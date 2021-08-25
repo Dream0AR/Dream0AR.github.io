@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分几何初步》3.4-3.5 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《微分几何初步》3.4-3.5</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-08-25 10:42:10
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/">微分几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="向量场"><a href="#向量场" class="headerlink" title="向量场"></a>向量场</h2><h3 id="平面上的向量场"><a href="#平面上的向量场" class="headerlink" title="平面上的向量场"></a>平面上的向量场</h3><p>开集$U\subset \mathbb{R}^2$上的<strong>向量场</strong>是一个映射,
+对每个$q=(x,y)\in U$, 指定一个$w(q)=(a(x,y),b(x,y))\in \mathbb{R}^2.$
+称向量场是<strong>可微的</strong>, 若$w$是可微的, 即$a,b$都是可微的.
+我们默认总是考虑可微的向量场.</p>
+<p>给定一个向量场, 我们考虑是否存在场的<strong>轨迹</strong>,
+即是否存在可微曲线$\alpha(t)=(x(t),y(t)),$
+使得$\alpha’(t)=w(\alpha(t)).$ 事实上, 这就是解常微分方程组: <script type="math/tex">\left\{
+        \begin{aligned}
+            \frac{dx}{dt}=a(x,y)\\
+            \frac{dy}{dt}=b(x,y)
+        \end{aligned}
+        \right.</script></p>
+<p>我们说向量场$w$决定了上面这样一个微分方程系统. 如对向量场$w(x,y)=(x,y),$
+过$(x_0,y_0)$点的轨迹为$\alpha(t)=(x_0e^t,y_0 e^t);$
+对向量场$w(x,y)=(y,-x),$
+过$(x_0,y_0)$点轨迹为$\beta(t)=(r\sin t,r\cos t),$ $r^2=x_0^2+y_0^2.$</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/clUGft9ZwT41PN2.png width='50%' height='50%'></p>
+<p>由常微分方程基本理论(存在性, 唯一性), 我们有如下定理:</p>
+<p><strong>定理 1.1</strong>. <em>对任意开集$U\subset \mathbb{R}^2$上给定向量场$w,$ 以及定点$p\in U,$ 存在场的轨迹$\alpha:I\rightarrow U,$ 其中$I$为原点处小邻域, $\alpha(0)=p.$ 这样的轨迹是唯一的, 即若有另一条轨迹$\beta:J\rightarrow U,$ $J$为原点小邻域, $\beta(0)=p,$ 则限制在$I\cap J$上$\alpha=\beta.$</em> </p>
+<p>又由解对初值的依赖性, 我们进一步有:</p>
+<p><strong>定理 1.2</strong>. <em>字母含义同上, 存在$p$点邻域$V\subset U\subset \mathbb{R}^2,$ 有可微映射$\alpha:V\times I\rightarrow U,$ 使得$\,\forall\,q\in V,$ $\alpha(q,\cdot)$为场$w$过$q$点的轨迹.</em> </p>
+<p>这样的映射$\alpha$称为$w$在$p$点的(局部)<strong>流</strong>(local flow). 从图示来看,
+它将柱体\”拍\”到平面$(U)$上, 将每一根竖线映为轨迹.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/PS3wZrAmsBXEnfL.png width='50%' height='50%'></p>
+<p>由上述定理, 有结论如下:</p>
+<p><strong>引理 1.3</strong>. <em>令$w$为开集$U\subset \mathbb{R}^2$上向量场, $p\in U$有$w(p)\neq 0.$ 那么存在$p$点邻域$W\subset U$与可微函数$f:W\rightarrow \mathbb{R},$ 使得$f$沿轨迹为常数, 且$df_q\neq 0,$ $\,\forall\,q\in W.$</em> </p>
+<p><strong>证:</strong> 不妨设$p$为原点, $w(p)$沿$x$轴方向.
+由上述定理我们有局部流$\alpha:V\times I\rightarrow U.$
+取$\tilde\alpha$为$\alpha$限制在矩形$(V\times I)\cap \{(0,y,t)\in \mathbb{R}^3\}$上.
+由定义, $d\tilde \alpha_p$将$t$轴切方向映到$w(p),$
+将$y$轴切方向映到自身, 因此$d\tilde \alpha_p$不退化. 由反函数定理,
+在充分小的邻域$W\subset U$上, 存在可微函数$\tilde \alpha^{-1}.$
+那么取$f$为$\tilde \alpha^{-1}$在$y$轴上的分量即可. 易见$f$满足要求.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/2Fl7eQPofshRBVb.png width='50%' height='50%'></p>
+<p>这样的沿轨迹(解)为常数的函数$f$称为场$w$在$p$点邻域的(局部)首次积分.
+如对场$w(x,y)=(y,-x),$
+在$\mathbb{R}^2-O$上的一个首次积分是$f(x,y)=x^2+y^2.$
+容易看出这样定义的首次积分并不唯一. 由隐函数定理, 在$f$微分不消失的地方,
+$f=C$就给出了$x,y$的关系, 从而消去一个未知量, 使求解变得容易.</p>
+<p>开集$U\subset \mathbb{R}^2$上的<strong>方向场</strong>$r,$ 指对每个点$p\in U,$
+在$\mathbb{R}^2$上指定一条过$p$点的直线$r(p).$ 称$r$是在$p$点<strong>可微的</strong>,
+若$p$点邻域$V\subset U$上存在一个非零可微向量场$w,$
+满足$\,\forall\,q\in V$, 非零的$w(q)$为$r(q)$的基.
+$r$在$U$上可微自然指在$U$上点点可微.
+每个非零可微向量场$w$自然可以生成一个可微方向场$r.$</p>
+<p>需要注意的是, 根据定义, 每个可微方向场点点局部对应一个非零可微向量场$w,$
+但不见得整体对应一个非零可微向量场, 如下图所示.
+可以说方向场对应的向量场局部给出了方向场的一个定向,
+那么无法整体定向的方向场也就不能对应一个整体非零的向量场了.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/a5mbLhMNnPXVSUZ.png width='50%' height='50%'></p>
+<p>一个正则曲线$C\subset U$称为$U$上方向场$r$的<strong>积分曲线</strong>,
+若$\,\forall\,q\in C,$ $r(q)$为$C$在$q$点切线.
+易见积分曲线局部上就是可微方向场所对应的向量场的轨迹,
+由此每个可微方向场总能找到过任意定点的积分曲线,
+即类似于常微分方程中解的拼接, 积分曲线就是将向量场的轨迹拼接起来.</p>
+<p>既然轨迹与积分曲线看似对应的是同一个东西, 为何要引入新的定义呢?
+因为整体的方向场不见得对应整体的向量场, 因此没有所谓整体的轨迹这一概念,
+但整体的积分曲线是确实存在的. 可见可微性之于方向场也很重要,
+我们默认总是考虑可微的方向场.</p>
+<p>方向场也可由微分方程给出. 对任意向量场$w,$
+易见$\,\forall\,\lambda\neq 0,$ $\lambda w$与$w$生成的方向场是一致的,
+$\lambda$可以是一个处处非零的可微函数. 对常微分方程组$\begin{cases}
+        \frac{dx}{dt}=\lambda(x,y)a(x,y)\\ \frac{dy}{dt}=\lambda(x,y)b(x,y)
+        \end{cases},$ 为了消去$\lambda,$
+可以由微分方程$b(x,y)\frac{dx}{dt}-a(x,y)\frac{dy}{dt}=0$表示该方向场,
+方程的解就对应着积分曲线.
+对方向场我们不在乎曲线的参数化(对向量场的轨迹需要注意参数选取),
+因此我们常用形如$adx+bdy=0$的微分方程来表示方向场.</p>
+<h3 id="曲面上的向量场"><a href="#曲面上的向量场" class="headerlink" title="曲面上的向量场"></a>曲面上的向量场</h3><p>前面的所有内容仅用到了$\mathbb{R}^2$上的局部性质, 主要依赖于其可微结构.
+因此我们自然可以把上述讨论迁移到曲面上.</p>
+<p><strong>定义 1.4</strong>. <em>曲面$S$中开集$U$上的向量场$w,$ 为对每个点$p\in U,$ 指定一个$w(p)\in T_p(S)$的对应. 称其在$p$点可微, 若对$p$点某邻域上的参数化$x(u,v),$ 存在可微的$a(u,v), b(u,v),$ 使得$w(x(u,v))=a(u,v)x_u+b(u,v)x_v.$ 它与参数化选取无关.</em> </p>
+<p>类似的, 可定义向量场的轨迹, 方向场, 积分曲线等.
+只需将$\mathbb{R}^2$换为$S$即可, 定理与引理也自然是成立的.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/INDqrGEuOld7iYy.png width='50%' height='50%'></p>
+<p>接下来介绍本节的主定理.</p>
+<p><strong>定理 1.5</strong>. <em>在开集$U\subset S$上有两向量场$w_1,w_2,$ 在某点$p\in U$处线性无关. 那么存在某$p$点邻域$V\subset U,$ 其上有参数化使得$\,\forall\,q\in V,$ 过该点的两条坐标曲线分别与$w_1(q),w_2(q)$相切.</em> </p>
+<p><strong>证:</strong> 取$p$点邻域$W\subset U,$ 使其上有首次积分$f_1,f_2.$
+定义$\varphi:W\rightarrow \mathbb{R}^2,$ $\varphi(q)=(f_1(q),f_2(q)),$
+则$d\varphi_p(w_1)=(0,(df_2)_p(w_1))\neq 0,$
+$d\varphi_p(w_2)=((df_1)_p(w_2),0)\neq 0,$ 且线性无关,
+$d\varphi_p$不退化. 因此$\varphi$为局部同胚,
+从而取$\varphi$为更小的邻域$V\subset W$上的坐标函数即可.
+坐标曲线$f_1(q)=\emph{const}, f_2(q)=\emph{const}$分别与$w_1(q),w_2(q)$相切.</p>
+<p>需要注意的是, 定理并不表示坐标曲线的速度向量就是$w_1(q),w_2(q).$
+事实上可以将上述定理表示为下面的形式.</p>
+<p><strong>推论 1.6</strong>. <em>在开集$U\subset S$上有两方向场$r_1,r_2,$ 在某点$p\in U$处, $r_1(p)\neq r_2(p).$ 那么存在某$p$点邻域$V\subset U,$ 其上有参数化使得$\,\forall\,q\in V,$ 过该点的两条坐标曲线分别为$r_1,r_2$的积分曲线.</em> </p>
+<p>定理可以说明正交参数化的存在性:</p>
+<p><strong>推论 1.7</strong>. <em>$\,\forall\,p\in S,$ $p$点某邻域$V$上存在参数化$x(u,v),$ 使得坐标曲线$u=\emph{const},v=\emph{const}$在任意点$q\in V$上彼此正交. 称这样的$x$为正交参数化.</em> </p>
+<p><strong>证:</strong> 在点$p$处任取参数化$\bar x:\bar U\rightarrow S,$
+取向量场$w_1=\bar x_{\bar u},$
+$w_2=-(\bar F/\bar E)\bar x_{\bar u}+\bar x_{\bar v}.$
+那么$w_1\cdot w_2=-\bar F +\bar F=0,$ 在任意点$q$处.
+应用定理即得所需的参数化.</p>
+<p>不仅如此, 还可在$p$点任意指定两个正交方向, 生成需要的正交参数化. 特别地,
+对特殊的参数化, 有如下推论:</p>
+<p><strong>推论 1.8</strong>. <em>在双曲点附近存在参数化, 使得坐标曲线构成渐近线网; 在非脐点附近存在(正交)参数化, 使得坐标曲线构成曲率线网.</em> </p>
+<p><strong>证:</strong> 在双曲点附近, 满足$eg-f^2&lt;0,$
+由此可线性分解渐近线微分方程$e{u’}^2+2fu’v’+g{v’}^2=0$为$(Au’+Bv’)(Au’+Dv’)=0$的形式,
+从而确定两个方向场, 其积分曲线即为渐近线. 从而由前面的推论即得结论.</p>
+<p>在非脐点附近, 由于曲率线微分方程较为复杂, 由前面的推论,
+不妨先取正交参数化使$F=0.$ 由于是非脐点, 可取到正交参数化使$f\neq 0,$
+进而由$EGf^2&gt;0,$ 同上面的方法可线性分解微分方程, 得到方向场,
+积分曲线即为曲率线. 由前面的推论即得结论.</p>
+<h2 id="直纹面与极小曲面"><a href="#直纹面与极小曲面" class="headerlink" title="直纹面与极小曲面"></a>直纹面与极小曲面</h2><h3 id="直纹面"><a href="#直纹面" class="headerlink" title="直纹面"></a>直纹面</h3><p>一个可微的单参数直线族$\{L_t\}$, 指有可微的$\{\alpha(t),w(t)\},$
+对每个$t\in I,$ 指定一点$\alpha(t)\in \mathbb{R}^2$与向量$w(t).$
+直线$L_t$过$\alpha(t),$ 以$w(t)$为方向.
+直纹面即为由单参数直线族生成的曲面, 即有$x(t,v)=\alpha(t)+vw(t),$
+$(t,v)\in I\times \mathbb{R}.$ 直线$L_t$称为直母线(rulings),
+曲线$\alpha(t)$称为曲面的准线(directrix). 一般来说, 允许$x$出现奇点.</p>
+<p>接下来总是假设$|w(t)|=1,$ $w’(t)\neq 0.$ 后一假设即曲面是非柱状的.
+由前一假设有$\left&lt;{}w(t),w’(t)\right&gt;=0.$
+我们希望找到一条曲线$\beta(t)$使得$\left&lt;{}\beta’(t),w’(t)\right&gt;=0,$
+且$\beta$落在$x$上. 设$\beta(t)=\alpha(t)+u(t)w(t),$
+则$\beta’=\alpha’+u’w+uw’.$ 若满足要求,
+则$0=\left&lt;{}\beta’,w’\right&gt;=\left&lt;{}\alpha’,w’\right&gt;+u\left&lt;{}w’,w’\right&gt;,$
+$u=-\frac{\left&lt;{}\alpha’,w’\right&gt;}{\left&lt;{}w’,w’\right&gt;}.$
+从而取这样的$u$, 对应的$\beta$即满足要求.</p>
+<p>接下来说明$\beta$与准线的选取无关.
+若$x(t,u)=\alpha(t)+uw(t)=\bar\alpha(t)+v(u)w(t).$
+那么$\beta-\bar \beta=(\alpha-\bar\alpha)+\frac{\left&lt;{}\bar\alpha’-\alpha’,w’\right&gt;}{\left&lt;{}w’,w’\right&gt;}w.$
+由于$\alpha-\bar\alpha=(u-v)w,$ 且$\left&lt;{}w,w’\right&gt;=0,$
+便有$\beta=\bar\beta.$ 从而这样的曲线$\beta$只与直纹面本身有关,
+称其为<strong>腰线</strong>, 其上的点称为直纹面的<strong>中心点</strong>. 如螺旋面的腰线是中心轴,
+而单叶双曲面的腰线是半径最小的纬线.\
+选取$\beta$为直纹面的准线, $x(t,u)=\beta(t)+uw(t),$
+那么$x_t=\beta’+uw’,$ $x_u=w,$
+$x_t\wedge x_u=\beta’\wedge w+uw’\wedge w.$ $w’$垂直于$\beta’,w,$
+从而可记$\beta’\wedge w=\lambda w’,$ $\lambda=\lambda(t).$
+那么$|x_t\wedge x_u|^2=(\lambda^2+u^2)|w’|^2,$
+从而奇点只可能在$u=0$即准线$\beta$上出现. 且出现奇点当且仅当$\lambda=0,$
+即$w(t)$在准线切线上.
+可具体表示出$\lambda=\frac{(\beta’,w,w’)}{|w’|^2}.$</p>
+<p>我们来计算直纹面在正则点处的Gauss曲率. $x_{tt}=\beta’’+uw’’,$
+$x_{tu}=w’,$ $x_{uu}=0,$ 从而$g=0,$
+$f=\frac{(x_t,x_u,x_{tu})}{|x_t\wedge x_u|}=\frac{(\beta’,w,w’)}{|x_t\wedge x_u|}.$
+故$K=\frac{eg-f^2}{EG-F^2}=-\frac{\lambda^2 |w’|^4}{(\lambda^2+u^2)^2|w’|^4}=-\frac{\lambda^2}{(\lambda^2+u^2)^2}.$
+从而在正则点, 直纹面的Gauss曲率$K\le 0,$
+且等于零仅当$w(t)$落在$\beta(t)$切线上, 沿该直母线发生. 可以看出,
+若$\lambda\neq 0,$ 则$|K(u)|$是直母线上的连续函数, 取值关于中心点对称,
+在中心点处$|K(u)|$达到极大值.</p>
+<p>函数$\lambda(t)$称为$x$的分布参数. 由于腰线与准线选取无关,
+$\lambda$也是. 若$x$是正则的,
+有$N(t,u)=\frac{x_t\wedge x_u}{|x_t\wedge x_u|}=\frac{\lambda w’+uw’\wedge w}{\sqrt{\lambda^2+u^2}|w’|}.$
+若$\lambda\neq 0,$ $N(t,0)=\frac{w’}{|w’|}\frac{\lambda}{|\lambda|}.$
+考虑$N(t,u)$与$N(t,0)$夹角, $\tan\theta=\frac{u}{|\lambda|},$
+与$u$成正比, 比例系数为分布参数的倒数.</p>
+<p>利用这一性质, 可以推出一个有趣的结论是,
+由直母线上法向量对应的单参数直线族, 生成的直纹面恰为双曲抛物面$z=kxy,$
+$k=\frac{1}{\lambda}.$</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/h17DmyHNwXn6vRx.png width='50%' height='50%'></p>
+<p>对直纹面$x(t,v)=\alpha(t)+vw(t),$ 称它是<strong>可展的</strong>,
+若$(\alpha’,w,w’)=0.$ 计算得到$g=0,$
+$f=\frac{(\alpha’,w,w’)}{|x_t\wedge x_u|}=0,$
+从而$K=\frac{eg-f^2}{EG-F^2}=0,$ 即可展曲面Gauss曲率恒为零.
+事实上反过来也是对的, 即Gauss曲率为零的曲面也一定是可展的.
+它与平面局部等距, 因此可以剪下曲面上的一块展开为平面,
+这也是可展曲面得名的原因.</p>
+<p>一个基本的事实是可展曲线的切平面沿直母线不变.
+只需说明$\left&lt;{}N_v,x_v\right&gt;=\left&lt;{}N_v,x_t\right&gt;=0,$ 即$f=g=0.$
+这是已经得到过的.\
+接下来我们说明可展曲面只有柱面, 锥面, 切线面这三类.
+$w’=0$的部分为柱状区域, 去掉$w’=0$的部分后, 曲面是非柱状的.
+由前面的讨论, 可取到腰线$\beta(t),$ 且分布参数$\lambda=0,$
+从而腰线上都是奇点. 在$\beta’=0$的地方, 该点处的曲面为锥面;
+去掉$\beta’=0$的地方后, 由$\lambda=0$得到$\beta’$与$w$同向,
+即曲面为切线面.</p>
+<p>可展曲面的一个重要性质, 或者说等价的定义方式是,
+它是单参数平面族的包络面. 取正则曲面$S$与其上的弧长参数化曲线$\alpha,$
+假设它无处切方向是渐进的. 记$N(s)=N\circ\alpha(s),$
+那么$\left&lt;{}dN(\alpha’),\alpha’\right&gt;=\left&lt;{}N’,\alpha’\right&gt;\neq 0,$
+从而$N’\neq 0.$
+取直纹面$x(s,v)=\alpha(s)+v\frac{N(s)\wedge N’(s)}{|N’(s)|}.$</p>
+<p>考虑沿$\alpha(s)$的$S$的切平面族$\{T_{\alpha(s)}(S)\},$
+很近的两平面交于某直线,
+以$\frac{N(s)\wedge N(s+\Delta s)}{\Delta s}$为方向.
+令$\Delta s\rightarrow 0$即有该方向为$N\wedge N’.$
+从而$x$的直母线为平面族邻近平面交线的极限.
+这样的$x$即称为单参数平面族$\{T_{\alpha(s)}(S)\}$的包络面.
+柱面和锥面很显然可由该种方法生成.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/t9pCgwDZ51FOz6a.png width='50%' height='50%'></p>
+<p>可以很直接的计算出,
+$(\alpha’,w,w’)=\frac{1}{|N’|^2}\left&lt;{}(N\wedge N’)\wedge (N\wedge N’)’,\alpha’\right&gt;=\frac{1}{|N’|^2}\left&lt;{}\left&lt;{}N\wedge N’,N’’\right&gt;N,\alpha’\right&gt;=0,$
+从而单参数平面族包络面可展. 对可展曲面,
+也能够找到对应的单参数平面族以其为包络面.</p>
+<p>接下来我们说明$x$在$\alpha$附近正则, 且沿$\alpha$与$S$相切.在$\alpha$上,
+$x_s\wedge x_v=\alpha’\wedge\frac{N\wedge N’}{|N’|}=\left&lt;{}N’,\alpha’\right&gt;\frac{N}{|N’|}=-\frac{k_nN}{|N’|}.$
+由于$\alpha’$非渐进方向, $k_n$无处为零, 从而$x$在$\alpha$附近正则,
+且在$\alpha$处法向量与$S$一致, 即与$S$相切.</p>
+<h3 id="极小曲面"><a href="#极小曲面" class="headerlink" title="极小曲面"></a>极小曲面</h3><p>一个正则参数化曲面是<strong>极小的</strong>, 若其平均曲率处处消失.
+令$x:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$为正则参数化曲面.
+取有界区域$D\subset U,$ 以及可微函数$h:\bar D\rightarrow \mathbb{R}.$
+$x(\bar D)$由$h$决定的<strong>法向变分</strong>,
+指映射$\varphi:\bar D\times (-\varepsilon,\varepsilon)\rightarrow \mathbb{R}^3,$
+$\varphi(u,v,t)=x(u,v)+th(u,v)N(u,v).$
+对每个固定的$t\in (-\varepsilon,\varepsilon),$
+$x^t:D\rightarrow \mathbb{R}^3,$
+$x^t(u,v)=\varphi(u,v,t)$为一个参数化曲面.
+计算得到$\uppercase{\romannumeral 1\relax}^t=\uppercase{\romannumeral 1\relax}-2th\uppercase{\romannumeral 2\relax}+o(t).$
+由平均曲率$H=\frac{1}{2}\frac{Eg-2fF+Ge}{EG-F^2},$
+可以得到$E^tG^t-(F^t)^2=(EG-F^2)(1-4thH)+o(t).$
+从而$x^t(\bar D)$曲面面积$A(t)=\int_{\bar D}\sqrt{1-4thH+o(t)}\sqrt{EG-F^2}dudv,$
+对充分小的$\varepsilon$为可微函数,
+且在零点导数$A’(0)=\int_{\bar D}-2hH \sqrt{EG-F^2}dudv.$</p>
+<p><strong>命题 1.9</strong>. <em>条件同上, $x$为极小曲面当且仅当$A’(0)=0$对任意法向变分成立.</em> </p>
+<p><strong>证:</strong> 必要性易见. 假设$H(q)\neq 0,$
+取支撑在点$q$充分小邻域上的$h:\bar D\rightarrow \mathbb{R}$使得$h(q)=H(q),$
+$hH&gt;0.$ 那么对于该$h$决定的法向变分, $A’(0)&lt;0,$ 矛盾.</p>
+<p>需要注意的是, 其实我们只说明了极小曲面面积达到临界值, 未必真的是极小值.
+但极小曲面这一定义由Lagrange早在1760年便提出, 因此一直沿用至今.</p>
+<p>提到极小曲面往往会提到皂膜. 给定一个框架, 将其放入肥皂水中,
+小心翼翼的拿出来, 框架上便会架起皂膜. 这些皂膜便是面积达到极小的曲面,
+这样我们就制造出了极小曲面.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/N5vfHc93B2qnDJZ.png width='50%' height='50%'></p>
+<p>一般的, 定义平均曲率向量为$H=HN,$ 令$h=H$,
+那么$A’(0)=\int_{\bar D}-2\left&lt;{}H,H\right&gt;\sqrt{EG-F^2}dudv&lt;0,$
+也就是沿着平均曲率向量, 面积在零点附近是递减的.</p>
+<p>对等温曲面, 即$E=G=\lambda^2,$ $F=0,$ 有如下命题:</p>
+<p><strong>命题 1.10</strong>. <em>设$x(u,v)$为正则参数化等温曲面, 那么$x_{uu}+x_{vv}=2\lambda^2 H.$</em> </p>
+<p><strong>证:</strong> 首先由微分, 有:
+$\left&lt;{}x_{uu},x_u\right&gt;=\left&lt;{}x_{vu},x_v\right&gt;=-\left&lt;{}x_u,x_{vv}\right&gt;,$
+从而$\left&lt;{}x_{uu}+x_{vv},x_u\right&gt;=0.$
+类似的$\left&lt;{}x_{uu}+x_{vv},x_v\right&gt;=0.$
+从而$x_{uu}+x_{vv}$沿$N$方向.
+计算得到平均曲率$H=\frac{1}{2}\frac{g+e}{\lambda^2}.$ 因此,
+$2\lambda^2 H=g+e=\left&lt;{}N,x_{uu}+x_{vv}\right&gt;,$
+从而$x_{uu}+x_{vv}=2\lambda^2 H.$</p>
+<p><strong>推论 1.11</strong>. <em>对正则参数化等温曲面$x(u,v)=(x(u,v),y(u,v),z(u,v)),$ $x$极小当且仅当坐标分量都是调和的.</em> </p>
+<p>关于极小曲面有若干经典的例子. 如悬链面是旋转面中唯一的极小曲面,
+通过取旋转面的参数化计算即可. 这一点并不难以理解,
+极小曲面和悬链线都是自然形成的,
+因此有理由相信悬链线形成的悬链面是极小曲面.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/oeVBy5GjR3CQJML.png width='50%' height='50%'></p>
+<p>另一个例子是螺旋面是直纹面中唯一的极小曲面, 除了平面.
+教材中引用了Osserman的survey中,
+极小曲面Gauss曲率零点孤立这一性质(平面除外).</p>
+<p>除去Gauss曲率取零点的地方, 由于平均曲率为零, Gauss曲率必然取负.
+由于$k_1=-k_2,$ 由Euler公式, 曲面有正交的渐进曲线. 显然直母线是渐进曲线,
+由于曲面非平面, 可取到点$q\in W,$
+过该点的另一条渐进曲线以$\tau=\sqrt{-K}$为挠率.
+由于渐进曲线密切平面为曲面切平面,
+在$q$点邻域$V\subset W$上直母线恰为另一渐进曲线族的法线.
+这当且仅当该曲线族为螺线族时发生(Bertrand曲线), 因此$V$是螺面的一部分.
+由于螺线挠率恒定, 可见整个曲面都是螺旋面.</p>
+<p>极小曲面是微分几何中重要的研究课题, 许多有关它的结论都很形象,
+但又相当难以证明. 书中提到如下的定理:</p>
+<p><strong>定理 1.12</strong>. <em>令$S$为非平面的正则极小闭曲面, 那么Gauss映射像在球面上是稠密的.</em> </p>
+<p>文章最后更新于 2021-08-25 10:42:10 </p>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/12/%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%8A%A8%E5%8C%96/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">博客自动化</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script data-pjax
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script data-pjax>
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('true') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%9C%BA"><span class="nav-text">向量场</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%90%91%E9%87%8F%E5%9C%BA"><span class="nav-text">平面上的向量场</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%90%91%E9%87%8F%E5%9C%BA"><span class="nav-text">曲面上的向量场</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E7%BA%B9%E9%9D%A2%E4%B8%8E%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2"><span class="nav-text">直纹面与极小曲面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E7%BA%B9%E9%9D%A2"><span class="nav-text">直纹面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2"><span class="nav-text">极小曲面</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
