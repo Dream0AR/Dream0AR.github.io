@@ -267,7 +267,7 @@
                 <div class="home-article-content markdown-body">
                     
                         分享一下搭建个人博客的过程，包括一些细节的处理等等，希望会有帮助。
-我主要参考的文章是这个知乎专栏：。前三篇是GitHub使用相关，四六篇若不希望改变域名则非必要（穷学生不打算买域名，也没找到免费的方法QAQ）。我是从第五篇开始的，按步骤安装node...
+Hexo环境配置我主要参考的文章是这个知乎专栏：。前三篇是GitHub使用相关，四六篇若不希望改变域名则非必要（穷学生不打算买域名，也没找到免费的方法QAQ）。我是从第五篇开始的，按...
                     
                 </div>
 
@@ -638,5 +638,20 @@ $\alpha(s)=\alpha(0)...
 
 
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
