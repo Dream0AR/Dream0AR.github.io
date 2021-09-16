@@ -244,10 +244,10 @@
 使得$R$中顶点与$S$中顶点均不相邻.
 这时我们可以说图$X$是顶点集$R$和$S$诱导子图的无交并. 极大的连通诱导子图,
 称为图$X$的<strong>连通分支</strong>, 简记为<strong>分支</strong>.</p>
-<p>一个<strong>圈(cycle)</strong>指一个连通图, 每个顶点恰有两个邻点;
-图中的圈即指是圈的一个子图. 容易证明若图中每个点都至少有两个邻点,
-那么图必定包含一个圈. 连通的无圈图称为<strong>树</strong>,
-而无圈图可以拆分为若干极大连通无圈图的无交并, 因此称为<strong>森林</strong>.
+<p>一个<strong>环(cycle)</strong>指一个连通图, 每个顶点恰有两个邻点;
+图中的环即指作为子图的环. 容易证明若图中每个点都至少有两个邻点,
+那么图必定包含一个环. 连通的无环图称为<strong>树</strong>,
+而无环图可以拆分为若干极大连通无环图的无交并, 因此称为<strong>森林</strong>.
 若某生成子图为树, 则称其为<strong>生成树</strong>. 易见图有生成树当且仅当它是连通的.
 极大生成森林即指由每个分支的生成树组成的生成子图.</p>
 <h2 id="自同构"><a href="#自同构" class="headerlink" title="自同构"></a>自同构</h2><p>图$X$到自身的同构即为自同构. 容易证明自同构全体构成一个群,
@@ -270,7 +270,7 @@ $Y$与$Y^g$自然是同构的.</p>
 <p><strong>引理 1.2</strong>. <em>$\,\forall\,x,y\in X,$ $g\in \operatorname{Aut}(X),$ $d(x,y)=d(x^g,y^g).$</em> </p>
 <p>图$X$的<strong>补图</strong>$\overline X$是这样一个图: 它满足$V(X)=V(\overline X),$
 但两顶点在$\overline X$中相邻当且仅当它们在$X$中不相邻.</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/13/bQ2PI5ZWXstJ7TR.png width='50%' height='50%'></p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/NqFdbRUiZGYM5em.png width='50%' height='50%'></p>
 <p>容易证明如下引理:</p>
 <p><strong>引理 1.3</strong>. <em>$\operatorname{Aut}(X)\cong \operatorname{Aut}(\overline X).$</em> </p>
 <p>若$X$是有向图, 那么对于同构, 我们要求它是保方向的.</p>
@@ -296,20 +296,20 @@ $f^{-1}(y):=\{x\in V(X): f(x)=y\}$为独立集. 因此若有$X$到$K_r$的同态
 <p>图$X$到其子图$Y$的同态$f$称为收缩, 若$f|_Y$为恒等映射.
 此时称$Y$为$X$的收缩核. 如对如下的图, 按红色箭头所示构造同态,
 则内侧的五边形成为原图的收缩核.</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/13/rjF9tV6LR8ePHAB.png width='50%' height='50%'></p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/qD6o2IO3FYmjvui.png width='50%' height='50%'></p>
 <p>对有向图的同态, 只需将保相邻改为保有序对即可. 需要注意的是,
-以上讨论均默认图中无环. 边称为<strong>环(loop)</strong>, 若其两端点是同一个点.
-允许环存在的图的同态的性质将大有不同.
-一个例子是将任意顶点集映到有环的点的映射都是同态.</p>
+以上讨论均默认图中无环. 边称为<strong>圈(loop)</strong>, 若其两端点是同一个点.
+允许圈存在的图的同态的性质将大有不同.
+一个例子是将任意顶点集映到有圈的点的映射都是同态.</p>
 <p>图$X$到自身的同态称为自同态, 自同态全体构成幺半群. 自同构群包含在其中.</p>
 <h2 id="循环图"><a href="#循环图" class="headerlink" title="循环图"></a>循环图</h2><p>接下来介绍很重要的一类图, 称为<strong>循环图(circulant graph)</strong>:
 它是一个有向图$X=X(\mathbb{Z}_n,C),$
 集合$C\subset \mathbb{Z}_n\setminus\{0\}.$ 其顶点为$\mathbb{Z}_n$中元素,
 $(i,j)$为$X$中的弧当且仅当$j-i\in C.$
 $X(\mathbb{Z}_n,C)$称为$n$阶循环图, 以$C$为连接集.</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/13/f2Wtl8qTNOIg6VY.png width='50%' height='50%'></p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/5lzsWJ1NDBaf2ru.png width='50%' height='50%'></p>
 <p>若$\,\forall\,c\in C,$ $-c\in C,$ 那么$(i,j)$为弧当且仅当$(j,i)$为弧,
-从而$X$可以视为无向图. 易见前面提到的圈即为$X(\mathbb{Z}_n,\{\pm 1\}),$
+从而$X$可以视为无向图. 易见前面提到的环即为$X(\mathbb{Z}_n,\{\pm 1\}),$
 是循环图的一种, 记为$C_n$.</p>
 <h2 id="Johnson图"><a href="#Johnson图" class="headerlink" title="Johnson图"></a>Johnson图</h2><p>对正整数$v\ge k\ge i,$ 图$J(v,k,i)$是这样一个无向图:
 设有含$v$个元素的集合$\Omega,$
@@ -326,9 +326,9 @@ $J(v,k,0)$为<strong>Kneser图</strong>. 由于$\Omega$中元素的置换诱导�
 <p><strong>引理 1.6</strong>. <em>$S_v\subset \operatorname{Aut}(J(v,k,i)).$</em> </p>
 <h2 id="边图"><a href="#边图" class="headerlink" title="边图"></a>边图</h2><p>图$X$的<strong>边图(line graph)</strong>$L(X)$是这样一个图: 它以$X$的边为顶点,
 两顶点连边当且仅当它们在$X$中对应的边有公共顶点.</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/13/tiGOMQRIuBN7yqp.png width='50%' height='50%'></p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/RPjdVz8KtTUnNFr.png width='50%' height='50%'></p>
 <p><strong>星形图</strong>$K_{1,n}$为由$1$个顶点与其$n$个邻点构成的图.
-它的边图即为完全图$K_n.$ 对于圈$C_n,$ 它与其边图同构.</p>
+它的边图即为完全图$K_n.$ 对于环$C_n,$ 它与其边图同构.</p>
 <p>对每个边考虑其两个顶点, 有如下引理:</p>
 <p><strong>引理 1.7</strong>. <em>若$X$是$k-$正则图, 那么$L(X)$是$2k-2$正则的.</em> </p>
 <p>$X$中每个价为$k$的顶点都决定了$L(X)$中大小为$k$的团. 若$X$含$n$个顶点,
@@ -388,23 +388,23 @@ $n$个顶点对应的$n$个极大团大小大于$3,$
 这样的图称为<strong>平面三角剖分</strong>.</p>
 <p>一个图的平面嵌入有很多种, 这会导致平面图的面有所不同, 如下图所示.
 一个很重要的拓扑结论是, $3-$连通的图本质上只有唯一一种嵌入方式.</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/13/mXv8xwSjcAKVZWC.png width='50%' height='50%'></p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/bNgKA27E9TuIDkq.png width='50%' height='50%'></p>
 <p>给定平面图$X,$ 我们可以生成<strong>对偶图(dual graph)</strong>$X^\ast,$
 以$X$的面为$X^\ast$顶点, 对每条$X$中两面的公共边,
 绘制一条(跨公共边的)$X^\ast$中的边连接两面对应的顶点.
 注意$X^\ast$中可能有<strong>重边(multiple edge)</strong>, 即两个点间连接多个边.
 除了特殊说明, 我们默认不考虑图中出现重边的情况.</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/13/cnWTYUj7adSlf1o.png width='50%' height='50%'></p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/OqilQ1K7n2I4XAu.png width='50%' height='50%'></p>
 <p>若图与其对偶图同构, 则称其<strong>自对偶(self-dual)</strong>, 如完全图$K_4.$
 对连通的图$X,$ 可以说明$X\cong (X^\ast)^\ast.$
 嵌入的概念可以从平面推广到任意曲面上, 对偶也类似.
 一个例子是非平面图的完全图$K_6$可以嵌入到射影平面上,
 是射影平面的一个三角剖分.</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/13/tEfFVDiGKsg9ldU.png width='50%' height='50%'></p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/Fs8nIm63LMXyvaE.png width='50%' height='50%'></p>
 <p>另一个例子是完全图$K_7$不是平面图, 也不能嵌入到射影平面上,
 但是可以嵌入到环面上.</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/13/qlKTzGUEjeYvmXt.png width='50%' height='50%'></p>
-<p>文章最后更新于 2021-09-13 10:05:15 </p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/UZLdoX21VqCADpw.png width='50%' height='50%'></p>
+<p>文章最后更新于 2021-09-16 12:08:52 </p>
 
         </div>
 
