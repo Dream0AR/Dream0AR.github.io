@@ -253,15 +253,13 @@ $([\omega],[\tau])\mapsto \int_M \omega \wedge \tau$. 由Stokes定理,
 该配对是良定的.</p>
 <p><strong>定理 1.2</strong>. <em>若$n$维定向光滑流形$M$有有限好覆盖, 则配对$\int_M$非退化, 等价地, 我们有$H^q(M)\cong (H^{n-q}_c(M))^\ast , H_c^{n-q}(M)\cong (H^q(M))^\ast$</em> </p>
 <p>证明前先做一些准备工作:</p>
-<p><strong>引理 1.2</strong>. <em>我们有带符号的交换图表: <script type="math/tex">\begin{tikzcd}                 & H^q(U\cup V) \arrow[r, "r"] \arrow[d, "\otimes", phantom] & H^q(U)\oplus H^q(V) \arrow[r, "\delta"] \arrow[d, "\otimes", phantom]       & H^q(U\cap V) \arrow[r, "d^\ast "] \arrow[d, "\otimes", phantom]        & H^{q+1}(U\cup V) \arrow[d, "\otimes", phantom] \\                 & H_c^{n-q}(U\cup V) \arrow[d, "\int_{U\cup V}"]  & H_c^{n-q}(U)\oplus H_c^{n-q}(V) \arrow[l, "s"] \arrow[d, "\int_U + \int_V"] & H_c^{n-q}(U\cap V) \arrow[l, "\delta"] \arrow[d, "\int_{U\cap V}"] & H_c^{n-q-1}(U\cup V) \arrow[l, "d_\ast "] \arrow[d, "\int_{U\cup V}"] \\                 & \mathbb R                                                 & \mathbb R                                                                   & \mathbb R                                                          & \mathbb R                                                         &                              \end{tikzcd}</script></em>  <em>如对最右侧的交换性, 即取$[\omega]\in H^q(U\cap V)$, $[\tau]\in H_c^{n-q-1}(U\cup V)$, 有$\int_{U\cup V}d^\ast \omega\wedge \tau=\pm \int_{U\cap V}\omega\wedge d_\ast \tau$.</em> </p>
+<p><strong>引理 1.2</strong>. <em>我们有如下带符号的交换图表, 如对最右侧的交换性, 即取$[\omega]\in H^q(U\cap V)$, $[\tau]\in H_c^{n-q-1}(U\cup V)$, 有$\int_{U\cup V}d^\ast \omega\wedge \tau=\pm \int_{U\cap V}\omega\wedge d_\ast \tau$.</em> </p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/YhuZk9awXTqQls1.png width='50%' height='50%'></p>
 <p>已经证明过$d^\ast ,d_\ast$与单位分解选取无关, 因此不妨用同一个单位分解,
 将$d^\ast ,d_\ast$的映射具体地给出即可.</p>
 <p>于是配对$\int$诱导了下面带符号的交换图表:</p>
-<script type="math/tex; mode=display">% https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZABgBpiBdUkANwEMAbAVxiRAB12BjKCHBAL6l0mXPkIoAjOSq1GLNgAkAegEcAFAFVOXJmgAEANQCUIISOx4CRAEwzq9Zq0QgVGzcc4Q0zOPrfqJmbCIBiW4kQAzPZyTkpqWjp0BkHmoaJWEsgALDGOCi46vPzBFmLWUqSSsvnOIOqKAPpcysBgALSqAoncekbGxsoAVKXp4RXIdtUO8nUNza0dXVqe7N6+-gttnd0mgyNpYeVZ0dOxBfVNLdvL2tzJ-fujR5lEZGe1bEV8giEvEShch9Zl9uMVBLIYFAAObwIigABmACcIABbJBkEA4CBISRpZFo3HUbFIGz4lHoxB2LE4xCRcmEunE2nZBmU6Q0pAAVmoDCwYDqcAgfKgIGoAAsYHRRYgwEwGAxiXQsAw2JABWKQAw6AAjGAMAAKGQBWpgCJwowJlOpJMQADZefzBcKsKKJVKZXKFUqVWqCKxebr9UbxhJTebLRSkNFOYgAOyOjUuIUizWS6VIL2KrHK1UudUBrVBw3Girhi1spAADmZ3MriB5sbt9Ydsbj9YTsYAnAIKAIgA
-        \begin{tikzcd}
-            \cdots \arrow[r] & H^q(U\cup V) \arrow[r] \arrow[d] & H^q(U)\oplus H^q(V) \arrow[r] \arrow[d]       & H^q(U\cap V) \arrow[r] \arrow[d] & \cdots \\
-            \cdots \arrow[r] & (H_c^{n-q}(U\cup V))^\ast  \arrow[r] & (H_c^{n-q}(U)\oplus H_c^{n-q}(V))^\ast  \arrow[r] & (H_c^{n-q}(U\cap V))^\ast  \arrow[r] & \cdots
-        \end{tikzcd}</script><p>之后便可以借助五引理(Five Lemma)证明主命题了.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/ZO9F3exrD28iBhV.png width='50%' height='50%'></p>
+<p>之后便可以借助五引理(Five Lemma)证明主命题了.</p>
 <p><strong>证:</strong> 由上正合列与五引理, 若 Poincaré 对偶在$U$, $V$, $U\cap V$上成立,
 则在$U\cup V$上也成立.</p>
 <p>对有限好覆盖开集个数归纳证明: 若仅有一个好覆盖, 由 Poincaré 引理得证.</p>
@@ -305,7 +303,7 @@ $[\eta_S]$便称为$S$的<strong>紧Poincaré对偶.</strong></p>
 则容易验证它也是$M$中的紧Poincaré对偶.</p>
 <p>这就是<strong>局部化原理</strong>:
 $S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
-<p>文章最后更新于 2021-09-21 17:12:18 </p>
+<p>文章最后更新于 2021-09-21 17:25:28 </p>
 
         </div>
 
