@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(5-1)-MV方法 |
+            《代数拓扑与微分形式》笔记(5-2)-Künneth公式 |
         
         梦之居
     </title>
@@ -157,7 +157,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(5-1)-MV方法</span>
+            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(5-2)-Künneth公式</span>
         </div>
 
         
@@ -173,7 +173,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-21 17:11:26
+        <i class="fas fa-edit"></i>&nbsp;2021-09-22 18:30:38
     </span>
     
         <span class="article-categories article-meta-item">
@@ -213,97 +213,50 @@
         
 
         <div class="article-content markdown-body">
-            <p>MV方法指用MV序列+五引理, 给出对开覆盖开集个数归纳的证明方法.
-该方法导出若干重要的定理, 十分有用.</p>
-<h2 id="好覆盖的存在性"><a href="#好覆盖的存在性" class="headerlink" title="好覆盖的存在性"></a>好覆盖的存在性</h2><p>设$M$为$n$维流形, 其上开覆盖$\{U_\alpha\}$称为<strong>好覆盖</strong>,
-若任意非空有限交微分同胚于$\mathbb{R}^n$.</p>
-<p><strong>定理 1.1</strong>. <em>流形具有好覆盖. 特别地, 紧流形有有限好覆盖.</em> </p>
-<p><strong>证:</strong> 流形上可赋予黎曼度量(将$\mathbb{R}^n$上度量拉回,
-再利用单位分解). 令$U_x$为$x$点测地凸邻域, 微分同胚于$\mathbb{R}^n$,
-由于有限多个测地凸邻域非空交也是测地凸邻域,
-从而$\{U_x\}_{x\in M}$是$M$的一个好的开覆盖.</p>
-<p>测地凸邻域的概念可参考黎曼几何的教材.</p>
-<p>称开覆盖$\mathcal U$为$\mathcal V$的<strong>加细</strong>, 若每个$U$包含在某个$V$中.
-由于测地凸邻域可任意小, 容易证明每个开覆盖有一个加细的好覆盖.</p>
-<h2 id="de-Rham上同调维数有限性"><a href="#de-Rham上同调维数有限性" class="headerlink" title="de Rham上同调维数有限性"></a>de Rham上同调维数有限性</h2><p><strong>命题 1.1</strong>. <em>若$M$有有限好覆盖, 则$\dim H^\ast (M)&lt;\infty$.</em> </p>
-<p><strong>证:</strong> 记$h^q(M)=\dim H^q(M)$. 由MV序列,
-$H^q(M)=H^q(U\cup V)\cong \ker r\oplus\operatorname{Im}r\cong \operatorname{Im}d^\ast \oplus \operatorname{Im}r$.
-从而若$h^q(U), h^q(V), h^{q-1}(U\cap V)&lt;\infty\Rightarrow h^q(U\cup V)&lt;\infty$.</p>
-<p>对有限好覆盖开集个数进行归纳, 当个数为 1 时, $M\approx \mathbb{R}^n$,
-由 Poincaré 引理知结论成立.</p>
-<p>归纳地, 假设流形具有开集个数不超过$p$个有限好覆盖时, 上同调维数有限.
-若$M$具有有限好覆盖$\{U_0,…,U_p\}$. 取$W=U_0\cup … \cup U_{p-1}$,
-$V=U_p$.
-则$W\cap V$有不超过$p$个的有限好覆盖$(\{U_0\cap U_{p},…,U_{p-1}\cap U_p\})$.
-由归纳假设, $h^\ast (W\cap V), h^\ast (W), h^\ast (V)&lt;\infty$,
-从而$H^\ast (W\cup V)=H^\ast (M)&lt;\infty$.</p>
-<p>同理可证:</p>
-<p><strong>命题 1.2</strong>. <em>若$M$具有有限好覆盖, 则$\dim H_c^q(M)&lt;\infty$.</em> </p>
-<h2 id="定向流形的Poincare对偶"><a href="#定向流形的Poincare对偶" class="headerlink" title="定向流形的Poincaré对偶"></a>定向流形的Poincaré对偶</h2><p>设$V,W$为有限维向量空间,
-设其间有配对$\left&lt;{}-,-\right&gt;:V\otimes_\mathbb{R}W\rightarrow \mathbb{R},$
-为一个双线性映射, 则其诱导两个线性映射:</p>
-<script type="math/tex; mode=display">l_V:V\rightarrow W^\ast , v\mapsto \left<{}v,-\right>,</script><script type="math/tex; mode=display">l_W:W\rightarrow V^\ast , w\mapsto \left<{}-,w\right>.</script><p>这里$V^\ast$, $W^\ast$指$V,W$的对偶空间. 若两诱导映射都是单射,
-则称配对$\left&lt;{},\right&gt;$非退化.</p>
-<p><strong>引理 1.1</strong>. <em>$\left&lt;{}-,-\right&gt;$非退化当且仅当诱导映射$l_V$为同构.</em> </p>
-<p>由于$V,W$都是有限维的, 做简单的泛函分析即可.</p>
-<p>假定$M$为$n$维定向光滑流形, 具有有限好覆盖. 则$H^q(M)$,
-$H^{n-q}_c(M)$为两个有限维向量空间.
-定义配对$\int_M:H^1(M)\otimes_\mathbb{R}H^{n-q}_c(M)\rightarrow \mathbb{R}$,
-$([\omega],[\tau])\mapsto \int_M \omega \wedge \tau$. 由Stokes定理,
-该配对是良定的.</p>
-<p><strong>定理 1.2</strong>. <em>若$n$维定向光滑流形$M$有有限好覆盖, 则配对$\int_M$非退化, 等价地, 我们有$H^q(M)\cong (H^{n-q}_c(M))^\ast , H_c^{n-q}(M)\cong (H^q(M))^\ast$</em> </p>
-<p>证明前先做一些准备工作:</p>
-<p><strong>引理 1.2</strong>. <em>我们有如下带符号的交换图表, 如对最右侧的交换性, 即取$[\omega]\in H^q(U\cap V)$, $[\tau]\in H_c^{n-q-1}(U\cup V)$, 有$\int_{U\cup V}d^\ast \omega\wedge \tau=\pm \int_{U\cap V}\omega\wedge d_\ast \tau$.</em> </p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/YhuZk9awXTqQls1.png width='50%' height='50%'></p>
-<p>已经证明过$d^\ast ,d_\ast$与单位分解选取无关, 因此不妨用同一个单位分解,
-将$d^\ast ,d_\ast$的映射具体地给出即可.</p>
-<p>于是配对$\int$诱导了下面带符号的交换图表:</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/ZO9F3exrD28iBhV.png width='50%' height='50%'></p>
-<p>之后便可以借助五引理(Five Lemma)证明主命题了.</p>
-<p><strong>证:</strong> 由上正合列与五引理, 若 Poincaré 对偶在$U$, $V$, $U\cap V$上成立,
-则在$U\cup V$上也成立.</p>
-<p>对有限好覆盖开集个数归纳证明: 若仅有一个好覆盖, 由 Poincaré 引理得证.</p>
-<p>若其对有限好覆盖开集个数不超过$p$的流形成立,
-设$M$有好覆盖$\{U_0,…,U_p\}$, 令$W=U_0\cup …\cup U_{p-1}$, $V=U_p$,
-则$M,V,M\cap V$好覆盖开集数均不超过$p$,
-从而$M=U\cup V$上成立Poincaré对偶.</p>
-<p>若没有有限好覆盖, 则有如下定理:</p>
-<p><strong>定理 1.3</strong>. <em>若$M$为定向$n$维流形, 上同调不必是有限维的, 则:$H^q(M)\cong (H^{n-q}_c(M))^\ast$</em> </p>
-<p>也就是另一个同构关系不一定对, 因为直和的对偶是直积,
-但直积的对偶不是直和. 如当$M$可被分解为$M=\sqcup_i M_i$,
-可列个$M_i$每个均有有限开覆盖时, $H^k(M)=\prod_i H^k(M_i)$,
-但$H_c^{k}(M)=\oplus_i H^{k}_c(M_i)$, 因为其需要具有紧支集.</p>
-<p>那么此时$(H_c^{n-q}(M))^\ast =\prod(H_c^{n-q}(M_i))^\ast \cong \prod H^q(M_i)=H^q(M)$.
-而另一个同构不一定成立.</p>
-<p>由对偶关系, 即有:</p>
-<p><strong>推论 1.1</strong>. <em>若流形$M$连通可定向, 则$H^n_c(M)\cong \mathbb{R}$, 特别地, 若$M$还是紧的, 则$H^n(M)\cong \mathbb{R}$.</em> </p>
-<h2 id="闭定向子流形的Poincare对偶"><a href="#闭定向子流形的Poincare对偶" class="headerlink" title="闭定向子流形的Poincaré对偶"></a>闭定向子流形的Poincaré对偶</h2><p>设$M$为$n$维定向流形.</p>
-<h3 id="闭无边定向子流形"><a href="#闭无边定向子流形" class="headerlink" title="闭无边定向子流形"></a>闭无边定向子流形</h3><p>假设$S$为$M$的$k$维闭无边定向子流形, 考虑$\omega\in Z_c^k(M)$,
-$\operatorname{supp}(i^\ast \omega)$也是$M$中的闭集,
-从而$\operatorname{supp}(i^\ast \omega)\subset \operatorname{supp}\omega$紧,
-$\int_Si^\ast \omega$有意义.</p>
-<p>另一方面, $\,\forall\,\omega \in B_c^\ast (M)$, $\omega=d\phi$,
-同理$\operatorname{supp}(i^\ast \phi)$紧. 进一步, 存在闭集$B$,
-$\operatorname{supp}(i^\ast \phi)\subset B$且$\partial B$为光滑$k-1$维子流形或空集,
-则由Stokes定理, $\int_Si^\ast \omega=\int_Bd(i^\ast \phi)=0$.</p>
-<p>综上, $\int_S i^\ast$定义了$H_c^k(M)$上的一个线性泛函,
-于是存在唯一的$[\eta_S]\in H^{n-k}(M)$,
-$\int_S i^\ast \omega=\int_M\omega\wedge \eta_S$.
-$[\eta_S]$或其任意代表元称为$S$的<strong>(闭)Poincaré对偶.</strong></p>
-<h3 id="紧致无边定向子流形"><a href="#紧致无边定向子流形" class="headerlink" title="紧致无边定向子流形"></a>紧致无边定向子流形</h3><p>当$S$紧时, 由于流形是$T_2$的, 当然$S$也是闭的, 上述讨论可以继承.</p>
-<p>$\,\forall\,[\omega]\in H^k(M)$, 由紧性,
-积分$\int_S i^\ast \omega$有意义. 此时它定义了$H^k(M)$上的一个线性泛函,
-于是设$M$有有限好覆盖, 则便对应唯一的$[\eta_S’]\in H^{n-k}_c(M)$,
-满足$\int_Si^\ast \omega=\int_M \omega\wedge\eta_S’$.
-$[\eta_S]$便称为$S$的<strong>紧Poincaré对偶.</strong></p>
-<p>容易看出自然映射$H_c^{n-k}(M)\rightarrow H^{n-k}(M)$把紧Poincaré对偶映为闭Poincaré对偶.
-然而这两个可能有很大的区别, 如非零的紧Poincaré对偶可能被映为$0$.</p>
-<h3 id="局部化原理"><a href="#局部化原理" class="headerlink" title="局部化原理"></a>局部化原理</h3><p>取紧定向$k$维子流形$S$在$M$中的开邻域$W$, 即$S\subset W\subset M$,
-那么将$S$在$W$中的紧Poincaré对偶零延拓到$M$上,
-则容易验证它也是$M$中的紧Poincaré对偶.</p>
-<p>这就是<strong>局部化原理</strong>:
-$S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
-<p>文章最后更新于 2021-09-21 17:25:28 </p>
+            <h2 id="Kunneth公式"><a href="#Kunneth公式" class="headerlink" title="Künneth公式"></a>Künneth公式</h2><p>设$M$, $F$是流形, 且$M$的de Rham上同调的维数是有限的, 则</p>
+<script type="math/tex; mode=display">H^n(M\times F)=\sum_{p+q=n} H^p(M)\otimes_\mathbb{R}H^q(F).</script><p><strong>证:</strong> 假定$M$有有限好覆盖. 取$M\times F$到$F$, $M$的投射为$\rho,\pi$,
+则其诱导$\psi:\Omega^{\ast }(M)\otimes \Omega^\ast (F)\rightarrow \Omega^\ast (M\times F)$,
+$\psi(\omega\otimes \phi)=\pi^\ast \omega\wedge \rho^\ast \phi.$
+由于$\pi^\ast$, $\rho^\ast$与$d$可交换, $\psi$可约化到上同调间的映射.</p>
+<p>若$M\approx \mathbb{R}^m$(好覆盖仅为一个开集), 则由Poincaré引理,
+$H^n(\mathbb{R}^m\times F)=H^n(\mathbb{R}^{m-1}\times F)=\cdots=H^n(F)=H^0(\mathbb{R}^m)\otimes H^n(F)= \sum_p H^{p}(\mathbb{R}^m)\otimes H^{n-p}(F).$</p>
+<p>设$U,V$为$M$的开集, 固定$n$, 做上同调的MV序列.
+将每项与$H^{n-p}(F)$做张量积, 再把每项关于$p$做直和, 得到新的MV序列.
+该MV序列又可通过链映射$\psi$打到$M\times F$对应的MV序列上,
+由zig-zag引理该图可交换.</p>
+<p>交换图有点大...不打了先.</p>
+<p>从而借助MV序列, 若Künneth公式对$U,V,U\cap V$成立, 其对$U\cup V$也成立.
+由MV方法, 归纳好覆盖开集个数即可.</p>
+<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p>$M\times F$可看作$M$上以$F$为纤维的平凡纤维丛,
+因此Künneth公式可以推广到更一般的情形, 这就是<strong>Leray-Hirsch定理</strong>.
+先介绍一些纤维丛的概念.</p>
+<p>设$G$是拓扑群, $F$是拓扑空间, 设$G$对$F$有一个<strong>左作用</strong>,
+即$\,\forall\,g\in G$定义了一个连续同胚$g:F\rightarrow F$, 满足
+$g_1(g_2(v))=(g_1g_2)(v)$, $\,\forall\,g_1,g_2\in G$, $v\in F.$
+称作用是<strong>有效作用</strong>, 若$g(y)=y$,
+$\,\forall\,y\in F\Rightarrow g=1\in G.$</p>
+<p>在此基础上, 再加入$E,B$为拓扑空间, $\pi:E\rightarrow B$是连续满射.
+设$B$有开覆盖$\{U_\alpha\}_{\alpha\in I}$满足:</p>
+<p>(i) 对每个$\alpha\in I$, 有保纤维的同胚:
+    $\phi_\alpha:E_{U_\alpha}:=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times F$,
+    即$\phi_\alpha$是同胚且$\operatorname{pr}_1\circ\phi_\alpha=\pi.$</p>
+<p>(ii) $\phi_\alpha,\phi_\beta$诱导了$g_{\alpha\beta}:U_{\alpha\beta}\rightarrow G$,
+     $(\phi_\alpha\circ \phi_\beta^{-1})(x,v)=(x,g_{\alpha\beta}(x)(v)).$</p>
+<p>则称$\pi:E\rightarrow B$是以$F$为纤维的<strong>纤维丛</strong>, <strong>结构群</strong>为$G$,
+<strong>底空间</strong>为$B$, <strong>全空间</strong>为$E$.
+$\{(U_\alpha,\phi_\alpha)\}_{\alpha\in I}$为纤维丛的一个<strong>局部平凡化</strong>.
+对$x\in B$, $\pi^{-1}(x)$即称为点$x$的纤维, 记作$E_x$.</p>
+<p>在研究上同调时, 假定$E,B,F$是光滑流形,
+$G$无特殊说明为$F$的微分同胚群$\operatorname{Diff}(F)$.</p>
+<p>设$\pi:E\rightarrow M$是以$F$为纤维的光滑纤维丛.
+假定$E$上有上同调类$e_1,…,e_r$,
+限制在每条纤维$E_x$上形成了$H^\ast (E_x)$的一组基, 则可定义</p>
+<script type="math/tex; mode=display">\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).</script><p><strong>定理 1.1</strong> (Leray-Hirsch 定理). <em>在上述假定下, 若$M$有有限好覆盖, 则$\psi$是同构, 有$H^\ast (E)\cong H^\ast (M)\otimes \mathbb{R}\{e_1,…,e_r\} \cong H^\ast (M)\otimes H^\ast (F).$</em> </p>
+<p><strong>证:</strong> 由于有限好覆盖中的$U_\alpha\approx \mathbb{R}^n$为可缩空间,
+其上纤维丛平凡,
+对$E|_{U_\alpha}$的Leray-Hirsch定理退化为$U_\alpha\times F$的Künneth公式.</p>
+<p>用MV方法即可借助好覆盖, 将该论断归纳到$M$上.</p>
+<p>文章最后更新于 2021-09-22 18:30:43 </p>
 
         </div>
 
@@ -311,11 +264,11 @@ $S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(5-1)-MV方法</li>
+        <li>本文标题：《代数拓扑与微分形式》笔记(5-2)-Künneth公式</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-21 17:11:26</li>
+        <li>创建时间：2021-09-22 18:30:38</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/21/《代数拓扑与微分形式》笔记(5-1)-MV方法/
+            本文链接：https://dream0ar.github.io/2021/09/22/《代数拓扑与微分形式》笔记(5-2)-Künneth公式/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -329,29 +282,14 @@ $S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-2)-K%C3%BCnneth%E5%85%AC%E5%BC%8F/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(5-2)-Künneth公式</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E5%BA%9E%E5%8A%A0%E8%8E%B1%E5%BC%95%E7%90%86/"
+                           href="/2021/09/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-1)-MV%E6%96%B9%E6%B3%95/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(4)-庞加莱引理</span>
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(5-1)-MV方法</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -557,7 +495,7 @@ $S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%BD%E8%A6%86%E7%9B%96%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-text">好覆盖的存在性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#de-Rham%E4%B8%8A%E5%90%8C%E8%B0%83%E7%BB%B4%E6%95%B0%E6%9C%89%E9%99%90%E6%80%A7"><span class="nav-text">de Rham上同调维数有限性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E6%B5%81%E5%BD%A2%E7%9A%84Poincare%E5%AF%B9%E5%81%B6"><span class="nav-text">定向流形的Poincaré对偶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%AE%9A%E5%90%91%E5%AD%90%E6%B5%81%E5%BD%A2%E7%9A%84Poincare%E5%AF%B9%E5%81%B6"><span class="nav-text">闭定向子流形的Poincaré对偶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E6%97%A0%E8%BE%B9%E5%AE%9A%E5%90%91%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">闭无边定向子流形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A7%E8%87%B4%E6%97%A0%E8%BE%B9%E5%AE%9A%E5%90%91%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">紧致无边定向子流形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8C%96%E5%8E%9F%E7%90%86"><span class="nav-text">局部化原理</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kunneth%E5%85%AC%E5%BC%8F"><span class="nav-text">Künneth公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leray-Hirsch%E5%AE%9A%E7%90%86"><span class="nav-text">Leray-Hirsch定理</span></a></li></ol>
     </div>
 </div>
         </aside>
