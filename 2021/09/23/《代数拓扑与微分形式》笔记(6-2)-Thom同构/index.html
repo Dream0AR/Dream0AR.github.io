@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(6-1)-向量丛基础 |
+            《代数拓扑与微分形式》笔记(6-2)-Thom同构 |
         
         梦之居
     </title>
@@ -157,7 +157,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(6-1)-向量丛基础</span>
+            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(6-2)-Thom同构</span>
         </div>
 
         
@@ -173,7 +173,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-23 14:45:05
+        <i class="fas fa-edit"></i>&nbsp;2021-09-23 15:06:41
     </span>
     
         <span class="article-categories article-meta-item">
@@ -213,126 +213,72 @@
         
 
         <div class="article-content markdown-body">
-            <p>主要为了讨论紧垂直上同调与Thom类.</p>
-<h2 id="向量丛的局部平凡化"><a href="#向量丛的局部平凡化" class="headerlink" title="向量丛的局部平凡化"></a>向量丛的局部平凡化</h2><p>延续上节记号.</p>
-<p>$E_x=\pi^{-1}(x)$是向量空间. 若$\,\exists\,\{U_\alpha\}$为$M$的开覆盖,
-其上有微分同胚$\phi_\alpha:E_{U_\alpha}=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times \mathbb{R}^n$,
-将$E_x\mapsto \{x\}\times \mathbb{R}^n$, 且该映射为向量空间的同构,
-则称$\pi$为秩$n$的光滑(实)<strong>向量丛</strong>,
-$\{(U_\alpha,\phi_\alpha)\}$为<strong>局部平凡化</strong>,
-$E$与$M$称为<strong>全空间</strong>与<strong>底流形</strong>.</p>
-<p>向量丛为纤维为$\mathbb{R}^n$,
-结构群为$\operatorname{GL}(n,\mathbb{R})$的<strong>纤维丛</strong>.
-若将$\mathbb{R}$都换为$\mathbb{C}$, 即为复向量丛.
-我们默认讨论光滑实向量丛.</p>
-<p>光滑映射$s:U\rightarrow E$称为<strong>截面</strong>, 若$\pi\circ s=id$,
-即要求$s(x)\in E_x$. $E$在$U$上所有截面全体记为$\Gamma(U,E)$.
-<strong>零截面</strong>指$s: M\rightarrow E$, $s(x)=0_x\in E_x$.
-$U$上的$n$个截面$s_1,…,s_n$称为<strong>标架</strong>, 若对于每点$x\in U$,
-$s_1(x),…,s_n(x)$为$E_x$的一组基.</p>
-<p>局部平凡化上的自然标架为$\varepsilon_1^\alpha, …,\varepsilon_n^\alpha$,
-由 $\varepsilon_i^\alpha(x)=\phi_\alpha^{-1}(x,e_i)$定义.
-其中$e_1,…,e_n$为标准单位基. 反过来,
-标架$s_1,…,s_n$也给出$E|_U$的平凡化:
-$\phi(\sum v_is_i(x))=(x,(v_1,…,v_n))$,
-即将$E|_x$上的坐标直接打为$\mathbb{R}^n$上的坐标.</p>
-<p><strong>标架与局部平凡化之间的相互转化是研究向量丛的基本方法.</strong></p>
-<p><strong>向量丛本质: 转移函数.</strong> $\,\forall\,x\in U_{\alpha\beta}$,
-$\phi_{\alpha}\circ(\phi_\beta)^{-1}:\{x\}\times \mathbb{R}^n\rightarrow \{x\}\times \mathbb{R}^n$为自同构.
-存在$g_{\alpha\beta}(x)\in \operatorname{GL}(n,\mathbb{R})$使得,
-$\,\forall\,v\in \mathbb{R}^n$,
-$\phi_\alpha\phi_\beta^{-1}(x,v)=(x,g_{\alpha\beta}(x)v)$.</p>
-<p>其满足<strong>cocycle条件</strong>:
-$g_{\alpha\beta}=g_{\beta\alpha}^{-1}\:\:\text{on}\:\:U_{\alpha\beta};$
-$g_{\alpha\beta}g_{\beta\gamma}=g_{\alpha\gamma} \:\:\text{on}\:\:U_{\alpha\beta\gamma}.$</p>
-<p><strong>引理 1.1</strong>. <em>若有另一平凡化$\{(U_\alpha,\phi_\alpha’)\}$诱导转移函数$g_{\alpha\beta}’$, 则存在光滑矩阵映射$\lambda_\alpha,\lambda_\beta$, 使得$g_{\alpha\beta}(x)=\lambda_\alpha(x)g’_{\alpha\beta}(x)\lambda^{-1}_\beta(x)$.</em> </p>
-<p><strong>证:</strong> 注意到$\phi_\alpha\circ{\phi’_\alpha}^{-1}$为自同构,
-可定义$\lambda_\alpha$,
-使得$\phi_\alpha{\phi’_\alpha}^{-1}(x,v)=(x,\lambda_\alpha(x)v).$
-类似地, 定义$\lambda_\beta.$ 接下来,
-在$\phi_\alpha\phi_\beta^{-1}$中合适地插入$\phi_\alpha’,\phi_\beta’$
-即可.</p>
-<p>定义两个转移函数等价即为存在这样的光滑矩阵映射使得他们相抵,
-注意这里转移函数允许源于两个不同的向量丛. 所以同一向量丛两个不同平凡化,
-对应的转移函数等价.</p>
-<p>光滑映射$f:E\rightarrow E’$称为丛映射,H 若其将每根纤维映到纤维,
-且是线性的. 也成为同态, 记其全体为$\operatorname{Hom}(E,E’).$
-当限制在纤维上是同构时, 也称$f$为同构, $E$和$E’$同构.</p>
-<h2 id="结构群的约化"><a href="#结构群的约化" class="headerlink" title="结构群的约化"></a>结构群的约化</h2><p>若$\pi:E\rightarrow M$存在局部平凡化,
-转移函数只取值于$GL(n,\mathbb{R})$的子群$H$,
-那么称向量丛$E$的结构群可<strong>约化</strong>到$H$.</p>
-<p>也就是对于一般的转移函数$g$, 我们希望找到等价的$g’$只取值于较好的$H$.
-一般的, $H$为(特殊)正交群和行列式为正的$GL^+(n,\mathbb{R}).$
-若确实可约化到$GL^+(n,\mathbb{R})$, 则称向量丛$E$<strong>可定向</strong>.
-称局部平凡化<strong>定向</strong>, 若$\det g_{\alpha\beta}&gt;0$.
-称两个定向平凡化<strong>等价</strong>, 若
-$\phi_\alpha{\phi_\alpha’}^{-1}$Jacobian为正.</p>
-<p>这样若$M$连通, $E$的所有定向平凡化分为两个等价类, 每个等价类为一个定向.
-给定定向的可定向向量丛称为定向向量丛.</p>
-<p><strong>命题 1.1</strong>. <em>秩$n$的向量丛$E$结构群总能约化到$O(n)$. 能约化到$SO(n)$当且仅当$E$可定向.</em> </p>
-<p><strong>证:</strong> 通过自然标架诱导局部内积, 再利用单位分解合成整体内积.
-之后做Gram-Schimit正交化定义新的正交单位标架, 给一个局部平凡化即可.</p>
-<h2 id="向量丛的计算"><a href="#向量丛的计算" class="headerlink" title="向量丛的计算"></a>向量丛的计算</h2><p>设$E$为秩$n$向量丛, $\{(U_\alpha,\phi_\alpha)\}$为局部平凡化,
-转移函数$g_{\alpha\beta}$; $E’$为秩$m$向量丛,
-$\{(U_\alpha,\phi’_\alpha)\}$为局部平凡化, 转移函数$g’_{\alpha\beta}$.
-可以假设两个开覆盖一样是因为$\{(U_\alpha,\phi_\alpha)\}$和$\{(U_{\alpha \beta},\phi_{\alpha})\}$是等价的,
-开覆盖$\{U_{\alpha \beta}\}$为开覆盖$\{U_\alpha\}$和$\{U_\beta\}$交织而成.</p>
-<p><strong>直和</strong>: $E\oplus E’$为一个秩$n+m$向量丛,
-局部平凡化为$\{(U_\alpha, \phi_\alpha\oplus\phi_\alpha’)\}$,
-转移函数为$\begin{pmatrix}
-                g_{\alpha\beta}&amp;0\\
-                0&amp;g_{\alpha\beta}’
-            \end{pmatrix}$</p>
-<p><strong>张量积</strong>: $E\otimes E’$为一个秩$nm$向量丛,
-局部平凡化为$\{(U_\alpha,\phi_\alpha\otimes\phi_\alpha’)\}$,
-转移函数为$g_{\alpha}\otimes g_{\alpha}’.$</p>
-<p>$\operatorname{Hom}(E,E’)$为$E$到$E’$丛映射全体,
-同构于$E^\ast \otimes E’.$</p>
-<p><strong>对偶丛</strong>: 回忆泛函分析中, $f:V\rightarrow W$为有限维空间上的线性泛函,
-$f^\ast :W^\ast \rightarrow V^\ast$为对偶空间上的线性泛函,
-它的表示矩阵为$f$表示矩阵的转置, 因此我们也以$f^t$记$f^\ast$.</p>
-<p>$E^\ast$即为$E$的对偶空间, 称为对偶丛.
-局部平凡化为$\{(U_\alpha,{(\phi^t_\alpha)}^{-1})\}$.
-转移函数$(g_{\alpha\beta}^t)^{-1}$.</p>
-<p><strong>拉回丛</strong>: 设有$f:N\rightarrow M$为光滑映射, 则可构造向量丛:
-$\pi:f^{-1}E\rightarrow N$, 称为$E$由$f$的拉回丛.</p>
-<p>$f^{-1}E=\{(y,e)|f(y)=\pi(e)\}\subset N\times E.$ 即对每点$y\in N$,
-将$f(y)\in M$的纤维$E|_{f(y)}$移植过来称为$f^{-1}E|_{y}$.
-它是$N\times E$的唯一最大子集,
-使得$\pi \circ (f\times \mathrm{id}) =f\circ \operatorname{pr}_1$.</p>
-<p>乘积丛的拉回丛为乘积丛, 因此$f^{-1}E$可局部平凡化,
-转移函数为$f^\ast g_{\alpha\beta}$.</p>
-<h2 id="向量丛的同伦性"><a href="#向量丛的同伦性" class="headerlink" title="向量丛的同伦性"></a>向量丛的同伦性</h2><p><strong>定理 1.1</strong> (向量丛的同伦性质). <em>设$Y$是紧流形, $f_0,f_1:Y\rightarrow X$同伦且$\pi:E\rightarrow X$是向量丛, 则$f_0^{-1}E\cong f_1^{-1}E$, 即同伦映射诱导同构丛.</em> </p>
-<p><strong>证:</strong> 只需证$\,\forall\,t_0\in I$, $\,\exists\,\varepsilon&gt;0$,
-$\,\forall\,t\in O(t_0,\varepsilon)$, $f_{t}^{-1}E\cong f_{t_0}^{-1}E$.
-由$I$紧性则结论成立.</p>
-<p>其中$f:Y\times I\rightarrow X$为$f_0,f_1$间的同伦映射, $f_t(y)=f(y,t)$.
-取$\pi:Y\times I\rightarrow Y$为投射,
-则$f^{-1}E|_{Y\times \{t_0\} }\cong\pi^{-1} f_{t_0}^{-1}E|_{Y\times \{t_0\} },$
-即将$f(y,t_0)$分为两步:$f_{t_0}(\pi(y,t_0)).$</p>
-<p>回忆$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$也是一个向量丛,
-每根纤维是所有线性映射全体;
-取其子群$\operatorname{Iso}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$,
-每根纤维是其中的同构全体.
-因此我们只需要给出一个$(Y,t_0)$附近的一个截面即可.</p>
-<p>我们取$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$的一个局部平凡化$\{(U_\alpha,\phi_\alpha)\}$,
-由于$Y,I$紧, 由管状邻域引理(拓扑学),
-$\,\exists\,Y\times O(t_0,\varepsilon)$被有限个$U_\alpha$包含,
-使得每个$(y,O(t_0,\varepsilon))$在某个$U_\alpha$内.</p>
-<p>取$Y$的坐标邻域$\{V_k\}$覆盖$Y$,
-使得$V_k\times O(t_0,\varepsilon)$包含在某个$U_\alpha$内.
-截面$s(y,t_0)$已经在$Y$上整体定义. 在每个局部平凡化邻域内,
-$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$的$V_k\times O(t_0,\varepsilon)$上的纤维,
-均可视为欧氏空间, 从而在其上任意将截面向外延拓. 即从$s(y,t_0)$出发,
-延拓为$s(y,t)$, $(y,t)\in V_k\times O(t_0,\varepsilon).$ 进一步,
-利用从属于$\{V_k\}$的单位分解将每个$V_k$上的延拓合并,
-形成$Y\times O(t_0,\varepsilon)$上的整体延拓,
-从而截面在条状区域内整体定义.</p>
-<p>延拓时注意, 非同构线性映射全体为闭集, 因此我们可以在开集内进行延拓.
-截面给出了, 从而同构在$t_0$附近成立. 由紧性, 在$I$上成立, 特别地,
-$f_0^{-1}E\cong f_1^{-1}E.$</p>
-<p><strong>推论 1.1</strong>. <em>可缩空间上的向量丛是平凡丛.</em> </p>
-<p>文章最后更新于 2021-09-23 14:45:08 </p>
+            <p>向量丛上的不变量: 紧垂直上同调, 由沿纤维积分给出.</p>
+<h2 id="向量丛-全空间-的紧上同调"><a href="#向量丛-全空间-的紧上同调" class="headerlink" title="向量丛(全空间)的紧上同调"></a>向量丛(全空间)的紧上同调</h2><p>若$s:M\rightarrow E$为零截面, 则它把$M$嵌入到$E$. $s(M)$为$E$的形变收缩,
+于是$H^\ast (E)\cong H^\ast (M)$. 那么受Poincaré引理启发, 对于紧上同调,
+是否有$H_c^\ast (E)\cong H_c^{\ast -n}(M)$? 但对开Möbius带就不成立.</p>
+<p>现在我们将具有有限好覆盖的流形称为<strong>有限型流形</strong>.</p>
+<p><strong>引理 1.1</strong>. <em>$\pi:E\rightarrow M$为秩$n$向量丛. 若$E,M$是可定向有限型流形, 则公式成立.</em> </p>
+<p>由Poincaré对偶转化为上同调的对偶空间, 再由同伦不变性即得.</p>
+<p>若$M$为有限型流形, 则$E$也是. 事实上, 若$M$可定向, $\pi$为可定向向量丛,
+则$E$也是可定向的. 只需利用$M$上的坐标函数$\psi_\alpha$,
+以及$E$的定向平凡化$\phi_\alpha$自然地构造$E$上的坐标函数即可.
+即$E$的坐标图册为
+$\{(E|_{U_\alpha},(\psi_\alpha\times \mathrm{id})\circ\phi_\alpha)\}$.
+容易验证其为定向的, 称为局部乘积定向.</p>
+<p>从而有如下命题:</p>
+<p><strong>命题 1.1</strong>. <em>若$M$为可定向有限型流形, $\pi:E\rightarrow M$为秩$n$可定向向量丛, 则$H_c^\ast (E)\cong H_c^{\ast -n}(M).$</em> </p>
+<p>事实上仿照后文Thom同构证明与MV方法, 可去掉$M$的可定向性假设.</p>
+<h2 id="紧垂直上同调与沿纤维积分"><a href="#紧垂直上同调与沿纤维积分" class="headerlink" title="紧垂直上同调与沿纤维积分"></a>紧垂直上同调与沿纤维积分</h2><p>记$\Omega^\ast _{cv}(E)$为垂直方向具紧支集的微分形式复形,
+即$\omega\in\Omega_{cv}^\ast (E)$当且仅当对任意紧集$K\subset M$,
+$\operatorname{supp}\omega\cap \pi^{-1}(K)$紧.
+称该微分形式<strong>在垂直方向具紧支集</strong>. $H_{cv}^\ast (E)$称<strong>紧垂直上同调</strong>.
+对这样的形式, 限制在$E_x$上具紧支集, 因此可沿纤维积分.</p>
+<p>记沿纤维积分$\pi_\ast :\Omega_{cv}^\ast (E)\rightarrow \Omega^{\ast -n}(M)$.
+先设$E$是平凡丛.
+将$\omega\in \Omega_{cv}^\ast (E)$分解为含$dt_1\wedge \cdots\wedge dt_n$的项和其他项的线性组合.
+令$\pi_\ast :\pi^\ast \phi\wedge f(x,t)dt_1\wedge \cdots\wedge dt_n\mapsto \phi\int_{\mathbb{R}^n}f(x,t)dt_1\cdots dt_n$,
+其它形式映为$0$. 事实上这就是以前记号的高维推广.</p>
+<p>对任意定向向量丛, 将$\pi_\ast \omega$在每个局部平凡化邻域做即可.
+但需要验证的是, 取两块$U_\alpha,U_\beta$与其上的坐标函数、平凡化,
+需要验证其上的$\pi_\ast \omega_\alpha, \pi_\ast \omega_\beta$可以拼起来.
+事实上这就是重积分的积分变换公式.</p>
+<p>当然, 也可直接在操作层面处理,
+利用单位分解将$\omega$分为在每个$U_\alpha$上支撑的$\omega_\alpha$的和,
+然后做$\pi_\ast$沿纤维积分即可. 接下来我们有:</p>
+<p><strong>命题 1.2</strong>. <em>$\pi_\ast$为链映射, 从而诱导紧垂直上同调间的映射.</em> </p>
+<p>对乘积丛$E=M\times \mathbb{R}^n$验证即可, 利用定义展开,
+和之前证明链同伦差不多.</p>
+<p><strong>命题 1.3</strong> (投射公式). <em>$\,\forall\,\tau\in\Omega^\ast (M)$, $\omega\in \Omega_{cv}^\ast (E)$, 则$\pi_\ast (\pi^\ast \tau\wedge \omega)=\tau\wedge \pi_\ast \omega$. 若$M$为$m$维定向流形, 设$\omega\in\Omega^{q}_{cv}(E)$, $\tau \in \Omega_c^{m+n-q}(M)$, $E$取局部乘积定向, 则$\int_E\pi^\ast \tau\wedge\omega=\int_M\tau\wedge\pi_\ast \omega.$</em> </p>
+<p>做简单的验证即好, 和之前的证明差不多, 将形式分为两个部分分别验证.</p>
+<p>后半命题将$M$单位分解即可, 证明要用到Fubini定理,
+就是在$E|_{U_\alpha}$上积分和先沿纤维积分再在$U_\alpha$上积分是一样的.</p>
+<h2 id="Thom同构"><a href="#Thom同构" class="headerlink" title="Thom同构"></a>Thom同构</h2><p>接下来将紧支集上的Poincaré引理证明照搬即可得到:</p>
+<p><strong>命题 1.4</strong> (紧垂直支集的Poincaré引理). <em>$\pi_\ast :H_{cv}^\ast (M\times \mathbb{R}^n)\cong H^{\ast -n}(M).$</em> </p>
+<p>接下来我们证明一般情形:</p>
+<p><strong>定理 1.1</strong> (Thom同构). <em>若$\pi:E\rightarrow M$为有限型流形$M$上秩$n$可定向向量丛, 则$H_{cv}^\ast (E)\cong H^{\ast -n}(M).$</em> </p>
+<p>证明用到$U\cup V$上的MV序列以及其上纤维$E|_{U\cup V}$的MV序列.
+其间由链映射$\pi_\ast$联系. 由五引理,
+Thom同构对$E|_U,E|_V,E|_{U\cap V}$成立, 则也对$E|_{U\cup V}$成立.
+从而归纳好覆盖开集个数, 由MV方法即得.</p>
+<p>记$\mathcal{T}:H^\ast (M)\rightarrow H_{cv}^{\ast +n}(E)$为$\pi_\ast$的逆,
+称其为Thom同构. 对$1\in H^0(M)$,
+$\Phi=\mathcal{T}(1)\in H_{cv}^n(E)$称为$E$的Thom类.</p>
+<p>$\mathcal{T}(\omega)=\mathcal{T}\pi_\ast (\pi^\ast \omega\wedge \Phi)=\pi^\ast \omega\wedge \Phi.$
+因为$\mathcal{T}\pi_\ast =\mathrm{id}$, $\pi_\ast \mathcal{T}(1)=1.$</p>
+<p><strong>命题 1.5</strong>. <em>$\Phi$是$H_{cv}^n(E)$的唯一上同调类, 限制在每个$E_x$上为$H_c^n(E_x)$生成元.</em> </p>
+<p><strong>证:</strong> $\pi_\ast \Phi=1$, $\pi_\ast \Phi(x)=\int_{E_x}\Phi(x,t)dt=1$,
+从而$\Phi|_{E_x}\in H_c^n(E_x)$是生成元.</p>
+<p>若$\Phi’$也满足该性质, 则$\pi_\ast \Phi’=1$.
+$\pi_\ast (\pi^\ast \omega\wedge\Phi’)=\omega$,
+$\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi’$,
+从而$\Phi’=\mathcal{T}(1)=\Phi.$</p>
+<p><strong>命题 1.6</strong>. <em>设$\pi_1:E\rightarrow M$, $\pi_2:E’\rightarrow M$为两定向向量丛, 则$\Phi(E\oplus E’)=\operatorname{pr}_1^\ast \Phi(E)\wedge \operatorname{pr}_2^\ast \Phi(E’)$.</em> </p>
+<p><strong>证:</strong> 取右式为$\Phi’$, 在$E_x\oplus E’_x$上积分发现为$1$,
+由上一命题的唯一性即得.</p>
+<p>事实上, $\Phi$也有函子性, 即$f:N\rightarrow M$为光滑映射,
+则$\Phi(f^{-1}E)=f^\ast \Phi(E)$, 证明留做习题. (确实是我们的习题)</p>
+<p>文章最后更新于 2021-09-23 15:07:12 </p>
 
         </div>
 
@@ -340,11 +286,11 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(6-1)-向量丛基础</li>
+        <li>本文标题：《代数拓扑与微分形式》笔记(6-2)-Thom同构</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-23 14:45:05</li>
+        <li>创建时间：2021-09-23 15:06:41</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-1)-向量丛基础/
+            本文链接：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-2)-Thom同构/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -358,29 +304,14 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-2)-Thom%E5%90%8C%E6%9E%84/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-2)-Thom同构</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-2)-K%C3%BCnneth%E5%85%AC%E5%BC%8F/"
+                           href="/2021/09/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-1)-%E5%90%91%E9%87%8F%E4%B8%9B%E5%9F%BA%E7%A1%80/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(5-2)-Künneth公式</span>
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-1)-向量丛基础</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -586,7 +517,7 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%B1%80%E9%83%A8%E5%B9%B3%E5%87%A1%E5%8C%96"><span class="nav-text">向量丛的局部平凡化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%BE%A4%E7%9A%84%E7%BA%A6%E5%8C%96"><span class="nav-text">结构群的约化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-text">向量丛的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%90%8C%E4%BC%A6%E6%80%A7"><span class="nav-text">向量丛的同伦性</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B-%E5%85%A8%E7%A9%BA%E9%97%B4-%E7%9A%84%E7%B4%A7%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text">向量丛(全空间)的紧上同调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E5%9E%82%E7%9B%B4%E4%B8%8A%E5%90%8C%E8%B0%83%E4%B8%8E%E6%B2%BF%E7%BA%A4%E7%BB%B4%E7%A7%AF%E5%88%86"><span class="nav-text">紧垂直上同调与沿纤维积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thom%E5%90%8C%E6%9E%84"><span class="nav-text">Thom同构</span></a></li></ol>
     </div>
 </div>
         </aside>
