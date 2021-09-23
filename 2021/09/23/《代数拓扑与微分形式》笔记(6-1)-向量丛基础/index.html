@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(5-2)-Künneth公式 |
+            《代数拓扑与微分形式》笔记(6-1)-向量丛基础 |
         
         梦之居
     </title>
@@ -157,7 +157,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(5-2)-Künneth公式</span>
+            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(6-1)-向量丛基础</span>
         </div>
 
         
@@ -173,7 +173,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-22 18:30:38
+        <i class="fas fa-edit"></i>&nbsp;2021-09-23 14:45:05
     </span>
     
         <span class="article-categories article-meta-item">
@@ -213,50 +213,126 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Kunneth公式"><a href="#Kunneth公式" class="headerlink" title="Künneth公式"></a>Künneth公式</h2><p>设$M$, $F$是流形, 且$M$的de Rham上同调的维数是有限的, 则</p>
-<script type="math/tex; mode=display">H^n(M\times F)=\sum_{p+q=n} H^p(M)\otimes_\mathbb{R}H^q(F).</script><p><strong>证:</strong> 假定$M$有有限好覆盖. 取$M\times F$到$F$, $M$的投射为$\rho,\pi$,
-则其诱导$\psi:\Omega^{\ast }(M)\otimes \Omega^\ast (F)\rightarrow \Omega^\ast (M\times F)$,
-$\psi(\omega\otimes \phi)=\pi^\ast \omega\wedge \rho^\ast \phi.$
-由于$\pi^\ast$, $\rho^\ast$与$d$可交换, $\psi$可约化到上同调间的映射.</p>
-<p>若$M\approx \mathbb{R}^m$(好覆盖仅为一个开集), 则由Poincaré引理,
-$H^n(\mathbb{R}^m\times F)=H^n(\mathbb{R}^{m-1}\times F)=\cdots=H^n(F)=H^0(\mathbb{R}^m)\otimes H^n(F)= \sum_p H^{p}(\mathbb{R}^m)\otimes H^{n-p}(F).$</p>
-<p>设$U,V$为$M$的开集, 固定$n$, 做上同调的MV序列.
-将每项与$H^{n-p}(F)$做张量积, 再把每项关于$p$做直和, 得到新的MV序列.
-该MV序列又可通过链映射$\psi$打到$M\times F$对应的MV序列上,
-由zig-zag引理该图可交换.</p>
-<p>交换图有点大...不打了先.</p>
-<p>从而借助MV序列, 若Künneth公式对$U,V,U\cap V$成立, 其对$U\cup V$也成立.
-由MV方法, 归纳好覆盖开集个数即可.</p>
-<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p>$M\times F$可看作$M$上以$F$为纤维的平凡纤维丛,
-因此Künneth公式可以推广到更一般的情形, 这就是<strong>Leray-Hirsch定理</strong>.
-先介绍一些纤维丛的概念.</p>
-<p>设$G$是拓扑群, $F$是拓扑空间, 设$G$对$F$有一个<strong>左作用</strong>,
-即$\,\forall\,g\in G$定义了一个连续同胚$g:F\rightarrow F$, 满足
-$g_1(g_2(v))=(g_1g_2)(v)$, $\,\forall\,g_1,g_2\in G$, $v\in F.$
-称作用是<strong>有效作用</strong>, 若$g(y)=y$,
-$\,\forall\,y\in F\Rightarrow g=1\in G.$</p>
-<p>在此基础上, 再加入$E,B$为拓扑空间, $\pi:E\rightarrow B$是连续满射.
-设$B$有开覆盖$\{U_\alpha\}_{\alpha\in I}$满足:</p>
-<p>(i) 对每个$\alpha\in I$, 有保纤维的同胚:
-    $\phi_\alpha:E_{U_\alpha}:=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times F$,
-    即$\phi_\alpha$是同胚且$\operatorname{pr}_1\circ\phi_\alpha=\pi.$</p>
-<p>(ii) $\phi_\alpha,\phi_\beta$诱导了$g_{\alpha\beta}:U_{\alpha\beta}\rightarrow G$,
-     $(\phi_\alpha\circ \phi_\beta^{-1})(x,v)=(x,g_{\alpha\beta}(x)(v)).$</p>
-<p>则称$\pi:E\rightarrow B$是以$F$为纤维的<strong>纤维丛</strong>, <strong>结构群</strong>为$G$,
-<strong>底空间</strong>为$B$, <strong>全空间</strong>为$E$.
-$\{(U_\alpha,\phi_\alpha)\}_{\alpha\in I}$为纤维丛的一个<strong>局部平凡化</strong>.
-对$x\in B$, $\pi^{-1}(x)$即称为点$x$的纤维, 记作$E_x$.</p>
-<p>在研究上同调时, 假定$E,B,F$是光滑流形,
-$G$无特殊说明为$F$的微分同胚群$\operatorname{Diff}(F)$.</p>
-<p>设$\pi:E\rightarrow M$是以$F$为纤维的光滑纤维丛.
-假定$E$上有上同调类$e_1,…,e_r$,
-限制在每条纤维$E_x$上形成了$H^\ast (E_x)$的一组基, 则可定义</p>
-<script type="math/tex; mode=display">\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).</script><p><strong>定理 1.1</strong> (Leray-Hirsch 定理). <em>在上述假定下, 若$M$有有限好覆盖, 则$\psi$是同构, 有$H^\ast (E)\cong H^\ast (M)\otimes \mathbb{R}\{e_1,…,e_r\} \cong H^\ast (M)\otimes H^\ast (F).$</em> </p>
-<p><strong>证:</strong> 由于有限好覆盖中的$U_\alpha\approx \mathbb{R}^n$为可缩空间,
-其上纤维丛平凡,
-对$E|_{U_\alpha}$的Leray-Hirsch定理退化为$U_\alpha\times F$的Künneth公式.</p>
-<p>用MV方法即可借助好覆盖, 将该论断归纳到$M$上.</p>
-<p>文章最后更新于 2021-09-22 18:30:43 </p>
+            <p>主要为了讨论紧垂直上同调与Thom类.</p>
+<h2 id="向量丛的局部平凡化"><a href="#向量丛的局部平凡化" class="headerlink" title="向量丛的局部平凡化"></a>向量丛的局部平凡化</h2><p>延续上节记号.</p>
+<p>$E_x=\pi^{-1}(x)$是向量空间. 若$\,\exists\,\{U_\alpha\}$为$M$的开覆盖,
+其上有微分同胚$\phi_\alpha:E_{U_\alpha}=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times \mathbb{R}^n$,
+将$E_x\mapsto \{x\}\times \mathbb{R}^n$, 且该映射为向量空间的同构,
+则称$\pi$为秩$n$的光滑(实)<strong>向量丛</strong>,
+$\{(U_\alpha,\phi_\alpha)\}$为<strong>局部平凡化</strong>,
+$E$与$M$称为<strong>全空间</strong>与<strong>底流形</strong>.</p>
+<p>向量丛为纤维为$\mathbb{R}^n$,
+结构群为$\operatorname{GL}(n,\mathbb{R})$的<strong>纤维丛</strong>.
+若将$\mathbb{R}$都换为$\mathbb{C}$, 即为复向量丛.
+我们默认讨论光滑实向量丛.</p>
+<p>光滑映射$s:U\rightarrow E$称为<strong>截面</strong>, 若$\pi\circ s=id$,
+即要求$s(x)\in E_x$. $E$在$U$上所有截面全体记为$\Gamma(U,E)$.
+<strong>零截面</strong>指$s: M\rightarrow E$, $s(x)=0_x\in E_x$.
+$U$上的$n$个截面$s_1,…,s_n$称为<strong>标架</strong>, 若对于每点$x\in U$,
+$s_1(x),…,s_n(x)$为$E_x$的一组基.</p>
+<p>局部平凡化上的自然标架为$\varepsilon_1^\alpha, …,\varepsilon_n^\alpha$,
+由 $\varepsilon_i^\alpha(x)=\phi_\alpha^{-1}(x,e_i)$定义.
+其中$e_1,…,e_n$为标准单位基. 反过来,
+标架$s_1,…,s_n$也给出$E|_U$的平凡化:
+$\phi(\sum v_is_i(x))=(x,(v_1,…,v_n))$,
+即将$E|_x$上的坐标直接打为$\mathbb{R}^n$上的坐标.</p>
+<p><strong>标架与局部平凡化之间的相互转化是研究向量丛的基本方法.</strong></p>
+<p><strong>向量丛本质: 转移函数.</strong> $\,\forall\,x\in U_{\alpha\beta}$,
+$\phi_{\alpha}\circ(\phi_\beta)^{-1}:\{x\}\times \mathbb{R}^n\rightarrow \{x\}\times \mathbb{R}^n$为自同构.
+存在$g_{\alpha\beta}(x)\in \operatorname{GL}(n,\mathbb{R})$使得,
+$\,\forall\,v\in \mathbb{R}^n$,
+$\phi_\alpha\phi_\beta^{-1}(x,v)=(x,g_{\alpha\beta}(x)v)$.</p>
+<p>其满足<strong>cocycle条件</strong>:
+$g_{\alpha\beta}=g_{\beta\alpha}^{-1}\:\:\text{on}\:\:U_{\alpha\beta};$
+$g_{\alpha\beta}g_{\beta\gamma}=g_{\alpha\gamma} \:\:\text{on}\:\:U_{\alpha\beta\gamma}.$</p>
+<p><strong>引理 1.1</strong>. <em>若有另一平凡化$\{(U_\alpha,\phi_\alpha’)\}$诱导转移函数$g_{\alpha\beta}’$, 则存在光滑矩阵映射$\lambda_\alpha,\lambda_\beta$, 使得$g_{\alpha\beta}(x)=\lambda_\alpha(x)g’_{\alpha\beta}(x)\lambda^{-1}_\beta(x)$.</em> </p>
+<p><strong>证:</strong> 注意到$\phi_\alpha\circ{\phi’_\alpha}^{-1}$为自同构,
+可定义$\lambda_\alpha$,
+使得$\phi_\alpha{\phi’_\alpha}^{-1}(x,v)=(x,\lambda_\alpha(x)v).$
+类似地, 定义$\lambda_\beta.$ 接下来,
+在$\phi_\alpha\phi_\beta^{-1}$中合适地插入$\phi_\alpha’,\phi_\beta’$
+即可.</p>
+<p>定义两个转移函数等价即为存在这样的光滑矩阵映射使得他们相抵,
+注意这里转移函数允许源于两个不同的向量丛. 所以同一向量丛两个不同平凡化,
+对应的转移函数等价.</p>
+<p>光滑映射$f:E\rightarrow E’$称为丛映射,H 若其将每根纤维映到纤维,
+且是线性的. 也成为同态, 记其全体为$\operatorname{Hom}(E,E’).$
+当限制在纤维上是同构时, 也称$f$为同构, $E$和$E’$同构.</p>
+<h2 id="结构群的约化"><a href="#结构群的约化" class="headerlink" title="结构群的约化"></a>结构群的约化</h2><p>若$\pi:E\rightarrow M$存在局部平凡化,
+转移函数只取值于$GL(n,\mathbb{R})$的子群$H$,
+那么称向量丛$E$的结构群可<strong>约化</strong>到$H$.</p>
+<p>也就是对于一般的转移函数$g$, 我们希望找到等价的$g’$只取值于较好的$H$.
+一般的, $H$为(特殊)正交群和行列式为正的$GL^+(n,\mathbb{R}).$
+若确实可约化到$GL^+(n,\mathbb{R})$, 则称向量丛$E$<strong>可定向</strong>.
+称局部平凡化<strong>定向</strong>, 若$\det g_{\alpha\beta}&gt;0$.
+称两个定向平凡化<strong>等价</strong>, 若
+$\phi_\alpha{\phi_\alpha’}^{-1}$Jacobian为正.</p>
+<p>这样若$M$连通, $E$的所有定向平凡化分为两个等价类, 每个等价类为一个定向.
+给定定向的可定向向量丛称为定向向量丛.</p>
+<p><strong>命题 1.1</strong>. <em>秩$n$的向量丛$E$结构群总能约化到$O(n)$. 能约化到$SO(n)$当且仅当$E$可定向.</em> </p>
+<p><strong>证:</strong> 通过自然标架诱导局部内积, 再利用单位分解合成整体内积.
+之后做Gram-Schimit正交化定义新的正交单位标架, 给一个局部平凡化即可.</p>
+<h2 id="向量丛的计算"><a href="#向量丛的计算" class="headerlink" title="向量丛的计算"></a>向量丛的计算</h2><p>设$E$为秩$n$向量丛, $\{(U_\alpha,\phi_\alpha)\}$为局部平凡化,
+转移函数$g_{\alpha\beta}$; $E’$为秩$m$向量丛,
+$\{(U_\alpha,\phi’_\alpha)\}$为局部平凡化, 转移函数$g’_{\alpha\beta}$.
+可以假设两个开覆盖一样是因为$\{(U_\alpha,\phi_\alpha)\}$和$\{(U_{\alpha \beta},\phi_{\alpha})\}$是等价的,
+开覆盖$\{U_{\alpha \beta}\}$为开覆盖$\{U_\alpha\}$和$\{U_\beta\}$交织而成.</p>
+<p><strong>直和</strong>: $E\oplus E’$为一个秩$n+m$向量丛,
+局部平凡化为$\{(U_\alpha, \phi_\alpha\oplus\phi_\alpha’)\}$,
+转移函数为$\begin{pmatrix}
+                g_{\alpha\beta}&amp;0\\
+                0&amp;g_{\alpha\beta}’
+            \end{pmatrix}$</p>
+<p><strong>张量积</strong>: $E\otimes E’$为一个秩$nm$向量丛,
+局部平凡化为$\{(U_\alpha,\phi_\alpha\otimes\phi_\alpha’)\}$,
+转移函数为$g_{\alpha}\otimes g_{\alpha}’.$</p>
+<p>$\operatorname{Hom}(E,E’)$为$E$到$E’$丛映射全体,
+同构于$E^\ast \otimes E’.$</p>
+<p><strong>对偶丛</strong>: 回忆泛函分析中, $f:V\rightarrow W$为有限维空间上的线性泛函,
+$f^\ast :W^\ast \rightarrow V^\ast$为对偶空间上的线性泛函,
+它的表示矩阵为$f$表示矩阵的转置, 因此我们也以$f^t$记$f^\ast$.</p>
+<p>$E^\ast$即为$E$的对偶空间, 称为对偶丛.
+局部平凡化为$\{(U_\alpha,{(\phi^t_\alpha)}^{-1})\}$.
+转移函数$(g_{\alpha\beta}^t)^{-1}$.</p>
+<p><strong>拉回丛</strong>: 设有$f:N\rightarrow M$为光滑映射, 则可构造向量丛:
+$\pi:f^{-1}E\rightarrow N$, 称为$E$由$f$的拉回丛.</p>
+<p>$f^{-1}E=\{(y,e)|f(y)=\pi(e)\}\subset N\times E.$ 即对每点$y\in N$,
+将$f(y)\in M$的纤维$E|_{f(y)}$移植过来称为$f^{-1}E|_{y}$.
+它是$N\times E$的唯一最大子集,
+使得$\pi \circ (f\times \mathrm{id}) =f\circ \operatorname{pr}_1$.</p>
+<p>乘积丛的拉回丛为乘积丛, 因此$f^{-1}E$可局部平凡化,
+转移函数为$f^\ast g_{\alpha\beta}$.</p>
+<h2 id="向量丛的同伦性"><a href="#向量丛的同伦性" class="headerlink" title="向量丛的同伦性"></a>向量丛的同伦性</h2><p><strong>定理 1.1</strong> (向量丛的同伦性质). <em>设$Y$是紧流形, $f_0,f_1:Y\rightarrow X$同伦且$\pi:E\rightarrow X$是向量丛, 则$f_0^{-1}E\cong f_1^{-1}E$, 即同伦映射诱导同构丛.</em> </p>
+<p><strong>证:</strong> 只需证$\,\forall\,t_0\in I$, $\,\exists\,\varepsilon&gt;0$,
+$\,\forall\,t\in O(t_0,\varepsilon)$, $f_{t}^{-1}E\cong f_{t_0}^{-1}E$.
+由$I$紧性则结论成立.</p>
+<p>其中$f:Y\times I\rightarrow X$为$f_0,f_1$间的同伦映射, $f_t(y)=f(y,t)$.
+取$\pi:Y\times I\rightarrow Y$为投射,
+则$f^{-1}E|_{Y\times \{t_0\} }\cong\pi^{-1} f_{t_0}^{-1}E|_{Y\times \{t_0\} },$
+即将$f(y,t_0)$分为两步:$f_{t_0}(\pi(y,t_0)).$</p>
+<p>回忆$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$也是一个向量丛,
+每根纤维是所有线性映射全体;
+取其子群$\operatorname{Iso}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$,
+每根纤维是其中的同构全体.
+因此我们只需要给出一个$(Y,t_0)$附近的一个截面即可.</p>
+<p>我们取$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$的一个局部平凡化$\{(U_\alpha,\phi_\alpha)\}$,
+由于$Y,I$紧, 由管状邻域引理(拓扑学),
+$\,\exists\,Y\times O(t_0,\varepsilon)$被有限个$U_\alpha$包含,
+使得每个$(y,O(t_0,\varepsilon))$在某个$U_\alpha$内.</p>
+<p>取$Y$的坐标邻域$\{V_k\}$覆盖$Y$,
+使得$V_k\times O(t_0,\varepsilon)$包含在某个$U_\alpha$内.
+截面$s(y,t_0)$已经在$Y$上整体定义. 在每个局部平凡化邻域内,
+$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$的$V_k\times O(t_0,\varepsilon)$上的纤维,
+均可视为欧氏空间, 从而在其上任意将截面向外延拓. 即从$s(y,t_0)$出发,
+延拓为$s(y,t)$, $(y,t)\in V_k\times O(t_0,\varepsilon).$ 进一步,
+利用从属于$\{V_k\}$的单位分解将每个$V_k$上的延拓合并,
+形成$Y\times O(t_0,\varepsilon)$上的整体延拓,
+从而截面在条状区域内整体定义.</p>
+<p>延拓时注意, 非同构线性映射全体为闭集, 因此我们可以在开集内进行延拓.
+截面给出了, 从而同构在$t_0$附近成立. 由紧性, 在$I$上成立, 特别地,
+$f_0^{-1}E\cong f_1^{-1}E.$</p>
+<p><strong>推论 1.1</strong>. <em>可缩空间上的向量丛是平凡丛.</em> </p>
+<p>文章最后更新于 2021-09-23 14:45:08 </p>
 
         </div>
 
@@ -264,11 +340,11 @@ $G$无特殊说明为$F$的微分同胚群$\operatorname{Diff}(F)$.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(5-2)-Künneth公式</li>
+        <li>本文标题：《代数拓扑与微分形式》笔记(6-1)-向量丛基础</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-22 18:30:38</li>
+        <li>创建时间：2021-09-23 14:45:05</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/22/《代数拓扑与微分形式》笔记(5-2)-Künneth公式/
+            本文链接：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-1)-向量丛基础/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -282,29 +358,14 @@ $G$无特殊说明为$F$的微分同胚群$\operatorname{Diff}(F)$.</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-1)-%E5%90%91%E9%87%8F%E4%B8%9B%E5%9F%BA%E7%A1%80/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-1)-向量丛基础</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-1)-MV%E6%96%B9%E6%B3%95/"
+                           href="/2021/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-2)-K%C3%BCnneth%E5%85%AC%E5%BC%8F/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(5-1)-MV方法</span>
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(5-2)-Künneth公式</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -510,7 +571,7 @@ $G$无特殊说明为$F$的微分同胚群$\operatorname{Diff}(F)$.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kunneth%E5%85%AC%E5%BC%8F"><span class="nav-text">Künneth公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leray-Hirsch%E5%AE%9A%E7%90%86"><span class="nav-text">Leray-Hirsch定理</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%B1%80%E9%83%A8%E5%B9%B3%E5%87%A1%E5%8C%96"><span class="nav-text">向量丛的局部平凡化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%BE%A4%E7%9A%84%E7%BA%A6%E5%8C%96"><span class="nav-text">结构群的约化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-text">向量丛的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%90%8C%E4%BC%A6%E6%80%A7"><span class="nav-text">向量丛的同伦性</span></a></li></ol>
     </div>
 </div>
         </aside>
