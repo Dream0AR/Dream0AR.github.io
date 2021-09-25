@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(6-2)-Thom同构 |
+            《微分流形》第一章-微分流形(2) |
         
         梦之居
     </title>
@@ -157,7 +157,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(6-2)-Thom同构</span>
+            <span class="title-hover-animation">《微分流形》第一章-微分流形(2)</span>
         </div>
 
         
@@ -173,7 +173,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-23 15:06:41
+        <i class="fas fa-edit"></i>&nbsp;2021-09-25 13:12:19
     </span>
     
         <span class="article-categories article-meta-item">
@@ -185,11 +185,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
                     </li>
                 
             </ul>
@@ -213,72 +213,77 @@
         
 
         <div class="article-content markdown-body">
-            <p>向量丛上的不变量: 紧垂直上同调, 由沿纤维积分给出.</p>
-<h2 id="向量丛-全空间-的紧上同调"><a href="#向量丛-全空间-的紧上同调" class="headerlink" title="向量丛(全空间)的紧上同调"></a>向量丛(全空间)的紧上同调</h2><p>若$s:M\rightarrow E$为零截面, 则它把$M$嵌入到$E$. $s(M)$为$E$的形变收缩,
-于是$H^\ast (E)\cong H^\ast (M)$. 那么受Poincaré引理启发, 对于紧上同调,
-是否有$H_c^\ast (E)\cong H_c^{\ast -n}(M)$? 但对开Möbius带就不成立.</p>
-<p>现在我们将具有有限好覆盖的流形称为<strong>有限型流形</strong>.</p>
-<p><strong>引理 1.1</strong>. <em>$\pi:E\rightarrow M$为秩$n$向量丛. 若$E,M$是可定向有限型流形, 则公式成立.</em> </p>
-<p>由Poincaré对偶转化为上同调的对偶空间, 再由同伦不变性即得.</p>
-<p>若$M$为有限型流形, 则$E$也是. 事实上, 若$M$可定向, $\pi$为可定向向量丛,
-则$E$也是可定向的. 只需利用$M$上的坐标函数$\psi_\alpha$,
-以及$E$的定向平凡化$\phi_\alpha$自然地构造$E$上的坐标函数即可.
-即$E$的坐标图册为
-$\{(E|_{U_\alpha},(\psi_\alpha\times \mathrm{id})\circ\phi_\alpha)\}$.
-容易验证其为定向的, 称为局部乘积定向.</p>
-<p>从而有如下命题:</p>
-<p><strong>命题 1.1</strong>. <em>若$M$为可定向有限型流形, $\pi:E\rightarrow M$为秩$n$可定向向量丛, 则$H_c^\ast (E)\cong H_c^{\ast -n}(M).$</em> </p>
-<p>事实上仿照后文Thom同构证明与MV方法, 可去掉$M$的可定向性假设.</p>
-<h2 id="紧垂直上同调与沿纤维积分"><a href="#紧垂直上同调与沿纤维积分" class="headerlink" title="紧垂直上同调与沿纤维积分"></a>紧垂直上同调与沿纤维积分</h2><p>记$\Omega^\ast _{cv}(E)$为垂直方向具紧支集的微分形式复形,
-即$\omega\in\Omega_{cv}^\ast (E)$当且仅当对任意紧集$K\subset M$,
-$\operatorname{supp}\omega\cap \pi^{-1}(K)$紧.
-称该微分形式<strong>在垂直方向具紧支集</strong>. $H_{cv}^\ast (E)$称<strong>紧垂直上同调</strong>.
-对这样的形式, 限制在$E_x$上具紧支集, 因此可沿纤维积分.</p>
-<p>记沿纤维积分$\pi_\ast :\Omega_{cv}^\ast (E)\rightarrow \Omega^{\ast -n}(M)$.
-先设$E$是平凡丛.
-将$\omega\in \Omega_{cv}^\ast (E)$分解为含$dt_1\wedge \cdots\wedge dt_n$的项和其他项的线性组合.
-令$\pi_\ast :\pi^\ast \phi\wedge f(x,t)dt_1\wedge \cdots\wedge dt_n\mapsto \phi\int_{\mathbb{R}^n}f(x,t)dt_1\cdots dt_n$,
-其它形式映为$0$. 事实上这就是以前记号的高维推广.</p>
-<p>对任意定向向量丛, 将$\pi_\ast \omega$在每个局部平凡化邻域做即可.
-但需要验证的是, 取两块$U_\alpha,U_\beta$与其上的坐标函数、平凡化,
-需要验证其上的$\pi_\ast \omega_\alpha, \pi_\ast \omega_\beta$可以拼起来.
-事实上这就是重积分的积分变换公式.</p>
-<p>当然, 也可直接在操作层面处理,
-利用单位分解将$\omega$分为在每个$U_\alpha$上支撑的$\omega_\alpha$的和,
-然后做$\pi_\ast$沿纤维积分即可. 接下来我们有:</p>
-<p><strong>命题 1.2</strong>. <em>$\pi_\ast$为链映射, 从而诱导紧垂直上同调间的映射.</em> </p>
-<p>对乘积丛$E=M\times \mathbb{R}^n$验证即可, 利用定义展开,
-和之前证明链同伦差不多.</p>
-<p><strong>命题 1.3</strong> (投射公式). <em>$\,\forall\,\tau\in\Omega^\ast (M)$, $\omega\in \Omega_{cv}^\ast (E)$, 则$\pi_\ast (\pi^\ast \tau\wedge \omega)=\tau\wedge \pi_\ast \omega$. 若$M$为$m$维定向流形, 设$\omega\in\Omega^{q}_{cv}(E)$, $\tau \in \Omega_c^{m+n-q}(M)$, $E$取局部乘积定向, 则$\int_E\pi^\ast \tau\wedge\omega=\int_M\tau\wedge\pi_\ast \omega.$</em> </p>
-<p>做简单的验证即好, 和之前的证明差不多, 将形式分为两个部分分别验证.</p>
-<p>后半命题将$M$单位分解即可, 证明要用到Fubini定理,
-就是在$E|_{U_\alpha}$上积分和先沿纤维积分再在$U_\alpha$上积分是一样的.</p>
-<h2 id="Thom同构"><a href="#Thom同构" class="headerlink" title="Thom同构"></a>Thom同构</h2><p>接下来将紧支集上的Poincaré引理证明照搬即可得到:</p>
-<p><strong>命题 1.4</strong> (紧垂直支集的Poincaré引理). <em>$\pi_\ast :H_{cv}^\ast (M\times \mathbb{R}^n)\cong H^{\ast -n}(M).$</em> </p>
-<p>接下来我们证明一般情形:</p>
-<p><strong>定理 1.1</strong> (Thom同构). <em>若$\pi:E\rightarrow M$为有限型流形$M$上秩$n$可定向向量丛, 则$H_{cv}^\ast (E)\cong H^{\ast -n}(M).$</em> </p>
-<p>证明用到$U\cup V$上的MV序列以及其上纤维$E|_{U\cup V}$的MV序列.
-其间由链映射$\pi_\ast$联系. 由五引理,
-Thom同构对$E|_U,E|_V,E|_{U\cap V}$成立, 则也对$E|_{U\cup V}$成立.
-从而归纳好覆盖开集个数, 由MV方法即得.</p>
-<p>记$\mathcal{T}:H^\ast (M)\rightarrow H_{cv}^{\ast +n}(E)$为$\pi_\ast$的逆,
-称其为Thom同构. 对$1\in H^0(M)$,
-$\Phi=\mathcal{T}(1)\in H_{cv}^n(E)$称为$E$的Thom类.</p>
-<p>$\mathcal{T}(\omega)=\mathcal{T}\pi_\ast (\pi^\ast \omega\wedge \Phi)=\pi^\ast \omega\wedge \Phi.$
-因为$\mathcal{T}\pi_\ast =\mathrm{id}$, $\pi_\ast \mathcal{T}(1)=1.$</p>
-<p><strong>命题 1.5</strong>. <em>$\Phi$是$H_{cv}^n(E)$的唯一上同调类, 限制在每个$E_x$上为$H_c^n(E_x)$生成元.</em> </p>
-<p><strong>证:</strong> $\pi_\ast \Phi=1$, $\pi_\ast \Phi(x)=\int_{E_x}\Phi(x,t)dt=1$,
-从而$\Phi|_{E_x}\in H_c^n(E_x)$是生成元.</p>
-<p>若$\Phi’$也满足该性质, 则$\pi_\ast \Phi’=1$.
-$\pi_\ast (\pi^\ast \omega\wedge\Phi’)=\omega$,
-$\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi’$,
-从而$\Phi’=\mathcal{T}(1)=\Phi.$</p>
-<p><strong>命题 1.6</strong>. <em>设$\pi_1:E\rightarrow M$, $\pi_2:E’\rightarrow M$为两定向向量丛, 则$\Phi(E\oplus E’)=\operatorname{pr}_1^\ast \Phi(E)\wedge \operatorname{pr}_2^\ast \Phi(E’)$.</em> </p>
-<p><strong>证:</strong> 取右式为$\Phi’$, 在$E_x\oplus E’_x$上积分发现为$1$,
-由上一命题的唯一性即得.</p>
-<p>事实上, $\Phi$也有函子性, 即$f:N\rightarrow M$为光滑映射,
-则$\Phi(f^{-1}E)=f^\ast \Phi(E)$, 证明留做习题. (确实是我们的习题)</p>
-<p>文章最后更新于 2021-09-23 15:07:12 </p>
+            <h2 id="拓扑流形"><a href="#拓扑流形" class="headerlink" title="拓扑流形"></a>拓扑流形</h2><ul>
+<li><p>局部道路连通(坐标邻域);</p>
+</li>
+<li><p>连通$\Leftrightarrow$道路连通(局部道路连通);</p>
+</li>
+<li><p>连通分支可数(第二可数性);</p>
+</li>
+<li><p>局部紧(局部欧氏).</p>
+</li>
+</ul>
+<p>第二可数性 + 局部紧 $\Rightarrow$ <strong>仿紧性</strong>(任意开覆盖有开的,
+局部有限的加细).</p>
+<p>局部有限: 称覆盖$\{A_\alpha\}$是<strong>局部有限</strong>的, 若$\,\forall\,p\in M,$
+$\,\exists\,$邻域$U\ni p$使得$U$只与有限个$A_\alpha$相交.</p>
+<h2 id="微分流形例子"><a href="#微分流形例子" class="headerlink" title="微分流形例子"></a>微分流形例子</h2><p>研究微分流形上的微积分需要$C^\infty$微分结构$[\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}].$
+$C^\infty$流形=拓扑流形+$C^\infty$结构.</p>
+<p>$M$为$C^\infty$流形, $[\mathcal{F}]=[\{(U_\alpha,\varphi_\alpha)\}],$
+$U\subset M$为开子集. 那么$U$也是拓扑流形,
+同时有诱导的$C^\infty$坐标图册$[\mathcal{F}_U]=[\{U_\alpha\cap U,\varphi_\alpha|_{U\cap U_\alpha}\}]$,
+从而$U$也是$C^\infty$流形, 称为<strong>开子流形</strong>.</p>
+<p>$m$阶方阵全体$M_m=\{(a_{ij})_{m\times m}|a_{ij}\in \mathbb{R}\}\leftrightarrow \mathbb{R}^{m^2},$
+为向量空间的同构. 因此也可视为一个$C^\infty$流形.</p>
+<p>$GL(m,\mathbb{R}):=\{A\in M_{m}|\det A\neq 0\}\subset M_m=\mathbb{R}^{m^2}.$
+$\det:M_m\rightarrow \mathbb{R}$为连续函数.
+由于$GL(m,\mathbb{R})=(\det)^{-1}(\mathbb{R}\setminus \{0\})$为$M_m$的开子集,
+它是开子流形. 因此$GL(m,\mathbb{R})$也是一个$m^2$维$C^\infty$流形,
+称为($\mathbb{R}$上)<strong>一般线性群</strong>, 以矩阵乘法为群上运算.</p>
+<p>后面将说明, 矩阵乘法与求逆运算均为$C^\infty$流形间的$C^\infty$映照,
+给出了其上两种结构($C^\infty$流形结构与群结构)之间的关系.
+这样的群称为<strong>李群(Lie Group)</strong>.</p>
+<p>设$(M^m,[\mathcal{F}=\{(U_{\alpha},\varphi_\alpha)\}]),$
+$(N^n,[\tilde \mathcal{F}=\{(V_\beta,\psi_\beta)\}])$是$C^\infty$流形.
+赋予$M^m\times N^n$积拓扑,
+即$U\times V$为开子集当且仅当两者分别为各自空间开子集.
+容易验证$M^m\times N^n$是一个$m+n$维拓扑流形,
+以$[\mathcal{F}\times \tilde \mathcal{F}:=\{(U_{\alpha}\times V_{\beta},\varphi_\alpha\times \psi_\beta)\}]$为$C^\infty$坐标图册,
+成为$C^\infty$微分流形. 称$M\times N$为$M,N$的<strong>积流形</strong>.
+可归纳定义$M_1\times\cdots\times M_k.$</p>
+<p>$\mathbb{R}^{m+1}\setminus \{0\}$引入等价关系$\sim,$
+$x\sim y\Leftrightarrow x=\lambda y.$
+商空间$M=\mathbb{R}^{m+1}\setminus\{0\}/_\sim,$ 赋予<strong>商拓扑</strong>,
+即$U\subset M$为开子集$\Leftrightarrow$ $\pi^{-1}(U)$为原空间开子集,
+其中$\pi:x\mapsto [x]$为<strong>自然投影</strong>. $[x]$可视为过原点的直线,
+或球面上的两点粘贴. 可以说明<em>商拓扑是Hausdorff, 第二可数的</em>.</p>
+<p>令开集$U_i=\{[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0\},$
+$(x^1,\cdots,x^{m+1})$称为$[x]$的<strong>齐次坐标</strong>.
+$M=\bigcup_{i=1}^{m+1} U_i.$
+定义同胚$\varphi_i:U_i\rightarrow \mathbb{R}^m,$
+$[x]\mapsto\frac{1}{x_i}(x^1,\cdots, \widehat{x^{i} },\cdots, x^{m+1}).$
+$(U_i,\varphi_i)$即为$M$的一个坐标图册. 称对应的坐标为<strong>非齐次坐标</strong>.</p>
+<p>记$\xi_{(i)}^k=\frac{x^k}{x^i}.$ 任取$1\le i&lt;j\le m+1,$
+$U_i\cap U_j$上坐标变换为$\xi_{(i)}^j\mapsto \xi_{(j)}^i=\frac{1}{\xi_{(i)}^j},$
+$\xi_{(i)}^l\mapsto \xi_{(j)}^l=\frac{\xi^l_{(i)} }{\xi_{(i)}^j},$
+$l\neq i,j,$ 是$\mathbb{R}^m$上的$C^\infty$映射,
+因此坐标图册是$C^\infty$的.
+从而$(M,[\{(U_i,\varphi_i)\}])$成为$m$维$C^\infty$流形,
+记为<strong>实射影空间</strong>$\mathbb{R}\mathrm{P}^m.$</p>
+<p>取$\mathbb{R}^N$为$N$维欧氏空间,
+记$G_{k,N}=\{\text{$P$为$\mathbb{R}^N$的$k$维子空间}\}.$
+赋予拓扑与$C^\infty$结构使之成为一个$C^\infty$流形, 称为Grassman流形.
+易见$G_{1,N}=\mathbb{R}\mathrm{P}^{N-1}.$</p>
+<h2 id="流形间的映射"><a href="#流形间的映射" class="headerlink" title="流形间的映射"></a>流形间的映射</h2><p>设$(M^m,[\mathcal{F}])$是$C^\infty$流形, $f:M\rightarrow \mathbb{R}.$
+$\,\forall\,p\in M,$
+若存在含$p$的<strong>允许坐标系</strong>$(U,\varphi)$使$f\circ \varphi^{-1}\in C^\infty(\varphi(U)),$
+则称$f$在$p$点是$C^\infty$的.
+称$(f\circ \varphi^{-1})(x^1,\cdots,x^m)$为<strong>局部表示</strong>.
+这里<strong>允许坐标系</strong>指包含在$[\mathcal{F}]$极大坐标图册中的坐标卡.
+如果$f$点点$C^\infty,$ 则称$f\in C^\infty(M).$</p>
+<p><strong>注 1.1</strong>. <em>上述概念与坐标系选取无关. 注意$f$在$p$点$C^\infty$等价于$f\circ \varphi^{-1}$在$\varphi(p)$某个小邻域$C^\infty.$</em> </p>
+<p><strong>注 1.2</strong>. <em>类似可给出$f$在$p$点是$C^r$的, 以及$f\in C^r(M)$的定义.</em> </p>
+<p>文章最后更新于 2021-09-25 13:12:47 </p>
 
         </div>
 
@@ -286,11 +291,11 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi’$,
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(6-2)-Thom同构</li>
+        <li>本文标题：《微分流形》第一章-微分流形(2)</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-23 15:06:41</li>
+        <li>创建时间：2021-09-25 13:12:19</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-2)-Thom同构/
+            本文链接：https://dream0ar.github.io/2021/09/25/《微分流形》第一章-微分流形(2)/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -304,29 +309,14 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi’$,
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/25/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(2)/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第一章-微分流形(2)</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-1)-%E5%90%91%E9%87%8F%E4%B8%9B%E5%9F%BA%E7%A1%80/"
+                           href="/2021/09/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-2)-Thom%E5%90%8C%E6%9E%84/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-1)-向量丛基础</span>
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-2)-Thom同构</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -532,7 +522,7 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi’$,
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B-%E5%85%A8%E7%A9%BA%E9%97%B4-%E7%9A%84%E7%B4%A7%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text">向量丛(全空间)的紧上同调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E5%9E%82%E7%9B%B4%E4%B8%8A%E5%90%8C%E8%B0%83%E4%B8%8E%E6%B2%BF%E7%BA%A4%E7%BB%B4%E7%A7%AF%E5%88%86"><span class="nav-text">紧垂直上同调与沿纤维积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Thom%E5%90%8C%E6%9E%84"><span class="nav-text">Thom同构</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E6%B5%81%E5%BD%A2"><span class="nav-text">拓扑流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E4%BE%8B%E5%AD%90"><span class="nav-text">微分流形例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E9%97%B4%E7%9A%84%E6%98%A0%E5%B0%84"><span class="nav-text">流形间的映射</span></a></li></ol>
     </div>
 </div>
         </aside>
