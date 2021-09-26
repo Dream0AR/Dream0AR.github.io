@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》第一章-微分流形(2) |
+            《微分流形》第一章-流形间的映射 |
         
         梦之居
     </title>
@@ -157,7 +157,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第一章-微分流形(2)</span>
+            <span class="title-hover-animation">《微分流形》第一章-流形间的映射</span>
         </div>
 
         
@@ -173,7 +173,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-25 13:12:19
+        <i class="fas fa-edit"></i>&nbsp;2021-09-26 16:39:38
     </span>
     
         <span class="article-categories article-meta-item">
@@ -213,77 +213,76 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="拓扑流形"><a href="#拓扑流形" class="headerlink" title="拓扑流形"></a>拓扑流形</h2><ul>
-<li><p>局部道路连通(坐标邻域);</p>
+            <h2 id="映射的微分学"><a href="#映射的微分学" class="headerlink" title="映射的微分学"></a>映射的微分学</h2><h3 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h3><p>$M^m$是$C^\infty$流形, $f:M\rightarrow \mathbb{R},$ $p\in M.$
+若$\,\exists\,$含$p$点允许坐标系$(U,\varphi)$(即$\in [\mathcal{F}]$)使$f\circ \varphi^{-1}$在$\varphi(p)$的某个邻域内是$C^\infty$的,
+则称$f$在$p$点$C^\infty.$ 若$f$点点光滑, 则称$f\in C^\infty(M).$</p>
+<p>允许坐标系限制在更小的开子集上显然仍是允许坐标系,
+因此上述定义等价于存在某个允许坐标系使得$f\circ \varphi^{-1}$在整个$\varphi(U)$上是$C^\infty$的.</p>
+<p>由于坐标变换是光滑的, 上述概念与允许坐标系选择无关. 类似地,
+可以定义$f$在$p$点是$C^r$的, 或$f\in C^r(M).$</p>
+<h3 id="映照"><a href="#映照" class="headerlink" title="映照"></a>映照</h3><p>设$M^m,N^n$是光滑流形, $F:M\rightarrow N,$ $p\in M.$
+若存在含$p,q=F(p)$的允许坐标系$(U,\varphi),(V,\psi),$ $F(U)\subset V,$
+使得<strong>局部表示</strong>$\widehat{F}:=\psi\circ F\circ\varphi^{-1}$在$\varphi(p)$某邻域是$C^\infty$的,
+则称$F$在$p$点是$C^\infty$的. 若$F$点点$C^\infty,$
+则称$F$是<strong>光滑映照</strong>, 记为$F\in C^\infty(M,N).$</p>
+<p><strong>注 1.1</strong>. <em>若$F(U)\not\subset V,$ 则可取$\widetilde{U}=F^{-1}(V)\cap U.$</em> </p>
+<p>同理上述概念与允许坐标系选取无关.</p>
+<h3 id="微分同胚"><a href="#微分同胚" class="headerlink" title="微分同胚"></a>微分同胚</h3><p>如果$(U,\varphi)$是$M$的允许坐标系,
+则$\varphi:U\rightarrow \varphi(U)$及$\varphi^{-1}:\varphi(U)\rightarrow U$依定义显然是光滑的,
+再取同样的允许坐标系$(U,\varphi)$说明即可. 注意$U$从$M$上诱导光滑结构,
+为开子流形, 而非嵌入到外围空间的子流形(微分结构不同),
+如$\widetilde{\varphi}:U\rightarrow \varphi(U)\hookrightarrow \mathbb{R}^k$不见得光滑.</p>
+<p>易见光滑映照的复合仍是光滑映照.</p>
+<p>设$F:M\rightarrow N$是光滑流形间的双射. 如果$F,F^{-1}$是光滑的,
+则称$F:M\rightarrow N$是$C^\infty$微分同胚.
+两个微分同胚的光滑流形视为一样的.</p>
+<p>例如球极投影$F:S^2\setminus\{p\}\rightarrow\mathbb{R}^2$, scaling
+$B^n(1)\rightarrow \mathbb{R}^n$都是光滑同胚.</p>
+<h3 id="微分结构问题"><a href="#微分结构问题" class="headerlink" title="微分结构问题"></a>微分结构问题</h3><p>一个基本问题是, 给定拓扑流形$M^m,$ 其上是否一定存在$C^\infty$结构?
+存在的话是否(在$C^\infty$同胚意义下)唯一? 若$M$有两个微分结构,
+问是否有光滑同胚$(M,\mathcal{F}_1)\approx (M,\mathcal{F}_2).$
+注意同胚的选取不见得取恒等映射$\mathrm{id},$
+因此不能简简单单只验证$\mathcal{F}_1,\mathcal{F}_2$是否$C^\infty$相容.</p>
+<p>已知结果:</p>
+<ul>
+<li><p>$\mathbb{R}^m,$ $m\neq 4$上存在唯一的$C^\infty$结构;</p>
 </li>
-<li><p>连通$\Leftrightarrow$道路连通(局部道路连通);</p>
+<li><p>$\mathbb{R}^4$上存在无穷多个互不等价的$C^\infty$结构;</p>
 </li>
-<li><p>连通分支可数(第二可数性);</p>
+<li><p>$S^7$-Milnor怪球上存在28种互不等价的$C^\infty$结构;</p>
 </li>
-<li><p>局部紧(局部欧氏).</p>
+<li><p>维数$m\le 3$的拓扑流形上存在唯一的$C^\infty$结构;</p>
+</li>
+<li><p>$\,\forall\,m&gt;3,$ 都存在$m$维拓扑流形, 其上不存在$C^\infty$结构.</p>
 </li>
 </ul>
-<p>第二可数性 + 局部紧 $\Rightarrow$ <strong>仿紧性</strong>(任意开覆盖有开的,
-局部有限的加细).</p>
-<p>局部有限: 称覆盖$\{A_\alpha\}$是<strong>局部有限</strong>的, 若$\,\forall\,p\in M,$
-$\,\exists\,$邻域$U\ni p$使得$U$只与有限个$A_\alpha$相交.</p>
-<h2 id="微分流形例子"><a href="#微分流形例子" class="headerlink" title="微分流形例子"></a>微分流形例子</h2><p>研究微分流形上的微积分需要$C^\infty$微分结构$[\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}].$
-$C^\infty$流形=拓扑流形+$C^\infty$结构.</p>
-<p>$M$为$C^\infty$流形, $[\mathcal{F}]=[\{(U_\alpha,\varphi_\alpha)\}],$
-$U\subset M$为开子集. 那么$U$也是拓扑流形,
-同时有诱导的$C^\infty$坐标图册$[\mathcal{F}_U]=[\{U_\alpha\cap U,\varphi_\alpha|_{U\cap U_\alpha}\}]$,
-从而$U$也是$C^\infty$流形, 称为<strong>开子流形</strong>.</p>
-<p>$m$阶方阵全体$M_m=\{(a_{ij})_{m\times m}|a_{ij}\in \mathbb{R}\}\leftrightarrow \mathbb{R}^{m^2},$
-为向量空间的同构. 因此也可视为一个$C^\infty$流形.</p>
-<p>$GL(m,\mathbb{R}):=\{A\in M_{m}|\det A\neq 0\}\subset M_m=\mathbb{R}^{m^2}.$
-$\det:M_m\rightarrow \mathbb{R}$为连续函数.
-由于$GL(m,\mathbb{R})=(\det)^{-1}(\mathbb{R}\setminus \{0\})$为$M_m$的开子集,
-它是开子流形. 因此$GL(m,\mathbb{R})$也是一个$m^2$维$C^\infty$流形,
-称为($\mathbb{R}$上)<strong>一般线性群</strong>, 以矩阵乘法为群上运算.</p>
-<p>后面将说明, 矩阵乘法与求逆运算均为$C^\infty$流形间的$C^\infty$映照,
-给出了其上两种结构($C^\infty$流形结构与群结构)之间的关系.
-这样的群称为<strong>李群(Lie Group)</strong>.</p>
-<p>设$(M^m,[\mathcal{F}=\{(U_{\alpha},\varphi_\alpha)\}]),$
-$(N^n,[\widetilde {\mathcal{F} }=\{(V_\beta,\psi_\beta)\}])$是$C^\infty$流形.
-赋予$M^m\times N^n$积拓扑,
-即$U\times V$为开子集当且仅当两者分别为各自空间开子集.
-容易验证$M^m\times N^n$是一个$m+n$维拓扑流形,
-以$[\mathcal{F}\times \widetilde {\mathcal{F} }:=\{(U_{\alpha}\times V_{\beta},\varphi_\alpha\times \psi_\beta)\}]$为$C^\infty$坐标图册,
-成为$C^\infty$微分流形. 称$M\times N$为$M,N$的<strong>积流形</strong>.
-可归纳定义$M_1\times\cdots\times M_k.$</p>
-<p>$\mathbb{R}^{m+1}\setminus \{0\}$引入等价关系$\sim,$
-$x\sim y\Leftrightarrow x=\lambda y.$
-商空间$M=\mathbb{R}^{m+1}\setminus\{0\}/_\sim,$ 赋予<strong>商拓扑</strong>,
-即$U\subset M$为开子集$\Leftrightarrow$ $\pi^{-1}(U)$为原空间开子集,
-其中$\pi:x\mapsto [x]$为<strong>自然投影</strong>. $[x]$可视为过原点的直线,
-或球面上的两点粘贴. 可以说明<em>商拓扑是Hausdorff, 第二可数的</em>.</p>
-<p>令开集$U_i=\{[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0\},$
-$(x^1,\cdots,x^{m+1})$称为$[x]$的<strong>齐次坐标</strong>.
-$M=\bigcup_{i=1}^{m+1} U_i.$
-定义同胚$\varphi_i:U_i\rightarrow \mathbb{R}^m,$
-$[x]\mapsto\frac{1}{x_i}(x^1,\cdots, \widehat{x^{i} },\cdots, x^{m+1}).$
-$(U_i,\varphi_i)$即为$M$的一个坐标图册. 称对应的坐标为<strong>非齐次坐标</strong>.</p>
-<p>记$\xi_{(i)}^k=\frac{x^k}{x^i}.$ 任取$1\le i&lt;j\le m+1,$
-$U_i\cap U_j$上坐标变换为$\xi_{(i)}^j\mapsto \xi_{(j)}^i=\frac{1}{\xi_{(i)}^j},$
-$\xi_{(i)}^l\mapsto \xi_{(j)}^l=\frac{\xi^l_{(i)} }{\xi_{(i)}^j},$
-$l\neq i,j,$ 是$\mathbb{R}^m$上的$C^\infty$映射,
-因此坐标图册是$C^\infty$的.
-从而$(M,[\{(U_i,\varphi_i)\}])$成为$m$维$C^\infty$流形,
-记为<strong>实射影空间</strong>$\mathbb{R}\mathrm{P}^m.$</p>
-<p>取$\mathbb{R}^N$为$N$维欧氏空间,
-记$G_{k,N}=\{\text{$P$为$\mathbb{R}^N$的$k$维子空间}\}.$
-赋予拓扑与$C^\infty$结构使之成为一个$C^\infty$流形, 称为Grassman流形.
-易见$G_{1,N}=\mathbb{R}\mathrm{P}^{N-1}.$</p>
-<h2 id="流形间的映射"><a href="#流形间的映射" class="headerlink" title="流形间的映射"></a>流形间的映射</h2><p>设$(M^m,[\mathcal{F}])$是$C^\infty$流形, $f:M\rightarrow \mathbb{R}.$
-$\,\forall\,p\in M,$
-若存在含$p$的<strong>允许坐标系</strong>$(U,\varphi)$使$f\circ \varphi^{-1}\in C^\infty(\varphi(U)),$
-则称$f$在$p$点是$C^\infty$的.
-称$(f\circ \varphi^{-1})(x^1,\cdots,x^m)$为<strong>局部表示</strong>.
-这里<strong>允许坐标系</strong>指包含在$[\mathcal{F}]$极大坐标图册中的坐标卡.
-如果$f$点点$C^\infty,$ 则称$f\in C^\infty(M).$</p>
-<p><strong>注 1.1</strong>. <em>上述概念与坐标系选取无关. 注意$f$在$p$点$C^\infty$等价于$f\circ \varphi^{-1}$在$\varphi(p)$某个小邻域$C^\infty.$</em> </p>
-<p><strong>注 1.2</strong>. <em>类似可给出$f$在$p$点是$C^r$的, 以及$f\in C^r(M)$的定义.</em> </p>
-<p>文章最后更新于 2021-09-25 16:22:50 </p>
+<p>下面假设拓扑流形都给定了$C^\infty$结构.</p>
+<h2 id="切空间"><a href="#切空间" class="headerlink" title="切空间"></a>切空间</h2><p>给定光滑流形$M^m,$ 我们尝试<em>内蕴地</em>推广切向量, 切平面的概念.
+将曲线$C:(a,b)\rightarrow M^m$视为光滑流形间的映照,
+我们可以定义光滑曲线的概念. 设$C(t_0)=p,$
+用$C_p^\infty(M)$表示$M$上在$p$处光滑的函数全体,
+我们称映照(<em>方向导数算子</em>)$X:C_p^\infty(M)\rightarrow \mathbb{R},$
+$f\mapsto \frac{d}{dt}[f(c(t))]|_{t=t_0}$为$C(t)$在$p$处<strong>切向量</strong>,
+即求方向导数的运算过程蕴含了该方向本身.</p>
+<p>上述”切向量”$X$满足$X(af+bg)=aX(f)+bX(g),$
+$X(f\cdot g)=X(f)g(p)+f(p)X(g).$
+取$\widetilde{T}_pM=\{\widetilde{X}:C_p^\infty\rightarrow \mathbb{R}\text{满足(1),(2)}\}.$
+$(\widetilde{X}_1+\widetilde{X}_2)f:=\widetilde{X}_1(f)+\widetilde{X}_2(f),$
+$(x\widetilde{X})(f):=a\widetilde{X}(f).$
+容易验证$\widetilde{X}_1+\widetilde{X}_2,$
+$a\widetilde{X}$满足$(1),(2),$ 即$\widetilde{T}_pM$是向量空间.</p>
+<p>$C_p^\infty(M)$和$C^\infty(M)$不同, 后者为向量空间, 但前者不是,
+因为<em>零元并不唯一</em>. 原因是前者的加法仅在公共光滑邻域上做加法.
+因此$X$也暂时不是线性映射.</p>
+<p>我们引入等价关系来改变这一状况:
+记$f\sim g\Leftrightarrow \,\exists\,p$点小邻域$W,$ 使得$f|_W=g|_W.$
+称$[f]$为$C^\infty$<strong>函数芽</strong>,
+$C_p^\infty(M)/_\sim$为$C^\infty$<strong>函数芽空间</strong>$\mathcal{F}_p^\infty.$
+$X$可以诱导其上的映射,
+仍记为$X:\mathcal{F}_p^\infty\rightarrow \mathbb{R},$ $[f]\mapsto Xf.$
+它也满足类似前面$(1),(2)$的性质.
+此时$\mathcal{F}_p^\infty$确实是向量空间, 因此$X$成为线性映射.</p>
+<p>文章最后更新于 2021-09-26 16:39:45 </p>
 
         </div>
 
@@ -291,11 +290,11 @@ $\,\forall\,p\in M,$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第一章-微分流形(2)</li>
+        <li>本文标题：《微分流形》第一章-流形间的映射</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-25 13:12:19</li>
+        <li>创建时间：2021-09-26 16:39:38</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/25/《微分流形》第一章-微分流形(2)/
+            本文链接：https://dream0ar.github.io/2021/09/26/《微分流形》第一章-流形间的映射/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -309,29 +308,14 @@ $\,\forall\,p\in M,$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/26/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%B5%81%E5%BD%A2%E9%97%B4%E7%9A%84%E6%98%A0%E5%B0%84/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第一章-流形间的映射</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-2)-Thom%E5%90%8C%E6%9E%84/"
+                           href="/2021/09/25/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(2)/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-2)-Thom同构</span>
+                                <span class="post-nav-title-item">《微分流形》第一章-微分流形(2)</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -537,7 +521,7 @@ $\,\forall\,p\in M,$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E6%B5%81%E5%BD%A2"><span class="nav-text">拓扑流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E4%BE%8B%E5%AD%90"><span class="nav-text">微分流形例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E9%97%B4%E7%9A%84%E6%98%A0%E5%B0%84"><span class="nav-text">流形间的映射</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%98%A0%E5%B0%84%E7%9A%84%E5%BE%AE%E5%88%86%E5%AD%A6"><span class="nav-text">映射的微分学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%A0%E5%B0%84"><span class="nav-text">映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%A0%E7%85%A7"><span class="nav-text">映照</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%90%8C%E8%83%9A"><span class="nav-text">微分同胚</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E7%BB%93%E6%9E%84%E9%97%AE%E9%A2%98"><span class="nav-text">微分结构问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E7%A9%BA%E9%97%B4"><span class="nav-text">切空间</span></a></li></ol>
     </div>
 </div>
         </aside>
