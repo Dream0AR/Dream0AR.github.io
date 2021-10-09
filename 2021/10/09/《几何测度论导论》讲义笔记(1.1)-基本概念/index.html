@@ -9,7 +9,7 @@
     
     <title>
         
-            序 |
+            《几何测度论导论》讲义笔记(1.1)-基本概念 |
         
         梦之居
     </title>
@@ -157,7 +157,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">序</span>
+            <span class="title-hover-animation">《几何测度论导论》讲义笔记(1.1)-基本概念</span>
         </div>
 
         
@@ -173,7 +173,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-07-14 13:00:00
+        <i class="fas fa-edit"></i>&nbsp;2021-10-09 11:03:10
     </span>
     
         <span class="article-categories article-meta-item">
@@ -181,7 +181,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E9%9A%8F%E6%83%B3%E5%BD%95/">随想录</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E6%B5%8B%E5%BA%A6%E8%AE%BA/">几何测度论</a>&nbsp;
                     </li>
                 
             </ul>
@@ -205,9 +213,154 @@
         
 
         <div class="article-content markdown-body">
-            <p>今天开始博客正式启动啦! 之前一直在知乎记录一些学习生活, 但感觉有一些个人用的学习材料不太适合放到知乎上, 所以一直在计划搭建一个自己的个人博客, 这样也能更自在一些.</p>
-<p>除了学习生活, 还计划记录一些其它生活中的点滴, 比如在玩的游戏, 喜欢的沙雕图, 以及一些随想之类的. 这样看我的博客就能够了解我, 知道我喜欢什么, 以及最近在干啥了.</p>
-<p>人生一场, 总是希望能够留下些什么的, 留下一些不会消散的东西. <strong>记录</strong>, 便是最简单的一种形式. 希望能够坚持记录人生的习惯, 让今后的我能够回顾我走过的一程. </p>
+            <h2 id="外测度"><a href="#外测度" class="headerlink" title="外测度"></a>外测度</h2><p>回忆$X$上外测度$\mu$指$2^X\rightarrow [0,\infty]$的单调次可加函数,
+满足$\mu(\varnothing)=0.$ 有时简称其为测度, 若不会导致混淆的话.
+称集合$A\subset X$是$\mu$-可测的, 若$\,\forall\,S\subset X,$
+$\mu(S)=\mu(S\setminus A)+\mu(S\cap A).$ 后者称为Caratheodory条件,
+指集合$A$能够关于”$\mu$-可加地”切割其它集合.</p>
+<p><strong>注 1.1</strong>. <em>事实上由次可加性, 条件等价于$\mu(S)\ge\mu(S\setminus A)+\mu(S\cap A).$ 由此易证任意$\mu$-零测集都是$\mu$-可测的.</em> </p>
+<p>由于$S\setminus A=S\cap (X\setminus A),$
+易见$A$为$\mu$-可测的当且仅当$X\setminus A$也是.
+设$A_1,A_2$是$\mu$-可测的, 那么$\,\forall\,S\subset X,$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \mu(S)=&\mu(S\setminus A_1)+\mu(S\cap A_1)& A_1\text{是$\mu$-可测的}\\
+            =&\mu((S\setminus A_1)\setminus A_2)+\mu((S\setminus A_1)\cap A_2)+\mu(S\cap A_1)& A_2\text{是$\mu$-可测的}\\
+            \ge&\mu(S\setminus (A_1\cup A_2))+\mu(S\cap((A_2\setminus A_1)\cup A_1))& \text{次可列可加性}\\
+            =&\mu(S\setminus(A_1\cup A_2))+\mu(S\cap(A_1\cup A_2)),
+        \end{aligned}$$ 从而$A_1\cup A_2$是$\mu$-可测的.
+那么$X\setminus((X\setminus A_1)\cup (X\setminus A_2))=A_1\cap A_2$也是$\mu$-可测的,
+$A_2\setminus A_1=A_2\cap (X\setminus A_1)$也是.
+归纳可知有限步并,交,补运算均保持$\mu$-可测的性质.
+Caratheodory条件给无交$\mu$-可测集赋予了可加性:
+
+**引理 1.2** (可列可加性). *若$A_1,\cdots$为无交$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).$* 
+
+**证:** 由次可列可加性,
+$\mu(S\cap \bigcup_{i=1}^\infty A_i)\le \sum_{i=1}^\infty\mu(S\cap A_i).$
+由Caratheodory条件, $\,\forall\,S\subset X,$
+$\mu(S\cap (A_1\cup A_2))=\mu((S\cap (A_1\cup A_2))\setminus A_1)+\mu(S\cap(A_1\cup A_2)\cap A_1)= \mu(S\cap A_1)+\mu(S\cap A_2).$
+从而可归纳到有限个无交$\mu$-可测集的情况.
+
+现有$\sum_{i=1}^n \mu(S\cap A_i)=\mu(S\cap\bigcup_{i=1}^n A_i)\le \mu(S\cap \bigcup_{i=1}^\infty A_i).$
+令$n\rightarrow\infty,$ 即得到另一个方向的不等式, 从而命题得证.
+
+**引理 1.3**. *若$A_1,\cdots$为递增$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$* 
+
+**证:** 记$A_0=\varnothing,$
+由于$\bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty (A_i\setminus A_{i-1}),$
+由可列可加性, $$\begin{aligned}
+                \mu(S\cap \bigcup_{i=1}^\infty A_i)&=\mu(S\cap \bigcup_{i=1}^\infty (A_{i}\setminus A_{i-1}))\\
+                &= \sum_{i=1}^\infty \mu(S\cap (A_i\setminus A_{i-1}))\\
+                &=\lim\limits_n \sum_{i=1}^n \mu(S\cap (A_i\setminus A_{i-1}))\\
+                &=\lim\limits_{n}\mu(S\cap A_n),
+            \end{aligned}$$ 命题得证.
+
+**推论 1.4**. *设$A_1,\cdots$为递减$\mu$-可测集, 若$\,\exists\,A_k$测度有限, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$* 
+
+称$X$一系列子集的集合$\mathcal{S}$为$\sigma$-代数, 若:
+
+(1) $\varnothing,X\in \mathcal{S};$
+
+(2) $A\in \mathcal{S}\Rightarrow X\setminus A\in \mathcal{S};$
+
+(3) $A_1,\cdots \in \mathcal{S}\Rightarrow \bigcup_{i=1}^\infty A_i\in \mathcal{S}.$
+
+**注 1.5**. *$\sigma$-代数对可列并与取补运算封闭, 易见它对可列交也是封闭的. 由于$\sigma$-代数的交仍为$\sigma$-代数, 可以找到包含一系列指定集合的最小的一个$\sigma$-代数. 特别地, 对拓扑空间$X,$ 包含所有开集的最小$\sigma$-代数称为$X$中的Borel代数, 其中集合称为Borel集.* 
+
+**引理 1.6**. *$\mu$-可测集全体构成$\sigma$-代数, 包含所有$X$的$\mu$-零测集.* 
+
+**证:** 只需证若$A_1,\cdots$是$\mu$-可测的,
+则$\bigcup_{i=1}^\infty A_i$也是.
+记$B_i=\bigcup_{j=1}^i A_j$为递增$\mu$-可测集,
+则$\,\forall\,S\subset X,$ $$\begin{aligned}
+                \mu(S)&=\mu(S\setminus \bigcup_{i=1}^n A_i)+\mu(S\cap \bigcup_{i=1}^n A_i)\\
+                &\ge\mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap B_n).
+            \end{aligned}</script><p>令$n\rightarrow \infty,$ 即有 <script type="math/tex">\begin{aligned}
+                \mu(S)&\ge \mu(S\setminus \bigcup_{i=1}^\infty A_i)+ \mu(S\cap \bigcup_{n=1}^\infty B_n)\\
+                &= \mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap \bigcup_{i=1}^\infty A_i),
+            \end{aligned}</script> 从而命题得证.</p>
+<h2 id="Borel正则测度"><a href="#Borel正则测度" class="headerlink" title="Borel正则测度"></a>Borel正则测度</h2><p>称外测度$\mu$是<strong>正则的</strong>, 若$\,\forall\,A\subset X,$
+存在$\mu$-可测集$B\supset A$满足$\mu(B)=\mu(A).$
+此时先前关于$A_i$为单调列的性质无需再假设$A_i$是$\mu$-可测的.</p>
+<p>当$X$为拓扑空间时,
+外测度$\mu$是<strong>Borel正则的</strong>若所有Borel集都是$\mu$-可测的,
+且$\,\forall\,A\subset X,$ 存在Borel集$B\supset A$满足$\mu(B)=\mu(A).$</p>
+<p>需要强调的是$\mu(B)=\mu(A)$不意味着$\mu(B\setminus A)=0,$
+除非$A$是$\mu-$可测的且$\mu(A)&lt;\infty.$</p>
+<p><strong>注 1.7</strong>. <em>回忆Borel测度$\mu_0$为Borel集全体到$[0,\infty]$上的映射, 满足$\mu_0(\varnothing)=0$与可列可加性(从而蕴含单调性). 此时$\,\forall\,A\subset X,$ $\mu(A):=\inf\limits_{B\text{ Borel, }B\supset A}\mu_0(B)$便定义了一个Borel正则外测度, 在Borel集全体上与$\mu_0$一致. 反过来一个Borel正则外侧度在Borel集全体上的限制即为一个Borel测度.</em> </p>
+<p>给定任意子集$Y\subset X$与外测度$\mu,$ 可以定义一个新的外测度$\mu |_Y,$
+$\mu|_Y(Z):=\mu(Y\cap Z),$ $Z\subset X.$
+任意$\mu$-可测集都是$\mu|_Y$-可测的, 即使$Y$本身不见得$\mu$-可测.
+当$Y$是$\mu$-可测的且$\mu(Y)&lt;\infty$时, 若$\mu$是Borel正则的,
+则$\mu|_Y$也是.
+关于这一点只需利用$\mu$的Borel正则性取合适的$B_1\supset Y,$
+$B_2\supset B_1\setminus Y,$ $B_3\supset A\cap Y.$
+那么$A\subset (X\setminus B_1)\cup B_2\cup B_3$且两者$\mu|_Y$测度相同.</p>
+<p>当$X$为度量空间时, 对$A,B\subset X,$
+记$d(A,B)=\inf\{d(a,b):a\in A,b\in B\}.$ $\inf\varnothing:=+\infty.$</p>
+<p><strong>定理 1.8</strong> (Caratheodory判别法). <em>设$(X,d)$为度量空间, $\mu$为外测度. 若$\mu(A\cup B)=\mu(A)+\mu(B),$ $\,\forall\,A,B\subset X$满足$d(A,B)&gt;0,$ 则所有Borel集都是$\mu$-可测的.</em> </p>
+<p><strong>证:</strong> 只需证明所有闭集均是$\mu$-可测的. $\,\forall\,$闭集$C\subset X,$
+取$C_j=\{x\in X:d(x,C)\le \frac{1}{j}\}.$ 那么$\,\forall\,S\subset X,$
+$d(S\setminus C_j,S\cap C)&gt;0.$
+从而有<script type="math/tex">\mu(S)\ge \mu(S\setminus C_j)+\mu(S\cap C),\quad \,\forall\,j>0.</script></p>
+<p>令$j\rightarrow \infty,$ 由于$S\setminus C_j=S\cap (X\setminus C_j),$
+$X\setminus C_j$单增,
+从而$\lim\limits_{j\rightarrow \infty}\mu(S\setminus C_j)=\mu(S\setminus \bigcap_{j}C_j)=\mu(S\setminus C).$
+最后一个等号是因为$C$为闭集, 故所有与$C$距离为零的点都在$C$中.
+因此<script type="math/tex">\mu(S)\ge \mu(S\setminus C)+\mu(S\cap C),</script>从而任意闭集$C$是可测的,
+命题得证.</p>
+<p><strong>定义 1.9</strong>. <em>称Borel正则测度$\mu$是<strong>开</strong>$\sigma$<strong>-有限</strong>的, 若$X=\bigcup_j V_j,$ $V_j$为开集且测度有限.</em> </p>
+<p>显然当$X$为可分度量空间, $\mu$局部有限时, 它是开$\sigma$-有限的.</p>
+<p><strong>定理 1.10</strong>. <em>设拓扑空间$X$中每个闭集均是可列个开集之交, 设$\mu$是开$\sigma$-有限的Borel正则测度, 那么$\,\forall\,A\subset X,$ <script type="math/tex">\mu(A)=\inf_{\text{开集}U\supset A}\mu(U).</script></em>  <em>若$A$是$\mu$-可测的, 那么还有<script type="math/tex">\mu(A)=\sup_{\text{闭集}C\subset A}\mu(C).</script></em> </p>
+<p><strong>思路:</strong> 分全空间测度有限/无限的情况讨论. 取使结论成立的集合全体,
+证其包含$\sigma$-代数, 其中又包含所有开集, 进而包含整个Borel代数.
+最后由正则性即得结论.</p>
+<p><strong>证:</strong> 首先假设$\mu(X)&lt;\infty,$ 此时$(1)\Rightarrow (2).$
+由测度是Borel正则的, 只需证明$A$为Borel集的情况.
+取$\mathcal{A}:=\{\text{Borel集}A\subset X:\text{(1)成立}\},$
+那么$\mathcal{A}$自然包含所有开集.</p>
+<p>取$A_1,\cdots\in \mathcal{A}.$ $\,\forall\,\varepsilon&gt;0,$
+$\,\exists\,$开$U_1,\cdots,$ 满足$U_j\supset A_j,$
+且$\mu(U_j\setminus A_j)\le 2^{-j}\varepsilon.$
+那么<script type="math/tex">\mu(\bigcup_j U_j \setminus \bigcup_j A_j),\mu(\bigcap_j U_j\setminus \bigcap_j A_j)\le \sum_j\mu(U_j\setminus A_j)\le \varepsilon,</script>
+从而$\bigcup_j A_j,\bigcap_j A_j\in \mathcal{A},$ 集合对可列并,
+可列交封闭. 由于任意闭集是开集可列交, 全体闭集均在$\mathcal{A}$中.</p>
+<p>取$\widetilde{\mathcal{A} }:=\{A\in \mathcal{A}:X\setminus A\in \mathcal{A}\},$
+那么容易验证$\widetilde{\mathcal{A} }$为包含全体开集的$\sigma$-代数,
+从而$\mathcal{A}$包含(即为)Borel集全体, $\mu(X)$有限的情况得证.</p>
+<p>对$\mu(X)=\infty$的情况, 只需利用$X$的$\sigma$-有限性,
+取$X=\bigcup_{j} V_j,$ 每个$V_j$测度有限. 此时$\mu|_{V_{j} }(X)&lt;\infty,$
+应用前面的结论, $\,\forall\,\varepsilon&gt;0,$
+有开集$U_j\supset A$满足$\mu(U_j\cap V_j\setminus A)\le2^{-j}\varepsilon,$
+从而$\mu(\bigcup_{j}(U_j\cap V_j)\setminus A)\le \varepsilon.$
+由于$\bigcup_j (U_j\cap V_j)$为含$A$开集, (1)成立.</p>
+<p>对(2), 类似地$\,\forall\,\varepsilon&gt;0,$
+有闭集$C_j\subset A$满足$\mu(A\cap V_j\setminus C_j)\le 2^{-j}\varepsilon.$
+那么<script type="math/tex">\mu(A\setminus \bigcup_j C_j)=\mu( A\cap \bigcup_jV_j\setminus \bigcup_jC_j)\le \sum_j \mu(A\cap V_j\setminus C_j) \le \varepsilon.</script>
+从而当$\mu(A)=\infty$时, $\mu(\bigcup_{j=1}^NC_j)\rightarrow \infty;$
+$\mu(A)&lt;\infty$时,
+对足够大的$N$有$\mu(A\setminus \bigcup_{j=1}^N C_j)\le 2\varepsilon.$
+因此(2)得证.</p>
+<p><strong>注 1.11</strong>. <em>注意若$X$是$\sigma$-紧的Hausdorff空间, 即全空间为可列个紧集之并. 那么第二个性质可推出<script type="math/tex">\mu(A)=\sup_{\text{紧集}K\subset A}\mu(K).</script> 这是因为在上述假设下, 任意闭集为一列递增紧集之并.</em> </p>
+<p>由上述定理可证明Lusin定理:</p>
+<p><strong>定理 1.12</strong> (Lusin). <em>令$\mu$为Borel正则外测度, 拓扑空间$X$中所有闭集均为可列开集之交(如$X$取度量空间即可). 令$A$为$\mu$-可测集且测度有限, $f:A\rightarrow \mathbb{R}$为可测函数. 那么$\,\forall\,\varepsilon&gt;0,$ 存在$X$中闭集$C\subset A,$ 满足$\mu(A\setminus C)&lt;\varepsilon,$ 且$f|_C$连续.</em> </p>
+<p><strong>证:</strong> 取$A_{ij}=f^{-1}[\frac{j-1}{i},\frac{j}{i}),$
+$i\in \mathbb{Z}_+,$ $j\in \mathbb{Z}.$
+那么$\mu$-可测的$A_{ij}$两两无交, 测度有限,
+且有$\bigcup_{j}A_{ij}=A$对任意$i$成立. 由于$\mu|_{A}$是Borel正则的,
+应用上述定理, 可找到$X$中闭集$C_{ij}\subset A_{ij},$
+$\mu(A_{ij}\setminus C_{ij})=\mu|_A(A_{ij}\setminus C_{ij})&lt;2^{-i-|j|-2}\varepsilon.$
+进一步$\mu(A\setminus \bigcup_j C_{ij})&lt; 2^{-i}\varepsilon,$
+因此对每个$i,$
+有$J(i)\in \mathbb{Z}_+$使得$\mu(A\setminus \bigcup_{|j|\le J(i)}C_{ij})\le 2^{-i}\varepsilon.$
+取$C=\bigcap_{i}\bigcup_{|j|\le j(i)}C_{ij}$为闭集,
+那么$\mu(A\setminus C)\le \varepsilon.$</p>
+<p>最后, 定义$g_i:\bigcup_{|j|\le J(i)}C_{ij}\rightarrow \mathbb{R},$
+$g_i|_{C_{ij} }(x)=\frac{j-1}{i}.$ 由于固定$i,$ $C_{ij}$彼此无交,
+因此$g_i|_C$连续. 由于$\,\forall\,x\in C,$
+$0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
+从而$f|_C$连续.</p>
+<p>文章最后更新于 2021-10-09 11:03:13 </p>
 
         </div>
 
@@ -215,11 +368,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：序</li>
+        <li>本文标题：《几何测度论导论》讲义笔记(1.1)-基本概念</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-07-14 13:00:00</li>
+        <li>创建时间：2021-10-09 11:03:10</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/07/14/序/
+            本文链接：https://dream0ar.github.io/2021/10/09/《几何测度论导论》讲义笔记(1.1)-基本概念/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -236,18 +389,33 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/07/20/LaTeX-%E6%B5%8B%E8%AF%95/"
+                           href="/2021/10/09/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%88%87%E4%B8%9B(1)/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">LaTeX-测试</span>
+                                <span class="post-nav-title-item">《微分流形》第二章-切丛(1)</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
                     </div>
                 
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/08/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E8%AE%A8%E8%AE%BA%E7%A8%BF-%E8%A7%A3%E6%9E%90%E6%B5%81%E5%BD%A2/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《微分流形》讨论稿-解析流形</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
                 
             </div>
         
@@ -446,7 +614,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E6%B5%8B%E5%BA%A6"><span class="nav-text">外测度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Borel%E6%AD%A3%E5%88%99%E6%B5%8B%E5%BA%A6"><span class="nav-text">Borel正则测度</span></a></li></ol>
     </div>
 </div>
         </aside>
