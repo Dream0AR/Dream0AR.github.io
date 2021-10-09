@@ -227,63 +227,53 @@ $\mu(S)=\mu(S\setminus A)+\mu(S\cap A).$ 后者称为Caratheodory条件,
             =&\mu((S\setminus A_1)\setminus A_2)+\mu((S\setminus A_1)\cap A_2)+\mu(S\cap A_1)& A_2\text{是$\mu$-可测的}\\
             \ge&\mu(S\setminus (A_1\cup A_2))+\mu(S\cap((A_2\setminus A_1)\cup A_1))& \text{次可列可加性}\\
             =&\mu(S\setminus(A_1\cup A_2))+\mu(S\cap(A_1\cup A_2)),
-        \end{aligned}$$ 从而$A_1\cup A_2$是$\mu$-可测的.
+        \end{aligned}</script><p>从而$A_1\cup A_2$是$\mu$-可测的.
 那么$X\setminus((X\setminus A_1)\cup (X\setminus A_2))=A_1\cap A_2$也是$\mu$-可测的,
 $A_2\setminus A_1=A_2\cap (X\setminus A_1)$也是.
 归纳可知有限步并,交,补运算均保持$\mu$-可测的性质.
-Caratheodory条件给无交$\mu$-可测集赋予了可加性:
-
-**引理 1.2** (可列可加性). *若$A_1,\cdots$为无交$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).$* 
-
-**证:** 由次可列可加性,
+Caratheodory条件给无交$\mu$-可测集赋予了可加性:</p>
+<p><strong>引理 1.2</strong> (可列可加性). <em>若$A_1,\cdots$为无交$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).$</em> </p>
+<p><strong>证:</strong> 由次可列可加性,
 $\mu(S\cap \bigcup_{i=1}^\infty A_i)\le \sum_{i=1}^\infty\mu(S\cap A_i).$
 由Caratheodory条件, $\,\forall\,S\subset X,$
 $\mu(S\cap (A_1\cup A_2))=\mu((S\cap (A_1\cup A_2))\setminus A_1)+\mu(S\cap(A_1\cup A_2)\cap A_1)= \mu(S\cap A_1)+\mu(S\cap A_2).$
-从而可归纳到有限个无交$\mu$-可测集的情况.
-
-现有$\sum_{i=1}^n \mu(S\cap A_i)=\mu(S\cap\bigcup_{i=1}^n A_i)\le \mu(S\cap \bigcup_{i=1}^\infty A_i).$
-令$n\rightarrow\infty,$ 即得到另一个方向的不等式, 从而命题得证.
-
-**引理 1.3**. *若$A_1,\cdots$为递增$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$* 
-
-**证:** 记$A_0=\varnothing,$
+从而可归纳到有限个无交$\mu$-可测集的情况.</p>
+<p>现有$\sum_{i=1}^n \mu(S\cap A_i)=\mu(S\cap\bigcup_{i=1}^n A_i)\le \mu(S\cap \bigcup_{i=1}^\infty A_i).$
+令$n\rightarrow\infty,$ 即得到另一个方向的不等式, 从而命题得证.</p>
+<p><strong>引理 1.3</strong>. <em>若$A_1,\cdots$为递增$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
+<p><strong>证:</strong> 记$A_0=\varnothing,$
 由于$\bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty (A_i\setminus A_{i-1}),$
-由可列可加性, $$\begin{aligned}
+由可列可加性, <script type="math/tex">\begin{aligned}
                 \mu(S\cap \bigcup_{i=1}^\infty A_i)&=\mu(S\cap \bigcup_{i=1}^\infty (A_{i}\setminus A_{i-1}))\\
                 &= \sum_{i=1}^\infty \mu(S\cap (A_i\setminus A_{i-1}))\\
                 &=\lim\limits_n \sum_{i=1}^n \mu(S\cap (A_i\setminus A_{i-1}))\\
                 &=\lim\limits_{n}\mu(S\cap A_n),
-            \end{aligned}$$ 命题得证.
-
-**推论 1.4**. *设$A_1,\cdots$为递减$\mu$-可测集, 若$\,\exists\,A_k$测度有限, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$* 
-
-称$X$一系列子集的集合$\mathcal{S}$为$\sigma$-代数, 若:
-
-(1) $\varnothing,X\in \mathcal{S};$
-
-(2) $A\in \mathcal{S}\Rightarrow X\setminus A\in \mathcal{S};$
-
-(3) $A_1,\cdots \in \mathcal{S}\Rightarrow \bigcup_{i=1}^\infty A_i\in \mathcal{S}.$
-
-**注 1.5**. *$\sigma$-代数对可列并与取补运算封闭, 易见它对可列交也是封闭的. 由于$\sigma$-代数的交仍为$\sigma$-代数, 可以找到包含一系列指定集合的最小的一个$\sigma$-代数. 特别地, 对拓扑空间$X,$ 包含所有开集的最小$\sigma$-代数称为$X$中的Borel代数, 其中集合称为Borel集.* 
-
-**引理 1.6**. *$\mu$-可测集全体构成$\sigma$-代数, 包含所有$X$的$\mu$-零测集.* 
-
-**证:** 只需证若$A_1,\cdots$是$\mu$-可测的,
+            \end{aligned}</script></p>
+<p>命题得证.</p>
+<p><strong>推论 1.4</strong>. <em>设$A_1,\cdots$为递减$\mu$-可测集, 若$\,\exists\,A_k$测度有限, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
+<p>称$X$一系列子集的集合$\mathcal{S}$为$\sigma$-代数, 若:</p>
+<p>(1) $\varnothing,X\in \mathcal{S};$</p>
+<p>(2) $A\in \mathcal{S}\Rightarrow X\setminus A\in \mathcal{S};$</p>
+<p>(3) $A_1,\cdots \in \mathcal{S}\Rightarrow \bigcup_{i=1}^\infty A_i\in \mathcal{S}.$</p>
+<p><strong>注 1.5</strong>. <em>$\sigma$-代数对可列并与取补运算封闭, 易见它对可列交也是封闭的. 由于$\sigma$-代数的交仍为$\sigma$-代数, 可以找到包含一系列指定集合的最小的一个$\sigma$-代数. 特别地, 对拓扑空间$X,$ 包含所有开集的最小$\sigma$-代数称为$X$中的Borel代数, 其中集合称为Borel集.</em> </p>
+<p><strong>引理 1.6</strong>. <em>$\mu$-可测集全体构成$\sigma$-代数, 包含所有$X$的$\mu$-零测集.</em> </p>
+<p><strong>证:</strong> 只需证若$A_1,\cdots$是$\mu$-可测的,
 则$\bigcup_{i=1}^\infty A_i$也是.
 记$B_i=\bigcup_{j=1}^i A_j$为递增$\mu$-可测集,
-则$\,\forall\,S\subset X,$ $$\begin{aligned}
+则$\,\forall\,S\subset X,$ <script type="math/tex">\begin{aligned}
                 \mu(S)&=\mu(S\setminus \bigcup_{i=1}^n A_i)+\mu(S\cap \bigcup_{i=1}^n A_i)\\
                 &\ge\mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap B_n).
-            \end{aligned}</script><p>令$n\rightarrow \infty,$ 即有 <script type="math/tex">\begin{aligned}
+            \end{aligned}</script></p>
+<p>令$n\rightarrow \infty,$ 即有 <script type="math/tex">\begin{aligned}
                 \mu(S)&\ge \mu(S\setminus \bigcup_{i=1}^\infty A_i)+ \mu(S\cap \bigcup_{n=1}^\infty B_n)\\
                 &= \mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap \bigcup_{i=1}^\infty A_i),
-            \end{aligned}</script> 从而命题得证.</p>
-<h2 id="Borel正则测度"><a href="#Borel正则测度" class="headerlink" title="Borel正则测度"></a>Borel正则测度</h2><p>称外测度$\mu$是\ast \ast 正则的\ast \ast , 若$\,\forall\,A\subset X,$
+            \end{aligned}</script></p>
+<p>从而命题得证.</p>
+<h2 id="Borel正则测度"><a href="#Borel正则测度" class="headerlink" title="Borel正则测度"></a>Borel正则测度</h2><p>称外测度$\mu$是<strong>正则的</strong>, 若$\,\forall\,A\subset X,$
 存在$\mu$-可测集$B\supset A$满足$\mu(B)=\mu(A).$
 此时先前关于$A_i$为单调列的性质无需再假设$A_i$是$\mu$-可测的.</p>
 <p>当$X$为拓扑空间时,
-外测度$\mu$是\ast \ast Borel正则的\ast \ast 若所有Borel集都是$\mu$-可测的,
+外测度$\mu$是<strong>Borel正则的</strong>若所有Borel集都是$\mu$-可测的,
 且$\,\forall\,A\subset X,$ 存在Borel集$B\supset A$满足$\mu(B)=\mu(A).$</p>
 <p>需要强调的是$\mu(B)=\mu(A)$不意味着$\mu(B\setminus A)=0,$
 除非$A$是$\mu-$可测的且$\mu(A)&lt;\infty.$</p>
@@ -309,7 +299,7 @@ $X\setminus C_j$单增,
 最后一个等号是因为$C$为闭集, 故所有与$C$距离为零的点都在$C$中.
 因此<script type="math/tex">\mu(S)\ge \mu(S\setminus C)+\mu(S\cap C),</script>从而任意闭集$C$是可测的,
 命题得证.</p>
-<p><strong>定义 1.9</strong>. <em>称Borel正则测度$\mu$是\ast \ast 开\ast \ast $\sigma$<strong>-有限</strong>的, 若$X=\bigcup_j V_j,$ $V_j$为开集且测度有限.</em> </p>
+<p><strong>定义 1.9</strong>. <em>称Borel正则测度$\mu$是<strong>开</strong>$\sigma$<strong>-有限</strong>的, 若$X=\bigcup_j V_j,$ $V_j$为开集且测度有限.</em> </p>
 <p>显然当$X$为可分度量空间, $\mu$局部有限时, 它是开$\sigma$-有限的.</p>
 <p><strong>定理 1.10</strong>. <em>设拓扑空间$X$中每个闭集均是可列个开集之交, 设$\mu$是开$\sigma$-有限的Borel正则测度, 那么$\,\forall\,A\subset X,$ <script type="math/tex">\mu(A)=\inf_{\text{开集}U\supset A}\mu(U).</script></em>  <em>若$A$是$\mu$-可测的, 那么还有<script type="math/tex">\mu(A)=\sup_{\text{闭集}C\subset A}\mu(C).</script></em> </p>
 <p><strong>思路:</strong> 分全空间测度有限/无限的情况讨论. 取使结论成立的集合全体,
@@ -360,7 +350,7 @@ $g_i|_{C_{ij} }(x)=\frac{j-1}{i}.$ 由于固定$i,$ $C_{ij}$彼此无交,
 因此$g_i|_C$连续. 由于$\,\forall\,x\in C,$
 $0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
 从而$f|_C$连续.</p>
-<p>文章最后更新于 2021-10-09 12:26:04 </p>
+<p>文章最后更新于 2021-10-09 13:20:37 </p>
 
         </div>
 
