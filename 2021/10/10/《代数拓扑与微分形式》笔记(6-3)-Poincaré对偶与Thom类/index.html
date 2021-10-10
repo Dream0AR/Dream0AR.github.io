@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》第二章-切丛(1) |
+            《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类 |
         
         梦之居
     </title>
@@ -157,7 +157,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第二章-切丛(1)</span>
+            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</span>
         </div>
 
         
@@ -173,7 +173,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-09 11:48:08
+        <i class="fas fa-edit"></i>&nbsp;2021-10-10 21:10:51
     </span>
     
         <span class="article-categories article-meta-item">
@@ -185,11 +185,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">代数拓扑与微分形式</a>&nbsp;
                     </li>
                 
             </ul>
@@ -213,78 +213,84 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="切空间"><a href="#切空间" class="headerlink" title="切空间"></a>切空间</h2><p>回忆我们可以定义$C^\infty$曲线$C:(a,b)\rightarrow M,$ $C(t_0)=p.$
-$C_p^\infty$表示$M$上在$p$点$C^\infty$的函数全体,
-即其中元素均是点$p$某邻域上的光滑函数. $C_p^\infty$上函数可做运算,
-但是仅能在公共邻域上做运算.
-曲线$C(t)$在点$p$处”切向量”指方向导数算子$X:C_p^\infty\rightarrow \mathbb{R},$
-$X(f)=\frac{df\circ c(t)}{dt}|_{t=t_0},$ 满足:</p>
-<p>(1) $X(af+bg)=aX(f)+bX(g);$</p>
-<p>(2) $X(fg)=X(f)g(p)+f(p)X(g).$</p>
-<p>令$T_pM:=\{X\text{是过}p\text{的曲线的切向量}\},$
-称为$M$在$p$处的切空间.
-$\widetilde{T}_pM:=\{\widetilde X:C_p^\infty\rightarrow \mathbb{R}\text{满足(1),(2)}\}.$
-那么有$T_pM\subset \widetilde{T}_pM.$ $\widetilde{T}_pM$可引入加法,
-数乘使之成为向量空间.</p>
-<p>回忆对坐标卡$(U,\varphi),$ $\varphi$是流形间的光滑同胚.
-对$\varphi^{-1},$ 仅让$x^i$变化,
-即得光滑曲线$\varphi^{-1}(\cdots,x^i,\cdots),$ 称为$x^i$-曲线.
-过每点$q\in U$有$m$条坐标曲线.</p>
-<p>用$\left(\frac{\partial {} }{\partial {}x^i}\right)_p$表示$x_i$-曲线在$p$处切向量$X_i,$
-$X_i(f)=\frac{d}{dx^i}[f\circ \varphi^{-1}(\cdots, x^i,\cdots)]_{\varphi(p)}=[\frac{\partial {} }{\partial {}x^i}(f\circ\varphi^{-1})]_{\varphi(p)}.$
-$f\circ\varphi^{-1}:\varphi(U)\rightarrow \mathbb{R}.$
-从而$\left(\frac{\partial {} }{\partial {}x^i}\right)_p\in T_pM,$
-$1\le i\le m.$</p>
-<p><strong>命题 1.1</strong>. <em>$T_pM$是$m$维向量空间. $\{X_i\}$构成$T_pM$的一组基.</em> </p>
-<p><strong>证:</strong> 任取$X\in T_pM,$ $C:(a,b)\rightarrow M,$ $C(t_0)=p.$
-$C’(t_0)=X.$ $\varphi\circ C(t)=(x^i(t))$称为<strong>参数方程</strong>. 由定义,
-$X(f)=\frac{d}{dt}[f\circ C(t)]|_{t=t_0}=\frac{d}{dt}[(f\circ\varphi^{-1})(\varphi\circ C(t))]|_{t_0}=\sum_{i=1}^m \frac{dx^i(t)}{dt}|_{t_0}\cdot [\frac{\partial {} }{\partial {}x^i}(f\circ \varphi^{-1})]_{\varphi(p)}.$
-记$a^i=\frac{d x^i}{dt}|_{t_0},$ 那么$X(f)=\sum_{i=1}^m a^i X_i(f),$
-从而$X=\sum_{i=1}^m a^i X_i.$</p>
-<p>任给$\sum_{i=1}^m b^i X_i,$
-要找$C(t)$过$p$点使$\frac{dx^i(t)}{dt}|_{t_0}=b^i.$
-设$\varphi(p)=(d^i),$ 取$x^i(t)=d^i+b^i(t-t_0),$
-$C(t)=\varphi^{-1}(x^i(t))$即可. 那么$C’(t_0)=\sum_i b^iX_i.$
-进而即可说明$T_pM$是向量空间.</p>
-<p>只需再说明$\{X_i\}$线性无关. 设$\sum_{i=1}^m a^i X_i=0,$
-取$m$个只沿$x^i$方向增长的$f=x^i:=\pi^i\circ \varphi$试探,
-即可说明$a^i\equiv 0.$ 从而$T_pM$为$m$维向量空间.</p>
-<p><strong>注 1.2</strong>. <em>事实上, 有$T_pM=\widetilde{T}_pM.$</em> </p>
-<p>之前提到$C_p^\infty$中零元素不唯一, 因此并非向量空间.
-为此可以定义等价关系$f\sim g$ $\Leftrightarrow$ $\,\exists\,p$点邻域$W,$
-$f|_W=g|_W.$ 商空间$\mathcal{F}_p^\infty=C_p^\infty/\sim$为向量空间,
-称为<strong>函数芽空间</strong>.
-其上有诱导的$X:\mathcal{F}_p^\infty\rightarrow \mathbb{R},$
-即$X([f]):=X(f),$ $<a href="p">f</a>:=f(p).$ 它同样满足类似(1),(2)的性质.</p>
-<h2 id="余切空间"><a href="#余切空间" class="headerlink" title="余切空间"></a>余切空间</h2><p>设$V$为$m$维向量空间,
-$V^\ast =\{\text{linear }\omega:V\rightarrow \mathbb{R}\}$亦为$m$维向量空间,
-以对偶基为基. 对$m$维光滑流形$M^m,$ $T_pM$为切空间,
-$T_p^\ast M$表示其对偶空间, 称为$M$在$p$处<strong>余切空间</strong>.</p>
-<p>$X\in T_pM,$ $f\in C_p^\infty$有方向导数$X(f).$ 考虑固定$f$令$X$变化,
-记$\omega_f(X)=X(f),$
-那么$\omega_f:T_pM\rightarrow \mathbb{R}$为线性函数, 在$T_p^\ast M$中.
-记$\omega_f$为$(df)_p,$ 称为$f$在$p$点的<strong>微分</strong>.
-任取含$p$坐标系$(U,\varphi),$ 那么$\{(dx^i)_p\}\in T_p^\ast M,$
-为$\{X_i\}$的对偶基, 因此构成$T_p^\ast M$的基, 称为<strong>自然基</strong>.</p>
-<p>$\,\forall\,f\in C_p^\infty,$
-$(df)_p=\sum_{i=1}^m a_i(dx^i)_p\in T_p^\ast M.$ 两边作用$X_j,$
-得$X_j(f)=a_j.$ 因此有$(df)_p=\sum_{i=1}^m X_i(f)(dx^i)_p.$
-由此也可以看出称其为微分的原因.</p>
-<p><strong>注 1.3</strong>. <em>若$f\sim g\in C_p^\infty,$ 那么$X(f)=X(g),$ 从而$(df)_p=(dg)_p.$ 那么记$\tau:\mathcal{F}_p^\infty\rightarrow T_p^\ast M,$ $\tau([f])=(df)_g$ 是线性满的. $\widehat{\tau}:\mathcal{F}_p^\infty/\ker(\tau)\cong T_p^\ast M$为线性同构, $\ker(\tau)=\{[f]\in \mathcal{F}_p^\infty|\tau([f])=(df)_p=0\}.$ 因此对余切空间的另一种定义方式就是函数芽空间做商空间, 然后再对偶来定义切空间.</em> </p>
-<h2 id="切丛"><a href="#切丛" class="headerlink" title="切丛"></a>切丛</h2><p>取$TM=\bigcup_{p\in M}T_pM,$ 称为$M$的切丛. 引入$\pi:TM\rightarrow M,$
-$\pi(T_pM)\rightarrow p,$ 称为<strong>自然投影</strong>.
-任取坐标卡$(U,\varphi; x^i),$ 考察$\pi^{-1}(U).$ $\,\forall\,q\in U,$
-$T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
-从而有<script type="math/tex">\widehat{\Phi}:\pi^{-1}(U)\xrightarrow{\Phi}U\times \mathbb{R}^m\xrightarrow{ \varphi\times \mathrm{id}_{\mathbb{R}^m} }\varphi(U)\times \mathbb{R}^m,</script>
-其中$\Phi(X)=(\pi(X),\xi),$ $X=\sum_{i=1}^m \xi^i X_i.$</p>
-<p>赋予$TM$自然拓扑结构, 使得$\pi^{-1}(U)$是$TM$的开子集,
-且$\widehat\Phi:\pi^{-1}(U)\rightarrow \varphi(U)\times \mathbb{R}^m$为同胚.
-令所有$\pi^{-1}(U_i)$的开子集构成生成$TM$的拓扑基即可.
-那么$TM$成为$2m$维拓扑流形.</p>
-<p>此时$\widehat{\mathcal{F} }=[\{(\pi^{-1}(U_\alpha),\widehat{\Phi}_\alpha)\}]$为$TM$坐标图册,
-转移函数$\widehat{\Phi}_\beta\circ \widehat{\Phi}_\alpha^{-1}(x,\xi)=(\varphi_{\beta}\circ\varphi_{\alpha}^{-1}(x),J(\varphi_\beta\circ\varphi_\alpha^{-1})\xi)$为光滑函数,
-因此图册是光滑的, 故切丛$TM$为$2m$维$C^\infty$流形.</p>
-<p>文章最后更新于 2021-10-09 12:26:27 </p>
+            <p>本节解释如何将子流形Poincaré对偶与子流形上向量丛的Thom类联系起来.</p>
+<h2 id="商丛"><a href="#商丛" class="headerlink" title="商丛"></a>商丛</h2><p>称$F$是秩$n$向量丛$E$的秩$k$<strong>子丛</strong>, 若$\,\forall\,x\in M$,
+$F_x$为$E_x$子空间.</p>
+<p>由此可定义<strong>商丛</strong>$Q=E/F$,
+它是一个向量丛使得$0\rightarrow F\rightarrow E\rightarrow Q\rightarrow 0$正合.
+即$\,\forall\,x\in M$, $Q_x=E_x/F_x$为商空间.</p>
+<p>首先, 先取$F$中自然标架, 再扩张为$E$的一组标架,
+这样它们的局部平凡化相容. 设$E$的局部平凡化转移函数为$g_{\alpha\beta},$
+$F$为$h_{\alpha\beta}.$ 则对于$F$上的点, 只有$h_{\alpha\beta}$起作用,
+从而有$g_{\alpha\beta}=\begin{pmatrix}
+            h_{\alpha\beta} &amp; *\\
+            0 &amp; q_{\alpha\beta}
+        \end{pmatrix}$. 那么$q_{\alpha\beta}$便是$Q$的转移函数.
+易见若$E,F$可定向, $Q$也可定向, 称$Q$的定向使得$E$的定向是直和定向.</p>
+<p>因为我们有内积, 所以纤维上有正交补空间$F_x^\perp\subset E_x$.
+那么$F^\perp=\bigsqcup F_x^\perp$是$E$的子丛且$E=F\oplus F^\perp$,
+其上还有继承于$E$的内积. 显然$Q\cong F^\perp$,
+从而$Q/E$上也有诱导的内积. $F^\perp$上也有定向使得$E$的定向为直和定向.</p>
+<h2 id="子流形法丛与管状邻域引理"><a href="#子流形法丛与管状邻域引理" class="headerlink" title="子流形法丛与管状邻域引理"></a>子流形法丛与管状邻域引理</h2><p>$k$维子流形$S\subset M$, $S$上有切丛$TS$与$i^{-1}TM=TM|_S$,
+$i$为包含映射.</p>
+<p>显然$TS\subset TM|_S$. 定义$N_{S/M}=TM|_S/TS$, 简记为$N$. 若$M,S$可定向,
+则切丛可定向, 从而$N$可定向.</p>
+<p>$\,\forall\,x\in S$, 存在$x$点坐标卡$(U,\phi)$,
+使得$\phi|_{S\cap U}$为$x$在$S$中坐标卡, 且只有前$k$个坐标有值.
+由此诱导切丛上的标架. 限制在$U_\alpha$或$U_\alpha\cap S$上,
+记$TM$标架为$\{\frac{\partial {} }{\partial {}x_A^\alpha}\}_{1\le A\le n}$,
+$TS$标架为$\{\frac{\partial {} }{\partial {}x_i^\alpha}\}_{1\le i\le k}$,
+$N$标架为$\{\frac{\partial {} }{\partial {}x_a^\alpha}\}_{k+1\le a\le n}$.</p>
+<p>在$S\cap U_{\alpha\beta}$上,
+$\frac{\partial {}x_a^\alpha}{\partial {}x_i^\beta}=0$,
+因此$TS$转移函数为$h_{\alpha\beta}=(\frac{\partial {}x_j^\alpha}{\partial {}x_i^\beta})_{k\times k}$.</p>
+<p>然而,
+$\frac{\partial {}x_j^\alpha}{\partial {}x_a^\beta}$显然不一定为$0$,
+但我们在做商丛时模掉了这部分,
+因此$N$的转移函数为$q_{\alpha\beta}=(\frac{\partial {}x_b^\alpha}{\partial {}x_a^\beta})_{(n-k)\times (n-k)}$.
+$TM|_S$的转移函数即为$g_{\alpha\beta}=\begin{pmatrix}
+            h_{\alpha\beta} &amp; *\\
+            0 &amp; q_{\alpha\beta}
+        \end{pmatrix}=(\frac{\partial {}x_A^\alpha}{\partial {}x_B^\beta})_{n\times n}$.</p>
+<p>我们有如下重要定理, 证明可参考其它微分流形教材.</p>
+<p><strong>定理 1.1</strong> (管状邻域定理). <em>存在$j$将$N$嵌入$M$, 且$j\circ s=i$, 即将零截面映到$S$.</em> </p>
+<p>称开集$j(N)\subset M$为管状邻域, 记为$T$.</p>
+<h2 id="Poincare对偶与Thom类"><a href="#Poincare对偶与Thom类" class="headerlink" title="Poincaré对偶与Thom类"></a>Poincaré对偶与Thom类</h2><p>记$\Phi$为$S$法丛$N$的Thom类, 则由Thom同构,
+$H^\ast (S)\cong H_{cv}^{\ast +n-k}(N)\cong H_{cv}^{\ast +n-k}(T)\rightarrow H^{\ast +n-k}(M)$,
+最后一个映射为零延拓.</p>
+<p><strong>引理 1.1</strong>. <em>$S$的闭Poincaré对偶$[\eta_S]=j_\ast \Phi\in H^{n-k}(M)$,</em> </p>
+<p><strong>证:</strong> 只需证明$j_\ast \Phi$满足对偶性质. 记$l:S\rightarrow T$为包含,
+其为$\pi:T\rightarrow S$为零截面. 它们在上同调的层面为互逆的,
+从而$\omega|_T=\pi^\ast l^\ast (\omega|_T)+d\tau$, $\tau\in \Omega^{k-1}(T)$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+                \int_M\omega\wedge j_*\Phi&=\int_T\omega|_T\wedge \Phi & j_*\text{为零延拓}\\
+                &=\int_T \pi^*l^*(\omega|_T)\wedge \Phi+\int_T d\tau \wedge \Phi&\\
+                &=\int_S l^*(\omega|_T)\wedge \pi_*\Phi&\text{Stokes定理+投射公式}\\
+                &=\int_S i^*\omega.&\pi_*\Phi=1\quad+\quad{\omega|_T}|_S=\omega|_S
+            \end{aligned}</script><p>又因为子流形$S$在$M$中的管状邻域可充分小, 我们得到:</p>
+<p><strong>命题 1.1</strong> (局部化原理). <em>闭子流形$S$的Poincaré对偶的支集可缩小到$S$任意给定的管状邻域中.</em> </p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="横截相交子流形的Poincare对偶"><a href="#横截相交子流形的Poincare对偶" class="headerlink" title="横截相交子流形的Poincaré对偶"></a>横截相交子流形的Poincaré对偶</h3><p>称$M$中两个子流形$R,S$为横截相交的, 若$\,\forall\,x\in R\cap S$,
+$T_xR+T_xS=T_xM$.</p>
+<p>设$R,S$为流形$M$中横截相交的闭子流形,
+则$R\cap S$也是闭子流形且$\dim R\cap S=\dim R+\dim S-\dim M$.
+进一步$\operatorname{codim}_M R\cap S=\operatorname{codim}_M R+\operatorname{codim}_M S$.</p>
+<p>$R\cap S$在$M$中法丛$N_{(R\cap S)/M}=(N_{R/M}\oplus N_{S/M}) |_{R\cap S}$.
+将法丛嵌入到$M$中为管状邻域,
+则$\Phi(N_{(R\cap S)/M})=\Phi(N_{R/M})\wedge \Phi(N_{S/M})$,
+从而$\eta_{R\cap S}=\eta_R\wedge \eta_S$.</p>
+<p><strong>命题 1.2</strong>. <em>两个横截相交闭子流形的交的Poincaré对偶等于这两个子流形的Poincaré对偶的外积.</em> </p>
+<h3 id="Poincare对偶的拉回"><a href="#Poincare对偶的拉回" class="headerlink" title="Poincaré对偶的拉回"></a>Poincaré对偶的拉回</h3><p>设$f:M’\rightarrow M$是光滑映射, $S$是$M$的闭子流形.
+若$\,\forall\,x\in f^{-1}(S)$, $f_\ast (T_x M’)+T_{f(x)}S=T_{f(x)}M$,
+则称映射$f$横截于子流形$S$.
+即$f(M’)$要么与子流形$S$不相交($f^{-1}(S)=\varnothing$自动成立),
+要么横截相交($f_\ast (T_x M’)=T_{f(x)}f(M’)$).</p>
+<p>这时, $f^{-1}(S)$是$M’$的光滑子流形, 且任意$S$在$M$中的管状邻域$T$,
+$f^{-1}T$是$f^{-1}(S)$在$M’$中的管状邻域. 由Thom类的函子性,
+$f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
+这时我们有$f^\ast \eta_S=f^\ast j_\ast \Phi(T)=j_\ast \mathcal{T}f^\ast (1)=j_\ast \Phi(f^{-1}T)=\eta_{f^{-1}(S)}$.
+即:</p>
+<p><strong>命题 1.3</strong>. <em>设$f:M’\rightarrow M$是光滑映射, 横截于$M$的闭子流形$S$. 若$[\eta_S]$是$S$在$M$中的Poincaré对偶, 则$f^\ast [\eta_S]$是$f^{-1}(S)$在$M’$中的Poincaré对偶.</em> </p>
+<p>文章最后更新于 2021-10-10 21:10:53 </p>
 
         </div>
 
@@ -292,11 +298,11 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第二章-切丛(1)</li>
+        <li>本文标题：《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-09 11:48:08</li>
+        <li>创建时间：2021-10-10 21:10:51</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/09/《微分流形》第二章-切丛(1)/
+            本文链接：https://dream0ar.github.io/2021/10/10/《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -310,29 +316,14 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/10/10/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-3)-Poincar%C3%A9%E5%AF%B9%E5%81%B6%E4%B8%8EThom%E7%B1%BB/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/10/09/%E3%80%8A%E5%87%A0%E4%BD%95%E6%B5%8B%E5%BA%A6%E8%AE%BA%E5%AF%BC%E8%AE%BA%E3%80%8B%E8%AE%B2%E4%B9%89%E7%AC%94%E8%AE%B0(1.1)-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
+                           href="/2021/10/09/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%88%87%E4%B8%9B(1)/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何测度论导论》讲义笔记(1.1)-基本概念</span>
+                                <span class="post-nav-title-item">《微分流形》第二章-切丛(1)</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -538,7 +529,7 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E7%A9%BA%E9%97%B4"><span class="nav-text">切空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%99%E5%88%87%E7%A9%BA%E9%97%B4"><span class="nav-text">余切空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E4%B8%9B"><span class="nav-text">切丛</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%86%E4%B8%9B"><span class="nav-text">商丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2%E6%B3%95%E4%B8%9B%E4%B8%8E%E7%AE%A1%E7%8A%B6%E9%82%BB%E5%9F%9F%E5%BC%95%E7%90%86"><span class="nav-text">子流形法丛与管状邻域引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Poincare%E5%AF%B9%E5%81%B6%E4%B8%8EThom%E7%B1%BB"><span class="nav-text">Poincaré对偶与Thom类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E7%9B%B8%E4%BA%A4%E5%AD%90%E6%B5%81%E5%BD%A2%E7%9A%84Poincare%E5%AF%B9%E5%81%B6"><span class="nav-text">横截相交子流形的Poincaré对偶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Poincare%E5%AF%B9%E5%81%B6%E7%9A%84%E6%8B%89%E5%9B%9E"><span class="nav-text">Poincaré对偶的拉回</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
