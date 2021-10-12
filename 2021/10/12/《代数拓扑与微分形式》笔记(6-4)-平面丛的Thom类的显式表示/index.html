@@ -9,7 +9,7 @@
     
     <title>
         
-            序 |
+            《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示 |
         
         梦之居
     </title>
@@ -157,7 +157,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">序</span>
+            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</span>
         </div>
 
         
@@ -173,7 +173,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-07-14 13:00:00
+        <i class="fas fa-edit"></i>&nbsp;2021-10-12 10:25:16
     </span>
     
         <span class="article-categories article-meta-item">
@@ -181,7 +181,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E9%9A%8F%E6%83%B3%E5%BD%95/">随想录</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">代数拓扑与微分形式</a>&nbsp;
                     </li>
                 
             </ul>
@@ -205,9 +213,70 @@
         
 
         <div class="article-content markdown-body">
-            <p>今天开始博客正式启动啦! 之前一直在知乎记录一些学习生活, 但感觉有一些个人用的学习材料不太适合放到知乎上, 所以一直在计划搭建一个自己的个人博客, 这样也能更自在一些.</p>
-<p>除了学习生活, 还计划记录一些其它生活中的点滴, 比如在玩的游戏, 喜欢的沙雕图, 以及一些随想之类的. 这样看我的博客就能够了解我, 知道我喜欢什么, 以及最近在干啥了.</p>
-<p>人生一场, 总是希望能够留下些什么的, 留下一些不会消散的东西. <strong>记录</strong>, 便是最简单的一种形式. 希望能够坚持记录人生的习惯, 让今后的我能够回顾我走过的一程. </p>
+            <h2 id="整体角形式"><a href="#整体角形式" class="headerlink" title="整体角形式"></a>整体角形式</h2><p>在定向流形$M$上, 最高次形式是<strong>正的</strong>若它在$M$的定向类中.
+取$\sigma\in H^{n-1}(S^{n-1})$为生成元,
+$p:\mathbb{R}^n-\{0\}\rightarrow S^{n-1}$为形变收缩,
+规定$\sigma$在$S^{n-1}$上是正的当且仅当$dr\wedge p^\ast \sigma$在$\mathbb{R}^n-\{0\}$上是正的.</p>
+<p>设$\sigma$是$S^{k-1}$上正形式, 且$\int_{S^{k-1} }\sigma=1$,
+则$\psi=p^\ast \sigma$称为$\mathbb{R}^k-0$上的<strong>角形式</strong>.
+$[\psi]\in H^{k-1}(\mathbb{R}^k-\{0\})$为生成元.</p>
+<p>设$\rho(r)\in C^\infty[0,+\infty)$, $\rho(r)=\begin{cases}
+            -1&amp;r\le \delta_1\\
+            0&amp;r\ge \delta_2
+        \end{cases}$, $\delta_1&lt;\delta_2$, 中间部分光滑连接.
+$d\rho=\rho’(r)dr$是一个bump-1形式.</p>
+<p>这时, $[d\rho\wedge \psi]\in H_c^k(\mathbb{R}^k)$, 挖去$B_\varepsilon$,
+利用$\rho$性质与Stokes定理可证$\int_{\mathbb{R}^k}d\rho\wedge \psi=1$.
+即$[d\rho\wedge \psi]$为生成元.</p>
+<p>考虑$M$上秩$k$定向向量丛$\pi :E\rightarrow M$, $E^0=E-s(E)$,
+$s$为零截面. 设$\left&lt;{},\right&gt;$为度量, 对每条纤维上的向量$v$,
+定义$r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$. 那么$r$在$E$上有意义,
+$\rho(r)$可视为定义在$E$上的函数.</p>
+<p>称$E^0$的一个$k-1$-形式$\psi$为<strong>整体角形式</strong>,
+若$\psi$限制在每条纤维$E_x^0\simeq \mathbb{R}^k-\{0\}$上是角形式,
+并且$d\psi$能自然延拓成$E$的一个$k$-形式.</p>
+<p>若$E^0$上存在整体角形式$\psi$,
+则$E$的Thom类为$\Phi=d\rho\wedge\psi+\rho d\psi$.
+这是因为限制在纤维上第二项消失, 而第一项积分为$1$.</p>
+<h2 id="平面丛欧拉类的显示表示"><a href="#平面丛欧拉类的显示表示" class="headerlink" title="平面丛欧拉类的显示表示"></a>平面丛欧拉类的显示表示</h2><p>假定$E$是定向平面丛, 即秩为$2$. 取坐标图册与定向平凡化,
+在$U_\alpha$上有坐标$(x_1^\alpha,…,x_n^\alpha)$.</p>
+<p>利用定向平凡化, 定义$E^0|_{E_\alpha}$的极坐标$r_\alpha$,
+$\theta_\alpha$, 从而有坐标$\pi^\ast  x^\alpha, r_\alpha, \theta_\alpha$.
+假定$E$上度量保内积, 即转移函数约化到$SO(2)$, 则$r_\alpha=r_\beta$,
+我们定义了整体的$r$. 事实上这就是先前的$r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$.</p>
+<p>但$\theta_\alpha,\theta_\beta$相差一个旋转,
+可定义$\varphi_{\alpha\beta}$,
+使得$\theta_\beta=\theta_\alpha+\pi^\ast \varphi_{\alpha\beta}$.
+在$\mod 2\pi$意义下,
+$\varphi_{\alpha\beta}$满足cocycle条件以及可被唯一定义.</p>
+<p>因此若采用de Rham上同调, 则$\{d\varphi_{\alpha\beta}\}$满足cocycle条件.
+定义$\xi_\alpha=\frac{1}{2\pi} \sum_\gamma \rho_\gamma d\varphi_{\gamma\alpha}$,
+则在$U_{\alpha\beta}$上,
+$\frac{1}{2\pi}d\varphi_{\alpha\beta}=\xi_\beta-\xi_\alpha$.</p>
+<p>从而, $d\xi_\alpha=d\xi_\beta$, 可以拼成整体定义$2$-形式$e$:
+$e|_{U_\alpha}=d\xi_\alpha$. 显然$de=0$.
+断言$[e]\in H^2(M)$与$\{\xi_\alpha\}$选取无关,
+称之为平面丛$E$的<strong>欧拉类</strong>, 也记作$e(E)$.</p>
+<p>选取无关是因为倘若有另一个$\tilde \xi_\alpha$满足要求,
+那么$\tilde \xi_\alpha-\xi_\alpha$将满足相容性, 可以整体定义为$\eta$.
+那么$d\eta=d\tilde\xi_\alpha-d\xi_\alpha$, 从而在上同调层面它们是相等的.</p>
+<p>若给$E$一个定向平凡化, 假设约化到了$SO(2)=SU(1)$,
+则$\varphi_{\alpha\beta}=-\frac{1}{i}\log g_{\alpha\beta}$, 进一步
+$e|_{U_\alpha}=d\xi_\alpha=-\frac{1}{2\pi i}\sum_\gamma d(\rho_\gamma \cdot d\log g_{\gamma\alpha})$,
+称为<strong>平面丛欧拉类的显示表示公式</strong>.</p>
+<p>当$E$为乘积丛时, 转移函数为常值矩阵, 从而欧拉类为零.
+它反映出了定向向量丛$E$的扭曲程度. 由表示公式, 可以证明欧拉类的函子性:</p>
+<p><strong>命题 1.1</strong>. <em>$f:N\rightarrow M$为光滑映射, $\pi:E\rightarrow M$为秩2定向向量丛, 则$e(f^{-1}E)=f^\ast e(E)\in H^2(N)$.</em> </p>
+<h2 id="平面丛Thom类的显示表示"><a href="#平面丛Thom类的显示表示" class="headerlink" title="平面丛Thom类的显示表示"></a>平面丛Thom类的显示表示</h2><p>$\frac{d\theta_\alpha}{2\pi}-\pi^\ast \xi_\alpha$定义了$E^0$上的$1$-形式$\psi$.
+$\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
+为$E_x^0$的角形式; 同时$d\psi=-\pi^\ast e$在$E$上有定义, $\psi$是整体角形式.</p>
+<p>于是, $E$的Thom类为$\Phi=d\rho(r)\wedge \psi-\rho(r)\pi^\ast e$.
+若$s:M\rightarrow E$为零截面, 则$s^\ast \Phi=e$.
+即零截面把Thom类拉回为欧拉类.</p>
+<p>利用欧拉类的显式表示,
+即得$\Phi=d\rho(r)\wedge \frac{d\theta_\alpha}{2\pi}+\frac{1}{2\pi i}d(\rho(r)\pi^\ast \sum_\gamma\rho_\gamma d\log g_{\gamma\alpha})$.
+前一项形式非常直观, 而后一项是因为向量丛扭曲引起的修正项.</p>
+<p>文章最后更新于 2021-10-12 10:25:18 </p>
 
         </div>
 
@@ -215,11 +284,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：序</li>
+        <li>本文标题：《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-07-14 13:00:00</li>
+        <li>创建时间：2021-10-12 10:25:16</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/07/14/序/
+            本文链接：https://dream0ar.github.io/2021/10/12/《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -233,21 +302,21 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/07/20/LaTeX-%E6%B5%8B%E8%AF%95/"
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/10/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-3)-Poincar%C3%A9%E5%AF%B9%E5%81%B6%E4%B8%8EThom%E7%B1%BB/"
                         >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">LaTeX-测试</span>
-                                <span class="post-nav-item">上一篇</span>
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
                             </span>
                         </a>
                     </div>
-                
                 
             </div>
         
@@ -446,7 +515,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E8%A7%92%E5%BD%A2%E5%BC%8F"><span class="nav-text">整体角形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E4%B8%9B%E6%AC%A7%E6%8B%89%E7%B1%BB%E7%9A%84%E6%98%BE%E7%A4%BA%E8%A1%A8%E7%A4%BA"><span class="nav-text">平面丛欧拉类的显示表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E4%B8%9BThom%E7%B1%BB%E7%9A%84%E6%98%BE%E7%A4%BA%E8%A1%A8%E7%A4%BA"><span class="nav-text">平面丛Thom类的显示表示</span></a></li></ol>
     </div>
 </div>
         </aside>
