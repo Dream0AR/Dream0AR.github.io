@@ -262,27 +262,29 @@ $\alpha(x)=\frac{1}{\int_{\mathbb{R}^n} \varphi dx}\varphi(x).$
 若$u$局部可积则$u_\varepsilon$由定义, 满足如下定理:</p>
 <p><strong>定理 1.1</strong>. <em>若$u\in L_{loc}^1(\mathbb{R}^n),$ 则$u_\varepsilon\in C^\infty(\mathbb{R}^n).$ 当$\varepsilon\rightarrow 0$时, 若$u\in C^0(\mathbb{R}^n),$ 则$u_\varepsilon\rightarrow u(C^0(\mathbb{R}^n));$ 若$u\in L^p(\mathbb{R}^n),$ 则$u_\varepsilon\rightarrow u(L^p(\mathbb{R}^n)).$</em> </p>
 <p>前两个性质是易证的. 对$u\in L^p(\mathbb{R}^n)$的情况, 运用Lusin定理,
-找$v\in C_c(\mathbb{R}^n)$使得$||u-v||_{L^p}$充分小即可.
+找$v\in C_c(\mathbb{R}^n)$使得$\parallel u-v\parallel_{L^p}$充分小即可.
 过程中用到如下引理:</p>
-<p><strong>引理 1.2</strong> (Minkowski积分不等式). <em>$||||f(x,y)||_{L_x^1}||_{L_y^p}\le ||||f(x,y)||_{L_y^p}||_{L_x^1}.$</em> </p>
+<p><strong>引理 1.2</strong> (Minkowski积分不等式). <em>$\parallel\parallel f(x,y)\parallel_{L_x^1}\parallel_{L_y^p}\le \parallel\parallel f(x,y)\parallel_{L_y^p}\parallel_{L_x^1}.$</em> </p>
 <p><strong>证:</strong>
 只需证明(可能需要限制在子空间上)线性算子$\mathrm{id}:L_x^1L_y^p\rightarrow L_y^pL_x^1$是有界的,
-且$||\mathrm{id}||\le 1.$ 由泛函分析知识,
+且$\parallel\mathrm{id}\parallel\le 1.$ 由泛函分析知识,
 赋范线性空间间的线性算子$A:X\rightarrow Y$是有界的当且仅当$A^\ast :Y^\ast \rightarrow X^\ast $是有界的,
-且有$||A||=||A^\ast ||.$ 左推右是经典的命题, 右推左只需利用$A^{\ast \ast }$即可,
-它是$A$在$X^{\ast \ast }$上的延拓.</p>
+且有$\parallel A\parallel=\parallel A^\ast \parallel.$ 左推右是经典的命题,
+右推左只需利用$A^{\ast \ast }$即可, 它是$A$在$X^{\ast \ast }$上的延拓.</p>
 <p>因此考虑线性算子$\mathrm{id}^\ast :L_y^qL_x^\infty\rightarrow L_x^\infty L_y^q,$
-说明$||\mathrm{id}^\ast ||\le 1$即可,
-即$\operatorname{ess}\operatorname{sup}_x||f(x,y)||_{L_y^q}\le ||\operatorname{ess}\operatorname{sup}_x|f(x,y)|||_{L_y^q},$
+说明$\parallel\mathrm{id}^\ast \parallel\le 1$即可,
+即$\operatorname{ess}\operatorname{sup}_x\parallel f(x,y)\parallel_{L_y^q}\le \parallel\operatorname{ess}\operatorname{sup}_x|f(x,y)|\parallel_{L_y^q},$
 然而这是显然的.</p>
-<p>若$||||f(x,y)||_{L_x^1}||_{L_y^p}=\infty,$
+<p>若$\parallel\parallel f(x,y)\parallel_{L_x^1}\parallel_{L_y^p}=\infty,$
 考虑用$g_n=(|f|\wedge n)\cdot 1_{B_n}$逼近,
 利用Levi单调收敛引理说明即可.</p>
-<p><strong>推论 1.3</strong>. <em>$||f\ast g||_{L^p}\le ||f||_{L^p}||g||_{L^1}.$</em> </p>
+<p><strong>推论 1.3</strong>. <em>$\parallel f\ast g\parallel_{L^p}\le \parallel f\parallel_{L^p}\parallel g\parallel_{L^1}.$</em> </p>
 <p><strong>证:</strong>
-$||f\ast g||_{L^p} \le ||||f(x-y)g(y)||_{L^1_y}||_{L^p_x}\le ||||f(x-y)g(y)||_{L^p_x}||_{L^1_y}=||f||_{L^p}||g||_{L^1}.$</p>
-<p>由该推论, $||u_\varepsilon-v_\varepsilon||\le ||u-v||$也充分小,
-而$||v-v_\varepsilon||$利用已有的性质也可以充分小, 定理得证.</p>
+$\parallel f\ast g\parallel_{L^p} \le \parallel\parallel f(x-y)g(y)\parallel_{L^1_y}\parallel_{L^p_x}\le \parallel\parallel f(x-y)g(y)\parallel_{L^p_x}\parallel_{L^1_y}=\parallel f\parallel_{L^p}\parallel g\parallel_{L^1}.$</p>
+<p>由该推论,
+$\parallel u_\varepsilon-v_\varepsilon\parallel\le \parallel u-v\parallel$也充分小,
+而$\parallel v-v_\varepsilon\parallel$利用已有的性质也可以充分小,
+定理得证.</p>
 <p>称线性算子$J_\varepsilon:L_{loc}^1(\mathbb{R}^n)\rightarrow C^\infty(\mathbb{R}^n),$
 $u\mapsto u_\varepsilon$为<strong>磨光算子</strong>,
 得到$u_\varepsilon$的过程称为<strong>正则化</strong>.
@@ -412,7 +414,7 @@ $T$改造为$\mathscr{E}$上线性泛函后也是连续的,
 这是因为$\overline{O}_\delta(K)$的$\delta$可任意小,
 可以取到$\zeta_\delta\xrightarrow{\mathscr{D} }\zeta,$
 再利用线性泛函的连续性即可($T\in \mathscr{D}’$).</p>
-<p>文章最后更新于 2021-10-13 12:40:40 </p>
+<p>文章最后更新于 2021-10-13 12:46:51 </p>
 
         </div>
 
