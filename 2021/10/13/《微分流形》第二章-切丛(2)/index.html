@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分流形》第二章-切丛(2) |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《微分流形》第二章-切丛(2)</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-13 16:59:47
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="切丛"><a href="#切丛" class="headerlink" title="切丛"></a>切丛</h2><p>回忆$M^m$为$m$维$C^\infty$流形,
+其上有切丛$TM=\bigcup_{p\in M}T_pM\xrightarrow{\pi}M,$ 具有自然的拓扑.
+$T_qM$有自然基$\{X_i\},$ $T_qM\cong \mathbb{R}^m,$
+从而有同胚$\Phi_U:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^m\rightarrow \varphi(U)\times \mathbb{R}^m.$
+$\{(\pi^{-1}(U_\alpha),\Phi_\alpha)\}$即为$TM$的光滑坐标图册,
+使之成为$2m$维$C^\infty$流形.</p>
+<h2 id="向量场"><a href="#向量场" class="headerlink" title="向量场"></a>向量场</h2><p>$X:p\mapsto X_p\in T_pM$称为$M$上<strong>向量场</strong>. 对开集$U\subset M,$
+$X:U\ni p\mapsto T_pM$称为$U$上向量场.
+也可以描述$X$为$X:M\rightarrow TM,$ $\pi\circ X=\mathrm{id}_M.$
+如果$X$还是流形间的$C^\infty$映照, 则称$X$是$M$上$C^\infty$向量场.
+考虑局部拉回到$\widehat{X}:\varphi(U)\rightarrow \varphi(U)\times \mathbb{R}^m$,
+具体表示为$x\mapsto (x,\xi\circ\varphi^{-1}(x)).$
+因此只需考虑$\xi\circ\varphi^{-1}$是否光滑即可,
+也即$\xi$各个分量是否在$C^\infty(U)$中.</p>
+<p>用$\chi(M)$表示$M$山光滑向量场全体, $\,\forall\,X,Y\in \chi(M),$
+$f,g\in C^\infty(M),$ 则$fX+gY\in \chi(M),$
+$(fX+gY)(p):=f(p)X(p)+g(p)Y(p)\in T_pM.$
+这是因为$C^\infty(U)$和$C^\infty(\mathbb{R}^m)$一样,
+都是乘法封闭的向量空间, 考虑局部表示即可.
+特别地$\chi(M)$是无穷维向量空间.</p>
+<p>回忆若$f\in C^2(U),$ $U\subset \mathbb{R}^m,$ $f$的混合偏导可交换顺序.
+那么对一般的向量场, 我们考虑是否有$XY=YX,$ $X,Y\in\chi(M).$
+即$[X,Y]f=XYf-YXf$是否总取零.
+这里$[-,-]:\chi(M)\times \chi(M)\rightarrow\chi(M)$称为$X$和$Y$的<strong>Lie括号</strong>.
+$[X,Y]_p f=X_pYf-Y_pXf.$</p>
+<p>回忆$(Yf)(p)=Y_p(f),$ 希望$Yf\in C^\infty(M).$
+考察$(Yf)\circ\varphi^{-1},$ $(Yf)|_U=\sum_i\eta^i X_i(f),$
+那么$(Yf)\circ\varphi^{-1}=\sum_i \eta^i\circ\varphi^{-1}\cdot \frac{\partial f\circ\varphi^{-1} }{\partial x_i}\in C^\infty(\mathbb{R}^m).$
+因此$X_pYf$有意义, 有: <script type="math/tex">\begin{aligned}
+            X_pYf&=\sum_i \xi^i(p)\sum_j X_i(\eta^jX_j(f))\\
+            &=\sum_{i,j} \xi^i(p)X_i(\eta^j)X_j(f)+\xi^i(p)\eta^j(p)X_iX_j(f)
+        \end{aligned}</script> 交换$X,Y$顺序即得到$Y_pXf,$ 从而:</p>
+<p><script type="math/tex">\begin{aligned}
+_pf&=\sum_{i,j}[\xi^i(p)X_i(\eta^j)-\eta^i(p)X_i(\xi^j)]X_j(f)+\sum_{i,j}\xi^i(p)\eta^j(p)[X_i,X_j](f),
+        \end{aligned}</script> 后项由于$f\in C^\infty(M)$取零,
+故$[X,Y]|_U=\sum_{ij} [\xi^iX_j(\eta^j)-\eta^i X_i(\xi^j)]X_j,$
+$[X,Y]\in\chi(M)$确实为光滑向量场.</p>
+<p>可以看出, $[-,-]$满足如下性质:</p>
+<ul>
+<li><p>反交换性: $[X,Y]=-[Y,X];$</p>
+</li>
+<li><p>线性性: $[aX_1+bX_2,Y]=a[X_1,Y]+b[X_2,Y];$</p>
+</li>
+<li><p>Jacobi恒等式: $[[X,Y],Z]+[[Y,Z],X]+[[Z,X],Y]=0.$</p>
+</li>
+</ul>
+<p>因此$\chi(M)$是一个<strong>李代数</strong>.</p>
+<h2 id="切映照"><a href="#切映照" class="headerlink" title="切映照"></a>切映照</h2><p>设$F:M^m\rightarrow N^n$是$C^\infty$流形间的$C^\infty$映照.
+$\,\forall\,$过$p$点曲线$C(t),$ $C(t_0)=p,$ $C’(t_0)=X,$
+则对应有过$q$点曲线$F(C(t)),$ 切向量为$Y.$
+这诱导了切空间之间的映照${F_\ast }_p:T_pM\rightarrow T_qN.$
+$\,\forall\,f\in C_q^\infty(N),$ $Yf=X(f\circ F).$
+即${F_\ast }_pX(f)=X(f\circ F).$ 易证
+${F_\ast }_p(aX_1+bX_2)=a{F_\ast }_pX_1+b{F_\ast }_pX_2,$ 因此${F_\ast }_p$为线性映照.</p>
+<p>回忆向量空间之间的线性映照$\varphi:V\rightarrow W$诱导对偶映照$\varphi^\ast :W^\ast \rightarrow V^\ast ,$
+定义为$\,\forall\,w^\ast \in W^\ast ,$ $(\varphi^\ast w^\ast )(v)=w^\ast (\varphi (v)).$
+对偶映照也是线性的, 称为<strong>拉回映照</strong>. 因此对上面的${F_\ast }_p,$
+有拉回映照$F^\ast :T_q^\ast N\rightarrow T_p^\ast M,$
+$F^\ast (df)_q(X)=(df)_q({F_\ast }_pX)={F_\ast }_pX(f)=X(f\circ F)= d(f\circ F)_p(X),$
+即$F^\ast (df)_q=d(f\circ F)_p.$</p>
+<p><strong>命题 1.1</strong>. <em>设$F\in C^\infty(M,N),$ $G\in C^\infty(N,W),$ 则${(G\circ F)_{\ast } }_p={G_{\ast } }_q\circ {F_\ast }_p,$ $(G\circ F)^\ast =F^\ast \circ G^\ast .$ 且若$F$是光滑同胚, 那么${F_\ast }_p$是线性同构, $\,\forall\,p\in M.$</em> </p>
+<p>前面的性质是容易说明的, 而后面的性质利用$F^{-1}\circ F=\mathrm{id}_M,$
+$F\circ F^{-1}=\mathrm{id}_N,$ 结合前面的性质即得.</p>
+<p><strong>命题 1.2</strong>. <em>设$F:M\rightarrow N$是光滑映照, $q=F(p).$ 那么${F_\ast }_pX_i=\sum_\alpha [X_i(y^\alpha \circ F)]Y_\alpha,$ $F^\ast (dy^\alpha)_q=\sum_i <a href="dx^i">X_i(y^\alpha\circ F)</a>_p.$</em> </p>
+<p>按定义验证即可.
+注意$X_i(y^\alpha\circ F)=J(\psi\circ F\circ \varphi^{-1})_{\alpha,i},$
+因此切映照是Jacobi矩阵的推广.</p>
+<p>给出如下定义:</p>
+<ul>
+<li><p>定义$F$在$p$点的<strong>秩</strong>为${F_{\ast } }_p$的秩$=r(D\widehat{F})_{\varphi(p)},$
+记为$r({F_\ast }_p);$</p>
+</li>
+<li><p>如果${F_\ast }_p$是单射, 即$r({F_\ast }_p)=m,$ 则称$F$在$p$点是<strong>浸入.</strong>
+若$F$点点浸入, 则称$F:M\rightarrow N$是浸入;</p>
+</li>
+<li><p>如果${F_\ast }_p$是满射, 即$r({F_\ast }_p)=n,$ 则称$F$在$p$点是<strong>淹没.</strong>
+若$F$点点淹没, 则称$F:M\rightarrow N$是淹没.</p>
+</li>
+</ul>
+<p>回忆反函数定理: 若开集$U,V\subset \mathbb{R}^m,$
+$F:U\rightarrow V$为光滑映照, $p\in U,$ $q=F(p)\in V.$ 若$DF(p)$非退化,
+那么$\,\exists\,$点$p$的小邻域$U_1,$ $q$点小邻域$V_1,$
+使$F|_{U_1}:U_1\rightarrow V_1$是$C^\infty$同胚. 那么在流形上,
+设$U\subset M^m,V\subset N^m,$
+将$DF(p)$非退化条件改为${F_\ast }_p$是线性同构, 即可推广反函数定理到流形上.</p>
+<p>文章最后更新于 2021-10-13 17:01:47 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分流形》第二章-切丛(2)</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-10-13 16:59:47</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/10/13/《微分流形》第二章-切丛(2)/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/13/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《现代PDE基础》笔记(1)-广义函数</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E4%B8%9B"><span class="nav-text">切丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%9C%BA"><span class="nav-text">向量场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%98%A0%E7%85%A7"><span class="nav-text">切映照</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
