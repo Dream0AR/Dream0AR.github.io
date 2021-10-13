@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《现代PDE基础》笔记(1)-广义函数 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《现代PDE基础》笔记(1)-广义函数</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-10 14:45:14
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="多重指标"><a href="#多重指标" class="headerlink" title="多重指标"></a>多重指标</h3><p>$\alpha\in \mathbb{N}^n,$ $|\alpha|=\sum \alpha_i,$
+$\alpha!=\prod \alpha_i !.$ 作为上标, $x^\alpha=\prod x_i^{\alpha_i}$
+$\partial^\alpha=\frac{\partial^{|\alpha|} }{\partial x_1^{\alpha_1}\cdots\partial x_n^{\alpha_n} },$
+$f^{(\alpha)}(x)=\partial^\alpha f(x).$
+$f(x)$的Taylor展开为$\sum_\alpha \frac{f^{(\alpha)}(0)}{\alpha!}x^\alpha.$</p>
+<p>$\partial^\alpha(fg)=\sum_{\beta+\gamma=\alpha}\binom{\alpha}{\beta \:\gamma}\partial^\beta f\partial^\gamma g.$
+当$f,g$满足适当条件时, 一个有趣的证明是考虑Fourier变换,
+利用二项式展开先证明$\xi^\alpha (\widehat{f}\ast \widehat{g})=\sum_{\beta+\gamma=\alpha}\binom{\alpha}{\beta \:\gamma}(\xi^\beta \widehat{f})\ast (\xi^\gamma \widehat{g}),$
+再做Fourier逆变换即可.</p>
+<h3 id="基本空间"><a href="#基本空间" class="headerlink" title="基本空间"></a>基本空间</h3><p>取光滑函数空间$\mathscr{E}(\mathbb{R}^n)=C^\infty(\mathbb{R}^n),$
+拓扑规定为,
+若序列$\{\varphi_v\}\in C^\infty(\mathbb{R}^n)$满足$\,\forall\,K\Subset \mathbb{R}^n, \alpha \in \mathbb{N}^n,$
+$\sup_{x\in K}|\partial^\alpha \varphi_v|\rightarrow 0,$
+则称$\varphi_v\rightarrow 0(C^\infty(\mathbb{R}^n)).$
+这样的空间是拓扑线性空间, 可以看作有多个(半)模.
+元素趋于零需要求所有(可列多个)模均趋于零. 由于难以找到一个统一的模,
+因此它和Banach空间有所区别.</p>
+<p>取紧支撑光滑函数空间$\mathscr{D}(\mathbb{R}^n)=C_c^\infty(\mathbb{R}^n),$
+拓扑规定为,
+若序列$\{\varphi_v\}\in C_c^\infty(\mathbb{R}^n)$支集落在共同紧集$K$内,
+且$\,\forall\,\alpha\in \mathbb{N}^n,$
+$\sup_{x\in K}|\partial^\alpha \varphi_v|\rightarrow 0,$
+则称$\varphi_v\rightarrow 0(C_c^\infty(\mathbb{R}^n)).$</p>
+<p>取速降函数空间$\mathscr{S}(\mathbb{R}^n),$
+为满足$\lim\limits_{|x|\rightarrow \infty}x^\alpha\partial^p\varphi(x)=0,$
+$\,\forall\,\alpha,p\in \mathbb{N}^n$的光滑函数全体. 拓扑规定为,
+若序列$\{\varphi_v\}\in \mathscr{S}(\mathbb{R}^n)$满足$\,\forall\,\alpha,p\in \mathbb{N}^n,$
+$\sup_{x\in \mathbb{R}^n}|x^\alpha\partial^p \varphi_v(x)|\rightarrow 0,$
+则称$\varphi_v\rightarrow 0(\mathscr{S}(\mathbb{R}^n)).$</p>
+<p>速降函数的条件也可等价地改为有界, 或将$x^\alpha$替换为$(1+|x|^2)^k,$
+以便于处理. 速降函数空间的拓扑也类似. 和前两个空间一样,
+速降函数空间也关于卷积封闭.</p>
+<p>取$\varphi(x)=\begin{cases}
+                e^{\frac{1}{|x|^2-1} },&amp;|x|&lt;1\\
+                0,&amp;|x|\ge 1.
+            \end{cases},$
+$\alpha(x)=\frac{1}{\int_{\mathbb{R}^n} \varphi dx}\varphi(x).$
+令$\beta_R=1_{B_R}\ast \alpha,$
+则$\operatorname{supp}\beta_R\subset B_{R+1},$
+且$\beta_R|_{B_{R-1} }\equiv 1.$
+从而$\,\forall\,\varphi\in C^\infty(\mathbb{R}^n),$
+取$\varphi_\nu=\beta_\nu\varphi\in C_c^\infty(\mathbb{R}^n),$
+满足$\varphi_\nu\rightarrow \varphi(C^\infty(\mathbb{R}^n)).$
+因此$C_c^\infty(\mathbb{R}^n)$在$C^\infty(\mathbb{R}^n)$中稠密. 类似地,
+它在$\mathscr{S}(\mathbb{R}^n)$中也稠密.</p>
+<p>对于$\mathscr{D}(\mathbb{R}^n)\subset \mathscr{S}(\mathbb{R}^n)\subset \mathscr{E}(\mathbb{R}^n),$
+前面的空间在后面的空间中稠密, 而前面的拓扑比后面的拓扑强.</p>
+<h3 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h3><p>对$\Omega$上的函数$u(x),$ 称其<strong>局部可积</strong>,
+若其在任意紧集$K\Subset \Omega$上Lebesgue可积.
+取$\alpha_\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$
+令$u_\varepsilon=u\ast \alpha_\varepsilon.$
+若$u$局部可积则$u_\varepsilon$由定义, 满足如下定理:</p>
+<p><strong>定理 1.1</strong>. <em>若$u\in L_{loc}^1(\mathbb{R}^n),$ 则$u_\varepsilon\in C^\infty(\mathbb{R}^n).$ 当$\varepsilon\rightarrow 0$时, 若$u\in C^0(\mathbb{R}^n),$ 则$u_\varepsilon\rightarrow u(C^0(\mathbb{R}^n));$ 若$u\in L^p(\mathbb{R}^n),$ 则$u_\varepsilon\rightarrow u(L^p(\mathbb{R}^n)).$</em> </p>
+<p>前两个性质是易证的. 对$u\in L^p(\mathbb{R}^n)$的情况, 运用Lusin定理,
+找$v\in C_c(\mathbb{R}^n)$使得$|u-v|_{L^p}$充分小即可.
+过程中用到如下引理:</p>
+<p><strong>引理 1.2</strong> (Minkowski积分不等式). <em>$||f(x,y)|_{L_x^1}|_{L_y^p}\le ||f(x,y)|_{L_y^p}|_{L_x^1}.$</em> </p>
+<p><strong>证:</strong>
+只需证明(可能需要限制在子空间上)线性算子$\mathrm{id}:L_x^1L_y^p\rightarrow L_y^pL_x^1$是有界的,
+且$|\mathrm{id}|\le 1.$ 由泛函分析知识,
+赋范线性空间间的线性算子$A:X\rightarrow Y$是有界的当且仅当$A^\ast :Y^\ast \rightarrow X^\ast $是有界的,
+且有$|A|=|A^\ast |.$ 左推右是经典的命题, 右推左只需利用$A^{\ast \ast }$即可,
+它是$A$在$X^{\ast \ast }$上的延拓.</p>
+<p>因此考虑线性算子$\mathrm{id}^\ast :L_y^qL_x^\infty\rightarrow L_x^\infty L_y^q,$
+说明$|\mathrm{id}^\ast |\le 1$即可,
+即$\operatorname{ess}\operatorname{sup}_x|f(x,y)|_{L_y^q}\le |\operatorname{ess}\operatorname{sup}_x|f(x,y)||_{L_y^q},$
+然而这是显然的.</p>
+<p>若$||f(x,y)|_{L_x^1}|_{L_y^p}=\infty,$
+考虑用$g_n=(|f|\wedge n)\cdot 1_{B_n}$逼近,
+利用Levi单调收敛引理说明即可.</p>
+<p><strong>推论 1.3</strong>. <em>$|f\ast g|_{L^p}\le |f|_{L^p}|g|_{L^1}.$</em> </p>
+<p><strong>证:</strong>
+$|f\ast g|_{L^p} \le ||f(x-y)g(y)|_{L^1_y}|_{L^p_x}\le ||f(x-y)g(y)|_{L^p_x}|_{L^1_y}=|f|_{L^p}|g|_{L^1}.$</p>
+<p>由该推论, $|u_\varepsilon-v_\varepsilon|\le |u-v|$也充分小,
+而$|v-v_\varepsilon|$利用已有的性质也可以充分小, 定理得证.</p>
+<p>称线性算子$J_\varepsilon:L_{loc}^1(\mathbb{R}^n)\rightarrow C^\infty(\mathbb{R}^n),$
+$u\mapsto u_\varepsilon$为<strong>磨光算子</strong>,
+得到$u_\varepsilon$的过程称为<strong>正则化</strong>.
+定理说明$C^\infty(\mathbb{R}^n)$在$C^0(\mathbb{R}^n),L^p(\mathbb{R}^n)$中<em>稠密</em>,
+从而$C_c^\infty(\mathbb{R}^n), \mathscr{S}(\mathbb{R}^n)$也在其中稠密.</p>
+<p>一些简单的推论是,
+$J_\varepsilon\in \mathfrak{B}(L^p(\mathbb{R}^n)\rightarrow L^p(\mathbb{R}^n));$
+$u\in \mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)$时,
+$u_\varepsilon\rightarrow u(\mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)).$</p>
+<p>磨光算子的一个基本应用是对开集$\Omega,$ $\,\forall\,K\Subset \Omega,$
+$\,\exists\,\varphi\in C_c^\infty(\mathbb{R}^n),$
+$\operatorname{supp}\varphi\subset \Omega,$ $\varphi \in [0,1],$
+且$\varphi|_K\equiv 1.$ 取$\varepsilon=d(K,\Omega^c)&gt;0,$
+取$J_{\frac{\varepsilon}{4} } (1_{d(x,K)\le \frac{\varepsilon}{2} })$即可.</p>
+<h2 id="广义函数"><a href="#广义函数" class="headerlink" title="广义函数"></a>广义函数</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>称$\mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)$上的<em>线性连续泛函</em>为$\mathscr{D}’/\mathscr{S}’/\mathscr{E}’(\mathbb{R}^n)$广义函数.
+我们有关系式$\mathscr{D}’\supset \mathscr{S}’\supset \mathscr{E}’,$
+这里包含通过嵌入来看.
+如$\mathrm{id}:\mathscr{S}’\rightarrow \mathscr{D}’$不仅有意义,
+而且是单射.
+有意义是因为在$\mathscr{D}\subset \mathscr{S}\subset \mathscr{E}$中,
+前者拓扑强于后者; 单射通过前面的空间在后面的空间稠密保证.</p>
+<p>类似地, 可以在开集$\Omega$上定义$\mathscr{D}’,\mathscr{E}’$广义函数,
+但$\mathscr{S}’$广义函数只在$\mathbb{R}^n$上讨论.
+容易说明$L_{loc}^1\subset \mathscr{D}’,$
+而Dirac函数$\delta\in \mathscr{E}’.$</p>
+<p>我们知道在赋范线性空间上, 线性泛函有界$\Leftrightarrow$连续,
+但在拓扑线性空间上, 没有统一的模, 因此并没有”有界”的概念.
+不过类似的命题依然成立, 可以由”一些模”控制.</p>
+<p><strong>定理 1.4</strong>. <em>若$T\in \mathscr{D}’(\Omega),$ 则$\,\forall\,K\Subset \Omega,$ $\,\exists\,C(K)&gt;0,$ $m(K)\in \mathbb{N},$ 使得 <script type="math/tex">|\left<{}T,\varphi\right>|\le C(K)\sup_{x\in \Omega,|\alpha|\le m}|\partial^\alpha \varphi(x)|, \,\forall\,\varphi\in C_c^\infty(K)\subset C_c^\infty(\Omega).</script></em>  <em>反之若$T$为满足上述条件的线性泛函, 则它是连续的, $T\in \mathscr{D}’(\Omega).$</em> </p>
+<p><strong>证:</strong>
+定义$|\varphi|_\nu=\sup\limits_{x\in \Omega,|\alpha|\le \nu} |\partial^\alpha \varphi(x)|,$
+满足$|\varphi|_\nu\le |\varphi|_\mu,$ $\,\forall\,\nu\le \mu.$
+若$T\in \mathscr{D}’(\Omega)$不满足命题性质,
+则$\,\exists\,K\Subset \Omega,$ $\{\varphi_\nu\}\in C_c^\infty(K),$
+使得$|\left&lt;{}T,\varphi_\nu \right&gt;|&gt;\nu|\varphi_\nu|_\nu.$
+对$\varphi_\nu$做乘子使$|\left&lt;{}T,\varphi_\nu\right&gt;|=1,$
+则$|\varphi_\nu|_\nu&lt;\frac{1}{\nu}.$
+容易看出这样有$\varphi_\nu\xrightarrow{\mathscr{D} } 0,$
+但$|\left&lt;{}T,\varphi_\nu\right&gt;|\equiv 1,$
+$\left&lt;{}T,\varphi_\nu\right&gt;\not\rightarrow 0,$ 矛盾.</p>
+<p>反之若$T$为满足条件的线性泛函,
+$\,\forall\,\varphi_\nu\xrightarrow{\mathscr{D} } 0,$
+$\,\exists\,K$使得$\{\varphi_\nu\}\in C_c^\infty(K).$
+由条件有对应的$C(K),m(K),$
+使得$|\left&lt;{}T,\varphi_\nu\right&gt;|\le C|\varphi_\nu|_m\rightarrow 0.$
+因此$\left&lt;{}T,\varphi_\nu\right&gt;\rightarrow 0,$
+$T\in \mathscr{D}’(\Omega).$</p>
+<p><strong>定理 1.5</strong>. <em>若$T\in \mathscr{E}’(\Omega),$ 则$\,\exists\,K\Subset \Omega,$ $C&gt;0,$ $m\in \mathbb{N},$ 使得 <script type="math/tex">|\left<{}T,\varphi\right>|\le C\sup_{x\in K,|\alpha|\le m}|\partial^\alpha \varphi(x)|, \,\forall\,\varphi\in C^\infty(\Omega).</script></em>  <em>反之若$T$为满足上述条件的线性泛函, 则它是连续的, $T\in \mathscr{E}’(\Omega).$</em> </p>
+<p><strong>证:</strong> 取紧集$K_\nu=B_\nu\cap \{x:d(x,\Omega^c)\ge \frac{1}{\nu}\},$
+则$K_\nu$递增且$\bigcup K_\nu=\Omega.$ $\,\forall\,K\Subset \Omega,$
+$\,\exists\,N&gt;0,$ $\,\forall\,\nu&gt;N,$ $K\subset K_\nu.$</p>
+<p>定义$|\varphi|_\nu=\sup\limits_{x\in K_\nu,|\alpha|\le \nu} |\partial^\alpha \varphi(x)|,$
+满足$|\varphi|_\nu\le |\varphi|_\mu,$ $\,\forall\,\nu\le \mu.$
+同上一定理可证明$T\in \mathscr{E}’(\Omega)$时满足命题性质.</p>
+<p>反之若$T$为满足条件的线性泛函,
+$\,\forall\,\varphi_\nu\xrightarrow{\mathscr{E} } 0,$ 取使性质成立的$K,$
+那么$\sup_{x\in K}|\partial^\alpha\varphi(x)|\rightarrow 0,$
+$\,\forall\,\alpha\in \mathbb{N}^n.$
+因此$|\left&lt;{}T,\varphi_\nu\right&gt;|\le C\sup\limits_{x\in K,|\alpha|\le m}|\partial^\alpha\varphi_\nu(x)|\rightarrow 0.$
+因此$\left&lt;{}T,\varphi_\nu\right&gt;\rightarrow 0,$
+$T\in \mathscr{E}’(\Omega).$</p>
+<p>可以看出, $\mathscr{D}’,\mathscr{E}’$满足某种对偶关系:
+在$\mathscr{D}$中, 函数有紧支集, 收敛性要求有一共同紧集,
+因此其上的线性泛函连续性条件适当放宽,
+对不同紧集上的紧支撑函数分别满足某种有界性即可; 而在$\mathscr{E}$中,
+函数无紧支集, 收敛性要求对任意紧集满足一定条件即可,
+这导致其上线性泛函连续性条件变严格, 有界性需由一紧集控制,
+且要求对所有光滑函数一致地满足有界性.
+这便是$\mathscr{D}\subset \mathscr{E}\rightarrow \mathscr{D}’\supset \mathscr{E}’.$
+这种对偶关系在下一节会有更强的表现.</p>
+<h3 id="支集"><a href="#支集" class="headerlink" title="支集"></a>支集</h3><p>对广义函数来说, 它在特定点的取值意义不明确, 但可以谈论它在开集上的取值.
+对$T\in \mathscr{D}’(\Omega),$ 给一开集$\Omega’\subset \Omega,$
+若$\,\forall\,\varphi\in C_c^\infty(\Omega’),$
+$\left&lt;{}T,\varphi\right&gt;=0,$ 则称$T$在$\Omega’$上取零值.
+进一步称$T_1,T_2$在$\Omega’$上取值相同, 若$T_1-T_2$在$\Omega’$上取零值.
+因此若某个广义函数和一常义函数(诱导的线性连续泛函)在一开集上取值相同,
+则可以说该广义函数在该开集上等于这一常义函数.</p>
+<p>若常义函数点点取零则整体为零, 类似地若广义函数点点小邻域上取值为零,
+则整体取零. 证明上, 只需利用<em>单位分解定理</em>.
+对$\varphi\in C_c^\infty(\Omega),$
+取单位分解$\{\varphi_i\}$从属于覆盖$\operatorname{supp}\varphi$的有限个小邻域组成的开覆盖$\{O_i\}$.
+那么$\varphi_i \varphi\in C_c^\infty(O_i),$
+且在整个$\Omega$上$\sum_i \varphi_i\varphi=\varphi.$
+那么广义函数作用在$\varphi$上可分解到$\{O_i\}$上进行,
+再线性组合取值即可. 零值作和仍为零, 故广义函数在全空间上取零值.</p>
+<p>由这一性质, 广义函数在取零值的全体开集之并上仍取零值.
+而全体开集之并仍为开集, 因此可以定义广义函数取零值的最大开集.
+那么称该最大开集的补集为该广义函数的<strong>支集</strong>,
+记为$\operatorname{supp}T.$ 对连续函数$f(x),$
+容易看出其作为广义函数的支集与原本定义的支集是相同的.
+因此广义函数支集的定义是连续函数支集定义的延伸.</p>
+<p><strong>定理 1.6</strong>. <em>任意$T\in \mathscr{E}’(\Omega)$具紧支集; 反之任意具紧支集$T\in \mathscr{D}’(\Omega),$ $T$也在$\mathscr{E}’(\Omega)$中.</em> </p>
+<p><strong>证:</strong> 由上节定理, $\,\forall\,T\in \mathscr{E}’(\Omega),$
+$\,\exists\,K\Subset \Omega,$ $C&gt;0,$ $m\in \mathbb{N},$ 使得</p>
+<script type="math/tex; mode=display">|\left<{}T,\varphi\right>|\le C\sup\limits_{x\in K,|\alpha|\le m}|\partial^\alpha\varphi(x)|,\,\forall\,\varphi\in C^\infty(\Omega),</script><p>我们说明该$K$包含$T$的支集, 从而支集是紧的. 而这是容易的,
+因为只要$\operatorname{supp}\varphi\subset \Omega\setminus K,$
+不等式右端即为零, 从而迫使$T$在$\Omega\setminus K$上取零值, 支集在$K$内.</p>
+<p>反之, 若$T\in \mathscr{D}’(\Omega)$,
+我们希望将其定义域从$\mathscr{D}(\Omega)$延拓为$\mathscr{E}(\Omega),$
+为此需想办法将光滑函数改造为紧支撑的, 且不改变泛函取值.
+自然想到利用其支集即可. 记$\operatorname{supp}T=K\Subset \Omega$,
+那么取$K\Subset \Omega_1\Subset \Omega,$
+作$\zeta\in C_c^\infty(\overline{\Omega}_1),$
+$\zeta\in[0,1]$且$\zeta|_{\overline{O}_\delta(K)}\equiv 1.$</p>
+<p>对$\varphi\in C^\infty(\Omega),$
+定义$\left&lt;{}T,\varphi\right&gt;=\left&lt;{}T,\zeta\varphi\right&gt;,$
+$\zeta\varphi\in C_c^\infty(\overline{\Omega}_1).$ 需验证定义的合理性:
+若还有$\eta\in C_c^\infty(\overline{\Omega}_2),$
+$\eta\in [0,1]$且$\eta|_{\overline{O}_{\varepsilon}(K)}\equiv 1,$
+那么$\zeta-\eta\in C_c^\infty(\Omega \setminus K),$
+支集落在广义函数支集外,
+从而$\left&lt;{}T,\zeta\varphi\right&gt;-\left&lt;{}T,\eta\varphi\right&gt;=\left&lt;{}T,(\zeta-\eta)\varphi\right&gt;=0.$</p>
+<p>这样泛函就可以作用在$\varphi$上, 且由上节关于$\mathscr{D}’$的定理,</p>
+<script type="math/tex; mode=display">|\left<{}T,\varphi\right>|\le C|\zeta\varphi|_m\le C'\sup_{x\in \Omega_1,|\alpha|\le m}|\partial^\alpha\varphi|,</script><p>那么由关于$\mathscr{E}’$的定理,
+$T$改造为$\mathscr{E}$上线性泛函后也是连续的,
+即$T\in \mathscr{E}’(\Omega).$</p>
+<p>由此可见$\mathscr{D}’_c=\mathscr{E}’,$
+这与$\mathscr{D}=\mathscr{E}_c$构成对偶, 十分赏心悦目.
+可以看成为了让$\left&lt;{}T,\varphi\right&gt;$合理, 一侧条件弱时,
+另一侧条件要强. 证明中后半部分即是在说,
+为了让$T\in \mathscr{D}’_c$可以作用在$\mathscr{E}$中的$\varphi$上,
+只需考虑在$\varphi|_{\operatorname{supp}T}$部分上的作用即可,
+因为其余的部分落在支集外. 就具体操作而言, 不能直接进行限制,
+需要利用证明中的方法改造为具紧支集函数.</p>
+<p>事实上, 对(用于改造$\varphi$的)辅助函数$\zeta,$
+可以将要求替换为$\zeta|_K=1.$
+这是因为$\overline{O}_\delta(K)$的$\delta$可任意小,
+可以取到$\zeta_\delta\xrightarrow{\mathscr{D} }\zeta,$
+再利用线性泛函的连续性即可($T\in \mathscr{D}’$).</p>
+<p>文章最后更新于 2021-10-13 12:31:30 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《现代PDE基础》笔记(1)-广义函数</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-10-10 14:45:14</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/10/10/《现代PDE基础》笔记(1)-广义函数/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/10/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-3)-Poincar%C3%A9%E5%AF%B9%E5%81%B6%E4%B8%8EThom%E7%B1%BB/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/09/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%88%87%E4%B8%9B(1)/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《微分流形》第二章-切丛(1)</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E9%87%8D%E6%8C%87%E6%A0%87"><span class="nav-text">多重指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%A9%BA%E9%97%B4"><span class="nav-text">基本空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-text">正则化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-text">广义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%AF%E9%9B%86"><span class="nav-text">支集</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
