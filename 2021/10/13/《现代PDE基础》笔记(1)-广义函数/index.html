@@ -752,6 +752,10 @@ $T$改造为$\mathscr{E}$上线性泛函后也是连续的,
 
 <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
+		TeX: { 
+            equationNumbers: { autoNumber: "AMS" },
+            extensions: ["AMSmath.js", "AMSsymbols.js"]
+        },
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
             skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
@@ -762,6 +766,7 @@ $T$改造为$\mathscr{E}$上线性泛函后也是连续的,
         var all = MathJax.Hub.getAllJax();
         for (var i = 0; i < all.length; ++i)
             all[i].SourceElement().parentNode.className += ' has-jax';
+		$('.MathJax_Display').wrap("<div class='official'></div>");
     });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
