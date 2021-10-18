@@ -209,8 +209,34 @@
 
         <div class="article-content markdown-body">
             <h2 id="常义Fourier变换"><a href="#常义Fourier变换" class="headerlink" title="常义Fourier变换"></a>常义Fourier变换</h2><p>$\,\forall\,f\in \mathscr{S}(\mathbb{R}_x^n),$ 定义其<strong>Fourier变换</strong>为</p>
-<script type="math/tex; mode=display">F[f]=\int_{\mathbb{R}_x^n}f(x)e^{-ix\cdot \xi} dx.</script><p>对$g(\xi)\in\mathscr{S}(\mathbb{R}_\xi^n),$ 定义其<strong>Fourier逆变换</strong>为</p>
-<script type="math/tex; mode=display">F^{-1}g=\int_{\mathbb{R}_\xi^n}g(\xi)e^{ix\cdot \xi}d\hspace* {-0.08em}\bar{}\hspace* {0.1em}\xi.</script><p>文章最后更新于 2021-10-18 15:14:31 </p>
+<script type="math/tex; mode=display">F[f]=\int_{\mathbb{R}_x^n}f(x)e^{-ix\cdot \xi} dx;</script><p>对$g(\xi)\in\mathscr{S}(\mathbb{R}_\xi^n),$ 定义其<strong>Fourier逆变换</strong>为</p>
+<script type="math/tex; mode=display">F^{-1}g=\int_{\mathbb{R}_\xi^n}g(\xi)e^{ix\cdot \xi}\bar{d}\xi.</script><p>其中$\bar{d}\xi=\frac{1}{(2\pi)^n}d\xi.$ 也记$F[f]=\widehat{f}.$</p>
+<p>$F$满足如下性质:</p>
+<ol>
+<li><p>$F[f(x+h)]=\widehat{f}(\xi)e^{ih\xi};$</p>
+</li>
+<li><p>$F[f(x)e^{-ixh}]=\widehat{f}(\xi+h);$</p>
+</li>
+<li><p>$F[f(\delta x)]=\delta^{-1}\widehat{f}(\delta^{-1}\xi);$</p>
+</li>
+<li><p>$F[D_jf(x)]=\xi_j\widehat{f}(\xi);$</p>
+</li>
+<li><p>$F[x_jf(x)]=-D_j\widehat{f}(\xi).$</p>
+</li>
+</ol>
+<p>其中$D_j=\frac{1}{i}\partial x_j.$ 前三个命题是容易的,
+第四个命题即是分部积分, 最后一个命题难点在于说明$\widehat{f}$是可微的.
+对$\widehat{f}$做微商, 注意左式已经给出了我们期望的极限,
+因此证明它们的差趋于零即可. 用欧拉公式与微分中值定理即可给出简单的证明.
+这一性质告诉我们, $\widehat{f}\in C^\infty(\mathbb{R}_\xi^n).$ 进一步有:</p>
+<p><strong>定理 1.1</strong>. <em>$f\in \mathscr{S}(\mathbb{R}^n)$ $\Rightarrow$ $\widehat f\in \mathscr{S}(\mathbb{R}^n).$</em> </p>
+<p><strong>证:</strong> 注意到$\widehat{f}=F[f]$是有界的. 那么由前面的性质,
+$(-1)^{|\beta|}\xi^\alpha D^\beta\widehat{f}(\xi)=F[D^\beta(x^\alpha f(x))]$也是有界的.
+因此$\widehat f\in \mathscr{S}(\mathbb{R}^n).$</p>
+<p>接下来我们说明$F^{-1}$确实是$F$的逆. 首先由Fubini定理, 有如下命题:</p>
+<p><strong>命题 1.2</strong>. <em>$f,g\in \mathscr{S}(\mathbb{R}^n)$时, 有 <script type="math/tex">\int_{\mathbb{R}^n}f\widehat gdx=\int_{\mathbb{R}^n}\widehat fgdx.</script></em> </p>
+<p><strong>定理 1.3</strong> (Fourier逆变换). <em>$f\in \mathscr{S}(\mathbb{R}^n),$ $f=F^{-1}\circ F[f].$</em> </p>
+<p>文章最后更新于 2021-10-18 16:59:53 </p>
 
         </div>
 
@@ -531,20 +557,5 @@
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
