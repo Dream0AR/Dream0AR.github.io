@@ -220,9 +220,8 @@ $\alpha_\varepsilon(x-y)\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \alpha_\vareps
 因此$\left&lt;{}T,\alpha_\varepsilon(x-y)\right&gt;\rightarrow\left&lt;{}T,\alpha_\varepsilon(x_0-y)\right&gt;,$
 $T_\varepsilon(x)$为连续函数. 类似地,
 $\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \partial_k \alpha_\varepsilon(x,y),$
-从而
-$\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left&lt;{}T,\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\right&gt;\rightarrow\left&lt;{}T,\partial_k \alpha_\varepsilon(x,y)\right&gt;,$
-因此$T_\varepsilon(x)$关于$x_k$可导. 同理可证它有任意阶导数,
+从而有</p>
+<script type="math/tex; mode=display">\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left<{}T,\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\right>\rightarrow\left<{}T,\partial_k \alpha_\varepsilon(x,y)\right>,</script><p>因此$T_\varepsilon(x)$关于$x_k$可导. 同理可证它有任意阶导数,
 因此是光滑函数.</p>
 <p>当$T$为常义函数时, 泛函即为积分,
 因此对广义函数的正则化是对常义函数正则化的推广.
@@ -233,8 +232,8 @@ $\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left&lt;{}T,\f
 $\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$
 由于$\varphi$具紧支集, 可以用Riemann积分的方式来逼近式中的积分.
 然而将积分写成求和形式后,
-$\alpha_\varepsilon(x-y)$可以与$\varphi(x)$先行结合($\sum_i\alpha_\varepsilon(x_i-y)\varphi(x_i)\Delta x_i\xrightarrow{\mathscr{E} }\int_{\mathbb{R}_x^n}\alpha_\varepsilon(x-y)\varphi(x)dx.$),
-从而$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\left&lt;{}T,\varphi_\varepsilon\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+$\alpha_\varepsilon(x-y)$可以与$\varphi(x)$先行结合, 即</p>
+<script type="math/tex; mode=display">\sum_i\alpha_\varepsilon(x_i-y)\varphi(x_i)\Delta x_i\xrightarrow{\mathscr{E} }\int_{\mathbb{R}_x^n}\alpha_\varepsilon(x-y)\varphi(x)dx,</script><p>从而$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\left&lt;{}T,\varphi_\varepsilon\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;,$
 命题得证.</p>
 <p><strong>定理 1.3</strong>. <em>$T\in \mathscr{E}’(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{E}’} T.$</em> </p>
 <p><strong>证:</strong>
@@ -248,31 +247,29 @@ $\left&lt;{}T_\varepsilon,\zeta\varphi\right&gt;\rightarrow \left&lt;{}T,\zeta\v
 <script type="math/tex; mode=display">\left<{}T_\varepsilon,\zeta\varphi\right>=\left<{}T_\varepsilon,\varphi\right>\rightarrow \left<{}T,\varphi\right>=\left<{}T,\zeta\varphi\right>,</script><p>命题得证.</p>
 <h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><p>设$T\in\mathscr{D}’(\mathbb{R}^n),$
 定义$T$关于$x_k$的<strong>(广义)导数</strong>$\frac{\partial {}T}{\partial {}x_k}\in \mathscr{D}’(\mathbb{R}^n),$
-满足$\left&lt;{}\frac{\partial {}T}{\partial {}x_k},\varphi\right&gt;=-\left&lt;{}T,\frac{\partial {}\varphi}{\partial {}x_k}\right&gt;.$
-由分部积分公式, 当$T$为$C^1$函数时, 广义导数即为一般意义下的导数.
+满足</p>
+<script type="math/tex; mode=display">\left<{}\frac{\partial {}T}{\partial {}x_k},\varphi\right>=-\left<{}T,\frac{\partial {}\varphi}{\partial {}x_k}\right>.</script><p>由分部积分公式, 当$T$为$C^1$函数时, 广义导数即为一般意义下的导数.
 因此广义导数的概念是通常导数概念的推广. 特别地, 对于某些常义函数,
 它无法按照通常概念求导. 但将其视为广义函数,
 就可以得到广义函数空间中的广义导数, 这往往是十分有用的.</p>
-<p>类似地定义高阶导数$\left&lt;{}\partial^\alpha T,\varphi\right&gt;=(-1)^{|\alpha|}\left&lt;{}T,\partial^\alpha \varphi\right&gt;.$
-可见广义函数任意阶导数存在, 且混合偏导与顺序无关.</p>
+<p>类似地定义高阶导数</p>
+<script type="math/tex; mode=display">\left<{}\partial^\alpha T,\varphi\right>=(-1)^{|\alpha|}\left<{}T,\partial^\alpha \varphi\right>.</script><p>可见广义函数任意阶导数存在, 且混合偏导与顺序无关.</p>
 <p>一个有意思的例子是, 若$\operatorname{supp}T=\{0\},$
 则$T$只能是$\delta$及其导数的有限线性组合.
 证明通过对$\varphi$进行Taylor展开给出即可.</p>
 <h2 id="乘子"><a href="#乘子" class="headerlink" title="乘子"></a>乘子</h2><p>对$T\in \mathscr{D}’(\mathbb{R}^n),$ $\alpha\in C^\infty(\mathbb{R}^n),$
-定义$\alpha T\in \mathscr{D}’(\mathbb{R}^n)$为$\left&lt;{}\alpha T,\varphi\right&gt;=\left&lt;{}T,\alpha\varphi\right&gt;.$
-称$\alpha$为$\mathscr{D}’(\mathbb{R}^n)$的<strong>乘子</strong>.
+定义$\alpha T\in \mathscr{D}’(\mathbb{R}^n)$为</p>
+<script type="math/tex; mode=display">\left<{}\alpha T,\varphi\right>=\left<{}T,\alpha\varphi\right>.</script><p>称$\alpha$为$\mathscr{D}’(\mathbb{R}^n)$的<strong>乘子</strong>.
 类似地它也是$\mathscr{E}’(\mathbb{R}^n)$的乘子,
 但一般不见得是$\mathscr{S}(\mathbb{R}^n)$的乘子.</p>
 <p>类似于常义函数, 我们有Leibniz公式:</p>
 <script type="math/tex; mode=display">\partial^r(\alpha T)=\sum_{p+q=r} \frac{r!}{p!q!}(\partial^p \alpha \cdot \partial^q T).</script><h2 id="自变量变换"><a href="#自变量变换" class="headerlink" title="自变量变换"></a>自变量变换</h2><p>仿照$C_c^\infty$函数的自变量变换, 对$T\in \mathscr{D}’(\Omega_x),$
 给光滑同胚$\psi:\Omega_x\rightarrow \Omega_y,$
-定义$S\in \mathscr{D}’(O_y):$
-$\left&lt;{}S,\varphi\right&gt;=\left&lt;{}T,\det|\psi’|\varphi\circ\psi\right&gt;.$
-当$T$为常义函数时, $S(y)=T(\psi^{-1}(y)).$ 该定义自然也是通常定义的推广.</p>
+定义$S\in \mathscr{D}’(O_y):$</p>
+<script type="math/tex; mode=display">\left<{}S,\varphi\right>=\left<{}T,\det|\psi'|\varphi\circ\psi\right>.</script><p>当$T$为常义函数时, $S(y)=T(\psi^{-1}(y)).$ 该定义自然也是通常定义的推广.</p>
 <h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>对$f,g\in C_c^\infty(\mathbb{R}^n),$ 考虑$f\ast g$在$\varphi$上的作用,
-类比地定义广义积分间的卷积. 设$S,T$为广义函数, 定义<strong>卷积</strong>$S\ast T:$
-$\left&lt;{}S\ast T,\varphi\right&gt;=\left&lt;{}S_x,\left&lt;{}T_y,\varphi(x+y)\right&gt;\right&gt;,$
-$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$ 和常义函数一样,
+类比地定义广义积分间的卷积. 设$S,T$为广义函数, 定义<strong>卷积</strong>$S\ast T:$</p>
+<script type="math/tex; mode=display">\left<{}S\ast T,\varphi\right>=\left<{}S_x,\left<{}T_y,\varphi(x+y)\right>\right>,</script><p>$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$ 和常义函数一样,
 广义函数的卷积也不总是有意义的.
 当$S,T\in \mathscr{D}’(\mathbb{R}^n)$中至少一者在$\mathscr{E}’(\mathbb{R}^n)$中时,
 卷积有意义, $S\ast T\in \mathscr{D}’(\mathbb{R}^n).$</p>
@@ -304,7 +301,7 @@ $T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n)
 <p>前四个性质说明$\mathscr{E}’(\mathbb{R}^n)$关于通常的线性运算与卷积运算构成有单位元$\delta$的交换代数,
 称为<strong>卷积代数</strong>. 对函数的正则化有$f_\varepsilon=f\ast \alpha_\varepsilon,$
 类似地对广义函数的正则化也有$T_\varepsilon=T\ast \alpha_\varepsilon.$</p>
-<p>文章最后更新于 2021-10-17 21:50:12 </p>
+<p>文章最后更新于 2021-10-18 15:02:37 </p>
 
         </div>
 
@@ -625,20 +622,5 @@ $T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n)
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
