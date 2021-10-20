@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示 |
+            《微分流形》第二章-秩定理 |
         
         梦之居
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</span>
+            <span class="title-hover-animation">《微分流形》第二章-秩定理</span>
         </div>
 
         
@@ -168,7 +168,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-12 10:25:16
+        <i class="fas fa-edit"></i>&nbsp;2021-10-20 16:22:49
     </span>
     
         <span class="article-categories article-meta-item">
@@ -180,11 +180,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
                     </li>
                 
             </ul>
@@ -208,70 +208,44 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="整体角形式"><a href="#整体角形式" class="headerlink" title="整体角形式"></a>整体角形式</h2><p>在定向流形$M$上, 最高次形式是<strong>正的</strong>若它在$M$的定向类中.
-取$\sigma\in H^{n-1}(S^{n-1})$为生成元,
-$p:\mathbb{R}^n-\{0\}\rightarrow S^{n-1}$为形变收缩,
-规定$\sigma$在$S^{n-1}$上是正的当且仅当$dr\wedge p^\ast \sigma$在$\mathbb{R}^n-\{0\}$上是正的.</p>
-<p>设$\sigma$是$S^{k-1}$上正形式, 且$\int_{S^{k-1} }\sigma=1$,
-则$\psi=p^\ast \sigma$称为$\mathbb{R}^k-0$上的<strong>角形式</strong>.
-$[\psi]\in H^{k-1}(\mathbb{R}^k-\{0\})$为生成元.</p>
-<p>设$\rho(r)\in C^\infty[0,+\infty)$, $\rho(r)=\begin{cases}
-            -1&amp;r\le \delta_1\\
-            0&amp;r\ge \delta_2
-        \end{cases}$, $\delta_1&lt;\delta_2$, 中间部分光滑连接.
-$d\rho=\rho’(r)dr$是一个bump-1形式.</p>
-<p>这时, $[d\rho\wedge \psi]\in H_c^k(\mathbb{R}^k)$, 挖去$B_\varepsilon$,
-利用$\rho$性质与Stokes定理可证$\int_{\mathbb{R}^k}d\rho\wedge \psi=1$.
-即$[d\rho\wedge \psi]$为生成元.</p>
-<p>考虑$M$上秩$k$定向向量丛$\pi :E\rightarrow M$, $E^0=E-s(E)$,
-$s$为零截面. 设$\left&lt;{},\right&gt;$为度量, 对每条纤维上的向量$v$,
-定义$r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$. 那么$r$在$E$上有意义,
-$\rho(r)$可视为定义在$E$上的函数.</p>
-<p>称$E^0$的一个$k-1$-形式$\psi$为<strong>整体角形式</strong>,
-若$\psi$限制在每条纤维$E_x^0\simeq \mathbb{R}^k-\{0\}$上是角形式,
-并且$d\psi$能自然延拓成$E$的一个$k$-形式.</p>
-<p>若$E^0$上存在整体角形式$\psi$,
-则$E$的Thom类为$\Phi=d\rho\wedge\psi+\rho d\psi$.
-这是因为限制在纤维上第二项消失, 而第一项积分为$1$.</p>
-<h2 id="平面丛欧拉类的显示表示"><a href="#平面丛欧拉类的显示表示" class="headerlink" title="平面丛欧拉类的显示表示"></a>平面丛欧拉类的显示表示</h2><p>假定$E$是定向平面丛, 即秩为$2$. 取坐标图册与定向平凡化,
-在$U_\alpha$上有坐标$(x_1^\alpha,…,x_n^\alpha)$.</p>
-<p>利用定向平凡化, 定义$E^0|_{E_\alpha}$的极坐标$r_\alpha$,
-$\theta_\alpha$, 从而有坐标$\pi^\ast  x^\alpha, r_\alpha, \theta_\alpha$.
-假定$E$上度量保内积, 即转移函数约化到$SO(2)$, 则$r_\alpha=r_\beta$,
-我们定义了整体的$r$. 事实上这就是先前的$r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$.</p>
-<p>但$\theta_\alpha,\theta_\beta$相差一个旋转,
-可定义$\varphi_{\alpha\beta}$,
-使得$\theta_\beta=\theta_\alpha+\pi^\ast \varphi_{\alpha\beta}$.
-在$\mod 2\pi$意义下,
-$\varphi_{\alpha\beta}$满足cocycle条件以及可被唯一定义.</p>
-<p>因此若采用de Rham上同调, 则$\{d\varphi_{\alpha\beta}\}$满足cocycle条件.
-定义$\xi_\alpha=\frac{1}{2\pi} \sum_\gamma \rho_\gamma d\varphi_{\gamma\alpha}$,
-则在$U_{\alpha\beta}$上,
-$\frac{1}{2\pi}d\varphi_{\alpha\beta}=\xi_\beta-\xi_\alpha$.</p>
-<p>从而, $d\xi_\alpha=d\xi_\beta$, 可以拼成整体定义$2$-形式$e$:
-$e|_{U_\alpha}=d\xi_\alpha$. 显然$de=0$.
-断言$[e]\in H^2(M)$与$\{\xi_\alpha\}$选取无关,
-称之为平面丛$E$的<strong>欧拉类</strong>, 也记作$e(E)$.</p>
-<p>选取无关是因为倘若有另一个$\tilde \xi_\alpha$满足要求,
-那么$\tilde \xi_\alpha-\xi_\alpha$将满足相容性, 可以整体定义为$\eta$.
-那么$d\eta=d\tilde\xi_\alpha-d\xi_\alpha$, 从而在上同调层面它们是相等的.</p>
-<p>若给$E$一个定向平凡化, 假设约化到了$SO(2)=SU(1)$,
-则$\varphi_{\alpha\beta}=-\frac{1}{i}\log g_{\alpha\beta}$, 进一步
-$e|_{U_\alpha}=d\xi_\alpha=-\frac{1}{2\pi i}\sum_\gamma d(\rho_\gamma \cdot d\log g_{\gamma\alpha})$,
-称为<strong>平面丛欧拉类的显示表示公式</strong>.</p>
-<p>当$E$为乘积丛时, 转移函数为常值矩阵, 从而欧拉类为零.
-它反映出了定向向量丛$E$的扭曲程度. 由表示公式, 可以证明欧拉类的函子性:</p>
-<p><strong>命题 1.1</strong>. <em>$f:N\rightarrow M$为光滑映射, $\pi:E\rightarrow M$为秩2定向向量丛, 则$e(f^{-1}E)=f^\ast e(E)\in H^2(N)$.</em> </p>
-<h2 id="平面丛Thom类的显示表示"><a href="#平面丛Thom类的显示表示" class="headerlink" title="平面丛Thom类的显示表示"></a>平面丛Thom类的显示表示</h2><p>$\frac{d\theta_\alpha}{2\pi}-\pi^\ast \xi_\alpha$定义了$E^0$上的$1$-形式$\psi$.
-$\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
-为$E_x^0$的角形式; 同时$d\psi=-\pi^\ast e$在$E$上有定义, $\psi$是整体角形式.</p>
-<p>于是, $E$的Thom类为$\Phi=d\rho(r)\wedge \psi-\rho(r)\pi^\ast e$.
-若$s:M\rightarrow E$为零截面, 则$s^\ast \Phi=e$.
-即零截面把Thom类拉回为欧拉类.</p>
-<p>利用欧拉类的显式表示,
-即得$\Phi=d\rho(r)\wedge \frac{d\theta_\alpha}{2\pi}+\frac{1}{2\pi i}d(\rho(r)\pi^\ast \sum_\gamma\rho_\gamma d\log g_{\gamma\alpha})$.
-前一项形式非常直观, 而后一项是因为向量丛扭曲引起的修正项.</p>
-<p>文章最后更新于 2021-10-12 10:25:18 </p>
+            <h2 id="秩定理"><a href="#秩定理" class="headerlink" title="秩定理"></a>秩定理</h2><p><strong>定理 1.1</strong> (秩定理). <em>设光滑映照$F:M^m\rightarrow N^n$在$p$点邻域内秩为$k,$ 则$\,\exists\,$分别含$p,q=F(p)$的坐标系$(U,\varphi),(V,\psi),$ 使得$p,q$坐标为零且局部表示$\widehat{F}$为投影.</em> </p>
+<p><strong>证:</strong> 先取定一个坐标系使得$p,q$坐标为零, 记$\widetilde{U}=\varphi(U),$
+$\widetilde{V}=\varphi(V).$ 考虑$k=m\le n$的情形.
+取局部表示$\widehat{F}$的Jacobi矩阵$D\widehat{F},$
+不妨设其前$m$行在原点邻域是非退化的. 取</p>
+<script type="math/tex; mode=display">I_\varepsilon=\{(x^{m+1},\cdots,x^n)| |x^\gamma|\le \varepsilon, m+1\le \gamma\le n\}\subset \mathbb{R}^{n-m},</script><script type="math/tex; mode=display">\widetilde{\psi}:\widetilde{U}\times I_\varepsilon\rightarrow \widetilde{V}</script><script type="math/tex; mode=display">\begin{aligned}
+                \widetilde{\psi}^i(t)&=f^i(t^1,\cdots,t^m) &  1\le i\le m;\\
+                \widetilde{\psi}^i(t)&=t^i+f^i(t^1,\cdots,t^m) &  m+1\le i\le n.
+            \end{aligned}</script><p>那么容易说明$\widetilde{\psi}$的Jacobi矩阵非退化. 由反函数定理,
+不妨假设$\widetilde{\psi}$本身为微分同胚,
+那么当然$\widetilde{\psi}^{-1}$也是.</p>
+<p>考虑$\widetilde{\psi}^{-1}\circ\widehat{F},$
+它是$(U,\varphi),(V,\widetilde{\psi}\circ\psi)$的局部表示.
+它的Jacobi阵前$m$行为单位阵, 后$n-m$行为零. 结合其将原点映为原点的性质,
+该局部表示即为投影. 从$\widetilde{\psi}^{-1}$的原始定义出发同样可以说明.</p>
+<p>对$k=n$的情形, 构造合适的$\widetilde{\varphi}$即可. 对一般的情形,
+同时改造两侧的坐标系即可给出证明.</p>
+<p>特别地, 对该定理, 可以要求$\varphi(U)=C_\varepsilon^m(0),$
+$\psi(V)=C_\varepsilon^n(0).$
+$C_\varepsilon^r(0)$为$r$维$\varepsilon$边长的立方体.</p>
+<p>取$0\le k\le m,$ 对$a\in \varphi(U),$
+取$S=\{q\in U|x^i(q)=a^i, k+1\le i\le m\}.$ 赋予其诱导拓扑,
+使之成为$k$维拓扑流形.
+取$\widetilde{\varphi}=T\circ\varphi|_S:S\rightarrow T\circ\varphi(S)\subset \mathbb{R}^k$为同胚,
+$T$为投影. 那么其有坐标系$(S,\widetilde{\varphi}),$
+成为$k$维$C^\infty$流形, 称为$(U,\varphi)$的$k$维切片.</p>
+<p>因此秩定理说明, $F(U)$是$V$内的$k$维切片, 在$U,V$像取立方体时.</p>
+<h2 id="子流形"><a href="#子流形" class="headerlink" title="子流形"></a>子流形</h2><p>回忆曲线: $C:(a,b)\rightarrow \mathbb{R}^3,$ $C’(t)\neq 0,$
+即$r(C(t))=1;$</p>
+<p>曲面: $F:\Omega\subset \mathbb{R}^2\rightarrow \mathbb{R}^3,$
+$(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
+<p>一般地, 设$F:M^m\rightarrow N^n$为$C^\infty$映照. 若$F$每点秩为$m,$
+则称$(M,F)$为$N$中的<strong>浸入子流形</strong>. 如果$F$又是单射, 则称之为<strong>子流形</strong>.
+浸入子流形在局部考虑都是子流形. 包含映射当然是秩$m$的,
+因此$M$中开子集都是开子流形.</p>
+<p>注意(浸入)子流形指$(M,F)$对, 而非像.
+事实上有一个子流形与非子流形的浸入子流形像一致.</p>
+<p>文章最后更新于 2021-10-20 16:23:00 </p>
 
         </div>
 
@@ -279,11 +253,11 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</li>
+        <li>本文标题：《微分流形》第二章-秩定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-12 10:25:16</li>
+        <li>创建时间：2021-10-20 16:22:49</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/12/《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示/
+            本文链接：https://dream0ar.github.io/2021/10/20/《微分流形》第二章-秩定理/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -297,29 +271,14 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/10/13/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(1)-广义函数</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/10/10/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-3)-Poincar%C3%A9%E5%AF%B9%E5%81%B6%E4%B8%8EThom%E7%B1%BB/"
+                           href="/2021/10/19/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(8)-%E6%8E%A8%E5%B9%BF%E7%9A%84MV%E5%8E%9F%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</span>
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(8)-推广的MV原理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -525,7 +484,7 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E8%A7%92%E5%BD%A2%E5%BC%8F"><span class="nav-text">整体角形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E4%B8%9B%E6%AC%A7%E6%8B%89%E7%B1%BB%E7%9A%84%E6%98%BE%E7%A4%BA%E8%A1%A8%E7%A4%BA"><span class="nav-text">平面丛欧拉类的显示表示</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%9D%A2%E4%B8%9BThom%E7%B1%BB%E7%9A%84%E6%98%BE%E7%A4%BA%E8%A1%A8%E7%A4%BA"><span class="nav-text">平面丛Thom类的显示表示</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%A9%E5%AE%9A%E7%90%86"><span class="nav-text">秩定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">子流形</span></a></li></ol>
     </div>
 </div>
         </aside>
