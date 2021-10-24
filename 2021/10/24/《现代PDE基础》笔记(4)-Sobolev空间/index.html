@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《现代PDE基础》笔记(4)-Sobolev空间 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《现代PDE基础》笔记(4)-Sobolev空间</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-24 19:48:18
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><p>默认$\Omega\subset \mathbb{R}^n$为有界区域或外区域(有界区域闭包之补),
+边界为$C^\infty$子流形或$C^m$子流形. 对边界的光滑性要求由隐函数定理,
+等价于要求$\,\forall\,x\in \partial \Omega,$ $\,\exists\,$邻域$U\ni x,$
+$U\cap \partial\Omega$可由$x_j=\varphi(\widehat{x}_j)\in C^\infty/C^m$表示,
+$1\le j\le n.$</p>
+<p>对$m\in \mathbb{N},$ $1\le p\le \infty,$
+定义Sobolev空间$H^{m,p}(\Omega)$为满足条件</p>
+<script type="math/tex; mode=display">D^\alpha u\in L^p(\Omega),\quad |\alpha|\le m$$ 的广义函数$u$全体.
+配备范数
+$$\parallel u\parallel_{H^{m,p}(\Omega)}=\left(\sum_{|\alpha|\le m}\parallel D^\alpha u\parallel_{L^p(\Omega)}^p\right)^{\frac{1}{p} },\quad 1\le p<\infty,</script><script type="math/tex; mode=display">\parallel u\parallel_{H^{m,\infty}(\Omega)}=\max_{|\alpha|\le m}\parallel D^\alpha u\parallel_{L^\infty(\Omega)}.</script><p>由于$L^p(\Omega)$为Banach空间, 容易证明$H^{m,p}(\Omega)$也是Banach空间.
+回忆$C^\infty$在$L^p$中稠密,
+通过类似的方法可证$C^\infty(\overline{\Omega})$在$H^{m,p}(\Omega)$中稠密(当然$C^m(\overline{\Omega})$在$H^{m,p}(\Omega)$中也稠密).
+因此$H^{m,p}(\Omega)$可视为$C^\infty(\overline{\Omega})$在配备$\parallel\cdot\parallel_{H^{m,p}(\Omega)}$模下的完备化空间.</p>
+<h2 id="等价模定理"><a href="#等价模定理" class="headerlink" title="等价模定理"></a>等价模定理</h2><p>对$f\in H^{m,p}(\Omega),$ 定义基于$H^{m,p}(\mathbb{R}^n)$的模</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_{\Omega}=f}\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)},</script><p>$\widetilde{f}$即为$f$在$\mathbb{R}^n$上的延拓.
+显然对任意延拓$\widetilde{f},$
+$\parallel f\parallel_{H^{m,p}(\Omega)}\le \parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)},$
+因此$\parallel f\parallel_{H^{m,p}(\Omega)}\le \parallel f\parallel_{\widetilde{H}^{m,p}(\mathbb{R}^n)}.$
+而接下来我们证明能够找到常数使反过来的不等式也成立, 因此有如下定理:</p>
+<p><strong>定理 1.1</strong>. <em>$H^{m,p},\widetilde{H}^{m,p}$为等价模.</em> </p>
+<p><strong>证:</strong> 只需构造一个延拓$\widetilde{f},$
+使得$\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\Omega)},$
+$C=C(m,p,\Omega)$与$f$无关即可. 这样有</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{H^{m,p}(\Omega)}\le\parallel f\parallel_{\widetilde{H}^{m,p}(\Omega)}\le \parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\Omega)},</script><p>定理即证. 由于$C^m(\overline\Omega)$在$H^{m,p}(\Omega)$中稠密,
+不妨先对$f\in C^m(\overline{\Omega})$的情况进行讨论.</p>
+<p>我们采用Lions延拓的方法. $\,\forall\,x\in \overline{\Omega},$
+若$x\in \Omega,$ 取$O_\delta(x)\subset \Omega;$ 若$x\in \partial\Omega,$
+取$O_\delta(x)$使得$O_\delta(x)\cap \partial\Omega$可由$C^m$函数表示.
+那么$\{O_\delta(x)\}$构成$\overline{\Omega}$的开覆盖,
+有有限子覆盖$\{O_{\delta_i}(x_i)\}.$
+取从属于之的单位分解$\{\varphi_i\}.$ 那么由于$f=\sum_i \varphi_if,$
+只需对每个$\varphi_i f$做延拓$F_i.$ 由于$\varphi_i$仅与$\Omega$有关,
+$\,\exists\,C&gt;0$使得$\parallel\varphi_i f\parallel_{H^{m,p}(\Omega)}\le C\parallel f\parallel_{H^{m,p}(\Omega)}.$
+只需令延拓$F_i$满足$\parallel F_i\parallel_{H^{m,p}(\mathbb{R}^n)}\le C_i\parallel\varphi_i f\parallel_{H^{m,p}(\Omega)}$,
+这样取$\widetilde{f}=\sum_i F_i$即可.</p>
+<p>若$x_i\in \Omega,$ 则取$F_i$为$\varphi_i f$的零延拓即可;
+若$x_i\in \partial \Omega,$
+将$\partial \Omega\cap O_{\delta_i}(x_i)$展平,
+使$\Omega\cap O_{\delta_i}(x_i)$含于上半平面$\mathbb{H}$中,
+过程中$H^{m,p}$模不变. 取定$O_{\delta}(x)$时可要求附加条件:
+$\Omega^c\cap O_{\delta}(x)$展平后在下半平面的部分包含$\Omega\cap O_{\delta}(x)$的镜像对称.
+不然可以缩小$O_{\delta}(x)$在$\Omega$中的部分,
+尽管$O_{\delta}(x)$不再是球形邻域.</p>
+<p>依然用同样的符号来记展平后的各项元素. 不妨设展平是关于$x_1$的,
+记$y=(x_2,\cdots,x_n),$
+那么定义支撑在$O_{\delta_i}(x_i)$上(可做零延拓)的延拓</p>
+<script type="math/tex; mode=display">F_i(x_1,y)=\begin{cases}
+                \varphi_i f(x_1,y)&x_1\ge 0\\
+                 \sum_{j=0}^m C_j\varphi_if(-\lambda_j x_1,y)&x_1<0
+            \end{cases}.$$ 它在上下半平面分别都是$C^m$的,
+只需验证在$x_1=0$时在$x_1$方向上的正则性. 注意到
+只需要保证$\sum_{j=0}^m (-\lambda_j)^kC_j=1,$ $\,\forall\,0\le k\le m,$
+即有$F_i\in C^m(\mathbb{R}^n)\subset H^{m,p}(\mathbb{R}^n).$
+而由于$\det(-\lambda_j)^k$为范德蒙行列式,
+只要$\lambda_j>0$互异即有解$\{C_j\}.$
+因此延拓$F_i\in C^m(\mathbb{R}^n)$是可实现的.
+将其拉回到初始的$O_{\delta_i}(x_i),$ 做零延拓即可.
+
+这样对$f\in C^m(\Omega),$
+我们找到了合适的延拓$\widetilde{f}\in C^m(\mathbb{R}^n),$
+满足$\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\Omega)}.$
+一般地, 对$f\in H^{m,p}(\Omega),$ 有$f_i\xrightarrow{H^{m,p} } f.$
+此时依照同样的方法构造延拓,
+不难证明$\widetilde{f_i}\xrightarrow{H^{m,p} } \widetilde{f}.$
+因此依旧有$\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\mathbb{R}^n)}.$
+命题得证.
+
+事实上证明中令$j$从$1$开始计数即可. 这样虽然延拓是$C^{m-1}$的,
+但由于在$x_1=0$两侧是$C^m$的, 延拓$F_i$仍然是$m$阶广义可导的,
+且导数落在$L^p$空间中.
+
+Sobolev不等式
+-------------
+
+又称**嵌入定理**. 定义齐次Sobolev模
+$$|f|_{\dot{H}^{m,p}(\Omega)}=\left(\sum_{|\alpha|=m}\parallel\partial^\alpha f\parallel_{L^p(\Omega)}^p\right)^{\frac{1}{p} }.</script><p>做关于$x$的量纲分析: 将$x$替换为$kx,$ 多出常数$k^{\frac{n}{p}-m}.$
+与该式相匹配的元素关于$x$的量纲应同样为$\frac{n}{p}-m.$</p>
+<p><strong>定理 1.2</strong> (Sobolev不等式(嵌入定理)). <em>当$\frac{n}{p}=\frac{n}{q}-m$时, 有</em> </p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p(\Omega)}\le C|f|_{\dot{H}^{m,q}(\Omega)},\quad \,\forall\,f\in C_c^\infty(\Omega)</script><p><strong>证:</strong> 首先先做基本的观察, 让证明的结论变得尽可能简单. 假设$m\ge 2,$
+对$m-1$以下均有不等式成立, 那么</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^{p}(\Omega)}\le C_{m-1}|f|_{\dot{H}^{m-1,q_1}(\Omega)}.</script><p>记$g_\alpha=\partial^\alpha f,$ 那么</p>
+<script type="math/tex; mode=display">\parallel g_\alpha\parallel_{L^{q_1}(\Omega)}\le C_1|g_\alpha|_{\dot{H}^{1,q_2}(\Omega)}.</script><p>从而得到</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p(\Omega)}\le C_1C_{m-1}\sum_{\alpha}|g_\alpha|_{\dot{H}^{1,q_2}(\Omega)}\le C_m|f|_{\dot{H}^{m,q_2}(\Omega)},</script><p>$C_m$可取为$nC_1 C_{m-1}.$ 由于$\begin{cases}
+                \frac{n}{p}=\frac{n}{q_1}-m+1,\\
+                \frac{n}{q_1}=\frac{n}{q_2}-1.
+            \end{cases},$ 发现$q_2=q,$ 满足$\frac{n}{p}=\frac{n}{q}-m.$
+因此只需对$m=1$的情形证明即可.\
+接下来假设$q=1,$ $p=\frac{n}{n-1}$的情况已证明. 那么对一般的$p,q,$
+取$g=|f|^{\frac{p(n-1)}{n} },$ 我们有:</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p}^{\frac{p(n-1)}{n} }=\parallel g\parallel_{L^{\frac{n}{n-1} } }\le C|g|_{\dot{H}^{1,1} }=\widetilde{C}\sum_{j=1}^n\parallel|f|^{\frac{p(n-1)}{n}-1}\partial_jf\parallel_{L^1}\le \widetilde{\widetilde{C} }|f|_{\dot{H}^{1,q} }\parallel|f|^{\frac{p(n-1)}{n}-1}\parallel_{L^{q^\ast } }.</script><p>其中$q^\ast $满足$\frac{1}{q}+\frac{1}{q^\ast }=1.$
+结合$\frac{n}{p}=\frac{n}{q}-1,$ 我们有$q^\ast [\frac{p(n-1)}{n}-1]=p.$ 因此</p>
+<script type="math/tex; mode=display">\parallel|f|^{\frac{p(n-1)}{n}-1}\parallel_{L^{q^\ast } }=\parallel f\parallel_{L^{p} }^{\frac{p(n-1)}{n}-1},</script><p>将该项挪到不等式左侧, 便给出了一般情况下的证明. 从而只需考虑$q=1,$
+$p=\frac{n}{n-1}$的情形.\
+$n=1$时, $p=\infty,$
+需证$\parallel f\parallel_{L^\infty}\le C|f|_{\dot{H}^{1,1} }.$
+由于$\mathbb{R}^1$上的函数$f\in C_c^\infty(\Omega),$ 结论是显然的,
+取$C=1$甚至$\frac{1}{2}$即可. 对一般的$n,$ 假设$n-1$正确,
+记$y=(x_2,\cdots,x_n),$ 那么有:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+                \parallel f\parallel_{L^{\frac{n}{n-1} } }&=\left(\int_{\mathbb{R} }\int_{\mathbb{R}^{n-1} }|f(x_1,y)|^{\frac{n}{n-1} }dx_1dy\right)^{\frac{n-1}{n} }\\
+                &\le\left(\int_{\mathbb{R}^{n-1} }\int_{\mathbb{R} }|f(x_1,y)|dx_1\left(\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right)^{\frac{1}{n-1} }\right)^{\frac{n-1}{n} }\\
+                &\le \left|\left|\left(\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right)^{\frac{1}{n-1} }\right|\right|_{L^p(\mathbb{R}^{n-1}_y)}^{\frac{n-1}{n} }\left|\left|\int_{\mathbb{R} }|f(y_1,y)|dy_1\right|\right|_{L^q(\mathbb{R}^{n-1}_y)}^{\frac{n-1}{n} }
+            \end{aligned}</script><p>取$q=\frac{n-1}{n-2},$ 则$p=n-1.$ 应用假设, 有:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+                \parallel f\parallel_{L^{\frac{n}{n-1} } }&\le C\left|\left|\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right|\right|_{L^1(\mathbb{R}^{n-1}_y)}^{\frac{1}{n} }\left(\sum_{j=2}^m\left|\left|\partial_j\int_{\mathbb{R} }|f(y_1,y)|dy_1\right|\right|_{L^1(\mathbb{R}^{n-1}_y)}\right)^{\frac{n-1}{n} }\\
+                &\le C\parallel\partial_1 f\parallel_{L^1(\mathbb{R}^n)}^{\frac{1}{n} }\left(\sum_{j=2}^m\parallel\partial_j f\parallel_{L^1(\mathbb{R}^n)}\right)^\frac{n-1}{n}\\
+                &\le \widetilde{C}\sum_{j=1}^m \parallel\partial_j f\parallel_{L^1(\mathbb{R}^n)}=\widetilde{C}|f|_{\dot{H}^{1,1} }
+            \end{aligned}</script><p>最后一行不等号由Young不等式得到. 这样便给出了最终的证明.</p>
+<p>记$C_c^\infty(\Omega)$按$H^{m,q}$范数完备化得到的空间为$H_0^{m,q}(\Omega),$
+那么不等式对$H_0^{m,q}(\Omega)\cap L^p(\Omega)$中的函数也对. 特别地,
+当$\Omega=\mathbb{R}^n$时,
+$H_0^{m,q}(\mathbb{R}^n)$就是$H^{m,q}(\mathbb{R}^n).$</p>
+<p>文章最后更新于 2021-10-24 19:48:21 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《现代PDE基础》笔记(4)-Sobolev空间</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-10-24 19:48:18</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/10/24/《现代PDE基础》笔记(4)-Sobolev空间/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/23/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Forman%E6%9B%B2%E7%8E%87%E4%B8%8EOllivier%E6%9B%B2%E7%8E%87/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">论文笔记-Forman曲率与Ollivier曲率</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">基本定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E4%BB%B7%E6%A8%A1%E5%AE%9A%E7%90%86"><span class="nav-text">等价模定理</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
