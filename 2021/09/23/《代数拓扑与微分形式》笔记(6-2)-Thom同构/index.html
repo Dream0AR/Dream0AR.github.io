@@ -148,273 +148,198 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(6-2)-Thom同构</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.svg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">DreamAR</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-23 15:06:41
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <p>向量丛上的不变量: 紧垂直上同调, 由沿纤维积分给出.</p>
-<h2 id="向量丛-全空间-的紧上同调"><a href="#向量丛-全空间-的紧上同调" class="headerlink" title="向量丛(全空间)的紧上同调"></a>向量丛(全空间)的紧上同调</h2><p>若$s:M\rightarrow E$为零截面, 则它把$M$嵌入到$E$. $s(M)$为$E$的形变收缩,
-于是$H^\ast (E)\cong H^\ast (M)$. 那么受Poincaré引理启发, 对于紧上同调,
-是否有$H_c^\ast (E)\cong H_c^{\ast -n}(M)$? 但对开Möbius带就不成立.</p>
-<p>现在我们将具有有限好覆盖的流形称为<strong>有限型流形</strong>.</p>
-<p><strong>引理 1.1</strong>. <em>$\pi:E\rightarrow M$为秩$n$向量丛. 若$E,M$是可定向有限型流形, 则公式成立.</em> </p>
-<p>由Poincaré对偶转化为上同调的对偶空间, 再由同伦不变性即得.</p>
-<p>若$M$为有限型流形, 则$E$也是. 事实上, 若$M$可定向, $\pi$为可定向向量丛,
-则$E$也是可定向的. 只需利用$M$上的坐标函数$\psi_\alpha$,
-以及$E$的定向平凡化$\phi_\alpha$自然地构造$E$上的坐标函数即可.
-即$E$的坐标图册为
-$\{(E|_{U_\alpha},(\psi_\alpha\times \mathrm{id})\circ\phi_\alpha)\}$.
-容易验证其为定向的, 称为局部乘积定向.</p>
-<p>从而有如下命题:</p>
-<p><strong>命题 1.1</strong>. <em>若$M$为可定向有限型流形, $\pi:E\rightarrow M$为秩$n$可定向向量丛, 则$H_c^\ast (E)\cong H_c^{\ast -n}(M).$</em> </p>
-<p>事实上仿照后文Thom同构证明与MV方法, 可去掉$M$的可定向性假设.</p>
-<h2 id="紧垂直上同调与沿纤维积分"><a href="#紧垂直上同调与沿纤维积分" class="headerlink" title="紧垂直上同调与沿纤维积分"></a>紧垂直上同调与沿纤维积分</h2><p>记$\Omega^\ast _{cv}(E)$为垂直方向具紧支集的微分形式复形,
-即$\omega\in\Omega_{cv}^\ast (E)$当且仅当对任意紧集$K\subset M$,
-$\operatorname{supp}\omega\cap \pi^{-1}(K)$紧.
-称该微分形式<strong>在垂直方向具紧支集</strong>. $H_{cv}^\ast (E)$称<strong>紧垂直上同调</strong>.
-对这样的形式, 限制在$E_x$上具紧支集, 因此可沿纤维积分.</p>
-<p>记沿纤维积分$\pi_\ast :\Omega_{cv}^\ast (E)\rightarrow \Omega^{\ast -n}(M)$.
-先设$E$是平凡丛.
-将$\omega\in \Omega_{cv}^\ast (E)$分解为含$dt_1\wedge \cdots\wedge dt_n$的项和其他项的线性组合.
-令$\pi_\ast :\pi^\ast \phi\wedge f(x,t)dt_1\wedge \cdots\wedge dt_n\mapsto \phi\int_{\mathbb{R}^n}f(x,t)dt_1\cdots dt_n$,
-其它形式映为$0$. 事实上这就是以前记号的高维推广.</p>
-<p>对任意定向向量丛, 将$\pi_\ast \omega$在每个局部平凡化邻域做即可.
-但需要验证的是, 取两块$U_\alpha,U_\beta$与其上的坐标函数、平凡化,
-需要验证其上的$\pi_\ast \omega_\alpha, \pi_\ast \omega_\beta$可以拼起来.
-事实上这就是重积分的积分变换公式.</p>
-<p>当然, 也可直接在操作层面处理,
-利用单位分解将$\omega$分为在每个$U_\alpha$上支撑的$\omega_\alpha$的和,
-然后做$\pi_\ast$沿纤维积分即可. 接下来我们有:</p>
-<p><strong>命题 1.2</strong>. <em>$\pi_\ast$为链映射, 从而诱导紧垂直上同调间的映射.</em> </p>
-<p>对乘积丛$E=M\times \mathbb{R}^n$验证即可, 利用定义展开,
-和之前证明链同伦差不多.</p>
-<p><strong>命题 1.3</strong> (投射公式). <em>$\,\forall\,\tau\in\Omega^\ast (M)$, $\omega\in \Omega_{cv}^\ast (E)$, 则$\pi_\ast (\pi^\ast \tau\wedge \omega)=\tau\wedge \pi_\ast \omega$. 若$M$为$m$维定向流形, 设$\omega\in\Omega^{q}_{cv}(E)$, $\tau \in \Omega_c^{m+n-q}(M)$, $E$取局部乘积定向, 则$\int_E\pi^\ast \tau\wedge\omega=\int_M\tau\wedge\pi_\ast \omega.$</em> </p>
-<p>做简单的验证即好, 和之前的证明差不多, 将形式分为两个部分分别验证.</p>
-<p>后半命题将$M$单位分解即可, 证明要用到Fubini定理,
-就是在$E|_{U_\alpha}$上积分和先沿纤维积分再在$U_\alpha$上积分是一样的.</p>
-<h2 id="Thom同构"><a href="#Thom同构" class="headerlink" title="Thom同构"></a>Thom同构</h2><p>接下来将紧支集上的Poincaré引理证明照搬即可得到:</p>
-<p><strong>命题 1.4</strong> (紧垂直支集的Poincaré引理). <em>$\pi_\ast :H_{cv}^\ast (M\times \mathbb{R}^n)\cong H^{\ast -n}(M).$</em> </p>
-<p>接下来我们证明一般情形:</p>
-<p><strong>定理 1.1</strong> (Thom同构). <em>若$\pi:E\rightarrow M$为有限型流形$M$上秩$n$可定向向量丛, 则$H_{cv}^\ast (E)\cong H^{\ast -n}(M).$</em> </p>
-<p>证明用到$U\cup V$上的MV序列以及其上纤维$E|_{U\cup V}$的MV序列.
-其间由链映射$\pi_\ast$联系. 由五引理,
-Thom同构对$E|_U,E|_V,E|_{U\cap V}$成立, 则也对$E|_{U\cup V}$成立.
-从而归纳好覆盖开集个数, 由MV方法即得.</p>
-<p>记$\mathcal{T}:H^\ast (M)\rightarrow H_{cv}^{\ast +n}(E)$为$\pi_\ast$的逆,
-称其为Thom同构. 对$1\in H^0(M)$,
-$\Phi=\mathcal{T}(1)\in H_{cv}^n(E)$称为$E$的Thom类.</p>
-<p>$\mathcal{T}(\omega)=\mathcal{T}\pi_\ast (\pi^\ast \omega\wedge \Phi)=\pi^\ast \omega\wedge \Phi.$
-因为$\mathcal{T}\pi_\ast =\mathrm{id}$, $\pi_\ast \mathcal{T}(1)=1.$</p>
-<p><strong>命题 1.5</strong>. <em>$\Phi$是$H_{cv}^n(E)$的唯一上同调类, 限制在每个$E_x$上为$H_c^n(E_x)$生成元.</em> </p>
-<p><strong>证:</strong> $\pi_\ast \Phi=1$, $\pi_\ast \Phi(x)=\int_{E_x}\Phi(x,t)dt=1$,
-从而$\Phi|_{E_x}\in H_c^n(E_x)$是生成元.</p>
-<p>若$\Phi’$也满足该性质, 则$\pi_\ast \Phi’=1$.
-$\pi_\ast (\pi^\ast \omega\wedge\Phi’)=\omega$,
-$\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi’$,
-从而$\Phi’=\mathcal{T}(1)=\Phi.$</p>
-<p><strong>命题 1.6</strong>. <em>设$\pi_1:E\rightarrow M$, $\pi_2:E’\rightarrow M$为两定向向量丛, 则$\Phi(E\oplus E’)=\operatorname{pr}_1^\ast \Phi(E)\wedge \operatorname{pr}_2^\ast \Phi(E’)$.</em> </p>
-<p><strong>证:</strong> 取右式为$\Phi’$, 在$E_x\oplus E’_x$上积分发现为$1$,
-由上一命题的唯一性即得.</p>
-<p>事实上, $\Phi$也有函子性, 即$f:N\rightarrow M$为光滑映射,
-则$\Phi(f^{-1}E)=f^\ast \Phi(E)$, 证明留做习题. (确实是我们的习题)</p>
-<p>文章最后更新于 2021-09-23 15:07:12 </p>
-
-        </div>
-
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(6-2)-Thom同构</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-23 15:06:41</li>
-        <li>
-            本文链接：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-2)-Thom同构/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
-
-            </div>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/25/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(2)/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第一章-微分流形(2)</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2021/09/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-1)-%E5%90%91%E9%87%8F%E4%B8%9B%E5%9F%BA%E7%A1%80/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-1)-向量丛基础</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
-    </div>
-    
-
-        
-            
-    <div class="valine-container">
-        <script 
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script >
-            function loadValine() {
-                new Valine({
-                    el: '#vcomments',
-                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
-                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
-                    meta: ['nick', 'mail', 'link'],
-                    avatar: 'wavatar',
-                    enableQQ: true,
-                    placeholder: '欢迎交流讨论',
-                    lang: 'zh-CN'.toLowerCase()
-                });
-
-                function getAuthor(language) {
-                    switch (language) {
-                        case 'en':
-                            return 'Author';
-                        case 'zh-CN':
-                            return '博主';
-                        default:
-                            return 'Master';
-                    }
-                }
-
-                // Add "Author" identify
-                const getValineDomTimer = setInterval(() => {
-                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                    if (vcards.length > 0) {
-                        let author = 'DreamAR';
-
-                        if (author) {
-                            for (let vcard of vcards) {
-                                const vnick_dom = vcard.querySelector('.vhead .vnick');
-                                const vnick = vnick_dom.innerHTML;
-                                if (vnick === author) {
-                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                                }
-                            }
-                        }
-                        clearInterval(getValineDomTimer);
-                    } else {
-                        clearInterval(getValineDomTimer);
-                    }
-                }, 2000);
-            }
-
-            if ('false') {
-                const loadValineTimeout = setTimeout(() => {
-                    loadValine();
-                    clearTimeout(loadValineTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadValine);
-            }
-        </script>
-    </div>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
 
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-        
-    
-</div>
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-            </div>
-        
-    </div>
-</div>
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
+
+    }
+
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+  }
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 

@@ -148,279 +148,198 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第二章-切丛(1)</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.svg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">DreamAR</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-09 11:48:08
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <h2 id="切空间"><a href="#切空间" class="headerlink" title="切空间"></a>切空间</h2><p>回忆我们可以定义$C^\infty$曲线$C:(a,b)\rightarrow M,$ $C(t_0)=p.$
-$C_p^\infty$表示$M$上在$p$点$C^\infty$的函数全体,
-即其中元素均是点$p$某邻域上的光滑函数. $C_p^\infty$上函数可做运算,
-但是仅能在公共邻域上做运算.
-曲线$C(t)$在点$p$处”切向量”指方向导数算子$X:C_p^\infty\rightarrow \mathbb{R},$
-$X(f)=\frac{df\circ c(t)}{dt}|_{t=t_0},$ 满足:</p>
-<p>(1) $X(af+bg)=aX(f)+bX(g);$</p>
-<p>(2) $X(fg)=X(f)g(p)+f(p)X(g).$</p>
-<p>令$T_pM:=\{X\text{是过}p\text{的曲线的切向量}\},$
-称为$M$在$p$处的切空间.
-$\widetilde{T}_pM:=\{\widetilde X:C_p^\infty\rightarrow \mathbb{R}\text{满足(1),(2)}\}.$
-那么有$T_pM\subset \widetilde{T}_pM.$ $\widetilde{T}_pM$可引入加法,
-数乘使之成为向量空间.</p>
-<p>回忆对坐标卡$(U,\varphi),$ $\varphi$是流形间的光滑同胚.
-对$\varphi^{-1},$ 仅让$x^i$变化,
-即得光滑曲线$\varphi^{-1}(\cdots,x^i,\cdots),$ 称为$x^i$-曲线.
-过每点$q\in U$有$m$条坐标曲线.</p>
-<p>用$\left(\frac{\partial {} }{\partial {}x^i}\right)_p$表示$x_i$-曲线在$p$处切向量$X_i,$
-$X_i(f)=\frac{d}{dx^i}[f\circ \varphi^{-1}(\cdots, x^i,\cdots)]_{\varphi(p)}=[\frac{\partial {} }{\partial {}x^i}(f\circ\varphi^{-1})]_{\varphi(p)}.$
-$f\circ\varphi^{-1}:\varphi(U)\rightarrow \mathbb{R}.$
-从而$\left(\frac{\partial {} }{\partial {}x^i}\right)_p\in T_pM,$
-$1\le i\le m.$</p>
-<p><strong>命题 1.1</strong>. <em>$T_pM$是$m$维向量空间. $\{X_i\}$构成$T_pM$的一组基.</em> </p>
-<p><strong>证:</strong> 任取$X\in T_pM,$ $C:(a,b)\rightarrow M,$ $C(t_0)=p.$
-$C’(t_0)=X.$ $\varphi\circ C(t)=(x^i(t))$称为<strong>参数方程</strong>. 由定义,
-$X(f)=\frac{d}{dt}[f\circ C(t)]|_{t=t_0}=\frac{d}{dt}[(f\circ\varphi^{-1})(\varphi\circ C(t))]|_{t_0}=\sum_{i=1}^m \frac{dx^i(t)}{dt}|_{t_0}\cdot [\frac{\partial {} }{\partial {}x^i}(f\circ \varphi^{-1})]_{\varphi(p)}.$
-记$a^i=\frac{d x^i}{dt}|_{t_0},$ 那么$X(f)=\sum_{i=1}^m a^i X_i(f),$
-从而$X=\sum_{i=1}^m a^i X_i.$</p>
-<p>任给$\sum_{i=1}^m b^i X_i,$
-要找$C(t)$过$p$点使$\frac{dx^i(t)}{dt}|_{t_0}=b^i.$
-设$\varphi(p)=(d^i),$ 取$x^i(t)=d^i+b^i(t-t_0),$
-$C(t)=\varphi^{-1}(x^i(t))$即可. 那么$C’(t_0)=\sum_i b^iX_i.$
-进而即可说明$T_pM$是向量空间.</p>
-<p>只需再说明$\{X_i\}$线性无关. 设$\sum_{i=1}^m a^i X_i=0,$
-取$m$个只沿$x^i$方向增长的$f=x^i:=\pi^i\circ \varphi$试探,
-即可说明$a^i\equiv 0.$ 从而$T_pM$为$m$维向量空间.</p>
-<p><strong>注 1.2</strong>. <em>事实上, 有$T_pM=\widetilde{T}_pM.$</em> </p>
-<p>之前提到$C_p^\infty$中零元素不唯一, 因此并非向量空间.
-为此可以定义等价关系$f\sim g$ $\Leftrightarrow$ $\,\exists\,p$点邻域$W,$
-$f|_W=g|_W.$ 商空间$\mathcal{F}_p^\infty=C_p^\infty/\sim$为向量空间,
-称为<strong>函数芽空间</strong>.
-其上有诱导的$X:\mathcal{F}_p^\infty\rightarrow \mathbb{R},$
-即$X([f]):=X(f),$ $<a href="p">f</a>:=f(p).$ 它同样满足类似(1),(2)的性质.</p>
-<h2 id="余切空间"><a href="#余切空间" class="headerlink" title="余切空间"></a>余切空间</h2><p>设$V$为$m$维向量空间,
-$V^\ast =\{\text{linear }\omega:V\rightarrow \mathbb{R}\}$亦为$m$维向量空间,
-以对偶基为基. 对$m$维光滑流形$M^m,$ $T_pM$为切空间,
-$T_p^\ast M$表示其对偶空间, 称为$M$在$p$处<strong>余切空间</strong>.</p>
-<p>$X\in T_pM,$ $f\in C_p^\infty$有方向导数$X(f).$ 考虑固定$f$令$X$变化,
-记$\omega_f(X)=X(f),$
-那么$\omega_f:T_pM\rightarrow \mathbb{R}$为线性函数, 在$T_p^\ast M$中.
-记$\omega_f$为$(df)_p,$ 称为$f$在$p$点的<strong>微分</strong>.
-任取含$p$坐标系$(U,\varphi),$ 那么$\{(dx^i)_p\}\in T_p^\ast M,$
-为$\{X_i\}$的对偶基, 因此构成$T_p^\ast M$的基, 称为<strong>自然基</strong>.</p>
-<p>$\,\forall\,f\in C_p^\infty,$
-$(df)_p=\sum_{i=1}^m a_i(dx^i)_p\in T_p^\ast M.$ 两边作用$X_j,$
-得$X_j(f)=a_j.$ 因此有$(df)_p=\sum_{i=1}^m X_i(f)(dx^i)_p.$
-由此也可以看出称其为微分的原因.</p>
-<p><strong>注 1.3</strong>. <em>若$f\sim g\in C_p^\infty,$ 那么$X(f)=X(g),$ 从而$(df)_p=(dg)_p.$ 那么记$\tau:\mathcal{F}_p^\infty\rightarrow T_p^\ast M,$ $\tau([f])=(df)_g$ 是线性满的. $\widehat{\tau}:\mathcal{F}_p^\infty/\ker(\tau)\cong T_p^\ast M$为线性同构, $\ker(\tau)=\{[f]\in \mathcal{F}_p^\infty|\tau([f])=(df)_p=0\}.$ 因此对余切空间的另一种定义方式就是函数芽空间做商空间, 然后再对偶来定义切空间.</em> </p>
-<h2 id="切丛"><a href="#切丛" class="headerlink" title="切丛"></a>切丛</h2><p>取$TM=\bigcup_{p\in M}T_pM,$ 称为$M$的切丛. 引入$\pi:TM\rightarrow M,$
-$\pi(T_pM)\rightarrow p,$ 称为<strong>自然投影</strong>.
-任取坐标卡$(U,\varphi; x^i),$ 考察$\pi^{-1}(U).$ $\,\forall\,q\in U,$
-$T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
-从而有<script type="math/tex">\widehat{\Phi}:\pi^{-1}(U)\xrightarrow{\Phi}U\times \mathbb{R}^m\xrightarrow{ \varphi\times \mathrm{id}_{\mathbb{R}^m} }\varphi(U)\times \mathbb{R}^m,</script>
-其中$\Phi(X)=(\pi(X),\xi),$ $X=\sum_{i=1}^m \xi^i X_i.$</p>
-<p>赋予$TM$自然拓扑结构, 使得$\pi^{-1}(U)$是$TM$的开子集,
-且$\widehat\Phi:\pi^{-1}(U)\rightarrow \varphi(U)\times \mathbb{R}^m$为同胚.
-令所有$\pi^{-1}(U_i)$的开子集构成生成$TM$的拓扑基即可.
-那么$TM$成为$2m$维拓扑流形.</p>
-<p>此时$\widehat{\mathcal{F} }=[\{(\pi^{-1}(U_\alpha),\widehat{\Phi}_\alpha)\}]$为$TM$坐标图册,
-转移函数$\widehat{\Phi}_\beta\circ \widehat{\Phi}_\alpha^{-1}(x,\xi)=(\varphi_{\beta}\circ\varphi_{\alpha}^{-1}(x),J(\varphi_\beta\circ\varphi_\alpha^{-1})\xi)$为光滑函数,
-因此图册是光滑的, 故切丛$TM$为$2m$维$C^\infty$流形.</p>
-<p>文章最后更新于 2021-10-09 12:26:27 </p>
-
-        </div>
-
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：《微分流形》第二章-切丛(1)</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-09 11:48:08</li>
-        <li>
-            本文链接：https://dream0ar.github.io/2021/10/09/《微分流形》第二章-切丛(1)/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
-
-            </div>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/10/10/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-3)-Poincar%C3%A9%E5%AF%B9%E5%81%B6%E4%B8%8EThom%E7%B1%BB/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2021/10/09/%E3%80%8A%E5%87%A0%E4%BD%95%E6%B5%8B%E5%BA%A6%E8%AE%BA%E5%AF%BC%E8%AE%BA%E3%80%8B%E8%AE%B2%E4%B9%89%E7%AC%94%E8%AE%B0(1.1)-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何测度论导论》讲义笔记(1.1)-基本概念</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
-    </div>
-    
-
-        
-            
-    <div class="valine-container">
-        <script 
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script >
-            function loadValine() {
-                new Valine({
-                    el: '#vcomments',
-                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
-                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
-                    meta: ['nick', 'mail', 'link'],
-                    avatar: 'wavatar',
-                    enableQQ: true,
-                    placeholder: '欢迎交流讨论',
-                    lang: 'zh-CN'.toLowerCase()
-                });
-
-                function getAuthor(language) {
-                    switch (language) {
-                        case 'en':
-                            return 'Author';
-                        case 'zh-CN':
-                            return '博主';
-                        default:
-                            return 'Master';
-                    }
-                }
-
-                // Add "Author" identify
-                const getValineDomTimer = setInterval(() => {
-                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                    if (vcards.length > 0) {
-                        let author = 'DreamAR';
-
-                        if (author) {
-                            for (let vcard of vcards) {
-                                const vnick_dom = vcard.querySelector('.vhead .vnick');
-                                const vnick = vnick_dom.innerHTML;
-                                if (vnick === author) {
-                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                                }
-                            }
-                        }
-                        clearInterval(getValineDomTimer);
-                    } else {
-                        clearInterval(getValineDomTimer);
-                    }
-                }, 2000);
-            }
-
-            if ('false') {
-                const loadValineTimeout = setTimeout(() => {
-                    loadValine();
-                    clearTimeout(loadValineTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadValine);
-            }
-        </script>
-    </div>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
 
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-        
-    
-</div>
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-            </div>
-        
-    </div>
-</div>
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
+
+    }
+
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+  }
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 

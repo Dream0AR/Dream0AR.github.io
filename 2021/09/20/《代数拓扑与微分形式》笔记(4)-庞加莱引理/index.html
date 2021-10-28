@@ -148,319 +148,198 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(4)-庞加莱引理</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.svg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">DreamAR</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-20 16:38:24
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <h2 id="de-Rham上同调的Poincare引理"><a href="#de-Rham上同调的Poincare引理" class="headerlink" title="de Rham上同调的Poincaré引理"></a>de Rham上同调的Poincaré引理</h2><p>本节我们希望证明,
-$H^\ast (\mathbb{R}^n\times \mathbb{R}^1)\cong H^\ast (\mathbb{R}^n)$.</p>
-<p>我们记$\pi:\mathbb{R}^n\times \mathbb{R}^1\rightarrow \mathbb{R}^n$为投射,
-$s:\mathbb{R}^n\rightarrow \mathbb{R}^n\times \mathbb{R}^1$为零截面,
-即$\pi(x,t)=x$, $s(x)=(x,0)$, $x\in \mathbb{R}^n$.
-我们有$\pi\circ s=\mathrm{id}\Rightarrow s^\ast \circ\pi^\ast =\mathrm{id}.$
-但是$s\circ\pi \neq \mathrm{id}$,
-不过确实有$\pi^\ast \circ s^\ast =\mathrm{id}$.</p>
-<p>为了证明这一点, 类似代数拓扑中引入$D$,
-我们引入<strong>同伦算子</strong>$K:\Omega^\ast (\mathbb{R}^n\times \mathbb{R}^1)\rightarrow \Omega^{\ast -1}(\mathbb{R}^n\times \mathbb{R}^1).$
-若$\mathrm{id}-\pi^\ast \circ s^\ast =\pm (dK \pm Kd)$,
-则称$K$为同伦算子,
-记$\pi^\ast \circ s^\ast \simeq \mathrm{id}$<strong>链同伦</strong>.</p>
-<p>链同伦的两个映射作用到上同调群中的元素$\omega$上时, 因为$d\omega=0$,
-只剩$\pm dK\omega$项, 是恰当形式. 因此两个映射在同调意义下相同,
-从而$\pi^\ast \circ s^\ast =id$.</p>
-<p>将$\Omega^\ast (\mathbb{R}^n\times \mathbb{R}^1)$中的元素线性拆分为$\pi^\ast \phi\cdot f(x,t)$(无$dt$项),
-和$\pi^\ast \phi\wedge f(x,t)dt$(含$dt$项).
-$\phi\in \Omega^\ast (\mathbb{R}^n)$.
-现令$K:\pi^\ast \phi\cdot f(x,t)\mapsto 0, \pi^\ast \phi\wedge f(x,t)dt\mapsto \pi^\ast \phi\cdot \int_0^tf(x,u)du$.</p>
-<p><strong>引理 1.1</strong>. <em>$K$为同伦算子.</em> </p>
-<p>计算$(\mathrm{id}-\pi^\ast s^\ast )$和$dK-Kd$作用在$\omega$上的值,
-由线性性分别考虑上述两种情况,
-得到$\mathrm{id}-\pi^\ast s^\ast =(-1)^{q-1}(dK-Kd)$即可.
-式子比较长但计算比较简单, 需要注意符号.</p>
-<p>从而, 我们有:</p>
-<p><strong>命题 1.2</strong>. <em>$\pi^\ast$, $s^\ast$互为同构, $H^\ast (\mathbb{R}^n\times \mathbb{R}^1)\cong H^\ast (\mathbb{R}^n)$.</em> </p>
-<p>以及推论:</p>
-<p><strong>推论 1.3</strong>. <em>$H^q(\mathbb{R}^n)=H^q(\ast )=             \begin{cases}                 \mathbb{R}, \quad &amp;q=0\\                 0, &amp;q\neq 0             \end{cases}$, 这里$\ast =\mathbb{R}^0$, 即单点空间.</em> </p>
-<p>更一般的, 我们有如下定理:</p>
-<p><strong>定理 1.4</strong> (de Rham 上同调同伦公理). <em>$M,N$为光滑流形, $f,g$是光滑同伦的两个从$M$到$N$的光滑映射, 则$f^\ast =g^\ast$.</em> </p>
-<p><strong>证</strong> 取$F:M\times I\rightarrow N$ 为光滑同伦,
-$\,\forall\,\omega\in \Omega^q(N)$,
-$F^\ast \omega\in \Omega^q(M\times I)$.
-局部将$F^\ast \omega$分解为$F^\ast \omega=\omega_1+\omega_2\wedge dt$,
-$\omega_1,\omega_2$分别是$q,q-1$形式.</p>
-<p>仿照之前的构造方法, 构造$K$把$\omega$映为$0$,
-把$\omega_2$中的函数项关于$t$积分. 这时再利用$F(x,0)=f(x)$,
-$F(x,1)=g(x)$, 利用简单的Leibnitz法则证明下式即可:</p>
-<script type="math/tex; mode=display">dK(F^\ast \omega)\pm Kd(F^\ast \omega)=g^\ast \omega-f^\ast \omega.</script><p>注意$dF^\ast =F^\ast d$, 因此上式成立意味着$KF^\ast$是同伦算子,
-$g^\ast \simeq f^\ast$, 在同调群意义下相等.</p>
-<p><strong>推论 1.5</strong>. <em>同伦等价的两个流形有相同的de Rham上同调.</em> </p>
-<p>特别地, 有:</p>
-<p><strong>推论 1.6</strong>. <em>若$A$为$M$的形变收缩, 则$A$与$M$有相同的de Rham上同调.</em> </p>
-<h2 id="紧上同调的Poincare引理"><a href="#紧上同调的Poincare引理" class="headerlink" title="紧上同调的Poincaré引理"></a>紧上同调的Poincaré引理</h2><p>类似地, 对于紧上同调, 我们希望证明:
-$H^\ast _c(\mathbb{R}^n\times \mathbb{R}^1)\cong H^{\ast -1}_c(\mathbb{R}^n).$
-此时$\pi^\ast$不再能保持紧支集, 我们需要考虑一个新的映射$\pi_\ast$.</p>
-<p>$\,\forall\,\omega\in \Omega^\ast _c(M\times \mathbb{R}^1)$,
-将其按是否含$dt$项分为两种形式的线性组合,
-即$\pi^\ast \phi\cdot f(x,t)$与$\pi^\ast \phi\wedge f(x,t)dt$,
-其中$\phi\in \Omega^\ast (M)$,
-$f(x,t)\in C_c^\infty (M\times \mathbb{R}^1)$.
-我们定义$\pi_\ast :\phi\cdot f(x,t)\mapsto 0$,
-$\phi\wedge f(x,t)dt\mapsto \phi\cdot\int_{\mathbb{R}^1}f(x,t)dt$.</p>
-<p>经过简单的验证发现$d\pi_\ast =\pi_\ast d$是链映射,
-从而可以诱导$\pi_\ast : H^q_c(M\times \mathbb{R}^1)\rightarrow H^{q-1}_c(M)$.
-我们接下来找它的逆映射$e_\ast$.</p>
-<p>定义$e_\ast :\Omega^q_c(M)\rightarrow \Omega_c^{q+1}(M\times \mathbb{R}^1)$,
-$e_\ast (\phi)=\pi^\ast \phi \wedge e$,
-其中$e=e(t)dt\in \Omega_c^1(\mathbb{R}^1)$,
-$\int_{\mathbb{R}^1}e(t)dt=1$(如 bump 1-形式). 容易验证它也是链映射,
-诱导了紧上同调群上的映射.</p>
-<p>接下来就有如下命题:</p>
-<p><strong>命题 1.7</strong>. <em>$\pi_\ast \circ e_\ast =\mathrm{id}$, $e_\ast \circ \pi_\ast \simeq \mathrm{id}$</em> </p>
-<p><strong>证</strong> 第一部分显然, 主要需要构造同伦算子$K$连接$e_\ast$与$\pi_\ast$.</p>
-<p>定义$K:\pi^\ast \phi\cdot f(x,t)\mapsto 0$,
-$\pi^\ast \phi\wedge f(x,t)dt\mapsto \pi^\ast \phi\cdot \int_{-\infty}^{t}f(x,u)du-\pi^\ast \phi\cdot A(t)\cdot \int_{\mathbb{R}^1}f(x,t)dt$,
-其中$A(t)=\int_{-\infty}^t e(u)du$.</p>
-<p>验证$id-e_\ast \circ \pi_\ast =(-1)^{q-1}(dK-Kd)$即可, 注意利用紧性,
-很多积分积出来为$0$.</p>
-<p>从而得到下面的命题:</p>
-<p><strong>命题 1.8</strong>. <em>$\pi_\ast ,e_\ast$互为逆映射, $H_c^\ast (M\times \mathbb{R}^1)\cong H_c^{\ast -1}(M)$</em> </p>
-<p>以及推论:</p>
-<p><strong>推论 1.9</strong>. <em>$H^q(\mathbb{R}^n)=\begin{cases}                 \mathbb{R}, \quad &amp;q=n\\                 0, &amp;q\neq n             \end{cases}$.</em> </p>
-<p>通过$0$-形式的生成元$1$,
-可以用$e_\ast$依次找到$n$-形式生成元$e(x_1)\cdots e(x_n){} dx_{1}\wedge\cdots\wedge{} dx_{ {}n}$,
-是$\mathbb{R}^n$上的一个bump $n$-形式, 紧支集可任意小.</p>
-<h2 id="逆紧映射的度"><a href="#逆紧映射的度" class="headerlink" title="逆紧映射的度"></a>逆紧映射的度</h2><p>接下来是紧支集Poincaré引理的应用, 给出了逆紧映射的光滑不变量.</p>
-<p>若$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$光滑逆紧,
-则有拉回$f^\ast :\Omega^\ast _c(\mathbb{R}^n)\rightarrow \Omega^\ast _c(\mathbb{R}^n)$,
-诱导$f^\ast :H^\ast _c(\mathbb{R}^n)\rightarrow H^\ast _c(\mathbb{R}^n)$有定义.</p>
-<p>取$[\alpha]\in H^n_c(\mathbb{R}^n)$为生成元,
-$\int_{\mathbb{R}^n}\alpha =1$, $f^\ast [\alpha]=c[\alpha]$,
-$c$称为$f$的度, 记作$\deg f$.
-易见$\deg f=\int_{\mathbb{R}^n} f^\ast \alpha$. 令人意外的,
-$\deg f\in \mathbb{Z}$.</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>首先给几个微分几何中的定义:</p>
-<p>若$f:\mathbb{R}^m\rightarrow \mathbb{R}^n$为光滑映射,
-则其诱导了$f_{\ast p}:T_p\mathbb{R}^m\rightarrow T_{f(p)}\mathbb{R}^n$为切映射.
-若其非满, 则称$p$为临界点, $f(p)$为临界值.
-$\mathbb{R}^n$中其余点都是正则值.</p>
-<p><strong>命题 1.10</strong>. <em>若$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$非满, 则$\deg f=0$.</em> </p>
-<p><strong>证</strong> $f$逆紧, 从而$f(\mathbb{R}^n)$闭,
-$\mathbb{R}^n-f(\mathbb{R}^n)$开.
-存在开集$U\subset \mathbb{R}^n-f(\mathbb{R}^n)$.
-令生成元$[\alpha]$支集在$U$中, 则$f^\ast \alpha=0$, $\deg f=0$.</p>
-<p>之后首先先承认一个定理:</p>
-<p><strong>定理 1.11</strong> (Sard 定理). <em>对任意正整数$m,n$, 临界值集是$\mathbb{R}^n$零测集.</em> </p>
-<p>接下来证明主命题: $\deg f\in \mathbb{Z}$.</p>
-<p><strong>证</strong> 设$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$满, 由Sard定理,
-$f(\mathbb{R}^n)$中几乎处处为正则值. 设$q\in f(\mathbb{R}^n)$为正则值.</p>
-<p>$\,\forall\,p\in f^{-1}(q)$, $f_{\ast p}$是满线性映射, 从而为同构.
-由反函数定理, $f$在$p$点附近微分同胚. 于是$f^{-1}(q)$为离散点集.
-又$f$逆紧, $q$点逆像紧, 从而$f^{-1}(q)$为有限点集,
-记为$f^{-1}(q)=\{p_1,…,p_N\}$.</p>
-<p>对每个$p_i$, 取$U_i\approx f(U_i)$, 使得$U_i\cap U_j=\varnothing$.
-取$\alpha \in \Omega_c^n(\mathbb{R}^n)$支集在$\bigcap_i f(U_i)$里.
-从而$\operatorname{supp}f^\ast \alpha\subset \bigcup U_i$.</p>
-<p>$\int_{U_i}f^\ast \alpha=\pm \int_{f(U_i)} \alpha=\pm 1$,
-符号由微分同胚Jacobi正负号决定.
-于是$\int_{\mathbb{R}^n} f^\ast \alpha=\sum_{f^{-1}(q)}\pm 1\in \mathbb{Z}$.</p>
-<p>文章最后更新于 2021-09-20 16:39:03 </p>
-
-        </div>
-
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(4)-庞加莱引理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-20 16:38:24</li>
-        <li>
-            本文链接：https://dream0ar.github.io/2021/09/20/《代数拓扑与微分形式》笔记(4)-庞加莱引理/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
-
-            </div>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-1)-MV%E6%96%B9%E6%B3%95/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(5-1)-MV方法</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2021/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(3)-MV%E5%BA%8F%E5%88%97/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(3)-MV序列</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
-    </div>
-    
-
-        
-            
-    <div class="valine-container">
-        <script 
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script >
-            function loadValine() {
-                new Valine({
-                    el: '#vcomments',
-                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
-                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
-                    meta: ['nick', 'mail', 'link'],
-                    avatar: 'wavatar',
-                    enableQQ: true,
-                    placeholder: '欢迎交流讨论',
-                    lang: 'zh-CN'.toLowerCase()
-                });
-
-                function getAuthor(language) {
-                    switch (language) {
-                        case 'en':
-                            return 'Author';
-                        case 'zh-CN':
-                            return '博主';
-                        default:
-                            return 'Master';
-                    }
-                }
-
-                // Add "Author" identify
-                const getValineDomTimer = setInterval(() => {
-                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                    if (vcards.length > 0) {
-                        let author = 'DreamAR';
-
-                        if (author) {
-                            for (let vcard of vcards) {
-                                const vnick_dom = vcard.querySelector('.vhead .vnick');
-                                const vnick = vnick_dom.innerHTML;
-                                if (vnick === author) {
-                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                                }
-                            }
-                        }
-                        clearInterval(getValineDomTimer);
-                    } else {
-                        clearInterval(getValineDomTimer);
-                    }
-                }, 2000);
-            }
-
-            if ('false') {
-                const loadValineTimeout = setTimeout(() => {
-                    loadValine();
-                    clearTimeout(loadValineTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadValine);
-            }
-        </script>
-    </div>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
 
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-        
-    
-</div>
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-            </div>
-        
-    </div>
-</div>
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
+
+    }
+
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+  }
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 

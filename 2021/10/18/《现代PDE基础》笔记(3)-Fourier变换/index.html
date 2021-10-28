@@ -148,302 +148,198 @@
             <div class="main-content">
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    $avatarWidth = 46px;
+$arrow-icon-width = 16px;
+$post-nav-max-width = 220px;
+$article-title-font-size = 1.6rem;
 
-        <div class="article-title">
-            <span class="title-hover-animation">《现代PDE基础》笔记(3)-Fourier变换</span>
-        </div>
+.article-content-container {
 
-        
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/avatar.svg">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">DreamAR</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-18 15:14:30
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
-                    </li>
-                
-                    <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
+  keep-container(false, 0, 0, 30px, 30px);
 
-    
-    
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
-    
-</div>
+  .article-title {
+    color: var(--second-text-color);
+    font-weight: 600;
+    font-size: $article-title-font-size;
 
-                    </div>
-                </div>
-            </div>
-        
+    +keep-tablet() {
+      font-size: $article-title-font-size * 0.9;
+    }
 
-        <div class="article-content markdown-body">
-            <h2 id="常义Fourier变换"><a href="#常义Fourier变换" class="headerlink" title="常义Fourier变换"></a>常义Fourier变换</h2><h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><p>$\,\forall\,f\in \mathscr{S}(\mathbb{R}_x^n),$ 定义其<strong>Fourier变换</strong>为</p>
-<script type="math/tex; mode=display">F[f]=\int_{\mathbb{R}_x^n}f(x)e^{-ix\cdot \xi} dx;</script><p>对$g(\xi)\in\mathscr{S}(\mathbb{R}_\xi^n),$ 定义其<strong>Fourier逆变换</strong>为</p>
-<script type="math/tex; mode=display">F^{-1}g=\int_{\mathbb{R}_\xi^n}g(\xi)e^{ix\cdot \xi}\bar{d}\xi.</script><p>其中$\bar{d}\xi=(2\pi)^{-n}d\xi.$ 也记$F[f]=\widehat{f}.$</p>
-<p>$F$满足如下性质:</p>
-<ol>
-<li><p>$F[f(x+h)]=\widehat{f}(\xi)e^{ih\cdot\xi};$</p>
-</li>
-<li><p>$F[f(x)e^{-ix\cdot h}]=\widehat{f}(\xi+h);$</p>
-</li>
-<li><p>$F[f(\delta x)]=\delta^{-n}\widehat{f}(\delta^{-1}\xi);$</p>
-</li>
-<li><p>$F[D_jf(x)]=\xi_j\widehat{f}(\xi);$</p>
-</li>
-<li><p>$F[x_jf(x)]=-D_j\widehat{f}(\xi).$</p>
-</li>
-</ol>
-<p>其中$D_j=\frac{1}{i}\partial x_j.$ 前三个命题是容易的,
-第四个命题即是分部积分, 最后一个命题难点在于说明$\widehat{f}$是可微的.
-对$\widehat{f}$做微商, 注意左式已经给出了我们期望的极限,
-因此证明它们的差趋于零即可. 用欧拉公式与微分中值定理即可给出简单的证明.
-这一性质告诉我们, $\widehat{f}\in C^\infty(\mathbb{R}_\xi^n).$ 进一步有:</p>
-<p><strong>定理 1.1</strong>. <em>$f\in \mathscr{S}(\mathbb{R}^n)$ $\Rightarrow$ $\widehat f\in \mathscr{S}(\mathbb{R}^n).$</em> </p>
-<p><strong>证:</strong> 注意到$\widehat{f}=F[f]$是有界的. 那么由前面的性质,
-$(-1)^{|\beta|}\xi^\alpha D^\beta\widehat{f}(\xi)=F[D^\beta(x^\alpha f(x))]$也是有界的.
-因此$\widehat f\in \mathscr{S}(\mathbb{R}^n).$</p>
-<p>接下来我们说明$F^{-1}$确实是$F$的逆. 首先由Fubini定理, 有如下命题:</p>
-<p><strong>命题 1.2</strong>. <em>$f,g\in \mathscr{S}(\mathbb{R}^n)$时, 有 <script type="math/tex">\int_{\mathbb{R}^n}f\widehat gdx=\int_{\mathbb{R}^n}\widehat fgdx.</script></em> </p>
-<p>回忆概率论中均值为零,
-标准差为$\sigma I$的正态分布密度函数为$K_\sigma(x)={(\sqrt{2\pi}\sigma)^{-n} }e^{-\frac{|x|^2}{2\sigma^2} }.$
-记$G_\sigma(x)=(2\pi)^{-n}e^{-\frac{\sigma^2 |x|^2}{2} },$
-那么计算有$F[G_\sigma]=K_\sigma.$ 我们利用这一点证明下面的定理:</p>
-<p><strong>定理 1.3</strong> (Fourier逆变换). <em>$f\in \mathscr{S}(\mathbb{R}^n),$ $f=F^{-1}\circ F[f].$</em> </p>
-<p><strong>证:</strong> 由前面的命题,
-$\int_{\mathbb{R}^n}f K_\sigma dx=\int_{\mathbb{R}^n}\widehat{f} G_\sigma d\xi.$
-当$\sigma\rightarrow 0$时,
-左侧收敛到$f(0)$(即$K_\sigma\rightarrow \delta$),
-右侧收敛到$\int_{\mathbb{R}^n} \widehat{f}\bar{d}\xi$(即$G_\sigma\rightarrow (2\pi)^{-n}$).
-因此有$f(0)=\int_{\mathbb{R}^n} \widehat{f}\bar{d}\xi=F^{-1}\widehat{f}(0).$</p>
-<p>接下来$\,\forall\,x\in \mathbb{R},$ 取函数$g(y)=f(y+x),$ 那么</p>
-<script type="math/tex; mode=display">f(x)=g(0)=\int_{\mathbb{R}^n}\widehat{g}(\xi)\bar{d}\xi=\int_{\mathbb{R}^n}\widehat{f}(\xi)e^{ix\cdot \xi}\bar{d}\xi=F^{-1}\widehat{f}(x).</script><p>因此$f=F^{-1}\circ F[f].$</p>
-<p>根据定义, $F[f] (\xi)=(2\pi)^nF^{-1}[f] (-\xi),$
-$F^{\pm 1}[f(x)] (\xi)=F^{\pm 1}[f(-x)] (-\xi),$ 因此</p>
-<script type="math/tex; mode=display">F[F^{-1}[f] (\xi)] (x)=(2\pi)^{-n}F[F[f] (-\xi)] (x)=F^{-1}[F[f] (-\xi)] (-x)=F^{-1}[F[f] (\xi)] (x)=f(x),</script><p>即在$\mathscr{S}(\mathbb{R}^n)$上,
-$F^{-1}\circ F=F^{-1}\circ F=\mathrm{id},$
-故线性连续映照$F$建立了一个同构对应, 逆映射也是连续的.</p>
-<h3 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h3><p>卷积运算在Fourier变换下也有很好的性质.</p>
-<p><strong>命题 1.4</strong>. <em>$\,\forall\,f,g\in \mathscr{S}(\mathbb{R}^n),$ $f\ast g\in \mathscr{S}(\mathbb{R}^n),$ 且$F[f\ast g]=F[f]F[g].$</em> </p>
-<p><strong>证:</strong> $\,\forall\,l\ge 0,$
-$\,\exists\,M_l&gt;0$使得$\sup_x |x|^l|g(x)|\le M_l.$ 因此有:</p>
-<script type="math/tex; mode=display">|x||g(x-y)|^{1/l}\le M_l^{1/l}\frac{|x|}{|x-y|}\le 2M_l^{1/l},\quad |x|\ge 2|y|;</script><script type="math/tex; mode=display">\frac{|x|}{|y|}|g(x-y)|^{1/l}\le 2|g(x-y)|\le 2M_0^{1/l},\quad |x|<2|y|.</script><p>记$A_l=2^l(M_0+M_l),$ 那么$|x|^l|g(x-y)|\le A_l(1+|y|)^l.$ 从而</p>
-<script type="math/tex; mode=display">\sup_x|x|^l|(f\ast g)(x)|\le A_l\int_{\mathbb{R}^n}f(y)(1+|y|)^ldy<\infty.</script><p>$\,\forall\,\alpha\in \mathbb{N}^n,$
-由于$\partial^\alpha(f\ast g)=f\ast (\partial^\alpha g),$
-$\partial^\alpha g\in \mathscr{S}(\mathbb{R}^n),$
-因此$\sup_x |x|^l |\partial^\alpha (f\ast g)(x)|&lt;\infty,$
-$f\ast g\in \mathscr{S}(\mathbb{R}^n).$</p>
-<p>记$F(x,y)=f(y)g(x-y)e^{-ix\cdot \xi}.$ $|F|$显然是可积的,
-因此由Fubini定理,</p>
-<script type="math/tex; mode=display">\widehat{f\ast g}(\xi)=\int_{\mathbb{R}^n\times \mathbb{R}^n}F(x,y)dydx=\int_{\mathbb{R}^n\times \mathbb{R}^n}F(x,y)d(x-y)dy=\widehat{f}(\xi)\widehat{g}(\xi).</script><p>即$F[f\ast g]=F[f]F[g].$</p>
-<p>利用$F$与$F^{-1}$的转化关系, 立即可得:</p>
-<p><strong>推论 1.5</strong>. <em>$F[fg]=(2\pi)^{-n}F[f]\ast F[g]$</em> </p>
-<p>对Fourier级数的Parseval恒等式, 我们有类似的Fourier变换版本:</p>
-<p><strong>定理 1.6</strong> (Plancherel). <em>$f\in \mathscr{S}(\mathbb{R}^n)\Rightarrow (2\pi)^{-n}\parallel\widehat{f}\parallel_{L^2(\mathbb{R}^n)}=\parallel f\parallel_{L^2(\mathbb{R}^n)}$</em> </p>
-<p><strong>证:</strong> 取$f^\ast (x)=\overline{f(-x)},$ 那么</p>
-<script type="math/tex; mode=display">Ff^\ast (\xi)=\int_{\mathbb{R}^n}\overline{f(-x)}e^{-ix\cdot \xi}dx=\overline{\int_{\mathbb{R}^n}f(-x)e^{ix\cdot \xi}dx}=\overline{\widehat{f}(\xi)}.</script><p>取$h=f\ast f^\ast ,$
-那么一方面$h(0)=\int_{\mathbb{R}^n}f(y)\overline{f(y)}dy=\parallel f\parallel^2_{L^2(\mathbb{R}^n)}.$
-另一方面,
-由$\widehat{h}=\widehat{f}\overline{\widehat{f} }=|\widehat{f}|^2,$
-$h(0)=\int_{\mathbb{R}^n}\widehat{h}(\xi)\bar{d}\xi=(2\pi)^{-n}\parallel\widehat{f}\parallel^2_{L^2(\mathbb{R}^n)}.$
-由此即得$(2\pi)^{-n}\parallel\widehat{f}\parallel_{L^2(\mathbb{R}^n)}=\parallel f\parallel_{L^2(\mathbb{R}^n)}.$</p>
-<p>当然可以先证明更一般地有$\int_{\mathbb{R}^n}\widehat{f}\overline{\widehat{g} }\bar{d}\xi=\int_{\mathbb{R}^n}f\overline{g}d x,$
-取$h=f\ast g^\ast $即可.</p>
-<h2 id="广义Fourier变换"><a href="#广义Fourier变换" class="headerlink" title="广义Fourier变换"></a>广义Fourier变换</h2><h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><p>我们可以在$\mathscr{S}’(\mathbb{R}^n)$上定义广义Fourier变换$F[T]\in \mathscr{S}’(\mathbb{R}^n):$</p>
-<script type="math/tex; mode=display">\left<{}F[T],\varphi\right>:=\left<{}T,F[\varphi]\right></script><p>当$T\in \mathscr{S}(\mathbb{R}^n)$或仅为存在Fourier变换的常义可积函数时,
-由前面的命题(用Fubini定理证明), 等式在常义Fourier变换意义下成立,
-因此定义是常义的推广.</p>
-<p>类似地, 广义Fourier变换也满足如下性质: $F[D^\alpha T]=\xi^\alpha F[T],$
-$F[x^\alpha T]=(-1)^{|\alpha|}D^\alpha F[T].$</p>
-<p>定义广义Fourier逆变换为:</p>
-<script type="math/tex; mode=display">\left<{}F^{-1}[T],\varphi\right>:=\left<{}T,F^{-1}[\varphi]\right>.</script><p>由常义Fourier变换$F:\mathscr{S}(\mathbb{R}^n)\cong \mathscr{S}(\mathbb{R}^n),$
-广义Fourier变换也是广义函数空间$\mathscr{S}’(\mathbb{R}^n)$上的连续同构对应,
-逆映射$F^{-1}$也是线性连续映照.</p>
-<p>回忆我们定义了广义函数的卷积, 但对一般的广义函数, 卷积不见得存在.
-对$\varphi\in \mathscr{S}(\mathbb{R}^n),$
-$T\in \mathscr{S}’(\mathbb{R}^n),$
-我们有$\varphi\ast T\in \mathscr{S}’(\mathbb{R}^n),$
-且$F[\varphi\ast T]=F[\varphi]F[T].$
-$\varphi$也可替换为具紧支集广义函数$\mathscr{E}’(\mathbb{R}^n).$</p>
-<p>由于对广义函数, $F,F^{-1}$也有如下的转化关系:</p>
-<script type="math/tex; mode=display">\left<{}F[T],\varphi(x)\right>=(2\pi)^n\left<{}T,F^{-1}[\varphi(-x)]\right>=(2\pi)^n\left<{}F^{-1}[T],\varphi(-x)\right>,</script><p>我们有$F[\varphi\cdot T]=(2\pi)^{-n}F[\varphi]\ast F[T].$</p>
-<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>$F[\delta(x-a)]=e^{-ia\cdot \xi},$ 特别地, $F[\delta]=1.$</p>
-<p>具紧支集的广义函数当然在$\mathscr{S}’(\mathbb{R}^n)$中. 特别地,
-其满足如下定理:</p>
-<p><strong>定理 1.7</strong>. <em>若$T\in \mathscr{E}’(\mathbb{R}_x^n),$ 则$F[T] (\xi)=\left&lt;{}T_x,e^{-ix\cdot \xi}\right&gt;\in \mathscr{S}’(\mathbb{R}_\xi^n)$为关于$\xi$的常义函数.</em> </p>
-<p>证明用广义函数的正则化即可给出.</p>
-<p>文章最后更新于 2021-10-23 13:03:45 </p>
-
-        </div>
-
-        
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>本文标题：《现代PDE基础》笔记(3)-Fourier变换</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-18 15:14:30</li>
-        <li>
-            本文链接：https://dream0ar.github.io/2021/10/18/《现代PDE基础》笔记(3)-Fourier变换/
-        </li>
-        <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
-        </li>
-    </ul>
-</div>
-
-            </div>
-        
-
-        
-            <div class="article-nav">
-                
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/10/19/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(8)-%E6%8E%A8%E5%B9%BF%E7%9A%84MV%E5%8E%9F%E7%90%86/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(8)-推广的MV原理</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/2021/10/17/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(2)-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97/"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(2)-广义函数运算</span>
-                                <span class="post-nav-item">下一篇</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
-        
-            <div class="comment-container">
-                <div class="comments-container">
-    <div id="comment-anchor"></div>
-    <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
-    </div>
-    
-
-        
-            
-    <div class="valine-container">
-        <script 
-                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
-        <div id="vcomments"></div>
-        <script >
-            function loadValine() {
-                new Valine({
-                    el: '#vcomments',
-                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
-                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
-                    meta: ['nick', 'mail', 'link'],
-                    avatar: 'wavatar',
-                    enableQQ: true,
-                    placeholder: '欢迎交流讨论',
-                    lang: 'zh-CN'.toLowerCase()
-                });
-
-                function getAuthor(language) {
-                    switch (language) {
-                        case 'en':
-                            return 'Author';
-                        case 'zh-CN':
-                            return '博主';
-                        default:
-                            return 'Master';
-                    }
-                }
-
-                // Add "Author" identify
-                const getValineDomTimer = setInterval(() => {
-                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
-                    if (vcards.length > 0) {
-                        let author = 'DreamAR';
-
-                        if (author) {
-                            for (let vcard of vcards) {
-                                const vnick_dom = vcard.querySelector('.vhead .vnick');
-                                const vnick = vnick_dom.innerHTML;
-                                if (vnick === author) {
-                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
-                                }
-                            }
-                        }
-                        clearInterval(getValineDomTimer);
-                    } else {
-                        clearInterval(getValineDomTimer);
-                    }
-                }, 2000);
-            }
-
-            if ('false') {
-                const loadValineTimeout = setTimeout(() => {
-                    loadValine();
-                    clearTimeout(loadValineTimeout);
-                }, 1000);
-            } else {
-                window.addEventListener('DOMContentLoaded', loadValine);
-            }
-        </script>
-    </div>
+    +keep-mobile() {
+      font-size: $article-title-font-size * 0.8;
+    }
+  }
 
 
+  .article-header {
+    position: relative;
+    padding-left: $avatarWidth;
+    width: 100%;
+    height: $avatarWidth;
+    box-sizing: border-box;
 
-        
-    
-</div>
+    .avatar {
+      position: absolute;
+      top: 0
+      left: 0;
+      width: $avatarWidth;
+      height: $avatarWidth;
+      padding: 1px;
+      box-sizing: border-box;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
 
-            </div>
-        
-    </div>
-</div>
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        background: var(--avatar-background-color);
+      }
+
+    }
+
+
+    .info {
+      padding: 2px 0;
+      margin-left: 10px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+
+      .author {
+        font-weight: 600;
+        font-size: 1.18rem;
+        display: flex;
+        align-items: center;
+
+        .name {
+          color: var(--default-text-color);
+        }
+
+        .author-label {
+          margin-left: 10px;
+          font-size: 0.8rem;
+          font-weight: 500;
+          padding: 0 5px;
+          border-radius: 5px;
+          color: #fff;
+          background: var(--selection-color);
+        }
+
+      }
+    }
+
+  }
+
+
+  .article-header, .article-header-meta-info {
+    margin-top: 16px;
+    +keep-tablet() {
+      transform: scale(0.9);
+      transform-origin: left top;
+    }
+  }
+
+
+  .article-content {
+    margin-top: $component-spacing-value;
+    padding-bottom: 10px;
+    word-wrap: break-word;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--default-text-color);
+  }
+
+  .post-copyright-info {
+    margin-top: $component-spacing-value;
+    width: 100%;
+  }
+
+  .article-nav {
+    height: 40px;
+    margin-top: $component-spacing-value;
+
+    .article-prev, .article-next {
+      max-width: $post-nav-max-width;
+      height: 100%;
+      box-sizing: border-box;
+
+      keep-container(true, 1.03, 1.03, 10px, 0);
+
+      a {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+
+        &.prev {
+          padding-left: $arrow-icon-width;
+        }
+
+        &.next {
+          padding-right: $arrow-icon-width;
+        }
+
+        .arrow-icon {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: $arrow-icon-width;
+
+          &.left {
+            left: 0;
+          }
+
+          &.right {
+            right: 0;
+          }
+        }
+
+        .title {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    .article-prev {
+      float: left;
+    }
+
+    .article-next {
+      float: right;
+    }
+
+    .post-nav-item {
+      display: none;
+
+      +keep-tablet() {
+        display: inline-block;
+      }
+
+    }
+
+
+    .post-nav-title-item {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      +keep-tablet() {
+        display: none;
+      }
+    }
+
+  }
+
+
+}
+
 
 
                 
