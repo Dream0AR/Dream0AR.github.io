@@ -138,24 +138,6 @@
 
     <div class="window-mask"></div>
 
-<script type="text/javascript">
-window.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('code').forEach(code => {
-    const text = code.innerHTML;
-    is_inline_math = /^\$(.*)\$$/.exec(text);
-    is_display_math = /^\$\$(.*)\$\$$/ms.exec(text) || /^\\begin\{.+\}(.*)\\end\{.+\}/ms.exec(text);
-    if (is_inline_math || is_display_math) {
-      code.parentElement.classList.add('has-jax');
-      if (is_inline_math) {
-        code.outerHTML = "<span class=yuuki_mathjax_inline>" + text + "</span>";
-      } else {
-        code.outerHTML = "<span class=yuuki_mathjax_display>" + text + "</span>";
-      }
-    }
-  });
-});
-</script>
-
 </header>
 
 
@@ -241,13 +223,14 @@ $(U_i,\varphi_i)$为坐标邻域且允许对某个$i\neq j$有$U_i=U_j.$
 也是初始开覆盖的加细. 最后我们说明它确实是局部有限的开覆盖.</p>
 <p>$\,\forall\,x\in M,$ $\,\exists\,V_i \ni x.$
 令$V_a$为其中指标最小的开集,
-那么由于$\varphi_{j}^{-1}(K_{j,i})\subset V_{j},$ $\,\forall\,j<a,$
-$x\notin V_j,$ 从而$x\in W_a.$ 然而又由$V_a$有穷竭序列,
-存在$x$的小邻域$O_x,$ $\,\exists\,b>a,$ $\,\forall\,k&gt; b,$
-$O_x\subset \varphi_{a}^{-1}(K_{a,k}),$ 因此$O_x\cap W_k=\varnothing.$
-从而$O_x$至多与$b$个开集有交, 于是$\{W_i\}$是开覆盖的局部有限加细.</p>
+那么由于$\varphi_{j}^{-1}(K_{j,i})\subset V_{j},$
+$\,\forall\,j\textless a,$ $x\notin V_j,$ 从而$x\in W_a.$
+然而又由$V_a$有穷竭序列, 存在$x$的小邻域$O_x,$ $\,\exists\,b&gt;a,$
+$\,\forall\,k&gt; b,$ $O_x\subset \varphi_{a}^{-1}(K_{a,k}),$
+因此$O_x\cap W_k=\varnothing.$ 从而$O_x$至多与$b$个开集有交,
+于是$\{W_i\}$是开覆盖的局部有限加细.</p>
 <p>参考: <a class="link"   target="_blank" rel="noopener" href="https://mathoverflow.net/a/96783" >https://mathoverflow.net/a/96783<i class="fas fa-external-link-alt"></i></a></p>
-<p>文章最后更新于 2021-10-28 19:12:06 </p>
+<p>文章最后更新于 2021-10-28 19:43:17 </p>
 
         </div>
 
