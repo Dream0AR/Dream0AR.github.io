@@ -148,198 +148,398 @@
             <div class="main-content">
 
                 
-                    $avatarWidth = 46px;
-$arrow-icon-width = 16px;
-$post-nav-max-width = 220px;
-$article-title-font-size = 1.6rem;
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-.article-content-container {
+        <div class="article-title">
+            <span class="title-hover-animation">《代数图论》第一章-基本概念</span>
+        </div>
 
-  keep-container(false, 0, 0, 30px, 30px);
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-16 14:51:40
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/GTM207-%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/">GTM207-代数图论</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
 
-  .article-title {
-    color: var(--second-text-color);
-    font-weight: 600;
-    font-size: $article-title-font-size;
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-    +keep-tablet() {
-      font-size: $article-title-font-size * 0.9;
-    }
+                    </div>
+                </div>
+            </div>
+        
 
-    +keep-mobile() {
-      font-size: $article-title-font-size * 0.8;
-    }
-  }
+        <div class="article-content markdown-body">
+            <h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p>图$X$由<strong>顶点集</strong>$V(X),$ <strong>边集</strong>$E(X)$组成.
+每个(无向)边是一个无序对$\{x,y\},$ 常用$xy$来简化表示. 若$xy\in E,$
+则称$x,y$点<strong>相邻</strong>, 记为$x\sim y.$
+若存在双射$\varphi: V(X)\rightarrow V(Y),$
+使得$V(X)$中$x\sim y$当且仅当$V(Y)$中$\varphi(x)\sim\varphi(y),$
+则称图$X$与$Y$<strong>同构</strong>. 画图表示时, 常用数字对顶点标号.</p>
+<p>称图是<strong>完全(complete)</strong>的, 若其两两顶点均相邻.
+记有$n$个顶点的完全图为$K_n.$ 称图是<strong>空(empty)</strong>的,
+若边集为空集且至少有一个顶点; 称图是<strong>无效(null)</strong>的,
+若边集和点集都是空集. 这两个概念均是为叙述上的方便提出的.</p>
+<p>前面的图均为<strong>简单图</strong>. 有时将边集$E(X)$替换为有向边集$A(X),$
+称为<strong>有向图</strong>. 此时边是有序对, 在图示中用箭头表示, 称为<strong>弧(arc)</strong>.
+有时也将无向图视为每个无向边均是两个有向边的有向图.
+一般默认均考虑简单图. 顶点集事实上可以有无穷多个元素,
+但本书默认考虑<strong>有限图</strong>.</p>
+<h2 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h2><p>若图$Y$满足$V(X)\subset V(Y),$ $E(X)\subset E(Y),$
+则称$Y$为$X$的<strong>子图</strong>. 若还满足$V(Y)=V(X),$ 则称$Y$为$X$的<strong>生成子图</strong>.
+若子图$Y$中顶点相邻当且仅当它们在$X$中相邻, 则称$Y$为$X$的诱导子图.
+可以看出, 生成子图是通过删边得到的, 而诱导子图是通过删点及其邻边得到的.</p>
+<p>有几类与子图相关的重要概念: 若子图为完全图, 则称其为<strong>团(clique)</strong>.
+若某顶点集的诱导子图是空的, 则称其为<strong>独立集</strong>.
+图$X$最大团的大小记为$\omega(X),$ 最大独立集大小记为$\alpha(X).$
+这是图的很重要的两个属性.</p>
+<p>图上由顶点$x$到$y$长度为$r$的<strong>道路</strong>,
+指一个由$r+1$个不同顶点构成的序列, 以$x$为首, $y$为尾,
+且序列中相邻的顶点在图中也相邻. 若图上任意两点有以其为首尾的道路,
+则称图是<strong>连通</strong>的, 否则即为不连通的.</p>
+<p>图是不连通的等价于我们可以将图$X$顶点集分为两个集合$R,S,$
+使得$R$中顶点与$S$中顶点均不相邻.
+这时我们可以说图$X$是顶点集$R$和$S$诱导子图的无交并. 极大的连通诱导子图,
+称为图$X$的<strong>连通分支</strong>, 简记为<strong>分支</strong>.</p>
+<p>一个<strong>环(cycle)</strong>指一个连通图, 每个顶点恰有两个邻点;
+图中的环即指作为子图的环. 容易证明若图中每个点都至少有两个邻点,
+那么图必定包含一个环. 连通的无环图称为<strong>树</strong>,
+而无环图可以拆分为若干极大连通无环图的无交并, 因此称为<strong>森林</strong>.
+若某生成子图为树, 则称其为<strong>生成树</strong>. 易见图有生成树当且仅当它是连通的.
+极大生成森林即指由每个分支的生成树组成的生成子图.</p>
+<h2 id="自同构"><a href="#自同构" class="headerlink" title="自同构"></a>自同构</h2><p>图$X$到自身的同构即为自同构. 容易证明自同构全体构成一个群,
+记为$\operatorname{Aut}(X).$
+显然$\operatorname{Aut}(X)\subset \operatorname{Sym}(V(X)).$
+后者指对称群, 即集合$V(X)$的所有置换.
+一个基本的例子是$\operatorname{Aut}(K_n)\cong \operatorname{Sym}(V(K_n))=S_n.$
+一般来说, 判断两个图是否同构, 以及某个图是否有非平凡自同构并不容易.</p>
+<p>$v$在置换$g$下的像记为$v^g.$ 当$g\in \operatorname{Aut}(X)$时,
+对子图$Y\subset X,$ 可以保边地定义子图$Y^g\subset X.$
+$Y$与$Y^g$自然是同构的.</p>
+<p>顶点$x$的<strong>度/价(valency)</strong>, 指$x$的邻点个数. 图$X$的最大(最小)度,
+即指所有顶点度的最大(最小)值. 若图的每个顶点度均为$k,$
+则称其为<strong>$k-$正则图</strong>.</p>
+<p><strong>引理 1.1</strong>. <em>若$x\in X,$ $g\in \operatorname{Aut}(X),$ 则$x$与$x^g$度相同.</em> </p>
+<p><strong>证:</strong>
+只需利用$x$及其全部邻点的诱导子图$N(x)$满足$N(x)\cong N(x)^g=N(x^g)$即可.</p>
+<p>图$X$中两顶点$x,y$的<strong>距离</strong>$d_X(x,y),$ 指连接$x,y$最短路的长度.
+若$X$明了, 可简记距离为$d(x,y).$ 一个简单的引理如下:</p>
+<p><strong>引理 1.2</strong>. <em>$\,\forall\,x,y\in X,$ $g\in \operatorname{Aut}(X),$ $d(x,y)=d(x^g,y^g).$</em> </p>
+<p>图$X$的<strong>补图</strong>$\overline X$是这样一个图: 它满足$V(X)=V(\overline X),$
+但两顶点在$\overline X$中相邻当且仅当它们在$X$中不相邻.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/NqFdbRUiZGYM5em.png width='50%' height='50%'></p>
+<p>容易证明如下引理:</p>
+<p><strong>引理 1.3</strong>. <em>$\operatorname{Aut}(X)\cong \operatorname{Aut}(\overline X).$</em> </p>
+<p>若$X$是有向图, 那么对于同构, 我们要求它是保方向的.</p>
+<h2 id="同态"><a href="#同态" class="headerlink" title="同态"></a>同态</h2><p>给两个图$X,Y,$ 映射$f:V(X)\rightarrow V(Y)$称为<strong>同态,</strong>
+若$x\sim y\in X\Rightarrow f(x)\sim f(y)\in Y.$ 前面的同构当然也是同态.
+图$X$为<strong>二分图</strong>, 若$V(X)$可划分为$V_1,V_2,$
+使得每个边的端点分别在这两个集合中.
+一个同态的例子是$V(X)\rightarrow V(K_2),$ 将$V_i$映到顶点$i$.</p>
+<p>这一例子引申出图的染色问题. 一个图的<strong>正常染色(proper colouring)</strong>,
+指从$V(X)$到某有限(颜色)集的映射, 使得相邻的点映至不同的颜色.
+如果$X$可由$k$种颜色正常染色, 称其可被$k-$<strong>染色</strong>.
+称最小的$k$为图$X$的<strong>着色数(chromatic number)</strong>, 记为$\chi(X).$
+染上某种颜色的全体点构成独立集, 称为一个<strong>颜色类(colour class)</strong>.
+对于至少有一条边的二分图, 它的着色数即为$2.$</p>
+<p><strong>引理 1.4</strong>. <em>$X$的着色数是最小的$r,$ 使得存在$X\rightarrow K_r$的同态.</em> </p>
+<p><strong>证:</strong> 对同态$f:X\rightarrow Y,$ 易见对$y\in Y,$
+$f^{-1}(y):=\{x\in V(X): f(x)=y\}$为独立集. 因此若有$X$到$K_r$的同态,
+以$K_r$顶点为$r$个不同颜色, 对$X$中顶点按其像上色即可,
+从而$\chi(X)\le r.$</p>
+<p>若$\chi(X)$可被$r-$染色, 记颜色集为$\{1,\cdots,r\},$
+将每个颜色类映到$K_r$中相应顶点即可. 因为$X$中相邻的点颜色不同,
+而不同颜色在$K_r$中彼此相邻.</p>
+<p>图$X$到其子图$Y$的同态$f$称为收缩, 若$f|_Y$为恒等映射.
+此时称$Y$为$X$的收缩核. 如对如下的图, 按红色箭头所示构造同态,
+则内侧的五边形成为原图的收缩核.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/qD6o2IO3FYmjvui.png width='50%' height='50%'></p>
+<p>对有向图的同态, 只需将保相邻改为保有序对即可. 需要注意的是,
+以上讨论均默认图中无环. 边称为<strong>圈(loop)</strong>, 若其两端点是同一个点.
+允许圈存在的图的同态的性质将大有不同.
+一个例子是将任意顶点集映到有圈的点的映射都是同态.</p>
+<p>图$X$到自身的同态称为自同态, 自同态全体构成幺半群. 自同构群包含在其中.</p>
+<h2 id="循环图"><a href="#循环图" class="headerlink" title="循环图"></a>循环图</h2><p>接下来介绍很重要的一类图, 称为<strong>循环图(circulant graph)</strong>:
+它是一个有向图$X=X(\mathbb{Z}_n,C),$
+集合$C\subset \mathbb{Z}_n\setminus\{0\}.$ 其顶点为$\mathbb{Z}_n$中元素,
+$(i,j)$为$X$中的弧当且仅当$j-i\in C.$
+$X(\mathbb{Z}_n,C)$称为$n$阶循环图, 以$C$为连接集.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/5lzsWJ1NDBaf2ru.png width='50%' height='50%'></p>
+<p>若$\,\forall\,c\in C,$ $-c\in C,$ 那么$(i,j)$为弧当且仅当$(j,i)$为弧,
+从而$X$可以视为无向图. 易见前面提到的环即为$X(\mathbb{Z}_n,\{\pm 1\}),$
+是循环图的一种, 记为$C_n$.</p>
+<h2 id="Johnson图"><a href="#Johnson图" class="headerlink" title="Johnson图"></a>Johnson图</h2><p>对正整数$v\ge k\ge i,$ 图$J(v,k,i)$是这样一个无向图:
+设有含$v$个元素的集合$\Omega,$
+图以$\Omega$中含$k$个元素的全体子集为顶点,
+两点连边当且仅当其对应子集之交含$i$个元素. 因此它含$\binom{v}{k}$个顶点,
+为正则图, 每点以$\binom{k}{i}\binom{v-k}{k-i}$为度.</p>
+<p><strong>引理 1.5</strong>. <em>$J(v,k,i)\cong J(v,v-k,v-2k+i).$</em> </p>
+<p><strong>证:</strong> 将每个含$k$元素子集映到它在$\Omega$中的补集即可.
+易见两补集交集含$v-2k+i$个元素当且仅当原来的两集合含$i$个元素.
+因此这样的映射是同构.</p>
+<p>由该引理, 我们总是可默认$v\ge 2k.$ 这时称$J(v,k,k-1)$为<strong>Johnson图</strong>,
+$J(v,k,0)$为<strong>Kneser图</strong>. 由于$\Omega$中元素的置换诱导子集间的置换,
+我们有如下引理:</p>
+<p><strong>引理 1.6</strong>. <em>$S_v\subset \operatorname{Aut}(J(v,k,i)).$</em> </p>
+<h2 id="边图"><a href="#边图" class="headerlink" title="边图"></a>边图</h2><p>图$X$的<strong>边图(line graph)</strong>$L(X)$是这样一个图: 它以$X$的边为顶点,
+两顶点连边当且仅当它们在$X$中对应的边有公共顶点.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/RPjdVz8KtTUnNFr.png width='50%' height='50%'></p>
+<p><strong>星形图</strong>$K_{1,n}$为由$1$个顶点与其$n$个邻点构成的图.
+它的边图即为完全图$K_n.$ 对于环$C_n,$ 它与其边图同构.</p>
+<p>对每个边考虑其两个顶点, 有如下引理:</p>
+<p><strong>引理 1.7</strong>. <em>若$X$是$k-$正则图, 那么$L(X)$是$2k-2$正则的.</em> </p>
+<p>$X$中每个度为$k$的顶点都决定了$L(X)$中大小为$k$的团. 若$X$含$n$个顶点,
+则$L(X)$中有对应的$n$个团, 使得$L(X)$的每个顶点最多在其中的两个团中,
+每条边恰在其中一个团里. 事实上通过构造的方法, 有如下的逆命题:</p>
+<p><strong>定理 1.8</strong> (Krausz). <em>非空图是某个图的边图当且仅当它的边集可以划分为若干个团, 使得每个顶点最多在其中两个团中.</em> </p>
+<p>若$X$不含<strong>三角形</strong>(大小为$3$的团), 则当$L(X)$中某个点有两邻点,
+两邻点都在前面所述的某个团中时, 这个点也在该团中.
+不然它们对应的边在$X$即构成三角形.
+因此由$X$顶点决定的$L(X)$中的团都是极大的.</p>
+<p>显然$X\cong Y\Rightarrow L(X)\cong L(Y),$ 但反过来不见得对,
+比如$L(K_{1,3})\cong L(K_3).$
+不过Whitney证明了事实上这是唯一一个连通情况下的反例.
+我们来证明下面弱一点的命题.</p>
+<p><strong>引理 1.9</strong>. <em>若$X,Y$最小度大于$3,$ 则$X\cong Y\Leftrightarrow L(X)\cong L(Y).$</em> </p>
+<p><strong>证:</strong> 只需注意到在边图中,
+含三个点以下的团不见得还原为以某顶点出发星形图,
+但三个点以上的团还原时必然还原为星形图. 只需说明四个边两两有公共顶点时,
+一定是$K_{1,4}$的形状. 不然其中三个边还原时一定还原为三角形,
+而这时无法再添加第四条边使得两两边有公共顶点.</p>
+<p>从而在每个顶点度均大于$3$的情况下,
+$n$个顶点对应的$n$个极大团大小大于$3,$
+且反过来每个大小大于$3$的极大团都对应一个顶点.
+从而顶点集到大小大于$3$的极大团全体间有一个双射,
+且满足顶点相邻当且仅当对应的极大团有公共点.
+因此图的属性与其边图属性互相决定,
+故$X\cong Y\Leftrightarrow L(X)\cong L(Y).$</p>
+<p>另一个关于边图的有趣描述是:</p>
+<p><strong>定理 1.10</strong> (Beineke). <em>图是边图当且仅当它的每个最多含六个点的诱导子图是边图.</em> </p>
+<p>我们称二分图是<strong>半正则</strong>的, 若它有$2$-染色使得颜色相同的点度相同.
+最简单的例子是<strong>完全二分图</strong>$K_{m,n},$
+由两个含$m$个点与$n$个点的独立集构成, 其间两两连接.</p>
+<p><strong>引理 1.11</strong>. <em>若连通图$X$的边图$L(X)$为正则图, 则$X$是正则的, 或是半正则的二分图.</em> </p>
+<p><strong>证:</strong> 设$L(X)$是$k-$正则的, 那么$X$中每对邻点的度之和恒为$k+2.$
+因此连通的$X$中所有点的度最多只有两种取值. 若只有一种取值,
+那么就是正则图; 如果有两种不同取值, 那么按这两种取值染色即可.
+这样只有相异颜色的点度之和满足要求, 因此相同颜色的点必不相邻.
+且这样染色后, 颜色相同的点度相同, 是半正则的.</p>
+<h2 id="可平面图"><a href="#可平面图" class="headerlink" title="可平面图"></a>可平面图</h2><p>我们已经看到, 用图示来表示图很方便. 若图可被无交线地绘制出来,
+则称其为<strong>可平面图(planar graph)</strong>. 更精确地, 我们考虑将图映到平面上.
+将顶点映至点, 边映至连接两点的连续无自交的曲线,
+称这样的映射为<strong>平面嵌入</strong>, 若无公共点的边对应曲线不相交,
+有公共顶点的边对应的曲线仅在平面上对应点相交.
+图称为<strong>可平面的</strong>当且仅当存在这样一个平面嵌入.</p>
+<p><strong>平面图(plane graph)</strong>为取好平面嵌入的可平面图.
+平面图的边将平面划分为若干区域, 称为平面图的<strong>面</strong>. 除了一个区域外,
+其它区域都是有界的, 称这个无界的区域为<strong>无穷面</strong>或<strong>外面(external
+face)</strong>. 面的长度指框住它边的个数.</p>
+<p>著名的欧拉公式给出平面图点线面的关系:</p>
+<p><strong>定理 1.12</strong> (Euler). <em>若连通平面图有$n$个顶点, $e$条边与$f$个面, 那么$n-e+f=2.$</em> </p>
+<p>可平面图称为<strong>极大可平面图</strong>, 如果再添加一条边就不再是可平面的了.
+如果可平面图的平面嵌入有长度大于$3$的面, 那么一定可以再添一条边.
+因此极大可平面图的平面嵌入所有面长度均为$3$. 若每个点度至少是$2$,
+则每条边恰在两个面中, 我们有$2e=3f,$ 从而$e=3n-6.$
+事实上若含$n$个点的可平面图有$3n-6$条边, 它一定是极大的.
+这样的图称为<strong>平面三角剖分</strong>.</p>
+<p>一个图的平面嵌入有很多种, 这会导致平面图的面有所不同, 如下图所示.
+一个很重要的拓扑结论是, $3-$连通的图本质上只有唯一一种嵌入方式.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/bNgKA27E9TuIDkq.png width='50%' height='50%'></p>
+<p>给定平面图$X,$ 我们可以生成<strong>对偶图(dual graph)</strong>$X^\ast,$
+以$X$的面为$X^\ast$顶点, 对每条$X$中两面的公共边,
+绘制一条(跨公共边的)$X^\ast$中的边连接两面对应的顶点.
+注意$X^\ast$中可能有<strong>重边(multiple edge)</strong>, 即两个点间连接多个边.
+除了特殊说明, 我们默认不考虑图中出现重边的情况.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/OqilQ1K7n2I4XAu.png width='50%' height='50%'></p>
+<p>若图与其对偶图同构, 则称其<strong>自对偶(self-dual)</strong>, 如完全图$K_4.$
+对连通的图$X,$ 可以说明$X\cong (X^\ast)^\ast.$
+嵌入的概念可以从平面推广到任意曲面上, 对偶也类似.
+一个例子是非可平面图的完全图$K_6$可以嵌入到射影平面上,
+是射影平面的一个三角剖分.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/Fs8nIm63LMXyvaE.png width='50%' height='50%'></p>
+<p>另一个例子是完全图$K_7$不是可平面图, 也不能嵌入到射影平面上,
+但是可以嵌入到环面上.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/UZLdoX21VqCADpw.png width='50%' height='50%'></p>
+<p>文章最后更新于 2021-09-16 14:51:40 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数图论》第一章-基本概念</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-09-16 14:51:40</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/09/16/《代数图论》第一章-基本概念/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/09/16/%E3%80%8A%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BE%A4%E8%AE%BA%E5%9B%9E%E9%A1%BE/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《代数图论》第二章-群论回顾</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/09/15/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(1)/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《微分流形》第一章-微分流形(1)</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
 
 
-  .article-header {
-    position: relative;
-    padding-left: $avatarWidth;
-    width: 100%;
-    height: $avatarWidth;
-    box-sizing: border-box;
 
-    .avatar {
-      position: absolute;
-      top: 0
-      left: 0;
-      width: $avatarWidth;
-      height: $avatarWidth;
-      padding: 1px;
-      box-sizing: border-box;
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
+        
+    
+</div>
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        background: var(--avatar-background-color);
-      }
-
-    }
-
-
-    .info {
-      padding: 2px 0;
-      margin-left: 10px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-
-      .author {
-        font-weight: 600;
-        font-size: 1.18rem;
-        display: flex;
-        align-items: center;
-
-        .name {
-          color: var(--default-text-color);
-        }
-
-        .author-label {
-          margin-left: 10px;
-          font-size: 0.8rem;
-          font-weight: 500;
-          padding: 0 5px;
-          border-radius: 5px;
-          color: #fff;
-          background: var(--selection-color);
-        }
-
-      }
-    }
-
-  }
-
-
-  .article-header, .article-header-meta-info {
-    margin-top: 16px;
-    +keep-tablet() {
-      transform: scale(0.9);
-      transform-origin: left top;
-    }
-  }
-
-
-  .article-content {
-    margin-top: $component-spacing-value;
-    padding-bottom: 10px;
-    word-wrap: break-word;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--default-text-color);
-  }
-
-  .post-copyright-info {
-    margin-top: $component-spacing-value;
-    width: 100%;
-  }
-
-  .article-nav {
-    height: 40px;
-    margin-top: $component-spacing-value;
-
-    .article-prev, .article-next {
-      max-width: $post-nav-max-width;
-      height: 100%;
-      box-sizing: border-box;
-
-      keep-container(true, 1.03, 1.03, 10px, 0);
-
-      a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-
-        &.prev {
-          padding-left: $arrow-icon-width;
-        }
-
-        &.next {
-          padding-right: $arrow-icon-width;
-        }
-
-        .arrow-icon {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: $arrow-icon-width;
-
-          &.left {
-            left: 0;
-          }
-
-          &.right {
-            right: 0;
-          }
-        }
-
-        .title {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-    }
-
-    .article-prev {
-      float: left;
-    }
-
-    .article-next {
-      float: right;
-    }
-
-    .post-nav-item {
-      display: none;
-
-      +keep-tablet() {
-        display: inline-block;
-      }
-
-    }
-
-
-    .post-nav-title-item {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      +keep-tablet() {
-        display: none;
-      }
-    }
-
-  }
-
-
-}
-
+            </div>
+        
+    </div>
+</div>
 
 
                 

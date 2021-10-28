@@ -148,198 +148,277 @@
             <div class="main-content">
 
                 
-                    $avatarWidth = 46px;
-$arrow-icon-width = 16px;
-$post-nav-max-width = 220px;
-$article-title-font-size = 1.6rem;
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-.article-content-container {
+        <div class="article-title">
+            <span class="title-hover-animation">《微分流形》第一章-微分流形(1)</span>
+        </div>
 
-  keep-container(false, 0, 0, 30px, 30px);
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-15 16:10:47
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
 
-  .article-title {
-    color: var(--second-text-color);
-    font-weight: 600;
-    font-size: $article-title-font-size;
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-    +keep-tablet() {
-      font-size: $article-title-font-size * 0.9;
-    }
+                    </div>
+                </div>
+            </div>
+        
 
-    +keep-mobile() {
-      font-size: $article-title-font-size * 0.8;
-    }
-  }
+        <div class="article-content markdown-body">
+            <h2 id="流形基本概念与例子"><a href="#流形基本概念与例子" class="headerlink" title="流形基本概念与例子"></a>流形基本概念与例子</h2><h3 id="拓扑"><a href="#拓扑" class="headerlink" title="拓扑"></a>拓扑</h3><ul>
+<li><p>$M,N$为两拓扑空间, $\varphi:M\rightarrow N$为双射,
+且$\varphi$和$\varphi^{-1}$都是连续的,
+则称$\varphi:M\rightarrow N$为<strong>同胚</strong>. <em>同胚的拓扑空间视为一样的.</em></p>
+</li>
+<li><p>如果拓扑空间具有可数拓扑基, 则称$M$满足<strong>第二可数公理</strong>.</p>
+</li>
+<li><p>设$M$为拓扑空间,
+如果$\,\forall\,p,q\in M$存在含$p$和$q$的开邻域$U$和$V$,
+使$U\cap V=\varnothing$, 则称$M$是<strong>Hausdorff</strong>的(满足第二分离公理).</p>
+</li>
+</ul>
+<p>欧氏空间$\mathbb{R}^m$为向量空间, 其上有加法, 有数乘.
+一般用$l^2$距离定义$\mathbb{R}^m$上距离$d,$
+$(\mathbb{R}^m,d)$成为度量空间, 由开球$B(x,r)$全体定义拓扑(构成拓扑基).</p>
+<p>给定开集$U\subset\mathbb{R}^m,$ 函数$f:U\rightarrow \mathbb{R}.$
+若$0\le r\le \infty,$ $f$直到$r$阶偏导存在且连续, 则记$f\in C^r(U).$
+若$f$可展开为幂级数, 称其为<strong>解析函数</strong>, 记$f\in C^\omega(U).$</p>
+<p>设$F:U\rightarrow V,$ $U\subset \mathbb{R}^m,$
+$V\subset \mathbb{R}^n$为开子集,
+$F(x)=(f^1(x^1,\cdots x^m),\cdots, f^n(x^1,\cdots, x^m)).$
+若$f^i\in C^r(U),$ $1\le i\le n,$ 则记$F\in C^r(U,V).$</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>曲线- $F:(a,b)\rightarrow \mathbb{R}^3$</p>
+<p>曲面片- 同胚$F:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$</p>
+<p>任意过点$p$曲线可表为$C(t)=F(u(t),v(t)),$
+切向量$C’(t_0)=F_uu’(t_0)+F_vv’(t_0).$ 默认要求$F_u\times F_v\neq 0,$
+称其满足<strong>正则性</strong>. 切向量全体张成一个平面, 称为<strong>切平面</strong>.</p>
+<p>球面无法用单张曲面片来描述(紧性, 同调群...) 但可以用若干张曲面片来描述.</p>
+<h3 id="流形"><a href="#流形" class="headerlink" title="流形"></a>流形</h3><p>设$M$为拓扑空间, 满足$\,\forall\,p\in M,$ 存在含$p$的邻域$U_p$,
+及从$U_p$到$m$维欧氏空间$\mathbb{R}^m$中开集$D$的同胚$\varphi:U_p\rightarrow D.$
+即它是<strong>局部欧氏</strong>的. 若其还满足第二可数公理与Hausdorff性,
+则称$M$为$m$维<strong>拓扑流形</strong>. 流形的概念是曲线,曲面概念<em>高维,内蕴的推广</em>,
+可视为一块块欧氏空间粘贴起来的一种拓扑空间.</p>
+<p>设$M^m$为$m$维拓扑流形, 称$(U,\varphi)$为<strong>局部坐标系/图/卡</strong>,
+$x^i(q)$称为$q$在$(U,\varphi)$中第$i$个坐标($1\le i\le m$).
+若$(U,\varphi),(V,\psi)$为两个坐标系, $U\cap V\neq \varnothing,$
+则$\psi\circ \varphi^{-1}$称为<strong>坐标变换</strong>.
+如果$\varphi\circ \psi^{-1},\psi\circ \varphi^{-1}\in C^r,$
+则称$(U,\varphi)$与$(V,\psi)$是$C^r$<strong>相容</strong>的.
+它们当然至少是$C^0$相容的.</p>
+<p>设$\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}_{\alpha}$是拓扑流形$M^m$的一族坐标图.
+如果$\bigcup_{\alpha\in \Lambda} U_{\alpha}=M,$
+则称$\{(U_\alpha,\varphi_\alpha)\}_{\alpha\in \Lambda}$是$M$的<strong>坐标图册</strong>.
+如$\,\forall\,\alpha,\beta\in \Lambda,$
+$(U_\alpha,\varphi_\alpha),(U_\beta,\varphi_\beta)$是$C^r$相容的,
+则记$\mathcal{F}\in C^r.$</p>
+<p>分析流形上函数$f:M\rightarrow \mathbb{R}$时,
+只需将$M$中的点在局部坐标系上考虑,
+那么$f\circ\varphi^{-1}$即为欧氏空间到欧氏空间上的函数,
+称为$f$的<strong>局部表示</strong>, 以分析$f$的性质.
+易见两种局部表示可由坐标变换转化, 若坐标变换是光滑的,
+那么局部表示的微分性质在变换下保持, 即<em>不依赖坐标系选取</em>.
+可见为了在流形上研究微分学, 必须要有好的坐标图册.</p>
+<p>设$\mathcal{F}_1=\{(U_\alpha,\varphi_\alpha)\},$
+$\mathcal{F}_2=\{(V_\beta,\psi_\beta)\}$是$M$上两个$C^\infty$坐标图册,
+若$\,\forall\,\alpha,\beta,$
+$(U_\alpha,\varphi_\alpha)$与$(V_\beta,\psi_\beta)$是$C^\infty$相容的,
+则称$\mathcal{F}_1$与$\mathcal{F}_2$是$C^\infty$<strong>等价</strong>的,
+记为$\mathcal{F}_1\sim \mathcal{F}_2.$
+$M$上所有$C^\infty$坐标图册可划分为等价类集,
+每一个$[\mathcal{F}]$称为$M$上一个$C^\infty$<strong>微分结构</strong>.</p>
+<p><strong>定义 1.1</strong>. <em>$m$维$C^\infty$流形=$m$维拓扑流形+$C^\infty$结构[$\mathcal{F}$].</em> </p>
+<p><strong>注 1.2</strong>. <em>类似地可以引入$C^r$微分结构, $C^\omega$微分结构, 定义$C^r$微分流形, $C^\omega$微分流形(解析流形).</em> </p>
+<p><strong>注 1.3</strong>. <em>设$[\mathcal{F}]$是$M^m$上$C^\infty$结构, $\mathcal{F}_1=\{(U_\alpha,\varphi_\alpha)\}\in [\mathcal{F}].$ 若$(V,\psi)$与其中每个坐标图$C^\infty$相容, 可加入该图, 得到扩充的坐标图册$\mathcal{F}_1’.$ 它也是$C^\infty$坐标图册, 且仍在等价类$[\mathcal{F}]$中. 这样可得到极大$C^\infty$坐标图册$\mathcal{F}_{\max}\in [\mathcal{F}],$ 也称为$C^\infty$结构.</em> </p>
+<p>对$M=\mathbb{R}^m,$
+取$\mathcal{F}=\{(\mathbb{R}^m,\mathrm{id})\}$即为$C^\infty$
+$(C^\omega)$ 坐标图册,
+称$[\mathcal{F}]$为$\mathbb{R}^m$上标准$C^\infty$结构,
+$(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
+<p>文章最后更新于 2021-09-15 16:12:46 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分流形》第一章-微分流形(1)</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-09-15 16:10:47</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/09/15/《微分流形》第一章-微分流形(1)/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/09/16/%E3%80%8A%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《代数图论》第一章-基本概念</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/25/%E3%80%8A%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B3.4-3.5/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《微分几何初步》3.4-3.5</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
 
 
-  .article-header {
-    position: relative;
-    padding-left: $avatarWidth;
-    width: 100%;
-    height: $avatarWidth;
-    box-sizing: border-box;
 
-    .avatar {
-      position: absolute;
-      top: 0
-      left: 0;
-      width: $avatarWidth;
-      height: $avatarWidth;
-      padding: 1px;
-      box-sizing: border-box;
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
+        
+    
+</div>
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        background: var(--avatar-background-color);
-      }
-
-    }
-
-
-    .info {
-      padding: 2px 0;
-      margin-left: 10px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-
-      .author {
-        font-weight: 600;
-        font-size: 1.18rem;
-        display: flex;
-        align-items: center;
-
-        .name {
-          color: var(--default-text-color);
-        }
-
-        .author-label {
-          margin-left: 10px;
-          font-size: 0.8rem;
-          font-weight: 500;
-          padding: 0 5px;
-          border-radius: 5px;
-          color: #fff;
-          background: var(--selection-color);
-        }
-
-      }
-    }
-
-  }
-
-
-  .article-header, .article-header-meta-info {
-    margin-top: 16px;
-    +keep-tablet() {
-      transform: scale(0.9);
-      transform-origin: left top;
-    }
-  }
-
-
-  .article-content {
-    margin-top: $component-spacing-value;
-    padding-bottom: 10px;
-    word-wrap: break-word;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--default-text-color);
-  }
-
-  .post-copyright-info {
-    margin-top: $component-spacing-value;
-    width: 100%;
-  }
-
-  .article-nav {
-    height: 40px;
-    margin-top: $component-spacing-value;
-
-    .article-prev, .article-next {
-      max-width: $post-nav-max-width;
-      height: 100%;
-      box-sizing: border-box;
-
-      keep-container(true, 1.03, 1.03, 10px, 0);
-
-      a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-
-        &.prev {
-          padding-left: $arrow-icon-width;
-        }
-
-        &.next {
-          padding-right: $arrow-icon-width;
-        }
-
-        .arrow-icon {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: $arrow-icon-width;
-
-          &.left {
-            left: 0;
-          }
-
-          &.right {
-            right: 0;
-          }
-        }
-
-        .title {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-    }
-
-    .article-prev {
-      float: left;
-    }
-
-    .article-next {
-      float: right;
-    }
-
-    .post-nav-item {
-      display: none;
-
-      +keep-tablet() {
-        display: inline-block;
-      }
-
-    }
-
-
-    .post-nav-title-item {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      +keep-tablet() {
-        display: none;
-      }
-    }
-
-  }
-
-
-}
-
+            </div>
+        
+    </div>
+</div>
 
 
                 

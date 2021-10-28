@@ -148,198 +148,395 @@
             <div class="main-content">
 
                 
-                    $avatarWidth = 46px;
-$arrow-icon-width = 16px;
-$post-nav-max-width = 220px;
-$article-title-font-size = 1.6rem;
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-.article-content-container {
+        <div class="article-title">
+            <span class="title-hover-animation">《代数图论》第二章-群论回顾</span>
+        </div>
 
-  keep-container(false, 0, 0, 30px, 30px);
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-16 14:51:49
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/GTM207-%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/">GTM207-代数图论</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
 
-  .article-title {
-    color: var(--second-text-color);
-    font-weight: 600;
-    font-size: $article-title-font-size;
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-    +keep-tablet() {
-      font-size: $article-title-font-size * 0.9;
-    }
+                    </div>
+                </div>
+            </div>
+        
 
-    +keep-mobile() {
-      font-size: $article-title-font-size * 0.8;
-    }
-  }
+        <div class="article-content markdown-body">
+            <h2 id="置换群"><a href="#置换群" class="headerlink" title="置换群"></a>置换群</h2><p>回忆对称群的任意子群称为<strong>置换群(permutation group)</strong>,
+图的自同构群是一个置换群. 群$G$的一个<strong>置换表示(permutation
+representation)</strong>指$G$到某对称群$\operatorname{Sym}(V)$的同态,
+也称为群$G$在集合$V$上的<strong>作用(action)</strong>.
+一个表示是<strong>忠实的(faithful)</strong>若它是单射, 仅将单位元映至恒等置换.</p>
+<p>群$G$在集合$V$上的作用也诱导了其它的作用,
+如其在集合$V$幂集$2^V$上的作用, 给出了子集间的置换.
+注意到作用保子集大小, 因此也可以作用在$V$的$k-$子集全体上,
+或将子集改为有序元组.</p>
+<p>称集合$V$子集$S$是$G-$<strong>不变</strong>的, 若$\,\forall\,s\in S, g\in G,$
+$s^g\in S.$ 此时任意$g\in G$给出$S$中元素的置换,
+可以将其<strong>限制</strong>在$S$上, 记为$g|_S.$ 限制置换全体记为$G|_S,$ 或$G^S.$</p>
+<p>$G$在$V$上的作用是<strong>可迁(transitive)</strong>的, 若任意给定$x,y\in V,$
+存在$g\in G$使得$x^g=y.$
+$G-$不变子集$S$称为<strong>轨道(orbit)</strong>若$G|_S$在$S$上是可迁的.
+$\,\forall\,x\in V,$ $x^G:=\{x^g:g\in G\}$是一个轨道.</p>
+<p>轨道彼此不相交, 给出了$V$的一个划分. 每个元素恰落在一个轨道里.
+每个$G-$不变子集都是一系列轨道的并, 因此也可以称轨道为极小$G-$不变子集.</p>
+<h2 id="计数"><a href="#计数" class="headerlink" title="计数"></a>计数</h2><p>令$G$为$V$的置换群, $\,\forall\,x\in V,$
+<strong>稳定子(stabilizer)</strong>$G_x$为使得$x^g=x$的全体置换, 形成一个子群.
+给定$S=\{x_1,\cdots,x_r\}\subset V,$
+<strong>逐点稳定子</strong>$G_{x_1,\cdots,x_r}:=\bigcap_{i=1}^r G_{x_i},$
+<strong>集合稳定子</strong>$G_S$为仅要求$S^g=S$的全体置换. 易见前者为后者子群.</p>
+<p><strong>引理 1.1</strong>. <em>设$G$作用在$V$上, $S$为$G$的轨道. 若$x,y\in S,$ 那么将$x$映至$y$的所有置换为$G_x$的某个右陪集. 反过来$G_x$的右陪集中所有置换将$x$映至$S$中同一点.</em> </p>
+<p>本节证明基本为抽象代数基本练习, 在此均略过.</p>
+<p><strong>引理 1.2</strong> (轨道稳定集定理). <em>$|G_x||x^G|=|G|.$</em> </p>
+<p>取$h\in G,$ 称形如$g^{-1}hg$的元素与$h$<strong>共轭</strong>,
+与$h$共轭的元素全体称为$h$的<strong>共轭类</strong>.
+映射$\tau_g:h\rightarrow g^{-1}hg$给出了$G$的置换,
+因此$G$在自身上有一个共轭作用, 以共轭类为轨道. 若$H$为$G$的子群,
+则$g^{-1}Hg$也是子群, 称其与$H$共轭.</p>
+<p><strong>引理 1.3</strong>. <em>设$G$在$V$上有一个作用, 则$\,\forall\,x\in V, g\in G,$ $g^{-1}G_x g=G_{x^g}.$</em> </p>
+<p>记$\operatorname{fix}(g)$表示置换$g$下不动点个数, 熟知有如下引理:</p>
+<p><strong>引理 1.4</strong> (Burnside). <em>$G$作用在$V$上的轨道数等于$G$中元素不动点个数的平均值.</em> </p>
+<h2 id="非对称图"><a href="#非对称图" class="headerlink" title="非对称图"></a>非对称图</h2><p>图是<strong>非对称(asymmetric)</strong>的, 若其自同构群平凡.
+本节我们证明几乎所有图都是非对称的, 即对于$n$个点的图,
+非对称图的占比当$n\rightarrow \infty$时趋近于$1.$</p>
+<p>设$V$含$n$个点, 记$K_V$为$n$个点的完全图.
+所有含$n$个点的图均由$K_V$通过删边得到, 因此共有$2^{\binom{n}{2} }$个图,
+与$E(K_V)$子集一一对应.</p>
+<p>给定图$X,$ 与其同构的图全体称为$X$的<strong>同构类</strong>. 回忆同构定义,
+可以看出同构类即为对称群$\operatorname{Sym}(V)$在$E(K_V)$幂集上作用的轨道.
+由轨道稳定集定理, 有如下引理:</p>
+<p><strong>引理 1.5</strong>. <em>含$X$的同构类大小为$\frac{n!}{|\operatorname{Aut}(X)|}.$</em> </p>
+<p>由Burnside引理, 我们对同构类进行计数.
+设置换$g$(生成的子群)作用在$E(K_V)$上有$r$个轨道,
+记为$\operatorname{orb}_2(g)=r.$ 那么$g$作用在$E(K_V)$幂集上时,
+这些轨道就是全部的极小$g-$不动点, 组合起来共有$2^r$个不动点.
+从而图的同构类个数共有$\frac{1}{n!}\sum_{g\in \operatorname{Sym}(V)}2^{\operatorname{orb}_2(g)}$个.</p>
+<p>如果所有图都是非对称的, 那么每个等价类里含$n!$个图,
+因此有$\frac{2^{\binom{n}{2} } }{n!}$个等价类.
+接下来我们说明事实上当$n\rightarrow \infty$时, 等价类数量趋于该值,
+进而推断出几乎所有的图都是非对称的.</p>
+<p><strong>引理 1.6</strong>. <em>含$n$个顶点的图的同构类数量至多有$(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$个.</em> </p>
+<p><strong>证:</strong> 称某个置换无法固定的点全体为置换的<strong>支撑</strong>,
+即置换的作用仅在支撑上体现. 断言对于所有支撑大小为$2r$的置换,
+$\operatorname{orb}_2$最大值由以$r$个对换组成的置换实现.</p>
+<p>边$xy$非置换的不动点当且仅当$x,y$均在支撑里且不在同一对换内,
+或一者在支撑里, 另一者不在. 设置换中含$k$个对换,
+那么不动的边共有$\binom{n-2r}{2}+k$条, 每条边都是单独的一个轨道.</p>
+<p>对于在动的边, 直接考虑轨道数: 一者在支撑里,
+另一者不在的边贡献的轨道数至多为$(n-2r)(k+2(r-k)/3)=(n-2r)(2r+k)/3$条;
+均在支撑里且不在同一对换内的轨道数至多有$2k\cdot 2(r-k)/3+k(k-1)+\binom{2(r-k)}{2}/3=4/3 \cdot k(r-k)+k(k-1)+(r-k)(2r-2k-1)/3=[2r^2+k^2-r-2k]/3.$
+与前面的合计至多共$\binom{n-2r}{2}+[r(2n-2r-1)+k(k+n-2r+1)]/3$条,
+在$k=r$处达到最大值$(n-2r)(n-2r-1)/2+nr-r^2=n^2/2-rn+r^2-n/2+r=\binom{n}{2}+r(r-n+1).$</p>
+<p>而对由$k=r$个对换组成的置换,
+前面的轨道数只对$r-k$部分(非对换部分)进行了放缩估计, 因此当$k=r$时,
+计算是精确的,
+因此$\operatorname{orb}_2$最大值确实由以$r$个对换组成的置换实现,
+且具体取值已经给出.</p>
+<p>注意轨道数最大估计对支撑大小非偶数的置换也成立,
+即将$2r$换为支撑大小$t\in[2,n]$(此时最大估计未必实现).
+那么轨道数最大估计$\varphi(t)=\binom{n}{2}+\frac{t}{2}(\frac{t}{2}-n+1)$为二次函数,
+以$t=n-1$为对称轴.</p>
+<p>取$m\le n-2,$ 现将$\operatorname{Sym}(V)$划分为三类: 恒等变换,
+支撑大小不超过$m$的置换与剩余的置换.
+它们的大小分别不超过$1,\binom{n}{m}m!&lt;n^m, n!&lt;n^n.$ 由轨道数最大估计,
+每个第二类置换轨道数至多有$\binom{n}{2}-(n-2)$个,
+每个第三类置换轨道数至多有$\binom{n}{2}-\frac{m}{2}(n-\frac{m}{2}-1)\le \binom{n}{2}-\frac{nm}{4}$个.</p>
+<p>从而图的同构类个数至多有$\frac{1}{n!}[2^{\binom{n}{2} }+n^m2^{\binom{n}{2}-(n-2)}+n^n2^{\binom{n}{2}-\frac{nm}{4} }]=\frac{2^{\binom{n}{2} } }{n!}(1+n^m2^{-(n-2)}+n^n2^{-\frac{nm}{4} }).$
+记$n^m2^{-(n-2)}+n^n2^{-\frac{nm}{4} }=2^{m\log_2 n-(n-2)}+2^{n\log_2 n-\frac{nm}{4} },$
+发现对足够大的$n,$ 取$m=\lceil 8log_2 n\rceil$, 即有该项为无穷小量.
+因此同构类数量至多有$(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$个.</p>
+<p><strong>推论 1.7</strong>. <em>几乎所有图都是非对称的.</em> </p>
+<p><strong>证:</strong> 假设在所有同构类中, 非对称图的同构类占比为$\mu.$
+每个非对称图所在同构类中含$n!$张图,
+而其余同构类中至多含$\frac{n!}{2}$张图.
+因此同构类平均大小至多为$\mu n!+(1-\mu) \frac{n!}{2}=(1+\mu) \frac{n!}{2}.$</p>
+<p>而每个图当然在某个同构类里出现过,
+因此$(1+\mu)\frac{n!}{2}(1+o(1))\frac{2^{\binom{n}{2} } }{n!}\ge 2^{\binom{n}{2} },$
+$(1+\mu)(1+o(1))\ge 2.$ 从而当$n\rightarrow\infty$时,
+$\mu\rightarrow 1.$</p>
+<p>因此, 若将所有同构的图视为同一张图, 几乎所有图都是非对称的.
+若将同构类里每张图都视作不同的图, 由于非对称图所在同构类里含图数量最多,
+我们仍然得到几乎所有图都是非对称的.</p>
+<h2 id="对上的轨道"><a href="#对上的轨道" class="headerlink" title="对上的轨道"></a>对上的轨道</h2><p>设$G$在$V$上有一个可迁作用, 它在$V\times V$上也自然有一个作用,
+我们研究其上的轨道. 由于$G$是可迁的, $\{(x,x):x\in V\}$是一个轨道,
+称为<strong>对角轨道</strong>. 设$\Omega\subset V\times V,$
+记其<strong>转置</strong>$\Omega^T$为$\{(y,x):(x,y)\in \Omega\}.$
+易见$\Omega^T$是$G-$不变的当且仅当$\Omega$也是. 若$\Omega$为轨道,
+那么$\Omega=\Omega^T$或无交. $\Omega=\Omega^T$时称其为<strong>对称</strong>轨道.</p>
+<p><strong>引理 1.8</strong>. <em>设$G$在$V$上有一个可迁作用, $x\in V,$ 那么$G$在$V\times V$上的轨道与$G_x$在$V$上轨道一一对应.</em> </p>
+<p>证明为抽代练习, 在此略过.</p>
+<p>因此$G$在$V\times V$上的轨道$\Omega$与$G_x$在$V$上的轨道联系.
+称$G_x$在$V$上的轨道数为$G$的秩. 若$\Omega$对称,
+称$G_x$在$V$上对应轨道是<strong>自配对(self-paired)</strong>的.
+每个$V\times V$上的轨道$\Omega$可看为以$V$为顶点集,
+$\Omega$为弧集的有向图, 当$\Omega$对称时为无向图.
+注意当$\Omega$非对称时, 两点间仅有一条弧, 称其为<strong>定向图(oriented
+graph)</strong>.</p>
+<p><strong>引理 1.9</strong>. <em>令$G$为$V$上的可迁置换群, $\Omega$为$V\times V$上轨道. 设$(x,y)\in \Omega,$ 则$\Omega$对称当且仅当$\,\exists\,g\in G,$ 使得$(x^g,y^g)=(y,x).$</em> </p>
+<p>若$g$交换$x,y,$ 则对换$(xy)$在$g$中, 那么$g$为偶数阶, 从而$G$也是偶数阶.
+称$G$在$V$上<strong>慷慨可迁(generously transitive)</strong>, 若任意给定$x,y\in V,$
+存在置换交换它们. $V\times V$上所有轨道都是对称的当且仅当$G$慷慨可迁.</p>
+<p>每个$V\times V$上的轨道给出一个图, $G$中元素均是该图的自同构,
+且作用在顶点集和边集上都是可迁的. 对于若干轨道之并,
+$G$中元素也均为该图的自同构, 但仅作用在顶点集上可迁的.
+注意$G$并不一定就是图的自同构群. 书中给出了$G=S_7,$ 可生成$J(7,3,1),$
+但$S_8\subset \operatorname{Aut}(J(7,3,1))$的例子, 在此略过.</p>
+<h2 id="本原性"><a href="#本原性" class="headerlink" title="本原性"></a>本原性</h2><p>令$G$可迁作用在$V$上, 非空子集$S\subset V$称为$G$的<strong>非本源区块(block of
+imprimitivity)</strong>, 若$\,\forall\,g\in G,$
+$S^g=S$或$S^g\cap S=\varnothing.$ 由于$G$可迁,
+$S$的所有转换构成了$V$的划分.
+这些不同转换构成的集合称为$G$的<strong>非本原系统</strong>.</p>
+<p>如下图中, 正方体$Q$的自同构群作用在顶点集上是可迁的, 考虑距离易见,
+所有相同颜色的点的集合都是非本原区块,
+而四个集合构成了自同构群的非本原系统.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/PlVHYLgGbunfSz2.png width='50%' height='50%'></p>
+<p>除了$S$为单点和全集的情况, 其余非本原系统都称为非平凡的.
+若群没有非平凡非本原系统, 则称群是<strong>本原(primitive)</strong>的,
+否则即为非本原的.</p>
+<p><strong>引理 1.10</strong>. <em>$G$可迁作用在$V$上, $x\in V.$ $G$是本原的当且仅当$G_x$为$G$的极大子群.</em> </p>
+<p><strong>证:</strong> 我们来证明$G$有非平凡非本原系统当且仅当$G_x$不是$G$的极大子群.
+设$G$有非平凡非本原系统, 令$x\in B,$ $B$为一个非本原区块.
+下面证明$G_x\subsetneq G_B\subsetneq G.$ 由于$\,\forall\,g\in G_x,$
+$x\in B\cap B^g,$ 因此$B=B^g,$ $g\in G_B.$ 取$B$中另一元素$y\neq x.$
+由可迁性存在$h\in G$使得$y=x^h.$ 从而$y\in B\cap B^h,$ $B=B^h,$
+$h\in G_B.$ 然而$h\notin G_x,$ 从而$G_x$真包含于$G_B.$</p>
+<p>设$G_x\subsetneq H\subsetneq G,$
+我们说明$H$的轨道就是$G$的非平凡非本原系统. 记$B$为$H$含$x$的轨道,
+取$g\in G,$ 需证明要么$B=B^g,$ 要么$B\cap B^g=\varnothing.$
+假设$y\in B\cap B^g,$ 由于$x,y$同在轨道$B$内, $\,\exists\,h\in H,$
+使得$y=x^h.$ 而由于$y\in B^g,$ 有$B$中元素$x^{h’},$ $x^{h’g}=y.$
+因此$x^{h’gh^{-1} }=x,$ $h’gh^{-1}\in G_x\subsetneq H,$ 从而$g\in H.$
+由于$B$是$H$的轨道, 即有$B=B^g.$</p>
+<p>由于$G_x\subsetneq H,$ $B$不止由$x$组成. 为了说明$H$的轨道不是整个$V,$
+回忆 $\,\forall\,y\in V,$ $G$将$x$映至$y$的所有置换为$G_x$某个右陪集.
+若$H$也是可迁的, 则有$G_x H\supset G.$ 然而$G_x H=H$, 因此$H=G,$
+与$H$为真子群矛盾. 从而$B\neq V$, 即$B$是非平凡的非本原系统.</p>
+<h2 id="本原性与连通性"><a href="#本原性与连通性" class="headerlink" title="本原性与连通性"></a>本原性与连通性</h2><p>关于本原性的另一个描述在$G$作用于$V\times V$的轨道上体现.
+我们先做些预备工作.
+有向图的一个路指不同顶点构成的序列$\{u_0,\cdots,u_r\},$
+$(u_{i-1},u_i)$为弧; 有向图的<strong>弱路(weak
+path)</strong>只要求$(u_{i-1},u_i)$或$(u_{i},u_{i-1})$为弧即可.
+有向图是<strong>强连通</strong>的, 若任意两点有路径连接;
+称其<strong>弱连通</strong>即指任意两点有弱路连接.
+有向图的弱连通性即为无视方向后无向图的连通性. 有向图的<strong>强连通分支</strong>,
+指强连通的极大诱导子图. 根据定义, 单点即为强连通的,
+因此强连通分支构成了图的一个划分.</p>
+<p>有向图中顶点的<strong>入度(in-valency)</strong>为以该点为终点的弧的个数;
+<strong>出度(out-valency)</strong>即为以该点为起点的弧的个数.</p>
+<p><strong>引理 1.11</strong>. <em>若$D$为所有点出度与入度相同的有向图, 则$D$强连通当且仅当它弱连通.</em> </p>
+<p><strong>证:</strong> 只需证明当$D$弱连通时, 它也是强连通的. 不然,
+$D$可拆分为强连通分支$D_1,\cdots,D_r.$ 若有一条弧从$D_i$出发至$D_j,$
+那么连接$D_i,D_j$的所有的弧都必须从$D_i$出发,
+不然$D_i,D_j$可合并为强连通子图.</p>
+<p>以$D$的强连通分支为顶点作有向图$D’,$
+$D_i$到$D_j$连有向边当且仅当$D$中存在一条弧从$D_i$出发至$D_j.$
+由于$D$是弱连通的, $D’$也是. $D’$中不能出现环,
+不然环涉及的强连通分支全体之并为强连通的.
+从而易证$D’$中至少有一个点入度为零, 不妨设其对应强连通分支$D_1.$</p>
+<p>对于涉及$D_1$的全体弧, 若其终点在$D_1$内, 起点必在$D_1$内,
+出度与入度相消; 但是至少有一条边, 从$D_1$出发, 终点在$D_1$外,
+因为$D’$是弱连通的. 因此$D_1$内全体点出度之和必定大于入度, 与条件矛盾.</p>
+<p>回忆$G$可迁作用在$V$上时, $V\times V$上的轨道$\Omega$可视为有向图.
+当$\Omega$非对称时, 图为定向图. 由于$G$是可迁的, 全体点出度相同,
+入度相同. 又由于出度和等于入度和(等于弧数), 全体点出度等于入度.
+因此轨道对应的有向图强连通性等于弱连通性, 泛称为轨道的连通性.</p>
+<p><strong>引理 1.12</strong>. <em>$G$可迁作用在$V$上. $G$是本原的当且仅当每个非对角轨道连通.</em> </p>
+<p><strong>证:</strong> 假设$G$是非本原的, $B_1,\cdots, B_r$为非本原系统.
+设$x\neq y\in B_1,$ $\Omega$为$V\times V$上含$(x,y)$的轨道. 对$g\in G,$
+$x^g,y^g$在相同非本原区块内. 从而$\Omega$的每条弧起终点都在同一区块内,
+显然不连通.</p>
+<p>反之设$\Omega$某一轨道不连通, $B$为$\Omega$某一连通分支的顶点全体.
+这时$\,\forall\,g\in G,$ $B^g$显然也是连通的,
+因此$B^g=B$或$B^g\cap B=\varnothing.$ 因此$B$为非本原区块,
+$G$是非本原的.</p>
+<p>文章最后更新于 2021-09-16 14:51:49 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数图论》第二章-群论回顾</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-09-16 14:51:49</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/09/16/《代数图论》第二章-群论回顾/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/09/19/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(1)-de%20Rham%20%E5%A4%8D%E5%BD%A2/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(1)-de Rham 复形</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/09/16/%E3%80%8A%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《代数图论》第一章-基本概念</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
 
 
-  .article-header {
-    position: relative;
-    padding-left: $avatarWidth;
-    width: 100%;
-    height: $avatarWidth;
-    box-sizing: border-box;
 
-    .avatar {
-      position: absolute;
-      top: 0
-      left: 0;
-      width: $avatarWidth;
-      height: $avatarWidth;
-      padding: 1px;
-      box-sizing: border-box;
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
+        
+    
+</div>
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        background: var(--avatar-background-color);
-      }
-
-    }
-
-
-    .info {
-      padding: 2px 0;
-      margin-left: 10px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-
-      .author {
-        font-weight: 600;
-        font-size: 1.18rem;
-        display: flex;
-        align-items: center;
-
-        .name {
-          color: var(--default-text-color);
-        }
-
-        .author-label {
-          margin-left: 10px;
-          font-size: 0.8rem;
-          font-weight: 500;
-          padding: 0 5px;
-          border-radius: 5px;
-          color: #fff;
-          background: var(--selection-color);
-        }
-
-      }
-    }
-
-  }
-
-
-  .article-header, .article-header-meta-info {
-    margin-top: 16px;
-    +keep-tablet() {
-      transform: scale(0.9);
-      transform-origin: left top;
-    }
-  }
-
-
-  .article-content {
-    margin-top: $component-spacing-value;
-    padding-bottom: 10px;
-    word-wrap: break-word;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--default-text-color);
-  }
-
-  .post-copyright-info {
-    margin-top: $component-spacing-value;
-    width: 100%;
-  }
-
-  .article-nav {
-    height: 40px;
-    margin-top: $component-spacing-value;
-
-    .article-prev, .article-next {
-      max-width: $post-nav-max-width;
-      height: 100%;
-      box-sizing: border-box;
-
-      keep-container(true, 1.03, 1.03, 10px, 0);
-
-      a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-
-        &.prev {
-          padding-left: $arrow-icon-width;
-        }
-
-        &.next {
-          padding-right: $arrow-icon-width;
-        }
-
-        .arrow-icon {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: $arrow-icon-width;
-
-          &.left {
-            left: 0;
-          }
-
-          &.right {
-            right: 0;
-          }
-        }
-
-        .title {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-    }
-
-    .article-prev {
-      float: left;
-    }
-
-    .article-next {
-      float: right;
-    }
-
-    .post-nav-item {
-      display: none;
-
-      +keep-tablet() {
-        display: inline-block;
-      }
-
-    }
-
-
-    .post-nav-title-item {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      +keep-tablet() {
-        display: none;
-      }
-    }
-
-  }
-
-
-}
-
+            </div>
+        
+    </div>
+</div>
 
 
                 

@@ -148,198 +148,294 @@
             <div class="main-content">
 
                 
-                    $avatarWidth = 46px;
-$arrow-icon-width = 16px;
-$post-nav-max-width = 220px;
-$article-title-font-size = 1.6rem;
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
 
-.article-content-container {
+        <div class="article-title">
+            <span class="title-hover-animation">《微分流形》第二章-切丛(2)</span>
+        </div>
 
-  keep-container(false, 0, 0, 30px, 30px);
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-13 16:59:47
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
 
-  .article-title {
-    color: var(--second-text-color);
-    font-weight: 600;
-    font-size: $article-title-font-size;
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
 
-    +keep-tablet() {
-      font-size: $article-title-font-size * 0.9;
-    }
+                    </div>
+                </div>
+            </div>
+        
 
-    +keep-mobile() {
-      font-size: $article-title-font-size * 0.8;
-    }
-  }
+        <div class="article-content markdown-body">
+            <h2 id="切丛"><a href="#切丛" class="headerlink" title="切丛"></a>切丛</h2><p>回忆$M^m$为$m$维$C^\infty$流形,
+其上有切丛$TM=\bigcup_{p\in M}T_pM\xrightarrow{\pi}M,$ 具有自然的拓扑.
+$T_qM$有自然基$\{X_i\},$ $T_qM\cong \mathbb{R}^m,$
+从而有同胚$\Phi_U:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^m\rightarrow \varphi(U)\times \mathbb{R}^m.$
+$\{(\pi^{-1}(U_\alpha),\Phi_\alpha)\}$即为$TM$的光滑坐标图册,
+使之成为$2m$维$C^\infty$流形.</p>
+<h2 id="向量场"><a href="#向量场" class="headerlink" title="向量场"></a>向量场</h2><p>$X:p\mapsto X_p\in T_pM$称为$M$上<strong>向量场</strong>. 对开集$U\subset M,$
+$X:U\ni p\mapsto T_pM$称为$U$上向量场.
+也可以描述$X$为$X:M\rightarrow TM,$ $\pi\circ X=\mathrm{id}_M.$
+如果$X$还是流形间的$C^\infty$映照, 则称$X$是$M$上$C^\infty$向量场.
+考虑局部拉回到$\widehat{X}:\varphi(U)\rightarrow \varphi(U)\times \mathbb{R}^m$,
+具体表示为$x\mapsto (x,\xi\circ\varphi^{-1}(x)).$
+因此只需考虑$\xi\circ\varphi^{-1}$是否光滑即可,
+也即$\xi$各个分量是否在$C^\infty(U)$中.</p>
+<p>用$\chi(M)$表示$M$山光滑向量场全体, $\,\forall\,X,Y\in \chi(M),$
+$f,g\in C^\infty(M),$ 则$fX+gY\in \chi(M),$
+$(fX+gY)(p):=f(p)X(p)+g(p)Y(p)\in T_pM.$
+这是因为$C^\infty(U)$和$C^\infty(\mathbb{R}^m)$一样,
+都是乘法封闭的向量空间, 考虑局部表示即可.
+特别地$\chi(M)$是无穷维向量空间.</p>
+<p>回忆若$f\in C^2(U),$ $U\subset \mathbb{R}^m,$ $f$的混合偏导可交换顺序.
+那么对一般的向量场, 我们考虑是否有$XY=YX,$ $X,Y\in\chi(M).$
+即$[X,Y]f=XYf-YXf$是否总取零.
+这里$[-,-]:\chi(M)\times \chi(M)\rightarrow\chi(M)$称为$X$和$Y$的<strong>Lie括号</strong>.
+$[X,Y]_p f=X_pYf-Y_pXf.$</p>
+<p>回忆$(Yf)(p)=Y_p(f),$ 希望$Yf\in C^\infty(M).$
+考察$(Yf)\circ\varphi^{-1},$ $(Yf)|_U=\sum_i\eta^i X_i(f),$
+那么$(Yf)\circ\varphi^{-1}=\sum_i \eta^i\circ\varphi^{-1}\cdot \frac{\partial f\circ\varphi^{-1} }{\partial x_i}\in C^\infty(\mathbb{R}^m).$
+因此$X_pYf$有意义, 有:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            X_pYf&=\sum_i \xi^i(p)\sum_j X_i(\eta^jX_j(f))\\
+            &=\sum_{i,j} \xi^i(p)X_i(\eta^j)X_j(f)+\xi^i(p)\eta^j(p)X_iX_j(f)
+        \end{aligned}</script><p>交换$X,Y$顺序即得到$Y_pXf,$ 从而:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            [X,Y]_pf&=\sum_{i,j}[\xi^i(p)X_i(\eta^j)-\eta^i(p)X_i(\xi^j)]X_j(f)+\sum_{i,j}\xi^i(p)\eta^j(p)[X_i,X_j] (f),
+        \end{aligned}</script><p>后项由于$f\in C^\infty(M)$取零,
+故$[X,Y]|_U=\sum_{ij} [\xi^iX_j(\eta^j)-\eta^i X_i(\xi^j)]X_j,$
+$[X,Y]\in\chi(M)$确实为光滑向量场.</p>
+<p>可以看出, $[-,-]$满足如下性质:</p>
+<ul>
+<li><p>反交换性: $[X,Y]=-[Y,X];$</p>
+</li>
+<li><p>线性性: $[aX_1+bX_2,Y]=a[X_1,Y]+b[X_2,Y];$</p>
+</li>
+<li><p>Jacobi恒等式: $[[X,Y],Z]+[[Y,Z],X]+[[Z,X],Y]=0.$</p>
+</li>
+</ul>
+<p>因此$\chi(M)$是一个<strong>李代数</strong>.</p>
+<h2 id="切映照"><a href="#切映照" class="headerlink" title="切映照"></a>切映照</h2><p>设$F:M^m\rightarrow N^n$是$C^\infty$流形间的$C^\infty$映照.
+$\,\forall\,$过$p$点曲线$C(t),$ $C(t_0)=p,$ $C’(t_0)=X,$
+则对应有过$q$点曲线$F(C(t)),$ 切向量为$Y.$
+这诱导了切空间之间的映照${F_\ast }_p:T_pM\rightarrow T_qN.$
+$\,\forall\,f\in C_q^\infty(N),$ $Yf=X(f\circ F).$
+即${F_\ast }_pX(f)=X(f\circ F).$ 易证
+${F_\ast }_p(aX_1+bX_2)=a{F_\ast }_pX_1+b{F_\ast }_pX_2,$ 因此${F_\ast }_p$为线性映照.</p>
+<p>回忆向量空间之间的线性映照$\varphi:V\rightarrow W$诱导对偶映照$\varphi^\ast :W^\ast \rightarrow V^\ast ,$
+定义为$\,\forall\,w^\ast \in W^\ast ,$ $(\varphi^\ast w^\ast )(v)=w^\ast (\varphi (v)).$
+对偶映照也是线性的, 称为<strong>拉回映照</strong>. 因此对上面的${F_\ast }_p,$
+有拉回映照$F^\ast :T_q^\ast N\rightarrow T_p^\ast M,$
+$F^\ast (df)_q(X)=(df)_q({F_\ast }_pX)={F_\ast }_pX(f)=X(f\circ F)= d(f\circ F)_p(X),$
+即$F^\ast (df)_q=d(f\circ F)_p.$</p>
+<p><strong>命题 1.1</strong>. <em>设$F\in C^\infty(M,N),$ $G\in C^\infty(N,W),$ 则${(G\circ F)_{\ast } }_p={G_{\ast } }_q\circ {F_\ast }_p,$ $(G\circ F)^\ast =F^\ast \circ G^\ast .$ 且若$F$是光滑同胚, 那么${F_\ast }_p$是线性同构, $\,\forall\,p\in M.$</em> </p>
+<p>前面的性质是容易说明的, 而后面的性质利用$F^{-1}\circ F=\mathrm{id}_M,$
+$F\circ F^{-1}=\mathrm{id}_N,$ 结合前面的性质即得.</p>
+<p><strong>命题 1.2</strong>. <em>设$F:M\rightarrow N$是光滑映照, $q=F(p).$ 那么${F_\ast }_pX_i=\sum_\alpha [X_i(y^\alpha \circ F)]Y_\alpha,$ $F^\ast (dy^\alpha)_q=\sum_i [X_i(y^\alpha\circ F)] (dx^i)_p.$</em> </p>
+<p>按定义验证即可.
+注意$X_i(y^\alpha\circ F)=J(\psi\circ F\circ \varphi^{-1})_{\alpha,i},$
+因此切映照是Jacobi矩阵的推广.</p>
+<p>给出如下定义:</p>
+<ul>
+<li><p>定义$F$在$p$点的<strong>秩</strong>为${F_{\ast } }_p$的秩$=r(D\widehat{F})_{\varphi(p)},$
+记为$r({F_\ast }_p);$</p>
+</li>
+<li><p>如果${F_\ast }_p$是单射, 即$r({F_\ast }_p)=m,$ 则称$F$在$p$点是<strong>浸入.</strong>
+若$F$点点浸入, 则称$F:M\rightarrow N$是浸入;</p>
+</li>
+<li><p>如果${F_\ast }_p$是满射, 即$r({F_\ast }_p)=n,$ 则称$F$在$p$点是<strong>淹没.</strong>
+若$F$点点淹没, 则称$F:M\rightarrow N$是淹没.</p>
+</li>
+</ul>
+<p>回忆反函数定理: 若开集$U,V\subset \mathbb{R}^m,$
+$F:U\rightarrow V$为光滑映照, $p\in U,$ $q=F(p)\in V.$ 若$DF(p)$非退化,
+那么$\,\exists\,$点$p$的小邻域$U_1,$ $q$点小邻域$V_1,$
+使$F|_{U_1}:U_1\rightarrow V_1$是$C^\infty$同胚. 那么在流形上,
+设$U\subset M^m,V\subset N^m,$
+将$DF(p)$非退化条件改为${F_\ast }_p$是线性同构, 即可推广反函数定理到流形上.</p>
+<p>文章最后更新于 2021-10-26 16:51:44 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分流形》第二章-切丛(2)</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-10-13 16:59:47</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/10/13/《微分流形》第二章-切丛(2)/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/17/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(2)-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《现代PDE基础》笔记(2)-广义函数运算</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/13/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《现代PDE基础》笔记(1)-广义函数</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
 
 
-  .article-header {
-    position: relative;
-    padding-left: $avatarWidth;
-    width: 100%;
-    height: $avatarWidth;
-    box-sizing: border-box;
 
-    .avatar {
-      position: absolute;
-      top: 0
-      left: 0;
-      width: $avatarWidth;
-      height: $avatarWidth;
-      padding: 1px;
-      box-sizing: border-box;
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
+        
+    
+</div>
 
-      img {
-        border-radius: 50%;
-        width: 100%;
-        height: 100%;
-        background: var(--avatar-background-color);
-      }
-
-    }
-
-
-    .info {
-      padding: 2px 0;
-      margin-left: 10px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 100%;
-      height: 100%;
-
-      .author {
-        font-weight: 600;
-        font-size: 1.18rem;
-        display: flex;
-        align-items: center;
-
-        .name {
-          color: var(--default-text-color);
-        }
-
-        .author-label {
-          margin-left: 10px;
-          font-size: 0.8rem;
-          font-weight: 500;
-          padding: 0 5px;
-          border-radius: 5px;
-          color: #fff;
-          background: var(--selection-color);
-        }
-
-      }
-    }
-
-  }
-
-
-  .article-header, .article-header-meta-info {
-    margin-top: 16px;
-    +keep-tablet() {
-      transform: scale(0.9);
-      transform-origin: left top;
-    }
-  }
-
-
-  .article-content {
-    margin-top: $component-spacing-value;
-    padding-bottom: 10px;
-    word-wrap: break-word;
-    border-bottom: 1px solid var(--border-color);
-    color: var(--default-text-color);
-  }
-
-  .post-copyright-info {
-    margin-top: $component-spacing-value;
-    width: 100%;
-  }
-
-  .article-nav {
-    height: 40px;
-    margin-top: $component-spacing-value;
-
-    .article-prev, .article-next {
-      max-width: $post-nav-max-width;
-      height: 100%;
-      box-sizing: border-box;
-
-      keep-container(true, 1.03, 1.03, 10px, 0);
-
-      a {
-        position: relative;
-        display: block;
-        width: 100%;
-        height: 100%;
-        box-sizing: border-box;
-
-        &.prev {
-          padding-left: $arrow-icon-width;
-        }
-
-        &.next {
-          padding-right: $arrow-icon-width;
-        }
-
-        .arrow-icon {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: $arrow-icon-width;
-
-          &.left {
-            left: 0;
-          }
-
-          &.right {
-            right: 0;
-          }
-        }
-
-        .title {
-          width: 100%;
-          height: 100%;
-        }
-      }
-
-    }
-
-    .article-prev {
-      float: left;
-    }
-
-    .article-next {
-      float: right;
-    }
-
-    .post-nav-item {
-      display: none;
-
-      +keep-tablet() {
-        display: inline-block;
-      }
-
-    }
-
-
-    .post-nav-title-item {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-
-      +keep-tablet() {
-        display: none;
-      }
-    }
-
-  }
-
-
-}
-
+            </div>
+        
+    </div>
+</div>
 
 
                 
