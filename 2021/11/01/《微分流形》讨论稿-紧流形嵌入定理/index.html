@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(10)-Čech上同调 |
+            《微分流形》讨论稿-紧流形嵌入定理 |
         
         梦之居
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(10)-Čech上同调</span>
+            <span class="title-hover-animation">《微分流形》讨论稿-紧流形嵌入定理</span>
         </div>
 
         
@@ -168,7 +168,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-31 20:55:17
+        <i class="fas fa-edit"></i>&nbsp;2021-11-01 17:27:25
     </span>
     
         <span class="article-categories article-meta-item">
@@ -176,15 +176,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/">讨论稿</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                        &gt; <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
                     </li>
                 
             </ul>
@@ -208,117 +208,128 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="预层"><a href="#预层" class="headerlink" title="预层"></a>预层</h2><p>$X$上预层$\mathcal{F}$指, 对$X$的每个开集赋予一个abel群$\mathcal{F}(U)$,
-赋予每个开集的包含$V\subset U$群同态$\rho^U_V:\mathcal{F}(U)\rightarrow\mathcal{F}(V)$,
-称为限制. 满足范畴论的要求: $\rho^U_U=\mathrm{id}$,
-且有传递性$\rho^V_W\circ\rho^U_V=\rho^U_W$.</p>
-<p>例如$X$上的连续函数预层, $C^0(U)$是$U$上的连续函数,
-$\rho^U_V$就是通常函数的限制. $\Omega^\ast $也是一个预层.
-特别地对$0\le q\le \dim M$, $\Omega^q$也是预层.</p>
-<p>若$\mathcal{F},\mathcal{G}$是$X$上预层,
-对每个开集$U$存在同态$f_U:\mathcal{F}(U)\rightarrow\mathcal{G}(U)$,
-使得$\rho^U_Vf_U=f_V\rho^U_V$, 则称$\{f_U\}$为预层上的同态;
-如果每个同态都是同构, 则$\{f_U\}$是预层的同构,
-$\mathcal{F}\cong \mathcal{G}$.</p>
-<p>用范畴论的语言来看,
-两个预层的同态$f$就是两个函子$\mathcal{F},\mathcal{G}$上的自然变换.</p>
-<p>称$\mathcal{F}$为取值于abel群$G$的常值预层,
-若$\mathcal{F}(U)$是$U$上取值于$G$的局部常值函数全体,
-且$\rho^U_V$是通常函数的限制.</p>
-<p>所以若$U$连通, 则$\mathcal{F}(U)\cong G$,
-且若$V\cap U$是两个连通开集的包含, 那么$\rho^U_V=\mathrm{id}_G$.
-习惯上将该常值预层就记为$G$.</p>
-<p>若有纤维丛$\pi:E\rightarrow M$, 则可在$M$上定义预层$\mathcal{H}^q$,
-$\mathcal{H}^q(U)=H^q(\pi^{-1}(U))$, 限制$\rho^U_V$由$i^\ast $诱导,
-包含映射$i:\pi^{-1}(V)\rightarrow \pi^{-1}(U)$.
-(在预层$\mathcal{H}^q$上可以构造超上同调.)</p>
-<p>当$U$可缩时, $\pi^{-1}(U)\cong U\times F$, 由Künneth公式,
-$\mathcal{H}^q(U)\cong H^q(F)$. 若$V$为可缩开集的包含,
-则$\rho^U_V$为同构.</p>
-<p>预层$\mathcal{H}^q$为好覆盖上局部常值预层的一个例子,
-它在纤维化谱序列中有基本的重要性.</p>
-<h2 id="开覆盖的Cech上同调"><a href="#开覆盖的Cech上同调" class="headerlink" title="开覆盖的Čech上同调"></a>开覆盖的Čech上同调</h2><p>设$\mathcal{F}$是拓扑空间$X$上预层, $\mathcal{U}=\{U_\alpha\}$为开覆盖,
-定义$C^0(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U_\alpha)$.
-设$\omega\in C^0(\mathcal{U},\mathcal{F})$,
-对每个$U_\alpha$指定$\omega_\alpha\in \mathcal{F}(U_\alpha)$.
-$\omega$称为$\mathcal{U}$上取值于$\mathcal{F}$的一个$0$-上链.</p>
-<p>定义$C^1(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U_{\alpha\beta})$,
-额外的, 需指定$\omega_{\alpha\beta}=-\omega_{\beta\alpha}$.
-称为$1$-上链.</p>
-<p>类似地, 可以定义$p$-上链$\omega\in C^p(\mathcal{U},\mathcal{F})$,
-对任意$p+1$个开集非空交指定$\omega_{\alpha_0\cdots\alpha_p}$,
-要求交换下标后符号取反.</p>
-<p>简单起见, 记限制$\rho^U_V(\omega_U)=\omega_U|_V$,
-在明了时也可以省去$|_V$, 因为限制具有传递性.</p>
-<p>接下来定义差分算子$\delta:C^p(\mathcal{U},\mathcal{F})\rightarrow C^{p+1}(\mathcal{U},\mathcal{F})$,
-$\delta\omega$的分量$(\delta\omega)_{\alpha_0\cdots\alpha_{p+1} }=\sum_{i=0}^{p+1}(-1)^i\omega_{\alpha_0\cdots\hat\alpha_i\cdots\alpha_{p+1} }$.</p>
-<p>由限制的传递性, $\delta^2=0$.
-称复形$\{C^\ast (\mathcal{U},\mathcal{F}),\delta\}$的上同调$H^\ast (\mathcal{U},\mathcal{F})$为覆盖$\mathcal{U}$取值于预层$\mathcal{F}$的Čech上同调.</p>
-<p>若$\mathcal{F}$是共变的,
-那么有$\partial:C_p(\mathcal{U},\mathcal{F})\rightarrow C_{p-1}(\mathcal{U},\mathcal{F})$,
-$(\partial \omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_{\alpha}\omega_{\alpha\alpha_0\cdots\alpha_{p-1} }$.</p>
-<p>回到$\mathcal{F}$上Čech上同调的讨论,
-若$\mathcal{V}$是$\mathcal{U}$的一个加细,
-即$\,\exists\,\phi:J\rightarrow I$为指标集的映射,
-$V_\beta\subset U_{\phi\beta}$, $\,\forall\,\beta\in J$.
-$\phi$称为加细映射.</p>
-<p>$\phi$诱导了$\phi^\sharp:C^q(\mathcal{U},\mathcal{F})\rightarrow C^q(\mathcal{V},\mathcal{F})$,
-$(\phi^\sharp\omega)_{\beta_0\cdots\beta_q}=\omega_{\phi(\beta_0)\cdots\phi(\beta_q)}$.
-容易验证, $\phi^\sharp$是一个链映射.</p>
-<p>若存在另一个加细映射$\psi:J\rightarrow I$,
-则$\phi^\sharp\simeq\psi^\sharp$链同伦. 事实上,
-取同伦算子$K:C^q(\mathcal{U},\mathcal{F})\rightarrow C^{q-1}(\mathcal{V},\mathcal{F})$,
-$(K\omega)_{\beta_0\cdots\beta_{q-1} }=\sum_{i=0}^{q-1}(-1)^i\omega_{\phi(\beta_0)\cdots\phi(\beta_i)\psi(\beta_i)\cdots\psi(\beta_{q-1})}$即可.</p>
-<p>从而,
-有诱导映射$\phi^\sharp:H^q(\mathcal{U},\mathcal{F})\rightarrow H^q(\mathcal{V},\mathcal{F})$,
-且其与$\phi$选取无关.</p>
-<h2 id="有向极限"><a href="#有向极限" class="headerlink" title="有向极限"></a>有向极限</h2><p>设有偏序集$(I,\le)$, 若其还满足$\,\forall\,a,b\in I, \,\exists\,c\in I$,
-$a,b\le c$, 则称$I$为有向集.</p>
-<p>定义群的有向系为群的集类$\{G_\alpha\}$, 以有向集为指标集,
-使得$\,\forall\,a\le b$, 存在群同态$f^a_b:G_a\rightarrow G_b$,
-$f^a_a=\mathrm{id}$, $f^a_c=f^b_c\circ f^a_b$, 若$a\le b\le c$.</p>
-<p>定义等价关系$\sim$, $g_{a}\sim g_b$若$\,\exists\,c$, $a,b\le c$,
-$f^a_c(g_a)=f^b_c(g_b)$.
-定义群的有向系$\{G_a\}$有向极限为$\lim_{a\in I}G_a=(\prod_{a\in I}G_a)/\sim$,
-加法自然定义为$[g_a]+[g_b]=[f^a_c(g_a)+f^b_c(g_b)]$, $a,b\le c$.
-良定且有向极限成为群.</p>
-<h2 id="拓扑空间的Cech上同调"><a href="#拓扑空间的Cech上同调" class="headerlink" title="拓扑空间的Čech上同调"></a>拓扑空间的Čech上同调</h2><p>把上面的理论应用到$H^\ast (\mathcal{U},\mathcal{F})$上, 即取:</p>
+            <h2 id="紧支撑光滑函数"><a href="#紧支撑光滑函数" class="headerlink" title="紧支撑光滑函数"></a>紧支撑光滑函数</h2><p>首先考虑克莱因瓶如何嵌入到$\mathbb{R}^4$里,
+这直接导致我们需要如下的工具.</p>
+<p>在$\mathbb{R}^n$上, 取$\varphi(x)=\begin{cases}
+            e^{\frac{1}{|x|^2-1} },&amp;|x|&lt;1\\
+            0,&amp;|x|\ge 1.
+        \end{cases},$
+令$\alpha(x)=\frac{1}{\int_{\mathbb{R}^n} \varphi dx}\varphi(x).$
+那么$\alpha(x)\in C_c^\infty(\mathbb{R}^n),$
+$\operatorname{supp}\alpha=B_1,$ 满足$\int_{\mathbb{R}^n}\alpha dx=1.$
+取$\alpha_\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$
+则$\operatorname{supp}\alpha_\varepsilon=B_\varepsilon,$
+也满足$\int_{\mathbb{R}^n}\alpha_\varepsilon dx=1.$</p>
+<p>定义卷积运算$f\ast g:=\int_{\mathbb{R}^n}f(y)g(x-y)dy.$ 那么对任意开集$E,$
+$f=1_E\ast \alpha_\varepsilon=\int_E \alpha_\varepsilon(x-y)dy,$
+满足如下性质:</p>
 <ol>
-<li><p>有向集为$X$的开覆盖集, $I=\{\mathcal{U},\mathcal{V},\cdots\}$</p>
+<li><p>$f\in [0,1];$</p>
 </li>
-<li><p>偏序为加细$\mathcal{U}&gt;\mathcal{V}$</p>
+<li><p>$\,\forall\,x$满足$d(x,E^c)&lt; \varepsilon,$ $f(x)=1;$</p>
 </li>
-<li><p>abel群取$G_\mathcal{U}=H^\ast (\mathcal{U},\mathcal{F})$</p>
+<li><p>$\operatorname{supp}f=\overline{O_\varepsilon(E)};$</p>
 </li>
-<li><p>$\phi:\mathcal{V}\rightarrow \mathcal{U}$为加细映射,
-限制$\phi^\sharp:G_\mathcal{U}\rightarrow G_\mathcal{V}$为同态</p>
-</li>
-<li><p>若$\varphi=\phi\circ\psi$,
-则$\varphi^\sharp=\psi^\sharp\circ\phi^\sharp$</p>
+<li><p>$f\in C_c^\infty(\mathbb{R}^n).$</p>
 </li>
 </ol>
-<p>这样$\{H^\ast (\mathcal{U},\mathcal{F})\}_{\mathcal{U}\in I}$成为群的有向系,
-它的有向极限$\lim_\mathcal{U}H^\ast (\mathcal{U},\mathcal{F})$称为拓扑空间$X$取值于预层$\mathcal{F}$的Čech上同调,
-记为$H^\ast (X,\mathcal{F})$.</p>
-<p><strong>命题 1.1</strong>. <em>$H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</em> </p>
-<p><strong>证:</strong> 对于任意开覆盖$\mathcal{U}$,
-我们事实上可以取到一个加细的好覆盖$\mathcal{V}$,
-因为考虑每点做测地凸邻域即可. 特别地流形满足$C_2$可数性公理,
-因此它还是可数的.</p>
-<p>$\,\forall\,a,b\in H^\ast (\mathcal{U},\mathcal{F})$, 若$[a]\neq[b]$,
-则对每个这样的$\mathcal{V}$, $a,b$在其上的限制不同. 若$[a]=[b]$,
-则存在$\mathcal{W}$, $a,b$在其上的限制相同. 那么由传递性,
-取$\mathcal{W}$的加细好覆盖$\mathcal{V}$, $a,b$限制在其上也相等.</p>
-<p>因此, 我们只需要考察$H^\ast (\mathcal{V},\mathcal{F})$即可,
-$\mathcal{V}$为可数好覆盖,
-即$H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$,
-c.g.c=countable good covers.</p>
-<p>然后, 我们知道对于可数好覆盖$\mathcal{V}$,
-$H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链映射,
-和$\delta$可换. 在双复形网络上能看出, 可数好覆盖间的限制映射将诱导同构.
-因此$H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$中每一项都是$H^\ast _{dR}(M)$,
-从而$H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</p>
-<p>文章最后更新于 2021-10-31 20:55:18 </p>
+<p>那么对流形上坐标卡$(U,\varphi),$ 倘若有开集$V\Subset W\Subset U,$
+则$\varphi(V)\Subset \varphi(W)\Subset \varphi(U).$
+记$\delta=\min(d(\overline{\varphi(V)},\varphi(W)^c),d(\overline{\varphi(W)},\varphi(U)^c))&gt;0,$
+那么取$f=(1_{\varphi(W)}\ast \alpha_{\frac{\delta}{2} })\circ \varphi,$
+满足$f\in [0,1],$ $f|_{V}=1,$ 且$f\in C_c^\infty(U).$</p>
+<h2 id="紧流形的嵌入"><a href="#紧流形的嵌入" class="headerlink" title="紧流形的嵌入"></a>紧流形的嵌入</h2><p>基本思路是对每个坐标卡, 把坐标邻域分别嵌入到各自的$\mathbb{R}^m$里,
+再留一维用来标识即可.</p>
+<p><strong>定理 1.1</strong>. <em>设$M$为$m$维紧致光滑流形, 则存在正整数$n,$ 以及光滑映射$\varphi:M\rightarrow \mathbb{R}^n,$ 使得$(M,\varphi)$是$\mathbb{R}^n$的正则子流形.</em> </p>
+<p><strong>证:</strong> 取$M$的坐标图册$\{(U_i,\varphi_i;u_i^j)\}_{i=1}^k,$
+由于是紧流形, 可取到有限坐标图册.
+取$M\setminus\bigcup_{j=2}^k U_j\subset V_1\Subset W_1\Subset U_1,$
+归纳地取$M\setminus(\bigcup_{j=1}^{i-1}V_j\cup\bigcup_{j=i+1}^k U_j)\subset V_i\Subset W_i\Subset U_i,$
+得到加细$\{V_i\}$覆盖$M,$ 且对每个$V_i$由前面的说明,
+存在$f_i\in C_c^\infty(U_i),$ $f_i|_{V_i}=1.$ 可以将$f_i$零延拓到$M$上.</p>
+<p>在$M$上定义$n=k(m+1)$个光滑函数: <script type="math/tex">\begin{aligned}
+                x_i^0&=f_i\\
+                x_i^j&=f_i \cdot u_{i}^j\\
+            \end{aligned}</script> 其中$i=1,\cdots,k,$ $j=1,\cdots,m.$
+虽然每个函数只定义在$U_i$上, 但是同样可零延拓到整个$M$上.
+这给出了光滑映射$\Phi:M\rightarrow \mathbb{R}^n,$
+断言$(M,\Phi)$即为$\mathbb{R}^n$的正则子流形.</p>
+<p>首先它确实是子流形: 先验证秩, 由于$\,\forall\,p\in M,$
+$\,\exists\,V_i\supset O_p\ni p,$ 那么$f_i|_{O_p}\equiv 1,$
+从而$\det \frac{\partial(x^{1}_i,\cdots,x^m_i)}{\partial (u_i^1,\cdots,u_i^m)}=1,$
+$r(\Phi)=m.$ 因此$(M,\Phi)$是浸入子流形.</p>
+<p>接下来若$\Phi(p)=\Phi(q),$ 那么倘若$V_i\supset p,$
+$f_i(p)=1=f_i(q)\Rightarrow q\in V_i.$ 从而$\varphi_i(p)=\varphi_i(q),$
+由于$\varphi_i$为同胚, $p=q.$ 因此$\Phi$是单射, $(M,\Phi)$是子流形.</p>
+<p>由于$M$紧, 由上节课定理, $(M,\Phi)$自动是嵌入子流形,
+而由另一定理又说明$(M,\Phi)$也是正则子流形.</p>
+<h2 id="维数论"><a href="#维数论" class="headerlink" title="维数论"></a>维数论</h2><p>通过这种方式得到的嵌入显然有些暴力, 多余的维数太多了. 以$S^2$为例,
+至少要用两个坐标卡来描述,
+此时按照上面的方法里要嵌入到$n=2\times(2+1)=6$维空间里.
+倘若用标准的六个坐标卡来描述甚至要嵌到$18$维空间里.
+事实上我们可以用维数论的方法将外围空间维数降低. 首先需要介绍Sard定理:</p>
+<p><strong>定理 1.2</strong> (Sard定理). <em>设有光滑映照$f:M^m\rightarrow N^n,$ 则$N$上临界值全体零测.</em> </p>
+<p>临界值即为$M$上临界点的像, 临界点指使得$r(f)&lt;n$的点,
+即$f$在临界点非淹没.</p>
+<p><strong>定理 1.3</strong>. <em>若$m$维光滑流形$M$可单浸入$\mathbb{R}^K$中, $K&gt;2m+1,$ 那么它也可以单浸入$\mathbb{R}^{K-1}$中.</em> </p>
+<p><strong>证:</strong> 记单浸入为$\Phi,$
+$\mathbb{R}^K$中所有过原点的超平面$P$全体为$\mathbb{R}\mathrm{P}^{K-1},$
+它是一个$K-1$维光滑流形.
+我们说明使得$\pi_P\circ \Phi$不是单浸入的$P$在$\mathbb{R}\mathrm{P}^{K-1}$上是零测集.</p>
+<p>若其不是单射, 则$M$上有两点$p,q,$
+使得$P$在原点法线$[v]=[\Phi(p)-\Phi(q)]$决定. 从而$[v]$落在</p>
+<script type="math/tex; mode=display">\alpha:M\times M\setminus \Delta_M\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,q)\mapsto[\Phi(p)-\Phi(q)]</script><p>的像集中, 其中$\Delta_M=\{(p,p)|p\in M\}.$ 那么$\alpha$是光滑映射,
+$M\times M\setminus \Delta_M$为$2m$维开子流形, 由假设$2m&lt;K-1,$
+因此$\alpha$处处非淹没, 从而像集零测.</p>
+<p>若其不是浸入, 则$\,\exists\,p\in M,$
+$0\neq X_p\in T_pM$使得$(d\pi_P)_{\Phi(p)} (d\Phi)_p(X_p)\neq 0.$
+而$\pi_P$本身是线性映照, $d\pi_P=\pi_P,$
+因此$[(d\Phi)_p(X_p)]=[v]\neq 0.$ 从而$[v]$落在</p>
+<script type="math/tex; mode=display">\beta:TM\setminus\{(p,0)\,|\,p\in M\}\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,X_p)\mapsto[(d\Phi)_p(X_p)]</script><p>的像集中. $\beta$是光滑映射, 左侧同样为$2m$维开子流形,
+由Sard定理同理有像集零测.
+综上不是单浸入的$P$在$\mathbb{R}\mathrm{P}^{K-1}$上零测,
+于是几乎处处可以取到投影将维数降低.</p>
+<p>于是我们得到若$M$可单浸入$\mathbb{R}^K$中,
+则必可单浸入$\mathbb{R}^{2m+1}$中. 事实上对不是浸入的证明,
+可将$TM$更换为球面丛$SM=\{(p,X_p)\,|\,|X_p|=1\},$
+切丛度量由外围空间诱导. 此时$SM$是$2m-1$维光滑流形, 维数可以再降低.
+因此当$M$可嵌入$\mathbb{R}^{2m+1}$时, $M$可浸入$\mathbb{R}^{2m}.$</p>
+<p>综上, 任意$m$维光滑紧流形可嵌入$\mathbb{R}^{2m+1}$中,
+可浸入$\mathbb{R}^{2m}$中.</p>
+<h2 id="Whitney嵌入定理"><a href="#Whitney嵌入定理" class="headerlink" title="Whitney嵌入定理"></a>Whitney嵌入定理</h2><p>对于非紧情形, 我们给出证明的思路.</p>
+<p><strong>定理 1.4</strong>. <em>任意非紧光滑流形$M$可单浸入到$\mathbb{R}^K$中.</em> </p>
+<p>我们将$M$划分为可列多个紧子流形的并$M=\cup_{i}{M_i}$,
+保证$M_i\cap M_j=\varnothing,$ 若$|j-i|\ge 2.$
+这样设$M_i$上有到$\mathbb{R}^{2m+1}$的嵌入$\varphi_i,$
+取$M_i$小邻域的单位分解$\rho_i$, 则</p>
+<script type="math/tex; mode=display">\left(\sum_{i-odd}\rho_i \varphi_i, \sum_{i-even}\rho_i \varphi_i, f\right)</script><p>给出了想要的单浸入, $f$为控制函数, 提供了$M_i$的划分方法.</p>
+<p>这样$M^m$可单浸入到$\mathbb{R}^{2m+1}$中, 不过不见得是嵌入.
+不过可以改造单浸入成为嵌入, 利用如下命题,
+即Lee的光滑流形导论中的命题4.22(b):</p>
+<p><strong>命题 1.5</strong>. <em>逆紧的光滑单浸入是嵌入. (像空间是局部紧$T_2$的即可, 此时逆紧连续映射是闭映射.)</em> </p>
+<p>将单浸入改造为逆紧的单浸入, 就得到了经典的Whitney嵌入定理.</p>
+<p><strong>定理 1.6</strong> (Whitney嵌入定理). <em>$m$维光滑流形$M$可嵌入$\mathbb{R}^{2m+1},$ 可浸入$\mathbb{R}^{2m}.$</em> </p>
+<h2 id="其它结果"><a href="#其它结果" class="headerlink" title="其它结果"></a>其它结果</h2><p>应用Whitney trick, 可以证明如下定理:</p>
+<p><strong>定理 1.7</strong> (强Whitney嵌入定理). <em>任意$m\ge 2$维以上光滑流形可嵌入$\mathbb{R}^{2m}$中, 可浸入$\mathbb{R}^{2m-1}$中.</em> </p>
+<p>还有许多更细致的结果如下:</p>
+<ul>
+<li><p>$m$维光滑紧定向流形可嵌入$\mathbb{R}^{2m-1}$中.</p>
+</li>
+<li><p>$m\neq 2^k$时, $m$维光滑流形可嵌入$\mathbb{R}^{2m-1}$中. $m=2^k$时,
+$\mathbb{R}\mathrm{P}^m$不可嵌入$\mathbb{R}^{2m-1}$中.</p>
+</li>
+<li><p>$m$维光滑流形可浸入$\mathbb{R}^{2m-a(m)}$中,
+$a(m)$为$m$二进制表示中$1$的数目, $m\ge 2.$</p>
+</li>
+</ul>
+<p>最后一个结果出自The Immersion Conjecture for Differentiable Manifolds,
+Ralph L. Cohen. 方法源于E.H.Brown与F.P.Peterson的工作.
+事实上由障碍性理论(Smale-Hirsch theory),
+浸入的唯一阻碍是Stiefel-Whitney示性类,
+由此可以说明对$m=2^{i_1}+\cdots+2^{i_l},$
+取$M^m=\mathbb{R}\mathrm{P}^{2^{i_1} }\times\cdots\times \mathbb{R}\mathrm{P}^{2^{i_l} },$
+$M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳的.</p>
+<p>文章最后更新于 2021-11-01 17:27:27 </p>
 
         </div>
 
@@ -326,11 +337,11 @@ $H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(10)-Čech上同调</li>
+        <li>本文标题：《微分流形》讨论稿-紧流形嵌入定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-31 20:55:17</li>
+        <li>创建时间：2021-11-01 17:27:25</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/31/《代数拓扑与微分形式》笔记(10)-Čech上同调/
+            本文链接：https://dream0ar.github.io/2021/11/01/《微分流形》讨论稿-紧流形嵌入定理/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -344,29 +355,14 @@ $H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/11/01/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E8%AE%A8%E8%AE%BA%E7%A8%BF-%E7%B4%A7%E6%B5%81%E5%BD%A2%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》讨论稿-紧流形嵌入定理</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/10/31/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Sobolev%E4%B8%8D%E7%AD%89%E5%BC%8F/"
+                           href="/2021/10/31/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%C4%8Cech%E4%B8%8A%E5%90%8C%E8%B0%83/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(5)-Sobolev不等式</span>
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(10)-Čech上同调</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -572,7 +568,7 @@ $H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%B1%82"><span class="nav-text">预层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E8%A6%86%E7%9B%96%E7%9A%84Cech%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text">开覆盖的Čech上同调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E6%9E%81%E9%99%90"><span class="nav-text">有向极限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%9A%84Cech%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text">拓扑空间的Čech上同调</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E6%94%AF%E6%92%91%E5%85%89%E6%BB%91%E5%87%BD%E6%95%B0"><span class="nav-text">紧支撑光滑函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E6%B5%81%E5%BD%A2%E7%9A%84%E5%B5%8C%E5%85%A5"><span class="nav-text">紧流形的嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%B4%E6%95%B0%E8%AE%BA"><span class="nav-text">维数论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Whitney%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86"><span class="nav-text">Whitney嵌入定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E7%BB%93%E6%9E%9C"><span class="nav-text">其它结果</span></a></li></ol>
     </div>
 </div>
         </aside>
