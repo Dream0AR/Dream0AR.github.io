@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》第四章-分布 |
+            《微分流形》第四章-Frobenius定理 |
         
         梦之居
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第四章-分布</span>
+            <span class="title-hover-animation">《微分流形》第四章-Frobenius定理</span>
         </div>
 
         
@@ -168,7 +168,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-03 16:49:41
+        <i class="fas fa-edit"></i>&nbsp;2021-11-10 16:15:52
     </span>
     
         <span class="article-categories article-meta-item">
@@ -208,56 +208,85 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="积分曲线"><a href="#积分曲线" class="headerlink" title="积分曲线"></a>积分曲线</h2><p><strong>定理 1.1</strong> (Flow box). <em>设$X\in\chi(M),$ 若$X_p\neq 0,$ 则存在含$p$坐标系$(U,\varphi;x^i)$使得$X|_U=\frac{\partial {} }{\partial {}x^1},$ 即$x^1$-曲线就是$X$在$U$中的积分曲线.</em> </p>
-<p><strong>证:</strong> 任取坐标系$(U,\varphi;u^i),$ $\varphi(p)=0.$
-$X|_U=\sum_i\xi^i(u)\frac{\partial {} }{\partial {}u^i}.$
-不妨设$\xi^1(p)\neq 0,$ 且进而设其处处非零.
-设$u$可写为$v$的函数(坐标变换),
-使得$X|_U=\xi^1(v) \frac{\partial {} }{\partial {}v^1}.$
-两边作用$u^\alpha,$ 有 <script type="math/tex">\left\{
-                \begin{aligned}
-                    &\frac{\partial {}u^\alpha}{\partial {}v^1}=\frac{\xi^\alpha(u^1,\cdots,u^m)}{\xi^1(u^1,\cdots,u^m)},\quad \alpha=1,\cdots,m.\\
-                    &u^\alpha(0,v^2,\cdots,v^m)=v^\alpha
-                \end{aligned}   
-                \right.</script> 由ODE理论,
-$\,\exists\,\delta&gt;0$使得$C_\delta^m=\{|u^i|&lt;\delta\}\subset U,$
-$\,\forall\,$给定初值$(0,v^2,\cdots,v^m)\in C_\delta^m,$
-在$v^1\in (-\widetilde{\delta},\widetilde{\delta})$内有唯一解$u^\alpha(v).$
-记$\widehat{\delta}=\min\{\delta,\widetilde{\delta}\},$
-那么对于$u^\alpha:C_{\widehat{\delta} }^m\rightarrow \varphi(U),$
-$\det(Du^\alpha)|_0=1,$ 局部为微分同胚.
-不妨设本身就是微分同胚(不然可将$\widetilde{\delta}$缩小), 记为$G.$</p>
-<p>此时在坐标系$(\widetilde{U},G^{-1}\circ\varphi;v^i)$下,
-$X|_{\widetilde{U} }=\xi^1(v)\frac{\partial {} }{\partial {}v^1}.$
-最后再做变换 <script type="math/tex">\left\{
-                \begin{aligned}
-                    &w^1=\int_0^{v_1} \frac{dt}{\xi^1(t,v^2,\cdots,v^n)}\\
-                    &w^\alpha=v^\alpha,\quad \alpha=2,\cdots,m
-                \end{aligned}   
-                \right.</script>
-即有$X|_{\widetilde{U} }=\frac{\partial {} }{\partial {}w^1},$
-$w^1$-曲线为$X$在$\widetilde{U}$中积分曲线.</p>
-<h2 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h2><p><strong>定义 1.2</strong>. <em>$M^m$为$C^\infty$流形, 若$\,\forall\,p\in M,$ 指定$T_pM$中$k$-维子空间$D_p,$ 则称$\mathcal{D}:p\rightarrow D_p$为$M$上$k$维<strong>分布</strong>.</em> </p>
-<p>若$\,\forall\,p\in M,$ $\,\exists\,U\ni p,$
-$X_1,\cdots, X_k\in \chi(U),$
-使得$\mathcal{D}_q=\operatorname{span}\{X_1(q),\cdots,X_k(q)\},$
-$\,\forall\,q\in U,$ 则称$\mathcal{D}$是$M$上$C^\infty$分布,
-$\{X_1,\cdots,X_k\}$称为$\mathcal{D}$的<strong>局部标架场</strong>. $k\in(0,m)$时,
-$\mathcal{D}$可看作$TM$的非平凡秩$k$子丛.</p>
-<p><strong>定义 1.3</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, $F:W\hookrightarrow M$是子流形, 满足${F_{\ast } }_p(T_pW)=D_{F(p)},$ $\,\forall\,p\in W.$ 则称$(W,F)$为$\mathcal{D}$的<strong>积分子流形</strong>.</em> </p>
-<p>自然的问题是, 给定$M^m$上一个$k$维$C^\infty$-分布$\mathcal{D},$
-$\,\forall\,p\in M,$ 是否存在$\mathcal{D}$的过$p$点的积分子流形?
-答案是否定的. 事实上积分子流形应有积分曲线网,
-那么若在$\mathbb{R}^3$上取$X=\frac{\partial {} }{\partial {}x}+y\frac{\partial {} }{\partial {}z},$
-$Y=\frac{\partial {} }{\partial {}y},$
-$\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流形,
-应包含$xoy$平面的一小部分. 但是在$x$轴外该流形又不是积分子流形, 矛盾.</p>
-<p><strong>定义 1.4</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, 若过每点$p\in M$都存在$\mathcal{D}$的积分子流形, 则我们称$\mathcal{D}$是<strong>可积的</strong>. 否则, 称之为<strong>不可积的</strong>.</em> </p>
-<p>$k=0,m$时平凡. $k=1$时, 由积分曲线存在定理, $1$维分布总是可积的,
-积分子流形即为积分曲线. 但积分曲线不都是某个分布的积分子流形,
-因为积分曲线对应的光滑向量场允许有奇点,
-但有奇点的光滑向量场并不能作为标架张成分布.</p>
-<p>文章最后更新于 2021-11-03 16:49:42 </p>
+            <h2 id="对合性"><a href="#对合性" class="headerlink" title="对合性"></a>对合性</h2><p><strong>命题 1.1</strong>. <em>设$\mathcal{D}$是$M$上光滑分布. 若$\mathcal{D}$是可积的, 则$\,\forall\,X,Y\in \chi(\mathcal{D}),$ 即$\,\forall\,p\in M,$ $X_p,Y_p\in \mathcal{D}_p,$ 那么$[X,Y]\in \chi(\mathcal{D}).$</em> </p>
+<p><strong>证:</strong> 任取含$p$坐标系$(U,\varphi;x^i),$
+要证$[X,Y]_p\in \mathcal{D}_p.$
+由可积性过$p$点存在积分子流形$i:N^k\hookrightarrow M,$ 局部来看由秩定理,
+可以视其为切片. 从而$X,Y$只在前$k$个自然基上有光滑分量. 计算得到,
+$[X,Y]$同样只在前$k$个自然基上有光滑分量,
+因此$[X,Y]\in \chi(\mathcal{D}).$</p>
+<p><strong>注 1.2</strong>. <em>可以证明, 若$X_1,X_2$与$Y_1,Y_2$是$F$相关的, 即$F_\ast X_i=Y_i,$ 则$[X_1,X_2],[Y_1,Y_2]$也是$F$相关的. 由此可以证明在题设下, $[X|_N,Y|_N]$与$[X,Y]$是$i$相关的, 即$i_\ast [X|_N,Y|_N]=[X,Y],$ 从而$[X|_N,Y|_N]=[X,Y]|_N.$</em> </p>
+<p><strong>定义 1.3</strong>. <em>设$\mathcal{D}$是$M$上光滑分布, 若$\,\forall\,X,Y\in \chi(\mathcal{D}),$ $[X,Y]\in \chi(D),$ 则称$\mathcal{D}$是<strong>对合</strong>的.</em> </p>
+<p>由前面的命题, 可积性$\Rightarrow$对合性. 事实上欲证对合性,
+只需说明$\,\forall\,\mathcal{D}$的局部标架场$X_1,\cdots,X_k,$
+$[X_i,X_j]\in \chi(\mathcal{D}),$ $\,\forall\,1\le i,j\le k.$
+利用标架性质即可说明此时满足对合性的原始条件. 从而这两个条件是等价的.</p>
+<h2 id="Frobenius定理"><a href="#Frobenius定理" class="headerlink" title="Frobenius定理"></a>Frobenius定理</h2><p><strong>定理 1.4</strong> (Frobenius). <em>设$\mathcal{D}$是$M^m$上$k$维分布. 如果$\mathcal{D}$是对合的, 那么$\,\forall\,p\in M,$ $\,\exists\,$含$p$坐标系$(U,\varphi;x^i)$使得$k$维切片都是$\mathcal{D}$的积分子流形.</em> </p>
+<p><strong>证:</strong> $k=1$时, 由Flow box定理, 每点局部都有坐标系,
+使得任意$x^1$-曲线为$X$的积分曲线,
+即$1$维切片都是$\mathcal{D}$的$1$维积分子流形.</p>
+<p>归纳地, 若命题对$k-1$维分布成立,
+那么设$\mathcal{D}$是$M$上对合的$k$维分布,
+取局部标架场$X_1,\cdots, X_k,$ 那么由对合性,</p>
+<script type="math/tex; mode=display">[X_i,X_j]\equiv 0 \mod \{X_1,\cdots,X_k\}.</script><p>由Flow box定理,
+可以取到坐标系使得$X_k=\frac{\partial {} }{\partial {}y_k},$
+那么对$1\le \lambda,\mu,\nu\le k-1,$
+令$X_\lambda’=X_\lambda-X_\lambda(y^k)X_k,$ 则$X_{\lambda}’(y_k)=0,$
+$X_k(y_k)=1,$
+从而$\mathcal{D}=\operatorname{span}\{X_1’,\cdots,X_{k-1}’,X_k\},$
+仍是局部标架场.</p>
+<p>计算得到,
+光是$k-1$维分布$\mathcal{D}’:=\operatorname{span}\{X_1’,\cdots,X_{k-1}’\}$就满足对合性.
+此时由归纳假设, $\mathcal{D}’$是可积分布,
+有坐标系$(V,\psi;z^i)$使得$k-1$维切片都是$\mathcal{D}’$的积分子流形.
+此时$\frac{\partial {}y^k}{\partial {}z^\lambda}=0,$
+$\,\forall\,1\le \lambda\le k-1.$
+$\mathcal{D}=\operatorname{span}\{\frac{\partial {} }{\partial {}z^1},\cdots,\frac{\partial {} }{\partial {}z^{k-1} },X_k\}.$</p>
+<p>作用$y^k,$
+计算得到$[\frac{\partial {} }{\partial {}z^\lambda},X_k]\equiv 0\mod \{\frac{\partial {} }{\partial {}z^1}\cdots\frac{\partial {} }{\partial {}z^{k-1} }\}.$
+将$X_k$表示为$\sum_{A=1}^m \xi^A \frac{\partial {} }{\partial {}z^A},$
+那么由前面的式子,
+$\sum_{A=k}^m\frac{\partial {}\xi^A}{\partial {}z^\lambda}\frac{\partial {} }{\partial {}z^A}=0,$
+这就说明$\xi^A=\xi^A(z^k,\cdots,z^m),$ $\,\forall\,A\ge k.$
+令$X_k’=X_k-\sum_{\lambda=1}^{k-1}\xi^\lambda\frac{\partial {} }{\partial {}z^\lambda},$
+只保留后面的分量. 由Flowbox定理,
+可以取到新坐标系使得$X’_{k}=\frac{\partial {} }{\partial {}x^k},$
+满足$x^\lambda=z^\lambda,$ $1\le \lambda\le k-1.$ 即前$k-1$个坐标不变.
+那么此时即有$\mathcal{D}=\operatorname{span}\{\frac{\partial {} }{\partial {}x^1},\cdots,\frac{\partial {} }{\partial {}x^{k} }\},$
+$k$维切片都是积分子流形.</p>
+<h2 id="单位分解"><a href="#单位分解" class="headerlink" title="单位分解"></a>单位分解</h2><p><strong>定理 1.5</strong>. <em>设光滑流形$M^m$上有紧集$\overline{V}\subset U,$ 那么存在$f\in C_c^\infty(M),$ 使得$f\in[0,1],$ $f|_V\equiv 1,$ $f|_{M\setminus U}\equiv 0.$</em> </p>
+<ul>
+<li><p>设$M$是拓扑空间, $\{A_\alpha\}$是$M$的一族子集.
+如$\bigcup_{\alpha}A_\alpha=M,$
+则称$\{A_\alpha\}$为$M$的一个<strong>覆盖</strong>.</p>
+</li>
+<li><p>设$\{A_\alpha\}$是$M$的覆盖, 如果$\,\forall\,p\in M,$
+存在$U\ni p$使得$U$只与有限个$A_\alpha$相交,
+则称$\{A_\alpha\}$是$M$的<strong>局部有限</strong>的覆盖.</p>
+</li>
+<li><p>设$\{U_\alpha\},$ $\{V_\beta\}$是$M$的两个覆盖.
+若$\,\forall\,\beta,$
+$\,\exists\,\alpha$使得$V_\beta\subset U_\alpha,$
+则称$\{V_\beta\}$是$\{U_\alpha\}$的<strong>加细</strong>.</p>
+</li>
+</ul>
+<p><strong>定义 1.6</strong>. <em>$M$是拓扑空间, 若$M$的任意开覆盖$\{U_\alpha\}$有局部有限的加细, 则称$M$是<strong>仿紧</strong>的.</em> </p>
+<p>现设$M$是$m$维$C^\infty$流形, $\{A_\alpha\}$是$M$的开覆盖.
+由第二可数公理, $\{A_\alpha\}$存在可数加细$\{U_j\},$
+且每个开集都是坐标图$(U_j,\varphi_j).$ 坐标图可进一步改造为局部有限的,
+且$\varphi_j(U_j)=B_1^m(0),$
+$\{V_j=\varphi_j^{-1}(B_{1/2}^m(0))\}$也是$M$的开覆盖.</p>
+<p><strong>定义 1.7</strong>. <em>设$M$为光滑流形. 若$\{f_i\}\in C^\infty(M)$满足$f_i\in [0,1],$ $\sum_i f_i\equiv 1,$ 且$\{\operatorname{supp}f_i\}$是$M$的局部有限的覆盖, 那么称$\{f_i\}$为$M$的<strong>单位分解</strong>.</em> </p>
+<p><strong>定理 1.8</strong> (单位分解). <em>设$M^m$为光滑流形, 则存在单位分解$\{f_i\}.$</em> </p>
+<p><strong>证:</strong> $\,\forall\,\bigcup_\alpha A_\alpha\supset M,$ 由上述引理,
+存在局部有限加细$\{(U_i,\varphi_i)\},$ $\varphi_i(U_i)=B_1^m(0).$ 进而
+$\,\exists\,\{\widetilde{f}_i\}\in C_c^\infty(U_i),$
+$\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
+最后取$f_i=\frac{\widetilde{f}_i}{\sum_i \widetilde{f}_i}$即可.</p>
+<p>事实上有$\operatorname{supp}f_i\subset U_i\subset A_\alpha,$
+称$\{f_i\}$是<strong>从属</strong>于$\{A_\alpha\}$的单位分解.
+因此任意开覆盖有从属于之的单位分解.</p>
+<p>文章最后更新于 2021-11-10 16:15:52 </p>
 
         </div>
 
@@ -265,11 +294,11 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第四章-分布</li>
+        <li>本文标题：《微分流形》第四章-Frobenius定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-03 16:49:41</li>
+        <li>创建时间：2021-11-10 16:15:52</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/03/《微分流形》第四章-分布/
+            本文链接：https://dream0ar.github.io/2021/11/10/《微分流形》第四章-Frobenius定理/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -283,29 +312,14 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/11/10/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0-Frobenius%E5%AE%9A%E7%90%86/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第四章-Frobenius定理</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/01/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E8%AE%A8%E8%AE%BA%E7%A8%BF-%E7%B4%A7%E6%B5%81%E5%BD%A2%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86/"
+                           href="/2021/11/03/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%88%86%E5%B8%83/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》讨论稿-紧流形嵌入定理</span>
+                                <span class="post-nav-title-item">《微分流形》第四章-分布</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -511,7 +525,7 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E6%9B%B2%E7%BA%BF"><span class="nav-text">积分曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%83"><span class="nav-text">分布</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%90%88%E6%80%A7"><span class="nav-text">对合性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Frobenius%E5%AE%9A%E7%90%86"><span class="nav-text">Frobenius定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E5%88%86%E8%A7%A3"><span class="nav-text">单位分解</span></a></li></ol>
     </div>
 </div>
         </aside>
