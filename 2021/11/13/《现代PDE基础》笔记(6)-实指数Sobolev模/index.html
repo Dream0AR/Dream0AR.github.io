@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》第四章-Frobenius定理 |
+            《现代PDE基础》笔记(6)-实指数Sobolev模 |
         
         梦之居
     </title>
@@ -152,7 +152,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第四章-Frobenius定理</span>
+            <span class="title-hover-animation">《现代PDE基础》笔记(6)-实指数Sobolev模</span>
         </div>
 
         
@@ -168,7 +168,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-10 16:15:52
+        <i class="fas fa-edit"></i>&nbsp;2021-11-13 17:29:37
     </span>
     
         <span class="article-categories article-meta-item">
@@ -180,11 +180,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
                     </li>
                 
             </ul>
@@ -208,85 +208,103 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="对合性"><a href="#对合性" class="headerlink" title="对合性"></a>对合性</h2><p><strong>命题 1.1</strong>. <em>设$\mathcal{D}$是$M$上光滑分布. 若$\mathcal{D}$是可积的, 则$\,\forall\,X,Y\in \chi(\mathcal{D}),$ 即$\,\forall\,p\in M,$ $X_p,Y_p\in \mathcal{D}_p,$ 那么$[X,Y]\in \chi(\mathcal{D}).$</em> </p>
-<p><strong>证:</strong> 任取含$p$坐标系$(U,\varphi;x^i),$
-要证$[X,Y]_p\in \mathcal{D}_p.$
-由可积性过$p$点存在积分子流形$i:N^k\hookrightarrow M,$ 局部来看由秩定理,
-可以视其为切片. 从而$X,Y$只在前$k$个自然基上有光滑分量. 计算得到,
-$[X,Y]$同样只在前$k$个自然基上有光滑分量,
-因此$[X,Y]\in \chi(\mathcal{D}).$</p>
-<p><strong>注 1.2</strong>. <em>可以证明, 若$X_1,X_2$与$Y_1,Y_2$是$F$相关的, 即$F_\ast X_i=Y_i,$ 则$[X_1,X_2],[Y_1,Y_2]$也是$F$相关的. 由此可以证明在题设下, $[X|_N,Y|_N]$与$[X,Y]$是$i$相关的, 即$i_\ast [X|_N,Y|_N]=[X,Y],$ 从而$[X|_N,Y|_N]=[X,Y]|_N.$</em> </p>
-<p><strong>定义 1.3</strong>. <em>设$\mathcal{D}$是$M$上光滑分布, 若$\,\forall\,X,Y\in \chi(\mathcal{D}),$ $[X,Y]\in \chi(D),$ 则称$\mathcal{D}$是<strong>对合</strong>的.</em> </p>
-<p>由前面的命题, 可积性$\Rightarrow$对合性. 事实上欲证对合性,
-只需说明$\,\forall\,\mathcal{D}$的局部标架场$X_1,\cdots,X_k,$
-$[X_i,X_j]\in \chi(\mathcal{D}),$ $\,\forall\,1\le i,j\le k.$
-利用标架性质即可说明此时满足对合性的原始条件. 从而这两个条件是等价的.</p>
-<h2 id="Frobenius定理"><a href="#Frobenius定理" class="headerlink" title="Frobenius定理"></a>Frobenius定理</h2><p><strong>定理 1.4</strong> (Frobenius). <em>设$\mathcal{D}$是$M^m$上$k$维分布. 如果$\mathcal{D}$是对合的, 那么$\,\forall\,p\in M,$ $\,\exists\,$含$p$坐标系$(U,\varphi;x^i)$使得$k$维切片都是$\mathcal{D}$的积分子流形.</em> </p>
-<p><strong>证:</strong> $k=1$时, 由Flow box定理, 每点局部都有坐标系,
-使得任意$x^1$-曲线为$X$的积分曲线,
-即$1$维切片都是$\mathcal{D}$的$1$维积分子流形.</p>
-<p>归纳地, 若命题对$k-1$维分布成立,
-那么设$\mathcal{D}$是$M$上对合的$k$维分布,
-取局部标架场$X_1,\cdots, X_k,$ 那么由对合性,</p>
-<script type="math/tex; mode=display">[X_i,X_j]\equiv 0 \mod \{X_1,\cdots,X_k\}.</script><p>由Flow box定理,
-可以取到坐标系使得$X_k=\frac{\partial {} }{\partial {}y_k},$
-那么对$1\le \lambda,\mu,\nu\le k-1,$
-令$X_\lambda’=X_\lambda-X_\lambda(y^k)X_k,$ 则$X_{\lambda}’(y_k)=0,$
-$X_k(y_k)=1,$
-从而$\mathcal{D}=\operatorname{span}\{X_1’,\cdots,X_{k-1}’,X_k\},$
-仍是局部标架场.</p>
-<p>计算得到,
-光是$k-1$维分布$\mathcal{D}’:=\operatorname{span}\{X_1’,\cdots,X_{k-1}’\}$就满足对合性.
-此时由归纳假设, $\mathcal{D}’$是可积分布,
-有坐标系$(V,\psi;z^i)$使得$k-1$维切片都是$\mathcal{D}’$的积分子流形.
-此时$\frac{\partial {}y^k}{\partial {}z^\lambda}=0,$
-$\,\forall\,1\le \lambda\le k-1.$
-$\mathcal{D}=\operatorname{span}\{\frac{\partial {} }{\partial {}z^1},\cdots,\frac{\partial {} }{\partial {}z^{k-1} },X_k\}.$</p>
-<p>作用$y^k,$
-计算得到$[\frac{\partial {} }{\partial {}z^\lambda},X_k]\equiv 0\mod \{\frac{\partial {} }{\partial {}z^1}\cdots\frac{\partial {} }{\partial {}z^{k-1} }\}.$
-将$X_k$表示为$\sum_{A=1}^m \xi^A \frac{\partial {} }{\partial {}z^A},$
-那么由前面的式子,
-$\sum_{A=k}^m\frac{\partial {}\xi^A}{\partial {}z^\lambda}\frac{\partial {} }{\partial {}z^A}=0,$
-这就说明$\xi^A=\xi^A(z^k,\cdots,z^m),$ $\,\forall\,A\ge k.$
-令$X_k’=X_k-\sum_{\lambda=1}^{k-1}\xi^\lambda\frac{\partial {} }{\partial {}z^\lambda},$
-只保留后面的分量. 由Flowbox定理,
-可以取到新坐标系使得$X’_{k}=\frac{\partial {} }{\partial {}x^k},$
-满足$x^\lambda=z^\lambda,$ $1\le \lambda\le k-1.$ 即前$k-1$个坐标不变.
-那么此时即有$\mathcal{D}=\operatorname{span}\{\frac{\partial {} }{\partial {}x^1},\cdots,\frac{\partial {} }{\partial {}x^{k} }\},$
-$k$维切片都是积分子流形.</p>
-<h2 id="单位分解"><a href="#单位分解" class="headerlink" title="单位分解"></a>单位分解</h2><p><strong>定理 1.5</strong>. <em>设光滑流形$M^m$上有紧集$\overline{V}\subset U,$ 那么存在$f\in C_c^\infty(M),$ 使得$f\in[0,1],$ $f|_V\equiv 1,$ $f|_{M\setminus U}\equiv 0.$</em> </p>
-<ul>
-<li><p>设$M$是拓扑空间, $\{A_\alpha\}$是$M$的一族子集.
-如$\bigcup_{\alpha}A_\alpha=M,$
-则称$\{A_\alpha\}$为$M$的一个<strong>覆盖</strong>.</p>
-</li>
-<li><p>设$\{A_\alpha\}$是$M$的覆盖, 如果$\,\forall\,p\in M,$
-存在$U\ni p$使得$U$只与有限个$A_\alpha$相交,
-则称$\{A_\alpha\}$是$M$的<strong>局部有限</strong>的覆盖.</p>
-</li>
-<li><p>设$\{U_\alpha\},$ $\{V_\beta\}$是$M$的两个覆盖.
-若$\,\forall\,\beta,$
-$\,\exists\,\alpha$使得$V_\beta\subset U_\alpha,$
-则称$\{V_\beta\}$是$\{U_\alpha\}$的<strong>加细</strong>.</p>
-</li>
-</ul>
-<p><strong>定义 1.6</strong>. <em>$M$是拓扑空间, 若$M$的任意开覆盖$\{U_\alpha\}$有局部有限的加细, 则称$M$是<strong>仿紧</strong>的.</em> </p>
-<p>现设$M$是$m$维$C^\infty$流形, $\{A_\alpha\}$是$M$的开覆盖.
-由第二可数公理, $\{A_\alpha\}$存在可数加细$\{U_j\},$
-且每个开集都是坐标图$(U_j,\varphi_j).$ 坐标图可进一步改造为局部有限的,
-且$\varphi_j(U_j)=B_1^m(0),$
-$\{V_j=\varphi_j^{-1}(B_{1/2}^m(0))\}$也是$M$的开覆盖.</p>
-<p><strong>定义 1.7</strong>. <em>设$M$为光滑流形. 若$\{f_i\}\in C^\infty(M)$满足$f_i\in [0,1],$ $\sum_i f_i\equiv 1,$ 且$\{\operatorname{supp}f_i\}$是$M$的局部有限的覆盖, 那么称$\{f_i\}$为$M$的<strong>单位分解</strong>.</em> </p>
-<p><strong>定理 1.8</strong> (单位分解). <em>设$M^m$为光滑流形, 则存在单位分解$\{f_i\}.$</em> </p>
-<p><strong>证:</strong> $\,\forall\,\bigcup_\alpha A_\alpha\supset M,$ 由上述引理,
-存在局部有限加细$\{(U_i,\varphi_i)\},$ $\varphi_i(U_i)=B_1^m(0).$ 进而
-$\,\exists\,\{\widetilde{f}_i\}\in C_c^\infty(U_i),$
-$\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
-最后取$f_i=\frac{\widetilde{f}_i}{\sum_i \widetilde{f}_i}$即可.</p>
-<p>事实上有$\operatorname{supp}f_i\subset U_i\subset A_\alpha,$
-称$\{f_i\}$是<strong>从属</strong>于$\{A_\alpha\}$的单位分解.
-因此任意开覆盖有从属于之的单位分解.</p>
-<p>文章最后更新于 2021-11-10 16:15:52 </p>
+            <h2 id="实指数Sobolev空间"><a href="#实指数Sobolev空间" class="headerlink" title="实指数Sobolev空间"></a>实指数Sobolev空间</h2><p>下面希望对$H^{m,p}(\mathbb{R}^n)$将$m$为实数的情形给出定义.
+考虑$p=2$的情形, 记$H^{m,2}$为$H^m.$
+由于$H^m(\mathbb{R}^n)\subset L^2(\mathbb{R}^n)\subset \mathscr{S}’(\mathbb{R}^n),$
+可以对其做Fourier变换. 由变换性质, 我们有:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \parallel f\parallel_{H^m}&=(2\pi)^{-n}\left(\sum_{|\alpha|\le m}\parallel\xi^\alpha \widehat{f}(\xi)\parallel_{L^2}^2\right)^\frac{1}{2}\\
+            &\sim \parallel(1+|\xi|^2)^{\frac{m}{2} }\widehat{f}(\xi)\parallel_{L^2}.
+        \end{aligned}</script><p>于是对$s\in \mathbb{R}^n,$
+可以定义实指数Sobolev空间$H^s(\mathbb{R}^n)\subset \mathscr{S}’(\mathbb{R}^n),$
+配备模</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{H^s}=\parallel(1+|\xi|^2)^{\frac{s}{2} }\widehat{f}(\xi)\parallel_{L^2}.</script><p>在$s$为非负整数时由上述推导过程, 与原始定义的$H^{s,2}$相容.
+可以证明它也是$C_c^\infty(\mathbb{R}^n)$的完备化空间,
+配备与范数相容的内积. 类似地, 可以定义齐次模</p>
+<script type="math/tex; mode=display">|f|_{\dot{H}^s}=||\xi|^s\widehat{f}(\xi)|_{L^2}.</script><p>对实指数Sobolev空间, 我们有如下Sobolev不等式:</p>
+<p><strong>定理 1.1</strong>. <em>$\,\forall\,s&gt;\frac{n}{2},$ 我们有如下不等式:</em> </p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^\infty}\le C\parallel f\parallel_{H^s}, \quad\,\forall\,f\in C_c^\infty(\mathbb{R}^n).</script><p><strong>证:</strong> 由Fourier逆变换,
+$f(x)=(2\pi)^{-n}\int_{\mathbb{R}^n} e^{ix\cdot \xi}\widehat{f}(\xi)d\xi,$
+于是</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^\infty}\le (2\pi)^{-n}\parallel\widehat{f}\parallel_{L^1}\le \parallel(1+|\xi|^2)^{\frac{s}{2} }\widehat{f}(\xi)\parallel_{L^2}\parallel(1+|\xi|^2)^{-\frac{s}{2} }\parallel_{L^2}=C\parallel f\parallel_{H^s}.</script><p>容易看出我们也有如下的事实:</p>
+<p><strong>定理 1.2</strong>. <em>$(H^s(\mathbb{R}^n))^\ast =H^{-s}(\mathbb{R}^n).$</em> </p>
+<p><strong>证:</strong> $\,\forall\,f\in H^s(\mathbb{R}^n),$
+$g\in H^{-s}(\mathbb{R}^n),$ 我们有</p>
+<script type="math/tex; mode=display">\int_{\mathbb{R}^n} f\overline{g}dx=(2\pi)^{-n}\int_{\mathbb{R}^n} (1+|\xi|^2)^s\widehat{f}(\xi)(1+|\xi|^2)^{-s}\overline{\widehat{g} }(\xi)dx\le (2\pi)^{-n}\parallel f\parallel_{H^s}\parallel g\parallel_{H^{-s} }.</script><p>于是$H^{-s}(\mathbb{R}^n)\subset (H^s(\mathbb{R}^n))^\ast .$
+反过来若$g\in (H^s)^\ast ,$ $g\in \mathscr{S}’(\mathbb{R}^n).$ 由同样的式子,</p>
+<script type="math/tex; mode=display">\left<{}f,g\right>=(2\pi)^{-n}\left<{}(1+|\xi|^2)^s \widehat{f},(1+|\xi|^2)^{-s}\widehat{g}\right>\le C\parallel f\parallel_{H^s}=C\parallel(1+|\xi|^2)^s\widehat{f}(\xi)\parallel_{L^2}.</script><p>由于$(1+|\xi|^2)^s \widehat{f}(\xi)$在$L^2$中稠密(包含$C_c^\infty$),
+$(1+|\xi|^2)^{-s}\widehat{g}\in (L^2)^\ast =L^2,$
+从而$\parallel g\parallel_{H^{-s} }=\parallel(1+|\xi|^2)^{-s}\widehat{g}\parallel_{L^2}&lt;\infty,$
+$g\in H^{-s}(\mathbb{R}^n).$
+从而$(H^s(\mathbb{R}^n))^\ast =H^{-s}(\mathbb{R}^n).$</p>
+<h2 id="负整指数Sobolev空间"><a href="#负整指数Sobolev空间" class="headerlink" title="负整指数Sobolev空间"></a>负整指数Sobolev空间</h2><p>对一般的$H^{m,p},$ 定义$H^{-m,p’}:=(H_0^{m,p})^\ast \subset \mathscr{D}’,$
+$\frac{1}{p}+\frac{1}{p’}=1,$ 配备算子范数.
+此时$C_c^\infty$也在其中稠密. 由前面的定理,
+可以知道$H^s$与$H^{s,2}$的相容性在$s$为负整指数时也对.</p>
+<h2 id="迹定理"><a href="#迹定理" class="headerlink" title="迹定理"></a>迹定理</h2><p><strong>定理 1.3</strong> (迹定理). <em>$\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ 记$x’=(x_2,\cdots,x_n),$ $\pi f(x’)=f(0,x’).$ 我们有如下不等式:</em> </p>
+<script type="math/tex; mode=display">\parallel\pi f\parallel_{H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})}\le C\parallel f\parallel_{H^s(\mathbb{R}^n)},\quad \,\forall\,s>\frac{1}{2}.</script><p><strong>证:</strong> 记$F_{n-1}f(x_1,\xi’)=g(x_1,\xi’)$为$f$做$n-1$次Fourier变换.
+那么</p>
+<script type="math/tex; mode=display">\widehat{f}(\xi)=\int_{\mathbb{R} }e^{-ix_1\xi_1}g(x_1,\xi')dx_1,\quad g(x_1,\xi')=\frac{1}{2\pi}\int_{\mathbb{R} }e^{ix_1\xi_1}\widehat{f}(\xi)d\xi_1.</script><p>注意到$\widehat{\pi f}(\xi’)=g(0,\xi’)=\frac{1}{2\pi}\int_{\mathbb{R} }\widehat{f}(\xi)d\xi_1,$
+而 <script type="math/tex">\begin{aligned}
+                \int_{\mathbb{R}^n}|\widehat{f}|d\xi_1&\le \left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{-\frac{s}{2} }\right|^2d\xi_1\right)^\frac{1}{2}\\
+                &\le C\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\left(\int_{\mathbb{R} }\left(1+|\xi_1|+|\xi'|\right)^{-2s}d\xi_1\right)^\frac{1}{2}\\
+                &\le C\left(1+|\xi'|^2\right)^{\frac{-s+\frac{1}{2} }{2} }\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }
+            \end{aligned}</script> 于是, <script type="math/tex">\begin{aligned}
+                \parallel\pi f\parallel_{H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})}&\le\frac{1}{2\pi} \parallel(1+|\xi'|^2)^{\frac{s-\frac{1}{2} }{2} }\int_{\mathbb{R} }|\widehat{f}(\xi)|d\xi_1\parallel_{L^2(\mathbb{R}^{n-1})}\\
+                &\le C\parallel\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\parallel_{L^2(\mathbb{R}^{n-1})}=C\parallel f\parallel_{H^s(\mathbb{R}^n)}
+            \end{aligned}</script> 命题得证.</p>
+<p>$\,\forall\,f\in H^s(\mathbb{R}^n),$ 改变$f$在零测集上的取值并没有意义,
+因此只是取$f(0,x’)$并没有实际意义, 无法反映$f$的性质. 不过由迹定理,
+我们知道当$\{f_\nu\}\in C_c^\infty(\mathbb{R}^n),$
+$f_\nu\xrightarrow{H^s}f$时,
+$\{\pi f_{\nu}\}$构成$H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})$Cauchy列.
+记其收敛到$\pi f,$ 称为$f$的<strong>迹</strong>. 迹定义了函数在边界处的取值,
+反映其边界性质.</p>
+<p>由展平技巧与单位分解, 对$f\in H^s(\Omega),$
+我们也可以定义其在边界上的迹$\pi f\in H^{s-\frac{1}{2} }(\partial \Omega).$
+常用$s=1$的情形,
+特别地有$\parallel\pi f\parallel_{L^2(\partial\Omega)}\le C\parallel f\parallel_{H^1(\Omega)}.$
+回忆空间$H_0^1(\Omega)$为$C_c^\infty(\Omega)$在$H^1$模下的完备化空间.
+在给出迹的定义后, 事实上我们可以证明</p>
+<script type="math/tex; mode=display">H_0^1(\Omega)=\{f\in H^1(\Omega),\pi f=0\}.</script><p>这给出了$H_0^1(\Omega)$的另一种等价刻画.</p>
+<h2 id="Poincare不等式"><a href="#Poincare不等式" class="headerlink" title="Poincaré不等式"></a>Poincaré不等式</h2><p><strong>定理 1.4</strong> (Poincaré不等式). <em>对有界区域$\Omega,$ $f\in H_{0}^{1,p}(\Omega),$ $p\in[1,\infty),$ 我们有如下不等式:</em> </p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p}\le C(\Omega)\parallel\nabla f\parallel_{L^p}</script><p><strong>证:</strong> 只需对$f\in C_c^\infty(\Omega)$给出证明.
+$\,\exists\,L&gt;0$使得$\Omega\subset [-L,L]^n.$
+那么$f(x)=\int_{-L}^{x_1}\partial_1f(y_1,x’)dy_1.$ 于是</p>
+<script type="math/tex; mode=display">\begin{aligned}
+                |f(x)|&\le \int_{-L}^L |f_1(y_1,x')|dy_1\\
+                &\le (\int_{-L}^L|f_1|^pdy_1)^{\frac{1}{p} }(2L)^{\frac{1}{q} }\\
+                \parallel f\parallel_{L^p}&\le 2L\parallel f_1\parallel_{L^p}\le 2L\parallel\nabla f\parallel_{L^p}                 
+            \end{aligned}</script><h2 id="紧嵌入定理"><a href="#紧嵌入定理" class="headerlink" title="紧嵌入定理"></a>紧嵌入定理</h2><p>对有界区域$\Omega,$ 由Sobolev不等式与基本的分析,</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p(\Omega)}\le C\parallel f\parallel_{H^{m,q}(\Omega)},\quad \,\forall\,\frac{n}{p}\ge \frac{n}{q}-m.</script><p>因此有嵌入$H^{m,q}(\Omega)\hookrightarrow L^p(\Omega).$ 当不等式严格时,
+即$\frac{n}{p}&gt;\frac{n}{q}-m,$ 我们可以证明嵌入是紧的,
+即将有界集映到列紧集.</p>
+<p>取到严格不等号就可以说明嵌入是紧的, 大致是因为此时可以使用导数,
+通过Ascoli-Arzela引理证明. 即设$\frac{n}{p}=\frac{n}{q}-s,$ 那么大致有</p>
+<script type="math/tex; mode=display">H^{m,q}\stackrel{c}\hookrightarrow H^{s,q}\hookrightarrow L^p</script><p>由于嵌入是连续的, 将收敛列映到收敛列, 只需说明第一个嵌入是紧的即可.
+但是对一般的$q$尚未定义$H^{s,q},$ 因此上述说明只是形式上的.
+具体证明时将不借助$H^{s,q},$ 直接给出证明.</p>
+<p>我们可以对$p=2$时已定义的情形给出证明. 我们说明对$s&gt;t&gt;0,$ 有紧嵌入</p>
+<script type="math/tex; mode=display">H^s(\mathbb{R}^n)\stackrel{c}\hookrightarrow H^t_{loc}(\mathbb{R}^n).</script><p>这里$f\in H^t_{loc}(\mathbb{R}^n)$即为满足$\,\forall\,\varphi\in C_c^\infty(\mathbb{R}^n),$
+$\varphi f\in H^t(\mathbb{R}^n)$的函数.</p>
+<p><strong>引理 1.5</strong>. <em>$\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ $s&gt;t&gt;0,$ 我们有如下不等式:</em> </p>
+<script type="math/tex; mode=display">|f(x+h)-f(x)|_{\dot{H}^t(\mathbb{R}^n)}\le C|h|^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}.</script><p><strong>证:</strong> 不妨设$s-t\in (0,1).$ 对一般情况在$(s,t)$间加分点即可.
+$F[f(x+h)-f(x)]=(e^{-ih\cdot \xi}-1)\widehat{f}(\xi).$
+注意到$|e^{-ih\cdot\xi}-1|\le 2$或$C|h\cdot\xi|,$
+因此$|e^{-ih\cdot \xi}-1|\le C|h|^{s-t}|\xi|^{s-t}.$ 从而</p>
+<script type="math/tex; mode=display">|f(x+h)-f(x)|_{\dot{H}^t(\mathbb{R}^n)}\le C|h|^{s-t}\parallel|\xi|^{s}\widehat{f}(\xi)\parallel_{L^2(\mathbb{R}^n)}=C|h|^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}</script><p><strong>推论 1.6</strong>. <em>$|\alpha_\varepsilon\ast f-f|_{\dot{H}^t(\mathbb{R}^n)}\le C\varepsilon^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}$</em> </p>
+<p>因此设$\{f_{\nu}\}$为$\dot{H}^s(\mathbb{R}^n)$有界函数列,
+那么$\,\forall\,\varepsilon&gt;0,$
+$\{\alpha_\varepsilon\ast f_\nu\}$为$C^m$有界函数列, $\,\forall\,m&gt;t+1.$
+从而由Arzela-Ascoli引理, 其有在任意紧集上$C^{m-1}$收敛的子列,
+即$C_{loc}^{m-1}$紧. 自然地, 收敛列在$H^{m-1}$模意义下也收敛,
+因此是$H^{m-1}_{loc}$紧的. 而$H^{m-1}\hookrightarrow H^t$为连续嵌入,
+故$\{\alpha_\varepsilon\ast f_\nu\}$是$H^t_{loc}$紧的.</p>
+<p>由推论,
+对$\nu$一致地有$\alpha_\varepsilon\ast f_{\nu} \xrightarrow{\dot{H}^t} f_{\nu},$
+由对角线法可证$\{f_{\nu}\}$有Cauchy子列, 从而是$H^t_{loc}$紧的.
+因此$H^s(\mathbb{R}^n)$到$H^t_{loc}(\mathbb{R}^n)$的嵌入是紧的.</p>
+<p>文章最后更新于 2021-11-13 18:02:38 </p>
 
         </div>
 
@@ -294,11 +312,11 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第四章-Frobenius定理</li>
+        <li>本文标题：《现代PDE基础》笔记(6)-实指数Sobolev模</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-10 16:15:52</li>
+        <li>创建时间：2021-11-13 17:29:37</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/10/《微分流形》第四章-Frobenius定理/
+            本文链接：https://dream0ar.github.io/2021/11/13/《现代PDE基础》笔记(6)-实指数Sobolev模/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -312,29 +330,14 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/11/13/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E5%AE%9E%E6%8C%87%E6%95%B0Sobolev%E6%A8%A1/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(6)-实指数Sobolev模</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/03/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%88%86%E5%B8%83/"
+                           href="/2021/11/10/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0-Frobenius%E5%AE%9A%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第四章-分布</span>
+                                <span class="post-nav-title-item">《微分流形》第四章-Frobenius定理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -540,7 +543,7 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%90%88%E6%80%A7"><span class="nav-text">对合性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Frobenius%E5%AE%9A%E7%90%86"><span class="nav-text">Frobenius定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E5%88%86%E8%A7%A3"><span class="nav-text">单位分解</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E6%8C%87%E6%95%B0Sobolev%E7%A9%BA%E9%97%B4"><span class="nav-text">实指数Sobolev空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9F%E6%95%B4%E6%8C%87%E6%95%B0Sobolev%E7%A9%BA%E9%97%B4"><span class="nav-text">负整指数Sobolev空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%B9%E5%AE%9A%E7%90%86"><span class="nav-text">迹定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Poincare%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-text">Poincaré不等式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86"><span class="nav-text">紧嵌入定理</span></a></li></ol>
     </div>
 </div>
         </aside>
