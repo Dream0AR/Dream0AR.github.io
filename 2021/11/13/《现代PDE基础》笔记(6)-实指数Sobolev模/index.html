@@ -245,14 +245,16 @@ $\frac{1}{p}+\frac{1}{p’}=1,$ 配备算子范数.
 <script type="math/tex; mode=display">\parallel\pi f\parallel_{H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})}\le C\parallel f\parallel_{H^s(\mathbb{R}^n)},\quad \,\forall\,s>\frac{1}{2}.</script><p><strong>证:</strong> 记$F_{n-1}f(x_1,\xi’)=g(x_1,\xi’)$为$f$做$n-1$次Fourier变换.
 那么</p>
 <script type="math/tex; mode=display">\widehat{f}(\xi)=\int_{\mathbb{R} }e^{-ix_1\xi_1}g(x_1,\xi')dx_1,\quad g(x_1,\xi')=\frac{1}{2\pi}\int_{\mathbb{R} }e^{ix_1\xi_1}\widehat{f}(\xi)d\xi_1.</script><p>注意到$\widehat{\pi f}(\xi’)=g(0,\xi’)=\frac{1}{2\pi}\int_{\mathbb{R} }\widehat{f}(\xi)d\xi_1,$
-而 <script type="math/tex">\begin{aligned}
+而</p>
+<script type="math/tex; mode=display">\begin{aligned}
                 \int_{\mathbb{R}^n}|\widehat{f}|d\xi_1&\le \left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{-\frac{s}{2} }\right|^2d\xi_1\right)^\frac{1}{2}\\
                 &\le C\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\left(\int_{\mathbb{R} }\left(1+|\xi_1|+|\xi'|\right)^{-2s}d\xi_1\right)^\frac{1}{2}\\
                 &\le C\left(1+|\xi'|^2\right)^{\frac{-s+\frac{1}{2} }{2} }\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }
-            \end{aligned}</script> 于是, <script type="math/tex">\begin{aligned}
+            \end{aligned}</script><p>于是,</p>
+<script type="math/tex; mode=display">\begin{aligned}
                 \parallel\pi f\parallel_{H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})}&\le\frac{1}{2\pi} \parallel(1+|\xi'|^2)^{\frac{s-\frac{1}{2} }{2} }\int_{\mathbb{R} }|\widehat{f}(\xi)|d\xi_1\parallel_{L^2(\mathbb{R}^{n-1})}\\
                 &\le C\parallel\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\parallel_{L^2(\mathbb{R}^{n-1})}=C\parallel f\parallel_{H^s(\mathbb{R}^n)}
-            \end{aligned}</script> 命题得证.</p>
+            \end{aligned}</script><p>命题得证.</p>
 <p>$\,\forall\,f\in H^s(\mathbb{R}^n),$ 改变$f$在零测集上的取值并没有意义,
 因此只是取$f(0,x’)$并没有实际意义, 无法反映$f$的性质. 不过由迹定理,
 我们知道当$\{f_\nu\}\in C_c^\infty(\mathbb{R}^n),$
@@ -268,7 +270,8 @@ $\{\pi f_{\nu}\}$构成$H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})$Cauchy列.
 在给出迹的定义后, 事实上我们可以证明</p>
 <script type="math/tex; mode=display">H_0^1(\Omega)=\{f\in H^1(\Omega),\pi f=0\}.</script><p>这给出了$H_0^1(\Omega)$的另一种等价刻画.</p>
 <h2 id="Poincare不等式"><a href="#Poincare不等式" class="headerlink" title="Poincaré不等式"></a>Poincaré不等式</h2><p><strong>定理 1.4</strong> (Poincaré不等式). <em>对有界区域$\Omega,$ $f\in H_{0}^{1,p}(\Omega),$ $p\in[1,\infty),$ 我们有如下不等式:</em> </p>
-<script type="math/tex; mode=display">\parallel f\parallel_{L^p}\le C(\Omega)\parallel\nabla f\parallel_{L^p}</script><p><strong>证:</strong> 只需对$f\in C_c^\infty(\Omega)$给出证明.
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p}\le C(\Omega)\parallel\nabla f\parallel_{L^p}</script><p><strong>证:</strong></p>
+<p>只需对$f\in C_c^\infty(\Omega)$给出证明.
 $\,\exists\,L&gt;0$使得$\Omega\subset [-L,L]^n.$
 那么$f(x)=\int_{-L}^{x_1}\partial_1f(y_1,x’)dy_1.$ 于是</p>
 <script type="math/tex; mode=display">\begin{aligned}
@@ -304,7 +307,7 @@ $\{\alpha_\varepsilon\ast f_\nu\}$为$C^m$有界函数列, $\,\forall\,m&gt;t+1.
 对$\nu$一致地有$\alpha_\varepsilon\ast f_{\nu} \xrightarrow{\dot{H}^t} f_{\nu},$
 由对角线法可证$\{f_{\nu}\}$有Cauchy子列, 从而是$H^t_{loc}$紧的.
 因此$H^s(\mathbb{R}^n)$到$H^t_{loc}(\mathbb{R}^n)$的嵌入是紧的.</p>
-<p>文章最后更新于 2021-11-13 18:02:38 </p>
+<p>文章最后更新于 2021-11-13 18:16:30 </p>
 
         </div>
 
