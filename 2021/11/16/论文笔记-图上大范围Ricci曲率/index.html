@@ -17,9 +17,7 @@
 <link rel="stylesheet" href="/css/style.css">
 
     <link rel="shortcut icon" href="/images/logo.svg">
-    
-<link rel="stylesheet" href="/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN"};
@@ -240,52 +238,44 @@ champ)算子:</p>
         \end{aligned}</script><p>这样我们有关于曲率的不等式:</p>
 <script type="math/tex; mode=display">K|\nabla_R f|(x)\le\Delta |\nabla_R f|(x)-(\Delta f(y)-\Delta f(x))\operatorname{sgn}(f(y)-f(x)).</script><p>左右关于$f$的量纲为$1,$ 不妨设$|\nabla_R f|=1,$
 由此导出如下的曲率定义方法:</p>
-<p><strong>定义 1.1</strong>. <em>任意指定$R\in \mathbb{N},$ $x,y\in V,$ 定义<strong>梯度-Ollivier曲率</strong>: <script type="math/tex">K_R(x,y):=\inf_{\begin{subarray}{c}                     f:V\rightarrow \mathbb{R}\\                     |\nabla_Rf|(x)=1\\                     |f(y)-f(x)|=|\nabla_R f|(x)             \end{subarray} }\Delta|\nabla_R f|(x)-(\Delta f(y)-\Delta f(x))\operatorname{sgn}(f(y)-f(x)).</script></em> </p>
-<h2 id="与Ollivier曲率联系"><a href="#与Ollivier曲率联系" class="headerlink" title="与Ollivier曲率联系"></a>与Ollivier曲率联系</h2><p><strong>定理 1.2</strong>. *$\,\forall\,x\sim y,$ 我们有 </p>
-<script type="math/tex; mode=display">K_1^{Ol}(x,y)\ge K_1(x,y).</script><ul>
-<li><p><strong>证:</strong> $$K_1^{Ol}(x,y)=\min_{\begin{subarray}{c}</p>
-<pre><code>              \parallel\nabla f\parallel_&#123;\infty&#125;=1\\
-              f(y)-f(x)=1
-      \end&#123;subarray&#125; &#125;\Delta f(x)-\Delta f(y).$$
-</code></pre></li>
-</ul>
-<p>令$f$为实现最小值的函数, 则$|\nabla_1 f|(x)=1,$ 且$\,\forall\,z\sim x,$
+<p><strong>定义 1.1</strong>. <em>任意指定$R\in \mathbb{N},$ $x,y\in V,$ 定义<strong>梯度-Ollivier曲率</strong>:</em> </p>
+<script type="math/tex; mode=display">K_R(x,y):=\inf_{\begin{subarray}{c}
+                    f:V\rightarrow \mathbb{R}\\
+                    |\nabla_Rf|(x)=1\\
+                    |f(y)-f(x)|=|\nabla_R f|(x)
+            \end{subarray} }\Delta|\nabla_R f|(x)-(\Delta f(y)-\Delta f(x))\operatorname{sgn}(f(y)-f(x)).</script><h2 id="与Ollivier曲率联系"><a href="#与Ollivier曲率联系" class="headerlink" title="与Ollivier曲率联系"></a>与Ollivier曲率联系</h2><p><strong>定理 1.2</strong>. <em>$\,\forall\,x\sim y,$ 我们有:</em> </p>
+<script type="math/tex; mode=display">K_1^{Ol}(x,y)\ge K_1(x,y).</script><p><strong>证:</strong> 由定义, </p>
+<script type="math/tex; mode=display">K_1^{Ol}(x,y)=\min_{\begin{subarray}{c}
+                    \parallel\nabla f\parallel_{\infty}=1\\
+                    f(y)-f(x)=1
+            \end{subarray} }\Delta f(x)-\Delta f(y).</script><p>令$f$为实现最小值的函数, 则$|\nabla_1 f|(x)=1,$ 且$\,\forall\,z\sim x,$
 $|\nabla_1 f|(z)\le 1.$ 这说明$\Delta |\nabla_1 f|(x)\le 0.$ 因此:</p>
 <script type="math/tex; mode=display">K_1(x,y)\le \Delta |\nabla_1f|(x)+K_1^{Ol}(x,y)\le K_1^{Ol}(x,y).</script><h2 id="梯度估计"><a href="#梯度估计" class="headerlink" title="梯度估计"></a>梯度估计</h2><p>接下来说明这种曲率定义方式事实上也是充分的. 首先需要如下引理:</p>
-<p><strong>引理 1.3</strong>. *若$K_R(x,y)\ge K,$ $\,\forall\,d(x,y)\le R.$ 给定$t&gt;0,$ 取函数 </p>
-<script type="math/tex; mode=display">G_s:=e^{-Ks}P_s|\nabla_R P_{t-s}f|,\quad s\in[0,t]</script><p> 那么$G_s$是递增函数.* </p>
+<p><strong>引理 1.3</strong>. <em>若$K_R(x,y)\ge K,$ $\,\forall\,d(x,y)\le R.$ 给定$t&gt;0,$ 取函数</em> </p>
+<script type="math/tex; mode=display">G_s:=e^{-Ks}P_s|\nabla_R P_{t-s}f|,\quad s\in[0,t]</script><p><em>那么$G_s$是递增函数.</em></p>
 <p><strong>证:</strong>
 只需证$G_s$下导数$\underline{\partial}_sG_s:=\varliminf\limits_{h\rightarrow 0}\frac{G_{s+h}-G_s}{h}\ge0.$
 计算得到:</p>
 <script type="math/tex; mode=display">\underline{\partial}_sG_s=-KG_s+e^{-Ks}(P_s(\underline\partial_s|\nabla_RP_{t-s}f|)+\Delta P_s|\nabla_R P_{t-s}f|).</script><p>与导出曲率时的方法相同,
 $\,\forall\,y\in B_R(x)$满足$|\nabla_R P_{t-s}f|(x)=|P_{t-s}f(y)-P_{t-s}f(x)|,$
-有: <script type="math/tex">\begin{aligned}
+有: </p>
+<script type="math/tex; mode=display">\begin{aligned}
                 \underline\partial_s|\nabla_RP_{t-s}f|(x)&\ge \partial_s|P_{t-s}f(y)-P_{t-s}f(x)|\\
                 &=(\partial_s P_{t-s}f(y)-\partial_s P_{t-s}f(x))\operatorname{sgn}(P_{t-s}f(y)-P_{t-s}f(x))\\
                 &=-(\Delta P_{t-s}f(y)-\Delta P_{t-s}f(x))\operatorname{sgn}(P_{t-s}f(y)-P_{t-s}f(x))\\
                 &\ge |\nabla_R P_{t-s}f|(x)K_R(x,y)-\Delta |\nabla_RP_{t-s}f|(x)\\
                 &\ge K|\nabla_R P_{t-s}f|(x)-\Delta |\nabla_R P_{t-s} f|(x)
-            \end{aligned}</script></p>
-<p>由于$P_s\Delta=\Delta P_s$且对于非负函数$f\ge 0,$ $P_sf\ge 0,$ 我们有
+            \end{aligned}</script><p>由于$P_s\Delta=\Delta P_s$且对于非负函数$f\ge 0,$ $P_sf\ge 0,$ 我们有
 $\underline{\partial}_s G_s\ge 0,$ 引理得证.</p>
 <p>比较$G_0$与$G_t,$ 立即得到如下定理成立:</p>
-<p><strong>定理 1.4</strong>. *若$K_R(x,y)\ge K,$ $\,\forall\,d(x,y)\le R,$ 则 </p>
-<script type="math/tex; mode=display">|\nabla_R P_tf|\le e^{-Kt}P_t|\nabla_R f|.</script><ul>
-<li><p>衰减性</p>
-</li>
-</ul>
-<hr>
-<p>当$K=0$时, 上述梯度估计不再能给出好的衰减性. 我们希望证明如下的估计:</p>
-<p><strong>定理 1.5</strong>. *若$\,\forall\,x,y\in V,$ $d(x,y)\le R,$ 有$K_R(x,y)\ge 0.$ 那么 </p>
-<script type="math/tex; mode=display">|\nabla_R P_tf|^2\le \frac{C}{t}\parallel f\parallel^2_{\infty},</script><ul>
-<li><p>我们希望利用$\Gamma f$来估计$|\nabla_R f|^2,$ 给出其上界.
+<p><strong>定理 1.4</strong>. <em>若$K_R(x,y)\ge K,$ $\,\forall\,d(x,y)\le R,$ 则</em> </p>
+<script type="math/tex; mode=display">|\nabla_R P_tf|\le e^{-Kt}P_t|\nabla_R f|.</script><h2 id="衰减性"><a href="#衰减性" class="headerlink" title="衰减性"></a>衰减性</h2><p>当$K=0$时, 上述梯度估计不再能给出好的衰减性. 我们希望证明如下的估计:</p>
+<p><strong>定理 1.5</strong>. <em>若$\,\forall\,x,y\in V,$ $d(x,y)\le R,$ 有$K_R(x,y)\ge 0.$ 那么</em> </p>
+<script type="math/tex; mode=display">|\nabla_R P_tf|^2\le \frac{C}{t}\parallel f\parallel^2_{\infty},</script><p>我们希望利用$\Gamma f$来估计$|\nabla_R f|^2,$ 给出其上界.
 然而对$R\ge 2,$ $\Gamma$仅涉及一步邻域,
 于是基本的想法是将$\Gamma f$在足够大的邻域上求和来控制$|\nabla_R f|.$
 我们需要如下工具.</p>
-</li>
-</ul>
-<p><strong>定义 1.6</strong>. *对图$G=(G,w,m),$ 记$Q(x,y):=\frac{w(x,y)}{m(x)},$ 那么 </p>
-<script type="math/tex; mode=display">\Delta f(x)=\sum_y Q(x,y)(f(y)-f(x)).</script><p> 记$\deg(x):=\sum_y Q(x,y),$ $Q_{\min} :=\inf_{x\sim y}Q(x,y).$ 定义$A:=\Delta+\deg_{\max},$ 称为<strong>平均算子</strong>.* </p>
+<p><strong>定义 1.6</strong>. <em>对图$G=(G,w,m),$ 记$Q(x,y):=\frac{w(x,y)}{m(x)},$ 那么 $\Delta f(x)=\sum_y Q(x,y)(f(y)-f(x)).$</em>  <em>记$\deg(x):=\sum_y Q(x,y),$ $Q_{\min} :=\inf_{x\sim y}Q(x,y).$ 定义$A:=\Delta+\deg_{\max},$ 称为<strong>平均算子</strong>.</em> </p>
 <p>易见它满足一些简单的性质:</p>
 <ol>
 <li><p>$f\ge 0\Rightarrow Af\ge 0;$</p>
@@ -295,25 +285,23 @@ $\underline{\partial}_s G_s\ge 0,$ 引理得证.</p>
 <li><p>$P_t A=AP_t.$</p>
 </li>
 </ol>
-<p><strong>引理 1.7</strong>. *$\,\forall\,f:V\rightarrow \mathbb{R},$ 我们有 </p>
-<script type="math/tex; mode=display">|\nabla_R f|^2\le \frac{2R}{Q_{\min}^R}A^{R-1}\Gamma f.</script><ul>
-<li><p><strong>证:</strong> 首先估计$A^{R-1}\Gamma f.$ 注意到$\,\forall\,g\ge 0,$</p>
-</li>
-</ul>
+<p><strong>引理 1.7</strong>. <em>$\,\forall\,f:V\rightarrow \mathbb{R},$ 我们有</em> </p>
+<script type="math/tex; mode=display">|\nabla_R f|^2\le \frac{2R}{Q_{\min}^R}A^{R-1}\Gamma f.</script><p><strong>证:</strong> 首先估计$A^{R-1}\Gamma f.$ 注意到$\,\forall\,g\ge 0,$</p>
 <script type="math/tex; mode=display">Ag(x)\ge \sum_y Q(x,y) g(y)\ge Q_{\min}\sum_{y\sim x}g(y).</script><p> 因此,</p>
 <script type="math/tex; mode=display">A^{R-1}\Gamma f\ge Q_{\min}^{R-1}\sum_{x\sim x_1\sim\cdots\sim x_{R-1} } \Gamma f(x_{R-1}).</script><p>类似地, $\Gamma f$本身满足</p>
 <script type="math/tex; mode=display">\Gamma f(x)\ge \frac{1}{2}Q_{\min}\sum_{y\sim x}(f(z)-f(x))^2.</script><p> 因此,</p>
 <script type="math/tex; mode=display">A^{R-1}\Gamma f(x)\ge \frac{1}{2}Q_{\min}^{R}\sum_{x\sim x_1\sim\cdots\sim x_{R} } (f(x_{R})-f(x_{R-1}))^2.</script><p>那么设$|\nabla_R f|(x)=|f(x)-f(y)|,$ $y\in B_R(x).$
 取$x=y_0\sim \cdots\sim y_r=y,$ $r\le R.$
 那么由基本不等式$\frac{a_1+\cdots+a_n}{n}\le \sqrt{\frac{a_1^2+\cdots+a_n^2}{n} },$
-有: <script type="math/tex">\begin{aligned}
+有: </p>
+<script type="math/tex; mode=display">\begin{aligned}
                 A^{R-1}\Gamma f(x)&\ge \frac{1}{2}Q_{\min}^{R}\sum_{k=1}^r(f(y_k)-f(y_{k-1}))^2\\
                 &\ge \frac{1}{2}Q_{\min}^R\frac{1}{r}(f(y_r)-f(y_0))^2\\
                 &\ge \frac{1}{2}Q_{\min}^R\frac{1}{R}|\nabla_R f|^2.
-            \end{aligned}</script> 引理得证.</p>
+            \end{aligned}</script><p> 引理得证.</p>
 <p>现在就能证明前面的定理了. 事实上我们可以证明如下更强的版本:</p>
-<p><strong>定理 1.8</strong>. *设$K_R(x,y)\ge K,$ $\,\forall\,x,y\in V,$ $d(x,y)\le R.$ 那么 </p>
-<script type="math/tex; mode=display">\frac{e^{2Kt}-1}{2K}|\nabla_R P_tf|^2\le R\frac{\deg_{\max}^{R-1} }{Q_{\min}^{R} }\parallel f\parallel_{\infty}^2.</script><p> $K=0$时, $\frac{e^{2Kt}-1}{2K}:=t,$ 即为前面的定理.* </p>
+<p><strong>定理 1.8</strong>. <em>设$K_R(x,y)\ge K,$ $\,\forall\,x,y\in V,$ $d(x,y)\le R.$ 那么</em> </p>
+<script type="math/tex; mode=display">\frac{e^{2Kt}-1}{2K}|\nabla_R P_tf|^2\le R\frac{\deg_{\max}^{R-1} }{Q_{\min}^{R} }\parallel f\parallel_{\infty}^2.</script><p><em>$K=0$时, $\frac{e^{2Kt}-1}{2K}:=t,$ 即为前面的定理.</em></p>
 <p><strong>证:</strong> 令$H_s:=A^{R-1}P_s[(P_{t-s}f)^2],$
 $G_s:=e^{-Ks}P_s|\nabla_R P_{t-s} f|.$ 那么对$H$求导, 应用前一引理即有:</p>
 <script type="math/tex; mode=display">\begin{aligned}
@@ -322,14 +310,14 @@ $G_s:=e^{-Ks}P_s|\nabla_R P_{t-s} f|.$ 那么对$H$求导, 应用前一引理即
                 &\ge \frac{Q_{\min}^R}{R}P_s|\nabla_R P_{t-s}f|^2\\
                 &\ge \frac{Q_{\min}^R}{R}(P_s|\nabla_R P_{t-s}f|)^2\\
                 &=\frac{Q_{\min}^R}{R}e^{2Ks}G_s^2.
-            \end{aligned}$$ 积分并利用$G_s$是单增的, 得到:
-
-$$H_t-H_0\ge \frac{Q_{\min}^R}{R}G_0^2\int_0^te^{2Ks}ds=\frac{Q_{\min}^R}{R}G_0^2\frac{e^{2Ks}-1}{2K}.</script><p>那么由于$\parallel Ag\parallel_{\infty}\le \deg_{\max}\parallel g\parallel_{\infty},$
-$H_0\ge 0,$ <script type="math/tex">\begin{aligned}
+            \end{aligned}</script><p> 积分并利用$G_s$是单增的, 得到:</p>
+<script type="math/tex; mode=display">H_t-H_0\ge \frac{Q_{\min}^R}{R}G_0^2\int_0^te^{2Ks}ds=\frac{Q_{\min}^R}{R}G_0^2\frac{e^{2Ks}-1}{2K}.</script><p>那么由于$\parallel Ag\parallel_{\infty}\le \deg_{\max}\parallel g\parallel_{\infty},$
+$H_0\ge 0,$ </p>
+<script type="math/tex; mode=display">\begin{aligned}
                 \deg_{\max}^{R-1}\parallel f\parallel_\infty^2&\ge A^{R-1}(P_tf)^2=H_t\\
                 &\ge \frac{Q_{\min}^R}{R}G_0^2\frac{e^{2Kt}-1}{2K}\\
                 &=\frac{Q_{\min}^R}{R}|\nabla_R P_tf|^2\frac{e^{2Kt}-1}{2K}.
-            \end{aligned}</script> 整理即有定理成立.</p>
+            \end{aligned}</script><p> 整理即有定理成立.</p>
 <p>需要注意的是, 该定理只在$\deg_{\max}&lt;\infty,$ $Q_{\min}&gt;0,$
 即图$G$度数有一致上界, $Q$有非零一致下界时有意义.</p>
 <h2 id="指数曲率"><a href="#指数曲率" class="headerlink" title="指数曲率"></a>指数曲率</h2><p>Ollivier曲率以$K$为下界由下面的梯度估计刻画:</p>
@@ -343,32 +331,32 @@ $\varepsilon\rightarrow 0.$
 且$\log f(y)-\log f(x)=\parallel\nabla_R \log f\parallel_{\infty},$
 类似先前的导出方法, 我们对两侧求导, 在$t=0$时, 有</p>
 <script type="math/tex; mode=display">\partial_t (\log P_t f(y)-\log P_t f(x))=\frac{\Delta f(y)}{f(y)}-\frac{\Delta f(x)}{f(x)}\le -K\parallel\nabla_R \log f\parallel_{\infty}.</script><p>令$f=\exp(g),$ 即有如下定义:</p>
-<p><strong>定义 1.9</strong>. <em>任意指定$R\in \mathbb{N},$ $x,y\in V,$ 定义<strong>指数梯度-Ollivier曲率</strong>: <script type="math/tex">K_R^e(x,y)=\inf_{\begin{subarray}{c}             r>0\\             \parallel\nabla_R g\parallel_{\infty}=r\\             g(y)-g(x)=r \end{subarray} }\frac{1}{r} \left(\frac{\Delta \exp(g)}{\exp(g)}(x)-\frac{\Delta \exp(g)}{\exp(g)}(y)\right)</script></em> </p>
-<p>类似地, 它的定义方式也是充分的.</p>
-<p><strong>定理 1.10</strong>. *若$K_R^e(x,y)\ge K,$ $\,\forall\,d(x,y)\le R,$ 且$G$为有限图. 那么$\,\forall\,0&lt;f\in \ell^\infty(V),$ </p>
-<script type="math/tex; mode=display">\parallel\nabla_R\log P_tf\parallel_{\infty}\le e^{-Kt}\parallel\nabla_R \log f\parallel_{\infty}.</script><ul>
-<li><p><strong>证:</strong> 由于假设$G$是有限的, 最大模均能在某点取到. 记$g_0=\log P_tf,$
-$r_0=\parallel\nabla_R g_0\parallel_{\infty},$ 则 $$\begin{aligned}</p>
-<pre><code>          \partial_t\parallel\nabla_R\log P_t f\parallel_&#123;\infty&#125;
-          &amp;=\sup_&#123;\begin&#123;subarray&#125;&#123;c&#125;
-                  d(x,y)\le R\\
-                  \log P_tf(y)-\log P_tf(x)=\parallel\nabla_R \log P_t f\parallel_&#123;\infty&#125;
-              \end&#123;subarray&#125; &#125;\partial_t(\log P_tf(y)-\log P_tf(x))\\
-          &amp;=-r_0\inf_&#123;\begin&#123;subarray&#125;&#123;c&#125;
-                  d(x,y)\le R\\
-                  g_0(y)-g_0(x)=\parallel\nabla_R g_0\parallel_&#123;\infty&#125;=r_0
-              \end&#123;subarray&#125; &#125;\frac&#123;1&#125;&#123;r_0&#125;\left(\frac&#123;\Delta \exp(g_0)&#125;&#123;\exp(g_0)&#125;(x)-\frac&#123;\Delta \exp(g_0)&#125;&#123;\exp(g_0)&#125;(y)\right)\\
-          &amp;\le -r_0\inf_&#123;\begin&#123;subarray&#125;&#123;c&#125;
-                  d(x,y)\le R\\
-                  g(y)-g(x)=\parallel\nabla_R g\parallel_&#123;\infty&#125;=r
-              \end&#123;subarray&#125; &#125;\frac&#123;1&#125;&#123;r&#125;\left(\frac&#123;\Delta    \exp(g)&#125;&#123;\exp(g)&#125;(x)-\frac&#123;\Delta \exp(g)&#125;&#123;\exp(g)&#125;(y)\right)\\
-          &amp;=-r_0 \inf_&#123;d(x,y)\le R&#125; K_R^e(x,y)\le -r_0 K=-K\parallel\nabla_R\log P_t f\parallel_&#123;\infty&#125;.
-      \end&#123;aligned&#125;$$
-</code></pre><p>从而$\partial_t \log \parallel\nabla_R\log P_t f\parallel_{\infty}\le -K,$
+<p><strong>定义 1.9</strong>. <em>任意指定$R\in \mathbb{N},$ $x,y\in V,$ 定义<strong>指数梯度-Ollivier曲率</strong>:</em> </p>
+<script type="math/tex; mode=display">K_R^e(x,y)=\inf_{\begin{subarray}{c}
+                r>0\\
+                \parallel\nabla_R g\parallel_{\infty}=r\\
+                g(y)-g(x)=r \end{subarray} }\frac{1}{r} \left(\frac{\Delta \exp(g)}{\exp(g)}(x)-\frac{\Delta \exp(g)}{\exp(g)}(y)\right)</script><p>类似地, 它的定义方式也是充分的.</p>
+<p><strong>定理 1.10</strong>. <em>若$K_R^e(x,y)\ge K,$ $\,\forall\,d(x,y)\le R,$ 且$G$为有限图. 那么$\,\forall\,0&lt;f\in \ell^\infty(V),$</em> </p>
+<script type="math/tex; mode=display">\parallel\nabla_R\log P_tf\parallel_{\infty}\le e^{-Kt}\parallel\nabla_R \log f\parallel_{\infty}.</script><p><strong>证:</strong> 由于假设$G$是有限的, 最大模均能在某点取到. 记$g_0=\log P_tf,$
+$r_0=\parallel\nabla_R g_0\parallel_{\infty},$ 则 </p>
+<script type="math/tex; mode=display">\begin{aligned}
+                \partial_t\parallel\nabla_R\log P_t f\parallel_{\infty}
+                &=\sup_{\begin{subarray}{c}
+                        d(x,y)\le R\\
+                        \log P_tf(y)-\log P_tf(x)=\parallel\nabla_R \log P_t f\parallel_{\infty}
+                    \end{subarray} }\partial_t(\log P_tf(y)-\log P_tf(x))\\
+                &=-r_0\inf_{\begin{subarray}{c}
+                        d(x,y)\le R\\
+                        g_0(y)-g_0(x)=\parallel\nabla_R g_0\parallel_{\infty}=r_0
+                    \end{subarray} }\frac{1}{r_0}\left(\frac{\Delta \exp(g_0)}{\exp(g_0)}(x)-\frac{\Delta \exp(g_0)}{\exp(g_0)}(y)\right)\\
+                &\le -r_0\inf_{\begin{subarray}{c}
+                        d(x,y)\le R\\
+                        g(y)-g(x)=\parallel\nabla_R g\parallel_{\infty}=r
+                    \end{subarray} }\frac{1}{r}\left(\frac{\Delta    \exp(g)}{\exp(g)}(x)-\frac{\Delta \exp(g)}{\exp(g)}(y)\right)\\
+                &=-r_0 \inf_{d(x,y)\le R} K_R^e(x,y)\le -r_0 K=-K\parallel\nabla_R\log P_t f\parallel_{\infty}.
+            \end{aligned}</script><p>从而$\partial_t \log \parallel\nabla_R\log P_t f\parallel_{\infty}\le -K,$
 积分得到定理成立.</p>
-</li>
-</ul>
-<p>文章最后更新于 2021-11-16 14:59:35 </p>
+<p>文章最后更新于 2021-11-16 15:29:10 </p>
 
         </div>
 
@@ -607,7 +595,7 @@ $r_0=\parallel\nabla_R g_0\parallel_{\infty},$ 则 $$\begin{aligned}</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%8F%B7"><span class="nav-text">记号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87%E5%AF%BC%E5%87%BA"><span class="nav-text">曲率导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8EOllivier%E6%9B%B2%E7%8E%87%E8%81%94%E7%B3%BB"><span class="nav-text">与Ollivier曲率联系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%BC%B0%E8%AE%A1"><span class="nav-text">梯度估计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E6%9B%B2%E7%8E%87"><span class="nav-text">指数曲率</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%8F%B7"><span class="nav-text">记号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87%E5%AF%BC%E5%87%BA"><span class="nav-text">曲率导出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8EOllivier%E6%9B%B2%E7%8E%87%E8%81%94%E7%B3%BB"><span class="nav-text">与Ollivier曲率联系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E4%BC%B0%E8%AE%A1"><span class="nav-text">梯度估计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%B0%E5%87%8F%E6%80%A7"><span class="nav-text">衰减性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E6%9B%B2%E7%8E%87"><span class="nav-text">指数曲率</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -653,22 +641,10 @@ $r_0=\parallel\nabla_R g_0\parallel_{\infty},$ 则 $$\begin{aligned}</p>
 
 
 
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/main.js"></script>
-
-<script src="/js/header-shrink.js"></script>
-
-<script src="/js/back2top.js"></script>
-
-<script src="/js/dark-light-toggle.js"></script>
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 
-
-    
-<script src="/js/local-search.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
 
 
 
@@ -677,13 +653,7 @@ $r_0=\parallel\nabla_R g_0\parallel_{\infty},$ 则 $$\begin{aligned}</p>
 
 <div class="post-scripts">
     
-        
-<script src="/js/left-side-toggle.js"></script>
-
-<script src="/js/libs/anime.min.js"></script>
-
-<script src="/js/toc.js"></script>
-
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
     
 </div>
 
