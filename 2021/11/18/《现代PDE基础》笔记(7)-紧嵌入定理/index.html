@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《现代PDE基础》笔记(7)-紧嵌入定理 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《现代PDE基础》笔记(7)-紧嵌入定理</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-11-18 20:12:52
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="紧嵌入定理"><a href="#紧嵌入定理" class="headerlink" title="紧嵌入定理"></a>紧嵌入定理</h2><p>下面证明嵌入</p>
+<script type="math/tex; mode=display">\Vert f\Vert_{L^p(\Omega)}\le C\Vert f\Vert_{H^{m,q}(\Omega)},\quad \,\forall\,\frac{n}{p}\ge \frac{n}{q}-m,</script><p>当不等式严格时, 即$\frac{n}{p}&gt;\frac{n}{q}-m,$ 嵌入是紧的,
+将有界集映到列紧集.</p>
+<p>首先我们来简化证明的情形. 假设$m=1$时已证好, 那么$\,\forall\,m&gt;1,$
+取$q_1&gt;q,$ 使得 $\frac{n}{q_1}-1=\frac{n}{q}-m&lt;\frac{n}{p},$
+从而由Sobolev不等式, 我们有</p>
+<script type="math/tex; mode=display">H^{m,q}\hookrightarrow H^{1,q_1}\stackrel{c}\hookrightarrow L^p</script><p>因此嵌入将有界集映成有界集再映至列紧集. 从而只需证$m=1$时的情形.</p>
+<p>假设$p&gt;q$的情形已证好, 那么当$p\le q$时, $\,\exists\,p_1&gt;q\ge p,$
+$\frac{n}{q}&gt;\frac{n}{p_1}&gt;\frac{n}{q}-1.$ 有嵌入</p>
+<script type="math/tex; mode=display">H^{1,q}\stackrel{c}\hookrightarrow L^{p_1}\hookrightarrow L^p.</script><p>这将有界集映至列紧集再映成列紧集, 因此只需证$p&gt;q$的情形.
+此时$\frac{n}{q}&gt;\frac{n}{p}&gt;\frac{n}{q}-1.$</p>
+<p>首先我们考虑如下引理:</p>
+<p><strong>引理 1</strong>. <em>$\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ $\frac{n}{p}=\theta+\frac{n}{q}-1,$ $\theta\in(0,1),$ 我们有如下不等式:</em> </p>
+<script type="math/tex; mode=display">\Vert f(x+h)-f(x)\Vert_{L^p(\mathbb{R}^n)}\le C|h|^{\theta}\Vert f\Vert_{H^{1,q}(\mathbb{R}^n)}.</script><p><strong>证:</strong> 事实上右侧可以取齐次模.
+记$\frac{n}{p}&gt;\frac{n}{q}-1=\frac{n}{p_1}.$ $q&lt;p&lt;p_1,$
+那么$\frac{1}{p}=\frac{\theta}{q}+\frac{1-\theta}{p_1}.$ 从而</p>
+<script type="math/tex; mode=display">\begin{aligned}
+                \Vert f(x+h)-f(x)\Vert_{L^p}&\le \Vert f(x+h)-f(x)\Vert_{L^q}^\theta \Vert f(x+h)-f(x)\Vert_{L^{p_1} }^{1-\theta}\\
+                &\le C\left\Vert\int_0^1 \nabla f(x+sh)\cdot hds\right\Vert_{L^{q} }^\theta\Vert f\Vert_{\dot{H}^{1,q} }^{1-\theta}\\
+                &\le C |h|^\theta \Vert f\Vert^{1-\theta}_{\dot{H}^{1,q} }
+            \end{aligned}</script><p><strong>推论 2</strong>. <em>$\Vert\alpha_\varepsilon\ast f-f\Vert_{L^p(\mathbb{R}^n)}\le C\varepsilon^{\theta}\Vert f\Vert_{H^{1,q}(\mathbb{R}^n)}$</em> </p>
+<p>因此设$\{f_{\nu}\}$为$H^{1,q}(\mathbb{R}^n)$有界函数列,
+那么$\,\forall\,\varepsilon&gt;0,$
+$\{\alpha_\varepsilon\ast f_\nu\}$为$H^{m,q}$有界函数列,
+$\,\forall\,m\ge 1.$
+因为对$\alpha_\varepsilon\ast f_{\nu}$的求导可归结到$\alpha_\varepsilon$上.
+设对足够大的$m$有$\frac{n}{q}-m&lt;-1,$ 那么由负指数情形的Sobolev不等式,
+$\{\alpha_\varepsilon\ast f_\nu\}$是$C_{loc}^1$有界的.
+从而由Arzela-Ascoli引理, 其有在任意紧集上$C^0$收敛的子列,
+即$C_{loc}^{0}$紧. 自然地, 紧集上收敛列在$L^{p}$模意义下也收敛,
+因此是$L^{p}_{loc}$紧的.</p>
+<p>由推论,
+对$\nu$一致地有$\alpha_\varepsilon\ast f_{\nu} \xrightarrow{L^p} f_{\nu}.$
+由对角线法可证$\{f_{\nu}\}$有子列在任意紧集上成为Cauchy序列,
+从而是$L^p_{loc}$紧的.
+因此$H^{1,q}(\mathbb{R}^n)$到$L^p_{loc}(\mathbb{R}^n)$的嵌入是紧的.</p>
+<h2 id="PDE导论"><a href="#PDE导论" class="headerlink" title="PDE导论"></a>PDE导论</h2><p>称$\sum_{|\alpha|\le m}a_\alpha(x)\partial^\alpha u=f(x)$为$m$阶线性PDE,
+$a_\alpha,f\in C^\infty.$ 若解$u\in C^m,$ 称其为<strong>经典解</strong>;
+若$u\in C^{m-1},$ 在曲面$\{\psi(x)=0\}$上仅沿法向$m$阶第一类间断,
+其它$C^m,$ 则称$u$为<strong>弱间断解</strong>. 该曲面称为<strong>弱间断面</strong>.</p>
+<p>若曲面$\psi(x)=x_1=0,$ 则法向导数为$\frac{\partial {} }{\partial {}x_1}.$
+对一弱间断解$u,$ 倘若对于$\beta=(m,0,\cdots,0),$ 在曲面$\psi(x)=0$上,
+有$a_\beta(x)\neq 0,$ 那么在该点附近有小邻域,
+使得<script type="math/tex">\partial_{x_1}^m u(x)=\sum\limits_{\begin{subarray}{c}
+                |\alpha|\le m\\
+                \alpha\neq \beta
+            \end{subarray} } \frac{a_\alpha(x)}{a_\beta(x)}\partial^\alpha u(x)\in C^0</script>
+与$u$为弱间断解矛盾. 因此$a_\beta(x)=0$沿弱间断面发生.</p>
+<p>对任意曲面$\psi(x)=0,$ 通过展平技巧, 令$y_1=\psi,$ $y_i=x_i,$ 则</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+            \frac{\partial {}u}{\partial {}x_1}&=\frac{\partial {}u}{\partial {}y_1}\frac{\partial {}\psi}{\partial {}x_1}\\
+            \frac{\partial {}u}{\partial {}x_i}&=\frac{\partial {}u}{\partial {}y_1}\frac{\partial {}\psi}{\partial {}x_i}+\frac{\partial {}u}{\partial {}y_i}
+        \end{aligned}\right.</script><p>此时弱间断面上满足$\widetilde{a}_\beta(x)=\sum_{|\alpha|\le m}a_\alpha(x)(\nabla \psi)^\alpha=0.$</p>
+<p>称$\psi(x)=0$为<strong>特征曲面</strong>,
+若其满足$\sum_{|\alpha|\le m}a_\alpha(x)(\nabla \psi)^\alpha=0.$
+称其法向为<strong>特征方向</strong>. 因此<em>弱间断面必为特征曲面</em>.</p>
+<p>PDE理论中, 一个经典的存在性定理是Cauchy-Kovalevskaya定理.
+它说明若参数函数都是实解析的, 那么给定任意解析初值,
+解析解总是唯一存在的. 然而该定理使用的技术较为久远,
+我们采用现代化的方法来说明.</p>
+<p>我们考虑解$\frac{\partial {}u}{\partial {}t}=F(t,x,u,\nabla u),$
+化作积分方程$u(t,x)=u_0(x)+\int_0^t F(\tau,x,u,\nabla u)d\tau.$
+在ODE理论中, 由于$F$中不再涉及导数,
+我们可以采用Picard迭代的方法来得到唯一解.
+倘若我们可以取到合适的关于$x$的模$\Vert\cdot\Vert$,
+使得$\Vert\nabla u\Vert$可以被较好地控制, 那么对于</p>
+<script type="math/tex; mode=display">\Vert u(t,x)\Vert\le \Vert u_0\Vert+\int_0^t \Vert F(\tau,x,u,\nabla u)\Vert d\tau,</script><p>可以从ODE视角来分析处理. 特别地通过这种方式可以给出解的理论估计.</p>
+<p>对一般的函数, 显然无法用$\Vert u\Vert$控制$\Vert\nabla u\Vert.$
+但是对于解析函数, 导数与函数值是一体的, 因此可以取到这样的模.</p>
+<p>对解析函数$f(x)=\sum_\alpha \frac{\partial^\alpha f(0)}{\alpha!}x^\alpha,$
+记其收敛半径为$R.$ 那么$\,\forall\,r\le R,$ 定义</p>
+<script type="math/tex; mode=display">\Vert f\Vert_r=\sum_\alpha \frac{|\partial^\alpha f(0)|}{\alpha!}r^{|\alpha|}<\infty.</script><p>显然它是一个模, 且满足$\Vert fg\Vert_r\le \Vert f\Vert_r\Vert g\Vert_r.$
+特别地$\Vert f^n\Vert_r\le \Vert f\Vert_r^n.$
+函数$f$是解析的当且仅当存在$r$使得$\Vert f\Vert_r&lt;\infty.$</p>
+<p>由于导数项只在积分中出现, 我们只需在积分意义下控制$\Vert\nabla u\Vert:$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \left\Vert\int_{0}^t \partial_{x_1} u(\tau,x)d\tau\right\Vert_{R-MT}&\le \int_0^t \sum_\alpha \frac{|\partial^\alpha \partial_{x_1}u(\tau,0)|}{\alpha! (\alpha_1+1)}(\alpha_1+1)(R-MT)^{|\alpha|}d\tau\\
+            &\le \int_0^t \sum_{\alpha} \frac{|\partial^\alpha u(\tau,0)|}{\alpha!}(R-M\tau)^{|\alpha|} \frac{\alpha_1}{R-MT}\left(\frac{R-MT}{R-M\tau}\right)^{|\alpha|}d\tau\\
+            &\le \sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau} \int_0^t\sum_k \frac{k}{R-MT}\left(\frac{R-MT}{R-M\tau}\right)^kd\tau\\
+            &=\sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau} \int_0^t \frac{R-M\tau}{(MT-M\tau)^2} d\tau\\
+            &=C(M,R,T,t)\sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau}
+        \end{aligned}</script><p>注意解的解析半径不见得是固定的, 随时间$t$可能有衰减,
+因此分析时取的模也不能在固定$r$上考察.</p>
+<p>然而, C-K定理只说明了解的存在性与唯一性,
+Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是要关注解对初值的依赖性.</p>
+<p>文章最后更新于 2021-11-18 20:12:53 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《现代PDE基础》笔记(7)-紧嵌入定理</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-11-18 20:12:52</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/11/18/《现代PDE基础》笔记(7)-紧嵌入定理/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/16/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-%E5%9B%BE%E4%B8%8A%E5%A4%A7%E8%8C%83%E5%9B%B4Ricci%E6%9B%B2%E7%8E%87/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">论文笔记-图上大范围Ricci曲率</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86"><span class="nav-text">紧嵌入定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDE%E5%AF%BC%E8%AE%BA"><span class="nav-text">PDE导论</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
