@@ -9,7 +9,7 @@
     
     <title>
         
-            《现代PDE基础》笔记(7)-紧嵌入定理 |
+            《代数拓扑与微分形式》笔记(11-1)-球面丛 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《现代PDE基础》笔记(7)-紧嵌入定理</span>
+            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(11-1)-球面丛</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-18 20:12:52
+        <i class="fas fa-edit"></i>&nbsp;2021-11-21 15:55:20
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,92 +206,119 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="紧嵌入定理"><a href="#紧嵌入定理" class="headerlink" title="紧嵌入定理"></a>紧嵌入定理</h2><p>下面证明嵌入</p>
-<script type="math/tex; mode=display">\Vert f\Vert_{L^p(\Omega)}\le C\Vert f\Vert_{H^{m,q}(\Omega)},\quad \,\forall\,\frac{n}{p}\ge \frac{n}{q}-m,</script><p>当不等式严格时, 即$\frac{n}{p}&gt;\frac{n}{q}-m,$ 嵌入是紧的,
-将有界集映到列紧集.</p>
-<p>首先我们来简化证明的情形. 假设$m=1$时已证好, 那么$\,\forall\,m&gt;1,$
-取$q_1&gt;q,$ 使得 $\frac{n}{q_1}-1=\frac{n}{q}-m&lt;\frac{n}{p},$
-从而由Sobolev不等式, 我们有</p>
-<script type="math/tex; mode=display">H^{m,q}\hookrightarrow H^{1,q_1}\stackrel{c}\hookrightarrow L^p</script><p>因此嵌入将有界集映成有界集再映至列紧集. 从而只需证$m=1$时的情形.</p>
-<p>假设$p&gt;q$的情形已证好, 那么当$p\le q$时, $\,\exists\,p_1&gt;q\ge p,$
-$\frac{n}{q}&gt;\frac{n}{p_1}&gt;\frac{n}{q}-1.$ 有嵌入</p>
-<script type="math/tex; mode=display">H^{1,q}\stackrel{c}\hookrightarrow L^{p_1}\hookrightarrow L^p.</script><p>这将有界集映至列紧集再映成列紧集, 因此只需证$p&gt;q$的情形.
-此时$\frac{n}{q}&gt;\frac{n}{p}&gt;\frac{n}{q}-1.$</p>
-<p>首先我们考虑如下引理:</p>
-<p><strong>引理 1</strong>. <em>$\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ $\frac{n}{p}=\theta+\frac{n}{q}-1,$ $\theta\in(0,1),$ 我们有如下不等式:</em> </p>
-<script type="math/tex; mode=display">\Vert f(x+h)-f(x)\Vert_{L^p(\mathbb{R}^n)}\le C|h|^{\theta}\Vert f\Vert_{H^{1,q}(\mathbb{R}^n)}.</script><p><strong>证:</strong> 事实上右侧可以取齐次模.
-记$\frac{n}{p}&gt;\frac{n}{q}-1=\frac{n}{p_1}.$ $q&lt;p&lt;p_1,$
-那么$\frac{1}{p}=\frac{\theta}{q}+\frac{1-\theta}{p_1}.$ 从而</p>
-<script type="math/tex; mode=display">\begin{aligned}
-                \Vert f(x+h)-f(x)\Vert_{L^p}&\le \Vert f(x+h)-f(x)\Vert_{L^q}^\theta \Vert f(x+h)-f(x)\Vert_{L^{p_1} }^{1-\theta}\\
-                &\le C\left\Vert\int_0^1 \nabla f(x+sh)\cdot hds\right\Vert_{L^{q} }^\theta\Vert f\Vert_{\dot{H}^{1,q} }^{1-\theta}\\
-                &\le C |h|^\theta \Vert f\Vert^{1-\theta}_{\dot{H}^{1,q} }
-            \end{aligned}</script><p><strong>推论 2</strong>. <em>$\Vert\alpha_\varepsilon\ast f-f\Vert_{L^p(\mathbb{R}^n)}\le C\varepsilon^{\theta}\Vert f\Vert_{H^{1,q}(\mathbb{R}^n)}$</em> </p>
-<p>因此设$\{f_{\nu}\}$为$H^{1,q}(\mathbb{R}^n)$有界函数列,
-那么$\,\forall\,\varepsilon&gt;0,$
-$\{\alpha_\varepsilon\ast f_\nu\}$为$H^{m,q}$有界函数列,
-$\,\forall\,m\ge 1.$
-因为对$\alpha_\varepsilon\ast f_{\nu}$的求导可归结到$\alpha_\varepsilon$上.
-设对足够大的$m$有$\frac{n}{q}-m&lt;-1,$ 那么由负指数情形的Sobolev不等式,
-$\{\alpha_\varepsilon\ast f_\nu\}$是$C_{loc}^1$有界的.
-从而由Arzela-Ascoli引理, 其有在任意紧集上$C^0$收敛的子列,
-即$C_{loc}^{0}$紧. 自然地, 紧集上收敛列在$L^{p}$模意义下也收敛,
-因此是$L^{p}_{loc}$紧的.</p>
-<p>由推论,
-对$\nu$一致地有$\alpha_\varepsilon\ast f_{\nu} \xrightarrow{L^p} f_{\nu}.$
-由对角线法可证$\{f_{\nu}\}$有子列在任意紧集上成为Cauchy序列,
-从而是$L^p_{loc}$紧的.
-因此$H^{1,q}(\mathbb{R}^n)$到$L^p_{loc}(\mathbb{R}^n)$的嵌入是紧的.</p>
-<h2 id="PDE导论"><a href="#PDE导论" class="headerlink" title="PDE导论"></a>PDE导论</h2><p>称$\sum_{|\alpha|\le m}a_\alpha(x)\partial^\alpha u=f(x)$为$m$阶线性PDE,
-$a_\alpha,f\in C^\infty.$ 若解$u\in C^m,$ 称其为<strong>经典解</strong>;
-若$u\in C^{m-1},$ 在曲面$\{\psi(x)=0\}$上仅沿法向$m$阶第一类间断,
-其它$C^m,$ 则称$u$为<strong>弱间断解</strong>. 该曲面称为<strong>弱间断面</strong>.</p>
-<p>若曲面$\psi(x)=x_1=0,$ 则法向导数为$\frac{\partial {} }{\partial {}x_1}.$
-对一弱间断解$u,$ 倘若对于$\beta=(m,0,\cdots,0),$ 在曲面$\psi(x)=0$上,
-有$a_\beta(x)\neq 0,$ 那么在该点附近有小邻域,
-使得<script type="math/tex">\partial_{x_1}^m u(x)=\sum\limits_{\begin{subarray}{c}
-                |\alpha|\le m\\
-                \alpha\neq \beta
-            \end{subarray} } \frac{a_\alpha(x)}{a_\beta(x)}\partial^\alpha u(x)\in C^0</script>
-与$u$为弱间断解矛盾. 因此$a_\beta(x)=0$沿弱间断面发生.</p>
-<p>对任意曲面$\psi(x)=0,$ 通过展平技巧, 令$y_1=\psi,$ $y_i=x_i,$ 则</p>
-<script type="math/tex; mode=display">\left\{\begin{aligned}
-            \frac{\partial {}u}{\partial {}x_1}&=\frac{\partial {}u}{\partial {}y_1}\frac{\partial {}\psi}{\partial {}x_1}\\
-            \frac{\partial {}u}{\partial {}x_i}&=\frac{\partial {}u}{\partial {}y_1}\frac{\partial {}\psi}{\partial {}x_i}+\frac{\partial {}u}{\partial {}y_i}
-        \end{aligned}\right.</script><p>此时弱间断面上满足$\widetilde{a}_\beta(x)=\sum_{|\alpha|\le m}a_\alpha(x)(\nabla \psi)^\alpha=0.$</p>
-<p>称$\psi(x)=0$为<strong>特征曲面</strong>,
-若其满足$\sum_{|\alpha|\le m}a_\alpha(x)(\nabla \psi)^\alpha=0.$
-称其法向为<strong>特征方向</strong>. 因此<em>弱间断面必为特征曲面</em>.</p>
-<p>PDE理论中, 一个经典的存在性定理是Cauchy-Kovalevskaya定理.
-它说明若参数函数都是实解析的, 那么给定任意解析初值,
-解析解总是唯一存在的. 然而该定理使用的技术较为久远,
-我们采用现代化的方法来说明.</p>
-<p>我们考虑解$\frac{\partial {}u}{\partial {}t}=F(t,x,u,\nabla u),$
-化作积分方程$u(t,x)=u_0(x)+\int_0^t F(\tau,x,u,\nabla u)d\tau.$
-在ODE理论中, 由于$F$中不再涉及导数,
-我们可以采用Picard迭代的方法来得到唯一解.
-倘若我们可以取到合适的关于$x$的模$\Vert\cdot\Vert$,
-使得$\Vert\nabla u\Vert$可以被较好地控制, 那么对于</p>
-<script type="math/tex; mode=display">\Vert u(t,x)\Vert\le \Vert u_0\Vert+\int_0^t \Vert F(\tau,x,u,\nabla u)\Vert d\tau,</script><p>可以从ODE视角来分析处理. 特别地通过这种方式可以给出解的理论估计.</p>
-<p>对一般的函数, 显然无法用$\Vert u\Vert$控制$\Vert\nabla u\Vert.$
-但是对于解析函数, 导数与函数值是一体的, 因此可以取到这样的模.</p>
-<p>对解析函数$f(x)=\sum_\alpha \frac{\partial^\alpha f(0)}{\alpha!}x^\alpha,$
-记其收敛半径为$R.$ 那么$\,\forall\,r\le R,$ 定义</p>
-<script type="math/tex; mode=display">\Vert f\Vert_r=\sum_\alpha \frac{|\partial^\alpha f(0)|}{\alpha!}r^{|\alpha|}<\infty.</script><p>显然它是一个模, 且满足$\Vert fg\Vert_r\le \Vert f\Vert_r\Vert g\Vert_r.$
-特别地$\Vert f^n\Vert_r\le \Vert f\Vert_r^n.$
-函数$f$是解析的当且仅当存在$r$使得$\Vert f\Vert_r&lt;\infty.$</p>
-<p>由于导数项只在积分中出现, 我们只需在积分意义下控制$\Vert\nabla u\Vert:$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-            \left\Vert\int_{0}^t \partial_{x_1} u(\tau,x)d\tau\right\Vert_{R-MT}&\le \int_0^t \sum_\alpha \frac{|\partial^\alpha \partial_{x_1}u(\tau,0)|}{\alpha! (\alpha_1+1)}(\alpha_1+1)(R-MT)^{|\alpha|}d\tau\\
-            &\le \int_0^t \sum_{\alpha} \frac{|\partial^\alpha u(\tau,0)|}{\alpha!}(R-M\tau)^{|\alpha|} \frac{\alpha_1}{R-MT}\left(\frac{R-MT}{R-M\tau}\right)^{|\alpha|}d\tau\\
-            &\le \sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau} \int_0^t\sum_k \frac{k}{R-MT}\left(\frac{R-MT}{R-M\tau}\right)^kd\tau\\
-            &=\sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau} \int_0^t \frac{R-M\tau}{(MT-M\tau)^2} d\tau\\
-            &=C(M,R,T,t)\sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau}
-        \end{aligned}</script><p>注意解的解析半径不见得是固定的, 随时间$t$可能有衰减,
-因此分析时取的模也不能在固定$r$上考察.</p>
-<p>然而, C-K定理只说明了解的存在性与唯一性,
-Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是要关注解对初值的依赖性.</p>
-<p>文章最后更新于 2021-11-18 20:12:53 </p>
+            <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>对$\pi:E\rightarrow M$秩$n+1$向量丛, 给定度量$\left&lt;{}-,-\right&gt;$,
+可定义$r^2(v)=\left&lt;{}v,v\right&gt;$.
+置$S(E)_x=\{v\in E_x|r(v)=1\}\simeq S^n$, $x\in M$;
+$S(E)=\prod_{x\in M}S(E)_x$, 则$S(E)$是$M$上纤维为$S^n$的纤维丛.
+它的结构群是$O(n+1)$.</p>
+<p>把纤维为球面$S^n$的纤维丛称为$n$维球面丛或$S^n$丛.
+结构群是微分同胚群$\operatorname{Diff}(S^n)$.
+它一般并不一定能约化到$O(n+1)$.
+事实上能约化到$O(n+1)$当且仅当该球面丛由向量丛构造(上一段).</p>
+<p>设$\pi:E\rightarrow M$为$n$维向量丛, 根据Leray-Hirsch定理,
+若在$E$上存在闭的整体$n$-形式, 它到每条纤维的限制生成纤维的上同调,
+则$E$的上同调是$H^\ast (E)=H^\ast (M)\otimes H^\ast (S^n)$.</p>
+<p>若结构群是$SO(2)$, 则其上有整体角形式$\psi$与欧拉类$d\psi=-\pi^\ast e$.
+若欧拉类为零, 则整体角形式闭, 满足上述条件.</p>
+<p>一般的, 考虑结构群为$\operatorname{Diff}(S^n)$或$O(n+1)$的球面丛.
+我们研究可定向性与欧拉类.</p>
+<h2 id="可定向性"><a href="#可定向性" class="headerlink" title="可定向性"></a>可定向性</h2><p>假定$M$是连通的, 有好覆盖$\{U_\alpha\}$.
+取$\pi:E\rightarrow M$为$n$维球面丛,
+$E|_{U_\alpha}\approx U_\alpha\times S^n$,
+$H^n(E|_{U_\alpha})=\mathbb{R}$. 设$[\sigma_\alpha]$为生成元. 先验地,
+$[\sigma_\alpha]_{E|_{U_{\alpha\beta} } }=\pm[\sigma_\beta]_{E|_{U_{\alpha\beta} } }$.</p>
+<p>若存在定向平凡化,
+使得$[\sigma_\alpha]_{E|_{U_{\alpha\beta} } }=[\sigma_\beta]_{E|_{U_{\alpha\beta} } }$,
+则称$E$是可定向的. 它等价于对每条纤维$E_x$,
+选取$H^n(E_x)$生成元$[\sigma_x]$, 满足局部相容性条件:
+$M$上每点有邻域$U$, 与$H^n(E|_U)$生成元$[\sigma_U]$,
+使得$\,\forall\,x\in U$, $[\sigma_U]|_{E_x}=[\sigma_x]$.</p>
+<p>相容性条件等价于$\sigma_\beta-\sigma_\alpha=d\sigma_{\alpha\beta}$.
+这是讨论欧拉类的出发点.</p>
+<p>对于定向球面丛, 有两组相容生成元, 每组生成元称为球面丛的一个定向.
+给定定向的球面丛称为定向球面丛. 流形$M$上$S^0$丛是$M$的二重覆盖.
+如果$M$是连通的, 该丛可定向当且仅当它有两个连通分支.</p>
+<p>固定一个定向, 取$[\sigma]\in H^n(S^n)$为生成元. 若$g\in SO(n+1)$,
+则$g(S^n)=S^n$且定向相同.
+$g^\ast [\sigma]=\sigma$当且仅当正交变换$g$的行列式为正.</p>
+<p>现在研究向量丛$E$可定向性与$S(E)$可定向性.</p>
+<p><strong>命题 1</strong>. <em>向量丛$E$可定向当且仅当球面丛$S(E)$可定向.</em> </p>
+<p><strong>证:</strong> 给定$E$上度量,
+给定保内积的局部平凡化$\{(U_\alpha,\phi_\alpha)\}$.
+$g_{\alpha\beta}$约化到$O(n+1)$选取,
+诱导了$S(E)$的局部平凡化$\{(U_\alpha,\varphi_\alpha)\}$.
+$S(E)$的结构群也是$O(n+1)$.</p>
+<p>取投射$\rho_\alpha:U_\alpha\times S^n\rightarrow S^n$,
+利用$\rho_\alpha^\ast ,\varphi_\alpha^\ast $拉回$H^n(S^n)$生成元$[\sigma]$,
+给出$H^n(S(E)|_{U_\alpha})$生成元$[\sigma_\alpha]_x$.</p>
+<p>可以发现,
+$[\sigma_\alpha]_x=[\sigma_\beta]_x\Leftrightarrow [\sigma]=g_{\alpha\beta}(x)^\ast [\sigma]$.
+从而命题得证.</p>
+<p><strong>注 2</strong>. <em>$SO(1)=\{1\}$, 因此连通流形$M$上的线丛$\pi:L\rightarrow M$可定向当且仅当它是平凡的. 此时球面丛$S(L)$有两个连通分支. ($S^0=\{\pm 1\}$)</em> </p>
+<p>若$\{g_{\alpha\beta}\}$为$E$的转移函数,
+则$\{\det g_{\alpha\beta}\}$为行列式丛的转移函数. 因此有:</p>
+<p><strong>命题 3</strong>. <em>向量丛$E$可定向当且仅当行列式丛$\det E$可定向.</em> </p>
+<p>由于$0$-球面丛$S(\det E)$是$M$的二重覆盖,
+$E$可定向当且仅当$S(\det E)$不连通.
+由于单连通流形不可能有重数大于$1$的连通覆盖空间, 从而有:</p>
+<p><strong>命题 4</strong>. <em>单连通流形上每个向量丛可定向.</em> </p>
+<p>以及:</p>
+<p><strong>推论 5</strong>. <em>单连通流形可定向.</em> </p>
+<h2 id="欧拉类"><a href="#欧拉类" class="headerlink" title="欧拉类"></a>欧拉类</h2><p>$\sigma_\beta-\sigma_\alpha=d\sigma_{\alpha\beta}$,
+定义了$0$-上链$\sigma^{0,n}=(\sigma_\alpha,\sigma_\beta,…)$,
+与$1$-上链$\sigma^{1,n-1}=(\sigma_{\alpha\beta},\sigma_{\alpha\gamma},…)$.
+利用$\{U_\alpha\}$为好覆盖, 以及Künneth公式, 可继续沿对角线往右下方走,
+得到欧拉类$[\varepsilon]\in H^{n+1}(\mathcal{U},\mathbb{R})$,
+这对应了$[e]\in H^{n+1}(M)$.</p>
+<p>若$E$是定向向量丛, 零截面补$E^0$与定向球面丛有相同伦型.
+$E$欧拉类定义为$E^0$欧拉类. $E$欧拉类也可以通过度量成为$S(E)$的欧拉类.</p>
+<p><strong>命题 6</strong>. <em>给定定向, 欧拉类与$\sigma^{j,n-j}$选取无关.</em> </p>
+<p>凭借下一行的元素即可, 找$\tau\in K^{n-1}$, $D\tau=\bar\sigma-\sigma$,
+这将推得$\delta \tau=\bar\varepsilon-\varepsilon$,
+这里$\tau$跑到了$C^n(\pi^{-1}\mathcal{U},\mathbb{R})$.
+$[\bar\varepsilon]=[\varepsilon]\in H^{n+1}(M)$.</p>
+<p><strong>命题 7</strong>. <em>欧拉类$e(E)$与好覆盖选取无关.</em> </p>
+<p>取$\mathcal{W}$为$\mathcal{U},\mathcal{V}$的公共加细好覆盖,
+则由Čech同构,
+$[\varepsilon_\mathcal{U}]=[\varepsilon_\mathcal{W}]=[\varepsilon_\mathcal{V}]$.</p>
+<p>若欧拉类$e(E)\in H^{n+1}(M)$为零, 则$\varepsilon=\delta \tau$为上边缘,
+那么$\delta (\sigma^{n,0}+i\tau)=-i\varepsilon+i\varepsilon=0$,
+从而可用$\sigma^{n,0}+i\tau$代替$\sigma^{n,0}$,
+这样$\delta \sigma^{n,0}=0$, $D\sigma=0$. 由Collating公式,
+这对应了$E$上的整体闭$n$-形式$\eta$,
+使得$[\eta|_{E{|_{U_\alpha} } }]=[\sigma_\alpha]$,
+限制在每条纤维上为生成元.</p>
+<p>总结一下, 我们从球面丛$E$可定向, 给出了欧拉类. 当欧拉类为零时,
+推出了整体定义的$\eta$. 反过来, 若有一个整体定义的闭形式$\eta$,
+限制在每个纤维上为生成元, 那么取$[\sigma]_x=[\eta|_x]$,
+$E$当然是可定向的. 此时$\sigma_\alpha=\sigma_\beta=\sigma_x$,
+$d\sigma_{\alpha\beta}=0$, 从而推出欧拉类为零.</p>
+<p>综上,
+球面丛$E$可定向且欧拉类为零当且仅当$E$上存在一个限制在每条纤维上是生成元的整体闭形式.</p>
+<p>欧拉类用来衡量定向向量丛的扭曲程度:</p>
+<p><strong>命题 8</strong>. <em>若定向球面丛$E$有截面, 则它的欧拉类为零.</em> </p>
+<p><strong>证:</strong> 若$E$有截面$s$, 注意到$-\pi^\ast  \varepsilon=D\sigma$,
+作用$s^\ast $有$-\varepsilon=Ds^\ast \sigma$, 因此欧拉类为零($D$-上边缘,
+$[-\varepsilon]_\delta=[Ds^\ast \sigma]_D=0=[e]_d$).</p>
+<p><strong>注 9</strong>. <em>之前也有$-i\varepsilon=D\sigma$, 为什么欧拉类可能非零? 因为$\pi^{-1}\mathcal{U}$并不是一个好覆盖, 没有$H^\ast (\pi^{-1}\mathcal{U},\mathbb{R})\cong H^\ast (K)=H^\ast (\pi^{-1}\mathcal{U},\Omega^\ast )$. 但经过$s^\ast $拉回, $s^\ast \sigma$所在的双复形就是基于好覆盖的了.</em>  <em>所以这一部分的内容可以看成两层双复形, 其间由$\pi^\ast $和$\pi^\ast $逆映射(不一定是$s^\ast $)联系. 上层是$\pi^{-1}\mathcal{U}$的双复形, 是纤维层; 下层是$\mathcal{U}$的双复形, 是流形层. 从纤维层左上方由定向类出发, 往右下方跑到$[\pi^\ast \varepsilon]$. 因为利用好覆盖的性质, $\pi^\ast $在Čech上同调上是同构(可缩空间上的向量丛都是平凡丛, 再利用连通性说明). 这对应的是$[\varepsilon]$, 落在下层. 然后往左上方跑到$[e]$, 这就是欧拉类了.</em> </p>
+<h2 id="整体角形式"><a href="#整体角形式" class="headerlink" title="整体角形式"></a>整体角形式</h2><p>设$\pi:E\rightarrow M$为定向$S^n$丛, 问是否存在$\psi\in \Omega^n(E)$,
+使得$[\psi|_{E_x}]\in H^n(E_x)$是生成元, $d\psi=-\pi^\ast  e$.</p>
+<p>由Collating公式, $e=(-1)^{n+1}(D’’K)^{n+1}\varepsilon$.
+$D\sigma=-\pi^\ast \varepsilon$,
+则$\psi=f(\sigma)=\sum_{i=0}^n(-1)^i(D’’K)^i\sigma^{i,n-i}+(-1)^nK(D’’K)^n(-\pi^\ast \varepsilon)$.
+这里因为$\{\pi^\ast \rho\}$是$\pi^{-1}\mathcal{U}$上的单位分解,
+可以把流形层上的同伦算子照搬到纤维层上.</p>
+<p>可以看出, $d\psi=(-1)^n dK(D’’K)^n (\pi^\ast \varepsilon)=-\pi^\ast  e$.
+同时由于同伦算子$K$中的单位分解为$\pi^\ast $拉回的, 限制在$E_x$上不动,
+因此$\psi$所有单项中前面有$K$的项, 限制在纤维上都为零. 从而在纤维上,
+$[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
+因此$\psi$恰为整体角形式.</p>
+<p><strong>注 10</strong>. <em>设$\{U_\alpha\}$为$M$开覆盖, 局部平凡化$n$维球面丛$E$. 则上面的$e,\psi$满足$\operatorname{supp}d\psi\subset \pi^{-1}(U_{\alpha_0\cdots\alpha_n})$, $\operatorname{supp}e\subset \cup U_{\alpha_0\cdots \alpha_n}$.</em> </p>
+<p>这自然是因为$\varepsilon$只在$\cup U_{\alpha_0\cdots\alpha_{n+1} }$上局部常值,
+每次经过$K$后确保支集落在一个$U_\alpha$内. 由 Collating 公式,
+经过$n+1$次$K$后, 欧拉类$e$支集落在$\cup U_{\alpha_0\cdots\alpha_n}$上.
+由$d\psi=-\pi^\ast  e$得到另一结果.</p>
+<p>文章最后更新于 2021-11-21 15:56:09 </p>
 
         </div>
 
@@ -299,11 +326,11 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《现代PDE基础》笔记(7)-紧嵌入定理</li>
+        <li>本文标题：《代数拓扑与微分形式》笔记(11-1)-球面丛</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-18 20:12:52</li>
+        <li>创建时间：2021-11-21 15:55:20</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/18/《现代PDE基础》笔记(7)-紧嵌入定理/
+            本文链接：https://dream0ar.github.io/2021/11/21/《代数拓扑与微分形式》笔记(11-1)-球面丛/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -317,29 +344,14 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/11/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(11-1)-%E7%90%83%E9%9D%A2%E4%B8%9B/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(11-1)-球面丛</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/16/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-%E5%9B%BE%E4%B8%8A%E5%A4%A7%E8%8C%83%E5%9B%B4Ricci%E6%9B%B2%E7%8E%87/"
+                           href="/2021/11/18/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(7)-%E7%B4%A7%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">论文笔记-图上大范围Ricci曲率</span>
+                                <span class="post-nav-title-item">《现代PDE基础》笔记(7)-紧嵌入定理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -545,7 +557,7 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86"><span class="nav-text">紧嵌入定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDE%E5%AF%BC%E8%AE%BA"><span class="nav-text">PDE导论</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%AE%9A%E5%90%91%E6%80%A7"><span class="nav-text">可定向性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E7%B1%BB"><span class="nav-text">欧拉类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E8%A7%92%E5%BD%A2%E5%BC%8F"><span class="nav-text">整体角形式</span></a></li></ol>
     </div>
 </div>
         </aside>
