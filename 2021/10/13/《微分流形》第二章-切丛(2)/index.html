@@ -239,9 +239,7 @@ $[X,Y]_p f=X_pYf-Y_pXf.$</p>
             X_pYf&=\sum_i \xi^i(p)\sum_j X_i(\eta^jX_j(f))\\
             &=\sum_{i,j} \xi^i(p)X_i(\eta^j)X_j(f)+\xi^i(p)\eta^j(p)X_iX_j(f)
         \end{aligned}</script><p>交换$X,Y$顺序即得到$Y_pXf,$ 从而:</p>
-<script type="math/tex; mode=display">\begin{aligned}
-            [X,Y]_pf&=\sum_{i,j}[\xi^i(p)X_i(\eta^j)-\eta^i(p)X_i(\xi^j)]X_j(f)+\sum_{i,j}\xi^i(p)\eta^j(p)[X_i,X_j] (f),
-        \end{aligned}</script><p>后项由于$f\in C^\infty(M)$取零,
+<script type="math/tex; mode=display">[X,Y]_pf=\sum_{i,j}[\xi^i(p)X_i(\eta^j)-\eta^i(p)X_i(\xi^j)]X_j(f)+\sum_{i,j}\xi^i(p)\eta^j(p)[X_i,X_j] (f),</script><p>后项由于$f\in C^\infty(M)$取零,
 故$[X,Y]|_U=\sum_{ij} [\xi^iX_j(\eta^j)-\eta^i X_i(\xi^j)]X_j,$
 $[X,Y]\in\chi(M)$确实为光滑向量场.</p>
 <p>可以看出, $[-,-]$满足如下性质:</p>
@@ -267,10 +265,10 @@ ${F_\ast }_p(aX_1+bX_2)=a{F_\ast }_pX_1+b{F_\ast }_pX_2,$ 因此${F_\ast }_p$为
 有拉回映照$F^\ast :T_q^\ast N\rightarrow T_p^\ast M,$
 $F^\ast (df)_q(X)=(df)_q({F_\ast }_pX)={F_\ast }_pX(f)=X(f\circ F)= d(f\circ F)_p(X),$
 即$F^\ast (df)_q=d(f\circ F)_p.$</p>
-<p><strong>命题 1.1</strong>. <em>设$F\in C^\infty(M,N),$ $G\in C^\infty(N,W),$ 则${(G\circ F)_{\ast } }_p={G_{\ast } }_q\circ {F_\ast }_p,$ $(G\circ F)^\ast =F^\ast \circ G^\ast .$ 且若$F$是光滑同胚, 那么${F_\ast }_p$是线性同构, $\,\forall\,p\in M.$</em> </p>
+<p><strong>命题 1</strong>. <em>设$F\in C^\infty(M,N),$ $G\in C^\infty(N,W),$ 则${(G\circ F)_{\ast } }_p={G_{\ast } }_q\circ {F_\ast }_p,$ $(G\circ F)^\ast =F^\ast \circ G^\ast .$ 且若$F$是光滑同胚, 那么${F_\ast }_p$是线性同构, $\,\forall\,p\in M.$</em> </p>
 <p>前面的性质是容易说明的, 而后面的性质利用$F^{-1}\circ F=\mathrm{id}_M,$
 $F\circ F^{-1}=\mathrm{id}_N,$ 结合前面的性质即得.</p>
-<p><strong>命题 1.2</strong>. <em>设$F:M\rightarrow N$是光滑映照, $q=F(p).$ 那么${F_\ast }_pX_i=\sum_\alpha [X_i(y^\alpha \circ F)]Y_\alpha,$ $F^\ast (dy^\alpha)_q=\sum_i [X_i(y^\alpha\circ F)] (dx^i)_p.$</em> </p>
+<p><strong>命题 2</strong>. <em>设$F:M\rightarrow N$是光滑映照, $q=F(p).$ 那么${F_\ast }_pX_i=\sum_\alpha [X_i(y^\alpha \circ F)]Y_\alpha,$ $F^\ast (dy^\alpha)_q=\sum_i [X_i(y^\alpha\circ F)] (dx^i)_p.$</em> </p>
 <p>按定义验证即可.
 注意$X_i(y^\alpha\circ F)=J(\psi\circ F\circ \varphi^{-1})_{\alpha,i},$
 因此切映照是Jacobi矩阵的推广.</p>
@@ -292,7 +290,7 @@ $F:U\rightarrow V$为光滑映照, $p\in U,$ $q=F(p)\in V.$ 若$DF(p)$非退化,
 使$F|_{U_1}:U_1\rightarrow V_1$是$C^\infty$同胚. 那么在流形上,
 设$U\subset M^m,V\subset N^m,$
 将$DF(p)$非退化条件改为${F_\ast }_p$是线性同构, 即可推广反函数定理到流形上.</p>
-<p>文章最后更新于 2021-10-26 16:51:44 </p>
+<p>文章最后更新于 2021-11-21 17:57:10 </p>
 
         </div>
 
@@ -610,20 +608,5 @@ $F:U\rightarrow V$为光滑映照, $p\in U,$ $q=F(p)\in V.$ 若$DF(p)$非退化,
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
