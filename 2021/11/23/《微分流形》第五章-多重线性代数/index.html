@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(11-1)-球面丛 |
+            《微分流形》第五章-多重线性代数 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(11-1)-球面丛</span>
+            <span class="title-hover-animation">《微分流形》第五章-多重线性代数</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-21 15:55:20
+        <i class="fas fa-edit"></i>&nbsp;2021-11-23 18:00:16
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,119 +206,47 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>对$\pi:E\rightarrow M$秩$n+1$向量丛, 给定度量$\left&lt;{}-,-\right&gt;$,
-可定义$r^2(v)=\left&lt;{}v,v\right&gt;$.
-置$S(E)_x=\{v\in E_x|r(v)=1\}\simeq S^n$, $x\in M$;
-$S(E)=\prod_{x\in M}S(E)_x$, 则$S(E)$是$M$上纤维为$S^n$的纤维丛.
-它的结构群是$O(n+1)$.</p>
-<p>把纤维为球面$S^n$的纤维丛称为$n$维球面丛或$S^n$丛.
-结构群是微分同胚群$\operatorname{Diff}(S^n)$.
-它一般并不一定能约化到$O(n+1)$.
-事实上能约化到$O(n+1)$当且仅当该球面丛由向量丛构造(上一段).</p>
-<p>设$\pi:E\rightarrow M$为$n$维向量丛, 根据Leray-Hirsch定理,
-若在$E$上存在闭的整体$n$-形式, 它到每条纤维的限制生成纤维的上同调,
-则$E$的上同调是$H^\ast (E)=H^\ast (M)\otimes H^\ast (S^n)$.</p>
-<p>若结构群是$SO(2)$, 则其上有整体角形式$\psi$与欧拉类$d\psi=-\pi^\ast e$.
-若欧拉类为零, 则整体角形式闭, 满足上述条件.</p>
-<p>一般的, 考虑结构群为$\operatorname{Diff}(S^n)$或$O(n+1)$的球面丛.
-我们研究可定向性与欧拉类.</p>
-<h2 id="可定向性"><a href="#可定向性" class="headerlink" title="可定向性"></a>可定向性</h2><p>假定$M$是连通的, 有好覆盖$\{U_\alpha\}$.
-取$\pi:E\rightarrow M$为$n$维球面丛,
-$E|_{U_\alpha}\approx U_\alpha\times S^n$,
-$H^n(E|_{U_\alpha})=\mathbb{R}$. 设$[\sigma_\alpha]$为生成元. 先验地,
-$[\sigma_\alpha]_{E|_{U_{\alpha\beta} } }=\pm[\sigma_\beta]_{E|_{U_{\alpha\beta} } }$.</p>
-<p>若存在定向平凡化,
-使得$[\sigma_\alpha]_{E|_{U_{\alpha\beta} } }=[\sigma_\beta]_{E|_{U_{\alpha\beta} } }$,
-则称$E$是可定向的. 它等价于对每条纤维$E_x$,
-选取$H^n(E_x)$生成元$[\sigma_x]$, 满足局部相容性条件:
-$M$上每点有邻域$U$, 与$H^n(E|_U)$生成元$[\sigma_U]$,
-使得$\,\forall\,x\in U$, $[\sigma_U]|_{E_x}=[\sigma_x]$.</p>
-<p>相容性条件等价于$\sigma_\beta-\sigma_\alpha=d\sigma_{\alpha\beta}$.
-这是讨论欧拉类的出发点.</p>
-<p>对于定向球面丛, 有两组相容生成元, 每组生成元称为球面丛的一个定向.
-给定定向的球面丛称为定向球面丛. 流形$M$上$S^0$丛是$M$的二重覆盖.
-如果$M$是连通的, 该丛可定向当且仅当它有两个连通分支.</p>
-<p>固定一个定向, 取$[\sigma]\in H^n(S^n)$为生成元. 若$g\in SO(n+1)$,
-则$g(S^n)=S^n$且定向相同.
-$g^\ast [\sigma]=\sigma$当且仅当正交变换$g$的行列式为正.</p>
-<p>现在研究向量丛$E$可定向性与$S(E)$可定向性.</p>
-<p><strong>命题 1</strong>. <em>向量丛$E$可定向当且仅当球面丛$S(E)$可定向.</em> </p>
-<p><strong>证:</strong> 给定$E$上度量,
-给定保内积的局部平凡化$\{(U_\alpha,\phi_\alpha)\}$.
-$g_{\alpha\beta}$约化到$O(n+1)$选取,
-诱导了$S(E)$的局部平凡化$\{(U_\alpha,\varphi_\alpha)\}$.
-$S(E)$的结构群也是$O(n+1)$.</p>
-<p>取投射$\rho_\alpha:U_\alpha\times S^n\rightarrow S^n$,
-利用$\rho_\alpha^\ast ,\varphi_\alpha^\ast $拉回$H^n(S^n)$生成元$[\sigma]$,
-给出$H^n(S(E)|_{U_\alpha})$生成元$[\sigma_\alpha]_x$.</p>
-<p>可以发现,
-$[\sigma_\alpha]_x=[\sigma_\beta]_x\Leftrightarrow [\sigma]=g_{\alpha\beta}(x)^\ast [\sigma]$.
-从而命题得证.</p>
-<p><strong>注 2</strong>. <em>$SO(1)=\{1\}$, 因此连通流形$M$上的线丛$\pi:L\rightarrow M$可定向当且仅当它是平凡的. 此时球面丛$S(L)$有两个连通分支. ($S^0=\{\pm 1\}$)</em> </p>
-<p>若$\{g_{\alpha\beta}\}$为$E$的转移函数,
-则$\{\det g_{\alpha\beta}\}$为行列式丛的转移函数. 因此有:</p>
-<p><strong>命题 3</strong>. <em>向量丛$E$可定向当且仅当行列式丛$\det E$可定向.</em> </p>
-<p>由于$0$-球面丛$S(\det E)$是$M$的二重覆盖,
-$E$可定向当且仅当$S(\det E)$不连通.
-由于单连通流形不可能有重数大于$1$的连通覆盖空间, 从而有:</p>
-<p><strong>命题 4</strong>. <em>单连通流形上每个向量丛可定向.</em> </p>
-<p>以及:</p>
-<p><strong>推论 5</strong>. <em>单连通流形可定向.</em> </p>
-<h2 id="欧拉类"><a href="#欧拉类" class="headerlink" title="欧拉类"></a>欧拉类</h2><p>$\sigma_\beta-\sigma_\alpha=d\sigma_{\alpha\beta}$,
-定义了$0$-上链$\sigma^{0,n}=(\sigma_\alpha,\sigma_\beta,…)$,
-与$1$-上链$\sigma^{1,n-1}=(\sigma_{\alpha\beta},\sigma_{\alpha\gamma},…)$.
-利用$\{U_\alpha\}$为好覆盖, 以及Künneth公式, 可继续沿对角线往右下方走,
-得到欧拉类$[\varepsilon]\in H^{n+1}(\mathcal{U},\mathbb{R})$,
-这对应了$[e]\in H^{n+1}(M)$.</p>
-<p>若$E$是定向向量丛, 零截面补$E^0$与定向球面丛有相同伦型.
-$E$欧拉类定义为$E^0$欧拉类. $E$欧拉类也可以通过度量成为$S(E)$的欧拉类.</p>
-<p><strong>命题 6</strong>. <em>给定定向, 欧拉类与$\sigma^{j,n-j}$选取无关.</em> </p>
-<p>凭借下一行的元素即可, 找$\tau\in K^{n-1}$, $D\tau=\bar\sigma-\sigma$,
-这将推得$\delta \tau=\bar\varepsilon-\varepsilon$,
-这里$\tau$跑到了$C^n(\pi^{-1}\mathcal{U},\mathbb{R})$.
-$[\bar\varepsilon]=[\varepsilon]\in H^{n+1}(M)$.</p>
-<p><strong>命题 7</strong>. <em>欧拉类$e(E)$与好覆盖选取无关.</em> </p>
-<p>取$\mathcal{W}$为$\mathcal{U},\mathcal{V}$的公共加细好覆盖,
-则由Čech同构,
-$[\varepsilon_\mathcal{U}]=[\varepsilon_\mathcal{W}]=[\varepsilon_\mathcal{V}]$.</p>
-<p>若欧拉类$e(E)\in H^{n+1}(M)$为零, 则$\varepsilon=\delta \tau$为上边缘,
-那么$\delta (\sigma^{n,0}+i\tau)=-i\varepsilon+i\varepsilon=0$,
-从而可用$\sigma^{n,0}+i\tau$代替$\sigma^{n,0}$,
-这样$\delta \sigma^{n,0}=0$, $D\sigma=0$. 由Collating公式,
-这对应了$E$上的整体闭$n$-形式$\eta$,
-使得$[\eta|_{E{|_{U_\alpha} } }]=[\sigma_\alpha]$,
-限制在每条纤维上为生成元.</p>
-<p>总结一下, 我们从球面丛$E$可定向, 给出了欧拉类. 当欧拉类为零时,
-推出了整体定义的$\eta$. 反过来, 若有一个整体定义的闭形式$\eta$,
-限制在每个纤维上为生成元, 那么取$[\sigma]_x=[\eta|_x]$,
-$E$当然是可定向的. 此时$\sigma_\alpha=\sigma_\beta=\sigma_x$,
-$d\sigma_{\alpha\beta}=0$, 从而推出欧拉类为零.</p>
-<p>综上,
-球面丛$E$可定向且欧拉类为零当且仅当$E$上存在一个限制在每条纤维上是生成元的整体闭形式.</p>
-<p>欧拉类用来衡量定向向量丛的扭曲程度:</p>
-<p><strong>命题 8</strong>. <em>若定向球面丛$E$有截面, 则它的欧拉类为零.</em> </p>
-<p><strong>证:</strong> 若$E$有截面$s$, 注意到$-\pi^\ast  \varepsilon=D\sigma$,
-作用$s^\ast $有$-\varepsilon=Ds^\ast \sigma$, 因此欧拉类为零($D$-上边缘,
-$[-\varepsilon]_\delta=[Ds^\ast \sigma]_D=0=[e]_d$).</p>
-<p><strong>注 9</strong>. <em>之前也有$-i\varepsilon=D\sigma$, 为什么欧拉类可能非零? 因为$\pi^{-1}\mathcal{U}$并不是一个好覆盖, 没有$H^\ast (\pi^{-1}\mathcal{U},\mathbb{R})\cong H^\ast (K)=H^\ast (\pi^{-1}\mathcal{U},\Omega^\ast )$. 但经过$s^\ast $拉回, $s^\ast \sigma$所在的双复形就是基于好覆盖的了.</em>  <em>所以这一部分的内容可以看成两层双复形, 其间由$\pi^\ast $和$\pi^\ast $逆映射(不一定是$s^\ast $)联系. 上层是$\pi^{-1}\mathcal{U}$的双复形, 是纤维层; 下层是$\mathcal{U}$的双复形, 是流形层. 从纤维层左上方由定向类出发, 往右下方跑到$[\pi^\ast \varepsilon]$. 因为利用好覆盖的性质, $\pi^\ast $在Čech上同调上是同构(可缩空间上的向量丛都是平凡丛, 再利用连通性说明). 这对应的是$[\varepsilon]$, 落在下层. 然后往左上方跑到$[e]$, 这就是欧拉类了.</em> </p>
-<h2 id="整体角形式"><a href="#整体角形式" class="headerlink" title="整体角形式"></a>整体角形式</h2><p>设$\pi:E\rightarrow M$为定向$S^n$丛, 问是否存在$\psi\in \Omega^n(E)$,
-使得$[\psi|_{E_x}]\in H^n(E_x)$是生成元, $d\psi=-\pi^\ast  e$.</p>
-<p>由Collating公式, $e=(-1)^{n+1}(D’’K)^{n+1}\varepsilon$.
-$D\sigma=-\pi^\ast \varepsilon$,
-则$\psi=f(\sigma)=\sum_{i=0}^n(-1)^i(D’’K)^i\sigma^{i,n-i}+(-1)^nK(D’’K)^n(-\pi^\ast \varepsilon)$.
-这里因为$\{\pi^\ast \rho\}$是$\pi^{-1}\mathcal{U}$上的单位分解,
-可以把流形层上的同伦算子照搬到纤维层上.</p>
-<p>可以看出, $d\psi=(-1)^n dK(D’’K)^n (\pi^\ast \varepsilon)=-\pi^\ast  e$.
-同时由于同伦算子$K$中的单位分解为$\pi^\ast $拉回的, 限制在$E_x$上不动,
-因此$\psi$所有单项中前面有$K$的项, 限制在纤维上都为零. 从而在纤维上,
-$[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
-因此$\psi$恰为整体角形式.</p>
-<p><strong>注 10</strong>. <em>设$\{U_\alpha\}$为$M$开覆盖, 局部平凡化$n$维球面丛$E$. 则上面的$e,\psi$满足$\operatorname{supp}d\psi\subset \pi^{-1}(U_{\alpha_0\cdots\alpha_n})$, $\operatorname{supp}e\subset \cup U_{\alpha_0\cdots \alpha_n}$.</em> </p>
-<p>这自然是因为$\varepsilon$只在$\cup U_{\alpha_0\cdots\alpha_{n+1} }$上局部常值,
-每次经过$K$后确保支集落在一个$U_\alpha$内. 由 Collating 公式,
-经过$n+1$次$K$后, 欧拉类$e$支集落在$\cup U_{\alpha_0\cdots\alpha_n}$上.
-由$d\psi=-\pi^\ast  e$得到另一结果.</p>
-<p>文章最后更新于 2021-11-21 15:56:09 </p>
+            <h2 id="张量积"><a href="#张量积" class="headerlink" title="张量积"></a>张量积</h2><p>设$V$是数域$\mathbb{F}=\mathbb{R}$上$n$维向量空间,
+$e_1,\cdots,e_n$为$V$的基. $V\ni v=\sum_{i=1}^n a^ie_i.$
+那么$V^\ast =\{\text{linear} f:V\rightarrow \mathbb{R}\}$也构成$n$维向量空间,
+称为对偶空间. $\,\forall\,f\in V^\ast ,$
+$f$由基上取值$\{f(e_1),\cdots,f(e_n)\}$唯一决定.
+仅在$e_i$上取$1$的函数记为$\omega^i$, 即$\omega^i(e_j)=\delta^i_j.$
+$\{\omega^i\}$构成了$V^\ast $的一组基, 称为$\{e_i\}$的<strong>对偶基</strong>.</p>
+<p>对于有限维向量空间, 显然我们总有$(V^\ast )^\ast =V.$ 记$(f,v)=f(v)$为配对.</p>
+<p>设$V_1,\cdots,V_r,Z$为向量空间. 若
+$f:V_1\times\cdots\times V_r\rightarrow Z$ 关于每个分量是线性的,
+则称$f$是$r$-重线性映照. 当$Z=\mathbb{R}$时, 称为$r$-重线性函数.
+内积就是$2$-重线性函数, 称为双线性函数. 向量积(外积)是双线性映照.
+行列式也可视为多重线性函数.</p>
+<p>记$\mathcal{L}(V_1,\cdots,V_r;Z)=\{\text{multi-linear} f:V_1\times\cdots\times V_r\rightarrow Z\},$
+容易验证它也是向量空间. 取$Z$的一组基$\{\eta_\alpha\},$
+那么任意$f\in \mathcal{L}(V_1,\cdots,V_r;Z)$可分解成为基上函数$f^\alpha.$</p>
+<p>对$r=2$的情形, 设$V,W$是向量空间, $\dim V=n,$ $\dim W=m,$
+则$\,\forall\,f\in \mathcal{L}(V,W;\mathbb{R}),$ $\,\forall\,v\in V,$
+$w\in W,$ </p>
+<script type="math/tex; mode=display">f(\cdot,w)\in V^\ast ,\quad f(v,\cdot) \in W^\ast .</script><p>任取$v^\ast \in V^\ast ,$ $w^\ast \in W^\ast ,$ 引入如下双线性函数:</p>
+<script type="math/tex; mode=display">(v^\ast \otimes w^\ast )(v,w):=v^\ast (v)w^\ast (w)\,\Rightarrow\, v^\ast \otimes w^\ast \in \mathcal{L}(V,W;\mathbb{R}).</script><p>称为$v^\ast $和$w^\ast $的<strong>张量积</strong>.
+$h=\otimes:V^\ast \times W^\ast \rightarrow \mathcal{L}(V,W;\mathbb{R}).$</p>
+<p>容易验证, 它是双线性的, 即张量积 $\otimes$ 满足分配律.</p>
+<p>定义空间$V^\ast ,W^\ast $间的张量积:</p>
+<script type="math/tex; mode=display">V^\ast \otimes W^\ast =\operatorname{span}\{\operatorname{Im}h\}=\left\{\sum_{i=1}^{k}a_i (v_i^\ast \otimes w_i^\ast )\,|\, \,\forall\,a_i\in \mathbb{R}, v_i\in V^\ast , w_i\in W^\ast , k\in \mathbb{Z}_+\right\}.</script><p><strong>命题 1</strong>. <em>$V^\ast \otimes W^\ast =\mathcal{L}(V,W;\mathbb{R}).$</em> </p>
+<p><strong>证:</strong> 只需说明若$\{\omega^i\}, \{\sigma^\alpha\}$分别是$V^\ast ,W^\ast $的基,
+则$\{\omega^i\otimes \sigma^\alpha\}$为$\mathcal{L}(V,W;\mathbb{R})$的基.
+特别地由此可得到$\dim \mathcal{L}(V,W;\mathbb{R})=\dim V^\ast \otimes W^\ast =\dim V^\ast \cdot \dim W^\ast =\dim V\cdot \dim W.$</p>
+<p>易见$V^\ast \otimes W^\ast =\operatorname{span}\{\omega^i\otimes \sigma^\alpha\},$
+证其线性无关, 从而是一组基. 为此, 只需利用对偶基$\{e_i\},$
+$\{\xi_\alpha\}$讨论系数即可.</p>
+<p>而$\,\forall\,f\in \mathcal{L}(V,W),$ $f$由$f(e_i,\xi_\alpha)$唯一决定.
+因此$\dim \mathcal{L}(V,W)=\dim V^\ast \otimes W^\ast .$
+由$V^\ast \otimes W^\ast \subset \mathcal{L}(V,W)$即知$V^\ast \otimes W^\ast =\mathcal{L}(V,W).$</p>
+<p>由于$V,V^\ast ;$ $W,W^\ast $互为对偶, 类似地可以对$v\in V,w\in W,$ 定义</p>
+<script type="math/tex; mode=display">(v\otimes w)(v^\ast ,w^\ast )=v(v^\ast )w(w^\ast )=v^\ast (v)w^\ast (w).</script><p>此时$h=\otimes:V\times W\rightarrow \mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$是双线性的,
+类似定义$V$和$W$的张量积$V\otimes W=\operatorname{span}\{\operatorname{Im}h\}.$
+同理它与空间$\mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$等同,
+$\dim V\otimes W=n\cdot m,$
+且$\{e_i\otimes \xi_\alpha\}$为$V\otimes W$的基.</p>
+<p>文章最后更新于 2021-11-23 18:00:20 </p>
 
         </div>
 
@@ -326,11 +254,11 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(11-1)-球面丛</li>
+        <li>本文标题：《微分流形》第五章-多重线性代数</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-21 15:55:20</li>
+        <li>创建时间：2021-11-23 18:00:16</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/21/《代数拓扑与微分形式》笔记(11-1)-球面丛/
+            本文链接：https://dream0ar.github.io/2021/11/23/《微分流形》第五章-多重线性代数/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -344,29 +272,14 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/11/23/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%A4%9A%E9%87%8D%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第五章-多重线性代数</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/18/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(7)-%E7%B4%A7%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86/"
+                           href="/2021/11/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(11-1)-%E7%90%83%E9%9D%A2%E4%B8%9B/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(7)-紧嵌入定理</span>
+                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(11-1)-球面丛</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -572,7 +485,7 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E5%AE%9A%E5%90%91%E6%80%A7"><span class="nav-text">可定向性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E7%B1%BB"><span class="nav-text">欧拉类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E8%A7%92%E5%BD%A2%E5%BC%8F"><span class="nav-text">整体角形式</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF"><span class="nav-text">张量积</span></a></li></ol>
     </div>
 </div>
         </aside>
