@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》讨论稿-线性映照空间 |
+            《微分流形》第五章-张量 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》讨论稿-线性映照空间</span>
+            <span class="title-hover-animation">《微分流形》第五章-张量</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-24 22:08:09
+        <i class="fas fa-edit"></i>&nbsp;2021-12-01 15:58:06
     </span>
     
         <span class="article-categories article-meta-item">
@@ -174,15 +174,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/">讨论稿</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,27 +206,73 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="张量表示"><a href="#张量表示" class="headerlink" title="张量表示"></a>张量表示</h2><p>对于一般的$r$-重线性映照空间, 我们有</p>
-<script type="math/tex; mode=display">\mathcal{L}(V_1,\cdots,V_r;Z)=V_1^\ast \otimes \cdots\otimes V_r^\ast \otimes Z.</script><p>定义$(r+1)$-重线性映照 </p>
-<script type="math/tex; mode=display">\begin{aligned}
-        f:V_1^*\times\cdots\times V_r^*\times Z&\rightarrow \mathcal{L}(V_1,\cdots,V_r;Z),\\ (v_1^*,\cdots,v_r^*,z)&\mapsto v_1^*\otimes \cdots\otimes v_r^*\cdot z,
-    \end{aligned}</script><p>即$f(v_1^\ast ,\cdots,v_r^\ast ,z)(v_1,\cdots,v_r)=v_1^\ast (v_1)\cdots v_r^\ast (v_r) z=v_1^\ast \otimes \cdots \otimes v_r^\ast (v_1,\cdots,v_r) \cdot z.$
-其中$\cdot$为标量乘法, 由向量空间$Z$决定.</p>
-<p>只需利用万有映照性质说明$g:V_1^\ast \otimes \cdots\otimes V_r^\ast \otimes Z\rightarrow \mathcal{L}(V_1,\cdots,V_r;Z)$为同构.
-首先证明</p>
-<script type="math/tex; mode=display">\dim V_1^\ast \otimes\cdots \otimes V_r^\ast \otimes Z=\dim V_1^\ast \cdots\dim V_r^\ast \dim Z=\dim\mathcal{L}(V_1,\cdots,V_r;Z).</script><p>取$V_1^\ast ,\cdots,V_r^\ast ,Z$的基$\{\omega_{(1)}^{i_1}\},\cdots,\{\omega_{(r)}^{i_r}\},$
-$\{\eta_\alpha\}.$ 那么任意$F\in \mathcal{L}(V_1,\cdots,V_r;Z),$
-可分解为$F^\alpha\eta_\alpha,$
-$F^\alpha\in \mathcal{L}(V_1,\cdots,V_r;\mathbb{R})=V_1^\ast \otimes \cdots\otimes V_r^\ast .$
-因此每个$F^\alpha$又可分解为$a^\alpha_{i_1\cdots i_n}\omega_{(1)}^{i_1}\otimes\cdots\otimes \omega_{(n)}^{i_n}.$
-即</p>
-<script type="math/tex; mode=display">F=a^\alpha_{i_1\cdots i_n}\omega_{(1)}^{i_1}\otimes\cdots\otimes \omega_{(n)}^{i_n}\cdot\eta_\alpha.</script><p>通过作用对偶基$\{e^{(1)}_{i_1}\},\cdots,\{e^{(n)}_{i_n}\},$
-由$\{\eta_\alpha\}$的线性无关性,
-可以说明$\{\omega_{(1)}^{i_1}\otimes\cdots\otimes \omega_{(n)}^{i_n}\cdot\eta_\alpha\}$的线性无关性,
-从而其为一组基.</p>
-<p>注意到,</p>
-<script type="math/tex; mode=display">f(\omega^{i_1}_{(1)},\cdots,\omega^{i_r}_{(r)},\eta_\alpha)=\omega_{(1)}^{i_1}\otimes\cdots\otimes \omega_{(n)}^{i_n}\cdot\eta_\alpha=g(\omega^{i_1}_{(1)}\otimes\cdots\otimes\omega^{i_r}_{(r)}\otimes\eta_\alpha),</script><p>$g$将基映到基, 从而是线性同构.</p>
-<p>文章最后更新于 2021-11-24 22:08:11 </p>
+            <h2 id="对称张量与反称张量"><a href="#对称张量与反称张量" class="headerlink" title="对称张量与反称张量"></a>对称张量与反称张量</h2><p>对$\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ 若</p>
+<script type="math/tex; mode=display">\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,</script><p>则称$\Phi$是<strong>对称(反称)</strong>的.
+用$\odot^k(V^\ast )$表示$V^\ast \otimes\cdots\otimes V^\ast $中对称张量全体,
+$\Lambda^k(V^\ast )$表示反称张量全体.</p>
+<p>令$J(k)$表示$k$阶置换群. 对于$\sigma\in J(k),$
+定义$\operatorname{sgn}:J(k)\rightarrow\{\pm 1\},$ 表示奇偶排列.
+易验证$\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\tau).$
+定义作用$\sigma\Phi(v_1,\cdots,v_k):=\Phi(v_{\sigma(1)},\cdots,v_{\sigma(k)}),$
+易见$\sigma\Phi\in V^\ast \otimes\cdots\otimes V^\ast ,$ 且$\sigma$是线性映照.
+那么$\Phi$是对称(反称)的$\Leftrightarrow$
+$\sigma\Phi=(\operatorname{sgn}\sigma)\Phi.$</p>
+<p>取$V$的一组基$\{e_i\},$ 对偶基$\{\omega^i\}.$
+则对$\Phi=\Phi_{i_1\cdots i_k}\omega^{i_1}\otimes\cdots\otimes \omega^{i_k},$
+可以得到$\Phi$对称(反称)$\Leftrightarrow$
+$\Phi_{i_1\cdots i_k}$关于指标$\{i_1,\cdots,i_k\}$是对称(反称)的.</p>
+<p>定义如下两个线性变换:
+$S_k:\Phi\mapsto \frac{1}{k!}\sum_\sigma \sigma \Phi,$
+称为<strong>对称化算子</strong>;
+$A_k:\Phi\mapsto \frac{1}{k!}\sum_{\sigma} (\operatorname{sgn}\sigma)\sigma \Phi,$
+称为<strong>反称化算子</strong>. 记$V_k=V^\ast \otimes\cdots\otimes V^\ast ,$ 我们有如下命题:</p>
+<p><strong>命题 1</strong>. <em>$\odot^k(V^\ast )=S_k(V_k),$ $\Lambda^k(V^\ast )=A_k(V_k),$ 且$\Phi$是对称(反称)的$\Leftrightarrow$ $S_k(\Phi)=\Phi$($A_k(\Phi)=\Phi.$)</em> </p>
+<p><strong>证:</strong> 取$\tau\in J(k),$ 首先证明$\tau(S_k(\Phi))=S_k(\Phi),$
+$\tau(A_k(\Phi))=(\operatorname{sgn}\tau)A_k (\Phi).$
+其次再说明$A_k|_{\Lambda^k(V^\ast )}=\mathrm{id},$
+$S_k|_{\odot^k(V^\ast )}=\mathrm{id}$即可.</p>
+<h2 id="拉回映照"><a href="#拉回映照" class="headerlink" title="拉回映照"></a>拉回映照</h2><p>设$f:V\rightarrow W$为线性映照, 定义$f^\ast :W^\ast \rightarrow V^\ast ,$
+$(f^\ast w^\ast )(v)=w^\ast (f(v)),$ 称为<strong>拉回映照</strong>.
+可以推广到$f^\ast :W_k\rightarrow V_k,$
+$(f^\ast \Phi)(v_1,\cdots,v_k)=\Phi(f(v_1),\cdots,f(v_k)).$</p>
+<p><strong>命题 2</strong>. <em>$S_kf^\ast =f^\ast S_k,$ $A_kf^\ast =f^\ast A_k.$</em> </p>
+<p><strong>证:</strong> 利用$\sigma f^\ast =f^\ast \sigma$即可.</p>
+<h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p>$\Lambda^r(V^\ast ):=A_r(V_r),$ 称为$r$阶<strong>反称张量空间</strong>.
+约定$\Lambda^0(V^\ast )=\mathbb{R},$ $\Lambda^1(V^\ast )=V^\ast .$
+设$\Phi\in \Lambda^r(V^\ast ),$ $\Psi\in \Lambda^s(V^\ast ),$
+则$\Phi\wedge \Psi:=\binom{r+s}{r,s}A_{r+s}(\Phi\otimes \Psi)\in \Lambda^{r+s}(V^\ast )$称为$\Phi$与$\Psi$的<strong>外积</strong>,
+满足如下性质:</p>
+<ul>
+<li><p>分配律:
+$(a\Phi_1+b\Phi_2)\wedge\Psi=a\Phi_1\wedge \Psi+b\Phi_2\wedge\Psi;$
+$\Phi\wedge(a\Psi_1+b\Psi_2)=a\Phi\wedge \Psi_1+b\Phi\wedge \Psi_2.$</p>
+</li>
+<li><p>反交换律: $\Phi\wedge \Psi=(-1)^{rs}\Psi\wedge \Phi;$</p>
+</li>
+<li><p>结合律: $(\Phi\wedge \Psi)\wedge\eta=\Phi\wedge(\Psi\wedge \eta).$</p>
+</li>
+</ul>
+<p>证明基本利用张量积的性质即可, 外面套上线性的反称化算子$A.$ 对于反交换律,
+利用置换 </p>
+<p><script type="math/tex">\tau=\begin{pmatrix}
+            1&\cdots&r&r+1&\cdots&r+s\\
+            s+1&\cdots&s+r&1&\cdots&s
+        \end{pmatrix}</script> 即可, 满足$\operatorname{sgn}\tau=(-1)^{rs}.$
+特别地, 对于$r=s=1$的情形, $\Phi\wedge\Psi=-\Psi\wedge\Phi,$
+$\Phi\wedge\Phi=0.$</p>
+<p>对于结合律, 引入置换 </p>
+<p><script type="math/tex">\widetilde\tau=\begin{pmatrix}
+            1&\cdots&r+s&r+s+1&\cdots&r+s+t\\
+            \tau(1)&\cdots&\tau(r+s)&r+s+1&\cdots&r+s+t
+        \end{pmatrix}</script> 进行常规的定义讨论即可. 特别地,
+可以在证明中看到,
+$\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\otimes \cdots\otimes \Phi_k).$</p>
+<p><strong>推论 3</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ $x_1,\cdots,x_k\in V,$ 则$\theta^1\wedge\cdots\wedge\theta^k(x_1,\cdots,x_k)=\det(\theta^i(x_j))_{k\times k}.$</em> </p>
+<p><strong>证:</strong> 展开发现式子恰为行列式的组合定义即可.
+即$\sum_\sigma \operatorname{sgn}(\sigma) \theta^1(x_{\sigma(1)})\cdots\theta^k(x_{\sigma(k)}).$</p>
+<p><strong>推论 4</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ 则$\theta^1,\cdots,\theta^k$线性相关$\Leftrightarrow$ $\theta^1\wedge\cdots\wedge\theta^k=0.$</em> </p>
+<p><strong>证:</strong> 利用反交换律与反证法即可.</p>
+<p>文章最后更新于 2021-12-01 15:58:13 </p>
 
         </div>
 
@@ -234,11 +280,11 @@ $F^\alpha\in \mathcal{L}(V_1,\cdots,V_r;\mathbb{R})=V_1^\ast \otimes \cdots\otim
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》讨论稿-线性映照空间</li>
+        <li>本文标题：《微分流形》第五章-张量</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-24 22:08:09</li>
+        <li>创建时间：2021-12-01 15:58:06</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/24/《微分流形》讨论稿-线性映照空间/
+            本文链接：https://dream0ar.github.io/2021/12/01/《微分流形》第五章-张量/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -252,29 +298,14 @@ $F^\alpha\in \mathcal{L}(V_1,\cdots,V_r;\mathbb{R})=V_1^\ast \otimes \cdots\otim
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/01/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BC%A0%E9%87%8F/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第五章-张量</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/24/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BC%A0%E9%87%8F%E7%A7%AF/"
+                           href="/2021/11/24/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E8%AE%A8%E8%AE%BA%E7%A8%BF-%E7%BA%BF%E6%80%A7%E6%98%A0%E7%85%A7%E7%A9%BA%E9%97%B4/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第五章-张量积</span>
+                                <span class="post-nav-title-item">《微分流形》讨论稿-线性映照空间</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -480,7 +511,7 @@ $F^\alpha\in \mathcal{L}(V_1,\cdots,V_r;\mathbb{R})=V_1^\ast \otimes \cdots\otim
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E8%A1%A8%E7%A4%BA"><span class="nav-text">张量表示</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%BC%A0%E9%87%8F%E4%B8%8E%E5%8F%8D%E7%A7%B0%E5%BC%A0%E9%87%8F"><span class="nav-text">对称张量与反称张量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%9B%9E%E6%98%A0%E7%85%A7"><span class="nav-text">拉回映照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E4%BB%A3%E6%95%B0"><span class="nav-text">外代数</span></a></li></ol>
     </div>
 </div>
         </aside>
