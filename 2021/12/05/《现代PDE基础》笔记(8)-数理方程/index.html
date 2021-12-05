@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》第五章-张量 |
+            《现代PDE基础》笔记(8)-数理方程 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第五章-张量</span>
+            <span class="title-hover-animation">《现代PDE基础》笔记(8)-数理方程</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-01 15:58:06
+        <i class="fas fa-edit"></i>&nbsp;2021-12-05 20:29:14
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,73 +206,103 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="对称张量与反称张量"><a href="#对称张量与反称张量" class="headerlink" title="对称张量与反称张量"></a>对称张量与反称张量</h2><p>对$\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ 若</p>
-<script type="math/tex; mode=display">\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,</script><p>则称$\Phi$是<strong>对称(反称)</strong>的.
-用$\odot^k(V^\ast )$表示$V^\ast \otimes\cdots\otimes V^\ast $中对称张量全体,
-$\Lambda^k(V^\ast )$表示反称张量全体.</p>
-<p>令$J(k)$表示$k$阶置换群. 对于$\sigma\in J(k),$
-定义$\operatorname{sgn}:J(k)\rightarrow\{\pm 1\},$ 表示奇偶排列.
-易验证$\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\tau).$
-定义作用$\sigma\Phi(v_1,\cdots,v_k):=\Phi(v_{\sigma(1)},\cdots,v_{\sigma(k)}),$
-易见$\sigma\Phi\in V^\ast \otimes\cdots\otimes V^\ast ,$ 且$\sigma$是线性映照.
-那么$\Phi$是对称(反称)的$\Leftrightarrow$
-$\sigma\Phi=(\operatorname{sgn}\sigma)\Phi.$</p>
-<p>取$V$的一组基$\{e_i\},$ 对偶基$\{\omega^i\}.$
-则对$\Phi=\Phi_{i_1\cdots i_k}\omega^{i_1}\otimes\cdots\otimes \omega^{i_k},$
-可以得到$\Phi$对称(反称)$\Leftrightarrow$
-$\Phi_{i_1\cdots i_k}$关于指标$\{i_1,\cdots,i_k\}$是对称(反称)的.</p>
-<p>定义如下两个线性变换:
-$S_k:\Phi\mapsto \frac{1}{k!}\sum_\sigma \sigma \Phi,$
-称为<strong>对称化算子</strong>;
-$A_k:\Phi\mapsto \frac{1}{k!}\sum_{\sigma} (\operatorname{sgn}\sigma)\sigma \Phi,$
-称为<strong>反称化算子</strong>. 记$V_k=V^\ast \otimes\cdots\otimes V^\ast ,$ 我们有如下命题:</p>
-<p><strong>命题 1</strong>. <em>$\odot^k(V^\ast )=S_k(V_k),$ $\Lambda^k(V^\ast )=A_k(V_k),$ 且$\Phi$是对称(反称)的$\Leftrightarrow$ $S_k(\Phi)=\Phi$($A_k(\Phi)=\Phi.$)</em> </p>
-<p><strong>证:</strong> 取$\tau\in J(k),$ 首先证明$\tau(S_k(\Phi))=S_k(\Phi),$
-$\tau(A_k(\Phi))=(\operatorname{sgn}\tau)A_k (\Phi).$
-其次再说明$A_k|_{\Lambda^k(V^\ast )}=\mathrm{id},$
-$S_k|_{\odot^k(V^\ast )}=\mathrm{id}$即可.</p>
-<h2 id="拉回映照"><a href="#拉回映照" class="headerlink" title="拉回映照"></a>拉回映照</h2><p>设$f:V\rightarrow W$为线性映照, 定义$f^\ast :W^\ast \rightarrow V^\ast ,$
-$(f^\ast w^\ast )(v)=w^\ast (f(v)),$ 称为<strong>拉回映照</strong>.
-可以推广到$f^\ast :W_k\rightarrow V_k,$
-$(f^\ast \Phi)(v_1,\cdots,v_k)=\Phi(f(v_1),\cdots,f(v_k)).$</p>
-<p><strong>命题 2</strong>. <em>$S_kf^\ast =f^\ast S_k,$ $A_kf^\ast =f^\ast A_k.$</em> </p>
-<p><strong>证:</strong> 利用$\sigma f^\ast =f^\ast \sigma$即可.</p>
-<h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p>$\Lambda^r(V^\ast ):=A_r(V_r),$ 称为$r$阶<strong>反称张量空间</strong>.
-约定$\Lambda^0(V^\ast )=\mathbb{R},$ $\Lambda^1(V^\ast )=V^\ast .$
-设$\Phi\in \Lambda^r(V^\ast ),$ $\Psi\in \Lambda^s(V^\ast ),$
-则$\Phi\wedge \Psi:=\binom{r+s}{r,s}A_{r+s}(\Phi\otimes \Psi)\in \Lambda^{r+s}(V^\ast )$称为$\Phi$与$\Psi$的<strong>外积</strong>,
-满足如下性质:</p>
-<ul>
-<li><p>分配律:
-$(a\Phi_1+b\Phi_2)\wedge\Psi=a\Phi_1\wedge \Psi+b\Phi_2\wedge\Psi;$
-$\Phi\wedge(a\Psi_1+b\Psi_2)=a\Phi\wedge \Psi_1+b\Phi\wedge \Psi_2.$</p>
+            <h2 id="经典方程"><a href="#经典方程" class="headerlink" title="经典方程"></a>经典方程</h2><p>回忆数理方程, 我们最常接触的是如下方程:</p>
+<ol>
+<li><p>$-\Delta u=f,$ <strong>Poisson方程</strong>. 讨论边值问题,
+边界条件为Dirichlet或Neumann型.</p>
 </li>
-<li><p>反交换律: $\Phi\wedge \Psi=(-1)^{rs}\Psi\wedge \Phi;$</p>
+<li><p>$u_{tt}-\Delta u=f,$ <strong>波动方程</strong>. 无界区域上讨论Cauchy问题,
+有界区域上讨论初边值问题. 需对$u$与$u_t$给定初始条件,
+边界条件为Dirichlet或Neumann型.</p>
 </li>
-<li><p>结合律: $(\Phi\wedge \Psi)\wedge\eta=\Phi\wedge(\Psi\wedge \eta).$</p>
+<li><p>$u_t-\Delta u=f,$ <strong>热传导方程</strong>. 讨论内容基本同波方程,
+初始条件只需对$u$给定.</p>
 </li>
-</ul>
-<p>证明基本利用张量积的性质即可, 外面套上线性的反称化算子$A.$ 对于反交换律,
-利用置换 </p>
-<script type="math/tex; mode=display">\tau=\begin{pmatrix}
-            1&\cdots&r&r+1&\cdots&r+s\\
-            s+1&\cdots&s+r&1&\cdots&s
-        \end{pmatrix}</script><p> 即可, 满足$\operatorname{sgn}\tau=(-1)^{rs}.$
-特别地, 对于$r=s=1$的情形, $\Phi\wedge\Psi=-\Psi\wedge\Phi,$
-$\Phi\wedge\Phi=0.$</p>
-<p>对于结合律, 引入置换 </p>
-<script type="math/tex; mode=display">\widetilde\tau=\begin{pmatrix}
-            1&\cdots&r+s&r+s+1&\cdots&r+s+t\\
-            \tau(1)&\cdots&\tau(r+s)&r+s+1&\cdots&r+s+t
-        \end{pmatrix}</script><p> 进行常规的定义讨论即可. 特别地,
-可以在证明中看到,
-$\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\otimes \cdots\otimes \Phi_k).$</p>
-<p><strong>推论 3</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ $x_1,\cdots,x_k\in V,$ 则$\theta^1\wedge\cdots\wedge\theta^k(x_1,\cdots,x_k)=\det(\theta^i(x_j))_{k\times k}.$</em> </p>
-<p><strong>证:</strong> 展开发现式子恰为行列式的组合定义即可.
-即$\sum_\sigma \operatorname{sgn}(\sigma) \theta^1(x_{\sigma(1)})\cdots\theta^k(x_{\sigma(k)}).$</p>
-<p><strong>推论 4</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ 则$\theta^1,\cdots,\theta^k$线性相关$\Leftrightarrow$ $\theta^1\wedge\cdots\wedge\theta^k=0.$</em> </p>
-<p><strong>证:</strong> 利用反交换律与反证法即可.</p>
-<p>文章最后更新于 2021-12-02 11:36:31 </p>
+</ol>
+<p>考虑上述方程的一般化形式, 有如下线性方程,
+讨论的问题与上面经典问题都是对应的, 不再重复. 系数都设为光滑的,
+且满足<strong>椭圆性条件</strong>:
+$\sum_{ij=1}^n a_{ij(x)}\xi_i\xi_j\ge \alpha \Vert\xi\Vert^2,$
+$\,\forall\,\xi\neq 0.$ 不妨设系数是对称的.</p>
+<ol>
+<li><p>$Lu=\sum_{i,j=1}^{n}a_{ij}(x)u_{ij}+\sum_{i=1}^n b_i(x)u_i+c(x)u=f,$
+<strong>二阶椭圆方程</strong>.</p>
+</li>
+<li><p>$u_{tt}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(t,x)\frac{\partial {}u}{\partial {}x_j})+\sum_{i=1}^n b_i(t,x)\frac{\partial {}u}{\partial {}x_i}+c(t,x)u=f,$
+<strong>二阶双曲型方程</strong>.</p>
+</li>
+<li><p>$u_{t}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(t,x)\frac{\partial {}u}{\partial {}x_j})+\sum_{i=1}^n b_i(t,x)\frac{\partial {}u}{\partial {}x_i}+c(t,x)u=f,$
+<strong>二阶抛物型方程</strong>.</p>
+</li>
+</ol>
+<p>我们从考虑<strong>经典解</strong>($C^2$解)转移到考虑<strong>弱解</strong>(广义函数解) (Weak
+Formulation). 由<strong>Stokes公式</strong>:</p>
+<script type="math/tex; mode=display">\int_\Omega d\omega=\int_{\partial\Omega} \omega,</script><p>我们有<strong>Gauss-Green公式</strong>:</p>
+<script type="math/tex; mode=display">\int_\Omega \partial_i fdx=\int_\Omega \nabla \cdot e_i fdx=\int_{\partial\Omega} n\cdot e_i \gamma fdS=\int_{\partial\Omega} n_i\gamma fdS.</script><p>其中$\gamma$为迹, 使得公式对更多函数成立. 进而我们有<strong>分部积分公式</strong>:</p>
+<script type="math/tex; mode=display">\int_{\Omega} \partial_i fgdx+\int_\Omega f\partial_i gdx=\int_\Omega{\partial_i (fg)}dx=\int_{\partial\Omega} n_i\gamma(fg)dS.</script><p>对偏微分方程的求解, 一种常用的方法是<strong>算子半群</strong>方法,
+从而将问题转为求解无穷维ODE.</p>
+<h2 id="对偶算子"><a href="#对偶算子" class="headerlink" title="对偶算子"></a>对偶算子</h2><p>考虑Dirichlet齐次边界问题, $u\in H_0^1(\Omega).$
+作用测试函数$v\in H_0^1(\Omega)$到方程上: </p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \int_\Omega vLudx=&{\color{blue}\sum_{i,j=1}^n\int_{\Omega}\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)u_jv)dx}-\sum_{i,j=1}^n\int_{\Omega}u_j\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v)dx\\
+            &+{\color{blue}\sum_{i=1}^n \int_\Omega \frac{\partial {} }{\partial {}x_i}(b_i(x)uv)dx}-\sum_{i=1}^n \int_\Omega u\frac{\partial {} }{\partial {}x_i}(b_i(x)v)dx+\int_\Omega c(x)uvdx\\
+            =&-\sum_{i,j=1}^n\int_{\Omega}u_j\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v)dx-\sum_{i=1}^n \int_\Omega u\frac{\partial {} }{\partial {}x_i}(b_i(x)v)dx+\int_\Omega c(x)uvdx\\
+            =&{\color{blue}\sum_{i,j=1}^n\int_{\Omega}\frac{\partial {} }{\partial {}x_j}\left(u\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v)\right)dx}-\sum_{i,j=1}^n\int_{\Omega}u_j\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v)dx\\\
+            &-\sum_{i=1}^n \int_\Omega u\frac{\partial {} }{\partial {}x_i}(b_i(x)v)dx+\int_\Omega c(x)uvdx\\
+            =&\sum_{i,j=1}^n\int_{\Omega}u\frac{\partial^2 {} }{\partial {}x_i\partial {}x_j}(a_{ij}(x)v)dx-\sum_{i=1}^n \int_\Omega u\frac{\partial {} }{\partial {}x_i}(b_i(x)v)dx+\int_\Omega c(x)uvdx\\
+            =&\int_\Omega uL^*vdx.
+        \end{aligned}</script><p> 推导中多次用到Gauss-Green公式.
+由于函数具齐次边界条件, 边界项(蓝色项)全部消失.
+由此我们得到了对偶算子$L^\ast .$</p>
+<p>类似地, 对双曲型, 抛物型方程, 我们也有对偶算子:</p>
+<script type="math/tex; mode=display">M^\ast v=\frac{\partial {}^2v}{\partial {}t^2}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v_j)-\sum_{i=1}^n\frac{\partial {} }{\partial {}x_i}(b_i(x)v)+c(x)v,</script><script type="math/tex; mode=display">M^\ast v=-\frac{\partial {}v}{\partial {}t}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v_j)-\sum_{i=1}^n\frac{\partial {} }{\partial {}x_i}(b_i(x)v)+c(x)v.</script><p>对偶算子的重要性在于, 由泛函分析, 有如下重要命题:</p>
+<p><strong>命题 1</strong>. <em>对Hilbert空间$H,$ 有界线性算子$A:H\rightarrow H,$ 问题$Ax=b,$ $\,\forall\,b\in H$的存在性, 等价于问题$A^\ast y=0$的唯一性(即只有零解).</em> </p>
+<p><strong>证:</strong> 存在性$\Rightarrow$唯一性: $\,\forall\,y$使得$A^\ast y=0,$
+存在$x$使得$Ax=y.$ 因此,</p>
+<script type="math/tex; mode=display">0=(x,A^\ast y)=(Ax,y)=(y,y) \,\Rightarrow\, y=0.</script><p>唯一性$\Rightarrow$存在性: 对$b\in H,$ 只需找$x$满足:</p>
+<script type="math/tex; mode=display">(Ax,y)=(b,y),\quad \forall y\in H.</script><p>取$A^\ast :H\rightarrow B=\operatorname{Im} A^\ast ,$
+为连续线性算子.它是单射因为$A^\ast y=0$只有零解. 由逆算子定理,
+$(A^\ast )^{-1}:B\rightarrow H$也是连续线性算子.</p>
+<p>定义连续线性泛函$l_b:B\rightarrow \mathbb{R}$:</p>
+<script type="math/tex; mode=display">l_b(v)=(b,(A^\ast )^{-1}v)=(b,u),</script><p> 这里$A^\ast u=v.$ 由Riesz表示定理,
+存在$x\in B$使得$l_b(v)=(x,v).$ 因此对任意$y\in H:$</p>
+<script type="math/tex; mode=display">l_b(A^\ast y)=(b,y)=(x,A^\ast y)=(Ax,y).</script><p>这说明我们找到的$x\in B$正是$Ax=b$的解.</p>
+<h2 id="能量方法"><a href="#能量方法" class="headerlink" title="能量方法"></a>能量方法</h2><h3 id="乘子法"><a href="#乘子法" class="headerlink" title="乘子法"></a>乘子法</h3><p>由对偶算子, 在大多数情形, 我们只需处理唯一性的证明, 而这是容易的.
+通常采用能量方法, 通过求导由能量守恒说明唯一性.
+能量方法往往来源于乘子法. 对椭圆方程, 考虑能量形式$\int uLu$(势能);
+对波动方程, 考虑能量形式$\int u_t Mu$(动能); 对热传导方程,
+考虑能量形式$\int uMu$(势能).</p>
+<p>以椭圆方程为例. 对$u\in H_0^1(\Omega),$ 我们有: </p>
+<script type="math/tex; mode=display">\begin{aligned}
+            -\int_\Omega uLudx=&\int_\Omega \sum_{i,j=1}^n a_{ij}(x)u_iu_jdx+\int_\Omega \sum_{i=1}^n\left(\sum_{j=1}^n\frac{\partial {}a_{ij} }{\partial {}x_j}-b_i(x)\right)u_iudx-\int_\Omega c(x)u^2dx\\
+            \ge &\int_\Omega \alpha \sum_{i=1}^n u_i^2dx-\int_\Omega C'\sum_{i=1}^n \left(\frac{\alpha}{2C'} u_i^2+\frac{C'}{2\alpha}u^2\right)dx-\int_\Omega C''u^2dx\\
+            \ge &\frac{\alpha}{2}\Vert\nabla u\Vert-C\Vert u\Vert.
+        \end{aligned}</script><p>过程中用到了不等式$2ab\le \varepsilon a^2+\frac{1}{\varepsilon} b^2.$
+该不等式称为Garding不等式:</p>
+<p><strong>定理 2</strong> (Garding不等式). <em>设$\Omega$为$\mathbb{R}^n$中有界区域, 边界光滑. 若$L$为二阶椭圆型算子, 则$\,\forall\,u\in H_0^1(\Omega),$ 有如下不等式:</em> </p>
+<script type="math/tex; mode=display">\operatorname{Re}(-Lu,u)_{L^2(\Omega)}\ge C_1\Vert u\Vert_{1}^2-C_2\Vert u\Vert^2.</script><p>其中系数可以具体计算出来. 当$C_2\le 0$时, 对问题$Lu=0$考虑唯一性:</p>
+<script type="math/tex; mode=display">C_1\Vert u\Vert_{1}^2-C_2\Vert u\Vert^2\le 0\,\Rightarrow\, u\equiv 0.</script><p>对线性方程, $Lu=0$的唯一性与$Lu=f$的唯一性当然是等价的.</p>
+<h3 id="特征问题"><a href="#特征问题" class="headerlink" title="特征问题"></a>特征问题</h3><p>一般地, $C_2$不见得非正. 但是对充分大的$\Lambda\in \mathbb{R},$
+考虑$(-L+\Lambda)u=0$就可以强行将Garding不等式中右侧项调至非负,
+此时问题解具有唯一性. 因此可以在像空间定义逆算子$(-L+\Lambda)^{-1}.$
+我们进行如下推导: </p>
+<script type="math/tex; mode=display">\begin{aligned}
+            C_1\Vert u\Vert^2_{1}&\le \left<{}(-L+\Lambda)u,u\right>\\
+            &\le \Vert(-L+\Lambda)u\Vert\Vert u\Vert\le \Vert(-L+\Lambda)u\Vert\Vert u\Vert_{H^1}\\
+            \Vert u\Vert_{1}&\le C_3\Vert(-L+\Lambda)u\Vert\\
+            \Vert(-L+\Lambda)^{-1}v\Vert_{1}&\le C_3 \Vert v\Vert
+        \end{aligned}</script><p> 因此$(-L+\Lambda)^{-1}$为有界算子.
+由于$H_0^1\stackrel{c}\hookrightarrow L^2$为紧嵌入, 它还是紧算子.
+其特征值可列, $\mu_i\rightarrow 0.$</p>
+<p>考虑特征问题: </p>
+<script type="math/tex; mode=display">\begin{aligned}
+            -Lu&=\lambda u\\
+            (-L+\Lambda)u&=(\lambda+\Lambda)u\\
+            \frac{1}{\lambda+\Lambda}u&=(-L+\Lambda)^{-1}u=\mu u\\
+        \end{aligned}</script><p> 因此$-L$特征值也是可列的,
+且$\mu_i=\frac{1}{\lambda_i+\Lambda}\rightarrow 0$ $\Rightarrow$
+$\lambda_i\rightarrow \infty,$ 特征值趋于无穷.</p>
+<p>文章最后更新于 2021-12-05 20:30:25 </p>
 
         </div>
 
@@ -280,11 +310,11 @@ $\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\o
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第五章-张量</li>
+        <li>本文标题：《现代PDE基础》笔记(8)-数理方程</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-01 15:58:06</li>
+        <li>创建时间：2021-12-05 20:29:14</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/01/《微分流形》第五章-张量/
+            本文链接：https://dream0ar.github.io/2021/12/05/《现代PDE基础》笔记(8)-数理方程/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -298,29 +328,14 @@ $\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\o
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/05/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(8)-%E6%95%B0%E7%90%86%E6%96%B9%E7%A8%8B/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(8)-数理方程</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/11/24/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E8%AE%A8%E8%AE%BA%E7%A8%BF-%E7%BA%BF%E6%80%A7%E6%98%A0%E7%85%A7%E7%A9%BA%E9%97%B4/"
+                           href="/2021/12/01/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BC%A0%E9%87%8F/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》讨论稿-线性映照空间</span>
+                                <span class="post-nav-title-item">《微分流形》第五章-张量</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -526,7 +541,7 @@ $\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\o
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%BC%A0%E9%87%8F%E4%B8%8E%E5%8F%8D%E7%A7%B0%E5%BC%A0%E9%87%8F"><span class="nav-text">对称张量与反称张量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%9B%9E%E6%98%A0%E7%85%A7"><span class="nav-text">拉回映照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E4%BB%A3%E6%95%B0"><span class="nav-text">外代数</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8%E6%96%B9%E7%A8%8B"><span class="nav-text">经典方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E7%AE%97%E5%AD%90"><span class="nav-text">对偶算子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%BD%E9%87%8F%E6%96%B9%E6%B3%95"><span class="nav-text">能量方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%98%E5%AD%90%E6%B3%95"><span class="nav-text">乘子法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E9%97%AE%E9%A2%98"><span class="nav-text">特征问题</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
