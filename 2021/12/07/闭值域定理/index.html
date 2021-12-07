@@ -9,7 +9,7 @@
     
     <title>
         
-            《现代PDE基础》笔记(8)-数理方程 |
+            闭值域定理 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《现代PDE基础》笔记(8)-数理方程</span>
+            <span class="title-hover-animation">闭值域定理</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-05 20:29:14
+        <i class="fas fa-edit"></i>&nbsp;2021-12-07 15:35:09
     </span>
     
         <span class="article-categories article-meta-item">
@@ -174,15 +174,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/">命题与定理</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%88%86%E6%9E%90/">分析</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%88%86%E6%9E%90/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/">泛函分析</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,103 +206,24 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="经典方程"><a href="#经典方程" class="headerlink" title="经典方程"></a>经典方程</h2><p>回忆数理方程, 我们最常接触的是如下方程:</p>
-<ol>
-<li><p>$-\Delta u=f,$ <strong>Poisson方程</strong>. 讨论边值问题,
-边界条件为Dirichlet或Neumann型.</p>
-</li>
-<li><p>$u_{tt}-\Delta u=f,$ <strong>波动方程</strong>. 无界区域上讨论Cauchy问题,
-有界区域上讨论初边值问题. 需对$u$与$u_t$给定初始条件,
-边界条件为Dirichlet或Neumann型.</p>
-</li>
-<li><p>$u_t-\Delta u=f,$ <strong>热传导方程</strong>. 讨论内容基本同波方程,
-初始条件只需对$u$给定.</p>
-</li>
-</ol>
-<p>考虑上述方程的一般化形式, 有如下线性方程,
-讨论的问题与上面经典问题都是对应的, 不再重复. 系数都设为光滑的,
-且满足<strong>椭圆性条件</strong>:
-$\sum_{ij=1}^n a_{ij(x)}\xi_i\xi_j\ge \alpha \Vert\xi\Vert^2,$
-$\,\forall\,\xi\neq 0.$ 不妨设系数是对称的.</p>
-<ol>
-<li><p>$Lu=\sum_{i,j=1}^{n}a_{ij}(x)u_{ij}+\sum_{i=1}^n b_i(x)u_i+c(x)u=f,$
-<strong>二阶椭圆方程</strong>.</p>
-</li>
-<li><p>$u_{tt}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(t,x)\frac{\partial {}u}{\partial {}x_j})+\sum_{i=1}^n b_i(t,x)\frac{\partial {}u}{\partial {}x_i}+c(t,x)u=f,$
-<strong>二阶双曲型方程</strong>.</p>
-</li>
-<li><p>$u_{t}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(t,x)\frac{\partial {}u}{\partial {}x_j})+\sum_{i=1}^n b_i(t,x)\frac{\partial {}u}{\partial {}x_i}+c(t,x)u=f,$
-<strong>二阶抛物型方程</strong>.</p>
-</li>
-</ol>
-<p>我们从考虑<strong>经典解</strong>($C^2$解)转移到考虑<strong>弱解</strong>(广义函数解) (Weak
-Formulation). 由<strong>Stokes公式</strong>:</p>
-<script type="math/tex; mode=display">\int_\Omega d\omega=\int_{\partial\Omega} \omega,</script><p>我们有<strong>Gauss-Green公式</strong>:</p>
-<script type="math/tex; mode=display">\int_\Omega \partial_i fdx=\int_\Omega \nabla \cdot e_i fdx=\int_{\partial\Omega} n\cdot e_i \gamma fdS=\int_{\partial\Omega} n_i\gamma fdS.</script><p>其中$\gamma$为迹, 使得公式对更多函数成立. 进而我们有<strong>分部积分公式</strong>:</p>
-<script type="math/tex; mode=display">\int_{\Omega} \partial_i fgdx+\int_\Omega f\partial_i gdx=\int_\Omega{\partial_i (fg)}dx=\int_{\partial\Omega} n_i\gamma(fg)dS.</script><p>对偏微分方程的求解, 一种常用的方法是<strong>算子半群</strong>方法,
-从而将问题转为求解无穷维ODE.</p>
-<h2 id="对偶算子"><a href="#对偶算子" class="headerlink" title="对偶算子"></a>对偶算子</h2><p>考虑Dirichlet齐次边界问题, $u\in H_0^1(\Omega).$
-作用测试函数$v\in H_0^1(\Omega)$到方程上: </p>
-<script type="math/tex; mode=display">\begin{aligned}
-            \int_\Omega vLudx=&{\color{blue}\sum_{i,j=1}^n\int_{\Omega}\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)u_jv)dx}-\sum_{i,j=1}^n\int_{\Omega}u_j\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v)dx\\
-            &+{\color{blue}\sum_{i=1}^n \int_\Omega \frac{\partial {} }{\partial {}x_i}(b_i(x)uv)dx}-\sum_{i=1}^n \int_\Omega u\frac{\partial {} }{\partial {}x_i}(b_i(x)v)dx+\int_\Omega c(x)uvdx\\
-            =&-\sum_{i,j=1}^n\int_{\Omega}u_j\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v)dx-\sum_{i=1}^n \int_\Omega u\frac{\partial {} }{\partial {}x_i}(b_i(x)v)dx+\int_\Omega c(x)uvdx\\
-            =&{\color{blue}\sum_{i,j=1}^n\int_{\Omega}\frac{\partial {} }{\partial {}x_j}\left(u\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v)\right)dx}-\sum_{i,j=1}^n\int_{\Omega}u_j\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v)dx\\\
-            &-\sum_{i=1}^n \int_\Omega u\frac{\partial {} }{\partial {}x_i}(b_i(x)v)dx+\int_\Omega c(x)uvdx\\
-            =&\sum_{i,j=1}^n\int_{\Omega}u\frac{\partial^2 {} }{\partial {}x_i\partial {}x_j}(a_{ij}(x)v)dx-\sum_{i=1}^n \int_\Omega u\frac{\partial {} }{\partial {}x_i}(b_i(x)v)dx+\int_\Omega c(x)uvdx\\
-            =&\int_\Omega uL^*vdx.
-        \end{aligned}</script><p> 推导中多次用到Gauss-Green公式.
-由于函数具齐次边界条件, 边界项(蓝色项)全部消失.
-由此我们得到了对偶算子$L^\ast .$</p>
-<p>类似地, 对双曲型, 抛物型方程, 我们也有对偶算子:</p>
-<script type="math/tex; mode=display">M^\ast v=\frac{\partial {}^2v}{\partial {}t^2}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v_j)-\sum_{i=1}^n\frac{\partial {} }{\partial {}x_i}(b_i(x)v)+c(x)v,</script><script type="math/tex; mode=display">M^\ast v=-\frac{\partial {}v}{\partial {}t}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v_j)-\sum_{i=1}^n\frac{\partial {} }{\partial {}x_i}(b_i(x)v)+c(x)v.</script><p>对偶算子的重要性在于, 由泛函分析, 有如下重要命题:</p>
-<p><strong>命题 1</strong>. <em>对Hilbert空间$H,$ 有界线性算子$A:H\rightarrow H,$ 问题$Ax=b,$ $\,\forall\,b\in H$的存在性, 等价于问题$A^\ast y=0$的唯一性(即只有零解).</em> </p>
-<p><strong>证:</strong> 存在性$\Rightarrow$唯一性: $\,\forall\,y$使得$A^\ast y=0,$
-存在$x$使得$Ax=y.$ 因此,</p>
-<script type="math/tex; mode=display">0=(x,A^\ast y)=(Ax,y)=(y,y) \,\Rightarrow\, y=0.</script><p>唯一性$\Rightarrow$存在性: 对$b\in H,$ 只需找$x$满足:</p>
-<script type="math/tex; mode=display">(Ax,y)=(b,y),\quad \forall y\in H.</script><p>取$A^\ast :H\rightarrow B=\operatorname{Im} A^\ast ,$
-为连续线性算子.它是单射因为$A^\ast y=0$只有零解. 由逆算子定理,
-$(A^\ast )^{-1}:B\rightarrow H$也是连续线性算子.</p>
-<p>定义连续线性泛函$l_b:B\rightarrow \mathbb{R}$:</p>
-<script type="math/tex; mode=display">l_b(v)=(b,(A^\ast )^{-1}v)=(b,u),</script><p> 这里$A^\ast u=v.$ 由Riesz表示定理,
-存在$x\in B$使得$l_b(v)=(x,v).$ 因此对任意$y\in H:$</p>
-<script type="math/tex; mode=display">l_b(A^\ast y)=(b,y)=(x,A^\ast y)=(Ax,y).</script><p>这说明我们找到的$x\in B$正是$Ax=b$的解.</p>
-<h2 id="能量方法"><a href="#能量方法" class="headerlink" title="能量方法"></a>能量方法</h2><h3 id="乘子法"><a href="#乘子法" class="headerlink" title="乘子法"></a>乘子法</h3><p>由对偶算子, 在大多数情形, 我们只需处理唯一性的证明, 而这是容易的.
-通常采用能量方法, 通过求导由能量守恒说明唯一性.
-能量方法往往来源于乘子法. 对椭圆方程, 考虑能量形式$\int uLu$(势能);
-对波动方程, 考虑能量形式$\int u_t Mu$(动能); 对热传导方程,
-考虑能量形式$\int uMu$(势能).</p>
-<p>以椭圆方程为例. 对$u\in H_0^1(\Omega),$ 我们有: </p>
-<script type="math/tex; mode=display">\begin{aligned}
-            -\int_\Omega uLudx=&\int_\Omega \sum_{i,j=1}^n a_{ij}(x)u_iu_jdx+\int_\Omega \sum_{i=1}^n\left(\sum_{j=1}^n\frac{\partial {}a_{ij} }{\partial {}x_j}-b_i(x)\right)u_iudx-\int_\Omega c(x)u^2dx\\
-            \ge &\int_\Omega \alpha \sum_{i=1}^n u_i^2dx-\int_\Omega C'\sum_{i=1}^n \left(\frac{\alpha}{2C'} u_i^2+\frac{C'}{2\alpha}u^2\right)dx-\int_\Omega C''u^2dx\\
-            \ge &\frac{\alpha}{2}\Vert\nabla u\Vert-C\Vert u\Vert.
-        \end{aligned}</script><p>过程中用到了不等式$2ab\le \varepsilon a^2+\frac{1}{\varepsilon} b^2.$
-该不等式称为Garding不等式:</p>
-<p><strong>定理 2</strong> (Garding不等式). <em>设$\Omega$为$\mathbb{R}^n$中有界区域, 边界光滑. 若$L$为二阶椭圆型算子, 则$\,\forall\,u\in H_0^1(\Omega),$ 有如下不等式:</em> </p>
-<script type="math/tex; mode=display">\operatorname{Re}(-Lu,u)_{L^2(\Omega)}\ge C_1\Vert u\Vert_{1}^2-C_2\Vert u\Vert^2.</script><p>其中系数可以具体计算出来. 当$C_2\le 0$时, 对问题$Lu=0$考虑唯一性:</p>
-<script type="math/tex; mode=display">C_1\Vert u\Vert_{1}^2-C_2\Vert u\Vert^2\le 0\,\Rightarrow\, u\equiv 0.</script><p>对线性方程, $Lu=0$的唯一性与$Lu=f$的唯一性当然是等价的.</p>
-<h3 id="特征问题"><a href="#特征问题" class="headerlink" title="特征问题"></a>特征问题</h3><p>一般地, $C_2$不见得非正. 但是对充分大的$\Lambda\in \mathbb{R},$
-考虑$(-L+\Lambda)u=0$就可以强行将Garding不等式中右侧项调至非负,
-此时问题解具有唯一性. 因此可以在像空间定义逆算子$(-L+\Lambda)^{-1}.$
-我们进行如下推导: </p>
-<script type="math/tex; mode=display">\begin{aligned}
-            C_1\Vert u\Vert^2_{1}&\le \left<{}(-L+\Lambda)u,u\right>\\
-            &\le \Vert(-L+\Lambda)u\Vert\Vert u\Vert\le \Vert(-L+\Lambda)u\Vert\Vert u\Vert_{H^1}\\
-            \Vert u\Vert_{1}&\le C_3\Vert(-L+\Lambda)u\Vert\\
-            \Vert(-L+\Lambda)^{-1}v\Vert_{1}&\le C_3 \Vert v\Vert
-        \end{aligned}</script><p> 因此$(-L+\Lambda)^{-1}$为有界算子.
-由于$H_0^1\stackrel{c}\hookrightarrow L^2$为紧嵌入, 它还是紧算子.
-其特征值可列, $\mu_i\rightarrow 0.$</p>
-<p>考虑特征问题: </p>
-<script type="math/tex; mode=display">\begin{aligned}
-            -Lu&=\lambda u\\
-            (-L+\Lambda)u&=(\lambda+\Lambda)u\\
-            \frac{1}{\lambda+\Lambda}u&=(-L+\Lambda)^{-1}u=\mu u\\
-        \end{aligned}</script><p> 因此$-L$特征值也是可列的,
-且$\mu_i=\frac{1}{\lambda_i+\Lambda}\rightarrow 0$ $\Rightarrow$
-$\lambda_i\rightarrow \infty,$ 特征值趋于无穷.</p>
-<p>文章最后更新于 2021-12-05 20:30:25 </p>
+            <p><strong>定理 1</strong>. <em>$H$为Hilbert空间. 若$K:H\rightarrow H$为紧算子, 则$L=I-K$的值域是闭的.</em> </p>
+<p><strong>证:</strong> $H=N(L)\oplus N(L)^\perp.$
+$L:N(L)^\perp\rightarrow R(L)$是一一的. 断言$\,\exists\,c&gt;0,$ 满足</p>
+<script type="math/tex; mode=display">\Vert Lf\Vert\ge c\Vert f\Vert,\quad \,\forall\,f\in N(L)^\perp.</script><p>不然, $\,\exists\,\{f_n\}\subset N(L)^\perp,$
+满足$\Vert f_n\Vert\equiv 1,$ $\Vert Lf_n\Vert\rightarrow 0.$
+由于$K$是紧算子, $\{Kf_n\}$有子列收敛, 不妨设为自身收敛. 这样,</p>
+<script type="math/tex; mode=display">\widetilde{f}:=\lim_{n\rightarrow \infty}Kf_n+Lf_n=\lim_{n\rightarrow \infty}f_n.</script><p>结合闭性, 这说明了$\{f_n\}$自身也收敛到$\widetilde{f}\in N(L)^\perp.$
+而$L\widetilde{f}=\lim\limits_{n\rightarrow \infty}Lf_n=0,$
+$\widetilde{f}\in N(L).$ 这说明$\widetilde{f}=0.$
+然而$\Vert f_n\Vert\equiv 1,$ 不可能收敛到$0,$ 矛盾.</p>
+<p>接下来, $\,\forall\,\{g_n\}\subset R(L)$满足$g_n\rightarrow g,$
+我们需要证明$g\in R(L).$
+我们取$\{f_n\}\subset N(L)^\perp$满足$Lf_n=g_n,$
+那么$\Vert g_n\Vert\ge c\Vert f_n\Vert.$ 由于$\{g_n\}$构成Cauchy列,
+$\Vert f_n\Vert$也是, 记其收敛到$f.$
+这样就有$Lf=\lim\limits_{n\rightarrow \infty} Lf_n=g.$</p>
+<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://www.math.tamu.edu/" >https://www.math.tamu.edu/<i class="fas fa-external-link-alt"></i></a> fnarc/m641/m641_notes/closed_range.pdf</p>
+<p>文章最后更新于 2021-12-07 15:35:33 </p>
 
         </div>
 
@@ -310,11 +231,11 @@ $\lambda_i\rightarrow \infty,$ 特征值趋于无穷.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《现代PDE基础》笔记(8)-数理方程</li>
+        <li>本文标题：闭值域定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-05 20:29:14</li>
+        <li>创建时间：2021-12-07 15:35:09</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/05/《现代PDE基础》笔记(8)-数理方程/
+            本文链接：https://dream0ar.github.io/2021/12/07/闭值域定理/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -328,29 +249,14 @@ $\lambda_i\rightarrow \infty,$ 特征值趋于无穷.</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/07/%E9%97%AD%E5%80%BC%E5%9F%9F%E5%AE%9A%E7%90%86/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">闭值域定理</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/01/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BC%A0%E9%87%8F/"
+                           href="/2021/12/05/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(8)-%E6%95%B0%E7%90%86%E6%96%B9%E7%A8%8B/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第五章-张量</span>
+                                <span class="post-nav-title-item">《现代PDE基础》笔记(8)-数理方程</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -556,7 +462,7 @@ $\lambda_i\rightarrow \infty,$ 特征值趋于无穷.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%8F%E5%85%B8%E6%96%B9%E7%A8%8B"><span class="nav-text">经典方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E7%AE%97%E5%AD%90"><span class="nav-text">对偶算子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%BD%E9%87%8F%E6%96%B9%E6%B3%95"><span class="nav-text">能量方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%98%E5%AD%90%E6%B3%95"><span class="nav-text">乘子法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E9%97%AE%E9%A2%98"><span class="nav-text">特征问题</span></a></li></ol></li></ol>
+        
     </div>
 </div>
         </aside>
