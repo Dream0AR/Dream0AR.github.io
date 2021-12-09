@@ -9,7 +9,7 @@
     
     <title>
         
-            闭值域定理 |
+            《微分流形》第六章-张量丛 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">闭值域定理</span>
+            <span class="title-hover-animation">《微分流形》第六章-张量丛</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-07 15:35:09
+        <i class="fas fa-edit"></i>&nbsp;2021-12-08 15:50:08
     </span>
     
         <span class="article-categories article-meta-item">
@@ -174,15 +174,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/">命题与定理</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%88%86%E6%9E%90/">分析</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%88%86%E6%9E%90/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/">泛函分析</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,24 +206,95 @@
         
 
         <div class="article-content markdown-body">
-            <p><strong>定理 1</strong>. <em>$H$为Hilbert空间. 若$K:H\rightarrow H$为紧算子, 则$L=I-K$的值域是闭的.</em> </p>
-<p><strong>证:</strong> $H=N(L)\oplus N(L)^\perp.$
-$L:N(L)^\perp\rightarrow R(L)$是一一的. 断言$\,\exists\,c&gt;0,$ 满足</p>
-<script type="math/tex; mode=display">\Vert Lf\Vert\ge c\Vert f\Vert,\quad \,\forall\,f\in N(L)^\perp.</script><p>不然, $\,\exists\,\{f_n\}\subset N(L)^\perp,$
-满足$\Vert f_n\Vert\equiv 1,$ $\Vert Lf_n\Vert\rightarrow 0.$
-由于$K$是紧算子, $\{Kf_n\}$有子列收敛, 不妨设为自身收敛. 这样,</p>
-<script type="math/tex; mode=display">\widetilde{f}:=\lim_{n\rightarrow \infty}Kf_n+Lf_n=\lim_{n\rightarrow \infty}f_n.</script><p>结合闭性, 这说明了$\{f_n\}$自身也收敛到$\widetilde{f}\in N(L)^\perp.$
-而$L\widetilde{f}=\lim\limits_{n\rightarrow \infty}Lf_n=0,$
-$\widetilde{f}\in N(L).$ 这说明$\widetilde{f}=0.$
-然而$\Vert f_n\Vert\equiv 1,$ 不可能收敛到$0,$ 矛盾.</p>
-<p>接下来, $\,\forall\,\{g_n\}\subset R(L)$满足$g_n\rightarrow g,$
-我们需要证明$g\in R(L).$
-我们取$\{f_n\}\subset N(L)^\perp$满足$Lf_n=g_n,$
-那么$\Vert g_n\Vert\ge c\Vert f_n\Vert.$ 由于$\{g_n\}$构成Cauchy列,
-$\Vert f_n\Vert$也是, 记其收敛到$f.$
-这样就有$Lf=\lim\limits_{n\rightarrow \infty} Lf_n=g.$</p>
-<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf" >https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf<i class="fas fa-external-link-alt"></i></a></p>
-<p>文章最后更新于 2021-12-07 16:09:09 </p>
+            <h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p><strong>推论 1</strong>. <em>若$r&gt;n,$ 则$\Lambda^r(V^\ast )=\{0\}.$ 若$0\le r\le n,$ 则$\dim \Lambda^r(V^\ast )=\binom{n}{r},$ 以$\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1&lt;\cdots&lt;i_r\le n\}$为基.</em> </p>
+<p><strong>证:</strong>
+$\,\forall\,\Phi\in \Lambda^r(V^\ast )\subset V^\ast \otimes \cdots\otimes V^\ast =\mathcal{L}(V,\cdots,V,\mathbb{R}),$
+$\Phi=\Phi_{i_1\cdots i_r}\omega^{i_1}\otimes\cdots\otimes\omega^{i_r}.$
+那么</p>
+<script type="math/tex; mode=display">\Phi=A(\Phi)=\frac{1}{r!}\Phi_{i_1\cdots i_r} \omega^{i_1}\wedge\cdots\wedge \omega^{i_n}=\sum_{1\le i_1<\cdots<i_r\le n}a_{i_1\cdots i_r}\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}.</script><p>因此$r&gt;n$时, 求和集为空集, $\Phi\equiv 0.$ $0\le r\le n$时,
+只需证$\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1&lt;\cdots&lt;i_r\le n\}$线性无关.
+利用$\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}(e_{i_1},\cdots,e_{i_r})=\det(\omega^{i_\alpha}e_{i_\beta})=1,$
+其它作用为$0$即可.</p>
+<p><strong>推论 2</strong>. <em>设$\{\theta^i\},\{\omega^i\}$是$V^\ast $两组基, $\theta^i=a^i_j\omega^j.$ 则$\theta^1\wedge\cdots\wedge \theta^n=\det(a^i_j)\omega^1\wedge\cdots\wedge\omega^n.$</em> </p>
+<p><strong>证:</strong> 取$\{\omega^i\}$的对偶基$\{e_i\},$
+往等式两侧作用$(e_1,\cdots,e_n)$即可.</p>
+<script type="math/tex; mode=display">\mathrm{LHS}=\det(\theta^ie_j)=\det(a^i_k\omega^ke_j)=\det(a^i_j)=\mathrm{RHS}.</script><p><strong>引理 3</strong> (Cartan引理). <em>设$\omega^i,\theta^i\in V^\ast ,$ $1\le i\le r\le \dim V.$ 设$\{\omega^i\}$线性无关, 则:</em> </p>
+<script type="math/tex; mode=display">\sum_{i=1}^r\omega^i\wedge \theta^i=0\,\Leftrightarrow\, \theta^i=\sum_{j=1}^ra_{ij}\omega^j,\quad a_{ij}=a_{ji}.</script><p><strong>证:</strong> 将$\{\omega^i\}$扩充为一组基. 那么$\theta^i=a_{ij}\omega^j,$
+$\omega^i\wedge\theta^i=a_{ij}\omega^i\wedge\omega^j.$ 这样,</p>
+<script type="math/tex; mode=display">\sum_{i=1}^r \omega^i\wedge\theta^i=\sum_{1\le i<j\le r}(a_{ij}-a_{ji})\omega^i\wedge\omega^j+\sum_{1\le i\le r<j}a_{ij}\omega^i\wedge\omega^j.</script><p>注意右侧为用$\Lambda^2(V^\ast )$的基来表示. 由此证得等价性.</p>
+<p><strong>定理 4</strong>. <em>设$\omega^1,\cdots,\omega^r\in V^\ast $线性无关, $\Phi\in \Lambda^s(V^\ast ),$ 则$\,\exists\,\psi^1,\cdots,\psi^r\in \Lambda^{s-1}(V^\ast ),$ 使$\Phi=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r$ $\Leftrightarrow$ $\omega^1\wedge\cdots\wedge \omega^r\wedge \Phi=0.$</em> </p>
+<p><strong>证:</strong> 只需证明充分性.
+设有$\omega^1\wedge\cdots\wedge\omega^r\wedge \Phi=0,$ 将$\Phi$用基表示,</p>
+<script type="math/tex; mode=display">\Phi=c_{i_1\cdots i_s}\omega^{i_1}\wedge\cdots\wedge\omega^{i_s}=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r+\sum_{r+1\le \alpha_1<\cdots<\alpha_s\le n}a_{\alpha_1\cdots\alpha_s}\omega^{\alpha_1}\wedge\cdots\wedge\omega^{\alpha_s}.</script><p>当$r+s&gt;n$时, 后侧求和集为空集; 当$r+s\le n$时, 利用条件,
+与$\omega^1\wedge\cdots\wedge\omega^r$做外积.
+由线性无关性即有后面的系数全为零.</p>
+<p><strong>命题 5</strong>. <em>设$f\in \mathcal{L}(V;W),$ $f^\ast :\Lambda^r(W^\ast )\rightarrow\Lambda^r(V^\ast )$为拉回映照, 则$f^\ast (\Phi\wedge\Psi)=f^\ast \Phi\wedge f^\ast \Psi.$</em> </p>
+<p><strong>证:</strong> 利用$f^\ast $与$A,\otimes$的交换性即可: </p>
+<script type="math/tex; mode=display">\begin{aligned}
+                f^*(\Phi\wedge\Psi)(x_1,\cdots,x_{r+s})&=(\Phi\wedge\Psi)(f(x_1),\cdots,f(x_{r+s}))\\
+                &=\frac{(r+s)!}{r!s!}A(\Phi\otimes \Psi) (f(x_1),\cdots,f(x_{r+s}))\\
+                &=\frac{(r+s)!}{r!s!}A(f^*(\Phi\otimes \Psi))(x_1,\cdots,x_{r+s})\\
+                &=f^*\Phi \wedge f^*\Psi (x_1,\cdots,x_{r+s}).
+            \end{aligned}</script><p>做形式直和$\Lambda(V^\ast )=\bigoplus_{r=0}^n \Lambda^r(V^\ast )=\{\omega_0+\cdots+\omega_n|\omega_r\in \Lambda^r(V^\ast )\}.$
+那么它成为$2^n$维向量空间, 并且以$\wedge$为满足分配律的乘法, 成为代数.
+称之为$V^\ast $上的<strong>外代数</strong>. 类似地,
+可以定义$\Lambda(V)=\bigoplus_{r=0}^n \Lambda^r(V),$
+称为$V$上<strong>外代数</strong>.</p>
+<h2 id="张量丛"><a href="#张量丛" class="headerlink" title="张量丛"></a>张量丛</h2><p>令$M^m$为$m$维$C^\infty$流形, $\,\forall\,p\in M,$ 有切空间$T_pM.$
+我们定义$(r,s)$-型张量空间$T_s^r(p)=T_pM\otimes\cdots\otimes T_pM\otimes T_p^\ast M\otimes\cdots\otimes T_p^\ast M.$
+$\dim T_s^r(p)=m^{r+s}.$ 定义丛空间$T_s^r(M)=\bigcup_{p\in M}T_s^r(p),$
+可赋予自然拓扑与微分结构, 使之成为$m+m^{r+s}$维$C^\infty$流形.</p>
+<p>$T_s^r(q)$有自然基$\{\frac{\partial {} }{\partial {}x^{i_1} }\otimes\cdots\otimes\frac{\partial {} }{\partial {}x^{i_r} }\otimes dx^{j_1}\otimes \cdots\otimes dx^{j_s}|1\le i_1,\cdots,i_r,j_1,\cdots,j_s\le n\}.$
+$\Phi\in T_s^r$有坐标$(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s}).$
+取$\pi:T_s^r(M)\rightarrow M$为自然投影,
+$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$将$\Phi$映至$(q,(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s})).$
+那么定义</p>
+<script type="math/tex; mode=display">\widetilde{\Psi}=(\varphi\times \mathrm{id}_{\mathbb{R}^N})\circ \Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N\rightarrow \varphi(U)\times \mathbb{R}^N\subset \mathbb{R}^{m+N}.</script><p>赋予$T_s^r(M)$的拓扑使$\pi^{-1}(U)$是$T_s^r(M)$的开子集且$\widetilde{\Psi}$为同胚.
+若$\{(U_\alpha,\varphi_\alpha)\}$为$M$的光滑坐标图册,
+则$\{(\pi^{-1}(U_\alpha),\widetilde{\Psi}_\alpha)\}$为$T_s^r(M)$的光滑坐标图册.</p>
+<p>它满足如下性质, $\pi:T_s^r(M)\rightarrow M$为$C^\infty$满射,
+$\pi^{-1}(q)=T_s^r(q)$为$m^{r+s}$维向量空间,
+$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$为$C^\infty$映照,
+$\pi_1\circ \Psi=\pi,$ 并且$\Psi|_q$为线性同构.
+这些要素使其成为<strong>向量丛</strong>, 称其为<strong>张量丛</strong>.</p>
+<h2 id="张量场"><a href="#张量场" class="headerlink" title="张量场"></a>张量场</h2><p>若有$\Phi:M\rightarrow T_s^r(M),$ 满足$\pi\circ\Phi=\mathrm{id}_M,$
+则称$\Phi$为$M$上$(r,s)$-型<strong>张量场</strong>. 当$\Phi$为光滑映照时,
+称其为光滑$(r,s)$-型<strong>张量场</strong>. 这当且仅当$\Phi$的每个分量为光滑函数.</p>
+<p>$\Phi\in T_s^r(p)=\mathcal{L}(T_p^\ast M,\cdots,T_p^\ast M,T_pM,\cdots,T_pM;\mathbb{R})$可视为$(r+s)$-重线性函数.
+考虑$(0,s)$-型张量场$\Phi.$ 任取$X_1,\cdots,X_s\in \mathfrak{X}(M),$
+定义张量场在向量场上的作用:</p>
+<script type="math/tex; mode=display">[\Phi(X_1,\cdots,X_s)] (p):=\Phi(p)(X_1(p),\cdots,X_s(p)),</script><p>那么$\Phi(X_1,\cdots,X_s)\in C^\infty(M).$ 因为各个分量为光滑函数,
+做线性组合或相乘后仍是光滑函数.</p>
+<p>由于张量是多重线性函数, 任取$f_1,\cdots,f_s\in C^\infty(M),$
+逐点考虑得到</p>
+<script type="math/tex; mode=display">\Phi(f_1X_1,\cdots,f_sX_s)=f_1\cdots f_s\Phi(X_1,\cdots,X_s)\in C^\infty(M).</script><p>反过来,
+若有映照$\Phi:\mathfrak{X}(M)\times \cdots\times \mathfrak{X}(M)\rightarrow C^\infty(M)$是$C^\infty(M)$线性的,
+则$\Phi$必是$(0,s)$-型$C^\infty$-张量场.</p>
+<p>一般地, 记$\Gamma(T_s^r(M))$表示$C^\infty$的$(r,s)$-型张量场全体,
+则它是无穷维向量空间, $f\Phi+g\Psi(p):=f(p)\Phi(p)+g(p)\Psi(p).$
+类似前面, 它作用在余切向量场与向量场的组合上,
+并且也是$C^\infty(M)$线性的. 反过来也对.</p>
+<h2 id="外微分形式"><a href="#外微分形式" class="headerlink" title="外微分形式"></a>外微分形式</h2><p>$M^m$为$C^\infty$-流形.
+令$\Lambda^r(T^\ast M)=\bigcup_{p\in M}\Lambda^r(T_p^\ast M),$ 类似地,
+赋予其自然拓扑结构与微分结构使其成为$m+\binom{m}{r}$维$C^\infty$流形,
+称为$M$上$r$-次<strong>外形式丛</strong>.</p>
+<p>若$\Phi:M\rightarrow \Lambda^rT^\ast M$是光滑映照,
+$\pi\circ\Phi=\mathrm{id}_M,$ 则称$\Phi$是$r$-次<strong>外微分形式</strong>.
+这当且仅当它的各个分量是光滑函数.
+令$\mathcal{A}^r(M)=\Gamma(\Lambda^rT^\ast M)$为$r$-次外微分形式全体,
+为无穷维向量空间. 类似地,
+也可以定义$f\omega_1+g\omega_2\in \mathcal{A}^r(M).$</p>
+<p>由于我们在$\Lambda^r T^\ast M$上有乘法$\wedge,$
+我们可以逐点定义$\wedge:\mathcal{A}^r(M)\times \mathcal{A}^s(M)\rightarrow \mathcal{A}^{r+s}(M).$
+即</p>
+<script type="math/tex; mode=display">(\omega\wedge\sigma)(p)=\omega(p)\wedge \sigma(p)\in \Lambda^{r+s}(T_p^\ast M).</script><p>它当然同样满足分配律, 反交换律与结合律.</p>
+<p>设$F:M\rightarrow N$为光滑映照,
+则${F_{\ast } }_p:T_pM\rightarrow T_{F(p)}N$为切映照,
+$F^\ast :T^\ast _{F(p)}N\rightarrow T_p^\ast (M)$为拉回映照,
+诱导到$\Lambda^r T_q^\ast N\rightarrow \Lambda^r T_p^\ast M$上,
+再诱导了$\mathcal{A}^r(N)\rightarrow \mathcal{A}^r(M)$上的拉回,
+满足$F^\ast (\omega\wedge\sigma)=F^\ast \omega\wedge F^\ast \sigma.$</p>
+<p>文章最后更新于 2021-12-08 15:50:09 </p>
 
         </div>
 
@@ -231,11 +302,11 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：闭值域定理</li>
+        <li>本文标题：《微分流形》第六章-张量丛</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-07 15:35:09</li>
+        <li>创建时间：2021-12-08 15:50:08</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/07/闭值域定理/
+            本文链接：https://dream0ar.github.io/2021/12/08/《微分流形》第六章-张量丛/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -249,29 +320,14 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/08/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%BC%A0%E9%87%8F%E4%B8%9B/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第六章-张量丛</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/05/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(8)-%E6%95%B0%E7%90%86%E6%96%B9%E7%A8%8B/"
+                           href="/2021/12/07/%E9%97%AD%E5%80%BC%E5%9F%9F%E5%AE%9A%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(8)-数理方程</span>
+                                <span class="post-nav-title-item">闭值域定理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -477,7 +533,7 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E4%BB%A3%E6%95%B0"><span class="nav-text">外代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E4%B8%9B"><span class="nav-text">张量丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E5%9C%BA"><span class="nav-text">张量场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">外微分形式</span></a></li></ol>
     </div>
 </div>
         </aside>
