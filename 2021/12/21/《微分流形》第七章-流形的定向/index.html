@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》第七章-微分形式 |
+            《微分流形》第七章-流形的定向 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第七章-微分形式</span>
+            <span class="title-hover-animation">《微分流形》第七章-流形的定向</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-19 11:26:50
+        <i class="fas fa-edit"></i>&nbsp;2021-12-21 19:01:27
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,68 +206,50 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h2><p>回忆$\,\forall\,f\in C^\infty(M),$ $(df)_p\in T_p^\ast M,$
-称为$f$在$p$处的微分. 局部上我们有</p>
+            <h2 id="微分形式性质"><a href="#微分形式性质" class="headerlink" title="微分形式性质"></a>微分形式性质</h2><p><strong>定理 1</strong>. <em>设$f\in C^\infty(M,N),$ 则$f^\ast \circ d=d\circ f^\ast .$</em> </p>
+<p><strong>证:</strong> $\,\forall\,\omega\in \mathcal{A}^r(N).$ 当$r=0$时,</p>
 <script type="math/tex; mode=display">
-df|_U=\sum_i \frac{\partial {} }{\partial {}x^i} fdx^i,\quad \frac{\partial {} }{\partial {}x^i}f\in C^\infty(U)\,\Rightarrow\,df\in \mathcal{A}^1(M).</script><p>$\omega\in\Gamma(\Lambda^rT^\ast M)=\mathcal{A}^r(M),$ 称为$r$次外微分形式.
-令$\mathcal{A}(M):=\bigoplus_{r=0}^m \mathcal{A}^r(M),$
-称为<strong>微分形式空间</strong>. 它以外积$\wedge$为乘法结构, 是一个<strong>分层代数</strong>.</p>
-<p>若$f\in C^\infty(M,N),$
-则它诱导了拉回映照$f^\ast :\Gamma(T_r^0(N))\rightarrow \Gamma(T_r^0(M)),$</p>
+(f^\ast du)(X)=(du)(f_\ast X)=(f_\ast X)u=X(u\circ f)=X(f^\ast u)=d(f^\ast u)(X).</script><p>当$r&gt;0$时, 做归纳. 不妨设$\omega=udy^{i_1}\wedge\cdots\wedge dy^{i_r},$
+那么$d\omega=du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}.$ 我们有:</p>
 <script type="math/tex; mode=display">
-f^\ast (\Phi)(v_1,\cdots,v_r):=\Phi(f_\ast (v_1),\cdots,f_\ast (v_r)).</script><p> 考察系数:</p>
+f^\ast d\omega=f^\ast [du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}]=df^\ast u\wedge df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}=d[(f^\ast u) df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}]=df^\ast \omega.</script><h2 id="流形的定向"><a href="#流形的定向" class="headerlink" title="流形的定向"></a>流形的定向</h2><p><strong>定义 2</strong>. <em>若$S$上存在连续单位法向量$\vec{n},$ 则称$S$是<strong>可定向的</strong>.</em> </p>
+<p>一般地, 给定抽象$C^\infty$-流形$M,$ 由于缺少外围空间, 不便谈论法向量.
+但切平面总是存在的. 我们通过选取基来确定法向量. 对任意$m$维向量空间,
+称两组基是等价的, 若转移矩阵行列式为正. 此时它们确定了同一个法向量.
+易见全体基组落在两个等价类中. 选定一个等价类便给定了$V$一个定向.</p>
+<p>为了讨论连续性, 我们任取$0\neq \Omega\in \Lambda^m(V^\ast ).$
+此时对两组等价基, $\{\widetilde{e_j}\}=\{e_i\}\det(a^i_j),$
+$\Omega(\widetilde{e_1},\cdots,\widetilde{e_m})=\Omega(e_1,\cdots,e_m)\det(a^i_j).$
+因此$\Omega$作用在等价基上是同号的.
+那么选定$0\neq \Omega\in \Lambda^m(V^\ast )$就相当于给定了$V$的定向.</p>
+<p><strong>定义 3</strong>. <em>设$M^m$为$m$维$C^\infty$-流形, 如果$M$上存在连续的处处非零的$m$次外微分形式$\Omega,$ 则称$M$是<strong>可定向的</strong>, $(M,\Omega)$称为<strong>定向流形</strong>.</em> </p>
+<p>$\Omega$是$M\rightarrow \Lambda^m T^\ast M$的连续映照.
+由于$\dim \Lambda^m(T_p^\ast M)=1,$ $\Omega=fdx^1\wedge\cdots\wedge dx^m,$
+$f\in C^0(U),$ $\,\forall\,(U,x^i)\subset M.$</p>
+<p>若$\Omega_1,\Omega_2$都是$M$的定向, 则$\Omega_2=f\Omega_1,$
+$f$处处非零连续. 它们定向相同当且仅当$f&gt;0.$ 假设$M$是连通的,
+那么$f$要么处处为正, 或处处为负. 这给出了$M$的两种定向.</p>
+<p>坐标系$(U,x^i)$上的$dx^1\wedge\cdots\wedge dx^m\in \mathcal{A}^m(U)$给出了$U$上的局部定向.
+设$(M,\Omega)$为定向流形, 那么$\Omega|_U=fdx^1\wedge\cdots\wedge dx^m,$
+$f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
+<p><strong>定理 4</strong>. <em>设$M$是$m$维$C^\infty$流形, 则它是可定向的$\Leftrightarrow$存在坐标图册$\{(U_\alpha,\varphi_\alpha;x^i_{(\alpha)})\},$ 使得$\,\forall\,\alpha,\beta,$ 在$U_\alpha\cap U_\beta$上有$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]&gt;0.$</em> </p>
+<p><strong>证:</strong> $\Rightarrow:$
+任取坐标图册$\{(U_\alpha,\varphi_\alpha;x_{(\alpha)}^i)\}.$
+那么$\Omega|_{U_\alpha}=f_\alpha dx^1_{(\alpha)}\wedge\cdots\wedge dx_{(\alpha)}^m.$
+若$f_\alpha&gt;0,$ 则坐标系不动; 若$f_\alpha&lt;0,$
+则可以调整坐标系使得$f_\alpha$取正.
+此时$\,\forall\,p\in U_\alpha\cap U_\beta,$</p>
 <script type="math/tex; mode=display">
-(f^\ast \Phi)_{i_1\cdots i_r}=\Phi\left(f_\ast \frac{\partial {} }{\partial {}x_{i_1} },\cdots,f_\ast \frac{\partial {} }{\partial {}x_{i_r} }\right)=\frac{\partial {}y^{\alpha_1}\circ f}{\partial {}x^{i_1} }\cdots\frac{\partial {}y^{\alpha_r}\circ f}{\partial {}x^{i_r} }\cdot \Phi_{\alpha_1\cdots\alpha_r}\circ f.</script><p>确实是光滑的, 因此$f^\ast \Phi\in \Gamma(T_r^0(M)).$</p>
-<p>于是$f^\ast :\mathcal{A}(N)\rightarrow \mathcal{A}(M),$
-$f^\ast \sigma=\sum_{r=0}^n f^\ast \sigma_r,$
-且$f^\ast (\omega\wedge\sigma)=f^\ast \omega\wedge f^\ast \sigma,$
-$\,\forall\,\omega,\sigma\in \mathcal{A}(N).$ 它是一个代数同态.</p>
-<h2 id="外微分"><a href="#外微分" class="headerlink" title="外微分"></a>外微分</h2><p>设$d:\mathcal{A}(M)\rightarrow \mathcal{A}(M)$为线性映照, 满足:</p>
-<ol>
-<li><p>$d:\mathcal{A}^r(M)\rightarrow\mathcal{A}^{r+1}(M);$</p>
-</li>
-<li><p>$\omega\in \mathcal{A}^r(M),$ $\sigma\in \mathcal{A}(M),$
-$d(\omega\wedge\sigma)=d\omega\wedge\sigma+(-1)^r\omega\wedge d\sigma.$</p>
-</li>
-<li><p>$f\in \mathcal{A}^0(M)=C^\infty(M)$时, $df$为普通微分, 且$d^2f=0.$</p>
-</li>
-</ol>
-<p>则称$d$为$M$上<strong>外微分算子</strong>, 或简称<strong>外微分</strong>.</p>
-<p><strong>引理 1</strong>. <em>外微分算子为局部算子, 即若$\omega_1|_U=\omega_2|_U,$ 则$(d\omega_1)|_U=(d\omega_2)|_U.$</em> </p>
-<p><strong>证:</strong> 只需说明$\omega|_U=0\Rightarrow (d\omega)|_U=0.$
-取截断函数$f|_V\equiv 1,$ $\operatorname{supp}f\subset U$即可.
-这样$f\omega=0.$ 从而$0=d(f\omega)=df\wedge \omega+f(d\omega),$
-在$V$上有$df=0,$ 从而$(d\omega)|_V=0.$
-由$V$的任意性即有$(d\omega)|_U=0.$</p>
-<p><strong>定理 2</strong>. <em>$C^\infty$-流形$M$上外微分算子是存在唯一的.</em> </p>
-<p><strong>证:</strong> 先证唯一性. 由截断函数, $d$可以诱导$U$上的外微分算子.
-取引理中的$f,$ 对$\omega\in \mathcal{A}(U),$
-局部定义$(d\omega)|_V:=(d(f\omega))|_V.$ 现证$d$在坐标系里是唯一的:</p>
-<p>取$(U,\varphi;x^i)\subset M,$ $\omega\in \mathcal{A}^r(M),$
-$\omega|_U=adx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ 由外微分算子性质,
-$d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ 由局部性,
-$(d\omega)|_U=d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r},$
-$d\omega$在$U$内有确切表达式, 因此$d$在坐标系中唯一. 从而,
-$d$在整体上也唯一.</p>
-<p>接下来说明$d$的存在性. 首先由上段,
-局部定义$d\omega:=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}$即可,
-$\omega=adx^{i_1}\wedge\cdots\wedge dx^{i_r}\in \mathcal{A}^r(U).$
-这样它自然延拓为外微分算子. 由于它处处有局部定义, 整体上也有定义,
-且由局部唯一性, 它与坐标系选取无关.</p>
-<p>由$d$的局部定义, 我们自然得到如下引理:</p>
-<p><strong>引理 3</strong> (Poincaré引理). <em>$d^2=0.$ 即$\,\forall\,\omega\in \mathcal{A}(M),$ $d(d\omega)=0.$</em> </p>
-<p>设$\omega=Adx+Bdy+Cdz\in \mathcal{A}^1(\mathbb{R}^3)$与$X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$相应,
-当$\omega=df$时$X$即为$\nabla f.$ 那么$d\omega$与$\nabla\times X$相应.</p>
-<p>设$\omega=Ady\wedge dz+Bdz\wedge dx+Cdx\wedge dy,$
-与$X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$相应.
-那么$d\omega=(\nabla\cdot X)dx\wedge dy\wedge dz.$</p>
-<p>因此$\nabla\times (\nabla f)=0$由$d(df)=0$保证,
-$\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
-<p><strong>定理 4</strong>. <em>设$\omega\in \mathcal{A}^1(M),$ $X,Y\in \mathfrak{X}(M),$ 则$d\omega(X,Y)=X(\omega(Y))-Y(\omega(X))-\omega([X,Y]).$</em> </p>
-<p><strong>证:</strong> 设$\omega=fdg,$ 则$d\omega=df\wedge dg.$
-此时$df\wedge dg(X,Y)=X(f)Y(g)-Y(f)X(g).$ 计算右侧得到相同的结果,
-定理得证.</p>
-<p>文章最后更新于 2021-12-19 11:27:06 </p>
+\Omega|_{U_\alpha\cap U_\beta}=f_\alpha{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m}=f_\beta{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m}.</script><p>因此$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]=\frac{f_\beta}{f_\alpha}&gt;0.$</p>
+<p>$\Leftarrow:$ 将坐标图册加细使得它是局部有限的, 且保持题设性质.
+取$f_i$为单位分解.
+那么令$\omega=\sum_i f_i{}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}$即可.
+此时$\,\forall\,p\in M,$</p>
+<script type="math/tex; mode=display">
+\omega(p)=\sum_i f_i(p){}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}=\sum_i f_i(p)\det[D(\varphi_i\circ \varphi_{j_0}^{-1})]{}dx_{(j_0)}^{1}\wedge\cdots\wedge{}dx_{(j_0)}^{ {}m}.</script><p>由单位分解与题设性质, 即有$\omega\neq 0.$</p>
+<p>由过程可见, 构造的$\omega\in \mathcal{A}^m(M).$
+因此处处非零的外微分形式可要求为光滑的.</p>
+<p>文章最后更新于 2021-12-21 19:01:28 </p>
 
         </div>
 
@@ -275,11 +257,11 @@ $\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第七章-微分形式</li>
+        <li>本文标题：《微分流形》第七章-流形的定向</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-19 11:26:50</li>
+        <li>创建时间：2021-12-21 19:01:27</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/19/《微分流形》第七章-微分形式/
+            本文链接：https://dream0ar.github.io/2021/12/21/《微分流形》第七章-流形的定向/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -293,29 +275,14 @@ $\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/21/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第七章-流形的定向</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/12/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(9)-%E4%BC%BD%E8%BE%BD%E9%87%91(Galerkin)%E6%96%B9%E6%B3%95/"
+                           href="/2021/12/19/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</span>
+                                <span class="post-nav-title-item">《微分流形》第七章-微分形式</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -521,7 +488,7 @@ $\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">微分形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86"><span class="nav-text">外微分</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="nav-text">微分形式性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91"><span class="nav-text">流形的定向</span></a></li></ol>
     </div>
 </div>
         </aside>
