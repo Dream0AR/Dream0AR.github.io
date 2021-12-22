@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》第七章-流形的定向 |
+            《微分流形》第七章-流形上的积分 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第七章-流形的定向</span>
+            <span class="title-hover-animation">《微分流形》第七章-流形上的积分</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-21 19:01:27
+        <i class="fas fa-edit"></i>&nbsp;2021-12-22 18:49:33
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,50 +206,87 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="微分形式性质"><a href="#微分形式性质" class="headerlink" title="微分形式性质"></a>微分形式性质</h2><p><strong>定理 1</strong>. <em>设$f\in C^\infty(M,N),$ 则$f^\ast \circ d=d\circ f^\ast .$</em> </p>
-<p><strong>证:</strong> $\,\forall\,\omega\in \mathcal{A}^r(N).$ 当$r=0$时,</p>
+            <h2 id="外微分形式的积分"><a href="#外微分形式的积分" class="headerlink" title="外微分形式的积分"></a>外微分形式的积分</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>我们熟知有<strong>积分变量代换公式</strong>: 设$f\in C_c(\mathbb{R}^m),$
+$h:\mathbb{R}^m\approx \mathbb{R}^m$为微分同胚, 则</p>
 <script type="math/tex; mode=display">
-(f^\ast du)(X)=(du)(f_\ast X)=(f_\ast X)u=X(u\circ f)=X(f^\ast u)=d(f^\ast u)(X).</script><p>当$r&gt;0$时, 做归纳. 不妨设$\omega=udy^{i_1}\wedge\cdots\wedge dy^{i_r},$
-那么$d\omega=du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}.$ 我们有:</p>
+\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m=\int_{\mathbb{R}^m}(f\circ h)(y)|\det Dh|dy^1\cdots dy^m.</script><p>若$h:\mathbb{R}^m\rightarrow \mathbb{R}^m$满足$\det Dh(y)&gt;0,$
+则处处有$\det Dh&gt;0.$ 称它是<strong>保定向</strong>的微分同胚.</p>
+<p>由上节课内容,
+$\Omega={}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(\mathbb{R}^m)$给了$\mathbb{R}^m$一个自然的定向.
+现$(\mathbb{R}^m,\mathrm{id};x),(\mathbb{R}^m,h^{-1};y)$为两个不同坐标系,
+令$\omega=f(x)dx^1\wedge\cdots\wedge dx^m$为具紧支集连续$m$次外微分形式,
+那么由于</p>
 <script type="math/tex; mode=display">
-f^\ast d\omega=f^\ast [du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}]=df^\ast u\wedge df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}=d[(f^\ast u) df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}]=df^\ast \omega.</script><h2 id="流形的定向"><a href="#流形的定向" class="headerlink" title="流形的定向"></a>流形的定向</h2><p><strong>定义 2</strong>. <em>若$S$上存在连续单位法向量$\vec{n},$ 则称$S$是<strong>可定向的</strong>.</em> </p>
-<p>一般地, 给定抽象$C^\infty$-流形$M,$ 由于缺少外围空间, 不便谈论法向量.
-但切平面总是存在的. 我们通过选取基来确定法向量. 对任意$m$维向量空间,
-称两组基是等价的, 若转移矩阵行列式为正. 此时它们确定了同一个法向量.
-易见全体基组落在两个等价类中. 选定一个等价类便给定了$V$一个定向.</p>
-<p>为了讨论连续性, 我们任取$0\neq \Omega\in \Lambda^m(V^\ast ).$
-此时对两组等价基, $\{\widetilde{e_j}\}=\{e_i\}\det(a^i_j),$
-$\Omega(\widetilde{e_1},\cdots,\widetilde{e_m})=\Omega(e_1,\cdots,e_m)\det(a^i_j).$
-因此$\Omega$作用在等价基上是同号的.
-那么选定$0\neq \Omega\in \Lambda^m(V^\ast )$就相当于给定了$V$的定向.</p>
-<p><strong>定义 3</strong>. <em>设$M^m$为$m$维$C^\infty$-流形, 如果$M$上存在连续的处处非零的$m$次外微分形式$\Omega,$ 则称$M$是<strong>可定向的</strong>, $(M,\Omega)$称为<strong>定向流形</strong>.</em> </p>
-<p>$\Omega$是$M\rightarrow \Lambda^m T^\ast M$的连续映照.
-由于$\dim \Lambda^m(T_p^\ast M)=1,$ $\Omega=fdx^1\wedge\cdots\wedge dx^m,$
-$f\in C^0(U),$ $\,\forall\,(U,x^i)\subset M.$</p>
-<p>若$\Omega_1,\Omega_2$都是$M$的定向, 则$\Omega_2=f\Omega_1,$
-$f$处处非零连续. 它们定向相同当且仅当$f&gt;0.$ 假设$M$是连通的,
-那么$f$要么处处为正, 或处处为负. 这给出了$M$的两种定向.</p>
-<p>坐标系$(U,x^i)$上的$dx^1\wedge\cdots\wedge dx^m\in \mathcal{A}^m(U)$给出了$U$上的局部定向.
-设$(M,\Omega)$为定向流形, 那么$\Omega|_U=fdx^1\wedge\cdots\wedge dx^m,$
-$f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
-<p><strong>定理 4</strong>. <em>设$M$是$m$维$C^\infty$流形, 则它是可定向的$\Leftrightarrow$存在坐标图册$\{(U_\alpha,\varphi_\alpha;x^i_{(\alpha)})\},$ 使得$\,\forall\,\alpha,\beta,$ 在$U_\alpha\cap U_\beta$上有$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]&gt;0.$</em> </p>
-<p><strong>证:</strong> $\Rightarrow:$
-任取坐标图册$\{(U_\alpha,\varphi_\alpha;x_{(\alpha)}^i)\}.$
-那么$\Omega|_{U_\alpha}=f_\alpha dx^1_{(\alpha)}\wedge\cdots\wedge dx_{(\alpha)}^m.$
-若$f_\alpha&gt;0,$ 则坐标系不动; 若$f_\alpha&lt;0,$
-则可以调整坐标系使得$f_\alpha$取正.
-此时$\,\forall\,p\in U_\alpha\cap U_\beta,$</p>
+dx^1\wedge\cdots\wedge dx^m=\det(Dh)(y){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m},</script><p>我们知道$\omega=f\circ h(y)\det(Dh){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}$为另一表示.
+上述公式提示:</p>
 <script type="math/tex; mode=display">
-\Omega|_{U_\alpha\cap U_\beta}=f_\alpha{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m}=f_\beta{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m}.</script><p>因此$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]=\frac{f_\beta}{f_\alpha}&gt;0.$</p>
-<p>$\Leftarrow:$ 将坐标图册加细使得它是局部有限的, 且保持题设性质.
-取$f_i$为单位分解.
-那么令$\omega=\sum_i f_i{}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}$即可.
-此时$\,\forall\,p\in M,$</p>
+\int_{\mathbb{R}^m}\omega:=\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m.</script><p>设$(M^m,\Omega)$是定向$C^\infty$-流形,
+$\omega$为$M$上具紧支集$m$次外微分形式,
+即$\operatorname{supp}\omega=\overline{\{q|\omega(q)\neq 0\} }\Subset M.$
+下面来定义$\omega$在$M$上的积分.</p>
+<p>当$\operatorname{supp}\omega\subset (U,\varphi;x^i),$
+与定向$\Omega$相符的坐标系时, $\omega=f dx^1\wedge\cdots\wedge dx^m,$
+$f\in C_c(U).$ 由前面的叙述, 定义</p>
 <script type="math/tex; mode=display">
-\omega(p)=\sum_i f_i(p){}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}=\sum_i f_i(p)\det[D(\varphi_i\circ \varphi_{j_0}^{-1})]{}dx_{(j_0)}^{1}\wedge\cdots\wedge{}dx_{(j_0)}^{ {}m}.</script><p>由单位分解与题设性质, 即有$\omega\neq 0.$</p>
-<p>由过程可见, 构造的$\omega\in \mathcal{A}^m(M).$
-因此处处非零的外微分形式可要求为光滑的.</p>
-<p>文章最后更新于 2021-12-21 19:01:28 </p>
+\int_M \omega:=\int_U \omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.</script><p>一般地, 取$\{(U_i,\varphi_i)\}$为与定向相符的坐标图册,
+以及从属于它的单位分解. 那么$\omega=\sum_i f_i\omega,$
+$\operatorname{supp}(f_i\omega)\subset U_i.$ 由$\omega$具紧支集,
+$\{\operatorname{supp}f_i\}$局部有限, 和式总有意义. 于是我们定义</p>
+<script type="math/tex; mode=display">
+\int_M \omega:=\sum_i \int_M f_i\omega,</script><p>其中$\int_M f_i\omega$是已定义好的.</p>
+<h3 id="良定性"><a href="#良定性" class="headerlink" title="良定性"></a>良定性</h3><p>我们需要验证该定义的良定性: 是否与坐标系/图册以及单位分解选取无关?</p>
+<p>若$\operatorname{supp}\omega \subset (U,\varphi;x)\cap (V,\psi;y),$
+$f{}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}=\omega=g{}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}.$
+需验证:</p>
+<script type="math/tex; mode=display">
+\int_{\psi(U)}(g\circ\psi^{-1})(y)dy^1\cdots dy^m=\int_M\omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.</script><p>令$h=\varphi\circ\psi^{-1},$ $h(y)=x.$ 那么由积分变量代换公式,
+以及$g=f\det(Dh),$ 结合坐标系都是与定向$\Omega$相符的, 即有等式成立.</p>
+<p>设有两种单位分解$\{f_i\},\{g_j\},$
+那么$\{f_ig_j=g_jf_i\}$也是一个单位分解. 因此</p>
+<script type="math/tex; mode=display">
+\sum_j\int_M g_j\omega=\sum_{i,j}\int_M f_ig_j\omega=\sum_i\int_M f_i\omega.</script><h3 id="其它性质"><a href="#其它性质" class="headerlink" title="其它性质"></a>其它性质</h3><p>容易看出, $\int_{(M,\Omega)}\omega=-\int_{(M,-\Omega)}\omega.$</p>
+<p>定义$\mathcal{K}$为全体具紧支集连续的$m$次形式, 构成向量空间,
+且$\int_M:\mathcal{K}\rightarrow \mathbb{R}$为线性泛函.</p>
+<p>设$\varphi:N^k\rightarrow M$为$k$维子流形.
+若$\varphi^\ast \omega$在$N$中具紧支集, 则</p>
+<script type="math/tex; mode=display">
+\int_N \varphi^\ast \omega:=\int_{\varphi(N)} \omega.</script><h2 id="Stokes公式"><a href="#Stokes公式" class="headerlink" title="Stokes公式"></a>Stokes公式</h2><p>回忆$\mathbb{R}^m$上的多元微积分, 我们可将微积分基本定理, Green公式,
+Gauss公式, Stokes公式统一为:</p>
+<script type="math/tex; mode=display">
+\int_D d\omega=\int_{\partial D}\omega,\quad D\subset \mathbb{R}^m.</script><p>设$M^m$为$m$维$C^\infty$流形. 如果$M$中子集$D$由下面两类点构成:</p>
+<ol>
+<li><p>内点: $p\in D,$ $\,\exists\,V\ni p$为开邻域, $V\subset D.$</p>
+</li>
+<li><p>边界点: $p\in D,$ $\,\exists\,(U,\varphi;x^i)$使得$\varphi(p)=0,$
+$\varphi(U\cap D)=\{q\in D|x^m(q)\ge 0\}.$
+称这样的坐标系为<strong>适应坐标系</strong>.</p>
+</li>
+</ol>
+<p>则称$D$为$M$中<strong>带边区域</strong>. 用$\partial D$表示边界全体.</p>
+<p>易见内点全体$D^\circ$为$M$中开子集,
+$U\cap \partial D=\{x^m(q)=0\}$为$(m-1)$维切片.
+从而$\partial D$为$M$中正则超曲面.</p>
+<p>全体适应坐标系构成了$\partial D$的一个覆盖,
+构成了$\partial D$的坐标图册. 它确定了$\partial D$的$C^\infty$结构.
+现$M$是定向流形, 则可要求$\partial D$的每个适应坐标系与定向$\Omega$相符.</p>
+<p>在每个$(U_\alpha\cap \partial D;x_{\alpha}^1,\cdots,x_{\alpha}^{m-1})$上,
+局部定义$(-1)^m{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}.$
+下面证明它与$(-1)^m{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m-1}$定向相符,
+因此$\partial D$上有一诱导定向.</p>
+<p><strong>定理 1</strong>. <em>设$D$是$C^\infty$-流形$M$中带边区域, 如果$(M,\Omega)$是可定向的, 则$\partial D$也是可定向的.</em> </p>
+<p><strong>证:</strong> 取$(U,\varphi;x^i),(V,\psi;y^j)$为$\partial D$的适应坐标系,
+与定向$\Omega$相符,
+需考虑$\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}$的符号.
+已知$\det D(\psi\circ \varphi^{-1})&gt;0.$
+由于$\frac{\partial {}y^m}{\partial {}x^{i} }=0,$ $\,\forall\,i<m;$
+$\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
+立即推得$\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}>0.$
+因此$\partial D$是可定向的.</p>
+<p>特别地,
+我们选取$(-1)^m {}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}$与$\partial D$定向相符,
+使Stokes公式成立.</p>
+<p><strong>定理 2</strong> (Stokes公式). <em>设$(M^m,\Omega)$是定向$C^\infty$流形, $D$是$M$中带边区域, 从$M$中自然诱导定向. $\omega$是$M$一个具紧支集$C^1$的$(m-1)$次外微分形式, 则$\int_D d\omega=\int_{\partial D}\omega.$ 如果$\partial D=\varnothing,$ 则右端为零.</em> </p>
+<p>文章最后更新于 2021-12-22 18:49:34 </p>
 
         </div>
 
@@ -257,11 +294,11 @@ $f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第七章-流形的定向</li>
+        <li>本文标题：《微分流形》第七章-流形上的积分</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-21 19:01:27</li>
+        <li>创建时间：2021-12-22 18:49:33</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/21/《微分流形》第七章-流形的定向/
+            本文链接：https://dream0ar.github.io/2021/12/22/《微分流形》第七章-流形上的积分/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -275,29 +312,14 @@ $f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/22/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E7%A7%AF%E5%88%86/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第七章-流形上的积分</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/19/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/"
+                           href="/2021/12/21/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第七章-微分形式</span>
+                                <span class="post-nav-title-item">《微分流形》第七章-流形的定向</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -503,7 +525,7 @@ $f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="nav-text">微分形式性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91"><span class="nav-text">流形的定向</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E7%9A%84%E7%A7%AF%E5%88%86"><span class="nav-text">外微分形式的积分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%89%AF%E5%AE%9A%E6%80%A7"><span class="nav-text">良定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E6%80%A7%E8%B4%A8"><span class="nav-text">其它性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stokes%E5%85%AC%E5%BC%8F"><span class="nav-text">Stokes公式</span></a></li></ol>
     </div>
 </div>
         </aside>
