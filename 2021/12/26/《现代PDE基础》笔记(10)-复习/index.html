@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》第七章-流形上的积分 |
+            《现代PDE基础》笔记(10)-复习 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》第七章-流形上的积分</span>
+            <span class="title-hover-animation">《现代PDE基础》笔记(10)-复习</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-22 18:49:33
+        <i class="fas fa-edit"></i>&nbsp;2021-12-26 16:23:42
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,87 +206,102 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="外微分形式的积分"><a href="#外微分形式的积分" class="headerlink" title="外微分形式的积分"></a>外微分形式的积分</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>我们熟知有<strong>积分变量代换公式</strong>: 设$f\in C_c(\mathbb{R}^m),$
-$h:\mathbb{R}^m\approx \mathbb{R}^m$为微分同胚, 则</p>
+            <h2 id="广义函数"><a href="#广义函数" class="headerlink" title="广义函数"></a>广义函数</h2><h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><p>$C_c^\infty\subset \mathscr{S}\subset C^\infty,$
+记为$\mathscr{D}\subset \mathscr{S}\subset \mathscr{E},$
+那么$\mathscr{D}’\supset \mathscr{S}’\supset \mathscr{E}’.$
+注意这里用到基本空间前者在后者稠密.</p>
+<p>广义函数的连续性等价于有界性. 注意这里有界性较为特殊,
+因为基本空间不是赋范的. 但是可以取到一列范数.</p>
+<p>由该性质可以得到一个重要的对偶性质: $(\mathscr{D}’)_c=\mathscr{E}’.$</p>
+<h3 id="磨光"><a href="#磨光" class="headerlink" title="磨光"></a>磨光</h3><p>$\alpha_\varepsilon(x)=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon}).$
+称卷积$J_\varepsilon f:=f_\varepsilon=\alpha_\varepsilon\ast f$为$f$的磨光.
+由于$\alpha_\varepsilon$为径向函数, 我们有:</p>
 <script type="math/tex; mode=display">
-\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m=\int_{\mathbb{R}^m}(f\circ h)(y)|\det Dh|dy^1\cdots dy^m.</script><p>若$h:\mathbb{R}^m\rightarrow \mathbb{R}^m$满足$\det Dh(y)&gt;0,$
-则处处有$\det Dh&gt;0.$ 称它是<strong>保定向</strong>的微分同胚.</p>
-<p>由上节课内容,
-$\Omega={}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(\mathbb{R}^m)$给了$\mathbb{R}^m$一个自然的定向.
-现$(\mathbb{R}^m,\mathrm{id};x),(\mathbb{R}^m,h^{-1};y)$为两个不同坐标系,
-令$\omega=f(x)dx^1\wedge\cdots\wedge dx^m$为具紧支集连续$m$次外微分形式,
-那么由于</p>
+\left<{}\alpha_\varepsilon\ast T,\varphi\right>=\left<{}T_x,\left<{}\alpha_\varepsilon(y),\varphi(x+y)\right>\right>=\left<{}T,\alpha_\varepsilon\ast \varphi\right>.</script><p>当$T\in \mathscr{D}’$时, $\alpha_\varepsilon\ast T\in C^\infty.$</p>
+<p>由Minkowski不等式,
+$\Vert\alpha_\varepsilon\ast f\Vert_{L^p}\le \Vert f\Vert_{L^p}.$
+Minkowski不等式可由离散情况推得, 或由泛函分析方法证明.
+当$\varepsilon\rightarrow 0$时,
+我们有$f_\varepsilon\xrightarrow{L^p} f.$</p>
+<h3 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h3><p>广义函数”差不多”总能写成常义函数的导数. 这里求导为广义导数, 如:</p>
 <script type="math/tex; mode=display">
-dx^1\wedge\cdots\wedge dx^m=\det(Dh)(y){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m},</script><p>我们知道$\omega=f\circ h(y)\det(Dh){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}$为另一表示.
-上述公式提示:</p>
+\left<{}T,\varphi\right>=\left<{}D^\alpha f,\varphi\right>=(-1)^{|\alpha|}\left<{}f,D^\alpha \varphi\right>.</script><p>求导的定义来源于分部积分, 由Gauss-Green公式推导.</p>
 <script type="math/tex; mode=display">
-\int_{\mathbb{R}^m}\omega:=\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m.</script><p>设$(M^m,\Omega)$是定向$C^\infty$-流形,
-$\omega$为$M$上具紧支集$m$次外微分形式,
-即$\operatorname{supp}\omega=\overline{\{q|\omega(q)\neq 0\} }\Subset M.$
-下面来定义$\omega$在$M$上的积分.</p>
-<p>当$\operatorname{supp}\omega\subset (U,\varphi;x^i),$
-与定向$\Omega$相符的坐标系时, $\omega=f dx^1\wedge\cdots\wedge dx^m,$
-$f\in C_c(U).$ 由前面的叙述, 定义</p>
+\int_\Omega \partial f\cdot g+f\cdot \partial g=\int_{\Omega} \partial(fg)=\int_{\partial \Omega} fg\cdot \gamma,</script><p>当$f,g$有一者在边界上取零时, 右端得零, 建立了关于左端的等式.</p>
+<h3 id="Fourier变换"><a href="#Fourier变换" class="headerlink" title="Fourier变换"></a>Fourier变换</h3><p>对于速降函数, 有Fourier变换:</p>
 <script type="math/tex; mode=display">
-\int_M \omega:=\int_U \omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.</script><p>一般地, 取$\{(U_i,\varphi_i)\}$为与定向相符的坐标图册,
-以及从属于它的单位分解. 那么$\omega=\sum_i f_i\omega,$
-$\operatorname{supp}(f_i\omega)\subset U_i.$ 由$\omega$具紧支集,
-$\{\operatorname{supp}f_i\}$局部有限, 和式总有意义. 于是我们定义</p>
+F[f] (\xi)=\widehat{f}(\xi):=\int_{\mathbb{R}^n} f(x)e^{-ix\cdot \xi}dx,</script><p>有Fourier逆变换:</p>
 <script type="math/tex; mode=display">
-\int_M \omega:=\sum_i \int_M f_i\omega,</script><p>其中$\int_M f_i\omega$是已定义好的.</p>
-<h3 id="良定性"><a href="#良定性" class="headerlink" title="良定性"></a>良定性</h3><p>我们需要验证该定义的良定性: 是否与坐标系/图册以及单位分解选取无关?</p>
-<p>若$\operatorname{supp}\omega \subset (U,\varphi;x)\cap (V,\psi;y),$
-$f{}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}=\omega=g{}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}.$
-需验证:</p>
+f(x)=F^{-1}[\widehat{f}] (x):=(2\pi)^{-n}\int_{\mathbb{R}^n}\widehat{f}(\xi)e^{ix\cdot \xi}d\xi,</script><p>满足:</p>
 <script type="math/tex; mode=display">
-\int_{\psi(U)}(g\circ\psi^{-1})(y)dy^1\cdots dy^m=\int_M\omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.</script><p>令$h=\varphi\circ\psi^{-1},$ $h(y)=x.$ 那么由积分变量代换公式,
-以及$g=f\det(Dh),$ 结合坐标系都是与定向$\Omega$相符的, 即有等式成立.</p>
-<p>设有两种单位分解$\{f_i\},\{g_j\},$
-那么$\{f_ig_j=g_jf_i\}$也是一个单位分解. 因此</p>
+\widehat{D^\alpha f}(\xi)=\xi^\alpha \widehat{f}(\xi),\quad D^\alpha=\frac{1}{i^{|\alpha|} }\partial^\alpha,</script><script type="math/tex; mode=display">
+\widehat{fg}=(2\pi)^{-n}\widehat{f}\ast \widehat{g}.</script><p>我们有经典的命题: $F:\mathscr{S}\cong \mathscr{S}$为连续同构.
+这直接诱导了$F:\mathscr{S}’\cong \mathscr{S}’,$
+$\left&lt;{}F[T],\varphi\right&gt;:=\left&lt;{}T,F[\varphi]\right&gt;.$
+这是由Fubini定理保证的. 我们还有Plancherel公式:</p>
 <script type="math/tex; mode=display">
-\sum_j\int_M g_j\omega=\sum_{i,j}\int_M f_ig_j\omega=\sum_i\int_M f_i\omega.</script><h3 id="其它性质"><a href="#其它性质" class="headerlink" title="其它性质"></a>其它性质</h3><p>容易看出, $\int_{(M,\Omega)}\omega=-\int_{(M,-\Omega)}\omega.$</p>
-<p>定义$\mathcal{K}$为全体具紧支集连续的$m$次形式, 构成向量空间,
-且$\int_M:\mathcal{K}\rightarrow \mathbb{R}$为线性泛函.</p>
-<p>设$\varphi:N^k\rightarrow M$为$k$维子流形.
-若$\varphi^\ast \omega$在$N$中具紧支集, 则</p>
+\int_{\mathbb{R}^n}\widehat{f}\overline{\widehat{g} }\bar{d}\xi=\int_{\mathbb{R}^n} f \overline{g}dx,\quad \bar{d}\xi=(2\pi)^{-n}d\xi.</script><p>取$g=f,$ 即得到了连续情形的Parseval恒等式.</p>
+<h2 id="Sobolev空间"><a href="#Sobolev空间" class="headerlink" title="Sobolev空间"></a>Sobolev空间</h2><h3 id="Sobolev不等式"><a href="#Sobolev不等式" class="headerlink" title="Sobolev不等式"></a>Sobolev不等式</h3><script type="math/tex; mode=display">
+\Vert u\Vert_{L^q}\le C|u|_{\dot{H}^{m,p} },\quad \frac{n}{q}=\frac{n}{p}-m;</script><script type="math/tex; mode=display">
+|u|_{C^\alpha}\le C|u|_{\dot{H}^{m,p} },\quad -\alpha=\frac{n}{p}-m,\,\alpha\in (0,1);</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{m,p} },\quad 0>\frac{n}{p}-m;</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{s} },\quad 0>\frac{n}{2}-s;</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^q}\le C\Vert u\Vert_{H^{m,p} },\quad \frac{n}{p}-m=0,\, q\ge p.</script><p>关于最后一个不等式, 左侧量纲为$\frac{n}{q},$
+右侧量纲为$[\frac{n}{p}-m,\frac{n}{p}]=[0,m].$ 为了使不等式成立,
+左侧量纲一定要落在该区间中.
+从而$\frac{n}{q}\le \frac{n}{p}=m\,\Rightarrow\,q\ge p$的条件是必要的.</p>
+<p>我们还有Poincaré不等式:</p>
 <script type="math/tex; mode=display">
-\int_N \varphi^\ast \omega:=\int_{\varphi(N)} \omega.</script><h2 id="Stokes公式"><a href="#Stokes公式" class="headerlink" title="Stokes公式"></a>Stokes公式</h2><p>回忆$\mathbb{R}^m$上的多元微积分, 我们可将微积分基本定理, Green公式,
-Gauss公式, Stokes公式统一为:</p>
+\Vert u\Vert_{L^p}\le d\Vert\nabla u\Vert_{L^p}=d|u|_{\dot{H}^{1,p} },\quad \,\forall\,u\in H_0^{1,p}(\Omega).</script><h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p><strong>等价模定理</strong>: 由<strong>Lions延拓</strong>,
+$H^{m,p}(\Omega)$中的函数总可以延拓为$H^{m,p}(\mathbb{R}^n)$中的函数.
+定义</p>
 <script type="math/tex; mode=display">
-\int_D d\omega=\int_{\partial D}\omega,\quad D\subset \mathbb{R}^m.</script><p>设$M^m$为$m$维$C^\infty$流形. 如果$M$中子集$D$由下面两类点构成:</p>
-<ol>
-<li><p>内点: $p\in D,$ $\,\exists\,V\ni p$为开邻域, $V\subset D.$</p>
-</li>
-<li><p>边界点: $p\in D,$ $\,\exists\,(U,\varphi;x^i)$使得$\varphi(p)=0,$
-$\varphi(U\cap D)=\{q\in D|x^m(q)\ge 0\}.$
-称这样的坐标系为<strong>适应坐标系</strong>.</p>
-</li>
-</ol>
-<p>则称$D$为$M$中<strong>带边区域</strong>. 用$\partial D$表示边界全体.</p>
-<p>易见内点全体$D^\circ$为$M$中开子集,
-$U\cap \partial D=\{x^m(q)=0\}$为$(m-1)$维切片.
-从而$\partial D$为$M$中正则超曲面.</p>
-<p>全体适应坐标系构成了$\partial D$的一个覆盖,
-构成了$\partial D$的坐标图册. 它确定了$\partial D$的$C^\infty$结构.
-现$M$是定向流形, 则可要求$\partial D$的每个适应坐标系与定向$\Omega$相符.</p>
-<p>在每个$(U_\alpha\cap \partial D;x_{\alpha}^1,\cdots,x_{\alpha}^{m-1})$上,
-局部定义$(-1)^m{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}.$
-下面证明它与$(-1)^m{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m-1}$定向相符,
-因此$\partial D$上有一诱导定向.</p>
-<p><strong>定理 1</strong>. <em>设$D$是$C^\infty$-流形$M$中带边区域, 如果$(M,\Omega)$是可定向的, 则$\partial D$也是可定向的.</em> </p>
-<p><strong>证:</strong> 取$(U,\varphi;x^i),(V,\psi;y^j)$为$\partial D$的适应坐标系,
-与定向$\Omega$相符,
-需考虑$\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}$的符号.
-已知$\det D(\psi\circ \varphi^{-1})&gt;0.$
-由于$\frac{\partial {}y^m}{\partial {}x^{i} }=0,$ $\,\forall\,i\neq m;$
-$\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
-立即推得$\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}&gt;0.$
-因此$\partial D$是可定向的.</p>
-<p>特别地,
-我们选取$(-1)^m {}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}$与$\partial D$定向相符,
-使Stokes公式成立.</p>
-<p><strong>定理 2</strong> (Stokes公式). <em>设$(M^m,\Omega)$是定向$C^\infty$流形, $D$是$M$中带边区域, 从$M$中自然诱导定向. $\omega$是$M$一个具紧支集$C^1$的$(m-1)$次外微分形式, 则$\int_D d\omega=\int_{\partial D}\omega.$ 如果$\partial D=\varnothing,$ 则右端为零.</em> </p>
-<p>文章最后更新于 2021-12-22 18:57:10 </p>
+\Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_\Omega =f}\Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)},</script><p>则凭借由Lions延拓得到的$\widetilde{f},$ 我们有:</p>
+<script type="math/tex; mode=display">
+\Vert f\Vert_{H^{m,p}(\Omega)}\le \Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}\le \Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)}\le C\Vert f\Vert_{H^{m,p}(\Omega)},</script><p><strong>紧嵌入定理</strong>: 当Sobolev不等式中条件严格时,
+即$\frac{n}{q}&gt;\frac{n}{p}-m,$
+此时$H^{m,p}(\Omega)\hookrightarrow L^{q}(\Omega)$的嵌入是紧的,
+即将有界集映成列紧集.</p>
+<p><strong>迹定理</strong>:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{H^{s-\frac{1}{2} }(\partial\Omega)}\le C\Vert u\Vert_{H^s(\Omega)},\quad s>\frac{1}{2}</script><p>一个最常应用的简单推论是:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{L^2(\partial \Omega)}\le C\Vert u\Vert_{H^1(\Omega)}.</script><p>关于对偶空间: 需要注意的是, $H^{-1}(\Omega):=(H_0^1(\Omega))^\ast ,$
+并不是$H^1(\Omega)$的对偶空间. 仅当$\Omega=\mathbb{R}^n$时,
+$H_0^1(\mathbb{R}^n)=H^1(\mathbb{R}^n).$ 同时, 由Riesz表示定理,
+$H^{-1}(\Omega)\cong H_0^1(\Omega),$ 当并不相等.
+因为前者视为$\mathscr{D}’(\Omega)$的子空间, 以$L^2(\Omega)$为子空间,
+泛函取为做$L^2$内积; 而后者以$H^1$内积为泛函, 这导致对偶空间出现了不同,
+但总归是同构对应的.</p>
+<h2 id="PDE"><a href="#PDE" class="headerlink" title="PDE"></a>PDE</h2><h3 id="基本定义-1"><a href="#基本定义-1" class="headerlink" title="基本定义"></a>基本定义</h3><p>二阶椭圆方程: </p>
+<script type="math/tex; mode=display">
+Lu=\sum \partial_i(a_{ij}u_j)+\sum b_i u_i+cu.</script><p>二阶双曲方程:</p>
+<script type="math/tex; mode=display">
+Mu=u_{tt}-\sum \partial_i (a_{ij}u_j)-\sum b_{0j}u_{ti}+\sum b_iu_i+b_0 u_t+cu.</script><p>可记为$Mu=u_{tt}-M_1u_t+M_2u.$</p>
+<p>二阶抛物方程: </p>
+<script type="math/tex; mode=display">
+Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.</script><p>可记为$Nu=u_t-N_1u.$</p>
+<p>系数$a_{ij}$对称且满足椭圆性条件:
+$\sum a_{ij}\xi_i\xi_j\ge \alpha|\xi|^2.$ 当涉及时间项时, 条件是一致的.</p>
+<h3 id="能量方法"><a href="#能量方法" class="headerlink" title="能量方法"></a>能量方法</h3><p>对椭圆型方程, $\left&lt;{}u,Lu\right&gt;$给出Garding不等式;</p>
+<p>双曲型方程的$\left&lt;{}u_t,Mu\right&gt;,$
+抛物型方程的$\left&lt;{}u,Nu\right&gt;$给出能量估计.</p>
+<h3 id="Galerkin方法"><a href="#Galerkin方法" class="headerlink" title="Galerkin方法"></a>Galerkin方法</h3><p>取基本空间的一组基$\{\varphi_i\},$ 考虑$u_m=\sum a_i\varphi_i,$ 解</p>
+<script type="math/tex; mode=display">
+\left<{}Lu_m-f,\varphi_i\right>=0,\quad i=1,\cdots,m.</script><p>这化为了线性方程组$Ax=b$的形式, 求解系数即可.
+这里可解性由Garding不等式保证. $\frac{A+A^T}{2}$正定时, $A$可逆.
+而式中二次型可写为$x^T\frac{A+A^T}{2}x=\left&lt;{}-Lu,u\right&gt;$的形式,
+当$C_2\le 0$时, 即推知正定性.</p>
+<p>对涉及时间项的Galerkin方法, 需考虑$u_m=\sum a_i(t)\varphi_i.$ 此时</p>
+<script type="math/tex; mode=display">
+\left<{}Mu_m,\varphi_i\right>=\left<{}f,\varphi_i\right>,\quad i=1,\cdots,m</script><p>为$m$个ODE, 总是可解的. 具体地,</p>
+<script type="math/tex; mode=display">
+\sum \left<{}\varphi_j,\varphi_i\right>a_j''-\left<{}M_1\varphi_j,\varphi_i\right>a_j'+\left<{}M_2\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><p>类似地, 对抛物型方程, 问题为:</p>
+<script type="math/tex; mode=display">
+\left<{}Nu_m,\varphi_i\right>=\sum \left<{}\varphi_j,\varphi_i\right>a_j'-\left<{}N_1\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><h3 id="算子半群"><a href="#算子半群" class="headerlink" title="算子半群"></a>算子半群</h3><p>考虑问题$u_t=N_1u,$ 形式上, $e^{N_1t}u_0$给出了问题解. 具体的,
+考虑$N_\lambda:=\lambda N_1(\lambda-N_1)^{-1},$
+定义$e^{N_1t}:=\lim\limits_{\lambda\rightarrow+\infty}e^{N_\lambda t}$来将表示严格化.</p>
+<p>文章最后更新于 2021-12-26 16:23:44 </p>
 
         </div>
 
@@ -294,11 +309,11 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第七章-流形上的积分</li>
+        <li>本文标题：《现代PDE基础》笔记(10)-复习</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-22 18:49:33</li>
+        <li>创建时间：2021-12-26 16:23:42</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/22/《微分流形》第七章-流形上的积分/
+            本文链接：https://dream0ar.github.io/2021/12/26/《现代PDE基础》笔记(10)-复习/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -312,29 +327,14 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/26/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E5%A4%8D%E4%B9%A0/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(10)-复习</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/21/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91/"
+                           href="/2021/12/22/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%83%E7%AB%A0-%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E7%A7%AF%E5%88%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第七章-流形的定向</span>
+                                <span class="post-nav-title-item">《微分流形》第七章-流形上的积分</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -540,7 +540,7 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E7%9A%84%E7%A7%AF%E5%88%86"><span class="nav-text">外微分形式的积分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%89%AF%E5%AE%9A%E6%80%A7"><span class="nav-text">良定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E6%80%A7%E8%B4%A8"><span class="nav-text">其它性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stokes%E5%85%AC%E5%BC%8F"><span class="nav-text">Stokes公式</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-text">广义函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">基本定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A3%A8%E5%85%89"><span class="nav-text">磨光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B1%82%E5%AF%BC"><span class="nav-text">求导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fourier%E5%8F%98%E6%8D%A2"><span class="nav-text">Fourier变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sobolev%E7%A9%BA%E9%97%B4"><span class="nav-text">Sobolev空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sobolev%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-text">Sobolev不等式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E7%90%86"><span class="nav-text">定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PDE"><span class="nav-text">PDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89-1"><span class="nav-text">基本定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%BD%E9%87%8F%E6%96%B9%E6%B3%95"><span class="nav-text">能量方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Galerkin%E6%96%B9%E6%B3%95"><span class="nav-text">Galerkin方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E5%AD%90%E5%8D%8A%E7%BE%A4"><span class="nav-text">算子半群</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
