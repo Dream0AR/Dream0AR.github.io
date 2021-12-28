@@ -9,7 +9,7 @@
     
     <title>
         
-            《现代PDE基础》笔记(2)-广义函数运算 |
+            《微分流形》练习 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《现代PDE基础》笔记(2)-广义函数运算</span>
+            <span class="title-hover-animation">《微分流形》练习</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-17 21:50:09
+        <i class="fas fa-edit"></i>&nbsp;2021-12-28 19:33:04
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,100 +206,133 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><p>对某基本函数空间的广义函数列$\{T_k\},$
-若对其基本函数空间上的任意元素$\varphi,$
-有$\left&lt;{}T_k,\varphi\right&gt;\rightarrow 0,$ 则称$T_k$(弱)收敛于$0.$
-若$T_k-T$收敛于$0,$ 则称$T_k$的极限是$T,$ 记为$T_k\rightarrow T.$</p>
-<p>对常义函数, 我们可以做正则化$J_\varepsilon.$ 下面我们说明,
-对广义函数也有类似的正则化.</p>
-<p><strong>定理 1.1</strong>. <em>若$T\in \mathscr{D}’(\mathbb{R}_y^n),$ $T_\varepsilon(x):=\left&lt;{}T_y,\alpha_\varepsilon(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n),$ $\alpha_\varepsilon$如上节所示.</em> </p>
-<p><strong>证:</strong> 不难说明$x\rightarrow x_0$时,
-$\alpha_\varepsilon(x-y)\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \alpha_\varepsilon(x_0-y)$(等度连续),
-因此$\left&lt;{}T,\alpha_\varepsilon(x-y)\right&gt;\rightarrow\left&lt;{}T,\alpha_\varepsilon(x_0-y)\right&gt;,$
-$T_\varepsilon(x)$为连续函数. 类似地,
-$\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \partial_k \alpha_\varepsilon(x,y),$
-从而有</p>
-<script type="math/tex; mode=display">\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left<{}T,\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\right>\rightarrow\left<{}T,\partial_k \alpha_\varepsilon(x,y)\right>,</script><p>因此$T_\varepsilon(x)$关于$x_k$可导. 同理可证它有任意阶导数,
-因此是光滑函数.</p>
-<p>当$T$为常义函数时, 泛函即为积分,
-因此对广义函数的正则化是对常义函数正则化的推广.
-当然有了下面的定理才让正则化有意义:</p>
-<p><strong>定理 1.2</strong>. <em>$T\in \mathscr{D}’(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{D}’} T.$</em> </p>
+            <h2 id="考试题"><a href="#考试题" class="headerlink" title="考试题"></a>考试题</h2><p><strong>习题 1</strong>. <em>叙述$C^\infty$-微分流形的定义. 设若$M$和$N$分别是$m$维和$n$维的$C^\infty$-微分流形, 证明$M\times N$是$m+n$维$C^\infty$-微分流形.</em> </p>
+<p><strong>证:</strong> 称$M$为拓扑流形, 若$M$为一个拓扑空间, 满足$C_2$与$T_2$条件,
+即有可数拓扑基, 且$\,\forall\,p,q\in M,$
+$\,\exists\,U,V$分别为$p,q$的开邻域, 满足$U\cap V=\varnothing.$ 另外,
+还需是局部欧氏的, 即$\,\forall\,p\in M,$ $\,\exists\,U$为$p$的开邻域,
+$\varphi:U\approx \varphi(U)\subset \mathbb{R}^m$为同胚.
+这样的拓扑空间称为$m$维拓扑流形.</p>
+<p>给定$M$的开覆盖$\{U_\alpha\},$ 以及同胚到欧氏空间的$\{\varphi_\alpha\}.$
+称$\{(U_\alpha,\varphi_\alpha)\}$为$M$的坐标图册.
+若其满足$\,\forall\,U_\alpha\cap U_\beta\neq \varnothing,$
+$\varphi_\alpha\circ\varphi_{\beta}^{-1}:\varphi_{\beta}(U_\alpha\cap U_\beta)\rightarrow \varphi_{\alpha}(U_\alpha\cap U_\beta)$为$C^\infty$微分同胚,
+即作为同胚的同时, 映射与逆映射都是$C^\infty$的,
+则称$\{(U_\alpha,\varphi_\alpha)\}$为$C^\infty$坐标图册,
+赋予了$M$一个微分结构.
+具$C^\infty$微分结构的拓扑流形称为$C^\infty$微分流形.</p>
+<p>设$\{U_\alpha\},\{V_\beta\}$分别是$M,N$的拓扑基,
+则$\{U_\alpha\times V_\beta\}$为$M\times N$的拓扑基.
+$M\times N$取积拓扑. 同时, 对$(p_1,q_1)\neq (p_2,q_2),$
+不妨设$p_1\neq p_2,$ 取$p_1,p_2,q_1,q_2$的开邻域$U_1,U_2,V_1,V_2,$
+能保证$U_1\cap U_2=\varnothing.$
+那么此时$U_1\times V_1\cap U_2\times V_2=\varnothing,$
+为$(p_1,q_1),(p_2,q_2)$的无交开邻域.</p>
+<p>若$\{(U_\alpha,\varphi_\alpha)\},\{(V_\beta,\psi_\beta)\}$为$M,N$的$C^\infty$-坐标图册,
+下证$\{(U_\alpha\times V_\beta,\varphi_\alpha\times \psi_\beta)\}$为$M\times N$的$C^\infty$-坐标图册.
+显然$\varphi_\alpha\times \psi_\beta:U_\alpha\times V_\beta\approx \varphi_\alpha(U_\alpha)\times \psi_\beta(V_\beta)\subset \mathbb{R}^{m+n},$
+同时由$(f\times g)’=f’\times g’,$ 转移函数也都是$C^\infty$微分同胚,
+确实是$C^\infty$-坐标图册. 因此$M\times N$是$m+n$维$C^\infty$-微分流形.</p>
+<p><strong>习题 2</strong>. <em>设若$M$和$N$分别是$m$维和$n$维的$C^\infty$-微分流形, $F:M\rightarrow N$是$C^\infty$-微分流形之间的光滑映照. 对于$p\in M$以及$q = F(p) \in N$, $F$自然地确定了一个余切空间的拉回映照$F^\ast _q:T^\ast _qN\rightarrow T^\ast _pM.$ 如果$p$处有局部坐标$(U, u^i),$ $q$处有局部坐标$(V,v^\alpha),$ 它们分别给出了$T^\ast _pM$和$T^\ast _qN$的自然基$\{(du^i)_p\}$和$\{(dv^\alpha)_q\}.$ 请写出$F^\ast _q$在该基下的矩阵表示, 并证明, 当$F$是微分同胚时, 上述$F^\ast _q$还 是线性同构.</em> </p>
+<p><strong>证:</strong> 设$F^\ast _q(d v^\alpha)=a^\alpha_i du^i,$
+作用到$X_i=\frac{\partial {} }{\partial {}u^i}$上,
+得到$a_i^\alpha=X_i(v^\alpha\circ F).$
+记$\widehat{F}=\psi\circ F\circ \varphi^{-1}$为局部表示,
+则矩阵为$J(\widehat{F})$的转置,
+$F_q^\ast (b_\alpha dv^\alpha)=b_\alpha a_i^\alpha du^i.$ 当$F$为微分同胚时,
+记$\widehat{F}$为微分同胚, 此时$\det J(\widehat{F})\neq 0,$
+因此$F_q^\ast $的矩阵表示是满秩的, 从而是线性同构.</p>
+<p><strong>习题 3</strong>. <em>设映照$f : \mathbb{R}^2\rightarrow \mathbb{R}^2$的具体形式是$y_1 = x_1e^{x_2} + x_2,$ $y_2 = x_1e^{x_2}-x_2.$ 试写出$f$在欧式空间自然基底下, 诱导出切空间之间映照$f_\ast $的矩阵表示, 并证明$f$是个光滑同胚.</em> </p>
 <p><strong>证:</strong>
-即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
-$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$
-由于$\varphi$具紧支集, 可以用Riemann积分的方式来逼近式中的积分.
-然而将积分写成求和形式后,
-$\alpha_\varepsilon(x-y)$可以与$\varphi(x)$先行结合, 即</p>
-<script type="math/tex; mode=display">\sum_i\alpha_\varepsilon(x_i-y)\varphi(x_i)\Delta x_i\xrightarrow{\mathscr{E} }\int_{\mathbb{R}_x^n}\alpha_\varepsilon(x-y)\varphi(x)dx,</script><p>从而$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\left&lt;{}T,\varphi_\varepsilon\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;,$
-命题得证.</p>
-<p><strong>定理 1.3</strong>. <em>$T\in \mathscr{E}’(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{E}’} T.$</em> </p>
-<p><strong>证:</strong>
-即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
-$\,\forall\,\varphi\in \mathscr{E}(\mathbb{R}^n).$ 由于$T$具紧支集,
-不难证明$T_\varepsilon$也具紧支集, 且充分靠近$\operatorname{supp}T.$
-取紧支撑的$\zeta$在$\operatorname{supp}T$某邻域上恒为$1,$ 由前面的定理,
-$\left&lt;{}T_\varepsilon,\zeta\varphi\right&gt;\rightarrow \left&lt;{}T,\zeta\varphi\right&gt;.$
-由于在$\operatorname{supp}T$邻域上$\zeta\varphi=\varphi,$
-且对充分小的$\varepsilon,$ 该邻域包含了$T,T_\varepsilon$的支集, 因此</p>
-<script type="math/tex; mode=display">\left<{}T_\varepsilon,\zeta\varphi\right>=\left<{}T_\varepsilon,\varphi\right>\rightarrow \left<{}T,\varphi\right>=\left<{}T,\zeta\varphi\right>,</script><p>命题得证.</p>
-<h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><p>设$T\in\mathscr{D}’(\mathbb{R}^n),$
-定义$T$关于$x_k$的<strong>(广义)导数</strong>$\frac{\partial {}T}{\partial {}x_k}\in \mathscr{D}’(\mathbb{R}^n),$
-满足</p>
-<script type="math/tex; mode=display">\left<{}\frac{\partial {}T}{\partial {}x_k},\varphi\right>=-\left<{}T,\frac{\partial {}\varphi}{\partial {}x_k}\right>.</script><p>由分部积分公式, 当$T$为$C^1$函数时, 广义导数即为一般意义下的导数.
-因此广义导数的概念是通常导数概念的推广. 特别地, 对于某些常义函数,
-它无法按照通常概念求导. 但将其视为广义函数,
-就可以得到广义函数空间中的广义导数, 这往往是十分有用的.</p>
-<p>类似地定义高阶导数</p>
-<script type="math/tex; mode=display">\left<{}\partial^\alpha T,\varphi\right>=(-1)^{|\alpha|}\left<{}T,\partial^\alpha \varphi\right>.</script><p>可见广义函数任意阶导数存在, 且混合偏导与顺序无关.</p>
-<p>一个有意思的例子是, 若$\operatorname{supp}T=\{0\},$
-则$T$只能是$\delta$及其导数的有限线性组合.
-证明通过对$\varphi$进行Taylor展开给出即可.</p>
-<h2 id="乘子"><a href="#乘子" class="headerlink" title="乘子"></a>乘子</h2><p>对$T\in \mathscr{D}’(\mathbb{R}^n),$ $\alpha\in C^\infty(\mathbb{R}^n),$
-定义$\alpha T\in \mathscr{D}’(\mathbb{R}^n)$为</p>
-<script type="math/tex; mode=display">\left<{}\alpha T,\varphi\right>=\left<{}T,\alpha\varphi\right>.</script><p>称$\alpha$为$\mathscr{D}’(\mathbb{R}^n)$的<strong>乘子</strong>.
-类似地它也是$\mathscr{E}’(\mathbb{R}^n)$的乘子,
-但一般不见得是$\mathscr{S}(\mathbb{R}^n)$的乘子.</p>
-<p>类似于常义函数, 我们有Leibniz公式:</p>
-<script type="math/tex; mode=display">\partial^r(\alpha T)=\sum_{p+q=r} \frac{r!}{p!q!}(\partial^p \alpha \cdot \partial^q T).</script><h2 id="自变量变换"><a href="#自变量变换" class="headerlink" title="自变量变换"></a>自变量变换</h2><p>仿照$C_c^\infty$函数的自变量变换, 对$T\in \mathscr{D}’(\Omega_x),$
-给光滑同胚$\psi:\Omega_x\rightarrow \Omega_y,$
-定义$S\in \mathscr{D}’(O_y):$</p>
-<script type="math/tex; mode=display">\left<{}S,\varphi\right>=\left<{}T,\det|\psi'|\varphi\circ\psi\right>.</script><p>当$T$为常义函数时, $S(y)=T(\psi^{-1}(y)).$ 该定义自然也是通常定义的推广.</p>
-<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>对$f,g\in C_c^\infty(\mathbb{R}^n),$ 考虑$f\ast g$在$\varphi$上的作用,
-类比地定义广义积分间的卷积. 设$S,T$为广义函数, 定义<strong>卷积</strong>$S\ast T:$</p>
-<script type="math/tex; mode=display">\left<{}S\ast T,\varphi\right>=\left<{}S_x,\left<{}T_y,\varphi(x+y)\right>\right>,</script><p>$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$ 和常义函数一样,
-广义函数的卷积也不总是有意义的.
-当$S,T\in \mathscr{D}’(\mathbb{R}^n)$中至少一者在$\mathscr{E}’(\mathbb{R}^n)$中时,
-卷积有意义, $S\ast T\in \mathscr{D}’(\mathbb{R}^n).$</p>
-<p>证明过程分为两部分, 首先只有当$T\in \mathscr{D}’/\mathscr{E}’$时,
-$\psi:=\left&lt;{}T_y,\varphi(x+y)\right&gt;\in \mathscr{E}/\mathscr{D},$
-才能使定义有意义; 其次当$\varphi_\nu\xrightarrow{\mathscr{D} } 0$时,
-有$\psi_\nu\xrightarrow{\mathscr{E}/\mathscr{D} }0,$
-因此线性泛函是连续的. 证明方法与先前类似, 在此略过.</p>
-<p>可以证明,
-对$R,S,T\in \mathscr{D}’(\mathbb{R}^n)$且其中至少两个具紧支集时,
-广义函数的卷积(同常义卷积一样)满足如下性质:</p>
-<ol>
-<li><p>$\operatorname{supp}(S\ast T)\subset \operatorname{supp}(S)+\operatorname{supp}(T);$</p>
-</li>
-<li><p>$(R\ast S)\ast T=R\ast (S\ast T);$</p>
-</li>
-<li><p>$S\ast T=T\ast S;$</p>
-</li>
-<li><p>$\delta\ast T=T\ast \delta=T;$</p>
-</li>
-<li><p>$\alpha_1+\alpha_2=\alpha$时,
-$\partial^\alpha(S\ast T)=(\partial^{\alpha_1})\ast (\partial^{\alpha_2});$</p>
-</li>
-<li><p>$T\in \mathscr{D}’/\mathscr{E}’,$
-$\varphi\in \mathscr{D}/\mathscr{E}$时,
-$T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n).$</p>
-</li>
-</ol>
-<p>前四个性质说明$\mathscr{E}’(\mathbb{R}^n)$关于通常的线性运算与卷积运算构成有单位元$\delta$的交换代数,
-称为<strong>卷积代数</strong>. 对函数的正则化有$f_\varepsilon=f\ast \alpha_\varepsilon,$
-类似地对广义函数的正则化也有$T_\varepsilon=T\ast \alpha_\varepsilon.$</p>
-<p>文章最后更新于 2021-10-18 15:02:37 </p>
+回忆$f_\ast (\frac{\partial {} }{\partial {}x_i})=a_i^j \frac{\partial {} }{\partial {}y_j},$
+作用$dy^j,$ 得到$a_i^j=\frac{\partial {}y^j\circ f}{\partial {}x_i}.$
+因此$f^\ast (b^i\frac{\partial {} }{\partial {}x_i})=b^ia_i^j \frac{\partial {} }{\partial {}y_j},$
+矩阵表示$a_i^j$为局部表示$\widehat{f}=\mathrm{id}\circ f\circ \mathrm{id}^{-1}=f$的Jacobi矩阵.</p>
+<p>计算得到, $J(f)=\begin{bmatrix}
+ e^{x_2} &amp; x_1e^{x_2}+1\\
+ e^{x_2} &amp; x_1e^{x_2}-1
+ \end{bmatrix}.$ 此即为$f_*$的矩阵表示. 易见$f\in C^\infty,$
+且$\det J(f)=-2e^{x_2}\neq 0,$ 因此$f$处处为局部微分同胚, 且为单射.</p>
+<p>注意到$\frac{y_1-y_2}{2}=x_2,$
+$y_1=x_1e^{\frac{y_1-y_2}{2} }+\frac{y_1-y_2}{2},$
+$x_1=\frac{y_1+y_2}{2}e^{\frac{y_2-y_1}{2} }.$
+这就给出了$f^{-1}$的具体形式, 易见它没有定义域的限制,
+且也是$C^\infty$的, 因此$f$为满射, 且是光滑同胚,
+即作为同胚的同时映射与逆映射都是光滑的.</p>
+<p><strong>习题 4</strong>. <em>设$M$是$C^\infty$-微分流形, $f, g \in C^\infty(M),$ $X, Y \in X (M),$ $[-, -]$是Lie括号. 请展开$[fX, gY].$</em> </p>
+<p><strong>证:</strong> </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ [fX,gY]&=fX(gY)-gY(fX)\\
+ &=fX(g)Y+fgXY-gY(f)X-fgYX\\
+ &=fX(g)Y-gY(f)X+fg[X,Y] 
+ \end{aligned}</script><p>这里$X(g)(p)=X_p(g),$ $[X,Y]_p(h)=X_p(Y_q(h))-Y_p(X_q(h)),$
+其中$X_q(h)$为关于$q$的$C^\infty$函数.</p>
+<p><strong>习题 5</strong>. <em>设$M$是$C^\infty$-微分流形, $X, Y \in \mathfrak{X}(M),$ $\omega \in \Lambda^1(M),$ $[-, -]$是Lie括号. 证明公式:</em> </p>
+<script type="math/tex; mode=display">
+d\omega (X, Y ) = X\omega (Y ) - Y \omega(X) - \omega([X, Y ])</script><p><strong>证:</strong> 由于公式具线性性, 只需验证$\omega=fdg$的情形.
+$d\omega=df\wedge dg.$ 此时</p>
+<script type="math/tex; mode=display">
+d\omega(X,Y)=df\wedge dg(X,Y)=df(X)dg(Y)-df(Y)dg(X)=X(f)Y(g)-Y(f)X(g).</script><script type="math/tex; mode=display">
+X\omega(Y)=X(fY(g))=X(f)Y(g)+fXY(g)</script><script type="math/tex; mode=display">
+Y\omega(X)=Y(fX(g))=Y(f)X(g)+fYX(g)</script><script type="math/tex; mode=display">
+\omega([X,Y])=f[X,Y] (g)=fXY(g)-fYX(g)</script><p>因此,
+$X\omega(Y)-Y\omega(X)-\omega([X,Y])=X(f)Y(g)-Y(f)X(g)=d\omega(X,Y).$</p>
+<p><strong>习题 6</strong>. <em>设$M$是$m$维$C^\infty$-紧致无边微分流形, $f : M \rightarrow \mathbb{R}^m$是光滑映照. 试证明存在$p\in M,$ 使得$f$在$p$处的秩小于$m.$</em> </p>
+<p><strong>证:</strong> 不然, $f$处处秩等于$m$(显然不可能大于$m$). 由反函数定理,
+$f$处处为局部微分同胚. 即$\,\forall\,p\in M,$
+$\,\exists\,U$为$p$的开邻域, $f:U\approx f(U),$
+且可以要求$f(U)$也是开集. 由秩定理,
+事实上可以要求$U,f(U)$在适当坐标系下都是开方盒. 由$M$紧,
+$\,\exists\,\{U_i\}_{i=1}^m,$ $f:U_i\approx f(U_i),$
+$\bigcup_{i=1}^m U_i=M.$</p>
+<p>设$M$为连通流形, 不然在每个连通分支上讨论即可. 连通分支既开又闭,
+同时紧空间中闭集仍是紧集. 注意到我们有</p>
+<script type="math/tex; mode=display">
+\bigcup^m_{i=1} f(U_i)= f(\bigcup^m_{i=1}U_i)=f(M),</script><p> 这产生了矛盾.
+因为紧集连续像是紧的, $f(M)$为紧集, 从而是有界闭集.
+但$f(M)=\bigcup_{i=1}^m f(U_i)$又是开集,
+因此它只能是全空间$\mathbb{R}^m,$ 而这又会与紧性矛盾.
+从而$f$在某点秩小于$m.$</p>
+<p>题设中无边性用在了反函数定理中. 当$p$为带边流形边上点时,
+不再有类似的反函数定理. 即使找到了邻域$U$上的局部微分同胚,
+也无法说明像集在全空间中是开集, 从而无法进行类似的讨论.</p>
+<p><strong>习题 7</strong>. <em>设$M_1, M_2$是$C^\infty$-微分流形, $f : M_1 \rightarrow M_2$是局部微分同胚. 若$M_2$是可定向的, 证明$M_1$也是 可定向的.</em> </p>
+<p><strong>证:</strong> 由于$f$是局部微分同胚, 它的局部表示是微分同胚,
+从而$M_1,M_2$维数相同. 由$M_2$可定向,
+存在$\Omega\in \mathcal{A}^{m}(M_2)$为处处非零的外微分形式.
+断言$f^\ast \Omega\in \mathcal{A}^m(M_1)$也是处处非零的外微分形式,
+从而是可定向的.</p>
+<p>在局部坐标系中考虑. 设$f:U\approx V,$
+$\Omega=hdy^1\wedge\cdots \wedge dy^m\in \mathcal{A}^m(V),$ $h\neq 0,$
+则</p>
+<script type="math/tex; mode=display">
+f^\ast \Omega=f^\ast h\cdot f^\ast (dy^1\wedge\cdots\wedge dy^m)=h\circ f \cdot \det J(f) {}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(M_1).</script><p>由于$f$为局部微分同胚, $\det J(f)\neq 0,$ 同时$h\circ f\neq 0.$
+因此$f^\ast \Omega$确实是处处非零的外微分形式.</p>
+<p>另一种方法是, 取合适的加细, 使得$f:U_\alpha\approx V_\alpha,$
+且$\{(V_\alpha,\psi_\alpha)\}$构成$M_2$上的保定向光滑坐标图册.
+断言$\{(U_\alpha,\varphi_\alpha=\psi_\alpha\circ f)\}$构成$M_1$上的保定向光滑坐标图册.
+只需注意到</p>
+<script type="math/tex; mode=display">
+\varphi_\beta\circ\varphi_\alpha^{-1}=(\psi_\beta\circ f)\circ (f^{-1}\circ \psi_\alpha^{-1})=\psi_\beta\circ\psi_\alpha^{-1}.</script><p><strong>习题 8</strong>. <em>证明, 具有紧支集的形式的积分和单位分解的选取无关. 再叙述Stokes定理.</em> </p>
+<p><strong>证:</strong> 首先说明紧支集形式的积分和坐标系选取无关.
+若$\omega\in \mathcal{A}^m_c(U\cap V),$ 则</p>
+<script type="math/tex; mode=display">
+\int_U \omega=\int_{\varphi(U\cap V)}(\varphi^{-1})^\ast \omega=\int_{\psi(U\cap V)}(\psi^{-1})^\ast \omega=\int_V\omega,</script><p>中间的等号由$\mathbb{R}^m$间的积分变换公式得到,
+注意$U,V$的坐标选取需要与$M$定向相符,
+这样保证$\det J(\varphi\circ\psi^{-1})&gt; 0.$</p>
+<p>接下来, 对两组单位分解$\{f_i\},\{g_j\},$ $\{f_ig_j\}$也是一组单位分解.
+因此,</p>
+<script type="math/tex; mode=display">
+\sum_i \int_{U_i} f_i \omega=\sum_{i,j}\int_{U_i\cap V_j} f_ig_j \omega=\sum_{j}\int_{V_j} g_j\omega.</script><p>从而积分与单位分解选取无关.</p>
+<p>Stokes定理: 对定向$m$维光滑流形$M,$ 若$D$为其上(闭)带边区域,
+即$D$由内点$p\in U\approx \varphi(U)\subset \mathbb{R}^m$与边界点$p\in U,$
+$U\cap D\approx \varphi(U)\cap \mathbb{H}$组成.
+$D$<strong>从</strong>$M$<strong>上诱导定向</strong>,
+那么对于$M$上的$m-1$次的<strong>紧支撑</strong>$C^1$外微分形式$\omega$, 有</p>
+<script type="math/tex; mode=display">
+\int_D d\omega=\int_{\partial D}\omega.</script><p> 当$D$无边界点时, 右端消失.</p>
+<p>文章最后更新于 2021-12-28 19:33:06 </p>
 
         </div>
 
@@ -307,11 +340,11 @@ $T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n)
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《现代PDE基础》笔记(2)-广义函数运算</li>
+        <li>本文标题：《微分流形》练习</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-17 21:50:09</li>
+        <li>创建时间：2021-12-28 19:33:04</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/17/《现代PDE基础》笔记(2)-广义函数运算/
+            本文链接：https://dream0ar.github.io/2021/12/28/《微分流形》练习/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -325,29 +358,14 @@ $T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n)
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/10/18/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(3)-Fourier%E5%8F%98%E6%8D%A2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(3)-Fourier变换</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/10/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%88%87%E4%B8%9B(2)/"
+                           href="/2021/12/26/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E5%A4%8D%E4%B9%A0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第二章-切丛(2)</span>
+                                <span class="post-nav-title-item">《现代PDE基础》笔记(10)-复习</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -553,7 +571,7 @@ $T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n)
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90"><span class="nav-text">极限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0"><span class="nav-text">导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%98%E5%AD%90"><span class="nav-text">乘子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8F%98%E9%87%8F%E5%8F%98%E6%8D%A2"><span class="nav-text">自变量变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF"><span class="nav-text">卷积</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E9%A2%98"><span class="nav-text">考试题</span></a></li></ol>
     </div>
 </div>
         </aside>
