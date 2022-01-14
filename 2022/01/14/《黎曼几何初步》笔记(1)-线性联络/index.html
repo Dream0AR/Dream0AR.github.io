@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《黎曼几何初步》笔记(1)-线性联络 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《黎曼几何初步》笔记(1)-线性联络</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-01-14 12:21:56
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="线性联络"><a href="#线性联络" class="headerlink" title="线性联络"></a>线性联络</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>回忆$C^\infty$流形$M$上黎曼度量$g$指对每个$T_xM$指定一个向量内积$g_x(-,-),$
+也记为$\left&lt;{}-,-\right&gt;_x.$ 称它是$C^\infty$的,
+若任取坐标系$(x^1,\cdots,x^n),$
+$g_{ij}(x)=g_{x}(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j})$都是$C^\infty$函数,
+$1\le i,j\le n.$</p>
+<p>在$\mathbb{R}^n$中,
+对向量场$X=\sum_i X^i\frac{\partial {} }{\partial {}x^i},$
+沿$v$的方向导数$D_vX:=\sum_i D_vX^i\frac{\partial {} }{\partial {}x^i}.$
+若$V$是一个向量场, 那么可以定义新的向量场$D_VX(x)=D_{V(x)}X,$
+称为<strong>方向导数</strong>, 满足如下性质:</p>
+<ol>
+<li><p>$D_{fV+gW}X=fD_VX+gD_WX;$</p>
+</li>
+<li><p>$D_V(fX)=(D_Vf)X+fD_VX;$</p>
+</li>
+<li><p>$D_V(X+Y)=D_VX+D_VY.$</p>
+</li>
+</ol>
+<p><strong>定义 1</strong>. <em>在$C^\infty$流形$M$上, <strong>联络</strong>即对每一对$C^\infty$向量场$V,X,$ 指定新的$C^\infty$向量场$D_VX,$ 满足如上三条性质. $D_Vf$视为$Vf.$</em> </p>
+<p>$\mathbb{R}^n$中的方向导数为<strong>标准联络</strong>.
+<em>联络联系了</em>$M$<em>中各点的切空间</em>. 称$D_VX$为$X$沿$V$的<strong>协变导数</strong>,
+$D$有时称为协变微分.
+由于第一条性质说明$D_VX$对$V$是$C^\infty$函数环$\mathscr{F}(M)$上线性的,
+有时强调此时定义的联络为<strong>线性联络</strong>, 区别于仿射联络, 射影联络.</p>
+<p>线性联络满足如下性质. 若$x\in M$有$V(x)=W(x),$ 那么$D_VX(x)=D_WX(x).$
+由此可定义$D_vX:=D_VX(x)\in T_xM,$ $V$为任意满足$V(x)=v$的向量场.
+但是对$X(x)=Y(x),$ $D_VX(x)$并不见得等于$D_VY(x).$ 不过若$V(x)=v,$
+在从$x$出发以$v$为切方向的一小段弧线$\gamma$上有$X|_{\gamma}=Y|_{\gamma},$
+那么可以证明$D_VX(x)=D_VY(x).$ 因此可以说$D_vX$由$X|_{\gamma}$决定.</p>
+<p>通过将标准联络拉回, 局部总是可以定义线性联络. 由单位分解,
+整体联络也是可以给出的, 因为流形上联络全体组成凸集. 由此可以看出,
+联络有很多. 我们希望找到有意思的联络.</p>
+<h3 id="Levi-Civita联络"><a href="#Levi-Civita联络" class="headerlink" title="Levi-Civita联络"></a>Levi-Civita联络</h3><p><strong>命题 2</strong>. <em>对$M$上给定的黎曼度量$g,$ 存在$M$上的唯一联络$D,$ 使得对任意向量场$X,Y,Z,$ 满足如下两条性质:</em> </p>
+<ol>
+<li><p>$X\left&lt;{}Y,Z\right&gt;=\left&lt;{}D_XY,Z\right&gt;+\left&lt;{}Y,D_XZ\right&gt;;$</p>
+</li>
+<li><p>$D_XY-D_YX=[X,Y]=XY-YX.$</p>
+</li>
+</ol>
+<p><em>这样的联络被称为度量$g$的<strong>Levi-Civita联络</strong>或度量$g$的<strong>黎曼联络</strong>.
+它与后面说明的”平行移动”的性质等价.</em></p>
+<p>第一条性质给出了对内积求导的方法, 而第二条性质满足与Lie括号定义匹配.</p>
+<p><strong>证:</strong> 首先证明唯一性. 由如下方式, 给出函数$\Gamma^k_{ij}\in C^\infty:$</p>
+<script type="math/tex; mode=display">
+D_{\frac{\partial {} }{\partial {}x^i} }\frac{\partial {} }{\partial {}x^j}=\sum_{k=1}^n \Gamma_{ij}^k \frac{\partial {} }{\partial {}x^k},\quad 1\le i,j\le n.</script><p>我们只需说明<strong>联络系数</strong>$\Gamma_{ij}^k$由度量$g$唯一确定.</p>
+<p>由性质(L1), 以后默认采用Einstein求和约定, 我们有</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}g_{jk} }{\partial {}x^i}=\frac{\partial {} }{\partial {}x^i}\left<{}\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k}\right>=
+ \left<{}\Gamma_{ij}^l\frac{\partial {} }{\partial {}x^l},\frac{\partial {} }{\partial {}x^k}\right>+\left<{}\frac{\partial {} }{\partial {}x^j},\Gamma_{ik}^l\frac{\partial {} }{\partial {}x^l}\right>=\Gamma_{ij}^l g_{lk}+\Gamma_{ik}^l g_{jl} \eqno(*)</script><p>由性质(L2),</p>
+<script type="math/tex; mode=display">
+(\Gamma_{ij}^k-\Gamma_{ji}^k)\frac{\partial {} }{\partial {}x^k}=\left[\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right]=0 \,\Rightarrow\, \Gamma_{ij}^k=\Gamma_{ji}^k.</script><p>轮换$(\ast )$式$i,j,k$, 得到</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}g_{jk} }{\partial {}x^i}+\frac{\partial {}g_{ik} }{\partial {}x^j}-\frac{\partial {}g_{ij} }{\partial {}x^k}=2\Gamma_{ij}^lg_{lk}\,\Rightarrow\, \Gamma_{ij}^k=\frac{g^{kl} }{2}\left(\frac{\partial {}g_{jl} }{\partial {}x^i}+\frac{\partial {}g_{il} }{\partial {}x^j}-\frac{\partial {}g_{ij} }{\partial {}x^l}\right).</script><p>其中$(g^{ij})$为$(g_{ij})$的逆阵, 即满足$g^{ik}g_{kj}=\delta^i_j,$
+$\,\forall\,i,j.$</p>
+<p>上式说明$\Gamma_{ij}^k$由度量$g$决定, 这说明了唯一性. 至于存在性,
+只需说明由$\Gamma_{ij}^k$反过来也可以给出一个联络.
+对向量场$X=f^i\frac{\partial {} }{\partial {}x_i},$
+$Y=h^i\frac{\partial {} }{\partial {}x_i},$ 由联络性质, 自然定义</p>
+<script type="math/tex; mode=display">
+D_XY=f^i\frac{\partial {}h^j}{\partial {}x_i}\frac{\partial {} }{\partial {}x_j}+f^ih^j \left(D_{\frac{\partial {} }{\partial {}x_i} }\frac{\partial {} }{\partial {}x_j}\right)=f^i\left(\frac{\partial {}h^j}{\partial {}x_j}+h^k \Gamma_{ik}^j\right)\frac{\partial {} }{\partial {}x_j}.</script><p>验证发现其与坐标系选取无关, 因此向量场良定. 由定义过程,
+它当然满足联络的性质, 从而$D$即为所求, 存在性得证.</p>
+<p>证明中用度量来表示联络系数的方式由 Christoffel 得到,
+因此将 Levi-Civita 联络的$\Gamma_{ij}^k$称为 Christoffel 记号.</p>
+<p>不借助坐标系, 也可通过Levi-Civita联络的性质得到如下表示:</p>
+<script type="math/tex; mode=display">
+\left<{}D_XY,Z\right>=\frac{1}{2}\left(X\left<{}Y,Z\right>+Y\left<{}Z,X\right>-Z\left<{}X,Y\right>+\left<{}Z,[X,Y]\right>+\left<{}Y,[Z,X]\right>-\left<{}X,[Y,Z]\right>\right).</script><p>这完全确定了Levi-Civita联络. 当$X,Y,Z$满足好的性质时, 如彼此正交,
+则上式的表述将大幅简化.</p>
+<h3 id="几何意义"><a href="#几何意义" class="headerlink" title="几何意义"></a>几何意义</h3><p>我们知道, 子流形$N$上可以继承外围空间$M$中原有的黎曼度量$g$,
+得到诱导度量$\overline{g}.$ 一个好的事实是, $\,\forall\,p\in N,$
+令$P:T_pM\rightarrow T_pN$为<strong>正交投影</strong>,
+则$\,\forall\,X,Y\in \mathfrak{X}(N)\subset \mathfrak{X}(M),$
+定义$\overline{D}_XY=P(D_XY),$
+则$\overline{D}$恰为$N$上度量$\overline{g}$的Levi-Civita联络.</p>
+<p>特别地, 当外围空间$M=\mathbb{R}^n$时, 其有自然的<strong>平坦度量</strong>$g,$
+自然基标准正交. 易验证一开始提到的方向导数就是它的Levi-Civita联络.
+因此上述事实表明了$N\subset \mathbb{R}^n$时Levi-Civita联络的几何意义:
+<em>它是外围空间中向量场方向导数的投影</em>.</p>
+<p>可以看出, 性质(L2)在没有给出黎曼度量的情况下也可以讨论.
+它等价于$\Gamma_{ij}^k=\Gamma_{ji}^k,$ $\,\forall\,1\le i,j,k\le n.$
+因此称满足(L2)的联络是<strong>对称</strong>的, 也称为<strong>无挠</strong>的.</p>
+<p>我们还需更直观的理解联络. 设$\gamma:[a,b]\rightarrow M$为一条嵌入曲线,
+像落在某坐标邻域中. 设$X$为$\gamma(t)$(邻域)上的向量场.
+我们关心何时有$D_{\dot\gamma(t)}X=0,$ $\,\forall\,t\in [a,b].$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ D_{\dot\gamma(t)}X&=D_{\dot\gamma(t)}\left(X^j\frac{\partial {} }{\partial {}x^j}\right)\\
+ &=\frac{d {}X^j}{d {}t}\frac{\partial {} }{\partial {}x_j}+\dot\gamma^iX^jD_{\frac{\partial {} }{\partial {}x_i} }\frac{\partial {} }{\partial {}x^j}\\
+ &=\left(\frac{d {}X^k}{d {}t}+\dot\gamma^iX^j\Gamma_{ij}^k\right)\frac{\partial {} }{\partial {}x^k}
+ \end{aligned}</script><p>因此$D_{\dot\gamma(t)}X=0$即要求$\,\forall\,k,$
+有$\frac{d {}X^k}{d {}t}+\dot\gamma^iX^j\Gamma_{ij}^k=0$成立.
+这是一个ODE方程组, $\,\forall\,v\in T_{\gamma(a)}M,$ 总存在$X_v(t),$
+满足$X_v(a)=v,$ $D_{\dot\gamma(t)}X_v=0.$</p>
+<p>称一个沿$\gamma$的向量场$X$是<strong>平行</strong>的, 若$D_{\dot\gamma}X=0.$
+给定$\gamma:[a,b]\rightarrow M,$
+称$w\in T_{\gamma(b)}M$由$v\in T_{\gamma(a)}M$沿$\gamma$<strong>平行移动</strong>得到,
+若存在沿$\gamma$的<strong>平行向量场</strong>$X,$ 使得$X(a)=v,$ $X(b)=w.$
+以上都是对一小段嵌入曲线讨论的结果. 对一般的浸入曲线, 需要对区间做分割,
+使向量分段平移.</p>
+<p>由此我们可以定义向量空间的同构$P^\gamma:M_{\gamma(a)}\rightarrow M_{\gamma(b)},$
+它的逆恰恰是沿$\gamma$反向曲线的平行移动. 称该同构为<strong>平移同构</strong>.
+注意平移同构与曲线的选取密切相关. 因此,
+我们可以说<em>联络联系着曲线两端的切空间</em>, 当然这一联系与曲线本身有关.</p>
+<p>现在我们能对(L1)性质有更深刻的认识: 它等价于所有平移同构都保持内积.
+当(L1)成立时, 设有弧长参数化曲线$\gamma:[0,1]\rightarrow M,$
+$x,y$为其端点. 取$T_xM$标准正交基$\{e_i\},$
+令$e_i(t)=P^{\gamma|_{[0,t]} }(e_i),$ 有$D_{\dot\gamma(t)}e_i(t)=0.$
+因此,</p>
+<script type="math/tex; mode=display">
+\frac{d {} }{d {}t}\left<{}e_i(t),e_j(t)\right>=\dot\gamma(t)\left<{}e_i(t),e_j(t)\right>=\left<{}D_{\dot\gamma(t)}e_i(t),e_j(t)\right>+\left<{}e_i(t),D_{\dot\gamma(t)}e_j(t)\right>=0.</script><p>从而, $\left&lt;{}e_i(t),e_j(t)\right&gt;\equiv \delta_{ij}.$ 因此,
+平移同构将标准正交基映为标准正交基, 从而是保持内积的同构. 反过来,
+设每一个平移同构都保持内积, 取向量场$X,Y,Z.$ 对任意点$x,$
+取弧长参数化曲线$\gamma:[0,1]\rightarrow M,$
+以$x$为起点且$\dot\gamma(0)=X(x).$
+类似地取$\{e_i(t)\}$为$T_{\gamma(t)}M$的标准正交基, 那么设$Y=Y^ie_i,$
+$Z=Z^ie_i,$ 则:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ X(x)\left<{}Y,Z\right>&=\dot\gamma(0)\left<{}Y,Z\right>=\frac{d {} }{d {}t}\sum_i Y^iZ^i|_{t=0}\\
+ &=\sum_i \frac{d {}Y^i}{d {}t}(0)Z^i(0) + \sum_i Y^i(0)\frac{d {}Z^i}{d {}t}(0)\\
+ &=\left<{}D_{\dot{\gamma}(0)}Y,Z\right>+\left<{}Y,D_{\dot{\gamma}(0)}Z\right>\\
+ &=\left<{}D_{X(x)}Y,Z\right>+\left<{}Y,D_{X(x)}Z\right>
+ \end{aligned}</script><p>即若平移同构总保持内积, 那么它也一定满足(L1)条件. 于是,
+可以说Levi-Civita联络是唯一的对称联络, 使得所有平移同构都是等距同构.</p>
+<p><strong>注 3</strong>. <em>联络$D$决定了平移同构, 反过来平移同构也决定了该联络: 可以证明, 若给定$v\in T_xM,$ 向量场$X,$ 曲线$\gamma$以$x$为起点, $\dot{\gamma}(0)=v,$ 那么对于平移同构$P_t:T_xM\rightarrow T_{\gamma(t)}M,$ 有</em> </p>
+<script type="math/tex; mode=display">
+D_vX=\frac{d {} }{d {}t}[P_t^{-1}(X\circ\gamma(t))]|_{t=0}.</script><p><strong>注 4</strong>. <em>测地线的概念由测地曲率为零引入, 即曲线的曲率向量与法线重合, 曲线在切平面上的投影处处曲率为零, 是直线的推广. 另一种推广方式是考虑曲线上切向量场, 如果切向量场是沿曲线的平行向量场, 那么曲线称为联络的<strong>测地线</strong>, 即$D_{\dot\gamma}\dot\gamma=0.$ 于是这两种定义是等价的, 且通过后一定义立即看出测地线的定义是内蕴的.</em> </p>
+<p>文章最后更新于 2022-01-14 12:22:00 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《黎曼几何初步》笔记(1)-线性联络</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-01-14 12:21:56</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/01/14/《黎曼几何初步》笔记(1)-线性联络/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/28/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%BB%83%E4%B9%A0/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《微分流形》练习</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%81%94%E7%BB%9C"><span class="nav-text">线性联络</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Levi-Civita%E8%81%94%E7%BB%9C"><span class="nav-text">Levi-Civita联络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="nav-text">几何意义</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
