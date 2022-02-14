@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《黎曼几何初步》笔记(2)-协变微分与曲率张量 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《黎曼几何初步》笔记(2)-协变微分与曲率张量</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-02-14 15:31:54
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="协变微分"><a href="#协变微分" class="headerlink" title="协变微分"></a>协变微分</h2><h3 id="张量"><a href="#张量" class="headerlink" title="张量"></a>张量</h3><p>回忆$T^r_s(V):=\underbrace{V\otimes \cdots\otimes V}_{r}\otimes \underbrace{V^\ast \otimes \cdots\otimes V^\ast }_{s},$
+$T^\ast (V):=\bigoplus\limits_{r,s} T^r_s(V).$
+若有同构$\varphi:V\rightarrow W,$
+我们有伴随同构$\varphi^\ast :W^\ast \rightarrow V^\ast ,$
+诱导了$\widetilde{\varphi}:T^r_s(V)\rightarrow T^r_s(W),$</p>
+<script type="math/tex; mode=display">
+\widetilde{\varphi}(v_1\otimes\cdots\otimes v_r\otimes \alpha^1\otimes \cdots\otimes \alpha^s)=\varphi(v_1)\otimes\cdots\otimes \varphi(v_r)\otimes (\varphi^\ast )^{-1}(\alpha^1)\otimes\cdots\otimes (\varphi^\ast )^{-1}(\alpha^s),</script><p>显然利用线性性,
+可以将$\widetilde\varphi$推广定义到$T^\ast (V)\rightarrow T^\ast (W)$上.</p>
+<h3 id="协变导数"><a href="#协变导数" class="headerlink" title="协变导数"></a>协变导数</h3><p>上节我们有平移同构$P_t:T_{\gamma(0)}M\rightarrow T_{\gamma(t)}M.$
+记$T_xM$为$M_x,$
+我可以取$\widetilde{P_t}:T^\ast (M_{\gamma(0)})\rightarrow T^\ast (M_{\gamma(t)})$为诱导同构.
+由上节注记,
+定义$D_vK:=\frac{d {} }{d {}t}[\widetilde{P_t}^{-1}(K(\gamma(t)))]_{t=0},$
+称为张量场$K$关于$v$的<strong>协变导数</strong>. 可以证明它与$\gamma$选取无关.</p>
+<p><em>取好张量场的一组平行基后, 协变导数便化为通常的导数.</em>
+因此我们有如下性质:</p>
+<ol>
+<li><p>若$K$为$(r,s)$型, 则$D_vK$也是$(r,s)$型;</p>
+</li>
+<li><p>$D_v$是作用在张量场代数上的一个导子,
+即$D_v(K_1\otimes K_2)=(D_vK_1)\otimes K_2+K_1\otimes (D_vK_2).$</p>
+</li>
+<li><p>$D_v$和缩并可交换, 这里缩并$\mathscr{C}$指共变与反变部分相消,
+使张量降两阶,
+如$\mathscr{C}(X\otimes \alpha\otimes \omega)=\omega(X)\alpha,$
+$X\in V,$ $\alpha,\omega\in V^\ast .$ 该交换性表示为:
+$D_v (\mathscr{C}K)=\mathscr{C}(D_vK).$</p>
+</li>
+<li><p>$D_vK$仅依赖于$K,$ 与曲线$\gamma$选取无关.</p>
+</li>
+</ol>
+<p>最后一条性质的证明只需说明$D_v\eta$与$\gamma$选取无关即可,
+$\eta$为$1$-形式. 这一点利用性质$2,3,$
+再结合$D_vX$确实与$\gamma$选取无关即可. 由性质$4,$
+我们可以对每个张量场$K,$ 向量场$X,$ 定义新的张量场$D_XK:$
+$D_XK(x)=D_{X(x)}K.$</p>
+<h3 id="协变微分-1"><a href="#协变微分-1" class="headerlink" title="协变微分"></a>协变微分</h3><p>$D_XK$关于$X$是$\mathscr{F}$线性的, 因此可以定义$(r,s+1)$型张量场$DK:$</p>
+<script type="math/tex; mode=display">
+(\omega^1,\cdots,\omega^r,X_1,\cdots,X_s,X)\mapsto (D_XK)(\omega^1,\cdots,\omega^r,X_1,\cdots,X_s).</script><p>$DK$称为$K$的<strong>协变微分</strong>. 容易看出, 对函数$f,$ 有$Df=df,$
+它是微分的推广. 一般地, 记$D^nK=D(D^{n-1}K),$ 但需注意,
+一般来说不见得有$D^2K(\cdots,X,Y)=D_YD_XK(\cdots),$ 如计算可得对函数$f,$</p>
+<script type="math/tex; mode=display">
+D^2f(X,Y)=(D_Y(df))(X)=YXf-(D_YX)f.</script><p> 特别地, 可以看到:</p>
+<script type="math/tex; mode=display">
+D^2f(X,Y)-D^2f(Y,X)=((D_XY-D_YX)-[X,Y])f=T(X,Y)f.</script><p>于是若$D$是一个对称联络, 那么$T(X,Y)\equiv 0,$ $D^2f(X,Y)=D^2f(Y,X),$
+$D^2f$是一个对称的二阶协变张量场, 称为$f$的Hessian.</p>
+<h3 id="Laplace算子"><a href="#Laplace算子" class="headerlink" title="Laplace算子"></a>Laplace算子</h3><p>对任意二阶协变对称张量场$S$,
+取$\operatorname{tr}S(x)=\sum_i S(e_i,e_i),$
+这与标准正交基$\{e_i\}$选取无关. 定义$\Delta f=\operatorname{tr}D^2 f,$
+称为作用在函数上的<strong>Laplace算子</strong>. 具体展开, 它有如下形式:</p>
+<script type="math/tex; mode=display">
+\Delta f= g^{ij}D^2f\left(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right)=\frac{1}{\sqrt{G} }\frac{\partial {} }{\partial {}x^k}\left(g^{ik}\sqrt{G}\frac{\partial {}f}{\partial {}x^i}\right).</script><h3 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h3><p><strong>习题 1</strong>. <em>在具联络$D$的流形$M$上, 称张量场$K$是<strong>平行</strong>的, 若$DK\equiv 0.$ 证明度量$g$作为二阶协变对称张量是平行的.</em> </p>
+<p><strong>证:</strong> 即$\,\forall\,v,X,Y,$ $(D_vg)(X,Y)=0.$ 由导子性与和缩并可交换性,
+我们有:</p>
+<script type="math/tex; mode=display">
+D_v(g\otimes X\otimes Y)=D_vg \otimes X\otimes Y+g\otimes D_vX\otimes Y+g\otimes X\otimes D_vY.</script><script type="math/tex; mode=display">
+vg(X,Y)=(D_vg)(X,Y)+g(D_vX,Y)+g(X,D_vY).</script><p> 回忆联络的性质(L1),
+$vg(X,Y)=g(D_vX,Y)+g(X,D_vY),$ 因此的确有$(D_vg)(X,Y)=0,$
+从而度量$g$是平行的张量场.</p>
+<p><strong>习题 2</strong>. <em>写出Laplace算子的展开过程.</em> </p>
+<p><strong>证:</strong> 设$A^{ij}\frac{\partial {} }{\partial {}x^j}=e_i,$
+则$A^{ij}=\sqrt{g}^{ij}$时, $\{e_i\}$构成标准正交基.</p>
+<script type="math/tex; mode=display">
+\Delta f=\sum_i D^2f\left(\sqrt{g}^{ij}\frac{\partial {} }{\partial {}x^j},\sqrt{g}^{ik}\frac{\partial {} }{\partial {}x^k}\right)=g^{jk}D^2f\left(\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k}\right)</script><script type="math/tex; mode=display">
+D^2f\left(\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k}\right)=\frac{\partial^2 {}f}{\partial {}x^j\partial {}x^k}-\left(D_{\frac{\partial {} }{\partial {}x^k} }\frac{\partial {} }{\partial {}x^j}\right)f</script><script type="math/tex; mode=display">
+D_{\frac{\partial {} }{\partial {}x^k} }\frac{\partial {} }{\partial {}x^j}=\Gamma_{jk}^i\frac{\partial {} }{\partial {}x^i}=\frac{g^{li} }{2}\left(\frac{\partial {}g_{jl} }{\partial {}x^k}+\frac{\partial {}g_{kl} }{\partial {}x^j}-\frac{\partial {}g_{jk} }{\partial {}x^l}\right)\frac{\partial {} }{\partial {}x^i}</script><p>于是, 我们有: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Delta f&=g^{jk}\frac{\partial^2 {}f}{\partial {}x^j\partial {}x^k}-\frac{g^{jk}g^{li} }{2}\left(\frac{\partial {}g_{jl} }{\partial {}x^k}+\frac{\partial {}g_{kl} }{\partial {}x^j}-\frac{\partial {}g_{jk} }{\partial {}x^l}\right)\frac{\partial {}f}{\partial {}x^i}\\
+ &=g^{ik}\frac{\partial^2 {}f}{\partial {}x^i\partial {}x^k}-g^{il}\frac{\partial {}g_{lj} }{\partial {}x^k}g^{jk}\frac{\partial {}f}{\partial {}x^i}+\frac{g^{jk}g^{li} }{2}\frac{\partial {}g_{jk} }{\partial {}x^l}\frac{\partial {}f}{\partial {}x^i}\\
+ &=g^{ik}\frac{\partial^2 {}f}{\partial {}x^i\partial {}x^k}+\frac{\partial {}g^{ik} }{\partial {}x^k}\frac{\partial {}f}{\partial {}x^i}+g^{ik}\frac{g^{lj} }{2}\frac{\partial {}g_{jl} }{\partial {}x^k}\frac{\partial {}f}{\partial {}x^i}\\
+ &=\frac{1}{\sqrt{G} }\frac{\partial {} }{\partial {}x^k}\left(g^{ik}\sqrt{G}\frac{\partial {}f}{\partial {}x^i}\right).
+ \end{aligned}</script><p> 其中用到了如下矩阵求导的恒等式:</p>
+<script type="math/tex; mode=display">
+\frac{d {}A^{-1}(t)}{d {}t}=-A^{-1}(t)A'(t)A^{-1}(t),</script><script type="math/tex; mode=display">
+\frac{d {}\det A(t)}{d {}t}=\det(A(t))\operatorname{tr}(A^{-1}(t)A'(t)).</script><h2 id="曲率张量"><a href="#曲率张量" class="headerlink" title="曲率张量"></a>曲率张量</h2><h3 id="曲率算子"><a href="#曲率算子" class="headerlink" title="曲率算子"></a>曲率算子</h3><p>记$\mathscr{T}^\ast $为$M$上所有张量场对应于$C^\infty$代数所形成的模.
+则对任意给定向量场$X,$ 协变导数$D_X$为$\mathscr{T}^\ast $的一个导子.
+现对给定向量场$X,Y,$ 定义映射:</p>
+<script type="math/tex; mode=display">
+R_{XY}=D_{[X,Y]}-(D_XD_Y-D_YD_X)=D_{[X,Y]}-[D_X,D_Y].</script><p>称$R_{XY}$为由$X,Y$定义的<strong>曲率算子</strong>, 具有如下性质:</p>
+<p>(1) $R_{XY}$为$\mathscr{T}^\ast $的一个导子;</p>
+<p>(2) $R_{XY}$保持张量场的类型;</p>
+<p>(3) $\,\forall\,$函数$f,$ 张量场$K,$
+ 有$R_{(fX)Y}K=R_{X(fY)}K=R_{XY}fK=fR_{XY}K;$</p>
+<p>(4) $\,\forall\,$函数$f,$ 有$R_{XY}f=0.$</p>
+<p>由代数中的结论, 若$D_1,D_2$为导子, 则Lie括号$[D_1,D_2]$也是导子.
+由此说明了性质(1). 性质(2)由协变导数基本性质即得. 性质(3)经由常规计算得.
+性质(4)由联络的基本性质即得.</p>
+<h3 id="曲率张量-1"><a href="#曲率张量-1" class="headerlink" title="曲率张量"></a>曲率张量</h3><p>由(2),(3)知, 对向量场$X,Y,Z,$ $R_{XY}Z$也是向量场,
+且关于每个变量都是$\mathscr{F}$线性的. 从而它决定了一个$(1,3)$型张量场:</p>
+<script type="math/tex; mode=display">
+(\omega,X,Y,Z)\mapsto \omega(R_{XY}Z),</script><p> 等价地,
+也可以将它视为一个$(0,4)$型张量场:</p>
+<script type="math/tex; mode=display">
+R(X,Y,Z,W):=\left<{}R_{XY}Z,W\right>.</script><p>称$R_{XY}Z$或$R(X,Y,Z,W)$为黎曼度量的<strong>曲率张量</strong>.
+它刻画了流形”空间弯曲”的性质.</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>曲率张量是度量的二阶不变量, 即它包含度量张量$g$的二阶导数.
+记$g_{ij}=g\left(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right),$
+$R_{ijkl}=R\left(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k},\frac{\partial {} }{\partial {}x^l}\right),$
+计算得到</p>
+<script type="math/tex; mode=display">
+R_{ijkl}=\frac{1}{2}\left(\frac{\partial^2 {}g_{il} }{\partial {}x^j\partial {}x^k}+\frac{\partial^2 {}g_{jk} }{\partial {}x^i\partial {}x^l}-\frac{\partial^2 {}g_{ik} }{\partial {}x^j\partial {}x^l}-\frac{\partial^2 {}g_{jl} }{\partial {}x^i\partial {}x^k}\right)+g_{rs}\left(\Gamma_{jk}^r\Gamma_{il}^s-\Gamma_{jl}^r\Gamma_{ik}^s\right).</script><p>这意味着, <em>曲率张量是度量张量的非线性函数.</em>
+这将是我们理解曲率张量主要的障碍.</p>
+<p><strong>引理 1</strong>. <em>对向量场$X,Y,Z,W,$ 我们有:</em> </p>
+<p>(1) $R_{XY}=-R_{YX};$</p>
+<p>(2) $R_{XY}Z+R_{YZ}X+R_{ZX}Y=0$<em>(第一Bianchi恒等式)</em>;</p>
+<p>(3) $R(X,Y,Z,W)=-R(X,Y,W,Z);$</p>
+<p>(4) $R(X,Y,Z,W)=R(Z,W,X,Y).$</p>
+<p><strong>证:</strong> 由于曲率算子$R$关于向量场是$C^\infty$多重线性的,
+只需考虑$R_{ijkl}$是否满足性质即可. 性质(1)是即得的. 对于坐标向量场,
+Lie括号$[\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}]\equiv 0,$
+$R_{\frac{\partial {} }{\partial {}x^i}\frac{\partial {} }{\partial {}x^j} }=-[D_{\frac{\partial {} }{\partial {}x^i} },D_{\frac{\partial {} }{\partial {}x^j} }].$
+又由Levi-Civita联络性质,
+$D_{\frac{\partial {} }{\partial {}x^i} }\frac{\partial {} }{\partial {}x^j}=D_{\frac{\partial {} }{\partial {}x^j} }\frac{\partial {} }{\partial {}x^i},$
+结合前式即有性质(2).</p>
+<p>性质(3)由前面的$R_{ijkl}$表达式得到, 也等价于$R_{ijkk}=0.$
+性质(4)是性质(1)-(3)的代数推论, 当然也可由$R_{ijkl}$表达式得到.</p>
+<p>现考虑$R_{XY}:M_x\rightarrow M_x$为线性变换, 由性质(3),
+它相对于$M_x$上的内积来说是反对称的. 进而,
+考虑定义在$M_x\oplus M_x$上的函数 </p>
+<script type="math/tex; mode=display">
+Q(X,Y):=R(X,Y,X,Y),</script><p>称$Q$为$R$的<strong>相配二次型.</strong></p>
+<p><strong>引理 2</strong>. <em>$Q$完全确定了曲率张量. 对两个满足引理$1$条件的张量场, 若它们的相配二次型相同, 则它们本身也相同.</em> </p>
+<p><strong>证:</strong> 只需证明若张量场$R$决定的$Q=0,$ 则$R=0.$ 首先由定义与性质(4),</p>
+<script type="math/tex; mode=display">
+Q(X,Y),Q(X,W),Q(X,Y+W)=0\Rightarrow R(X,Y,X,W)+R(X,W,X,Y)=2R(X,Y,X,W)=0.</script><p>由于对任意向量场$W$成立, $R_{XY}X=0.$ 类似地, 可以得到</p>
+<script type="math/tex; mode=display">
+R_{(X+Z)Y}(X+Z)=R_{XY}Z+R_{ZY}X=0.</script><p> 由第一Bianchi恒等式,
+$R_{XY}Z+R_{YZ}X+R_{ZX}Y=0,$ 结合曲率算子反对称性, $2R_{ZY}X=R_{ZX}Y.$
+而同理我们有$R_{YZ}X+R_{XZ}Y=0,$ 代入得到$3R_{YZ}X=0.$
+由向量场选取任意性, $R=0.$</p>
+<p><strong>引理 3</strong> (第二Bianchi恒等式). <em>$(D_XR)_{YZ}+(D_YR)_{ZX}+(D_ZR)_{XY}=0.$</em> </p>
+<p><strong>证:</strong> 只需对坐标向量场讨论即可. 此时$D_XY=D_YX,$
+$R_{XY}=-D_XD_Y+D_YD_X.$ $R$是张量场, 我们有:</p>
+<script type="math/tex; mode=display">
+D_X(R_{YZ}W)=(D_XR)_{YZ}W+R_{D_XY,Z}W+R_{Y,D_XZ}W+R_{YZ}(D_XW).</script><p>轮换$X,Y,Z$即可得到结论.</p>
+<p><strong>引理 4</strong> (Ricci恒等式). <em>若$T$为一个张量场, 则</em> </p>
+<script type="math/tex; mode=display">
+D^2T(\cdots,X,Y)-D^2T(\cdots,Y,X)=(R_{XY}T)(\cdots).</script><p><strong>证:</strong></p>
+<script type="math/tex; mode=display">
+D^2T(\cdots,X,Y)=(D_Y(DT))(\cdots,X)=D_YD_XT(\cdots)-D_{D_YX}T(\cdots).</script><p>交换$X,Y$后做差发现恰好得到等式.</p>
+<p>特别地, 当$T$为函数时, 得到了前面$D^2f$对称的结论. 该等式是更一般的推广.</p>
+<h3 id="练习-1"><a href="#练习-1" class="headerlink" title="练习"></a>练习</h3><p><strong>习题 3</strong>. <em>等距变换保持Levi-Civita联络, 进而它保持曲率张量.</em> </p>
+<p><strong>证:</strong> 设$\varphi:M\rightarrow N$为等距变换,
+在$M$上定义联络$\widetilde{D}_XY=(d\varphi)^{-1}D’_{d\varphi(X)}d\varphi(Y),$
+显然它确实是一个联络. 只需证明其满足Levi-Civita联络的性质,
+由唯一性即得$D_XY=\widetilde{D}_XY=D’_{d\varphi(X)}d\varphi(Y).$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ X\left<{}Y,Z\right>&=d\varphi(X)\left<{}d\varphi(Y),d\varphi(Z)\right>\\
+ &=\left<{}D'_{d\varphi(X)}d\varphi(Y),d\varphi(Z)\right>+\left<{}d\varphi(Y),D'_{d\varphi(X)}d\varphi(Z)\right>\\
+ &=\left<{}\widetilde{D}_XY,Z\right>+\left<{}Y,\widetilde{D}_XZ\right>
+ \end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+ \widetilde{D}_XY-\widetilde{D}_YX=&(d\varphi)^{-1}(D'_{d\varphi(X)}d\varphi(Y)-D'{D\varphi(Y)}d\varphi(X))\\
+ =&(d\varphi)^{-1}[d\varphi(X),d\varphi(Y)]\\
+ =&[X,Y]=XY-YX
+ \end{aligned}</script><p>因此该联络确实满足Levi-Civita联络的性质. 由于联络决定了曲率张量,
+等距变换也是保持曲率张量不变的.</p>
+<h2 id="曲率"><a href="#曲率" class="headerlink" title="曲率"></a>曲率</h2><h3 id="截面曲率"><a href="#截面曲率" class="headerlink" title="截面曲率"></a>截面曲率</h3><p>一般地, 我们对$Q$做归一化处理. 设$\Pi$为$M_x$的一个二维子空间,
+$\{v_1,v_2\}$为其任意一组基, 则定义$\Pi$的<strong>截面曲率</strong>为</p>
+<script type="math/tex; mode=display">
+K(\Pi):=\frac{R(v_1,v_2,v_1,v_2)}{|v_1\wedge v_2|^2},</script><p> 容易看到,
+$K$与二维子空间的基选取无关. 特别地, 若选取一组标准正交基$\{e_1,e_2\},$
+$K(\Pi)=R(e_1,e_2,e_1,e_2).$ 由前面的引理,
+若<em>我们知道所有二维子空间的截面曲率, 就等价于知道了曲率张量</em>.
+截面曲率自然和曲率张量一样, 都是度量不变量, 在等距变换下保持.</p>
+<p>对二维黎曼流形$M,$ 我们熟知有高斯曲率$K.$
+此时高斯曲率与上述的截面曲率是一致的.
+因此可以说截面曲率是高斯曲率的推广. 特别地, 注意到高斯曲率同样是内蕴的.
+这便是<strong>高斯绝妙定理</strong>.</p>
+<p>称$\mathbb{R}^n$上通常的度量是<strong>平坦的</strong>. 此时$\,\forall\,X,Y,Z,$
+$R_{XY}Z=0,$ 曲率张量恒为零. 反之,
+我们后面会证明若黎曼流形$M$曲率张量为零,
+它必局部等距于配备平坦度量的$\mathbb{R}^n.$ 称这样的流形是<strong>平坦的</strong>.</p>
+<p>对于$n$维球面$S^n,$ 由于任意两点处任意两个二维切平面间存在一个等距变换,
+可以证明它是具常截面曲率的.</p>
+<h3 id="Ricci张量"><a href="#Ricci张量" class="headerlink" title="Ricci张量"></a>Ricci张量</h3><p><strong>Ricci张量</strong>为一个二阶协变张量场, 定义为:</p>
+<script type="math/tex; mode=display">
+\operatorname{Ric}(X,Y):=\sum_i R(e_i,X,e_i,Y),</script><p>$\{e_i\}$为$M_x$任意一组标准正交基. 由$R$的多重线性性, 它与基选取无关.
+且由其性质, Ricci张量是对称的,
+即$\operatorname{Ric}(X,Y)=\operatorname{Ric}(Y,X).$</p>
+<p>在$M$的切单位球面上, 定义函数$X\mapsto \operatorname{Ric}(X,X),$
+称为在向量$X$下的<strong>Ricci曲率</strong>. 若$X=e_1$在选取的基中,
+则$\operatorname{Ric}(X,X)=\sum_{i=2}^n R(e_i,e_1,e_i,e_1),$
+是$n-1$个截面曲率的和.</p>
+<p><strong>数量曲率</strong>$s$定义为$\operatorname{Ric}$的迹,
+$s(x):=\sum_{i,j}R(e_i,e_j,e_i,e_j),$
+是幺正基中$n$个向量所张成的各种可能的二维平面截面曲率之和.</p>
+<p>文章最后更新于 2022-02-14 15:31:56 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《黎曼几何初步》笔记(2)-协变微分与曲率张量</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-02-14 15:31:54</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/02/14/《黎曼几何初步》笔记(2)-协变微分与曲率张量/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/01/24/Jacobi%E5%85%AC%E5%BC%8F/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Jacobi公式</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98%E5%BE%AE%E5%88%86"><span class="nav-text">协变微分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F"><span class="nav-text">张量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98%E5%AF%BC%E6%95%B0"><span class="nav-text">协变导数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98%E5%BE%AE%E5%88%86-1"><span class="nav-text">协变微分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Laplace%E7%AE%97%E5%AD%90"><span class="nav-text">Laplace算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0"><span class="nav-text">练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F"><span class="nav-text">曲率张量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87%E7%AE%97%E5%AD%90"><span class="nav-text">曲率算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87%E5%BC%A0%E9%87%8F-1"><span class="nav-text">曲率张量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-text">性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%83%E4%B9%A0-1"><span class="nav-text">练习</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87"><span class="nav-text">曲率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%AA%E9%9D%A2%E6%9B%B2%E7%8E%87"><span class="nav-text">截面曲率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ricci%E5%BC%A0%E9%87%8F"><span class="nav-text">Ricci张量</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
