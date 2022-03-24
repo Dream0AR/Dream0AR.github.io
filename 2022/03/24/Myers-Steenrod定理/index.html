@@ -9,7 +9,7 @@
     
     <title>
         
-            闭值域定理 |
+            Myers-Steenrod定理 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">闭值域定理</span>
+            <span class="title-hover-animation">Myers-Steenrod定理</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-07 15:35:09
+        <i class="fas fa-edit"></i>&nbsp;2022-03-24 15:24:32
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%88%86%E6%9E%90/">分析</a>&nbsp;
+                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%88%86%E6%9E%90/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/">泛函分析</a>&nbsp;
+                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,24 +206,53 @@
         
 
         <div class="article-content markdown-body">
-            <p><strong>定理 1</strong>. <em>$H$为Hilbert空间. 若$K:H\rightarrow H$为紧算子, 则$L=I-K$的值域是闭的.</em> </p>
-<p><strong>证:</strong> $H=N(L)\oplus N(L)^\perp.$
-$L:N(L)^\perp\rightarrow R(L)$是一一的. 断言$\,\exists\,c&gt;0,$ 满足</p>
-<script type="math/tex; mode=display">\Vert Lf\Vert\ge c\Vert f\Vert,\quad \,\forall\,f\in N(L)^\perp.</script><p>不然, $\,\exists\,\{f_n\}\subset N(L)^\perp,$
-满足$\Vert f_n\Vert\equiv 1,$ $\Vert Lf_n\Vert\rightarrow 0.$
-由于$K$是紧算子, $\{Kf_n\}$有子列收敛, 不妨设为自身收敛. 这样,</p>
-<script type="math/tex; mode=display">\widetilde{f}:=\lim_{n\rightarrow \infty}Kf_n+Lf_n=\lim_{n\rightarrow \infty}f_n.</script><p>结合闭性, 这说明了$\{f_n\}$自身也收敛到$\widetilde{f}\in N(L)^\perp.$
-而$L\widetilde{f}=\lim\limits_{n\rightarrow \infty}Lf_n=0,$
-$\widetilde{f}\in N(L).$ 这说明$\widetilde{f}=0.$
-然而$\Vert f_n\Vert\equiv 1,$ 不可能收敛到$0,$ 矛盾.</p>
-<p>接下来, $\,\forall\,\{g_n\}\subset R(L)$满足$g_n\rightarrow g,$
-我们需要证明$g\in R(L).$
-我们取$\{f_n\}\subset N(L)^\perp$满足$Lf_n=g_n,$
-那么$\Vert g_n\Vert\ge c\Vert f_n\Vert.$ 由于$\{g_n\}$构成Cauchy列,
-$\Vert f_n\Vert$也是, 记其收敛到$f.$
-这样就有$Lf=\lim\limits_{n\rightarrow \infty} Lf_n=g.$</p>
-<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf" >https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf<i class="fas fa-external-link-alt"></i></a></p>
-<p>文章最后更新于 2021-12-07 16:09:09 </p>
+            <p>一开始看到流形上的等距变换, 自然想到保持范数$\Leftrightarrow$保持内积,
+从而保持黎曼度量. 但事实上等距(依照初始定义)保持的是流形上的距离,
+而不是切空间上的距离, 因此这件事情是需要来证明的. 更重要的一点是,
+前述的等价关系仅对线性变换成立,
+而切映照是线性变换建立在映照可微的基础上.
+事实上我们不需要事先要求等距变换可微, 这就是Myers-Steenrod定理.</p>
+<p><strong>定理 1</strong>. <em>若$\phi:M\rightarrow N$为等距满射, 则$\phi$为同构, 特别地它是光滑的.</em> </p>
+<p><strong>证:</strong> 由于测地线有局部极短性, 等距变换将测地线映至测地线.
+设$\phi(p)=q,$ 选取$v\in T_pM,$ $|v|$充分小.
+取从$p$点出发以$v$为初始切向量的测地线$\gamma,$
+那么$d(p,\gamma(1))=|v|.$ 由于$\phi$是等距变换,
+$d(q,\phi\circ\gamma(1))=|v|.$ 若$\phi$可微,
+那么由于$\phi\circ\gamma$也是测地线,
+$|v|=|(\phi\circ\gamma)’(0)|=|d\phi(v)|.$
+此时$d\phi$是保持范数的线性变换, 因此$d\phi$保持内积, 即保持黎曼度量,
+故$\phi$是同构.</p>
+<p>当$\phi$不见得可微时, 由于$\phi$保持测地线,
+我们可以通过测地线的切向量来定义$d\phi:T_pM\rightarrow T_pN,$
+它也是保持范数的. 但此时它不见得是线性变换, 不过我们可以来证明这一点.
+假设已知如下结论:</p>
+<script type="math/tex; mode=display">
+\lim_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.</script><p>选取$A,B\in T_pM,$ 取对应的测地线$\gamma_A,\gamma_B.$ 记$A’=d\phi(A),$
+$B’=d\phi(B),$ 以及对应的测地线$\gamma_{A’},\gamma_{B’},$
+我们有$d(\gamma_A(t),\gamma_B(t))=d(\gamma_{A’}(t),\gamma_{B’}(t)),$
+从而:</p>
+<script type="math/tex; mode=display">
+1=\lim_{t\rightarrow 0}\frac{d(\exp_p(tA),\exp_p(tB))}{t|A-B|}=\lim_{t\rightarrow 0}\frac{d(\exp_q(tA'),\exp_q(tB'))}{t|A-B|}=\frac{|A'-B'|}{|A-B|},</script><p>因此$|d\phi(A)-d\phi(B)|=|A-B|,$ $\,\forall\,A,B\in T_pM.$
+由Mazur-Ulam定理, 结合$d\phi(0)=0,$ 便说明$d\phi$是线性变换,
+从而命题得证.</p>
+<p><strong>引理 2</strong>. <em>$\lim\limits_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.$</em> </p>
+<p><strong>证:</strong> 我们首先证明如下事实, 对曲线$c:I\rightarrow T_pM,$
+若$|c’|$保持有界,</p>
+<script type="math/tex; mode=display">
+\lim_{c(I)\rightarrow 0}\frac{l(\exp_p(c))}{l(c)}=1.</script><p>我们有$l(c)=\int |c’|,$
+$l(\exp_p(c))=\int |d\exp_p(c’(t))|_{\exp_p(c(t))}.$
+由于$d\exp_p$在原点处为恒等变换, 同时$g$是光滑的,
+$T_{\exp_p(c(t))}M$与$T_pM$度量在$c(I)\rightarrow 0$时充分接近,
+$l(\exp_p(c))=l(c)+o(l(c)),$ 由此即知事实成立.</p>
+<p>接下来, 记$\gamma$为连接$A,B$的曲线, 使得$\exp_p(\gamma)$为测地线;
+$\xi$为连接$A,B$的直线. 那么 </p>
+<script type="math/tex; mode=display">
+|A-B|=l(\xi)\le l(\gamma),</script><script type="math/tex; mode=display">
+d(\exp_p(A),\exp_p(B))=l(\exp_p(\gamma))\le l(\exp_p(\xi)).</script><p>因此,</p>
+<script type="math/tex; mode=display">
+\frac{l(\exp_p(\gamma))}{l(\gamma)}\le \frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=\frac{l(\exp_p(\gamma))}{l(\xi)}\le \frac{l(\exp_p(\xi))}{l(\xi)}.</script><p>当$A,B\rightarrow 0\in T_pM$时, 两侧趋于$1,$ 从而中间项也趋于$1.$</p>
+<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://ncatlab.org/nlab/show/Myers-Steenrod+theorem" >https://ncatlab.org/nlab/show/Myers-Steenrod+theorem<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-03-24 15:24:34 </p>
 
         </div>
 
@@ -231,11 +260,11 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：闭值域定理</li>
+        <li>本文标题：Myers-Steenrod定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-07 15:35:09</li>
+        <li>创建时间：2022-03-24 15:24:32</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/07/闭值域定理/
+            本文链接：https://dream0ar.github.io/2022/03/24/Myers-Steenrod定理/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -249,29 +278,14 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/12/08/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%BC%A0%E9%87%8F%E4%B8%9B/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第六章-张量丛</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/12/05/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(8)-%E6%95%B0%E7%90%86%E6%96%B9%E7%A8%8B/"
+                           href="/2022/03/13/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(3)-%E6%B5%8B%E5%9C%B0%E7%BA%BF/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《现代PDE基础》笔记(8)-数理方程</span>
+                                <span class="post-nav-title-item">《黎曼几何初步》笔记(3)-测地线</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
