@@ -374,10 +374,10 @@
         }
     });
     MathJax.Hub.Queue(function() {
-		('.MathJax_Display').wrap("<div class='official'></div>");
         var all = MathJax.Hub.getAllJax();
         for (var i = 0; i < all.length; ++i)
             all[i].SourceElement().parentNode.className += ' has-jax';
+		$('.MathJax_Display').wrap("<div class='official'></div>");
     });
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
