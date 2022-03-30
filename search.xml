@@ -7059,4 +7059,32 @@ $u-1$在$\Sigma$上具有限能量, 取$\varphi=u.$ 由$R_M&gt;0,$</p>
         <category>黎曼几何</category>
       </categories>
   </entry>
+  <entry>
+    <title>调和函数的Taylor展开</title>
+    <url>/2022/03/30/%E8%B0%83%E5%92%8C%E5%87%BD%E6%95%B0%E7%9A%84Taylor%E5%B1%95%E5%BC%80/</url>
+    <content><![CDATA[<p>看论文的时候用到了一个结论, 想了一会发现确实是对的.
+震撼于这么简单而有用的命题为什么之前没学过, 在此记录一下.</p>
+<p><strong>命题 1</strong>. <em>调和函数的任意$k$次Taylor展开为调和多项式.</em> </p>
+<p><strong>证:</strong> 取调和函数$u,$ 记其$k$次Taylor展开式为$h_k.$ $k=0,1$时平凡.
+$k=2$时, $x_ix_j$项不对调和项产生影响. 对于$x_i^2$项,
+求$\Delta$后为常数, 因此只需说明$\Delta h_k$后在一点处取零即可.
+我们在原点考察, 函数本身在原点有$\Delta u=0,$ 同时余项$u-h_k$为高阶项,
+求二阶导后在原点也取零, 这就迫使$\Delta h_k$在原点也取零, 进而处处为零.
+注意对余项的考察用到了调和函数的解析性.</p>
+<p>对于$k\ge 3,$ 归纳地, 假设$k-1$次展开式都是调和多项式.
+$\partial_iu$的$k-1$次Taylor展开式为$\partial_ih_k,$
+由于调和函数的导数仍是调和函数,
+$\partial_i\Delta h_k=\Delta \partial_ih_k=0.$
+这样多项式$\Delta h_k$各阶导数为零, $\Delta h_k$为常数.
+而$h_k-h_{k-1}$为$k$次齐次多项式,
+$\Delta (h_k-h_{k-1})=\Delta h_k$为$k-2$次齐次多项式, 又是常数,
+只能取零.</p>
+<p>文章最后更新于 2022-03-30 16:45:54 </p>
+]]></content>
+      <categories>
+        <category>命题与定理</category>
+        <category>分析</category>
+        <category>PDE</category>
+      </categories>
+  </entry>
 </search>
