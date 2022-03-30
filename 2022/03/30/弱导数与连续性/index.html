@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(5-1)-MV方法 |
+            弱导数与连续性 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(5-1)-MV方法</span>
+            <span class="title-hover-animation">弱导数与连续性</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-21 17:11:26
+        <i class="fas fa-edit"></i>&nbsp;2022-03-30 13:22:05
     </span>
     
         <span class="article-categories article-meta-item">
@@ -174,15 +174,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/">命题与定理</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%88%86%E6%9E%90/">分析</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%88%86%E6%9E%90/%E6%B3%9B%E5%87%BD%E5%88%86%E6%9E%90/">泛函分析</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,97 +206,60 @@
         
 
         <div class="article-content markdown-body">
-            <p>MV方法指用MV序列+五引理, 给出对开覆盖开集个数归纳的证明方法.
-该方法导出若干重要的定理, 十分有用.</p>
-<h2 id="好覆盖的存在性"><a href="#好覆盖的存在性" class="headerlink" title="好覆盖的存在性"></a>好覆盖的存在性</h2><p>设$M$为$n$维流形, 其上开覆盖$\{U_\alpha\}$称为<strong>好覆盖</strong>,
-若任意非空有限交微分同胚于$\mathbb{R}^n$.</p>
-<p><strong>定理 1.1</strong>. <em>流形具有好覆盖. 特别地, 紧流形有有限好覆盖.</em> </p>
-<p><strong>证:</strong> 流形上可赋予黎曼度量(将$\mathbb{R}^n$上度量拉回,
-再利用单位分解). 令$U_x$为$x$点测地凸邻域, 微分同胚于$\mathbb{R}^n$,
-由于有限多个测地凸邻域非空交也是测地凸邻域,
-从而$\{U_x\}_{x\in M}$是$M$的一个好的开覆盖.</p>
-<p>测地凸邻域的概念可参考黎曼几何的教材.</p>
-<p>称开覆盖$\mathcal U$为$\mathcal V$的<strong>加细</strong>, 若每个$U$包含在某个$V$中.
-由于测地凸邻域可任意小, 容易证明每个开覆盖有一个加细的好覆盖.</p>
-<h2 id="de-Rham上同调维数有限性"><a href="#de-Rham上同调维数有限性" class="headerlink" title="de Rham上同调维数有限性"></a>de Rham上同调维数有限性</h2><p><strong>命题 1.1</strong>. <em>若$M$有有限好覆盖, 则$\dim H^\ast (M)&lt;\infty$.</em> </p>
-<p><strong>证:</strong> 记$h^q(M)=\dim H^q(M)$. 由MV序列,
-$H^q(M)=H^q(U\cup V)\cong \ker r\oplus\operatorname{Im}r\cong \operatorname{Im}d^\ast \oplus \operatorname{Im}r$.
-从而若$h^q(U), h^q(V), h^{q-1}(U\cap V)&lt;\infty\Rightarrow h^q(U\cup V)&lt;\infty$.</p>
-<p>对有限好覆盖开集个数进行归纳, 当个数为 1 时, $M\approx \mathbb{R}^n$,
-由 Poincaré 引理知结论成立.</p>
-<p>归纳地, 假设流形具有开集个数不超过$p$个有限好覆盖时, 上同调维数有限.
-若$M$具有有限好覆盖$\{U_0,…,U_p\}$. 取$W=U_0\cup … \cup U_{p-1}$,
-$V=U_p$.
-则$W\cap V$有不超过$p$个的有限好覆盖$(\{U_0\cap U_{p},…,U_{p-1}\cap U_p\})$.
-由归纳假设, $h^\ast (W\cap V), h^\ast (W), h^\ast (V)&lt;\infty$,
-从而$H^\ast (W\cup V)=H^\ast (M)&lt;\infty$.</p>
-<p>同理可证:</p>
-<p><strong>命题 1.2</strong>. <em>若$M$具有有限好覆盖, 则$\dim H_c^q(M)&lt;\infty$.</em> </p>
-<h2 id="定向流形的Poincare对偶"><a href="#定向流形的Poincare对偶" class="headerlink" title="定向流形的Poincaré对偶"></a>定向流形的Poincaré对偶</h2><p>设$V,W$为有限维向量空间,
-设其间有配对$\left&lt;{}-,-\right&gt;:V\otimes_\mathbb{R}W\rightarrow \mathbb{R},$
-为一个双线性映射, 则其诱导两个线性映射:</p>
-<script type="math/tex; mode=display">l_V:V\rightarrow W^\ast , v\mapsto \left<{}v,-\right>,</script><script type="math/tex; mode=display">l_W:W\rightarrow V^\ast , w\mapsto \left<{}-,w\right>.</script><p>这里$V^\ast$, $W^\ast$指$V,W$的对偶空间. 若两诱导映射都是单射,
-则称配对$\left&lt;{},\right&gt;$非退化.</p>
-<p><strong>引理 1.1</strong>. <em>$\left&lt;{}-,-\right&gt;$非退化当且仅当诱导映射$l_V$为同构.</em> </p>
-<p>由于$V,W$都是有限维的, 做简单的泛函分析即可.</p>
-<p>假定$M$为$n$维定向光滑流形, 具有有限好覆盖. 则$H^q(M)$,
-$H^{n-q}_c(M)$为两个有限维向量空间.
-定义配对$\int_M:H^1(M)\otimes_\mathbb{R}H^{n-q}_c(M)\rightarrow \mathbb{R}$,
-$([\omega],[\tau])\mapsto \int_M \omega \wedge \tau$. 由Stokes定理,
-该配对是良定的.</p>
-<p><strong>定理 1.2</strong>. <em>若$n$维定向光滑流形$M$有有限好覆盖, 则配对$\int_M$非退化, 等价地, 我们有$H^q(M)\cong (H^{n-q}_c(M))^\ast , H_c^{n-q}(M)\cong (H^q(M))^\ast$</em> </p>
-<p>证明前先做一些准备工作:</p>
-<p><strong>引理 1.2</strong>. <em>我们有如下带符号的交换图表, 如对最右侧的交换性, 即取$[\omega]\in H^q(U\cap V)$, $[\tau]\in H_c^{n-q-1}(U\cup V)$, 有$\int_{U\cup V}d^\ast \omega\wedge \tau=\pm \int_{U\cap V}\omega\wedge d_\ast \tau$.</em> </p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/YhuZk9awXTqQls1.png width='50%' height='50%'></p>
-<p>已经证明过$d^\ast ,d_\ast$与单位分解选取无关, 因此不妨用同一个单位分解,
-将$d^\ast ,d_\ast$的映射具体地给出即可.</p>
-<p>于是配对$\int$诱导了下面带符号的交换图表:</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/ZO9F3exrD28iBhV.png width='50%' height='50%'></p>
-<p>之后便可以借助五引理(Five Lemma)证明主命题了.</p>
-<p><strong>证:</strong> 由上正合列与五引理, 若 Poincaré 对偶在$U$, $V$, $U\cap V$上成立,
-则在$U\cup V$上也成立.</p>
-<p>对有限好覆盖开集个数归纳证明: 若仅有一个好覆盖, 由 Poincaré 引理得证.</p>
-<p>若其对有限好覆盖开集个数不超过$p$的流形成立,
-设$M$有好覆盖$\{U_0,…,U_p\}$, 令$W=U_0\cup …\cup U_{p-1}$, $V=U_p$,
-则$M,V,M\cap V$好覆盖开集数均不超过$p$,
-从而$M=U\cup V$上成立Poincaré对偶.</p>
-<p>若没有有限好覆盖, 则有如下定理:</p>
-<p><strong>定理 1.3</strong>. <em>若$M$为定向$n$维流形, 上同调不必是有限维的, 则:$H^q(M)\cong (H^{n-q}_c(M))^\ast$</em> </p>
-<p>也就是另一个同构关系不一定对, 因为直和的对偶是直积,
-但直积的对偶不是直和. 如当$M$可被分解为$M=\sqcup_i M_i$,
-可列个$M_i$每个均有有限开覆盖时, $H^k(M)=\prod_i H^k(M_i)$,
-但$H_c^{k}(M)=\oplus_i H^{k}_c(M_i)$, 因为其需要具有紧支集.</p>
-<p>那么此时$(H_c^{n-q}(M))^\ast =\prod(H_c^{n-q}(M_i))^\ast \cong \prod H^q(M_i)=H^q(M)$.
-而另一个同构不一定成立.</p>
-<p>由对偶关系, 即有:</p>
-<p><strong>推论 1.1</strong>. <em>若流形$M$连通可定向, 则$H^n_c(M)\cong \mathbb{R}$, 特别地, 若$M$还是紧的, 则$H^n(M)\cong \mathbb{R}$.</em> </p>
-<h2 id="闭定向子流形的Poincare对偶"><a href="#闭定向子流形的Poincare对偶" class="headerlink" title="闭定向子流形的Poincaré对偶"></a>闭定向子流形的Poincaré对偶</h2><p>设$M$为$n$维定向流形.</p>
-<h3 id="闭无边定向子流形"><a href="#闭无边定向子流形" class="headerlink" title="闭无边定向子流形"></a>闭无边定向子流形</h3><p>假设$S$为$M$的$k$维闭无边定向子流形, 考虑$\omega\in Z_c^k(M)$,
-$\operatorname{supp}(i^\ast \omega)$也是$M$中的闭集,
-从而$\operatorname{supp}(i^\ast \omega)\subset \operatorname{supp}\omega$紧,
-$\int_Si^\ast \omega$有意义.</p>
-<p>另一方面, $\,\forall\,\omega \in B_c^\ast (M)$, $\omega=d\phi$,
-同理$\operatorname{supp}(i^\ast \phi)$紧. 进一步, 存在闭集$B$,
-$\operatorname{supp}(i^\ast \phi)\subset B$且$\partial B$为光滑$k-1$维子流形或空集,
-则由Stokes定理, $\int_Si^\ast \omega=\int_Bd(i^\ast \phi)=0$.</p>
-<p>综上, $\int_S i^\ast$定义了$H_c^k(M)$上的一个线性泛函,
-于是存在唯一的$[\eta_S]\in H^{n-k}(M)$,
-$\int_S i^\ast \omega=\int_M\omega\wedge \eta_S$.
-$[\eta_S]$或其任意代表元称为$S$的<strong>(闭)Poincaré对偶.</strong></p>
-<h3 id="紧致无边定向子流形"><a href="#紧致无边定向子流形" class="headerlink" title="紧致无边定向子流形"></a>紧致无边定向子流形</h3><p>当$S$紧时, 由于流形是$T_2$的, 当然$S$也是闭的, 上述讨论可以继承.</p>
-<p>$\,\forall\,[\omega]\in H^k(M)$, 由紧性,
-积分$\int_S i^\ast \omega$有意义. 此时它定义了$H^k(M)$上的一个线性泛函,
-于是设$M$有有限好覆盖, 则便对应唯一的$[\eta_S’]\in H^{n-k}_c(M)$,
-满足$\int_Si^\ast \omega=\int_M \omega\wedge\eta_S’$.
-$[\eta_S]$便称为$S$的<strong>紧Poincaré对偶.</strong></p>
-<p>容易看出自然映射$H_c^{n-k}(M)\rightarrow H^{n-k}(M)$把紧Poincaré对偶映为闭Poincaré对偶.
-然而这两个可能有很大的区别, 如非零的紧Poincaré对偶可能被映为$0$.</p>
-<h3 id="局部化原理"><a href="#局部化原理" class="headerlink" title="局部化原理"></a>局部化原理</h3><p>取紧定向$k$维子流形$S$在$M$中的开邻域$W$, 即$S\subset W\subset M$,
-那么将$S$在$W$中的紧Poincaré对偶零延拓到$M$上,
-则容易验证它也是$M$中的紧Poincaré对偶.</p>
-<p>这就是<strong>局部化原理</strong>:
-$S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
-<p>文章最后更新于 2021-09-21 17:25:28 </p>
+            <h2 id="严格证明"><a href="#严格证明" class="headerlink" title="严格证明"></a>严格证明</h2><p>若一个广义函数有弱导数, 那么它是不是本身几乎处处等于一个连续函数呢?
+注意这里不是指几乎处处连续, 比如$1_{[0,+\infty)}$是几乎处处连续的,
+但它不几乎处处等于一个连续函数;
+反过来$1_{\mathbb{Q} }$几乎处处等于连续函数$0,$ 但是几乎处处不连续.</p>
+<p>设$u\in H^{1,p}(\Omega),$ 那么由(负指数)Sobolev不等式, 当$p&gt;n$时,
+$\frac{n}{p}-1&lt;0,$ 因此$H^{1,p}(\Omega)$可嵌入到$C^{\alpha}(\Omega)$中,
+函数是Hölder连续的.</p>
+<p>那么$p\le n$时是否还可以呢? 这时就需要加额外的条件了.
+一个经典的条件是假设弱导数都是连续的. 那么任取$O\Subset \Omega,$
+$\overline{O}$为紧集, 故弱导数都在$L^\infty(O)$中,
+当然也在所有的$L^p(O)$中, $\,\forall\,p\ge 1.$</p>
+<p>由Sobolev不等式, $H^{1,p}(O)$可嵌入到$L^{q}(O)$中,
+$0\le \frac{n}{p}-1\le \frac{n}{q}.$ 由于弱导数也在$L^{q}(O)$中,
+实际上$u$也在$H^{1,q}(O)$中. 归纳地, 我们可得到$u\in H^{1,q}(O),$
+$q$满足$0\le \frac{n}{p}-k\le \frac{n}{q},$ $k\in \mathbb{Z}_+.$
+令$k$充分大, 使得$\frac{n}{p}-k<1,$ 即有$q>n,$ 将问题化为上一段的情形.
+由$O$的任意性即得到结论.</p>
+<p>称前面的条件经典, 是因为这样又能接着得到$u\in C^1(\Omega)$的结论.
+取磨光子$\phi_\varepsilon,$ 那么对充分小的$\varepsilon,$
+$u_\varepsilon:=u\ast \phi_\varepsilon$定义在$\Omega’\Subset \Omega$上,
+满足$u_\varepsilon\rightarrow u,$
+$Du_\varepsilon=Du \ast \phi_\varepsilon\rightarrow Du$一致收敛.
+因此$u_{\frac{1}{n} }\in C^\infty(\Omega’)$是$C^1(\Omega’)$模下的Cauchy序列,
+从而收敛到某个函数$v\in C^1(\Omega’).$
+而$u_\varepsilon\rightarrow u$即说明$v=u\in C^1(\Omega’).$
+由$\Omega’$选取任意性知$u\in C^1(\Omega).$</p>
+<h2 id="直观说明"><a href="#直观说明" class="headerlink" title="直观说明"></a>直观说明</h2><p>直观来看, 也可以尝试直接给出$u$的表达式来证明. 如对于$1$维情况,
+定义</p>
+<script type="math/tex; mode=display">
+v(x)=\int_{0}^x\partial u(y)dy,</script><p> 那么$v$是连续可导的,
+他的弱导数当然和它经典意义上的导数一样. 接下来我们来证$u,v$相差常数.
+只需证弱导数为零能推出函数为常数即可.</p>
+<p>设$u$的弱导数为零. 由于我们总是在分布意义下考察函数,
+只需证$\int u\varphi=c\int\varphi,$ $\,\forall\,\varphi\in C_c^\infty.$
+特别地只需对所有$\int \varphi=1$的函数证明. 当$\int \phi=0$时,
+$\,\exists\,\psi\in C_c^\infty,$ $\phi=\partial\psi.$
+因此对这样的$\phi,$ $\int u\phi=-\int \partial u\psi=0.$
+现任取$\psi$满足$\int \psi=1,$ 那么对所有$\int \varphi=1$的函数,
+$\int (\varphi-\psi)=0.$ 因此</p>
+<script type="math/tex; mode=display">
+\int u(\varphi-\psi)=0, \int u\varphi=\int u\psi,\quad \,\forall\,\int \varphi=1.</script><p>这就说明了结论, 此时$\int u\varphi$即是常数$c.$</p>
+<p>对于高维情况, 直观说明就变得复杂了.
+我们期望通过路径积分来给出$u$的表达式,
+但无法先验地判断积分与路径选取无关. 我们有偏导连续的结论,
+倘若能再求一阶偏导, 就能够通过格林公式(分部积分)给出证明.
+但可惜的是连续函数不见得有弱导数, 甚至有界变差函数也不行, 如devil’s
+staircase, 尽管其几乎处处可微. 不过我们已经有了$u$的确连续可导的结论,
+因此后验地我们知道的确积分与路径选取无关.</p>
+<p>高维情况对(每个)弱导数为零的论证是类似的,
+说明原函数沿所有直线为常数即可.</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a class="link"   target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/3550108/the-recovery-of-w1-p-omega-to-c1-omega?noredirect=1" >https://math.stackexchange.com/questions/3550108/the-recovery-of-w1-p-omega-to-c1-omega?noredirect=1<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/2780348/do-continuous-weak-derivatives-imply-continuity" >https://math.stackexchange.com/questions/2780348/do-continuous-weak-derivatives-imply-continuity<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/497708/is-a-continuous-function-with-continuous-weak-derivatives-of-class-c1" >https://math.stackexchange.com/questions/497708/is-a-continuous-function-with-continuous-weak-derivatives-of-class-c1<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-03-30 13:22:20 </p>
 
         </div>
 
@@ -304,11 +267,11 @@ $S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(5-1)-MV方法</li>
+        <li>本文标题：弱导数与连续性</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-21 17:11:26</li>
+        <li>创建时间：2022-03-30 13:22:05</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/21/《代数拓扑与微分形式》笔记(5-1)-MV方法/
+            本文链接：https://dream0ar.github.io/2022/03/30/弱导数与连续性/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -322,29 +285,14 @@ $S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-2)-K%C3%BCnneth%E5%85%AC%E5%BC%8F/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(5-2)-Künneth公式</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E5%BA%9E%E5%8A%A0%E8%8E%B1%E5%BC%95%E7%90%86/"
+                           href="/2022/03/24/Mazur-Ulam%E5%AE%9A%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(4)-庞加莱引理</span>
+                                <span class="post-nav-title-item">Mazur-Ulam定理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -550,7 +498,7 @@ $S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%BD%E8%A6%86%E7%9B%96%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-text">好覆盖的存在性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#de-Rham%E4%B8%8A%E5%90%8C%E8%B0%83%E7%BB%B4%E6%95%B0%E6%9C%89%E9%99%90%E6%80%A7"><span class="nav-text">de Rham上同调维数有限性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E6%B5%81%E5%BD%A2%E7%9A%84Poincare%E5%AF%B9%E5%81%B6"><span class="nav-text">定向流形的Poincaré对偶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%AD%E5%AE%9A%E5%90%91%E5%AD%90%E6%B5%81%E5%BD%A2%E7%9A%84Poincare%E5%AF%B9%E5%81%B6"><span class="nav-text">闭定向子流形的Poincaré对偶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AD%E6%97%A0%E8%BE%B9%E5%AE%9A%E5%90%91%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">闭无边定向子流形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B4%A7%E8%87%B4%E6%97%A0%E8%BE%B9%E5%AE%9A%E5%90%91%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">紧致无边定向子流形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8C%96%E5%8E%9F%E7%90%86"><span class="nav-text">局部化原理</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%A5%E6%A0%BC%E8%AF%81%E6%98%8E"><span class="nav-text">严格证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B4%E8%A7%82%E8%AF%B4%E6%98%8E"><span class="nav-text">直观说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
     </div>
 </div>
         </aside>
