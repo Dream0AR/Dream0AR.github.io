@@ -7087,4 +7087,295 @@ $\Delta (h_k-h_{k-1})=\Delta h_k$为$k-2$次齐次多项式, 又是常数,
         <category>PDE</category>
       </categories>
   </entry>
+  <entry>
+    <title>论文笔记-渐进平坦流形上的椭圆型方程</title>
+    <url>/2022/04/14/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-%E6%B8%90%E8%BF%9B%E5%B9%B3%E5%9D%A6%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E6%A4%AD%E5%9C%86%E5%9E%8B%E6%96%B9%E7%A8%8B/</url>
+    <content><![CDATA[<p>The Mass of an Asymptotically Flat Manifold - Robert Bartnik</p>
+<h2 id="带权Sobolev空间"><a href="#带权Sobolev空间" class="headerlink" title="带权Sobolev空间"></a>带权Sobolev空间</h2><p>我们首先在$\mathbb{R}^n,$ $n\ge 3$中讨论. 记$r=|x|,$
+$\sigma=\sqrt{1+r^2},$ 分别在$L_{\mathrm{loc} }^p(\mathbb{R}^n),$
+$L_{\mathrm{loc} }^p(\mathbb{R}^n\setminus\{0\})$中定义带权Lebesgue空间:</p>
+<script type="math/tex; mode=display">
+L_\delta^p:\quad \Vert u\Vert_{p,\delta}=
+ \left\{
+ \begin{aligned}
+ &\left(\int_{\mathbb{R}^n}|u|^p\sigma^{-\delta p-n}dx\right)^{\frac{1}{p} },&p<\infty,\\
+ &\operatorname{ess}\operatorname{sup}_{\mathbb{R}^n}(\sigma^{-\delta}|u|), &p=\infty,
+ \end{aligned}
+ \right.</script><script type="math/tex; mode=display">
+{L'}_\delta^p:\quad \Vert u\Vert'_{p,\delta}=
+ \left\{
+ \begin{aligned}
+ &\left(\int_{\mathbb{R}^n\setminus\{0\} }|u|^pr^{-\delta p-n}dx\right)^{\frac{1}{p} },&p<\infty,\\
+ &\operatorname{ess}\operatorname{sup}_{\mathbb{R}^n\setminus\{0\} }(r^{-\delta}|u|), &p=\infty,
+ \end{aligned}
+ \right.</script><p>接下来, 定义带权Sobolev空间:</p>
+<script type="math/tex; mode=display">
+W_\delta^{k,p}:\quad \Vert u\Vert_{k,p,\delta}=\sum_{j=0}^k\Vert D^ju\Vert_{p,\delta-j},</script><script type="math/tex; mode=display">
+{W'}_\delta^{k,p}:\quad \Vert u\Vert'_{k,p,\delta}=\sum_{j=0}^k\Vert D^ju\Vert'_{p,\delta-j},</script><p>注意这里权重的不同使得相加项量纲基本一致. $p\in [1,\infty)$时,
+$C_c^\infty(\mathbb{R}^n),$
+$C_c^\infty(\mathbb{R}^n\setminus\{0\})$分别是在它们中稠密的.
+权重的选取使得对于函数$u_R(x)=u(Rx),$</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert'_{k,p,\delta}=R^{-\delta}\Vert u_R\Vert'_{k,p,\delta},</script><script type="math/tex; mode=display">
+\Vert u\Vert_{k,p,\delta;A_R}\approx R^{-\delta}\Vert u_R\Vert_{k,p,\delta;A_1}, \quad R\ge 1.</script><p>这里$A_R:=B_{2R}\setminus B_R,$ $B_R$为原点处半径为$R$的闭球.
+“$\approx$”即指两者可由与$R$无关的常数倍控制, 考虑控制$\sigma$即可.
+接下来我们不加证明地列举如下性质:</p>
+<p><strong>定理 1</strong>. <em>对于$1\le p\le q\le \infty,$ $\delta_2&lt;\delta_1,$ $u\in L_{\delta_2}^q,$ 有$\Vert u\Vert_{p,\delta_1}\le c\Vert u\Vert_{q,\delta_2},$ 因此$L_{\delta_2}^q\subset L_{\delta_1}^p.$ 即$p$越高, $\delta$越小, $L_\delta^p$性质越好, 对函数要求越高.</em> </p>
+<p><strong>定理 2</strong> (Hölder不等式). <em>$u\in L_{\delta_1}^q,$ $v\in L_{\delta_2}^r,$ $\delta=\delta_1+\delta_2,$ $1\le p,q,r\le \infty,$ $\frac{1}{p}=\frac{1}{q}+\frac{1}{r},$ 则</em> </p>
+<script type="math/tex; mode=display">
+\Vert uv\Vert_{p,\delta}\le \Vert u\Vert_{q,\delta_1}\Vert v\Vert_{r,\delta_2}.</script><p><strong>定理 3</strong> (插值不等式). <em>$\,\forall\,\varepsilon&gt;0,$ $\,\exists\,C(\varepsilon)&gt;0,$ $\,\forall\,u\in W_{\delta}^{2,p},$ $p\in [1,\infty],$</em> </p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{1,p,\delta}\le \varepsilon\Vert u\Vert_{2,p,\delta}+C(\varepsilon)\Vert u\Vert_{0,p,\delta}.</script><p><strong>定理 4</strong> (Sobolev不等式). <em>若$u\in W_{\delta}^{k,p},$ 则</em> </p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{q,\delta}\le C\Vert u\Vert_{k,p,\delta},\quad 0<\frac{n}{p}-k\le \frac{n}{q}\le \frac{n}{p};</script><script type="math/tex; mode=display">
+\Vert u\Vert_{\infty,\delta}\le C\Vert u\Vert_{k,p,\delta},\quad \frac{n}{p}-k<0,\quad \text{且} |u(x)|=o(r^{\delta}).</script><p>定义带权Hölder模:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{C_\delta^{0,\alpha} }:=\sup_{x\in \mathbb{R}^n}\left(\sigma^{-\delta+\alpha}(x)\sup_{4|x-y|\le \sigma(x)}\frac{|u(x)-u(y)|}{|x-y|^{\alpha} }\right)+\sup_{x\in\mathbb{R}^n}\sigma^{-\delta}(x)|u(x)|.</script><p><strong>定理 5</strong> (负指数Sobolev不等式). <em>若$u\in W_{\delta}^{k,p},$ $0&lt;\alpha\le k-\frac{n}{p}\le 1,$ 则</em> </p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{C_{\delta}^{0,\alpha} }\le C\Vert u\Vert_{k,p,\delta},\quad \Vert u\Vert_{C_{\delta}^{0,\alpha}(A_R)}=o(1).</script><p><strong>定理 6</strong> (Poincaré不等式). <em>$\,\forall\,u\in {W’}_{\delta}^{1,p},$ $1\le p&lt;\infty,$ $\delta\neq 0,$</em> </p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{p,\delta}'\le |\delta|^{-1}\Vert u_r\Vert'_{p,\delta-1}\le |\delta|^{-1}\Vert Du\Vert'_{p,\delta-1},\quad u_r=\partial_ru=r^{-1}x\cdot Du.</script><script type="math/tex; mode=display">
+\Vert u\Vert_{p,\delta}\le C\Vert u_r\Vert_{p,\delta-1},\quad \delta<0,\quad u\in W_{\delta}^{1,p}.</script><p><strong>引理 7</strong>. <em>$k&gt;j,$ $\delta&lt;\varepsilon,$ $1\le p&lt;\infty,$ $W_\delta^{k,p}\Subset W_{\varepsilon}^{j,p}$为紧嵌入.</em> </p>
+<h2 id="渐进椭圆算子"><a href="#渐进椭圆算子" class="headerlink" title="渐进椭圆算子"></a>渐进椭圆算子</h2><h3 id="不等式估计"><a href="#不等式估计" class="headerlink" title="不等式估计"></a>不等式估计</h3><p><strong>定义 8</strong>. <em>算子$Pu:=a^{ij}(x)\partial_{ij}^2u+b^i(x)\partial_iu+c(x)u$称为(以速率$\tau$)<strong>渐进(asymptotic)</strong>至$\Delta$的, 若$\,\exists\,n&lt;q&lt;\infty,$ $\tau\ge 0,$ $C_1,\lambda,$ 使得</em> </p>
+<script type="math/tex; mode=display">
+\lambda |\xi|^2\le a^{ij}(x)\xi_i\xi_j\le \lambda^{-1}|\xi|^2,\quad \,\forall\,x,\xi\in \mathbb{R}^n;</script><script type="math/tex; mode=display">
+\Vert a^{ij}-\delta_{ij}\Vert_{1,q,-\tau}+\Vert b^i\Vert_{0,q-1,-1-\tau}+\Vert c\Vert_{0,\frac{q}{2},-2-\tau}\le C_1.</script><p>由前面的定理, $a^{ij}$是Hölder连续的,
+且$|a^{ij}-\delta_{ij}|=o(r^{-\tau}).$ 对于$1\le p\le q,$
+$\delta\in \mathbb{R},$
+$P:W_{\delta}^{2,p}\rightarrow W_{\delta-2}^{0,p}$是有界算子.
+事实上有如下估计成立:</p>
+<p><strong>命题 9</strong>. <em>设$P$渐进至$\Delta,$ $1&lt;p\le q,$ $\delta\in \mathbb{R},$ 则存在常数$C=C(n,p,q,\delta,C_1,\lambda),$ 使得若$u\in L_\delta^{0,p},$ $Pu\in L_{\delta-2}^{0,p},$ 则$u\in W_{\delta}^{2,p},$</em> </p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta}).</script><p>欲证该命题, 做二阶椭圆型方程中通常的$L^p$估计即可.
+注意该估计对${W’}_{\delta}^{k,p}$模也成立.</p>
+<p>接下来我们来讨论算子$P$的Fredholm性, 即考虑其像是否是闭的,
+以及核与余核维数的有限性. 上述命题并不足以说明它具有该性质.
+我们需要加强估计, 使得右侧误差项关于$W_\delta^{2,p}$是紧的.</p>
+<p>权重参数$\delta$称为<strong>非例外的(nonexceptional)</strong>,
+若$\delta\in \mathbb{R}\setminus\{k\in \mathbb{Z},k\neq -1,-2,\cdots,3-n\}.$
+<strong>例外值(exceptional
+value)</strong>$\{k\in \mathbb{Z}, k\neq -1,-2,\cdots,3-n\}$对应了$\mathbb{R}^n\setminus B_1$上调和函数的增长阶数.
+定义 </p>
+<script type="math/tex; mode=display">
+k^-(\delta)=\max\{k \text{ exceptional},k<\delta\}.</script><p><strong>定理 10</strong>. <em>设$\delta$非例外, $p\in (1,\infty),$ $s$为非负整数. 那么有同构</em> </p>
+<script type="math/tex; mode=display">
+\Delta:{W'}_\delta^{s+2,p}\rightarrow {W'}_{\delta-2}^{s,p},</script><p><em>且存在常数</em>$C=C(n,p,\delta,s),$</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert'_{s+2,p,\delta}\le C\Vert\Delta u\Vert'_{s,p,\delta-2}.</script><p><strong>证:</strong> 只需对$s=0$的情况证明.
+首先我们说明$\Delta$的分布逆有卷积核$K(x,y):$</p>
+<script type="math/tex; mode=display">
+c_nK(x,y)=
+ \left\{\begin{aligned}
+ &|x-y|^{2-n} &2-n<\delta<0,\\
+ &|x-y|^{2-n}-|y|^{2-n}\sum_{j=0}^k P_j^\lambda(\mu)\left(\frac{|x|}{|y|}\right)^j &k\ge 0,\\
+ &|x-y|^{2-n}-|x|^{2-n}\sum_{j=0}^k P_j^\lambda(\mu)\left(\frac{|y|}{|x|}\right)^j &k<2-n.
+ \end{aligned}\right.</script><p>这里$k=k^-(\delta),$ $\mu=\frac{\left&lt;{}x,y\right&gt;}{|x||y|},$
+$P_j^\lambda$是超球(ultraspherical)函数, 出现在泰勒展开式中:</p>
+<script type="math/tex; mode=display">
+|x-y|^{2-n}=|x|^{2-n}\sum_0^\infty P_j^\lambda(\mu)\left(\frac{|y|}{|x|}\right)^j,\quad |y|<|x|.</script><p>先来验证卷积核$K$的确定义了${W’}_{\delta-2}^{0,p}\rightarrow {W’}_{\delta}^{0,p}$的有界算子.
+以$k\ge 0$的情况为例, 我们有估计 </p>
+<script type="math/tex; mode=display">
+|K(x,y)|\le c(n,k)|x-y|^{2-n}
+ \left\{\begin{aligned}
+ &\left(\frac{|x|}{|y|}\right)^{k+1} &\frac{|x|}{|y|}<\frac{1}{2},\\
+ &\left(\frac{|x|}{|y|}\right)^{n+k-2} & \frac{|x|}{|y|}\ge \frac{1}{2}.
+ \end{aligned}\right.</script><p>我们有引理如下:</p>
+<p><strong>引理 11</strong>. *固定$p\in (1,\infty),$ $\frac{1}{p}+\frac{1}{p’}=1,$ $a,b\in \mathbb{R}$且$a+b&gt;0.$ 设有核 </p>
+<script type="math/tex; mode=display">
+K'(x,y)=|x|^{-a}|x-y|^{2-n}|y|^{-b},\quad x\neq y.</script><ul>
+<li><em>对$u\in L^p(\mathbb{R}^n),$ 定义$K’u(x)=\int K’(x,y)u(y)dy,$ 那么$K’:L^p\rightarrow L^p$是有界算子当且仅当$a&lt;\frac{n}{p},$ $b&lt;\frac{n}{p’}.$</em> </li>
+</ul>
+<p>令$K_1,K_2$是核算子$|x-y|^{2-n}\left(\frac{|x|}{|y|}\right)^\alpha,$
+分别对应$\alpha=k+1,$ $\alpha=n+k-2$.
+上述引理说明当$3-n+k&lt;\delta&lt;k+1$时, 核</p>
+<script type="math/tex; mode=display">
+K_1'(x,y)=|x|^{-\delta-\frac{n}{p} }K_1(x,y)|y|^{\delta-2+\frac{n}{p} }</script><p>定义了$L^p\rightarrow L^p$的有界算子. 进而</p>
+<script type="math/tex; mode=display">
+\Vert K_1u\Vert_{p,\delta}'\le c\Vert r^{2-\delta-\frac{n}{p} }u\Vert_{L^p}\le c\Vert u\Vert'_{p,\delta-2},</script><p>即$K_1:{W’}_{\delta-2}^{0,p}\rightarrow {W’}_{\delta}^{0,p}$是有界算子.</p>
+<p>类似地, 当$k&lt;\delta&lt;n+k-2$时, $K_2’$是$L^p\rightarrow L^p$上的有界算子,
+进而$K_2$也是有界算子. 这两个估计就说明了当$k&lt;\delta&lt;k+1$时,
+$K$也是有界算子, 而$k=k^-(\delta),$ 条件自动满足.
+$K$定义中的另外两种情况类似处理.</p>
+<p>我们有分布恒等式: </p>
+<script type="math/tex; mode=display">
+\Delta_x K(x,y)=\Delta_y K(x,y)=\delta(x-y),</script><p>因此$K(\Delta u)=u,$
+$\,\forall\,u\in C_c^\infty(\mathbb{R}^n\setminus \{0\}).$
+于是由$K$的有界性及$C_c^\infty$的稠密性给出</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{0,p,\delta}'=\Vert K(\Delta u)\Vert_{0,p,\delta}'\le C\Vert\Delta u\Vert'_{0,p,\delta-2},\quad \,\forall\,u\in {W'}_\delta^{k,p}.</script><p>结合前面的$L^p$估计, 就给出了定理所述不等式的证明($s=0$).
+由于$\Delta:{W’}_{\delta}^{2,p}\rightarrow {W’}_{\delta-2}^{0,p}$是有界算子,
+该不等式立刻说明其像是闭的.</p>
+<p>由分布恒等式, 我们看到,</p>
+<script type="math/tex; mode=display">
+\Delta(Kf)(x)=f(x),\quad f\in C_c^\infty(\mathbb{R}^n\setminus \{0\}),\quad Kf\in {W'}_{\delta}^{0,p}.</script><p>所以$\Delta$是同构, 定理证毕.</p>
+<p>定理给出了如下熟知的Liouville定理:</p>
+<p><strong>推论 12</strong>. <em>设$\Delta u=0,$ $u\in L_\delta^p,$ $1&lt;p&lt;\infty.$ 令$k=k^-(\delta).$ 若$k&lt;0,$ 那么$u\equiv 0;$ 若$k\ge 0,$ 那么$u$是$k$阶及以下的调和多项式.</em> </p>
+<p><strong>证:</strong> 由于$0\in {W’}_\delta^{s,p},$ $\,\forall\,s\ge 0,$
+推出$u\in {W’}_\delta^{s+2,p}.$ 由Sobolev不等式,
+$u\in C^\infty(\mathbb{R}^n).$ 令$h_k(x)$为$u(x)$的$k$次 Taylor 展开式,
+即 </p>
+<script type="math/tex; mode=display">
+u(x)=h_k(x)+O(|x|^{k+1}).</script><p>由于$u$是调和的, 我们知道$h_k$为调和多项式.
+此时$u-h_k\in {L’}_\delta^p,$ 由前面的命题与定理,
+$u-h_k\in {W’}_\delta^{2,p},$
+且有估计$\Vert u-h_k\Vert’_{2,p,\delta}\le C\Vert\Delta(u-h_k)\Vert_{0,p,\delta-2}’=0,$
+从而$u=h_k.$</p>
+<p>接下来, 我们给出与前面命题类似的估计. 乍一看不等式的量纲有些混乱,
+因此称为scale-broken估计(我猜的).</p>
+<p><strong>定理 13</strong>. <em>设$P$渐进于$\Delta,$ $\delta\in \mathbb{R}$非例外, 渐进条件中的$q\ge p&gt;1.$ 那么算子$P:W_\delta^{2,p}\rightarrow W_{\delta-2}^{0,p}$的核是有限维的, 具闭值域, 且对任意$u\in W_{\delta}^{2,p},$ 有常数$C,R$由$P,\delta,n,p,q$控制, 使得</em> </p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{L^p(B_R)}).</script><p><strong>证:</strong> 取算子模</p>
+<script type="math/tex; mode=display">
+\Vert P-\Delta\Vert_{op}:=\sup\{\Vert(P-\Delta)u\Vert_{0,p,\delta-2}:u\in W_{\delta}^{2,p},\Vert u\Vert_{2,p,\delta}=1\}.</script><p>类似地定义$\Vert\cdot\Vert_{op,R},$
+要求选取的函数$u$支集落在$E_R=\mathbb{R}^n\setminus B_R$中,
+即在$B_R$内取零. 那么若$\operatorname{supp}(u)\subset E_R,$ 由$q&gt;n,$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Vert(P-\Delta)u\Vert_{0,p,\delta-2}\le& \sup_{|x|>R}\{|a^{ij}(x)-\delta_{ij}|\}\Vert D^2u\Vert_{0,p,\delta-2}\\
+ &+C\Vert b\Vert_{0,q,-1;E_R}\Vert Du\Vert_{1,p,\delta-1}+C\Vert c\Vert_{0,\frac{q}{2},-2;E_R}\Vert u\Vert_{2,p,\delta}
+ \end{aligned}</script><p>由于$P$渐进于$\Delta,$</p>
+<script type="math/tex; mode=display">
+\Vert P-\Delta\Vert_{op,R}=o(1),\quad R\rightarrow \infty.</script><p>取$\chi\in C_c^\infty(B_2),$ $\chi\in [0,1],$ $\chi|_{B_1}=1.$
+取待定常数$R,$ 令$\chi_R(x)=\chi(\frac{x}{R}),$ $u_0=\chi_Ru,$
+$u_\infty=(1-\chi_R)u,$ $u=u_0+u_\infty.$ 由前面的定理, 我们有:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Vert u_\infty\Vert_{2,p,\delta}&\le C\Vert\Delta u_{\infty}\Vert_{0,p,\delta-2}=C\Vert(\Delta-P+P) u_{\infty}\Vert_{0,p,\delta-2}\\
+ &\le C(\Vert Pu_{\infty}\Vert_{0,p,\delta-2}+\Vert P-\Delta\Vert_{op,R}\Vert u_{\infty}\Vert_{2,p,\delta}) 
+ \end{aligned}</script><p>由于$\Vert P-\Delta\Vert_{op,R}=o(1),$ 对充分大的$R,$ 有</p>
+<script type="math/tex; mode=display">
+\Vert u_{\infty}\Vert_{2,p,\delta}\le C\Vert Pu_\infty\Vert_{0,p,\delta-2}.</script><p>进一步估计, 有 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Vert Pu_\infty\Vert_{0,p,\delta-2}&\le \Vert Pu\Vert_{0,p,\delta-2}+\Vert 2a^{ij}u_i\partial_j\chi_R+(a^{ij}\partial^2_{ij}\chi_R+b^i\partial_i \chi_R)u\Vert_{0,p,\delta-2;A_R}\\
+ &\le \Vert Pu\Vert_{0,p,\delta-2}+C\Vert u\Vert_{1,p,\delta;A_R}
+ \end{aligned}</script><p>再对$\Vert\cdot\Vert_{1,p,\delta}$项利用插值不等式进一步改造,
+以及$L^p$估计, 即有</p>
+<script type="math/tex; mode=display">
+\Vert u_\infty\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta;A_R}).</script><p>同时由$L^p$估计, 对$u_0$有</p>
+<script type="math/tex; mode=display">
+\Vert u_0\Vert_{2,p,\delta}\le C(\Vert Pu_0\Vert_{0,p,\delta-2}+\Vert u_0\Vert_{0,p,\delta})\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert Pu_{\infty}\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta;{B_{2R} } }).</script><p>再利用一遍前面关于$Pu_\infty$已有的估计, 就得到了定理所需的不等式:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{2,p,\delta}\le \Vert u_0\Vert_{2,p,\delta}+\Vert u_\infty\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{L^p(B_R)}).</script><p>接下来讨论核维数的有限性. 设$\{u_k\}$为$\ker P$中的函数列,
+满足$\Vert u_k\Vert_{2,p,\delta}=1.$ 由紧嵌入定理,
+不妨设$\{u_k\}$本身在$L^p(B_R)$中强收敛. 此时由于$Pu_k\equiv 0,$
+刚刚证得的不等式就说明了$\{u_k\}$是$W_\delta^{2,p}$中的Cauchy列.
+因此$\ker P$中单位球面是紧的, 从而其维数有限.</p>
+<p>由于$\ker P$维数有限, 有分解$W_\delta^{2,p}=\ker P\oplus Z,$ $Z$为闭集.
+断言存在常数$C$使得</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{2,p,\delta}\le C\Vert Pu\Vert_{0,p,\delta-2},\quad \,\forall\,u\in Z.</script><p>不然, 存在$\{u_k\},$ $\Vert u_k\Vert_{2,p,\delta}\equiv 1,$
+而$\Vert Pu_k\Vert_{0,p,\delta-2}\rightarrow 0.$ 此时由紧嵌入定理,
+利用定理中的不等式再一次得到$\{u_k\}$是$W_{\delta}^{2,p}$中的Cauchy列.
+由$Z$的闭性, 它收敛到$u_0\in Z.$ 然而又由$P$的连续性, $Pu_0=0,$
+$u_0\in \ker P.$ 从而$u_0=0,$
+但这又与$\Vert u_k\Vert_{2,p,\delta}\equiv 1$矛盾,
+因为$u_k\rightarrow u_0.$ 于是断言成立, 立即说明$P$具闭值域.</p>
+<h3 id="半Fredholm性质"><a href="#半Fredholm性质" class="headerlink" title="半Fredholm性质"></a>半Fredholm性质</h3><p>接下来我们进一步考虑$P$的核的维数. 记</p>
+<script type="math/tex; mode=display">
+N(P,\delta)=\dim\ker (P:W_\delta^{2,p}\rightarrow W_{\delta-2}^{0,p}), \quad 1<p\le q.</script><p>由$L^p$估计与Sobolev不等式, 可以说明$N(P,\delta)$与$p$选取无关.
+下面为了简化记号, 我们记$X=W_\delta^{2,p},$ $Y=W_{\delta-2}^{0,p},$
+$\delta$非例外, $1&lt;p\le q.$ 那么由刚刚的定理,
+我们知道$P:X\rightarrow Y$是<strong>半Fredholm</strong>的, 即核是有限维的,
+且具闭值域.</p>
+<p><strong>命题 14</strong>. <em>设$P:X\rightarrow Y$是Banach空间间的半Fredholm算子, 那么存在常数$C&gt;0,$ 有估计</em> </p>
+<script type="math/tex; mode=display">
+\Vert u-\ker P\Vert_{X}=\Vert u\Vert_{X/\ker P}\le C\Vert Pu\Vert_Y.</script><p><em>同时, 有</em>$\varepsilon&gt;0,$
+<em>使得对于任意满足</em>$\Vert P-P’\Vert_{op}&lt;\varepsilon$<em>的另一个半Fredholm算子</em>$P’,$</p>
+<script type="math/tex; mode=display">
+\dim \ker P'\le \dim \ker P.</script><p><strong>证:</strong> 已知$\operatorname{Im}P$是闭的, 那么它是Banach空间,
+因此第一个估计由逆算子定理立即得到. 现令$\varepsilon=\frac{1}{2C},$
+设核维数不等式不成立, 那么存在$u\in \ker P’,$ $\Vert u\Vert_X=1,$
+$\Vert u-\ker P\Vert_X&gt;\frac{1}{2}.$ 此时</p>
+<script type="math/tex; mode=display">
+\frac{1}{2}<\Vert u-\ker P\Vert_{X}\le C\Vert Pu\Vert_{Y}\le C\Vert P-P'\Vert_{op}\Vert u\Vert_X<C\varepsilon,</script><p>产生矛盾.</p>
+<p>可见$\frac{1}{C}$衡量着$P$与其它核更大的半Fredholm算子的距离.
+下面反方向的命题使这一观点更为深刻:</p>
+<p><strong>命题 15</strong>. <em>$X,Y$同上, 记$\bm F$为$X$到$Y$上渐进于$\Delta$的算子全体. 设$\bm U\subset \bm F$为其中满足$\dim\ker P\equiv N$的算子全体, 那么给定$P\in \bm U,$ $\,\exists\,\varepsilon,C&gt;0,$ 使得</em> </p>
+<script type="math/tex; mode=display">
+\Vert u-\ker P'\Vert_{X}\le C\Vert P'u\Vert_Y,\quad \,\forall\,u\in X,P'\in \bm U, \Vert P-P'\Vert_{op}\le \varepsilon.</script><p><strong>证:</strong> 不然, 存在序列$P_k\rightarrow P\in \bm U,$ $\{u_k\}\subset X,$
+满足$\Vert u_k\Vert_X=1,$ $\Vert u_k-\ker P_k\Vert_{X}&gt;\frac{1}{2},$ 且</p>
+<script type="math/tex; mode=display">
+\Vert u_k-\ker P_k\Vert_{X}\ge k\Vert P_ku_k\Vert_Y.</script><p>这说明$P_ku_k\rightarrow 0.$
+此时继续通过前面定理中的紧嵌入方法即可取子列$u_k\rightarrow u,$
+满足$Pu=0,$ $\Vert u\Vert_X=1,$
+且对充分大的$k$有$\Vert u-\ker P_k\Vert\ge \frac{1}{4}.$</p>
+<p>类似地, 任取$v_k\in \ker P_k,$ $\Vert v_k\Vert_X=1,$
+同理它也有子列收敛到$v\in \ker P.$
+这就说明$N$维的$\ker P_k$收敛到$\ker P$中的$N$维子空间.
+然而由上段的估计, $u$不在这样的子空间中, 但$u\in \ker P.$
+这就说明$\dim \ker P\ge N+1,$ 矛盾.</p>
+<p>最后我们给出如下的定理, 说明核更大的半Fredholm算子集更小.</p>
+<p><strong>定理 16</strong>. <em>设$P:X\rightarrow Y$是半Fredholm的, $A:X\rightarrow Y$是$P$-有界的, 即$\Vert Au\Vert_Y\le C(\Vert Pu\Vert_Y+\Vert u\Vert_X),$ $\,\forall\,u\in X.$ 那么存在$\lambda_0&gt;0,$ 使得对于$|\lambda|&lt;\lambda_0,$ $P+\lambda A$总是半Fredholm的, 且$\dim \ker (P+\lambda A)$在$0&lt;\lambda&lt;\lambda_0$时为常数(注意$\lambda=0$不在其中).</em> </p>
+<h3 id="Fredholm指标"><a href="#Fredholm指标" class="headerlink" title="Fredholm指标"></a>Fredholm指标</h3><p>我们有伴随算子$P^\ast :W^{0,p’}_{2-n-\delta}\rightarrow W^{-2,p’}_{-n-\delta},$
+$\frac{1}{p’}+\frac{1}{p}=1.$ 若其也是渐进的,
+那么我们可以通过<strong>Fredholm指标</strong>得到更多信息. 由前面的命题,
+当$1&lt;p’\le \widetilde{q}$时, $\ker P^\ast \subset W^{2,p’}_{2-n-\delta}.$
+当$\delta$非例外时, 伴随也是半Fredholm算子, 从而:</p>
+<script type="math/tex; mode=display">
+\dim \operatorname{coker}P=\dim \ker P^\ast =N(P^\ast ,2-n-\delta).</script><p>因此$P$成为<strong>Fredholm算子</strong>, 具<strong>Fredholm指标</strong>:</p>
+<script type="math/tex; mode=display">
+\iota(P,\delta)=N(P,\delta)-N(P^\ast ,2-n-\delta).</script><p>由于指标在Fredholm算子空间上是局部常数的, 我们有</p>
+<script type="math/tex; mode=display">
+\iota(P,\delta)=\iota(\Delta,\delta)=:\iota_0(\delta).</script><p>而$\iota_0(\delta)$是可以计算的.
+记$H_k$为$\mathbb{R}^n$中$k$次齐次调和多项式全体,
+我们有$n_k=\dim H_k=\frac{(n-2+2k)(n-3+k)!}{k!(n-2)!}.$
+接下来定义$N_0(\delta):=N(\Delta,\delta),$ 我们有:</p>
+<script type="math/tex; mode=display">
+N_0(\delta)=n_0+\cdots+n_k=\frac{(n-1+2k)(n-2+k)!}{k!(n-1)!},\quad k=k^-(\delta)>0.</script><p>因此, $\iota_0(\delta)=\begin{cases}
+ N_0(\delta),&amp;\delta&gt;0;\\
+ -N_0(2-n-\delta),&amp;\delta&lt;0.
+ \end{cases}$ 上述推导给出了如下命题:</p>
+<p><strong>命题 17</strong>. <em>设$P,P^\ast $都是渐进于$\Delta$的, $\delta$非例外, $1&lt;p\le q$时, $P:W^{2,p}_\delta\rightarrow W^{0,p}_{\delta-2}$是Fredholm算子, $N(P,\delta)=\dim\ker P$与$p$选取无关. 若$k^-(\delta)&lt;\delta’\le \delta,$ 那么$N(P,\delta)=N(P,\delta’),$ 且若$u\in W_\delta^{2,p},$ $Pu\in W_{\delta’}^{0,p},$ 则$u\in W_{\delta’}^{2,p}.$</em> </p>
+<p><strong>证:</strong> 由于$k^-(\delta)=k^-(\delta’),$
+$\iota(P,\delta)-\iota(P,\delta’)=\iota_0(\delta)-\iota_0(\delta’)=0.$
+展开即有</p>
+<script type="math/tex; mode=display">
+N(P,\delta)-N(P,\delta')=N(P^\ast ,2-n-\delta)-N(P^\ast ,2-n-\delta').</script><p>由于$L^p_{\delta’}\subset L^p_{\delta},$ 左侧非负右侧非正,
+因此两侧皆为零, $N(P,\delta)=N(P,\delta’).$
+这说明$\ker(P,\delta)=\ker(P,\delta’).$ 现若$Pu\in W_{\delta’}^{0,p},$
+则$\left&lt;{}Pu,v\right&gt;=\left&lt;{}u,P^\ast v\right&gt;=0,$
+$\,\forall\,v\in \ker(P^\ast ,2-n-\delta’).$ 由$P$具闭值域,
+$Pu\in \operatorname{Im}(P,\delta’).$
+因此$\,\exists\,w\in W_{\delta’}^{2,p}\subset W_\delta^{2,p},$
+使得$Pu=Pw.$
+即$w-u\in\ker(P,\delta)=\ker (P,\delta’)\subset W_{\delta’}^{2,p}.$
+进而$u\in W_{\delta’}^{2,p}.$</p>
+<p>当$P=\Delta_g$时, $P^\ast =P.$
+注意伴随由配对$(u,v)=\int uvd\mathcal{H}^n=\int uv\sqrt{g}dx$确定.</p>
+<p><strong>命题 18</strong>. <em>设$g_{ij}(x)$是$\mathbb{R}^n$上一致椭圆的, $(g_{ij}-\delta_{ij})\in W_0^{1,q},$ $n&lt;q&lt;\infty.$ 若$\delta$非例外, $1&lt;p\le q,$ 则$\Delta_g:W_{\delta}^{2,p}\rightarrow W_{\delta-2}^{0,p}$是Fredholm的, $N(\Delta_g,\delta)=N_0(\delta).$</em> </p>
+<p><strong>证:</strong> 由正则性条件, $\Delta_g$渐进于标准Laplace算子,</p>
+<script type="math/tex; mode=display">
+\Delta_g=g^{ij}\partial^2_{ij}+\frac{\partial {}g^{ij} }{\partial {}x^j}\partial_i+\frac{g^{ik}g^{lj} }{2}\frac{\partial {}g_{jl} }{\partial {}x^l}\partial_i.</script><p>又由$\Delta_g$的自伴随性, 可知$\Delta_g$可继承前述讨论, 是Fredholm算子.
+由指标不变性, 只需证明当$\delta&lt;0$时, $N(\Delta_g,\delta)=0.$
+而$\Delta_gu=0,$ $\delta&lt;0$时, 由$u\in W_{\delta}^{2,p}$出发,
+反复利用前面的命题, 结合Sobolev不等式, 得到$u$在无穷远处趋于零.
+这样利用极值原理即可得出结论.</p>
+<p>由先前的命题, 自动有:</p>
+<p><strong>推论 19</strong>. <em>令$\delta$非例外, $n<q<\infty,$ $1<p\le q.$ 那么存在常数$C,\varepsilon>0,$ 使得对任意度量$g_{ij},$ 满足$\Vert g_{ij}-\delta_{ij}\Vert_{1,q,0}\le \varepsilon,$ 有</em> </p>
+<script type="math/tex; mode=display">
+\Vert u-\ker \Delta_g\Vert_{2,p,\delta}\le C\Vert\Delta_g u\Vert_{0,p,\delta-2},\quad \,\forall\,u\in W_{\delta}^{2,p}.</script><p>最后我们来看本节得到的最重要的一个结论:</p>
+<p><strong>定理 20</strong>. <em>设$P$渐进于$\Delta,$ 速率为$\tau&gt;0,$ $u\in W_{\delta}^{2,q},$ $\delta$非例外, 在$E_R$上$Pu=0.$ 那么存在例外值$k\le k^-(\delta),$ $k$次齐次调和函数$h_k\in C^\infty(\mathbb{R}^n),$ 使得</em> </p>
+<script type="math/tex; mode=display">
+u-h_k=o(r^{k-\tau}),\quad r\rightarrow \infty.</script><p><strong>证:</strong> 记在$\mathbb{R}^n$中$Pu=f,$
+那么$\Delta u=F\in W^{0,q}_{\delta-2-\tau}.$ 在$E_R$上,</p>
+<script type="math/tex; mode=display">
+F=(\delta_{ij}-a^{ij})\partial^2_{ij}u-b^i\partial_iu-cu.</script><p>由于$\Delta:{W’}_{\delta-\tau}^{2,q}\rightarrow {W’}_{\delta-\tau-2}^{0,q}$是同构,
+$\,\exists\,v\in W_{\delta-\tau}^{2,q},$ 使得</p>
+<script type="math/tex; mode=display">
+\Delta(u-v)=0,\quad |x|>R.</script><p> 由经典的调和函数展开式, 我们有:</p>
+<script type="math/tex; mode=display">
+u-v=h_k+O(r^{k-1}),</script><p> $k\le k^-(\delta),$ $h_k$如上所述.
+现$u-h_k=v+O(r^{k-1})\in W_{\delta-\tau}^{2,q},$
+对应着$F\in W_{\delta-2-2\tau}^{0,q},$
+继续说明$v\in W_{\delta-2\tau}^{2,q}.$
+重复直到我们得到$u-h_k\in W_{k-\tau}^{2,q}$即可.</p>
+<p>文章最后更新于 2022-04-14 15:01:23 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>科研</category>
+        <category>PDE</category>
+      </categories>
+  </entry>
 </search>
