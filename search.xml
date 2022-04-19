@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>LaTeX-测试</title>
+    <url>/2021/07/20/LaTeX-%E6%B5%8B%E8%AF%95/</url>
+    <content><![CDATA[<p>测试$\LaTeX$是否正常显示: $e^{ix}=\cos(x)+i\sin(x)$.</p>
+<p>行间公式测试: <script type="math/tex">\sum_{i=1}^n a_i^j\qquad \forall j\in \mathbb{Z}</script>.</p>
+<p>格式测试: 
+\begin{align}
+    a&amp;=b+c &amp; A\\
+    &amp;=d+e+f &amp; B
+\end{align}</p>
+]]></content>
+      <categories>
+        <category>博客创建</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Mazur-Ulam定理</title>
+    <url>/2022/03/24/Mazur-Ulam%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p><strong>定理 1</strong>. <em>$X,Y$为赋范线性空间. 若$\phi:X\rightarrow Y$为等距满射, 则$\phi$为仿射变换.</em> </p>
+<p><strong>证:</strong> 首先由于$\phi$是等距变换, $\phi$是单射, 且$\phi$连续. 同时,
+$\phi-\phi(0)$也是等距满射. 故不妨设$\phi(0)=0,$
+只需验证$\phi$为线性变换. 为此, 只要有$\phi(x+y)=\phi(x)+\phi(y)$即可.
+这等价于总有</p>
+<script type="math/tex; mode=display">
+\phi\left(\frac{x+y}{2}\right)=\frac{\phi\left(x\right)+\phi\left(y\right)}{2}.</script><p>$\,\forall\,x,y\in X,$ 记$z=\frac{x+y}{2},$
+取$X$上关于$z$点的中心对称变换$\psi(w):=2z-w.$ 那么</p>
+<script type="math/tex; mode=display">
+|\phi(w)-z|=|w-z|,\quad |\phi(w)-w|=2|w-z|.</script><p>取$G$为保持$x,y$两点不动的等距自变换群,
+记$\lambda=\sup\{|gz-z|:g\in G\},$ 那么$\,\forall\,g\in G,$</p>
+<script type="math/tex; mode=display">
+|gz-x|=|gz-gx|=|z-x|,\quad |gz-z|\le |gz-x|+|x-z|=2|z-x|,\quad \lambda<\infty.</script><p>定义$g^\ast :=\psi g^{-1}\psi g,$ 那么$\,\forall\,g\in G,$</p>
+<script type="math/tex; mode=display">
+2|gz-z|=|\psi gz-gz|=|g^{-1}\psi gz-z|=|\psi g^{-1}\psi gz-z|=|g^\ast z-z|\le \lambda.</script><p>关于$g$取上确界, 就得到了$\lambda=0.$
+从而<em>所有保持两点不动的等距自变换也保持中点不动.</em></p>
+<p>接下来,
+我们取$\psi’$为$Y$中关于$z’:=\frac{\phi(x)+\phi(y)}{2}$的中心对称变换.
+此时$h:=\psi\phi^{-1}\psi’\phi$保持$x,y$两点不动, 从而由前面的结论,
+$hz=z.$ 具体展开并化简移项得到$\psi’\phi z=\phi z.$
+然而中心对称变换$\psi’$的唯一不动点为$z’,$ 这就说明$\phi z=z’,$
+从而命题得证.</p>
+<p>参考: <a class="link"   href="https://zhuanlan.zhihu.com/p/24978670" >https://zhuanlan.zhihu.com/p/24978670<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-03-24 21:24:48 </p>
+]]></content>
+      <categories>
+        <category>命题与定理</category>
+        <category>分析</category>
+        <category>泛函分析</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Hexo博客搭建流程</title>
     <url>/2021/08/12/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/</url>
     <content><![CDATA[<p>分享一下搭建个人博客的过程，包括一些细节的处理等等，希望会有帮助。</p>
@@ -140,21 +189,6 @@ zhihu.close()
       </categories>
   </entry>
   <entry>
-    <title>LaTeX-测试</title>
-    <url>/2021/07/20/LaTeX-%E6%B5%8B%E8%AF%95/</url>
-    <content><![CDATA[<p>测试$\LaTeX$是否正常显示: $e^{ix}=\cos(x)+i\sin(x)$.</p>
-<p>行间公式测试: <script type="math/tex">\sum_{i=1}^n a_i^j\qquad \forall j\in \mathbb{Z}</script>.</p>
-<p>格式测试: 
-\begin{align}
-    a&amp;=b+c &amp; A\\
-    &amp;=d+e+f &amp; B
-\end{align}</p>
-]]></content>
-      <categories>
-        <category>博客创建</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Jacobi公式</title>
     <url>/2022/01/24/Jacobi%E5%85%AC%E5%BC%8F/</url>
     <content><![CDATA[<p>在学习黎曼几何时遇到了一个计算上的问题, 查阅后才发现居然有这种公式,
@@ -183,97 +217,6 @@ zhihu.close()
         <category>命题与定理</category>
         <category>代数</category>
         <category>高等代数</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Mazur-Ulam定理</title>
-    <url>/2022/03/24/Mazur-Ulam%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[<p><strong>定理 1</strong>. <em>$X,Y$为赋范线性空间. 若$\phi:X\rightarrow Y$为等距满射, 则$\phi$为仿射变换.</em> </p>
-<p><strong>证:</strong> 首先由于$\phi$是等距变换, $\phi$是单射, 且$\phi$连续. 同时,
-$\phi-\phi(0)$也是等距满射. 故不妨设$\phi(0)=0,$
-只需验证$\phi$为线性变换. 为此, 只要有$\phi(x+y)=\phi(x)+\phi(y)$即可.
-这等价于总有</p>
-<script type="math/tex; mode=display">
-\phi\left(\frac{x+y}{2}\right)=\frac{\phi\left(x\right)+\phi\left(y\right)}{2}.</script><p>$\,\forall\,x,y\in X,$ 记$z=\frac{x+y}{2},$
-取$X$上关于$z$点的中心对称变换$\psi(w):=2z-w.$ 那么</p>
-<script type="math/tex; mode=display">
-|\phi(w)-z|=|w-z|,\quad |\phi(w)-w|=2|w-z|.</script><p>取$G$为保持$x,y$两点不动的等距自变换群,
-记$\lambda=\sup\{|gz-z|:g\in G\},$ 那么$\,\forall\,g\in G,$</p>
-<script type="math/tex; mode=display">
-|gz-x|=|gz-gx|=|z-x|,\quad |gz-z|\le |gz-x|+|x-z|=2|z-x|,\quad \lambda<\infty.</script><p>定义$g^\ast :=\psi g^{-1}\psi g,$ 那么$\,\forall\,g\in G,$</p>
-<script type="math/tex; mode=display">
-2|gz-z|=|\psi gz-gz|=|g^{-1}\psi gz-z|=|\psi g^{-1}\psi gz-z|=|g^\ast z-z|\le \lambda.</script><p>关于$g$取上确界, 就得到了$\lambda=0.$
-从而<em>所有保持两点不动的等距自变换也保持中点不动.</em></p>
-<p>接下来,
-我们取$\psi’$为$Y$中关于$z’:=\frac{\phi(x)+\phi(y)}{2}$的中心对称变换.
-此时$h:=\psi\phi^{-1}\psi’\phi$保持$x,y$两点不动, 从而由前面的结论,
-$hz=z.$ 具体展开并化简移项得到$\psi’\phi z=\phi z.$
-然而中心对称变换$\psi’$的唯一不动点为$z’,$ 这就说明$\phi z=z’,$
-从而命题得证.</p>
-<p>参考: <a class="link"   href="https://zhuanlan.zhihu.com/p/24978670" >https://zhuanlan.zhihu.com/p/24978670<i class="fas fa-external-link-alt"></i></a></p>
-<p>文章最后更新于 2022-03-24 21:24:48 </p>
-]]></content>
-      <categories>
-        <category>命题与定理</category>
-        <category>分析</category>
-        <category>泛函分析</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Myers-Steenrod定理</title>
-    <url>/2022/03/24/Myers-Steenrod%E5%AE%9A%E7%90%86/</url>
-    <content><![CDATA[<p>一开始看到流形上的等距变换, 自然想到保持范数$\Leftrightarrow$保持内积,
-从而保持黎曼度量. 但事实上等距(依照初始定义)保持的是流形上的距离,
-而不是切空间上的距离, 因此这件事情是需要来证明的. 更重要的一点是,
-前述的等价关系仅对线性变换成立,
-而切映照是线性变换建立在映照可微的基础上.
-事实上我们不需要事先要求等距变换可微, 这就是Myers-Steenrod定理.</p>
-<p><strong>定理 1</strong>. <em>若$\phi:M\rightarrow N$为等距满射, 则$\phi$为同构, 特别地它是光滑的.</em> </p>
-<p><strong>证:</strong> 由于测地线有局部极短性, 等距变换将测地线映至测地线.
-设$\phi(p)=q,$ 选取$v\in T_pM,$ $|v|$充分小.
-取从$p$点出发以$v$为初始切向量的测地线$\gamma,$
-那么$d(p,\gamma(1))=|v|.$ 由于$\phi$是等距变换,
-$d(q,\phi\circ\gamma(1))=|v|.$ 若$\phi$可微,
-那么由于$\phi\circ\gamma$也是测地线,
-$|v|=|(\phi\circ\gamma)’(0)|=|d\phi(v)|.$
-此时$d\phi$是保持范数的线性变换, 因此$d\phi$保持内积, 即保持黎曼度量,
-故$\phi$是同构.</p>
-<p>当$\phi$不见得可微时, 由于$\phi$保持测地线,
-我们可以通过测地线的切向量来定义$d\phi:T_pM\rightarrow T_pN,$
-它也是保持范数的. 但此时它不见得是线性变换, 不过我们可以来证明这一点.
-假设已知如下结论:</p>
-<script type="math/tex; mode=display">
-\lim_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.</script><p>选取$A,B\in T_pM,$ 取对应的测地线$\gamma_A,\gamma_B.$ 记$A’=d\phi(A),$
-$B’=d\phi(B),$ 以及对应的测地线$\gamma_{A’},\gamma_{B’},$
-我们有$d(\gamma_A(t),\gamma_B(t))=d(\gamma_{A’}(t),\gamma_{B’}(t)),$
-从而:</p>
-<script type="math/tex; mode=display">
-1=\lim_{t\rightarrow 0}\frac{d(\exp_p(tA),\exp_p(tB))}{t|A-B|}=\lim_{t\rightarrow 0}\frac{d(\exp_q(tA'),\exp_q(tB'))}{t|A-B|}=\frac{|A'-B'|}{|A-B|},</script><p>因此$|d\phi(A)-d\phi(B)|=|A-B|,$ $\,\forall\,A,B\in T_pM.$
-由Mazur-Ulam定理, 结合$d\phi(0)=0,$ 便说明$d\phi$是线性变换,
-从而命题得证.</p>
-<p><strong>引理 2</strong>. <em>$\lim\limits_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.$</em> </p>
-<p><strong>证:</strong> 我们首先证明如下事实, 对曲线$c:I\rightarrow T_pM,$
-若$|c’|$保持有界,</p>
-<script type="math/tex; mode=display">
-\lim_{c(I)\rightarrow 0}\frac{l(\exp_p(c))}{l(c)}=1.</script><p>我们有$l(c)=\int |c’|,$
-$l(\exp_p(c))=\int |d\exp_p(c’(t))|_{\exp_p(c(t))}.$
-由于$d\exp_p$在原点处为恒等变换, 同时$g$是光滑的,
-$T_{\exp_p(c(t))}M$与$T_pM$度量在$c(I)\rightarrow 0$时充分接近,
-$l(\exp_p(c))=l(c)+o(l(c)),$ 由此即知事实成立.</p>
-<p>接下来, 记$\gamma$为连接$A,B$的曲线, 使得$\exp_p(\gamma)$为测地线;
-$\xi$为连接$A,B$的直线. 那么 </p>
-<script type="math/tex; mode=display">
-|A-B|=l(\xi)\le l(\gamma),</script><script type="math/tex; mode=display">
-d(\exp_p(A),\exp_p(B))=l(\exp_p(\gamma))\le l(\exp_p(\xi)).</script><p>因此,</p>
-<script type="math/tex; mode=display">
-\frac{l(\exp_p(\gamma))}{l(\gamma)}\le \frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=\frac{l(\exp_p(\gamma))}{l(\xi)}\le \frac{l(\exp_p(\xi))}{l(\xi)}.</script><p>当$A,B\rightarrow 0\in T_pM$时, 两侧趋于$1,$ 从而中间项也趋于$1.$</p>
-<p>参考: <a class="link"   href="https://ncatlab.org/nlab/show/Myers-Steenrod+theorem" >https://ncatlab.org/nlab/show/Myers-Steenrod+theorem<i class="fas fa-external-link-alt"></i></a></p>
-<p>文章最后更新于 2022-03-24 15:24:34 </p>
-]]></content>
-      <categories>
-        <category>命题与定理</category>
-        <category>几何</category>
-        <category>黎曼几何</category>
       </categories>
   </entry>
   <entry>
@@ -478,6 +421,83 @@ face)</strong>. 面的长度指框住它边的个数.</p>
       </categories>
   </entry>
   <entry>
+    <title>《代数拓扑与微分形式》笔记(1)-de Rham 复形</title>
+    <url>/2021/09/19/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(1)-de%20Rham%20%E5%A4%8D%E5%BD%A2/</url>
+    <content><![CDATA[<p>de Rham
+上同调是流形的最重要的微分同胚不变量，而不变量是我们很期待的东西，用不变量可以快速区分/分类流形。</p>
+<h2 id="mathbb-R-n-de-Rham-上同调"><a href="#mathbb-R-n-de-Rham-上同调" class="headerlink" title="$\mathbb{R}^n$ de Rham 上同调"></a>$\mathbb{R}^n$ de Rham 上同调</h2><h3 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h3><p>在$\mathbb{R}^n$中坐标为$(x_1,…,x_n)$, 记自变量微分$dx_1,…,dx_n$,
+引入记号$\wedge$(wedge), 满足$dx_i\wedge dx_i=0$,
+$dx_i\wedge dx_j=-dx_j\wedge dx_i$, $i\neq j$.</p>
+<p>记$\Omega^q=\operatorname{span}_R\{dx_{i_1}\wedge\cdots\wedge dx_{i_q}|{}i_{1}&lt;…&lt;{}i_{ {}q}\},$
+$\Omega^\ast=\oplus_{q=0}^n \Omega^q$, 易见其维数为$2^n$.</p>
+<p>记光滑$q-$形式全体为$\Omega^q(\mathbb{R}^n)=C^\infty(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^q$,
+光滑形式全体为$\Omega^\ast(\mathbb{R}^n)=\oplus_{q=0}^n \Omega^q(\mathbb{R}^n)$.</p>
+<p>于是任意光滑形式$\omega\in \Omega^\ast(\mathbb{R}^n)$可以<strong>按型分解</strong>为$\omega=\sum_{q=0}^{n} \omega_q$,
+$\omega_q\in \Omega^q(\mathbb{R}^n)$.
+$\omega_q=\sum_{I:{}i_{1}&lt;…&lt;{}i_{ {}q} }f_Idx_I$, $I$称为<strong>多重指标</strong>。</p>
+<h3 id="算子"><a href="#算子" class="headerlink" title="算子"></a>算子</h3><p>外积算子$\wedge$:(可以看成原来记号的扩充定义)
+$\tau=\sum_{I:{}i_{1}&lt;…&lt;{}i_{ {}p} }f_Idx_I\in \Omega^p(\mathbb{R}^n)$,
+$\omega=\sum_{J:{}j_{1}&lt;…&lt;{}j_{ {}q} }g_Jdx_J\in \Omega^q(\mathbb{R}^n)$,
+则
+$\tau\wedge\omega=\sum_{I,J}f_Ig_Jdx_I\wedge dx_J=\sum_{K:{}k_{1}&lt;…&lt;{}k_{ {}p+q} }h_Kdx_K$.
+其中$h_K$可由$f_I,g_J$表出。</p>
+<p><strong>命题 1.1</strong>. <em>$\tau\wedge \omega = (-1)^{pq}\omega \wedge \tau$</em> </p>
+<p>外微分算子$d:\Omega^q(\mathbb{R}^n)\rightarrow \Omega^{q+1}(\mathbb{R}^n)$,
+$\omega=\sum_I f_I dx_I$,
+$d\omega=\sum_I df_I\wedge dx_I=\sum_{i,I} \frac{\partial {}f_I}{\partial {}x_i}dx_i\wedge dx_I$,
+是$C^\infty$上微分算子的自然延拓.</p>
+<p><strong>命题 1.2</strong>. <em>$\tau\in \Omega^p(\mathbb{R}^n)$, 则$d(\tau\wedge \omega)=d\tau \wedge \omega + (-1)^p \tau\wedge d\omega,$ $d^2=0$.</em> </p>
+<h3 id="de-Rham-复形"><a href="#de-Rham-复形" class="headerlink" title="de Rham 复形"></a>de Rham 复形</h3><p>由于$d^2=0$, $\{\Omega^\ast(\mathbb{R}^n),d\}$形成$\mathbb{R}^n$的<strong>de
+Rham复形</strong>：</p>
+<script type="math/tex; mode=display">\Omega^0(\mathbb{R}^n)\xrightarrow{d}\cdots\xrightarrow{d}\Omega^n(\mathbb{R}^n).</script><p>可以对$q<0$及$q>n$添加$\Omega^q(\mathbb{R}^n)=0$.</p>
+<p>定义$Z^q(\mathbb{R}^n)=\{\omega\in\Omega^q(\mathbb{R}^n)|d\omega=0\},$
+其中元素称为<strong>闭的</strong>$q$-形式.
+定义$B^q(\mathbb{R}^n)=\{d\tau | \tau\in\Omega^{q-1}(\mathbb{R}^n)\},$
+其中元素称为<strong>恰当的</strong>$q$-形式. 特别地,
+规定$Z^n(\mathbb{R}^n)=\Omega^n(\mathbb{R}^n),$ $B^0(\mathbb{R}^n)=0.$</p>
+<p>由于$d^2=0$, $B^q(\mathbb{R}^n)\subset Z^q(\mathbb{R}^n).$
+定义$\mathbb{R}^n$的第$q$个de
+Rham上同调为$H^q_{dR}(\mathbb{R}^n)=Z^q(\mathbb{R}^n)/B^q(\mathbb{R}^n).$
+不引起歧义时, 通常隐去下标.
+闭$q$-形式$\omega$所在上同调类记为$[\omega].$</p>
+<p>类似地, 对$\mathbb{R}^n$开集$U$上的de Rham复形,
+只需在一开始将光滑函数定义域设置为$U$即可.</p>
+<p>我们有<strong>上同调的Poincaré引理</strong>: $H^q(\mathbb{R}^n)=\begin{cases}
+    \mathbb{R}\quad&amp;q=0\\
+    0&amp;q\neq 0
+\end{cases}.$</p>
+<h2 id="紧上同调"><a href="#紧上同调" class="headerlink" title="紧上同调"></a>紧上同调</h2><p>记$\Omega^\ast_c(\mathbb{R}^n)=C^\infty_c(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^\ast,$
+即将光滑函数改为具有紧支集的光滑函数. 类似地, 可以将其按型分解.
+由于光滑函数偏导支集闭包含于原来的紧支集, 它也是有紧支撑的,
+因此$\{\Omega^\ast_c(\mathbb{R}^n),d\}$是一个复形, 称为<strong>具紧支集的de
+Rham复形</strong>.</p>
+<p>类似地,
+定义$Z^q_c(\mathbb{R}^n)=\{\omega\in\Omega_c^q(\mathbb{R}^n)|d\omega=0\},$
+$B^q_c(\mathbb{R}^n)=\{d\tau | \tau\in\Omega_c^{q-1}(\mathbb{R}^n)\},$
+$H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
+<p>注意$Z_c^q(\mathbb{R}^n)=\Omega^q_c(\mathbb{R}^n)\cap Z^q(\mathbb{R}^n),$
+但一般$B^q_c(\mathbb{R}^n)\neq B^q(\mathbb{R}^n)\cap \Omega_c^q(\mathbb{R}^n).$
+即不是$d\tau$有紧支集而是$d\tau$中$\tau$有紧支集.</p>
+<p>我们有<strong>紧上同调的Poincaré引理</strong>: $H^q_c(\mathbb{R}^n)=\begin{cases}
+        \mathbb{R}\quad&amp;q=n\\
+        0&amp;q\neq n
+    \end{cases}.$</p>
+<p>注意这说明了<strong>紧上同调不是同伦不变量</strong>. 类似地,
+我们可对一般的$U\subset \mathbb{R}^n$定义$H_c^\ast(U)$.</p>
+<h2 id="微分复形"><a href="#微分复形" class="headerlink" title="微分复形"></a>微分复形</h2><p>称向量空间直和$C=\oplus_{q\in\mathbb{Z} } C^q$为<strong>微分复形</strong>,
+若有同态$d:C\rightarrow C,$ 满足$d:C^q\rightarrow C^{q+1},$ $d^2=0.$
+可以由$d$对复形定义上同调. de Rham复形即为微分复形.</p>
+<p>与代数拓扑相同, 我们可定义复形间的链映射及其诱导同态, 复形的短正合列,
+以及至关重要的zig-zag引理(图追踪定义同调的长正合列).</p>
+<p>文章最后更新于 2021-09-19 18:59:49 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>GTM82-代数拓扑与微分形式</category>
+      </categories>
+  </entry>
+  <entry>
     <title>《代数图论》第二章-群论回顾</title>
     <url>/2021/09/16/%E3%80%8A%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BE%A4%E8%AE%BA%E5%9B%9E%E9%A1%BE/</url>
     <content><![CDATA[<h2 id="置换群"><a href="#置换群" class="headerlink" title="置换群"></a>置换群</h2><p>回忆对称群的任意子群称为<strong>置换群(permutation group)</strong>,
@@ -676,324 +696,60 @@ $G$是非本原的.</p>
       </categories>
   </entry>
   <entry>
-    <title>《代数拓扑与微分形式》笔记(1)-de Rham 复形</title>
-    <url>/2021/09/19/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(1)-de%20Rham%20%E5%A4%8D%E5%BD%A2/</url>
-    <content><![CDATA[<p>de Rham
-上同调是流形的最重要的微分同胚不变量，而不变量是我们很期待的东西，用不变量可以快速区分/分类流形。</p>
-<h2 id="mathbb-R-n-de-Rham-上同调"><a href="#mathbb-R-n-de-Rham-上同调" class="headerlink" title="$\mathbb{R}^n$ de Rham 上同调"></a>$\mathbb{R}^n$ de Rham 上同调</h2><h3 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h3><p>在$\mathbb{R}^n$中坐标为$(x_1,…,x_n)$, 记自变量微分$dx_1,…,dx_n$,
-引入记号$\wedge$(wedge), 满足$dx_i\wedge dx_i=0$,
-$dx_i\wedge dx_j=-dx_j\wedge dx_i$, $i\neq j$.</p>
-<p>记$\Omega^q=\operatorname{span}_R\{dx_{i_1}\wedge\cdots\wedge dx_{i_q}|{}i_{1}&lt;…&lt;{}i_{ {}q}\},$
-$\Omega^\ast=\oplus_{q=0}^n \Omega^q$, 易见其维数为$2^n$.</p>
-<p>记光滑$q-$形式全体为$\Omega^q(\mathbb{R}^n)=C^\infty(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^q$,
-光滑形式全体为$\Omega^\ast(\mathbb{R}^n)=\oplus_{q=0}^n \Omega^q(\mathbb{R}^n)$.</p>
-<p>于是任意光滑形式$\omega\in \Omega^\ast(\mathbb{R}^n)$可以<strong>按型分解</strong>为$\omega=\sum_{q=0}^{n} \omega_q$,
-$\omega_q\in \Omega^q(\mathbb{R}^n)$.
-$\omega_q=\sum_{I:{}i_{1}&lt;…&lt;{}i_{ {}q} }f_Idx_I$, $I$称为<strong>多重指标</strong>。</p>
-<h3 id="算子"><a href="#算子" class="headerlink" title="算子"></a>算子</h3><p>外积算子$\wedge$:(可以看成原来记号的扩充定义)
-$\tau=\sum_{I:{}i_{1}&lt;…&lt;{}i_{ {}p} }f_Idx_I\in \Omega^p(\mathbb{R}^n)$,
-$\omega=\sum_{J:{}j_{1}&lt;…&lt;{}j_{ {}q} }g_Jdx_J\in \Omega^q(\mathbb{R}^n)$,
-则
-$\tau\wedge\omega=\sum_{I,J}f_Ig_Jdx_I\wedge dx_J=\sum_{K:{}k_{1}&lt;…&lt;{}k_{ {}p+q} }h_Kdx_K$.
-其中$h_K$可由$f_I,g_J$表出。</p>
-<p><strong>命题 1.1</strong>. <em>$\tau\wedge \omega = (-1)^{pq}\omega \wedge \tau$</em> </p>
-<p>外微分算子$d:\Omega^q(\mathbb{R}^n)\rightarrow \Omega^{q+1}(\mathbb{R}^n)$,
-$\omega=\sum_I f_I dx_I$,
-$d\omega=\sum_I df_I\wedge dx_I=\sum_{i,I} \frac{\partial {}f_I}{\partial {}x_i}dx_i\wedge dx_I$,
-是$C^\infty$上微分算子的自然延拓.</p>
-<p><strong>命题 1.2</strong>. <em>$\tau\in \Omega^p(\mathbb{R}^n)$, 则$d(\tau\wedge \omega)=d\tau \wedge \omega + (-1)^p \tau\wedge d\omega,$ $d^2=0$.</em> </p>
-<h3 id="de-Rham-复形"><a href="#de-Rham-复形" class="headerlink" title="de Rham 复形"></a>de Rham 复形</h3><p>由于$d^2=0$, $\{\Omega^\ast(\mathbb{R}^n),d\}$形成$\mathbb{R}^n$的<strong>de
-Rham复形</strong>：</p>
-<script type="math/tex; mode=display">\Omega^0(\mathbb{R}^n)\xrightarrow{d}\cdots\xrightarrow{d}\Omega^n(\mathbb{R}^n).</script><p>可以对$q<0$及$q>n$添加$\Omega^q(\mathbb{R}^n)=0$.</p>
-<p>定义$Z^q(\mathbb{R}^n)=\{\omega\in\Omega^q(\mathbb{R}^n)|d\omega=0\},$
-其中元素称为<strong>闭的</strong>$q$-形式.
-定义$B^q(\mathbb{R}^n)=\{d\tau | \tau\in\Omega^{q-1}(\mathbb{R}^n)\},$
-其中元素称为<strong>恰当的</strong>$q$-形式. 特别地,
-规定$Z^n(\mathbb{R}^n)=\Omega^n(\mathbb{R}^n),$ $B^0(\mathbb{R}^n)=0.$</p>
-<p>由于$d^2=0$, $B^q(\mathbb{R}^n)\subset Z^q(\mathbb{R}^n).$
-定义$\mathbb{R}^n$的第$q$个de
-Rham上同调为$H^q_{dR}(\mathbb{R}^n)=Z^q(\mathbb{R}^n)/B^q(\mathbb{R}^n).$
-不引起歧义时, 通常隐去下标.
-闭$q$-形式$\omega$所在上同调类记为$[\omega].$</p>
-<p>类似地, 对$\mathbb{R}^n$开集$U$上的de Rham复形,
-只需在一开始将光滑函数定义域设置为$U$即可.</p>
-<p>我们有<strong>上同调的Poincaré引理</strong>: $H^q(\mathbb{R}^n)=\begin{cases}
-    \mathbb{R}\quad&amp;q=0\\
-    0&amp;q\neq 0
-\end{cases}.$</p>
-<h2 id="紧上同调"><a href="#紧上同调" class="headerlink" title="紧上同调"></a>紧上同调</h2><p>记$\Omega^\ast_c(\mathbb{R}^n)=C^\infty_c(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^\ast,$
-即将光滑函数改为具有紧支集的光滑函数. 类似地, 可以将其按型分解.
-由于光滑函数偏导支集闭包含于原来的紧支集, 它也是有紧支撑的,
-因此$\{\Omega^\ast_c(\mathbb{R}^n),d\}$是一个复形, 称为<strong>具紧支集的de
-Rham复形</strong>.</p>
-<p>类似地,
-定义$Z^q_c(\mathbb{R}^n)=\{\omega\in\Omega_c^q(\mathbb{R}^n)|d\omega=0\},$
-$B^q_c(\mathbb{R}^n)=\{d\tau | \tau\in\Omega_c^{q-1}(\mathbb{R}^n)\},$
-$H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
-<p>注意$Z_c^q(\mathbb{R}^n)=\Omega^q_c(\mathbb{R}^n)\cap Z^q(\mathbb{R}^n),$
-但一般$B^q_c(\mathbb{R}^n)\neq B^q(\mathbb{R}^n)\cap \Omega_c^q(\mathbb{R}^n).$
-即不是$d\tau$有紧支集而是$d\tau$中$\tau$有紧支集.</p>
-<p>我们有<strong>紧上同调的Poincaré引理</strong>: $H^q_c(\mathbb{R}^n)=\begin{cases}
-        \mathbb{R}\quad&amp;q=n\\
-        0&amp;q\neq n
-    \end{cases}.$</p>
-<p>注意这说明了<strong>紧上同调不是同伦不变量</strong>. 类似地,
-我们可对一般的$U\subset \mathbb{R}^n$定义$H_c^\ast(U)$.</p>
-<h2 id="微分复形"><a href="#微分复形" class="headerlink" title="微分复形"></a>微分复形</h2><p>称向量空间直和$C=\oplus_{q\in\mathbb{Z} } C^q$为<strong>微分复形</strong>,
-若有同态$d:C\rightarrow C,$ 满足$d:C^q\rightarrow C^{q+1},$ $d^2=0.$
-可以由$d$对复形定义上同调. de Rham复形即为微分复形.</p>
-<p>与代数拓扑相同, 我们可定义复形间的链映射及其诱导同态, 复形的短正合列,
-以及至关重要的zig-zag引理(图追踪定义同调的长正合列).</p>
-<p>文章最后更新于 2021-09-19 18:59:49 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>代数拓扑</category>
-        <category>GTM82-代数拓扑与微分形式</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《代数拓扑与微分形式》笔记(10)-Čech上同调</title>
-    <url>/2021/10/31/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%C4%8Cech%E4%B8%8A%E5%90%8C%E8%B0%83/</url>
-    <content><![CDATA[<h2 id="预层"><a href="#预层" class="headerlink" title="预层"></a>预层</h2><p>$X$上预层$\mathcal{F}$指, 对$X$的每个开集赋予一个abel群$\mathcal{F}(U)$,
-赋予每个开集的包含$V\subset U$群同态$\rho^U_V:\mathcal{F}(U)\rightarrow\mathcal{F}(V)$,
-称为限制. 满足范畴论的要求: $\rho^U_U=\mathrm{id}$,
-且有传递性$\rho^V_W\circ\rho^U_V=\rho^U_W$.</p>
-<p>例如$X$上的连续函数预层, $C^0(U)$是$U$上的连续函数,
-$\rho^U_V$就是通常函数的限制. $\Omega^\ast $也是一个预层.
-特别地对$0\le q\le \dim M$, $\Omega^q$也是预层.</p>
-<p>若$\mathcal{F},\mathcal{G}$是$X$上预层,
-对每个开集$U$存在同态$f_U:\mathcal{F}(U)\rightarrow\mathcal{G}(U)$,
-使得$\rho^U_Vf_U=f_V\rho^U_V$, 则称$\{f_U\}$为预层上的同态;
-如果每个同态都是同构, 则$\{f_U\}$是预层的同构,
-$\mathcal{F}\cong \mathcal{G}$.</p>
-<p>用范畴论的语言来看,
-两个预层的同态$f$就是两个函子$\mathcal{F},\mathcal{G}$上的自然变换.</p>
-<p>称$\mathcal{F}$为取值于abel群$G$的常值预层,
-若$\mathcal{F}(U)$是$U$上取值于$G$的局部常值函数全体,
-且$\rho^U_V$是通常函数的限制.</p>
-<p>所以若$U$连通, 则$\mathcal{F}(U)\cong G$,
-且若$V\cap U$是两个连通开集的包含, 那么$\rho^U_V=\mathrm{id}_G$.
-习惯上将该常值预层就记为$G$.</p>
-<p>若有纤维丛$\pi:E\rightarrow M$, 则可在$M$上定义预层$\mathcal{H}^q$,
-$\mathcal{H}^q(U)=H^q(\pi^{-1}(U))$, 限制$\rho^U_V$由$i^\ast $诱导,
-包含映射$i:\pi^{-1}(V)\rightarrow \pi^{-1}(U)$.
-(在预层$\mathcal{H}^q$上可以构造超上同调.)</p>
-<p>当$U$可缩时, $\pi^{-1}(U)\cong U\times F$, 由Künneth公式,
-$\mathcal{H}^q(U)\cong H^q(F)$. 若$V$为可缩开集的包含,
-则$\rho^U_V$为同构.</p>
-<p>预层$\mathcal{H}^q$为好覆盖上局部常值预层的一个例子,
-它在纤维化谱序列中有基本的重要性.</p>
-<h2 id="开覆盖的Cech上同调"><a href="#开覆盖的Cech上同调" class="headerlink" title="开覆盖的Čech上同调"></a>开覆盖的Čech上同调</h2><p>设$\mathcal{F}$是拓扑空间$X$上预层, $\mathcal{U}=\{U_\alpha\}$为开覆盖,
-定义$C^0(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U_\alpha)$.
-设$\omega\in C^0(\mathcal{U},\mathcal{F})$,
-对每个$U_\alpha$指定$\omega_\alpha\in \mathcal{F}(U_\alpha)$.
-$\omega$称为$\mathcal{U}$上取值于$\mathcal{F}$的一个$0$-上链.</p>
-<p>定义$C^1(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U_{\alpha\beta})$,
-额外的, 需指定$\omega_{\alpha\beta}=-\omega_{\beta\alpha}$.
-称为$1$-上链.</p>
-<p>类似地, 可以定义$p$-上链$\omega\in C^p(\mathcal{U},\mathcal{F})$,
-对任意$p+1$个开集非空交指定$\omega_{\alpha_0\cdots\alpha_p}$,
-要求交换下标后符号取反.</p>
-<p>简单起见, 记限制$\rho^U_V(\omega_U)=\omega_U|_V$,
-在明了时也可以省去$|_V$, 因为限制具有传递性.</p>
-<p>接下来定义差分算子$\delta:C^p(\mathcal{U},\mathcal{F})\rightarrow C^{p+1}(\mathcal{U},\mathcal{F})$,
-$\delta\omega$的分量$(\delta\omega)_{\alpha_0\cdots\alpha_{p+1} }=\sum_{i=0}^{p+1}(-1)^i\omega_{\alpha_0\cdots\hat\alpha_i\cdots\alpha_{p+1} }$.</p>
-<p>由限制的传递性, $\delta^2=0$.
-称复形$\{C^\ast (\mathcal{U},\mathcal{F}),\delta\}$的上同调$H^\ast (\mathcal{U},\mathcal{F})$为覆盖$\mathcal{U}$取值于预层$\mathcal{F}$的Čech上同调.</p>
-<p>若$\mathcal{F}$是共变的,
-那么有$\partial:C_p(\mathcal{U},\mathcal{F})\rightarrow C_{p-1}(\mathcal{U},\mathcal{F})$,
-$(\partial \omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_{\alpha}\omega_{\alpha\alpha_0\cdots\alpha_{p-1} }$.</p>
-<p>回到$\mathcal{F}$上Čech上同调的讨论,
-若$\mathcal{V}$是$\mathcal{U}$的一个加细,
-即$\,\exists\,\phi:J\rightarrow I$为指标集的映射,
-$V_\beta\subset U_{\phi\beta}$, $\,\forall\,\beta\in J$.
-$\phi$称为加细映射.</p>
-<p>$\phi$诱导了$\phi^\sharp:C^q(\mathcal{U},\mathcal{F})\rightarrow C^q(\mathcal{V},\mathcal{F})$,
-$(\phi^\sharp\omega)_{\beta_0\cdots\beta_q}=\omega_{\phi(\beta_0)\cdots\phi(\beta_q)}$.
-容易验证, $\phi^\sharp$是一个链映射.</p>
-<p>若存在另一个加细映射$\psi:J\rightarrow I$,
-则$\phi^\sharp\simeq\psi^\sharp$链同伦. 事实上,
-取同伦算子$K:C^q(\mathcal{U},\mathcal{F})\rightarrow C^{q-1}(\mathcal{V},\mathcal{F})$,
-$(K\omega)_{\beta_0\cdots\beta_{q-1} }=\sum_{i=0}^{q-1}(-1)^i\omega_{\phi(\beta_0)\cdots\phi(\beta_i)\psi(\beta_i)\cdots\psi(\beta_{q-1})}$即可.</p>
-<p>从而,
-有诱导映射$\phi^\sharp:H^q(\mathcal{U},\mathcal{F})\rightarrow H^q(\mathcal{V},\mathcal{F})$,
-且其与$\phi$选取无关.</p>
-<h2 id="有向极限"><a href="#有向极限" class="headerlink" title="有向极限"></a>有向极限</h2><p>设有偏序集$(I,\le)$, 若其还满足$\,\forall\,a,b\in I, \,\exists\,c\in I$,
-$a,b\le c$, 则称$I$为有向集.</p>
-<p>定义群的有向系为群的集类$\{G_\alpha\}$, 以有向集为指标集,
-使得$\,\forall\,a\le b$, 存在群同态$f^a_b:G_a\rightarrow G_b$,
-$f^a_a=\mathrm{id}$, $f^a_c=f^b_c\circ f^a_b$, 若$a\le b\le c$.</p>
-<p>定义等价关系$\sim$, $g_{a}\sim g_b$若$\,\exists\,c$, $a,b\le c$,
-$f^a_c(g_a)=f^b_c(g_b)$.
-定义群的有向系$\{G_a\}$有向极限为$\lim_{a\in I}G_a=(\prod_{a\in I}G_a)/\sim$,
-加法自然定义为$[g_a]+[g_b]=[f^a_c(g_a)+f^b_c(g_b)]$, $a,b\le c$.
-良定且有向极限成为群.</p>
-<h2 id="拓扑空间的Cech上同调"><a href="#拓扑空间的Cech上同调" class="headerlink" title="拓扑空间的Čech上同调"></a>拓扑空间的Čech上同调</h2><p>把上面的理论应用到$H^\ast (\mathcal{U},\mathcal{F})$上, 即取:</p>
-<ol>
-<li><p>有向集为$X$的开覆盖集, $I=\{\mathcal{U},\mathcal{V},\cdots\}$</p>
-</li>
-<li><p>偏序为加细$\mathcal{U}&gt;\mathcal{V}$</p>
-</li>
-<li><p>abel群取$G_\mathcal{U}=H^\ast (\mathcal{U},\mathcal{F})$</p>
-</li>
-<li><p>$\phi:\mathcal{V}\rightarrow \mathcal{U}$为加细映射,
-限制$\phi^\sharp:G_\mathcal{U}\rightarrow G_\mathcal{V}$为同态</p>
-</li>
-<li><p>若$\varphi=\phi\circ\psi$,
-则$\varphi^\sharp=\psi^\sharp\circ\phi^\sharp$</p>
-</li>
-</ol>
-<p>这样$\{H^\ast (\mathcal{U},\mathcal{F})\}_{\mathcal{U}\in I}$成为群的有向系,
-它的有向极限$\lim_\mathcal{U}H^\ast (\mathcal{U},\mathcal{F})$称为拓扑空间$X$取值于预层$\mathcal{F}$的Čech上同调,
-记为$H^\ast (X,\mathcal{F})$.</p>
-<p><strong>命题 1.1</strong>. <em>$H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</em> </p>
-<p><strong>证:</strong> 对于任意开覆盖$\mathcal{U}$,
-我们事实上可以取到一个加细的好覆盖$\mathcal{V}$,
-因为考虑每点做测地凸邻域即可. 特别地流形满足$C_2$可数性公理,
-因此它还是可数的.</p>
-<p>$\,\forall\,a,b\in H^\ast (\mathcal{U},\mathcal{F})$, 若$[a]\neq[b]$,
-则对每个这样的$\mathcal{V}$, $a,b$在其上的限制不同. 若$[a]=[b]$,
-则存在$\mathcal{W}$, $a,b$在其上的限制相同. 那么由传递性,
-取$\mathcal{W}$的加细好覆盖$\mathcal{V}$, $a,b$限制在其上也相等.</p>
-<p>因此, 我们只需要考察$H^\ast (\mathcal{V},\mathcal{F})$即可,
-$\mathcal{V}$为可数好覆盖,
-即$H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$,
-c.g.c=countable good covers.</p>
-<p>然后, 我们知道对于可数好覆盖$\mathcal{V}$,
-$H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链映射,
-和$\delta$可换. 在双复形网络上能看出, 可数好覆盖间的限制映射将诱导同构.
-因此$H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$中每一项都是$H^\ast _{dR}(M)$,
-从而$H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</p>
-<p>文章最后更新于 2021-10-31 20:55:18 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>代数拓扑</category>
-        <category>GTM82-代数拓扑与微分形式</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《代数拓扑与微分形式》笔记(11-1)-球面丛</title>
-    <url>/2021/11/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(11-1)-%E7%90%83%E9%9D%A2%E4%B8%9B/</url>
-    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>对$\pi:E\rightarrow M$秩$n+1$向量丛, 给定度量$\left&lt;{}-,-\right&gt;$,
-可定义$r^2(v)=\left&lt;{}v,v\right&gt;$.
-置$S(E)_x=\{v\in E_x|r(v)=1\}\simeq S^n$, $x\in M$;
-$S(E)=\prod_{x\in M}S(E)_x$, 则$S(E)$是$M$上纤维为$S^n$的纤维丛.
-它的结构群是$O(n+1)$.</p>
-<p>把纤维为球面$S^n$的纤维丛称为$n$维球面丛或$S^n$丛.
-结构群是微分同胚群$\operatorname{Diff}(S^n)$.
-它一般并不一定能约化到$O(n+1)$.
-事实上能约化到$O(n+1)$当且仅当该球面丛由向量丛构造(上一段).</p>
-<p>设$\pi:E\rightarrow M$为$n$维向量丛, 根据Leray-Hirsch定理,
-若在$E$上存在闭的整体$n$-形式, 它到每条纤维的限制生成纤维的上同调,
-则$E$的上同调是$H^\ast (E)=H^\ast (M)\otimes H^\ast (S^n)$.</p>
-<p>若结构群是$SO(2)$, 则其上有整体角形式$\psi$与欧拉类$d\psi=-\pi^\ast e$.
-若欧拉类为零, 则整体角形式闭, 满足上述条件.</p>
-<p>一般的, 考虑结构群为$\operatorname{Diff}(S^n)$或$O(n+1)$的球面丛.
-我们研究可定向性与欧拉类.</p>
-<h2 id="可定向性"><a href="#可定向性" class="headerlink" title="可定向性"></a>可定向性</h2><p>假定$M$是连通的, 有好覆盖$\{U_\alpha\}$.
-取$\pi:E\rightarrow M$为$n$维球面丛,
-$E|_{U_\alpha}\approx U_\alpha\times S^n$,
-$H^n(E|_{U_\alpha})=\mathbb{R}$. 设$[\sigma_\alpha]$为生成元. 先验地,
-$[\sigma_\alpha]_{E|_{U_{\alpha\beta} } }=\pm[\sigma_\beta]_{E|_{U_{\alpha\beta} } }$.</p>
-<p>若存在定向平凡化,
-使得$[\sigma_\alpha]_{E|_{U_{\alpha\beta} } }=[\sigma_\beta]_{E|_{U_{\alpha\beta} } }$,
-则称$E$是可定向的. 它等价于对每条纤维$E_x$,
-选取$H^n(E_x)$生成元$[\sigma_x]$, 满足局部相容性条件:
-$M$上每点有邻域$U$, 与$H^n(E|_U)$生成元$[\sigma_U]$,
-使得$\,\forall\,x\in U$, $[\sigma_U]|_{E_x}=[\sigma_x]$.</p>
-<p>相容性条件等价于$\sigma_\beta-\sigma_\alpha=d\sigma_{\alpha\beta}$.
-这是讨论欧拉类的出发点.</p>
-<p>对于定向球面丛, 有两组相容生成元, 每组生成元称为球面丛的一个定向.
-给定定向的球面丛称为定向球面丛. 流形$M$上$S^0$丛是$M$的二重覆盖.
-如果$M$是连通的, 该丛可定向当且仅当它有两个连通分支.</p>
-<p>固定一个定向, 取$[\sigma]\in H^n(S^n)$为生成元. 若$g\in SO(n+1)$,
-则$g(S^n)=S^n$且定向相同.
-$g^\ast [\sigma]=\sigma$当且仅当正交变换$g$的行列式为正.</p>
-<p>现在研究向量丛$E$可定向性与$S(E)$可定向性.</p>
-<p><strong>命题 1</strong>. <em>向量丛$E$可定向当且仅当球面丛$S(E)$可定向.</em> </p>
-<p><strong>证:</strong> 给定$E$上度量,
-给定保内积的局部平凡化$\{(U_\alpha,\phi_\alpha)\}$.
-$g_{\alpha\beta}$约化到$O(n+1)$选取,
-诱导了$S(E)$的局部平凡化$\{(U_\alpha,\varphi_\alpha)\}$.
-$S(E)$的结构群也是$O(n+1)$.</p>
-<p>取投射$\rho_\alpha:U_\alpha\times S^n\rightarrow S^n$,
-利用$\rho_\alpha^\ast ,\varphi_\alpha^\ast $拉回$H^n(S^n)$生成元$[\sigma]$,
-给出$H^n(S(E)|_{U_\alpha})$生成元$[\sigma_\alpha]_x$.</p>
-<p>可以发现,
-$[\sigma_\alpha]_x=[\sigma_\beta]_x\Leftrightarrow [\sigma]=g_{\alpha\beta}(x)^\ast [\sigma]$.
+    <title>Myers-Steenrod定理</title>
+    <url>/2022/03/24/Myers-Steenrod%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p>一开始看到流形上的等距变换, 自然想到保持范数$\Leftrightarrow$保持内积,
+从而保持黎曼度量. 但事实上等距(依照初始定义)保持的是流形上的距离,
+而不是切空间上的距离, 因此这件事情是需要来证明的. 更重要的一点是,
+前述的等价关系仅对线性变换成立,
+而切映照是线性变换建立在映照可微的基础上.
+事实上我们不需要事先要求等距变换可微, 这就是Myers-Steenrod定理.</p>
+<p><strong>定理 1</strong>. <em>若$\phi:M\rightarrow N$为等距满射, 则$\phi$为同构, 特别地它是光滑的.</em> </p>
+<p><strong>证:</strong> 由于测地线有局部极短性, 等距变换将测地线映至测地线.
+设$\phi(p)=q,$ 选取$v\in T_pM,$ $|v|$充分小.
+取从$p$点出发以$v$为初始切向量的测地线$\gamma,$
+那么$d(p,\gamma(1))=|v|.$ 由于$\phi$是等距变换,
+$d(q,\phi\circ\gamma(1))=|v|.$ 若$\phi$可微,
+那么由于$\phi\circ\gamma$也是测地线,
+$|v|=|(\phi\circ\gamma)’(0)|=|d\phi(v)|.$
+此时$d\phi$是保持范数的线性变换, 因此$d\phi$保持内积, 即保持黎曼度量,
+故$\phi$是同构.</p>
+<p>当$\phi$不见得可微时, 由于$\phi$保持测地线,
+我们可以通过测地线的切向量来定义$d\phi:T_pM\rightarrow T_pN,$
+它也是保持范数的. 但此时它不见得是线性变换, 不过我们可以来证明这一点.
+假设已知如下结论:</p>
+<script type="math/tex; mode=display">
+\lim_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.</script><p>选取$A,B\in T_pM,$ 取对应的测地线$\gamma_A,\gamma_B.$ 记$A’=d\phi(A),$
+$B’=d\phi(B),$ 以及对应的测地线$\gamma_{A’},\gamma_{B’},$
+我们有$d(\gamma_A(t),\gamma_B(t))=d(\gamma_{A’}(t),\gamma_{B’}(t)),$
+从而:</p>
+<script type="math/tex; mode=display">
+1=\lim_{t\rightarrow 0}\frac{d(\exp_p(tA),\exp_p(tB))}{t|A-B|}=\lim_{t\rightarrow 0}\frac{d(\exp_q(tA'),\exp_q(tB'))}{t|A-B|}=\frac{|A'-B'|}{|A-B|},</script><p>因此$|d\phi(A)-d\phi(B)|=|A-B|,$ $\,\forall\,A,B\in T_pM.$
+由Mazur-Ulam定理, 结合$d\phi(0)=0,$ 便说明$d\phi$是线性变换,
 从而命题得证.</p>
-<p><strong>注 2</strong>. <em>$SO(1)=\{1\}$, 因此连通流形$M$上的线丛$\pi:L\rightarrow M$可定向当且仅当它是平凡的. 此时球面丛$S(L)$有两个连通分支. ($S^0=\{\pm 1\}$)</em> </p>
-<p>若$\{g_{\alpha\beta}\}$为$E$的转移函数,
-则$\{\det g_{\alpha\beta}\}$为行列式丛的转移函数. 因此有:</p>
-<p><strong>命题 3</strong>. <em>向量丛$E$可定向当且仅当行列式丛$\det E$可定向.</em> </p>
-<p>由于$0$-球面丛$S(\det E)$是$M$的二重覆盖,
-$E$可定向当且仅当$S(\det E)$不连通.
-由于单连通流形不可能有重数大于$1$的连通覆盖空间, 从而有:</p>
-<p><strong>命题 4</strong>. <em>单连通流形上每个向量丛可定向.</em> </p>
-<p>以及:</p>
-<p><strong>推论 5</strong>. <em>单连通流形可定向.</em> </p>
-<h2 id="欧拉类"><a href="#欧拉类" class="headerlink" title="欧拉类"></a>欧拉类</h2><p>$\sigma_\beta-\sigma_\alpha=d\sigma_{\alpha\beta}$,
-定义了$0$-上链$\sigma^{0,n}=(\sigma_\alpha,\sigma_\beta,…)$,
-与$1$-上链$\sigma^{1,n-1}=(\sigma_{\alpha\beta},\sigma_{\alpha\gamma},…)$.
-利用$\{U_\alpha\}$为好覆盖, 以及Künneth公式, 可继续沿对角线往右下方走,
-得到欧拉类$[\varepsilon]\in H^{n+1}(\mathcal{U},\mathbb{R})$,
-这对应了$[e]\in H^{n+1}(M)$.</p>
-<p>若$E$是定向向量丛, 零截面补$E^0$与定向球面丛有相同伦型.
-$E$欧拉类定义为$E^0$欧拉类. $E$欧拉类也可以通过度量成为$S(E)$的欧拉类.</p>
-<p><strong>命题 6</strong>. <em>给定定向, 欧拉类与$\sigma^{j,n-j}$选取无关.</em> </p>
-<p>凭借下一行的元素即可, 找$\tau\in K^{n-1}$, $D\tau=\bar\sigma-\sigma$,
-这将推得$\delta \tau=\bar\varepsilon-\varepsilon$,
-这里$\tau$跑到了$C^n(\pi^{-1}\mathcal{U},\mathbb{R})$.
-$[\bar\varepsilon]=[\varepsilon]\in H^{n+1}(M)$.</p>
-<p><strong>命题 7</strong>. <em>欧拉类$e(E)$与好覆盖选取无关.</em> </p>
-<p>取$\mathcal{W}$为$\mathcal{U},\mathcal{V}$的公共加细好覆盖,
-则由Čech同构,
-$[\varepsilon_\mathcal{U}]=[\varepsilon_\mathcal{W}]=[\varepsilon_\mathcal{V}]$.</p>
-<p>若欧拉类$e(E)\in H^{n+1}(M)$为零, 则$\varepsilon=\delta \tau$为上边缘,
-那么$\delta (\sigma^{n,0}+i\tau)=-i\varepsilon+i\varepsilon=0$,
-从而可用$\sigma^{n,0}+i\tau$代替$\sigma^{n,0}$,
-这样$\delta \sigma^{n,0}=0$, $D\sigma=0$. 由Collating公式,
-这对应了$E$上的整体闭$n$-形式$\eta$,
-使得$[\eta|_{E{|_{U_\alpha} } }]=[\sigma_\alpha]$,
-限制在每条纤维上为生成元.</p>
-<p>总结一下, 我们从球面丛$E$可定向, 给出了欧拉类. 当欧拉类为零时,
-推出了整体定义的$\eta$. 反过来, 若有一个整体定义的闭形式$\eta$,
-限制在每个纤维上为生成元, 那么取$[\sigma]_x=[\eta|_x]$,
-$E$当然是可定向的. 此时$\sigma_\alpha=\sigma_\beta=\sigma_x$,
-$d\sigma_{\alpha\beta}=0$, 从而推出欧拉类为零.</p>
-<p>综上,
-球面丛$E$可定向且欧拉类为零当且仅当$E$上存在一个限制在每条纤维上是生成元的整体闭形式.</p>
-<p>欧拉类用来衡量定向向量丛的扭曲程度:</p>
-<p><strong>命题 8</strong>. <em>若定向球面丛$E$有截面, 则它的欧拉类为零.</em> </p>
-<p><strong>证:</strong> 若$E$有截面$s$, 注意到$-\pi^\ast  \varepsilon=D\sigma$,
-作用$s^\ast $有$-\varepsilon=Ds^\ast \sigma$, 因此欧拉类为零($D$-上边缘,
-$[-\varepsilon]_\delta=[Ds^\ast \sigma]_D=0=[e]_d$).</p>
-<p><strong>注 9</strong>. <em>之前也有$-i\varepsilon=D\sigma$, 为什么欧拉类可能非零? 因为$\pi^{-1}\mathcal{U}$并不是一个好覆盖, 没有$H^\ast (\pi^{-1}\mathcal{U},\mathbb{R})\cong H^\ast (K)=H^\ast (\pi^{-1}\mathcal{U},\Omega^\ast )$. 但经过$s^\ast $拉回, $s^\ast \sigma$所在的双复形就是基于好覆盖的了.</em>  <em>所以这一部分的内容可以看成两层双复形, 其间由$\pi^\ast $和$\pi^\ast $逆映射(不一定是$s^\ast $)联系. 上层是$\pi^{-1}\mathcal{U}$的双复形, 是纤维层; 下层是$\mathcal{U}$的双复形, 是流形层. 从纤维层左上方由定向类出发, 往右下方跑到$[\pi^\ast \varepsilon]$. 因为利用好覆盖的性质, $\pi^\ast $在Čech上同调上是同构(可缩空间上的向量丛都是平凡丛, 再利用连通性说明). 这对应的是$[\varepsilon]$, 落在下层. 然后往左上方跑到$[e]$, 这就是欧拉类了.</em> </p>
-<h2 id="整体角形式"><a href="#整体角形式" class="headerlink" title="整体角形式"></a>整体角形式</h2><p>设$\pi:E\rightarrow M$为定向$S^n$丛, 问是否存在$\psi\in \Omega^n(E)$,
-使得$[\psi|_{E_x}]\in H^n(E_x)$是生成元, $d\psi=-\pi^\ast  e$.</p>
-<p>由Collating公式, $e=(-1)^{n+1}(D’’K)^{n+1}\varepsilon$.
-$D\sigma=-\pi^\ast \varepsilon$,
-则$\psi=f(\sigma)=\sum_{i=0}^n(-1)^i(D’’K)^i\sigma^{i,n-i}+(-1)^nK(D’’K)^n(-\pi^\ast \varepsilon)$.
-这里因为$\{\pi^\ast \rho\}$是$\pi^{-1}\mathcal{U}$上的单位分解,
-可以把流形层上的同伦算子照搬到纤维层上.</p>
-<p>可以看出, $d\psi=(-1)^n dK(D’’K)^n (\pi^\ast \varepsilon)=-\pi^\ast  e$.
-同时由于同伦算子$K$中的单位分解为$\pi^\ast $拉回的, 限制在$E_x$上不动,
-因此$\psi$所有单项中前面有$K$的项, 限制在纤维上都为零. 从而在纤维上,
-$[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
-因此$\psi$恰为整体角形式.</p>
-<p><strong>注 10</strong>. <em>设$\{U_\alpha\}$为$M$开覆盖, 局部平凡化$n$维球面丛$E$. 则上面的$e,\psi$满足$\operatorname{supp}d\psi\subset \pi^{-1}(U_{\alpha_0\cdots\alpha_n})$, $\operatorname{supp}e\subset \cup U_{\alpha_0\cdots \alpha_n}$.</em> </p>
-<p>这自然是因为$\varepsilon$只在$\cup U_{\alpha_0\cdots\alpha_{n+1} }$上局部常值,
-每次经过$K$后确保支集落在一个$U_\alpha$内. 由 Collating 公式,
-经过$n+1$次$K$后, 欧拉类$e$支集落在$\cup U_{\alpha_0\cdots\alpha_n}$上.
-由$d\psi=-\pi^\ast  e$得到另一结果.</p>
-<p>文章最后更新于 2021-11-21 15:56:09 </p>
+<p><strong>引理 2</strong>. <em>$\lim\limits_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.$</em> </p>
+<p><strong>证:</strong> 我们首先证明如下事实, 对曲线$c:I\rightarrow T_pM,$
+若$|c’|$保持有界,</p>
+<script type="math/tex; mode=display">
+\lim_{c(I)\rightarrow 0}\frac{l(\exp_p(c))}{l(c)}=1.</script><p>我们有$l(c)=\int |c’|,$
+$l(\exp_p(c))=\int |d\exp_p(c’(t))|_{\exp_p(c(t))}.$
+由于$d\exp_p$在原点处为恒等变换, 同时$g$是光滑的,
+$T_{\exp_p(c(t))}M$与$T_pM$度量在$c(I)\rightarrow 0$时充分接近,
+$l(\exp_p(c))=l(c)+o(l(c)),$ 由此即知事实成立.</p>
+<p>接下来, 记$\gamma$为连接$A,B$的曲线, 使得$\exp_p(\gamma)$为测地线;
+$\xi$为连接$A,B$的直线. 那么 </p>
+<script type="math/tex; mode=display">
+|A-B|=l(\xi)\le l(\gamma),</script><script type="math/tex; mode=display">
+d(\exp_p(A),\exp_p(B))=l(\exp_p(\gamma))\le l(\exp_p(\xi)).</script><p>因此,</p>
+<script type="math/tex; mode=display">
+\frac{l(\exp_p(\gamma))}{l(\gamma)}\le \frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=\frac{l(\exp_p(\gamma))}{l(\xi)}\le \frac{l(\exp_p(\xi))}{l(\xi)}.</script><p>当$A,B\rightarrow 0\in T_pM$时, 两侧趋于$1,$ 从而中间项也趋于$1.$</p>
+<p>参考: <a class="link"   href="https://ncatlab.org/nlab/show/Myers-Steenrod+theorem" >https://ncatlab.org/nlab/show/Myers-Steenrod+theorem<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-03-24 15:24:34 </p>
 ]]></content>
       <categories>
-        <category>笔记</category>
-        <category>代数拓扑</category>
-        <category>GTM82-代数拓扑与微分形式</category>
+        <category>命题与定理</category>
+        <category>几何</category>
+        <category>黎曼几何</category>
       </categories>
   </entry>
   <entry>
@@ -1210,120 +966,121 @@ $B^1(S^1)=\ker \int_{S^1}.$
       </categories>
   </entry>
   <entry>
-    <title>《代数拓扑与微分形式》笔记(4)-庞加莱引理</title>
-    <url>/2021/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E5%BA%9E%E5%8A%A0%E8%8E%B1%E5%BC%95%E7%90%86/</url>
-    <content><![CDATA[<h2 id="de-Rham上同调的Poincare引理"><a href="#de-Rham上同调的Poincare引理" class="headerlink" title="de Rham上同调的Poincaré引理"></a>de Rham上同调的Poincaré引理</h2><p>本节我们希望证明,
-$H^\ast (\mathbb{R}^n\times \mathbb{R}^1)\cong H^\ast (\mathbb{R}^n)$.</p>
-<p>我们记$\pi:\mathbb{R}^n\times \mathbb{R}^1\rightarrow \mathbb{R}^n$为投射,
-$s:\mathbb{R}^n\rightarrow \mathbb{R}^n\times \mathbb{R}^1$为零截面,
-即$\pi(x,t)=x$, $s(x)=(x,0)$, $x\in \mathbb{R}^n$.
-我们有$\pi\circ s=\mathrm{id}\Rightarrow s^\ast \circ\pi^\ast =\mathrm{id}.$
-但是$s\circ\pi \neq \mathrm{id}$,
-不过确实有$\pi^\ast \circ s^\ast =\mathrm{id}$.</p>
-<p>为了证明这一点, 类似代数拓扑中引入$D$,
-我们引入<strong>同伦算子</strong>$K:\Omega^\ast (\mathbb{R}^n\times \mathbb{R}^1)\rightarrow \Omega^{\ast -1}(\mathbb{R}^n\times \mathbb{R}^1).$
-若$\mathrm{id}-\pi^\ast \circ s^\ast =\pm (dK \pm Kd)$,
-则称$K$为同伦算子,
-记$\pi^\ast \circ s^\ast \simeq \mathrm{id}$<strong>链同伦</strong>.</p>
-<p>链同伦的两个映射作用到上同调群中的元素$\omega$上时, 因为$d\omega=0$,
-只剩$\pm dK\omega$项, 是恰当形式. 因此两个映射在同调意义下相同,
-从而$\pi^\ast \circ s^\ast =id$.</p>
-<p>将$\Omega^\ast (\mathbb{R}^n\times \mathbb{R}^1)$中的元素线性拆分为$\pi^\ast \phi\cdot f(x,t)$(无$dt$项),
-和$\pi^\ast \phi\wedge f(x,t)dt$(含$dt$项).
-$\phi\in \Omega^\ast (\mathbb{R}^n)$.
-现令$K:\pi^\ast \phi\cdot f(x,t)\mapsto 0, \pi^\ast \phi\wedge f(x,t)dt\mapsto \pi^\ast \phi\cdot \int_0^tf(x,u)du$.</p>
-<p><strong>引理 1.1</strong>. <em>$K$为同伦算子.</em> </p>
-<p>计算$(\mathrm{id}-\pi^\ast s^\ast )$和$dK-Kd$作用在$\omega$上的值,
-由线性性分别考虑上述两种情况,
-得到$\mathrm{id}-\pi^\ast s^\ast =(-1)^{q-1}(dK-Kd)$即可.
-式子比较长但计算比较简单, 需要注意符号.</p>
-<p>从而, 我们有:</p>
-<p><strong>命题 1.2</strong>. <em>$\pi^\ast$, $s^\ast$互为同构, $H^\ast (\mathbb{R}^n\times \mathbb{R}^1)\cong H^\ast (\mathbb{R}^n)$.</em> </p>
-<p>以及推论:</p>
-<p><strong>推论 1.3</strong>. <em>$H^q(\mathbb{R}^n)=H^q(\ast )=             \begin{cases}                 \mathbb{R}, \quad &amp;q=0\\                 0, &amp;q\neq 0             \end{cases}$, 这里$\ast =\mathbb{R}^0$, 即单点空间.</em> </p>
-<p>更一般的, 我们有如下定理:</p>
-<p><strong>定理 1.4</strong> (de Rham 上同调同伦公理). <em>$M,N$为光滑流形, $f,g$是光滑同伦的两个从$M$到$N$的光滑映射, 则$f^\ast =g^\ast$.</em> </p>
-<p><strong>证</strong> 取$F:M\times I\rightarrow N$ 为光滑同伦,
-$\,\forall\,\omega\in \Omega^q(N)$,
-$F^\ast \omega\in \Omega^q(M\times I)$.
-局部将$F^\ast \omega$分解为$F^\ast \omega=\omega_1+\omega_2\wedge dt$,
-$\omega_1,\omega_2$分别是$q,q-1$形式.</p>
-<p>仿照之前的构造方法, 构造$K$把$\omega$映为$0$,
-把$\omega_2$中的函数项关于$t$积分. 这时再利用$F(x,0)=f(x)$,
-$F(x,1)=g(x)$, 利用简单的Leibnitz法则证明下式即可:</p>
-<script type="math/tex; mode=display">dK(F^\ast \omega)\pm Kd(F^\ast \omega)=g^\ast \omega-f^\ast \omega.</script><p>注意$dF^\ast =F^\ast d$, 因此上式成立意味着$KF^\ast$是同伦算子,
-$g^\ast \simeq f^\ast$, 在同调群意义下相等.</p>
-<p><strong>推论 1.5</strong>. <em>同伦等价的两个流形有相同的de Rham上同调.</em> </p>
-<p>特别地, 有:</p>
-<p><strong>推论 1.6</strong>. <em>若$A$为$M$的形变收缩, 则$A$与$M$有相同的de Rham上同调.</em> </p>
-<h2 id="紧上同调的Poincare引理"><a href="#紧上同调的Poincare引理" class="headerlink" title="紧上同调的Poincaré引理"></a>紧上同调的Poincaré引理</h2><p>类似地, 对于紧上同调, 我们希望证明:
-$H^\ast _c(\mathbb{R}^n\times \mathbb{R}^1)\cong H^{\ast -1}_c(\mathbb{R}^n).$
-此时$\pi^\ast$不再能保持紧支集, 我们需要考虑一个新的映射$\pi_\ast$.</p>
-<p>$\,\forall\,\omega\in \Omega^\ast _c(M\times \mathbb{R}^1)$,
-将其按是否含$dt$项分为两种形式的线性组合,
-即$\pi^\ast \phi\cdot f(x,t)$与$\pi^\ast \phi\wedge f(x,t)dt$,
-其中$\phi\in \Omega^\ast (M)$,
-$f(x,t)\in C_c^\infty (M\times \mathbb{R}^1)$.
-我们定义$\pi_\ast :\phi\cdot f(x,t)\mapsto 0$,
-$\phi\wedge f(x,t)dt\mapsto \phi\cdot\int_{\mathbb{R}^1}f(x,t)dt$.</p>
-<p>经过简单的验证发现$d\pi_\ast =\pi_\ast d$是链映射,
-从而可以诱导$\pi_\ast : H^q_c(M\times \mathbb{R}^1)\rightarrow H^{q-1}_c(M)$.
-我们接下来找它的逆映射$e_\ast$.</p>
-<p>定义$e_\ast :\Omega^q_c(M)\rightarrow \Omega_c^{q+1}(M\times \mathbb{R}^1)$,
-$e_\ast (\phi)=\pi^\ast \phi \wedge e$,
-其中$e=e(t)dt\in \Omega_c^1(\mathbb{R}^1)$,
-$\int_{\mathbb{R}^1}e(t)dt=1$(如 bump 1-形式). 容易验证它也是链映射,
-诱导了紧上同调群上的映射.</p>
-<p>接下来就有如下命题:</p>
-<p><strong>命题 1.7</strong>. <em>$\pi_\ast \circ e_\ast =\mathrm{id}$, $e_\ast \circ \pi_\ast \simeq \mathrm{id}$</em> </p>
-<p><strong>证</strong> 第一部分显然, 主要需要构造同伦算子$K$连接$e_\ast$与$\pi_\ast$.</p>
-<p>定义$K:\pi^\ast \phi\cdot f(x,t)\mapsto 0$,
-$\pi^\ast \phi\wedge f(x,t)dt\mapsto \pi^\ast \phi\cdot \int_{-\infty}^{t}f(x,u)du-\pi^\ast \phi\cdot A(t)\cdot \int_{\mathbb{R}^1}f(x,t)dt$,
-其中$A(t)=\int_{-\infty}^t e(u)du$.</p>
-<p>验证$id-e_\ast \circ \pi_\ast =(-1)^{q-1}(dK-Kd)$即可, 注意利用紧性,
-很多积分积出来为$0$.</p>
-<p>从而得到下面的命题:</p>
-<p><strong>命题 1.8</strong>. <em>$\pi_\ast ,e_\ast$互为逆映射, $H_c^\ast (M\times \mathbb{R}^1)\cong H_c^{\ast -1}(M)$</em> </p>
-<p>以及推论:</p>
-<p><strong>推论 1.9</strong>. <em>$H^q(\mathbb{R}^n)=\begin{cases}                 \mathbb{R}, \quad &amp;q=n\\                 0, &amp;q\neq n             \end{cases}$.</em> </p>
-<p>通过$0$-形式的生成元$1$,
-可以用$e_\ast$依次找到$n$-形式生成元$e(x_1)\cdots e(x_n){} dx_{1}\wedge\cdots\wedge{} dx_{ {}n}$,
-是$\mathbb{R}^n$上的一个bump $n$-形式, 紧支集可任意小.</p>
-<h2 id="逆紧映射的度"><a href="#逆紧映射的度" class="headerlink" title="逆紧映射的度"></a>逆紧映射的度</h2><p>接下来是紧支集Poincaré引理的应用, 给出了逆紧映射的光滑不变量.</p>
-<p>若$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$光滑逆紧,
-则有拉回$f^\ast :\Omega^\ast _c(\mathbb{R}^n)\rightarrow \Omega^\ast _c(\mathbb{R}^n)$,
-诱导$f^\ast :H^\ast _c(\mathbb{R}^n)\rightarrow H^\ast _c(\mathbb{R}^n)$有定义.</p>
-<p>取$[\alpha]\in H^n_c(\mathbb{R}^n)$为生成元,
-$\int_{\mathbb{R}^n}\alpha =1$, $f^\ast [\alpha]=c[\alpha]$,
-$c$称为$f$的度, 记作$\deg f$.
-易见$\deg f=\int_{\mathbb{R}^n} f^\ast \alpha$. 令人意外的,
-$\deg f\in \mathbb{Z}$.</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>首先给几个微分几何中的定义:</p>
-<p>若$f:\mathbb{R}^m\rightarrow \mathbb{R}^n$为光滑映射,
-则其诱导了$f_{\ast p}:T_p\mathbb{R}^m\rightarrow T_{f(p)}\mathbb{R}^n$为切映射.
-若其非满, 则称$p$为临界点, $f(p)$为临界值.
-$\mathbb{R}^n$中其余点都是正则值.</p>
-<p><strong>命题 1.10</strong>. <em>若$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$非满, 则$\deg f=0$.</em> </p>
-<p><strong>证</strong> $f$逆紧, 从而$f(\mathbb{R}^n)$闭,
-$\mathbb{R}^n-f(\mathbb{R}^n)$开.
-存在开集$U\subset \mathbb{R}^n-f(\mathbb{R}^n)$.
-令生成元$[\alpha]$支集在$U$中, 则$f^\ast \alpha=0$, $\deg f=0$.</p>
-<p>之后首先先承认一个定理:</p>
-<p><strong>定理 1.11</strong> (Sard 定理). <em>对任意正整数$m,n$, 临界值集是$\mathbb{R}^n$零测集.</em> </p>
-<p>接下来证明主命题: $\deg f\in \mathbb{Z}$.</p>
-<p><strong>证</strong> 设$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$满, 由Sard定理,
-$f(\mathbb{R}^n)$中几乎处处为正则值. 设$q\in f(\mathbb{R}^n)$为正则值.</p>
-<p>$\,\forall\,p\in f^{-1}(q)$, $f_{\ast p}$是满线性映射, 从而为同构.
-由反函数定理, $f$在$p$点附近微分同胚. 于是$f^{-1}(q)$为离散点集.
-又$f$逆紧, $q$点逆像紧, 从而$f^{-1}(q)$为有限点集,
-记为$f^{-1}(q)=\{p_1,…,p_N\}$.</p>
-<p>对每个$p_i$, 取$U_i\approx f(U_i)$, 使得$U_i\cap U_j=\varnothing$.
-取$\alpha \in \Omega_c^n(\mathbb{R}^n)$支集在$\bigcap_i f(U_i)$里.
-从而$\operatorname{supp}f^\ast \alpha\subset \bigcup U_i$.</p>
-<p>$\int_{U_i}f^\ast \alpha=\pm \int_{f(U_i)} \alpha=\pm 1$,
-符号由微分同胚Jacobi正负号决定.
-于是$\int_{\mathbb{R}^n} f^\ast \alpha=\sum_{f^{-1}(q)}\pm 1\in \mathbb{Z}$.</p>
-<p>文章最后更新于 2021-09-20 16:39:03 </p>
+    <title>《代数拓扑与微分形式》笔记(11-1)-球面丛</title>
+    <url>/2021/11/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(11-1)-%E7%90%83%E9%9D%A2%E4%B8%9B/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>对$\pi:E\rightarrow M$秩$n+1$向量丛, 给定度量$\left&lt;{}-,-\right&gt;$,
+可定义$r^2(v)=\left&lt;{}v,v\right&gt;$.
+置$S(E)_x=\{v\in E_x|r(v)=1\}\simeq S^n$, $x\in M$;
+$S(E)=\prod_{x\in M}S(E)_x$, 则$S(E)$是$M$上纤维为$S^n$的纤维丛.
+它的结构群是$O(n+1)$.</p>
+<p>把纤维为球面$S^n$的纤维丛称为$n$维球面丛或$S^n$丛.
+结构群是微分同胚群$\operatorname{Diff}(S^n)$.
+它一般并不一定能约化到$O(n+1)$.
+事实上能约化到$O(n+1)$当且仅当该球面丛由向量丛构造(上一段).</p>
+<p>设$\pi:E\rightarrow M$为$n$维向量丛, 根据Leray-Hirsch定理,
+若在$E$上存在闭的整体$n$-形式, 它到每条纤维的限制生成纤维的上同调,
+则$E$的上同调是$H^\ast (E)=H^\ast (M)\otimes H^\ast (S^n)$.</p>
+<p>若结构群是$SO(2)$, 则其上有整体角形式$\psi$与欧拉类$d\psi=-\pi^\ast e$.
+若欧拉类为零, 则整体角形式闭, 满足上述条件.</p>
+<p>一般的, 考虑结构群为$\operatorname{Diff}(S^n)$或$O(n+1)$的球面丛.
+我们研究可定向性与欧拉类.</p>
+<h2 id="可定向性"><a href="#可定向性" class="headerlink" title="可定向性"></a>可定向性</h2><p>假定$M$是连通的, 有好覆盖$\{U_\alpha\}$.
+取$\pi:E\rightarrow M$为$n$维球面丛,
+$E|_{U_\alpha}\approx U_\alpha\times S^n$,
+$H^n(E|_{U_\alpha})=\mathbb{R}$. 设$[\sigma_\alpha]$为生成元. 先验地,
+$[\sigma_\alpha]_{E|_{U_{\alpha\beta} } }=\pm[\sigma_\beta]_{E|_{U_{\alpha\beta} } }$.</p>
+<p>若存在定向平凡化,
+使得$[\sigma_\alpha]_{E|_{U_{\alpha\beta} } }=[\sigma_\beta]_{E|_{U_{\alpha\beta} } }$,
+则称$E$是可定向的. 它等价于对每条纤维$E_x$,
+选取$H^n(E_x)$生成元$[\sigma_x]$, 满足局部相容性条件:
+$M$上每点有邻域$U$, 与$H^n(E|_U)$生成元$[\sigma_U]$,
+使得$\,\forall\,x\in U$, $[\sigma_U]|_{E_x}=[\sigma_x]$.</p>
+<p>相容性条件等价于$\sigma_\beta-\sigma_\alpha=d\sigma_{\alpha\beta}$.
+这是讨论欧拉类的出发点.</p>
+<p>对于定向球面丛, 有两组相容生成元, 每组生成元称为球面丛的一个定向.
+给定定向的球面丛称为定向球面丛. 流形$M$上$S^0$丛是$M$的二重覆盖.
+如果$M$是连通的, 该丛可定向当且仅当它有两个连通分支.</p>
+<p>固定一个定向, 取$[\sigma]\in H^n(S^n)$为生成元. 若$g\in SO(n+1)$,
+则$g(S^n)=S^n$且定向相同.
+$g^\ast [\sigma]=\sigma$当且仅当正交变换$g$的行列式为正.</p>
+<p>现在研究向量丛$E$可定向性与$S(E)$可定向性.</p>
+<p><strong>命题 1</strong>. <em>向量丛$E$可定向当且仅当球面丛$S(E)$可定向.</em> </p>
+<p><strong>证:</strong> 给定$E$上度量,
+给定保内积的局部平凡化$\{(U_\alpha,\phi_\alpha)\}$.
+$g_{\alpha\beta}$约化到$O(n+1)$选取,
+诱导了$S(E)$的局部平凡化$\{(U_\alpha,\varphi_\alpha)\}$.
+$S(E)$的结构群也是$O(n+1)$.</p>
+<p>取投射$\rho_\alpha:U_\alpha\times S^n\rightarrow S^n$,
+利用$\rho_\alpha^\ast ,\varphi_\alpha^\ast $拉回$H^n(S^n)$生成元$[\sigma]$,
+给出$H^n(S(E)|_{U_\alpha})$生成元$[\sigma_\alpha]_x$.</p>
+<p>可以发现,
+$[\sigma_\alpha]_x=[\sigma_\beta]_x\Leftrightarrow [\sigma]=g_{\alpha\beta}(x)^\ast [\sigma]$.
+从而命题得证.</p>
+<p><strong>注 2</strong>. <em>$SO(1)=\{1\}$, 因此连通流形$M$上的线丛$\pi:L\rightarrow M$可定向当且仅当它是平凡的. 此时球面丛$S(L)$有两个连通分支. ($S^0=\{\pm 1\}$)</em> </p>
+<p>若$\{g_{\alpha\beta}\}$为$E$的转移函数,
+则$\{\det g_{\alpha\beta}\}$为行列式丛的转移函数. 因此有:</p>
+<p><strong>命题 3</strong>. <em>向量丛$E$可定向当且仅当行列式丛$\det E$可定向.</em> </p>
+<p>由于$0$-球面丛$S(\det E)$是$M$的二重覆盖,
+$E$可定向当且仅当$S(\det E)$不连通.
+由于单连通流形不可能有重数大于$1$的连通覆盖空间, 从而有:</p>
+<p><strong>命题 4</strong>. <em>单连通流形上每个向量丛可定向.</em> </p>
+<p>以及:</p>
+<p><strong>推论 5</strong>. <em>单连通流形可定向.</em> </p>
+<h2 id="欧拉类"><a href="#欧拉类" class="headerlink" title="欧拉类"></a>欧拉类</h2><p>$\sigma_\beta-\sigma_\alpha=d\sigma_{\alpha\beta}$,
+定义了$0$-上链$\sigma^{0,n}=(\sigma_\alpha,\sigma_\beta,…)$,
+与$1$-上链$\sigma^{1,n-1}=(\sigma_{\alpha\beta},\sigma_{\alpha\gamma},…)$.
+利用$\{U_\alpha\}$为好覆盖, 以及Künneth公式, 可继续沿对角线往右下方走,
+得到欧拉类$[\varepsilon]\in H^{n+1}(\mathcal{U},\mathbb{R})$,
+这对应了$[e]\in H^{n+1}(M)$.</p>
+<p>若$E$是定向向量丛, 零截面补$E^0$与定向球面丛有相同伦型.
+$E$欧拉类定义为$E^0$欧拉类. $E$欧拉类也可以通过度量成为$S(E)$的欧拉类.</p>
+<p><strong>命题 6</strong>. <em>给定定向, 欧拉类与$\sigma^{j,n-j}$选取无关.</em> </p>
+<p>凭借下一行的元素即可, 找$\tau\in K^{n-1}$, $D\tau=\bar\sigma-\sigma$,
+这将推得$\delta \tau=\bar\varepsilon-\varepsilon$,
+这里$\tau$跑到了$C^n(\pi^{-1}\mathcal{U},\mathbb{R})$.
+$[\bar\varepsilon]=[\varepsilon]\in H^{n+1}(M)$.</p>
+<p><strong>命题 7</strong>. <em>欧拉类$e(E)$与好覆盖选取无关.</em> </p>
+<p>取$\mathcal{W}$为$\mathcal{U},\mathcal{V}$的公共加细好覆盖,
+则由Čech同构,
+$[\varepsilon_\mathcal{U}]=[\varepsilon_\mathcal{W}]=[\varepsilon_\mathcal{V}]$.</p>
+<p>若欧拉类$e(E)\in H^{n+1}(M)$为零, 则$\varepsilon=\delta \tau$为上边缘,
+那么$\delta (\sigma^{n,0}+i\tau)=-i\varepsilon+i\varepsilon=0$,
+从而可用$\sigma^{n,0}+i\tau$代替$\sigma^{n,0}$,
+这样$\delta \sigma^{n,0}=0$, $D\sigma=0$. 由Collating公式,
+这对应了$E$上的整体闭$n$-形式$\eta$,
+使得$[\eta|_{E{|_{U_\alpha} } }]=[\sigma_\alpha]$,
+限制在每条纤维上为生成元.</p>
+<p>总结一下, 我们从球面丛$E$可定向, 给出了欧拉类. 当欧拉类为零时,
+推出了整体定义的$\eta$. 反过来, 若有一个整体定义的闭形式$\eta$,
+限制在每个纤维上为生成元, 那么取$[\sigma]_x=[\eta|_x]$,
+$E$当然是可定向的. 此时$\sigma_\alpha=\sigma_\beta=\sigma_x$,
+$d\sigma_{\alpha\beta}=0$, 从而推出欧拉类为零.</p>
+<p>综上,
+球面丛$E$可定向且欧拉类为零当且仅当$E$上存在一个限制在每条纤维上是生成元的整体闭形式.</p>
+<p>欧拉类用来衡量定向向量丛的扭曲程度:</p>
+<p><strong>命题 8</strong>. <em>若定向球面丛$E$有截面, 则它的欧拉类为零.</em> </p>
+<p><strong>证:</strong> 若$E$有截面$s$, 注意到$-\pi^\ast  \varepsilon=D\sigma$,
+作用$s^\ast $有$-\varepsilon=Ds^\ast \sigma$, 因此欧拉类为零($D$-上边缘,
+$[-\varepsilon]_\delta=[Ds^\ast \sigma]_D=0=[e]_d$).</p>
+<p><strong>注 9</strong>. <em>之前也有$-i\varepsilon=D\sigma$, 为什么欧拉类可能非零? 因为$\pi^{-1}\mathcal{U}$并不是一个好覆盖, 没有$H^\ast (\pi^{-1}\mathcal{U},\mathbb{R})\cong H^\ast (K)=H^\ast (\pi^{-1}\mathcal{U},\Omega^\ast )$. 但经过$s^\ast $拉回, $s^\ast \sigma$所在的双复形就是基于好覆盖的了.</em>  <em>所以这一部分的内容可以看成两层双复形, 其间由$\pi^\ast $和$\pi^\ast $逆映射(不一定是$s^\ast $)联系. 上层是$\pi^{-1}\mathcal{U}$的双复形, 是纤维层; 下层是$\mathcal{U}$的双复形, 是流形层. 从纤维层左上方由定向类出发, 往右下方跑到$[\pi^\ast \varepsilon]$. 因为利用好覆盖的性质, $\pi^\ast $在Čech上同调上是同构(可缩空间上的向量丛都是平凡丛, 再利用连通性说明). 这对应的是$[\varepsilon]$, 落在下层. 然后往左上方跑到$[e]$, 这就是欧拉类了.</em> </p>
+<h2 id="整体角形式"><a href="#整体角形式" class="headerlink" title="整体角形式"></a>整体角形式</h2><p>设$\pi:E\rightarrow M$为定向$S^n$丛, 问是否存在$\psi\in \Omega^n(E)$,
+使得$[\psi|_{E_x}]\in H^n(E_x)$是生成元, $d\psi=-\pi^\ast  e$.</p>
+<p>由Collating公式, $e=(-1)^{n+1}(D’’K)^{n+1}\varepsilon$.
+$D\sigma=-\pi^\ast \varepsilon$,
+则$\psi=f(\sigma)=\sum_{i=0}^n(-1)^i(D’’K)^i\sigma^{i,n-i}+(-1)^nK(D’’K)^n(-\pi^\ast \varepsilon)$.
+这里因为$\{\pi^\ast \rho\}$是$\pi^{-1}\mathcal{U}$上的单位分解,
+可以把流形层上的同伦算子照搬到纤维层上.</p>
+<p>可以看出, $d\psi=(-1)^n dK(D’’K)^n (\pi^\ast \varepsilon)=-\pi^\ast  e$.
+同时由于同伦算子$K$中的单位分解为$\pi^\ast $拉回的, 限制在$E_x$上不动,
+因此$\psi$所有单项中前面有$K$的项, 限制在纤维上都为零. 从而在纤维上,
+$[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
+因此$\psi$恰为整体角形式.</p>
+<p><strong>注 10</strong>. <em>设$\{U_\alpha\}$为$M$开覆盖, 局部平凡化$n$维球面丛$E$. 则上面的$e,\psi$满足$\operatorname{supp}d\psi\subset \pi^{-1}(U_{\alpha_0\cdots\alpha_n})$, $\operatorname{supp}e\subset \cup U_{\alpha_0\cdots \alpha_n}$.</em> </p>
+<p>这自然是因为$\varepsilon$只在$\cup U_{\alpha_0\cdots\alpha_{n+1} }$上局部常值,
+每次经过$K$后确保支集落在一个$U_\alpha$内. 由 Collating 公式,
+经过$n+1$次$K$后, 欧拉类$e$支集落在$\cup U_{\alpha_0\cdots\alpha_n}$上.
+由$d\psi=-\pi^\ast  e$得到另一结果.</p>
+<p>文章最后更新于 2021-11-21 15:56:09 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -1332,153 +1089,119 @@ $f(\mathbb{R}^n)$中几乎处处为正则值. 设$q\in f(\mathbb{R}^n)$为正则
       </categories>
   </entry>
   <entry>
-    <title>《代数拓扑与微分形式》笔记(5-1)-MV方法</title>
-    <url>/2021/09/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-1)-MV%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<p>MV方法指用MV序列+五引理, 给出对开覆盖开集个数归纳的证明方法.
-该方法导出若干重要的定理, 十分有用.</p>
-<h2 id="好覆盖的存在性"><a href="#好覆盖的存在性" class="headerlink" title="好覆盖的存在性"></a>好覆盖的存在性</h2><p>设$M$为$n$维流形, 其上开覆盖$\{U_\alpha\}$称为<strong>好覆盖</strong>,
-若任意非空有限交微分同胚于$\mathbb{R}^n$.</p>
-<p><strong>定理 1.1</strong>. <em>流形具有好覆盖. 特别地, 紧流形有有限好覆盖.</em> </p>
-<p><strong>证:</strong> 流形上可赋予黎曼度量(将$\mathbb{R}^n$上度量拉回,
-再利用单位分解). 令$U_x$为$x$点测地凸邻域, 微分同胚于$\mathbb{R}^n$,
-由于有限多个测地凸邻域非空交也是测地凸邻域,
-从而$\{U_x\}_{x\in M}$是$M$的一个好的开覆盖.</p>
-<p>测地凸邻域的概念可参考黎曼几何的教材.</p>
-<p>称开覆盖$\mathcal U$为$\mathcal V$的<strong>加细</strong>, 若每个$U$包含在某个$V$中.
-由于测地凸邻域可任意小, 容易证明每个开覆盖有一个加细的好覆盖.</p>
-<h2 id="de-Rham上同调维数有限性"><a href="#de-Rham上同调维数有限性" class="headerlink" title="de Rham上同调维数有限性"></a>de Rham上同调维数有限性</h2><p><strong>命题 1.1</strong>. <em>若$M$有有限好覆盖, 则$\dim H^\ast (M)&lt;\infty$.</em> </p>
-<p><strong>证:</strong> 记$h^q(M)=\dim H^q(M)$. 由MV序列,
-$H^q(M)=H^q(U\cup V)\cong \ker r\oplus\operatorname{Im}r\cong \operatorname{Im}d^\ast \oplus \operatorname{Im}r$.
-从而若$h^q(U), h^q(V), h^{q-1}(U\cap V)&lt;\infty\Rightarrow h^q(U\cup V)&lt;\infty$.</p>
-<p>对有限好覆盖开集个数进行归纳, 当个数为 1 时, $M\approx \mathbb{R}^n$,
-由 Poincaré 引理知结论成立.</p>
-<p>归纳地, 假设流形具有开集个数不超过$p$个有限好覆盖时, 上同调维数有限.
-若$M$具有有限好覆盖$\{U_0,…,U_p\}$. 取$W=U_0\cup … \cup U_{p-1}$,
-$V=U_p$.
-则$W\cap V$有不超过$p$个的有限好覆盖$(\{U_0\cap U_{p},…,U_{p-1}\cap U_p\})$.
-由归纳假设, $h^\ast (W\cap V), h^\ast (W), h^\ast (V)&lt;\infty$,
-从而$H^\ast (W\cup V)=H^\ast (M)&lt;\infty$.</p>
-<p>同理可证:</p>
-<p><strong>命题 1.2</strong>. <em>若$M$具有有限好覆盖, 则$\dim H_c^q(M)&lt;\infty$.</em> </p>
-<h2 id="定向流形的Poincare对偶"><a href="#定向流形的Poincare对偶" class="headerlink" title="定向流形的Poincaré对偶"></a>定向流形的Poincaré对偶</h2><p>设$V,W$为有限维向量空间,
-设其间有配对$\left&lt;{}-,-\right&gt;:V\otimes_\mathbb{R}W\rightarrow \mathbb{R},$
-为一个双线性映射, 则其诱导两个线性映射:</p>
-<script type="math/tex; mode=display">l_V:V\rightarrow W^\ast , v\mapsto \left<{}v,-\right>,</script><script type="math/tex; mode=display">l_W:W\rightarrow V^\ast , w\mapsto \left<{}-,w\right>.</script><p>这里$V^\ast$, $W^\ast$指$V,W$的对偶空间. 若两诱导映射都是单射,
-则称配对$\left&lt;{},\right&gt;$非退化.</p>
-<p><strong>引理 1.1</strong>. <em>$\left&lt;{}-,-\right&gt;$非退化当且仅当诱导映射$l_V$为同构.</em> </p>
-<p>由于$V,W$都是有限维的, 做简单的泛函分析即可.</p>
-<p>假定$M$为$n$维定向光滑流形, 具有有限好覆盖. 则$H^q(M)$,
-$H^{n-q}_c(M)$为两个有限维向量空间.
-定义配对$\int_M:H^1(M)\otimes_\mathbb{R}H^{n-q}_c(M)\rightarrow \mathbb{R}$,
-$([\omega],[\tau])\mapsto \int_M \omega \wedge \tau$. 由Stokes定理,
-该配对是良定的.</p>
-<p><strong>定理 1.2</strong>. <em>若$n$维定向光滑流形$M$有有限好覆盖, 则配对$\int_M$非退化, 等价地, 我们有$H^q(M)\cong (H^{n-q}_c(M))^\ast , H_c^{n-q}(M)\cong (H^q(M))^\ast$</em> </p>
-<p>证明前先做一些准备工作:</p>
-<p><strong>引理 1.2</strong>. <em>我们有如下带符号的交换图表, 如对最右侧的交换性, 即取$[\omega]\in H^q(U\cap V)$, $[\tau]\in H_c^{n-q-1}(U\cup V)$, 有$\int_{U\cup V}d^\ast \omega\wedge \tau=\pm \int_{U\cap V}\omega\wedge d_\ast \tau$.</em> </p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/YhuZk9awXTqQls1.png width='50%' height='50%'></p>
-<p>已经证明过$d^\ast ,d_\ast$与单位分解选取无关, 因此不妨用同一个单位分解,
-将$d^\ast ,d_\ast$的映射具体地给出即可.</p>
-<p>于是配对$\int$诱导了下面带符号的交换图表:</p>
-<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/ZO9F3exrD28iBhV.png width='50%' height='50%'></p>
-<p>之后便可以借助五引理(Five Lemma)证明主命题了.</p>
-<p><strong>证:</strong> 由上正合列与五引理, 若 Poincaré 对偶在$U$, $V$, $U\cap V$上成立,
-则在$U\cup V$上也成立.</p>
-<p>对有限好覆盖开集个数归纳证明: 若仅有一个好覆盖, 由 Poincaré 引理得证.</p>
-<p>若其对有限好覆盖开集个数不超过$p$的流形成立,
-设$M$有好覆盖$\{U_0,…,U_p\}$, 令$W=U_0\cup …\cup U_{p-1}$, $V=U_p$,
-则$M,V,M\cap V$好覆盖开集数均不超过$p$,
-从而$M=U\cup V$上成立Poincaré对偶.</p>
-<p>若没有有限好覆盖, 则有如下定理:</p>
-<p><strong>定理 1.3</strong>. <em>若$M$为定向$n$维流形, 上同调不必是有限维的, 则:$H^q(M)\cong (H^{n-q}_c(M))^\ast$</em> </p>
-<p>也就是另一个同构关系不一定对, 因为直和的对偶是直积,
-但直积的对偶不是直和. 如当$M$可被分解为$M=\sqcup_i M_i$,
-可列个$M_i$每个均有有限开覆盖时, $H^k(M)=\prod_i H^k(M_i)$,
-但$H_c^{k}(M)=\oplus_i H^{k}_c(M_i)$, 因为其需要具有紧支集.</p>
-<p>那么此时$(H_c^{n-q}(M))^\ast =\prod(H_c^{n-q}(M_i))^\ast \cong \prod H^q(M_i)=H^q(M)$.
-而另一个同构不一定成立.</p>
-<p>由对偶关系, 即有:</p>
-<p><strong>推论 1.1</strong>. <em>若流形$M$连通可定向, 则$H^n_c(M)\cong \mathbb{R}$, 特别地, 若$M$还是紧的, 则$H^n(M)\cong \mathbb{R}$.</em> </p>
-<h2 id="闭定向子流形的Poincare对偶"><a href="#闭定向子流形的Poincare对偶" class="headerlink" title="闭定向子流形的Poincaré对偶"></a>闭定向子流形的Poincaré对偶</h2><p>设$M$为$n$维定向流形.</p>
-<h3 id="闭无边定向子流形"><a href="#闭无边定向子流形" class="headerlink" title="闭无边定向子流形"></a>闭无边定向子流形</h3><p>假设$S$为$M$的$k$维闭无边定向子流形, 考虑$\omega\in Z_c^k(M)$,
-$\operatorname{supp}(i^\ast \omega)$也是$M$中的闭集,
-从而$\operatorname{supp}(i^\ast \omega)\subset \operatorname{supp}\omega$紧,
-$\int_Si^\ast \omega$有意义.</p>
-<p>另一方面, $\,\forall\,\omega \in B_c^\ast (M)$, $\omega=d\phi$,
-同理$\operatorname{supp}(i^\ast \phi)$紧. 进一步, 存在闭集$B$,
-$\operatorname{supp}(i^\ast \phi)\subset B$且$\partial B$为光滑$k-1$维子流形或空集,
-则由Stokes定理, $\int_Si^\ast \omega=\int_Bd(i^\ast \phi)=0$.</p>
-<p>综上, $\int_S i^\ast$定义了$H_c^k(M)$上的一个线性泛函,
-于是存在唯一的$[\eta_S]\in H^{n-k}(M)$,
-$\int_S i^\ast \omega=\int_M\omega\wedge \eta_S$.
-$[\eta_S]$或其任意代表元称为$S$的<strong>(闭)Poincaré对偶.</strong></p>
-<h3 id="紧致无边定向子流形"><a href="#紧致无边定向子流形" class="headerlink" title="紧致无边定向子流形"></a>紧致无边定向子流形</h3><p>当$S$紧时, 由于流形是$T_2$的, 当然$S$也是闭的, 上述讨论可以继承.</p>
-<p>$\,\forall\,[\omega]\in H^k(M)$, 由紧性,
-积分$\int_S i^\ast \omega$有意义. 此时它定义了$H^k(M)$上的一个线性泛函,
-于是设$M$有有限好覆盖, 则便对应唯一的$[\eta_S’]\in H^{n-k}_c(M)$,
-满足$\int_Si^\ast \omega=\int_M \omega\wedge\eta_S’$.
-$[\eta_S]$便称为$S$的<strong>紧Poincaré对偶.</strong></p>
-<p>容易看出自然映射$H_c^{n-k}(M)\rightarrow H^{n-k}(M)$把紧Poincaré对偶映为闭Poincaré对偶.
-然而这两个可能有很大的区别, 如非零的紧Poincaré对偶可能被映为$0$.</p>
-<h3 id="局部化原理"><a href="#局部化原理" class="headerlink" title="局部化原理"></a>局部化原理</h3><p>取紧定向$k$维子流形$S$在$M$中的开邻域$W$, 即$S\subset W\subset M$,
-那么将$S$在$W$中的紧Poincaré对偶零延拓到$M$上,
-则容易验证它也是$M$中的紧Poincaré对偶.</p>
-<p>这就是<strong>局部化原理</strong>:
-$S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
-<p>文章最后更新于 2021-09-21 17:25:28 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>代数拓扑</category>
-        <category>GTM82-代数拓扑与微分形式</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《代数拓扑与微分形式》笔记(5-2)-Künneth公式</title>
-    <url>/2021/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-2)-K%C3%BCnneth%E5%85%AC%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="Kunneth公式"><a href="#Kunneth公式" class="headerlink" title="Künneth公式"></a>Künneth公式</h2><p>设$M$, $F$是流形, 且$M$的de Rham上同调的维数是有限的, 则</p>
-<script type="math/tex; mode=display">H^n(M\times F)=\sum_{p+q=n} H^p(M)\otimes_\mathbb{R}H^q(F).</script><p><strong>证:</strong> 假定$M$有有限好覆盖. 取$M\times F$到$F$, $M$的投射为$\rho,\pi$,
-则其诱导$\psi:\Omega^{\ast }(M)\otimes \Omega^\ast (F)\rightarrow \Omega^\ast (M\times F)$,
-$\psi(\omega\otimes \phi)=\pi^\ast \omega\wedge \rho^\ast \phi.$
-由于$\pi^\ast$, $\rho^\ast$与$d$可交换, $\psi$可约化到上同调间的映射.</p>
-<p>若$M\approx \mathbb{R}^m$(好覆盖仅为一个开集), 则由Poincaré引理,
-$H^n(\mathbb{R}^m\times F)=H^n(\mathbb{R}^{m-1}\times F)=\cdots=H^n(F)=H^0(\mathbb{R}^m)\otimes H^n(F)= \sum_p H^{p}(\mathbb{R}^m)\otimes H^{n-p}(F).$</p>
-<p>设$U,V$为$M$的开集, 固定$n$, 做上同调的MV序列.
-将每项与$H^{n-p}(F)$做张量积, 再把每项关于$p$做直和, 得到新的MV序列.
-该MV序列又可通过链映射$\psi$打到$M\times F$对应的MV序列上,
-由zig-zag引理该图可交换.</p>
-<p>交换图有点大...不打了先.</p>
-<p>从而借助MV序列, 若Künneth公式对$U,V,U\cap V$成立, 其对$U\cup V$也成立.
-由MV方法, 归纳好覆盖开集个数即可.</p>
-<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p>$M\times F$可看作$M$上以$F$为纤维的平凡纤维丛,
-因此Künneth公式可以推广到更一般的情形, 这就是<strong>Leray-Hirsch定理</strong>.
-先介绍一些纤维丛的概念.</p>
-<p>设$G$是拓扑群, $F$是拓扑空间, 设$G$对$F$有一个<strong>左作用</strong>,
-即$\,\forall\,g\in G$定义了一个连续同胚$g:F\rightarrow F$, 满足
-$g_1(g_2(v))=(g_1g_2)(v)$, $\,\forall\,g_1,g_2\in G$, $v\in F.$
-称作用是<strong>有效作用</strong>, 若$g(y)=y$,
-$\,\forall\,y\in F\Rightarrow g=1\in G.$</p>
-<p>在此基础上, 再加入$E,B$为拓扑空间, $\pi:E\rightarrow B$是连续满射.
-设$B$有开覆盖$\{U_\alpha\}_{\alpha\in I}$满足:</p>
-<p>(i) 对每个$\alpha\in I$, 有保纤维的同胚:
-    $\phi_\alpha:E_{U_\alpha}:=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times F$,
-    即$\phi_\alpha$是同胚且$\operatorname{pr}_1\circ\phi_\alpha=\pi.$</p>
-<p>(ii) $\phi_\alpha,\phi_\beta$诱导了$g_{\alpha\beta}:U_{\alpha\beta}\rightarrow G$,
-     $(\phi_\alpha\circ \phi_\beta^{-1})(x,v)=(x,g_{\alpha\beta}(x)(v)).$</p>
-<p>则称$\pi:E\rightarrow B$是以$F$为纤维的<strong>纤维丛</strong>, <strong>结构群</strong>为$G$,
-<strong>底空间</strong>为$B$, <strong>全空间</strong>为$E$.
-$\{(U_\alpha,\phi_\alpha)\}_{\alpha\in I}$为纤维丛的一个<strong>局部平凡化</strong>.
-对$x\in B$, $\pi^{-1}(x)$即称为点$x$的纤维, 记作$E_x$.</p>
-<p>在研究上同调时, 假定$E,B,F$是光滑流形,
-$G$无特殊说明为$F$的微分同胚群$\operatorname{Diff}(F)$.</p>
-<p>设$\pi:E\rightarrow M$是以$F$为纤维的光滑纤维丛.
-假定$E$上有上同调类$e_1,…,e_r$,
-限制在每条纤维$E_x$上形成了$H^\ast (E_x)$的一组基, 则可定义</p>
-<script type="math/tex; mode=display">\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).</script><p><strong>定理 1.1</strong> (Leray-Hirsch 定理). <em>在上述假定下, 若$M$有有限好覆盖, 则$\psi$是同构, 有$H^\ast (E)\cong H^\ast (M)\otimes \mathbb{R}\{e_1,…,e_r\} \cong H^\ast (M)\otimes H^\ast (F).$</em> </p>
-<p><strong>证:</strong> 由于有限好覆盖中的$U_\alpha\approx \mathbb{R}^n$为可缩空间,
-其上纤维丛平凡,
-对$E|_{U_\alpha}$的Leray-Hirsch定理退化为$U_\alpha\times F$的Künneth公式.</p>
-<p>用MV方法即可借助好覆盖, 将该论断归纳到$M$上.</p>
-<p>文章最后更新于 2021-09-22 18:30:43 </p>
+    <title>《代数拓扑与微分形式》笔记(10)-Čech上同调</title>
+    <url>/2021/10/31/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%C4%8Cech%E4%B8%8A%E5%90%8C%E8%B0%83/</url>
+    <content><![CDATA[<h2 id="预层"><a href="#预层" class="headerlink" title="预层"></a>预层</h2><p>$X$上预层$\mathcal{F}$指, 对$X$的每个开集赋予一个abel群$\mathcal{F}(U)$,
+赋予每个开集的包含$V\subset U$群同态$\rho^U_V:\mathcal{F}(U)\rightarrow\mathcal{F}(V)$,
+称为限制. 满足范畴论的要求: $\rho^U_U=\mathrm{id}$,
+且有传递性$\rho^V_W\circ\rho^U_V=\rho^U_W$.</p>
+<p>例如$X$上的连续函数预层, $C^0(U)$是$U$上的连续函数,
+$\rho^U_V$就是通常函数的限制. $\Omega^\ast $也是一个预层.
+特别地对$0\le q\le \dim M$, $\Omega^q$也是预层.</p>
+<p>若$\mathcal{F},\mathcal{G}$是$X$上预层,
+对每个开集$U$存在同态$f_U:\mathcal{F}(U)\rightarrow\mathcal{G}(U)$,
+使得$\rho^U_Vf_U=f_V\rho^U_V$, 则称$\{f_U\}$为预层上的同态;
+如果每个同态都是同构, 则$\{f_U\}$是预层的同构,
+$\mathcal{F}\cong \mathcal{G}$.</p>
+<p>用范畴论的语言来看,
+两个预层的同态$f$就是两个函子$\mathcal{F},\mathcal{G}$上的自然变换.</p>
+<p>称$\mathcal{F}$为取值于abel群$G$的常值预层,
+若$\mathcal{F}(U)$是$U$上取值于$G$的局部常值函数全体,
+且$\rho^U_V$是通常函数的限制.</p>
+<p>所以若$U$连通, 则$\mathcal{F}(U)\cong G$,
+且若$V\cap U$是两个连通开集的包含, 那么$\rho^U_V=\mathrm{id}_G$.
+习惯上将该常值预层就记为$G$.</p>
+<p>若有纤维丛$\pi:E\rightarrow M$, 则可在$M$上定义预层$\mathcal{H}^q$,
+$\mathcal{H}^q(U)=H^q(\pi^{-1}(U))$, 限制$\rho^U_V$由$i^\ast $诱导,
+包含映射$i:\pi^{-1}(V)\rightarrow \pi^{-1}(U)$.
+(在预层$\mathcal{H}^q$上可以构造超上同调.)</p>
+<p>当$U$可缩时, $\pi^{-1}(U)\cong U\times F$, 由Künneth公式,
+$\mathcal{H}^q(U)\cong H^q(F)$. 若$V$为可缩开集的包含,
+则$\rho^U_V$为同构.</p>
+<p>预层$\mathcal{H}^q$为好覆盖上局部常值预层的一个例子,
+它在纤维化谱序列中有基本的重要性.</p>
+<h2 id="开覆盖的Cech上同调"><a href="#开覆盖的Cech上同调" class="headerlink" title="开覆盖的Čech上同调"></a>开覆盖的Čech上同调</h2><p>设$\mathcal{F}$是拓扑空间$X$上预层, $\mathcal{U}=\{U_\alpha\}$为开覆盖,
+定义$C^0(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U_\alpha)$.
+设$\omega\in C^0(\mathcal{U},\mathcal{F})$,
+对每个$U_\alpha$指定$\omega_\alpha\in \mathcal{F}(U_\alpha)$.
+$\omega$称为$\mathcal{U}$上取值于$\mathcal{F}$的一个$0$-上链.</p>
+<p>定义$C^1(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U_{\alpha\beta})$,
+额外的, 需指定$\omega_{\alpha\beta}=-\omega_{\beta\alpha}$.
+称为$1$-上链.</p>
+<p>类似地, 可以定义$p$-上链$\omega\in C^p(\mathcal{U},\mathcal{F})$,
+对任意$p+1$个开集非空交指定$\omega_{\alpha_0\cdots\alpha_p}$,
+要求交换下标后符号取反.</p>
+<p>简单起见, 记限制$\rho^U_V(\omega_U)=\omega_U|_V$,
+在明了时也可以省去$|_V$, 因为限制具有传递性.</p>
+<p>接下来定义差分算子$\delta:C^p(\mathcal{U},\mathcal{F})\rightarrow C^{p+1}(\mathcal{U},\mathcal{F})$,
+$\delta\omega$的分量$(\delta\omega)_{\alpha_0\cdots\alpha_{p+1} }=\sum_{i=0}^{p+1}(-1)^i\omega_{\alpha_0\cdots\hat\alpha_i\cdots\alpha_{p+1} }$.</p>
+<p>由限制的传递性, $\delta^2=0$.
+称复形$\{C^\ast (\mathcal{U},\mathcal{F}),\delta\}$的上同调$H^\ast (\mathcal{U},\mathcal{F})$为覆盖$\mathcal{U}$取值于预层$\mathcal{F}$的Čech上同调.</p>
+<p>若$\mathcal{F}$是共变的,
+那么有$\partial:C_p(\mathcal{U},\mathcal{F})\rightarrow C_{p-1}(\mathcal{U},\mathcal{F})$,
+$(\partial \omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_{\alpha}\omega_{\alpha\alpha_0\cdots\alpha_{p-1} }$.</p>
+<p>回到$\mathcal{F}$上Čech上同调的讨论,
+若$\mathcal{V}$是$\mathcal{U}$的一个加细,
+即$\,\exists\,\phi:J\rightarrow I$为指标集的映射,
+$V_\beta\subset U_{\phi\beta}$, $\,\forall\,\beta\in J$.
+$\phi$称为加细映射.</p>
+<p>$\phi$诱导了$\phi^\sharp:C^q(\mathcal{U},\mathcal{F})\rightarrow C^q(\mathcal{V},\mathcal{F})$,
+$(\phi^\sharp\omega)_{\beta_0\cdots\beta_q}=\omega_{\phi(\beta_0)\cdots\phi(\beta_q)}$.
+容易验证, $\phi^\sharp$是一个链映射.</p>
+<p>若存在另一个加细映射$\psi:J\rightarrow I$,
+则$\phi^\sharp\simeq\psi^\sharp$链同伦. 事实上,
+取同伦算子$K:C^q(\mathcal{U},\mathcal{F})\rightarrow C^{q-1}(\mathcal{V},\mathcal{F})$,
+$(K\omega)_{\beta_0\cdots\beta_{q-1} }=\sum_{i=0}^{q-1}(-1)^i\omega_{\phi(\beta_0)\cdots\phi(\beta_i)\psi(\beta_i)\cdots\psi(\beta_{q-1})}$即可.</p>
+<p>从而,
+有诱导映射$\phi^\sharp:H^q(\mathcal{U},\mathcal{F})\rightarrow H^q(\mathcal{V},\mathcal{F})$,
+且其与$\phi$选取无关.</p>
+<h2 id="有向极限"><a href="#有向极限" class="headerlink" title="有向极限"></a>有向极限</h2><p>设有偏序集$(I,\le)$, 若其还满足$\,\forall\,a,b\in I, \,\exists\,c\in I$,
+$a,b\le c$, 则称$I$为有向集.</p>
+<p>定义群的有向系为群的集类$\{G_\alpha\}$, 以有向集为指标集,
+使得$\,\forall\,a\le b$, 存在群同态$f^a_b:G_a\rightarrow G_b$,
+$f^a_a=\mathrm{id}$, $f^a_c=f^b_c\circ f^a_b$, 若$a\le b\le c$.</p>
+<p>定义等价关系$\sim$, $g_{a}\sim g_b$若$\,\exists\,c$, $a,b\le c$,
+$f^a_c(g_a)=f^b_c(g_b)$.
+定义群的有向系$\{G_a\}$有向极限为$\lim_{a\in I}G_a=(\prod_{a\in I}G_a)/\sim$,
+加法自然定义为$[g_a]+[g_b]=[f^a_c(g_a)+f^b_c(g_b)]$, $a,b\le c$.
+良定且有向极限成为群.</p>
+<h2 id="拓扑空间的Cech上同调"><a href="#拓扑空间的Cech上同调" class="headerlink" title="拓扑空间的Čech上同调"></a>拓扑空间的Čech上同调</h2><p>把上面的理论应用到$H^\ast (\mathcal{U},\mathcal{F})$上, 即取:</p>
+<ol>
+<li><p>有向集为$X$的开覆盖集, $I=\{\mathcal{U},\mathcal{V},\cdots\}$</p>
+</li>
+<li><p>偏序为加细$\mathcal{U}&gt;\mathcal{V}$</p>
+</li>
+<li><p>abel群取$G_\mathcal{U}=H^\ast (\mathcal{U},\mathcal{F})$</p>
+</li>
+<li><p>$\phi:\mathcal{V}\rightarrow \mathcal{U}$为加细映射,
+限制$\phi^\sharp:G_\mathcal{U}\rightarrow G_\mathcal{V}$为同态</p>
+</li>
+<li><p>若$\varphi=\phi\circ\psi$,
+则$\varphi^\sharp=\psi^\sharp\circ\phi^\sharp$</p>
+</li>
+</ol>
+<p>这样$\{H^\ast (\mathcal{U},\mathcal{F})\}_{\mathcal{U}\in I}$成为群的有向系,
+它的有向极限$\lim_\mathcal{U}H^\ast (\mathcal{U},\mathcal{F})$称为拓扑空间$X$取值于预层$\mathcal{F}$的Čech上同调,
+记为$H^\ast (X,\mathcal{F})$.</p>
+<p><strong>命题 1.1</strong>. <em>$H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</em> </p>
+<p><strong>证:</strong> 对于任意开覆盖$\mathcal{U}$,
+我们事实上可以取到一个加细的好覆盖$\mathcal{V}$,
+因为考虑每点做测地凸邻域即可. 特别地流形满足$C_2$可数性公理,
+因此它还是可数的.</p>
+<p>$\,\forall\,a,b\in H^\ast (\mathcal{U},\mathcal{F})$, 若$[a]\neq[b]$,
+则对每个这样的$\mathcal{V}$, $a,b$在其上的限制不同. 若$[a]=[b]$,
+则存在$\mathcal{W}$, $a,b$在其上的限制相同. 那么由传递性,
+取$\mathcal{W}$的加细好覆盖$\mathcal{V}$, $a,b$限制在其上也相等.</p>
+<p>因此, 我们只需要考察$H^\ast (\mathcal{V},\mathcal{F})$即可,
+$\mathcal{V}$为可数好覆盖,
+即$H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$,
+c.g.c=countable good covers.</p>
+<p>然后, 我们知道对于可数好覆盖$\mathcal{V}$,
+$H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链映射,
+和$\delta$可换. 在双复形网络上能看出, 可数好覆盖间的限制映射将诱导同构.
+因此$H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$中每一项都是$H^\ast _{dR}(M)$,
+从而$H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</p>
+<p>文章最后更新于 2021-10-31 20:55:18 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -1617,6 +1340,283 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
       </categories>
   </entry>
   <entry>
+    <title>《代数拓扑与微分形式》笔记(4)-庞加莱引理</title>
+    <url>/2021/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E5%BA%9E%E5%8A%A0%E8%8E%B1%E5%BC%95%E7%90%86/</url>
+    <content><![CDATA[<h2 id="de-Rham上同调的Poincare引理"><a href="#de-Rham上同调的Poincare引理" class="headerlink" title="de Rham上同调的Poincaré引理"></a>de Rham上同调的Poincaré引理</h2><p>本节我们希望证明,
+$H^\ast (\mathbb{R}^n\times \mathbb{R}^1)\cong H^\ast (\mathbb{R}^n)$.</p>
+<p>我们记$\pi:\mathbb{R}^n\times \mathbb{R}^1\rightarrow \mathbb{R}^n$为投射,
+$s:\mathbb{R}^n\rightarrow \mathbb{R}^n\times \mathbb{R}^1$为零截面,
+即$\pi(x,t)=x$, $s(x)=(x,0)$, $x\in \mathbb{R}^n$.
+我们有$\pi\circ s=\mathrm{id}\Rightarrow s^\ast \circ\pi^\ast =\mathrm{id}.$
+但是$s\circ\pi \neq \mathrm{id}$,
+不过确实有$\pi^\ast \circ s^\ast =\mathrm{id}$.</p>
+<p>为了证明这一点, 类似代数拓扑中引入$D$,
+我们引入<strong>同伦算子</strong>$K:\Omega^\ast (\mathbb{R}^n\times \mathbb{R}^1)\rightarrow \Omega^{\ast -1}(\mathbb{R}^n\times \mathbb{R}^1).$
+若$\mathrm{id}-\pi^\ast \circ s^\ast =\pm (dK \pm Kd)$,
+则称$K$为同伦算子,
+记$\pi^\ast \circ s^\ast \simeq \mathrm{id}$<strong>链同伦</strong>.</p>
+<p>链同伦的两个映射作用到上同调群中的元素$\omega$上时, 因为$d\omega=0$,
+只剩$\pm dK\omega$项, 是恰当形式. 因此两个映射在同调意义下相同,
+从而$\pi^\ast \circ s^\ast =id$.</p>
+<p>将$\Omega^\ast (\mathbb{R}^n\times \mathbb{R}^1)$中的元素线性拆分为$\pi^\ast \phi\cdot f(x,t)$(无$dt$项),
+和$\pi^\ast \phi\wedge f(x,t)dt$(含$dt$项).
+$\phi\in \Omega^\ast (\mathbb{R}^n)$.
+现令$K:\pi^\ast \phi\cdot f(x,t)\mapsto 0, \pi^\ast \phi\wedge f(x,t)dt\mapsto \pi^\ast \phi\cdot \int_0^tf(x,u)du$.</p>
+<p><strong>引理 1.1</strong>. <em>$K$为同伦算子.</em> </p>
+<p>计算$(\mathrm{id}-\pi^\ast s^\ast )$和$dK-Kd$作用在$\omega$上的值,
+由线性性分别考虑上述两种情况,
+得到$\mathrm{id}-\pi^\ast s^\ast =(-1)^{q-1}(dK-Kd)$即可.
+式子比较长但计算比较简单, 需要注意符号.</p>
+<p>从而, 我们有:</p>
+<p><strong>命题 1.2</strong>. <em>$\pi^\ast$, $s^\ast$互为同构, $H^\ast (\mathbb{R}^n\times \mathbb{R}^1)\cong H^\ast (\mathbb{R}^n)$.</em> </p>
+<p>以及推论:</p>
+<p><strong>推论 1.3</strong>. <em>$H^q(\mathbb{R}^n)=H^q(\ast )=             \begin{cases}                 \mathbb{R}, \quad &amp;q=0\\                 0, &amp;q\neq 0             \end{cases}$, 这里$\ast =\mathbb{R}^0$, 即单点空间.</em> </p>
+<p>更一般的, 我们有如下定理:</p>
+<p><strong>定理 1.4</strong> (de Rham 上同调同伦公理). <em>$M,N$为光滑流形, $f,g$是光滑同伦的两个从$M$到$N$的光滑映射, 则$f^\ast =g^\ast$.</em> </p>
+<p><strong>证</strong> 取$F:M\times I\rightarrow N$ 为光滑同伦,
+$\,\forall\,\omega\in \Omega^q(N)$,
+$F^\ast \omega\in \Omega^q(M\times I)$.
+局部将$F^\ast \omega$分解为$F^\ast \omega=\omega_1+\omega_2\wedge dt$,
+$\omega_1,\omega_2$分别是$q,q-1$形式.</p>
+<p>仿照之前的构造方法, 构造$K$把$\omega$映为$0$,
+把$\omega_2$中的函数项关于$t$积分. 这时再利用$F(x,0)=f(x)$,
+$F(x,1)=g(x)$, 利用简单的Leibnitz法则证明下式即可:</p>
+<script type="math/tex; mode=display">dK(F^\ast \omega)\pm Kd(F^\ast \omega)=g^\ast \omega-f^\ast \omega.</script><p>注意$dF^\ast =F^\ast d$, 因此上式成立意味着$KF^\ast$是同伦算子,
+$g^\ast \simeq f^\ast$, 在同调群意义下相等.</p>
+<p><strong>推论 1.5</strong>. <em>同伦等价的两个流形有相同的de Rham上同调.</em> </p>
+<p>特别地, 有:</p>
+<p><strong>推论 1.6</strong>. <em>若$A$为$M$的形变收缩, 则$A$与$M$有相同的de Rham上同调.</em> </p>
+<h2 id="紧上同调的Poincare引理"><a href="#紧上同调的Poincare引理" class="headerlink" title="紧上同调的Poincaré引理"></a>紧上同调的Poincaré引理</h2><p>类似地, 对于紧上同调, 我们希望证明:
+$H^\ast _c(\mathbb{R}^n\times \mathbb{R}^1)\cong H^{\ast -1}_c(\mathbb{R}^n).$
+此时$\pi^\ast$不再能保持紧支集, 我们需要考虑一个新的映射$\pi_\ast$.</p>
+<p>$\,\forall\,\omega\in \Omega^\ast _c(M\times \mathbb{R}^1)$,
+将其按是否含$dt$项分为两种形式的线性组合,
+即$\pi^\ast \phi\cdot f(x,t)$与$\pi^\ast \phi\wedge f(x,t)dt$,
+其中$\phi\in \Omega^\ast (M)$,
+$f(x,t)\in C_c^\infty (M\times \mathbb{R}^1)$.
+我们定义$\pi_\ast :\phi\cdot f(x,t)\mapsto 0$,
+$\phi\wedge f(x,t)dt\mapsto \phi\cdot\int_{\mathbb{R}^1}f(x,t)dt$.</p>
+<p>经过简单的验证发现$d\pi_\ast =\pi_\ast d$是链映射,
+从而可以诱导$\pi_\ast : H^q_c(M\times \mathbb{R}^1)\rightarrow H^{q-1}_c(M)$.
+我们接下来找它的逆映射$e_\ast$.</p>
+<p>定义$e_\ast :\Omega^q_c(M)\rightarrow \Omega_c^{q+1}(M\times \mathbb{R}^1)$,
+$e_\ast (\phi)=\pi^\ast \phi \wedge e$,
+其中$e=e(t)dt\in \Omega_c^1(\mathbb{R}^1)$,
+$\int_{\mathbb{R}^1}e(t)dt=1$(如 bump 1-形式). 容易验证它也是链映射,
+诱导了紧上同调群上的映射.</p>
+<p>接下来就有如下命题:</p>
+<p><strong>命题 1.7</strong>. <em>$\pi_\ast \circ e_\ast =\mathrm{id}$, $e_\ast \circ \pi_\ast \simeq \mathrm{id}$</em> </p>
+<p><strong>证</strong> 第一部分显然, 主要需要构造同伦算子$K$连接$e_\ast$与$\pi_\ast$.</p>
+<p>定义$K:\pi^\ast \phi\cdot f(x,t)\mapsto 0$,
+$\pi^\ast \phi\wedge f(x,t)dt\mapsto \pi^\ast \phi\cdot \int_{-\infty}^{t}f(x,u)du-\pi^\ast \phi\cdot A(t)\cdot \int_{\mathbb{R}^1}f(x,t)dt$,
+其中$A(t)=\int_{-\infty}^t e(u)du$.</p>
+<p>验证$id-e_\ast \circ \pi_\ast =(-1)^{q-1}(dK-Kd)$即可, 注意利用紧性,
+很多积分积出来为$0$.</p>
+<p>从而得到下面的命题:</p>
+<p><strong>命题 1.8</strong>. <em>$\pi_\ast ,e_\ast$互为逆映射, $H_c^\ast (M\times \mathbb{R}^1)\cong H_c^{\ast -1}(M)$</em> </p>
+<p>以及推论:</p>
+<p><strong>推论 1.9</strong>. <em>$H^q(\mathbb{R}^n)=\begin{cases}                 \mathbb{R}, \quad &amp;q=n\\                 0, &amp;q\neq n             \end{cases}$.</em> </p>
+<p>通过$0$-形式的生成元$1$,
+可以用$e_\ast$依次找到$n$-形式生成元$e(x_1)\cdots e(x_n){} dx_{1}\wedge\cdots\wedge{} dx_{ {}n}$,
+是$\mathbb{R}^n$上的一个bump $n$-形式, 紧支集可任意小.</p>
+<h2 id="逆紧映射的度"><a href="#逆紧映射的度" class="headerlink" title="逆紧映射的度"></a>逆紧映射的度</h2><p>接下来是紧支集Poincaré引理的应用, 给出了逆紧映射的光滑不变量.</p>
+<p>若$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$光滑逆紧,
+则有拉回$f^\ast :\Omega^\ast _c(\mathbb{R}^n)\rightarrow \Omega^\ast _c(\mathbb{R}^n)$,
+诱导$f^\ast :H^\ast _c(\mathbb{R}^n)\rightarrow H^\ast _c(\mathbb{R}^n)$有定义.</p>
+<p>取$[\alpha]\in H^n_c(\mathbb{R}^n)$为生成元,
+$\int_{\mathbb{R}^n}\alpha =1$, $f^\ast [\alpha]=c[\alpha]$,
+$c$称为$f$的度, 记作$\deg f$.
+易见$\deg f=\int_{\mathbb{R}^n} f^\ast \alpha$. 令人意外的,
+$\deg f\in \mathbb{Z}$.</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>首先给几个微分几何中的定义:</p>
+<p>若$f:\mathbb{R}^m\rightarrow \mathbb{R}^n$为光滑映射,
+则其诱导了$f_{\ast p}:T_p\mathbb{R}^m\rightarrow T_{f(p)}\mathbb{R}^n$为切映射.
+若其非满, 则称$p$为临界点, $f(p)$为临界值.
+$\mathbb{R}^n$中其余点都是正则值.</p>
+<p><strong>命题 1.10</strong>. <em>若$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$非满, 则$\deg f=0$.</em> </p>
+<p><strong>证</strong> $f$逆紧, 从而$f(\mathbb{R}^n)$闭,
+$\mathbb{R}^n-f(\mathbb{R}^n)$开.
+存在开集$U\subset \mathbb{R}^n-f(\mathbb{R}^n)$.
+令生成元$[\alpha]$支集在$U$中, 则$f^\ast \alpha=0$, $\deg f=0$.</p>
+<p>之后首先先承认一个定理:</p>
+<p><strong>定理 1.11</strong> (Sard 定理). <em>对任意正整数$m,n$, 临界值集是$\mathbb{R}^n$零测集.</em> </p>
+<p>接下来证明主命题: $\deg f\in \mathbb{Z}$.</p>
+<p><strong>证</strong> 设$f:\mathbb{R}^n\rightarrow \mathbb{R}^n$满, 由Sard定理,
+$f(\mathbb{R}^n)$中几乎处处为正则值. 设$q\in f(\mathbb{R}^n)$为正则值.</p>
+<p>$\,\forall\,p\in f^{-1}(q)$, $f_{\ast p}$是满线性映射, 从而为同构.
+由反函数定理, $f$在$p$点附近微分同胚. 于是$f^{-1}(q)$为离散点集.
+又$f$逆紧, $q$点逆像紧, 从而$f^{-1}(q)$为有限点集,
+记为$f^{-1}(q)=\{p_1,…,p_N\}$.</p>
+<p>对每个$p_i$, 取$U_i\approx f(U_i)$, 使得$U_i\cap U_j=\varnothing$.
+取$\alpha \in \Omega_c^n(\mathbb{R}^n)$支集在$\bigcap_i f(U_i)$里.
+从而$\operatorname{supp}f^\ast \alpha\subset \bigcup U_i$.</p>
+<p>$\int_{U_i}f^\ast \alpha=\pm \int_{f(U_i)} \alpha=\pm 1$,
+符号由微分同胚Jacobi正负号决定.
+于是$\int_{\mathbb{R}^n} f^\ast \alpha=\sum_{f^{-1}(q)}\pm 1\in \mathbb{Z}$.</p>
+<p>文章最后更新于 2021-09-20 16:39:03 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>GTM82-代数拓扑与微分形式</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《代数拓扑与微分形式》笔记(5-2)-Künneth公式</title>
+    <url>/2021/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-2)-K%C3%BCnneth%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="Kunneth公式"><a href="#Kunneth公式" class="headerlink" title="Künneth公式"></a>Künneth公式</h2><p>设$M$, $F$是流形, 且$M$的de Rham上同调的维数是有限的, 则</p>
+<script type="math/tex; mode=display">H^n(M\times F)=\sum_{p+q=n} H^p(M)\otimes_\mathbb{R}H^q(F).</script><p><strong>证:</strong> 假定$M$有有限好覆盖. 取$M\times F$到$F$, $M$的投射为$\rho,\pi$,
+则其诱导$\psi:\Omega^{\ast }(M)\otimes \Omega^\ast (F)\rightarrow \Omega^\ast (M\times F)$,
+$\psi(\omega\otimes \phi)=\pi^\ast \omega\wedge \rho^\ast \phi.$
+由于$\pi^\ast$, $\rho^\ast$与$d$可交换, $\psi$可约化到上同调间的映射.</p>
+<p>若$M\approx \mathbb{R}^m$(好覆盖仅为一个开集), 则由Poincaré引理,
+$H^n(\mathbb{R}^m\times F)=H^n(\mathbb{R}^{m-1}\times F)=\cdots=H^n(F)=H^0(\mathbb{R}^m)\otimes H^n(F)= \sum_p H^{p}(\mathbb{R}^m)\otimes H^{n-p}(F).$</p>
+<p>设$U,V$为$M$的开集, 固定$n$, 做上同调的MV序列.
+将每项与$H^{n-p}(F)$做张量积, 再把每项关于$p$做直和, 得到新的MV序列.
+该MV序列又可通过链映射$\psi$打到$M\times F$对应的MV序列上,
+由zig-zag引理该图可交换.</p>
+<p>交换图有点大...不打了先.</p>
+<p>从而借助MV序列, 若Künneth公式对$U,V,U\cap V$成立, 其对$U\cup V$也成立.
+由MV方法, 归纳好覆盖开集个数即可.</p>
+<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p>$M\times F$可看作$M$上以$F$为纤维的平凡纤维丛,
+因此Künneth公式可以推广到更一般的情形, 这就是<strong>Leray-Hirsch定理</strong>.
+先介绍一些纤维丛的概念.</p>
+<p>设$G$是拓扑群, $F$是拓扑空间, 设$G$对$F$有一个<strong>左作用</strong>,
+即$\,\forall\,g\in G$定义了一个连续同胚$g:F\rightarrow F$, 满足
+$g_1(g_2(v))=(g_1g_2)(v)$, $\,\forall\,g_1,g_2\in G$, $v\in F.$
+称作用是<strong>有效作用</strong>, 若$g(y)=y$,
+$\,\forall\,y\in F\Rightarrow g=1\in G.$</p>
+<p>在此基础上, 再加入$E,B$为拓扑空间, $\pi:E\rightarrow B$是连续满射.
+设$B$有开覆盖$\{U_\alpha\}_{\alpha\in I}$满足:</p>
+<p>(i) 对每个$\alpha\in I$, 有保纤维的同胚:
+    $\phi_\alpha:E_{U_\alpha}:=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times F$,
+    即$\phi_\alpha$是同胚且$\operatorname{pr}_1\circ\phi_\alpha=\pi.$</p>
+<p>(ii) $\phi_\alpha,\phi_\beta$诱导了$g_{\alpha\beta}:U_{\alpha\beta}\rightarrow G$,
+     $(\phi_\alpha\circ \phi_\beta^{-1})(x,v)=(x,g_{\alpha\beta}(x)(v)).$</p>
+<p>则称$\pi:E\rightarrow B$是以$F$为纤维的<strong>纤维丛</strong>, <strong>结构群</strong>为$G$,
+<strong>底空间</strong>为$B$, <strong>全空间</strong>为$E$.
+$\{(U_\alpha,\phi_\alpha)\}_{\alpha\in I}$为纤维丛的一个<strong>局部平凡化</strong>.
+对$x\in B$, $\pi^{-1}(x)$即称为点$x$的纤维, 记作$E_x$.</p>
+<p>在研究上同调时, 假定$E,B,F$是光滑流形,
+$G$无特殊说明为$F$的微分同胚群$\operatorname{Diff}(F)$.</p>
+<p>设$\pi:E\rightarrow M$是以$F$为纤维的光滑纤维丛.
+假定$E$上有上同调类$e_1,…,e_r$,
+限制在每条纤维$E_x$上形成了$H^\ast (E_x)$的一组基, 则可定义</p>
+<script type="math/tex; mode=display">\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).</script><p><strong>定理 1.1</strong> (Leray-Hirsch 定理). <em>在上述假定下, 若$M$有有限好覆盖, 则$\psi$是同构, 有$H^\ast (E)\cong H^\ast (M)\otimes \mathbb{R}\{e_1,…,e_r\} \cong H^\ast (M)\otimes H^\ast (F).$</em> </p>
+<p><strong>证:</strong> 由于有限好覆盖中的$U_\alpha\approx \mathbb{R}^n$为可缩空间,
+其上纤维丛平凡,
+对$E|_{U_\alpha}$的Leray-Hirsch定理退化为$U_\alpha\times F$的Künneth公式.</p>
+<p>用MV方法即可借助好覆盖, 将该论断归纳到$M$上.</p>
+<p>文章最后更新于 2021-09-22 18:30:43 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>GTM82-代数拓扑与微分形式</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《代数拓扑与微分形式》笔记(5-1)-MV方法</title>
+    <url>/2021/09/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(5-1)-MV%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<p>MV方法指用MV序列+五引理, 给出对开覆盖开集个数归纳的证明方法.
+该方法导出若干重要的定理, 十分有用.</p>
+<h2 id="好覆盖的存在性"><a href="#好覆盖的存在性" class="headerlink" title="好覆盖的存在性"></a>好覆盖的存在性</h2><p>设$M$为$n$维流形, 其上开覆盖$\{U_\alpha\}$称为<strong>好覆盖</strong>,
+若任意非空有限交微分同胚于$\mathbb{R}^n$.</p>
+<p><strong>定理 1.1</strong>. <em>流形具有好覆盖. 特别地, 紧流形有有限好覆盖.</em> </p>
+<p><strong>证:</strong> 流形上可赋予黎曼度量(将$\mathbb{R}^n$上度量拉回,
+再利用单位分解). 令$U_x$为$x$点测地凸邻域, 微分同胚于$\mathbb{R}^n$,
+由于有限多个测地凸邻域非空交也是测地凸邻域,
+从而$\{U_x\}_{x\in M}$是$M$的一个好的开覆盖.</p>
+<p>测地凸邻域的概念可参考黎曼几何的教材.</p>
+<p>称开覆盖$\mathcal U$为$\mathcal V$的<strong>加细</strong>, 若每个$U$包含在某个$V$中.
+由于测地凸邻域可任意小, 容易证明每个开覆盖有一个加细的好覆盖.</p>
+<h2 id="de-Rham上同调维数有限性"><a href="#de-Rham上同调维数有限性" class="headerlink" title="de Rham上同调维数有限性"></a>de Rham上同调维数有限性</h2><p><strong>命题 1.1</strong>. <em>若$M$有有限好覆盖, 则$\dim H^\ast (M)&lt;\infty$.</em> </p>
+<p><strong>证:</strong> 记$h^q(M)=\dim H^q(M)$. 由MV序列,
+$H^q(M)=H^q(U\cup V)\cong \ker r\oplus\operatorname{Im}r\cong \operatorname{Im}d^\ast \oplus \operatorname{Im}r$.
+从而若$h^q(U), h^q(V), h^{q-1}(U\cap V)&lt;\infty\Rightarrow h^q(U\cup V)&lt;\infty$.</p>
+<p>对有限好覆盖开集个数进行归纳, 当个数为 1 时, $M\approx \mathbb{R}^n$,
+由 Poincaré 引理知结论成立.</p>
+<p>归纳地, 假设流形具有开集个数不超过$p$个有限好覆盖时, 上同调维数有限.
+若$M$具有有限好覆盖$\{U_0,…,U_p\}$. 取$W=U_0\cup … \cup U_{p-1}$,
+$V=U_p$.
+则$W\cap V$有不超过$p$个的有限好覆盖$(\{U_0\cap U_{p},…,U_{p-1}\cap U_p\})$.
+由归纳假设, $h^\ast (W\cap V), h^\ast (W), h^\ast (V)&lt;\infty$,
+从而$H^\ast (W\cup V)=H^\ast (M)&lt;\infty$.</p>
+<p>同理可证:</p>
+<p><strong>命题 1.2</strong>. <em>若$M$具有有限好覆盖, 则$\dim H_c^q(M)&lt;\infty$.</em> </p>
+<h2 id="定向流形的Poincare对偶"><a href="#定向流形的Poincare对偶" class="headerlink" title="定向流形的Poincaré对偶"></a>定向流形的Poincaré对偶</h2><p>设$V,W$为有限维向量空间,
+设其间有配对$\left&lt;{}-,-\right&gt;:V\otimes_\mathbb{R}W\rightarrow \mathbb{R},$
+为一个双线性映射, 则其诱导两个线性映射:</p>
+<script type="math/tex; mode=display">l_V:V\rightarrow W^\ast , v\mapsto \left<{}v,-\right>,</script><script type="math/tex; mode=display">l_W:W\rightarrow V^\ast , w\mapsto \left<{}-,w\right>.</script><p>这里$V^\ast$, $W^\ast$指$V,W$的对偶空间. 若两诱导映射都是单射,
+则称配对$\left&lt;{},\right&gt;$非退化.</p>
+<p><strong>引理 1.1</strong>. <em>$\left&lt;{}-,-\right&gt;$非退化当且仅当诱导映射$l_V$为同构.</em> </p>
+<p>由于$V,W$都是有限维的, 做简单的泛函分析即可.</p>
+<p>假定$M$为$n$维定向光滑流形, 具有有限好覆盖. 则$H^q(M)$,
+$H^{n-q}_c(M)$为两个有限维向量空间.
+定义配对$\int_M:H^1(M)\otimes_\mathbb{R}H^{n-q}_c(M)\rightarrow \mathbb{R}$,
+$([\omega],[\tau])\mapsto \int_M \omega \wedge \tau$. 由Stokes定理,
+该配对是良定的.</p>
+<p><strong>定理 1.2</strong>. <em>若$n$维定向光滑流形$M$有有限好覆盖, 则配对$\int_M$非退化, 等价地, 我们有$H^q(M)\cong (H^{n-q}_c(M))^\ast , H_c^{n-q}(M)\cong (H^q(M))^\ast$</em> </p>
+<p>证明前先做一些准备工作:</p>
+<p><strong>引理 1.2</strong>. <em>我们有如下带符号的交换图表, 如对最右侧的交换性, 即取$[\omega]\in H^q(U\cap V)$, $[\tau]\in H_c^{n-q-1}(U\cup V)$, 有$\int_{U\cup V}d^\ast \omega\wedge \tau=\pm \int_{U\cap V}\omega\wedge d_\ast \tau$.</em> </p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/YhuZk9awXTqQls1.png width='50%' height='50%'></p>
+<p>已经证明过$d^\ast ,d_\ast$与单位分解选取无关, 因此不妨用同一个单位分解,
+将$d^\ast ,d_\ast$的映射具体地给出即可.</p>
+<p>于是配对$\int$诱导了下面带符号的交换图表:</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/21/ZO9F3exrD28iBhV.png width='50%' height='50%'></p>
+<p>之后便可以借助五引理(Five Lemma)证明主命题了.</p>
+<p><strong>证:</strong> 由上正合列与五引理, 若 Poincaré 对偶在$U$, $V$, $U\cap V$上成立,
+则在$U\cup V$上也成立.</p>
+<p>对有限好覆盖开集个数归纳证明: 若仅有一个好覆盖, 由 Poincaré 引理得证.</p>
+<p>若其对有限好覆盖开集个数不超过$p$的流形成立,
+设$M$有好覆盖$\{U_0,…,U_p\}$, 令$W=U_0\cup …\cup U_{p-1}$, $V=U_p$,
+则$M,V,M\cap V$好覆盖开集数均不超过$p$,
+从而$M=U\cup V$上成立Poincaré对偶.</p>
+<p>若没有有限好覆盖, 则有如下定理:</p>
+<p><strong>定理 1.3</strong>. <em>若$M$为定向$n$维流形, 上同调不必是有限维的, 则:$H^q(M)\cong (H^{n-q}_c(M))^\ast$</em> </p>
+<p>也就是另一个同构关系不一定对, 因为直和的对偶是直积,
+但直积的对偶不是直和. 如当$M$可被分解为$M=\sqcup_i M_i$,
+可列个$M_i$每个均有有限开覆盖时, $H^k(M)=\prod_i H^k(M_i)$,
+但$H_c^{k}(M)=\oplus_i H^{k}_c(M_i)$, 因为其需要具有紧支集.</p>
+<p>那么此时$(H_c^{n-q}(M))^\ast =\prod(H_c^{n-q}(M_i))^\ast \cong \prod H^q(M_i)=H^q(M)$.
+而另一个同构不一定成立.</p>
+<p>由对偶关系, 即有:</p>
+<p><strong>推论 1.1</strong>. <em>若流形$M$连通可定向, 则$H^n_c(M)\cong \mathbb{R}$, 特别地, 若$M$还是紧的, 则$H^n(M)\cong \mathbb{R}$.</em> </p>
+<h2 id="闭定向子流形的Poincare对偶"><a href="#闭定向子流形的Poincare对偶" class="headerlink" title="闭定向子流形的Poincaré对偶"></a>闭定向子流形的Poincaré对偶</h2><p>设$M$为$n$维定向流形.</p>
+<h3 id="闭无边定向子流形"><a href="#闭无边定向子流形" class="headerlink" title="闭无边定向子流形"></a>闭无边定向子流形</h3><p>假设$S$为$M$的$k$维闭无边定向子流形, 考虑$\omega\in Z_c^k(M)$,
+$\operatorname{supp}(i^\ast \omega)$也是$M$中的闭集,
+从而$\operatorname{supp}(i^\ast \omega)\subset \operatorname{supp}\omega$紧,
+$\int_Si^\ast \omega$有意义.</p>
+<p>另一方面, $\,\forall\,\omega \in B_c^\ast (M)$, $\omega=d\phi$,
+同理$\operatorname{supp}(i^\ast \phi)$紧. 进一步, 存在闭集$B$,
+$\operatorname{supp}(i^\ast \phi)\subset B$且$\partial B$为光滑$k-1$维子流形或空集,
+则由Stokes定理, $\int_Si^\ast \omega=\int_Bd(i^\ast \phi)=0$.</p>
+<p>综上, $\int_S i^\ast$定义了$H_c^k(M)$上的一个线性泛函,
+于是存在唯一的$[\eta_S]\in H^{n-k}(M)$,
+$\int_S i^\ast \omega=\int_M\omega\wedge \eta_S$.
+$[\eta_S]$或其任意代表元称为$S$的<strong>(闭)Poincaré对偶.</strong></p>
+<h3 id="紧致无边定向子流形"><a href="#紧致无边定向子流形" class="headerlink" title="紧致无边定向子流形"></a>紧致无边定向子流形</h3><p>当$S$紧时, 由于流形是$T_2$的, 当然$S$也是闭的, 上述讨论可以继承.</p>
+<p>$\,\forall\,[\omega]\in H^k(M)$, 由紧性,
+积分$\int_S i^\ast \omega$有意义. 此时它定义了$H^k(M)$上的一个线性泛函,
+于是设$M$有有限好覆盖, 则便对应唯一的$[\eta_S’]\in H^{n-k}_c(M)$,
+满足$\int_Si^\ast \omega=\int_M \omega\wedge\eta_S’$.
+$[\eta_S]$便称为$S$的<strong>紧Poincaré对偶.</strong></p>
+<p>容易看出自然映射$H_c^{n-k}(M)\rightarrow H^{n-k}(M)$把紧Poincaré对偶映为闭Poincaré对偶.
+然而这两个可能有很大的区别, 如非零的紧Poincaré对偶可能被映为$0$.</p>
+<h3 id="局部化原理"><a href="#局部化原理" class="headerlink" title="局部化原理"></a>局部化原理</h3><p>取紧定向$k$维子流形$S$在$M$中的开邻域$W$, 即$S\subset W\subset M$,
+那么将$S$在$W$中的紧Poincaré对偶零延拓到$M$上,
+则容易验证它也是$M$中的紧Poincaré对偶.</p>
+<p>这就是<strong>局部化原理</strong>:
+$S$在$M$中紧Poincaré对偶的支集可缩小到$S$的任一开邻域中.</p>
+<p>文章最后更新于 2021-09-21 17:25:28 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>GTM82-代数拓扑与微分形式</category>
+      </categories>
+  </entry>
+  <entry>
     <title>《代数拓扑与微分形式》笔记(6-2)-Thom同构</title>
     <url>/2021/09/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-2)-Thom%E5%90%8C%E6%9E%84/</url>
     <content><![CDATA[<p>向量丛上的不变量: 紧垂直上同调, 由沿纤维积分给出.</p>
@@ -1685,6 +1685,80 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi’$,
 <p>事实上, $\Phi$也有函子性, 即$f:N\rightarrow M$为光滑映射,
 则$\Phi(f^{-1}E)=f^\ast \Phi(E)$, 证明留做习题. (确实是我们的习题)</p>
 <p>文章最后更新于 2021-09-23 15:07:12 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>GTM82-代数拓扑与微分形式</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</title>
+    <url>/2021/10/12/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-4)-%E5%B9%B3%E9%9D%A2%E4%B8%9B%E7%9A%84Thom%E7%B1%BB%E7%9A%84%E6%98%BE%E5%BC%8F%E8%A1%A8%E7%A4%BA/</url>
+    <content><![CDATA[<h2 id="整体角形式"><a href="#整体角形式" class="headerlink" title="整体角形式"></a>整体角形式</h2><p>在定向流形$M$上, 最高次形式是<strong>正的</strong>若它在$M$的定向类中.
+取$\sigma\in H^{n-1}(S^{n-1})$为生成元,
+$p:\mathbb{R}^n-\{0\}\rightarrow S^{n-1}$为形变收缩,
+规定$\sigma$在$S^{n-1}$上是正的当且仅当$dr\wedge p^\ast \sigma$在$\mathbb{R}^n-\{0\}$上是正的.</p>
+<p>设$\sigma$是$S^{k-1}$上正形式, 且$\int_{S^{k-1} }\sigma=1$,
+则$\psi=p^\ast \sigma$称为$\mathbb{R}^k-0$上的<strong>角形式</strong>.
+$[\psi]\in H^{k-1}(\mathbb{R}^k-\{0\})$为生成元.</p>
+<p>设$\rho(r)\in C^\infty[0,+\infty)$, $\rho(r)=\begin{cases}
+            -1&amp;r\le \delta_1\\
+            0&amp;r\ge \delta_2
+        \end{cases}$, $\delta_1&lt;\delta_2$, 中间部分光滑连接.
+$d\rho=\rho’(r)dr$是一个bump-1形式.</p>
+<p>这时, $[d\rho\wedge \psi]\in H_c^k(\mathbb{R}^k)$, 挖去$B_\varepsilon$,
+利用$\rho$性质与Stokes定理可证$\int_{\mathbb{R}^k}d\rho\wedge \psi=1$.
+即$[d\rho\wedge \psi]$为生成元.</p>
+<p>考虑$M$上秩$k$定向向量丛$\pi :E\rightarrow M$, $E^0=E-s(E)$,
+$s$为零截面. 设$\left&lt;{},\right&gt;$为度量, 对每条纤维上的向量$v$,
+定义$r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$. 那么$r$在$E$上有意义,
+$\rho(r)$可视为定义在$E$上的函数.</p>
+<p>称$E^0$的一个$k-1$-形式$\psi$为<strong>整体角形式</strong>,
+若$\psi$限制在每条纤维$E_x^0\simeq \mathbb{R}^k-\{0\}$上是角形式,
+并且$d\psi$能自然延拓成$E$的一个$k$-形式.</p>
+<p>若$E^0$上存在整体角形式$\psi$,
+则$E$的Thom类为$\Phi=d\rho\wedge\psi+\rho d\psi$.
+这是因为限制在纤维上第二项消失, 而第一项积分为$1$.</p>
+<h2 id="平面丛欧拉类的显示表示"><a href="#平面丛欧拉类的显示表示" class="headerlink" title="平面丛欧拉类的显示表示"></a>平面丛欧拉类的显示表示</h2><p>假定$E$是定向平面丛, 即秩为$2$. 取坐标图册与定向平凡化,
+在$U_\alpha$上有坐标$(x_1^\alpha,…,x_n^\alpha)$.</p>
+<p>利用定向平凡化, 定义$E^0|_{E_\alpha}$的极坐标$r_\alpha$,
+$\theta_\alpha$, 从而有坐标$\pi^\ast  x^\alpha, r_\alpha, \theta_\alpha$.
+假定$E$上度量保内积, 即转移函数约化到$SO(2)$, 则$r_\alpha=r_\beta$,
+我们定义了整体的$r$. 事实上这就是先前的$r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$.</p>
+<p>但$\theta_\alpha,\theta_\beta$相差一个旋转,
+可定义$\varphi_{\alpha\beta}$,
+使得$\theta_\beta=\theta_\alpha+\pi^\ast \varphi_{\alpha\beta}$.
+在$\mod 2\pi$意义下,
+$\varphi_{\alpha\beta}$满足cocycle条件以及可被唯一定义.</p>
+<p>因此若采用de Rham上同调, 则$\{d\varphi_{\alpha\beta}\}$满足cocycle条件.
+定义$\xi_\alpha=\frac{1}{2\pi} \sum_\gamma \rho_\gamma d\varphi_{\gamma\alpha}$,
+则在$U_{\alpha\beta}$上,
+$\frac{1}{2\pi}d\varphi_{\alpha\beta}=\xi_\beta-\xi_\alpha$.</p>
+<p>从而, $d\xi_\alpha=d\xi_\beta$, 可以拼成整体定义$2$-形式$e$:
+$e|_{U_\alpha}=d\xi_\alpha$. 显然$de=0$.
+断言$[e]\in H^2(M)$与$\{\xi_\alpha\}$选取无关,
+称之为平面丛$E$的<strong>欧拉类</strong>, 也记作$e(E)$.</p>
+<p>选取无关是因为倘若有另一个$\tilde \xi_\alpha$满足要求,
+那么$\tilde \xi_\alpha-\xi_\alpha$将满足相容性, 可以整体定义为$\eta$.
+那么$d\eta=d\tilde\xi_\alpha-d\xi_\alpha$, 从而在上同调层面它们是相等的.</p>
+<p>若给$E$一个定向平凡化, 假设约化到了$SO(2)=SU(1)$,
+则$\varphi_{\alpha\beta}=-\frac{1}{i}\log g_{\alpha\beta}$, 进一步
+$e|_{U_\alpha}=d\xi_\alpha=-\frac{1}{2\pi i}\sum_\gamma d(\rho_\gamma \cdot d\log g_{\gamma\alpha})$,
+称为<strong>平面丛欧拉类的显示表示公式</strong>.</p>
+<p>当$E$为乘积丛时, 转移函数为常值矩阵, 从而欧拉类为零.
+它反映出了定向向量丛$E$的扭曲程度. 由表示公式, 可以证明欧拉类的函子性:</p>
+<p><strong>命题 1.1</strong>. <em>$f:N\rightarrow M$为光滑映射, $\pi:E\rightarrow M$为秩2定向向量丛, 则$e(f^{-1}E)=f^\ast e(E)\in H^2(N)$.</em> </p>
+<h2 id="平面丛Thom类的显示表示"><a href="#平面丛Thom类的显示表示" class="headerlink" title="平面丛Thom类的显示表示"></a>平面丛Thom类的显示表示</h2><p>$\frac{d\theta_\alpha}{2\pi}-\pi^\ast \xi_\alpha$定义了$E^0$上的$1$-形式$\psi$.
+$\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
+为$E_x^0$的角形式; 同时$d\psi=-\pi^\ast e$在$E$上有定义, $\psi$是整体角形式.</p>
+<p>于是, $E$的Thom类为$\Phi=d\rho(r)\wedge \psi-\rho(r)\pi^\ast e$.
+若$s:M\rightarrow E$为零截面, 则$s^\ast \Phi=e$.
+即零截面把Thom类拉回为欧拉类.</p>
+<p>利用欧拉类的显式表示,
+即得$\Phi=d\rho(r)\wedge \frac{d\theta_\alpha}{2\pi}+\frac{1}{2\pi i}d(\rho(r)\pi^\ast \sum_\gamma\rho_\gamma d\log g_{\gamma\alpha})$.
+前一项形式非常直观, 而后一项是因为向量丛扭曲引起的修正项.</p>
+<p>文章最后更新于 2021-10-12 10:25:18 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -1773,80 +1847,6 @@ $f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
 即:</p>
 <p><strong>命题 1.3</strong>. <em>设$f:M’\rightarrow M$是光滑映射, 横截于$M$的闭子流形$S$. 若$[\eta_S]$是$S$在$M$中的Poincaré对偶, 则$f^\ast [\eta_S]$是$f^{-1}(S)$在$M’$中的Poincaré对偶.</em> </p>
 <p>文章最后更新于 2021-10-10 21:10:53 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>代数拓扑</category>
-        <category>GTM82-代数拓扑与微分形式</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</title>
-    <url>/2021/10/12/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(6-4)-%E5%B9%B3%E9%9D%A2%E4%B8%9B%E7%9A%84Thom%E7%B1%BB%E7%9A%84%E6%98%BE%E5%BC%8F%E8%A1%A8%E7%A4%BA/</url>
-    <content><![CDATA[<h2 id="整体角形式"><a href="#整体角形式" class="headerlink" title="整体角形式"></a>整体角形式</h2><p>在定向流形$M$上, 最高次形式是<strong>正的</strong>若它在$M$的定向类中.
-取$\sigma\in H^{n-1}(S^{n-1})$为生成元,
-$p:\mathbb{R}^n-\{0\}\rightarrow S^{n-1}$为形变收缩,
-规定$\sigma$在$S^{n-1}$上是正的当且仅当$dr\wedge p^\ast \sigma$在$\mathbb{R}^n-\{0\}$上是正的.</p>
-<p>设$\sigma$是$S^{k-1}$上正形式, 且$\int_{S^{k-1} }\sigma=1$,
-则$\psi=p^\ast \sigma$称为$\mathbb{R}^k-0$上的<strong>角形式</strong>.
-$[\psi]\in H^{k-1}(\mathbb{R}^k-\{0\})$为生成元.</p>
-<p>设$\rho(r)\in C^\infty[0,+\infty)$, $\rho(r)=\begin{cases}
-            -1&amp;r\le \delta_1\\
-            0&amp;r\ge \delta_2
-        \end{cases}$, $\delta_1&lt;\delta_2$, 中间部分光滑连接.
-$d\rho=\rho’(r)dr$是一个bump-1形式.</p>
-<p>这时, $[d\rho\wedge \psi]\in H_c^k(\mathbb{R}^k)$, 挖去$B_\varepsilon$,
-利用$\rho$性质与Stokes定理可证$\int_{\mathbb{R}^k}d\rho\wedge \psi=1$.
-即$[d\rho\wedge \psi]$为生成元.</p>
-<p>考虑$M$上秩$k$定向向量丛$\pi :E\rightarrow M$, $E^0=E-s(E)$,
-$s$为零截面. 设$\left&lt;{},\right&gt;$为度量, 对每条纤维上的向量$v$,
-定义$r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$. 那么$r$在$E$上有意义,
-$\rho(r)$可视为定义在$E$上的函数.</p>
-<p>称$E^0$的一个$k-1$-形式$\psi$为<strong>整体角形式</strong>,
-若$\psi$限制在每条纤维$E_x^0\simeq \mathbb{R}^k-\{0\}$上是角形式,
-并且$d\psi$能自然延拓成$E$的一个$k$-形式.</p>
-<p>若$E^0$上存在整体角形式$\psi$,
-则$E$的Thom类为$\Phi=d\rho\wedge\psi+\rho d\psi$.
-这是因为限制在纤维上第二项消失, 而第一项积分为$1$.</p>
-<h2 id="平面丛欧拉类的显示表示"><a href="#平面丛欧拉类的显示表示" class="headerlink" title="平面丛欧拉类的显示表示"></a>平面丛欧拉类的显示表示</h2><p>假定$E$是定向平面丛, 即秩为$2$. 取坐标图册与定向平凡化,
-在$U_\alpha$上有坐标$(x_1^\alpha,…,x_n^\alpha)$.</p>
-<p>利用定向平凡化, 定义$E^0|_{E_\alpha}$的极坐标$r_\alpha$,
-$\theta_\alpha$, 从而有坐标$\pi^\ast  x^\alpha, r_\alpha, \theta_\alpha$.
-假定$E$上度量保内积, 即转移函数约化到$SO(2)$, 则$r_\alpha=r_\beta$,
-我们定义了整体的$r$. 事实上这就是先前的$r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$.</p>
-<p>但$\theta_\alpha,\theta_\beta$相差一个旋转,
-可定义$\varphi_{\alpha\beta}$,
-使得$\theta_\beta=\theta_\alpha+\pi^\ast \varphi_{\alpha\beta}$.
-在$\mod 2\pi$意义下,
-$\varphi_{\alpha\beta}$满足cocycle条件以及可被唯一定义.</p>
-<p>因此若采用de Rham上同调, 则$\{d\varphi_{\alpha\beta}\}$满足cocycle条件.
-定义$\xi_\alpha=\frac{1}{2\pi} \sum_\gamma \rho_\gamma d\varphi_{\gamma\alpha}$,
-则在$U_{\alpha\beta}$上,
-$\frac{1}{2\pi}d\varphi_{\alpha\beta}=\xi_\beta-\xi_\alpha$.</p>
-<p>从而, $d\xi_\alpha=d\xi_\beta$, 可以拼成整体定义$2$-形式$e$:
-$e|_{U_\alpha}=d\xi_\alpha$. 显然$de=0$.
-断言$[e]\in H^2(M)$与$\{\xi_\alpha\}$选取无关,
-称之为平面丛$E$的<strong>欧拉类</strong>, 也记作$e(E)$.</p>
-<p>选取无关是因为倘若有另一个$\tilde \xi_\alpha$满足要求,
-那么$\tilde \xi_\alpha-\xi_\alpha$将满足相容性, 可以整体定义为$\eta$.
-那么$d\eta=d\tilde\xi_\alpha-d\xi_\alpha$, 从而在上同调层面它们是相等的.</p>
-<p>若给$E$一个定向平凡化, 假设约化到了$SO(2)=SU(1)$,
-则$\varphi_{\alpha\beta}=-\frac{1}{i}\log g_{\alpha\beta}$, 进一步
-$e|_{U_\alpha}=d\xi_\alpha=-\frac{1}{2\pi i}\sum_\gamma d(\rho_\gamma \cdot d\log g_{\gamma\alpha})$,
-称为<strong>平面丛欧拉类的显示表示公式</strong>.</p>
-<p>当$E$为乘积丛时, 转移函数为常值矩阵, 从而欧拉类为零.
-它反映出了定向向量丛$E$的扭曲程度. 由表示公式, 可以证明欧拉类的函子性:</p>
-<p><strong>命题 1.1</strong>. <em>$f:N\rightarrow M$为光滑映射, $\pi:E\rightarrow M$为秩2定向向量丛, 则$e(f^{-1}E)=f^\ast e(E)\in H^2(N)$.</em> </p>
-<h2 id="平面丛Thom类的显示表示"><a href="#平面丛Thom类的显示表示" class="headerlink" title="平面丛Thom类的显示表示"></a>平面丛Thom类的显示表示</h2><p>$\frac{d\theta_\alpha}{2\pi}-\pi^\ast \xi_\alpha$定义了$E^0$上的$1$-形式$\psi$.
-$\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
-为$E_x^0$的角形式; 同时$d\psi=-\pi^\ast e$在$E$上有定义, $\psi$是整体角形式.</p>
-<p>于是, $E$的Thom类为$\Phi=d\rho(r)\wedge \psi-\rho(r)\pi^\ast e$.
-若$s:M\rightarrow E$为零截面, 则$s^\ast \Phi=e$.
-即零截面把Thom类拉回为欧拉类.</p>
-<p>利用欧拉类的显式表示,
-即得$\Phi=d\rho(r)\wedge \frac{d\theta_\alpha}{2\pi}+\frac{1}{2\pi i}d(\rho(r)\pi^\ast \sum_\gamma\rho_\gamma d\log g_{\gamma\alpha})$.
-前一项形式非常直观, 而后一项是因为向量丛扭曲引起的修正项.</p>
-<p>文章最后更新于 2021-10-12 10:25:18 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -2458,6 +2458,87 @@ $n$为曲线与这些直线的总交点数(记重数), 即将积分离散化.
       </categories>
   </entry>
   <entry>
+    <title>《微分流形》第一章-微分流形(2)</title>
+    <url>/2021/09/25/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(2)/</url>
+    <content><![CDATA[<h2 id="拓扑流形"><a href="#拓扑流形" class="headerlink" title="拓扑流形"></a>拓扑流形</h2><ul>
+<li><p>局部道路连通(坐标邻域);</p>
+</li>
+<li><p>连通$\Leftrightarrow$道路连通(局部道路连通);</p>
+</li>
+<li><p>连通分支可数(第二可数性);</p>
+</li>
+<li><p>局部紧(局部欧氏).</p>
+</li>
+</ul>
+<p>第二可数性 + 局部紧 $\Rightarrow$ <strong>仿紧性</strong>(任意开覆盖有开的,
+局部有限的加细).</p>
+<p>局部有限: 称覆盖$\{A_\alpha\}$是<strong>局部有限</strong>的, 若$\,\forall\,p\in M,$
+$\,\exists\,$邻域$U\ni p$使得$U$只与有限个$A_\alpha$相交.</p>
+<h2 id="微分流形例子"><a href="#微分流形例子" class="headerlink" title="微分流形例子"></a>微分流形例子</h2><p>研究微分流形上的微积分需要$C^\infty$微分结构$[\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}].$
+$C^\infty$流形=拓扑流形+$C^\infty$结构.</p>
+<p>$M$为$C^\infty$流形, $[\mathcal{F}]=[\{(U_\alpha,\varphi_\alpha)\}],$
+$U\subset M$为开子集. 那么$U$也是拓扑流形,
+同时有诱导的$C^\infty$坐标图册$[\mathcal{F}_U]=[\{U_\alpha\cap U,\varphi_\alpha|_{U\cap U_\alpha}\}]$,
+从而$U$也是$C^\infty$流形, 称为<strong>开子流形</strong>.</p>
+<p>$m$阶方阵全体$M_m=\{(a_{ij})_{m\times m}|a_{ij}\in \mathbb{R}\}\leftrightarrow \mathbb{R}^{m^2},$
+为向量空间的同构. 因此也可视为一个$C^\infty$流形.</p>
+<p>$GL(m,\mathbb{R}):=\{A\in M_{m}|\det A\neq 0\}\subset M_m=\mathbb{R}^{m^2}.$
+$\det:M_m\rightarrow \mathbb{R}$为连续函数.
+由于$GL(m,\mathbb{R})=(\det)^{-1}(\mathbb{R}\setminus \{0\})$为$M_m$的开子集,
+它是开子流形. 因此$GL(m,\mathbb{R})$也是一个$m^2$维$C^\infty$流形,
+称为($\mathbb{R}$上)<strong>一般线性群</strong>, 以矩阵乘法为群上运算.</p>
+<p>后面将说明, 矩阵乘法与求逆运算均为$C^\infty$流形间的$C^\infty$映照,
+给出了其上两种结构($C^\infty$流形结构与群结构)之间的关系.
+这样的群称为<strong>李群(Lie Group)</strong>.</p>
+<p>设$(M^m,[\mathcal{F}=\{(U_{\alpha},\varphi_\alpha)\}]),$
+$(N^n,[\widetilde {\mathcal{F} }=\{(V_\beta,\psi_\beta)\}])$是$C^\infty$流形.
+赋予$M^m\times N^n$积拓扑,
+即$U\times V$为开子集当且仅当两者分别为各自空间开子集.
+容易验证$M^m\times N^n$是一个$m+n$维拓扑流形,
+以$[\mathcal{F}\times \widetilde {\mathcal{F} }:=\{(U_{\alpha}\times V_{\beta},\varphi_\alpha\times \psi_\beta)\}]$为$C^\infty$坐标图册,
+成为$C^\infty$微分流形. 称$M\times N$为$M,N$的<strong>积流形</strong>.
+可归纳定义$M_1\times\cdots\times M_k.$</p>
+<p>$\mathbb{R}^{m+1}\setminus \{0\}$引入等价关系$\sim,$
+$x\sim y\Leftrightarrow x=\lambda y.$
+商空间$M=\mathbb{R}^{m+1}\setminus\{0\}/_\sim,$ 赋予<strong>商拓扑</strong>,
+即$U\subset M$为开子集$\Leftrightarrow$ $\pi^{-1}(U)$为原空间开子集,
+其中$\pi:x\mapsto [x]$为<strong>自然投影</strong>. $[x]$可视为过原点的直线,
+或球面上的两点粘贴. 可以说明<em>商拓扑是Hausdorff, 第二可数的</em>.</p>
+<p>令开集$U_i=\{[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0\},$
+$(x^1,\cdots,x^{m+1})$称为$[x]$的<strong>齐次坐标</strong>.
+$M=\bigcup_{i=1}^{m+1} U_i.$
+定义同胚$\varphi_i:U_i\rightarrow \mathbb{R}^m,$
+$[x]\mapsto\frac{1}{x_i}(x^1,\cdots, \widehat{x^{i} },\cdots, x^{m+1}).$
+$(U_i,\varphi_i)$即为$M$的一个坐标图册. 称对应的坐标为<strong>非齐次坐标</strong>.</p>
+<p>记$\xi_{(i)}^k=\frac{x^k}{x^i}.$ 任取$1\le i&lt;j\le m+1,$
+$U_i\cap U_j$上坐标变换为$\xi_{(i)}^j\mapsto \xi_{(j)}^i=\frac{1}{\xi_{(i)}^j},$
+$\xi_{(i)}^l\mapsto \xi_{(j)}^l=\frac{\xi^l_{(i)} }{\xi_{(i)}^j},$
+$l\neq i,j,$ 是$\mathbb{R}^m$上的$C^\infty$映射,
+因此坐标图册是$C^\infty$的.
+从而$(M,[\{(U_i,\varphi_i)\}])$成为$m$维$C^\infty$流形,
+记为<strong>实射影空间</strong>$\mathbb{R}\mathrm{P}^m.$</p>
+<p>取$\mathbb{R}^N$为$N$维欧氏空间,
+记$G_{k,N}=\{\text{$P$为$\mathbb{R}^N$的$k$维子空间}\}.$
+赋予拓扑与$C^\infty$结构使之成为一个$C^\infty$流形, 称为Grassman流形.
+易见$G_{1,N}=\mathbb{R}\mathrm{P}^{N-1}.$</p>
+<h2 id="流形间的映射"><a href="#流形间的映射" class="headerlink" title="流形间的映射"></a>流形间的映射</h2><p>设$(M^m,[\mathcal{F}])$是$C^\infty$流形, $f:M\rightarrow \mathbb{R}.$
+$\,\forall\,p\in M,$
+若存在含$p$的<strong>允许坐标系</strong>$(U,\varphi)$使$f\circ \varphi^{-1}\in C^\infty(\varphi(U)),$
+则称$f$在$p$点是$C^\infty$的.
+称$(f\circ \varphi^{-1})(x^1,\cdots,x^m)$为<strong>局部表示</strong>.
+这里<strong>允许坐标系</strong>指包含在$[\mathcal{F}]$极大坐标图册中的坐标卡.
+如果$f$点点$C^\infty,$ 则称$f\in C^\infty(M).$</p>
+<p><strong>注 1.1</strong>. <em>上述概念与坐标系选取无关. 注意$f$在$p$点$C^\infty$等价于$f\circ \varphi^{-1}$在$\varphi(p)$某个小邻域$C^\infty.$</em> </p>
+<p><strong>注 1.2</strong>. <em>类似可给出$f$在$p$点是$C^r$的, 以及$f\in C^r(M)$的定义.</em> </p>
+<p>文章最后更新于 2021-09-25 16:22:50 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>微分流形</category>
+      </categories>
+  </entry>
+  <entry>
     <title>《微分流形》第一章-微分流形(1)</title>
     <url>/2021/09/15/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(1)/</url>
     <content><![CDATA[<h2 id="流形基本概念与例子"><a href="#流形基本概念与例子" class="headerlink" title="流形基本概念与例子"></a>流形基本概念与例子</h2><h3 id="拓扑"><a href="#拓扑" class="headerlink" title="拓扑"></a>拓扑</h3><ul>
@@ -2538,79 +2619,78 @@ $(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
       </categories>
   </entry>
   <entry>
-    <title>《微分流形》第一章-微分流形(2)</title>
-    <url>/2021/09/25/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(2)/</url>
-    <content><![CDATA[<h2 id="拓扑流形"><a href="#拓扑流形" class="headerlink" title="拓扑流形"></a>拓扑流形</h2><ul>
-<li><p>局部道路连通(坐标邻域);</p>
+    <title>《微分流形》第一章-流形间的映射</title>
+    <url>/2021/09/26/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%B5%81%E5%BD%A2%E9%97%B4%E7%9A%84%E6%98%A0%E5%B0%84/</url>
+    <content><![CDATA[<h2 id="映射的微分学"><a href="#映射的微分学" class="headerlink" title="映射的微分学"></a>映射的微分学</h2><h3 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h3><p>$M^m$是$C^\infty$流形, $f:M\rightarrow \mathbb{R},$ $p\in M.$
+若$\,\exists\,$含$p$点允许坐标系$(U,\varphi)$(即$\in [\mathcal{F}]$)使$f\circ \varphi^{-1}$在$\varphi(p)$的某个邻域内是$C^\infty$的,
+则称$f$在$p$点$C^\infty.$ 若$f$点点光滑, 则称$f\in C^\infty(M).$</p>
+<p>允许坐标系限制在更小的开子集上显然仍是允许坐标系,
+因此上述定义等价于存在某个允许坐标系使得$f\circ \varphi^{-1}$在整个$\varphi(U)$上是$C^\infty$的.</p>
+<p>由于坐标变换是光滑的, 上述概念与允许坐标系选择无关. 类似地,
+可以定义$f$在$p$点是$C^r$的, 或$f\in C^r(M).$</p>
+<h3 id="映照"><a href="#映照" class="headerlink" title="映照"></a>映照</h3><p>设$M^m,N^n$是光滑流形, $F:M\rightarrow N,$ $p\in M.$
+若存在含$p,q=F(p)$的允许坐标系$(U,\varphi),(V,\psi),$ $F(U)\subset V,$
+使得<strong>局部表示</strong>$\widehat{F}:=\psi\circ F\circ\varphi^{-1}$在$\varphi(p)$某邻域是$C^\infty$的,
+则称$F$在$p$点是$C^\infty$的. 若$F$点点$C^\infty,$
+则称$F$是<strong>光滑映照</strong>, 记为$F\in C^\infty(M,N).$</p>
+<p><strong>注 1.1</strong>. <em>若$F(U)\not\subset V,$ 则可取$\widetilde{U}=F^{-1}(V)\cap U.$</em> </p>
+<p>同理上述概念与允许坐标系选取无关.</p>
+<h3 id="微分同胚"><a href="#微分同胚" class="headerlink" title="微分同胚"></a>微分同胚</h3><p>如果$(U,\varphi)$是$M$的允许坐标系,
+则$\varphi:U\rightarrow \varphi(U)$及$\varphi^{-1}:\varphi(U)\rightarrow U$依定义显然是光滑的,
+再取同样的允许坐标系$(U,\varphi)$说明即可. 注意$U$从$M$上诱导光滑结构,
+为开子流形, 而非嵌入到外围空间的子流形(微分结构不同),
+如$\widetilde{\varphi}:U\rightarrow \varphi(U)\hookrightarrow \mathbb{R}^k$不见得光滑.</p>
+<p>易见光滑映照的复合仍是光滑映照.</p>
+<p>设$F:M\rightarrow N$是光滑流形间的双射. 如果$F,F^{-1}$是光滑的,
+则称$F:M\rightarrow N$是$C^\infty$微分同胚.
+两个微分同胚的光滑流形视为一样的.</p>
+<p>例如球极投影$F:S^2\setminus\{p\}\rightarrow\mathbb{R}^2$, scaling
+$B^n(1)\rightarrow \mathbb{R}^n$都是光滑同胚.</p>
+<h3 id="微分结构问题"><a href="#微分结构问题" class="headerlink" title="微分结构问题"></a>微分结构问题</h3><p>一个基本问题是, 给定拓扑流形$M^m,$ 其上是否一定存在$C^\infty$结构?
+存在的话是否(在$C^\infty$同胚意义下)唯一? 若$M$有两个微分结构,
+问是否有光滑同胚$(M,\mathcal{F}_1)\approx (M,\mathcal{F}_2).$
+注意同胚的选取不见得取恒等映射$\mathrm{id},$
+因此不能简简单单只验证$\mathcal{F}_1,\mathcal{F}_2$是否$C^\infty$相容.</p>
+<p>已知结果:</p>
+<ul>
+<li><p>$\mathbb{R}^m,$ $m\neq 4$上存在唯一的$C^\infty$结构;</p>
 </li>
-<li><p>连通$\Leftrightarrow$道路连通(局部道路连通);</p>
+<li><p>$\mathbb{R}^4$上存在无穷多个互不等价的$C^\infty$结构;</p>
 </li>
-<li><p>连通分支可数(第二可数性);</p>
+<li><p>$S^7$-Milnor怪球上存在28种互不等价的$C^\infty$结构;</p>
 </li>
-<li><p>局部紧(局部欧氏).</p>
+<li><p>维数$m\le 3$的拓扑流形上存在唯一的$C^\infty$结构;</p>
+</li>
+<li><p>$\,\forall\,m&gt;3,$ 都存在$m$维拓扑流形, 其上不存在$C^\infty$结构.</p>
 </li>
 </ul>
-<p>第二可数性 + 局部紧 $\Rightarrow$ <strong>仿紧性</strong>(任意开覆盖有开的,
-局部有限的加细).</p>
-<p>局部有限: 称覆盖$\{A_\alpha\}$是<strong>局部有限</strong>的, 若$\,\forall\,p\in M,$
-$\,\exists\,$邻域$U\ni p$使得$U$只与有限个$A_\alpha$相交.</p>
-<h2 id="微分流形例子"><a href="#微分流形例子" class="headerlink" title="微分流形例子"></a>微分流形例子</h2><p>研究微分流形上的微积分需要$C^\infty$微分结构$[\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}].$
-$C^\infty$流形=拓扑流形+$C^\infty$结构.</p>
-<p>$M$为$C^\infty$流形, $[\mathcal{F}]=[\{(U_\alpha,\varphi_\alpha)\}],$
-$U\subset M$为开子集. 那么$U$也是拓扑流形,
-同时有诱导的$C^\infty$坐标图册$[\mathcal{F}_U]=[\{U_\alpha\cap U,\varphi_\alpha|_{U\cap U_\alpha}\}]$,
-从而$U$也是$C^\infty$流形, 称为<strong>开子流形</strong>.</p>
-<p>$m$阶方阵全体$M_m=\{(a_{ij})_{m\times m}|a_{ij}\in \mathbb{R}\}\leftrightarrow \mathbb{R}^{m^2},$
-为向量空间的同构. 因此也可视为一个$C^\infty$流形.</p>
-<p>$GL(m,\mathbb{R}):=\{A\in M_{m}|\det A\neq 0\}\subset M_m=\mathbb{R}^{m^2}.$
-$\det:M_m\rightarrow \mathbb{R}$为连续函数.
-由于$GL(m,\mathbb{R})=(\det)^{-1}(\mathbb{R}\setminus \{0\})$为$M_m$的开子集,
-它是开子流形. 因此$GL(m,\mathbb{R})$也是一个$m^2$维$C^\infty$流形,
-称为($\mathbb{R}$上)<strong>一般线性群</strong>, 以矩阵乘法为群上运算.</p>
-<p>后面将说明, 矩阵乘法与求逆运算均为$C^\infty$流形间的$C^\infty$映照,
-给出了其上两种结构($C^\infty$流形结构与群结构)之间的关系.
-这样的群称为<strong>李群(Lie Group)</strong>.</p>
-<p>设$(M^m,[\mathcal{F}=\{(U_{\alpha},\varphi_\alpha)\}]),$
-$(N^n,[\widetilde {\mathcal{F} }=\{(V_\beta,\psi_\beta)\}])$是$C^\infty$流形.
-赋予$M^m\times N^n$积拓扑,
-即$U\times V$为开子集当且仅当两者分别为各自空间开子集.
-容易验证$M^m\times N^n$是一个$m+n$维拓扑流形,
-以$[\mathcal{F}\times \widetilde {\mathcal{F} }:=\{(U_{\alpha}\times V_{\beta},\varphi_\alpha\times \psi_\beta)\}]$为$C^\infty$坐标图册,
-成为$C^\infty$微分流形. 称$M\times N$为$M,N$的<strong>积流形</strong>.
-可归纳定义$M_1\times\cdots\times M_k.$</p>
-<p>$\mathbb{R}^{m+1}\setminus \{0\}$引入等价关系$\sim,$
-$x\sim y\Leftrightarrow x=\lambda y.$
-商空间$M=\mathbb{R}^{m+1}\setminus\{0\}/_\sim,$ 赋予<strong>商拓扑</strong>,
-即$U\subset M$为开子集$\Leftrightarrow$ $\pi^{-1}(U)$为原空间开子集,
-其中$\pi:x\mapsto [x]$为<strong>自然投影</strong>. $[x]$可视为过原点的直线,
-或球面上的两点粘贴. 可以说明<em>商拓扑是Hausdorff, 第二可数的</em>.</p>
-<p>令开集$U_i=\{[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0\},$
-$(x^1,\cdots,x^{m+1})$称为$[x]$的<strong>齐次坐标</strong>.
-$M=\bigcup_{i=1}^{m+1} U_i.$
-定义同胚$\varphi_i:U_i\rightarrow \mathbb{R}^m,$
-$[x]\mapsto\frac{1}{x_i}(x^1,\cdots, \widehat{x^{i} },\cdots, x^{m+1}).$
-$(U_i,\varphi_i)$即为$M$的一个坐标图册. 称对应的坐标为<strong>非齐次坐标</strong>.</p>
-<p>记$\xi_{(i)}^k=\frac{x^k}{x^i}.$ 任取$1\le i&lt;j\le m+1,$
-$U_i\cap U_j$上坐标变换为$\xi_{(i)}^j\mapsto \xi_{(j)}^i=\frac{1}{\xi_{(i)}^j},$
-$\xi_{(i)}^l\mapsto \xi_{(j)}^l=\frac{\xi^l_{(i)} }{\xi_{(i)}^j},$
-$l\neq i,j,$ 是$\mathbb{R}^m$上的$C^\infty$映射,
-因此坐标图册是$C^\infty$的.
-从而$(M,[\{(U_i,\varphi_i)\}])$成为$m$维$C^\infty$流形,
-记为<strong>实射影空间</strong>$\mathbb{R}\mathrm{P}^m.$</p>
-<p>取$\mathbb{R}^N$为$N$维欧氏空间,
-记$G_{k,N}=\{\text{$P$为$\mathbb{R}^N$的$k$维子空间}\}.$
-赋予拓扑与$C^\infty$结构使之成为一个$C^\infty$流形, 称为Grassman流形.
-易见$G_{1,N}=\mathbb{R}\mathrm{P}^{N-1}.$</p>
-<h2 id="流形间的映射"><a href="#流形间的映射" class="headerlink" title="流形间的映射"></a>流形间的映射</h2><p>设$(M^m,[\mathcal{F}])$是$C^\infty$流形, $f:M\rightarrow \mathbb{R}.$
-$\,\forall\,p\in M,$
-若存在含$p$的<strong>允许坐标系</strong>$(U,\varphi)$使$f\circ \varphi^{-1}\in C^\infty(\varphi(U)),$
-则称$f$在$p$点是$C^\infty$的.
-称$(f\circ \varphi^{-1})(x^1,\cdots,x^m)$为<strong>局部表示</strong>.
-这里<strong>允许坐标系</strong>指包含在$[\mathcal{F}]$极大坐标图册中的坐标卡.
-如果$f$点点$C^\infty,$ 则称$f\in C^\infty(M).$</p>
-<p><strong>注 1.1</strong>. <em>上述概念与坐标系选取无关. 注意$f$在$p$点$C^\infty$等价于$f\circ \varphi^{-1}$在$\varphi(p)$某个小邻域$C^\infty.$</em> </p>
-<p><strong>注 1.2</strong>. <em>类似可给出$f$在$p$点是$C^r$的, 以及$f\in C^r(M)$的定义.</em> </p>
-<p>文章最后更新于 2021-09-25 16:22:50 </p>
+<p>下面假设拓扑流形都给定了$C^\infty$结构.</p>
+<h2 id="切空间"><a href="#切空间" class="headerlink" title="切空间"></a>切空间</h2><p>给定光滑流形$M^m,$ 我们尝试<em>内蕴地</em>推广切向量, 切平面的概念.
+将曲线$C:(a,b)\rightarrow M^m$视为光滑流形间的映照,
+我们可以定义光滑曲线的概念. 设$C(t_0)=p,$
+用$C_p^\infty(M)$表示$M$上在$p$处光滑的函数全体,
+我们称映照(<em>方向导数算子</em>)$X:C_p^\infty(M)\rightarrow \mathbb{R},$
+$f\mapsto \frac{d}{dt}[f(c(t))]|_{t=t_0}$为$C(t)$在$p$处<strong>切向量</strong>,
+即求方向导数的运算过程蕴含了该方向本身.</p>
+<p>上述”切向量”$X$满足$X(af+bg)=aX(f)+bX(g),$
+$X(f\cdot g)=X(f)g(p)+f(p)X(g).$
+取$\widetilde{T}_pM=\{\widetilde{X}:C_p^\infty\rightarrow \mathbb{R}\text{满足(1),(2)}\}.$
+$(\widetilde{X}_1+\widetilde{X}_2)f:=\widetilde{X}_1(f)+\widetilde{X}_2(f),$
+$(x\widetilde{X})(f):=a\widetilde{X}(f).$
+容易验证$\widetilde{X}_1+\widetilde{X}_2,$
+$a\widetilde{X}$满足$(1),(2),$ 即$\widetilde{T}_pM$是向量空间.</p>
+<p>$C_p^\infty(M)$和$C^\infty(M)$不同, 后者为向量空间, 但前者不是,
+因为<em>零元并不唯一</em>. 原因是前者的加法仅在公共光滑邻域上做加法.
+因此$X$也暂时不是线性映射.</p>
+<p>我们引入等价关系来改变这一状况:
+记$f\sim g\Leftrightarrow \,\exists\,p$点小邻域$W,$ 使得$f|_W=g|_W.$
+称$[f]$为$C^\infty$<strong>函数芽</strong>,
+$C_p^\infty(M)/_\sim$为$C^\infty$<strong>函数芽空间</strong>$\mathcal{F}_p^\infty.$
+$X$可以诱导其上的映射,
+仍记为$X:\mathcal{F}_p^\infty\rightarrow \mathbb{R},$ $[f]\mapsto Xf.$
+它也满足类似前面$(1),(2)$的性质.
+此时$\mathcal{F}_p^\infty$确实是向量空间, 因此$X$成为线性映射.</p>
+<p>文章最后更新于 2021-09-26 16:39:45 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -2782,78 +2862,56 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
       </categories>
   </entry>
   <entry>
-    <title>《微分流形》第一章-流形间的映射</title>
-    <url>/2021/09/26/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%B5%81%E5%BD%A2%E9%97%B4%E7%9A%84%E6%98%A0%E5%B0%84/</url>
-    <content><![CDATA[<h2 id="映射的微分学"><a href="#映射的微分学" class="headerlink" title="映射的微分学"></a>映射的微分学</h2><h3 id="映射"><a href="#映射" class="headerlink" title="映射"></a>映射</h3><p>$M^m$是$C^\infty$流形, $f:M\rightarrow \mathbb{R},$ $p\in M.$
-若$\,\exists\,$含$p$点允许坐标系$(U,\varphi)$(即$\in [\mathcal{F}]$)使$f\circ \varphi^{-1}$在$\varphi(p)$的某个邻域内是$C^\infty$的,
-则称$f$在$p$点$C^\infty.$ 若$f$点点光滑, 则称$f\in C^\infty(M).$</p>
-<p>允许坐标系限制在更小的开子集上显然仍是允许坐标系,
-因此上述定义等价于存在某个允许坐标系使得$f\circ \varphi^{-1}$在整个$\varphi(U)$上是$C^\infty$的.</p>
-<p>由于坐标变换是光滑的, 上述概念与允许坐标系选择无关. 类似地,
-可以定义$f$在$p$点是$C^r$的, 或$f\in C^r(M).$</p>
-<h3 id="映照"><a href="#映照" class="headerlink" title="映照"></a>映照</h3><p>设$M^m,N^n$是光滑流形, $F:M\rightarrow N,$ $p\in M.$
-若存在含$p,q=F(p)$的允许坐标系$(U,\varphi),(V,\psi),$ $F(U)\subset V,$
-使得<strong>局部表示</strong>$\widehat{F}:=\psi\circ F\circ\varphi^{-1}$在$\varphi(p)$某邻域是$C^\infty$的,
-则称$F$在$p$点是$C^\infty$的. 若$F$点点$C^\infty,$
-则称$F$是<strong>光滑映照</strong>, 记为$F\in C^\infty(M,N).$</p>
-<p><strong>注 1.1</strong>. <em>若$F(U)\not\subset V,$ 则可取$\widetilde{U}=F^{-1}(V)\cap U.$</em> </p>
-<p>同理上述概念与允许坐标系选取无关.</p>
-<h3 id="微分同胚"><a href="#微分同胚" class="headerlink" title="微分同胚"></a>微分同胚</h3><p>如果$(U,\varphi)$是$M$的允许坐标系,
-则$\varphi:U\rightarrow \varphi(U)$及$\varphi^{-1}:\varphi(U)\rightarrow U$依定义显然是光滑的,
-再取同样的允许坐标系$(U,\varphi)$说明即可. 注意$U$从$M$上诱导光滑结构,
-为开子流形, 而非嵌入到外围空间的子流形(微分结构不同),
-如$\widetilde{\varphi}:U\rightarrow \varphi(U)\hookrightarrow \mathbb{R}^k$不见得光滑.</p>
-<p>易见光滑映照的复合仍是光滑映照.</p>
-<p>设$F:M\rightarrow N$是光滑流形间的双射. 如果$F,F^{-1}$是光滑的,
-则称$F:M\rightarrow N$是$C^\infty$微分同胚.
-两个微分同胚的光滑流形视为一样的.</p>
-<p>例如球极投影$F:S^2\setminus\{p\}\rightarrow\mathbb{R}^2$, scaling
-$B^n(1)\rightarrow \mathbb{R}^n$都是光滑同胚.</p>
-<h3 id="微分结构问题"><a href="#微分结构问题" class="headerlink" title="微分结构问题"></a>微分结构问题</h3><p>一个基本问题是, 给定拓扑流形$M^m,$ 其上是否一定存在$C^\infty$结构?
-存在的话是否(在$C^\infty$同胚意义下)唯一? 若$M$有两个微分结构,
-问是否有光滑同胚$(M,\mathcal{F}_1)\approx (M,\mathcal{F}_2).$
-注意同胚的选取不见得取恒等映射$\mathrm{id},$
-因此不能简简单单只验证$\mathcal{F}_1,\mathcal{F}_2$是否$C^\infty$相容.</p>
-<p>已知结果:</p>
-<ul>
-<li><p>$\mathbb{R}^m,$ $m\neq 4$上存在唯一的$C^\infty$结构;</p>
-</li>
-<li><p>$\mathbb{R}^4$上存在无穷多个互不等价的$C^\infty$结构;</p>
-</li>
-<li><p>$S^7$-Milnor怪球上存在28种互不等价的$C^\infty$结构;</p>
-</li>
-<li><p>维数$m\le 3$的拓扑流形上存在唯一的$C^\infty$结构;</p>
-</li>
-<li><p>$\,\forall\,m&gt;3,$ 都存在$m$维拓扑流形, 其上不存在$C^\infty$结构.</p>
-</li>
-</ul>
-<p>下面假设拓扑流形都给定了$C^\infty$结构.</p>
-<h2 id="切空间"><a href="#切空间" class="headerlink" title="切空间"></a>切空间</h2><p>给定光滑流形$M^m,$ 我们尝试<em>内蕴地</em>推广切向量, 切平面的概念.
-将曲线$C:(a,b)\rightarrow M^m$视为光滑流形间的映照,
-我们可以定义光滑曲线的概念. 设$C(t_0)=p,$
-用$C_p^\infty(M)$表示$M$上在$p$处光滑的函数全体,
-我们称映照(<em>方向导数算子</em>)$X:C_p^\infty(M)\rightarrow \mathbb{R},$
-$f\mapsto \frac{d}{dt}[f(c(t))]|_{t=t_0}$为$C(t)$在$p$处<strong>切向量</strong>,
-即求方向导数的运算过程蕴含了该方向本身.</p>
-<p>上述”切向量”$X$满足$X(af+bg)=aX(f)+bX(g),$
-$X(f\cdot g)=X(f)g(p)+f(p)X(g).$
-取$\widetilde{T}_pM=\{\widetilde{X}:C_p^\infty\rightarrow \mathbb{R}\text{满足(1),(2)}\}.$
-$(\widetilde{X}_1+\widetilde{X}_2)f:=\widetilde{X}_1(f)+\widetilde{X}_2(f),$
-$(x\widetilde{X})(f):=a\widetilde{X}(f).$
-容易验证$\widetilde{X}_1+\widetilde{X}_2,$
-$a\widetilde{X}$满足$(1),(2),$ 即$\widetilde{T}_pM$是向量空间.</p>
-<p>$C_p^\infty(M)$和$C^\infty(M)$不同, 后者为向量空间, 但前者不是,
-因为<em>零元并不唯一</em>. 原因是前者的加法仅在公共光滑邻域上做加法.
-因此$X$也暂时不是线性映射.</p>
-<p>我们引入等价关系来改变这一状况:
-记$f\sim g\Leftrightarrow \,\exists\,p$点小邻域$W,$ 使得$f|_W=g|_W.$
-称$[f]$为$C^\infty$<strong>函数芽</strong>,
-$C_p^\infty(M)/_\sim$为$C^\infty$<strong>函数芽空间</strong>$\mathcal{F}_p^\infty.$
-$X$可以诱导其上的映射,
-仍记为$X:\mathcal{F}_p^\infty\rightarrow \mathbb{R},$ $[f]\mapsto Xf.$
-它也满足类似前面$(1),(2)$的性质.
-此时$\mathcal{F}_p^\infty$确实是向量空间, 因此$X$成为线性映射.</p>
-<p>文章最后更新于 2021-09-26 16:39:45 </p>
+    <title>《微分流形》第三章-子流形</title>
+    <url>/2021/10/27/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AD%90%E6%B5%81%E5%BD%A2/</url>
+    <content><![CDATA[<h2 id="子流形"><a href="#子流形" class="headerlink" title="子流形"></a>子流形</h2><p>设$F:M^m\hookrightarrow N^n$为子流形. 若$\,\forall\,p\in M,$
+存在含$q=F(p)$的$N$中坐标系$(V,\psi,y^\alpha),$
+使得$F(M)\cap V$为$V$中切片, 则称$(M,F)$为$N$中的<strong>正则子流形</strong>.</p>
+<p>另外, $F(M)$是$N$的子集, 可以从$N$中诱导子空间拓扑,
+也可以通过$F$将$M$上的拓扑搬到$F(M)$上. 若两种诱导拓扑一致,
+则称$(M,F)$为<strong>嵌入子流形</strong>.</p>
+<p><strong>定理 1.1</strong>. <em>设$F:M\rightarrow N$是子流形, 则$(M,F)$是正则子流形当且仅当它是嵌入子流形.</em> </p>
+<p>证明可参考白,沈的《黎曼几何初步》.</p>
+<p><strong>定理 1.2</strong>. <em>设$F:M\rightarrow N$是子流形. 如果$M$紧致, 则$(M,F)$一定是嵌入子流形.</em> </p>
+<p><strong>证:</strong> 赋予$F(M)$作为$N$中子集所诱导的拓扑$\mathcal{T},$
+只需说明$F:M\rightarrow F(M)$为同胚. 首先说明$F$是连续的.
+对任意开集$U\subset F(M),$ 存在开集$\widetilde{U}\subset N,$
+使得$U=\widetilde{U}\cap F(M).$
+那么$F^{-1}(U)=F^{-1}(\widetilde{U})$是$M$中开集. 接下来说明$F$为闭映射.
+而紧空间到$T_2$空间的连续映射都是闭映射, 由此得证.</p>
+<p><strong>定理 1.3</strong>. <em>设$F:M^m\rightarrow N^n$是光滑映照. 取$q\in N,$ 定义$P:=F^{-1}(q).$ 若$\,\forall\,p\in P,$ $r({F_{\ast } }_p)=n,$ 则$P$具有唯一的$C^\infty$-流形结构使$(P,i)$是$M$的正则子流形, $\dim P=m-n.$</em> </p>
+<p><strong>证:</strong> 由秩定理, 可以取到合适的盒形坐标系使$\widehat{F}$为投影.
+因此$\widehat{F}^{-1}(0)=\{(0,\cdots,0,x^{n+1},\cdots,x^m)||x^\gamma|&lt;\delta\},$
+即$\widehat{F}^{-1}(0)=F^{-1}(q)\cap U$为$U$中$n$维切片.
+赋予$P$子空间拓扑, 取坐标图册$\{(P\cap U,\pi\circ\varphi)\},$
+易见$P$成为$m-n$维拓扑流形. 同时容易看出图册满足$C^\infty$相容性,
+因此$P$具有$C^\infty$-流形结构. 显然单射$i\in C^\infty(P,M)$且秩为$m-n,$
+因此它是子流形. 由先前说明, 局部来看它又是切片, 因此$(P,i)$是正则子流形.</p>
+<p><strong>推论 1.4</strong>. <em>如果满射$F:M\rightarrow N$是淹没, 则$\,\forall\,q\in N,$ $F^{-1}(q)$为$M$中$m-n$维正则子流形.</em> </p>
+<p>一个问题是给定$C^\infty$流形$M^m,$
+是否存在$F:M\rightarrow \mathbb{R}^N,$
+使$(M,F)$是$\mathbb{R}^N$中子流形. H.Whitney 指出,
+存在$F:M^m\hookrightarrow \mathbb{R}^{2m+1}$为正则子流形.</p>
+<h2 id="向量场的积分曲线"><a href="#向量场的积分曲线" class="headerlink" title="向量场的积分曲线"></a>向量场的积分曲线</h2><p>设$X\in \chi(M),$ $\gamma:(a,b)\rightarrow M$为$C^\infty$-曲线,
+若$\gamma’(t)=X_{\gamma(t)},$ $\,\forall\,t\in (a,b).$
+则称$\gamma$是$X$的<strong>积分曲线</strong>. 如果$0\in(a,b),$
+$p=\gamma(0)$称为$\gamma$的<strong>初始点</strong>.</p>
+<p>给定$X\in\chi(M),$ $p\in M.$ 任取坐标系$(U,\varphi;x^i),$
+$\{X_i\}_{i=1}^m$为自然基. 那么$X|_U=\sum \xi^iX_i,$
+$\xi^i\in C^\infty(U).$ 而$\gamma’(t)=\sum_i \frac{dx^i(t)}{dt}X_i,$
+因此求积分曲线$\gamma$即在给定初值后解常微分方程组:</p>
+<script type="math/tex; mode=display">\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cdots,m.</script><p>其中$\widehat{\xi}^i=\xi^i\circ\varphi^{-1}\in C^\infty(\varphi(U)).$
+由常微分方程基本定理, 我们有如下命题:</p>
+<p><strong>命题 1.5</strong>. <em>设$X\in\chi(M),$ 则$\,\forall\,p\in M,$ $\,\exists\,\varepsilon&gt;0,$ $\gamma:(-\varepsilon,\varepsilon)\rightarrow M,$ 使得$\gamma(0)=p$且$\gamma$为$X$的积分曲线.</em> </p>
+<p>设$X\in\chi(M),$ 若$X_p=0,$ 则称$p$为$X$的<strong>奇点</strong>. 一个经典的命题是,
+球面上光滑向量场必有奇点. 一个典型的证明是应用指标定理,
+而球面的欧拉示性数非零.</p>
+<p>回忆切丛$TM$为$2m$维$C^\infty$流形, 对$U\subset M,$
+有局部平凡化$\widetilde{\Phi}:TU=\pi^{-1}(U)\cong U\times \mathbb{R}^m$为微分同胚,
+且$\widetilde{\Phi}|_{T_{p}M}:T_pM\rightarrow \{p\}\times \mathbb{R}^m$为线同构(保纤维).
+那么上面的命题说明, $TS^2\not\cong S^2\times \mathbb{R}^2,$
+即球面切丛非平凡丛.</p>
+<p>文章最后更新于 2021-10-27 21:07:04 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -2908,64 +2966,6 @@ $f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
 <p>由过程可见, 构造的$\omega\in \mathcal{A}^m(M).$
 因此处处非零的外微分形式可要求为光滑的.</p>
 <p>文章最后更新于 2021-12-21 19:01:28 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>几何</category>
-        <category>微分流形</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《微分流形》第三章-子流形</title>
-    <url>/2021/10/27/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%AD%90%E6%B5%81%E5%BD%A2/</url>
-    <content><![CDATA[<h2 id="子流形"><a href="#子流形" class="headerlink" title="子流形"></a>子流形</h2><p>设$F:M^m\hookrightarrow N^n$为子流形. 若$\,\forall\,p\in M,$
-存在含$q=F(p)$的$N$中坐标系$(V,\psi,y^\alpha),$
-使得$F(M)\cap V$为$V$中切片, 则称$(M,F)$为$N$中的<strong>正则子流形</strong>.</p>
-<p>另外, $F(M)$是$N$的子集, 可以从$N$中诱导子空间拓扑,
-也可以通过$F$将$M$上的拓扑搬到$F(M)$上. 若两种诱导拓扑一致,
-则称$(M,F)$为<strong>嵌入子流形</strong>.</p>
-<p><strong>定理 1.1</strong>. <em>设$F:M\rightarrow N$是子流形, 则$(M,F)$是正则子流形当且仅当它是嵌入子流形.</em> </p>
-<p>证明可参考白,沈的《黎曼几何初步》.</p>
-<p><strong>定理 1.2</strong>. <em>设$F:M\rightarrow N$是子流形. 如果$M$紧致, 则$(M,F)$一定是嵌入子流形.</em> </p>
-<p><strong>证:</strong> 赋予$F(M)$作为$N$中子集所诱导的拓扑$\mathcal{T},$
-只需说明$F:M\rightarrow F(M)$为同胚. 首先说明$F$是连续的.
-对任意开集$U\subset F(M),$ 存在开集$\widetilde{U}\subset N,$
-使得$U=\widetilde{U}\cap F(M).$
-那么$F^{-1}(U)=F^{-1}(\widetilde{U})$是$M$中开集. 接下来说明$F$为闭映射.
-而紧空间到$T_2$空间的连续映射都是闭映射, 由此得证.</p>
-<p><strong>定理 1.3</strong>. <em>设$F:M^m\rightarrow N^n$是光滑映照. 取$q\in N,$ 定义$P:=F^{-1}(q).$ 若$\,\forall\,p\in P,$ $r({F_{\ast } }_p)=n,$ 则$P$具有唯一的$C^\infty$-流形结构使$(P,i)$是$M$的正则子流形, $\dim P=m-n.$</em> </p>
-<p><strong>证:</strong> 由秩定理, 可以取到合适的盒形坐标系使$\widehat{F}$为投影.
-因此$\widehat{F}^{-1}(0)=\{(0,\cdots,0,x^{n+1},\cdots,x^m)||x^\gamma|&lt;\delta\},$
-即$\widehat{F}^{-1}(0)=F^{-1}(q)\cap U$为$U$中$n$维切片.
-赋予$P$子空间拓扑, 取坐标图册$\{(P\cap U,\pi\circ\varphi)\},$
-易见$P$成为$m-n$维拓扑流形. 同时容易看出图册满足$C^\infty$相容性,
-因此$P$具有$C^\infty$-流形结构. 显然单射$i\in C^\infty(P,M)$且秩为$m-n,$
-因此它是子流形. 由先前说明, 局部来看它又是切片, 因此$(P,i)$是正则子流形.</p>
-<p><strong>推论 1.4</strong>. <em>如果满射$F:M\rightarrow N$是淹没, 则$\,\forall\,q\in N,$ $F^{-1}(q)$为$M$中$m-n$维正则子流形.</em> </p>
-<p>一个问题是给定$C^\infty$流形$M^m,$
-是否存在$F:M\rightarrow \mathbb{R}^N,$
-使$(M,F)$是$\mathbb{R}^N$中子流形. H.Whitney 指出,
-存在$F:M^m\hookrightarrow \mathbb{R}^{2m+1}$为正则子流形.</p>
-<h2 id="向量场的积分曲线"><a href="#向量场的积分曲线" class="headerlink" title="向量场的积分曲线"></a>向量场的积分曲线</h2><p>设$X\in \chi(M),$ $\gamma:(a,b)\rightarrow M$为$C^\infty$-曲线,
-若$\gamma’(t)=X_{\gamma(t)},$ $\,\forall\,t\in (a,b).$
-则称$\gamma$是$X$的<strong>积分曲线</strong>. 如果$0\in(a,b),$
-$p=\gamma(0)$称为$\gamma$的<strong>初始点</strong>.</p>
-<p>给定$X\in\chi(M),$ $p\in M.$ 任取坐标系$(U,\varphi;x^i),$
-$\{X_i\}_{i=1}^m$为自然基. 那么$X|_U=\sum \xi^iX_i,$
-$\xi^i\in C^\infty(U).$ 而$\gamma’(t)=\sum_i \frac{dx^i(t)}{dt}X_i,$
-因此求积分曲线$\gamma$即在给定初值后解常微分方程组:</p>
-<script type="math/tex; mode=display">\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cdots,m.</script><p>其中$\widehat{\xi}^i=\xi^i\circ\varphi^{-1}\in C^\infty(\varphi(U)).$
-由常微分方程基本定理, 我们有如下命题:</p>
-<p><strong>命题 1.5</strong>. <em>设$X\in\chi(M),$ 则$\,\forall\,p\in M,$ $\,\exists\,\varepsilon&gt;0,$ $\gamma:(-\varepsilon,\varepsilon)\rightarrow M,$ 使得$\gamma(0)=p$且$\gamma$为$X$的积分曲线.</em> </p>
-<p>设$X\in\chi(M),$ 若$X_p=0,$ 则称$p$为$X$的<strong>奇点</strong>. 一个经典的命题是,
-球面上光滑向量场必有奇点. 一个典型的证明是应用指标定理,
-而球面的欧拉示性数非零.</p>
-<p>回忆切丛$TM$为$2m$维$C^\infty$流形, 对$U\subset M,$
-有局部平凡化$\widetilde{\Phi}:TU=\pi^{-1}(U)\cong U\times \mathbb{R}^m$为微分同胚,
-且$\widetilde{\Phi}|_{T_{p}M}:T_pM\rightarrow \{p\}\times \mathbb{R}^m$为线同构(保纤维).
-那么上面的命题说明, $TS^2\not\cong S^2\times \mathbb{R}^2,$
-即球面切丛非平凡丛.</p>
-<p>文章最后更新于 2021-10-27 21:07:04 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -3151,6 +3151,83 @@ $F:U\rightarrow V$为光滑映照, $p\in U,$ $q=F(p)\in V.$ 若$DF(p)$非退化,
       </categories>
   </entry>
   <entry>
+    <title>《微分流形》第五章-张量</title>
+    <url>/2021/12/01/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BC%A0%E9%87%8F/</url>
+    <content><![CDATA[<h2 id="对称张量与反称张量"><a href="#对称张量与反称张量" class="headerlink" title="对称张量与反称张量"></a>对称张量与反称张量</h2><p>对$\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ 若</p>
+<script type="math/tex; mode=display">\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,</script><p>则称$\Phi$是<strong>对称(反称)</strong>的.
+用$\odot^k(V^\ast )$表示$V^\ast \otimes\cdots\otimes V^\ast $中对称张量全体,
+$\Lambda^k(V^\ast )$表示反称张量全体.</p>
+<p>令$J(k)$表示$k$阶置换群. 对于$\sigma\in J(k),$
+定义$\operatorname{sgn}:J(k)\rightarrow\{\pm 1\},$ 表示奇偶排列.
+易验证$\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\tau).$
+定义作用$\sigma\Phi(v_1,\cdots,v_k):=\Phi(v_{\sigma(1)},\cdots,v_{\sigma(k)}),$
+易见$\sigma\Phi\in V^\ast \otimes\cdots\otimes V^\ast ,$ 且$\sigma$是线性映照.
+那么$\Phi$是对称(反称)的$\Leftrightarrow$
+$\sigma\Phi=(\operatorname{sgn}\sigma)\Phi.$</p>
+<p>取$V$的一组基$\{e_i\},$ 对偶基$\{\omega^i\}.$
+则对$\Phi=\Phi_{i_1\cdots i_k}\omega^{i_1}\otimes\cdots\otimes \omega^{i_k},$
+可以得到$\Phi$对称(反称)$\Leftrightarrow$
+$\Phi_{i_1\cdots i_k}$关于指标$\{i_1,\cdots,i_k\}$是对称(反称)的.</p>
+<p>定义如下两个线性变换:
+$S_k:\Phi\mapsto \frac{1}{k!}\sum_\sigma \sigma \Phi,$
+称为<strong>对称化算子</strong>;
+$A_k:\Phi\mapsto \frac{1}{k!}\sum_{\sigma} (\operatorname{sgn}\sigma)\sigma \Phi,$
+称为<strong>反称化算子</strong>. 记$V_k=V^\ast \otimes\cdots\otimes V^\ast ,$ 我们有如下命题:</p>
+<p><strong>命题 1</strong>. <em>$\odot^k(V^\ast )=S_k(V_k),$ $\Lambda^k(V^\ast )=A_k(V_k),$ 且$\Phi$是对称(反称)的$\Leftrightarrow$ $S_k(\Phi)=\Phi$($A_k(\Phi)=\Phi.$)</em> </p>
+<p><strong>证:</strong> 取$\tau\in J(k),$ 首先证明$\tau(S_k(\Phi))=S_k(\Phi),$
+$\tau(A_k(\Phi))=(\operatorname{sgn}\tau)A_k (\Phi).$
+其次再说明$A_k|_{\Lambda^k(V^\ast )}=\mathrm{id},$
+$S_k|_{\odot^k(V^\ast )}=\mathrm{id}$即可.</p>
+<h2 id="拉回映照"><a href="#拉回映照" class="headerlink" title="拉回映照"></a>拉回映照</h2><p>设$f:V\rightarrow W$为线性映照, 定义$f^\ast :W^\ast \rightarrow V^\ast ,$
+$(f^\ast w^\ast )(v)=w^\ast (f(v)),$ 称为<strong>拉回映照</strong>.
+可以推广到$f^\ast :W_k\rightarrow V_k,$
+$(f^\ast \Phi)(v_1,\cdots,v_k)=\Phi(f(v_1),\cdots,f(v_k)).$</p>
+<p><strong>命题 2</strong>. <em>$S_kf^\ast =f^\ast S_k,$ $A_kf^\ast =f^\ast A_k.$</em> </p>
+<p><strong>证:</strong> 利用$\sigma f^\ast =f^\ast \sigma$即可.</p>
+<h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p>$\Lambda^r(V^\ast ):=A_r(V_r),$ 称为$r$阶<strong>反称张量空间</strong>.
+约定$\Lambda^0(V^\ast )=\mathbb{R},$ $\Lambda^1(V^\ast )=V^\ast .$
+设$\Phi\in \Lambda^r(V^\ast ),$ $\Psi\in \Lambda^s(V^\ast ),$
+则$\Phi\wedge \Psi:=\binom{r+s}{r,s}A_{r+s}(\Phi\otimes \Psi)\in \Lambda^{r+s}(V^\ast )$称为$\Phi$与$\Psi$的<strong>外积</strong>,
+满足如下性质:</p>
+<ul>
+<li><p>分配律:
+$(a\Phi_1+b\Phi_2)\wedge\Psi=a\Phi_1\wedge \Psi+b\Phi_2\wedge\Psi;$
+$\Phi\wedge(a\Psi_1+b\Psi_2)=a\Phi\wedge \Psi_1+b\Phi\wedge \Psi_2.$</p>
+</li>
+<li><p>反交换律: $\Phi\wedge \Psi=(-1)^{rs}\Psi\wedge \Phi;$</p>
+</li>
+<li><p>结合律: $(\Phi\wedge \Psi)\wedge\eta=\Phi\wedge(\Psi\wedge \eta).$</p>
+</li>
+</ul>
+<p>证明基本利用张量积的性质即可, 外面套上线性的反称化算子$A.$ 对于反交换律,
+利用置换 </p>
+<script type="math/tex; mode=display">\tau=\begin{pmatrix}
+            1&\cdots&r&r+1&\cdots&r+s\\
+            s+1&\cdots&s+r&1&\cdots&s
+        \end{pmatrix}</script><p> 即可, 满足$\operatorname{sgn}\tau=(-1)^{rs}.$
+特别地, 对于$r=s=1$的情形, $\Phi\wedge\Psi=-\Psi\wedge\Phi,$
+$\Phi\wedge\Phi=0.$</p>
+<p>对于结合律, 引入置换 </p>
+<script type="math/tex; mode=display">\widetilde\tau=\begin{pmatrix}
+            1&\cdots&r+s&r+s+1&\cdots&r+s+t\\
+            \tau(1)&\cdots&\tau(r+s)&r+s+1&\cdots&r+s+t
+        \end{pmatrix}</script><p> 进行常规的定义讨论即可. 特别地,
+可以在证明中看到,
+$\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\otimes \cdots\otimes \Phi_k).$</p>
+<p><strong>推论 3</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ $x_1,\cdots,x_k\in V,$ 则$\theta^1\wedge\cdots\wedge\theta^k(x_1,\cdots,x_k)=\det(\theta^i(x_j))_{k\times k}.$</em> </p>
+<p><strong>证:</strong> 展开发现式子恰为行列式的组合定义即可.
+即$\sum_\sigma \operatorname{sgn}(\sigma) \theta^1(x_{\sigma(1)})\cdots\theta^k(x_{\sigma(k)}).$</p>
+<p><strong>推论 4</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ 则$\theta^1,\cdots,\theta^k$线性相关$\Leftrightarrow$ $\theta^1\wedge\cdots\wedge\theta^k=0.$</em> </p>
+<p><strong>证:</strong> 利用反交换律与反证法即可.</p>
+<p>文章最后更新于 2021-12-02 11:36:31 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>微分流形</category>
+      </categories>
+  </entry>
+  <entry>
     <title>《微分流形》第二章-秩定理</title>
     <url>/2021/10/20/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%A7%A9%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<h2 id="秩定理"><a href="#秩定理" class="headerlink" title="秩定理"></a>秩定理</h2><p><strong>定理 1.1</strong> (秩定理). <em>设光滑映照$F:M^m\rightarrow N^n$在$p$点邻域内秩为$k,$ 则$\,\exists\,$分别含$p,q=F(p)$的坐标系$(U,\varphi),(V,\psi),$ 使得$p,q$坐标为零且局部表示$\widehat{F}$为投影.</em> </p>
@@ -3242,83 +3319,6 @@ $\{\xi_\alpha\}$讨论系数即可.</p>
 $\dim V\otimes W=n\cdot m,$
 且$\{e_i\otimes \xi_\alpha\}$为$V\otimes W$的基.</p>
 <p>文章最后更新于 2021-11-23 18:00:20 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>几何</category>
-        <category>微分流形</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《微分流形》第五章-张量</title>
-    <url>/2021/12/01/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BC%A0%E9%87%8F/</url>
-    <content><![CDATA[<h2 id="对称张量与反称张量"><a href="#对称张量与反称张量" class="headerlink" title="对称张量与反称张量"></a>对称张量与反称张量</h2><p>对$\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ 若</p>
-<script type="math/tex; mode=display">\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,</script><p>则称$\Phi$是<strong>对称(反称)</strong>的.
-用$\odot^k(V^\ast )$表示$V^\ast \otimes\cdots\otimes V^\ast $中对称张量全体,
-$\Lambda^k(V^\ast )$表示反称张量全体.</p>
-<p>令$J(k)$表示$k$阶置换群. 对于$\sigma\in J(k),$
-定义$\operatorname{sgn}:J(k)\rightarrow\{\pm 1\},$ 表示奇偶排列.
-易验证$\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\tau).$
-定义作用$\sigma\Phi(v_1,\cdots,v_k):=\Phi(v_{\sigma(1)},\cdots,v_{\sigma(k)}),$
-易见$\sigma\Phi\in V^\ast \otimes\cdots\otimes V^\ast ,$ 且$\sigma$是线性映照.
-那么$\Phi$是对称(反称)的$\Leftrightarrow$
-$\sigma\Phi=(\operatorname{sgn}\sigma)\Phi.$</p>
-<p>取$V$的一组基$\{e_i\},$ 对偶基$\{\omega^i\}.$
-则对$\Phi=\Phi_{i_1\cdots i_k}\omega^{i_1}\otimes\cdots\otimes \omega^{i_k},$
-可以得到$\Phi$对称(反称)$\Leftrightarrow$
-$\Phi_{i_1\cdots i_k}$关于指标$\{i_1,\cdots,i_k\}$是对称(反称)的.</p>
-<p>定义如下两个线性变换:
-$S_k:\Phi\mapsto \frac{1}{k!}\sum_\sigma \sigma \Phi,$
-称为<strong>对称化算子</strong>;
-$A_k:\Phi\mapsto \frac{1}{k!}\sum_{\sigma} (\operatorname{sgn}\sigma)\sigma \Phi,$
-称为<strong>反称化算子</strong>. 记$V_k=V^\ast \otimes\cdots\otimes V^\ast ,$ 我们有如下命题:</p>
-<p><strong>命题 1</strong>. <em>$\odot^k(V^\ast )=S_k(V_k),$ $\Lambda^k(V^\ast )=A_k(V_k),$ 且$\Phi$是对称(反称)的$\Leftrightarrow$ $S_k(\Phi)=\Phi$($A_k(\Phi)=\Phi.$)</em> </p>
-<p><strong>证:</strong> 取$\tau\in J(k),$ 首先证明$\tau(S_k(\Phi))=S_k(\Phi),$
-$\tau(A_k(\Phi))=(\operatorname{sgn}\tau)A_k (\Phi).$
-其次再说明$A_k|_{\Lambda^k(V^\ast )}=\mathrm{id},$
-$S_k|_{\odot^k(V^\ast )}=\mathrm{id}$即可.</p>
-<h2 id="拉回映照"><a href="#拉回映照" class="headerlink" title="拉回映照"></a>拉回映照</h2><p>设$f:V\rightarrow W$为线性映照, 定义$f^\ast :W^\ast \rightarrow V^\ast ,$
-$(f^\ast w^\ast )(v)=w^\ast (f(v)),$ 称为<strong>拉回映照</strong>.
-可以推广到$f^\ast :W_k\rightarrow V_k,$
-$(f^\ast \Phi)(v_1,\cdots,v_k)=\Phi(f(v_1),\cdots,f(v_k)).$</p>
-<p><strong>命题 2</strong>. <em>$S_kf^\ast =f^\ast S_k,$ $A_kf^\ast =f^\ast A_k.$</em> </p>
-<p><strong>证:</strong> 利用$\sigma f^\ast =f^\ast \sigma$即可.</p>
-<h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p>$\Lambda^r(V^\ast ):=A_r(V_r),$ 称为$r$阶<strong>反称张量空间</strong>.
-约定$\Lambda^0(V^\ast )=\mathbb{R},$ $\Lambda^1(V^\ast )=V^\ast .$
-设$\Phi\in \Lambda^r(V^\ast ),$ $\Psi\in \Lambda^s(V^\ast ),$
-则$\Phi\wedge \Psi:=\binom{r+s}{r,s}A_{r+s}(\Phi\otimes \Psi)\in \Lambda^{r+s}(V^\ast )$称为$\Phi$与$\Psi$的<strong>外积</strong>,
-满足如下性质:</p>
-<ul>
-<li><p>分配律:
-$(a\Phi_1+b\Phi_2)\wedge\Psi=a\Phi_1\wedge \Psi+b\Phi_2\wedge\Psi;$
-$\Phi\wedge(a\Psi_1+b\Psi_2)=a\Phi\wedge \Psi_1+b\Phi\wedge \Psi_2.$</p>
-</li>
-<li><p>反交换律: $\Phi\wedge \Psi=(-1)^{rs}\Psi\wedge \Phi;$</p>
-</li>
-<li><p>结合律: $(\Phi\wedge \Psi)\wedge\eta=\Phi\wedge(\Psi\wedge \eta).$</p>
-</li>
-</ul>
-<p>证明基本利用张量积的性质即可, 外面套上线性的反称化算子$A.$ 对于反交换律,
-利用置换 </p>
-<script type="math/tex; mode=display">\tau=\begin{pmatrix}
-            1&\cdots&r&r+1&\cdots&r+s\\
-            s+1&\cdots&s+r&1&\cdots&s
-        \end{pmatrix}</script><p> 即可, 满足$\operatorname{sgn}\tau=(-1)^{rs}.$
-特别地, 对于$r=s=1$的情形, $\Phi\wedge\Psi=-\Psi\wedge\Phi,$
-$\Phi\wedge\Phi=0.$</p>
-<p>对于结合律, 引入置换 </p>
-<script type="math/tex; mode=display">\widetilde\tau=\begin{pmatrix}
-            1&\cdots&r+s&r+s+1&\cdots&r+s+t\\
-            \tau(1)&\cdots&\tau(r+s)&r+s+1&\cdots&r+s+t
-        \end{pmatrix}</script><p> 进行常规的定义讨论即可. 特别地,
-可以在证明中看到,
-$\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\otimes \cdots\otimes \Phi_k).$</p>
-<p><strong>推论 3</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ $x_1,\cdots,x_k\in V,$ 则$\theta^1\wedge\cdots\wedge\theta^k(x_1,\cdots,x_k)=\det(\theta^i(x_j))_{k\times k}.$</em> </p>
-<p><strong>证:</strong> 展开发现式子恰为行列式的组合定义即可.
-即$\sum_\sigma \operatorname{sgn}(\sigma) \theta^1(x_{\sigma(1)})\cdots\theta^k(x_{\sigma(k)}).$</p>
-<p><strong>推论 4</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ 则$\theta^1,\cdots,\theta^k$线性相关$\Leftrightarrow$ $\theta^1\wedge\cdots\wedge\theta^k=0.$</em> </p>
-<p><strong>证:</strong> 利用反交换律与反证法即可.</p>
-<p>文章最后更新于 2021-12-02 11:36:31 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -3501,66 +3501,6 @@ $F^\ast :T^\ast _{F(p)}N\rightarrow T_p^\ast (M)$为拉回映照,
       </categories>
   </entry>
   <entry>
-    <title>《微分流形》第四章-分布</title>
-    <url>/2021/11/03/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%88%86%E5%B8%83/</url>
-    <content><![CDATA[<h2 id="积分曲线"><a href="#积分曲线" class="headerlink" title="积分曲线"></a>积分曲线</h2><p><strong>定理 1.1</strong> (Flow box). <em>设$X\in\chi(M),$ 若$X_p\neq 0,$ 则存在含$p$坐标系$(U,\varphi;x^i)$使得$X|_U=\frac{\partial {} }{\partial {}x^1},$ 即$x^1$-曲线就是$X$在$U$中的积分曲线.</em> </p>
-<p><strong>证:</strong> 任取坐标系$(U,\varphi;u^i),$ $\varphi(p)=0.$
-$X|_U=\sum_i\xi^i(u)\frac{\partial {} }{\partial {}u^i}.$
-不妨设$\xi^1(p)\neq 0,$ 且进而设其处处非零.
-设$u$可写为$v$的函数(坐标变换),
-使得$X|_U=\xi^1(v) \frac{\partial {} }{\partial {}v^1}.$
-两边作用$u^\alpha,$ 有 <script type="math/tex">\left\{
-                \begin{aligned}
-                    &\frac{\partial {}u^\alpha}{\partial {}v^1}=\frac{\xi^\alpha(u^1,\cdots,u^m)}{\xi^1(u^1,\cdots,u^m)},\quad \alpha=1,\cdots,m.\\
-                    &u^\alpha(0,v^2,\cdots,v^m)=v^\alpha
-                \end{aligned}   
-                \right.</script> 由ODE理论,
-$\,\exists\,\delta&gt;0$使得$C_\delta^m=\{|u^i|&lt;\delta\}\subset U,$
-$\,\forall\,$给定初值$(0,v^2,\cdots,v^m)\in C_\delta^m,$
-在$v^1\in (-\widetilde{\delta},\widetilde{\delta})$内有唯一解$u^\alpha(v).$
-记$\widehat{\delta}=\min\{\delta,\widetilde{\delta}\},$
-那么对于$u^\alpha:C_{\widehat{\delta} }^m\rightarrow \varphi(U),$
-$\det(Du^\alpha)|_0=1,$ 局部为微分同胚.
-不妨设本身就是微分同胚(不然可将$\widetilde{\delta}$缩小), 记为$G.$</p>
-<p>此时在坐标系$(\widetilde{U},G^{-1}\circ\varphi;v^i)$下,
-$X|_{\widetilde{U} }=\xi^1(v)\frac{\partial {} }{\partial {}v^1}.$
-最后再做变换 <script type="math/tex">\left\{
-                \begin{aligned}
-                    &w^1=\int_0^{v_1} \frac{dt}{\xi^1(t,v^2,\cdots,v^n)}\\
-                    &w^\alpha=v^\alpha,\quad \alpha=2,\cdots,m
-                \end{aligned}   
-                \right.</script>
-即有$X|_{\widetilde{U} }=\frac{\partial {} }{\partial {}w^1},$
-$w^1$-曲线为$X$在$\widetilde{U}$中积分曲线.</p>
-<h2 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h2><p><strong>定义 1.2</strong>. <em>$M^m$为$C^\infty$流形, 若$\,\forall\,p\in M,$ 指定$T_pM$中$k$-维子空间$D_p,$ 则称$\mathcal{D}:p\rightarrow D_p$为$M$上$k$维<strong>分布</strong>.</em> </p>
-<p>若$\,\forall\,p\in M,$ $\,\exists\,U\ni p,$
-$X_1,\cdots, X_k\in \chi(U),$
-使得$\mathcal{D}_q=\operatorname{span}\{X_1(q),\cdots,X_k(q)\},$
-$\,\forall\,q\in U,$ 则称$\mathcal{D}$是$M$上$C^\infty$分布,
-$\{X_1,\cdots,X_k\}$称为$\mathcal{D}$的<strong>局部标架场</strong>. $k\in(0,m)$时,
-$\mathcal{D}$可看作$TM$的非平凡秩$k$子丛.</p>
-<p><strong>定义 1.3</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, $F:W\hookrightarrow M$是子流形, 满足${F_{\ast } }_p(T_pW)=D_{F(p)},$ $\,\forall\,p\in W.$ 则称$(W,F)$为$\mathcal{D}$的<strong>积分子流形</strong>.</em> </p>
-<p>自然的问题是, 给定$M^m$上一个$k$维$C^\infty$-分布$\mathcal{D},$
-$\,\forall\,p\in M,$ 是否存在$\mathcal{D}$的过$p$点的积分子流形?
-答案是否定的. 事实上积分子流形应有积分曲线网,
-那么若在$\mathbb{R}^3$上取$X=\frac{\partial {} }{\partial {}x}+y\frac{\partial {} }{\partial {}z},$
-$Y=\frac{\partial {} }{\partial {}y},$
-$\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流形,
-应包含$xoy$平面的一小部分. 但是在$x$轴外该流形又不是积分子流形, 矛盾.</p>
-<p><strong>定义 1.4</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, 若过每点$p\in M$都存在$\mathcal{D}$的积分子流形, 则我们称$\mathcal{D}$是<strong>可积的</strong>. 否则, 称之为<strong>不可积的</strong>.</em> </p>
-<p>$k=0,m$时平凡. $k=1$时, 由积分曲线存在定理, $1$维分布总是可积的,
-积分子流形即为积分曲线. 但积分曲线不都是某个分布的积分子流形,
-因为积分曲线对应的光滑向量场允许有奇点,
-但有奇点的光滑向量场并不能作为标架张成分布.</p>
-<p>文章最后更新于 2021-11-03 16:49:42 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>几何</category>
-        <category>微分流形</category>
-      </categories>
-  </entry>
-  <entry>
     <title>《微分流形》第四章-Frobenius定理</title>
     <url>/2021/11/10/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0-Frobenius%E5%AE%9A%E7%90%86/</url>
     <content><![CDATA[<h2 id="对合性"><a href="#对合性" class="headerlink" title="对合性"></a>对合性</h2><p><strong>命题 1.1</strong>. <em>设$\mathcal{D}$是$M$上光滑分布. 若$\mathcal{D}$是可积的, 则$\,\forall\,X,Y\in \chi(\mathcal{D}),$ 即$\,\forall\,p\in M,$ $X_p,Y_p\in \mathcal{D}_p,$ 那么$[X,Y]\in \chi(\mathcal{D}).$</em> </p>
@@ -3642,6 +3582,66 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
 称$\{f_i\}$是<strong>从属</strong>于$\{A_\alpha\}$的单位分解.
 因此任意开覆盖有从属于之的单位分解.</p>
 <p>文章最后更新于 2021-11-10 16:15:52 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>微分流形</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《微分流形》第四章-分布</title>
+    <url>/2021/11/03/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%88%86%E5%B8%83/</url>
+    <content><![CDATA[<h2 id="积分曲线"><a href="#积分曲线" class="headerlink" title="积分曲线"></a>积分曲线</h2><p><strong>定理 1.1</strong> (Flow box). <em>设$X\in\chi(M),$ 若$X_p\neq 0,$ 则存在含$p$坐标系$(U,\varphi;x^i)$使得$X|_U=\frac{\partial {} }{\partial {}x^1},$ 即$x^1$-曲线就是$X$在$U$中的积分曲线.</em> </p>
+<p><strong>证:</strong> 任取坐标系$(U,\varphi;u^i),$ $\varphi(p)=0.$
+$X|_U=\sum_i\xi^i(u)\frac{\partial {} }{\partial {}u^i}.$
+不妨设$\xi^1(p)\neq 0,$ 且进而设其处处非零.
+设$u$可写为$v$的函数(坐标变换),
+使得$X|_U=\xi^1(v) \frac{\partial {} }{\partial {}v^1}.$
+两边作用$u^\alpha,$ 有 <script type="math/tex">\left\{
+                \begin{aligned}
+                    &\frac{\partial {}u^\alpha}{\partial {}v^1}=\frac{\xi^\alpha(u^1,\cdots,u^m)}{\xi^1(u^1,\cdots,u^m)},\quad \alpha=1,\cdots,m.\\
+                    &u^\alpha(0,v^2,\cdots,v^m)=v^\alpha
+                \end{aligned}   
+                \right.</script> 由ODE理论,
+$\,\exists\,\delta&gt;0$使得$C_\delta^m=\{|u^i|&lt;\delta\}\subset U,$
+$\,\forall\,$给定初值$(0,v^2,\cdots,v^m)\in C_\delta^m,$
+在$v^1\in (-\widetilde{\delta},\widetilde{\delta})$内有唯一解$u^\alpha(v).$
+记$\widehat{\delta}=\min\{\delta,\widetilde{\delta}\},$
+那么对于$u^\alpha:C_{\widehat{\delta} }^m\rightarrow \varphi(U),$
+$\det(Du^\alpha)|_0=1,$ 局部为微分同胚.
+不妨设本身就是微分同胚(不然可将$\widetilde{\delta}$缩小), 记为$G.$</p>
+<p>此时在坐标系$(\widetilde{U},G^{-1}\circ\varphi;v^i)$下,
+$X|_{\widetilde{U} }=\xi^1(v)\frac{\partial {} }{\partial {}v^1}.$
+最后再做变换 <script type="math/tex">\left\{
+                \begin{aligned}
+                    &w^1=\int_0^{v_1} \frac{dt}{\xi^1(t,v^2,\cdots,v^n)}\\
+                    &w^\alpha=v^\alpha,\quad \alpha=2,\cdots,m
+                \end{aligned}   
+                \right.</script>
+即有$X|_{\widetilde{U} }=\frac{\partial {} }{\partial {}w^1},$
+$w^1$-曲线为$X$在$\widetilde{U}$中积分曲线.</p>
+<h2 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h2><p><strong>定义 1.2</strong>. <em>$M^m$为$C^\infty$流形, 若$\,\forall\,p\in M,$ 指定$T_pM$中$k$-维子空间$D_p,$ 则称$\mathcal{D}:p\rightarrow D_p$为$M$上$k$维<strong>分布</strong>.</em> </p>
+<p>若$\,\forall\,p\in M,$ $\,\exists\,U\ni p,$
+$X_1,\cdots, X_k\in \chi(U),$
+使得$\mathcal{D}_q=\operatorname{span}\{X_1(q),\cdots,X_k(q)\},$
+$\,\forall\,q\in U,$ 则称$\mathcal{D}$是$M$上$C^\infty$分布,
+$\{X_1,\cdots,X_k\}$称为$\mathcal{D}$的<strong>局部标架场</strong>. $k\in(0,m)$时,
+$\mathcal{D}$可看作$TM$的非平凡秩$k$子丛.</p>
+<p><strong>定义 1.3</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, $F:W\hookrightarrow M$是子流形, 满足${F_{\ast } }_p(T_pW)=D_{F(p)},$ $\,\forall\,p\in W.$ 则称$(W,F)$为$\mathcal{D}$的<strong>积分子流形</strong>.</em> </p>
+<p>自然的问题是, 给定$M^m$上一个$k$维$C^\infty$-分布$\mathcal{D},$
+$\,\forall\,p\in M,$ 是否存在$\mathcal{D}$的过$p$点的积分子流形?
+答案是否定的. 事实上积分子流形应有积分曲线网,
+那么若在$\mathbb{R}^3$上取$X=\frac{\partial {} }{\partial {}x}+y\frac{\partial {} }{\partial {}z},$
+$Y=\frac{\partial {} }{\partial {}y},$
+$\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流形,
+应包含$xoy$平面的一小部分. 但是在$x$轴外该流形又不是积分子流形, 矛盾.</p>
+<p><strong>定义 1.4</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, 若过每点$p\in M$都存在$\mathcal{D}$的积分子流形, 则我们称$\mathcal{D}$是<strong>可积的</strong>. 否则, 称之为<strong>不可积的</strong>.</em> </p>
+<p>$k=0,m$时平凡. $k=1$时, 由积分曲线存在定理, $1$维分布总是可积的,
+积分子流形即为积分曲线. 但积分曲线不都是某个分布的积分子流形,
+因为积分曲线对应的光滑向量场允许有奇点,
+但有奇点的光滑向量场并不能作为标架张成分布.</p>
+<p>文章最后更新于 2021-11-03 16:49:42 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -3950,6 +3950,112 @@ $F^\alpha\in \mathcal{L}(V_1,\cdots,V_r;\mathbb{R})=V_1^\ast \otimes \cdots\otim
       </categories>
   </entry>
   <entry>
+    <title>《现代PDE基础》笔记(10)-复习</title>
+    <url>/2021/12/26/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E5%A4%8D%E4%B9%A0/</url>
+    <content><![CDATA[<h2 id="广义函数"><a href="#广义函数" class="headerlink" title="广义函数"></a>广义函数</h2><h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><p>$C_c^\infty\subset \mathscr{S}\subset C^\infty,$
+记为$\mathscr{D}\subset \mathscr{S}\subset \mathscr{E},$
+那么$\mathscr{D}’\supset \mathscr{S}’\supset \mathscr{E}’.$
+注意这里用到基本空间前者在后者稠密.</p>
+<p>广义函数的连续性等价于有界性. 注意这里有界性较为特殊,
+因为基本空间不是赋范的. 但是可以取到一列范数.</p>
+<p>由该性质可以得到一个重要的对偶性质: $(\mathscr{D}’)_c=\mathscr{E}’.$</p>
+<h3 id="磨光"><a href="#磨光" class="headerlink" title="磨光"></a>磨光</h3><p>$\alpha_\varepsilon(x)=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon}).$
+称卷积$J_\varepsilon f:=f_\varepsilon=\alpha_\varepsilon\ast f$为$f$的磨光.
+由于$\alpha_\varepsilon$为径向函数, 我们有:</p>
+<script type="math/tex; mode=display">
+\left<{}\alpha_\varepsilon\ast T,\varphi\right>=\left<{}T_x,\left<{}\alpha_\varepsilon(y),\varphi(x+y)\right>\right>=\left<{}T,\alpha_\varepsilon\ast \varphi\right>.</script><p>当$T\in \mathscr{D}’$时, $\alpha_\varepsilon\ast T\in C^\infty.$</p>
+<p>由Minkowski不等式,
+$\Vert\alpha_\varepsilon\ast f\Vert_{L^p}\le \Vert f\Vert_{L^p}.$
+Minkowski不等式可由离散情况推得, 或由泛函分析方法证明.
+当$\varepsilon\rightarrow 0$时,
+我们有$f_\varepsilon\xrightarrow{L^p} f.$</p>
+<h3 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h3><p>广义函数”差不多”总能写成常义函数的导数. 这里求导为广义导数, 如:</p>
+<script type="math/tex; mode=display">
+\left<{}T,\varphi\right>=\left<{}D^\alpha f,\varphi\right>=(-1)^{|\alpha|}\left<{}f,D^\alpha \varphi\right>.</script><p>求导的定义来源于分部积分, 由Gauss-Green公式推导.</p>
+<script type="math/tex; mode=display">
+\int_\Omega \partial f\cdot g+f\cdot \partial g=\int_{\Omega} \partial(fg)=\int_{\partial \Omega} fg\cdot \gamma,</script><p>当$f,g$有一者在边界上取零时, 右端得零, 建立了关于左端的等式.</p>
+<h3 id="Fourier变换"><a href="#Fourier变换" class="headerlink" title="Fourier变换"></a>Fourier变换</h3><p>对于速降函数, 有Fourier变换:</p>
+<script type="math/tex; mode=display">
+F[f] (\xi)=\widehat{f}(\xi):=\int_{\mathbb{R}^n} f(x)e^{-ix\cdot \xi}dx,</script><p>有Fourier逆变换:</p>
+<script type="math/tex; mode=display">
+f(x)=F^{-1}[\widehat{f}] (x):=(2\pi)^{-n}\int_{\mathbb{R}^n}\widehat{f}(\xi)e^{ix\cdot \xi}d\xi,</script><p>满足:</p>
+<script type="math/tex; mode=display">
+\widehat{D^\alpha f}(\xi)=\xi^\alpha \widehat{f}(\xi),\quad D^\alpha=\frac{1}{i^{|\alpha|} }\partial^\alpha,</script><script type="math/tex; mode=display">
+\widehat{fg}=(2\pi)^{-n}\widehat{f}\ast \widehat{g}.</script><p>我们有经典的命题: $F:\mathscr{S}\cong \mathscr{S}$为连续同构.
+这直接诱导了$F:\mathscr{S}’\cong \mathscr{S}’,$
+$\left&lt;{}F[T],\varphi\right&gt;:=\left&lt;{}T,F[\varphi]\right&gt;.$
+这是由Fubini定理保证的. 我们还有Plancherel公式:</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}^n}\widehat{f}\overline{\widehat{g} }\bar{d}\xi=\int_{\mathbb{R}^n} f \overline{g}dx,\quad \bar{d}\xi=(2\pi)^{-n}d\xi.</script><p>取$g=f,$ 即得到了连续情形的Parseval恒等式.</p>
+<h2 id="Sobolev空间"><a href="#Sobolev空间" class="headerlink" title="Sobolev空间"></a>Sobolev空间</h2><h3 id="Sobolev不等式"><a href="#Sobolev不等式" class="headerlink" title="Sobolev不等式"></a>Sobolev不等式</h3><script type="math/tex; mode=display">
+\Vert u\Vert_{L^q}\le C|u|_{\dot{H}^{m,p} },\quad \frac{n}{q}=\frac{n}{p}-m;</script><script type="math/tex; mode=display">
+|u|_{C^\alpha}\le C|u|_{\dot{H}^{m,p} },\quad -\alpha=\frac{n}{p}-m,\,\alpha\in (0,1);</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{m,p} },\quad 0>\frac{n}{p}-m;</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{s} },\quad 0>\frac{n}{2}-s;</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^q}\le C\Vert u\Vert_{H^{m,p} },\quad \frac{n}{p}-m=0,\, q\ge p.</script><p>关于最后一个不等式, 左侧量纲为$\frac{n}{q},$
+右侧量纲为$[\frac{n}{p}-m,\frac{n}{p}]=[0,m].$ 为了使不等式成立,
+左侧量纲一定要落在该区间中.
+从而$\frac{n}{q}\le \frac{n}{p}=m\,\Rightarrow\,q\ge p$的条件是必要的.</p>
+<p>我们还有Poincaré不等式:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{L^p}\le d\Vert\nabla u\Vert_{L^p}=d|u|_{\dot{H}^{1,p} },\quad \,\forall\,u\in H_0^{1,p}(\Omega).</script><h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p><strong>等价模定理</strong>: 由<strong>Lions延拓</strong>,
+$H^{m,p}(\Omega)$中的函数总可以延拓为$H^{m,p}(\mathbb{R}^n)$中的函数.
+定义</p>
+<script type="math/tex; mode=display">
+\Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_\Omega =f}\Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)},</script><p>则凭借由Lions延拓得到的$\widetilde{f},$ 我们有:</p>
+<script type="math/tex; mode=display">
+\Vert f\Vert_{H^{m,p}(\Omega)}\le \Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}\le \Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)}\le C\Vert f\Vert_{H^{m,p}(\Omega)},</script><p><strong>紧嵌入定理</strong>: 当Sobolev不等式中条件严格时,
+即$\frac{n}{q}&gt;\frac{n}{p}-m,$
+此时$H^{m,p}(\Omega)\hookrightarrow L^{q}(\Omega)$的嵌入是紧的,
+即将有界集映成列紧集.</p>
+<p><strong>迹定理</strong>:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{H^{s-\frac{1}{2} }(\partial\Omega)}\le C\Vert u\Vert_{H^s(\Omega)},\quad s>\frac{1}{2}</script><p>一个最常应用的简单推论是:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{L^2(\partial \Omega)}\le C\Vert u\Vert_{H^1(\Omega)}.</script><p>关于对偶空间: 需要注意的是, $H^{-1}(\Omega):=(H_0^1(\Omega))^\ast ,$
+并不是$H^1(\Omega)$的对偶空间. 仅当$\Omega=\mathbb{R}^n$时,
+$H_0^1(\mathbb{R}^n)=H^1(\mathbb{R}^n).$ 同时, 由Riesz表示定理,
+$H^{-1}(\Omega)\cong H_0^1(\Omega),$ 当并不相等.
+因为前者视为$\mathscr{D}’(\Omega)$的子空间, 以$L^2(\Omega)$为子空间,
+泛函取为做$L^2$内积; 而后者以$H^1$内积为泛函, 这导致对偶空间出现了不同,
+但总归是同构对应的.</p>
+<h2 id="PDE"><a href="#PDE" class="headerlink" title="PDE"></a>PDE</h2><h3 id="基本定义-1"><a href="#基本定义-1" class="headerlink" title="基本定义"></a>基本定义</h3><p>二阶椭圆方程: </p>
+<script type="math/tex; mode=display">
+Lu=\sum \partial_i(a_{ij}u_j)+\sum b_i u_i+cu.</script><p>二阶双曲方程:</p>
+<script type="math/tex; mode=display">
+Mu=u_{tt}-\sum \partial_i (a_{ij}u_j)-\sum b_{0j}u_{ti}+\sum b_iu_i+b_0 u_t+cu.</script><p>可记为$Mu=u_{tt}-M_1u_t+M_2u.$</p>
+<p>二阶抛物方程: </p>
+<script type="math/tex; mode=display">
+Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.</script><p>可记为$Nu=u_t-N_1u.$</p>
+<p>系数$a_{ij}$对称且满足椭圆性条件:
+$\sum a_{ij}\xi_i\xi_j\ge \alpha|\xi|^2.$ 当涉及时间项时, 条件是一致的.</p>
+<h3 id="能量方法"><a href="#能量方法" class="headerlink" title="能量方法"></a>能量方法</h3><p>对椭圆型方程, $\left&lt;{}u,Lu\right&gt;$给出Garding不等式;</p>
+<p>双曲型方程的$\left&lt;{}u_t,Mu\right&gt;,$
+抛物型方程的$\left&lt;{}u,Nu\right&gt;$给出能量估计.</p>
+<h3 id="Galerkin方法"><a href="#Galerkin方法" class="headerlink" title="Galerkin方法"></a>Galerkin方法</h3><p>取基本空间的一组基$\{\varphi_i\},$ 考虑$u_m=\sum a_i\varphi_i,$ 解</p>
+<script type="math/tex; mode=display">
+\left<{}Lu_m-f,\varphi_i\right>=0,\quad i=1,\cdots,m.</script><p>这化为了线性方程组$Ax=b$的形式, 求解系数即可.
+这里可解性由Garding不等式保证. $\frac{A+A^T}{2}$正定时, $A$可逆.
+而式中二次型可写为$x^T\frac{A+A^T}{2}x=\left&lt;{}-Lu,u\right&gt;$的形式,
+当$C_2\le 0$时, 即推知正定性.</p>
+<p>对涉及时间项的Galerkin方法, 需考虑$u_m=\sum a_i(t)\varphi_i.$ 此时</p>
+<script type="math/tex; mode=display">
+\left<{}Mu_m,\varphi_i\right>=\left<{}f,\varphi_i\right>,\quad i=1,\cdots,m</script><p>为$m$个ODE, 总是可解的. 具体地,</p>
+<script type="math/tex; mode=display">
+\sum \left<{}\varphi_j,\varphi_i\right>a_j''-\left<{}M_1\varphi_j,\varphi_i\right>a_j'+\left<{}M_2\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><p>类似地, 对抛物型方程, 问题为:</p>
+<script type="math/tex; mode=display">
+\left<{}Nu_m,\varphi_i\right>=\sum \left<{}\varphi_j,\varphi_i\right>a_j'-\left<{}N_1\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><h3 id="算子半群"><a href="#算子半群" class="headerlink" title="算子半群"></a>算子半群</h3><p>考虑问题$u_t=N_1u,$ 形式上, $e^{N_1t}u_0$给出了问题解. 具体的,
+考虑$N_\lambda:=\lambda N_1(\lambda-N_1)^{-1},$
+定义$e^{N_1t}:=\lim\limits_{\lambda\rightarrow+\infty}e^{N_\lambda t}$来将表示严格化.</p>
+<p>文章最后更新于 2021-12-26 16:23:44 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>PDE</category>
+        <category>现代PDE基础</category>
+      </categories>
+  </entry>
+  <entry>
     <title>《微分流形》讨论稿-解析流形</title>
     <url>/2021/10/08/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E8%AE%A8%E8%AE%BA%E7%A8%BF-%E8%A7%A3%E6%9E%90%E6%B5%81%E5%BD%A2/</url>
     <content><![CDATA[<h2 id="解析流形"><a href="#解析流形" class="headerlink" title="解析流形"></a>解析流形</h2><h3 id="微分学"><a href="#微分学" class="headerlink" title="微分学"></a>微分学</h3><p>回忆$C^\omega$结构$[\mathcal{F}]$指坐标图册$\mathcal{F}$中的所有坐标卡$(U,\varphi)$彼此是$C^\omega$相容的,
@@ -4085,6 +4191,110 @@ Kirby-Siebenmann 光滑性障碍.</p>
         <category>讨论稿</category>
         <category>几何</category>
         <category>微分流形</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《现代PDE基础》笔记(2)-广义函数运算</title>
+    <url>/2021/10/17/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(2)-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97/</url>
+    <content><![CDATA[<h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><p>对某基本函数空间的广义函数列$\{T_k\},$
+若对其基本函数空间上的任意元素$\varphi,$
+有$\left&lt;{}T_k,\varphi\right&gt;\rightarrow 0,$ 则称$T_k$(弱)收敛于$0.$
+若$T_k-T$收敛于$0,$ 则称$T_k$的极限是$T,$ 记为$T_k\rightarrow T.$</p>
+<p>对常义函数, 我们可以做正则化$J_\varepsilon.$ 下面我们说明,
+对广义函数也有类似的正则化.</p>
+<p><strong>定理 1.1</strong>. <em>若$T\in \mathscr{D}’(\mathbb{R}_y^n),$ $T_\varepsilon(x):=\left&lt;{}T_y,\alpha_\varepsilon(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n),$ $\alpha_\varepsilon$如上节所示.</em> </p>
+<p><strong>证:</strong> 不难说明$x\rightarrow x_0$时,
+$\alpha_\varepsilon(x-y)\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \alpha_\varepsilon(x_0-y)$(等度连续),
+因此$\left&lt;{}T,\alpha_\varepsilon(x-y)\right&gt;\rightarrow\left&lt;{}T,\alpha_\varepsilon(x_0-y)\right&gt;,$
+$T_\varepsilon(x)$为连续函数. 类似地,
+$\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \partial_k \alpha_\varepsilon(x,y),$
+从而有</p>
+<script type="math/tex; mode=display">\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left<{}T,\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\right>\rightarrow\left<{}T,\partial_k \alpha_\varepsilon(x,y)\right>,</script><p>因此$T_\varepsilon(x)$关于$x_k$可导. 同理可证它有任意阶导数,
+因此是光滑函数.</p>
+<p>当$T$为常义函数时, 泛函即为积分,
+因此对广义函数的正则化是对常义函数正则化的推广.
+当然有了下面的定理才让正则化有意义:</p>
+<p><strong>定理 1.2</strong>. <em>$T\in \mathscr{D}’(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{D}’} T.$</em> </p>
+<p><strong>证:</strong>
+即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$
+由于$\varphi$具紧支集, 可以用Riemann积分的方式来逼近式中的积分.
+然而将积分写成求和形式后,
+$\alpha_\varepsilon(x-y)$可以与$\varphi(x)$先行结合, 即</p>
+<script type="math/tex; mode=display">\sum_i\alpha_\varepsilon(x_i-y)\varphi(x_i)\Delta x_i\xrightarrow{\mathscr{E} }\int_{\mathbb{R}_x^n}\alpha_\varepsilon(x-y)\varphi(x)dx,</script><p>从而$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\left&lt;{}T,\varphi_\varepsilon\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+命题得证.</p>
+<p><strong>定理 1.3</strong>. <em>$T\in \mathscr{E}’(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{E}’} T.$</em> </p>
+<p><strong>证:</strong>
+即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+$\,\forall\,\varphi\in \mathscr{E}(\mathbb{R}^n).$ 由于$T$具紧支集,
+不难证明$T_\varepsilon$也具紧支集, 且充分靠近$\operatorname{supp}T.$
+取紧支撑的$\zeta$在$\operatorname{supp}T$某邻域上恒为$1,$ 由前面的定理,
+$\left&lt;{}T_\varepsilon,\zeta\varphi\right&gt;\rightarrow \left&lt;{}T,\zeta\varphi\right&gt;.$
+由于在$\operatorname{supp}T$邻域上$\zeta\varphi=\varphi,$
+且对充分小的$\varepsilon,$ 该邻域包含了$T,T_\varepsilon$的支集, 因此</p>
+<script type="math/tex; mode=display">\left<{}T_\varepsilon,\zeta\varphi\right>=\left<{}T_\varepsilon,\varphi\right>\rightarrow \left<{}T,\varphi\right>=\left<{}T,\zeta\varphi\right>,</script><p>命题得证.</p>
+<h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><p>设$T\in\mathscr{D}’(\mathbb{R}^n),$
+定义$T$关于$x_k$的<strong>(广义)导数</strong>$\frac{\partial {}T}{\partial {}x_k}\in \mathscr{D}’(\mathbb{R}^n),$
+满足</p>
+<script type="math/tex; mode=display">\left<{}\frac{\partial {}T}{\partial {}x_k},\varphi\right>=-\left<{}T,\frac{\partial {}\varphi}{\partial {}x_k}\right>.</script><p>由分部积分公式, 当$T$为$C^1$函数时, 广义导数即为一般意义下的导数.
+因此广义导数的概念是通常导数概念的推广. 特别地, 对于某些常义函数,
+它无法按照通常概念求导. 但将其视为广义函数,
+就可以得到广义函数空间中的广义导数, 这往往是十分有用的.</p>
+<p>类似地定义高阶导数</p>
+<script type="math/tex; mode=display">\left<{}\partial^\alpha T,\varphi\right>=(-1)^{|\alpha|}\left<{}T,\partial^\alpha \varphi\right>.</script><p>可见广义函数任意阶导数存在, 且混合偏导与顺序无关.</p>
+<p>一个有意思的例子是, 若$\operatorname{supp}T=\{0\},$
+则$T$只能是$\delta$及其导数的有限线性组合.
+证明通过对$\varphi$进行Taylor展开给出即可.</p>
+<h2 id="乘子"><a href="#乘子" class="headerlink" title="乘子"></a>乘子</h2><p>对$T\in \mathscr{D}’(\mathbb{R}^n),$ $\alpha\in C^\infty(\mathbb{R}^n),$
+定义$\alpha T\in \mathscr{D}’(\mathbb{R}^n)$为</p>
+<script type="math/tex; mode=display">\left<{}\alpha T,\varphi\right>=\left<{}T,\alpha\varphi\right>.</script><p>称$\alpha$为$\mathscr{D}’(\mathbb{R}^n)$的<strong>乘子</strong>.
+类似地它也是$\mathscr{E}’(\mathbb{R}^n)$的乘子,
+但一般不见得是$\mathscr{S}(\mathbb{R}^n)$的乘子.</p>
+<p>类似于常义函数, 我们有Leibniz公式:</p>
+<script type="math/tex; mode=display">\partial^r(\alpha T)=\sum_{p+q=r} \frac{r!}{p!q!}(\partial^p \alpha \cdot \partial^q T).</script><h2 id="自变量变换"><a href="#自变量变换" class="headerlink" title="自变量变换"></a>自变量变换</h2><p>仿照$C_c^\infty$函数的自变量变换, 对$T\in \mathscr{D}’(\Omega_x),$
+给光滑同胚$\psi:\Omega_x\rightarrow \Omega_y,$
+定义$S\in \mathscr{D}’(O_y):$</p>
+<script type="math/tex; mode=display">\left<{}S,\varphi\right>=\left<{}T,\det|\psi'|\varphi\circ\psi\right>.</script><p>当$T$为常义函数时, $S(y)=T(\psi^{-1}(y)).$ 该定义自然也是通常定义的推广.</p>
+<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>对$f,g\in C_c^\infty(\mathbb{R}^n),$ 考虑$f\ast g$在$\varphi$上的作用,
+类比地定义广义积分间的卷积. 设$S,T$为广义函数, 定义<strong>卷积</strong>$S\ast T:$</p>
+<script type="math/tex; mode=display">\left<{}S\ast T,\varphi\right>=\left<{}S_x,\left<{}T_y,\varphi(x+y)\right>\right>,</script><p>$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$ 和常义函数一样,
+广义函数的卷积也不总是有意义的.
+当$S,T\in \mathscr{D}’(\mathbb{R}^n)$中至少一者在$\mathscr{E}’(\mathbb{R}^n)$中时,
+卷积有意义, $S\ast T\in \mathscr{D}’(\mathbb{R}^n).$</p>
+<p>证明过程分为两部分, 首先只有当$T\in \mathscr{D}’/\mathscr{E}’$时,
+$\psi:=\left&lt;{}T_y,\varphi(x+y)\right&gt;\in \mathscr{E}/\mathscr{D},$
+才能使定义有意义; 其次当$\varphi_\nu\xrightarrow{\mathscr{D} } 0$时,
+有$\psi_\nu\xrightarrow{\mathscr{E}/\mathscr{D} }0,$
+因此线性泛函是连续的. 证明方法与先前类似, 在此略过.</p>
+<p>可以证明,
+对$R,S,T\in \mathscr{D}’(\mathbb{R}^n)$且其中至少两个具紧支集时,
+广义函数的卷积(同常义卷积一样)满足如下性质:</p>
+<ol>
+<li><p>$\operatorname{supp}(S\ast T)\subset \operatorname{supp}(S)+\operatorname{supp}(T);$</p>
+</li>
+<li><p>$(R\ast S)\ast T=R\ast (S\ast T);$</p>
+</li>
+<li><p>$S\ast T=T\ast S;$</p>
+</li>
+<li><p>$\delta\ast T=T\ast \delta=T;$</p>
+</li>
+<li><p>$\alpha_1+\alpha_2=\alpha$时,
+$\partial^\alpha(S\ast T)=(\partial^{\alpha_1})\ast (\partial^{\alpha_2});$</p>
+</li>
+<li><p>$T\in \mathscr{D}’/\mathscr{E}’,$
+$\varphi\in \mathscr{D}/\mathscr{E}$时,
+$T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n).$</p>
+</li>
+</ol>
+<p>前四个性质说明$\mathscr{E}’(\mathbb{R}^n)$关于通常的线性运算与卷积运算构成有单位元$\delta$的交换代数,
+称为<strong>卷积代数</strong>. 对函数的正则化有$f_\varepsilon=f\ast \alpha_\varepsilon,$
+类似地对广义函数的正则化也有$T_\varepsilon=T\ast \alpha_\varepsilon.$</p>
+<p>文章最后更新于 2021-10-18 15:02:37 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>PDE</category>
+        <category>现代PDE基础</category>
       </categories>
   </entry>
   <entry>
@@ -4305,216 +4515,6 @@ $T$改造为$\mathscr{E}$上线性泛函后也是连续的,
       </categories>
   </entry>
   <entry>
-    <title>《现代PDE基础》笔记(10)-复习</title>
-    <url>/2021/12/26/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E5%A4%8D%E4%B9%A0/</url>
-    <content><![CDATA[<h2 id="广义函数"><a href="#广义函数" class="headerlink" title="广义函数"></a>广义函数</h2><h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><p>$C_c^\infty\subset \mathscr{S}\subset C^\infty,$
-记为$\mathscr{D}\subset \mathscr{S}\subset \mathscr{E},$
-那么$\mathscr{D}’\supset \mathscr{S}’\supset \mathscr{E}’.$
-注意这里用到基本空间前者在后者稠密.</p>
-<p>广义函数的连续性等价于有界性. 注意这里有界性较为特殊,
-因为基本空间不是赋范的. 但是可以取到一列范数.</p>
-<p>由该性质可以得到一个重要的对偶性质: $(\mathscr{D}’)_c=\mathscr{E}’.$</p>
-<h3 id="磨光"><a href="#磨光" class="headerlink" title="磨光"></a>磨光</h3><p>$\alpha_\varepsilon(x)=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon}).$
-称卷积$J_\varepsilon f:=f_\varepsilon=\alpha_\varepsilon\ast f$为$f$的磨光.
-由于$\alpha_\varepsilon$为径向函数, 我们有:</p>
-<script type="math/tex; mode=display">
-\left<{}\alpha_\varepsilon\ast T,\varphi\right>=\left<{}T_x,\left<{}\alpha_\varepsilon(y),\varphi(x+y)\right>\right>=\left<{}T,\alpha_\varepsilon\ast \varphi\right>.</script><p>当$T\in \mathscr{D}’$时, $\alpha_\varepsilon\ast T\in C^\infty.$</p>
-<p>由Minkowski不等式,
-$\Vert\alpha_\varepsilon\ast f\Vert_{L^p}\le \Vert f\Vert_{L^p}.$
-Minkowski不等式可由离散情况推得, 或由泛函分析方法证明.
-当$\varepsilon\rightarrow 0$时,
-我们有$f_\varepsilon\xrightarrow{L^p} f.$</p>
-<h3 id="求导"><a href="#求导" class="headerlink" title="求导"></a>求导</h3><p>广义函数”差不多”总能写成常义函数的导数. 这里求导为广义导数, 如:</p>
-<script type="math/tex; mode=display">
-\left<{}T,\varphi\right>=\left<{}D^\alpha f,\varphi\right>=(-1)^{|\alpha|}\left<{}f,D^\alpha \varphi\right>.</script><p>求导的定义来源于分部积分, 由Gauss-Green公式推导.</p>
-<script type="math/tex; mode=display">
-\int_\Omega \partial f\cdot g+f\cdot \partial g=\int_{\Omega} \partial(fg)=\int_{\partial \Omega} fg\cdot \gamma,</script><p>当$f,g$有一者在边界上取零时, 右端得零, 建立了关于左端的等式.</p>
-<h3 id="Fourier变换"><a href="#Fourier变换" class="headerlink" title="Fourier变换"></a>Fourier变换</h3><p>对于速降函数, 有Fourier变换:</p>
-<script type="math/tex; mode=display">
-F[f] (\xi)=\widehat{f}(\xi):=\int_{\mathbb{R}^n} f(x)e^{-ix\cdot \xi}dx,</script><p>有Fourier逆变换:</p>
-<script type="math/tex; mode=display">
-f(x)=F^{-1}[\widehat{f}] (x):=(2\pi)^{-n}\int_{\mathbb{R}^n}\widehat{f}(\xi)e^{ix\cdot \xi}d\xi,</script><p>满足:</p>
-<script type="math/tex; mode=display">
-\widehat{D^\alpha f}(\xi)=\xi^\alpha \widehat{f}(\xi),\quad D^\alpha=\frac{1}{i^{|\alpha|} }\partial^\alpha,</script><script type="math/tex; mode=display">
-\widehat{fg}=(2\pi)^{-n}\widehat{f}\ast \widehat{g}.</script><p>我们有经典的命题: $F:\mathscr{S}\cong \mathscr{S}$为连续同构.
-这直接诱导了$F:\mathscr{S}’\cong \mathscr{S}’,$
-$\left&lt;{}F[T],\varphi\right&gt;:=\left&lt;{}T,F[\varphi]\right&gt;.$
-这是由Fubini定理保证的. 我们还有Plancherel公式:</p>
-<script type="math/tex; mode=display">
-\int_{\mathbb{R}^n}\widehat{f}\overline{\widehat{g} }\bar{d}\xi=\int_{\mathbb{R}^n} f \overline{g}dx,\quad \bar{d}\xi=(2\pi)^{-n}d\xi.</script><p>取$g=f,$ 即得到了连续情形的Parseval恒等式.</p>
-<h2 id="Sobolev空间"><a href="#Sobolev空间" class="headerlink" title="Sobolev空间"></a>Sobolev空间</h2><h3 id="Sobolev不等式"><a href="#Sobolev不等式" class="headerlink" title="Sobolev不等式"></a>Sobolev不等式</h3><script type="math/tex; mode=display">
-\Vert u\Vert_{L^q}\le C|u|_{\dot{H}^{m,p} },\quad \frac{n}{q}=\frac{n}{p}-m;</script><script type="math/tex; mode=display">
-|u|_{C^\alpha}\le C|u|_{\dot{H}^{m,p} },\quad -\alpha=\frac{n}{p}-m,\,\alpha\in (0,1);</script><script type="math/tex; mode=display">
-\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{m,p} },\quad 0>\frac{n}{p}-m;</script><script type="math/tex; mode=display">
-\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{s} },\quad 0>\frac{n}{2}-s;</script><script type="math/tex; mode=display">
-\Vert u\Vert_{L^q}\le C\Vert u\Vert_{H^{m,p} },\quad \frac{n}{p}-m=0,\, q\ge p.</script><p>关于最后一个不等式, 左侧量纲为$\frac{n}{q},$
-右侧量纲为$[\frac{n}{p}-m,\frac{n}{p}]=[0,m].$ 为了使不等式成立,
-左侧量纲一定要落在该区间中.
-从而$\frac{n}{q}\le \frac{n}{p}=m\,\Rightarrow\,q\ge p$的条件是必要的.</p>
-<p>我们还有Poincaré不等式:</p>
-<script type="math/tex; mode=display">
-\Vert u\Vert_{L^p}\le d\Vert\nabla u\Vert_{L^p}=d|u|_{\dot{H}^{1,p} },\quad \,\forall\,u\in H_0^{1,p}(\Omega).</script><h3 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h3><p><strong>等价模定理</strong>: 由<strong>Lions延拓</strong>,
-$H^{m,p}(\Omega)$中的函数总可以延拓为$H^{m,p}(\mathbb{R}^n)$中的函数.
-定义</p>
-<script type="math/tex; mode=display">
-\Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_\Omega =f}\Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)},</script><p>则凭借由Lions延拓得到的$\widetilde{f},$ 我们有:</p>
-<script type="math/tex; mode=display">
-\Vert f\Vert_{H^{m,p}(\Omega)}\le \Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}\le \Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)}\le C\Vert f\Vert_{H^{m,p}(\Omega)},</script><p><strong>紧嵌入定理</strong>: 当Sobolev不等式中条件严格时,
-即$\frac{n}{q}&gt;\frac{n}{p}-m,$
-此时$H^{m,p}(\Omega)\hookrightarrow L^{q}(\Omega)$的嵌入是紧的,
-即将有界集映成列紧集.</p>
-<p><strong>迹定理</strong>:</p>
-<script type="math/tex; mode=display">
-\Vert u\Vert_{H^{s-\frac{1}{2} }(\partial\Omega)}\le C\Vert u\Vert_{H^s(\Omega)},\quad s>\frac{1}{2}</script><p>一个最常应用的简单推论是:</p>
-<script type="math/tex; mode=display">
-\Vert u\Vert_{L^2(\partial \Omega)}\le C\Vert u\Vert_{H^1(\Omega)}.</script><p>关于对偶空间: 需要注意的是, $H^{-1}(\Omega):=(H_0^1(\Omega))^\ast ,$
-并不是$H^1(\Omega)$的对偶空间. 仅当$\Omega=\mathbb{R}^n$时,
-$H_0^1(\mathbb{R}^n)=H^1(\mathbb{R}^n).$ 同时, 由Riesz表示定理,
-$H^{-1}(\Omega)\cong H_0^1(\Omega),$ 当并不相等.
-因为前者视为$\mathscr{D}’(\Omega)$的子空间, 以$L^2(\Omega)$为子空间,
-泛函取为做$L^2$内积; 而后者以$H^1$内积为泛函, 这导致对偶空间出现了不同,
-但总归是同构对应的.</p>
-<h2 id="PDE"><a href="#PDE" class="headerlink" title="PDE"></a>PDE</h2><h3 id="基本定义-1"><a href="#基本定义-1" class="headerlink" title="基本定义"></a>基本定义</h3><p>二阶椭圆方程: </p>
-<script type="math/tex; mode=display">
-Lu=\sum \partial_i(a_{ij}u_j)+\sum b_i u_i+cu.</script><p>二阶双曲方程:</p>
-<script type="math/tex; mode=display">
-Mu=u_{tt}-\sum \partial_i (a_{ij}u_j)-\sum b_{0j}u_{ti}+\sum b_iu_i+b_0 u_t+cu.</script><p>可记为$Mu=u_{tt}-M_1u_t+M_2u.$</p>
-<p>二阶抛物方程: </p>
-<script type="math/tex; mode=display">
-Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.</script><p>可记为$Nu=u_t-N_1u.$</p>
-<p>系数$a_{ij}$对称且满足椭圆性条件:
-$\sum a_{ij}\xi_i\xi_j\ge \alpha|\xi|^2.$ 当涉及时间项时, 条件是一致的.</p>
-<h3 id="能量方法"><a href="#能量方法" class="headerlink" title="能量方法"></a>能量方法</h3><p>对椭圆型方程, $\left&lt;{}u,Lu\right&gt;$给出Garding不等式;</p>
-<p>双曲型方程的$\left&lt;{}u_t,Mu\right&gt;,$
-抛物型方程的$\left&lt;{}u,Nu\right&gt;$给出能量估计.</p>
-<h3 id="Galerkin方法"><a href="#Galerkin方法" class="headerlink" title="Galerkin方法"></a>Galerkin方法</h3><p>取基本空间的一组基$\{\varphi_i\},$ 考虑$u_m=\sum a_i\varphi_i,$ 解</p>
-<script type="math/tex; mode=display">
-\left<{}Lu_m-f,\varphi_i\right>=0,\quad i=1,\cdots,m.</script><p>这化为了线性方程组$Ax=b$的形式, 求解系数即可.
-这里可解性由Garding不等式保证. $\frac{A+A^T}{2}$正定时, $A$可逆.
-而式中二次型可写为$x^T\frac{A+A^T}{2}x=\left&lt;{}-Lu,u\right&gt;$的形式,
-当$C_2\le 0$时, 即推知正定性.</p>
-<p>对涉及时间项的Galerkin方法, 需考虑$u_m=\sum a_i(t)\varphi_i.$ 此时</p>
-<script type="math/tex; mode=display">
-\left<{}Mu_m,\varphi_i\right>=\left<{}f,\varphi_i\right>,\quad i=1,\cdots,m</script><p>为$m$个ODE, 总是可解的. 具体地,</p>
-<script type="math/tex; mode=display">
-\sum \left<{}\varphi_j,\varphi_i\right>a_j''-\left<{}M_1\varphi_j,\varphi_i\right>a_j'+\left<{}M_2\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><p>类似地, 对抛物型方程, 问题为:</p>
-<script type="math/tex; mode=display">
-\left<{}Nu_m,\varphi_i\right>=\sum \left<{}\varphi_j,\varphi_i\right>a_j'-\left<{}N_1\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><h3 id="算子半群"><a href="#算子半群" class="headerlink" title="算子半群"></a>算子半群</h3><p>考虑问题$u_t=N_1u,$ 形式上, $e^{N_1t}u_0$给出了问题解. 具体的,
-考虑$N_\lambda:=\lambda N_1(\lambda-N_1)^{-1},$
-定义$e^{N_1t}:=\lim\limits_{\lambda\rightarrow+\infty}e^{N_\lambda t}$来将表示严格化.</p>
-<p>文章最后更新于 2021-12-26 16:23:44 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>PDE</category>
-        <category>现代PDE基础</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《现代PDE基础》笔记(2)-广义函数运算</title>
-    <url>/2021/10/17/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(2)-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0%E8%BF%90%E7%AE%97/</url>
-    <content><![CDATA[<h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><p>对某基本函数空间的广义函数列$\{T_k\},$
-若对其基本函数空间上的任意元素$\varphi,$
-有$\left&lt;{}T_k,\varphi\right&gt;\rightarrow 0,$ 则称$T_k$(弱)收敛于$0.$
-若$T_k-T$收敛于$0,$ 则称$T_k$的极限是$T,$ 记为$T_k\rightarrow T.$</p>
-<p>对常义函数, 我们可以做正则化$J_\varepsilon.$ 下面我们说明,
-对广义函数也有类似的正则化.</p>
-<p><strong>定理 1.1</strong>. <em>若$T\in \mathscr{D}’(\mathbb{R}_y^n),$ $T_\varepsilon(x):=\left&lt;{}T_y,\alpha_\varepsilon(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n),$ $\alpha_\varepsilon$如上节所示.</em> </p>
-<p><strong>证:</strong> 不难说明$x\rightarrow x_0$时,
-$\alpha_\varepsilon(x-y)\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \alpha_\varepsilon(x_0-y)$(等度连续),
-因此$\left&lt;{}T,\alpha_\varepsilon(x-y)\right&gt;\rightarrow\left&lt;{}T,\alpha_\varepsilon(x_0-y)\right&gt;,$
-$T_\varepsilon(x)$为连续函数. 类似地,
-$\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \partial_k \alpha_\varepsilon(x,y),$
-从而有</p>
-<script type="math/tex; mode=display">\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left<{}T,\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\right>\rightarrow\left<{}T,\partial_k \alpha_\varepsilon(x,y)\right>,</script><p>因此$T_\varepsilon(x)$关于$x_k$可导. 同理可证它有任意阶导数,
-因此是光滑函数.</p>
-<p>当$T$为常义函数时, 泛函即为积分,
-因此对广义函数的正则化是对常义函数正则化的推广.
-当然有了下面的定理才让正则化有意义:</p>
-<p><strong>定理 1.2</strong>. <em>$T\in \mathscr{D}’(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{D}’} T.$</em> </p>
-<p><strong>证:</strong>
-即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
-$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$
-由于$\varphi$具紧支集, 可以用Riemann积分的方式来逼近式中的积分.
-然而将积分写成求和形式后,
-$\alpha_\varepsilon(x-y)$可以与$\varphi(x)$先行结合, 即</p>
-<script type="math/tex; mode=display">\sum_i\alpha_\varepsilon(x_i-y)\varphi(x_i)\Delta x_i\xrightarrow{\mathscr{E} }\int_{\mathbb{R}_x^n}\alpha_\varepsilon(x-y)\varphi(x)dx,</script><p>从而$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\left&lt;{}T,\varphi_\varepsilon\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;,$
-命题得证.</p>
-<p><strong>定理 1.3</strong>. <em>$T\in \mathscr{E}’(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{E}’} T.$</em> </p>
-<p><strong>证:</strong>
-即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
-$\,\forall\,\varphi\in \mathscr{E}(\mathbb{R}^n).$ 由于$T$具紧支集,
-不难证明$T_\varepsilon$也具紧支集, 且充分靠近$\operatorname{supp}T.$
-取紧支撑的$\zeta$在$\operatorname{supp}T$某邻域上恒为$1,$ 由前面的定理,
-$\left&lt;{}T_\varepsilon,\zeta\varphi\right&gt;\rightarrow \left&lt;{}T,\zeta\varphi\right&gt;.$
-由于在$\operatorname{supp}T$邻域上$\zeta\varphi=\varphi,$
-且对充分小的$\varepsilon,$ 该邻域包含了$T,T_\varepsilon$的支集, 因此</p>
-<script type="math/tex; mode=display">\left<{}T_\varepsilon,\zeta\varphi\right>=\left<{}T_\varepsilon,\varphi\right>\rightarrow \left<{}T,\varphi\right>=\left<{}T,\zeta\varphi\right>,</script><p>命题得证.</p>
-<h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><p>设$T\in\mathscr{D}’(\mathbb{R}^n),$
-定义$T$关于$x_k$的<strong>(广义)导数</strong>$\frac{\partial {}T}{\partial {}x_k}\in \mathscr{D}’(\mathbb{R}^n),$
-满足</p>
-<script type="math/tex; mode=display">\left<{}\frac{\partial {}T}{\partial {}x_k},\varphi\right>=-\left<{}T,\frac{\partial {}\varphi}{\partial {}x_k}\right>.</script><p>由分部积分公式, 当$T$为$C^1$函数时, 广义导数即为一般意义下的导数.
-因此广义导数的概念是通常导数概念的推广. 特别地, 对于某些常义函数,
-它无法按照通常概念求导. 但将其视为广义函数,
-就可以得到广义函数空间中的广义导数, 这往往是十分有用的.</p>
-<p>类似地定义高阶导数</p>
-<script type="math/tex; mode=display">\left<{}\partial^\alpha T,\varphi\right>=(-1)^{|\alpha|}\left<{}T,\partial^\alpha \varphi\right>.</script><p>可见广义函数任意阶导数存在, 且混合偏导与顺序无关.</p>
-<p>一个有意思的例子是, 若$\operatorname{supp}T=\{0\},$
-则$T$只能是$\delta$及其导数的有限线性组合.
-证明通过对$\varphi$进行Taylor展开给出即可.</p>
-<h2 id="乘子"><a href="#乘子" class="headerlink" title="乘子"></a>乘子</h2><p>对$T\in \mathscr{D}’(\mathbb{R}^n),$ $\alpha\in C^\infty(\mathbb{R}^n),$
-定义$\alpha T\in \mathscr{D}’(\mathbb{R}^n)$为</p>
-<script type="math/tex; mode=display">\left<{}\alpha T,\varphi\right>=\left<{}T,\alpha\varphi\right>.</script><p>称$\alpha$为$\mathscr{D}’(\mathbb{R}^n)$的<strong>乘子</strong>.
-类似地它也是$\mathscr{E}’(\mathbb{R}^n)$的乘子,
-但一般不见得是$\mathscr{S}(\mathbb{R}^n)$的乘子.</p>
-<p>类似于常义函数, 我们有Leibniz公式:</p>
-<script type="math/tex; mode=display">\partial^r(\alpha T)=\sum_{p+q=r} \frac{r!}{p!q!}(\partial^p \alpha \cdot \partial^q T).</script><h2 id="自变量变换"><a href="#自变量变换" class="headerlink" title="自变量变换"></a>自变量变换</h2><p>仿照$C_c^\infty$函数的自变量变换, 对$T\in \mathscr{D}’(\Omega_x),$
-给光滑同胚$\psi:\Omega_x\rightarrow \Omega_y,$
-定义$S\in \mathscr{D}’(O_y):$</p>
-<script type="math/tex; mode=display">\left<{}S,\varphi\right>=\left<{}T,\det|\psi'|\varphi\circ\psi\right>.</script><p>当$T$为常义函数时, $S(y)=T(\psi^{-1}(y)).$ 该定义自然也是通常定义的推广.</p>
-<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>对$f,g\in C_c^\infty(\mathbb{R}^n),$ 考虑$f\ast g$在$\varphi$上的作用,
-类比地定义广义积分间的卷积. 设$S,T$为广义函数, 定义<strong>卷积</strong>$S\ast T:$</p>
-<script type="math/tex; mode=display">\left<{}S\ast T,\varphi\right>=\left<{}S_x,\left<{}T_y,\varphi(x+y)\right>\right>,</script><p>$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$ 和常义函数一样,
-广义函数的卷积也不总是有意义的.
-当$S,T\in \mathscr{D}’(\mathbb{R}^n)$中至少一者在$\mathscr{E}’(\mathbb{R}^n)$中时,
-卷积有意义, $S\ast T\in \mathscr{D}’(\mathbb{R}^n).$</p>
-<p>证明过程分为两部分, 首先只有当$T\in \mathscr{D}’/\mathscr{E}’$时,
-$\psi:=\left&lt;{}T_y,\varphi(x+y)\right&gt;\in \mathscr{E}/\mathscr{D},$
-才能使定义有意义; 其次当$\varphi_\nu\xrightarrow{\mathscr{D} } 0$时,
-有$\psi_\nu\xrightarrow{\mathscr{E}/\mathscr{D} }0,$
-因此线性泛函是连续的. 证明方法与先前类似, 在此略过.</p>
-<p>可以证明,
-对$R,S,T\in \mathscr{D}’(\mathbb{R}^n)$且其中至少两个具紧支集时,
-广义函数的卷积(同常义卷积一样)满足如下性质:</p>
-<ol>
-<li><p>$\operatorname{supp}(S\ast T)\subset \operatorname{supp}(S)+\operatorname{supp}(T);$</p>
-</li>
-<li><p>$(R\ast S)\ast T=R\ast (S\ast T);$</p>
-</li>
-<li><p>$S\ast T=T\ast S;$</p>
-</li>
-<li><p>$\delta\ast T=T\ast \delta=T;$</p>
-</li>
-<li><p>$\alpha_1+\alpha_2=\alpha$时,
-$\partial^\alpha(S\ast T)=(\partial^{\alpha_1})\ast (\partial^{\alpha_2});$</p>
-</li>
-<li><p>$T\in \mathscr{D}’/\mathscr{E}’,$
-$\varphi\in \mathscr{D}/\mathscr{E}$时,
-$T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n).$</p>
-</li>
-</ol>
-<p>前四个性质说明$\mathscr{E}’(\mathbb{R}^n)$关于通常的线性运算与卷积运算构成有单位元$\delta$的交换代数,
-称为<strong>卷积代数</strong>. 对函数的正则化有$f_\varepsilon=f\ast \alpha_\varepsilon,$
-类似地对广义函数的正则化也有$T_\varepsilon=T\ast \alpha_\varepsilon.$</p>
-<p>文章最后更新于 2021-10-18 15:02:37 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>PDE</category>
-        <category>现代PDE基础</category>
-      </categories>
-  </entry>
-  <entry>
     <title>《现代PDE基础》笔记(3)-Fourier变换</title>
     <url>/2021/10/18/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(3)-Fourier%E5%8F%98%E6%8D%A2/</url>
     <content><![CDATA[<h2 id="常义Fourier变换"><a href="#常义Fourier变换" class="headerlink" title="常义Fourier变换"></a>常义Fourier变换</h2><h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><p>$\,\forall\,f\in \mathscr{S}(\mathbb{R}_x^n),$ 定义其<strong>Fourier变换</strong>为</p>
@@ -4612,6 +4612,71 @@ $\varphi$也可替换为具紧支集广义函数$\mathscr{E}’(\mathbb{R}^n).$<
 <p><strong>定理 1.7</strong>. <em>若$T\in \mathscr{E}’(\mathbb{R}_x^n),$ 则$F[T] (\xi)=\left&lt;{}T_x,e^{-ix\cdot \xi}\right&gt;\in \mathscr{S}’(\mathbb{R}_\xi^n)$为关于$\xi$的常义函数.</em> </p>
 <p>证明用广义函数的正则化即可给出.</p>
 <p>文章最后更新于 2021-10-23 13:03:45 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>PDE</category>
+        <category>现代PDE基础</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《现代PDE基础》笔记(5)-Sobolev不等式</title>
+    <url>/2021/10/31/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Sobolev%E4%B8%8D%E7%AD%89%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="负指数Sobolev不等式"><a href="#负指数Sobolev不等式" class="headerlink" title="负指数Sobolev不等式"></a>负指数Sobolev不等式</h2><p>前面证明了如下不等式:</p>
+<p><strong>定理 1.1</strong>. <em>当$\frac{n}{p}=\frac{n}{q}-m$时, 有</em> </p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p(\Omega)}\le C|f|_{\dot{H}^{m,q}(\Omega)},\quad \,\forall\,f\in C_c^\infty(\Omega).</script><p>注意不等式仅在$p\in(1,+\infty),$ $q\in [1,+\infty)$时成立.
+当$p=+\infty$时, 仅在$q=n=m=1$时成立.
+也就是前面的不等式只在$\frac{n}{q}-m&gt;0$时成立.</p>
+<p>在$\frac{n}{q}-m&lt;0$时, 也有相应的Sobolev不等式.
+首先需要引入Hölder模的概念.</p>
+<p>若连续函数$f$满足$|f(x)-f(y)|\le H|x-y|^{\alpha},$ $\alpha\in(0,1),$
+则称$f$是<strong>Hölder连续</strong>的. 当$\alpha$取$1$时即为<strong>Lipschitz连续</strong>.
+记$\Omega$上全体Hölder连续函数为$C^\alpha(\Omega),$ 定义<strong>Hölder模</strong>:</p>
+<script type="math/tex; mode=display">\parallel u\parallel_{C^\alpha}=\parallel u\parallel_{L^{\infty} }+|u|_{\dot{C}^\alpha},</script><p>其中$|\cdot|_{\dot{C}^\alpha}$称为<strong>齐次Hölder模</strong>, 定义为:</p>
+<script type="math/tex; mode=display">|u|_{\dot{C}^\alpha(\Omega)}:=\sup_{x\neq y\in \Omega}\frac{|u(x)-u(y)|}{|x-y|^{\alpha} }.</script><p>齐次Hölder模有限时$u$即为Hölder连续的, 量纲关于$u$为$1,$ $x$为$-\alpha.$</p>
+<p><strong>定理 1.2</strong>. <em>当$-k-1&lt;-\alpha-k=\frac{n}{q}-m&lt;-k,$ $k\in \mathbb{N}$时, $\,\forall\,\beta\in \mathbb{N}^n,$ $|\beta|=k,$ 有</em> </p>
+<script type="math/tex; mode=display">|\partial^\beta u|_{\dot{C}^\alpha(\mathbb{R}^n)}\le C|u|_{\dot{H}^{m,q}(\mathbb{R}^n)},\quad \,\forall\,f\in C_c^\infty(\mathbb{R}^n).</script><p><strong>证:</strong> 只需讨论$k=0$的情形. 对一般的情形,
+对$\partial^\beta u$应用$-\alpha=\frac{n}{q}-(m-k)$的不等式即可, 即</p>
+<script type="math/tex; mode=display">|\partial^\beta u|_{\dot{C}^\alpha}
+        \le C|\partial^\beta u|_{\dot{H}^{m-k,q} }.
+        \le C|u|_{\dot{H}^{m,q} }.</script><p>同前面的讨论, 不妨设$m=1,$ 那么只需证$\,\forall\,x\neq y\in \Omega,$ 有</p>
+<script type="math/tex; mode=display">|u(x)-u(y)|\le C|u|_{\dot{H}^{1,q} }|x-y|^{\alpha}.</script><p>记$|x-y|=\rho,$ 取$B(\rho)$为含$x,y,$ 边长为$\rho$的立方体, 那么</p>
+<script type="math/tex; mode=display">|u(x)-u(y)|\le \left|\frac{1}{\rho^n}\int_{B(\rho)}u(x)-u(z)dz\right|+\left|\frac{1}{\rho^n}\int_{B(\rho)}u(y)-u(z)dz\right|</script><p>由于</p>
+<script type="math/tex; mode=display">u(x)-u(z)=-\int_0^1\frac{d}{ds}u(x+s(z-x))ds=-\int_0^1\nabla u(x+s(z-x))\cdot (z-x)ds,</script><script type="math/tex; mode=display">\begin{aligned}
+            \left|\rho^{-n}\int_{B(\rho)}u(x)-u(z)dz\right|&\le\left|\rho^{1-n}\int_0^1\int_{B(\rho)}|\nabla u(x+s(z-x))|dzds\right|\\
+            &\le \left|\rho^{1-\frac{n}{q} }\int_0^1\left(\int_{B(\rho)}|\nabla u(x+s(z-x))|^qdz\right)^{\frac{1}{q} }ds\right|\\
+            &\le \rho^\alpha \parallel\nabla u\parallel_{L^q}\int_0^1 s^{-\frac{n}{q} }ds\le \frac{C}{2}|u|_{\dot{H}^{1,q} }|x-y|^{\alpha}
+        \end{aligned}</script><p>因此$|u(x)-u(y)|\le C|u|_{\dot{H}^{1,q} }|x-y|^\alpha$成立, 定理得证.</p>
+<h2 id="其它情形的Sobolev不等式"><a href="#其它情形的Sobolev不等式" class="headerlink" title="其它情形的Sobolev不等式"></a>其它情形的Sobolev不等式</h2><p>若$\frac{n}{p}=\frac{n}{q}-m,$ $p=\infty$时一般没有相应的不等式,
+但是将条件放宽, 我们有:</p>
+<p><strong>命题 1.3</strong>. <em>$\parallel u\parallel_{L^p(\Omega)}\le C_p\parallel u\parallel_{H^{1,n}(\Omega)},$ $\,\forall\,p\in(1,+\infty),$ $u\in C_c^\infty(\Omega)$</em> </p>
+<p><strong>证:</strong> 当$\Omega$为有界区域时这是简单的, 因为取相应于$p$的$q,$ 有$q&lt;n,$
+从而$\parallel\nabla u\parallel_{L^q(\Omega)}\le C\parallel\nabla u\parallel_{L^n(\Omega)},$
+$\parallel u\parallel_{L^p(\Omega)}\le C|u|_{\dot{H}^{1,q}(\Omega)}\le C|u|_{\dot{H}^{1,n}(\Omega)}.$
+由此知将不等式右侧换为齐次模也对.</p>
+<p>当$\Omega=\mathbb{R}^n$时, 由量纲分析知只能取Sobolev模.
+这里我们只对$p&gt;n+1$的情形给出证明. 取待定常数$(p_1,q_1),$
+使得有Sobolev不等式$\parallel f\parallel_{L^{p_1} }\le C\parallel\nabla f\parallel_{L^{q_1} }$成立.
+令$f=|u|^{\frac{n}{q_1} },$ 记$p=\frac{np_1}{q_1},$ 那么有:</p>
+<script type="math/tex; mode=display">\parallel u\parallel^{\frac{n}{q_1} }_{L^{p} }=\parallel u^{\frac{n}{q_1} }\parallel_{L^{p_1} }\le C\parallel|u|^{n-q_1}|\nabla u|^{q_1}\parallel_{L^1}^{\frac{1}{q_1} }\le C\parallel\nabla u\parallel_{L^n}\parallel u\parallel_{L^n}^{\frac{n}{q_1}-1}\le C\parallel u\parallel_{H^{1,n} }^{\frac{n}{q_1} }.</script><p>结合$\frac{n}{p_1}=\frac{n}{q_1}-1,$
+我们即得到$\parallel u\parallel_{L^p(\mathbb{R}^n)}\le C_p\parallel u\parallel_{H^{1,n}(\mathbb{R}^n)},$
+$\,\forall\,p=\frac{np_1}{q_1}=n+p_1&gt;n+1.$</p>
+<p>从另一个角度放宽条件, 令$p=+\infty,$ 我们有如下不等式:</p>
+<p><strong>命题 1.4</strong>. <em>$\parallel u\parallel_{L^\infty}\le C\parallel u\parallel_{H^{1,q}(\mathbb{R}^n)},$ $\,\forall\,q&gt;n,$ $u\in C_c^\infty(\mathbb{R}^n).$</em> </p>
+<p><strong>证:</strong> 即证$\,\forall\,x\in \mathbb{R}^n,$
+$|u(x)| \le C\parallel u\parallel_{H^{1,q}(\mathbb{R}^n)}.$
+在前面的定理证明过程中, 令$\rho=1,$
+有$|u(x)-\int_{B(1)}u(z)dz|\le C|u|_{\dot{H}^{1,q} }.$ 因此:</p>
+<script type="math/tex; mode=display">|u(x)|\le C|u|_{\dot{H}^{1,q}(\mathbb{R}^n)}+\parallel u\parallel_{L^q(B(1))}\le C\parallel u\parallel_{H^{1,q}(\mathbb{R}^n)}.</script><p>由这一结果, 结合先前的不等式, 可以看出对$0&lt;\alpha=1-\frac{n}{q}&lt;1$,
+有$\parallel u\parallel_{C^\alpha}\le C\parallel u\parallel_{H^{1,q} },$
+将齐次模的结果换为一般模.</p>
+<p>对$\Omega$为有界区域的情形, 若只关心其上一般模,
+前面的不等式可以仅在$\mathbb{R}^n$上讨论,
+而后用等价模定理将结果搬到$\Omega$上即可. 如:</p>
+<script type="math/tex; mode=display">\parallel u\parallel_{L^p(\Omega)}\le \parallel\widetilde{u}\parallel_{L^p(\mathbb{R}^n)}\le C\parallel\widetilde{u}\parallel_{H^{m,q}(\mathbb{R}^n)}, \quad \,\forall\,u\in C_c^\infty(\Omega).</script><p>其中$\widetilde{u}$为$u$的延拓. 因此</p>
+<script type="math/tex; mode=display">\parallel u\parallel_{L^p(\Omega)}\le C\inf_{\widetilde u|_{\Omega}=u}\parallel\widetilde{u}\parallel_{H^{m,q}(\mathbb{R}^n)}\,\approx\, \parallel u\parallel_{H^{m,q}(\Omega)}.</script><p>类似地对Hölder模也有同样的结果. 注意并没有齐次模形式的等价性定理,
+因此不能用上述方法搬运齐次模的结果.</p>
+<p>文章最后更新于 2021-10-31 20:22:25 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -4728,71 +4793,6 @@ $p=\frac{n}{n-1}$的情形.</p>
 当$\Omega=\mathbb{R}^n$时,
 $H_0^{m,q}(\mathbb{R}^n)$就是$H^{m,q}(\mathbb{R}^n).$</p>
 <p>文章最后更新于 2021-10-25 18:35:52 </p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-        <category>PDE</category>
-        <category>现代PDE基础</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>《现代PDE基础》笔记(5)-Sobolev不等式</title>
-    <url>/2021/10/31/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Sobolev%E4%B8%8D%E7%AD%89%E5%BC%8F/</url>
-    <content><![CDATA[<h2 id="负指数Sobolev不等式"><a href="#负指数Sobolev不等式" class="headerlink" title="负指数Sobolev不等式"></a>负指数Sobolev不等式</h2><p>前面证明了如下不等式:</p>
-<p><strong>定理 1.1</strong>. <em>当$\frac{n}{p}=\frac{n}{q}-m$时, 有</em> </p>
-<script type="math/tex; mode=display">\parallel f\parallel_{L^p(\Omega)}\le C|f|_{\dot{H}^{m,q}(\Omega)},\quad \,\forall\,f\in C_c^\infty(\Omega).</script><p>注意不等式仅在$p\in(1,+\infty),$ $q\in [1,+\infty)$时成立.
-当$p=+\infty$时, 仅在$q=n=m=1$时成立.
-也就是前面的不等式只在$\frac{n}{q}-m&gt;0$时成立.</p>
-<p>在$\frac{n}{q}-m&lt;0$时, 也有相应的Sobolev不等式.
-首先需要引入Hölder模的概念.</p>
-<p>若连续函数$f$满足$|f(x)-f(y)|\le H|x-y|^{\alpha},$ $\alpha\in(0,1),$
-则称$f$是<strong>Hölder连续</strong>的. 当$\alpha$取$1$时即为<strong>Lipschitz连续</strong>.
-记$\Omega$上全体Hölder连续函数为$C^\alpha(\Omega),$ 定义<strong>Hölder模</strong>:</p>
-<script type="math/tex; mode=display">\parallel u\parallel_{C^\alpha}=\parallel u\parallel_{L^{\infty} }+|u|_{\dot{C}^\alpha},</script><p>其中$|\cdot|_{\dot{C}^\alpha}$称为<strong>齐次Hölder模</strong>, 定义为:</p>
-<script type="math/tex; mode=display">|u|_{\dot{C}^\alpha(\Omega)}:=\sup_{x\neq y\in \Omega}\frac{|u(x)-u(y)|}{|x-y|^{\alpha} }.</script><p>齐次Hölder模有限时$u$即为Hölder连续的, 量纲关于$u$为$1,$ $x$为$-\alpha.$</p>
-<p><strong>定理 1.2</strong>. <em>当$-k-1&lt;-\alpha-k=\frac{n}{q}-m&lt;-k,$ $k\in \mathbb{N}$时, $\,\forall\,\beta\in \mathbb{N}^n,$ $|\beta|=k,$ 有</em> </p>
-<script type="math/tex; mode=display">|\partial^\beta u|_{\dot{C}^\alpha(\mathbb{R}^n)}\le C|u|_{\dot{H}^{m,q}(\mathbb{R}^n)},\quad \,\forall\,f\in C_c^\infty(\mathbb{R}^n).</script><p><strong>证:</strong> 只需讨论$k=0$的情形. 对一般的情形,
-对$\partial^\beta u$应用$-\alpha=\frac{n}{q}-(m-k)$的不等式即可, 即</p>
-<script type="math/tex; mode=display">|\partial^\beta u|_{\dot{C}^\alpha}
-        \le C|\partial^\beta u|_{\dot{H}^{m-k,q} }.
-        \le C|u|_{\dot{H}^{m,q} }.</script><p>同前面的讨论, 不妨设$m=1,$ 那么只需证$\,\forall\,x\neq y\in \Omega,$ 有</p>
-<script type="math/tex; mode=display">|u(x)-u(y)|\le C|u|_{\dot{H}^{1,q} }|x-y|^{\alpha}.</script><p>记$|x-y|=\rho,$ 取$B(\rho)$为含$x,y,$ 边长为$\rho$的立方体, 那么</p>
-<script type="math/tex; mode=display">|u(x)-u(y)|\le \left|\frac{1}{\rho^n}\int_{B(\rho)}u(x)-u(z)dz\right|+\left|\frac{1}{\rho^n}\int_{B(\rho)}u(y)-u(z)dz\right|</script><p>由于</p>
-<script type="math/tex; mode=display">u(x)-u(z)=-\int_0^1\frac{d}{ds}u(x+s(z-x))ds=-\int_0^1\nabla u(x+s(z-x))\cdot (z-x)ds,</script><script type="math/tex; mode=display">\begin{aligned}
-            \left|\rho^{-n}\int_{B(\rho)}u(x)-u(z)dz\right|&\le\left|\rho^{1-n}\int_0^1\int_{B(\rho)}|\nabla u(x+s(z-x))|dzds\right|\\
-            &\le \left|\rho^{1-\frac{n}{q} }\int_0^1\left(\int_{B(\rho)}|\nabla u(x+s(z-x))|^qdz\right)^{\frac{1}{q} }ds\right|\\
-            &\le \rho^\alpha \parallel\nabla u\parallel_{L^q}\int_0^1 s^{-\frac{n}{q} }ds\le \frac{C}{2}|u|_{\dot{H}^{1,q} }|x-y|^{\alpha}
-        \end{aligned}</script><p>因此$|u(x)-u(y)|\le C|u|_{\dot{H}^{1,q} }|x-y|^\alpha$成立, 定理得证.</p>
-<h2 id="其它情形的Sobolev不等式"><a href="#其它情形的Sobolev不等式" class="headerlink" title="其它情形的Sobolev不等式"></a>其它情形的Sobolev不等式</h2><p>若$\frac{n}{p}=\frac{n}{q}-m,$ $p=\infty$时一般没有相应的不等式,
-但是将条件放宽, 我们有:</p>
-<p><strong>命题 1.3</strong>. <em>$\parallel u\parallel_{L^p(\Omega)}\le C_p\parallel u\parallel_{H^{1,n}(\Omega)},$ $\,\forall\,p\in(1,+\infty),$ $u\in C_c^\infty(\Omega)$</em> </p>
-<p><strong>证:</strong> 当$\Omega$为有界区域时这是简单的, 因为取相应于$p$的$q,$ 有$q&lt;n,$
-从而$\parallel\nabla u\parallel_{L^q(\Omega)}\le C\parallel\nabla u\parallel_{L^n(\Omega)},$
-$\parallel u\parallel_{L^p(\Omega)}\le C|u|_{\dot{H}^{1,q}(\Omega)}\le C|u|_{\dot{H}^{1,n}(\Omega)}.$
-由此知将不等式右侧换为齐次模也对.</p>
-<p>当$\Omega=\mathbb{R}^n$时, 由量纲分析知只能取Sobolev模.
-这里我们只对$p&gt;n+1$的情形给出证明. 取待定常数$(p_1,q_1),$
-使得有Sobolev不等式$\parallel f\parallel_{L^{p_1} }\le C\parallel\nabla f\parallel_{L^{q_1} }$成立.
-令$f=|u|^{\frac{n}{q_1} },$ 记$p=\frac{np_1}{q_1},$ 那么有:</p>
-<script type="math/tex; mode=display">\parallel u\parallel^{\frac{n}{q_1} }_{L^{p} }=\parallel u^{\frac{n}{q_1} }\parallel_{L^{p_1} }\le C\parallel|u|^{n-q_1}|\nabla u|^{q_1}\parallel_{L^1}^{\frac{1}{q_1} }\le C\parallel\nabla u\parallel_{L^n}\parallel u\parallel_{L^n}^{\frac{n}{q_1}-1}\le C\parallel u\parallel_{H^{1,n} }^{\frac{n}{q_1} }.</script><p>结合$\frac{n}{p_1}=\frac{n}{q_1}-1,$
-我们即得到$\parallel u\parallel_{L^p(\mathbb{R}^n)}\le C_p\parallel u\parallel_{H^{1,n}(\mathbb{R}^n)},$
-$\,\forall\,p=\frac{np_1}{q_1}=n+p_1&gt;n+1.$</p>
-<p>从另一个角度放宽条件, 令$p=+\infty,$ 我们有如下不等式:</p>
-<p><strong>命题 1.4</strong>. <em>$\parallel u\parallel_{L^\infty}\le C\parallel u\parallel_{H^{1,q}(\mathbb{R}^n)},$ $\,\forall\,q&gt;n,$ $u\in C_c^\infty(\mathbb{R}^n).$</em> </p>
-<p><strong>证:</strong> 即证$\,\forall\,x\in \mathbb{R}^n,$
-$|u(x)| \le C\parallel u\parallel_{H^{1,q}(\mathbb{R}^n)}.$
-在前面的定理证明过程中, 令$\rho=1,$
-有$|u(x)-\int_{B(1)}u(z)dz|\le C|u|_{\dot{H}^{1,q} }.$ 因此:</p>
-<script type="math/tex; mode=display">|u(x)|\le C|u|_{\dot{H}^{1,q}(\mathbb{R}^n)}+\parallel u\parallel_{L^q(B(1))}\le C\parallel u\parallel_{H^{1,q}(\mathbb{R}^n)}.</script><p>由这一结果, 结合先前的不等式, 可以看出对$0&lt;\alpha=1-\frac{n}{q}&lt;1$,
-有$\parallel u\parallel_{C^\alpha}\le C\parallel u\parallel_{H^{1,q} },$
-将齐次模的结果换为一般模.</p>
-<p>对$\Omega$为有界区域的情形, 若只关心其上一般模,
-前面的不等式可以仅在$\mathbb{R}^n$上讨论,
-而后用等价模定理将结果搬到$\Omega$上即可. 如:</p>
-<script type="math/tex; mode=display">\parallel u\parallel_{L^p(\Omega)}\le \parallel\widetilde{u}\parallel_{L^p(\mathbb{R}^n)}\le C\parallel\widetilde{u}\parallel_{H^{m,q}(\mathbb{R}^n)}, \quad \,\forall\,u\in C_c^\infty(\Omega).</script><p>其中$\widetilde{u}$为$u$的延拓. 因此</p>
-<script type="math/tex; mode=display">\parallel u\parallel_{L^p(\Omega)}\le C\inf_{\widetilde u|_{\Omega}=u}\parallel\widetilde{u}\parallel_{H^{m,q}(\mathbb{R}^n)}\,\approx\, \parallel u\parallel_{H^{m,q}(\Omega)}.</script><p>类似地对Hölder模也有同样的结果. 注意并没有齐次模形式的等价性定理,
-因此不能用上述方法搬运齐次模的结果.</p>
-<p>文章最后更新于 2021-10-31 20:22:25 </p>
 ]]></content>
       <categories>
         <category>笔记</category>
@@ -5755,17 +5755,6 @@ $\gamma(s)\sim x_{\delta’}$的两段测地线拼接起来刚好弧长为$s+\de
       </categories>
   </entry>
   <entry>
-    <title>序</title>
-    <url>/2021/07/14/%E5%BA%8F/</url>
-    <content><![CDATA[<p>今天开始博客正式启动啦! 之前一直在知乎记录一些学习生活, 但感觉有一些个人用的学习材料不太适合放到知乎上, 所以一直在计划搭建一个自己的个人博客, 这样也能更自在一些.</p>
-<p>除了学习生活, 还计划记录一些其它生活中的点滴, 比如在玩的游戏, 喜欢的沙雕图, 以及一些随想之类的. 这样看我的博客就能够了解我, 知道我喜欢什么, 以及最近在干啥了.</p>
-<p>人生一场, 总是希望能够留下些什么的, 留下一些不会消散的东西. <strong>记录</strong>, 便是最简单的一种形式. 希望能够坚持记录人生的习惯, 让今后的我能够回顾我走过的一程. </p>
-]]></content>
-      <categories>
-        <category>随想录</category>
-      </categories>
-  </entry>
-  <entry>
     <title>《黎曼几何初步》笔记(4)-等距变换和空间形式</title>
     <url>/2022/04/17/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E7%AD%89%E8%B7%9D%E5%8F%98%E6%8D%A2%E5%92%8C%E7%A9%BA%E9%97%B4%E5%BD%A2%E5%BC%8F/</url>
     <content><![CDATA[<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>现在开始我们对<strong>空间形式</strong>, 即<em>常截面曲率的完备黎曼流形</em>进行研究.
@@ -5945,6 +5934,17 @@ $(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始�
         <category>笔记</category>
         <category>几何</category>
         <category>黎曼几何</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>序</title>
+    <url>/2021/07/14/%E5%BA%8F/</url>
+    <content><![CDATA[<p>今天开始博客正式启动啦! 之前一直在知乎记录一些学习生活, 但感觉有一些个人用的学习材料不太适合放到知乎上, 所以一直在计划搭建一个自己的个人博客, 这样也能更自在一些.</p>
+<p>除了学习生活, 还计划记录一些其它生活中的点滴, 比如在玩的游戏, 喜欢的沙雕图, 以及一些随想之类的. 这样看我的博客就能够了解我, 知道我喜欢什么, 以及最近在干啥了.</p>
+<p>人生一场, 总是希望能够留下些什么的, 留下一些不会消散的东西. <strong>记录</strong>, 便是最简单的一种形式. 希望能够坚持记录人生的习惯, 让今后的我能够回顾我走过的一程. </p>
+]]></content>
+      <categories>
+        <category>随想录</category>
       </categories>
   </entry>
   <entry>
