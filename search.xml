@@ -7685,4 +7685,67 @@ R_{vw}v=
         <category>黎曼几何</category>
       </categories>
   </entry>
+  <entry>
+    <title>《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</title>
+    <url>/2022/04/22/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E5%BC%A7%E9%95%BF%E7%AC%AC%E4%B8%80%E4%B8%8E%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="第一变分公式"><a href="#第一变分公式" class="headerlink" title="第一变分公式"></a>第一变分公式</h2><p>我们来研究$\gamma$曲线的长度极短性.
+取单参数曲线族$\{\gamma_u\}_{-\varepsilon\le u\le \varepsilon},$
+满足$\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b).$
+记$L(u):[-\varepsilon,\varepsilon]\rightarrow \mathbb{R}$为曲线$\gamma_u$的长度.
+那么当$L’(0)=0,$ $L’’(0)&gt;0$时, $L(0)$处有极小值;
+若这对所有满足条件的单参数曲线族$\{\gamma_u\}$都成立,
+则局部上$\gamma$取得极短长度.</p>
+<p>我们先取消$\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b)$的假设,
+令$U$为$\{\gamma_u\}$的横截向量场, $T$切于所有曲线$\gamma_u(t).$
+不妨设$t$是基曲线$\gamma$的弧长参数, $|\dot\gamma|=1.$ 那么,</p>
+<script type="math/tex; mode=display">
+L(u)=\int_a^b |\dot\gamma_u(t)|dt,\quad L'(u)=\int_a^b\frac{d {} }{d {}u}\sqrt{\left<{}\dot\gamma_u(t),\dot\gamma_u(t)\right>}dt,</script><p>其中积分项可以写为:</p>
+<script type="math/tex; mode=display">
+U\sqrt{\left<{}T,T\right>}=\frac{1}{|T|}\left<{}T,D_UT\right>=\frac{1}{|T|}\left<{}T,D_TU\right>=\frac{1}{|T|}\left(T\left<{}T,U\right>-\left<{}D_TT,U\right>\right),</script><p>这样我们就得到了<strong>弧长第一变分公式</strong>:</p>
+<script type="math/tex; mode=display">
+L'(0)=\int_a^b\frac{d {} }{d {}t}\left<{}\dot\gamma,U\right>-\left<{}D_{\dot\gamma}\dot\gamma,U\right>dt=\left<{}\dot\gamma(t),U(t)\right>|_a^b-\int_a^b\left<{}\ddot\gamma(t),U(t)\right>.</script><p>称$\{\gamma_u\}$为$\gamma$的<strong>正常变分</strong>, 若$\gamma_u(a)=\gamma(a),$
+$\gamma_u(b)=\gamma(b),$ $\gamma_0=\gamma.$ 对于正常变分, $U(a)=U(b)=0,$
+因此第一变分公式中第一项消失. 现在我们可以看到测地线的另一等价描述:</p>
+<p><strong>引理 1</strong>. <em>曲线$\gamma:[a,b]\rightarrow M$是测地线的充要条件是, 它是长度函数关于所有正常变分的临界点.</em> </p>
+<p>设$N$为$M$中闭子流形, $x\notin N,$
+那么$\,\exists\,y\in N$使得$d(x,y)=d(x,N).$
+取最短的正规测地线$\gamma:[a,b]\rightarrow M$连接$x,y.$</p>
+<p><strong>引理 2</strong>. <em>$\gamma\perp N,$ 即$\dot\gamma(b)\perp N_y.$</em> </p>
+<p><strong>证:</strong> 设$Y\in N_y,$ 取$\xi:[-\varepsilon,\varepsilon]\rightarrow N,$
+$\xi(0)=y,$ $\dot\xi(0)=Y.$ 那么可以取到单参数曲线族$\{\gamma_u\},$
+$\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a)=x,$ $\gamma_u(b)=\xi(u).$
+这样横截向量场$U$满足$U(x)=0,$ $U(y)=Y,$ 从而:</p>
+<script type="math/tex; mode=display">
+L'(0)=\left<{}\dot\gamma(b),U(b)\right>=\left<{}\dot\gamma(b),Y\right>=0 \quad \Rightarrow \quad \gamma\perp N.</script><h2 id="第二变分公式"><a href="#第二变分公式" class="headerlink" title="第二变分公式"></a>第二变分公式</h2><p>一般当$L’(0)=0$时, 计算$L’’(0)$才有意义. 故现设$\gamma$为正规测地线, 则:</p>
+<script type="math/tex; mode=display">
+L''(u)=\int_a^b\frac{d {} }{d {}u}\left(\frac{1}{|T|}\left<{}T,D_TU\right>\right)dt,</script><p>其中积分项可写为: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ U\left(\frac{1}{|T|}\left<{}T,D_TU\right>\right)&=-\frac{1}{|T|^3}\left<{}T,D_TU\right>^2+\frac{1}{|T|}\left<{}D_TU,D_TU\right>+\frac{1}{|T|}\left<{}T,D_UD_TU\right>\\
+ &=-\frac{1}{|T|^3}\left(T\left<{}T,U\right>-\left<{}D_TT,U\right>\right)^2+\frac{1}{|T|}|D_TU|^2+\frac{1}{|T|}\left(-\left<{}T,R_{UT}U\right>+\left<{}D_TD_UU,T\right>\right).
+ \end{aligned}</script><p> 带入到$u=0$时, 注意此时$\gamma$为正规测地线,
+因此: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ L''(0)&=\int_a^b -\left(\frac{d {} }{d {}t}\left<{}\dot\gamma,U\right>\right)^2+|\dot U(t)|^2-\left<{}\dot \gamma,R_{U\dot\gamma}U\right>+\frac{d {} }{d {}t}\left<{}D_UU,\dot\gamma\right>dt\\
+ &=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b\left(|\dot U(t)|^2-\left<{}R_{\dot\gamma U}\dot\gamma,U\right>-\left(\left<{}\dot\gamma,U\right>'\right)^2\right)dt.
+ \end{aligned}</script><p>这就是<strong>弧长第二变分公式</strong>, 决定项为曲率项,
+称$\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a$为边界项,
+当$\{\gamma_u\}$为正常变分时边界项消失.</p>
+<p>由于$U(t)$沿$\dot\gamma$的切向分量并不改变$\gamma$的长度,
+我们只需考虑正交分量$U^\perp(t),$
+即设$\left&lt;{}U^\perp,\dot\gamma\right&gt;=0,$ $U=U^\perp+f\dot\gamma.$ 那么</p>
+<script type="math/tex; mode=display">
+|\dot U(t)|^2-\left(\left<{}\dot\gamma(t),U(t)\right>'\right)^2=|\dot U^\perp (t)|^2+f'(t)^2-f'(t)^2=|\dot U^\perp(t)|^2,</script><script type="math/tex; mode=display">
+\left<{}R_{\dot\gamma U}\dot\gamma,U\right>=\left<{}R_{\dot\gamma U^\perp}\dot\gamma, U^\perp\right>.</script><p>因此弧长第二变分公式也可写为:</p>
+<script type="math/tex; mode=display">
+L''(0)=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\left<{}R_{\dot\gamma U^\perp}\dot\gamma,U^\perp\right>\right)dt.</script><p>后面的应用日后补充.</p>
+<p>文章最后更新于 2022-04-22 21:06:49 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>黎曼几何</category>
+      </categories>
+  </entry>
 </search>
