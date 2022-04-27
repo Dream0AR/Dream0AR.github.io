@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《黎曼几何初步》笔记(13)-子流形和第二基本形式 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《黎曼几何初步》笔记(13)-子流形和第二基本形式</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-04-27 20:54:19
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="第二基本形式"><a href="#第二基本形式" class="headerlink" title="第二基本形式"></a>第二基本形式</h2><p>设$\widetilde{M}$为$\widetilde{n}$维黎曼流形, $M$为$n$维子流形,
+$n&lt;\widetilde{n}.$
+记$\mathscr{N}(M)$为$\widetilde{M}$中$M$的<strong>法向量场</strong>全体,
+$\mathscr{T}(M)$为<strong>切向量场</strong>全体. 为了考察子流形的外观,
+我们取法向量场$N\in \mathscr{N}(M),$ 考虑$\widetilde{D}_XN.$
+这等价于考察所有$\left&lt;{}\widetilde D_XN,Y\right&gt;,$
+$Y\in \mathscr{T}(M).$ 这就定义了<strong>第二基本形式</strong>.
+对给定$\nu\in \mathscr{N}(M),$ 定义:</p>
+<script type="math/tex; mode=display">
+\Pi_\nu(X,Y)=\left<{}\widetilde{D}_X\nu,Y\right>,\quad X,Y\in \mathscr{T}(M),</script><p>称为$M$对应于$\nu$的第二基本形式.</p>
+<p><strong>引理 1</strong>. <em>对每个固定的$\nu,$ $\Pi_\nu$是$M$上的二次对称协变张量场.</em> </p>
+<p><strong>证:</strong> 由于$\left&lt;{}\nu,Y\right&gt;\equiv 0,$ $Y\in \mathscr{T}(M),$
+对于任意$X,Y\in \mathscr{T}(M),$ 我们有:</p>
+<script type="math/tex; mode=display">
+0=X\left<{}\nu,Y\right>=\left<{}\widetilde{D}_X\nu,Y\right>+\left<{}\nu,\widetilde{D}_XY\right>,</script><p>因此我们也有<strong>Weingarten方程</strong>:</p>
+<script type="math/tex; mode=display">
+\Pi_\nu(X,Y)=-\left<{}\nu,\widetilde{D}_XY\right>.</script><p> 接下来,
+由于$[X,Y]\in \mathscr{T}(M),$</p>
+<script type="math/tex; mode=display">
+\left<{}\nu,\widetilde{D}_XY\right>=\left<{}\nu,\widetilde{D}_YX\right>+\left<{}\nu,[X,Y]\right>=\left<{}\nu,\widetilde{D}_YX\right>,</script><p>那么由Weingarten方程, $\Pi_\nu(X,Y)=\Pi_\nu(Y,X).$ 另外, 容易看出</p>
+<script type="math/tex; mode=display">
+\Pi_\nu(fX,Y)=f\Pi_\nu(X,Y)=\Pi_\nu(X,fY),</script><p>因此$\Pi_\nu$的确是$M$上的张量场. 引理得证.</p>
+<p>可以看出, $\Pi_\nu(X,Y)(x)$也只依赖于$\nu(x),$
+且关于$\nu$是$C^\infty$线性的.
+记$M_x^\perp$是$M_x$在$\widetilde{M}_x$中的正交补, 可以定义<strong>二次型</strong></p>
+<script type="math/tex; mode=display">
+S:M_x\otimes M_x\rightarrow M_x^\perp,</script><p> 使得</p>
+<script type="math/tex; mode=display">
+\left<{}S(v,w),\nu\right>:=\Pi_\nu(v,w),\quad \,\forall\,\nu\in \mathscr{N}(M).</script><p>容易看出$S(v,w)$就是$-\widetilde{D}_XY(x)$在$M_x^\perp$上的投影,
+$X(x)=v,Y(x)=w,$ 取值与向量场选取无关.</p>
+<p>$S$的迹$\sum_{i=1}^nS(e_i,e_i)\in M_x^\perp,$ 记为$\eta(x),$
+$\{e_i\}\subset M_x$为标准正交基. 那么$\eta\in \mathscr{N}(M),$
+称为$M$的<strong>平均曲率法向量场</strong>, $|\eta|$称为$M$的<strong>平均曲率</strong>.</p>
+<p>有时也定义对称线性变换$A_\nu:M_x\rightarrow M_x,$ 使得</p>
+<script type="math/tex; mode=display">
+\left<{}A_\nu(v),w\right>=\Pi_\nu(v,w)=\left<{}v,A_\nu(w)\right>,</script><p>即$A_\nu(v)$为$\widetilde{D}_v\nu$在$M_x$上的投影,
+我们也称$A_\nu$为对应于$\nu$的<strong>第二基本形式</strong>. 它与平均曲率的关系是:</p>
+<script type="math/tex; mode=display">
+\left<{}\eta(x),\nu\right>=\sum_{i=1}^n\left<{}S(e_i,e_i),\nu\right>=\sum_{i=1}^n\Pi_\nu(e_i,e_i)=\sum_{i=1}^n\left<{}A_\nu(e_i),e_i\right>=\operatorname{tr}A_\nu.</script><p>当$\widetilde{n}=n+1$时, $M$是$\widetilde{M}$中的<strong>超曲面</strong>,
+此时局部可固定单位法向量场$\nu,$ 记$A:=A_\nu.$
+此时$\widetilde{D}_v\nu\in M_x,$ $A(v)=\widetilde{D}_v\nu.$
+称$A$的特征值为主曲率, 由对称性它们全是实的, 记为$p_1,\cdots,p_n.$
+$\det A$称为$M$的<strong>Gauss曲率</strong>. $n=2$时, 它与截面曲率一致,
+这就是Gauss的<strong>Egregium(绝妙)定理</strong>.</p>
+<p>设$\widetilde{M}=\mathbb{R}^{n+1},$ 若超曲面$M$是可定向的,
+那么整体上有单位法向量场$\nu,$ 可定义$\Gamma:M\rightarrow S^n,$
+$x\mapsto \nu(x),$ 称为<strong>Gauss映射</strong>. 那么,</p>
+<script type="math/tex; mode=display">
+d\Gamma(X)=\widetilde{D}_X\nu=A(X),\quad \frac{\Gamma^\ast \Omega_0}{\Omega}=\det d\Gamma=\det A,</script><p>其中$\Omega_0,\Omega$分别是$S^n,M$的体积元,
+由此我们可以看出Gauss曲率$\det A$的几何意义.</p>
+<p>若假定$M$具正Gauss曲率, 那么Gauss映射$\Gamma$就是一个浸入.
+取$S^n$上标准黎曼度量$g_0,$ 可赋予$M$新的黎曼度量$\Gamma^\ast g_0.$
+当$M$紧时, $\Gamma^\ast g_0$是完备的. 由度量选取, $\Gamma$是局部等距,
+因此是覆盖映射. 又由于$S^n$是单连通的, $\Gamma$是一个微分同胚.
+从而我们有引理:</p>
+<p><strong>引理 2</strong>. <em>设$M$是$\mathbb{R}^{n+1}$中紧致超曲面, 具正Gauss曲率, 那么Gauss映射$\Gamma:M\rightarrow S^n$为微分同胚.</em> </p>
+<p><strong>推论 3</strong>. <em>$\mathbb{R}^{n+1}$中紧致的正曲率超曲面必是凸曲面, 即它总落在其切平面的一侧.</em> </p>
+<p>现定义两个正交投影:</p>
+<script type="math/tex; mode=display">
+\top:\widetilde{M}_x\rightarrow M_x,\quad \perp:\widetilde{M}_x\rightarrow M_x^\perp,</script><p>容易验证$\top(\widetilde{D}_XY)$满足$M$上Levi-Civita联络的性质,
+因此$D_XY=\top(\widetilde{D}_XY).$
+回忆前面我们说明了$S(X,Y)$是$-\widetilde{D}_XY(x)$在$M_x^\perp$上的投影,
+因此我们有: </p>
+<script type="math/tex; mode=display">
+S(X,Y)=\perp(-\widetilde{D}_XY)=D_XY-\widetilde{D}_XY.</script><p>这恰是前面讨论全测地子流形时引入的定义.
+现在我们可以说$M$<em>是全测地的当且仅当它的第二基本形式恒为零.</em>
+因此第二基本形式刻画了与全测地的差异.</p>
+<h2 id="Gauss方程"><a href="#Gauss方程" class="headerlink" title="Gauss方程"></a>Gauss方程</h2><p>回忆全测地子流形任意$2$维切平面的截面曲率与原流形相同,
+对于一般情形我们有如下方程:</p>
+<p><strong>命题 4</strong> (Gauss方程). <em>$\,\forall\,X,Y\in \mathscr{T}(M),$ 我们有:</em> </p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}R_{XY}X,Y\right>-\left<{}S(X,X),S(Y,Y)\right>+|S(X,Y)|^2.</script><p><strong>证:</strong> 证明是直接的计算:</p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}\widetilde{D}_{[X,Y]}X,Y\right>-\left<{}\widetilde{D}_X\widetilde{D}_YX,Y\right>+\left<{}\widetilde{D}_Y\widetilde{D}_XX,Y\right>,</script><p>其中, 由于$S$的像落在$M_x^\perp$中,</p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{D}_{[X,Y]}X,Y\right>=\left<{}D_{[X,Y]}X,Y\right>-\left<{}S([X,Y],X),Y\right>=\left<{}D_{[X,Y]}X,Y\right>,</script><script type="math/tex; mode=display">
+\begin{aligned}
+ \left<{}\widetilde{D}_X\widetilde{D}_YX,Y\right>&=\left<{}\widetilde{D}_X(D_YX-S(X,Y)),Y\right>\\
+ &=\left<{}\widetilde{D}_XD_YX,Y\right>-\left<{}\widetilde{D}_XS(X,Y),Y\right>\\
+ &=\left<{}D_XD_YX,Y\right>-\left<{}S(X,D_YX),Y\right>-X\left<{}S(X,Y),Y\right>+\left<{}S(X,Y),\widetilde{D}_XY\right>\\
+ &=\left<{}D_XD_YX,Y\right>+\left<{}S(X,Y),D_XY-S(X,Y)\right>\\
+ &=\left<{}D_XD_YX,Y\right>-\left<{}S(X,Y),S(X,Y)\right>
+ \end{aligned}</script><p> 类似地,</p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{D}_Y\widetilde{D}_XX,Y\right>=\left<{}D_YD_XX,Y\right>-\left<{}S(X,X),S(Y,Y)\right>.</script><p>整合上述等式即可得到结论.</p>
+<p><strong>注:</strong> Gauss方程刻画了$\top\widetilde{R}_{XY}Z,$
+而$\perp \widetilde{R}_{XY}Z$将由后面的<strong>Codazzi方程</strong>给出. 事实上,
+利用Gauss方程证明中同样的方法, 可以证明如下等式成立:</p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{R}_{XY}Z,W\right>=\left<{}R_{XY}Z,W\right>-\left<{}S(X,Z),S(Y,W)\right>+\left<{}S(X,W),S(Y,Z)\right>.</script><p><strong>推论 5</strong>. <em>设$M$是$\widetilde{M}$中的超曲面, $A$是关于单位法向量场$\nu$的第二基本形式. 若$P$是$M_x$中的$2$-平面, 令$A|_P:P\rightarrow P$为$A:P\rightarrow M_x$后再复合正交投影$M_x\rightarrow P,$ 则</em> </p>
+<script type="math/tex; mode=display">
+\widetilde{K}(P)=K(P)-\det(A|_P).</script><p><strong>证:</strong> $M$为超曲面时,
+由于$\left&lt;{}S(X,Y),\nu\right&gt;=\Pi_\nu(X,Y)=\left&lt;{}A(X),Y\right&gt;,$
+$S(X,Y)=\left&lt;{}A(X),Y\right&gt;\nu.$ 因此取$\{e_1,e_2\}$为$P$的标准正交基,
+则</p>
+<script type="math/tex; mode=display">
+\left<{}S(e_1,e_1),S(e_2,e_2)\right>-|S(e_1,e_2)|^2=\left<{}A(e_1),e_1\right>\left<{}A(e_2),e_2\right>-\left<{}A(e_1),e_2\right>^2=\det(A|_P).</script><p>由于$\widetilde{K}(P)=\left&lt;{}\widetilde{R}_{e_1e_2}e_1,e_2\right&gt;,$
+$K(P)=\left&lt;{}R_{e_1e_2}e_1,e_2\right&gt;,$ 由Gauss方程立即得到结论.</p>
+<p><strong>推论 6</strong> (Gauss绝妙定理). <em>设$M$是$\mathbb{R}^3$中的曲面, 那么它的截面曲率等于它的Gauss曲率.</em> </p>
+<p><strong>推论 7</strong>. <em>设$\{\nu_1,\cdots,\nu_{\widetilde{n}-n}\}$为$M_x^\perp$的幺正基, 那么$\,\forall\,X,Y\in M_x,$</em> </p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}R_{XY}X,Y\right>-\sum_i \Pi_{\nu_i}(X,X)\Pi_{\nu_i}(Y,Y)+\sum_i \Pi_{\nu_i}(X,Y).</script><p><strong>推论 8</strong> (Synge引理). <em>设$M$包含一条$\widetilde{M}$的测地线$\gamma,$ 则对任意切平面$P$满足$\dot\gamma\in P\subset M_x,$ 我们有$K(P)\le \widetilde{K}(P).$</em> </p>
+<p><strong>证:</strong> 设$P$由$\dot\gamma,Y$张成. 由于$\gamma$是测地线,
+$S(\dot\gamma,\dot\gamma)=0.$ 那么令Gauss方程中$X=\dot\gamma,$
+立即得到结论.</p>
+<p><strong>推论 9</strong>. <em>$\mathbb{R}^3$中<strong>直纹面</strong>(单参数直线族)具非正Gauss曲率.</em> </p>
+<p><strong>推论 10</strong>. <em>设$M$是$\widetilde{M}$中$2$维曲面, 包含一条$\widetilde{M}$的测地线$\gamma,$ 则$K(M_{\gamma(t)})\equiv \widetilde{K}(M_{\gamma(t)})$当且仅当$M_{\gamma(t)}$在$\widetilde{M}$中沿$\gamma$平行.</em> </p>
+<p><strong>证:</strong> 设$\gamma$是正规测地线, $X$为$M$中单位向量场, 与$\gamma$垂直, 则</p>
+<script type="math/tex; mode=display">
+\widetilde{K}(M_{\gamma(t)})=K(M_{\gamma(t)})+|S(\dot\gamma(t),X(t))|^2.</script><p>因此等式恒成立当且仅当$\widetilde{D}_{\dot\gamma}X\equiv D_{\dot\gamma}X.$</p>
+<p>$\dot\gamma$在$M,\widetilde{M}$中沿$\gamma$当然都是平行的, 而</p>
+<script type="math/tex; mode=display">
+\left<{}D_{\dot\gamma}X,\dot\gamma\right>=\dot\gamma\left<{}X,\dot\gamma\right>-\left<{}X,D_{\dot\gamma}\dot\gamma\right>=0, \quad \left<{}D_{\dot\gamma}X,X\right>=0\:\Rightarrow\: D_{\dot\gamma}X=0,</script><p>$X$在$M$中沿$\gamma$是平行的.
+因此等式恒成立又当且仅当$X$在$\widetilde{M}$中沿$\gamma$也是平行的,
+即$M_{\gamma(t)}$在$\widetilde{M}$中沿$\gamma$平行.</p>
+<p><strong>推论 11</strong>. <em>设$M$为黎曼流形, $x\in M.$ 取$\{x^i\}$为$x$处法坐标系, $P\subset M_x$由$\{\frac{\partial {} }{\partial {}x^1},\frac{\partial {} }{\partial {}x^2}\}$张成, $\mathscr{S}$为曲面$\{x^i=0:i\ge 3\}.$ 则$P$的截面曲率等于$\mathscr{S}$在诱导度量下的Gauss曲率.</em> </p>
+<p><strong>证:</strong> 只需注意到对于法坐标系, $O$点处$S\equiv 0,$ 第二基本形式为零,
+那么由Gauss方程即得.</p>
+<h2 id="Codazzi方程"><a href="#Codazzi方程" class="headerlink" title="Codazzi方程"></a>Codazzi方程</h2><p>Codazzi方程又称Codazzi-Mainardi方程,
+直接进行计算可得到如下关于$\widetilde{R}_{XY}Z$的结果.</p>
+<p><strong>命题 12</strong> (Codazzi方程). <em>若$X,Y,Z\in \mathscr{T}(M),$ $R,\widetilde{R}$为$M,\widetilde{M}$的曲率张量, 则</em> </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \perp\widetilde{R}_{XY}Z=&\left(\perp \widetilde{D}_XS(Y,Z)-S(D_XY,Z)-S(Y,D_XZ)\right)\\
+ &-\left(\perp \widetilde{D}_YS(X,Z)-S(D_YX,Z)-S(X,D_YZ)\right)
+ \end{aligned}</script><p>往往把Codazzi方程与Gauss方程合称为<strong>Gauss-Codazzi方程</strong>.
+Codazzi方程一般来看较为复杂, 但在特殊情形时较为简洁.</p>
+<p><strong>命题 13</strong>. <em>设$\widetilde M$为常曲率空间, $M$为其中的超曲面, 那么$(D_X\Pi)(Y,Z)$关于$X,Y,Z$是对称的, 其中$X,Y,Z\in \mathscr{T}(M).$</em> </p>
+<p><strong>证:</strong> 由于$\Pi(Y,Z)=\Pi(Z,Y),$ 显然关于$Y,Z$是对称的. 因此只需证</p>
+<script type="math/tex; mode=display">
+(D_X\Pi)(Y,Z)=(D_Y\Pi)(X,Z).</script><p>取单位法向量场$\nu,$ 那么$S(X,Z)=\Pi(X,Z)\nu.$ 因此</p>
+<script type="math/tex; mode=display">
+\perp\widetilde{D}_YS(X,Z)=\perp\left((Y\Pi(X,Z))\nu+\Pi(X,Z)\widetilde{D}_Y\nu\right)=(Y\Pi(X,Z))\nu.</script><p>当$\widetilde{M}$具常截面曲率$c$时,</p>
+<script type="math/tex; mode=display">
+\widetilde{R}_{XY}Z=c(\left<{}X,Z\right>Y-\left<{}Y,Z\right>X).</script><p>这是因为右式构成了$\widetilde{M}$上的曲率张量, 且同样具常截面曲率$c.$
+此时便可发现$\perp\widetilde{R}_{XY}Z=0.$</p>
+<p>代入Codazzi方程, 即有:</p>
+<script type="math/tex; mode=display">
+Y\Pi(X,Z)-\Pi(D_YX,Z)-\Pi(X,D_YZ)=(D_Y\Pi)(X,Z)=(D_X\Pi)(Y,Z)=\cdots.</script><p>Gauss-Codazzi方程的一个基本应用是说明给定第二基本形式的超曲面的存在唯一性.
+证明核心是考虑由下式决定的过定一阶偏微分方程组:</p>
+<script type="math/tex; mode=display">
+S(Y_i,Y_j)=\Pi(Y_i,Y_j)\nu=D_{Y_i}Y_j-\widetilde{D}_{Y_i}Y_j,\quad \widetilde{D}_{Y_i}\nu=A(Y_i).</script><p>由于方程是过定的, 不见得有解.
+事实上可解的充要条件是满足前面的Gauss-Codazzi方程,
+这是由考虑<strong>Frobenius定理</strong>得到的. 下面我们仅对存在唯一性做定理叙述.</p>
+<p><strong>定理 14</strong> (唯一性). <em>设$M,M’$为$\mathbb{R}^{n+1}$中的两个超曲面, 具单位法向量场$\nu,\nu’.$ 设$\varphi:M\rightarrow M’$为等距同构, 使得$\Pi(X,Y)=\Pi’(d\varphi(X),d\varphi(Y)),$ 则$M,M’$是<strong>合同</strong>的, 即存在等距同构$\Phi:\mathbb{R}^{n+1}\rightarrow \mathbb{R}^{n+1},$ 使得$\Phi_M=\varphi.$</em> </p>
+<p><strong>定理 15</strong> (存在性). <em>给定$n$维黎曼流形和其上的对称张量$\Pi,$ 满足Gauss-Codazzi方程, 那么$M$可局部等距地嵌入到$\mathbb{R}^{n+1}$中, 使得它相对于某一单位法向量场的第二基本形式恰是$\Pi.$ 此外这个嵌入在相差整体等距同构$\overline{\varphi}:\mathbb{R}^{n+1}\rightarrow \mathbb{R}^{n+1}$的意义下是唯一的.</em> </p>
+<p>我们可以将定理推广到$n+1$维黎曼流形$\widetilde{M},$
+但Gauss-Codazzi方程的形式将更为复杂. 此外, 也可以推广到余维数更高的情形,
+但此时要增添额外的可积条件<strong>Ricci方程</strong>,
+由考虑$\perp\widetilde{R}_{XY}\nu$项得到.</p>
+<h2 id="Ricci方程"><a href="#Ricci方程" class="headerlink" title="Ricci方程"></a>Ricci方程</h2><p>取$\{\nu_i\}$为$M_x^\perp$的标准正交基,
+定义<strong>法基本形式</strong>$\beta_{r}^s(X_p)=\left&lt;{}\widetilde{D}_{X_p}\nu_r,\nu_s\right&gt;.$
+记$\Pi_r:=\Pi_{\nu_r},$ 取$\{U_i\}$为$\{M_x\}$的标准正交基,
+定义第二基本形式间的<strong>卷积</strong>:</p>
+<script type="math/tex; mode=display">
+\Pi_r\ast \Pi_s(X,Y)=\sum_i \Pi_r(X,U_i)\Pi_s(U_i,Y),</script><p>易见该等式可以退广地定义为二次对称张量场间的卷积.
+计算得到如下的<strong>Ricci方程</strong>:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \left<{}\widetilde{R}_{XY}\nu_r,\nu_s\right>=&\left(\Pi_r*\Pi_s(Y,X)+(D_Y\beta_r^s)(X)+\beta_w^s(Y)\beta_r^w(X)\right)\\
+ &-\left(\Pi_r*\Pi_s(X,Y)+(D_X\beta_r^s)(Y)+\beta_w^s(X)\beta_r^w(Y)\right)\\
+ \end{aligned}</script><p>文章最后更新于 2022-04-27 21:03:42 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《黎曼几何初步》笔记(13)-子流形和第二基本形式</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-04-27 20:54:19</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/04/27/《黎曼几何初步》笔记(13)-子流形和第二基本形式/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/22/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E5%BC%A7%E9%95%BF%E7%AC%AC%E4%B8%80%E4%B8%8E%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="nav-text">第二基本形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss%E6%96%B9%E7%A8%8B"><span class="nav-text">Gauss方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Codazzi%E6%96%B9%E7%A8%8B"><span class="nav-text">Codazzi方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ricci%E6%96%B9%E7%A8%8B"><span class="nav-text">Ricci方程</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+		TeX: { 
+			equationNumbers: { autoNumber: "AMS" },
+			extensions: ["AMSmath.js", "AMSsymbols.js"]
+		},
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i) 
+			all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
