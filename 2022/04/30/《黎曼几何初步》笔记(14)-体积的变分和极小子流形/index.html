@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《黎曼几何初步》笔记(14)-体积的变分和极小子流形 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《黎曼几何初步》笔记(14)-体积的变分和极小子流形</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-04-30 14:07:59
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="体积第一变分"><a href="#体积第一变分" class="headerlink" title="体积第一变分"></a>体积第一变分</h2><p>本节考虑测地线的推广: $k$维<strong>极小子流形</strong>.
+设在$\widetilde{M}$中给定了具有边界的浸入紧致子流形:</p>
+<script type="math/tex; mode=display">
+f:M\rightarrow \widetilde{M}, \quad\dim M=n<\widetilde{n}=\dim\widetilde{M}.</script><p>设有$C^\infty$映射$F:M\times [0,\varepsilon]\rightarrow\widetilde{M},$
+$f_t(x):=F(x,t).$ 若$f_0=f,$ $f_t|_{\partial M}=f|_{\partial M},$
+$f_t$为浸入, 则称$\{M_t\}$为$M$的<strong>正常变分</strong>, $M_t$为$f_t$的像.
+沿给定浸入$f$的<strong>变分向量场</strong>为$W=dF\left(\left.\frac{d {} }{d {}t}\right|_{t=0}\right).$
+体积$V(t):=V(M_t)$指$M$在$f_t^\ast \widetilde{g}$下的体积, 那么当$V’=0$时,
+称$M$关于$\widetilde{M}$是<strong>稳态</strong>的.
+若对$M$中每个具$C^\infty$边界$\partial D$的定向紧致子区域$D,$
+$D$关于每个正常变分都是稳态的, 则称$M$为<strong>极小</strong>的.</p>
+<p>由于$f:M\rightarrow\widetilde{M}$为浸入, 局部上$f$是一个嵌入,
+因此可将$M$与$f(M)$恒同,
+将$f(M)$的平均曲率法向量场$\eta$称为$M$在$\widetilde{M}$中的<strong>平均曲率法向量场</strong>,
+$M$的<strong>平均曲率</strong>为$|\eta|.$</p>
+<p><strong>引理 1</strong>. <em>浸入子流形$f:M\rightarrow \widetilde{M}$是极小的, 充要条件是其平均曲率为零.</em> </p>
+<p>事实上它是如下更精确定理的直接推论.</p>
+<p><strong>命题 2</strong> (体积第一变分). <em>设$M$是浸入在$\widetilde{M}$中具边界的定向紧致流形, $\{M_t\}$为其正常变分, 则</em> </p>
+<script type="math/tex; mode=display">
+V'(0)=\int_M\left<{}\eta,W\right>dv.</script><p><strong>证:</strong> 记$\Omega_t$为$M$上度量$f_t^\ast \widetilde{g}$的体积元. 我们来证明</p>
+<script type="math/tex; mode=display">
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=(\operatorname{div}\top W)\Omega_0+\left<{}\eta,W\right>\Omega_0.</script><p>一旦式子成立, 那么由Green定理, 以及$W|_{\partial M}=0,$ 即有:</p>
+<script type="math/tex; mode=display">
+V'(0)=\int_M\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=\int_{\partial M}\left<{}\top W,n\right>dv+\int_M\left<{}\eta,W\right>\Omega_0=\int_M\left<{}\eta,W\right>\Omega_0.</script><p>对于体积元, 我们有:</p>
+<script type="math/tex; mode=display">
+\Omega_t=\sqrt{G_t}{}dx^{1}\wedge\cdots\wedge{}dx^{ {}n}.</script><p>记$f_t^\ast \widetilde{g}=(g_t)_{ij}dx^idx^j=\left&lt;{}-,-\right&gt;_t,$
+$G_t=\det[(g_t)_{ij}],$
+$\Omega_{\mathbb{R} }={}dx^{1}\wedge\cdots\wedge{}dx^{ {}n},$ 那么</p>
+<script type="math/tex; mode=display">
+\left<{}\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n},\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n}\right>_t=\det\left[\left<{}\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right>_t\right]=\det[(g_t)_{ij}]=G_t.</script><p>于是我们有:</p>
+<script type="math/tex; mode=display">
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=\left(\left.\frac{d {} }{d {}t}\right|_{t=0}\sqrt{G_t}\right)\Omega_{\mathbb{R} }=\frac{1}{\sqrt{G_0} }\left<{}\widetilde{D}_W\left(\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge\frac{\partial {} }{\partial {}x^n}\right),\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n}\right>_0\Omega_{\mathbb{R} }.</script><p>记$\perp W=\nu,$ $\top W=\tau,$ 则: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \widetilde{D}_W\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }=&\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_W\frac{\partial {} }{\partial {}x^i}\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }W\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }\tau\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}\\
+ &+\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }\nu\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&\left(\operatorname{tr}(X\mapsto \widetilde{D}_X\tau)+\operatorname{tr}A_\nu\right)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }\\
+ =&(\operatorname{div}\tau+\left<{}\eta,\nu\right>)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }\\
+ =&(\operatorname{div}\top W+\left<{}\eta,W\right>)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }
+ \end{aligned}</script><p>从而,</p>
+<script type="math/tex; mode=display">
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=(\operatorname{div}\top W+\left<{}\eta,W\right>)\sqrt{G_0}\,\Omega_{\mathbb{R} }=(\operatorname{div}\top W)\Omega_0+\left<{}\eta,W\right>\Omega_0.</script><p>设$M$是$\widetilde{M}$中的浸入超曲面, 则$M$的平均曲率正好是主曲率之和,
+于是我们有如下推论:</p>
+<p><strong>推论 3</strong>. <em>超曲面是极小子流形的充要条件是它在每点处主曲率之和为零.</em> </p>
+<p>利用Gauss方程, 我们可以得到下面的结果.</p>
+<p><strong>推论 4</strong>. <em>非正截面曲率流形的极小子流形具非正Ricci曲率.</em> </p>
+<p>通过建立$M$上Laplace算子$\Delta$与$\widetilde{D}^2f$的关系,
+我们还有如下的结论:</p>
+<p><strong>推论 5</strong>. <em>在非正截面曲率的单连通完备流形$\widetilde{M}$中不存在紧致的极小子流形.</em> </p>
+<p>事实上, 局部上取定坐标系后, 平均曲率$|\eta|=0$可由$f$来表示,
+这将是一个<strong>拟线性的</strong>椭圆型方程组,
+因此极小子流形的研究与偏微分方程关系重大. 特别地,
+当$\widetilde{M}=\mathbb{R}^{n+k}$时, $M$为其中的极小图像当且仅当</p>
+<script type="math/tex; mode=display">
+\sum_{i,j} g^{ij}\frac{\partial^2 {}f^A}{\partial {}y^i\partial {}y^j}=0,\quad A=n+1,\cdots,n+k,</script><p>其中$g_{ij}=\delta_{ij}+\sum_A\frac{\partial {}f^A}{\partial {}y^i}\frac{\partial {}f^A}{\partial {}y^j}.$</p>
+<h2 id="体积第二变分"><a href="#体积第二变分" class="headerlink" title="体积第二变分"></a>体积第二变分</h2><p>同上假设, 且我们仅讨论$V’(0)=0$基础上的情况, 因为这时第二变分才有意义.
+由体积第一变分, 切向分量$\top W$不起作用,
+因此不妨总假设$\{M_t\}$是<strong>法向正常变分</strong>, 即$W\perp f(M).$</p>
+<p>设$M$是浸入在$\widetilde{M}$中的极小子流形,
+若对每个具$C^\infty$边界$\partial D$的可定向紧致子域$D,$
+它的每个法向变分都具非负体积第二变分, 则称$M$是<strong>稳定的</strong>.
+也即稳定的极小子流形对所有具紧支集的法向正常变分,
+都具非负的体积第二变分.</p>
+<p>对任意同上条件的$D,$
+若$\widetilde{M}$中任意与$D$边界相同的$C^\infty$子流形$\overline{D},$
+总有$V(\overline{D})\ge V(D),$ 则称该极小子流形是<strong>(整体)极小化的</strong>.</p>
+<p>设$\mathscr{N}(M)$为$M$的<strong>法丛</strong>, 对每个$X\in \mathscr{T}(M),$ 定义映射</p>
+<script type="math/tex; mode=display">
+\nabla_X:\mathscr{N}(M)\rightarrow \mathscr{N}(M), \quad \nabla_X\nu=\perp\widetilde{D}_X\nu.</script><p>容易验证$\nabla$具有联络的所有性质,
+称它是在$M$法丛$\mathscr{N}(M)$上的<strong>诱导联络</strong>. 类似地,
+任意取定$M$中幺正标架场$\{E_i\},$ 我们定义$\nabla$的Laplace算子:</p>
+<script type="math/tex; mode=display">
+\overline{\Delta}\nu:=\operatorname{tr}\nabla^2\nu=\sum_{i=1}^n \nabla_{E_i}\nabla_{E_i}\nu-\nabla_{D_{E_i}E_i}\nu,\quad \,\forall\,\nu\in \mathscr{N}(M).</script><p>对任意标架场$\{E_i\},$
+我们再引入$\mathscr{N}(M)$上的<strong>Ricci张量</strong>$\overline{\operatorname{Ric} }:$</p>
+<script type="math/tex; mode=display">
+\overline{\operatorname{Ric} }:\mathscr{N}(M)\rightarrow\mathscr{N}(M),\quad \overline{\operatorname{Ric} }(\nu)=\sum_{i=1}^n\widetilde{R}_{E_i\nu}E_i.</script><p>对于第二基本形式$A_\nu:M_x\rightarrow M_x,$
+对任意$M_x$中标准正交基$\{e_i\},$ 定义算子范数:</p>
+<script type="math/tex; mode=display">
+|A_\nu|^2:=\sum_{i,j}\left<{}A_\nu(e_i),e_j\right>^2=\sum_{i,j}\left<{}S(e_i,e_j),\nu\right>^2.</script><p>令$S^t$表示$S:M_x\otimes M_x\rightarrow M_x^\perp$的转置,
+即$S^t:M_x^\perp\rightarrow M_x\otimes M_x,$ 使得</p>
+<script type="math/tex; mode=display">
+\left<{}S^t(\mu),V\otimes W\right>=\left<{}\mu,S(V,W)\right>,\quad \,\forall\,\mu\in M_x^\perp, \: V,W\in M_x.</script><p>那么由线性代数知识($\Vert A\Vert^2=\operatorname{tr}(A^TA)=\operatorname{tr}(AA^T)$),</p>
+<script type="math/tex; mode=display">
+|A_\nu|^2=\left<{}(S\circ S^t)(\nu),\nu\right>.</script><p><strong>命题 6</strong> (体积第二变分). <em>设$M$是极小地浸入$\widetilde{M}$中的一个具边界定向紧流形, $f:M\rightarrow\widetilde{M},$ 且$\{M_t\}$为$M$的法向正常变分, 变分向量场为$\nu\in \mathscr{N}(M),$ $V(t)=V(M_t).$ 那么,</em> </p>
+<script type="math/tex; mode=display">
+V''(0)=\int_M\left<{}-\overline{\Delta}\nu-\overline{\operatorname{Ric} }(\nu)-(S\circ S^t)(\nu),\nu\right>dv</script><p><strong>证:</strong> 首先由体积第一变分, 可以得到:</p>
+<script type="math/tex; mode=display">
+V'(t)=\int_M\left<{}\eta_t,\nu_t\right>\Omega_t,</script><p>其中局部上$\eta_t$是$f_t(M)\subset \widetilde{M}$的平均曲率法向量场,
+$\nu_t$是$f_t(M)$上的法向变分向量场. 进一步,</p>
+<script type="math/tex; mode=display">
+V''(0)=\int_M\left<{}\widetilde{D}_\nu\eta,\nu\right>\Omega+\left<{}\eta,\widetilde{D}_\nu\nu\right>\Omega+\left<{}\eta,\nu\right>\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t.</script><p>由于$\eta=0,$ 通过直接的计算, 可以得到:</p>
+<script type="math/tex; mode=display">
+V''(0)=\int_M\left<{}\widetilde{D}_\nu\eta,\nu\right>\Omega=\int_M\left(\left<{}-\overline{\Delta}\nu-\overline{\operatorname{Ric} }(\nu)-(S\circ S^t)(\nu),\nu\right>+f\right)\Omega,</script><p>其中$f$满足$\int_Mf\Omega=0.$ 这样就得到了结论. 具体计算的过程在此略过.</p>
+<p>当$M$为$\widetilde{M}$中的极小超曲面, $\widetilde{M}$可定向时,
+取单位法向量场$N\in\mathscr{N}(M),$ 那么$\nu=uN.$ 此时$\nabla_XN=0,$
+因此$\overline\Delta \nu=(\Delta u)N.$ 其次,</p>
+<script type="math/tex; mode=display">
+\left<{}\overline{\operatorname{Ric} }(\nu),\nu\right>=u^2\sum_{i=1}^n\left<{}\widetilde{\operatorname{Ric} }_{E_iN}E_i,N\right>=u^2\widetilde{\operatorname{Ric} }(N,N).</script><p>最后,</p>
+<script type="math/tex; mode=display">
+\left<{}(S\circ S^t)(\nu),\nu\right>=u^2|A_N|^2=u^2\sum_i p_i^2,</script><p>$\{p_i\}$为$M\subset \widetilde{M}$的主曲率. 记$A_N$为$A,$
+则此时第二变分公式为:</p>
+<script type="math/tex; mode=display">
+V''(0)=\int_M(-u\Delta u-u^2(\widetilde{\operatorname{Ric} }(N,N)+|A|^2))dv.</script><p>由该式, 我们可推得如下命题:</p>
+<p><strong>命题 7</strong>. <em>设$M,\widetilde{M}$可定向, $M$是极小地浸入在$\widetilde{M}$中的超曲面, 则$M$稳定的充要条件是:</em> </p>
+<script type="math/tex; mode=display">
+\int_M u^2(\widetilde{\operatorname{Ric} }(N,N)+|A|^2)dv\le \int_M |du|^2 dv,\quad \,\forall\,u\in C_c^\infty(M,\mathbb{R}).</script><p><strong>定理 8</strong> (Schoen-Yau定理). <em>设$\widetilde{M}$为具正数量曲率的紧致定向$3$维流形, 则$\widetilde{M}$中不存在亏格为正的, 紧致的稳定极小的浸入$2$维定向子流形.</em> </p>
+<p><strong>证:</strong> 反证法, 假设$M$是这样的子流形. 由于$M$本身紧致,
+可令第二变分公式中$u\equiv 1,$ 则</p>
+<script type="math/tex; mode=display">
+\int_M(\widetilde{\operatorname{Ric} }(N,N)+|A|^2)dv\le 0.</script><p>此外, 可以证明:</p>
+<script type="math/tex; mode=display">
+\widetilde{\operatorname{Ric} }(N,N)+|A|^2=\frac{1}{2}\sigma-K+\frac{1}{2}|A|^2,\eqno{(\ast )}</script><p>其中$\sigma$是$\widetilde{M}$数量曲率在$M$上的限制,
+$K$是$M$上诱导度量的Gauss曲率. 积分得到:</p>
+<script type="math/tex; mode=display">
+0\ge \frac{1}{2}\int_M\sigma dv-\int_MKdv+\frac{1}{2}\int_M|A|^2dv.</script><p>由假设, $\int_M\sigma dv&gt;0;$ 由Gauss-Bonnet定理,</p>
+<script type="math/tex; mode=display">
+\int_MKdv=2\pi \chi(M)=4\pi(1-g)\le 0.</script><p>最后结合$\int_M|A|^2dv\ge 0$即可推得矛盾.</p>
+<p>于是我们只需证明$(\ast )$式. 取$M_x$的一组标准正交基$\{e_1,e_2\},$
+使得第二基本形式$A$是对角化的, 即</p>
+<script type="math/tex; mode=display">
+A(e_1)=\lambda e_1,\quad A(e_2)=\mu e_2.</script><p>由于$M$极小, $\operatorname{tr}A=0,$ $\lambda=-\mu.$
+因此$|A|^2=2\lambda^2.$ 令$N=e_3,$
+则$\{e_1,e_2,e_3\}$构成$\widetilde{M}_x$的一组标准正交基.
+记$\widetilde{K}(\operatorname{span}\{e_i,e_j\})=\widetilde{K}_{ij},$ 则</p>
+<script type="math/tex; mode=display">
+\sigma=\sum_{i,j}\widetilde{K}_{ij}=2(\widetilde{\operatorname{Ric} }(N,N)+\widetilde{K}_{12}).</script><p>由Gauss公式, $\widetilde{K}_{12}=K-\det(A)=K+\lambda^2,$
+因此$(\ast )$式即可得证:</p>
+<script type="math/tex; mode=display">
+\widetilde{\operatorname{Ric} }(N,N)+|A|^2=\left(\frac{1}{2}\sigma-\widetilde{K}_{12}\right)+2\lambda^2=\frac{1}{2}\sigma-K+\lambda^2=\frac{1}{2}\sigma-K+\frac{1}{2}|A|^2.</script><p>该定理是如下结论的关键, 与<strong>正质量定理</strong>密切相关:</p>
+<p><strong>定理 9</strong>. <em>若$\mathbb{R}^3$中的黎曼度量在紧集$K$外部是平坦的, 且处处具非负数量曲率, 则它必是平坦的.</em> </p>
+<p>最后, 我们来看欧氏空间中极小超曲面的结果.</p>
+<p><strong>引理 10</strong>. <em>设$M$是$\mathbb{R}^{n+1}$中极小超曲面. 若$D$是$M$中充分小的区域, 具$C^\infty$边界$\partial D,$ 则对$\mathbb{R}^{n+1}$中每一个使得$\partial D’=\partial D$的超曲面$D’,$ 有$V(D’)\ge V(D).$</em> </p>
+<p>由于局部上,
+每个超曲面都是某函数$f:\mathscr{U}\rightarrow \mathbb{R}(\mathscr{U}\subset \mathbb{R}^n)$的图像,
+因此该引理为如下引理的直接推论:</p>
+<p><strong>引理 11</strong>. <em>设$\mathscr{U}$为$\mathbb{R}^n$中的区域, 具$C^\infty$边界$\partial \mathscr{U}.$ 有$C^\infty$函数$f:\overline\mathscr{U}\rightarrow\mathbb{R},$ 使得$f$在$\overline\mathscr{U}\times\mathbb{R}$中的图像$M$是$\mathbb{R}^{n+1}$中的一个(具边界的)极小超曲面. 若$N$是$\overline\mathscr{U}\times \mathbb{R}$中的超曲面, 使得$\partial N=\partial M,$ 则$V(N)\ge V(M),$ 且取等当且仅当$N=M.$</em> </p>
+<p><strong>证:</strong>
+令$\nu=\frac{1}{W}\left(\frac{\partial {}f}{\partial {}x^1},\cdots,\frac{\partial {}f}{\partial {}x^n},-1\right)$为$M$在$(x,f(x))$处的单位外法向量,
+$W=\sqrt{1+|df|^2}.$
+令$\omega$为$\overline\mathscr{U}\times\mathbb{R}$中的$n$次微分形式:</p>
+<script type="math/tex; mode=display">
+\omega:=\sum_{i=1}^{n+1}(-1)^{i-1}\nu_idx^1\wedge\cdots\wedge \widehat{dx^i}\wedge \cdots\wedge dx^{n+1}.</script><p>我们来说明$d\omega=0.$ 首先,
+$d\omega=\sum_i\frac{\partial {}\nu_i}{\partial {}x^i}{}dx^{1}\wedge\cdots\wedge{}dx^{ {}n+1},$
+其次向量场$X_i=\frac{\partial {} }{\partial {}x^i}+\frac{\partial {}f}{\partial {}x^i}\frac{\partial {} }{\partial {}x^{n+1} }$构成了$M_y$的一组基,
+同时, 计算可得</p>
+<script type="math/tex; mode=display">
+A_\nu(X_i)=\frac{\partial {}\nu}{\partial {}x^i}+\frac{\partial {}f}{\partial {}x^i}\frac{\partial {}\nu}{\partial {}x^{n+1} }=\frac{\partial {}\nu}{\partial {}x^i}=\sum_j\frac{\partial {}\nu_j}{\partial {}x^i}X_j.</script><p>由于$M$是极小的,
+$\operatorname{tr}A_\nu=\sum_i \frac{\partial {}\nu_i}{\partial {}x^i}=0,$
+从而$d\omega=0.$</p>
+<p>设$\Sigma$为由$M,N$围成的区域, $\partial \Sigma=M-N.$ 因此由Stokes公式,</p>
+<script type="math/tex; mode=display">
+\int_M\omega-\int_N\omega=\int_{\Sigma}\omega=\int_\Sigma d\omega=0,</script><p>从而$\int_M \omega=\int_N\omega.$</p>
+<p>由于单位外法向量$\nu$的对偶微分形式为$\widetilde{\nu}=\nu_idx^i,$
+有$\widetilde{\nu}\wedge \omega=dx^1\wedge\cdots\wedge dx^{n+1}.$
+因此$\omega|_M$就是$M$的体积元. 另一方面, 记$\Omega$为$N$的体积元, 那么</p>
+<script type="math/tex; mode=display">
+V(M)=\int_N\omega=\int_N\left<{}\omega,\Omega\right>\Omega\le \int_N |\omega||\Omega| \Omega=\int_N \Omega=V(N).</script><p>当$M\neq N$时, 取$p\in M,$ $q\in N$投影到$\mathscr{U}$中相同的点,
+但$M_{p},N_q$并不平行.
+此时在$q$点处$\left&lt;{}\omega,\Omega\right&gt;&lt;1$严格成立,
+进而不等式在$N$上的小邻域也成立. 从而$V(M)&lt;V(N),$ 命题得证.</p>
+<p><strong>推论 12</strong>. <em>如果$f:\mathbb{R}^n\rightarrow \mathbb{R}$的图像是$\mathbb{R}^{n+1}$中的极小超曲面, 那么它是极小化的, 进而是稳定的.</em> </p>
+<p>文章最后更新于 2022-04-30 14:07:59 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《黎曼几何初步》笔记(14)-体积的变分和极小子流形</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-04-30 14:07:59</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/04/30/《黎曼几何初步》笔记(14)-体积的变分和极小子流形/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/27/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(13)-%E5%AD%90%E6%B5%81%E5%BD%A2%E5%92%8C%E7%AC%AC%E4%BA%8C%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《黎曼几何初步》笔记(13)-子流形和第二基本形式</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (中国标准时间)</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%A7%AF%E7%AC%AC%E4%B8%80%E5%8F%98%E5%88%86"><span class="nav-text">体积第一变分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%A7%AF%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86"><span class="nav-text">体积第二变分</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+		TeX: { 
+			equationNumbers: { autoNumber: "AMS" },
+			extensions: ["AMSmath.js", "AMSsymbols.js"]
+		},
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i) 
+			all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>
