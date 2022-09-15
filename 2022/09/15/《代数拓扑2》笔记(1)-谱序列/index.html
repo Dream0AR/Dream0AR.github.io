@@ -9,7 +9,7 @@
     
     <title>
         
-            Win11仿Win10记 |
+            《代数拓扑2》笔记(1)-谱序列 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Win11仿Win10记</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(1)-谱序列</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-07-05 11:57:12
+        <i class="fas fa-edit"></i>&nbsp;2022-09-15 10:54:10
     </span>
     
         <span class="article-categories article-meta-item">
@@ -174,7 +174,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">技术笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
                     </li>
                 
             </ul>
@@ -198,10 +206,86 @@
         
 
         <div class="article-content markdown-body">
-            <p>新到手的Surface开始默认装Win11了，倒腾了半天恢复了Win10的手感。有的地方感觉还是传统设计舒服，很多改动感觉中看不中用…记录一下可以调整哪些东西恢复Win10的感觉。</p>
-<h2 id="任务栏设置"><a href="#任务栏设置" class="headerlink" title="任务栏设置"></a>任务栏设置</h2><p>把很多不必要的隐藏了，然后最重要的任务栏居左对齐，让别人看不出这是Win11。</p>
-<h2 id="右键菜单设置"><a href="#右键菜单设置" class="headerlink" title="右键菜单设置"></a>右键菜单设置</h2><p>是不是找不到你的Git Bash here或者其它右键菜单里的东西了？别慌，不是你安装错误或者Win11不兼容了，而是它隐藏在了右键菜单里最下栏的“显示更多选项”里。Win11的新右键菜单虽然好看但是却很不实用，如果经常要用软件设置的额外菜单选项的话，每次都得点一下。有没有办法可以默认开启更多选项呢？有的！我们只需要修改注册表即可。方法详见<a class="link"   target="_blank" rel="noopener" href="https://www.xitongzhijia.net/xtjc/20220629/246207.html#:~:text=Win11%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E5%A6%82%E4%BD%95%E7%9B%B4%E6%8E%A5%E9%BB%98%E8%AE%A4%E6%98%BE%E7%A4%BA%E6%9B%B4%E5%A4%9A%E9%80%89%E9%A1%B9%201%E3%80%81%E9%A6%96%E5%85%88%E7%94%A8%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE%E7%82%B9%E5%87%BB%E2%80%9C%E5%BC%80%E5%A7%8B%E2%80%9D%E6%8C%89%E9%92%AE%EF%BC%88%E6%88%96%E8%80%85%E6%8C%89Win%2BX%E9%94%AE%EF%BC%89%EF%BC%8C%E9%80%89%E6%8B%A9%E7%82%B9%E5%87%BB,%E2%80%9CWindows%20%E7%BB%88%E7%AB%AF%EF%BC%88%E7%AE%A1%E7%90%86%E5%91%98%EF%BC%89%E2%80%9D%E3%80%82" >这篇文章<i class="fas fa-external-link-alt"></i></a>，原理及其他方式可以看<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/question/480356710" >这里<i class="fas fa-external-link-alt"></i></a>。</p>
-<h2 id="本地安全策略"><a href="#本地安全策略" class="headerlink" title="本地安全策略"></a>本地安全策略</h2><p>在修改cmd权限时（<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46157208/article/details/120250560" >默认以管理员模式打开cmd<i class="fas fa-external-link-alt"></i></a>），发现适用于Win10的方法不行了，在控制面板中没有“本地安全策略”这一选项。似乎Win11家庭/教育版中没有安装这个东西。可以按照<a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/m0_63920681/article/details/122413895" >该教程<i class="fas fa-external-link-alt"></i></a>把它安装回来。好像必须编写成脚本启动，不能在cmd里手动输入。</p>
+            <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>参考书目:</p>
+<ol>
+<li><p>Hutchings, Introduction to spectral sequences;</p>
+</li>
+<li><p>Hatcher, AT Chapter 5;</p>
+</li>
+<li><p>Ramos, Spectral sequences via examples.</p>
+</li>
+</ol>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><p>给定纤维丛 </p>
+<script type="math/tex; mode=display">
+F\rightarrow E\rightarrow B,</script><p>我们希望能够利用谱序列计算$H_\ast (E),$ 利用$H_\ast (F)$与$H_\ast (B)$的信息.
+回忆对于CW复形对$(X,A)$, 有 </p>
+<script type="math/tex; mode=display">
+A\rightarrow X\rightarrow X/A,</script><p>它也称为<strong>余纤维</strong>(cofibration)(商纤维, 商丛?).
+其上我们有zig-zag引理得到长正合列来计算同调群, 但对于基本群,
+没有太多明显的工具.</p>
+<p>而对于纤维丛, 我们可以通过长正合列来计算基本群,
+而同调群的计算则仰仗于谱序列.</p>
+<h3 id="谱序列"><a href="#谱序列" class="headerlink" title="谱序列"></a>谱序列</h3><p>对于链复形$(C_\ast ,\partial),$ 取$F_0C_\ast \subset C_\ast $为子复形,
+我们有短正合列:</p>
+<script type="math/tex; mode=display">
+0\rightarrow F_0C_\ast \rightarrow C_\ast \rightarrow C_\ast /F_0C^\ast \rightarrow 0.</script><p>这诱导了长正合列</p>
+<script type="math/tex; mode=display">
+\cdots\rightarrow H_i(F_0C^\ast )\rightarrow H_i(C_\ast )\rightarrow H_i(C_\ast /F_{0}C^\ast )\xrightarrow{\delta_i}H_{i-1}(F_0C_\ast )\rightarrow\cdots.</script><p>回忆$\delta$的定义为$\alpha\mapsto [\partial x],$ $[x]=\alpha.$</p>
+<p>假设我们希望从$H_\ast (F_0C_\ast ),H_\ast (C_\ast /F_0C_\ast )$计算$H_\ast (C_\ast ),$
+我们将长正合列拆为短正合列,</p>
+<script type="math/tex; mode=display">
+0\rightarrow \operatorname{coker}(\delta_{i+1})\rightarrow H_i(C_\ast )\rightarrow \ker(\delta_i)\rightarrow 0.</script><p>总结一下, 我们为了计算$H_i(C_\ast ),$ 我们需要:</p>
+<ol>
+<li><p>计算$H_i(F_0C_\ast ),H_i(C_\ast /F_0C_\ast );$</p>
+</li>
+<li><p>考虑仅有两项的复形$H_{i}(C_\ast /F_0C_\ast )\xrightarrow{\delta_i}H_{i-1}(F_0C_\ast ),$
+它的同调是:</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+G_0H_\ast =\operatorname{coker}\delta,\quad G_1H_\ast =\ker\delta.</script><ol>
+<li>我们得到了短正合列:</li>
+</ol>
+<script type="math/tex; mode=display">
+0\rightarrow G_0H_\ast \rightarrow H_\ast (C_\ast )\rightarrow G_1H_\ast \rightarrow 0.</script><p>注意短正合列不一定可分裂, 因此用代数术语来描述, 我们说$H_\ast (C_\ast )$是
+延展地(\”up to extensions\”) 决定的.</p>
+<h2 id="滤列"><a href="#滤列" class="headerlink" title="滤列"></a>滤列</h2><p>一个滤列$R$模是一个$R$模$A,$ 有一列递增子模</p>
+<script type="math/tex; mode=display">
+\cdots \subset F_p A\subset F_{p+1}A\subset \cdots,\quad p\in \mathbb{Z},</script><p>使得$\bigcup_p F_pA=A,$ $\bigcap_pF_pA=0.$ 这被称为<strong>滤列</strong>.</p>
+<p>称滤列是<strong>有界</strong>的, 若非平凡滤子有限, 即</p>
+<script type="math/tex; mode=display">
+\cdots =0=F_p A\subset \cdots \subset F_{q} A=A=\cdots.</script><p>那么定义它的<strong>联系分级模</strong>为 </p>
+<script type="math/tex; mode=display">
+G_pA:=F_pA/F_{p-1}A.</script><p>我们认为$\{F_p A\},$ $\{G_pA\}$归纳地<em>延展地</em>决定$A.$</p>
+<script type="math/tex; mode=display">
+0\rightarrow F_{p-1}A\rightarrow F_pA\rightarrow G_pA\rightarrow 0.</script><p>注意延展是平凡的, 若$R$是一个域.</p>
+<p>一个<strong>滤列链复形</strong>是一个链复形$(C_\ast ,\partial),$
+以及关于$C_i$的滤列$\{F_pC_i\},$
+使得$\partial(F_pC_i)\subset F_pC_{i-1}.$ 可以验证, $\,\forall\,p,$
+$(G_pC_\ast ,\partial)$是一个链复形, 可以考虑其上的同调$H_i(G_pC_\ast )$.</p>
+<p>一个$C_\ast $上的滤列诱导了$H_\ast (C_\ast )$上的滤列:</p>
+<script type="math/tex; mode=display">
+F_pH_i(C_\ast ):=\{\alpha\in H_i(C_\ast )|\,\exists\,x\in F_pC_\ast , [x]=\alpha\}.</script><p>接下来我们有$G_pH_i(C_\ast ).$ 一个自然的问题是它与$H_i(G_pC_\ast )$有什么联系?</p>
+<p>回忆前面有 </p>
+<script type="math/tex; mode=display">
+0\subset F_0C_\ast \subset F_1C_\ast =C_\ast ,</script><p>则$G_pH_\ast (C_\ast )$是$H_\ast (G_1C_\ast )\xrightarrow{\delta} H_{\ast -1}(G_0C_\ast )$的同调.
+此时$H_i(G_pC_\ast )$基本决定了$G_pH_i(C_\ast ).$</p>
+<p>当滤列有更多非平凡项时, 为了考虑它们之间的关系,
+我们希望能考虑一些连续的逼近$E^1,E^2,\cdots$收敛到想要的结果,
+类似于Taylor展开. 这就称为<strong>谱序列</strong>.</p>
+<p>假设$(F_pC_\ast ,\partial)$是一个滤列复形, 定义:</p>
+<script type="math/tex; mode=display">
+E^0_{p,q}:=G_pC_{p+q}=F_pC_{p+q}/F_{p-1}C_{p+q},</script><p> 那么$E$是双分级的,
+$p$称为<strong>滤度(filtration degree)</strong>, $p+q$是<strong>同调度(homology degree)</strong>,
+$q$称为<strong>补度(complementary degree)</strong>.
+那么$(E_0,\partial_0)$是一个链复形,
+$\partial_0:E_{p,q}^0\rightarrow E^0_{p,q-1}.$</p>
+<p>定义$E^1_{p,q}:=H_{p+q}(G_pC_\ast ),$ 它是$H_\ast (C_\ast )$的一阶逼近.
+如下定义$\partial_1:E^1_{p,q}\rightarrow E^1_{p-1,q}:$
+$\,\forall\,\alpha\in E^1_{p,q}=H_{p+q}(G_pC_\ast ),$ 取$x\in F_pC_{p+q},$
+$[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
+记$\partial_1\alpha=[\partial x].$</p>
+<p>文章最后更新于 2022-09-15 10:54:54 </p>
 
         </div>
 
@@ -209,11 +293,11 @@
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Win11仿Win10记</li>
+        <li>本文标题：《代数拓扑2》笔记(1)-谱序列</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-07-05 11:57:12</li>
+        <li>创建时间：2022-09-15 10:54:10</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/07/05/win11仿win10记/
+            本文链接：https://dream0ar.github.io/2022/09/15/《代数拓扑2》笔记(1)-谱序列/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -227,29 +311,14 @@
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/09/15/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E8%B0%B1%E5%BA%8F%E5%88%97/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(1)-谱序列</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/04/30/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(14)-%E4%BD%93%E7%A7%AF%E7%9A%84%E5%8F%98%E5%88%86%E5%92%8C%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
+                           href="/2022/07/05/win11%E4%BB%BFwin10%E8%AE%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《黎曼几何初步》笔记(14)-体积的变分和极小子流形</span>
+                                <span class="post-nav-title-item">Win11仿Win10记</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -456,7 +525,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E6%A0%8F%E8%AE%BE%E7%BD%AE"><span class="nav-text">任务栏设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E8%AE%BE%E7%BD%AE"><span class="nav-text">右键菜单设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5"><span class="nav-text">本地安全策略</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%9C%BA"><span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text">谱序列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%A4%E5%88%97"><span class="nav-text">滤列</span></a></li></ol>
     </div>
 </div>
         </aside>
