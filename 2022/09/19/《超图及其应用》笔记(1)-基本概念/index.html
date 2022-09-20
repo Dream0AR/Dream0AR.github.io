@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《超图及其应用》笔记(1)-基本概念 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《超图及其应用》笔记(1)-基本概念</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-09-19 19:43:32
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/%E8%B6%85%E5%9B%BE%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8/">超图及其应用</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>超图是图的推广, 我们仍记顶点集为$V=\{x_1,\cdots,x_n\},$
+将边集记为$E=(E_1,\cdots,E_m),$ $E_i$中的点视为连接在一起.
+我们要求$E$满足:</p>
+<ol>
+<li><p>$E_i\neq \varnothing$,</p>
+</li>
+<li><p>$\bigcup_{i=1}^mE_i=V.$</p>
+</li>
+</ol>
+<p>将超图记为$H=(V,E).$ 由于第二个条件, 有时也直接隐去$V$,
+直接记$H=E$为<strong>超图</strong>.</p>
+<p>类似于简单图, 也有<strong>简单超图</strong>的概念: $\,\forall\,E_i\subset E_j,$
+$i=j.$ 即超边间没有包含关系. 因此简单超图里也是没有重边的.
+我们同样有<strong>关联矩阵</strong>$A=(a_{ij})_{n\times m},$
+$a_{ij}=1$当且仅当$x_i\in E_j$, 否则取零.</p>
+<p>称$H’=(V’,E’=(e_j))$为超图$H$的<strong>子超图</strong>, 若$V’\subset V,$
+$E’\subset E,$ 且$e_j\subset V’.$
+称$H’=(E_j|j\in J)$为由$J$导出的<strong>边导出子图</strong>, 对于$A\subset X,$
+称$H’=(E_j\cap A|E_j\cap A\neq \varnothing)$为由$A$导出的<strong>点导出子图</strong>.
+一个特别的导出子图是$H(x)=\{E_j|x\in E_j\}$, 称其为<strong>星</strong>.</p>
+<p>类似于对偶图, 我们也有对偶超图.
+称$H^\ast =(X_1,\cdots,X_n)$为$H=(E_1,\cdots,E_m)$的<strong>对偶超图</strong>,
+点集$e_1,\cdots,e_m$对应于$H$中的边, 而超边$X_i=\{e_j|x_i\in E_j\}.$
+注意到利用星的定义, 我们有: </p>
+<script type="math/tex; mode=display">
+H^\ast =(V^\ast =E,E^\ast =(H(x))_{x\in V}).</script><p>对偶超图有好的性质, 如它的关联矩阵$A^\ast $就是原超图关联矩阵$A$的转置,
+此时便能直观地发现$(H^\ast )^\ast =H.$</p>
+<p>记$n(H)=|V|$为超图$H$的<strong>阶</strong>, $m(H)=|E|$为超图的<strong>边数</strong>,
+$r(H)=\max_j|E_j|$为超图的<strong>秩</strong>,
+$s(H)=\min_j|E_j|$为<strong>反秩(anti-rank)</strong>, 也称为<strong>余秩(co-rank)</strong>.
+若$r(H)=s(H)$, 称$H$为<strong>一致超图</strong>, 此时所有超边元素个数相等.
+一个秩$r$简单一致超图也称为$r$一致的.</p>
+<h2 id="度"><a href="#度" class="headerlink" title="度"></a>度</h2><p>记$x$的度为$d_H(x)=m(H(x)),$ 图的最大度记为$\Delta(x)=\max d_H(x).$
+若每个点具有相同的度$k$, 称超图$H$是$k$正则的,
+此时每个点总在$k$个超边内. 注意到正则与一致的概念构成对偶,
+$H$是$k$正则的当且仅当$H^\ast $是$k$一致的.
+同时也有:</p>
+<script type="math/tex; mode=display">
+\Delta(H)=r(H^\ast ),\quad r(H)=\Delta(H^\ast ).</script><p><strong>命题 1</strong>. <em>一个$n$元组$d_1\ge \cdots\ge d_n$为一个阶为$n$秩为$r$的一致超图的度序列, 当且仅当$\sum_{i=1}^nd_i\ge d_1r$为$r$的倍数, 且$d_n\ge 1.$</em> </p>
+<p>必要性显然, 对于秩$r$的一致超图$H$, 每个边含$r$个点. 每个点统计度时,
+每个超边被统计了$r$次, 因此$\sum_{i=1}^nd_i=m(H)r,$
+同时显然有$m(H)\ge d_1.$ $d_n\ge 1$也是自然的条件.</p>
+<p>对于充分性, 只需给定算法构造合适的超图. 事实上用贪心算法就够了,
+每次取度最高的$r$个点放到一条超边里即可, 然后重新排列度序列使得其递减.
+我们需要验证算法是可执行到最后的, 即不会出现非零度点小于$r$的情况.</p>
+<p>在一次操作时, 若最高度对应点全部被选中,
+则$\sum_{i=1}^n d_i-r\ge (d_1-1)r,$ 操作后度序列条件仍然满足.
+若最高点对应度未全部被选中, 则原先至少有$r+1$个点具相同的最高度,
+$\sum_{i=1}^n d_i\ge d_1(r+1).$ 若$d_1\ge r,$ 则</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n d_i-r\ge d_1r;\eqno{(\ast )}</script><p> 若$d_1&lt;r,$
+则由于$\sum_{i=1}^n d_i$为$r$的倍数, 它大于等于$d_1r+r,$
+因此同样有不等式$(\ast ).$ 综上, 经过一次操作后,
+新的度序列仍然满足全部条件(除去零度点).</p>
+<p>接下来利用反证法, 假设操作到某时刻后非零度点不够$r$个,
+那么$\sum_{i=1}^n d_i\le (r-1)d_1&lt;d_1r,$ 不满足条件, 产生矛盾.
+因此该算法总能操作到$d_1=0$的情况, 也即超图构建完毕.</p>
+<p><strong>定理 2</strong>. <em>给定整数列$r_1,\cdots,r_m,$ $d_1\ge \cdots \ge d_n,$ 存在超图$H=(E_1,\cdots,E_m),$ $X=\{x_1,\cdots,x_n\},$ 使得$d_H(x_i)=d_i,$ $|E_j|=r_j,$ 当且仅当$\sum_{j=1}^mr_j=\sum_{i=1}^nd_i,$ 且$\sum_{j=1}^m\min\{r_j,k\}\ge \sum_{i=1}^k d_i,$ $\,\forall\,k\le n.$</em> </p>
+<p>首先说明充分性, 我们尝试利用网络流来构造一个超图. 取源$a$汇$z.$
+记每个超边为$j,$ 每个点为$x_i.$ 以容量$r_j$连接$(a,j),$
+以容量$d_i$连接$(x_i,z),$ 以容量$1$连接$(j,x_i).$ 对于整数流,
+若$(j,x_i)$有流, 则在超图中令$x_i\in E_j.$
+若整数流流量为$\sum_{i=1}^nd_i=\sum_{j=1}^mr_j,$
+则每个$E_j$中恰有$r_j$个点, 而每个点$x_i$又恰在$d_i$个超边中,
+超图构建完毕.</p>
+<p>由最大流最小割定理, 我们只需说明$\sum_{i=1}^nd_i$就是一个最小割,
+从而最大流可选取为整数流, 流量满足前面的条件.
+假设已经割掉$\{d_i|i\notin I\},$ $I\subset \{1,\cdots,n\}.$
+那么只需说明在进一步的割法中, $\sum_{i\in I}d_i$达到最小.
+其它的割法需要阻断$(a,x_i)_{i\in I},$ 为此对于每个$j,$
+要么直接割掉前面的$r_j,$ 要么割掉$k$个$(j,x_i)_{i\in I}.$
+从而$j$贡献的最小费用是$\min\{r_j,k\},$
+对$j$求和发现条件恰好说明了这样的费用不比割$\{d_i\}_{i\in I}$低.
+这就说明了结论.</p>
+<p>对于必要性, $\sum_{i=1}^nd_i$将每个超边统计了$r_j$遍,
+这就是$\sum_{j=1}^mr_j.$ 对于另一个条件, 我们仍来利用网络流.
+超图的存在性直接说明了最大流的存在性, 从而最小割就是$\sum_{i=1}^nd_i.$
+因此前述其他的割法不比直接割汇低, 这就表述了欲证的条件.</p>
+<h2 id="其它性质"><a href="#其它性质" class="headerlink" title="其它性质"></a>其它性质</h2><p>对于$1\le r\le n,$
+定义阶为$n$的$r$一致完全超图$K_n^r$为由基数为$n$的$r$子集全体作为超边的超图.</p>
+<p><strong>定理 3</strong>. <em>每个$n$阶简单超图都满足$\sum_{E\in H}\binom{n}{|E|}^{-1}\le 1,$ 进一步$m(H)\le \binom{n}{[\frac{n}{2}]}.$ 后式取等当且仅当$H=K^{[\frac{n}{2}]}_n,$ 当$n$为奇数时也可以是$K^{\frac{n+1}{2} }_n.$</em> </p>
+<p>可以通过哈斯图来辅助分析.
+从$\varnothing$到$X$的经过结点$E$的道路共有$|E|!(n-|E|)!$条.
+对$E’\neq E,$ 道路间没有重复, 因为它们不具有包含关系.
+因此总道路满足$n!\ge \sum_{E\in H}|E|!(n-|E|)!.$ 这就是第一个不等式.
+对于第二个不等式,
+由$\binom{n}{|E|}\le \binom{n}{[\frac{n}{2}]}$立即可得.</p>
+<p>对于取等的情况, 若$n$为偶数, $|E|=\frac{n}{2},$ 是一致超图,
+进而可得到完全性; 若$n$为奇数, $|E|=\frac{n-1}{2}$或$\frac{n+1}{2}.$
+只需说明不一致时边数一定不够即可.</p>
+<p>称超图$H$是<strong>可分离的</strong>, 若$\bigcap_{E\in H(x)}E=\{x\}.$
+注意到图$H$是可分的当且仅当$H^\ast $是简单超图. 从而由前面的定理,
+可以得到可分离超图的度序列$d_1\ge \cdots\ge d_n$满足</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^n\binom{m}{d_i}^{-1}\le 1.</script><p>称超图$H$是线性的, 若$|E_i\cap E_j|\le 1,$ $\,\forall\,i\neq j$.
+利用反证法简单讨论即有:</p>
+<p><strong>命题 4</strong>. <em>$H$线性当且仅当对偶图$H^\ast $线性.</em> </p>
+<p><strong>定理 5</strong>. <em>对每个$n$阶线性超图, 有$\sum_{E\in H}\binom{|E|}{2}\le \binom{n}{2}.$ 若进一步$H$是$r$一致的, 则边数满足$m(H)\le\frac{n(n-1)}{r(r-1)}.$ 取等当且仅当$H$是Steiner系统$S(2,r,n).$ Steiner系统是完全超图$K^r_n$的边导出子图, 要求每对点恰在一个超边中.</em> </p>
+<p>超图之间存在<strong>同构</strong>关系. 称超图$H\cong H’,$
+若存在双射$f:V\rightarrow V’,$ 使得$e=\{x_1,\cdots,x_k\}\in E$
+$\Leftrightarrow$ $f(e)=\{f(x_1),\cdots,f(x_k)\}\in E’.$</p>
+<p><strong>命题 6</strong>. <em>$H\cong H’\Leftrightarrow H^\ast \cong {H’}^\ast $</em> </p>
+<p>利用关联矩阵判断即可.</p>
+<p>文章最后更新于 2022-09-19 19:43:37 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《超图及其应用》笔记(1)-基本概念</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-09-19 19:43:32</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/09/19/《超图及其应用》笔记(1)-基本概念/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(2)-%E8%B0%B1%E5%BA%8F%E5%88%97%E7%9A%84%E6%94%B6%E6%95%9B/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(2)-谱序列的收敛</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/17/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(2)-Hausdorff%E7%BB%B4%E6%95%B0%E7%9A%84%E5%88%86%E6%9E%90%E5%BA%94%E7%94%A8/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《几何分析》笔记(2)-Hausdorff维数的分析应用</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (香港标准时间)</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+            
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%A6"><span class="nav-text">度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E6%80%A7%E8%B4%A8"><span class="nav-text">其它性质</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
