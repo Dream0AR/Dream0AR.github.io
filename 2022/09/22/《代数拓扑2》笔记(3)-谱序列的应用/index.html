@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(2)-谱序列的收敛 |
+            《代数拓扑2》笔记(3)-谱序列的应用 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(2)-谱序列的收敛</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(3)-谱序列的应用</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-09-20 17:38:38
+        <i class="fas fa-edit"></i>&nbsp;2022-09-22 19:17:44
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,55 +206,40 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于$R$模$A,$ 具有滤列$\{F_pA\},$ 我们有分级模$G_pA=F_pA/F_{p-1}A.$
-我们认为$\{F_pA\},\{G_pA\}$延展地决定了$A.$ 若滤列是有界的,
-那么仅有$\{G_pA\}$便可延展地恢复出$\{F_pA\},$ 进而决定$A.$</p>
-<p>假设有$(C_\ast ,\partial)$是一个滤列链复形, 我们定义了</p>
+            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于Serre纤维化, </p>
 <script type="math/tex; mode=display">
-E^0_{p,q}:=G_pC_{p+q}=F_pC_{p+q}/F_{p-1}C_{p+q},</script><p>其上有由$\partial$自然诱导的$\partial_0,$
-$(E^0,\partial_0)$是一个链复形. 可以理解为$E^0=\oplus_{p,q}E_{p,q}^0,$
-来将双分级降低为单分级.</p>
-<p>接下来$E_{p+q}^1:=H_{p+q}(E^0_{p,q}),$ $(E^1,\partial_1)$是链复形.
-$\partial_1$由$\partial_0$经过图追踪得到.</p>
-<h2 id="谱序列"><a href="#谱序列" class="headerlink" title="谱序列"></a>谱序列</h2><p>递归地, 我们定义$E^r_{p,q}:=H_{p+q}(E^r_{p,q}),$
-$\partial_r$由$\partial_{r-1}$图追踪得到,</p>
+E\xrightarrow{\pi} B,</script><p> 满足同伦提升性质(对CW复形).
+若$B$是道路连通的, 纤维彼此都是同伦等价的, 记为</p>
 <script type="math/tex; mode=display">
-\partial_r:E^r_{p,q}\rightarrow E^{r}_{p-r,q+r-1},\quad E^r_{p,q}:=\frac{\{x\in F_pC_{p+q}|\partial x\in F_{p-r}C_{p+q-1}\} }{F_{p-1}C_{p+q}+\partial (F_{p+r-1}C_{p+q+1})}.</script><p>称$r$为谱序列的<strong>页数</strong>, 称$E^r$为$H_\ast (C_\ast )$的$r$阶逼近.
-由这样的递归定义可以得到:</p>
-<p><strong>引理 1</strong>. <em>令$(F_pC_\ast ,\partial)$为滤列复形, 有谱序列$E^r_{p,q}.$ 那么, $\partial_r$是良定的, 且$\partial_r^2=0.$ $E^{r+1}$是$(E^r,\partial_r)$的同调, $E^1_{p,q}=H_{p+q}(G_pC_\ast ).$ 若$C_i$上的滤列对每个$i$是有界的, 则$\,\forall\,p,q,$ 当$r$充分大时, $E^r_{p,q}=G_pH_{p+q}(C_\ast ).$</em> </p>
-<p><strong>定义 2</strong>. <em>一个谱序列由如下要素组成: $R$模$E^r_{p,q},$ 微分$\partial_r:E_{p,q}^r\rightarrow E^r_{p-r,q+r-1},$ 使得$E^{r+1}$为$E^r$的同调.</em> </p>
-<p><strong>定义 3</strong>. <em>称谱序列是<strong>收敛的</strong>, 若$\,\forall\,p,q,$ 当$r$充分大时, $\partial_r=0,$ 从而,</em> </p>
+F\rightarrow E\xrightarrow{\pi}B.</script><p><strong>定理 1</strong>. <em>令$F\rightarrow E\rightarrow B$为Serre纤维化, $B$单连通. 那么存在谱序列$E^r,$ $E^2_{p,q}=H_p(B;H_q(F)),$ 收敛到$E^\infty_{p,q}=G_pH_{p+q}(E).$</em> </p>
+<p><strong>注 2</strong>. <em>若$\pi_1(B)\neq 0,$ 定理也成立, $H_\ast (B;H_\ast (F))$为具”局部系数”的同调, 由$\pi_1(B)$在$H_\ast (F)$上的作用表示.</em>  <em>若系数在域上选取, 则由万有系数定理与Kunneth公式, $E^2_{\ast ,\ast }=H_\ast (B;H_\ast (F))=H_\ast (B)\otimes H_\ast (F)=H_\ast (B\times F).$ $E^\infty=H_\ast (E).$</em>  <em>同时$\dim H_n(B\times F)=\sum_{p+q=n} \dim E^2_{p,q}\ge \sum_{p+q=n} \dim E_{p,q}^\infty=\dim H_n(E).$ 这给出了对纤维丛同调维数的限制.</em> </p>
+<p>考虑$B$的CW逼近, 它与原纤维化弱同伦等价. 由于结论关于弱同伦等价不变,
+不妨设$B$为CW复形. 取$B$的骨架滤列, 诱导了$E$上的滤列</p>
 <script type="math/tex; mode=display">
-E^\infty_{p,q}:=E^r_{p,q}=E^{r+1}_{p,q}=\cdots</script><p>由引理, 我们有命题:</p>
-<p><strong>命题 4</strong>. <em>若$(F_pC_\ast ,\partial)$是一个滤列复形, 那么存在谱序列$(E^r_{p,q},\partial_r),$ 使得$E^1_{p,q}=H_{p+q}(G_pC_\ast ).$ 若滤列在$C_i$上是有界的, 那么谱序列收敛,</em> </p>
+\cdots\subset \pi^{-1}(B^p)\subset \pi^{-1}(B^{p+1})\subset \cdots.</script><p>进而我们有$C_\ast (E)$上的滤列, 取它的谱序列.</p>
 <script type="math/tex; mode=display">
-E^\infty_{p,q}=G_pH_{p+q}(C_\ast ).</script><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>对于CW复形$X,$ 定义$F_pC_\ast (X)=C_\ast (X^p),$ 为$C_\ast (X)$上的滤列.</p>
-<p><strong>命题 5</strong>. <em>由CW复形产生的谱序列, $E^r$在第二页后不变, 有:</em> </p>
+E^0=G_pC_\ast (E)=C_\ast (\pi^{-1}(B^p),\pi^{-1}(B^{p-1})).</script><script type="math/tex; mode=display">
+E^1_{p,q}=H_{p+q}(\pi^{-1}(B^p),\pi^{-1}(B^{p-1}))</script><p>$(B^p,B^{p-1})$是$(p-1)$连通的,
+$(\pi^{-1}(B^p),\pi^{-1}(B^{p-1}))$也是(通过长正合列).
+因此$E^1_{p,q}$仅在$p,q\ge 0$时非平凡, 即在第一象限处.
+接下来我们对$E^1$做简化:</p>
 <script type="math/tex; mode=display">
-E^0_{p,q}=C_\ast (X^p,X^{p-1}),</script><script type="math/tex; mode=display">
-E^1_{p,q}=H_{p+q}(X^p,X^{p-1})=
- \left\{
- \begin{aligned}
- &C_p^{\operatorname{cell} }(X), && q=0\\
- &0 &&q\neq 0
- \end{aligned}\right.</script><script type="math/tex; mode=display">
-
-E^\infty_{p,q}=E^2_{p,q}=
- \left\{
- \begin{aligned}
- &H_p(X), &&q=0\\
- &0, &&q\neq 0
- \end{aligned}\right.</script><p>假设$X$是有限维的, 那么滤列有界,
-因此命题说明了$E^\infty_{p,q}=G_pH_{p+q}(C_\ast (X))=E^2_{p,q}.$</p>
-<p>记$p+q=i,$ 则 </p>
+\begin{aligned}
+ E^1_{p,q}&\cong \bigoplus_{\substack{p-cells\\\sigma:D^p\rightarrow B} }H_{p+q}(\sigma^*E,(\sigma|_{S^{p-1} })^*E)\\
+ &\cong \bigoplus_{p-cells} H_q(F)\otimes H_p(D^p,S^{p-1})\\
+ &=C^{cell}_{p}(B;H_q(F))
+ \end{aligned}</script><p> 其中第一个同构关系由下图表示(具体细节暂略):</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/09/22/xiI2w1ZaAJcM5Vp.png width='50%' height='50%'></p>
+<p>那么$\partial_1:E_{p,q}^1\rightarrow E_{p-1,q}^1$是胞腔复形上的微分.</p>
 <script type="math/tex; mode=display">
-G_pH_i(X)=\left\{
- \begin{aligned}
- &H_i^{\operatorname{cell} }(X), &&p=i\\
- &0, &&p\neq i
- \end{aligned}\right.</script><script type="math/tex; mode=display">
-H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).</script><p>这就说明了奇异同调与胞腔复形同调的同构关系.</p>
-<p>文章最后更新于 2022-09-20 17:39:06 </p>
+E^2_{p,q}=H_p^{cell}(B,H_q(F)).</script><p><strong>注 3</strong>. <em>谱序列的收敛性由谱序列仅在第一象限非平凡保证.</em> </p>
+<p>取纤维丛$U(1)\rightarrow U(2)\rightarrow S^3,$
+$U(2)$可迁地作用在$S^3$上, $(1,0)$的稳定子同构于$U(1).$ $S^3=U(2)/U(1).$
+我们有Leray-Serre谱序列:</p>
+<script type="math/tex; mode=display">
+E^2_{p,q}=H_p(S^3;H_q(S^1))\cong H_p(S^3)\otimes H_q(S^1).</script><p>此时谱序列从第二页开始就不再变化. 由于谱序列中只有一个平凡项,
+$E^\infty=H_p(U(2))=\mathbb{Z},$ $p=0,1,2,3,$ 其余为零.</p>
+<p>文章最后更新于 2022-09-22 19:38:54 </p>
 
         </div>
 
@@ -262,11 +247,11 @@ H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).</script><p>这就说明了奇异
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(2)-谱序列的收敛</li>
+        <li>本文标题：《代数拓扑2》笔记(3)-谱序列的应用</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-09-20 17:38:38</li>
+        <li>创建时间：2022-09-22 19:17:44</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/09/20/《代数拓扑2》笔记(2)-谱序列的收敛/
+            本文链接：https://dream0ar.github.io/2022/09/22/《代数拓扑2》笔记(3)-谱序列的应用/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -280,29 +265,14 @@ H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).</script><p>这就说明了奇异
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(3)-%E8%B0%B1%E5%BA%8F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(3)-谱序列的应用</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/19/%E3%80%8A%E8%B6%85%E5%9B%BE%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
+                           href="/2022/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(2)-%E8%B0%B1%E5%BA%8F%E5%88%97%E7%9A%84%E6%94%B6%E6%95%9B/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《超图及其应用》笔记(1)-基本概念</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(2)-谱序列的收敛</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -509,7 +479,7 @@ H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).</script><p>这就说明了奇异
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text">谱序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li></ol>
     </div>
 </div>
         </aside>

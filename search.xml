@@ -8485,4 +8485,48 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
         <category>泛函分析</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(3)-谱序列的应用</title>
+    <url>/2022/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(3)-%E8%B0%B1%E5%BA%8F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于Serre纤维化, </p>
+<script type="math/tex; mode=display">
+E\xrightarrow{\pi} B,</script><p> 满足同伦提升性质(对CW复形).
+若$B$是道路连通的, 纤维彼此都是同伦等价的, 记为</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi}B.</script><p><strong>定理 1</strong>. <em>令$F\rightarrow E\rightarrow B$为Serre纤维化, $B$单连通. 那么存在谱序列$E^r,$ $E^2_{p,q}=H_p(B;H_q(F)),$ 收敛到$E^\infty_{p,q}=G_pH_{p+q}(E).$</em> </p>
+<p><strong>注 2</strong>. <em>若$\pi_1(B)\neq 0,$ 定理也成立, $H_\ast (B;H_\ast (F))$为具”局部系数”的同调, 由$\pi_1(B)$在$H_\ast (F)$上的作用表示.</em>  <em>若系数在域上选取, 则由万有系数定理与Kunneth公式, $E^2_{\ast ,\ast }=H_\ast (B;H_\ast (F))=H_\ast (B)\otimes H_\ast (F)=H_\ast (B\times F).$ $E^\infty=H_\ast (E).$</em>  <em>同时$\dim H_n(B\times F)=\sum_{p+q=n} \dim E^2_{p,q}\ge \sum_{p+q=n} \dim E_{p,q}^\infty=\dim H_n(E).$ 这给出了对纤维丛同调维数的限制.</em> </p>
+<p>考虑$B$的CW逼近, 它与原纤维化弱同伦等价. 由于结论关于弱同伦等价不变,
+不妨设$B$为CW复形. 取$B$的骨架滤列, 诱导了$E$上的滤列</p>
+<script type="math/tex; mode=display">
+\cdots\subset \pi^{-1}(B^p)\subset \pi^{-1}(B^{p+1})\subset \cdots.</script><p>进而我们有$C_\ast (E)$上的滤列, 取它的谱序列.</p>
+<script type="math/tex; mode=display">
+E^0=G_pC_\ast (E)=C_\ast (\pi^{-1}(B^p),\pi^{-1}(B^{p-1})).</script><script type="math/tex; mode=display">
+E^1_{p,q}=H_{p+q}(\pi^{-1}(B^p),\pi^{-1}(B^{p-1}))</script><p>$(B^p,B^{p-1})$是$(p-1)$连通的,
+$(\pi^{-1}(B^p),\pi^{-1}(B^{p-1}))$也是(通过长正合列).
+因此$E^1_{p,q}$仅在$p,q\ge 0$时非平凡, 即在第一象限处.
+接下来我们对$E^1$做简化:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ E^1_{p,q}&\cong \bigoplus_{\substack{p-cells\\\sigma:D^p\rightarrow B} }H_{p+q}(\sigma^*E,(\sigma|_{S^{p-1} })^*E)\\
+ &\cong \bigoplus_{p-cells} H_q(F)\otimes H_p(D^p,S^{p-1})\\
+ &=C^{cell}_{p}(B;H_q(F))
+ \end{aligned}</script><p> 其中第一个同构关系由下图表示(具体细节暂略):</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/09/22/xiI2w1ZaAJcM5Vp.png width='50%' height='50%'></p>
+<p>那么$\partial_1:E_{p,q}^1\rightarrow E_{p-1,q}^1$是胞腔复形上的微分.</p>
+<script type="math/tex; mode=display">
+E^2_{p,q}=H_p^{cell}(B,H_q(F)).</script><p><strong>注 3</strong>. <em>谱序列的收敛性由谱序列仅在第一象限非平凡保证.</em> </p>
+<p>取纤维丛$U(1)\rightarrow U(2)\rightarrow S^3,$
+$U(2)$可迁地作用在$S^3$上, $(1,0)$的稳定子同构于$U(1).$ $S^3=U(2)/U(1).$
+我们有Leray-Serre谱序列:</p>
+<script type="math/tex; mode=display">
+E^2_{p,q}=H_p(S^3;H_q(S^1))\cong H_p(S^3)\otimes H_q(S^1).</script><p>此时谱序列从第二页开始就不再变化. 由于谱序列中只有一个平凡项,
+$E^\infty=H_p(U(2))=\mathbb{Z},$ $p=0,1,2,3,$ 其余为零.</p>
+<p>文章最后更新于 2022-09-22 19:38:54 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>
