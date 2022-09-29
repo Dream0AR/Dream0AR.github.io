@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数拓扑2》笔记(4)-Leray-Serre谱序列 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《代数拓扑2》笔记(4)-Leray-Serre谱序列</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-09-27 23:15:43
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于纤维丛 </p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi} B,\quad \pi_1B=0.</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(B;H_q(F))\Rightarrow E^\infty_{p,q}=G_pH_{p+q}(E).</script><p>考虑一些例子. 对于纤维丛</p>
+<script type="math/tex; mode=display">
+S^1\rightarrow S^\infty\rightarrow \mathbb{C}\mathrm{P}^\infty,</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(\mathbb{C}\mathrm{P}^\infty)\otimes H_q(S^1),</script><p>由$S^\infty$的同调,
+$E^2_{p,q}$上的$\partial_2:E^2_{2k,0}\cong E^2_{2k-2,1}$必须是同构,
+$k\ge 1.$</p>
+<p>对于Hopf纤维化</p>
+<script type="math/tex; mode=display">
+S^1\rightarrow S^3\rightarrow S^2=\mathbb{C}\mathrm{P}^1,</script><p>也可以通过类似的方法得到谱序列的结构. 计算$\partial_2$很少直接计算,
+第一种常见的计算方式就是上面的倒推法, 另一种是利用函子性质.</p>
+<p>注意到第二个例子中的纤维丛是第一个例子的拉回,
+由映射$\mathbb{C}\mathrm{P}^1\rightarrow \mathbb{C}\mathrm{P}^\infty.$
+那么由于Leray-Serre谱序列有函子性质, 链映射与微分可交换.
+这样就可以通过某个谱序列的微分得到另一个谱序列的微分.</p>
+<h2 id="局部系数"><a href="#局部系数" class="headerlink" title="局部系数"></a>局部系数</h2><p>对拓扑空间$B,$ 记其万有覆盖空间为$\widetilde{B},$ $\pi=\pi_1(B),$
+$M$是一个(左)$\mathbb{Z}[\pi]$模($\pi$作用在$M$上). 定义</p>
+<script type="math/tex; mode=display">
+C_n(B;M):=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]} M,</script><p>那么可以如下行定义$\pi$作用在$\widetilde{B}$上,
+诱导$\pi$在$C_n(\widetilde{B})$上的作用,
+从而$C_n(\widetilde{B})$是一个(左)$\mathbb{Z}[\pi]$模.</p>
+<p>$\,\forall\,c\in C_n(\widetilde{B}),$ $m\in M,$ $r\in \pi,$</p>
+<script type="math/tex; mode=display">
+(r^{-1}c)\otimes m=c\otimes (rm), \text{或} (rc)\otimes (rm)=c\otimes m.</script><p>$-\bigotimes_{\mathbb{Z}_\pi}M$是一个函子, $C_n(B;M)$是链复形.
+它的同调$H_n(B,M)$是局部系数在$M$中的$B$的同调.</p>
+<p>若$\pi_1B$在$M$上作用平凡, $B,\widetilde{B}$为CW复形. 那么</p>
+<script type="math/tex; mode=display">
+C_n^{CW}(B;M)=C_n^{CW}(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}M=C_n^{CW}(B;\mathbb{Z})\bigotimes_{\mathbb{Z} }M,</script><p>$H_n(B;M)$就是$B$的系数在$M$中的同调.</p>
+<p>若$M=\mathbb{Z}[\pi],$</p>
+<script type="math/tex; mode=display">
+C_n(B;\mathbb{Z}[\pi])=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}\mathbb{Z}[\pi]=C_n(\widetilde{B}),</script><p>因此$H_n(B;\mathbb{Z}[\pi])=H_n(\widetilde{B}).$</p>
+<p>若$M:=\mathbb{Z}[\pi/\pi’],$ $\pi’\subset \pi.$ 那么</p>
+<script type="math/tex; mode=display">
+C_n(B;\mathbb{Z}[\pi/\pi'])=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}\mathbb{Z}[\pi/\pi']=C_n(B'),\quad B'=\widetilde{B}/\pi'.</script><script type="math/tex; mode=display">
+H_n(B;\mathbb{Z}[\pi/\pi'])=H_n(B';\mathbb{Z}).</script><p>类似地, 定义</p>
+<script type="math/tex; mode=display">
+C^n(B;M)=\operatorname{Hom}_{\mathbb{Z}[\pi]}(C_n(\widetilde{B}),M),</script><p>为一个上链复形, 上同调记为$H^n(B;M).$</p>
+<p>若$B$为有限复形,</p>
+<script type="math/tex; mode=display">
+H^n(B;\mathbb{Z}[\pi])\cong H_c^n(\widetilde{B};\mathbb{Z})</script><p>对于不可定向流形上的Poincaré对偶, 记$N$为闭的不可定向$n$维流形,
+$\pi_1(N,x)\xrightarrow{\rho} \{\pm 1\}$作用在$\mathbb{Z}\cong H(N,N\setminus \{x\})$上.
+记$H_k(N;\mathbb{Z})$为整系数同调,
+$H_k(N;\widetilde{\mathbb{Z} })$为关于$\rho$中局部系数同调.</p>
+<p><strong>定理 1</strong>. <em>对$n$维闭流形$N,$ $H^k(N;\mathbb{Z})\cong H_{n-k}(N;\widetilde{\mathbb{Z} }),$ $H^k(N;\widetilde{\mathbb{Z} })\cong H_{n-k}(N;\mathbb{Z}).$ 同构由和基本类$[N]\in H_n(N;\widetilde{\mathbb{Z} })$的卡积给出.</em> </p>
+<h2 id="回到谱序列"><a href="#回到谱序列" class="headerlink" title="回到谱序列"></a>回到谱序列</h2><p>考虑$\pi_1B$不一定非零的纤维化 </p>
+<script type="math/tex; mode=display">
+F\rightarrow E\rightarrow B.</script><p>回忆每个$\gamma:[0,1]\rightarrow B$给出了同伦$L_\gamma:F_{\gamma(0)}\rightarrow F_{\gamma(1)}.$
+若$B$道路连通,</p>
+<script type="math/tex; mode=display">
+\pi_1(B,b)\rightarrow h\operatorname{Aut}(F_b)/\sim \rightarrow \operatorname{Aut}(H_q(F)),</script><script type="math/tex; mode=display">
+\gamma\mapsto L_\gamma\mapsto L_{\gamma^\ast }.</script><p>$\pi_1(B,b)$作用在$H_q(F_b)$上, 称为与纤维化关联的<strong>单值作用</strong>(monodromy
+action).</p>
+<p>对于纤维丛 </p>
+<script type="math/tex; mode=display">
+S^1\rightarrow U(2)\rightarrow \mathbb{R}\mathrm{P}^3,</script><p>构造通过$U(1)\hookrightarrow U(2),$
+$\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\{\pm 1\} }=\mathbb{R}\mathrm{P}^3.$</p>
+<p>事实上, $\pi_1(\mathbb{R}\mathrm{P}^3)$平凡地作用在$H_i(S^1)$上,
+因为它的作用是个180度旋转, 这不改变$S^1$($H_1(S^1)$生成元)的定向.</p>
+<p>文章最后更新于 2022-09-27 23:15:45 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数拓扑2》笔记(4)-Leray-Serre谱序列</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-09-27 23:15:43</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/09/27/《代数拓扑2》笔记(4)-Leray-Serre谱序列/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/27/%E6%95%B4%E4%BD%93%E7%A7%A9%E5%AE%9A%E7%90%86/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">整体秩定理</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/26/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E4%BD%93%E7%A7%AF%E6%AF%94%E8%BE%83%E5%AE%9A%E7%90%86/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《几何分析》笔记(6)-体积比较定理</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (香港标准时间)</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+            
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E7%B3%BB%E6%95%B0"><span class="nav-text">局部系数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text">回到谱序列</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+		TeX: { 
+			equationNumbers: { autoNumber: "AMS" },
+			extensions: ["AMSmath.js", "AMSsymbols.js"]
+		},
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i) 
+			all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

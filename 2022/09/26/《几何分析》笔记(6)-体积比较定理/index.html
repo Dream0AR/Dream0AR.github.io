@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《几何分析》笔记(6)-体积比较定理 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《几何分析》笔记(6)-体积比较定理</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-09-26 19:08:32
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90/">几何分析</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="好的情形"><a href="#好的情形" class="headerlink" title="好的情形"></a>好的情形</h2><p>我们回忆对$\operatorname{Ric}\ge (n-1)K$的完备流形, $p\in M,$
+$\,\forall\,x\in S_p\setminus\{p\},$ 我们有:</p>
+<script type="math/tex; mode=display">
+\Delta r(x)\le (n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><p> 在法坐标系下,
+$dV_g=\Theta (r,\theta)dr\wedge dS^{n-1},$</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}\Theta}{\partial {}r}=\Delta r\Theta.</script><script type="math/tex; mode=display">
+\frac{\partial {}\log\Theta}{\partial {}r}=\Delta r\le \frac{\partial {}\log sn_k^{n-1}(r)}{\partial {}r}.</script><script type="math/tex; mode=display">
+\frac{\partial {}\log \frac{\Theta}{\Theta_k} }{\partial {}r}\le 0.</script><p>因此$\frac{\Theta}{\Theta_k}$单减,
+$\lim_{r\rightarrow 0}\frac{\Theta}{\Theta_k}=1,$
+从而$\Theta\le \Theta_k,$ 在$x\in \widehat{S}_p$时.</p>
+<p>注意到$r_1&lt;r_2$时,
+$\frac{\partial^\ast B_{r_1}^n}{r_1}\supset \frac{\partial^\ast B_{r_2}^n}{r_2}.$</p>
+<script type="math/tex; mode=display">
+\frac{\mathcal{H}^{n-1}(\partial^\ast B_{r_2}^g)}{S_k(r_2)}=\int_{\partial^\ast B_{r_2}^n/r_2}\frac{\Theta(r_2,\theta)}{c_nsn_k^{n-1}(r_2)}dS^{n-1}\le \int_{\partial^\ast B_{r_2}^n/r_2}\frac{\Theta(r_1,\theta)}{c_nsn_k^{n-1}(r_1)}dS^{n-1}\le \frac{\mathcal{H}^{n-1}(\partial^\ast B_{r_1}^g)}{S_k(r_1)}.</script><p><strong>定理 1</strong>. <em>$\operatorname{Ric}\ge (n-1)K$时, $\frac{\mathcal{H}^{n-1}(\partial^\ast B_r^g(p))}{S_k(r)}$单调递减.</em> </p>
+<p><strong>推论 2</strong> (Myers’ Thm). <em>$\operatorname{Ric}\ge (n-1)K&gt;0$时, $\operatorname{diam}(M)\le \frac{\pi}{\sqrt{K} }$</em> </p>
+<p>标准的做法是第二变分方法. 现在我们利用体积比较定理给出证明.</p>
+<p>设$\operatorname{diam}(M)&gt;\frac{\pi}{\sqrt{K} },$ 那么$\,\exists\,p,$
+使得$\partial^\ast B^g_{\frac{\pi}{\sqrt{K} } }(p)\neq \varnothing.$
+$\mathcal{H}^{n-1}(\partial^\ast B^g_{\frac{\pi}{\sqrt{K} } }(p))&gt;0.$
+但此时$S_k(\frac{\pi}{\sqrt{K} })=0,$ 比值为$+\infty,$ 与单减性矛盾.</p>
+<h2 id="一般情形"><a href="#一般情形" class="headerlink" title="一般情形"></a>一般情形</h2><p>事实上, 可以说明一般的体积比较定理:</p>
+<p><strong>定理 3</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $\frac{\mathcal{H}^{n-1}(\partial B_r^g(p))}{S_k(r)}$单调递减.</em> </p>
+<script type="math/tex; mode=display">
+\mathcal{H}^{n-1}(\partial B_r^g(p))=\int_{\partial^\ast B_r^n/r}\Theta(r,\theta)dS^{n-1}+\frac{1}{2}\int_{(\partial B_r^n\cap \widehat{N}_p)/r}\Theta(r,\theta)dS^{n-1}.</script><p>$\Theta$在$\widehat{C}_p$上良定,</p>
+<script type="math/tex; mode=display">
+\frac{\Theta(r_1,\theta)}{sn_k^{n-1}(r_1)}\le \frac{\Theta(r_2,\theta)}{sn_k^{n-1}(r_2)},\quad r_1>r_2, (r_1,\theta)\in \widehat{S}_p.</script><p>上式当$(r_1,\theta)\in\widehat{N_p}$时也对. 同时注意到有:</p>
+<script type="math/tex; mode=display">
+(\partial B_{r_2}^n\cap \widehat{N}_p)/r_2\subset \partial^\ast B_{r_1}^n/r_1,\quad r_1<r_2.</script><p>因此类似的, 通过积分放缩即可得到结论.</p>
+<p><strong>定理 4</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $\frac{\mathrm{vol}(B_r^g(p))}{V_k(r)}$单调递减.</em> </p>
+<p>在$T_pM\cong \mathbb{R}^n$上,
+定义$\widetilde{\Theta}|_{\widehat{S}_p}=\Theta,$ 其他部分取零. 那么</p>
+<script type="math/tex; mode=display">
+\mathrm{vol}(B_r^g(p))=\int_{B_r^n}\widetilde{\Theta}drdS^{n-1}=\int_0^r\int_{S^{n-1} }\widetilde{\Theta}(r,\theta)dsdS^{n-1}\in AC_{loc}(0,+\infty)</script><script type="math/tex; mode=display">
+\begin{aligned}
+ \frac{d {} }{d {}r}\frac{\mathrm{vol}(B_r^g(p))}{V_k(r)}&=\frac{1}{V_k^2(r)}\cdot \left(\int_{\partial^*B^g_r/r}\Theta dS^{n-1}V_k(r)-\int_0^r\int_{\partial^*B^g_s/s}\Theta dS^{n-1}S_k(r)\right)\\
+ &=\frac{S_k(r)}{V_k(r)}\left(\frac{\mathcal{H}^{n-1}(\partial^* B_r^g)}{S_k(r)}-\frac{\int_0^r\frac{\mathcal{H}^{n-1}(\partial^*B_s^g)ds}{S_k(s)}S_k(s)}{\int_0^rS_k(s)ds}\right)\le 0
+ \end{aligned}</script><p> 由此即可得到结论.</p>
+<p>体积比较定理一般用来估计下界而非上界.</p>
+<p><strong>推论 5</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $\operatorname{diam}M=1,$ 有非塌缩条件$\mathrm{vol}(M)\ge v_0&gt;0.$ 那么$\,\exists\,C_1=C_1(n,k,v_0),C_2=C_2(n,k,v_0)&gt;0,$</em> </p>
+<script type="math/tex; mode=display">
+0<C_1\le \frac{\mathrm{vol}(B_r^g(p))}{r^n}\le C_2.</script><p>由体积比较定理, 有</p>
+<script type="math/tex; mode=display">
+0<\frac{\mathrm{vol}(M)}{V_k(1)}\le \frac{\mathrm{vol}(B_r^g(p))}{V_k(r)}\le 1.</script><p>由</p>
+<script type="math/tex; mode=display">
+\max_{[0,1]}\frac{V_k(r)}{r^n}<+\infty, \quad \inf_{[0,1]}\frac{V_k(r)}{r^n}>0</script><p>即有结论.</p>
+<p><strong>推论 6</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $r_1&lt;r_2,$</em> </p>
+<script type="math/tex; mode=display">
+\frac{\mathrm{vol}(B_{r_2}^g(p)\setminus B_{r_1}^g(p))}{V_k(r_2)-V_k(r_1)}\le \frac{\mathrm{vol}(B_{r_2}^g(p))}{V_k(r_2)}\le \frac{\mathrm{vol}(B_{r_1}^g(p))}{V_k(r_1)}</script><p>取$r_1&lt;r&lt;r_2,$ 令$r\rightarrow r_2,$ 即有</p>
+<script type="math/tex; mode=display">
+\frac{\mathcal{H}^{n-1}(\partial^\ast B_{r_2}^g)}{S_k(r_2)}\le \frac{\mathrm{vol}(B_{r_1}^g(p))}{V_k(r_1)}</script><p>可选到$r_2’\in (r_1,r_2),$
+使得$\mathcal{H}^{n-1}(\partial^\ast B_{r_2’}^g)=\mathcal{H}^{n-1}(\partial B_{r_2’}^g)$</p>
+<script type="math/tex; mode=display">
+\frac{\mathcal{H}^{n-1}(\partial^\ast B_{r_2}^g)}{S_k(r_2)}\le \frac{\mathcal{H}^{n-1}(\partial B_{r_2}^g)}{S_k(r_2)}\le\frac{\mathcal{H}^{n-1}(\partial B_{r_2'}^g)}{S_k(r_2')} \le \frac{\mathrm{vol}(B_{r_1}^g(p))}{V_k(r_1)}</script><p><strong>推论 7</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $r_1&lt;r_2,$</em> </p>
+<script type="math/tex; mode=display">
+\frac{\mathcal{H}^{n-1}(\partial B_{r_2}^g(p))}{S_k(r_2)}\le \frac{\mathrm{vol}(B_{r_1}^g(p))}{V_k(r_1)}</script><p><strong>定理 8</strong>. <em>$\operatorname{Ric}\ge 0$时, $(M,g)$紧, 或$\mathrm{vol}(B_R^g(p))\ge CR$比线性增长快.</em> </p>
+<p>若$(M,g)$非紧, 取$d(p,x_k)=k.$</p>
+<script type="math/tex; mode=display">
+\frac{\mathrm{vol}(B_{k+1}(x_k)\setminus B_{k-1}(x_k))}{\omega_n((k+1)^n-(k-1)^n)}\le\frac{\mathrm{vol}(B_{k-1}(x_k))}{\omega_n(k-1)^n}</script><script type="math/tex; mode=display">
+\mathrm{vol}(B_{2k(p)})\ge \mathrm{vol}(B_{k-1}(x_k))\ge Ck\mathrm{vol}(B_{k+1}(x_k)\setminus B_{k-1}(x_k))\ge Ck\mathrm{vol}(B_1(p))</script><p><strong>注 9</strong>. <em>若$\operatorname{Ric}\ge (n-1)K,$ 若$B_r^g,\partial B_r^g,\partial^\ast B_r^g$任意一项与标准体积比取$1,$ 则$B_r^g(p)\cong B_r^k.$</em> </p>
+<p>文章最后更新于 2022-09-26 19:08:33 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《几何分析》笔记(6)-体积比较定理</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-09-26 19:08:32</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/09/26/《几何分析》笔记(6)-体积比较定理/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/27/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(4)-Leray-Serre%E8%B0%B1%E5%BA%8F%E5%88%97/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(4)-Leray-Serre谱序列</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/26/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Ricci%E6%AF%94%E8%BE%83%E5%AE%9A%E7%90%86/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《几何分析》笔记(5)-Ricci比较定理</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (香港标准时间)</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+            
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%BD%E7%9A%84%E6%83%85%E5%BD%A2"><span class="nav-text">好的情形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%83%85%E5%BD%A2"><span class="nav-text">一般情形</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+		TeX: { 
+			equationNumbers: { autoNumber: "AMS" },
+			extensions: ["AMSmath.js", "AMSsymbols.js"]
+		},
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i) 
+			all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

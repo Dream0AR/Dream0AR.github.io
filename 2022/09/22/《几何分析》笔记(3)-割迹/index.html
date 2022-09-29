@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《几何分析》笔记(3)-割迹 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《几何分析》笔记(3)-割迹</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-09-22 22:35:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90/">几何分析</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>The dimension of a cut locus on a smooth Riemannian manifold - Jin-Ichi
+Itoh and Minoru Tanaka.</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们来对第一次课中给出的定理进行证明. 首先给出推广的Sard定理:</p>
+<p><strong>定理 1</strong> (Morse-Sard-Federer). <em>令$f:B_1^n(0)\rightarrow \mathbb{R}^m$为$C^1$映射, $E=\{x\in B_1^n(0)|r(df_x)\le k\}.$ 那么$\dim f(E)\le k.$</em> </p>
+<p>回忆对$M$为完备黎曼流形, $p\in M,$ 那么</p>
+<script type="math/tex; mode=display">
+\operatorname{Cut}_p=Q_p\cup N_p\cup L_p, \quad Q_{p}:=\{x\in \operatorname{Cut}_p|\,x,p\text{共轭}\},</script><p>还有$N_p$为其中恰有两条线段连接的部分,
+$L_p$为其中有三条以上线段连接的部分.</p>
+<p>给出下面几个定义:</p>
+<script type="math/tex; mode=display">
+\lambda(v)=\inf \{t>0|r(d\exp_{p,tv})\le n-1\}\in (0,+\infty],</script><script type="math/tex; mode=display">
+U_pM=\{v\in T_pM\,|\,|v|=1,\lambda(v)<+\infty\},</script><script type="math/tex; mode=display">
+\phi(v):=\exp_p\lambda(v)v: U_pM\rightarrow M.</script><p>我们给出如下的事实: 对$v\in U_pM,$
+若$\nu(v):=n-r(d\exp_{p,\lambda(v)v})=1,$ 由Morse指标定理,
+有$v$处邻域使得$\nu(v)\equiv 1.$ 由Jacobi场性质与隐函数定理,
+$\lambda,\phi$在$v$附近是光滑的,
+且$\,\exists\,\gamma:(-\varepsilon,\varepsilon)\rightarrow U_pM,$ 使得</p>
+<script type="math/tex; mode=display">
+\gamma(0)=v,\quad \gamma'(t)\in \ker(d\exp_{p,\lambda(\gamma(t))\gamma(t)}).</script><p><strong>引理 2</strong>. <em>在前述事实基础上, 若$\phi(v)\in \operatorname{Cut}_p,$ 则$\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|_{t=0}=0.$</em> </p>
+<p>记$\widehat{\gamma}=\phi(\gamma(t)),$ 首先由定义,</p>
+<script type="math/tex; mode=display">
+\frac{d {} }{d {}t}\widehat{\gamma}(t)=(\exp_{p,\lambda(v)v})_\ast \left(\frac{d {}\lambda(\gamma(t))}{d {}t}\gamma(t)+\lambda(\gamma(t))\frac{d {}\gamma(t)}{d {}t}\right)=\frac{d {}\lambda(\gamma(t))}{d {}t}(\exp_{p,\lambda(v)v})_\ast \gamma(t).</script><p>两边套模长积分,
+假设$\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}&lt;0,$
+那么存在小区间$[0,a],$ 使得</p>
+<script type="math/tex; mode=display">
+l(\widehat{\gamma})+\lambda(\gamma(a))=\lambda(\gamma(0)).</script><p>注意到$\lambda(\gamma(a))\ge d(p,\phi(\gamma(a))),$
+而由于$\phi(v)\in \operatorname{Cut}_p,$
+$\lambda(\gamma(0))=d(p,\phi(v)).$ 因此,</p>
+<script type="math/tex; mode=display">
+d(p,\phi(v))\le l(\widehat{\gamma})+d(p,\phi(\gamma(a)))\le d(p,\phi(v)).</script><p>因此式子只能取等,
+这说明$\phi(\gamma(a))$落在连接$p,\phi(v)$的最短测地线上,
+这与$\lambda(\gamma(a))$的定义矛盾,
+因此$\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}=0,$
+从而$\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|_{t=0}=0.$</p>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p><strong>引理 3</strong>. <em>$\dim Q_p\le n-2.$</em> </p>
+<p>我们将$Q_p$中的点分解为两部分来处理. </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ Q_p&=\{\exp_pv\in Q_p|r(d\exp_{p,v})\le n-1\}\\
+ &=\{\exp_pv\in Q_p|r(d\exp_{p,v})=n-1\}\cup \{\exp_pv\in Q_p|r(d\exp_{p,v})=n-2\}
+ \end{aligned}</script><p> 这两部分维数都是小于等于$n-2$的.
+后一部分直接由推广的Sard定理得到, 前一部分间接由其得到:
+它是$\{v\in U_pM|\phi(v)\in \operatorname{Cut}_p,\nu(v)=1\}$在$\phi$下的像,
+且$r(d\phi)\le n-2.$</p>
+<p><strong>引理 4</strong>. <em>$N_p$为$n-1$维嵌入子流形.</em> </p>
+<p>取$x\in N_p,$ 有两条从$p$引出的测地线, 记在$T_pM$上终点分别是$x_1,x_2.$
+取它们的邻域$U_1,U_2,$ 使得$\exp_p|_{U_i}$为微分同胚且像一致.</p>
+<p>令$\phi=\exp_p|_{U_2}^{-1}\circ \exp_p|_{U_1}:U_1\approx U_2.$
+考虑$f(v)=|v|-|\phi(v)|\in C^\infty(U_1).$ 不妨设$f$非退化,
+那么存在$(n-1)$维嵌入子流形$\Sigma_1,$ 其上有$|v|=|\phi(v)|.$
+令$\Sigma_2=\phi(\Sigma_1),$ $\Sigma=\exp_p\Sigma_1=\exp_p\Sigma_2.$
+分析可以得到$\Sigma=N_p\cap \exp_{p}|_{U_1},$
+从而$N_p$是$n-1$维嵌入子流形.</p>
+<p>类似地, 可以证明:</p>
+<p><strong>引理 5</strong>. <em>$\dim L_p\le n-2$</em> </p>
+<p>所以我们可以看出, $\partial B_R^g(p)\cap N_p$中坏的部分主要集中$N_p$上.</p>
+<script type="math/tex; mode=display">
+\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup (\partial B_R^g(p)\cap N_p)\cup (\partial B_R^g(p)\cap (L_p\cup Q_p)).</script><p>在$\widehat{C}_p\subset T_pM$上, 取法坐标系$\widehat{g}=\exp_p^\ast (g),$
+$(\widehat{C}_p,\widehat{g})\cong (C_p,g).$ $r(v)=|v|$是光滑函数.
+考虑$\widehat{N}_p=\exp_p^{-1}(N_p)$为$\widehat{C}_p$的$n-1$维子流形,
+那么一个事实是:</p>
+<p><strong>命题 6</strong>. <em>$\widehat{N}_p$有可数个连通分支, 是星型的.</em> </p>
+<p>由Sard定理, $\,\exists\,A\subset \mathbb{R}_+,$ $L^1(A)=0,$
+$R\notin A$是$\widehat{N}_p$上$r(v)$的正则值. $\,\forall\,a.e. R,$</p>
+<script type="math/tex; mode=display">
+\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup \{\text{零测集}\}</script><p>对不是正则值的$R,$ $\partial B_R^g(p)\cap N_p$是一个$n-1$维varifold,
+为$\exp_p(\partial B_R^n(0)\cap \widehat{N}_p).$
+$\widehat{N}_p$与$\partial B_R^n(0)$在坏点交集处的切空间是一致的,
+有后面将会讨论的体积公式:</p>
+<script type="math/tex; mode=display">
+\mathcal{H}^{n-1}(\partial B_R^g(p)\cap N_p)=\int \Theta d\mathcal{H}^{n-1}</script><p>文章最后更新于 2022-09-22 22:35:04 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《几何分析》笔记(3)-割迹</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-09-22 22:35:00</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/09/22/《几何分析》笔记(3)-割迹/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/09/22/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E5%89%B2%E8%BF%B9%E5%BA%94%E7%94%A8/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《几何分析》笔记(4)-割迹应用</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/09/22/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(3)-%E8%B0%B1%E5%BA%8F%E5%88%97%E7%9A%84%E5%BA%94%E7%94%A8/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(3)-谱序列的应用</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (香港标准时间)</span>&nbsp;-&nbsp;
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+            
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-text">证明</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+		TeX: { 
+			equationNumbers: { autoNumber: "AMS" },
+			extensions: ["AMSmath.js", "AMSsymbols.js"]
+		},
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i) 
+			all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</body>
+</html>

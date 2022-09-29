@@ -8529,4 +8529,570 @@ $E^\infty=H_p(U(2))=\mathbb{Z},$ $p=0,1,2,3,$ 其余为零.</p>
         <category>代数拓扑2</category>
       </categories>
   </entry>
+  <entry>
+    <title>《几何分析》笔记(3)-割迹</title>
+    <url>/2022/09/22/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(3)-%E5%89%B2%E8%BF%B9/</url>
+    <content><![CDATA[<p>The dimension of a cut locus on a smooth Riemannian manifold - Jin-Ichi
+Itoh and Minoru Tanaka.</p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们来对第一次课中给出的定理进行证明. 首先给出推广的Sard定理:</p>
+<p><strong>定理 1</strong> (Morse-Sard-Federer). <em>令$f:B_1^n(0)\rightarrow \mathbb{R}^m$为$C^1$映射, $E=\{x\in B_1^n(0)|r(df_x)\le k\}.$ 那么$\dim f(E)\le k.$</em> </p>
+<p>回忆对$M$为完备黎曼流形, $p\in M,$ 那么</p>
+<script type="math/tex; mode=display">
+\operatorname{Cut}_p=Q_p\cup N_p\cup L_p, \quad Q_{p}:=\{x\in \operatorname{Cut}_p|\,x,p\text{共轭}\},</script><p>还有$N_p$为其中恰有两条线段连接的部分,
+$L_p$为其中有三条以上线段连接的部分.</p>
+<p>给出下面几个定义:</p>
+<script type="math/tex; mode=display">
+\lambda(v)=\inf \{t>0|r(d\exp_{p,tv})\le n-1\}\in (0,+\infty],</script><script type="math/tex; mode=display">
+U_pM=\{v\in T_pM\,|\,|v|=1,\lambda(v)<+\infty\},</script><script type="math/tex; mode=display">
+\phi(v):=\exp_p\lambda(v)v: U_pM\rightarrow M.</script><p>我们给出如下的事实: 对$v\in U_pM,$
+若$\nu(v):=n-r(d\exp_{p,\lambda(v)v})=1,$ 由Morse指标定理,
+有$v$处邻域使得$\nu(v)\equiv 1.$ 由Jacobi场性质与隐函数定理,
+$\lambda,\phi$在$v$附近是光滑的,
+且$\,\exists\,\gamma:(-\varepsilon,\varepsilon)\rightarrow U_pM,$ 使得</p>
+<script type="math/tex; mode=display">
+\gamma(0)=v,\quad \gamma'(t)\in \ker(d\exp_{p,\lambda(\gamma(t))\gamma(t)}).</script><p><strong>引理 2</strong>. <em>在前述事实基础上, 若$\phi(v)\in \operatorname{Cut}_p,$ 则$\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|_{t=0}=0.$</em> </p>
+<p>记$\widehat{\gamma}=\phi(\gamma(t)),$ 首先由定义,</p>
+<script type="math/tex; mode=display">
+\frac{d {} }{d {}t}\widehat{\gamma}(t)=(\exp_{p,\lambda(v)v})_\ast \left(\frac{d {}\lambda(\gamma(t))}{d {}t}\gamma(t)+\lambda(\gamma(t))\frac{d {}\gamma(t)}{d {}t}\right)=\frac{d {}\lambda(\gamma(t))}{d {}t}(\exp_{p,\lambda(v)v})_\ast \gamma(t).</script><p>两边套模长积分,
+假设$\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}&lt;0,$
+那么存在小区间$[0,a],$ 使得</p>
+<script type="math/tex; mode=display">
+l(\widehat{\gamma})+\lambda(\gamma(a))=\lambda(\gamma(0)).</script><p>注意到$\lambda(\gamma(a))\ge d(p,\phi(\gamma(a))),$
+而由于$\phi(v)\in \operatorname{Cut}_p,$
+$\lambda(\gamma(0))=d(p,\phi(v)).$ 因此,</p>
+<script type="math/tex; mode=display">
+d(p,\phi(v))\le l(\widehat{\gamma})+d(p,\phi(\gamma(a)))\le d(p,\phi(v)).</script><p>因此式子只能取等,
+这说明$\phi(\gamma(a))$落在连接$p,\phi(v)$的最短测地线上,
+这与$\lambda(\gamma(a))$的定义矛盾,
+因此$\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}=0,$
+从而$\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|_{t=0}=0.$</p>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p><strong>引理 3</strong>. <em>$\dim Q_p\le n-2.$</em> </p>
+<p>我们将$Q_p$中的点分解为两部分来处理. </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ Q_p&=\{\exp_pv\in Q_p|r(d\exp_{p,v})\le n-1\}\\
+ &=\{\exp_pv\in Q_p|r(d\exp_{p,v})=n-1\}\cup \{\exp_pv\in Q_p|r(d\exp_{p,v})=n-2\}
+ \end{aligned}</script><p> 这两部分维数都是小于等于$n-2$的.
+后一部分直接由推广的Sard定理得到, 前一部分间接由其得到:
+它是$\{v\in U_pM|\phi(v)\in \operatorname{Cut}_p,\nu(v)=1\}$在$\phi$下的像,
+且$r(d\phi)\le n-2.$</p>
+<p><strong>引理 4</strong>. <em>$N_p$为$n-1$维嵌入子流形.</em> </p>
+<p>取$x\in N_p,$ 有两条从$p$引出的测地线, 记在$T_pM$上终点分别是$x_1,x_2.$
+取它们的邻域$U_1,U_2,$ 使得$\exp_p|_{U_i}$为微分同胚且像一致.</p>
+<p>令$\phi=\exp_p|_{U_2}^{-1}\circ \exp_p|_{U_1}:U_1\approx U_2.$
+考虑$f(v)=|v|-|\phi(v)|\in C^\infty(U_1).$ 不妨设$f$非退化,
+那么存在$(n-1)$维嵌入子流形$\Sigma_1,$ 其上有$|v|=|\phi(v)|.$
+令$\Sigma_2=\phi(\Sigma_1),$ $\Sigma=\exp_p\Sigma_1=\exp_p\Sigma_2.$
+分析可以得到$\Sigma=N_p\cap \exp_{p}|_{U_1},$
+从而$N_p$是$n-1$维嵌入子流形.</p>
+<p>类似地, 可以证明:</p>
+<p><strong>引理 5</strong>. <em>$\dim L_p\le n-2$</em> </p>
+<p>所以我们可以看出, $\partial B_R^g(p)\cap N_p$中坏的部分主要集中$N_p$上.</p>
+<script type="math/tex; mode=display">
+\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup (\partial B_R^g(p)\cap N_p)\cup (\partial B_R^g(p)\cap (L_p\cup Q_p)).</script><p>在$\widehat{C}_p\subset T_pM$上, 取法坐标系$\widehat{g}=\exp_p^\ast (g),$
+$(\widehat{C}_p,\widehat{g})\cong (C_p,g).$ $r(v)=|v|$是光滑函数.
+考虑$\widehat{N}_p=\exp_p^{-1}(N_p)$为$\widehat{C}_p$的$n-1$维子流形,
+那么一个事实是:</p>
+<p><strong>命题 6</strong>. <em>$\widehat{N}_p$有可数个连通分支, 是星型的.</em> </p>
+<p>由Sard定理, $\,\exists\,A\subset \mathbb{R}_+,$ $L^1(A)=0,$
+$R\notin A$是$\widehat{N}_p$上$r(v)$的正则值. $\,\forall\,a.e. R,$</p>
+<script type="math/tex; mode=display">
+\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup \{\text{零测集}\}</script><p>对不是正则值的$R,$ $\partial B_R^g(p)\cap N_p$是一个$n-1$维varifold,
+为$\exp_p(\partial B_R^n(0)\cap \widehat{N}_p).$
+$\widehat{N}_p$与$\partial B_R^n(0)$在坏点交集处的切空间是一致的,
+有后面将会讨论的体积公式:</p>
+<script type="math/tex; mode=display">
+\mathcal{H}^{n-1}(\partial B_R^g(p)\cap N_p)=\int \Theta d\mathcal{H}^{n-1}</script><p>文章最后更新于 2022-09-22 22:35:04 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>几何分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《几何分析》笔记(4)-割迹应用</title>
+    <url>/2022/09/22/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E5%89%B2%E8%BF%B9%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于$\operatorname{Cut}_p=N_p\cup Q_p\cup L_p,$
+$(Q_p\cup L_p)$维数小于等于$n-2,$且它是闭的. 设$x_k\rightarrow x,$
+若$x\notin Q_p,$ 那么$x$处有微分同胚, 从而周围的$x_k$只能在$L_p$中,
+这将导致三条线段的(子列)收敛, $x\in L_p.$</p>
+<p>记$\partial^\ast B_r^g(p):=\partial B_r^g(p)\cap S_p,$
+是$\partial B_r^g(p)$中好的部分,
+$\partial B_r^g(p)\cap N_p$是主要的坏的部分. 对几乎处处的$r,$
+它是$n-2$维子流形; 对所有的$r,$ 它是一个$n-1$维varifold.</p>
+<h2 id="积分公式"><a href="#积分公式" class="headerlink" title="积分公式"></a>积分公式</h2><p>对$\exp_p:\widehat{S}_p\rightarrow S_p,$ 取法坐标系</p>
+<script type="math/tex; mode=display">
+\widehat{g}=\exp_p^\ast (g)=dr\otimes dr+\phi_{ij}(r,\theta)d\theta^i\otimes d\theta^j,</script><script type="math/tex; mode=display">
+dV_{\widehat{g} }=\theta(r,\theta)dr\wedge dS^{n-1}.</script><p>事实上$\Theta$就是$\phi_{ij}$的行列式.</p>
+<script type="math/tex; mode=display">
+\mathcal{H}^{n-1}(\partial^\ast B_r^g(p))=\int_{(\partial B_r^n(0)\cap \widehat{S}_p)/r}\Theta(r,\theta)dS^{n-1},</script><script type="math/tex; mode=display">
+\mathcal{H}^{n-1}(\partial B_r^g(p)\cap N_p)=\frac{1}{2}\int_{(\partial B_r^n(0)\cap \widehat{N}_p)/r}\Theta(r,\theta)dS^{n-1}.</script><p>对几乎处处的$r,$ $\partial B_r^g(p)$只有第一个式子, 而对坏的$r,$
+测度要加上第二行的式子.</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>对$\dim M=2,$ 记$\operatorname{Cut}_p=N_p\cup R_p,$
+$R_p:=L_p\cup Q_p$维数为零.</p>
+<script type="math/tex; mode=display">
+E:=\{r\in (0,+\infty)|\partial B_r^g(p)\cap R_p\}\neq \varnothing.</script><p><strong>命题 1</strong>. <em>$\dim E=0.$</em> </p>
+<p>由于$\dim R_p=0,$ 固定$\tau&gt;0,$ $\widehat{B}_\infty^\tau(R_p)=0.$
+从而$\,\exists\,x_i,r_i,$ 使得$x_i\in R_p,$
+$R_p\subset \cup \overline{B}_{r_i}(x_i),$
+$\sum_{i=1}^\infty r_i^\tau&lt;\varepsilon.$</p>
+<p>$\,\forall\,r\in E,$ $\,\exists\,x\in R_p\cap \partial B_r^g(p),$
+$\,\exists\,i,$ 使得$x\in \overline{B}_{r_i}(x_i).$ 记$a_i:=d(p,x_i),$</p>
+<script type="math/tex; mode=display">
+|r-a_i|=|d(p,x)-a_i|\le d(x,x_i)\le r_i.</script><p>从而$r\in \cup [a_i-r_i,a_i+r_i]\supset E.$</p>
+<script type="math/tex; mode=display">
+\widehat{B}^\tau_{\infty}(E)\le \sum \omega(\tau)r_i^\tau\le C\varepsilon.</script><p>令$\varepsilon\rightarrow 0$即得$\widehat{B}^\tau_{\infty}(E)=0.$
+由$\tau$任意性即有结论.</p>
+<p>称$r\in \mathbb{R}_+$是正则的, 若$r\notin E,$
+$\partial B_r^g(p)$与$N_p$横截相交. 此时$\partial B_r^g(p)$是分段光滑的.
+正则的$r$是几乎处处的, 因此这样的性质也是.</p>
+<p>文章最后更新于 2022-09-22 23:12:19 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>几何分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《几何分析》笔记(5)-Ricci比较定理</title>
+    <url>/2022/09/26/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Ricci%E6%AF%94%E8%BE%83%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>令$M_k$为$n$维单连通黎曼流形, 截面曲率恒为$k,$ 即空间形式.
+令$V_k(r)$为半径为$r$的球的体积, $S_k(r)$为其球面面积. 记</p>
+<script type="math/tex; mode=display">
+g=dr^2+sn_k^2(r)g_{S_{n-1} }</script><script type="math/tex; mode=display">
+sn_k(r)=\left\{
+ \begin{aligned}
+ &\frac{\sin\sqrt{k}r}{\sqrt{k} },&&k>0\\
+ &r,&&k=0\\
+ &\frac{\sin\sqrt{-k}r}{\sqrt{-k} },&&k<0
+ \end{aligned}\right.</script><p> $sn_k(r)$是方程$f’’+kf=0,$ $f(0)=0,$
+$f’(0)=1$的解. 记$r(x)=d(x,p),$ 那么</p>
+<script type="math/tex; mode=display">
+\Delta r(x)=(n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><script type="math/tex; mode=display">
+dV_g=sn_k^{n-1}dr_ndS^{n-1}.</script><p>取$M$为$\operatorname{Ric}\ge (n-1)K$的流形, 那么对于其上的$r(x),$</p>
+<script type="math/tex; mode=display">
+\Delta r_k\ge \Delta r,\quad sn_{k}^{n-1}(r)\ge \Theta(r,\theta).</script><p>一些结论是, $r(x)\in W_{loc}^{1,p}\cap C^0,$ $\,\forall\,p.$
+这就是Ricci比较定理. 由Bishop在$S_p$上给出了证明.
+Gromov将其推广到整体上, 统称Bishop-Gromov定理.
+它在证明Gromov-Hausdorff定理中起到了重要的作用.</p>
+<p><strong>引理 1</strong>. <em>记$\omega$为体积形式, $r=d(x,p).$ 那么,</em> </p>
+<script type="math/tex; mode=display">
+L_{\partial r}\omega=\Delta r\omega,\quad \frac{\partial {}\Theta}{\partial {}r}=\Delta r\Theta,\quad x\in S_p.</script><p>取平行标准正交基$\{e_i\},$ $\nabla_ie_j=0.$ $\{\theta_i\}$为对偶基. 那么</p>
+<script type="math/tex; mode=display">
+\omega=\theta^1\wedge\cdots\wedge\theta^n.</script><script type="math/tex; mode=display">
+L_{\partial_r}\omega=(L_{\partial_r}\theta^1)\wedge\theta^2\wedge\cdots\wedge \theta^n+\cdots+\theta^1\wedge\cdots\wedge \theta^{n-1}\wedge (L_{\partial_r}\theta^n).</script><script type="math/tex; mode=display">
+\begin{aligned}
+ (L_{\partial_r}\theta^i)(X)=&\frac{\partial {}\theta^i(X)}{\partial {}r}-\theta^i(L_{\partial_r}X)\\
+ =&\frac{\partial {}\theta^i(X)}{\partial {}r}-\theta^i(\nabla_{\partial_r}X)+\theta^i(\nabla_X\partial_r)\\
+ =&(\nabla_{\partial_r}\theta^i)(X)+\theta^i(\nabla_X\partial_r)\\
+ =&\theta^i(\nabla_X\partial_r)
+ \end{aligned}</script><p>从而,</p>
+<script type="math/tex; mode=display">
+L_{\partial_r}\theta^i=\theta^i(\nabla_{e_k}\partial_r)\theta^k.</script><script type="math/tex; mode=display">
+L_{\partial_r}\omega=\theta^k(\nabla_{e_k}\partial_r)\omega=\operatorname{tr}(Hess_r)\omega=\Delta r\omega.</script><script type="math/tex; mode=display">
+\begin{aligned}
+ Hess_f(X,Y)&=XY(f)-d_f(\nabla_XY)\\
+ &=X\left<{}Y,\nabla_gf\right>-\left<{}\nabla_gf,\nabla_XY\right>\\
+ &=\left<{}Y,\nabla_X\nabla_gf\right>.
+ \end{aligned}</script><p> 那么对于体积元,</p>
+<script type="math/tex; mode=display">
+\omega=\Theta dr\wedge dS^{n-1},\quad \Delta r\omega=L_{\partial r}\omega=\frac{\partial {}\Theta}{\partial {}r}dr\wedge dS^{n-1}=\frac{\partial {}\Theta}{\partial {}r}\frac{\omega}{\Theta}.</script><h2 id="比较定理"><a href="#比较定理" class="headerlink" title="比较定理"></a>比较定理</h2><p>对于$r(x)=d(x,p)\in C^\infty(S_p\setminus\{p\}),$
+$|\nabla_gr(x)|^2\equiv 1.$ $\Delta_g|\nabla_gr|^2=0.$ 由Bochner公式,</p>
+<script type="math/tex; mode=display">
+2|Hess_f|^2+2\left<{}\nabla_g\Delta_g r,\nabla_g r\right>+2\operatorname{Ric}(\nabla_gr,\nabla_gr)=0,</script><script type="math/tex; mode=display">
+\frac{\partial {}\Delta r}{\partial {}r}+|Hess_r|^2=-\operatorname{Ric}(\partial_r,\partial_r),</script><p>由于</p>
+<script type="math/tex; mode=display">
+Hess_r(\partial_r,X)=\left<{}\nabla_{\partial_r}\partial_r,X\right>=0,\quad |Hess_r|^2\ge \frac{(\operatorname{tr}Hess_r)^2}{n-1}=\frac{(\Delta_gr)^2}{n-1}.</script><p>结合$\operatorname{Ric}\ge (n-1)K,$ 我们有:</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}\Delta r}{\partial {}r}+\frac{(\Delta r)^2}{n-1}\le -(n-1)K.</script><p>记$f(r)=\Delta_gr,$ 则 </p>
+<script type="math/tex; mode=display">
+f'+\frac{f^2}{n-1}\le -(n-1)K.</script><p>考虑$r=0$附近的渐进形态. 记$r=|x|,$ 局部我们有: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Delta_gr&=g^{ij}\left(\frac{\partial^2 {}r}{\partial {}x_i\partial {}x_j}-\Gamma_{ij}^k\frac{\partial {}r}{\partial {}x_k}\right)\\
+ &=\delta^{ij}\frac{\partial^2 {}r}{\partial {}x_i\partial {}x_j}+(g^{ij}-\delta^{ij})\frac{\partial^2 {}r}{\partial {}x_i\partial {}x_j}-\Gamma_{ij}^k\frac{\partial {}r}{\partial {}x_k}=\frac{1}{r}+O(r).
+ \end{aligned}</script><p>接下来我们分类讨论:</p>
+<h3 id="K-gt-0"><a href="#K-gt-0" class="headerlink" title="$K&gt;0$"></a>$K&gt;0$</h3><script type="math/tex; mode=display">
+f'\le -((n-1)K+\frac{f^2}{n-1}),\quad \frac{f'}{(n-1)^2K+f^2}\le -\frac{1}{n-1}.</script><p>两边积分, 利用$\arctan$即可得到,</p>
+<script type="math/tex; mode=display">
+f\le (n-1)\frac{\cos\sqrt{k}r}{\sin\sqrt{k}r}</script><h3 id="K-0"><a href="#K-0" class="headerlink" title="$K=0$"></a>$K=0$</h3><script type="math/tex; mode=display">
+f'+\frac{f^2}{n-1}\le 0,\quad f'\le 0.</script><p>取$T=\min\{t|f(t)=0\}\in (0,+\infty].$</p>
+<script type="math/tex; mode=display">
+f|_{[T,+\infty)}\le 0\quad\Rightarrow\quad f|_{[T,+\infty)}\le \frac{n-1}{r}=(n-1)\frac{sn_0'(r)}{sn_0(r)}.</script><p>所以只需分析$(0,T)$上的情况.</p>
+<script type="math/tex; mode=display">
+\frac{f'}{f^2}+\frac{1}{n-1}\le 0,\quad \left(\frac{1}{f}\right)'\ge \frac{1}{n-1},\quad \frac{1}{f(r)}\ge \frac{r-r_0}{n-1}+\frac{1}{f({r_0})}.</script><h3 id="K-lt-0"><a href="#K-lt-0" class="headerlink" title="$K&lt;0$"></a>$K&lt;0$</h3><script type="math/tex; mode=display">
+f'\le -(n-1)K-\frac{f^2}{n-1},\quad T=\min\{t|-(n-1)K-\frac{f^2}{n-1}=0\}.</script><p>那么 </p>
+<script type="math/tex; mode=display">
+-(n-1)K-\frac{f^2}{n-1}|_{(0,T)}< 0</script><p> 记</p>
+<script type="math/tex; mode=display">
+I=\{t|-(n-1)K-\frac{f^2}{n-1}< 0\}</script><p> 那么在$I$上,
+记$\varphi=(n-1)\frac{sn_k’(r)}{sn_k(r)},$ 使得有:</p>
+<script type="math/tex; mode=display">
+\frac{f'}{-(n-1)K-\frac{f^2}{n-1} }\ge 1=\frac{\varphi'}{-(n-1)K-\frac{\varphi^2}{n-1} }.</script><p>记$F’(t)=\frac{1}{-(n-1)K-\frac{t^2}{n-1} },$ 它在$I$上取负.
+那么$F$单调递减,</p>
+<script type="math/tex; mode=display">
+(F(f))'\ge (F(\varphi))',\quad \lim_{r\rightarrow 0}F(f)=\lim_{r\rightarrow 0}F(\varphi)\in (0,+\infty).</script><script type="math/tex; mode=display">
+F(f)\ge F(\varphi),\quad f\le \varphi,\quad in\,[0,T].</script><p>记$\alpha(r)=f(r)-\varphi(r).$ 设$\alpha(r_0)&gt;0.$
+定义$r_1=\max\{r| r&lt;r_0,\alpha(r)=0\}.$ 在$(r_1,r_0)$上,</p>
+<script type="math/tex; mode=display">
+-(n-1)K<\frac{\varphi^2}{n-1}<\varphi<f.</script><p>因此$-(n-1)K-\frac{f^2}{n-1}&lt;0,$ $(r_1,r_0)\subset I.$
+由同样的方法可以分析出其上有$f(r)\le \varphi(r),$ 矛盾.
+从而$\alpha(r)\le 0,$ 即$f\le \varphi.$</p>
+<p>综上, 我们证明了定理:</p>
+<p><strong>定理 2</strong>. <em>对$\operatorname{Ric}\ge (n-1)K$的完备黎曼流形$M,$ $\,\forall\,x\in S_p\setminus\{p\},$ 我们有:</em> </p>
+<script type="math/tex; mode=display">
+\Delta r(x)\le (n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><p>文章最后更新于 2022-09-26 19:08:06 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>几何分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《几何分析》笔记(6)-体积比较定理</title>
+    <url>/2022/09/26/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E4%BD%93%E7%A7%AF%E6%AF%94%E8%BE%83%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<h2 id="好的情形"><a href="#好的情形" class="headerlink" title="好的情形"></a>好的情形</h2><p>我们回忆对$\operatorname{Ric}\ge (n-1)K$的完备流形, $p\in M,$
+$\,\forall\,x\in S_p\setminus\{p\},$ 我们有:</p>
+<script type="math/tex; mode=display">
+\Delta r(x)\le (n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><p> 在法坐标系下,
+$dV_g=\Theta (r,\theta)dr\wedge dS^{n-1},$</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}\Theta}{\partial {}r}=\Delta r\Theta.</script><script type="math/tex; mode=display">
+\frac{\partial {}\log\Theta}{\partial {}r}=\Delta r\le \frac{\partial {}\log sn_k^{n-1}(r)}{\partial {}r}.</script><script type="math/tex; mode=display">
+\frac{\partial {}\log \frac{\Theta}{\Theta_k} }{\partial {}r}\le 0.</script><p>因此$\frac{\Theta}{\Theta_k}$单减,
+$\lim_{r\rightarrow 0}\frac{\Theta}{\Theta_k}=1,$
+从而$\Theta\le \Theta_k,$ 在$x\in \widehat{S}_p$时.</p>
+<p>注意到$r_1&lt;r_2$时,
+$\frac{\partial^\ast B_{r_1}^n}{r_1}\supset \frac{\partial^\ast B_{r_2}^n}{r_2}.$</p>
+<script type="math/tex; mode=display">
+\frac{\mathcal{H}^{n-1}(\partial^\ast B_{r_2}^g)}{S_k(r_2)}=\int_{\partial^\ast B_{r_2}^n/r_2}\frac{\Theta(r_2,\theta)}{c_nsn_k^{n-1}(r_2)}dS^{n-1}\le \int_{\partial^\ast B_{r_2}^n/r_2}\frac{\Theta(r_1,\theta)}{c_nsn_k^{n-1}(r_1)}dS^{n-1}\le \frac{\mathcal{H}^{n-1}(\partial^\ast B_{r_1}^g)}{S_k(r_1)}.</script><p><strong>定理 1</strong>. <em>$\operatorname{Ric}\ge (n-1)K$时, $\frac{\mathcal{H}^{n-1}(\partial^\ast B_r^g(p))}{S_k(r)}$单调递减.</em> </p>
+<p><strong>推论 2</strong> (Myers’ Thm). <em>$\operatorname{Ric}\ge (n-1)K&gt;0$时, $\operatorname{diam}(M)\le \frac{\pi}{\sqrt{K} }$</em> </p>
+<p>标准的做法是第二变分方法. 现在我们利用体积比较定理给出证明.</p>
+<p>设$\operatorname{diam}(M)&gt;\frac{\pi}{\sqrt{K} },$ 那么$\,\exists\,p,$
+使得$\partial^\ast B^g_{\frac{\pi}{\sqrt{K} } }(p)\neq \varnothing.$
+$\mathcal{H}^{n-1}(\partial^\ast B^g_{\frac{\pi}{\sqrt{K} } }(p))&gt;0.$
+但此时$S_k(\frac{\pi}{\sqrt{K} })=0,$ 比值为$+\infty,$ 与单减性矛盾.</p>
+<h2 id="一般情形"><a href="#一般情形" class="headerlink" title="一般情形"></a>一般情形</h2><p>事实上, 可以说明一般的体积比较定理:</p>
+<p><strong>定理 3</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $\frac{\mathcal{H}^{n-1}(\partial B_r^g(p))}{S_k(r)}$单调递减.</em> </p>
+<script type="math/tex; mode=display">
+\mathcal{H}^{n-1}(\partial B_r^g(p))=\int_{\partial^\ast B_r^n/r}\Theta(r,\theta)dS^{n-1}+\frac{1}{2}\int_{(\partial B_r^n\cap \widehat{N}_p)/r}\Theta(r,\theta)dS^{n-1}.</script><p>$\Theta$在$\widehat{C}_p$上良定,</p>
+<script type="math/tex; mode=display">
+\frac{\Theta(r_1,\theta)}{sn_k^{n-1}(r_1)}\le \frac{\Theta(r_2,\theta)}{sn_k^{n-1}(r_2)},\quad r_1>r_2, (r_1,\theta)\in \widehat{S}_p.</script><p>上式当$(r_1,\theta)\in\widehat{N_p}$时也对. 同时注意到有:</p>
+<script type="math/tex; mode=display">
+(\partial B_{r_2}^n\cap \widehat{N}_p)/r_2\subset \partial^\ast B_{r_1}^n/r_1,\quad r_1<r_2.</script><p>因此类似的, 通过积分放缩即可得到结论.</p>
+<p><strong>定理 4</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $\frac{\mathrm{vol}(B_r^g(p))}{V_k(r)}$单调递减.</em> </p>
+<p>在$T_pM\cong \mathbb{R}^n$上,
+定义$\widetilde{\Theta}|_{\widehat{S}_p}=\Theta,$ 其他部分取零. 那么</p>
+<script type="math/tex; mode=display">
+\mathrm{vol}(B_r^g(p))=\int_{B_r^n}\widetilde{\Theta}drdS^{n-1}=\int_0^r\int_{S^{n-1} }\widetilde{\Theta}(r,\theta)dsdS^{n-1}\in AC_{loc}(0,+\infty)</script><script type="math/tex; mode=display">
+\begin{aligned}
+ \frac{d {} }{d {}r}\frac{\mathrm{vol}(B_r^g(p))}{V_k(r)}&=\frac{1}{V_k^2(r)}\cdot \left(\int_{\partial^*B^g_r/r}\Theta dS^{n-1}V_k(r)-\int_0^r\int_{\partial^*B^g_s/s}\Theta dS^{n-1}S_k(r)\right)\\
+ &=\frac{S_k(r)}{V_k(r)}\left(\frac{\mathcal{H}^{n-1}(\partial^* B_r^g)}{S_k(r)}-\frac{\int_0^r\frac{\mathcal{H}^{n-1}(\partial^*B_s^g)ds}{S_k(s)}S_k(s)}{\int_0^rS_k(s)ds}\right)\le 0
+ \end{aligned}</script><p> 由此即可得到结论.</p>
+<p>体积比较定理一般用来估计下界而非上界.</p>
+<p><strong>推论 5</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $\operatorname{diam}M=1,$ 有非塌缩条件$\mathrm{vol}(M)\ge v_0&gt;0.$ 那么$\,\exists\,C_1=C_1(n,k,v_0),C_2=C_2(n,k,v_0)&gt;0,$</em> </p>
+<script type="math/tex; mode=display">
+0<C_1\le \frac{\mathrm{vol}(B_r^g(p))}{r^n}\le C_2.</script><p>由体积比较定理, 有</p>
+<script type="math/tex; mode=display">
+0<\frac{\mathrm{vol}(M)}{V_k(1)}\le \frac{\mathrm{vol}(B_r^g(p))}{V_k(r)}\le 1.</script><p>由</p>
+<script type="math/tex; mode=display">
+\max_{[0,1]}\frac{V_k(r)}{r^n}<+\infty, \quad \inf_{[0,1]}\frac{V_k(r)}{r^n}>0</script><p>即有结论.</p>
+<p><strong>推论 6</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $r_1&lt;r_2,$</em> </p>
+<script type="math/tex; mode=display">
+\frac{\mathrm{vol}(B_{r_2}^g(p)\setminus B_{r_1}^g(p))}{V_k(r_2)-V_k(r_1)}\le \frac{\mathrm{vol}(B_{r_2}^g(p))}{V_k(r_2)}\le \frac{\mathrm{vol}(B_{r_1}^g(p))}{V_k(r_1)}</script><p>取$r_1&lt;r&lt;r_2,$ 令$r\rightarrow r_2,$ 即有</p>
+<script type="math/tex; mode=display">
+\frac{\mathcal{H}^{n-1}(\partial^\ast B_{r_2}^g)}{S_k(r_2)}\le \frac{\mathrm{vol}(B_{r_1}^g(p))}{V_k(r_1)}</script><p>可选到$r_2’\in (r_1,r_2),$
+使得$\mathcal{H}^{n-1}(\partial^\ast B_{r_2’}^g)=\mathcal{H}^{n-1}(\partial B_{r_2’}^g)$</p>
+<script type="math/tex; mode=display">
+\frac{\mathcal{H}^{n-1}(\partial^\ast B_{r_2}^g)}{S_k(r_2)}\le \frac{\mathcal{H}^{n-1}(\partial B_{r_2}^g)}{S_k(r_2)}\le\frac{\mathcal{H}^{n-1}(\partial B_{r_2'}^g)}{S_k(r_2')} \le \frac{\mathrm{vol}(B_{r_1}^g(p))}{V_k(r_1)}</script><p><strong>推论 7</strong>. <em>$\operatorname{Ric}\ge (n-1)K,$ $r_1&lt;r_2,$</em> </p>
+<script type="math/tex; mode=display">
+\frac{\mathcal{H}^{n-1}(\partial B_{r_2}^g(p))}{S_k(r_2)}\le \frac{\mathrm{vol}(B_{r_1}^g(p))}{V_k(r_1)}</script><p><strong>定理 8</strong>. <em>$\operatorname{Ric}\ge 0$时, $(M,g)$紧, 或$\mathrm{vol}(B_R^g(p))\ge CR$比线性增长快.</em> </p>
+<p>若$(M,g)$非紧, 取$d(p,x_k)=k.$</p>
+<script type="math/tex; mode=display">
+\frac{\mathrm{vol}(B_{k+1}(x_k)\setminus B_{k-1}(x_k))}{\omega_n((k+1)^n-(k-1)^n)}\le\frac{\mathrm{vol}(B_{k-1}(x_k))}{\omega_n(k-1)^n}</script><script type="math/tex; mode=display">
+\mathrm{vol}(B_{2k(p)})\ge \mathrm{vol}(B_{k-1}(x_k))\ge Ck\mathrm{vol}(B_{k+1}(x_k)\setminus B_{k-1}(x_k))\ge Ck\mathrm{vol}(B_1(p))</script><p><strong>注 9</strong>. <em>若$\operatorname{Ric}\ge (n-1)K,$ 若$B_r^g,\partial B_r^g,\partial^\ast B_r^g$任意一项与标准体积比取$1,$ 则$B_r^g(p)\cong B_r^k.$</em> </p>
+<p>文章最后更新于 2022-09-26 19:08:33 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>几何分析</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(4)-Leray-Serre谱序列</title>
+    <url>/2022/09/27/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(4)-Leray-Serre%E8%B0%B1%E5%BA%8F%E5%88%97/</url>
+    <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于纤维丛 </p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi} B,\quad \pi_1B=0.</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(B;H_q(F))\Rightarrow E^\infty_{p,q}=G_pH_{p+q}(E).</script><p>考虑一些例子. 对于纤维丛</p>
+<script type="math/tex; mode=display">
+S^1\rightarrow S^\infty\rightarrow \mathbb{C}\mathrm{P}^\infty,</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(\mathbb{C}\mathrm{P}^\infty)\otimes H_q(S^1),</script><p>由$S^\infty$的同调,
+$E^2_{p,q}$上的$\partial_2:E^2_{2k,0}\cong E^2_{2k-2,1}$必须是同构,
+$k\ge 1.$</p>
+<p>对于Hopf纤维化</p>
+<script type="math/tex; mode=display">
+S^1\rightarrow S^3\rightarrow S^2=\mathbb{C}\mathrm{P}^1,</script><p>也可以通过类似的方法得到谱序列的结构. 计算$\partial_2$很少直接计算,
+第一种常见的计算方式就是上面的倒推法, 另一种是利用函子性质.</p>
+<p>注意到第二个例子中的纤维丛是第一个例子的拉回,
+由映射$\mathbb{C}\mathrm{P}^1\rightarrow \mathbb{C}\mathrm{P}^\infty.$
+那么由于Leray-Serre谱序列有函子性质, 链映射与微分可交换.
+这样就可以通过某个谱序列的微分得到另一个谱序列的微分.</p>
+<h2 id="局部系数"><a href="#局部系数" class="headerlink" title="局部系数"></a>局部系数</h2><p>对拓扑空间$B,$ 记其万有覆盖空间为$\widetilde{B},$ $\pi=\pi_1(B),$
+$M$是一个(左)$\mathbb{Z}[\pi]$模($\pi$作用在$M$上). 定义</p>
+<script type="math/tex; mode=display">
+C_n(B;M):=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]} M,</script><p>那么可以如下行定义$\pi$作用在$\widetilde{B}$上,
+诱导$\pi$在$C_n(\widetilde{B})$上的作用,
+从而$C_n(\widetilde{B})$是一个(左)$\mathbb{Z}[\pi]$模.</p>
+<p>$\,\forall\,c\in C_n(\widetilde{B}),$ $m\in M,$ $r\in \pi,$</p>
+<script type="math/tex; mode=display">
+(r^{-1}c)\otimes m=c\otimes (rm), \text{或} (rc)\otimes (rm)=c\otimes m.</script><p>$-\bigotimes_{\mathbb{Z}_\pi}M$是一个函子, $C_n(B;M)$是链复形.
+它的同调$H_n(B,M)$是局部系数在$M$中的$B$的同调.</p>
+<p>若$\pi_1B$在$M$上作用平凡, $B,\widetilde{B}$为CW复形. 那么</p>
+<script type="math/tex; mode=display">
+C_n^{CW}(B;M)=C_n^{CW}(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}M=C_n^{CW}(B;\mathbb{Z})\bigotimes_{\mathbb{Z} }M,</script><p>$H_n(B;M)$就是$B$的系数在$M$中的同调.</p>
+<p>若$M=\mathbb{Z}[\pi],$</p>
+<script type="math/tex; mode=display">
+C_n(B;\mathbb{Z}[\pi])=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}\mathbb{Z}[\pi]=C_n(\widetilde{B}),</script><p>因此$H_n(B;\mathbb{Z}[\pi])=H_n(\widetilde{B}).$</p>
+<p>若$M:=\mathbb{Z}[\pi/\pi’],$ $\pi’\subset \pi.$ 那么</p>
+<script type="math/tex; mode=display">
+C_n(B;\mathbb{Z}[\pi/\pi'])=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}\mathbb{Z}[\pi/\pi']=C_n(B'),\quad B'=\widetilde{B}/\pi'.</script><script type="math/tex; mode=display">
+H_n(B;\mathbb{Z}[\pi/\pi'])=H_n(B';\mathbb{Z}).</script><p>类似地, 定义</p>
+<script type="math/tex; mode=display">
+C^n(B;M)=\operatorname{Hom}_{\mathbb{Z}[\pi]}(C_n(\widetilde{B}),M),</script><p>为一个上链复形, 上同调记为$H^n(B;M).$</p>
+<p>若$B$为有限复形,</p>
+<script type="math/tex; mode=display">
+H^n(B;\mathbb{Z}[\pi])\cong H_c^n(\widetilde{B};\mathbb{Z})</script><p>对于不可定向流形上的Poincaré对偶, 记$N$为闭的不可定向$n$维流形,
+$\pi_1(N,x)\xrightarrow{\rho} \{\pm 1\}$作用在$\mathbb{Z}\cong H(N,N\setminus \{x\})$上.
+记$H_k(N;\mathbb{Z})$为整系数同调,
+$H_k(N;\widetilde{\mathbb{Z} })$为关于$\rho$中局部系数同调.</p>
+<p><strong>定理 1</strong>. <em>对$n$维闭流形$N,$ $H^k(N;\mathbb{Z})\cong H_{n-k}(N;\widetilde{\mathbb{Z} }),$ $H^k(N;\widetilde{\mathbb{Z} })\cong H_{n-k}(N;\mathbb{Z}).$ 同构由和基本类$[N]\in H_n(N;\widetilde{\mathbb{Z} })$的卡积给出.</em> </p>
+<h2 id="回到谱序列"><a href="#回到谱序列" class="headerlink" title="回到谱序列"></a>回到谱序列</h2><p>考虑$\pi_1B$不一定非零的纤维化 </p>
+<script type="math/tex; mode=display">
+F\rightarrow E\rightarrow B.</script><p>回忆每个$\gamma:[0,1]\rightarrow B$给出了同伦$L_\gamma:F_{\gamma(0)}\rightarrow F_{\gamma(1)}.$
+若$B$道路连通,</p>
+<script type="math/tex; mode=display">
+\pi_1(B,b)\rightarrow h\operatorname{Aut}(F_b)/\sim \rightarrow \operatorname{Aut}(H_q(F)),</script><script type="math/tex; mode=display">
+\gamma\mapsto L_\gamma\mapsto L_{\gamma^\ast }.</script><p>$\pi_1(B,b)$作用在$H_q(F_b)$上, 称为与纤维化关联的<strong>单值作用</strong>(monodromy
+action).</p>
+<p>对于纤维丛 </p>
+<script type="math/tex; mode=display">
+S^1\rightarrow U(2)\rightarrow \mathbb{R}\mathrm{P}^3,</script><p>构造通过$U(1)\hookrightarrow U(2),$
+$\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\{\pm 1\} }=\mathbb{R}\mathrm{P}^3.$</p>
+<p>事实上, $\pi_1(\mathbb{R}\mathrm{P}^3)$平凡地作用在$H_i(S^1)$上,
+因为它的作用是个180度旋转, 这不改变$S^1$($H_1(S^1)$生成元)的定向.</p>
+<p>文章最后更新于 2022-09-27 23:15:45 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>整体秩定理</title>
+    <url>/2022/09/27/%E6%95%B4%E4%BD%93%E7%A7%A9%E5%AE%9A%E7%90%86/</url>
+    <content><![CDATA[<p><strong>定理 1</strong>. <em>光滑映射$F:M^m\rightarrow N^n$秩为常数, 若$F$单则$F$为浸入; 若$F$满则$F$为淹没. 若$F$为双射则$F$为微分同胚.</em> </p>
+<p>记$r(F)=r.$ 若$F$满, 但$r&lt;n,$
+则由秩定理有坐标系使得$F(\overline U)\subset V$为紧切片.
+它在$N$中是闭的, 内部为空, 是疏朗集.
+由于$M$上可以找到可列个这样的局部坐标系, 那么由于$F$是满射.
+可列个疏朗集将并出$N.$ 由Baire纲定理, 这是不可能的.</p>
+<p>若$r&lt;m,$ 那么由秩定理$F$局部为投影, 显然不是单射.
+$F$为双射的情形是上面的自然推论.</p>
+<p>参考: Introduction to Smooth Manifolds by John M.Lee</p>
+<p>文章最后更新于 2022-09-27 23:31:00 </p>
+]]></content>
+      <categories>
+        <category>命题与定理</category>
+        <category>几何</category>
+        <category>微分流形</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(5)-上同调谱序列</title>
+    <url>/2022/09/29/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(5)-%E4%B8%8A%E5%90%8C%E8%B0%83%E8%B0%B1%E5%BA%8F%E5%88%97/</url>
+    <content><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>上同调谱序列和同调谱序列是类似的, 只是箭头都反了过来. 总的来说, 我们有:</p>
+<ul>
+<li><p>$R$模 $E_r^{p,q},$</p>
+</li>
+<li><p>微分$\delta_r:E_r^{p,q}\rightarrow E_r^{p+r,q-r+1},$</p>
+</li>
+</ul>
+<p>上链复形上滤列的包含关系将是反过来的, 即 </p>
+<script type="math/tex; mode=display">
+F_pC^\ast \supset F_{p+1}C^\ast .</script><p>这就给出了谱序列$(E_r^{p,q},\delta_r),$ $E_1^{p,q}=H^{p+q}(G_pC^\ast ).$
+谱序列收敛到$E_\infty^{p,q}=G_pH^{p+q}(C^\ast )$若滤列对每个$C^i$有界.</p>
+<h2 id="乘法结构"><a href="#乘法结构" class="headerlink" title="乘法结构"></a>乘法结构</h2><p>设$(C^\ast ,\delta)$有一个乘法结构(本身满足运算律如结合律等),</p>
+<script type="math/tex; mode=display">
+\cup:C^i\otimes C^j\rightarrow C^{i+j},</script><p> 我们希望它与微分和滤列兼容,
+这样它就可以放到谱序列上.</p>
+<p>与微分的兼容性要求它是导子:</p>
+<script type="math/tex; mode=display">
+\delta(\alpha\cup \beta)=(\delta\alpha)\cup \beta+(-1)^i\alpha\cup(\delta\beta),\quad \alpha\in C^i.</script><p>与滤列的兼容性要求:</p>
+<script type="math/tex; mode=display">
+\cup:F_pC^\ast \otimes F_{p'}C^\ast \rightarrow F_{p+p'}C^\ast .</script><p>这样$\cup$便(归纳地)诱导了一个谱序列上良定的乘法:</p>
+<script type="math/tex; mode=display">
+\cup_r:E_r^{p,q}\otimes E_r^{p',q'}\rightarrow E_r^{p+p',q+q'}.</script><p><strong>命题 1</strong>. <em>$\delta_r$是$E_r^{p,q}$上的一个导子, 即:</em> </p>
+<script type="math/tex; mode=display">
+\delta_r(\alpha\cup_r \beta)=(\delta_r\alpha)\cup_r\beta+(-1)^{|\alpha|}\alpha\cup_r(\delta_r\beta),\quad |\alpha|:=p+q,\quad \alpha\in E_r^{p,q}.</script><p><strong>命题 2</strong>. <em>若滤列对每个$C^i$有界, 那么$E_\infty^{p,q}$上的乘法结构与$G_pH^{p+q}(C^\ast )$上自然的乘法结构相容.</em> </p>
+<p>我们说$E_r$是一个代数谱序列, 若它有一个乘法结构.</p>
+<h2 id="Leray-Serre上同调谱序列"><a href="#Leray-Serre上同调谱序列" class="headerlink" title="Leray-Serre上同调谱序列"></a>Leray-Serre上同调谱序列</h2><p>对于Serre纤维化, $B$道路连通, </p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi} B</script><p>对于交换环$R,$ $H^\ast (F;R)$是一个(分级交换)$R$代数,
+$E_2^{p,q}=H^p(B;H^q(F;R))$是一个$R$代数, $E_r$是一个代数谱序列,
+$E_\infty^{p,q}=G_pH^{p+q}(E;R).$</p>
+<p><strong>注 3</strong>. <em>若$\cup$表示$H^\ast (B;H^\ast (F;R))$上的标准乘法结构, $\cup_2$是$E_2^{p,q}$上的乘法结构, 那么</em> </p>
+<script type="math/tex; mode=display">
+\alpha\cup_2\alpha'=(-1)^{qp'}\alpha\cup\alpha',\quad \alpha\in E_2^{p,q},\alpha'\in E_2^{p',q'}.</script><p>我们的目标是让$(E_r,\delta_r,\cup_r)$成为微分分级代数, 使得有</p>
+<script type="math/tex; mode=display">
+\alpha\beta=(-1)^{|\alpha||\beta|}\beta\alpha,</script><script type="math/tex; mode=display">
+\delta(\alpha\beta)=(\delta \alpha)\beta+(-1)^{|\alpha|}\alpha(\delta\beta).</script><p><strong>定理 4</strong>. <em>$H^\ast (SU(n))\cong \Lambda^\ast (a_3,a_5,\cdots,a_{2k-1})$为代数同构(后者为外代数).</em> </p>
+<p>用归纳法. $n=1$平凡. 对$n\ge 2,$ 考虑</p>
+<script type="math/tex; mode=display">
+SU(n-1)\rightarrow SU(n)\rightarrow S^{2n-1},</script><p> 考虑它的构造.
+$SU(n)$可迁地作用在$S^{2n-1}\subset \mathbb{C}^n$上,
+$(1,0,\cdots,0)$的稳定子就是$SU(n-1).$
+从而$S^{2n-1}\cong \frac{SU(n)}{SU(n-1)}.$</p>
+<p>考虑Leray-Serre谱序列,</p>
+<script type="math/tex; mode=display">
+E_2=H^\ast (S^{2n-1};H^\ast (SU(n-1)))\cong H(S^{2n-1})\otimes H^\ast (SU(n-1)).</script><p>谱序列如下图所示,
+唯一一个可能非零的$\delta_{2n-1}$由导子性质也是零(通过分解).
+从而谱序列从$E_2$开始就停止.</p>
+<script type="math/tex; mode=display">
+E_\infty=E_2=H^\ast (S^{2n-1})\otimes \Lambda^\ast (a_3,\cdots,a_{2n-3})=\Lambda^\ast (a_3,\cdots,a_{2n-1}).</script><p>新加的生成元对应于$H^{2n-1}(S^{2n-1})$的生成元.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/09/29/5Gl2EeTHFSdACcg.png width='50%' height='50%'></p>
+<p>注意到$\Lambda^\ast (a_3,\cdots,a_{2n-1})$是一个自由代数, 延展问题是平凡的,
+从而</p>
+<script type="math/tex; mode=display">
+\bigoplus_i H^i(SU(n))\cong \bigoplus_i\bigoplus_pG_pH^i(SU(n))=\bigoplus_i\bigoplus_p E_{\infty}^{p,i-p}.</script><p><strong>定理 5</strong>. <em>若$E_\infty$是自由的分级交换双分级代数, 那么$H^\ast \cong E_\infty$为代数同构.</em> </p>
+<h2 id="边同态"><a href="#边同态" class="headerlink" title="边同态"></a>边同态</h2><p>假设$E_2\Rightarrow H^\ast $为第一象限,</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}\hookrightarrow \cdots \hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}</script><script type="math/tex; mode=display">
+E_2^{p,0}\rightarrow E_3^{p,0}\rightarrow \cdots\rightarrow E_\infty^{p,0}</script><p>进一步,</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}=G_0H^q=\frac{F_0H^q}{F_1H^q},\quad H^q\rightarrow E_\infty^{0,q};</script><script type="math/tex; mode=display">
+E_\infty^{p,0}=G_pH^p=\frac{F_pH^p}{F_{p+1}H^p=0}, \quad E_\infty^{p,0}\hookrightarrow H^p.</script><p>文章最后更新于 2022-09-29 16:04:01 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《微分流形》笔记-李群</title>
+    <url>/2022/09/28/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E6%9D%8E%E7%BE%A4/</url>
+    <content><![CDATA[<p>Introduction to smooth manifolds by John M. Lee</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>李群</strong>就是指能够成为光滑流形的群, 且乘法和求逆都是光滑映射.
+它们往往具有非常好的对称结构. 回忆对于群结构的封闭性,
+只需验证$ab^{-1}$的封闭性即可. 类似地,
+我们只需说明$(a,b)\mapsto ab^{-1}$的光滑性,
+来代替乘法和求逆光滑性的说明.</p>
+<p>我们定义<strong>左平移</strong>, <strong>右平移</strong>算子$L_g,R_g:G\rightarrow G,$</p>
+<script type="math/tex; mode=display">
+L_g(h)=gh,\quad R_g(h)=hg.</script><p> 它们都是光滑映射, 且为微分同胚.</p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>下面列举一些常见李群.</p>
+<p>$GL(n,\mathbb{R})$称为<strong>一般线性群</strong>,
+是矩阵空间$M(n,\mathbb{R})$中的开子流形, 为全体可逆矩阵.
+它在矩阵乘法的意义下成为群, 容易验证它是一个李群.
+记$GL^+(n,\mathbb{R})$为其中行列式取正的全体矩阵, 它也是一个李群.
+一般的, 任意李群的开子群(是开流形的子群)都还是一个李群.
+复一般线性群$GL(n,\mathbb{C}),$
+实/复线性空间$V\rightarrow V$的全体可逆线性映射$GL(V)$也都是李群.</p>
+<p>一些更为常见的空间,
+如$\mathbb{R}^n,\mathbb{C}^n,\mathbb{R}^\ast ,\mathbb{R}^+,\mathbb{C}^\ast ,S_1,T^n$等都是李群.
+李群的直积还是李群. 离散群也可以是李群.</p>
+<h2 id="李群间的同态"><a href="#李群间的同态" class="headerlink" title="李群间的同态"></a>李群间的同态</h2><p>李群$G,H$间的<strong>同态</strong>指一个光滑映射$F:G\rightarrow H,$ 满足群同态的要求.
+它是李群间的<strong>同构</strong>, 若其是一个微分同胚.</p>
+<p>举一些李群同态的例子, 一些包含映射是显然的同态,
+$\exp:\mathbb{R}\rightarrow \mathbb{R}^+$与其逆映射$\log,$
+$\det:GL(n,\mathbb{R})\rightarrow \mathbb{R}^\ast $都是李群同态.
+特别地共轭算子$C_g:h\mapsto ghg^{-1}$是李群$G\rightarrow G$上的同构.</p>
+<p><strong>定理 1</strong>. <em>每个李群间的同态秩为常数.</em> </p>
+<p>我们首先说明对于同态$F,$ 它和平移算子可交换:</p>
+<script type="math/tex; mode=display">
+F(L_{g}(h))=F(gh)=F(g)F(h)=L_{F(g)}(F(h)).</script><p> 因此在$e$点考虑微分,
+$dF_{g}d(L_g)_e=d(L_{F(g)})_{\widetilde{e} }dF_e.$
+由于平移算子是微分同胚, 切映射满秩. 因此$r(dF_g)=r(dF_e).$
+这就说明了同态秩恒为常数.</p>
+<p>结合秩定理, 我们立即得到:</p>
+<p><strong>推论 2</strong>. <em>李群同态是李群间的同构当且仅当它是双射.</em> </p>
+<h2 id="万有覆盖群"><a href="#万有覆盖群" class="headerlink" title="万有覆盖群"></a>万有覆盖群</h2><p>考虑$G$的万有覆盖空间, 我们可以在其上定义群结构, 从而有如下定理成立.</p>
+<p><strong>定理 3</strong>. <em>令$G$为连通李群, 存在单连通李群$\widetilde{G}$与光滑覆盖映射$\pi:\widetilde{G}\rightarrow G,$ 且为群同态. 称$\widetilde{G}$为$G$的万有覆盖群. 它也在群同构的意义下是唯一的, 保持覆盖映射.</em> </p>
+<h2 id="李子群"><a href="#李子群" class="headerlink" title="李子群"></a>李子群</h2><p>李子群即是赋予了拓扑与光滑结构的子群, 它是一个子流形.
+容易说明子群作为嵌入子流形自动是李子群.</p>
+<p><strong>引理 4</strong>. <em>设$H\subset G$为开子群, 那么$H$是嵌入李子群, 它也是闭的, 为$G$中的若干连通分支之并.</em> </p>
+<p>开流形自动是嵌入子流形. 注意到陪集$gH$总是开的,
+因为它是微分同胚$L_g$下开集的像. 从而$G\setminus H$是若干开陪集的并,
+故$H$也是闭的, 进而得到结论.</p>
+<p><strong>命题 5</strong>. <em>设$G$是李群, $W\subset G$为幺元处邻域, 则$W$生成了$G$中的开子群. 当$W$连通时, 生成子群也连通; 当$G$连通时, $W$生成了$G.$</em> </p>
+<p>记$W$生成了$H,$ 那么$\,\forall\,h \in H,$ $hW\subset H,$
+因此$h$周围包含了平移过来的幺元处的邻域, 从而$H$是开的. 当$W$连通时,
+只需证$\,\forall\,h\in H,$ $e,h$道路连通即可.
+事实上$h$为$W$中元素及其逆的有限乘, 我们只需证明$h$与$hg$道路连通即可,
+$\,\forall\,h\in H,$ $g\in W.$ 这样归纳地即可得出结论.</p>
+<p>然而$h,hg\in hW,$ $hW$是$L_h$下连通集的像, 也连通, 命题得证.
+最后若$G$连通, 由前面引理, $H$也是闭的, 因此$H$就是全空间$G.$</p>
+<p>可见李群$G$中含幺元的连通分支$G_0$很关键,
+我们也称它为<strong>幺元分支(identity component)</strong>.
+可以证明它是$G$中的正则子群, 且是唯一一个连通开子群.
+每个$G$的连通分支都与$G_0$微分同胚.</p>
+<p>由前面关于同态秩为常数的结论, 以及秩定理, 我们有:</p>
+<p><strong>命题 6</strong>. <em>令$F:G\rightarrow H$为李群间的同态, 那么$\ker F$是逆紧嵌入的李子群, 余维数恰为$r(F).$</em> </p>
+<p><strong>命题 7</strong>. <em>若$F:G\rightarrow H$为李群单同态, 那么$F$的像具唯一光滑结构, 使得$F(G)$为李子群, 且$F:G\approx F(G)$为李群同构.</em> </p>
+<p>$SL(n,\mathbb{R})$为行列式为$1$的$n$阶实矩阵全体,
+称为$n$阶<strong>特殊线性群</strong>.
+它是$\det GL(n,\mathbb{R})\rightarrow \mathbb{R}^\ast $下的核,
+因此是逆紧嵌入的李子群. 由于$\det$为满射,
+分析秩得到$SL(n,\mathbb{R})$为$n^2-1$维子流形. 同理,
+也有复特殊线性群与类似的结论.</p>
+<p>我们知道对于光滑子流形, 闭性与嵌入性并没有什么显然的联系,
+然而对李子群是有的. 利用拓扑语言分析有:</p>
+<p><strong>定理 8</strong>. <em>设$G$为李群, $H\subset G$为李子群, 那么$H$在$G$中是闭的当且仅当它是嵌入的.</em> </p>
+<p>由该定理, 每个嵌入李子群也自动是逆紧嵌入的.
+因为嵌入子流形逆紧当且仅当其闭.</p>
+<h2 id="群作用与等变映射"><a href="#群作用与等变映射" class="headerlink" title="群作用与等变映射"></a>群作用与等变映射</h2><h3 id="群作用"><a href="#群作用" class="headerlink" title="群作用"></a>群作用</h3><p>李群在$M$上的群作用是李群最关键的应用之一.
+李群$G$在黎曼流形$M$上的<strong>左作用</strong>指映射$G\times M\rightarrow M,$ 满足:</p>
+<script type="math/tex; mode=display">
+g_1(g_2p)=(g_1g_2)p,\quad ep=p.</script><p> <strong>右作用</strong>类似定义. 当映射光滑时,
+称作用为<strong>光滑作用</strong>. 一般的, 我们会将作用如左作用记为$\theta_g(p)L=gp,$
+从而条件变为:</p>
+<script type="math/tex; mode=display">
+\theta_{g_1}\theta_{g_2}=\theta_{g_1g_2},\quad \theta_e=\mathrm{id}_M.</script><p>右作用类似. 对于光滑作用, $\theta_g:M\approx M$为微分同胚,
+以$\theta_{g^{-1} }$为逆.</p>
+<p>参考经典群论, 我们有<strong>轨道</strong>与<strong>稳定子</strong>的概念,
+以及作用的<strong>可迁</strong>与<strong>自由</strong>性.</p>
+<p>一些经典的群作用的例子是矩阵群在$\mathbb{R}^n$上的自然作用,
+李群在自己本身上的左作用, 共轭作用等, 以及作用在覆盖空间上的deck变化.</p>
+<p><strong>命题 9</strong>. <em>对于覆盖映射$\pi:E\rightarrow M,$ 取离散拓扑的自同构群$\operatorname{Aut}_\pi(E)$为零维李群, 光滑自由地作用在$E$上.</em> </p>
+<h3 id="等变映射"><a href="#等变映射" class="headerlink" title="等变映射"></a>等变映射</h3><p>称映射$F:M\rightarrow N$关于给定$G$-群作用是<strong>等变</strong>的, 若对于左作用有</p>
+<script type="math/tex; mode=display">
+F(gp)=gF(p)</script><p> 右作用类似.</p>
+<p><strong>定理 10</strong>. <em>有光滑流形$M,N$与李群$G.$ 若$F:M\rightarrow N$为光滑映射, 关于$M$上可迁光滑群作用与$N$上光滑群作用是等变的, 那么$F$秩为常数.</em> </p>
+<p>对$\varphi_gF=F\theta_g$做微分求切映射, 说明$\,\forall\,p,q\in M,$
+$r(dF_p)=r(dF_q)$即可.</p>
+<p>等变秩定理有一个重要的应用. 对左作用$\theta,$
+定义$\theta^{(p)}:G\rightarrow M,$ </p>
+<script type="math/tex; mode=display">
+\theta^{(p)}(g)=\theta_g(p).</script><p>称为<strong>轨道映射</strong>, 它的像是轨道$Gp.$</p>
+<p><strong>命题 11</strong>. <em>轨道映射$\theta^{(p)}:G\rightarrow M$光滑且秩为常数, 故稳定子群$G_p$是逆紧嵌入的李子群. 若作用自由, 轨道$Gp$是$M$中的子流形.</em> </p>
+<p>轨道映射是光滑的, 因为有如下分解:</p>
+<script type="math/tex; mode=display">
+G\approx G\times\{p\}\hookrightarrow G\times M\xrightarrow{\theta}M</script><p>事实上它是一个等变映射, $\theta^{(p)}(gh)=g\theta^{p}(h).$
+因此由上一命题即可得到结论. 若作用自由, $\theta^{(p)}$是单射,
+由整体秩定理它是浸入, 从而轨道都是子流形.</p>
+<p>我们可以构造等变映射来计算李群的维数.</p>
+<p>文章最后更新于 2022-09-28 22:31:58 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>微分流形</category>
+      </categories>
+  </entry>
 </search>
