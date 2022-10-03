@@ -9134,4 +9134,79 @@ $S\subset M$为嵌入子流形. 称$F$与$S$横截相交,
         <category>微分流形</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(6)-边同态</title>
+    <url>/2022/10/03/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E8%BE%B9%E5%90%8C%E6%80%81/</url>
+    <content><![CDATA[<h2 id="上同调的Leray-Serre谱序列"><a href="#上同调的Leray-Serre谱序列" class="headerlink" title="上同调的Leray-Serre谱序列"></a>上同调的Leray-Serre谱序列</h2><p>一些不加说明的具体构造过程如下所示:</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi}B,</script><script type="math/tex; mode=display">
+\cdots \subset B^p\subset B^{p+1}\subset \cdots,</script><script type="math/tex; mode=display">
+E^p:=\pi^{-1}(B^p),</script><script type="math/tex; mode=display">
+\cdots\subset E^p \subset E^{p+1}\subset\cdots,</script><script type="math/tex; mode=display">
+F_pC_\ast (E):=C_\ast (E^p),\quad F_pC^\ast (E):=\operatorname{Ann}(F_{p-1}C_\ast )=\{f:f|_{F_{p-1}C_\ast }=0\}\subset \operatorname{Hom}(C_\ast ;R).</script><p>$F_pC^\ast (E)$是$C^\ast (E)$上的一列递减滤列. 从而构造谱序列.</p>
+<h2 id="边同态"><a href="#边同态" class="headerlink" title="边同态"></a>边同态</h2><p>在第一象限, 我们有自然的映射列:</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}\hookrightarrow\cdots\hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}</script><script type="math/tex; mode=display">
+E_2^{p,0}\twoheadrightarrow{E_3^{p,0} }\twoheadrightarrow\cdots \twoheadrightarrow E_\infty^{p,0}</script><p>那么,</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}=G_0H^q,\quad H^q\twoheadrightarrow{E_\infty^{0,q} }</script><script type="math/tex; mode=display">
+E_\infty^{p,0}=G_pH^p,\quad E_\infty^{p,0}\hookrightarrow H^p.</script><p>用上面映射的复合定义边同态:</p>
+<script type="math/tex; mode=display">
+H^q\twoheadrightarrow E_\infty^{0,q} \hookrightarrow E_2^{0,q},</script><script type="math/tex; mode=display">
+E_2^{p,0}\twoheadrightarrow E_\infty^{p,0}\hookrightarrow H^p</script><p>考虑谱序列 </p>
+<script type="math/tex; mode=display">
+F\xrightarrow{\iota}E\xrightarrow{\pi}B,</script><p> $F$连通,
+$B$单连通. 那么边同态</p>
+<script type="math/tex; mode=display">
+H^q(E;R)\twoheadrightarrow E_\infty^{0,q}\hookrightarrow E_2^{0,q}= H^0(B;H^q(F;R))=H^q(F;R).</script><p>是$\iota^\ast =H^q(\iota).$ 若$\iota^\ast $是满射, 那么上行的嵌入也是满射,
+从而是同构, 得到谱序列的信息.</p>
+<script type="math/tex; mode=display">
+H^p(B;R)=H^p(B;H^0(F,R))=E_2^{p,0}\twoheadrightarrow E_\infty^{p,0} \hookrightarrow H^p(E;R)</script><p>是$\pi^\ast =H^p(\pi).$ 若$\pi^\ast $是单射, 那么上行的满射是同构.</p>
+<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p><strong>定理 1</strong>. <em>对于纤维化$F\xrightarrow{\iota}E\xrightarrow{\pi}B,$ $B$道路连通. 若$\iota^\ast :H^q(E)\rightarrow H^q(F)$是满射, $\,\forall\,q,$ 且$H^\ast (F)$是有限生成自由Abel群, 那么$H^\ast (E)\cong H^\ast (B)\otimes H^\ast (F)$作为$H^\ast (B)$模同构.</em> </p>
+<p>证明思路: 满射的条件给出$\pi_1(B)$在$H^\ast (F)$上的作用是平凡的.
+而有限生成自由Abel的条件说明了</p>
+<script type="math/tex; mode=display">
+E_2^{p,q}=H^p(B;H^q(F))\cong H^p(B)\otimes H^q(F).</script><p>由于边上的微分都是零, 由微分的导子性质, 所有地方的微分都是零.
+这就立刻得到了谱序列从第二页开始就不再变化, 从而收敛得到结论.</p>
+<p>若我们能够找到$\iota,\pi$对应的截面,
+那么立即有$\iota^\ast ,\pi^\ast $是满射/单射.</p>
+<h2 id="Hurewicz定理及其推广"><a href="#Hurewicz定理及其推广" class="headerlink" title="Hurewicz定理及其推广"></a>Hurewicz定理及其推广</h2><p><strong>定理 2</strong> (Hurewicz). <em>设$X$是单连通的, 那么$\pi_i(X)=0,$ $\,\forall\,i&lt;n$ 当且仅当$\widetilde{H}_i(X)=0,$ $\,\forall\,i&lt;n.$ 若条件满足, 那么$\pi_n(X)\cong H_n(X).$</em> </p>
+<p>对$n$归纳, 考虑道路纤维化: </p>
+<script type="math/tex; mode=display">
+\Omega X\rightarrow PX\rightarrow X</script><p>其中$\Omega X$是环空间, $PX$是道路空间, 可缩. $\,\forall\,q&lt;n-1,$
+由归纳假设, </p>
+<script type="math/tex; mode=display">
+0=\pi_{q+1}(X)\cong \pi_q(\Omega X)\cong H_q(\Omega X).</script><script type="math/tex; mode=display">
+\pi_n(X)\cong \pi_{n-1}(\Omega X)\cong H_{n-1}(\Omega X).</script><p>我们的目标是关联$H_\ast (\Omega X),$ $H_\ast (X).$</p>
+<p>由Leray-Serre谱序列, $E^2_{p,q}=H_p(X;H_q(\Omega X)),$ 但由于$PX$可缩,
+$E^\infty_{p,q}=0$除了$E^\infty_{0,0}.$
+也就是$E^2_{p,q}$上所有元素都会被消灭(除了$(0,0)$).
+那么由下面的谱序列立即得到结论.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/10/03/lpOkQ58q4Xc1uWz.png width='50%' height='50%'></p>
+<h2 id="Serre类"><a href="#Serre类" class="headerlink" title="Serre类"></a>Serre类</h2><p>Serre类$\mathscr{C}$是一个由Abel群组成的非空集, 使得对任意短正合列</p>
+<script type="math/tex; mode=display">
+0\rightarrow A\rightarrow B \rightarrow C\rightarrow 0,</script><p>$B\in \mathscr{C}$当且仅当$A,C\in \mathscr{C}.$
+我们称$\mathscr{C}$是”好”的, 若</p>
+<script type="math/tex; mode=display">
+\,\forall\,A,B\in \mathscr{C},\quad A\otimes B,\operatorname{Tor}(A,B)\in \mathscr{C}.</script><p>几个例子是: $\{0\}$,{挠Abel群(每个元素阶有限)}, {有限Abel群}.
+{有限生成Abel群}, {$p$群(每个元素阶为$p^n$)}.</p>
+<p>我们定义$f:A\rightarrow B$是$\mathscr{C}$单射若$\ker f\in \mathscr{C};$
+称它是$\mathscr{C}$满射, 若$\operatorname{coker}f\in \mathscr{C}.$
+称它是$\mathscr{C}$同构若满足以上两个条件.</p>
+<p><strong>定理 3</strong> (推广Hurewicz). <em>令$X$是单连通的, $\mathscr{C}$是好Serre类. 那么$\pi_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n$ 当且仅当$\widetilde{H}_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n.$ 若条件成立, $\pi_n(X)\rightarrow H_n(X)$是$\mathscr{C}$同构.</em> </p>
+<p>证明思路: 对$n$归纳.</p>
+<script type="math/tex; mode=display">
+\,\forall\,q<n-1, \quad \mathscr{C}\ni \pi_{q+1}(X)\cong_\mathscr{C}H_q(\Omega X),\qquad \pi_n(X)\cong_\mathscr{C}H_{n-1}(\Omega X).</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>从而由$H_q(\Omega X)\in \mathscr{C},$ $E^2_{p,q}\in \mathscr{C}.$
+再次由谱序列得到结论.</p>
+<p><strong>推论 4</strong>. <em>若$X$是单连通有限CW复形, 那么$\pi_i(X)$是有限生成的, $\,\forall\,i.$</em> </p>
+<p><strong>注 5</strong>. <em>$\pi_2(S^1\vee S^2)$并不是有限生成的.</em> </p>
+<p>文章最后更新于 2022-10-03 17:32:02 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>

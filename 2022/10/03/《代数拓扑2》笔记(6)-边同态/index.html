@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》笔记-横截性 |
+            《代数拓扑2》笔记(6)-边同态 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》笔记-横截性</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(6)-边同态</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-09-29 17:55:01
+        <i class="fas fa-edit"></i>&nbsp;2022-10-03 17:31:59
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,34 +206,71 @@
         
 
         <div class="article-content markdown-body">
-            <p>Introduction to smooth manifolds by John M. Lee</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>称$M$中两个嵌入子流形$S,S’$是<strong>横截相交的</strong>,
-若$\,\forall\,p\in S\cap S’,$ 切空间$T_pS,T_pS’$张成了$T_pM.$
-更一般地我们将它定义到函数上: 设$F:N\rightarrow M$为光滑映照,
-$S\subset M$为嵌入子流形. 称$F$与$S$横截相交,
-若$\,\forall\,x\in F^{-1}(S),$ $T_{F(x)}S,dF_x(T_{xN})$张成了$T_F(x)M.$</p>
-<p><strong>定理 1</strong>. <em>若$F:N\rightarrow M$与嵌入子流形$S\subset M$横截相交, 那么$F^{-1}(S)$是$N$中的嵌入子流形, 余维数与$S$在$M$中的余维数相同. 若$S’$与$S$横截相交, 那么$S’\cap S$是$M$中的嵌入子流形, 余维数为$S,S’$余维数之和.</em> </p>
-<p>利用秩定理即可给出证明. 由于淹没自动是横截相交的, 我们有推论:</p>
-<p><strong>推论 2</strong>. <em>设$N,M$是光滑流形, $S\subset M$是余维数为$k$的嵌入子流形, $F:N\rightarrow M$为淹没. 那么$F^{-1}(S)$是余维数为$k$的嵌入子流形.</em> </p>
-<p>横截性提供了更为简洁的判别函数图像的方法.
-下面的定理是隐函数定理的整体形式.</p>
-<p><strong>定理 3</strong>. <em>设$M,N$为光滑流形, $S\subset M\times N$为子流形, $\pi_M,\pi_N$为$M\times N$上的投影. 那么如下的命题是等价的:</em> </p>
-<ol>
-<li><p><em>$S$为某光滑映照$f:M\rightarrow N$的图像.</em></p>
-</li>
-<li><p><em>$\pi_M|_S:S\approx M$为微分同胚.</em></p>
-</li>
-<li><p><em>$\,\forall\,p\in M,$ $S$与$\{p\}\times N$在且仅在一点横截相交.</em></p>
-</li>
-</ol>
-<p><em>若条件满足, 那么$S$为$f=\pi_N\circ (\pi_M|_S)^{-1}$的图像.</em></p>
-<p><strong>推论 4</strong>. <em>设$M,N$为光滑流形, $S\subset M\times N$为子流形, $(p,q)\in S.$ 若$S$与$\{p\}\times N$在$(p,q)$点横截相交, 那么存在$p$点邻域$U\subset M$与$(p,q)$点邻域$V\subset S,$ 使得$V$是光滑映照$f:U\rightarrow N$的图像.</em> </p>
-<p>应用Sard定理可以证明下面的重要定理:</p>
-<p><strong>定理 5</strong> (参数化横截性定理). <em>设$N,M$为光滑流形, $X\subset M$为嵌入子流形. 若光滑映照$F:N\times S\rightarrow M$与$X$横截相交, 那么对几乎处处的$s\in S,$ $F_s:N\rightarrow M$与$X$横截相交.</em> </p>
-<p>为了应用参数化横截性定理, 我们需要一族满足要求的函数. 由下面的定理,
-这是可以做到的.</p>
-<p><strong>定理 6</strong> (横截同伦定理). <em>设$M,N$为光滑流形, $X\subset M$为嵌入子流形. 每个光滑映照$f:N\rightarrow M$同伦于一个光滑函数$g:N\rightarrow M,$ 与$X$横截.</em> </p>
-<p>文章最后更新于 2022-09-29 17:55:02 </p>
+            <h2 id="上同调的Leray-Serre谱序列"><a href="#上同调的Leray-Serre谱序列" class="headerlink" title="上同调的Leray-Serre谱序列"></a>上同调的Leray-Serre谱序列</h2><p>一些不加说明的具体构造过程如下所示:</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi}B,</script><script type="math/tex; mode=display">
+\cdots \subset B^p\subset B^{p+1}\subset \cdots,</script><script type="math/tex; mode=display">
+E^p:=\pi^{-1}(B^p),</script><script type="math/tex; mode=display">
+\cdots\subset E^p \subset E^{p+1}\subset\cdots,</script><script type="math/tex; mode=display">
+F_pC_\ast (E):=C_\ast (E^p),\quad F_pC^\ast (E):=\operatorname{Ann}(F_{p-1}C_\ast )=\{f:f|_{F_{p-1}C_\ast }=0\}\subset \operatorname{Hom}(C_\ast ;R).</script><p>$F_pC^\ast (E)$是$C^\ast (E)$上的一列递减滤列. 从而构造谱序列.</p>
+<h2 id="边同态"><a href="#边同态" class="headerlink" title="边同态"></a>边同态</h2><p>在第一象限, 我们有自然的映射列:</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}\hookrightarrow\cdots\hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}</script><script type="math/tex; mode=display">
+E_2^{p,0}\twoheadrightarrow{E_3^{p,0} }\twoheadrightarrow\cdots \twoheadrightarrow E_\infty^{p,0}</script><p>那么,</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}=G_0H^q,\quad H^q\twoheadrightarrow{E_\infty^{0,q} }</script><script type="math/tex; mode=display">
+E_\infty^{p,0}=G_pH^p,\quad E_\infty^{p,0}\hookrightarrow H^p.</script><p>用上面映射的复合定义边同态:</p>
+<script type="math/tex; mode=display">
+H^q\twoheadrightarrow E_\infty^{0,q} \hookrightarrow E_2^{0,q},</script><script type="math/tex; mode=display">
+E_2^{p,0}\twoheadrightarrow E_\infty^{p,0}\hookrightarrow H^p</script><p>考虑谱序列 </p>
+<script type="math/tex; mode=display">
+F\xrightarrow{\iota}E\xrightarrow{\pi}B,</script><p> $F$连通,
+$B$单连通. 那么边同态</p>
+<script type="math/tex; mode=display">
+H^q(E;R)\twoheadrightarrow E_\infty^{0,q}\hookrightarrow E_2^{0,q}= H^0(B;H^q(F;R))=H^q(F;R).</script><p>是$\iota^\ast =H^q(\iota).$ 若$\iota^\ast $是满射, 那么上行的嵌入也是满射,
+从而是同构, 得到谱序列的信息.</p>
+<script type="math/tex; mode=display">
+H^p(B;R)=H^p(B;H^0(F,R))=E_2^{p,0}\twoheadrightarrow E_\infty^{p,0} \hookrightarrow H^p(E;R)</script><p>是$\pi^\ast =H^p(\pi).$ 若$\pi^\ast $是单射, 那么上行的满射是同构.</p>
+<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p><strong>定理 1</strong>. <em>对于纤维化$F\xrightarrow{\iota}E\xrightarrow{\pi}B,$ $B$道路连通. 若$\iota^\ast :H^q(E)\rightarrow H^q(F)$是满射, $\,\forall\,q,$ 且$H^\ast (F)$是有限生成自由Abel群, 那么$H^\ast (E)\cong H^\ast (B)\otimes H^\ast (F)$作为$H^\ast (B)$模同构.</em> </p>
+<p>证明思路: 满射的条件给出$\pi_1(B)$在$H^\ast (F)$上的作用是平凡的.
+而有限生成自由Abel的条件说明了</p>
+<script type="math/tex; mode=display">
+E_2^{p,q}=H^p(B;H^q(F))\cong H^p(B)\otimes H^q(F).</script><p>由于边上的微分都是零, 由微分的导子性质, 所有地方的微分都是零.
+这就立刻得到了谱序列从第二页开始就不再变化, 从而收敛得到结论.</p>
+<p>若我们能够找到$\iota,\pi$对应的截面,
+那么立即有$\iota^\ast ,\pi^\ast $是满射/单射.</p>
+<h2 id="Hurewicz定理及其推广"><a href="#Hurewicz定理及其推广" class="headerlink" title="Hurewicz定理及其推广"></a>Hurewicz定理及其推广</h2><p><strong>定理 2</strong> (Hurewicz). <em>设$X$是单连通的, 那么$\pi_i(X)=0,$ $\,\forall\,i&lt;n$ 当且仅当$\widetilde{H}_i(X)=0,$ $\,\forall\,i&lt;n.$ 若条件满足, 那么$\pi_n(X)\cong H_n(X).$</em> </p>
+<p>对$n$归纳, 考虑道路纤维化: </p>
+<script type="math/tex; mode=display">
+\Omega X\rightarrow PX\rightarrow X</script><p>其中$\Omega X$是环空间, $PX$是道路空间, 可缩. $\,\forall\,q&lt;n-1,$
+由归纳假设, </p>
+<script type="math/tex; mode=display">
+0=\pi_{q+1}(X)\cong \pi_q(\Omega X)\cong H_q(\Omega X).</script><script type="math/tex; mode=display">
+\pi_n(X)\cong \pi_{n-1}(\Omega X)\cong H_{n-1}(\Omega X).</script><p>我们的目标是关联$H_\ast (\Omega X),$ $H_\ast (X).$</p>
+<p>由Leray-Serre谱序列, $E^2_{p,q}=H_p(X;H_q(\Omega X)),$ 但由于$PX$可缩,
+$E^\infty_{p,q}=0$除了$E^\infty_{0,0}.$
+也就是$E^2_{p,q}$上所有元素都会被消灭(除了$(0,0)$).
+那么由下面的谱序列立即得到结论.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/10/03/lpOkQ58q4Xc1uWz.png width='50%' height='50%'></p>
+<h2 id="Serre类"><a href="#Serre类" class="headerlink" title="Serre类"></a>Serre类</h2><p>Serre类$\mathscr{C}$是一个由Abel群组成的非空集, 使得对任意短正合列</p>
+<script type="math/tex; mode=display">
+0\rightarrow A\rightarrow B \rightarrow C\rightarrow 0,</script><p>$B\in \mathscr{C}$当且仅当$A,C\in \mathscr{C}.$
+我们称$\mathscr{C}$是”好”的, 若</p>
+<script type="math/tex; mode=display">
+\,\forall\,A,B\in \mathscr{C},\quad A\otimes B,\operatorname{Tor}(A,B)\in \mathscr{C}.</script><p>几个例子是: $\{0\}$,{挠Abel群(每个元素阶有限)}, {有限Abel群}.
+{有限生成Abel群}, {$p$群(每个元素阶为$p^n$)}.</p>
+<p>我们定义$f:A\rightarrow B$是$\mathscr{C}$单射若$\ker f\in \mathscr{C};$
+称它是$\mathscr{C}$满射, 若$\operatorname{coker}f\in \mathscr{C}.$
+称它是$\mathscr{C}$同构若满足以上两个条件.</p>
+<p><strong>定理 3</strong> (推广Hurewicz). <em>令$X$是单连通的, $\mathscr{C}$是好Serre类. 那么$\pi_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n$ 当且仅当$\widetilde{H}_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n.$ 若条件成立, $\pi_n(X)\rightarrow H_n(X)$是$\mathscr{C}$同构.</em> </p>
+<p>证明思路: 对$n$归纳.</p>
+<script type="math/tex; mode=display">
+\,\forall\,q<n-1, \quad \mathscr{C}\ni \pi_{q+1}(X)\cong_\mathscr{C}H_q(\Omega X),\qquad \pi_n(X)\cong_\mathscr{C}H_{n-1}(\Omega X).</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>从而由$H_q(\Omega X)\in \mathscr{C},$ $E^2_{p,q}\in \mathscr{C}.$
+再次由谱序列得到结论.</p>
+<p><strong>推论 4</strong>. <em>若$X$是单连通有限CW复形, 那么$\pi_i(X)$是有限生成的, $\,\forall\,i.$</em> </p>
+<p><strong>注 5</strong>. <em>$\pi_2(S^1\vee S^2)$并不是有限生成的.</em> </p>
+<p>文章最后更新于 2022-10-03 17:32:02 </p>
 
         </div>
 
@@ -241,11 +278,11 @@ $S\subset M$为嵌入子流形. 称$F$与$S$横截相交,
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》笔记-横截性</li>
+        <li>本文标题：《代数拓扑2》笔记(6)-边同态</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-09-29 17:55:01</li>
+        <li>创建时间：2022-10-03 17:31:59</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/09/29/《微分流形》笔记-横截性/
+            本文链接：https://dream0ar.github.io/2022/10/03/《代数拓扑2》笔记(6)-边同态/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -259,29 +296,14 @@ $S\subset M$为嵌入子流形. 称$F$与$S$横截相交,
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/10/03/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E8%BE%B9%E5%90%8C%E6%80%81/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(6)-边同态</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/29/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(5)-%E4%B8%8A%E5%90%8C%E8%B0%83%E8%B0%B1%E5%BA%8F%E5%88%97/"
+                           href="/2022/09/29/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E6%A8%AA%E6%88%AA%E6%80%A7/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(5)-上同调谱序列</span>
+                                <span class="post-nav-title-item">《微分流形》笔记-横截性</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -488,7 +510,7 @@ $S\subset M$为嵌入子流形. 称$F$与$S$横截相交,
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%90%8C%E8%B0%83%E7%9A%84Leray-Serre%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text">上同调的Leray-Serre谱序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E5%90%8C%E6%80%81"><span class="nav-text">边同态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leray-Hirsch%E5%AE%9A%E7%90%86"><span class="nav-text">Leray-Hirsch定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hurewicz%E5%AE%9A%E7%90%86%E5%8F%8A%E5%85%B6%E6%8E%A8%E5%B9%BF"><span class="nav-text">Hurewicz定理及其推广</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serre%E7%B1%BB"><span class="nav-text">Serre类</span></a></li></ol>
     </div>
 </div>
         </aside>
