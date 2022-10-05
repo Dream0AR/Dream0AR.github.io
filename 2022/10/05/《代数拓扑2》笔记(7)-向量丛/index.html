@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(6)-边同态 |
+            《代数拓扑2》笔记(7)-向量丛 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(6)-边同态</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(7)-向量丛</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-03 17:31:59
+        <i class="fas fa-edit"></i>&nbsp;2022-10-05 15:51:34
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,71 +206,61 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="上同调的Leray-Serre谱序列"><a href="#上同调的Leray-Serre谱序列" class="headerlink" title="上同调的Leray-Serre谱序列"></a>上同调的Leray-Serre谱序列</h2><p>一些不加说明的具体构造过程如下所示:</p>
+            <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>对于纤维丛 </p>
 <script type="math/tex; mode=display">
-F\rightarrow E\xrightarrow{\pi}B,</script><script type="math/tex; mode=display">
-\cdots \subset B^p\subset B^{p+1}\subset \cdots,</script><script type="math/tex; mode=display">
-E^p:=\pi^{-1}(B^p),</script><script type="math/tex; mode=display">
-\cdots\subset E^p \subset E^{p+1}\subset\cdots,</script><script type="math/tex; mode=display">
-F_pC_\ast (E):=C_\ast (E^p),\quad F_pC^\ast (E):=\operatorname{Ann}(F_{p-1}C_\ast )=\{f:f|_{F_{p-1}C_\ast }=0\}\subset \operatorname{Hom}(C_\ast ;R).</script><p>$F_pC^\ast (E)$是$C^\ast (E)$上的一列递减滤列. 从而构造谱序列.</p>
-<h2 id="边同态"><a href="#边同态" class="headerlink" title="边同态"></a>边同态</h2><p>在第一象限, 我们有自然的映射列:</p>
+F\rightarrow E\rightarrow B,</script><p> 若$F$是$n$维(实)向量空间,
+且局部平凡化还是保持向量空间结构的, 则称其为秩$n$(实)向量丛. 切丛, 法丛,
+平凡向量丛丛都是典型的向量丛.</p>
+<p>$\mathbb{R}\mathrm{P}^n$上有一个典型的向量丛, 是线丛. 定义为:</p>
 <script type="math/tex; mode=display">
-E_\infty^{0,q}\hookrightarrow\cdots\hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}</script><script type="math/tex; mode=display">
-E_2^{p,0}\twoheadrightarrow{E_3^{p,0} }\twoheadrightarrow\cdots \twoheadrightarrow E_\infty^{p,0}</script><p>那么,</p>
+E(\gamma_n^1):=\{(l,v)\in \mathbb{R}\mathrm{P}^n\times \mathbb{R}^{n+1}|v\in l\}.</script><p>记$\xi$为向量丛$F\rightarrow E\xrightarrow{\pi}B.$
+定义$\xi$上的<strong>截面</strong>为映射$s:B\rightarrow E,$
+使得$B\xrightarrow{s}E\xrightarrow{\pi}B$为恒等映射.
+称同一底空间$B$上的向量丛$\xi\cong \eta$为<strong>同构</strong>,
+若$\,\exists\,$同胚$f:E(\xi)\rightarrow E(\eta),$
+使得$\,\forall\,b\in B,$
+$f|_{F_b(\xi)}:F_b(\xi)\cong F_b(\eta)$为向量空间间的同构.</p>
+<p><strong>命题 1</strong>. <em>$\,\forall\,n\ge 1,$ $\gamma_n^1$没有非平凡处处不消失的截面. 因此$\gamma_n^1$不同构于平凡丛.</em> </p>
+<p>设$s:\mathbb{R}\mathrm{P}^n\rightarrow E(\gamma_n^1)$为一个截面, 考虑</p>
 <script type="math/tex; mode=display">
-E_\infty^{0,q}=G_0H^q,\quad H^q\twoheadrightarrow{E_\infty^{0,q} }</script><script type="math/tex; mode=display">
-E_\infty^{p,0}=G_pH^p,\quad E_\infty^{p,0}\hookrightarrow H^p.</script><p>用上面映射的复合定义边同态:</p>
+\mathbb{R}^{n+1}\setminus\{0\}\rightarrow \mathbb{R}\mathrm{P}^n\xrightarrow{s} E(\gamma_n^1),</script><script type="math/tex; mode=display">
+v\mapsto ([v],t(v)v).</script><p> 然而$v,-v$生成同一处截面, 因此$t(-v)=-t(v).$
+设$t(v)&gt;0,$ 则$t(-v)&lt;0,$
+那么由$\mathbb{R}^{n+1}\setminus \{0\}$的连通性, 必有点$w$使得$t(w)=0,$
+故截面在$[w]$处消失. (介值定理)</p>
+<p><strong>命题 2</strong>. <em>秩$n$向量丛$\xi$平凡当且仅当$\xi$上存在$n$个截面, 处处线性无关.</em> </p>
+<p>平凡丛找截面平凡. 假设存在这样的$n$个截面,
+定义映射$B\times \mathbb{R}^n\xrightarrow{f} E(\xi),$</p>
 <script type="math/tex; mode=display">
-H^q\twoheadrightarrow E_\infty^{0,q} \hookrightarrow E_2^{0,q},</script><script type="math/tex; mode=display">
-E_2^{p,0}\twoheadrightarrow E_\infty^{p,0}\hookrightarrow H^p</script><p>考虑谱序列 </p>
+\left(b,\sum t_ie_i\right)\mapsto \sum t_is_i(b)</script><p>这是一个向量丛间的同构.</p>
+<h2 id="向量丛的构造"><a href="#向量丛的构造" class="headerlink" title="向量丛的构造"></a>向量丛的构造</h2><h3 id="诱导丛-拉回丛"><a href="#诱导丛-拉回丛" class="headerlink" title="诱导丛(拉回丛)"></a>诱导丛(拉回丛)</h3><p>给定向量丛$\xi,$ 连续映照$B_1\rightarrow B,$ 那么</p>
 <script type="math/tex; mode=display">
-F\xrightarrow{\iota}E\xrightarrow{\pi}B,</script><p> $F$连通,
-$B$单连通. 那么边同态</p>
+f^\ast E:=\{(b,e)\in B_1\times E|f(b)=\pi(e)\}.</script><p> 也就是对于$b,$
+把$E$上的$f(b)$处的纤维拉回.</p>
+<p>定义$\eta,\xi$间的丛映射为连续映照$E(\eta)\xrightarrow{g}E(\xi),$
+使得它保持纤维, 且在纤维上是线性同构.</p>
+<p><strong>引理 3</strong>. <em>给定如上所述的丛映射, 我们有$\eta\cong (g|_{B(\eta)})^\ast \xi.$</em> </p>
+<p>只需验证$h:E(\eta)\rightarrow E((g|_{B(\eta)})^\ast \xi),$
+$e\mapsto (\pi(e),g(e))$为同构.</p>
+<h3 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h3><p>给定向量丛$\xi_1,\xi_2,$ 定义$\xi_1\times \xi_2$为</p>
 <script type="math/tex; mode=display">
-H^q(E;R)\twoheadrightarrow E_\infty^{0,q}\hookrightarrow E_2^{0,q}= H^0(B;H^q(F;R))=H^q(F;R).</script><p>是$\iota^\ast =H^q(\iota).$ 若$\iota^\ast $是满射, 那么上行的嵌入也是满射,
-从而是同构, 得到谱序列的信息.</p>
+\pi_1\times\pi_2:E_1\times E_2\rightarrow B_1\times B_2,</script><p> 纤维为</p>
 <script type="math/tex; mode=display">
-H^p(B;R)=H^p(B;H^0(F,R))=E_2^{p,0}\twoheadrightarrow E_\infty^{p,0} \hookrightarrow H^p(E;R)</script><p>是$\pi^\ast =H^p(\pi).$ 若$\pi^\ast $是单射, 那么上行的满射是同构.</p>
-<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p><strong>定理 1</strong>. <em>对于纤维化$F\xrightarrow{\iota}E\xrightarrow{\pi}B,$ $B$道路连通. 若$\iota^\ast :H^q(E)\rightarrow H^q(F)$是满射, $\,\forall\,q,$ 且$H^\ast (F)$是有限生成自由Abel群, 那么$H^\ast (E)\cong H^\ast (B)\otimes H^\ast (F)$作为$H^\ast (B)$模同构.</em> </p>
-<p>证明思路: 满射的条件给出$\pi_1(B)$在$H^\ast (F)$上的作用是平凡的.
-而有限生成自由Abel的条件说明了</p>
+(\pi_1\times\pi_2)^{-1}(b_1,b_2)=F_{b_1}(\xi_1)\times F_{b_2}(\xi_2).</script><h3 id="Whitney和"><a href="#Whitney和" class="headerlink" title="Whitney和"></a>Whitney和</h3><p>对于同一底空间$B,$ 给定向量丛$\xi_1,\xi_2,$
+对角映射$d:B\rightarrow B\times B.$
+定义向量丛$\xi_1\oplus \xi_2:=d^\ast (\xi_1\times \xi_2),$ 其上纤维为</p>
 <script type="math/tex; mode=display">
-E_2^{p,q}=H^p(B;H^q(F))\cong H^p(B)\otimes H^q(F).</script><p>由于边上的微分都是零, 由微分的导子性质, 所有地方的微分都是零.
-这就立刻得到了谱序列从第二页开始就不再变化, 从而收敛得到结论.</p>
-<p>若我们能够找到$\iota,\pi$对应的截面,
-那么立即有$\iota^\ast ,\pi^\ast $是满射/单射.</p>
-<h2 id="Hurewicz定理及其推广"><a href="#Hurewicz定理及其推广" class="headerlink" title="Hurewicz定理及其推广"></a>Hurewicz定理及其推广</h2><p><strong>定理 2</strong> (Hurewicz). <em>设$X$是单连通的, 那么$\pi_i(X)=0,$ $\,\forall\,i&lt;n$ 当且仅当$\widetilde{H}_i(X)=0,$ $\,\forall\,i&lt;n.$ 若条件满足, 那么$\pi_n(X)\cong H_n(X).$</em> </p>
-<p>对$n$归纳, 考虑道路纤维化: </p>
-<script type="math/tex; mode=display">
-\Omega X\rightarrow PX\rightarrow X</script><p>其中$\Omega X$是环空间, $PX$是道路空间, 可缩. $\,\forall\,q&lt;n-1,$
-由归纳假设, </p>
-<script type="math/tex; mode=display">
-0=\pi_{q+1}(X)\cong \pi_q(\Omega X)\cong H_q(\Omega X).</script><script type="math/tex; mode=display">
-\pi_n(X)\cong \pi_{n-1}(\Omega X)\cong H_{n-1}(\Omega X).</script><p>我们的目标是关联$H_\ast (\Omega X),$ $H_\ast (X).$</p>
-<p>由Leray-Serre谱序列, $E^2_{p,q}=H_p(X;H_q(\Omega X)),$ 但由于$PX$可缩,
-$E^\infty_{p,q}=0$除了$E^\infty_{0,0}.$
-也就是$E^2_{p,q}$上所有元素都会被消灭(除了$(0,0)$).
-那么由下面的谱序列立即得到结论.</p>
-<p><img style='margin: auto;' src=https://s2.loli.net/2022/10/03/lpOkQ58q4Xc1uWz.png width='50%' height='50%'></p>
-<h2 id="Serre类"><a href="#Serre类" class="headerlink" title="Serre类"></a>Serre类</h2><p>Serre类$\mathscr{C}$是一个由Abel群组成的非空集, 使得对任意短正合列</p>
-<script type="math/tex; mode=display">
-0\rightarrow A\rightarrow B \rightarrow C\rightarrow 0,</script><p>$B\in \mathscr{C}$当且仅当$A,C\in \mathscr{C}.$
-我们称$\mathscr{C}$是”好”的, 若</p>
-<script type="math/tex; mode=display">
-\,\forall\,A,B\in \mathscr{C},\quad A\otimes B,\operatorname{Tor}(A,B)\in \mathscr{C}.</script><p>几个例子是: $\{0\}$,{挠Abel群(每个元素阶有限)}, {有限Abel群}.
-{有限生成Abel群}, {$p$群(每个元素阶为$p^n$)}.</p>
-<p>我们定义$f:A\rightarrow B$是$\mathscr{C}$单射若$\ker f\in \mathscr{C};$
-称它是$\mathscr{C}$满射, 若$\operatorname{coker}f\in \mathscr{C}.$
-称它是$\mathscr{C}$同构若满足以上两个条件.</p>
-<p><strong>定理 3</strong> (推广Hurewicz). <em>令$X$是单连通的, $\mathscr{C}$是好Serre类. 那么$\pi_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n$ 当且仅当$\widetilde{H}_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n.$ 若条件成立, $\pi_n(X)\rightarrow H_n(X)$是$\mathscr{C}$同构.</em> </p>
-<p>证明思路: 对$n$归纳.</p>
-<script type="math/tex; mode=display">
-\,\forall\,q<n-1, \quad \mathscr{C}\ni \pi_{q+1}(X)\cong_\mathscr{C}H_q(\Omega X),\qquad \pi_n(X)\cong_\mathscr{C}H_{n-1}(\Omega X).</script><script type="math/tex; mode=display">
-E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>从而由$H_q(\Omega X)\in \mathscr{C},$ $E^2_{p,q}\in \mathscr{C}.$
-再次由谱序列得到结论.</p>
-<p><strong>推论 4</strong>. <em>若$X$是单连通有限CW复形, 那么$\pi_i(X)$是有限生成的, $\,\forall\,i.$</em> </p>
-<p><strong>注 5</strong>. <em>$\pi_2(S^1\vee S^2)$并不是有限生成的.</em> </p>
-<p>文章最后更新于 2022-10-03 17:32:02 </p>
+F_b(d^\ast (\xi_1\times\xi_2))=F_b(\xi_1)\times F_b(\xi_2)\cong F_b(\xi_1)\oplus F_b(\xi_2).</script><p>一般的, 向量空间上的操作都给出了向量丛上的操作, 依纤维操作即可,
+如还可以定义向量丛上的张量积, 反称/对称化, 对偶从等.</p>
+<h2 id="欧氏向量丛"><a href="#欧氏向量丛" class="headerlink" title="欧氏向量丛"></a>欧氏向量丛</h2><p>欧氏向量空间是一个向量空间,
+配备了一个正定二次型$\mu:V\rightarrow \mathbb{R},$
+即$\mu(\lambda v)=\lambda^2\mu(v),$ $\mu(v)&gt;0,$ $\,\forall\,v\neq 0.$
+那么$\mu$定义了$V$上的内积.</p>
+<p>一个欧氏向量丛是向量丛, 每个纤维都是欧氏向量空间. 若$\xi$是欧氏的,
+那么对于子丛$\eta,$ $\eta^\perp\oplus\eta=\xi.$</p>
+<p>一个事实是每个Hausdorff, 预紧的底空间上的向量丛都可以给定欧氏度量.
+CW复形, 度量空间, $\mathbb{R}^N$中流形上都可以给定欧氏度量.</p>
+<p>文章最后更新于 2022-10-05 15:51:36 </p>
 
         </div>
 
@@ -278,11 +268,11 @@ E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(6)-边同态</li>
+        <li>本文标题：《代数拓扑2》笔记(7)-向量丛</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-03 17:31:59</li>
+        <li>创建时间：2022-10-05 15:51:34</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/03/《代数拓扑2》笔记(6)-边同态/
+            本文链接：https://dream0ar.github.io/2022/10/05/《代数拓扑2》笔记(7)-向量丛/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -296,29 +286,14 @@ E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>�
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/10/03/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(7)-Laplace%E6%AF%94%E8%BE%83%E5%AE%9A%E7%90%86/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何分析》笔记(7)-Laplace比较定理</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/29/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E6%A8%AA%E6%88%AA%E6%80%A7/"
+                           href="/2022/10/03/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(7)-Laplace%E6%AF%94%E8%BE%83%E5%AE%9A%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》笔记-横截性</span>
+                                <span class="post-nav-title-item">《几何分析》笔记(7)-Laplace比较定理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -525,7 +500,7 @@ E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%90%8C%E8%B0%83%E7%9A%84Leray-Serre%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text">上同调的Leray-Serre谱序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E5%90%8C%E6%80%81"><span class="nav-text">边同态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leray-Hirsch%E5%AE%9A%E7%90%86"><span class="nav-text">Leray-Hirsch定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hurewicz%E5%AE%9A%E7%90%86%E5%8F%8A%E5%85%B6%E6%8E%A8%E5%B9%BF"><span class="nav-text">Hurewicz定理及其推广</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serre%E7%B1%BB"><span class="nav-text">Serre类</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-text">向量丛的构造</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B1%E5%AF%BC%E4%B8%9B-%E6%8B%89%E5%9B%9E%E4%B8%9B"><span class="nav-text">诱导丛(拉回丛)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%9B%E5%8D%A1%E5%B0%94%E7%A7%AF"><span class="nav-text">笛卡尔积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Whitney%E5%92%8C"><span class="nav-text">Whitney和</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%B0%8F%E5%90%91%E9%87%8F%E4%B8%9B"><span class="nav-text">欧氏向量丛</span></a></li></ol>
     </div>
 </div>
         </aside>

@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(6)-边同态 |
+            《几何分析》笔记(7)-Laplace比较定理 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(6)-边同态</span>
+            <span class="title-hover-animation">《几何分析》笔记(7)-Laplace比较定理</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-03 17:31:59
+        <i class="fas fa-edit"></i>&nbsp;2022-10-03 22:26:26
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90/">几何分析</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,71 +206,61 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="上同调的Leray-Serre谱序列"><a href="#上同调的Leray-Serre谱序列" class="headerlink" title="上同调的Leray-Serre谱序列"></a>上同调的Leray-Serre谱序列</h2><p>一些不加说明的具体构造过程如下所示:</p>
+            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>$r(x)=d(p,x)$是$M$上的Lipschitz函数, 进一步它在$W^{1,p}_{loc}(M)$中.
+我们希望推导得到:</p>
 <script type="math/tex; mode=display">
-F\rightarrow E\xrightarrow{\pi}B,</script><script type="math/tex; mode=display">
-\cdots \subset B^p\subset B^{p+1}\subset \cdots,</script><script type="math/tex; mode=display">
-E^p:=\pi^{-1}(B^p),</script><script type="math/tex; mode=display">
-\cdots\subset E^p \subset E^{p+1}\subset\cdots,</script><script type="math/tex; mode=display">
-F_pC_\ast (E):=C_\ast (E^p),\quad F_pC^\ast (E):=\operatorname{Ann}(F_{p-1}C_\ast )=\{f:f|_{F_{p-1}C_\ast }=0\}\subset \operatorname{Hom}(C_\ast ;R).</script><p>$F_pC^\ast (E)$是$C^\ast (E)$上的一列递减滤列. 从而构造谱序列.</p>
-<h2 id="边同态"><a href="#边同态" class="headerlink" title="边同态"></a>边同态</h2><p>在第一象限, 我们有自然的映射列:</p>
+-\int_M\nabla_g r\nabla_g \varphi\le \int_M (n-1)\frac{sn_k'(r)}{sn_k(r)}\varphi dV_g,\quad \,\forall\,\varphi\ge 0,\varphi\in \mathscr{D}(M).</script><p>对于割迹$\operatorname{Cut}=N_p\cup A_p,$ $\,\forall\,p&gt;n-2,$
+$\,\exists\,r_k,r_k’\rightarrow 0,$
+$\,\exists\,\phi_k\in W^{1,n-p}\cap C^0,$ 满足</p>
 <script type="math/tex; mode=display">
-E_\infty^{0,q}\hookrightarrow\cdots\hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}</script><script type="math/tex; mode=display">
-E_2^{p,0}\twoheadrightarrow{E_3^{p,0} }\twoheadrightarrow\cdots \twoheadrightarrow E_\infty^{p,0}</script><p>那么,</p>
+\phi_k|_{B_{r_k}^g(A_p)^c}\equiv 0,\quad \phi_k|_{B_{r_k}^g(A_p)}\equiv 1,</script><p>且$\int |\nabla \phi_k|^{n-p}\rightarrow 0.$</p>
+<h2 id="分部积分"><a href="#分部积分" class="headerlink" title="分部积分"></a>分部积分</h2><p>首先考虑将不等式左侧写成更方便的形式.</p>
 <script type="math/tex; mode=display">
-E_\infty^{0,q}=G_0H^q,\quad H^q\twoheadrightarrow{E_\infty^{0,q} }</script><script type="math/tex; mode=display">
-E_\infty^{p,0}=G_pH^p,\quad E_\infty^{p,0}\hookrightarrow H^p.</script><p>用上面映射的复合定义边同态:</p>
+-\int_M\nabla_g r\nabla_g\varphi dV_g=\lim_{k\rightarrow +\infty} -\int_M \nabla_g r\nabla_g(1-\varphi_k)\varphi dV_g.</script><p>记后面的积分为$I,$ 则 </p>
 <script type="math/tex; mode=display">
-H^q\twoheadrightarrow E_\infty^{0,q} \hookrightarrow E_2^{0,q},</script><script type="math/tex; mode=display">
-E_2^{p,0}\twoheadrightarrow E_\infty^{p,0}\hookrightarrow H^p</script><p>考虑谱序列 </p>
+\begin{aligned}
+ I&= -\int_{\widehat{C}_p\cap \widehat{S}_p} \nabla_{\widehat g}r\nabla_{\widehat g}(1-\phi_k)\varphi dV_{\widehat{g} }\\
+ &=\int_{\widehat{S}_p}\Delta_{\widehat g}r(1-\phi_k)\varphi-\int_{ {\widehat N}_p}\frac{\partial {}r}{\partial {}n}(1-\phi_k)\varphi\\
+ &=\int_M(\Delta_g r)(1-\phi_k)\varphi-\int_{N_p}J(x)(1-\phi_k)\varphi\\
+ &\rightarrow \int_{S_p}(\Delta_g r)\varphi dV_g-\int_{N_p }J(x)\varphi.
+ \end{aligned}</script><script type="math/tex; mode=display">
+J(x):=n_1\cdot \gamma_1'+n_2\cdot\gamma_2'\ge 0.</script><p>那么$\,\forall\,\varphi\in \mathscr{D}(M\setminus\{p\}),$</p>
 <script type="math/tex; mode=display">
-F\xrightarrow{\iota}E\xrightarrow{\pi}B,</script><p> $F$连通,
-$B$单连通. 那么边同态</p>
+-\int_M\nabla_gr\nabla_g\varphi dV_g=\int_{S_p}\Delta_gr\varphi dV_g-\int_{N_p} J(x)\varphi(x)d\mathcal{H}^{n-1}.</script><p>事实上可以取$\varphi\in \mathscr{D}(M).$ 考虑$\eta=\begin{cases}
+ 1, &amp;t&gt;2\\
+ \in[0,1], &amp;1\le t\le 2\\
+ 0, &amp;t&lt;1
+ \end{cases},$
+$\eta_\varepsilon=\eta(d(x,p)\varepsilon^{-1}),$
+$\varepsilon&lt;\operatorname{Inj}(p).$</p>
 <script type="math/tex; mode=display">
-H^q(E;R)\twoheadrightarrow E_\infty^{0,q}\hookrightarrow E_2^{0,q}= H^0(B;H^q(F;R))=H^q(F;R).</script><p>是$\iota^\ast =H^q(\iota).$ 若$\iota^\ast $是满射, 那么上行的嵌入也是满射,
-从而是同构, 得到谱序列的信息.</p>
+|\nabla_g\eta_\varepsilon|=|\eta'| \frac{|\nabla_g r|}{\varepsilon}\le \frac{\Vert\eta'\Vert_{C_0} }{\varepsilon},\quad \eta_\varepsilon\varphi\in \mathscr{D}(M\setminus\{p\}).</script><p>那么代入$\eta_\varepsilon\varphi,$
+令$\varepsilon\rightarrow 0$即可得到结论.
+也就是$\varphi$可以在$\mathscr{D}(M)$中选取.</p>
+<h2 id="弱意义"><a href="#弱意义" class="headerlink" title="弱意义"></a>弱意义</h2><p>由上面证得的公式, </p>
 <script type="math/tex; mode=display">
-H^p(B;R)=H^p(B;H^0(F,R))=E_2^{p,0}\twoheadrightarrow E_\infty^{p,0} \hookrightarrow H^p(E;R)</script><p>是$\pi^\ast =H^p(\pi).$ 若$\pi^\ast $是单射, 那么上行的满射是同构.</p>
-<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p><strong>定理 1</strong>. <em>对于纤维化$F\xrightarrow{\iota}E\xrightarrow{\pi}B,$ $B$道路连通. 若$\iota^\ast :H^q(E)\rightarrow H^q(F)$是满射, $\,\forall\,q,$ 且$H^\ast (F)$是有限生成自由Abel群, 那么$H^\ast (E)\cong H^\ast (B)\otimes H^\ast (F)$作为$H^\ast (B)$模同构.</em> </p>
-<p>证明思路: 满射的条件给出$\pi_1(B)$在$H^\ast (F)$上的作用是平凡的.
-而有限生成自由Abel的条件说明了</p>
+\Delta_g r=(\Delta_g r)\chi_{S_p}-\mu,</script><p>$\mu$为一个Radon测度, 可写为$\mu=J(x)\mathcal{H}^{n-1}|_{N_p},$ 即</p>
 <script type="math/tex; mode=display">
-E_2^{p,q}=H^p(B;H^q(F))\cong H^p(B)\otimes H^q(F).</script><p>由于边上的微分都是零, 由微分的导子性质, 所有地方的微分都是零.
-这就立刻得到了谱序列从第二页开始就不再变化, 从而收敛得到结论.</p>
-<p>若我们能够找到$\iota,\pi$对应的截面,
-那么立即有$\iota^\ast ,\pi^\ast $是满射/单射.</p>
-<h2 id="Hurewicz定理及其推广"><a href="#Hurewicz定理及其推广" class="headerlink" title="Hurewicz定理及其推广"></a>Hurewicz定理及其推广</h2><p><strong>定理 2</strong> (Hurewicz). <em>设$X$是单连通的, 那么$\pi_i(X)=0,$ $\,\forall\,i&lt;n$ 当且仅当$\widetilde{H}_i(X)=0,$ $\,\forall\,i&lt;n.$ 若条件满足, 那么$\pi_n(X)\cong H_n(X).$</em> </p>
-<p>对$n$归纳, 考虑道路纤维化: </p>
+\int_M\varphi d\mu=\int_{N_p}\varphi Jd\mathcal{H}^{n-1}</script><p> 由$J\ge 0,$
+我们就立即得到了前面的弱意义下(在函数空间$\mathscr{D}_+(M)$上)的Laplace比较定理.</p>
+<h2 id="闸函数"><a href="#闸函数" class="headerlink" title="闸函数"></a>闸函数</h2><p>在闸函数意义下也有相应的Laplace比较定理.</p>
+<p>回忆对于有界开集$\Omega,$ $p\in \Omega,$ $f\in C^2(\Omega).$
+若$f(p)=\min_\Omega f,$ 则$\Delta_g f(p)\ge 0.$
+那么若$\,\exists\,\varphi\in C^2(\Omega),$ $\varphi\ge f,$
+$\varphi(p)=f(p),$ 则$\varphi(p)-f(p)=\min_\Omega(\varphi-f),$
+从而$\Delta \varphi(p)\ge \Delta f(p).$</p>
+<p><strong>定义 1</strong>. <em>设$f$在$p$点附近连续. 称$\varphi$是$f$在$p$处的上闸函数, 若$\varphi\ge f,$ $\varphi=f(p).$ 定义闸函数意义下$\Delta f(p)\le C$指$\,\forall\,\varepsilon&gt;0,$ $\,\exists\,$上闸函数$\varphi,$ 使得$\Delta \varphi\le C+\varepsilon.$</em> </p>
+<p>类似地, 可以定义下闸函数. 若上下闸函数对同一常数$C$同时存在,
+则可定义$\Delta f(p)=C.$ 接下来, 我们证明在闸函数意义下,</p>
 <script type="math/tex; mode=display">
-\Omega X\rightarrow PX\rightarrow X</script><p>其中$\Omega X$是环空间, $PX$是道路空间, 可缩. $\,\forall\,q&lt;n-1,$
-由归纳假设, </p>
+\Delta r\le (n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><p>对$x\in M\setminus\{p\},$ 取$\gamma$为连接$p$到$x$的线段.
+取$x_\varepsilon=\gamma(\varepsilon).$
+定义$r_\varepsilon(x):=d(x,x_\varepsilon)+\varepsilon\ge d(x,p).$
+容易证明$x\in S_{x_\varepsilon},$ 因此$r(x)=r_\varepsilon(x).$
+而在$\operatorname{Ric}\ge (n-1)K$的条件下,</p>
 <script type="math/tex; mode=display">
-0=\pi_{q+1}(X)\cong \pi_q(\Omega X)\cong H_q(\Omega X).</script><script type="math/tex; mode=display">
-\pi_n(X)\cong \pi_{n-1}(\Omega X)\cong H_{n-1}(\Omega X).</script><p>我们的目标是关联$H_\ast (\Omega X),$ $H_\ast (X).$</p>
-<p>由Leray-Serre谱序列, $E^2_{p,q}=H_p(X;H_q(\Omega X)),$ 但由于$PX$可缩,
-$E^\infty_{p,q}=0$除了$E^\infty_{0,0}.$
-也就是$E^2_{p,q}$上所有元素都会被消灭(除了$(0,0)$).
-那么由下面的谱序列立即得到结论.</p>
-<p><img style='margin: auto;' src=https://s2.loli.net/2022/10/03/lpOkQ58q4Xc1uWz.png width='50%' height='50%'></p>
-<h2 id="Serre类"><a href="#Serre类" class="headerlink" title="Serre类"></a>Serre类</h2><p>Serre类$\mathscr{C}$是一个由Abel群组成的非空集, 使得对任意短正合列</p>
-<script type="math/tex; mode=display">
-0\rightarrow A\rightarrow B \rightarrow C\rightarrow 0,</script><p>$B\in \mathscr{C}$当且仅当$A,C\in \mathscr{C}.$
-我们称$\mathscr{C}$是”好”的, 若</p>
-<script type="math/tex; mode=display">
-\,\forall\,A,B\in \mathscr{C},\quad A\otimes B,\operatorname{Tor}(A,B)\in \mathscr{C}.</script><p>几个例子是: $\{0\}$,{挠Abel群(每个元素阶有限)}, {有限Abel群}.
-{有限生成Abel群}, {$p$群(每个元素阶为$p^n$)}.</p>
-<p>我们定义$f:A\rightarrow B$是$\mathscr{C}$单射若$\ker f\in \mathscr{C};$
-称它是$\mathscr{C}$满射, 若$\operatorname{coker}f\in \mathscr{C}.$
-称它是$\mathscr{C}$同构若满足以上两个条件.</p>
-<p><strong>定理 3</strong> (推广Hurewicz). <em>令$X$是单连通的, $\mathscr{C}$是好Serre类. 那么$\pi_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n$ 当且仅当$\widetilde{H}_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n.$ 若条件成立, $\pi_n(X)\rightarrow H_n(X)$是$\mathscr{C}$同构.</em> </p>
-<p>证明思路: 对$n$归纳.</p>
-<script type="math/tex; mode=display">
-\,\forall\,q<n-1, \quad \mathscr{C}\ni \pi_{q+1}(X)\cong_\mathscr{C}H_q(\Omega X),\qquad \pi_n(X)\cong_\mathscr{C}H_{n-1}(\Omega X).</script><script type="math/tex; mode=display">
-E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>从而由$H_q(\Omega X)\in \mathscr{C},$ $E^2_{p,q}\in \mathscr{C}.$
-再次由谱序列得到结论.</p>
-<p><strong>推论 4</strong>. <em>若$X$是单连通有限CW复形, 那么$\pi_i(X)$是有限生成的, $\,\forall\,i.$</em> </p>
-<p><strong>注 5</strong>. <em>$\pi_2(S^1\vee S^2)$并不是有限生成的.</em> </p>
-<p>文章最后更新于 2022-10-03 17:32:02 </p>
+\Delta_g r_\varepsilon=\Delta_g d(x,x_\varepsilon)\le (n-1)\frac{sn_k'}{sn_k}(d(x,x_\varepsilon)),</script><p>这就说明了在闸意义下, $\Delta_gr\le (n-1)\frac{sn_k’}{sn_k}(r).$</p>
+<p>文章最后更新于 2022-10-03 23:21:28 </p>
 
         </div>
 
@@ -278,11 +268,11 @@ E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(6)-边同态</li>
+        <li>本文标题：《几何分析》笔记(7)-Laplace比较定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-03 17:31:59</li>
+        <li>创建时间：2022-10-03 22:26:26</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/03/《代数拓扑2》笔记(6)-边同态/
+            本文链接：https://dream0ar.github.io/2022/10/03/《几何分析》笔记(7)-Laplace比较定理/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -299,13 +289,13 @@ E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>�
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/10/03/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(7)-Laplace%E6%AF%94%E8%BE%83%E5%AE%9A%E7%90%86/"
+                           href="/2022/10/05/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(7)-%E5%90%91%E9%87%8F%E4%B8%9B/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何分析》笔记(7)-Laplace比较定理</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(7)-向量丛</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -315,10 +305,10 @@ E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>�
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/09/29/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E6%A8%AA%E6%88%AA%E6%80%A7/"
+                           href="/2022/10/03/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E8%BE%B9%E5%90%8C%E6%80%81/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》笔记-横截性</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(6)-边同态</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -525,7 +515,7 @@ E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%90%8C%E8%B0%83%E7%9A%84Leray-Serre%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text">上同调的Leray-Serre谱序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%B9%E5%90%8C%E6%80%81"><span class="nav-text">边同态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leray-Hirsch%E5%AE%9A%E7%90%86"><span class="nav-text">Leray-Hirsch定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hurewicz%E5%AE%9A%E7%90%86%E5%8F%8A%E5%85%B6%E6%8E%A8%E5%B9%BF"><span class="nav-text">Hurewicz定理及其推广</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serre%E7%B1%BB"><span class="nav-text">Serre类</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86"><span class="nav-text">分部积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E6%84%8F%E4%B9%89"><span class="nav-text">弱意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B8%E5%87%BD%E6%95%B0"><span class="nav-text">闸函数</span></a></li></ol>
     </div>
 </div>
         </aside>
