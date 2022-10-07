@@ -9,7 +9,7 @@
     
     <title>
         
-            《几何分析》笔记(7)-Laplace比较定理 |
+            《微分流形》笔记-李导数 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《几何分析》笔记(7)-Laplace比较定理</span>
+            <span class="title-hover-animation">《微分流形》笔记-李导数</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-03 22:26:26
+        <i class="fas fa-edit"></i>&nbsp;2022-10-05 00:06:41
     </span>
     
         <span class="article-categories article-meta-item">
@@ -182,7 +182,7 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90/">几何分析</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,61 +206,32 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>$r(x)=d(p,x)$是$M$上的Lipschitz函数, 进一步它在$W^{1,p}_{loc}(M)$中.
-我们希望推导得到:</p>
+            <p>Introduction to smooth manifolds by John M. Lee</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>取关于$V$的流$\theta,$ 对$M$上的切向量场$X,$ 定义其关于$V$的李导数为:</p>
 <script type="math/tex; mode=display">
--\int_M\nabla_g r\nabla_g \varphi\le \int_M (n-1)\frac{sn_k'(r)}{sn_k(r)}\varphi dV_g,\quad \,\forall\,\varphi\ge 0,\varphi\in \mathscr{D}(M).</script><p>对于割迹$\operatorname{Cut}=N_p\cup A_p,$ $\,\forall\,p&gt;n-2,$
-$\,\exists\,r_k,r_k’\rightarrow 0,$
-$\,\exists\,\phi_k\in W^{1,n-p}\cap C^0,$ 满足</p>
+(L_VX)_p=\left.\frac{d {} }{d {}t}\right|_{t=0}d(\theta_{-t})_{\theta_t(p)}X_{\theta_t(p)}=\lim_{t\rightarrow 0}\frac{d(\theta_{-t})_{\theta_t(p)}X_{\theta_t(p)}-X_p}{t}.</script><p>对$M$上的光滑共变张量场$A,$ 定义其关于$V$的李导数为:</p>
 <script type="math/tex; mode=display">
-\phi_k|_{B_{r_k}^g(A_p)^c}\equiv 0,\quad \phi_k|_{B_{r_k}^g(A_p)}\equiv 1,</script><p>且$\int |\nabla \phi_k|^{n-p}\rightarrow 0.$</p>
-<h2 id="分部积分"><a href="#分部积分" class="headerlink" title="分部积分"></a>分部积分</h2><p>首先考虑将不等式左侧写成更方便的形式.</p>
+(L_VA)_p=\left.\frac{d {} }{d {}t}\right|_{t=0}(\theta_t^\ast A)_p=\lim_{t\rightarrow 0}\frac{(\theta_t)^\ast _p(A_{\theta_t(p)})-A_p}{t}.</script><p>注意这和协变导数的差别是: 协变导数是平移地拉回求导, 而李导数是直接拉回.
+李导数可定义在一般的张量场上, 得到的也是同样类型的张量场.</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p><strong>定理 1</strong>. <em>$L_VW=[V,W].$</em> </p>
+<p>需要特别注意的一点是是$L_VW$依赖于$V(p)$附近的取值, 而$D_VW$不是.
+这是因为李导数在$V$位置不是$C^\infty$线性的.</p>
+<p>关于李导数直接的性质有它关于张量积, 缩并满足Leibniz法则.
+一些常用的好的性质是它在微分形式上的作用:</p>
 <script type="math/tex; mode=display">
--\int_M\nabla_g r\nabla_g\varphi dV_g=\lim_{k\rightarrow +\infty} -\int_M \nabla_g r\nabla_g(1-\varphi_k)\varphi dV_g.</script><p>记后面的积分为$I,$ 则 </p>
+L_V(df)=d(L_Vf)=d(Vf),\quad L_V(d\omega)=d(L_V\omega).</script><script type="math/tex; mode=display">
+L_V(\omega\wedge\eta)=L_V\omega\wedge\eta+\omega\wedge L_V\eta.</script><p><strong>定理 2</strong> (Cartan’s Magic Formula). <em>$L_V\omega=i_V(d\omega)+d(i_V\omega)$</em> </p>
+<p>归纳法. 零维显然. 记$\omega=fdx^1\wedge\cdots\wedge dx^n,$
+$\eta=fdx^2\wedge\cdots\wedge dx^n,$ 故$\omega=dx^1\wedge \eta.$</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
- I&= -\int_{\widehat{C}_p\cap \widehat{S}_p} \nabla_{\widehat g}r\nabla_{\widehat g}(1-\phi_k)\varphi dV_{\widehat{g} }\\
- &=\int_{\widehat{S}_p}\Delta_{\widehat g}r(1-\phi_k)\varphi-\int_{ {\widehat N}_p}\frac{\partial {}r}{\partial {}n}(1-\phi_k)\varphi\\
- &=\int_M(\Delta_g r)(1-\phi_k)\varphi-\int_{N_p}J(x)(1-\phi_k)\varphi\\
- &\rightarrow \int_{S_p}(\Delta_g r)\varphi dV_g-\int_{N_p }J(x)\varphi.
- \end{aligned}</script><script type="math/tex; mode=display">
-J(x):=n_1\cdot \gamma_1'+n_2\cdot\gamma_2'\ge 0.</script><p>那么$\,\forall\,\varphi\in \mathscr{D}(M\setminus\{p\}),$</p>
+ L_V\omega&=L_Vdx^1\wedge \eta+dx^1\wedge L_V\eta\\
+ &=d(Vx^1)\wedge \eta+dx^1\wedge( i_V(d\eta)+d(i_V\eta))
+ \end{aligned}</script><p> 由于$d$和内乘都是反导子, 我们有:</p>
 <script type="math/tex; mode=display">
--\int_M\nabla_gr\nabla_g\varphi dV_g=\int_{S_p}\Delta_gr\varphi dV_g-\int_{N_p} J(x)\varphi(x)d\mathcal{H}^{n-1}.</script><p>事实上可以取$\varphi\in \mathscr{D}(M).$ 考虑$\eta=\begin{cases}
- 1, &amp;t&gt;2\\
- \in[0,1], &amp;1\le t\le 2\\
- 0, &amp;t&lt;1
- \end{cases},$
-$\eta_\varepsilon=\eta(d(x,p)\varepsilon^{-1}),$
-$\varepsilon&lt;\operatorname{Inj}(p).$</p>
-<script type="math/tex; mode=display">
-|\nabla_g\eta_\varepsilon|=|\eta'| \frac{|\nabla_g r|}{\varepsilon}\le \frac{\Vert\eta'\Vert_{C_0} }{\varepsilon},\quad \eta_\varepsilon\varphi\in \mathscr{D}(M\setminus\{p\}).</script><p>那么代入$\eta_\varepsilon\varphi,$
-令$\varepsilon\rightarrow 0$即可得到结论.
-也就是$\varphi$可以在$\mathscr{D}(M)$中选取.</p>
-<h2 id="弱意义"><a href="#弱意义" class="headerlink" title="弱意义"></a>弱意义</h2><p>由上面证得的公式, </p>
-<script type="math/tex; mode=display">
-\Delta_g r=(\Delta_g r)\chi_{S_p}-\mu,</script><p>$\mu$为一个Radon测度, 可写为$\mu=J(x)\mathcal{H}^{n-1}|_{N_p},$ 即</p>
-<script type="math/tex; mode=display">
-\int_M\varphi d\mu=\int_{N_p}\varphi Jd\mathcal{H}^{n-1}</script><p> 由$J\ge 0,$
-我们就立即得到了前面的弱意义下(在函数空间$\mathscr{D}_+(M)$上)的Laplace比较定理.</p>
-<h2 id="闸函数"><a href="#闸函数" class="headerlink" title="闸函数"></a>闸函数</h2><p>在闸函数意义下也有相应的Laplace比较定理.</p>
-<p>回忆对于有界开集$\Omega,$ $p\in \Omega,$ $f\in C^2(\Omega).$
-若$f(p)=\min_\Omega f,$ 则$\Delta_g f(p)\ge 0.$
-那么若$\,\exists\,\varphi\in C^2(\Omega),$ $\varphi\ge f,$
-$\varphi(p)=f(p),$ 则$\varphi(p)-f(p)=\min_\Omega(\varphi-f),$
-从而$\Delta \varphi(p)\ge \Delta f(p).$</p>
-<p><strong>定义 1</strong>. <em>设$f$在$p$点附近连续. 称$\varphi$是$f$在$p$处的上闸函数, 若$\varphi\ge f,$ $\varphi=f(p).$ 定义闸函数意义下$\Delta f(p)\le C$指$\,\forall\,\varepsilon&gt;0,$ $\,\exists\,$上闸函数$\varphi,$ 使得$\Delta \varphi\le C+\varepsilon.$</em> </p>
-<p>类似地, 可以定义下闸函数. 若上下闸函数对同一常数$C$同时存在,
-则可定义$\Delta f(p)=C.$ 接下来, 我们证明在闸函数意义下,</p>
-<script type="math/tex; mode=display">
-\Delta r\le (n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><p>对$x\in M\setminus\{p\},$ 取$\gamma$为连接$p$到$x$的线段.
-取$x_\varepsilon=\gamma(\varepsilon).$
-定义$r_\varepsilon(x):=d(x,x_\varepsilon)+\varepsilon\ge d(x,p).$
-容易证明$x\in S_{x_\varepsilon},$ 因此$r(x)=r_\varepsilon(x).$
-而在$\operatorname{Ric}\ge (n-1)K$的条件下,</p>
-<script type="math/tex; mode=display">
-\Delta_g r_\varepsilon=\Delta_g d(x,x_\varepsilon)\le (n-1)\frac{sn_k'}{sn_k}(d(x,x_\varepsilon)),</script><p>这就说明了在闸意义下, $\Delta_gr\le (n-1)\frac{sn_k’}{sn_k}(r).$</p>
-<p>文章最后更新于 2022-10-03 23:21:28 </p>
+i_V(d\omega)=-i_Vdx^1\wedge d\eta=-Vx^1\wedge d\eta +dx^1\wedge i_V(d\eta)</script><script type="math/tex; mode=display">
+d(i_V\omega)=d(Vx^1\wedge\eta-dx^1\wedge i_V\eta)=d(Vx^1)\wedge \eta +Vx^1 \wedge d\eta+dx^1\wedge d(i_V\eta)</script><p>由此即得到结论.</p>
+<p>文章最后更新于 2022-10-07 13:21:51 </p>
 
         </div>
 
@@ -268,11 +239,11 @@ $\varphi(p)=f(p),$ 则$\varphi(p)-f(p)=\min_\Omega(\varphi-f),$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《几何分析》笔记(7)-Laplace比较定理</li>
+        <li>本文标题：《微分流形》笔记-李导数</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-03 22:26:26</li>
+        <li>创建时间：2022-10-05 00:06:41</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/03/《几何分析》笔记(7)-Laplace比较定理/
+            本文链接：https://dream0ar.github.io/2022/10/05/《微分流形》笔记-李导数/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -289,13 +260,13 @@ $\varphi(p)=f(p),$ 则$\varphi(p)-f(p)=\min_\Omega(\varphi-f),$
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/10/05/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E6%9D%8E%E5%AF%BC%E6%95%B0/"
+                           href="/2022/10/05/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(7)-%E5%90%91%E9%87%8F%E4%B8%9B/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》笔记-李导数</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(7)-向量丛</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -305,10 +276,10 @@ $\varphi(p)=f(p),$ 则$\varphi(p)-f(p)=\min_\Omega(\varphi-f),$
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/10/03/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E8%BE%B9%E5%90%8C%E6%80%81/"
+                           href="/2022/10/03/%E3%80%8A%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90%E3%80%8B%E7%AC%94%E8%AE%B0(7)-Laplace%E6%AF%94%E8%BE%83%E5%AE%9A%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(6)-边同态</span>
+                                <span class="post-nav-title-item">《几何分析》笔记(7)-Laplace比较定理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -515,7 +486,7 @@ $\varphi(p)=f(p),$ 则$\varphi(p)-f(p)=\min_\Omega(\varphi-f),$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86"><span class="nav-text">分部积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E6%84%8F%E4%B9%89"><span class="nav-text">弱意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B8%E5%87%BD%E6%95%B0"><span class="nav-text">闸函数</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-text">性质</span></a></li></ol>
     </div>
 </div>
         </aside>
