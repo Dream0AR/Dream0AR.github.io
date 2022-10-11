@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(8)-Stiefel-Whitney示性类 |
+            《代数拓扑》复习-同伦论 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(8)-Stiefel-Whitney示性类</span>
+            <span class="title-hover-animation">《代数拓扑》复习-同伦论</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-11 15:12:26
+        <i class="fas fa-edit"></i>&nbsp;2022-10-11 17:51:29
     </span>
     
         <span class="article-categories article-meta-item">
@@ -182,7 +182,7 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/Hatcher/">Hatcher</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,89 +206,57 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>对于秩$n$实向量丛</p>
+            <h2 id="同伦群"><a href="#同伦群" class="headerlink" title="同伦群"></a>同伦群</h2><p>$n$维同伦群$\pi_n(X,x_0)$定义为映射$f:(I^n,\partial I^n)\rightarrow (X,x_0)$的同伦类全体.
+同伦$f_t$满足$f_t(\partial I^n)\equiv x_0.$
+也可视为$f:(S^n,s_0)\rightarrow (X,x_0)$的同伦类全体.</p>
+<p>考虑$I^{n-1}\subset I^n,$ $J^{n-1}:=\partial I^n\setminus I^{n-1}.$
+那么相对同伦群$\pi_n(X,A,x_0)$定义为映射$(I^n,\partial I^n, J^{n-1})\rightarrow (X,A,x_0)$的同伦类全体.
+也可视为$(D^n,S^{n-1},s_0)\rightarrow (X,A,x_0)$的同伦类全体.
+相对同伦群有长正合列:</p>
 <script type="math/tex; mode=display">
-\mathbb{R}^n\rightarrow E(\xi)\xrightarrow{\pi}B(\xi),</script><p>定义Stiefel-Whitney classes为:</p>
+\cdots\rightarrow \pi_n(A,x_0)\xrightarrow{i_\ast }\pi_n(X,x_0)\xrightarrow{j_\ast }\pi_n(X,A,x_0)\xrightarrow{\partial} \pi_{n-1}(A,x_0)\rightarrow\cdots\rightarrow \pi_0(X,x_0)</script><p>类似于同调的情况, 我们也能证明更一般的三元组$(X,A,B)$的情况,
+当$B=x_0$时即为上面的式子.</p>
+<p>$X$中的道路$\gamma$也能诱导不同基点同伦群间的同构$\beta_\gamma,$
+从而道路连通的情况可省去基点$x_0.$ 称空间$X$是$n$连通的, 若$\pi_i(X)=0,$
+$\,\forall\,i\le n.$
+$n$连通当且仅当所有$X$中$S^i$都是可缩的(用映射的观点来看),
+$\,\forall\,i\le n.$ 相对同伦的情况类似.</p>
+<h2 id="CW复形同伦论"><a href="#CW复形同伦论" class="headerlink" title="CW复形同伦论"></a>CW复形同伦论</h2><h3 id="胞腔逼近"><a href="#胞腔逼近" class="headerlink" title="胞腔逼近"></a>胞腔逼近</h3><p><strong>定理 1</strong> (Whitehead). <em>若CW复形间的映射$f:X\rightarrow Y$诱导了同伦群上的同构$f_\ast :\pi_\ast (X)\cong \pi_\ast (Y),$ 则$f$是一个同伦等价. 若$f$还是包含$X\hookrightarrow Y,$ 则结论更强: $X$是$Y$的强形变收缩核.</em> </p>
+<p><strong>定理 2</strong> (胞腔逼近). <em>每个CW复形间的映射$f:X\rightarrow Y$同伦于一个胞腔映射, 即将胞腔映到(比自己维数低的)胞腔.</em> </p>
+<p>对给定对$(X,A),$ $A$为非空CW复形.
+它的一个$n$连通<strong>CW模型</strong>指一个$n$连通CW对$(Z,A),$
+$f:Z\rightarrow X$在$A$上为恒等映射,
+且$f_\ast :\pi_i(Z)\rightarrow \pi_i(X)$在$i&gt;n$时为同构, 对$i=n$为满射.</p>
+<p><strong>命题 3</strong>. <em>每个这样的对$(X,A)$都存在一个$n$连通CW模型$f:(Z,A)\rightarrow (X,A),$ $\,\forall\,n\ge 0.$ $Z$由$A$贴$n$维以上胞腔而得.</em> </p>
+<p>当$n=0$时, 情况最为特殊. 取$Z$包含$A$的一个连通分支,
+即有<strong>CW逼近</strong>$f:Z\rightarrow X,$ 诱导了所有同伦群的同构,
+是<strong>弱同伦等价</strong>. 事实上,
+可以证明$(X,A)$的$n$连通CW模型是在关于$A$相对同伦等价的意义下唯一的.
+特别的, 空间的CW逼近是在同伦等价意义下唯一的.</p>
+<p><strong>命题 4</strong>. <em>弱同伦等价$f:X\rightarrow Y$诱导了全体同调/上同调群的同构, 关于任意系数群$G.$</em> </p>
+<h3 id="挖去定理"><a href="#挖去定理" class="headerlink" title="挖去定理"></a>挖去定理</h3><p>关于同伦我们也有挖去定理, 由如下的命题表示:</p>
+<p><strong>定理 5</strong>. <em>对于CW复形$X,$ 有子复形$A\cap B=C.$ 若$(A,C)$是$m$连通的, $(B,C)$是$n$连通的, 则由嵌入映射诱导的$\pi_i(A,C)\rightarrow \pi_i(X,B)$为同构, $\,\forall\,i&lt;m+n.$ 对于$i=m+n$为满射.</em> </p>
+<p><strong>推论 6</strong> (Freudenthal). <em>$\pi_i (S^n)\rightarrow \pi_{i+1}(S^{n+1})$为同构, $i&lt;2n-1.$ $i=2n-1$为满射. 更一般的, 这对$\pi_i(X)\rightarrow\pi_{i+1}(SX)$也成立, 只要$X$为$n-1$连通CW复形.</em> </p>
+<p><strong>命题 7</strong>. <em>(Eilenberg-Maclane空间)CW复形$K(G,n)$在同伦意义下唯一, 仅由$G,n$决定.</em> </p>
+<h2 id="Hurewicz定理"><a href="#Hurewicz定理" class="headerlink" title="Hurewicz定理"></a>Hurewicz定理</h2><p><strong>定理 8</strong>. <em>若空间$X$是$(n-1)$连通的, 则$\widetilde H_i(X)=0,$ $\,\forall\,i&lt;n;$ $\pi_n(X)\cong H_n(X).$ 相对同伦类似.</em> </p>
+<p>换句话说, 只要$X$是单连通的, 那么非平凡的同伦群和同调群发生在统一维数,
+且是同构的. 结合Whitehead定理我们可以证明如下的结论. (把$Y$换成$M_f$.)</p>
+<p><strong>推论 9</strong>. <em>若$f_\ast :H_\ast (X)\cong H_\ast (Y),$ 则单连通CW复形间的映射$f:X\rightarrow Y$为同伦等价.</em> </p>
+<h2 id="纤维丛"><a href="#纤维丛" class="headerlink" title="纤维丛"></a>纤维丛</h2><p>纤维丛$F\rightarrow E\xrightarrow{p} B$指$\,\forall\,b\in B,$
+$p^{-1}(b)\approx F,$ 且有局部平凡化$p^{-1}(U)\approx U\times F.$
+纤维化还要求$p$关于$X$满足<strong>同伦提升性质</strong>:
+$\,\forall\,g_t:X\rightarrow B$满足$g_0$有提升$\widetilde g_0,$
+则整体存在提升$\widetilde{g}_t.$</p>
+<p><strong>定理 10</strong>. <em>若纤维丛$F\rightarrow E\rightarrow B$关于圆盘都是纤维化(称为Serre纤维化), 则有如下长正合列:</em> </p>
 <script type="math/tex; mode=display">
-\omega_i(\xi)\in H^i(B(\xi);\mathbb{Z}_2),\quad i=0,1,2,\cdots</script><p>满足如下公理:</p>
-<ol>
-<li><p>$\omega_0(\xi)=1\in H^0(B(\xi);\mathbb{Z}_2)$; $\omega_i(\xi)=0,$
-$\,\forall\,i&gt;n.$</p>
-</li>
-<li><p>(自然性)对于$f:B(\xi)\rightarrow B(\eta)$由丛映射覆盖($\xi \cong f^\ast \eta$),
-$\omega_i(\xi)=(\omega_i(f^\ast \eta)=)f^\ast \omega_i(\eta).$</p>
-</li>
-<li><p>(Whitney乘积公式) 若$\xi,\eta$为底空间相同的实向量丛,
-那么$\omega_k(\xi\oplus\eta)=\sum_i \omega_i(\xi)\cup \omega_{k-i}(\eta).$</p>
-</li>
-<li><p>对于$\mathbb{R}\mathrm{P}^1$上的经典线丛$\gamma_1^1,$
-$\omega_1(\gamma_1^1)\neq 0.$</p>
-</li>
-</ol>
-<p>我们后面将看到这样的示性类存在唯一.</p>
-<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>一些不加证明的简单的性质如下.</p>
-<ol>
-<li><p>若$\xi\cong \eta,$ 则$\omega_i(\xi)=\omega_i(\eta).$</p>
-</li>
-<li><p>若向量丛$\varepsilon^n$平凡, 则$\omega_i(\varepsilon)=0,$
-$\,\forall\,i&gt;0.$</p>
-</li>
-<li><p>若向量丛$\varepsilon^n$平凡,
-则$\omega_i(\xi\oplus\varepsilon^n)=\omega_i(\xi).$</p>
-</li>
-</ol>
-<p><strong>命题 1</strong>. <em>若$\xi$是欧氏秩$n$实向量丛, 有无处消失截面, 则$\omega_n(\xi)=0.$</em> </p>
-<p>若$\xi$有无处消失截面, 则$\xi$包含一个平凡秩$1$子向量丛$\varepsilon.$
-由欧氏性, $\xi=\varepsilon\oplus \varepsilon^{\perp},$
-从而$\omega_n(\xi)=\omega_n(\varepsilon^\perp)=0.$
-最后一个等号是因为$\varepsilon^\perp$是秩$n-1$的.</p>
-<p>因此我们可以将Stiefel-Whitney classes视为一种阻碍, 若最高维示性类非零,
-则$\xi$上一定不存在无处消失截面. 类似地, 我们还有:</p>
-<p><strong>命题 2</strong>. <em>若$\xi$为欧氏秩$n$实向量丛, 有$k$个处处线性无关截面, 则$\omega_n(\xi)=\cdots=\omega_{n-k+1}(\xi)=0.$</em> </p>
-<h2 id="总SW示性类"><a href="#总SW示性类" class="headerlink" title="总SW示性类"></a>总SW示性类</h2><p>定义总SW示性类$\xi$为</p>
+\cdots \rightarrow \pi_n(F,x_0)\rightarrow \pi_n(E,x_0)\rightarrow \pi_n(B,b_0)\rightarrow \pi_{n-1}(F,x_0)\rightarrow \cdots\rightarrow \pi_0(E,x_0)\rightarrow 0.</script><p>注意到这即是$\pi_n(E,F,x_0)\cong \pi_n(B,b_0).$ 事实上, 我们有如下性质,
+说明纤维丛差不多都是纤维化:</p>
+<p><strong>命题 11</strong>. <em>纤维丛$p:E\rightarrow B$关于任意CW复形对$(X,A)$都有同伦提升性质.</em> </p>
+<h2 id="稳定同伦群"><a href="#稳定同伦群" class="headerlink" title="稳定同伦群"></a>稳定同伦群</h2><p>对于$n$连通CW复形$X,$ 我们有$\pi_i(X)\cong \pi_{i+1}(SX),$ $i&lt;2n+1.$
+特别的对$i\le n$成立, 因此$SX$是$n+1$连通的. 我们有如下的suspensions序列</p>
 <script type="math/tex; mode=display">
-\omega(\xi):=1+\omega_1(\xi)+\omega_2(\xi)+\cdots \in H^\ast (B(\xi);\mathbb{Z}_2)\subset H^\pi(B(\xi);\mathbb{Z}_2).</script><p>最后一个包含关系指直和包含于直积.</p>
-<p><strong>引理 3</strong>. <em>$\{\omega:\omega\text{起始系数为$1$}\}\subset H^\pi(B;\mathbb{Z}_2)$ 组成了在杯积下不变的交换子群.</em> </p>
-<p>只需证每个$\omega$存在逆. 记$\omega=1+\omega_1+\cdots,$
-$\overline\omega=1+\overline\omega_1+\cdots,$
-为了让$\omega\overline\omega=1,$ 我们需要$\,\forall\,k&gt;0,$</p>
-<script type="math/tex; mode=display">
-\sum_{i}\omega_i\overline\omega_{k-i}=0.</script><p> 故取如下元素作为逆即可.</p>
-<script type="math/tex; mode=display">
-\overline\omega_k=\omega_1\overline\omega_{k-1}+\cdots+\omega_k.</script><p><strong>命题 4</strong>. <em>若$\xi,\eta$都是$B$上的向量丛, 使得$\xi\oplus\eta$是平凡的, 那么$\omega(\xi)=\overline\omega(\eta).$</em> </p>
-<p>证明只需回忆: </p>
-<script type="math/tex; mode=display">
-\omega(\xi\oplus\eta)=\omega(\xi)\cup\omega(\eta)=1.</script><p><strong>推论 5</strong> (Whitney对偶). <em>若$M\subset \mathbb{R}^N$是一个光滑子流形, $\tau$为切丛, $\nu$为法丛, 则$\omega(\nu)=\overline\omega(\tau).$</em> </p>
-<p>只需注意到: </p>
-<script type="math/tex; mode=display">
-\tau\oplus\nu\cong T\mathbb{R}^N|_M=\varepsilon.</script><h2 id="计算SW类"><a href="#计算SW类" class="headerlink" title="计算SW类"></a>计算SW类</h2><p>对于标准球面$S^n,$ 法丛平凡, 因此切丛的SW类平凡.
-需要注意到偶数维球面上切丛非平凡,
-因此SW类最高维为零也不见得有处处非零截面.</p>
-<p>考虑$\gamma_n^1$为$\mathbb{R}\mathrm{P}^n$上的经典线丛, 我们有:</p>
-<script type="math/tex; mode=display">
-\omega(\gamma_n^1)=1+a,\quad a\neq 0\in H^1(\mathbb{R}\mathrm{P}^n;\mathbb{Z}_2).</script><p>考虑$\mathbb{R}^2\hookrightarrow \mathbb{R}^{n+1},$
-诱导了$\mathbb{R}\mathrm{P}^1\hookrightarrow \mathbb{R}\mathrm{P}^n,$
-由丛映射覆盖. 这就得到了结论.</p>
-<p>令$\mathbb{R}^{n+1}$具标准度量,
-$\gamma^\perp$为$\mathbb{R}\mathrm{P}^n$上的向量丛,
-每根纤维是经典线丛纤维的正交补.
-那么$\gamma^\perp\oplus \gamma_n^1=\varepsilon,$ 从而</p>
-<script type="math/tex; mode=display">
-\omega(\gamma^\perp)=\overline\omega(\gamma_n^1)=(1+a)^{-1}=1+a+\cdots+a^n.</script><p>特别地, $\omega_i(\gamma^\perp)=a^i\neq 0,$
-$a^i\in H^i(\mathbb{R}\mathrm{P}^n).$</p>
-<h2 id="SW类的应用"><a href="#SW类的应用" class="headerlink" title="SW类的应用"></a>SW类的应用</h2><h3 id="可除代数"><a href="#可除代数" class="headerlink" title="可除代数"></a>可除代数</h3><p><strong>定理 6</strong> (Stiefel). <em>设$\mathbb{R}^n$有双线性乘法$p:\mathbb{R}^n\times\mathbb{R}^n\rightarrow \mathbb{R}^n,$ 没有零因子, 则$n$是$2$的幂次.</em> </p>
-<p>我们分为如下两部分来证明:</p>
-<p>1. 假设乘法存在, 那么切丛$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$平凡.</p>
-<p>2. 若$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$平凡, 则$n$为$2$的幂次.</p>
-<p><strong>引理 7</strong>. <em>$\mathbb{R}\mathrm{P}^n$上的切丛有同构$\tau_{\mathbb{R}\mathrm{P}^n}\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp).$</em> </p>
-<p>构造</p>
-<script type="math/tex; mode=display">
-E(\tau_{\mathbb{R}\mathrm{P}^n})=\{\pm(x,v)\in S^n\times \mathbb{R}^{n+1}||x|=1,x\cdot v=0.\}</script><p>那么每个对$(x,v)$决定了一个函数$f\in \operatorname{Hom}(L,L^\perp),$
-$L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
-验证发现$(x,v)\mapsto f$就给出了引理中的同构.</p>
-<p><strong>命题 8</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}\oplus \varepsilon^1\cong \gamma_n^1\oplus \cdots\oplus \gamma_n^1,$ $n+1$个.</em> </p>
-<p>$\tau\oplus \varepsilon^1\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp)\oplus \operatorname{Hom}(\gamma_n^1,\gamma_n^1)\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp\oplus \gamma_n^1)=\operatorname{Hom}(\gamma_n^1,\varepsilon)^{\oplus (n+1)}\cong (\gamma_n^1)^{\oplus(n+1)}$</p>
-<p>文章最后更新于 2022-10-11 15:12:27 </p>
+\pi_i(X)\rightarrow \pi_{i+1}(SX)\rightarrow \pi_{i+2}(S^2X)\rightarrow \cdots</script><p>当$i&lt;2n+1$时, 它们都是同构. 记这些群为$\pi_i^s(X),$ 称为<strong>稳定同伦群</strong>.</p>
+<p>文章最后更新于 2022-10-11 17:51:42 </p>
 
         </div>
 
@@ -296,11 +264,11 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(8)-Stiefel-Whitney示性类</li>
+        <li>本文标题：《代数拓扑》复习-同伦论</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-11 15:12:26</li>
+        <li>创建时间：2022-10-11 17:51:29</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/11/《代数拓扑2》笔记(8)-Stiefel-Whitney示性类/
+            本文链接：https://dream0ar.github.io/2022/10/11/《代数拓扑》复习-同伦论/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -314,29 +282,14 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/10/11/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0-%E5%90%8C%E4%BC%A6%E8%AE%BA/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑》复习-同伦论</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/10/05/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(7)-%E5%90%91%E9%87%8F%E4%B8%9B/"
+                           href="/2022/10/11/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(8)-Stiefel-Whitney%E7%A4%BA%E6%80%A7%E7%B1%BB/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(7)-向量丛</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(8)-Stiefel-Whitney示性类</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -543,7 +496,7 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-text">性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BBSW%E7%A4%BA%E6%80%A7%E7%B1%BB"><span class="nav-text">总SW示性类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97SW%E7%B1%BB"><span class="nav-text">计算SW类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SW%E7%B1%BB%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">SW类的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E9%99%A4%E4%BB%A3%E6%95%B0"><span class="nav-text">可除代数</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E4%BC%A6%E7%BE%A4"><span class="nav-text">同伦群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CW%E5%A4%8D%E5%BD%A2%E5%90%8C%E4%BC%A6%E8%AE%BA"><span class="nav-text">CW复形同伦论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%9E%E8%85%94%E9%80%BC%E8%BF%91"><span class="nav-text">胞腔逼近</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%96%E5%8E%BB%E5%AE%9A%E7%90%86"><span class="nav-text">挖去定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hurewicz%E5%AE%9A%E7%90%86"><span class="nav-text">Hurewicz定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BA%A4%E7%BB%B4%E4%B8%9B"><span class="nav-text">纤维丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E5%90%8C%E4%BC%A6%E7%BE%A4"><span class="nav-text">稳定同伦群</span></a></li></ol>
     </div>
 </div>
         </aside>
