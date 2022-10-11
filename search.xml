@@ -9379,4 +9379,97 @@ u-v=h_k+O(r^{k-1}),</script><p> $k\le k^-(\delta),$ $h_k$如上所述.
         <category>PDE</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(8)-Stiefel-Whitney示性类</title>
+    <url>/2022/10/11/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(8)-Stiefel-Whitney%E7%A4%BA%E6%80%A7%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>对于秩$n$实向量丛</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^n\rightarrow E(\xi)\xrightarrow{\pi}B(\xi),</script><p>定义Stiefel-Whitney classes为:</p>
+<script type="math/tex; mode=display">
+\omega_i(\xi)\in H^i(B(\xi);\mathbb{Z}_2),\quad i=0,1,2,\cdots</script><p>满足如下公理:</p>
+<ol>
+<li><p>$\omega_0(\xi)=1\in H^0(B(\xi);\mathbb{Z}_2)$; $\omega_i(\xi)=0,$
+$\,\forall\,i&gt;n.$</p>
+</li>
+<li><p>(自然性)对于$f:B(\xi)\rightarrow B(\eta)$由丛映射覆盖($\xi \cong f^\ast \eta$),
+$\omega_i(\xi)=(\omega_i(f^\ast \eta)=)f^\ast \omega_i(\eta).$</p>
+</li>
+<li><p>(Whitney乘积公式) 若$\xi,\eta$为底空间相同的实向量丛,
+那么$\omega_k(\xi\oplus\eta)=\sum_i \omega_i(\xi)\cup \omega_{k-i}(\eta).$</p>
+</li>
+<li><p>对于$\mathbb{R}\mathrm{P}^1$上的经典线丛$\gamma_1^1,$
+$\omega_1(\gamma_1^1)\neq 0.$</p>
+</li>
+</ol>
+<p>我们后面将看到这样的示性类存在唯一.</p>
+<h2 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h2><p>一些不加证明的简单的性质如下.</p>
+<ol>
+<li><p>若$\xi\cong \eta,$ 则$\omega_i(\xi)=\omega_i(\eta).$</p>
+</li>
+<li><p>若向量丛$\varepsilon^n$平凡, 则$\omega_i(\varepsilon)=0,$
+$\,\forall\,i&gt;0.$</p>
+</li>
+<li><p>若向量丛$\varepsilon^n$平凡,
+则$\omega_i(\xi\oplus\varepsilon^n)=\omega_i(\xi).$</p>
+</li>
+</ol>
+<p><strong>命题 1</strong>. <em>若$\xi$是欧氏秩$n$实向量丛, 有无处消失截面, 则$\omega_n(\xi)=0.$</em> </p>
+<p>若$\xi$有无处消失截面, 则$\xi$包含一个平凡秩$1$子向量丛$\varepsilon.$
+由欧氏性, $\xi=\varepsilon\oplus \varepsilon^{\perp},$
+从而$\omega_n(\xi)=\omega_n(\varepsilon^\perp)=0.$
+最后一个等号是因为$\varepsilon^\perp$是秩$n-1$的.</p>
+<p>因此我们可以将Stiefel-Whitney classes视为一种阻碍, 若最高维示性类非零,
+则$\xi$上一定不存在无处消失截面. 类似地, 我们还有:</p>
+<p><strong>命题 2</strong>. <em>若$\xi$为欧氏秩$n$实向量丛, 有$k$个处处线性无关截面, 则$\omega_n(\xi)=\cdots=\omega_{n-k+1}(\xi)=0.$</em> </p>
+<h2 id="总SW示性类"><a href="#总SW示性类" class="headerlink" title="总SW示性类"></a>总SW示性类</h2><p>定义总SW示性类$\xi$为</p>
+<script type="math/tex; mode=display">
+\omega(\xi):=1+\omega_1(\xi)+\omega_2(\xi)+\cdots \in H^\ast (B(\xi);\mathbb{Z}_2)\subset H^\pi(B(\xi);\mathbb{Z}_2).</script><p>最后一个包含关系指直和包含于直积.</p>
+<p><strong>引理 3</strong>. <em>$\{\omega:\omega\text{起始系数为$1$}\}\subset H^\pi(B;\mathbb{Z}_2)$ 组成了在杯积下不变的交换子群.</em> </p>
+<p>只需证每个$\omega$存在逆. 记$\omega=1+\omega_1+\cdots,$
+$\overline\omega=1+\overline\omega_1+\cdots,$
+为了让$\omega\overline\omega=1,$ 我们需要$\,\forall\,k&gt;0,$</p>
+<script type="math/tex; mode=display">
+\sum_{i}\omega_i\overline\omega_{k-i}=0.</script><p> 故取如下元素作为逆即可.</p>
+<script type="math/tex; mode=display">
+\overline\omega_k=\omega_1\overline\omega_{k-1}+\cdots+\omega_k.</script><p><strong>命题 4</strong>. <em>若$\xi,\eta$都是$B$上的向量丛, 使得$\xi\oplus\eta$是平凡的, 那么$\omega(\xi)=\overline\omega(\eta).$</em> </p>
+<p>证明只需回忆: </p>
+<script type="math/tex; mode=display">
+\omega(\xi\oplus\eta)=\omega(\xi)\cup\omega(\eta)=1.</script><p><strong>推论 5</strong> (Whitney对偶). <em>若$M\subset \mathbb{R}^N$是一个光滑子流形, $\tau$为切丛, $\nu$为法丛, 则$\omega(\nu)=\overline\omega(\tau).$</em> </p>
+<p>只需注意到: </p>
+<script type="math/tex; mode=display">
+\tau\oplus\nu\cong T\mathbb{R}^N|_M=\varepsilon.</script><h2 id="计算SW类"><a href="#计算SW类" class="headerlink" title="计算SW类"></a>计算SW类</h2><p>对于标准球面$S^n,$ 法丛平凡, 因此切丛的SW类平凡.
+需要注意到偶数维球面上切丛非平凡,
+因此SW类最高维为零也不见得有处处非零截面.</p>
+<p>考虑$\gamma_n^1$为$\mathbb{R}\mathrm{P}^n$上的经典线丛, 我们有:</p>
+<script type="math/tex; mode=display">
+\omega(\gamma_n^1)=1+a,\quad a\neq 0\in H^1(\mathbb{R}\mathrm{P}^n;\mathbb{Z}_2).</script><p>考虑$\mathbb{R}^2\hookrightarrow \mathbb{R}^{n+1},$
+诱导了$\mathbb{R}\mathrm{P}^1\hookrightarrow \mathbb{R}\mathrm{P}^n,$
+由丛映射覆盖. 这就得到了结论.</p>
+<p>令$\mathbb{R}^{n+1}$具标准度量,
+$\gamma^\perp$为$\mathbb{R}\mathrm{P}^n$上的向量丛,
+每根纤维是经典线丛纤维的正交补.
+那么$\gamma^\perp\oplus \gamma_n^1=\varepsilon,$ 从而</p>
+<script type="math/tex; mode=display">
+\omega(\gamma^\perp)=\overline\omega(\gamma_n^1)=(1+a)^{-1}=1+a+\cdots+a^n.</script><p>特别地, $\omega_i(\gamma^\perp)=a^i\neq 0,$
+$a^i\in H^i(\mathbb{R}\mathrm{P}^n).$</p>
+<h2 id="SW类的应用"><a href="#SW类的应用" class="headerlink" title="SW类的应用"></a>SW类的应用</h2><h3 id="可除代数"><a href="#可除代数" class="headerlink" title="可除代数"></a>可除代数</h3><p><strong>定理 6</strong> (Stiefel). <em>设$\mathbb{R}^n$有双线性乘法$p:\mathbb{R}^n\times\mathbb{R}^n\rightarrow \mathbb{R}^n,$ 没有零因子, 则$n$是$2$的幂次.</em> </p>
+<p>我们分为如下两部分来证明:</p>
+<p>1. 假设乘法存在, 那么切丛$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$平凡.</p>
+<p>2. 若$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$平凡, 则$n$为$2$的幂次.</p>
+<p><strong>引理 7</strong>. <em>$\mathbb{R}\mathrm{P}^n$上的切丛有同构$\tau_{\mathbb{R}\mathrm{P}^n}\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp).$</em> </p>
+<p>构造</p>
+<script type="math/tex; mode=display">
+E(\tau_{\mathbb{R}\mathrm{P}^n})=\{\pm(x,v)\in S^n\times \mathbb{R}^{n+1}||x|=1,x\cdot v=0.\}</script><p>那么每个对$(x,v)$决定了一个函数$f\in \operatorname{Hom}(L,L^\perp),$
+$L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
+验证发现$(x,v)\mapsto f$就给出了引理中的同构.</p>
+<p><strong>命题 8</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}\oplus \varepsilon^1\cong \gamma_n^1\oplus \cdots\oplus \gamma_n^1,$ $n+1$个.</em> </p>
+<p>$\tau\oplus \varepsilon^1\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp)\oplus \operatorname{Hom}(\gamma_n^1,\gamma_n^1)\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp\oplus \gamma_n^1)=\operatorname{Hom}(\gamma_n^1,\varepsilon)^{\oplus (n+1)}\cong (\gamma_n^1)^{\oplus(n+1)}$</p>
+<p>文章最后更新于 2022-10-11 15:12:27 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>
