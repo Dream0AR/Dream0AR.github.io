@@ -9533,4 +9533,69 @@ $\,\forall\,g_t:X\rightarrow B$满足$g_0$有提升$\widetilde g_0,$
         <category>Hatcher</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)</title>
+    <url>/2022/10/12/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(9)-Stiefel-Whitney%E7%A4%BA%E6%80%A7%E7%B1%BB(%E7%BB%AD)/</url>
+    <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于向量丛$\xi:$ $\mathbb{R}^n\rightarrow E\rightarrow B,$
+$\omega_i(\xi)\in H^i(B;\mathbb{Z}_2),$
+$\omega(\xi):=\sum_i \omega_i(\xi).$</p>
+<p>我们有例子$\omega(\tau_{S^n})=1,$ $\omega(\gamma_n^1)=1+a,$
+$\omega(\gamma^\perp)=\overline\omega(\gamma_n^1)=(1+a)^{-1}=1+a+\cdots+a^n.$</p>
+<p>对于$\omega(\tau_{\mathbb{R}\mathrm{P}^n}),$ 我们有引理:</p>
+<p><strong>引理 1</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}=\operatorname{Hom}(\gamma_n^1,\gamma^\perp)$</em> </p>
+<p><strong>命题 2</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}\oplus\varepsilon^1\cong \gamma_n^1\oplus\cdots\oplus \gamma_n^1$ $(n+1)$个.</em> </p>
+<script type="math/tex; mode=display">
+\tau_{\mathbb{R}\mathrm{P}^n}\oplus\varepsilon^1=\operatorname{Hom}(\gamma_n^1,\gamma^\perp)\oplus \operatorname{Hom}(\gamma_n^1,\gamma_n^1)=\operatorname{Hom}(\gamma_n^1,\gamma^\perp\oplus \gamma_n^1=\varepsilon^{n+1})=\operatorname{Hom}(\gamma_n^1,\varepsilon^1)^{n+1}=(\gamma_n^1)^{n+1}</script><p>这样我们得到,
+$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=\omega(\gamma_n^1)^{n+1}=(1+a)^{n+1}.$
+但注意$a^{n+1}=0.$</p>
+<p><strong>推论 3</strong> (Stiefel). <em>$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=1$ 当且仅当 $(n+1)=2^k.$</em> </p>
+<h2 id="可除代数"><a href="#可除代数" class="headerlink" title="可除代数"></a>可除代数</h2><p><strong>定理 4</strong> (Stiefel). <em>假设$\mathbb{R}^n$有一个双线性乘法$p:\mathbb{R}^n\times \mathbb{R}^n\rightarrow\mathbb{R}^n,$ 没有零因子, 那么$n$为$2$的幂次.</em> </p>
+<p>只需证明若$p$存在, 那么$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$是平凡的.
+$\,\forall\,z\neq 0,$
+$y\mapsto p(y,z)$给出了$\mathbb{R}^n$到$\mathbb{R}^n$的线性同构.
+取一组基$\{e_i\},$ 那么存在同构$v_i:\mathbb{R}^n\cong \mathbb{R}^n,$
+使得$v_i(p(y,e_1))=p(y,e_i).$</p>
+<p>对任意$L\subset \mathbb{R}^n,$ 定义$\overline v_i:L\rightarrow L^\perp,$
+$\overline v_i(x):=pv_i(x),$ $p$为$\mathbb{R}^n$到$L^\perp$的投影.
+这样$\overline v_i$给出了一个$\operatorname{Hom}(\gamma_{n-1}^1,\gamma^\perp)\cong \tau_{\mathbb{R}\mathrm{P}^{n-1} }$的一个截面.
+验证发现$\{\overline v_i\}_{i\neq 1}$给出了一组标架(线性无关),
+故$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$是平凡的. 有前面的推论立即得到结论.</p>
+<h2 id="SW示性类的其它应用"><a href="#SW示性类的其它应用" class="headerlink" title="SW示性类的其它应用"></a>SW示性类的其它应用</h2><h3 id="SW示性类阻碍浸入"><a href="#SW示性类阻碍浸入" class="headerlink" title="SW示性类阻碍浸入"></a>SW示性类阻碍浸入</h3><p><strong>命题 5</strong>. <em>若$M^n$可以浸入到$\mathbb{R}^{n+k}$中, 则$\overline\omega_i(\tau_M)=0,$ $\,\forall\,i&gt;k.$</em> </p>
+<p>设有一个浸入, 那么$\tau_M\oplus \nu_M=\varepsilon^{n+k},$
+$\omega(\nu)=\overline\omega(\tau).$ 然而$\dim\nu=k,$
+这就说明了$\overline\omega_i(\tau)=\omega_i(\nu)=0,$ $\,\forall\,i&gt;k.$</p>
+<p><strong>命题 6</strong>. <em>若$n=2^r,$ $\mathbb{R}\mathrm{P}^n$可浸入$\mathbb{R}^{n+k},$ 则$k\ge n-1.$</em> </p>
+<p>$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=(1+a)^{n+1}=(1+a)(1+a^n)=1+a+a^n.$
+那么$\overline\omega(\tau_{\mathbb{R}\mathrm{P}^n})=1+a+\cdots+a^{n-1}.$
+由命题, $\overline\omega_i(\tau_{\mathbb{R}\mathrm{P}^n})=0,$
+$\,\forall\,i&gt;k,$ 故$k\ge n-1.$</p>
+<h3 id="配边"><a href="#配边" class="headerlink" title="配边"></a>配边</h3><p>考虑底空间$B=M^n$为闭流形, $\omega_i(M):=\omega_i(\tau_M).$ 考虑单项式</p>
+<script type="math/tex; mode=display">
+\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n}\in H^D(M,\mathbb{Z}_2),\quad D=\sum_{i=1}^n ir_i.</script><p>若$D=n,$ 考虑$[M]\in H_n(M),$ 我们就得到了一个数字</p>
+<script type="math/tex; mode=display">
+\left<{}\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n},[M]\right>\in \mathbb{Z}_2,</script><p>称为Stiefel-Whitney数, 与单项$\omega_1^{r_1}\cdots \omega_n^{r_n}$相关.</p>
+<p><strong>定理 7</strong> (Pontrjagin). <em>若$M^n$是$(n+1)$维紧流形$V^{n+1}$的边界, 那么所有$M$的SW数都是零.</em> </p>
+<p>$M=\partial V,$
+有$H_{n+1}(V,\partial V)\xrightarrow{\partial} H_n(\partial V),$
+$\partial[V]=[M].$ 对偶地, 我们有</p>
+<script type="math/tex; mode=display">
+\left<{}\delta \alpha,[V]\right>=\left<{}\alpha,\partial[V]\right>=\left<{}\alpha,[M]\right>.</script><p>考虑$\tau_V|_M=i^\ast \tau_V,$ $i:M=\partial V\hookrightarrow V.$
+注意到$\nu_M^V$是平凡的, 那么$i^\ast \tau_V=\tau_M\oplus\nu_M,$
+$i^\ast \omega_k(\tau_V)=\omega_k(i^\ast \tau_V)=\omega_k(\tau_M)$</p>
+<p>考虑长正合列 </p>
+<script type="math/tex; mode=display">
+H^n(V)\rightarrow H^n(M)\rightarrow H^{n+1}(V,M),</script><p>$M$的SW数为:</p>
+<script type="math/tex; mode=display">
+\left<{}\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n},[M]\right>=\left<{}\delta(\bullet),[V]\right>=\left<{}\delta i^\ast (\omega_1(V)^{r_1}\cdots\omega_n(V)^{r_n}),[V]\right>=0.</script><p><strong>定理 8</strong> (Thom). <em>逆命题成立.</em> </p>
+<p>对于两个$n$维光滑闭流形$M_1,M_2,$ 称他们属于相同的<strong>配边类(cobordism
+class)</strong>, 若$M_1\sqcup M_2$是一个光滑紧$(n+1)$维流形的边界.</p>
+<p><strong>推论 9</strong>. <em>$M_1,M_2$属于相同的配边类当且仅当它们的SW数都相同.</em> </p>
+<p>文章最后更新于 2022-10-12 15:23:48 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>
