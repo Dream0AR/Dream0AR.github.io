@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续) |
+            《代数拓扑2》笔记(10)-万有丛与示性类 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(10)-万有丛与示性类</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-12 15:23:47
+        <i class="fas fa-edit"></i>&nbsp;2022-10-14 16:39:00
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,61 +206,80 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于向量丛$\xi:$ $\mathbb{R}^n\rightarrow E\rightarrow B,$
-$\omega_i(\xi)\in H^i(B;\mathbb{Z}_2),$
-$\omega(\xi):=\sum_i \omega_i(\xi).$</p>
-<p>我们有例子$\omega(\tau_{S^n})=1,$ $\omega(\gamma_n^1)=1+a,$
-$\omega(\gamma^\perp)=\overline\omega(\gamma_n^1)=(1+a)^{-1}=1+a+\cdots+a^n.$</p>
-<p>对于$\omega(\tau_{\mathbb{R}\mathrm{P}^n}),$ 我们有引理:</p>
-<p><strong>引理 1</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}=\operatorname{Hom}(\gamma_n^1,\gamma^\perp)$</em> </p>
-<p><strong>命题 2</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}\oplus\varepsilon^1\cong \gamma_n^1\oplus\cdots\oplus \gamma_n^1$ $(n+1)$个.</em> </p>
+            <h2 id="万有丛"><a href="#万有丛" class="headerlink" title="万有丛"></a>万有丛</h2><p>一个秩$n$实向量丛$\gamma^n$称为<strong>万有丛</strong>, 若其满足如下性质:
+$\,\forall\,$ 仿紧底空间$B,$</p>
+<ol>
+<li><p>任意以$B$为底空间的秩$n$向量丛$\xi,$
+有一个丛映射$\xi\rightarrow \gamma^n.$</p>
+</li>
+<li><p>$\,\forall\,f,g:\xi\rightarrow\gamma^n$为丛映射,
+它们在丛映射意义下同伦.</p>
+</li>
+</ol>
+<p>因此, 任意秩$n$向量丛$\xi$都是$\gamma^n$的拉回.
+万有丛是在丛同伦等价的意义下唯一的.
+$B$上秩$n$向量丛的同构类和连续映射$f:B\rightarrow B(\gamma^n)$的同伦类间有一个一一对应.</p>
+<h2 id="万有丛的构造"><a href="#万有丛的构造" class="headerlink" title="万有丛的构造"></a>万有丛的构造</h2><p>$\,\forall\,n,k\in \mathbb{N},$ 定义Grassman流形</p>
 <script type="math/tex; mode=display">
-\tau_{\mathbb{R}\mathrm{P}^n}\oplus\varepsilon^1=\operatorname{Hom}(\gamma_n^1,\gamma^\perp)\oplus \operatorname{Hom}(\gamma_n^1,\gamma_n^1)=\operatorname{Hom}(\gamma_n^1,\gamma^\perp\oplus \gamma_n^1=\varepsilon^{n+1})=\operatorname{Hom}(\gamma_n^1,\varepsilon^1)^{n+1}=(\gamma_n^1)^{n+1}</script><p>这样我们得到,
-$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=\omega(\gamma_n^1)^{n+1}=(1+a)^{n+1}.$
-但注意$a^{n+1}=0.$</p>
-<p><strong>推论 3</strong> (Stiefel). <em>$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=1$ 当且仅当 $(n+1)=2^k.$</em> </p>
-<h2 id="可除代数"><a href="#可除代数" class="headerlink" title="可除代数"></a>可除代数</h2><p><strong>定理 4</strong> (Stiefel). <em>假设$\mathbb{R}^n$有一个双线性乘法$p:\mathbb{R}^n\times \mathbb{R}^n\rightarrow\mathbb{R}^n,$ 没有零因子, 那么$n$为$2$的幂次.</em> </p>
-<p>只需证明若$p$存在, 那么$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$是平凡的.
-$\,\forall\,z\neq 0,$
-$y\mapsto p(y,z)$给出了$\mathbb{R}^n$到$\mathbb{R}^n$的线性同构.
-取一组基$\{e_i\},$ 那么存在同构$v_i:\mathbb{R}^n\cong \mathbb{R}^n,$
-使得$v_i(p(y,e_1))=p(y,e_i).$</p>
-<p>对任意$L\subset \mathbb{R}^n,$ 定义$\overline v_i:L\rightarrow L^\perp,$
-$\overline v_i(x):=pv_i(x),$ $p$为$\mathbb{R}^n$到$L^\perp$的投影.
-这样$\overline v_i$给出了一个$\operatorname{Hom}(\gamma_{n-1}^1,\gamma^\perp)\cong \tau_{\mathbb{R}\mathrm{P}^{n-1} }$的一个截面.
-验证发现$\{\overline v_i\}_{i\neq 1}$给出了一组标架(线性无关),
-故$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$是平凡的. 有前面的推论立即得到结论.</p>
-<h2 id="SW示性类的其它应用"><a href="#SW示性类的其它应用" class="headerlink" title="SW示性类的其它应用"></a>SW示性类的其它应用</h2><h3 id="SW示性类阻碍浸入"><a href="#SW示性类阻碍浸入" class="headerlink" title="SW示性类阻碍浸入"></a>SW示性类阻碍浸入</h3><p><strong>命题 5</strong>. <em>若$M^n$可以浸入到$\mathbb{R}^{n+k}$中, 则$\overline\omega_i(\tau_M)=0,$ $\,\forall\,i&gt;k.$</em> </p>
-<p>设有一个浸入, 那么$\tau_M\oplus \nu_M=\varepsilon^{n+k},$
-$\omega(\nu)=\overline\omega(\tau).$ 然而$\dim\nu=k,$
-这就说明了$\overline\omega_i(\tau)=\omega_i(\nu)=0,$ $\,\forall\,i&gt;k.$</p>
-<p><strong>命题 6</strong>. <em>若$n=2^r,$ $\mathbb{R}\mathrm{P}^n$可浸入$\mathbb{R}^{n+k},$ 则$k\ge n-1.$</em> </p>
-<p>$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=(1+a)^{n+1}=(1+a)(1+a^n)=1+a+a^n.$
-那么$\overline\omega(\tau_{\mathbb{R}\mathrm{P}^n})=1+a+\cdots+a^{n-1}.$
-由命题, $\overline\omega_i(\tau_{\mathbb{R}\mathrm{P}^n})=0,$
-$\,\forall\,i&gt;k,$ 故$k\ge n-1.$</p>
-<h3 id="配边"><a href="#配边" class="headerlink" title="配边"></a>配边</h3><p>考虑底空间$B=M^n$为闭流形, $\omega_i(M):=\omega_i(\tau_M).$ 考虑单项式</p>
+G_n(\mathbb{R}^{n+k}):=\{H|\text{$H$为$\mathbb{R}^{n+k}$中的$n$维子空间}\}</script><p>$GL_{n+k}(\mathbb{R})$可以可迁地作用在$G_n(\mathbb{R}^{n+k}),$
+因此$G_n(\mathbb{R}^{n+k})\cong GL_{n+k}(\mathbb{R})/\operatorname{Stab}_H.$
+设$H=\{e_1,\cdots,e_n\},$ 则 </p>
 <script type="math/tex; mode=display">
-\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n}\in H^D(M,\mathbb{Z}_2),\quad D=\sum_{i=1}^n ir_i.</script><p>若$D=n,$ 考虑$[M]\in H_n(M),$ 我们就得到了一个数字</p>
+\operatorname{Stab}_H=\begin{bmatrix}
+ *&*\\
+ 0&*
+ \end{bmatrix}\subset GL_{n+k},</script><p> 为$GL_{n+k}$的闭子群.
+因此$G_n(\mathbb{R}^{n+k})$为$nk$维的光滑流形.</p>
+<p>事实上, 它还是紧的.
+这是因为$O_{n+k}\subset GL_{n+k}$就可以可迁地作用在$G_n(\mathbb{R}^{n+k})$上了.</p>
+<p>显然可以看出$G_n(\mathbb{R}^{n+k})\cong G_k(\mathbb{R}^{n+k}),$
+$H\mapsto H^\perp,$ 且$G_1(\mathbb{R}^{1+k})=\mathbb{R}\mathrm{P}^k.$</p>
+<p>定义$G_n(\mathbb{R}^{n+k})$上的典范丛$\gamma_k^n$为</p>
 <script type="math/tex; mode=display">
-\left<{}\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n},[M]\right>\in \mathbb{Z}_2,</script><p>称为Stiefel-Whitney数, 与单项$\omega_1^{r_1}\cdots \omega_n^{r_n}$相关.</p>
-<p><strong>定理 7</strong> (Pontrjagin). <em>若$M^n$是$(n+1)$维紧流形$V^{n+1}$的边界, 那么所有$M$的SW数都是零.</em> </p>
-<p>$M=\partial V,$
-有$H_{n+1}(V,\partial V)\xrightarrow{\partial} H_n(\partial V),$
-$\partial[V]=[M].$ 对偶地, 我们有</p>
+E(\gamma_k^n):=\{(H,v)|H\in G_n(\mathbb{R}^{n+k}),v\in H\},</script><p>构造$\mathbb{R}^\infty,$ 那么我们有</p>
 <script type="math/tex; mode=display">
-\left<{}\delta \alpha,[V]\right>=\left<{}\alpha,\partial[V]\right>=\left<{}\alpha,[M]\right>.</script><p>考虑$\tau_V|_M=i^\ast \tau_V,$ $i:M=\partial V\hookrightarrow V.$
-注意到$\nu_M^V$是平凡的, 那么$i^\ast \tau_V=\tau_M\oplus\nu_M,$
-$i^\ast \omega_k(\tau_V)=\omega_k(i^\ast \tau_V)=\omega_k(\tau_M)$</p>
-<p>考虑长正合列 </p>
+G_n(\mathbb{R}^n)\subset G_n(\mathbb{R}^{n+1})\subset\cdots\subset G_n(\mathbb{R}^\infty)=\bigcup_i G_n(\mathbb{R}^{n+i}).</script><p>定义$\gamma^n$为$G_n(\mathbb{R}^\infty)$上的典范丛.
+那么事实上它就是满足前述要求的万有丛.</p>
+<p><strong>定理 1</strong>. <em>$G_n(\mathbb{R}^\infty)$上的典范从$\gamma^n$为秩$n$万有丛.</em> </p>
+<p><strong>引理 2</strong>. <em>设有仿紧集$B$上的秩$n$丛$\xi,$ 存在线性映射$\widehat f:E(\xi)\rightarrow \mathbb{R}^\infty,$ 在每个纤维上是单射.</em> </p>
+<p>取局部平凡化$\{U_i\}$覆盖$B.$ 由仿紧性,
+我们可以构造可数覆盖且是局部有限的.
+取从属于$\{U_i\}$的单位分解$\{\lambda_i\},$
+使得$W_i\Subset V_i\Subset U_i,$ $\lambda_i\in C_0^\infty(V_i),$
+$\lambda_i|_{W_i}=1.$ $\sum \lambda_i(x)=1.$</p>
+<p>由于$\xi|_{U_i}$是平凡的, 取$h_i:\pi^{-1}U_i\cong \mathbb{R}^n.$
+定义连续映射$h_i’:E(\xi)\rightarrow \mathbb{R}^n,$
+$h_i’(e)=\lambda_i(\pi(e))h_i(e).$
+定义$\widehat f:E(\xi)\rightarrow \mathbb{R}^\infty,$
+$\widehat f(e):=(h_i’(e))^\infty_{i=0}\in \mathbb{R}^\infty.$
+这就是满足要求的映射了.</p>
+<p>我们回到定理的证明: 考虑映射$f:E(\xi)\rightarrow E(\gamma^n),$</p>
 <script type="math/tex; mode=display">
-H^n(V)\rightarrow H^n(M)\rightarrow H^{n+1}(V,M),</script><p>$M$的SW数为:</p>
+e\mapsto (\widehat f(F_{\pi(e)}(\xi)),\widehat f(e)),</script><p>这就是一个丛映射. 接下来对于任意两个丛映射$f,g:\xi\rightarrow \gamma^n,$
+每个都给出$\widehat{f},\widehat g:E(\xi)\rightarrow \mathbb{R}^\infty.$
+定义同伦$\widehat h_t(e)=(1-t)\widehat f(e)+t\widehat g(e),$
+$\widehat h_t$是单射, 若$\widehat f(e),\widehat{g} (e)$是线性无关的.</p>
+<p>定义$d_{2}:e_i\mapsto e_{2i},$ $d_{1}:e_i\mapsto e_{2i+1},$ 则</p>
 <script type="math/tex; mode=display">
-\left<{}\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n},[M]\right>=\left<{}\delta(\bullet),[V]\right>=\left<{}\delta i^\ast (\omega_1(V)^{r_1}\cdots\omega_n(V)^{r_n}),[V]\right>=0.</script><p><strong>定理 8</strong> (Thom). <em>逆命题成立.</em> </p>
-<p>对于两个$n$维光滑闭流形$M_1,M_2,$ 称他们属于相同的<strong>配边类(cobordism
-class)</strong>, 若$M_1\sqcup M_2$是一个光滑紧$(n+1)$维流形的边界.</p>
-<p><strong>推论 9</strong>. <em>$M_1,M_2$属于相同的配边类当且仅当它们的SW数都相同.</em> </p>
-<p>文章最后更新于 2022-10-12 15:23:48 </p>
+f\simeq d_1\circ f\simeq d_2\circ g\simeq g.</script><h2 id="示性类"><a href="#示性类" class="headerlink" title="示性类"></a>示性类</h2><p>一个秩$n$向量丛上的示性类是对$\xi$自然地赋予$c(\xi)\in H^\ast (B(\xi);R),$
+使得$c(f^\ast \xi)=f^\ast c(\xi).$ 因此我们只需考虑万有丛上的示性类即可.</p>
+<p>考虑计算$H^\ast (G_n(\mathbb{R}^\infty);R).$ 取$R=\mathbb{Z}_2.$
+断言其同构于$\mathbb{Z}_2[w_1,w_2,\cdots,w_n].$</p>
+<p>考虑$G_n(\mathbb{R}^\infty)$上的CW结构. 固定</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^0\subset \mathbb{R}^1\subset \cdots \subset \mathbb{R}^m.</script><p>任意$X\in G_n(\mathbb{R}^m)$给出一个序列:</p>
+<script type="math/tex; mode=display">
+0\le \dim (X\cap \mathbb{R}^1)\le\cdots\le \dim(X\cap \mathbb{R}^m)=n.</script><p>定义Schubert符号$\sigma=(\sigma_1,\cdots,\sigma_n)$记录了序列中跳跃的部分,
+$1\le \sigma_1&lt;\cdots&lt;\sigma_n\le m.$</p>
+<script type="math/tex; mode=display">
+e(\sigma):=\{X\in G_n(\mathbb{R}^m)|\dim (X\cap \mathbb{R}^{\sigma_i})=i,\:\dim(X\cap \mathbb{R}^{\sigma_i-1})=i-1\}.</script><p>断言$\{e(\sigma)\}$组成了$G_n(\mathbb{R}^m)$的CW结构.
+令$H^k\subset \mathbb{R}^k$为$x_k&gt;0$的上半平面,</p>
+<p><strong>引理 3</strong>. <em>每个$X\in e(\sigma)$有唯一一个正交基$(x_1,\cdots,x_n)\in H^{\sigma_1}\times\cdots\times H^{\sigma_n}.$</em> </p>
+<p>只需注意到下面的序列, 由线性空间的基本知识即得.</p>
+<script type="math/tex; mode=display">
+\dim(X\cap \mathbb{R}^\sigma_1)=1,\quad \dim(X\cap \mathbb{R}^\sigma_2)=2,\quad \cdots.</script><script type="math/tex; mode=display">
+e'(\sigma):=\{(x_1,\cdots,x_n)|\{x_i\}\text{正交, }x_i\in H^{\sigma_i}\}.</script><p>对$n$做归纳, 即可得到$\overline e’(\sigma)\cong$闭球.</p>
+<p>文章最后更新于 2022-10-14 16:39:02 </p>
 
         </div>
 
@@ -268,11 +287,11 @@ class)</strong>, 若$M_1\sqcup M_2$是一个光滑紧$(n+1)$维流形的边界.<
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)</li>
+        <li>本文标题：《代数拓扑2》笔记(10)-万有丛与示性类</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-12 15:23:47</li>
+        <li>创建时间：2022-10-14 16:39:00</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/12/《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)/
+            本文链接：https://dream0ar.github.io/2022/10/14/《代数拓扑2》笔记(10)-万有丛与示性类/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -286,29 +305,14 @@ class)</strong>, 若$M_1\sqcup M_2$是一个光滑紧$(n+1)$维流形的边界.<
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/10/14/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E4%B8%87%E6%9C%89%E4%B8%9B%E4%B8%8E%E7%A4%BA%E6%80%A7%E7%B1%BB/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(10)-万有丛与示性类</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/10/11/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0-%E5%90%8C%E4%BC%A6%E8%AE%BA/"
+                           href="/2022/10/12/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(9)-Stiefel-Whitney%E7%A4%BA%E6%80%A7%E7%B1%BB(%E7%BB%AD)/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑》复习-同伦论</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -515,7 +519,7 @@ class)</strong>, 若$M_1\sqcup M_2$是一个光滑紧$(n+1)$维流形的边界.<
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%99%A4%E4%BB%A3%E6%95%B0"><span class="nav-text">可除代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SW%E7%A4%BA%E6%80%A7%E7%B1%BB%E7%9A%84%E5%85%B6%E5%AE%83%E5%BA%94%E7%94%A8"><span class="nav-text">SW示性类的其它应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SW%E7%A4%BA%E6%80%A7%E7%B1%BB%E9%98%BB%E7%A2%8D%E6%B5%B8%E5%85%A5"><span class="nav-text">SW示性类阻碍浸入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E8%BE%B9"><span class="nav-text">配边</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%87%E6%9C%89%E4%B8%9B"><span class="nav-text">万有丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%87%E6%9C%89%E4%B8%9B%E7%9A%84%E6%9E%84%E9%80%A0"><span class="nav-text">万有丛的构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E6%80%A7%E7%B1%BB"><span class="nav-text">示性类</span></a></li></ol>
     </div>
 </div>
         </aside>

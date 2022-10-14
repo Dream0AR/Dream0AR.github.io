@@ -9598,4 +9598,88 @@ class)</strong>, 若$M_1\sqcup M_2$是一个光滑紧$(n+1)$维流形的边界.<
         <category>代数拓扑2</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(10)-万有丛与示性类</title>
+    <url>/2022/10/14/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E4%B8%87%E6%9C%89%E4%B8%9B%E4%B8%8E%E7%A4%BA%E6%80%A7%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="万有丛"><a href="#万有丛" class="headerlink" title="万有丛"></a>万有丛</h2><p>一个秩$n$实向量丛$\gamma^n$称为<strong>万有丛</strong>, 若其满足如下性质:
+$\,\forall\,$ 仿紧底空间$B,$</p>
+<ol>
+<li><p>任意以$B$为底空间的秩$n$向量丛$\xi,$
+有一个丛映射$\xi\rightarrow \gamma^n.$</p>
+</li>
+<li><p>$\,\forall\,f,g:\xi\rightarrow\gamma^n$为丛映射,
+它们在丛映射意义下同伦.</p>
+</li>
+</ol>
+<p>因此, 任意秩$n$向量丛$\xi$都是$\gamma^n$的拉回.
+万有丛是在丛同伦等价的意义下唯一的.
+$B$上秩$n$向量丛的同构类和连续映射$f:B\rightarrow B(\gamma^n)$的同伦类间有一个一一对应.</p>
+<h2 id="万有丛的构造"><a href="#万有丛的构造" class="headerlink" title="万有丛的构造"></a>万有丛的构造</h2><p>$\,\forall\,n,k\in \mathbb{N},$ 定义Grassman流形</p>
+<script type="math/tex; mode=display">
+G_n(\mathbb{R}^{n+k}):=\{H|\text{$H$为$\mathbb{R}^{n+k}$中的$n$维子空间}\}</script><p>$GL_{n+k}(\mathbb{R})$可以可迁地作用在$G_n(\mathbb{R}^{n+k}),$
+因此$G_n(\mathbb{R}^{n+k})\cong GL_{n+k}(\mathbb{R})/\operatorname{Stab}_H.$
+设$H=\{e_1,\cdots,e_n\},$ 则 </p>
+<script type="math/tex; mode=display">
+\operatorname{Stab}_H=\begin{bmatrix}
+ *&*\\
+ 0&*
+ \end{bmatrix}\subset GL_{n+k},</script><p> 为$GL_{n+k}$的闭子群.
+因此$G_n(\mathbb{R}^{n+k})$为$nk$维的光滑流形.</p>
+<p>事实上, 它还是紧的.
+这是因为$O_{n+k}\subset GL_{n+k}$就可以可迁地作用在$G_n(\mathbb{R}^{n+k})$上了.</p>
+<p>显然可以看出$G_n(\mathbb{R}^{n+k})\cong G_k(\mathbb{R}^{n+k}),$
+$H\mapsto H^\perp,$ 且$G_1(\mathbb{R}^{1+k})=\mathbb{R}\mathrm{P}^k.$</p>
+<p>定义$G_n(\mathbb{R}^{n+k})$上的典范丛$\gamma_k^n$为</p>
+<script type="math/tex; mode=display">
+E(\gamma_k^n):=\{(H,v)|H\in G_n(\mathbb{R}^{n+k}),v\in H\},</script><p>构造$\mathbb{R}^\infty,$ 那么我们有</p>
+<script type="math/tex; mode=display">
+G_n(\mathbb{R}^n)\subset G_n(\mathbb{R}^{n+1})\subset\cdots\subset G_n(\mathbb{R}^\infty)=\bigcup_i G_n(\mathbb{R}^{n+i}).</script><p>定义$\gamma^n$为$G_n(\mathbb{R}^\infty)$上的典范丛.
+那么事实上它就是满足前述要求的万有丛.</p>
+<p><strong>定理 1</strong>. <em>$G_n(\mathbb{R}^\infty)$上的典范从$\gamma^n$为秩$n$万有丛.</em> </p>
+<p><strong>引理 2</strong>. <em>设有仿紧集$B$上的秩$n$丛$\xi,$ 存在线性映射$\widehat f:E(\xi)\rightarrow \mathbb{R}^\infty,$ 在每个纤维上是单射.</em> </p>
+<p>取局部平凡化$\{U_i\}$覆盖$B.$ 由仿紧性,
+我们可以构造可数覆盖且是局部有限的.
+取从属于$\{U_i\}$的单位分解$\{\lambda_i\},$
+使得$W_i\Subset V_i\Subset U_i,$ $\lambda_i\in C_0^\infty(V_i),$
+$\lambda_i|_{W_i}=1.$ $\sum \lambda_i(x)=1.$</p>
+<p>由于$\xi|_{U_i}$是平凡的, 取$h_i:\pi^{-1}U_i\cong \mathbb{R}^n.$
+定义连续映射$h_i’:E(\xi)\rightarrow \mathbb{R}^n,$
+$h_i’(e)=\lambda_i(\pi(e))h_i(e).$
+定义$\widehat f:E(\xi)\rightarrow \mathbb{R}^\infty,$
+$\widehat f(e):=(h_i’(e))^\infty_{i=0}\in \mathbb{R}^\infty.$
+这就是满足要求的映射了.</p>
+<p>我们回到定理的证明: 考虑映射$f:E(\xi)\rightarrow E(\gamma^n),$</p>
+<script type="math/tex; mode=display">
+e\mapsto (\widehat f(F_{\pi(e)}(\xi)),\widehat f(e)),</script><p>这就是一个丛映射. 接下来对于任意两个丛映射$f,g:\xi\rightarrow \gamma^n,$
+每个都给出$\widehat{f},\widehat g:E(\xi)\rightarrow \mathbb{R}^\infty.$
+定义同伦$\widehat h_t(e)=(1-t)\widehat f(e)+t\widehat g(e),$
+$\widehat h_t$是单射, 若$\widehat f(e),\widehat{g} (e)$是线性无关的.</p>
+<p>定义$d_{2}:e_i\mapsto e_{2i},$ $d_{1}:e_i\mapsto e_{2i+1},$ 则</p>
+<script type="math/tex; mode=display">
+f\simeq d_1\circ f\simeq d_2\circ g\simeq g.</script><h2 id="示性类"><a href="#示性类" class="headerlink" title="示性类"></a>示性类</h2><p>一个秩$n$向量丛上的示性类是对$\xi$自然地赋予$c(\xi)\in H^\ast (B(\xi);R),$
+使得$c(f^\ast \xi)=f^\ast c(\xi).$ 因此我们只需考虑万有丛上的示性类即可.</p>
+<p>考虑计算$H^\ast (G_n(\mathbb{R}^\infty);R).$ 取$R=\mathbb{Z}_2.$
+断言其同构于$\mathbb{Z}_2[w_1,w_2,\cdots,w_n].$</p>
+<p>考虑$G_n(\mathbb{R}^\infty)$上的CW结构. 固定</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^0\subset \mathbb{R}^1\subset \cdots \subset \mathbb{R}^m.</script><p>任意$X\in G_n(\mathbb{R}^m)$给出一个序列:</p>
+<script type="math/tex; mode=display">
+0\le \dim (X\cap \mathbb{R}^1)\le\cdots\le \dim(X\cap \mathbb{R}^m)=n.</script><p>定义Schubert符号$\sigma=(\sigma_1,\cdots,\sigma_n)$记录了序列中跳跃的部分,
+$1\le \sigma_1&lt;\cdots&lt;\sigma_n\le m.$</p>
+<script type="math/tex; mode=display">
+e(\sigma):=\{X\in G_n(\mathbb{R}^m)|\dim (X\cap \mathbb{R}^{\sigma_i})=i,\:\dim(X\cap \mathbb{R}^{\sigma_i-1})=i-1\}.</script><p>断言$\{e(\sigma)\}$组成了$G_n(\mathbb{R}^m)$的CW结构.
+令$H^k\subset \mathbb{R}^k$为$x_k&gt;0$的上半平面,</p>
+<p><strong>引理 3</strong>. <em>每个$X\in e(\sigma)$有唯一一个正交基$(x_1,\cdots,x_n)\in H^{\sigma_1}\times\cdots\times H^{\sigma_n}.$</em> </p>
+<p>只需注意到下面的序列, 由线性空间的基本知识即得.</p>
+<script type="math/tex; mode=display">
+\dim(X\cap \mathbb{R}^\sigma_1)=1,\quad \dim(X\cap \mathbb{R}^\sigma_2)=2,\quad \cdots.</script><script type="math/tex; mode=display">
+e'(\sigma):=\{(x_1,\cdots,x_n)|\{x_i\}\text{正交, }x_i\in H^{\sigma_i}\}.</script><p>对$n$做归纳, 即可得到$\overline e’(\sigma)\cong$闭球.</p>
+<p>文章最后更新于 2022-10-14 16:39:02 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>
