@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》笔记-李代数 |
+            《微分流形》笔记-商流形 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》笔记-李代数</span>
+            <span class="title-hover-animation">《微分流形》笔记-商流形</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-18 17:41:30
+        <i class="fas fa-edit"></i>&nbsp;2022-10-18 22:50:15
     </span>
     
         <span class="article-categories article-meta-item">
@@ -207,31 +207,45 @@
 
         <div class="article-content markdown-body">
             <p>Introduction to smooth manifolds by John M. Lee</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>称李群$G$上向量场是<strong>左不变</strong>的, 若</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>设有作用$\theta:G\times M\rightarrow M.$ 在$M$上定义等价关系$p\sim q$
+$\Leftrightarrow$ $\,\exists\,g\in G,$ $p=g\cdot q.$
+那么等价类恰为$G$在$M$中的轨道. 记$M/G$为商空间, 也称为轨道空间.
+我们希望轨道空间也能是一个微分流形.</p>
+<p><strong>引理 1</strong>. <em>商映射$\pi:M\rightarrow G/M$为开映射.</em> </p>
+<p>称作用是<strong>逆紧作用</strong>, 若$G\times M\rightarrow M\times M,$
+$(g,p)\mapsto (g\cdot p,p)$是逆紧的.
+此条件比要求作用$\theta$本身是逆紧的要弱.</p>
+<p><strong>命题 2</strong>. <em>若李群连续逆紧地作用在流形上, 那么商空间是$T_2$的.</em> </p>
+<p>定义轨道关系$\mathcal{O}\subset M\times M,$</p>
 <script type="math/tex; mode=display">
-d(L_g)_{g'}(X_{g'})=X_{gg'},\quad \,\forall\,g,g'\in G.</script><p>简单写可以记为$(L_g)_\ast X=X.$ 回忆$F_\ast [X,Y]=[F_\ast X,F_\ast Y],$ 我们有:</p>
-<p><strong>命题 1</strong>. <em>若$X,Y$是$G$上的光滑左不变向量场, 那么$[X,Y]$也是左不变的.</em> </p>
-<p>一个实向量空间上的李代数指它配备了一个<strong>李括号</strong>, 满足双线性性, 反称性,
-以及Jacobi恒等式: </p>
+\mathcal{O}=\{(g\cdot p,p)\in M\times M:p\in M,g\in G\}.</script><p>那么$(p,q)\in \mathcal{O}$ $\Leftrightarrow$ $p,q$在同一轨道中.
+由于映到局部紧$T_2$空间的连续逆紧映射总是闭映射,
+$\mathcal{O}$为$M\times M$中的闭集.
+容易证明这恰是商空间为$T_2$的充分条件.</p>
+<p>然而直接判断逆紧作用并不容易. 不过我们有以下三个性质等价:</p>
+<ol>
+<li><p>作用是逆紧的.</p>
+</li>
+<li><p>若$\{p_i\},$ $\{g_i\cdot p_i\}$收敛, 则$\{g_i\}$有子列收敛.</p>
+</li>
+<li><p>$\,\forall\,K\Subset M,$
+$G_K=\{g\in G|( g\cdot K)\cap K\neq \varnothing\}$为紧集.</p>
+</li>
+</ol>
+<p><strong>推论 3</strong>. <em>紧李群在流形上的连续作用是逆紧的.</em> </p>
+<p><strong>命题 4</strong>. <em>设$\theta$是一个逆紧作用, 那么轨道映射$\theta^{(p)}:G\rightarrow M$是逆紧映射, 也因此轨道是闭的. 若它是单射, 那么轨道映射就是一个光滑嵌入, 轨道为逆紧嵌入子流形.</em> </p>
+<p><strong>推论 5</strong>. <em>若李群逆紧作用在$M$上, 那么每个轨道是$M$中闭集, 每个稳定子都是紧的.</em> </p>
+<h2 id="商空间"><a href="#商空间" class="headerlink" title="商空间"></a>商空间</h2><h3 id="商流形"><a href="#商流形" class="headerlink" title="商流形"></a>商流形</h3><p><strong>定理 6</strong>. <em>设$G$光滑, 自由, 逆紧地作用在$M$上, 那么轨道空间$M/G$是一个$\dim M-\dim G$维的拓扑流形, 有唯一一个光滑结构使得$\pi:M\rightarrow M/G$为光滑淹没.</em> </p>
+<h3 id="覆盖映射"><a href="#覆盖映射" class="headerlink" title="覆盖映射"></a>覆盖映射</h3><p><strong>引理 7</strong>. <em>设离散李群$\Gamma$连续, 自由地作用在流形$E$上. 那么作用是逆紧的当且仅当如下条件成立: $\,\forall\,p\in E,$ $\,\exists\,U$为邻域, $\,\forall\,g\in \Gamma,$ $(g\cdot U)\cap U\neq \varnothing,$ 除非$g=e.$ 且若$p,p’$不在同一个轨道里, 那么分别存在邻域$V,V’,$ $(g\cdot V)\cap V’=\varnothing,$ $\,\forall\,g\in \Gamma.$</em> </p>
+<p><strong>命题 8</strong>. <em>设$\pi:E\rightarrow M$为覆盖映射, 那么配备离散拓扑的$\operatorname{Aut}_\pi(E)$光滑, 自由, 逆紧的作用在$E$上.</em> </p>
+<p><strong>定理 9</strong>. <em>设$E$为连通光滑流形, $\Gamma$为离散李群, 光滑自由逆紧地作用在$E$上. 那么轨道空间$E/\Gamma$是拓扑流形, 具备唯一光滑结构使得$\pi:E\rightarrow E/\Gamma$为光滑正则覆盖.</em> </p>
+<h3 id="齐性空间"><a href="#齐性空间" class="headerlink" title="齐性空间"></a>齐性空间</h3><p>若李群$G$在流形$M$上有一个光滑可迁作用, 那么称$M$为齐性空间.</p>
+<p><strong>定理 10</strong>. <em>若$H$为$G$的闭子群, 那么左陪集空间$G/H$是$\dim G-\dim H$维拓扑空间, 有唯一光滑结构使得$\pi:G\rightarrow G/H$为光滑淹没. $G$在$G/H$上的左作用为$g_1\cdot (g_2H)=(g_1g_2)H,$ 将$G/H$变为齐性空间.</em> </p>
+<p><strong>定理 11</strong>. <em>设$G$为李群, $M$为齐性空间, $p\in M.$ 那么稳定子$G_p$为$G$的闭子群, $F:G/G_p\rightarrow M,$ $F(gG_p)=g\cdot p$给出一个等变微分同胚.</em> </p>
+<p>有一些典型的齐性空间:</p>
 <script type="math/tex; mode=display">
-[X,[Y,Z]]+[Y,[Z,X]]+[Z,[X,Y]]=0.</script><p>我们有子李代数, 李代数同态(线性映射$A:$ $A[X,Y]=[AX,AY],$ 与李代数同构.
-我们知道$\mathfrak{X}(M)$是一个李括号. 特别地由前面的命题,
-光滑左不变向量场全体是一个子李括号. 称为$G$的<strong>李代数</strong>,
-记为$\operatorname{Lie}(G).$</p>
-<p><strong>命题 2</strong>. <em>对李群同态$F:G\rightarrow H,$ $F^\ast $为李代数同态.</em> </p>
-<p>由于$L_g$是可迁的,
-可以看出任意左不变向量场由$X_e\in T_eG$通过$(L_g)_\ast $决定.</p>
-<h2 id="单参数李子群"><a href="#单参数李子群" class="headerlink" title="单参数李子群"></a>单参数李子群</h2><p>一个$G$的单参数李子群指一个李群同态 $\gamma:\mathbb{R}\rightarrow G.$</p>
-<p><strong>定理 3</strong>. <em>$G$的单参数李子群恰是一个原点出发的左不变向量场的极大积分曲线.</em> </p>
-<p>因此对$X\in \operatorname{Lie}(G),$ 它决定了一个单参数李子群,
-称为由$X$生成的单参数李子群.</p>
-<p>定义指数映射: </p>
-<script type="math/tex; mode=display">
-\exp X=\gamma(1),\quad X\in \operatorname{Lie}(G),</script><p>$\gamma$为由原点出发的$X$的积分曲线. 容易得到$\gamma(s)=\exp sX.$
-它满足很多类似指数函数的性质.</p>
-<p><strong>引理 4</strong>. <em>$G$为连通李群, $H\subset G$为连通李子群. 那么$H$是正则子群当且仅当</em> </p>
-<script type="math/tex; mode=display">
-\exp(X)\exp(Y)\exp(-X)\in H,\quad \,\forall\,X\in\operatorname{Lie}(G),Y\in\operatorname{Lie}(H).</script><p>文章最后更新于 2022-10-18 17:41:33 </p>
+S^{n-1}\approx O(n)/O(n-1)\approx SO(n)/SO(n-1),</script><script type="math/tex; mode=display">
+S^{2n-1}\approx U(n)/U(n-1)\approx SU(n)/SU(n-1).</script><p>文章最后更新于 2022-10-18 22:50:20 </p>
 
         </div>
 
@@ -239,11 +253,11 @@ d(L_g)_{g'}(X_{g'})=X_{gg'},\quad \,\forall\,g,g'\in G.</script><p>简单写可�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》笔记-李代数</li>
+        <li>本文标题：《微分流形》笔记-商流形</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-18 17:41:30</li>
+        <li>创建时间：2022-10-18 22:50:15</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/18/《微分流形》笔记-李代数/
+            本文链接：https://dream0ar.github.io/2022/10/18/《微分流形》笔记-商流形/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -257,29 +271,14 @@ d(L_g)_{g'}(X_{g'})=X_{gg'},\quad \,\forall\,g,g'\in G.</script><p>简单写可�
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/10/18/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E5%95%86%E6%B5%81%E5%BD%A2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》笔记-商流形</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/10/16/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0-%E6%B3%9B%E7%B3%BB%E6%95%B0%E5%AE%9A%E7%90%86/"
+                           href="/2022/10/18/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E6%9D%8E%E4%BB%A3%E6%95%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑》复习-泛系数定理</span>
+                                <span class="post-nav-title-item">《微分流形》笔记-李代数</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -486,7 +485,7 @@ d(L_g)_{g'}(X_{g'})=X_{gg'},\quad \,\forall\,g,g'\in G.</script><p>简单写可�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E5%8F%82%E6%95%B0%E6%9D%8E%E5%AD%90%E7%BE%A4"><span class="nav-text">单参数李子群</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%86%E7%A9%BA%E9%97%B4"><span class="nav-text">商空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E6%B5%81%E5%BD%A2"><span class="nav-text">商流形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E6%98%A0%E5%B0%84"><span class="nav-text">覆盖映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BD%90%E6%80%A7%E7%A9%BA%E9%97%B4"><span class="nav-text">齐性空间</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
