@@ -9895,4 +9895,160 @@ S^{2n-1}\approx U(n)/U(n-1)\approx SU(n)/SU(n-1).</script><p>文章最后更新�
         <category>微分流形</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(11)-Grassmannian流形</title>
+    <url>/2022/10/24/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(11)-Grassmannian%E6%B5%81%E5%BD%A2/</url>
+    <content><![CDATA[<h2 id="Grassmannian上同调计算"><a href="#Grassmannian上同调计算" class="headerlink" title="Grassmannian上同调计算"></a>Grassmannian上同调计算</h2><p>我们希望得到$H^\ast (G_n(\mathbb{R}^\infty);\mathbb{Z}_2)=\mathbb{Z}_2[w_1,\cdots,w_n].$</p>
+<p>回忆我们希望给出$G_n(\mathbb{R}^\infty)$上的CW结构. 固定flag:</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^0\subset \mathbb{R}^1\subset \cdots \subset \mathbb{R}^m.</script><p>任意$X\in G_n(\mathbb{R}^m)$给出一个序列:</p>
+<script type="math/tex; mode=display">
+0\le \dim (X\cap \mathbb{R}^1)\le\cdots\le \dim(X\cap \mathbb{R}^m)=n.</script><p>定义Schubert符号$\sigma=(\sigma_1,\cdots,\sigma_n)$记录了序列中跳跃的部分,
+$1\le \sigma_1&lt;\cdots&lt;\sigma_n\le m.$</p>
+<script type="math/tex; mode=display">
+e(\sigma):=\{X\in G_n(\mathbb{R}^m)|\dim (X\cap \mathbb{R}^{\sigma_i})=i,\:\dim(X\cap \mathbb{R}^{\sigma_i-1})=i-1\}.</script><p>断言$\{e(\sigma)\}$组成了$G_n(\mathbb{R}^m)$的CW结构.
+令$H^k\subset \mathbb{R}^k$为$x_k&gt;0$的上半平面,</p>
+<p><strong>引理 1</strong>. <em>每个$X\in e(\sigma)$有唯一一个正交基$(x_1,\cdots,x_n)\in H^{\sigma_1}\times\cdots\times H^{\sigma_n}.$</em> </p>
+<p>只需注意到下面的序列, 由线性空间的基本知识即得.</p>
+<script type="math/tex; mode=display">
+\dim(X\cap \mathbb{R}^{\sigma_1})=1,\quad \dim(X\cap \mathbb{R}^{\sigma_2})=2,\quad \cdots.</script><script type="math/tex; mode=display">
+e'(\sigma):=\{(x_1,\cdots,x_n)|\{x_i\}\text{正交, }x_i\in H^{\sigma_i}\}.</script><p>对$n$做归纳,
+即可得到$\overline e’(\sigma)\cong$维数为$d(\sigma):=\sum_i(\sigma_i-i)$的闭球.
+那么映射</p>
+<script type="math/tex; mode=display">
+\overline e'(\sigma)\ni (x_1,\cdots,x_n)\mapsto \operatorname{span}\{x_1,\cdots,x_n\} \in G_n(\mathbb{R}^m).</script><p>将$e’(\sigma)$同胚地映到$e(\sigma)$上. 这就实现了贴胞腔,
+给出了$G_n(\mathbb{R}^m)$上的CW结构.</p>
+<p><strong>注 2</strong>. <em>$G_n(\mathbb{R}^m)$是一个有限CW复形, 有$\binom{m}{n}$个胞腔. 令$m\rightarrow \infty,$ $G_n(\mathbb{R}^\infty)$为一个CW复形.</em> </p>
+<p>一个问题是$G_n(\mathbb{R}^m)$中有多少个$r$胞腔?
+即$\dim e(\sigma)=\sum_i (\sigma_i-i)=r$的Schubert数.
+记$\sigma_i-i=\mu_i,$ 那么 </p>
+<script type="math/tex; mode=display">
+0\le \mu_1\le \cdots\le \mu_n\le m-n,</script><p>满足$\sum_i\mu_i=r.$</p>
+<p><strong>推论 3</strong>. <em>$G_n(\mathbb{R}^m)$的$r$胞腔数为将$r$划分为至多$n$个小于等于$m-n$的正整数的方案数. 也称划分数.</em> </p>
+<p><strong>定理 4</strong>. <em>$H^\ast (G_n;\mathbb{Z}_2)\cong \mathbb{Z}_2[w_1,\cdots,w_n].$</em> </p>
+<p>我们希望构造一个同构:
+$H^\ast (G_n)\xrightarrow{f^\ast }\mathbb{Z}_2[s_1,\cdots,s_n],$
+$w_k(\gamma^n)\mapsto s_k.$</p>
+<p>考虑$f:(\mathbb{R}\mathrm{P}^\infty)^{\times n}\rightarrow G_n,$
+使得$(\gamma^1)^{\times n}=f^\ast \gamma^n.$
+我们有$f^\ast :H^\ast (G_n)\rightarrow H^\ast ((\mathbb{R}\mathrm{P}^\infty)^{\times n}).$
+注意到$\,\forall\,\tau\in S^n$作用在$(\mathbb{R}\mathrm{P}^\infty)^{\times n}$上,
+$\tau^\ast (\gamma^1)^{\times n}\cong (\gamma^1)^{\times n}.$
+因此$f\circ \tau$也能够将万有丛拉回. 那么$f\circ \tau\simeq f,$
+$\tau^\ast \circ f^\ast =f^\ast .$
+即$S_n$在$\operatorname{Im}(f^\ast )\subset H^\ast ((\mathbb{R}\mathrm{P}^\infty)^{\times n})$上作用平凡.</p>
+<p>回忆我们有</p>
+<script type="math/tex; mode=display">
+H^\ast ((\mathbb{R}\mathrm{P}^\infty)^{\times n})\cong H^\ast (\mathbb{R}\mathrm{P}^\infty)^{\otimes n}\cong \mathbb{Z}_2[a_1]\otimes \cdots\otimes \mathbb{Z}_2[a_n]\cong \mathbb{Z}_2[a_1,\cdots,a_n],\quad \deg a_i=1.</script><p>我们有对称多项式基本定理,</p>
+<script type="math/tex; mode=display">
+\mathbb{Z}_2[a_1,\cdots,a_n]=\mathbb{Z}_2[s_1,\cdots,s_n],\quad s_k=s_k(a_1,\cdots,a_n).</script><p>断言这诱导了$w_k(\gamma^n)\mapsto s_k(a_1,\cdots,a_n).$ 回忆</p>
+<script type="math/tex; mode=display">
+w(\gamma^1)=1+a,\quad w((\gamma^1)^{\times n})=(1+a_1)\times\cdots\times (1+a_n)\in H^\ast (\mathbb{R}\mathrm{P}^\infty)^{\otimes n},</script><script type="math/tex; mode=display">
+w((\gamma^1)^{\times n})=(1+a_1)\cdots(1+a_n)=\sum_{k=0}^n s_k(a_1,\cdots,a_n).</script><p>这就给出了$f^\ast w_k(\gamma^n)=w_k(f^\ast \gamma^n)=w_k((\gamma^1)^{\times n})=s_k.$</p>
+<p>只需再验证$f^\ast $为单射. 希望证明$\,\forall\,r,$
+$\dim H^r(G_n)\le \dim f^\ast H^r(G_n).$ 左侧小于等于$G_n$的胞腔数,
+等同于度数为$r$的单项$s_1^{r_1}\cdots s_n^{r_n}$的个数,
+又小于等于右侧的维数. 因此的确不等式成立.</p>
+<p>特别地, 我们证明完了$f^\ast $是同构, 因此其实是取等.
+那么这就说明了Grassmannian流形上的微分都是零.</p>
+<p><strong>注 5</strong>. <em>每个$e(\sigma)$都表示了$H_\ast (G_n)$中的一个非平凡元. $\dim H_r(G_n)$等于$r$维胞腔数, 与划分数联系. 每个$\mathbb{Z}_2$示性类都是$SW$示性类的乘积. 这也说明了$SW$示性类是唯一的.</em> </p>
+<h2 id="SW示性类存在性"><a href="#SW示性类存在性" class="headerlink" title="SW示性类存在性"></a>SW示性类存在性</h2><p><strong>定理 6</strong>. <em>SW示性类存在.</em> </p>
+<p>我们有至少四种方式来定义SW示性类.
+第一种方式是通过谱序列直接计算$H^\ast (G_n;\mathbb{Z}_2),$
+得到$\mathbb{Z}_2[w_1,\cdots,w_n].$ 将生成元拉回就给出了SW类.</p>
+<p>第二种方式是通过障碍性理论. 第三种方式是通过Steenrod操作.
+第四种方式也是要介绍的方式: 通过Leray-Hirsch定理. 回忆它是这么表述的:</p>
+<p><strong>定理 7</strong> (Leray-Hirsch). <em>设$F\xrightarrow{i} E\xrightarrow{p} B$为纤维丛. 取定某个交换环$R,$ 若$H^n(F;R)$为自由有限生成的$R$模, 存在$c_j\in H^\ast (E;R)$使得$\{i^\ast c_j\}$组成了$H^\ast (F;R)\cong R\{c_j\}_j$的一组$R$-基. 那么有如下$H^\ast (B;R)$模同构:</em> </p>
+<script type="math/tex; mode=display">
+H^\ast (B;R)\bigotimes H^\ast (F;R)\cong H^\ast (E;R), \quad \sum_{i,j}b_i\otimes i^\ast (c_j)\mapsto \sum_{i,j}p^\ast (b_i)\cup c_j.</script><p>文章最后更新于 2022-10-24 19:03:42 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(12)-Stiefel-Whitney示性类的存在性</title>
+    <url>/2022/10/24/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(12)-Stiefel-Whitney%E7%A4%BA%E6%80%A7%E7%B1%BB%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7/</url>
+    <content><![CDATA[<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p><strong>定理 1</strong>. <em>SW示性类存在.</em> </p>
+<p>只需考虑CW复形$B$上向量丛的的示性类. 不然, 考虑CW逼近$B’\rightarrow B,$
+考虑拉回丛即可.
+给定向量丛$\xi:\mathbb{R}^n\rightarrow E\xrightarrow{\pi} B,$
+考虑投影空间丛$P(\xi):P(\mathbb{R}^n)=\mathbb{R}\mathrm{P}^{n-1}\rightarrow P(E)\xrightarrow{p(\pi)}B,$</p>
+<script type="math/tex; mode=display">
+P(E)=\{(b,l)|b\in B,l\subset F_b(\xi)\text{ 为直线}\}.</script><p>$P(\xi)$为纤维丛. 我们希望应用Leray-Hirsch定理到该丛上.</p>
+<p><strong>定理 2</strong> (Leray-Hirsch). <em>设$F\xrightarrow{i} E\xrightarrow{p} B$为纤维丛. 取定某个交换环$R,$ 若$H^n(F;R)$为自由有限生成的$R$模, 存在$c_j\in H^\ast (E;R)$使得$\{i^\ast c_j\}$组成了$H^\ast (F;R)\cong R\{c_j\}_j$的一组$R$-基. 那么有如下$H^\ast (B;R)$模同构:</em> </p>
+<script type="math/tex; mode=display">
+H^\ast (B;R)\bigotimes H^\ast (F;R)\cong H^\ast (E;R), \quad \sum_{i,j}b_i\otimes i^\ast (c_j)\mapsto \sum_{i,j}p^\ast (b_i)\cup c_j.</script><p>我们验证条件,
+$H^i(\mathbb{R}\mathrm{P}^{n-1},\mathbb{Z}_2)=\left&lt;{}a^i\right&gt;$的确自由有限生成,
+$a\in H^1,$ $i\le n-1.$ 我们希望说明$i^\ast $满射.
+回忆$\,\exists\,\widehat f:E(\xi) \rightarrow \mathbb{R}^\infty,$
+使得$\widehat f$在纤维上是线性单射. 那么考虑</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^n\hookrightarrow E\xrightarrow{\widehat f}\mathbb{R}^\infty,</script><p>投影诱导</p>
+<script type="math/tex; mode=display">
+P(\mathbb{R}^n)\cong \mathbb{R}\mathrm{P}^{n-1}\xrightarrow{i}P(E)\xrightarrow{P(\widehat{f})}\mathbb{R}\mathrm{P}^\infty.</script><p>取拉回映射,</p>
+<script type="math/tex; mode=display">
+H^\ast (\mathbb{R}\mathrm{P}^{n-1})\xleftarrow{i^\ast } H^\ast (P(E))\leftarrow H^\ast (\mathbb{R}\mathrm{P}^\infty).</script><p>复合在低维为同构, 因此$i^\ast $满.</p>
+<p>于是条件满足, 有$H^\ast (B)$模同构</p>
+<script type="math/tex; mode=display">
+H^\ast (P(E))\cong H^\ast (B)\otimes H^\ast (\mathbb{R}\mathrm{P}^{n-1})=H^\ast (B)\{1,x,\cdots,x^{n-1}\}.</script><p>存在唯一的一组$w_1,w_2,\cdots,w_n\in H^\ast (B),$
+使得$x^n=\sum_{i=1}^n w_ix^{n-i}.$ 这被称为投影丛公式.
+定义示性类$w_i(\xi):=w_i,$ $i=1,\cdots,n.$ 我们来验证它满足SW类公理.</p>
+<p>$w_0(\xi)=1$ ok, 对于自然性, 考虑</p>
+<script type="math/tex; mode=display">
+E'\rightarrow E\xrightarrow{\widehat f} \mathbb{R}\mathrm{P}^\infty,</script><p>这拉回了</p>
+<script type="math/tex; mode=display">
+H^\ast (\mathbb{R}\mathrm{P}^{n-1})\leftarrow H^\ast (P(E'))\leftarrow H^\ast (P(E))\leftarrow H^\ast (\mathbb{R}\mathrm{P}^\infty).</script><p>这就得到了结论. 对于Whitney乘积公式, 定义$E_1=E(\xi),$ $E_2=E(\eta),$
+$E_1\oplus E_2=E(\xi\oplus \eta),$ $\dim(\xi)=m,$ $\dim(\eta)=n.$ 考虑</p>
+<script type="math/tex; mode=display">
+E_i\hookrightarrow E_1\oplus E_2\rightarrow \mathbb{R}^\infty,</script><p>拉回了</p>
+<script type="math/tex; mode=display">
+H^\ast (P(E_i))\leftarrow H^\ast (P(E_1\oplus E_2))\leftarrow H^\ast (\mathbb{R}\mathrm{P}^\infty).</script><p>定义$u:=\sum_j w_j(\xi)x^{m-j},$ $v:=\sum_j w_j(\eta)x^{n-j}.$
+断言$uv=0.$ 这样就有</p>
+<script type="math/tex; mode=display">
+w_j(\xi\oplus\eta)=\sum_{r+s=j}w_r(\xi)w_s(\eta).</script><p>至于断言, 考虑$P(E_1),P(E_2)\subset P(E_1\oplus E_2),$
+$P(E_1)\cap P(E_2)=\varnothing.$ $U_i=P(E_1\oplus E_2)\setminus P(E_j),$
+$U_i$形变收缩至$P(E_j).$</p>
+<script type="math/tex; mode=display">
+H^m(P(E_1\oplus E_2),U_2)\cong H^m(P(E_1\oplus E_2),P(E_1))\rightarrow H^m(P(E_1\oplus E_2))\rightarrow H^m(P(E_1)),</script><p>那么$\,\exists\,\widetilde u\mapsto u\mapsto 0.$
+类似地取$\widetilde{v}.$
+我们有$\widetilde u\cup \widetilde v=0\in H^{m+n}(X,U_1\cup U_2)=0.$
+由自然性, 便有$uv=0.$</p>
+<p>最后只需验证$w_1(\gamma_1^1)=0\in H^1(\mathbb{R}\mathrm{P}^1).$
+$\gamma_1^1:\mathbb{R}^1\rightarrow E\rightarrow \mathbb{R}\mathrm{P}^1$投影诱导了$\mathbb{R}\mathrm{P}^0=\ast \rightarrow P(E)\rightarrow \mathbb{R}\mathrm{P}^1.$
+定义$\widehat f:E\rightarrow \mathbb{R}^\infty,$ $(l,v)\mapsto v.$
+$P(\widehat f):P(E)\cong \mathbb{R}\mathrm{P}^1\rightarrow \mathbb{R}\mathrm{P}^\infty,$
+拉回$H^1(\mathbb{R}\mathrm{P}^1)\leftarrow H^1(\mathbb{R}\mathrm{P}^\infty),$
+$\alpha\mapsto x\neq 0.$ 那么$x^1=w_1x^0,$ $x=w_1(\gamma_1^1)\neq 0.$</p>
+<h2 id="分裂定理"><a href="#分裂定理" class="headerlink" title="分裂定理"></a>分裂定理</h2><p><strong>定理 3</strong>. <em>对于秩$n$平面丛$\xi,$ 底空间为仿紧集$B.$ 存在一个$F(E),$ $f:F(E)\rightarrow B,$ 使得: $f^\ast \xi$为$F(E)$上线丛的和, 且$f^\ast :H^\ast (B;\mathbb{Z}_2)\rightarrow H^\ast (F(E);\mathbb{Z}_2)$为单射.</em> </p>
+<p>对$n$归纳, 只需找到$f:F(E)\rightarrow B,$
+使得$f^\ast \xi=\eta\oplus \eta^\perp,$ 且$f^\ast $为单射.</p>
+<p>取$F(E)=P(E)\rightarrow B,$ $f=p(\pi).$
+那么$f^\ast :H^\ast (B)\hookrightarrow H^\ast (P(E))\cong H^\ast (B)\{1,\cdots,x^{n-1}\}$为单射.</p>
+<p>考虑全空间</p>
+<script type="math/tex; mode=display">
+E(f^\ast \xi)=\{(b,l,v)|b\in B, l\subset F_b(\xi),v\in F_b(\xi)\}.</script><p>考虑秩$1$子丛 </p>
+<script type="math/tex; mode=display">
+E(\eta):=\{(b,l,v)|b\in B,l\subset F_b(\xi),v\in l\}.</script><p>那么$\eta$就是想找的线丛.</p>
+<p><strong>注 4</strong>. *重复找$n$次线丛, 那么$F(E)=\{(b,l_1,\cdots,l_n)|l_1+\cdots+l_n=F_b\xi\}.$ 那么就有标架丛 </p>
+<script type="math/tex; mode=display">
+GL_n(\mathbb{R})/(\mathbb{R}^\ast )^n\cong \{frames\}\rightarrow F(E)\rightarrow B,</script><ul>
+<li><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2></li>
+</ul>
+<p>计算$w(\xi\otimes \xi’).$ 第一步假设它们都是线丛的和, 那么</p>
+<script type="math/tex; mode=display">
+w(\xi\otimes \xi')=w\left(\bigoplus_{i,j} L_i\otimes L_j'\right)=\prod_{i,j} w(L_i\otimes L_j').</script><p>然后利用分裂定理, 设$f^\ast \xi,f^\ast \xi’$分裂(可以分步来处理,
+$f=f_1\circ f_2$), 那么</p>
+<script type="math/tex; mode=display">
+f^\ast (w(\xi\otimes \xi'))=w(f^\ast (\xi)\otimes f^\ast (\xi'))=F(w(f^\ast (\xi)),w(f^\ast (\eta)))=f^\ast F(w(\xi),w(\eta)).</script><p>这样就可以把线丛上的计算方法套到一般丛上. 这也是分裂定理的主要用途之一.</p>
+<p>文章最后更新于 2022-10-24 19:04:00 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>

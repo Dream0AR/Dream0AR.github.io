@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分流形》笔记-商流形 |
+            《代数拓扑2》笔记(11)-Grassmannian流形 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分流形》笔记-商流形</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(11)-Grassmannian流形</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-18 22:50:15
+        <i class="fas fa-edit"></i>&nbsp;2022-10-24 19:03:40
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,46 +206,69 @@
         
 
         <div class="article-content markdown-body">
-            <p>Introduction to smooth manifolds by John M. Lee</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>设有作用$\theta:G\times M\rightarrow M.$ 在$M$上定义等价关系$p\sim q$
-$\Leftrightarrow$ $\,\exists\,g\in G,$ $p=g\cdot q.$
-那么等价类恰为$G$在$M$中的轨道. 记$M/G$为商空间, 也称为轨道空间.
-我们希望轨道空间也能是一个微分流形.</p>
-<p><strong>引理 1</strong>. <em>商映射$\pi:M\rightarrow G/M$为开映射.</em> </p>
-<p>称作用是<strong>逆紧作用</strong>, 若$G\times M\rightarrow M\times M,$
-$(g,p)\mapsto (g\cdot p,p)$是逆紧的.
-此条件比要求作用$\theta$本身是逆紧的要弱.</p>
-<p><strong>命题 2</strong>. <em>若李群连续逆紧地作用在流形上, 那么商空间是$T_2$的.</em> </p>
-<p>定义轨道关系$\mathcal{O}\subset M\times M,$</p>
+            <h2 id="Grassmannian上同调计算"><a href="#Grassmannian上同调计算" class="headerlink" title="Grassmannian上同调计算"></a>Grassmannian上同调计算</h2><p>我们希望得到$H^\ast (G_n(\mathbb{R}^\infty);\mathbb{Z}_2)=\mathbb{Z}_2[w_1,\cdots,w_n].$</p>
+<p>回忆我们希望给出$G_n(\mathbb{R}^\infty)$上的CW结构. 固定flag:</p>
 <script type="math/tex; mode=display">
-\mathcal{O}=\{(g\cdot p,p)\in M\times M:p\in M,g\in G\}.</script><p>那么$(p,q)\in \mathcal{O}$ $\Leftrightarrow$ $p,q$在同一轨道中.
-由于映到局部紧$T_2$空间的连续逆紧映射总是闭映射,
-$\mathcal{O}$为$M\times M$中的闭集.
-容易证明这恰是商空间为$T_2$的充分条件.</p>
-<p>然而直接判断逆紧作用并不容易. 不过我们有以下三个性质等价:</p>
-<ol>
-<li><p>作用是逆紧的.</p>
-</li>
-<li><p>若$\{p_i\},$ $\{g_i\cdot p_i\}$收敛, 则$\{g_i\}$有子列收敛.</p>
-</li>
-<li><p>$\,\forall\,K\Subset M,$
-$G_K=\{g\in G|( g\cdot K)\cap K\neq \varnothing\}$为紧集.</p>
-</li>
-</ol>
-<p><strong>推论 3</strong>. <em>紧李群在流形上的连续作用是逆紧的.</em> </p>
-<p><strong>命题 4</strong>. <em>设$\theta$是一个逆紧作用, 那么轨道映射$\theta^{(p)}:G\rightarrow M$是逆紧映射, 也因此轨道是闭的. 若它是单射, 那么轨道映射就是一个光滑嵌入, 轨道为逆紧嵌入子流形.</em> </p>
-<p><strong>推论 5</strong>. <em>若李群逆紧作用在$M$上, 那么每个轨道是$M$中闭集, 每个稳定子都是紧的.</em> </p>
-<h2 id="商空间"><a href="#商空间" class="headerlink" title="商空间"></a>商空间</h2><h3 id="商流形"><a href="#商流形" class="headerlink" title="商流形"></a>商流形</h3><p><strong>定理 6</strong>. <em>设$G$光滑, 自由, 逆紧地作用在$M$上, 那么轨道空间$M/G$是一个$\dim M-\dim G$维的拓扑流形, 有唯一一个光滑结构使得$\pi:M\rightarrow M/G$为光滑淹没.</em> </p>
-<h3 id="覆盖映射"><a href="#覆盖映射" class="headerlink" title="覆盖映射"></a>覆盖映射</h3><p><strong>引理 7</strong>. <em>设离散李群$\Gamma$连续, 自由地作用在流形$E$上. 那么作用是逆紧的当且仅当如下条件成立: $\,\forall\,p\in E,$ $\,\exists\,U$为邻域, $\,\forall\,g\in \Gamma,$ $(g\cdot U)\cap U\neq \varnothing,$ 除非$g=e.$ 且若$p,p’$不在同一个轨道里, 那么分别存在邻域$V,V’,$ $(g\cdot V)\cap V’=\varnothing,$ $\,\forall\,g\in \Gamma.$</em> </p>
-<p><strong>命题 8</strong>. <em>设$\pi:E\rightarrow M$为覆盖映射, 那么配备离散拓扑的$\operatorname{Aut}_\pi(E)$光滑, 自由, 逆紧的作用在$E$上.</em> </p>
-<p><strong>定理 9</strong>. <em>设$E$为连通光滑流形, $\Gamma$为离散李群, 光滑自由逆紧地作用在$E$上. 那么轨道空间$E/\Gamma$是拓扑流形, 具备唯一光滑结构使得$\pi:E\rightarrow E/\Gamma$为光滑正则覆盖.</em> </p>
-<h3 id="齐性空间"><a href="#齐性空间" class="headerlink" title="齐性空间"></a>齐性空间</h3><p>若李群$G$在流形$M$上有一个光滑可迁作用, 那么称$M$为齐性空间.</p>
-<p><strong>定理 10</strong>. <em>若$H$为$G$的闭子群, 那么左陪集空间$G/H$是$\dim G-\dim H$维拓扑空间, 有唯一光滑结构使得$\pi:G\rightarrow G/H$为光滑淹没. $G$在$G/H$上的左作用为$g_1\cdot (g_2H)=(g_1g_2)H,$ 将$G/H$变为齐性空间.</em> </p>
-<p><strong>定理 11</strong>. <em>设$G$为李群, $M$为齐性空间, $p\in M.$ 那么稳定子$G_p$为$G$的闭子群, $F:G/G_p\rightarrow M,$ $F(gG_p)=g\cdot p$给出一个等变微分同胚.</em> </p>
-<p>有一些典型的齐性空间:</p>
+\mathbb{R}^0\subset \mathbb{R}^1\subset \cdots \subset \mathbb{R}^m.</script><p>任意$X\in G_n(\mathbb{R}^m)$给出一个序列:</p>
 <script type="math/tex; mode=display">
-S^{n-1}\approx O(n)/O(n-1)\approx SO(n)/SO(n-1),</script><script type="math/tex; mode=display">
-S^{2n-1}\approx U(n)/U(n-1)\approx SU(n)/SU(n-1).</script><p>文章最后更新于 2022-10-18 22:50:20 </p>
+0\le \dim (X\cap \mathbb{R}^1)\le\cdots\le \dim(X\cap \mathbb{R}^m)=n.</script><p>定义Schubert符号$\sigma=(\sigma_1,\cdots,\sigma_n)$记录了序列中跳跃的部分,
+$1\le \sigma_1&lt;\cdots&lt;\sigma_n\le m.$</p>
+<script type="math/tex; mode=display">
+e(\sigma):=\{X\in G_n(\mathbb{R}^m)|\dim (X\cap \mathbb{R}^{\sigma_i})=i,\:\dim(X\cap \mathbb{R}^{\sigma_i-1})=i-1\}.</script><p>断言$\{e(\sigma)\}$组成了$G_n(\mathbb{R}^m)$的CW结构.
+令$H^k\subset \mathbb{R}^k$为$x_k&gt;0$的上半平面,</p>
+<p><strong>引理 1</strong>. <em>每个$X\in e(\sigma)$有唯一一个正交基$(x_1,\cdots,x_n)\in H^{\sigma_1}\times\cdots\times H^{\sigma_n}.$</em> </p>
+<p>只需注意到下面的序列, 由线性空间的基本知识即得.</p>
+<script type="math/tex; mode=display">
+\dim(X\cap \mathbb{R}^{\sigma_1})=1,\quad \dim(X\cap \mathbb{R}^{\sigma_2})=2,\quad \cdots.</script><script type="math/tex; mode=display">
+e'(\sigma):=\{(x_1,\cdots,x_n)|\{x_i\}\text{正交, }x_i\in H^{\sigma_i}\}.</script><p>对$n$做归纳,
+即可得到$\overline e’(\sigma)\cong$维数为$d(\sigma):=\sum_i(\sigma_i-i)$的闭球.
+那么映射</p>
+<script type="math/tex; mode=display">
+\overline e'(\sigma)\ni (x_1,\cdots,x_n)\mapsto \operatorname{span}\{x_1,\cdots,x_n\} \in G_n(\mathbb{R}^m).</script><p>将$e’(\sigma)$同胚地映到$e(\sigma)$上. 这就实现了贴胞腔,
+给出了$G_n(\mathbb{R}^m)$上的CW结构.</p>
+<p><strong>注 2</strong>. <em>$G_n(\mathbb{R}^m)$是一个有限CW复形, 有$\binom{m}{n}$个胞腔. 令$m\rightarrow \infty,$ $G_n(\mathbb{R}^\infty)$为一个CW复形.</em> </p>
+<p>一个问题是$G_n(\mathbb{R}^m)$中有多少个$r$胞腔?
+即$\dim e(\sigma)=\sum_i (\sigma_i-i)=r$的Schubert数.
+记$\sigma_i-i=\mu_i,$ 那么 </p>
+<script type="math/tex; mode=display">
+0\le \mu_1\le \cdots\le \mu_n\le m-n,</script><p>满足$\sum_i\mu_i=r.$</p>
+<p><strong>推论 3</strong>. <em>$G_n(\mathbb{R}^m)$的$r$胞腔数为将$r$划分为至多$n$个小于等于$m-n$的正整数的方案数. 也称划分数.</em> </p>
+<p><strong>定理 4</strong>. <em>$H^\ast (G_n;\mathbb{Z}_2)\cong \mathbb{Z}_2[w_1,\cdots,w_n].$</em> </p>
+<p>我们希望构造一个同构:
+$H^\ast (G_n)\xrightarrow{f^\ast }\mathbb{Z}_2[s_1,\cdots,s_n],$
+$w_k(\gamma^n)\mapsto s_k.$</p>
+<p>考虑$f:(\mathbb{R}\mathrm{P}^\infty)^{\times n}\rightarrow G_n,$
+使得$(\gamma^1)^{\times n}=f^\ast \gamma^n.$
+我们有$f^\ast :H^\ast (G_n)\rightarrow H^\ast ((\mathbb{R}\mathrm{P}^\infty)^{\times n}).$
+注意到$\,\forall\,\tau\in S^n$作用在$(\mathbb{R}\mathrm{P}^\infty)^{\times n}$上,
+$\tau^\ast (\gamma^1)^{\times n}\cong (\gamma^1)^{\times n}.$
+因此$f\circ \tau$也能够将万有丛拉回. 那么$f\circ \tau\simeq f,$
+$\tau^\ast \circ f^\ast =f^\ast .$
+即$S_n$在$\operatorname{Im}(f^\ast )\subset H^\ast ((\mathbb{R}\mathrm{P}^\infty)^{\times n})$上作用平凡.</p>
+<p>回忆我们有</p>
+<script type="math/tex; mode=display">
+H^\ast ((\mathbb{R}\mathrm{P}^\infty)^{\times n})\cong H^\ast (\mathbb{R}\mathrm{P}^\infty)^{\otimes n}\cong \mathbb{Z}_2[a_1]\otimes \cdots\otimes \mathbb{Z}_2[a_n]\cong \mathbb{Z}_2[a_1,\cdots,a_n],\quad \deg a_i=1.</script><p>我们有对称多项式基本定理,</p>
+<script type="math/tex; mode=display">
+\mathbb{Z}_2[a_1,\cdots,a_n]=\mathbb{Z}_2[s_1,\cdots,s_n],\quad s_k=s_k(a_1,\cdots,a_n).</script><p>断言这诱导了$w_k(\gamma^n)\mapsto s_k(a_1,\cdots,a_n).$ 回忆</p>
+<script type="math/tex; mode=display">
+w(\gamma^1)=1+a,\quad w((\gamma^1)^{\times n})=(1+a_1)\times\cdots\times (1+a_n)\in H^\ast (\mathbb{R}\mathrm{P}^\infty)^{\otimes n},</script><script type="math/tex; mode=display">
+w((\gamma^1)^{\times n})=(1+a_1)\cdots(1+a_n)=\sum_{k=0}^n s_k(a_1,\cdots,a_n).</script><p>这就给出了$f^\ast w_k(\gamma^n)=w_k(f^\ast \gamma^n)=w_k((\gamma^1)^{\times n})=s_k.$</p>
+<p>只需再验证$f^\ast $为单射. 希望证明$\,\forall\,r,$
+$\dim H^r(G_n)\le \dim f^\ast H^r(G_n).$ 左侧小于等于$G_n$的胞腔数,
+等同于度数为$r$的单项$s_1^{r_1}\cdots s_n^{r_n}$的个数,
+又小于等于右侧的维数. 因此的确不等式成立.</p>
+<p>特别地, 我们证明完了$f^\ast $是同构, 因此其实是取等.
+那么这就说明了Grassmannian流形上的微分都是零.</p>
+<p><strong>注 5</strong>. <em>每个$e(\sigma)$都表示了$H_\ast (G_n)$中的一个非平凡元. $\dim H_r(G_n)$等于$r$维胞腔数, 与划分数联系. 每个$\mathbb{Z}_2$示性类都是$SW$示性类的乘积. 这也说明了$SW$示性类是唯一的.</em> </p>
+<h2 id="SW示性类存在性"><a href="#SW示性类存在性" class="headerlink" title="SW示性类存在性"></a>SW示性类存在性</h2><p><strong>定理 6</strong>. <em>SW示性类存在.</em> </p>
+<p>我们有至少四种方式来定义SW示性类.
+第一种方式是通过谱序列直接计算$H^\ast (G_n;\mathbb{Z}_2),$
+得到$\mathbb{Z}_2[w_1,\cdots,w_n].$ 将生成元拉回就给出了SW类.</p>
+<p>第二种方式是通过障碍性理论. 第三种方式是通过Steenrod操作.
+第四种方式也是要介绍的方式: 通过Leray-Hirsch定理. 回忆它是这么表述的:</p>
+<p><strong>定理 7</strong> (Leray-Hirsch). <em>设$F\xrightarrow{i} E\xrightarrow{p} B$为纤维丛. 取定某个交换环$R,$ 若$H^n(F;R)$为自由有限生成的$R$模, 存在$c_j\in H^\ast (E;R)$使得$\{i^\ast c_j\}$组成了$H^\ast (F;R)\cong R\{c_j\}_j$的一组$R$-基. 那么有如下$H^\ast (B;R)$模同构:</em> </p>
+<script type="math/tex; mode=display">
+H^\ast (B;R)\bigotimes H^\ast (F;R)\cong H^\ast (E;R), \quad \sum_{i,j}b_i\otimes i^\ast (c_j)\mapsto \sum_{i,j}p^\ast (b_i)\cup c_j.</script><p>文章最后更新于 2022-10-24 19:03:42 </p>
 
         </div>
 
@@ -253,11 +276,11 @@ S^{2n-1}\approx U(n)/U(n-1)\approx SU(n)/SU(n-1).</script><p>文章最后更新�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》笔记-商流形</li>
+        <li>本文标题：《代数拓扑2》笔记(11)-Grassmannian流形</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-18 22:50:15</li>
+        <li>创建时间：2022-10-24 19:03:40</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/18/《微分流形》笔记-商流形/
+            本文链接：https://dream0ar.github.io/2022/10/24/《代数拓扑2》笔记(11)-Grassmannian流形/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -274,13 +297,13 @@ S^{2n-1}\approx U(n)/U(n-1)\approx SU(n)/SU(n-1).</script><p>文章最后更新�
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/10/24/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(11)-Grassmannian%E6%B5%81%E5%BD%A2/"
+                           href="/2022/10/24/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(12)-Stiefel-Whitney%E7%A4%BA%E6%80%A7%E7%B1%BB%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(11)-Grassmannian流形</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(12)-Stiefel-Whitney示性类的存在性</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -290,10 +313,10 @@ S^{2n-1}\approx U(n)/U(n-1)\approx SU(n)/SU(n-1).</script><p>文章最后更新�
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/10/18/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E6%9D%8E%E4%BB%A3%E6%95%B0/"
+                           href="/2022/10/18/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E5%95%86%E6%B5%81%E5%BD%A2/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》笔记-李代数</span>
+                                <span class="post-nav-title-item">《微分流形》笔记-商流形</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -500,7 +523,7 @@ S^{2n-1}\approx U(n)/U(n-1)\approx SU(n)/SU(n-1).</script><p>文章最后更新�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%86%E7%A9%BA%E9%97%B4"><span class="nav-text">商空间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%95%86%E6%B5%81%E5%BD%A2"><span class="nav-text">商流形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E6%98%A0%E5%B0%84"><span class="nav-text">覆盖映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BD%90%E6%80%A7%E7%A9%BA%E9%97%B4"><span class="nav-text">齐性空间</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Grassmannian%E4%B8%8A%E5%90%8C%E8%B0%83%E8%AE%A1%E7%AE%97"><span class="nav-text">Grassmannian上同调计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SW%E7%A4%BA%E6%80%A7%E7%B1%BB%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-text">SW示性类存在性</span></a></li></ol>
     </div>
 </div>
         </aside>
