@@ -10051,4 +10051,54 @@ f^\ast (w(\xi\otimes \xi'))=w(f^\ast (\xi)\otimes f^\ast (\xi'))=F(w(f^\ast (\xi
         <category>代数拓扑2</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(13)-定向与欧拉类</title>
+    <url>/2022/10/26/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(13)-%E5%AE%9A%E5%90%91%E4%B8%8E%E6%AC%A7%E6%8B%89%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="定向与Thom类"><a href="#定向与Thom类" class="headerlink" title="定向与Thom类"></a>定向与Thom类</h2><p>回忆对$V$为秩$n$实向量空间, $V$上的定向为
+$\operatorname{Iso}(\mathbb{R}^n,V)\cong GL_n(\mathbb{R})$
+上连通分支的选取(线性代数). 也等价于 $H^n(V|0;\mathbb{Z})$
+生成元的选取(代数拓扑). 也等价于</p>
+<script type="math/tex; mode=display">
+\Lambda^n V\setminus\{0\}\cong \Lambda^n\mathbb{R}^n\setminus\{0\}\xrightarrow{\det}\mathbb{R}\setminus\{0\}</script><p>连通分支的选取(微分流形).</p>
+<p>对于秩$n$实向量丛,
+定义$\xi$的定向为考虑外代数丛$\Lambda^n F\rightarrow E(\Lambda^n \xi)\rightarrow B,$
+$\Lambda^n\xi$上一个处处不消失的截面.</p>
+<p>当然我们也有其它的等价定义.
+$\xi$的一个定向对每个纤维$F$给出了一个$H^\ast (F|0;\mathbb{Z})$的定向,
+满足局部相容性.</p>
+<p><strong>定理 1</strong>. <em>若$\xi$为秩$n$定向实向量丛, 那么存在唯一一个类$u\in H^n(E|B;\mathbb{Z}),$ 限制在每个纤维上给出$H^n(F|0;\mathbb{Z})$的生成元.</em> </p>
+<p>证明思路: 我们采用MV方法来处理. 首先证明平凡丛$\xi$的情况,
+接下来考虑$B=U_1\cup U_2$的情况, 这样能给出$B$紧的证明.
+最后考虑$B$的穷竭序列即可.</p>
+<p>这样的类$u=u(\xi)$称为Thom类. 若考虑$\mathbb{Z}_2$系数,
+那么无需预先给出$\xi$的定向.</p>
+<p><strong>定理 2</strong> (Thom同构定理). <em>若$\xi$为秩$n$定向向量丛, 有Thom类$u.$ 那么$H^i(B;\mathbb{Z})\cong H^{n+i}(E|B;\mathbb{Z}),$ $\alpha\mapsto \pi^\ast \alpha \cup u.$</em> </p>
+<p>应用Leray-Hirsch定理到 </p>
+<script type="math/tex; mode=display">
+(F,F_0)\rightarrow (E,E_0)\rightarrow B.</script><p>那么首先$H^n(F|0)=\mathbb{Z}$自由生成, 其次由上一个定理, $i^\ast $是满射.
+这样$H^\ast (E|0)\cong H^\ast (B)\{u\}$就给出了结论.</p>
+<h2 id="欧拉类"><a href="#欧拉类" class="headerlink" title="欧拉类"></a>欧拉类</h2><p>对定向丛$\xi$定义欧拉类: $e(\xi)\in H^n(B;\mathbb{Z}),$ 使得</p>
+<script type="math/tex; mode=display">
+H^n(B;\mathbb{Z})\xrightarrow{\pi^\ast :\cong} H^n(E;\mathbb{Z})\leftarrow H^n(E|B;\mathbb{Z})</script><p>将$e(\xi)$与$u(\xi)$打到同一个元.</p>
+<p>它满足以下性质: 若$B\rightarrow B’$由保定向丛映射覆盖,
+那么$e(\xi)(=e(f^\ast \xi’))=f^\ast e(\xi’),$ 即满足自然性; 若$\xi$定向改变,
+则欧拉类改变符号;</p>
+<script type="math/tex; mode=display">
+e(\xi\oplus\eta)=e(\xi)\cup e(\eta),\quad e(\xi\times \eta)=e(\xi)\times e(\eta).</script><p>若$\xi$有一个无处消失截面, 那么$e(\xi)=0.$
+因为这将给出$\xi=\varepsilon^1\oplus\varepsilon^\perp,$
+$e(\xi)=e(\varepsilon^1)\cup e(\varepsilon^\perp)=0.$</p>
+<p><strong>定理 3</strong>. <em>对光滑定向紧连通流形$M^n,$ $e(\tau_M)=\chi(M)\cdot PD([\ast ]),$ 或者说$\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$</em> </p>
+<p>由此可以推出Poincaré-Hopf定理: $\chi(M)\neq 0$ 则不存在无处消失向量场.</p>
+<p><strong>定理 4</strong>. <em>若$\xi$是同上假设的$M$上的光滑定向向量丛, 则$e(\xi)=PD([Z_s]),$ $Z_s$为$s$的零截面, 需要和$M$(默认零截面)横截相交.</em> </p>
+<p>取$\xi=\tau_M$即推出前一定理.</p>
+<p>若$\xi$是$B$上的秩$n$定向向量丛,
+$H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\mapsto w_n(\xi).$</p>
+<p>文章最后更新于 2022-10-26 21:15:00 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>
