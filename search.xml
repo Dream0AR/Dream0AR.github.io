@@ -10101,4 +10101,86 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
         <category>泛函分析</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(14)-横截性理论</title>
+    <url>/2022/10/28/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(14)-%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上次课我们对定向实向量丛$\xi^n,$
+定义了Thom类$u(\xi)\in H^n(E,E_0;\mathbb{Z}).$
+这给出了Euler类$e(\xi)\in H^n(B;\mathbb{Z}),$ 当$B=M^n$光滑时,</p>
+<script type="math/tex; mode=display">
+e(\tau_M)=\chi(M)\cdot PD([\ast ]).</script><p> 一般的,
+对$\xi$截面$s$与$M$横截相交的零截面$Z_s,$ 有</p>
+<script type="math/tex; mode=display">
+e(\xi)=PD(Z_s),\quad Z_s=\{s=0\}</script><h2 id="横截性理论"><a href="#横截性理论" class="headerlink" title="横截性理论"></a>横截性理论</h2><p>设$X$为紧定向$n$维流形, 那么有Poincaré对偶:</p>
+<script type="math/tex; mode=display">
+PD_X:H_i(X)\rightarrow H^{n-i}(X), \alpha\cap [M]\leftarrow \alpha.</script><p>考虑横截积:</p>
+<script type="math/tex; mode=display">
+H_i(X)\times H_j(X)\rightarrow H_{i+j-n}(X),\quad (a,b)\mapsto a\cdot b,</script><script type="math/tex; mode=display">
+PD_X(a\cdot b)=PD_X(b)\cup PD_X(a).</script><p><strong>定理 1</strong>. <em>设$X$还是光滑的, $A,B$为横截相交闭光滑定向子流形. 那么$[A]_X\cdot [B]_X=[A\cap B]_X,$ 其中$[A]_X=i_\ast [A].$</em> </p>
+<p>给定$A\subset X,$ 定义$\tau_A^X:=PD([A]_X)\in H^{x-a}(X;\mathbb{Z}),$
+称为$A$在$X$中的Thom类. 那么 </p>
+<script type="math/tex; mode=display">
+[A]_X=\tau_A^X\cap [X].</script><p>记$\nu_A^X$为$A$在$X$中法丛, 我们有管状邻域定理:
+存在$A$在$X$中的管状邻域$N$, 满足: </p>
+<script type="math/tex; mode=display">
+E(\nu_A^X)\cong N.</script><p>这样,</p>
+<script type="math/tex; mode=display">
+u(\nu_A^X)\in H^{x-a}(E(\nu_A^X),E_0(\nu_A^X))\cong H^{x-a}(N,N\setminus A)\cong H^{x-a}(X,X\setminus A)\rightarrow H^{x-a}(X)\ni \tau_A^X.</script><p>我们将说明$\nu_A^X$的Thom类打到$A$在$X$中的Thom类, 这也是命名后者的原因.</p>
+<p>我们希望说明, </p>
+<script type="math/tex; mode=display">
+\nu_{B\cap A}^A\cong \nu_B^X|_{B\cap A}.</script><p>我们依纤维来检查: $\,\forall\,x\in A\cap B,$ $T_pA+T_pB=T_pX,$ 那么</p>
+<script type="math/tex; mode=display">
+T(i_A^X):T_pA/T_p(B\cap A)\cong T_pX/T_pB.</script><p>因此, $\tau^A_{B\cap A}=(i_A^X)^\ast \tau_B^X.$ 现在就可以证明定理了:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ [B\cap A]_X&=(i_A^X)_*(i^A_{B\cap A})_*[B\cap A]\\
+ &=(i_A^X)_*(\tau_{B\cap A}^A\cap [A])\\
+ &=(i_A^X)_*((i_A^X)^*\tau_B^X\cap [A])\\
+ &=\tau_B^X\cap ((i_A^X)_*[A])\\
+ &=\tau_B^X\cap (\tau_A^X\cap [X])\\
+ &=(\tau_B^X\cup\tau_A^X)\cap [X]\\
+ &=PD^{-1}(PD([B]_X)\cup PD([A]_X))\\
+ &=[B]_X\cdot [A]_X.
+ \end{aligned}</script><h2 id="Euler类"><a href="#Euler类" class="headerlink" title="Euler类"></a>Euler类</h2><p>回忆对定向丛$\xi,$ 我们给出Euler类:</p>
+<script type="math/tex; mode=display">
+H^n(E,E_0)\rightarrow H^n(E)\leftarrow H^n(B), \quad u(\xi)\mapsto u(\xi)|_E\leftarrow e(\xi).</script><p><strong>定理 2</strong>. <em>若$B$为闭定向光滑流形, $e(\xi)=PD([Z_s]).$ $Z_s=\{b\in B|s(b)=0\},$ $s$为$\xi$截面, 与零截面横截相交.</em> </p>
+<p>记$Z:=Z_s.$ 考虑$\nu_Z^B\cong \xi|_Z.$ $E(\nu_Z^B)\cong N\subset B.$</p>
+<script type="math/tex; mode=display">
+H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B,B\setminus Z)\rightarrow H^n(B).</script><script type="math/tex; mode=display">
+u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B=PD([Z]).</script><script type="math/tex; mode=display">
+H^n(B)\rightarrow H^n(E)\leftarrow H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B),</script><script type="math/tex; mode=display">
+e(\xi)\mapsto u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B.</script><p> 这样就看到了
+$e(\xi)=\tau_Z^B.$</p>
+<p><strong>定理 3</strong>. <em>$B=M^n$为闭定向流形, $\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$ 这与Poincaré-Hopf定理等价.</em> </p>
+<p>任取一个横截相交截面, 那么: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \left<{}e(\tau_M),[M]\right>=\left<{}PD_M[Z_s],[M]\right>=\left<{}PD_M[M],[Z_s]\right>=\sum_{p\in Z_s} \text{index of $s$ at $p$}=\chi(M)
+ \end{aligned}</script><p>指标由$\det(\nabla s:T_pM\rightarrow T_pM)$的符号决定.</p>
+<p>一个应用是, $\chi(S^n)=2,$ 若$n$为偶数. 这样$e(\tau_{S^n})=2,$
+这与$w_n(\tau_{S^n})=0$对应. 那么$\tau_{S^n}$非平凡,
+且$\tau_{S^n}$不包含任何真子丛$\eta^m.$
+这是因为$e(\tau_{S^n})=e(\eta)\cup e(\eta^\perp).$</p>
+<h2 id="横截性理论的应用"><a href="#横截性理论的应用" class="headerlink" title="横截性理论的应用"></a>横截性理论的应用</h2><h3 id="杯积"><a href="#杯积" class="headerlink" title="杯积"></a>杯积</h3><p>回忆$H^\ast (\mathbb{C}\mathrm{P}^n;\mathbb{Z})$中的杯积. 取</p>
+<script type="math/tex; mode=display">
+\mathbb{C}\mathrm{P}^{n-1}\approx h_i=\{x_i=0\}\subset \mathbb{C}\mathrm{P}^n,</script><script type="math/tex; mode=display">
+[h_i]\in H_{2n-2}(\mathbb{C}\mathrm{P}^n).</script><p> 由横截性理论,</p>
+<script type="math/tex; mode=display">
+[h_1]\cdots[h_n]=[h_1\cap\cdots\cap h_n]=[\ast ]\in H_0(\mathbb{C}\mathrm{P}^n).</script><p>令$\tau_i:=PD[h_i]\in H^2(\mathbb{C}\mathrm{P}^n),$
+$\tau_1\cup\cdots\cup \tau_n=PD[\ast ].$</p>
+<p>断言$\tau_1=\cdots=\tau_n=\tau,$ 称为超(射影)平面类.
+这样$H^\ast (\mathbb{C}\mathrm{P}^n)=\mathbb{Z}[\tau]/\tau^{n+1}=0.$</p>
+<h3 id="Bezout’s-定理"><a href="#Bezout’s-定理" class="headerlink" title="Bezout’s 定理"></a>Bezout’s 定理</h3><p>假设$F_1(x,y,z),$ $F_2(x,y,z)$为齐次多项式, $\deg F_i=d_i.$</p>
+<script type="math/tex; mode=display">
+V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,</script><p>在代数几何中称为$\deg=d_i$的代数曲线.</p>
+<p><strong>定理 4</strong>. <em>若$V_1,V_2$横截相交, 那么$[V_1\cap V_2]_{\mathbb{C}\mathrm{P}^2}=d_1d_2[\ast ]_{\mathbb{C}\mathrm{P}^2}.$</em> </p>
+<p>简单来看, 就是因为$PD[V_1]=d_1\cdot \tau,$ $PD[V_2]=d_2\cdot \tau.$</p>
+<p>文章最后更新于 2022-10-28 16:41:58 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>

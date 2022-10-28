@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(13)-定向与欧拉类 |
+            《代数拓扑2》笔记(14)-横截性理论 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(13)-定向与欧拉类</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(14)-横截性理论</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-26 21:14:58
+        <i class="fas fa-edit"></i>&nbsp;2022-10-28 16:41:54
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,46 +206,78 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="定向与Thom类"><a href="#定向与Thom类" class="headerlink" title="定向与Thom类"></a>定向与Thom类</h2><p>回忆对$V$为秩$n$实向量空间, $V$上的定向为
-$\operatorname{Iso}(\mathbb{R}^n,V)\cong GL_n(\mathbb{R})$
-上连通分支的选取(线性代数). 也等价于 $H^n(V|0;\mathbb{Z})$
-生成元的选取(代数拓扑). 也等价于</p>
+            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上次课我们对定向实向量丛$\xi^n,$
+定义了Thom类$u(\xi)\in H^n(E,E_0;\mathbb{Z}).$
+这给出了Euler类$e(\xi)\in H^n(B;\mathbb{Z}),$ 当$B=M^n$光滑时,</p>
 <script type="math/tex; mode=display">
-\Lambda^n V\setminus\{0\}\cong \Lambda^n\mathbb{R}^n\setminus\{0\}\xrightarrow{\det}\mathbb{R}\setminus\{0\}</script><p>连通分支的选取(微分流形).</p>
-<p>对于秩$n$实向量丛,
-定义$\xi$的定向为考虑外代数丛$\Lambda^n F\rightarrow E(\Lambda^n \xi)\rightarrow B,$
-$\Lambda^n\xi$上一个处处不消失的截面.</p>
-<p>当然我们也有其它的等价定义.
-$\xi$的一个定向对每个纤维$F$给出了一个$H^\ast (F|0;\mathbb{Z})$的定向,
-满足局部相容性.</p>
-<p><strong>定理 1</strong>. <em>若$\xi$为秩$n$定向实向量丛, 那么存在唯一一个类$u\in H^n(E|B;\mathbb{Z}),$ 限制在每个纤维上给出$H^n(F|0;\mathbb{Z})$的生成元.</em> </p>
-<p>证明思路: 我们采用MV方法来处理. 首先证明平凡丛$\xi$的情况,
-接下来考虑$B=U_1\cup U_2$的情况, 这样能给出$B$紧的证明.
-最后考虑$B$的穷竭序列即可.</p>
-<p>这样的类$u=u(\xi)$称为Thom类. 若考虑$\mathbb{Z}_2$系数,
-那么无需预先给出$\xi$的定向.</p>
-<p><strong>定理 2</strong> (Thom同构定理). <em>若$\xi$为秩$n$定向向量丛, 有Thom类$u.$ 那么$H^i(B;\mathbb{Z})\cong H^{n+i}(E|B;\mathbb{Z}),$ $\alpha\mapsto \pi^\ast \alpha \cup u.$</em> </p>
-<p>应用Leray-Hirsch定理到 </p>
+e(\tau_M)=\chi(M)\cdot PD([\ast ]).</script><p> 一般的,
+对$\xi$截面$s$与$M$横截相交的零截面$Z_s,$ 有</p>
 <script type="math/tex; mode=display">
-(F,F_0)\rightarrow (E,E_0)\rightarrow B.</script><p>那么首先$H^n(F|0)=\mathbb{Z}$自由生成, 其次由上一个定理, $i^\ast $是满射.
-这样$H^\ast (E|0)\cong H^\ast (B)\{u\}$就给出了结论.</p>
-<h2 id="欧拉类"><a href="#欧拉类" class="headerlink" title="欧拉类"></a>欧拉类</h2><p>对定向丛$\xi$定义欧拉类: $e(\xi)\in H^n(B;\mathbb{Z}),$ 使得</p>
+e(\xi)=PD(Z_s),\quad Z_s=\{s=0\}</script><h2 id="横截性理论"><a href="#横截性理论" class="headerlink" title="横截性理论"></a>横截性理论</h2><p>设$X$为紧定向$n$维流形, 那么有Poincaré对偶:</p>
 <script type="math/tex; mode=display">
-H^n(B;\mathbb{Z})\xrightarrow{\pi^\ast :\cong} H^n(E;\mathbb{Z})\leftarrow H^n(E|B;\mathbb{Z})</script><p>将$e(\xi)$与$u(\xi)$打到同一个元.</p>
-<p>它满足以下性质: 若$B\rightarrow B’$由保定向丛映射覆盖,
-那么$e(\xi)(=e(f^\ast \xi’))=f^\ast e(\xi’),$ 即满足自然性; 若$\xi$定向改变,
-则欧拉类改变符号;</p>
+PD_X:H_i(X)\rightarrow H^{n-i}(X), \alpha\cap [M]\leftarrow \alpha.</script><p>考虑横截积:</p>
 <script type="math/tex; mode=display">
-e(\xi\oplus\eta)=e(\xi)\cup e(\eta),\quad e(\xi\times \eta)=e(\xi)\times e(\eta).</script><p>若$\xi$有一个无处消失截面, 那么$e(\xi)=0.$
-因为这将给出$\xi=\varepsilon^1\oplus\varepsilon^\perp,$
-$e(\xi)=e(\varepsilon^1)\cup e(\varepsilon^\perp)=0.$</p>
-<p><strong>定理 3</strong>. <em>对光滑定向紧连通流形$M^n,$ $e(\tau_M)=\chi(M)\cdot PD([\ast ]),$ 或者说$\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$</em> </p>
-<p>由此可以推出Poincaré-Hopf定理: $\chi(M)\neq 0$ 则不存在无处消失向量场.</p>
-<p><strong>定理 4</strong>. <em>若$\xi$是同上假设的$M$上的光滑定向向量丛, 则$e(\xi)=PD([Z_s]),$ $Z_s$为$s$的零截面, 需要和$M$(默认零截面)横截相交.</em> </p>
-<p>取$\xi=\tau_M$即推出前一定理.</p>
-<p>若$\xi$是$B$上的秩$n$定向向量丛,
-$H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\mapsto w_n(\xi).$</p>
-<p>文章最后更新于 2022-10-26 21:15:00 </p>
+H_i(X)\times H_j(X)\rightarrow H_{i+j-n}(X),\quad (a,b)\mapsto a\cdot b,</script><script type="math/tex; mode=display">
+PD_X(a\cdot b)=PD_X(b)\cup PD_X(a).</script><p><strong>定理 1</strong>. <em>设$X$还是光滑的, $A,B$为横截相交闭光滑定向子流形. 那么$[A]_X\cdot [B]_X=[A\cap B]_X,$ 其中$[A]_X=i_\ast [A].$</em> </p>
+<p>给定$A\subset X,$ 定义$\tau_A^X:=PD([A]_X)\in H^{x-a}(X;\mathbb{Z}),$
+称为$A$在$X$中的Thom类. 那么 </p>
+<script type="math/tex; mode=display">
+[A]_X=\tau_A^X\cap [X].</script><p>记$\nu_A^X$为$A$在$X$中法丛, 我们有管状邻域定理:
+存在$A$在$X$中的管状邻域$N$, 满足: </p>
+<script type="math/tex; mode=display">
+E(\nu_A^X)\cong N.</script><p>这样,</p>
+<script type="math/tex; mode=display">
+u(\nu_A^X)\in H^{x-a}(E(\nu_A^X),E_0(\nu_A^X))\cong H^{x-a}(N,N\setminus A)\cong H^{x-a}(X,X\setminus A)\rightarrow H^{x-a}(X)\ni \tau_A^X.</script><p>我们将说明$\nu_A^X$的Thom类打到$A$在$X$中的Thom类, 这也是命名后者的原因.</p>
+<p>我们希望说明, </p>
+<script type="math/tex; mode=display">
+\nu_{B\cap A}^A\cong \nu_B^X|_{B\cap A}.</script><p>我们依纤维来检查: $\,\forall\,x\in A\cap B,$ $T_pA+T_pB=T_pX,$ 那么</p>
+<script type="math/tex; mode=display">
+T(i_A^X):T_pA/T_p(B\cap A)\cong T_pX/T_pB.</script><p>因此, $\tau^A_{B\cap A}=(i_A^X)^\ast \tau_B^X.$ 现在就可以证明定理了:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ [B\cap A]_X&=(i_A^X)_*(i^A_{B\cap A})_*[B\cap A]\\
+ &=(i_A^X)_*(\tau_{B\cap A}^A\cap [A])\\
+ &=(i_A^X)_*((i_A^X)^*\tau_B^X\cap [A])\\
+ &=\tau_B^X\cap ((i_A^X)_*[A])\\
+ &=\tau_B^X\cap (\tau_A^X\cap [X])\\
+ &=(\tau_B^X\cup\tau_A^X)\cap [X]\\
+ &=PD^{-1}(PD([B]_X)\cup PD([A]_X))\\
+ &=[B]_X\cdot [A]_X.
+ \end{aligned}</script><h2 id="Euler类"><a href="#Euler类" class="headerlink" title="Euler类"></a>Euler类</h2><p>回忆对定向丛$\xi,$ 我们给出Euler类:</p>
+<script type="math/tex; mode=display">
+H^n(E,E_0)\rightarrow H^n(E)\leftarrow H^n(B), \quad u(\xi)\mapsto u(\xi)|_E\leftarrow e(\xi).</script><p><strong>定理 2</strong>. <em>若$B$为闭定向光滑流形, $e(\xi)=PD([Z_s]).$ $Z_s=\{b\in B|s(b)=0\},$ $s$为$\xi$截面, 与零截面横截相交.</em> </p>
+<p>记$Z:=Z_s.$ 考虑$\nu_Z^B\cong \xi|_Z.$ $E(\nu_Z^B)\cong N\subset B.$</p>
+<script type="math/tex; mode=display">
+H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B,B\setminus Z)\rightarrow H^n(B).</script><script type="math/tex; mode=display">
+u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B=PD([Z]).</script><script type="math/tex; mode=display">
+H^n(B)\rightarrow H^n(E)\leftarrow H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B),</script><script type="math/tex; mode=display">
+e(\xi)\mapsto u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B.</script><p> 这样就看到了
+$e(\xi)=\tau_Z^B.$</p>
+<p><strong>定理 3</strong>. <em>$B=M^n$为闭定向流形, $\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$ 这与Poincaré-Hopf定理等价.</em> </p>
+<p>任取一个横截相交截面, 那么: </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \left<{}e(\tau_M),[M]\right>=\left<{}PD_M[Z_s],[M]\right>=\left<{}PD_M[M],[Z_s]\right>=\sum_{p\in Z_s} \text{index of $s$ at $p$}=\chi(M)
+ \end{aligned}</script><p>指标由$\det(\nabla s:T_pM\rightarrow T_pM)$的符号决定.</p>
+<p>一个应用是, $\chi(S^n)=2,$ 若$n$为偶数. 这样$e(\tau_{S^n})=2,$
+这与$w_n(\tau_{S^n})=0$对应. 那么$\tau_{S^n}$非平凡,
+且$\tau_{S^n}$不包含任何真子丛$\eta^m.$
+这是因为$e(\tau_{S^n})=e(\eta)\cup e(\eta^\perp).$</p>
+<h2 id="横截性理论的应用"><a href="#横截性理论的应用" class="headerlink" title="横截性理论的应用"></a>横截性理论的应用</h2><h3 id="杯积"><a href="#杯积" class="headerlink" title="杯积"></a>杯积</h3><p>回忆$H^\ast (\mathbb{C}\mathrm{P}^n;\mathbb{Z})$中的杯积. 取</p>
+<script type="math/tex; mode=display">
+\mathbb{C}\mathrm{P}^{n-1}\approx h_i=\{x_i=0\}\subset \mathbb{C}\mathrm{P}^n,</script><script type="math/tex; mode=display">
+[h_i]\in H_{2n-2}(\mathbb{C}\mathrm{P}^n).</script><p> 由横截性理论,</p>
+<script type="math/tex; mode=display">
+[h_1]\cdots[h_n]=[h_1\cap\cdots\cap h_n]=[\ast ]\in H_0(\mathbb{C}\mathrm{P}^n).</script><p>令$\tau_i:=PD[h_i]\in H^2(\mathbb{C}\mathrm{P}^n),$
+$\tau_1\cup\cdots\cup \tau_n=PD[\ast ].$</p>
+<p>断言$\tau_1=\cdots=\tau_n=\tau,$ 称为超(射影)平面类.
+这样$H^\ast (\mathbb{C}\mathrm{P}^n)=\mathbb{Z}[\tau]/\tau^{n+1}=0.$</p>
+<h3 id="Bezout’s-定理"><a href="#Bezout’s-定理" class="headerlink" title="Bezout’s 定理"></a>Bezout’s 定理</h3><p>假设$F_1(x,y,z),$ $F_2(x,y,z)$为齐次多项式, $\deg F_i=d_i.$</p>
+<script type="math/tex; mode=display">
+V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,</script><p>在代数几何中称为$\deg=d_i$的代数曲线.</p>
+<p><strong>定理 4</strong>. <em>若$V_1,V_2$横截相交, 那么$[V_1\cap V_2]_{\mathbb{C}\mathrm{P}^2}=d_1d_2[\ast ]_{\mathbb{C}\mathrm{P}^2}.$</em> </p>
+<p>简单来看, 就是因为$PD[V_1]=d_1\cdot \tau,$ $PD[V_2]=d_2\cdot \tau.$</p>
+<p>文章最后更新于 2022-10-28 16:41:58 </p>
 
         </div>
 
@@ -253,11 +285,11 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(13)-定向与欧拉类</li>
+        <li>本文标题：《代数拓扑2》笔记(14)-横截性理论</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-26 21:14:58</li>
+        <li>创建时间：2022-10-28 16:41:54</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/26/《代数拓扑2》笔记(13)-定向与欧拉类/
+            本文链接：https://dream0ar.github.io/2022/10/28/《代数拓扑2》笔记(14)-横截性理论/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -271,29 +303,14 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/10/28/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(14)-%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(14)-横截性理论</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/10/24/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(12)-Stiefel-Whitney%E7%A4%BA%E6%80%A7%E7%B1%BB%E7%9A%84%E5%AD%98%E5%9C%A8%E6%80%A7/"
+                           href="/2022/10/26/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(13)-%E5%AE%9A%E5%90%91%E4%B8%8E%E6%AC%A7%E6%8B%89%E7%B1%BB/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(12)-Stiefel-Whitney示性类的存在性</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(13)-定向与欧拉类</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -500,7 +517,7 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E4%B8%8EThom%E7%B1%BB"><span class="nav-text">定向与Thom类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E7%B1%BB"><span class="nav-text">欧拉类</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">横截性理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Euler%E7%B1%BB"><span class="nav-text">Euler类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">横截性理论的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%AF%E7%A7%AF"><span class="nav-text">杯积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bezout%E2%80%99s-%E5%AE%9A%E7%90%86"><span class="nav-text">Bezout’s 定理</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
