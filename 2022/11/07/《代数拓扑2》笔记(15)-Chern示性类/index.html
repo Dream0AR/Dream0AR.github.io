@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(14)-横截性理论 |
+            《代数拓扑2》笔记(15)-Chern示性类 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(14)-横截性理论</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(15)-Chern示性类</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-10-28 16:41:54
+        <i class="fas fa-edit"></i>&nbsp;2022-11-07 18:41:04
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,78 +206,108 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上次课我们对定向实向量丛$\xi^n,$
-定义了Thom类$u(\xi)\in H^n(E,E_0;\mathbb{Z}).$
-这给出了Euler类$e(\xi)\in H^n(B;\mathbb{Z}),$ 当$B=M^n$光滑时,</p>
+            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>横截相交与杯积由Poincaré对偶联系, $PD([S\cap T])=PD([S])\cup PD([T]).$
+一个应用是考虑$H^\ast (\mathbb{C}\mathrm{P}^n;\mathbb{Z})=\mathbb{Z}[\tau]/\tau^{n+1},$
+那么$\tau=PD[H],$
+$H$为$\mathbb{C}\mathrm{P}^n$中的超平面$\mathbb{C}\mathrm{P}^{n-1}\hookrightarrow \mathbb{C}\mathrm{P}^n.$</p>
+<p>另一个应用是Bezout定理. 设$F_i(x,y,z)$为一个齐次多项式, $\deg=d_i,$
+$i=1,2.$
+那么$V_i:=\{[x:y:z]|F_i=0\}\subset \mathbb{C}\mathrm{P}^2$称为$\deg d_i$的代数曲线.
+$V_i$为$\mathbb{C}\mathrm{P}^2$中的$1$维子流形.</p>
+<p>$[V_1]\in H_2(\mathbb{C}\mathrm{P}^2)\cong \mathbb{Z}.$
+令$\tau_1:=PD[V_1]\in H^2(\mathbb{C}\mathrm{P}^2)=\mathbb{Z}\{\tau\}.$
+断言$\tau_1=d_1\tau.$ 取$H\subset \mathbb{C}\mathrm{P}^2,$
+$H\cap V_1=d_i$个点. 那么$PD(H)\cup PD(V_1)=PD(d_i[\ast ]),$
+$\tau\cup \tau_1=d_1\tau^2.$ 这就推知了$\tau_1=d_1\tau.$</p>
+<p>从而$\tau_1\cup \tau_2=d_1d_2\tau^2,$ $[V_1\cap V_2]=d_1d_2$个点,
+若$V_1,V_2$横截相交.</p>
+<h2 id="复向量丛"><a href="#复向量丛" class="headerlink" title="复向量丛"></a>复向量丛</h2><p>考虑$\pi:E\rightarrow B,$ 纤维为$\mathbb{C}$-线性空间.
+如我们有$\mathbb{C}\mathrm{P}^n$上的典范复线丛$\gamma_n^1.$</p>
+<p>若$\omega$为$n$维复向量丛, 那么它也是一个$2n$维实向量丛.
+此时它总是可定向的实向量丛. 对于向量空间,
+$\operatorname{Iso}_\mathbb{R}(\mathbb{R}^{2n},V_\mathbb{R})\cong GL_{2n}(\mathbb{R}),$
+$\operatorname{Iso}_\mathbb{C}(\mathbb{C}^n,V)\cong GL_n(\mathbb{C}).$
+那么$\operatorname{Iso}_\mathbb{C}(\mathbb{C}^n,V)\subset \operatorname{Iso}_\mathbb{R}(\mathbb{R}^{2n},V_\mathbb{R})$诱导了$GL_n(\mathbb{C})\subset GL_{2n}(\mathbb{R}).$
+这就迫使包含只落在$GL_{2n}(\mathbb{R})$的某一个连通分支中,
+给出了一个定向.</p>
+<p>定义$(\gamma_1^1)^V:=\operatorname{Hom}_\mathbb{C}(\gamma_1^1,\varepsilon),$
+此时$\varepsilon$为平凡复线丛.
+这是一个$\dim_\mathbb{C}=1$的$\mathbb{C}\mathrm{P}^1$上线丛.
+断言$e((\gamma_1^1)^V_\mathbb{R})=\tau=PD([\ast ])\in H^2(\mathbb{C}\mathrm{P}^1;\mathbb{Z}),$
+或者说$\left&lt;{}e,[\mathbb{C}\mathrm{P}^1]\right&gt;=1.$</p>
+<p>固定一个向量$v\in \mathbb{C}^2\setminus\{0\},$
+我们有$(\gamma_1^1)^V$的截面$L\mapsto (u\mapsto \left&lt;{}u,v\right&gt;).$
+此时 </p>
 <script type="math/tex; mode=display">
-e(\tau_M)=\chi(M)\cdot PD([\ast ]).</script><p> 一般的,
-对$\xi$截面$s$与$M$横截相交的零截面$Z_s,$ 有</p>
+Z_s=\{L:s(L)=0\}=\{\left<{}v\right>^\perp\},</script><p>为$\mathbb{C}\mathrm{P}^1$中的一个点. 这样就有</p>
 <script type="math/tex; mode=display">
-e(\xi)=PD(Z_s),\quad Z_s=\{s=0\}</script><h2 id="横截性理论"><a href="#横截性理论" class="headerlink" title="横截性理论"></a>横截性理论</h2><p>设$X$为紧定向$n$维流形, 那么有Poincaré对偶:</p>
+e((\gamma_1^1)^V_\mathbb{R})=PD([Z_s])=PD([\ast ])=\tau.</script><p>一般地,
+$e((\gamma_n^1)^V_\mathbb{R})=\tau\in H^2(\mathbb{C}\mathrm{P}^n;\mathbb{Z}).$</p>
+<h2 id="Chern类"><a href="#Chern类" class="headerlink" title="Chern类"></a>Chern类</h2><p>设$\omega$为复向量丛$\mathbb{C}^n\rightarrow E\rightarrow B,$
+$B$为CW复形. 取投影丛</p>
 <script type="math/tex; mode=display">
-PD_X:H_i(X)\rightarrow H^{n-i}(X), \alpha\cap [M]\leftarrow \alpha.</script><p>考虑横截积:</p>
+\mathbb{C}\mathrm{P}^{n-1}\xrightarrow{\iota} P(E)\rightarrow B.</script><p>回忆由Leray-Hirsch,
+$H^\ast (\mathbb{C}\mathrm{P}^{n-1};\mathbb{Z})=\mathbb{Z}[b]/b^n.$
+事实上选取$b=-\tau,$ 因为$b=e((\tau^1_{n-1})_\mathbb{R}).$</p>
+<p>那么$H^\ast (P(E))=H^\ast (B)\{1,x,\cdots,x^{n-1}\},$
+$H^\ast (P(E))\xrightarrow{\iota^\ast }H^\ast (\mathbb{C}\mathrm{P}^{n-1}),$
+$x\mapsto b.$ 定义Chern类为$c_i=c_i(\omega)\in H^{2i}(B;\mathbb{Z}),$
+使得$H^\ast (P(E);\mathbb{Z})$中有$x^n-c_1x^{n-1}+c_2x^{n-2}-\cdots (-1)^nc_n=0.$</p>
+<p>Chern类满足如下性质:</p>
+<ol>
+<li><p>$c_0=1,$ $c_i=0,$ $\,\forall\,i&gt;n=\dim_\mathbb{C}(\omega);$</p>
+</li>
+<li><p>$c_i(f^\ast \omega)=f^\ast c_i(\omega);$</p>
+</li>
+<li><p>$c(\omega\oplus\eta)=c(\omega)\cup c(\eta),$
+$c(\omega):=\sum_{i=0}^\infty c_i(\omega);$</p>
+</li>
+<li><p>$c_1(\gamma_1^1)=b=-\tau\in H^2(\mathbb{C}\mathrm{P}^1;\mathbb{Z}),$
+$\left&lt;{}c_1(\gamma_1^1),[\mathbb{C}\mathrm{P}^1]\right&gt;=-1.$</p>
+</li>
+</ol>
+<p>为什么选取$b=-\tau$?
+我们选取有$c_1(\gamma_n^1)=e((\gamma_n^1)_\mathbb{R})=-\tau.$
+我们希望$c_1=e,$ 这就不得不选取相反的符号了.
+不过这样的好处是我们有$c_n(\omega)=e(\omega_\mathbb{R}),$
+$\,\forall\,$秩$n$复向量丛$\omega.$</p>
+<p>我们有分裂原理, 此时是系数为$\mathbb{Z}$的复版本. 可以用它来给出证明.</p>
+<p>有这些性质, 我们进而有如下结论:</p>
+<ol>
+<li><p>$c(\varepsilon^n)=1,$</p>
+</li>
+<li><p>$c_i(\omega\oplus \varepsilon^n)=c_i(\omega),$</p>
+</li>
+<li><p>$\omega^n$有$k$个独立截面, $\omega^n=\varepsilon^k\oplus\eta^{n-k},$
+$c_i(\omega^n)=c_i(\eta^{n-k})=0,$ $\,\forall\,i&gt;n-k.$</p>
+</li>
+<li><p>每个仿紧底空间上的$\omega$都能配备Hermitian度量.</p>
+</li>
+<li><p>若$\omega\cong \eta,$ 则$c_i(\omega)=c_i(\eta).$</p>
+</li>
+<li><p>$c_1(\gamma_n^1)=b=-\tau\in H^2(\mathbb{C}\mathrm{P}^n;\mathbb{Z}).$</p>
+</li>
+</ol>
+<h2 id="复Grassmannian流形"><a href="#复Grassmannian流形" class="headerlink" title="复Grassmannian流形"></a>复Grassmannian流形</h2><p>$G_n(\mathbb{C}^{n+k}):=\{X|X\subset \mathbb{C}^{n+k},\dim_\mathbb{C}X=n\}.$
+类似地, 它是一个紧光滑流形, 为$U_{n+k}/U_n\times U_k.$ 实维数为$2nk.$
+我们有$G_n(\mathbb{C}^{n+k})$上的典范丛$\gamma^n.$</p>
+<p><strong>定理 1</strong>. <em>每个仿紧空间上的秩$n$复向量丛都有一个到$G_n(\mathbb{C}^\infty)$上的$\gamma^n$的丛映照.</em> </p>
+<p><strong>定理 2</strong>. <em>$H^\ast (G_n(\mathbb{C}^\infty);\mathbb{Z})=\mathbb{Z}[c_1,\cdots,c_n].$</em> </p>
+<p>可以类似实版本证明, 另一种方式为谱序列.
+定义$V_n(\mathbb{C}^{n+k}):=\{(v_1,\cdots,v_n)|v_i\in \mathbb{C}^{n+k}, \perp\}.$
+我们有一个纤维丛:</p>
 <script type="math/tex; mode=display">
-H_i(X)\times H_j(X)\rightarrow H_{i+j-n}(X),\quad (a,b)\mapsto a\cdot b,</script><script type="math/tex; mode=display">
-PD_X(a\cdot b)=PD_X(b)\cup PD_X(a).</script><p><strong>定理 1</strong>. <em>设$X$还是光滑的, $A,B$为横截相交闭光滑定向子流形. 那么$[A]_X\cdot [B]_X=[A\cap B]_X,$ 其中$[A]_X=i_\ast [A].$</em> </p>
-<p>给定$A\subset X,$ 定义$\tau_A^X:=PD([A]_X)\in H^{x-a}(X;\mathbb{Z}),$
-称为$A$在$X$中的Thom类. 那么 </p>
+U_n\rightarrow V_n(\mathbb{C}^{n+k})\rightarrow G_n(\mathbb{C}^{n+k}),</script><p>更清楚地来看:</p>
 <script type="math/tex; mode=display">
-[A]_X=\tau_A^X\cap [X].</script><p>记$\nu_A^X$为$A$在$X$中法丛, 我们有管状邻域定理:
-存在$A$在$X$中的管状邻域$N$, 满足: </p>
+U_n\rightarrow U_{n+k}/U_k\rightarrow U_{n+k}/U_n\times U_k</script><p>可以验证$V_n(\mathbb{C}^{n+k})$是$2k$-连通的,
+$U_k\hookrightarrow U_{n+k}$诱导了$\pi_{\le 2k}$的同构.
+因此$V_n(\mathbb{C}^\infty)\cong \ast ,$ 存在纤维化</p>
 <script type="math/tex; mode=display">
-E(\nu_A^X)\cong N.</script><p>这样,</p>
-<script type="math/tex; mode=display">
-u(\nu_A^X)\in H^{x-a}(E(\nu_A^X),E_0(\nu_A^X))\cong H^{x-a}(N,N\setminus A)\cong H^{x-a}(X,X\setminus A)\rightarrow H^{x-a}(X)\ni \tau_A^X.</script><p>我们将说明$\nu_A^X$的Thom类打到$A$在$X$中的Thom类, 这也是命名后者的原因.</p>
-<p>我们希望说明, </p>
-<script type="math/tex; mode=display">
-\nu_{B\cap A}^A\cong \nu_B^X|_{B\cap A}.</script><p>我们依纤维来检查: $\,\forall\,x\in A\cap B,$ $T_pA+T_pB=T_pX,$ 那么</p>
-<script type="math/tex; mode=display">
-T(i_A^X):T_pA/T_p(B\cap A)\cong T_pX/T_pB.</script><p>因此, $\tau^A_{B\cap A}=(i_A^X)^\ast \tau_B^X.$ 现在就可以证明定理了:</p>
-<script type="math/tex; mode=display">
-\begin{aligned}
- [B\cap A]_X&=(i_A^X)_*(i^A_{B\cap A})_*[B\cap A]\\
- &=(i_A^X)_*(\tau_{B\cap A}^A\cap [A])\\
- &=(i_A^X)_*((i_A^X)^*\tau_B^X\cap [A])\\
- &=\tau_B^X\cap ((i_A^X)_*[A])\\
- &=\tau_B^X\cap (\tau_A^X\cap [X])\\
- &=(\tau_B^X\cup\tau_A^X)\cap [X]\\
- &=PD^{-1}(PD([B]_X)\cup PD([A]_X))\\
- &=[B]_X\cdot [A]_X.
- \end{aligned}</script><h2 id="Euler类"><a href="#Euler类" class="headerlink" title="Euler类"></a>Euler类</h2><p>回忆对定向丛$\xi,$ 我们给出Euler类:</p>
-<script type="math/tex; mode=display">
-H^n(E,E_0)\rightarrow H^n(E)\leftarrow H^n(B), \quad u(\xi)\mapsto u(\xi)|_E\leftarrow e(\xi).</script><p><strong>定理 2</strong>. <em>若$B$为闭定向光滑流形, $e(\xi)=PD([Z_s]).$ $Z_s=\{b\in B|s(b)=0\},$ $s$为$\xi$截面, 与零截面横截相交.</em> </p>
-<p>记$Z:=Z_s.$ 考虑$\nu_Z^B\cong \xi|_Z.$ $E(\nu_Z^B)\cong N\subset B.$</p>
-<script type="math/tex; mode=display">
-H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B,B\setminus Z)\rightarrow H^n(B).</script><script type="math/tex; mode=display">
-u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B=PD([Z]).</script><script type="math/tex; mode=display">
-H^n(B)\rightarrow H^n(E)\leftarrow H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B),</script><script type="math/tex; mode=display">
-e(\xi)\mapsto u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B.</script><p> 这样就看到了
-$e(\xi)=\tau_Z^B.$</p>
-<p><strong>定理 3</strong>. <em>$B=M^n$为闭定向流形, $\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$ 这与Poincaré-Hopf定理等价.</em> </p>
-<p>任取一个横截相交截面, 那么: </p>
-<script type="math/tex; mode=display">
-\begin{aligned}
- \left<{}e(\tau_M),[M]\right>=\left<{}PD_M[Z_s],[M]\right>=\left<{}PD_M[M],[Z_s]\right>=\sum_{p\in Z_s} \text{index of $s$ at $p$}=\chi(M)
- \end{aligned}</script><p>指标由$\det(\nabla s:T_pM\rightarrow T_pM)$的符号决定.</p>
-<p>一个应用是, $\chi(S^n)=2,$ 若$n$为偶数. 这样$e(\tau_{S^n})=2,$
-这与$w_n(\tau_{S^n})=0$对应. 那么$\tau_{S^n}$非平凡,
-且$\tau_{S^n}$不包含任何真子丛$\eta^m.$
-这是因为$e(\tau_{S^n})=e(\eta)\cup e(\eta^\perp).$</p>
-<h2 id="横截性理论的应用"><a href="#横截性理论的应用" class="headerlink" title="横截性理论的应用"></a>横截性理论的应用</h2><h3 id="杯积"><a href="#杯积" class="headerlink" title="杯积"></a>杯积</h3><p>回忆$H^\ast (\mathbb{C}\mathrm{P}^n;\mathbb{Z})$中的杯积. 取</p>
-<script type="math/tex; mode=display">
-\mathbb{C}\mathrm{P}^{n-1}\approx h_i=\{x_i=0\}\subset \mathbb{C}\mathrm{P}^n,</script><script type="math/tex; mode=display">
-[h_i]\in H_{2n-2}(\mathbb{C}\mathrm{P}^n).</script><p> 由横截性理论,</p>
-<script type="math/tex; mode=display">
-[h_1]\cdots[h_n]=[h_1\cap\cdots\cap h_n]=[\ast ]\in H_0(\mathbb{C}\mathrm{P}^n).</script><p>令$\tau_i:=PD[h_i]\in H^2(\mathbb{C}\mathrm{P}^n),$
-$\tau_1\cup\cdots\cup \tau_n=PD[\ast ].$</p>
-<p>断言$\tau_1=\cdots=\tau_n=\tau,$ 称为超(射影)平面类.
-这样$H^\ast (\mathbb{C}\mathrm{P}^n)=\mathbb{Z}[\tau]/\tau^{n+1}=0.$</p>
-<h3 id="Bezout’s-定理"><a href="#Bezout’s-定理" class="headerlink" title="Bezout’s 定理"></a>Bezout’s 定理</h3><p>假设$F_1(x,y,z),$ $F_2(x,y,z)$为齐次多项式, $\deg F_i=d_i.$</p>
-<script type="math/tex; mode=display">
-V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,</script><p>在代数几何中称为$\deg=d_i$的代数曲线.</p>
-<p><strong>定理 4</strong>. <em>若$V_1,V_2$横截相交, 那么$[V_1\cap V_2]_{\mathbb{C}\mathrm{P}^2}=d_1d_2[\ast ]_{\mathbb{C}\mathrm{P}^2}.$</em> </p>
-<p>简单来看, 就是因为$PD[V_1]=d_1\cdot \tau,$ $PD[V_2]=d_2\cdot \tau.$</p>
-<p>文章最后更新于 2022-10-28 16:41:58 </p>
+U_n\rightarrow V_n(\mathbb{C}^\infty)\rightarrow
+ G_n(C^\infty).</script><p>那么由LSSS, $E_2^{p,q}=H^p(G_n)\otimes H^q(U_n)\Rightarrow H^\ast (\ast ).$
+回忆$H^\ast (U_n)=\Lambda^\ast (x_1,x_3,\cdots,x_{2n-1}).$
+分析谱序列可得$H^\ast (G_n)=\mathbb{Z}[c_1,\cdots,c_n].$</p>
+<p>文章最后更新于 2022-11-07 18:41:05 </p>
 
         </div>
 
@@ -285,11 +315,11 @@ V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,<
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(14)-横截性理论</li>
+        <li>本文标题：《代数拓扑2》笔记(15)-Chern示性类</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-28 16:41:54</li>
+        <li>创建时间：2022-11-07 18:41:04</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/28/《代数拓扑2》笔记(14)-横截性理论/
+            本文链接：https://dream0ar.github.io/2022/11/07/《代数拓扑2》笔记(15)-Chern示性类/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -303,29 +333,14 @@ V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,<
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/11/07/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(15)-Chern%E7%A4%BA%E6%80%A7%E7%B1%BB/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(15)-Chern示性类</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/10/26/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(13)-%E5%AE%9A%E5%90%91%E4%B8%8E%E6%AC%A7%E6%8B%89%E7%B1%BB/"
+                           href="/2022/10/28/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(14)-%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(13)-定向与欧拉类</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(14)-横截性理论</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -532,7 +547,7 @@ V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,<
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">横截性理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Euler%E7%B1%BB"><span class="nav-text">Euler类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">横截性理论的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%AF%E7%A7%AF"><span class="nav-text">杯积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bezout%E2%80%99s-%E5%AE%9A%E7%90%86"><span class="nav-text">Bezout’s 定理</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E5%90%91%E9%87%8F%E4%B8%9B"><span class="nav-text">复向量丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chern%E7%B1%BB"><span class="nav-text">Chern类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8DGrassmannian%E6%B5%81%E5%BD%A2"><span class="nav-text">复Grassmannian流形</span></a></li></ol>
     </div>
 </div>
         </aside>
