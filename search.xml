@@ -10295,4 +10295,60 @@ U_n\rightarrow V_n(\mathbb{C}^\infty)\rightarrow
         <category>代数拓扑2</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(16)-复向量丛</title>
+    <url>/2022/11/09/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(16)-%E5%A4%8D%E5%90%91%E9%87%8F%E4%B8%9B/</url>
+    <content><![CDATA[<h2 id="与实向量丛的差异"><a href="#与实向量丛的差异" class="headerlink" title="与实向量丛的差异"></a>与实向量丛的差异</h2><h3 id="复共轭丛"><a href="#复共轭丛" class="headerlink" title="复共轭丛"></a>复共轭丛</h3><p>一个秩$2n$实向量丛的复结构指一个连续映射$J:E(\xi)\rightarrow E(\xi),$
+限制在每个纤维上为$\mathbb{R}$线性映射, 且$J(J(v))=-v.$
+可以将$J$理解为虚部.</p>
+<p><strong>注 1</strong>. <em>配备复结构的秩$2n$实向量丛等价于秩$n$复向量丛. 设$M^{2n}$为实流形, $\tau_M$的复结构称为$M$上的近复结构. 实流形$M^{2n}$配备近复结构且$J$满足一些微分方程(C-R方程?)当且仅当$M^n$为复流形.</em> </p>
+<p><strong>定义 2</strong>. <em>给定复向量丛$\omega,$ 它的复共轭为复向量丛$\overline\omega,$ 使得恒等映射$E(\omega)\xrightarrow{f=\mathrm{id} }E(\overline\omega)$是复共轭线性的, 即$f(\lambda e)=\overline\lambda e.$ 因此$J_{\overline\omega}=-J_{\omega}.$</em> </p>
+<p>假设$\omega$有一个Hermitian度量, 即</p>
+<script type="math/tex; mode=display">
+\left<{}\lambda v,w\right>=\lambda\left<{}v,w\right>,\quad \left<{}v,\lambda w\right>=\overline\lambda\left<{}v,w\right>,\quad \left<{}v,w\right>=\overline{\left<{}w,v\right>}.</script><p>那么有$\overline{\omega}\xrightarrow{\cong_\mathbb{C} } \operatorname{Hom}_{\mathbb{C} }(\omega,\varepsilon)=:\omega^V,$
+$v\mapsto(w\mapsto\left&lt;{}w,v\right&gt;).$</p>
+<p>一般地, 作为复向量丛, $\omega\not\cong \overline\omega.$
+这和实版本很不一样.
+一个例子是考虑$\gamma^1:\mathbb{C}\rightarrow E\rightarrow \mathbb{C}\mathrm{P}^\infty,$</p>
+<script type="math/tex; mode=display">
+\gamma^1\otimes \overline{\gamma}^1\cong \gamma^1\otimes \operatorname{Hom}_\mathbb{C}(\gamma^1,\varepsilon)\cong \varepsilon.</script><p>因此$c_1(\gamma^1)+c_1(\overline\gamma^1)=c_1(\varepsilon)=0,$
+从而$c_1(\overline\gamma^1)=-c_1(\gamma^1)=\tau\in H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}).$
+这就说明了$\overline\gamma^1\not\cong \gamma^1.$</p>
+<p><strong>注 3</strong>. <em>在代数几何中, 记$\gamma^1$为$O(-1),$ $\overline\gamma^1=O(1).$ $\mathbb{C}\cong \mathbb{R}^2$上的复共轭改变定向, $(\overline\gamma^1)_\mathbb{R}=\overline{(\gamma^1)}_\mathbb{R}.$</em> </p>
+<h3 id="SW类与Chern示性类"><a href="#SW类与Chern示性类" class="headerlink" title="SW类与Chern示性类"></a>SW类与Chern示性类</h3><p><strong>定理 4</strong>. <em>设$\xi$为复向量丛, 忘掉它的复结构, 那么$w_{2i+1}(\xi_{\mathbb{R} })=0,$ $w_{2i}(\xi_\mathbb{R})=c_i(\xi)\mod 2.$ 即$H^{2i}(B;\mathbb{Z})\rightarrow H^{2i}(B;\mathbb{Z}_2),$ $c_i(\xi)\mapsto w_{2i}(\xi_\mathbb{R}).$ 特别地, $w_{2n}(\xi_\mathbb{R})=c_n(\xi)=e(\xi_\mathbb{R})\mod 2.$</em> </p>
+<p>注意到, 我们有纤维丛</p>
+<script type="math/tex; mode=display">
+\mathbb{R}\mathrm{P}^1\rightarrow \mathbb{R}\mathrm{P}^{2n-1}\rightarrow \mathbb{C}\mathrm{P}^{n-1}, \quad \ell\mapsto \ell\otimes_\mathbb{R}\mathbb{C}.</script><p>考虑$\widehat f:E(\xi)\rightarrow \mathbb{C}^\infty,$
+是$\mathbb{C}$线性的且依纤维单射, 有</p>
+<script type="math/tex; mode=display">
+\mathbb{C}^n\hookrightarrow E(\xi)\xrightarrow{\widehat f}\mathbb{C}^\infty.</script><p>考虑实投影丛,</p>
+<script type="math/tex; mode=display">
+\mathbb{R}\mathrm{P}^{2n-1}\rightarrow \mathbb{R}\mathrm{P}(E(\xi)_\mathbb{R})\rightarrow \mathbb{R}\mathrm{P}^\infty;</script><p>考虑复投影丛,</p>
+<script type="math/tex; mode=display">
+\mathbb{C}\mathrm{P}^{n-1}\rightarrow \mathbb{C}\mathrm{P}(E(\xi))\rightarrow \mathbb{C}\mathrm{P}^\infty.</script><p>这两行中每一列又都是纤维为$\mathbb{R}\mathrm{P}^1$的纤维丛.</p>
+<p>这样我们可以得到$H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z})\rightarrow H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}_2)\rightarrow H^2(\mathbb{R}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$\beta\mapsto \overline\beta\mapsto \alpha^2,$ 可由Leray-Hirsch证明.</p>
+<p>对于右侧第一个方块,
+$H^2(\mathbb{R}\mathrm{P}(E);\mathbb{Z}_2)\leftarrow H^2(\mathbb{R}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$x^2(\xi_\mathbb{R})\leftarrow \alpha^2;$
+$H^2(\mathbb{C}\mathrm{P}(E);\mathbb{Z}_2)\leftarrow H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$\overline x_\mathbb{C}(\xi)\leftarrow \overline\beta.$
+那么模$2$的Chern类依定义,</p>
+<script type="math/tex; mode=display">
+\overline x_\mathbb{C}(\xi)^n+\overline c_1(\xi)\overline x_\mathbb{C}(\xi)^{n-1}+\cdots+\overline c_n(\xi)=0\in H^{2n}(\mathbb{C}\mathrm{P}(\xi);\mathbb{Z}_2),</script><p>打到了</p>
+<script type="math/tex; mode=display">
+x(\xi_{\mathbb{R} })^{2n}+\overline c_1(\xi)[x(\xi_\mathbb{R})^2]^{n-1}+\cdots +\overline c_n(\xi)=0\in H^{2n}(\mathbb{R}\mathrm{P}(\xi_\mathbb{R});\mathbb{Z}_2).</script><h2 id="示性类与阻碍性理论"><a href="#示性类与阻碍性理论" class="headerlink" title="示性类与阻碍性理论"></a>示性类与阻碍性理论</h2><h3 id="阻碍性理论"><a href="#阻碍性理论" class="headerlink" title="阻碍性理论"></a>阻碍性理论</h3><p>何时纤维丛$F\rightarrow E\rightarrow B$有一个截面?
+想法是若$B$为一个CW复形, 考虑$B^0\subset B^1\subset B^2\subset \cdots,$
+尝试按顺序定义骨架上的截面.</p>
+<p><strong>定理 5</strong>. <em>假设$F\rightarrow E\rightarrow B$为一个纤维丛, $B$为CW复形, $F$是$n$-simple的, 即$\pi_1(F,x_0)$作用在$\pi_n(F,x_0)$上是平凡的. 令$s$为$B^{n-1}$截面, 可被延拓为$B^n$上截面. 那么存在障碍类$ob(s)\in H^{n+1}(B;\pi_n(F))$(局部系数), 使得$ob(s)=0$当且仅当它可以被延拓到$B^{n+1}$上.</em> </p>
+<p><strong>注 6</strong>. <em>找到一个截面的同伦等于找到$F\rightarrow E\times I\rightarrow B\times I\hookleftarrow B\times\partial I$延拓两个截面$s,s’.$ 阻碍在$H^{n+1}(B\times I,B\times\partial I;\pi_n(F))\cong \pi^n(B;\pi_n(F))$中.</em> </p>
+<p><strong>注 7</strong>. <em>假设$F$($n-1$)连通, 截面的障碍在$H^i(B;\pi_{i-1}(F))=0$中, $i\le n;$ 截面同伦的障碍在$H^i(B;\pi_i(F))=0$中, $i\le n-1.$ 因此存在$B^n$上的截面, 并且$s|_{B^{n-1} }$在同伦意义下唯一. $ob(s)\in H^{n+1}(B;\pi_n(F))$与截面选取无关. 这称为第一障碍类.</em> </p>
+<p>文章最后更新于 2022-11-09 17:19:15 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>
