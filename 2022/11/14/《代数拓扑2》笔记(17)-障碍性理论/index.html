@@ -9,7 +9,7 @@
     
     <title>
         
-            《几何测度论导论》讲义笔记(1.1)-基本概念 |
+            《代数拓扑2》笔记(17)-障碍性理论 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《几何测度论导论》讲义笔记(1.1)-基本概念</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(17)-障碍性理论</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-09 11:03:10
+        <i class="fas fa-edit"></i>&nbsp;2022-11-14 19:10:03
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E6%B5%8B%E5%BA%A6%E8%AE%BA/">几何测度论</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,144 +206,68 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="外测度"><a href="#外测度" class="headerlink" title="外测度"></a>外测度</h2><p>回忆$X$上外测度$\mu$指$2^X\rightarrow [0,\infty]$的单调次可加函数,
-满足$\mu(\varnothing)=0.$ 有时简称其为测度, 若不会导致混淆的话.
-称集合$A\subset X$是$\mu$-可测的, 若$\,\forall\,S\subset X,$
-$\mu(S)=\mu(S\setminus A)+\mu(S\cap A).$ 后者称为Caratheodory条件,
-指集合$A$能够关于”$\mu$-可加地”切割其它集合.</p>
-<p><strong>注 1.1</strong>. <em>事实上由次可加性, 条件等价于$\mu(S)\ge\mu(S\setminus A)+\mu(S\cap A).$ 由此易证任意$\mu$-零测集都是$\mu$-可测的.</em> </p>
-<p>由于$S\setminus A=S\cap (X\setminus A),$
-易见$A$为$\mu$-可测的当且仅当$X\setminus A$也是.
-设$A_1,A_2$是$\mu$-可测的, 那么$\,\forall\,S\subset X,$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-            \mu(S)=&\mu(S\setminus A_1)+\mu(S\cap A_1)& A_1\text{是$\mu$-可测的}\\
-            =&\mu((S\setminus A_1)\setminus A_2)+\mu((S\setminus A_1)\cap A_2)+\mu(S\cap A_1)& A_2\text{是$\mu$-可测的}\\
-            \ge&\mu(S\setminus (A_1\cup A_2))+\mu(S\cap((A_2\setminus A_1)\cup A_1))& \text{次可列可加性}\\
-            =&\mu(S\setminus(A_1\cup A_2))+\mu(S\cap(A_1\cup A_2)),
-        \end{aligned}</script><p>从而$A_1\cup A_2$是$\mu$-可测的.
-那么$X\setminus((X\setminus A_1)\cup (X\setminus A_2))=A_1\cap A_2$也是$\mu$-可测的,
-$A_2\setminus A_1=A_2\cap (X\setminus A_1)$也是.
-归纳可知有限步并,交,补运算均保持$\mu$-可测的性质.
-Caratheodory条件给无交$\mu$-可测集赋予了可加性:</p>
-<p><strong>引理 1.2</strong> (可列可加性). <em>若$A_1,\cdots$为无交$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).$</em> </p>
-<p><strong>证:</strong> 由次可列可加性,
-$\mu(S\cap \bigcup_{i=1}^\infty A_i)\le \sum_{i=1}^\infty\mu(S\cap A_i).$
-由Caratheodory条件, $\,\forall\,S\subset X,$
-$\mu(S\cap (A_1\cup A_2))=\mu((S\cap (A_1\cup A_2))\setminus A_1)+\mu(S\cap(A_1\cup A_2)\cap A_1)= \mu(S\cap A_1)+\mu(S\cap A_2).$
-从而可归纳到有限个无交$\mu$-可测集的情况.</p>
-<p>现有$\sum_{i=1}^n \mu(S\cap A_i)=\mu(S\cap\bigcup_{i=1}^n A_i)\le \mu(S\cap \bigcup_{i=1}^\infty A_i).$
-令$n\rightarrow\infty,$ 即得到另一个方向的不等式, 从而命题得证.</p>
-<p><strong>引理 1.3</strong>. <em>若$A_1,\cdots$为递增$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
-<p><strong>证:</strong> 记$A_0=\varnothing,$
-由于$\bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty (A_i\setminus A_{i-1}),$
-由可列可加性,</p>
-<script type="math/tex; mode=display">\begin{aligned}
-                \mu(S\cap \bigcup_{i=1}^\infty A_i)&=\mu(S\cap \bigcup_{i=1}^\infty (A_{i}\setminus A_{i-1}))\\
-                &= \sum_{i=1}^\infty \mu(S\cap (A_i\setminus A_{i-1}))\\
-                &=\lim\limits_n \sum_{i=1}^n \mu(S\cap (A_i\setminus A_{i-1}))\\
-                &=\lim\limits_{n}\mu(S\cap A_n),
-            \end{aligned}</script><p>命题得证.</p>
-<p><strong>推论 1.4</strong>. <em>设$A_1,\cdots$为递减$\mu$-可测集, 若$\,\exists\,A_k$测度有限, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
-<p>称$X$一系列子集的集合$\mathcal{S}$为$\sigma$-代数, 若:</p>
-<p>(1) $\varnothing,X\in \mathcal{S};$</p>
-<p>(2) $A\in \mathcal{S}\Rightarrow X\setminus A\in \mathcal{S};$</p>
-<p>(3) $A_1,\cdots \in \mathcal{S}\Rightarrow \bigcup_{i=1}^\infty A_i\in \mathcal{S}.$</p>
-<p><strong>注 1.5</strong>. <em>$\sigma$-代数对可列并与取补运算封闭, 易见它对可列交也是封闭的. 由于$\sigma$-代数的交仍为$\sigma$-代数, 可以找到包含一系列指定集合的最小的一个$\sigma$-代数. 特别地, 对拓扑空间$X,$ 包含所有开集的最小$\sigma$-代数称为$X$中的Borel代数, 其中集合称为Borel集.</em> </p>
-<p><strong>引理 1.6</strong>. <em>$\mu$-可测集全体构成$\sigma$-代数, 包含所有$X$的$\mu$-零测集.</em> </p>
-<p><strong>证:</strong> 只需证若$A_1,\cdots$是$\mu$-可测的,
-则$\bigcup_{i=1}^\infty A_i$也是.
-记$B_i=\bigcup_{j=1}^i A_j$为递增$\mu$-可测集,
-则$\,\forall\,S\subset X,$</p>
-<script type="math/tex; mode=display">\begin{aligned}
-                \mu(S)&=\mu(S\setminus \bigcup_{i=1}^n A_i)+\mu(S\cap \bigcup_{i=1}^n A_i)\\
-                &\ge\mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap B_n).
-            \end{aligned}</script><p>令$n\rightarrow \infty,$ 即有</p>
-<script type="math/tex; mode=display">\begin{aligned}
-                \mu(S)&\ge \mu(S\setminus \bigcup_{i=1}^\infty A_i)+ \mu(S\cap \bigcup_{n=1}^\infty B_n)\\
-                &= \mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap \bigcup_{i=1}^\infty A_i),
-            \end{aligned}</script><p>从而命题得证.</p>
-<h2 id="Borel正则测度"><a href="#Borel正则测度" class="headerlink" title="Borel正则测度"></a>Borel正则测度</h2><p>称外测度$\mu$是<strong>正则的</strong>, 若$\,\forall\,A\subset X,$
-存在$\mu$-可测集$B\supset A$满足$\mu(B)=\mu(A).$
-此时先前关于$A_i$为单调列的性质无需再假设$A_i$是$\mu$-可测的.</p>
-<p>当$X$为拓扑空间时,
-外测度$\mu$是<strong>Borel正则的</strong>若所有Borel集都是$\mu$-可测的,
-且$\,\forall\,A\subset X,$ 存在Borel集$B\supset A$满足$\mu(B)=\mu(A).$</p>
-<p>需要强调的是$\mu(B)=\mu(A)$不意味着$\mu(B\setminus A)=0,$
-除非$A$是$\mu-$可测的且$\mu(A)&lt;\infty.$</p>
-<p><strong>注 1.7</strong>. <em>回忆Borel测度$\mu_0$为Borel集全体到$[0,\infty]$上的映射, 满足$\mu_0(\varnothing)=0$与可列可加性(从而蕴含单调性). 此时$\,\forall\,A\subset X,$ $\mu(A):=\inf\limits_{B\text{ Borel, }B\supset A}\mu_0(B)$便定义了一个Borel正则外测度, 在Borel集全体上与$\mu_0$一致. 反过来一个Borel正则外测度在Borel集全体上的限制即为一个Borel测度.</em> </p>
-<p>给定任意子集$Y\subset X$与外测度$\mu,$ 可以定义一个新的外测度$\mu |_Y,$
-$\mu|_Y(Z):=\mu(Y\cap Z),$ $Z\subset X.$
-任意$\mu$-可测集都是$\mu|_Y$-可测的, 即使$Y$本身不见得$\mu$-可测.
-当$Y$是$\mu$-可测的且$\mu(Y)&lt;\infty$时, 若$\mu$是Borel正则的,
-则$\mu|_Y$也是.
-关于这一点只需利用$\mu$的Borel正则性取合适的$B_1\supset Y,$
-$B_2\supset B_1\setminus Y,$ $B_3\supset A\cap Y.$
-那么$A\subset (X\setminus B_1)\cup B_2\cup B_3$且两者$\mu|_Y$测度相同.</p>
-<p>当$X$为度量空间时, 对$A,B\subset X,$
-记$d(A,B)=\inf\{d(a,b):a\in A,b\in B\}.$ $\inf\varnothing:=+\infty.$</p>
-<p><strong>定理 1.8</strong> (Caratheodory判别法). <em>设$(X,d)$为度量空间, $\mu$为外测度. 若$\mu(A\cup B)=\mu(A)+\mu(B),$ $\,\forall\,A,B\subset X$满足$d(A,B)&gt;0,$ 则所有Borel集都是$\mu$-可测的.</em> </p>
-<p><strong>证:</strong> 只需证明所有闭集均是$\mu$-可测的. $\,\forall\,$闭集$C\subset X,$
-取$C_j=\{x\in X:d(x,C)\le \frac{1}{j}\}.$ 那么$\,\forall\,S\subset X,$
-$d(S\setminus C_j,S\cap C)&gt;0.$
-从而有<script type="math/tex">\mu(S)\ge \mu(S\setminus C_j)+\mu(S\cap C),\quad \,\forall\,j>0.</script></p>
-<p>令$j\rightarrow \infty,$ 由于$S\setminus C_j=S\cap (X\setminus C_j),$
-$X\setminus C_j$单增,
-从而$\lim\limits_{j\rightarrow \infty}\mu(S\setminus C_j)=\mu(S\setminus \bigcap_{j}C_j)=\mu(S\setminus C).$
-最后一个等号是因为$C$为闭集, 故所有与$C$距离为零的点都在$C$中.
-因此<script type="math/tex">\mu(S)\ge \mu(S\setminus C)+\mu(S\cap C),</script>从而任意闭集$C$是可测的,
-命题得证.</p>
-<p><strong>定义 1.9</strong>. <em>称Borel正则测度$\mu$是<strong>开</strong>$\sigma$<strong>-有限</strong>的, 若$X=\bigcup_j V_j,$ $V_j$为开集且测度有限.</em> </p>
-<p>显然当$X$为可分度量空间, $\mu$局部有限时, 它是开$\sigma$-有限的.</p>
-<p><strong>定理 1.10</strong>. <em>设拓扑空间$X$中每个闭集均是可列个开集之交, 设$\mu$是开$\sigma$-有限的Borel正则测度, 那么$\,\forall\,A\subset X,$ <script type="math/tex">\mu(A)=\inf_{\text{开集}U\supset A}\mu(U).</script></em>  <em>若$A$是$\mu$-可测的, 那么还有<script type="math/tex">\mu(A)=\sup_{\text{闭集}C\subset A}\mu(C).</script></em> </p>
-<p><strong>思路:</strong> 分全空间测度有限/无限的情况讨论. 取使结论成立的集合全体,
-证其包含$\sigma$-代数, 其中又包含所有开集, 进而包含整个Borel代数.
-最后由正则性即得结论.</p>
-<p><strong>证:</strong> 首先假设$\mu(X)&lt;\infty,$ 此时$(1)\Rightarrow (2).$
-由测度是Borel正则的, 只需证明$A$为Borel集的情况.
-取$\mathcal{A}:=\{\text{Borel集}A\subset X:\text{(1)成立}\},$
-那么$\mathcal{A}$自然包含所有开集.</p>
-<p>取$A_1,\cdots\in \mathcal{A}.$ $\,\forall\,\varepsilon&gt;0,$
-$\,\exists\,$开$U_1,\cdots,$ 满足$U_j\supset A_j,$
-且$\mu(U_j\setminus A_j)\le 2^{-j}\varepsilon.$
-那么<script type="math/tex">\mu(\bigcup_j U_j \setminus \bigcup_j A_j),\mu(\bigcap_j U_j\setminus \bigcap_j A_j)\le \sum_j\mu(U_j\setminus A_j)\le \varepsilon,</script>
-从而$\bigcup_j A_j,\bigcap_j A_j\in \mathcal{A},$ 集合对可列并,
-可列交封闭. 由于任意闭集是开集可列交, 全体闭集均在$\mathcal{A}$中.</p>
-<p>取$\widetilde{\mathcal{A} }:=\{A\in \mathcal{A}:X\setminus A\in \mathcal{A}\},$
-那么容易验证$\widetilde{\mathcal{A} }$为包含全体开集的$\sigma$-代数,
-从而$\mathcal{A}$包含(即为)Borel集全体, $\mu(X)$有限的情况得证.</p>
-<p>对$\mu(X)=\infty$的情况, 只需利用$X$的$\sigma$-有限性,
-取$X=\bigcup_{j} V_j,$ 每个$V_j$测度有限. 此时$\mu|_{V_{j} }(X)&lt;\infty,$
-应用前面的结论, $\,\forall\,\varepsilon&gt;0,$
-有开集$U_j\supset A$满足$\mu(U_j\cap V_j\setminus A)\le2^{-j}\varepsilon,$
-从而$\mu(\bigcup_{j}(U_j\cap V_j)\setminus A)\le \varepsilon.$
-由于$\bigcup_j (U_j\cap V_j)$为含$A$开集, (1)成立.</p>
-<p>对(2), 类似地$\,\forall\,\varepsilon&gt;0,$
-有闭集$C_j\subset A$满足$\mu(A\cap V_j\setminus C_j)\le 2^{-j}\varepsilon.$
-那么<script type="math/tex">\mu(A\setminus \bigcup_j C_j)=\mu( A\cap \bigcup_jV_j\setminus \bigcup_jC_j)\le \sum_j \mu(A\cap V_j\setminus C_j) \le \varepsilon.</script>
-从而当$\mu(A)=\infty$时, $\mu(\bigcup_{j=1}^NC_j)\rightarrow \infty;$
-$\mu(A)&lt;\infty$时,
-对足够大的$N$有$\mu(A\setminus \bigcup_{j=1}^N C_j)\le 2\varepsilon.$
-因此(2)得证.</p>
-<p><strong>注 1.11</strong>. <em>注意若$X$是$\sigma$-紧的Hausdorff空间, 即全空间为可列个紧集之并. 那么第二个性质可推出<script type="math/tex">\mu(A)=\sup_{\text{紧集}K\subset A}\mu(K).</script> 这是因为在上述假设下, 任意闭集为一列递增紧集之并.</em> </p>
-<p>由上述定理可证明Lusin定理:</p>
-<p><strong>定理 1.12</strong> (Lusin). <em>令$\mu$为Borel正则外测度, 拓扑空间$X$中所有闭集均为可列开集之交(如$X$取度量空间即可). 令$A$为$\mu$-可测集且测度有限, $f:A\rightarrow \mathbb{R}$为可测函数. 那么$\,\forall\,\varepsilon&gt;0,$ 存在$X$中闭集$C\subset A,$ 满足$\mu(A\setminus C)&lt;\varepsilon,$ 且$f|_C$连续.</em> </p>
-<p><strong>证:</strong> 取$A_{ij}=f^{-1}[\frac{j-1}{i},\frac{j}{i}),$
-$i\in \mathbb{Z}_+,$ $j\in \mathbb{Z}.$
-那么$\mu$-可测的$A_{ij}$两两无交, 测度有限,
-且有$\bigcup_{j}A_{ij}=A$对任意$i$成立. 由于$\mu|_{A}$是Borel正则的,
-应用上述定理, 可找到$X$中闭集$C_{ij}\subset A_{ij},$
-$\mu(A_{ij}\setminus C_{ij})=\mu|_A(A_{ij}\setminus C_{ij})&lt;2^{-i-|j|-2}\varepsilon.$
-进一步$\mu(A\setminus \bigcup_j C_{ij})&lt; 2^{-i}\varepsilon,$
-因此对每个$i,$
-有$J(i)\in \mathbb{Z}_+$使得$\mu(A\setminus \bigcup_{|j|\le J(i)}C_{ij})\le 2^{-i}\varepsilon.$
-取$C=\bigcap_{i}\bigcup_{|j|\le j(i)}C_{ij}$为闭集,
-那么$\mu(A\setminus C)\le \varepsilon.$</p>
-<p>最后, 定义$g_i:\bigcup_{|j|\le J(i)}C_{ij}\rightarrow \mathbb{R},$
-$g_i|_{C_{ij} }(x)=\frac{j-1}{i}.$ 由于固定$i,$ $C_{ij}$彼此无交,
-因此$g_i|_C$连续. 由于$\,\forall\,x\in C,$
-$0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
-从而$f|_C$连续.</p>
-<p>文章最后更新于 2021-10-09 13:26:19 </p>
+            <h2 id="示性类与障碍性理论"><a href="#示性类与障碍性理论" class="headerlink" title="示性类与障碍性理论"></a>示性类与障碍性理论</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p><strong>定理 1</strong>. <em>假设$F\rightarrow E\rightarrow B$为纤维丛, $F$是$n$-simple的, $B$为CW复形. 令$s$为$B^{n-1}$上的截面, 可以被延拓到$B^n$上. 那么$s$可以被延拓为$B^{n+1}$上的截面当且仅当$ob(s)\in H^{n+1}(B;\pi_n(F))$为零.</em> </p>
+<p><strong>注 2</strong>. <em>一般地, $\pi_1B$在$\pi_nF$上可能有作用, $H^{n+1}(B;\pi_n(F))$是局部系数的. 若$F$是$(n-1)$连通的, 那么第一障碍类$ob(s)\in H^{n+1}(B,\pi_n(F))$与$s$选取无关. 此时它也是自然的, 拉回丛上的障碍类就是障碍类的拉回.</em> </p>
+<h3 id="SW类作为障碍"><a href="#SW类作为障碍" class="headerlink" title="SW类作为障碍"></a>SW类作为障碍</h3><p>定义Stiefel流形:
+$V_k(\mathbb{R}^n):=\{(v_1,\cdots,v_k)|\mathbb{R}^n\text{中标准正交}\}\cong O(n)/O(n-k).$
+给定$\xi$为秩$n$实向量丛(配备度量),
+$\mathbb{R}^n\rightarrow E\rightarrow B.$ 取$V_k(\xi),$ 为$B$上纤维丛</p>
+<script type="math/tex; mode=display">
+V_k(\mathbb{R}^n)\rightarrow V_k(E)\rightarrow B.</script><p>注意到$\xi$有$k$个线性无关/正交截面当且仅当$V_k(\xi)$有一个截面.
+我们希望说明$\xi$的SW类就是$V_k(\xi)$截面的第一阻碍类.
+我们下面来计算$\pi_i(V_k(\mathbb{R}^n)).$ 先做一些准备.</p>
+<p><strong>定理 3</strong> (Gysin sequence). <em>若$\xi$为秩$n$定向丛, 那么存在长正合列,</em> </p>
+<script type="math/tex; mode=display">
+\cdots\rightarrow H^i(B)\xrightarrow{\cup e} H^{i+n}(B)\xrightarrow{\pi^\ast } H^{i+n}(E_0)\rightarrow H^{i+1}(B)\rightarrow\cdots</script><p>已知有</p>
+<script type="math/tex; mode=display">
+\cdots\rightarrow H^j(E,E_0)\rightarrow H^j(E)\rightarrow H^j(E_0)\rightarrow \cdots</script><p>注意到有$H^{j-n}(B)\cong H^{j-n}(E)\cong H^j(E,E_0),$
+$H^j(B)\cong H^j(E).$ 由自然性即有定理中的长正合列.</p>
+<p><strong>注 4</strong>. <em>若非可定向, 那么定理在$\mod 2$意义下成立.</em> </p>
+<p><strong>引理 5</strong>. <em>$\pi_i(V_k(\mathbb{R}^n))=0,$ $\,\forall\,i&lt;n-k.$ $\pi_{n-k}(V_k(\mathbb{R}^n))=\begin{cases}  \mathbb{Z}&amp; n-k \text{为偶数, 或}k=1\\  \mathbb{Z}_2 &amp; \text{else}  \end{cases}$</em> </p>
+<p>考虑纤维丛</p>
+<script type="math/tex; mode=display">
+V_{k-1}(\mathbb{R}^{n-1})\rightarrow V_k(\mathbb{R}^n)\rightarrow S^{n-1},\quad (v_1,\cdots,v_k)\mapsto v_k.</script><p>迭代构造, 我们有:</p>
+<script type="math/tex; mode=display">
+S^{n-k}=V_1(\mathbb{R}^{n-k+1})\hookrightarrow V_2(\mathbb{R}^{n-k+2})\hookrightarrow\cdots\hookrightarrow V_k(\mathbb{R}^n)</script><p>每个$\hookrightarrow$都对应了一个纤维丛. 作用$\pi_i,$
+我们看到$\pi_i(-)=0$在全体空间上, 若$i&lt;n-k.$</p>
+<p>当$i=n-k$时, 考虑$V_2(\mathbb{R}^{n-k+2}).$ 由长正合列,
+这和$\pi_{n-k}(V_k(\mathbb{R}^n))$是一样的, $k\ge 2.$ 我们有</p>
+<script type="math/tex; mode=display">
+S^{n-k}\rightarrow V_2(\mathbb{R}^{n-k+2})\rightarrow S^{n-k+1}.</script><p>注意到, 记$UT$为单位切丛,</p>
+<script type="math/tex; mode=display">
+V_2(\mathbb{R}^{n-k+2})\cong UT(S^{n-k+1})\subset TS^{n-k+1}.</script><p>考虑$S^{n-k+1}$切丛的Gysin sequence,
+$E_0\cong UT(S^{n-k+1})\cong V_2(\mathbb{R}^{n-k+2}),$</p>
+<script type="math/tex; mode=display">
+0\rightarrow H^{n-k}(V_2)\rightarrow H^0(S^{n-k+1})\xrightarrow{\cup e} H^{n-k+1}(S^{n-k+1})\rightarrow H^{n-k+1}(V_2)\rightarrow H^1(S^{n-k+1})=0.</script><p>注意到$e=\chi(S^{n-k+1})\cdot PD(\ast ),$
+我们有$\chi:\mathbb{Z}\xrightarrow{\cup e} \mathbb{Z}.$
+因此若$n-k$为偶数, $\chi=0,$ $e=0,$ $H^{n-k}(V_2)=\mathbb{Z}.$
+由UCT与Hurewicz定理, $\pi_{n-k}(V_2)\cong \mathbb{Z}.$</p>
+<p>若$n-k$为奇数, $\chi=2,$ $H^{n-k}(V_2)=0,$
+$H^{n-k+1}(V_2)=\mathbb{Z}_2.$ 由UCT与Hurewicz定理,
+$\pi_{n-k}(V_2)=\mathbb{Z}_2.$</p>
+<p>$k=1$时单独考虑, 由$V_1(\mathbb{R}^n)=S^{n-1}$即得.</p>
+<p>给定$\xi$为$B$上的秩$n$实向量丛. $\,\forall\,k,$
+$V_k(\xi)$为$B$上纤维丛.</p>
+<p><strong>定理 6</strong>. <em>$V_k(\xi)$的第一障碍类$o_j(\xi)\in H^j(B;\pi_{j-1}(V_{n-j+1}(\mathbb{R}^n))),$ $j:=n-k+1.$ 映到$H^j(B;\mathbb{Z}_2),$ 我们有$o_j(\xi)\mapsto w_j(\xi),$ $\,\forall\,j\le n.$</em> </p>
+<p>回忆我们有$w_j(\xi)\neq 0$时, $V_{n-j+1}(\xi)$没有截面. 反过来不见得对:
+当$n-k$为偶数时, $o_j(\xi)\in H^j(B;\widetilde\mathbb{Z}),$
+可能为非零偶数. 即使$n-k$为奇数, 作为第一障碍类, $o_j(\xi)=w_j(\xi)=0,$
+我们也可能在之后有进一步的阻碍.</p>
+<h3 id="Chern类作为障碍"><a href="#Chern类作为障碍" class="headerlink" title="Chern类作为障碍"></a>Chern类作为障碍</h3><p>$V_{n-q}(\mathbb{C}^n):=\{\mathbb{C}^n\text{下的标准正交基}\},$
+$\pi_i(V_{n-q}(\mathbb{C}^n))=\begin{cases}
+ 0,&amp;i\le 2q\\
+ \mathbb{Z},&amp;i=2q+1
+ \end{cases}$ 给定秩$n$复向量丛$\omega,$
+$V_{n-q}(\omega)$截面的第一障碍类$o_{q+1}(\omega)\in H^{2q+2}(B;\pi_{2q+1}(V_{n-q}(\mathbb{C}^n))),$
+$o_{q+1}(\omega)= c_{q+1}(\omega)\in H^{2q+2}(B;\mathbb{Z}).$
+这里非局部系数是由复向量丛的(定向)特殊性.</p>
+<h3 id="Euler类"><a href="#Euler类" class="headerlink" title="Euler类"></a>Euler类</h3><p>设$\xi$为秩$n$实向量丛. $\mathbb{R}^n\rightarrow E\rightarrow B.$
+考虑球丛$S(\xi):$ </p>
+<script type="math/tex; mode=display">
+S^{n-1}\rightarrow S(E)\rightarrow B.</script><p>那么$S(\xi)$纤维$(n-2)$连通,
+第一障碍类$o_n\in H^n(B;\pi_{n-1}(S^{n-1})).$</p>
+<p><strong>定理 7</strong>. <em>若$\xi$是定向的, 那么$\pi_1(B)$在$\pi_{n-1}(S^{n-1})$上的作用是平凡的. $o_n=e(\xi)\in H^{n}(B;\mathbb{Z}).$</em> </p>
+<p>文章最后更新于 2022-11-14 19:10:05 </p>
 
         </div>
 
@@ -351,11 +275,11 @@ $0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《几何测度论导论》讲义笔记(1.1)-基本概念</li>
+        <li>本文标题：《代数拓扑2》笔记(17)-障碍性理论</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-09 11:03:10</li>
+        <li>创建时间：2022-11-14 19:10:03</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/09/《几何测度论导论》讲义笔记(1.1)-基本概念/
+            本文链接：https://dream0ar.github.io/2022/11/14/《代数拓扑2》笔记(17)-障碍性理论/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -369,29 +293,14 @@ $0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/10/09/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E5%88%87%E4%B8%9B(1)/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》第二章-切丛(1)</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/10/08/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E8%AE%A8%E8%AE%BA%E7%A8%BF-%E8%A7%A3%E6%9E%90%E6%B5%81%E5%BD%A2/"
+                           href="/2022/11/09/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(16)-%E5%A4%8D%E5%90%91%E9%87%8F%E4%B8%9B/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分流形》讨论稿-解析流形</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(16)-复向量丛</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -598,7 +507,7 @@ $0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E6%B5%8B%E5%BA%A6"><span class="nav-text">外测度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Borel%E6%AD%A3%E5%88%99%E6%B5%8B%E5%BA%A6"><span class="nav-text">Borel正则测度</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E6%80%A7%E7%B1%BB%E4%B8%8E%E9%9A%9C%E7%A2%8D%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">示性类与障碍性理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SW%E7%B1%BB%E4%BD%9C%E4%B8%BA%E9%9A%9C%E7%A2%8D"><span class="nav-text">SW类作为障碍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chern%E7%B1%BB%E4%BD%9C%E4%B8%BA%E9%9A%9C%E7%A2%8D"><span class="nav-text">Chern类作为障碍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Euler%E7%B1%BB"><span class="nav-text">Euler类</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
