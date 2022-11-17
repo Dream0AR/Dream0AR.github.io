@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(17)-障碍性理论 |
+            《代数拓扑2》笔记(18)-分类空间 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(17)-障碍性理论</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(18)-分类空间</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-11-14 19:10:03
+        <i class="fas fa-edit"></i>&nbsp;2022-11-17 11:35:12
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,68 +206,66 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="示性类与障碍性理论"><a href="#示性类与障碍性理论" class="headerlink" title="示性类与障碍性理论"></a>示性类与障碍性理论</h2><h3 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h3><p><strong>定理 1</strong>. <em>假设$F\rightarrow E\rightarrow B$为纤维丛, $F$是$n$-simple的, $B$为CW复形. 令$s$为$B^{n-1}$上的截面, 可以被延拓到$B^n$上. 那么$s$可以被延拓为$B^{n+1}$上的截面当且仅当$ob(s)\in H^{n+1}(B;\pi_n(F))$为零.</em> </p>
-<p><strong>注 2</strong>. <em>一般地, $\pi_1B$在$\pi_nF$上可能有作用, $H^{n+1}(B;\pi_n(F))$是局部系数的. 若$F$是$(n-1)$连通的, 那么第一障碍类$ob(s)\in H^{n+1}(B,\pi_n(F))$与$s$选取无关. 此时它也是自然的, 拉回丛上的障碍类就是障碍类的拉回.</em> </p>
-<h3 id="SW类作为障碍"><a href="#SW类作为障碍" class="headerlink" title="SW类作为障碍"></a>SW类作为障碍</h3><p>定义Stiefel流形:
-$V_k(\mathbb{R}^n):=\{(v_1,\cdots,v_k)|\mathbb{R}^n\text{中标准正交}\}\cong O(n)/O(n-k).$
-给定$\xi$为秩$n$实向量丛(配备度量),
-$\mathbb{R}^n\rightarrow E\rightarrow B.$ 取$V_k(\xi),$ 为$B$上纤维丛</p>
+            <h2 id="主-Principal-G-丛"><a href="#主-Principal-G-丛" class="headerlink" title="主(Principal)$G$-丛"></a>主(Principal)$G$-丛</h2><p>$G$为拓扑群. 一个主$G$-丛是一个局部平凡的纤维丛$\pi:P\rightarrow B,$
+在总空间上有一个连续的右作用$P\times G\rightarrow P,$
+使得$G$在每根纤维上的作用是自由可迁的. (保持纤维.)</p>
+<p><strong>注 1</strong>. <em>$\,\forall\,b\in B,$ $G\cong \pi^{-1}(b),$ $g\mapsto x_0\cdot g.$ 因此可写$G\rightarrow P\rightarrow B.$ 局部平凡化意味着可以写$B\cong P/G.$ 每个右作用也给出左作用$g\cdot x:=x\cdot g^{-1}.$</em> </p>
+<p>$G$为离散群时, 主$G$-丛就是一个正则$G$覆盖. 设$\xi$为秩$n$实向量丛,
+$\mathbb{R}^n\cong \xi_b\rightarrow E\rightarrow B.$ 考虑$n$-标架丛:</p>
 <script type="math/tex; mode=display">
-V_k(\mathbb{R}^n)\rightarrow V_k(E)\rightarrow B.</script><p>注意到$\xi$有$k$个线性无关/正交截面当且仅当$V_k(\xi)$有一个截面.
-我们希望说明$\xi$的SW类就是$V_k(\xi)$截面的第一阻碍类.
-我们下面来计算$\pi_i(V_k(\mathbb{R}^n)).$ 先做一些准备.</p>
-<p><strong>定理 3</strong> (Gysin sequence). <em>若$\xi$为秩$n$定向丛, 那么存在长正合列,</em> </p>
+F(\xi):F(\xi_b)\rightarrow F(E)\rightarrow B,</script><script type="math/tex; mode=display">
+F(\xi_b):=\{(v_1,\cdots,v_n)|v_i\in \xi_b \text{ 线性无关}\}\cong \operatorname{Iso}(\mathbb{R}^n,\xi_b).</script><p>那么这个标架丛就是一个主$GL_n(\mathbb{R})$丛.</p>
+<p>注意到我们有$B$上秩$n$实向量丛到主$GL_n(\mathbb{R})$丛的双射,
+逆映射由$E:=P\times_{GL_n(\mathbb{R})} \mathbb{R}^n\xrightarrow{p}P/GL_n(\mathbb{R})=B$给出.</p>
+<p>设$\xi$有一个欧氏度量,
+$OF(\xi_b):=\{(v_1,\cdots,v_n)|\text{标准正交}\}=V_n(\xi_b)\cong \operatorname{Isometry(\mathbb{R}^n,\xi_b)},$
+是一个主$O_n$丛. 类似地, 我们也有具度量秩$n$实向量丛到主$O_n$丛的双射.</p>
+<p>把实数改为复数也有类似的结论. 另外, 取$B=G_n(\mathbb{R}^{n+k}),$
+$P=V_n(\mathbb{R}^{n+k}),$
+$V_n(\mathbb{R}^{n+k})\rightarrow G_n(\mathbb{R}^{n+k}),$
+$(v_1,\cdots,v_n)\mapsto \operatorname{span}\{v_1,\cdots,v_n\}$是一个主$O_n$丛.
+这个丛就是$OF(\gamma_k^n).$
+回忆$G_n(\mathbb{R}^{n+k})\cong O_{n+k}/O_n\times O_k,$
+$V_n(\mathbb{R}^{n+k})=O_{n+k}/O_k,$ 纤维为$O_n.$</p>
+<p>取秩$1$的情况,
+就是$S^0\cong O(1)\rightarrow S(\mathbb{R}^{n+1})\rightarrow \mathbb{R}\mathrm{P}^n,$
+$S^1\cong U(1)\rightarrow S(\mathbb{C}^{n+1})\rightarrow \mathbb{C}\mathrm{P}^n,$
+类似地还有四元数的情形, 纤维记作$S_p(1)\cong SU(2)\cong S^3.$</p>
+<p>一个反例是$\mathbb{Q}\rightarrow \mathbb{R}\rightarrow \mathbb{R}/\mathbb{Q},$
+不是一个主$\mathbb{Q}$丛. 因为此时底空间拓扑平凡,
+局部平凡要求了整体平凡, 给出矛盾. 但当$G$为李群, $H$为其闭子群时,
+有$H\rightarrow G\rightarrow G/H$为主$H$丛, 底空间称为齐性空间.</p>
+<p>$G$光滑自由作用在光滑流形$M$上, $M\rightarrow M/G$可能不是一个主$G$丛,
+如$M=T^2,$ $G=\mathbb{R},$ 非有理地作用在$M$上, 使得轨道在$M$上是稠密的.
+不过当$G$紧的时候它是主$G$丛.</p>
+<p><strong>命题 2</strong>. <em>一个主$G$丛是平凡的当且仅当它有一个截面.</em> </p>
+<p><strong>注 3</strong>. <em>这对一般的纤维丛当然是错误的. $S^n$可平行化当且仅当$n=0,1,3,$ 但$S^n$有非平凡向量场当且仅当$\chi(S^n)=0,$ 当且仅当$n$为奇数.</em> </p>
+<p>设$P\rightarrow B$有一个截面, 定义$B\times G\rightarrow P,$
+$(b,g)\mapsto s(b)\cdot g$即可. 验证它是一个同胚.</p>
+<h2 id="分类空间"><a href="#分类空间" class="headerlink" title="分类空间"></a>分类空间</h2><p>我们称$BG$是拓扑群$G$的一个分类空间,
+若存在主$G$丛$EG\xrightarrow{\pi}BG,$ 使得$EG$是弱可缩的, 即$\pi_i=0,$
+$\,\forall\,i.$</p>
+<p><strong>定理 4</strong>. <em>对任意CW复形$B,$ 有映射$[B,BG]\rightarrow Bun_G(B),$ 后者为$B$上主$G$丛, $\phi\mapsto \phi^\ast (EG)$为一个双射.</em> </p>
+<p>满射: 任意给定p.G.b (principle $G$-bundle),
+有$EG\rightarrow P\times_G EG\rightarrow P/G=B.$
+截面存在因为$ob\in H^{i+1}(B;\pi_i(EG))=0.$
+$s:P/G\rightarrow P\times_G EG,$
+$p\mapsto (p,\widetilde\phi(p))=(p\cdot g,g\cdot \widetilde\phi(p)).$
+$p=p\cdot g\mapsto (p\cdot g,\widetilde\phi(p\cdot g)).$
+因此我们有映射$\widetilde{\phi}:P\rightarrow 
+ EG,$ 为$G$-等变映射. 于是可以定义$\phi:P/G\rightarrow EG/G,$
+验证这是一个拉回即可.</p>
+<p>单射: 设$\psi:f_0^\ast EG\cong f_1^\ast EG.$
+每个$f_0,f_1$给出$EG\rightarrow P\times_G EG\rightarrow P/G=B$的截面$s_0,s_1.$
+由阻碍理论, 它们是同伦的.</p>
+<p><strong>注 5</strong>. <em>$BG$可以取为CW复形. $G\rightarrow EG\rightarrow BG$给出$\pi_i(BG)\cong \pi_{i-1}(G).$ $BG$是CW同伦等价意义下唯一的, 称为$G$的分类空间. Milnor证明了对任意拓扑群$G$, $BG$存在.</em> </p>
+<p>Milnor的构造方法是Join. 给两个拓扑空间$X,Y,$</p>
 <script type="math/tex; mode=display">
-\cdots\rightarrow H^i(B)\xrightarrow{\cup e} H^{i+n}(B)\xrightarrow{\pi^\ast } H^{i+n}(E_0)\rightarrow H^{i+1}(B)\rightarrow\cdots</script><p>已知有</p>
-<script type="math/tex; mode=display">
-\cdots\rightarrow H^j(E,E_0)\rightarrow H^j(E)\rightarrow H^j(E_0)\rightarrow \cdots</script><p>注意到有$H^{j-n}(B)\cong H^{j-n}(E)\cong H^j(E,E_0),$
-$H^j(B)\cong H^j(E).$ 由自然性即有定理中的长正合列.</p>
-<p><strong>注 4</strong>. <em>若非可定向, 那么定理在$\mod 2$意义下成立.</em> </p>
-<p><strong>引理 5</strong>. <em>$\pi_i(V_k(\mathbb{R}^n))=0,$ $\,\forall\,i&lt;n-k.$ $\pi_{n-k}(V_k(\mathbb{R}^n))=\begin{cases}  \mathbb{Z}&amp; n-k \text{为偶数, 或}k=1\\  \mathbb{Z}_2 &amp; \text{else}  \end{cases}$</em> </p>
-<p>考虑纤维丛</p>
-<script type="math/tex; mode=display">
-V_{k-1}(\mathbb{R}^{n-1})\rightarrow V_k(\mathbb{R}^n)\rightarrow S^{n-1},\quad (v_1,\cdots,v_k)\mapsto v_k.</script><p>迭代构造, 我们有:</p>
-<script type="math/tex; mode=display">
-S^{n-k}=V_1(\mathbb{R}^{n-k+1})\hookrightarrow V_2(\mathbb{R}^{n-k+2})\hookrightarrow\cdots\hookrightarrow V_k(\mathbb{R}^n)</script><p>每个$\hookrightarrow$都对应了一个纤维丛. 作用$\pi_i,$
-我们看到$\pi_i(-)=0$在全体空间上, 若$i&lt;n-k.$</p>
-<p>当$i=n-k$时, 考虑$V_2(\mathbb{R}^{n-k+2}).$ 由长正合列,
-这和$\pi_{n-k}(V_k(\mathbb{R}^n))$是一样的, $k\ge 2.$ 我们有</p>
-<script type="math/tex; mode=display">
-S^{n-k}\rightarrow V_2(\mathbb{R}^{n-k+2})\rightarrow S^{n-k+1}.</script><p>注意到, 记$UT$为单位切丛,</p>
-<script type="math/tex; mode=display">
-V_2(\mathbb{R}^{n-k+2})\cong UT(S^{n-k+1})\subset TS^{n-k+1}.</script><p>考虑$S^{n-k+1}$切丛的Gysin sequence,
-$E_0\cong UT(S^{n-k+1})\cong V_2(\mathbb{R}^{n-k+2}),$</p>
-<script type="math/tex; mode=display">
-0\rightarrow H^{n-k}(V_2)\rightarrow H^0(S^{n-k+1})\xrightarrow{\cup e} H^{n-k+1}(S^{n-k+1})\rightarrow H^{n-k+1}(V_2)\rightarrow H^1(S^{n-k+1})=0.</script><p>注意到$e=\chi(S^{n-k+1})\cdot PD(\ast ),$
-我们有$\chi:\mathbb{Z}\xrightarrow{\cup e} \mathbb{Z}.$
-因此若$n-k$为偶数, $\chi=0,$ $e=0,$ $H^{n-k}(V_2)=\mathbb{Z}.$
-由UCT与Hurewicz定理, $\pi_{n-k}(V_2)\cong \mathbb{Z}.$</p>
-<p>若$n-k$为奇数, $\chi=2,$ $H^{n-k}(V_2)=0,$
-$H^{n-k+1}(V_2)=\mathbb{Z}_2.$ 由UCT与Hurewicz定理,
-$\pi_{n-k}(V_2)=\mathbb{Z}_2.$</p>
-<p>$k=1$时单独考虑, 由$V_1(\mathbb{R}^n)=S^{n-1}$即得.</p>
-<p>给定$\xi$为$B$上的秩$n$实向量丛. $\,\forall\,k,$
-$V_k(\xi)$为$B$上纤维丛.</p>
-<p><strong>定理 6</strong>. <em>$V_k(\xi)$的第一障碍类$o_j(\xi)\in H^j(B;\pi_{j-1}(V_{n-j+1}(\mathbb{R}^n))),$ $j:=n-k+1.$ 映到$H^j(B;\mathbb{Z}_2),$ 我们有$o_j(\xi)\mapsto w_j(\xi),$ $\,\forall\,j\le n.$</em> </p>
-<p>回忆我们有$w_j(\xi)\neq 0$时, $V_{n-j+1}(\xi)$没有截面. 反过来不见得对:
-当$n-k$为偶数时, $ o_j(\xi)\in H^j(B;\widetilde\mathbb{Z}), $
-可能为非零偶数. 即使$n-k$为奇数, 作为第一障碍类, $o_j(\xi)=w_j(\xi)=0,$
-我们也可能在之后有进一步的阻碍.</p>
-<h3 id="Chern类作为障碍"><a href="#Chern类作为障碍" class="headerlink" title="Chern类作为障碍"></a>Chern类作为障碍</h3><p>$V_{n-q}(\mathbb{C}^n):=\{\mathbb{C}^n\text{下的标准正交基}\},$
-$\pi_i(V_{n-q}(\mathbb{C}^n))=\begin{cases}
- 0,&amp;i\le 2q\\
- \mathbb{Z},&amp;i=2q+1
- \end{cases}$ 给定秩$n$复向量丛$\omega,$
-$V_{n-q}(\omega)$截面的第一障碍类$o_{q+1}(\omega)\in H^{2q+2}(B;\pi_{2q+1}(V_{n-q}(\mathbb{C}^n))),$
-$o_{q+1}(\omega)= c_{q+1}(\omega)\in H^{2q+2}(B;\mathbb{Z}).$
-这里非局部系数是由复向量丛的(定向)特殊性.</p>
-<h3 id="Euler类"><a href="#Euler类" class="headerlink" title="Euler类"></a>Euler类</h3><p>设$\xi$为秩$n$实向量丛. $\mathbb{R}^n\rightarrow E\rightarrow B.$
-考虑球丛$S(\xi):$ </p>
-<script type="math/tex; mode=display">
-S^{n-1}\rightarrow S(E)\rightarrow B.</script><p>那么$S(\xi)$纤维$(n-2)$连通,
-第一障碍类$o_n\in H^n(B;\pi_{n-1}(S^{n-1})).$</p>
-<p><strong>定理 7</strong>. <em>若$\xi$是定向的, 那么$\pi_1(B)$在$\pi_{n-1}(S^{n-1})$上的作用是平凡的. $o_n=e(\xi)\in H^{n}(B;\mathbb{Z}).$</em> </p>
-<p>文章最后更新于 2022-11-14 19:10:05 </p>
+X\ast Y:=X\times[0,1]\times Y/(x,0,y_1)\sim (x,0,y_2),(x_1,1,y)\sim (x_2,1,y).</script><p>一些例子是$S^0\ast S^0=S^1,$ $S^n\ast S^m=S^{n+m-1}.$</p>
+<p>一个事实是Join会增加连通性, $X^{\ast n}$是$(n-2)$连通的.
+令$n\rightarrow\infty,$ 就有它弱可缩. $EG:=\bigcup_{n=1}^\infty G^{\ast n}.$
+显然$G$在$G^{\ast n},EG$上有一个自然的作用, 且是自由的. 定义$BG=EG/G$即可.</p>
+<p>文章最后更新于 2022-11-17 11:35:13 </p>
 
         </div>
 
@@ -275,11 +273,11 @@ S^{n-1}\rightarrow S(E)\rightarrow B.</script><p>那么$S(\xi)$纤维$(n-2)$连�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(17)-障碍性理论</li>
+        <li>本文标题：《代数拓扑2》笔记(18)-分类空间</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-11-14 19:10:03</li>
+        <li>创建时间：2022-11-17 11:35:12</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/11/14/《代数拓扑2》笔记(17)-障碍性理论/
+            本文链接：https://dream0ar.github.io/2022/11/17/《代数拓扑2》笔记(18)-分类空间/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -293,29 +291,14 @@ S^{n-1}\rightarrow S(E)\rightarrow B.</script><p>那么$S(\xi)$纤维$(n-2)$连�
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/11/17/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(18)-%E5%88%86%E7%B1%BB%E7%A9%BA%E9%97%B4/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(18)-分类空间</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/11/09/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(16)-%E5%A4%8D%E5%90%91%E9%87%8F%E4%B8%9B/"
+                           href="/2022/11/14/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(17)-%E9%9A%9C%E7%A2%8D%E6%80%A7%E7%90%86%E8%AE%BA/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(16)-复向量丛</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(17)-障碍性理论</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -522,7 +505,7 @@ S^{n-1}\rightarrow S(E)\rightarrow B.</script><p>那么$S(\xi)$纤维$(n-2)$连�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E6%80%A7%E7%B1%BB%E4%B8%8E%E9%9A%9C%E7%A2%8D%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">示性类与障碍性理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SW%E7%B1%BB%E4%BD%9C%E4%B8%BA%E9%9A%9C%E7%A2%8D"><span class="nav-text">SW类作为障碍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Chern%E7%B1%BB%E4%BD%9C%E4%B8%BA%E9%9A%9C%E7%A2%8D"><span class="nav-text">Chern类作为障碍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Euler%E7%B1%BB"><span class="nav-text">Euler类</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB-Principal-G-%E4%B8%9B"><span class="nav-text">主(Principal)$G$-丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E7%A9%BA%E9%97%B4"><span class="nav-text">分类空间</span></a></li></ol>
     </div>
 </div>
         </aside>
