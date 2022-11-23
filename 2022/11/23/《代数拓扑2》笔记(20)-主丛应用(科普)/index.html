@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(19)-结构群 |
+            《代数拓扑2》笔记(20)-主丛应用(科普) |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(19)-结构群</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(20)-主丛应用(科普)</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-11-18 17:11:09
+        <i class="fas fa-edit"></i>&nbsp;2022-11-23 15:12:48
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,79 +206,68 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>回忆若$G$是一个拓扑群, 有分类空间$BG,$ 使得有$G$主丛:</p>
+            <h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>固定$F$为拓扑空间, 取$G=\operatorname{Homeo}(F).$ (紧开拓扑.) 我们有</p>
 <script type="math/tex; mode=display">
-G\rightarrow EG\rightarrow BG,</script><p>即$G$在$EG$上有一个依纤维自由可迁的作用. $EG$弱可缩.</p>
-<p><strong>命题 1</strong>. <em>设有拓扑群间连续映射$f:H\rightarrow G,$ 那么它诱导空间上的连续映射$Bf:BH\rightarrow BG,$ 同伦意义下唯一.</em> </p>
-<p><strong>注 2</strong>. <em>$G\mapsto BG$是一个拓扑群到CW复形同伦范畴的函子.</em> </p>
-<p>考虑一个$G$主丛: </p>
+\{F\rightarrow E\rightarrow B\}/\cong\leftrightarrow \{G\rightarrow P\rightarrow B\}/\cong \leftrightarrow [B,BG]</script><script type="math/tex; mode=display">
+\xi\mapsto (\operatorname{Homeo}(\xi_b,F)\rightarrow P\rightarrow B),</script><p>像称为标架丛. 反过来, 我们有:</p>
 <script type="math/tex; mode=display">
-G\rightarrow EH\times_HG\rightarrow EH/H=BH.</script><p>那么分类映射$\phi:BH\rightarrow BG$就是诱导的映射, 同伦意义下唯一.</p>
-<p><strong>推论 3</strong>. <em>若$f:H\rightarrow G$还是一个同伦等价, 那么$Bf:BH\rightarrow BG$也是一个同伦等价.</em> </p>
-<p>$f_\ast :\pi_{i-1}(H)\cong \pi_{i-1}(G),$
-这就诱导了$Bf_\ast :\pi_i(BH)\cong \pi_i(BG).$
-弱同伦等价在CW复形上就是同伦等价.</p>
-<p>Gram-Schmidt正交化$O(n)\hookrightarrow GL_n(\mathbb{R})$是一个同伦等价.
-另一种观点来看,
-$GL_n(\mathbb{R})/O_n=\{\left&lt;{}-,-\right&gt;_{\mathbb{R}^n}\}=\{S\in M_n(\mathbb{R})|S&gt;0\}.$
-由于后者为凸锥, 可缩.</p>
-<p>因此, $BO_n=BGL_n(\mathbb{R}).$ 类似地, $BU_n=BGL_n(\mathbb{C}).$</p>
-<p>考虑$(\mathbb{R}^n,+),$ 那么$B(\mathbb{R}^n)=B(\ast )=\ast .$
-因此任意$\mathbb{R}^n$主丛都是平凡的.</p>
-<h2 id="BG的显式模型"><a href="#BG的显式模型" class="headerlink" title="BG的显式模型"></a>BG的显式模型</h2><p>若$G$是离散的, 那么$BG=K(G,1).$ 如$E\mathbb{Z}=\mathbb{R},$
-$B\mathbb{Z}=\mathbb{R}/\mathbb{Z}=S^1.$ $EU(1)=S^\infty,$
-$BU(1)=\mathbb{C}\mathrm{P}^\infty.$</p>
-<p>$O(1)=\{\pm 1\}\subset U(1),$ $EO(1)=EU(1)=S^\infty,$
-$BO(1)=\mathbb{R}\mathrm{P}^\infty=K(\mathbb{Z}_2,1).$ 一般地,
-考虑$\mu_n=\{\lambda|\lambda^n=1\}\subset U(1)\subset \mathbb{C},$
-$E\mu_n=EU(1)=S^\infty,$ $B\mu_n=S^\infty/\mu_n=K(\mu_n,1)=$ lens space
-with dimension $\infty.$</p>
-<p>回忆有$O_n\rightarrow V_n(\mathbb{R}^{n+k})\rightarrow G_n(\mathbb{R}^{n+k}),$
-令$k\rightarrow \infty,$ 即有$V_n:=V_n(\mathbb{R}^\infty)=EO_n,$
-$G_n:=G_n(\mathbb{R}^\infty)=BO_n.$</p>
-<p>之前提过$GL_n(\mathbb{R})$收缩到$O_n,$ $\,\forall\,B$为CW复形,
-$[B,BO_n]$有到$B$上具度量秩$n$向量丛间的双射,
-$[B,BGL_n(\mathbb{R})]$有到$B$上秩$n$向量丛的双射.
-所以后者之间也有一个双射.</p>
-<p>类似地, 对$BU_n=BGL_n(\mathbb{C})=G_n(\mathbb{C}^\infty)$也有类似的理论.</p>
-<h2 id="结构群"><a href="#结构群" class="headerlink" title="结构群"></a>结构群</h2><p>对向量丛$\xi,$ 它的定向性, 无处消失截面存在性,
-是否具度量等许多问题可以用一致的方法来变为讨论结构群改变的问题.</p>
-<p><strong>命题 4</strong>. <em>设$G$是一个李群, $H\subset G$为一个闭子群, (此时$H\rightarrow G\rightarrow G/H$是一个$H$主丛.) 若$G\rightarrow P\rightarrow B$为CW复形上的$G$主丛. 那么以下等价:</em> </p>
-<ol>
-<li><p>$P$由$H$主丛诱导, 即$\,\exists\,H\rightarrow Q\rightarrow B,$
-使得$P\cong Q\times_HG.$</p>
-</li>
-<li><p>$G/H\rightarrow P\times_G(G/H)\rightarrow B$有一个截面.</p>
-</li>
-<li><p>$P$的分类映射可以同伦唯一地提升到$BH.$</p>
-</li>
-</ol>
-<p>给一个$B$上秩$n$实向量丛$\xi,$ 问给定$H\rightarrow GL_n(\mathbb{R}),$
-何时三结论成立?</p>
-<p>举例来看, 若$H=O_n,$ 那么提升总存在; 若$H=SO_n,$
-那么提升存在当且仅当$\xi$可定向. 我们有双重覆盖</p>
+(F\rightarrow P\times_G F\rightarrow B)\leftarrow (G\rightarrow P\rightarrow B).</script><h2 id="光滑流形上的向量丛"><a href="#光滑流形上的向量丛" class="headerlink" title="光滑流形上的向量丛"></a>光滑流形上的向量丛</h2><h3 id="圆丛"><a href="#圆丛" class="headerlink" title="圆丛"></a>圆丛</h3><p>设$F=M^n$为(可定向)光滑流形, $G=\operatorname{Diffeo}^+(M^n)$保持定向.
+那么 </p>
 <script type="math/tex; mode=display">
-O_n/SO_n\rightarrow BSO_n\rightarrow BO_n\leftarrow B,</script><p>提升的阻碍在$H^1(B;\pi_0(\pm 1))$中, 恰是$w_1(\xi).$
-于是$\xi$可定向当且仅当$w_1(\xi)=0.$</p>
-<p>$H=Spin(n),$ 回忆$\pi_1(SO_n)\cong \pi_1(SO_3)=\mathbb{Z}_2,$</p>
+\{\text{(oriented) $M^n$-bundle}\}\leftrightarrow [B,BG].</script><p>若$F=S^1,$
+$U(1)=SO(2)\hookrightarrow \operatorname{Diffeo}^+(S^1)$为同伦等价, 那么</p>
 <script type="math/tex; mode=display">
-SO(n-1)\rightarrow SO(n)\rightarrow S^{n-1},</script><p>$Spin(n)$定义为$SO_n$的万有覆盖.</p>
+B\operatorname{Diffeo}^+(S^1)=BU(1)=BSO(2)=\mathbb{C}\mathrm{P}^\infty=K(\mathbb{Z},2).</script><p>于是我们有</p>
 <script type="math/tex; mode=display">
-0\rightarrow \mathbb{Z}_2\rightarrow Spin(n)\rightarrow SO_n\rightarrow 0,</script><p>这诱导了</p>
+\{B\text{上定向$S^1$丛}\}/\cong\leftrightarrow [B,K(\mathbb{Z},2)]\cong H^2(B;\mathbb{Z}),</script><script type="math/tex; mode=display">
+\xi\mapsto e(\xi).</script><p><strong>注 1</strong>. <em>每个可定向$S^1$丛都是一个复线丛的球丛. Euler类是一个完全不变量.</em> </p>
+<p><strong>推论 2</strong>. <em>每个定向圆丛平凡若其有一个截面.</em> </p>
+<h3 id="球丛"><a href="#球丛" class="headerlink" title="球丛"></a>球丛</h3><p>对一般的球丛, $M^n=S^n,$
+$SO(n+1)\hookrightarrow \operatorname{Diffeo}^+(S^n)$为一个弱同伦等价,
+当$n=2,3$时. 它一定不是弱同伦等价, 若$n\ge 4.$</p>
+<p><strong>注 3</strong>. <em>$S^n$-丛理论和$n+1$维实向量丛理论是一致的.</em> </p>
+<h3 id="环丛"><a href="#环丛" class="headerlink" title="环丛"></a>环丛</h3><p>若$M^n=T^2=S^1\times S^1,$</p>
 <script type="math/tex; mode=display">
-B\mathbb{Z}_2\rightarrow BSpin(n)\rightarrow BSO_n\leftarrow B.</script><p>提升存在当且仅当$\xi$上有一个Spin结构,
-第一阻碍也是唯一阻碍在$H^2(B;\pi_1(B\mathbb{Z}_2))=H^2(B;\mathbb{Z}_2)$中,
-为$w_2(\xi).$</p>
-<p><strong>命题 5</strong>. <em>对一个可定向的$\xi,$ $\xi$有一个spin结构当且仅当$w_2(\xi)=0.$</em> </p>
-<h2 id="分裂原理-mathbb-C"><a href="#分裂原理-mathbb-C" class="headerlink" title="分裂原理($\mathbb{C}$)"></a>分裂原理($\mathbb{C}$)</h2><p>$\omega$为一个复向量丛,
-$\omega$可分裂为线丛的和当且仅当分类映射$B\rightarrow BU_n$可提升到$B(U_1)^{\times n}$上.
-$(U_1)^{\times n}\hookrightarrow U_n,$ 嵌入到对角阵中.</p>
-<p>考虑$G=U_n,$ $H=T^n=(U_1)^{\times n},$ 有纤维化</p>
+\{B\text{上}T^2\text{丛}\}\leftrightarrow [B,B\operatorname{Diffeo}(T^2)],</script><script type="math/tex; mode=display">
+\{B\text{上}T^2\text{丛, 有截面}\}\leftrightarrow [B,B\operatorname{Diffeo}(T^2,\ast )],</script><p>$\operatorname{Diffeo}(T^2,\ast )$表示有不动点.</p>
+<p><strong>命题 4</strong>. <em>$SL(2,\mathbb{Z})\hookrightarrow \operatorname{Diffeo}^+(T^2,\ast )$为一个同伦等价.</em> </p>
+<p><strong>推论 5</strong>. <em>$B\operatorname{Diffeo}^+(T^2,\ast )=BSL(2,\mathbb{Z}).$</em> </p>
+<p><strong>命题 6</strong>. <em>$\,\exists\,\operatorname{Diffeo}^+(T^2,\ast )\rightarrow \operatorname{Diffeo}^+(T^2)\rightarrow T^2.$</em> </p>
 <script type="math/tex; mode=display">
-U_n/T_n\rightarrow BT^n\rightarrow BU_n</script><p> 分裂原理可写为:</p>
+B\operatorname{Diffeo}^+(T^2,\ast )=BSL(2,\mathbb{Z})\rightarrow BSL(2,\mathbb{R})\cong BSO(2).</script><p>给出了</p>
 <script type="math/tex; mode=display">
-H^\ast (BU_n;\mathbb{Z})\hookrightarrow H^\ast (BT^n;\mathbb{Z}),\quad \mathbb{Z}[c_1,\cdots,c_n]\rightarrow \mathbb{Z}[x_1,\cdots, x_n],\quad c_i\mapsto \sigma_i(x_1,\cdots,x_n).</script><script type="math/tex; mode=display">
-U_n/T_n=\{(L_1,\cdots,L_n)|L_i\subset \mathbb{C}^n\text{ 为正交直线}\}.</script><p>文章最后更新于 2022-11-18 17:11:11 </p>
+\{B\text{上定向}T^2\text{丛具截面}\}\xrightarrow{\phi} \{B\text{上定向秩$2$丛}\}.</script><p>(是每个截面处取切平面)</p>
+<h3 id="曲面丛"><a href="#曲面丛" class="headerlink" title="曲面丛"></a>曲面丛</h3><p>考虑一般的$M^n=\Sigma_g,$ $g\ge 2.$ 那么</p>
+<script type="math/tex; mode=display">
+\{B\text{上光滑$\Sigma_g$丛}\}/\cong\leftrightarrow [B,B\operatorname{Diffeo}(\Sigma_g)].</script><p>Earle-Eells(1967):
+单位元所在的分支$\operatorname{Diffeo}_0(\Sigma_g)$可缩.
+定义$\Sigma_g$的<strong>映射类群</strong>为离散群</p>
+<script type="math/tex; mode=display">
+\operatorname{Mod}(\Sigma_g):=\operatorname{Diff}^+(\Sigma_g)/\operatorname{Diffeo}_0(\Sigma_g)=\pi_0(\operatorname{Diff}^+).</script><p>因此,</p>
+<script type="math/tex; mode=display">
+B\operatorname{Diff}^+(\Sigma_g)=B\operatorname{Mod}(\Sigma_g).</script><script type="math/tex; mode=display">
+H^\ast (B\operatorname{Mod}(\Sigma_g))=\{\text{曲面丛示性类}\}</script><p><strong>定理 7</strong> (Harer,1985). <em>$H^k(B\operatorname{Mod}(\Sigma_g);\mathbb{Z})$稳定, 当$g\rightarrow\infty.$</em> </p>
+<p><strong>定理 8</strong> (Madsen-Weiss,2006). <em>$H^\ast (B\operatorname{Mod}(\Sigma_\infty);\mathbb{Q})\rightarrow \mathbb{Q}[\kappa_1,\kappa_2,\cdots],$ 当$g\rightarrow\infty,$ $|\kappa_i|=2i.$</em> </p>
+<p><strong>定理 9</strong> (Harer-Zagier,1986). <em>$\chi(B\operatorname{Mod}(\Sigma_g))=\frac{\zeta(1-2g)}{2-2g}\sim (-1)^g\frac{(2g-1)!}{(2-2g)2^{2g-1}\pi^{2g} }.$</em> </p>
+<p><strong>注 10</strong>. <em>$\chi(B\operatorname{Mod}(\Sigma_g))$超指数增长, 但稳定群的示性数仅是多项式增长.</em> </p>
+<p>这称为”暗物质问题”.</p>
+<h2 id="Pontrjagin类"><a href="#Pontrjagin类" class="headerlink" title="Pontrjagin类"></a>Pontrjagin类</h2><p>回忆线性代数理论,
+$n$维实向量空间可以复化为$n$维复线性空间$V\otimes_\mathbb{R}\mathbb{C}=\{x+iy|x,y\in V\}.$
+我们有复向量空间的同构</p>
+<script type="math/tex; mode=display">
+V\otimes_\mathbb{R}\mathbb{C}\rightarrow\overline{V\otimes_\mathbb{R}\mathbb{C} },\quad x+iy\mapsto x-iy.</script><p>对于向量丛, 设$\xi$为秩$n$实向量丛,
+$\xi\otimes_\mathbb{R}\mathbb{C}$为秩$n$复向量丛,
+$\xi\otimes_\mathbb{R}\mathbb{C}\cong \overline{\xi\otimes_\mathbb{R}\mathbb{C} }$为复向量丛的同构.
+$\,\forall\,k,$</p>
+<script type="math/tex; mode=display">
+c_k(\xi\otimes \mathbb{C})=c_k(\overline{\xi\otimes \mathbb{C} })=(-1)^kc_k(\xi\otimes \mathbb{C}).</script><p>因此$k$为奇数时, 总有$2c_k(\xi\otimes\mathbb{C})=0.$</p>
+<p>定义第$i$个Pontrjagin示性类为</p>
+<script type="math/tex; mode=display">
+p_i(\xi):=(-1)^ic_{2i}(\xi\otimes \mathbb{C})\in H^{4i}(B;\mathbb{Z}).</script><p>显然$p_i(\xi)=0,$ $\,\forall\,i&gt;\frac{\dim \xi}{2}.$
+记$p(\xi)=1+p_1(\xi)+\cdots+p_{[\frac{n}{2}]}(\xi).$</p>
+<script type="math/tex; mode=display">
+p(\xi\oplus \eta)=p(\xi)\cup p(\eta)+2 \text{torsions},</script><script type="math/tex; mode=display">
+2[p(\xi\oplus\eta)-p(\xi)\cup p(\eta)]=0.</script><p>文章最后更新于 2022-11-23 15:12:50 </p>
 
         </div>
 
@@ -286,11 +275,11 @@ U_n/T_n=\{(L_1,\cdots,L_n)|L_i\subset \mathbb{C}^n\text{ 为正交直线}\}.</sc
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(19)-结构群</li>
+        <li>本文标题：《代数拓扑2》笔记(20)-主丛应用(科普)</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-11-18 17:11:09</li>
+        <li>创建时间：2022-11-23 15:12:48</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/11/18/《代数拓扑2》笔记(19)-结构群/
+            本文链接：https://dream0ar.github.io/2022/11/23/《代数拓扑2》笔记(20)-主丛应用(科普)/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -304,29 +293,14 @@ U_n/T_n=\{(L_1,\cdots,L_n)|L_i\subset \mathbb{C}^n\text{ 为正交直线}\}.</sc
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/11/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(20)-%E4%B8%BB%E4%B8%9B%E5%BA%94%E7%94%A8(%E7%A7%91%E6%99%AE)/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(20)-主丛应用(科普)</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/11/17/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(18)-%E5%88%86%E7%B1%BB%E7%A9%BA%E9%97%B4/"
+                           href="/2022/11/18/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(19)-%E7%BB%93%E6%9E%84%E7%BE%A4/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(18)-分类空间</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(19)-结构群</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -533,7 +507,7 @@ U_n/T_n=\{(L_1,\cdots,L_n)|L_i\subset \mathbb{C}^n\text{ 为正交直线}\}.</sc
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BG%E7%9A%84%E6%98%BE%E5%BC%8F%E6%A8%A1%E5%9E%8B"><span class="nav-text">BG的显式模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%BE%A4"><span class="nav-text">结构群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E8%A3%82%E5%8E%9F%E7%90%86-mathbb-C"><span class="nav-text">分裂原理($\mathbb{C}$)</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AD%90"><span class="nav-text">引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%89%E6%BB%91%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E5%90%91%E9%87%8F%E4%B8%9B"><span class="nav-text">光滑流形上的向量丛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%86%E4%B8%9B"><span class="nav-text">圆丛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%83%E4%B8%9B"><span class="nav-text">球丛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E4%B8%9B"><span class="nav-text">环丛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E4%B8%9B"><span class="nav-text">曲面丛</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pontrjagin%E7%B1%BB"><span class="nav-text">Pontrjagin类</span></a></li></ol>
     </div>
 </div>
         </aside>
