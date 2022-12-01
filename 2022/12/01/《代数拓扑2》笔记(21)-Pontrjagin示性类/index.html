@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(20)-主丛应用(科普) |
+            《代数拓扑2》笔记(21)-Pontrjagin示性类 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(20)-主丛应用(科普)</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(21)-Pontrjagin示性类</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-11-23 15:12:48
+        <i class="fas fa-edit"></i>&nbsp;2022-12-01 10:09:53
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,68 +206,90 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="引子"><a href="#引子" class="headerlink" title="引子"></a>引子</h2><p>固定$F$为拓扑空间, 取$G=\operatorname{Homeo}(F).$ (紧开拓扑.) 我们有</p>
+            <h2 id="Pontrjagin类"><a href="#Pontrjagin类" class="headerlink" title="Pontrjagin类"></a>Pontrjagin类</h2><p>回顾实向量丛$\xi$可以复化为$\xi\otimes_\mathbb{R}\mathbb{C},$
+与它的共轭丛同构. 定义第$i$个Pontrjagin示性类为</p>
 <script type="math/tex; mode=display">
-\{F\rightarrow E\rightarrow B\}/\cong\leftrightarrow \{G\rightarrow P\rightarrow B\}/\cong \leftrightarrow [B,BG]</script><script type="math/tex; mode=display">
-\xi\mapsto (\operatorname{Homeo}(\xi_b,F)\rightarrow P\rightarrow B),</script><p>像称为标架丛. 反过来, 我们有:</p>
+p_i(\xi):=(-1)^ic_{2i}(\xi\otimes \mathbb{C})\in H^{4i}(B;\mathbb{Z}).</script><p>用总Pontrjagin类: </p>
 <script type="math/tex; mode=display">
-(F\rightarrow P\times_G F\rightarrow B)\leftarrow (G\rightarrow P\rightarrow B).</script><h2 id="光滑流形上的向量丛"><a href="#光滑流形上的向量丛" class="headerlink" title="光滑流形上的向量丛"></a>光滑流形上的向量丛</h2><h3 id="圆丛"><a href="#圆丛" class="headerlink" title="圆丛"></a>圆丛</h3><p>设$F=M^n$为(可定向)光滑流形, $G=\operatorname{Diffeo}^+(M^n)$保持定向.
-那么 </p>
+p(\xi)=1+p_1(\xi)+\cdots+p_{[\frac{n}{2}]}(\xi).</script><p>由于它来自于Chern类, 它也满足如下性质:</p>
 <script type="math/tex; mode=display">
-\{\text{(oriented) $M^n$-bundle}\}\leftrightarrow [B,BG].</script><p>若$F=S^1,$
-$U(1)=SO(2)\hookrightarrow \operatorname{Diffeo}^+(S^1)$为同伦等价, 那么</p>
+p(\xi\oplus \eta)=p(\xi)\cup p(\eta)+2 \text{ torsions},</script><p> 即</p>
 <script type="math/tex; mode=display">
-B\operatorname{Diffeo}^+(S^1)=BU(1)=BSO(2)=\mathbb{C}\mathrm{P}^\infty=K(\mathbb{Z},2).</script><p>于是我们有</p>
+2[p(\xi\oplus\eta)-p(\xi)\cup p(\eta)]=0.</script><p>一个例子是$\tau_{S^n}\oplus\nu_{S^n}\cong \varepsilon^{n+1},$
+$p(\tau_{S^n})=p(\tau_{S^n}\oplus\varepsilon^1)=1+2\text{ torsions}.$
+但由于$H^\ast (S^n)$为自由$\mathbb{Z}$-模, 挠当然是零.</p>
+<p><strong>注 1</strong>. *复化可表示为: </p>
 <script type="math/tex; mode=display">
-\{B\text{上定向$S^1$丛}\}/\cong\leftrightarrow [B,K(\mathbb{Z},2)]\cong H^2(B;\mathbb{Z}),</script><script type="math/tex; mode=display">
-\xi\mapsto e(\xi).</script><p><strong>注 1</strong>. <em>每个可定向$S^1$丛都是一个复线丛的球丛. Euler类是一个完全不变量.</em> </p>
-<p><strong>推论 2</strong>. <em>每个定向圆丛平凡若其有一个截面.</em> </p>
-<h3 id="球丛"><a href="#球丛" class="headerlink" title="球丛"></a>球丛</h3><p>对一般的球丛, $M^n=S^n,$
-$SO(n+1)\hookrightarrow \operatorname{Diffeo}^+(S^n)$为一个弱同伦等价,
-当$n=2,3$时. 它一定不是弱同伦等价, 若$n\ge 4.$</p>
-<p><strong>注 3</strong>. <em>$S^n$-丛理论和$n+1$维实向量丛理论是一致的.</em> </p>
-<h3 id="环丛"><a href="#环丛" class="headerlink" title="环丛"></a>环丛</h3><p>若$M^n=T^2=S^1\times S^1,$</p>
+O(n)\hookrightarrow U(n),\quad A\mapsto A\otimes_\mathbb{R}\mathbb{C}(=A).</script><p> 这诱导了$BO(n)\rightarrow BU(n),$ 拉回得到$H^{4i}(BO(n);\mathbb{Z})\leftrightarrow H^{4i}(BU(n);\mathbb{Z}),$ $c_{2i}\mapsto (-1)^ip_i.$* </p>
+<h2 id="实向量丛-复向量丛与定向实向量丛"><a href="#实向量丛-复向量丛与定向实向量丛" class="headerlink" title="实向量丛, 复向量丛与定向实向量丛"></a>实向量丛, 复向量丛与定向实向量丛</h2><p>一个实向量丛复化后得到一个复向量丛,
+一个复向量丛可以忘掉复结构成为定向实向量丛,
+定向实向量丛又可以忘掉定向成为实向量丛. 从实向量丛$\xi$出发,
+转一圈我们得到的是$(\xi\otimes \mathbb{C})_\mathbb{R}\cong \xi\oplus\xi.$
+一个复向量丛$\omega$转一圈得到的是$\omega_\mathbb{R}\otimes \mathbb{C}\cong \omega\oplus\overline\omega.$
+只需验证纤维上$x\mapsto (x,-ix)$给出了同构即可.</p>
+<p>这样,</p>
 <script type="math/tex; mode=display">
-\{B\text{上}T^2\text{丛}\}\leftrightarrow [B,B\operatorname{Diffeo}(T^2)],</script><script type="math/tex; mode=display">
-\{B\text{上}T^2\text{丛, 有截面}\}\leftrightarrow [B,B\operatorname{Diffeo}(T^2,\ast )],</script><p>$\operatorname{Diffeo}(T^2,\ast )$表示有不动点.</p>
-<p><strong>命题 4</strong>. <em>$SL(2,\mathbb{Z})\hookrightarrow \operatorname{Diffeo}^+(T^2,\ast )$为一个同伦等价.</em> </p>
-<p><strong>推论 5</strong>. <em>$B\operatorname{Diffeo}^+(T^2,\ast )=BSL(2,\mathbb{Z}).$</em> </p>
-<p><strong>命题 6</strong>. <em>$\,\exists\,\operatorname{Diffeo}^+(T^2,\ast )\rightarrow \operatorname{Diffeo}^+(T^2)\rightarrow T^2.$</em> </p>
+(1+c_1+\cdots+c_n)(1-c_1+\cdots \pm c_n)=c(\omega)c(\overline\omega)=c(\omega_\mathbb{R}\otimes \mathbb{C})=p^{\pm}(\omega_\mathbb{R})=1-p_1+\cdots\pm p_n.</script><p><strong>推论 2</strong>. <em>复向量丛的Chern类决定了它实化的Pontrjagin类, 即</em> </p>
 <script type="math/tex; mode=display">
-B\operatorname{Diffeo}^+(T^2,\ast )=BSL(2,\mathbb{Z})\rightarrow BSL(2,\mathbb{R})\cong BSO(2).</script><p>给出了</p>
+p_k(\omega_\mathbb{R})=c_k^2-2c_{k-1}c_{k+1}+\cdots\pm 2c_1c_{2k-1}\mp 2c_{2k}</script><p><strong>注 3</strong>. <em>上面的三个转换化为结构群理论, 为$U(n)\rightarrow SO(2n)\rightarrow O(2n)\rightarrow U(2n).$ 那么拉回映射就是$(-1)^ic_{2i}\mapsto p_i\rightarrow$推论结论右侧.</em> </p>
+<p>取$\tau:=\tau_{\mathbb{C}\mathrm{P}^n},$
+我们希望研究$p_k(\tau_{\mathbb{C}\mathrm{P}^n}).$
+回忆$c(\tau)=(1+a)^{n+1},$
+$a=-c_1(\gamma_n^1)\in H^2(\mathbb{C}\mathrm{P}^n).$
+这是通过如下过程得到:</p>
 <script type="math/tex; mode=display">
-\{B\text{上定向}T^2\text{丛具截面}\}\xrightarrow{\phi} \{B\text{上定向秩$2$丛}\}.</script><p>(是每个截面处取切平面)</p>
-<h3 id="曲面丛"><a href="#曲面丛" class="headerlink" title="曲面丛"></a>曲面丛</h3><p>考虑一般的$M^n=\Sigma_g,$ $g\ge 2.$ 那么</p>
+\tau_{\mathbb{C}\mathrm{P}^n}\cong \operatorname{Hom}(\gamma^1,(\gamma^1)^\perp),</script><script type="math/tex; mode=display">
+\tau_{\mathbb{C}\mathrm{P}^n}\oplus \varepsilon^1\cong \operatorname{Hom}(\gamma^1,\varepsilon^{n+1})\cong \operatorname{Hom}(\gamma^1,\varepsilon^1)^{\oplus (n+1)}</script><p>令$p_k:=p_k(\tau_\mathbb{R}),$ 那么</p>
 <script type="math/tex; mode=display">
-\{B\text{上光滑$\Sigma_g$丛}\}/\cong\leftrightarrow [B,B\operatorname{Diffeo}(\Sigma_g)].</script><p>Earle-Eells(1967):
-单位元所在的分支$\operatorname{Diffeo}_0(\Sigma_g)$可缩.
-定义$\Sigma_g$的<strong>映射类群</strong>为离散群</p>
+1-p_1+\cdots\pm p_n=c(\tau)c(\overline\tau)=(1-a^2)^{n+1},</script><script type="math/tex; mode=display">
+p=1+p_1+\cdots+p_n=(1+a^2)^{n+1},\quad p_k=\binom{n+1}{k}a^{2k}\neq 0.</script><p>从一个实定向丛$\xi$出发,
+我们转一圈得到$(\xi\otimes \mathbb{C})_\mathbb{R}.$
+我们已经知道$(\xi\otimes \mathbb{C})_\mathbb{R}\cong \xi\oplus\xi.$
+但不清楚的是定向是否发生改变?</p>
+<p>取$(v_1,\cdots,v_n)$为$\xi_b$的正定向基, $b\in B.$
+那么$(v_1,iv_1,\cdots,v_n,iv_n)$为$(\xi\otimes \mathbb{C})_\mathbb{R}$的正定向基.
+但$\xi\oplus\xi$自然的正定向基为$(v_1,\cdots,v_n,v_1,\cdots,v_n).$
+它们之间差了$\binom{n}{2}$次置换.</p>
+<p><strong>命题 4</strong>. <em>$(\xi\otimes \mathbb{C})_\mathbb{R}\cong \xi\oplus\xi$保持定向当且仅当$\binom{n}{2}$为偶数.</em> </p>
+<p>‘</p>
+<p><strong>推论 5</strong>. <em>若$\xi$为秩$2n$实向量丛, 则$p_n(\xi)=e(\xi)^2\in H^{4n}(B;\mathbb{Z}).$</em> </p>
+<p>$p_n(\xi)=(-1)^nc_{2n}(\xi\otimes\mathbb{C})=(-1)^ne(\xi\otimes\mathbb{C}).$
+由推论, 这等于 $(-1)^ne(\xi\oplus \xi)(-1)^{\binom{2n}{2} }=e(\xi)^2.$</p>
+<p><strong>注 6</strong>. <em>通过BG理论, 我们事实上给出了$SO(n)\rightarrow O(n)\rightarrow U(n)\rightarrow SO(2n),$ 拉回得到$H^\ast BSO(2n)\rightarrow H^\ast BSO(n),$ $p_n\mapsto e^2.$</em> </p>
+<h2 id="万有丛"><a href="#万有丛" class="headerlink" title="万有丛"></a>万有丛</h2><script type="math/tex; mode=display">
+\{\pm 1\}\cong \frac{O(n)}{SO(n)}\rightarrow BSO(n)\rightarrow BO(n),</script><script type="math/tex; mode=display">
+BSO(n)\cong \widetilde G_n=\{X|X\subset \mathbb{R}^\infty, \text{秩$n$定向}\}.</script><p><strong>定理 7</strong>. <em>令$R$为i.d., $\frac{1}{2}\in \mathbb{R},$ 那么</em> </p>
 <script type="math/tex; mode=display">
-\operatorname{Mod}(\Sigma_g):=\operatorname{Diff}^+(\Sigma_g)/\operatorname{Diffeo}_0(\Sigma_g)=\pi_0(\operatorname{Diff}^+).</script><p>因此,</p>
+H^\ast (\widetilde G_{2m+1};R)\cong R[p_1,\cdots,p_m],\quad H^\ast (\widetilde G_{2m};R)\cong R[p_1,\cdots,p_{m-1},e],</script><script type="math/tex; mode=display">
+p_i=p_i(\widetilde\gamma^n),\quad e=e(\widetilde\gamma^n)</script><p> 等价的,</p>
 <script type="math/tex; mode=display">
-B\operatorname{Diff}^+(\Sigma_g)=B\operatorname{Mod}(\Sigma_g).</script><script type="math/tex; mode=display">
-H^\ast (B\operatorname{Mod}(\Sigma_g))=\{\text{曲面丛示性类}\}</script><p><strong>定理 7</strong> (Harer,1985). <em>$H^k(B\operatorname{Mod}(\Sigma_g);\mathbb{Z})$稳定, 当$g\rightarrow\infty.$</em> </p>
-<p><strong>定理 8</strong> (Madsen-Weiss,2006). <em>$H^\ast (B\operatorname{Mod}(\Sigma_\infty);\mathbb{Q})\rightarrow \mathbb{Q}[\kappa_1,\kappa_2,\cdots],$ 当$g\rightarrow\infty,$ $|\kappa_i|=2i.$</em> </p>
-<p><strong>定理 9</strong> (Harer-Zagier,1986). <em>$\chi(B\operatorname{Mod}(\Sigma_g))=\frac{\zeta(1-2g)}{2-2g}\sim (-1)^g\frac{(2g-1)!}{(2-2g)2^{2g-1}\pi^{2g} }.$</em> </p>
-<p><strong>注 10</strong>. <em>$\chi(B\operatorname{Mod}(\Sigma_g))$超指数增长, 但稳定群的示性数仅是多项式增长.</em> </p>
-<p>这称为”暗物质问题”.</p>
-<h2 id="Pontrjagin类"><a href="#Pontrjagin类" class="headerlink" title="Pontrjagin类"></a>Pontrjagin类</h2><p>回忆线性代数理论,
-$n$维实向量空间可以复化为$n$维复线性空间$V\otimes_\mathbb{R}\mathbb{C}=\{x+iy|x,y\in V\}.$
-我们有复向量空间的同构</p>
+H^\ast (\widetilde G_n;R)=R[p_1,\cdots,p_{[\frac{n}{2}]},e]|\text{$n$为奇数时$e=0,$ $n$为偶数时$e=p^2_{\frac{n}{2} }$}.</script><p><strong>推论 8</strong>. <em>对上述的$R,$</em> </p>
 <script type="math/tex; mode=display">
-V\otimes_\mathbb{R}\mathbb{C}\rightarrow\overline{V\otimes_\mathbb{R}\mathbb{C} },\quad x+iy\mapsto x-iy.</script><p>对于向量丛, 设$\xi$为秩$n$实向量丛,
-$\xi\otimes_\mathbb{R}\mathbb{C}$为秩$n$复向量丛,
-$\xi\otimes_\mathbb{R}\mathbb{C}\cong \overline{\xi\otimes_\mathbb{R}\mathbb{C} }$为复向量丛的同构.
-$\,\forall\,k,$</p>
+H^\ast (G_n;R)=R[p_1,\cdots,p_{\frac{n}{2} }].</script><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>我们将证明:</p>
+<ol>
+<li><p>不存在一个反定向的微分同胚$\mathbb{C}\mathrm{P}^{2n}\rightarrow \mathbb{C}\mathrm{P}^{2n}.$</p>
+</li>
+<li><p>$\mathbb{C}\mathrm{P}^{2n}\neq \partial V^{2n+1}.$</p>
+</li>
+<li><p>$\mathbb{C}\mathrm{P}^{2n}\not\cong X\times Y,$ $X,Y$都不是点.</p>
+</li>
+</ol>
+<p>我们的工具是Chern, Pontrjagin数.</p>
+<p>考虑$n$-划分$I=(i_1,\cdots,i_r),$ $i_1+\cdots+i_r=n.$
+取$I,J$分别为$n,m$划分, 那么</p>
 <script type="math/tex; mode=display">
-c_k(\xi\otimes \mathbb{C})=c_k(\overline{\xi\otimes \mathbb{C} })=(-1)^kc_k(\xi\otimes \mathbb{C}).</script><p>因此$k$为奇数时, 总有$2c_k(\xi\otimes\mathbb{C})=0.$</p>
-<p>定义第$i$个Pontrjagin示性类为</p>
+IJ:=(i_1,\cdots,i_r,j_1,\cdots,j_s),\quad IJ\text{为$n+m$划分}.</script><p>定义一个$I$的加细为$I’=I_1\cdots I_r,$ 使得$I_j$为$i_j$划分, $j\le r$.
+定义划分数$p(n)=n$划分个数.</p>
+<p>对于$n$维闭复流形$K^n,$ $I=(i_1,\cdots,i_r),$ 定义第$I$个Chern数为</p>
 <script type="math/tex; mode=display">
-p_i(\xi):=(-1)^ic_{2i}(\xi\otimes \mathbb{C})\in H^{4i}(B;\mathbb{Z}).</script><p>显然$p_i(\xi)=0,$ $\,\forall\,i&gt;\frac{\dim \xi}{2}.$
-记$p(\xi)=1+p_1(\xi)+\cdots+p_{[\frac{n}{2}]}(\xi).$</p>
+c_I[K^n]:=\left<{}c_{i_1}\cdots c_{i_r},[K^n]\right>_K\in \mathbb{Z},</script><p>$c_i=c_i(\tau_K).$ 等价地, 定义$f$为$\tau_K$的分类映射:</p>
 <script type="math/tex; mode=display">
-p(\xi\oplus \eta)=p(\xi)\cup p(\eta)+2 \text{torsions},</script><script type="math/tex; mode=display">
-2[p(\xi\oplus\eta)-p(\xi)\cup p(\eta)]=0.</script><p>文章最后更新于 2022-11-23 15:12:50 </p>
+f:K\rightarrow G_n(\mathbb{C}^\infty),\quad f^\ast \gamma^n=\tau_K.</script><script type="math/tex; mode=display">
+f_\ast [K]\in H_{2n}(G_n;\mathbb{Z}).</script><script type="math/tex; mode=display">
+c_I[K^n]=\left<{}c_{i_1}\cdots c_{i_r},f_\ast [K]\right>_{G_n}.</script><p>由于$H^\ast (G_n;\mathbb{Z})=\mathbb{Z}[c_1,\cdots,c_n],$
+$\{c_I\}$组成了$H^{2n}(G_n;\mathbb{Z})$的一组$\mathbb{Z}$-基(秩为$p(n)$),
+Chern数$\{c_I[K]:I\in n\}\subset \mathbb{Z}$完全决定了$f_\ast [K]\in H_{2n}(G_n;\mathbb{Z}).$</p>
+<p>文章最后更新于 2022-12-01 10:09:56 </p>
 
         </div>
 
@@ -275,11 +297,11 @@ p(\xi\oplus \eta)=p(\xi)\cup p(\eta)+2 \text{torsions},</script><script type="ma
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(20)-主丛应用(科普)</li>
+        <li>本文标题：《代数拓扑2》笔记(21)-Pontrjagin示性类</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-11-23 15:12:48</li>
+        <li>创建时间：2022-12-01 10:09:53</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/11/23/《代数拓扑2》笔记(20)-主丛应用(科普)/
+            本文链接：https://dream0ar.github.io/2022/12/01/《代数拓扑2》笔记(21)-Pontrjagin示性类/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -293,29 +315,14 @@ p(\xi\oplus \eta)=p(\xi)\cup p(\eta)+2 \text{torsions},</script><script type="ma
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2022/12/01/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(21)-Pontrjagin%E7%A4%BA%E6%80%A7%E7%B1%BB/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(21)-Pontrjagin示性类</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/11/18/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(19)-%E7%BB%93%E6%9E%84%E7%BE%A4/"
+                           href="/2022/11/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(20)-%E4%B8%BB%E4%B8%9B%E5%BA%94%E7%94%A8(%E7%A7%91%E6%99%AE)/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(19)-结构群</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(20)-主丛应用(科普)</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -522,7 +529,7 @@ p(\xi\oplus \eta)=p(\xi)\cup p(\eta)+2 \text{torsions},</script><script type="ma
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AD%90"><span class="nav-text">引子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%89%E6%BB%91%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E5%90%91%E9%87%8F%E4%B8%9B"><span class="nav-text">光滑流形上的向量丛</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%86%E4%B8%9B"><span class="nav-text">圆丛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%90%83%E4%B8%9B"><span class="nav-text">球丛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%8E%AF%E4%B8%9B"><span class="nav-text">环丛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B2%E9%9D%A2%E4%B8%9B"><span class="nav-text">曲面丛</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pontrjagin%E7%B1%BB"><span class="nav-text">Pontrjagin类</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pontrjagin%E7%B1%BB"><span class="nav-text">Pontrjagin类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E5%90%91%E9%87%8F%E4%B8%9B-%E5%A4%8D%E5%90%91%E9%87%8F%E4%B8%9B%E4%B8%8E%E5%AE%9A%E5%90%91%E5%AE%9E%E5%90%91%E9%87%8F%E4%B8%9B"><span class="nav-text">实向量丛, 复向量丛与定向实向量丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%87%E6%9C%89%E4%B8%9B"><span class="nav-text">万有丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a></li></ol>
     </div>
 </div>
         </aside>
