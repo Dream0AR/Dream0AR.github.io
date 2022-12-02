@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑2》笔记(21)-Pontrjagin示性类 |
+            《代数拓扑2》笔记(22)-Pontrjagin数 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑2》笔记(21)-Pontrjagin示性类</span>
+            <span class="title-hover-animation">《代数拓扑2》笔记(22)-Pontrjagin数</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-12-01 10:09:53
+        <i class="fas fa-edit"></i>&nbsp;2022-12-02 16:39:37
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,90 +206,84 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Pontrjagin类"><a href="#Pontrjagin类" class="headerlink" title="Pontrjagin类"></a>Pontrjagin类</h2><p>回顾实向量丛$\xi$可以复化为$\xi\otimes_\mathbb{R}\mathbb{C},$
-与它的共轭丛同构. 定义第$i$个Pontrjagin示性类为</p>
+            <h2 id="Pontrjagin数"><a href="#Pontrjagin数" class="headerlink" title="Pontrjagin数"></a>Pontrjagin数</h2><p>对于实流形$M^{4n},$ 为一个定向闭流形, $I=(i_1,\cdots,i_r)$为$n$的划分.
+定义第$I$个Pontrjagin数为</p>
 <script type="math/tex; mode=display">
-p_i(\xi):=(-1)^ic_{2i}(\xi\otimes \mathbb{C})\in H^{4i}(B;\mathbb{Z}).</script><p>用总Pontrjagin类: </p>
+P_I[M^{4n}]=\left<{}p_{i_1}\cdots p_{i_r},[M^{4n}]\right>\in \mathbb{Z}.</script><p><strong>注 1</strong>. <em>记$\overline M$为$M$反定向, $[\overline M]=-[M],$ 但$p_k(\tau_M)=p_k(\tau_{\overline M}),$ 从而$P_I[\overline M]=-p_I[M].$</em> </p>
+<p><strong>推论 2</strong>. <em>若$M^{4n}$ Pontrjagin数非零, 那么不存在反定向的微分同胚$M\rightarrow M.$</em> </p>
+<p>若$M=\mathbb{C}\mathrm{P}^m,$
+$p(\tau_{\mathbb{C}\mathrm{P}^m})=(1+a^2)^{m+1},$ $a=-c_1(\gamma^1),$
+$p_k(\mathbb{C}\mathrm{P}^m)=\binom{m+1}{k} a^{2k}\in H^{4k}.$ 若$m=2n,$
+则$M^{4n}=\mathbb{C}\mathrm{P}^{2n},$ $\,\forall\,I$为$n$的划分,
+$p_{i_1}\cdots p_{i_r}[\mathbb{C}\mathrm{P}^{2n}]=\binom{2n+1}{i_1}\cdots \binom{2n+1}{i_r}\neq 0.$
+作为一个推论, $\mathbb{C}\mathrm{P}^{2n}$上不存在反定向的微分自同胚.</p>
+<p>对于$m$为奇数的情形, 复共轭是一个反定向的微分自同胚. 注意$m$为奇数时,
+没有top Pontrjagin类.</p>
+<p><strong>命题 3</strong>. <em>若$M^{4n}=\partial V^{4n+1},$ $V$紧定向, 则$M^{4n}$所有的Pontrjagin数为零.</em> </p>
+<p><strong>推论 4</strong>. <em>$\mathbb{C}\mathrm{P}^{2n}\neq \partial V^{4n+1}$(定向), 且有限copy $\sqcup \mathbb{C}\mathrm{P}^{2n}\neq \partial V.$</em> </p>
+<p>注意对$\mathbb{C}\mathrm{P}^{2n+1}$不对,
+有例子$\mathbb{C}\mathrm{P}^1\approx S^2\approx \partial D^3.$</p>
+<h2 id="对称函数论"><a href="#对称函数论" class="headerlink" title="对称函数论"></a>对称函数论</h2><p>回顾$T^n=U(1)^{\times n}\hookrightarrow U(n),$ 映到对角阵中.
+这诱导了$BT^n\rightarrow BU(n),$
+拉回得到$H^\ast (BT^n;\mathbb{Z})\leftarrow H^\ast (BU(n);\mathbb{Z}),$
+$c_i\mapsto \sigma_i(t_1,\cdots t_n).$
+$1+\sigma_1+\cdots+\sigma_n=(1+t_1)\cdots (1+t_n).$</p>
+<p>记$S=\mathbb{Z}[\sigma_1,\cdots,\sigma_n]=\oplus_{k=0}^\infty S^k,$
+$S^k$为$k$次对称多项式. 它的基为</p>
 <script type="math/tex; mode=display">
-p(\xi)=1+p_1(\xi)+\cdots+p_{[\frac{n}{2}]}(\xi).</script><p>由于它来自于Chern类, 它也满足如下性质:</p>
+\{\sigma_{i_1}\cdots\sigma_{i_r}|i_1+\cdots+i_r=k,\quad i_j\le n\}.</script><script type="math/tex; mode=display">
+S^k=\mathbb{Z}\{\sigma_I|I\text{ 为$k$的划分, 每个元小于等于$n$}\}.</script><p>称两个单项等价, 若它们差一个置换. 如$t_1t_2^3t_3^5\sim t_4t_7^3t_2^5.$
+对$k$划分$I,$ $I$单项对称多项式定义为</p>
 <script type="math/tex; mode=display">
-p(\xi\oplus \eta)=p(\xi)\cup p(\eta)+2 \text{ torsions},</script><p> 即</p>
+m_I:=\sum \text{ 单项等价于 }t^I:=t_1^{i_1}\cdots t_r^{i_r}.</script><p>例如$k=3,$ $I=2+1=3,$ $m_I=t_1t_2^2+t_1^2t_2+t_1t_3^2+\cdots.$</p>
+<p><strong>引理 5</strong>. <em>$\{m_I|\text{$I$为$k$划分, $r\le n$.}\}$构成了$S^k=S^k_{(n)}$的一组$\mathbb{Z}$-基.</em> </p>
+<p>这组元素显然张成了$S^k.$ 只需检验维数.</p>
 <script type="math/tex; mode=display">
-2[p(\xi\oplus\eta)-p(\xi)\cup p(\eta)]=0.</script><p>一个例子是$\tau_{S^n}\oplus\nu_{S^n}\cong \varepsilon^{n+1},$
-$p(\tau_{S^n})=p(\tau_{S^n}\oplus\varepsilon^1)=1+2\text{ torsions}.$
-但由于$H^\ast (S^n)$为自由$\mathbb{Z}$-模, 挠当然是零.</p>
-<p><strong>注 1</strong>. *复化可表示为: </p>
+\dim_\mathbb{Z}S^k_{(n)}=\#\{\sigma_I\}=\{I|i_j\le n\}.</script><p>希望证明它和$\{I|r\le n\}$相等. (都是$k$划分.)</p>
+<p>我们发现前者为$n$列以下的Young diagrams with $k$ boxes,
+后者为$n$行以下的Young diagrams with $k$ boxes. 例如对于$I=(4,4,3,1,1),$
+逆序排列, 像俄罗斯方块一样放置, 那么要求列数不超过$n$.
+和它对应的是$I’=(5,3,3,2),$ 同样逆序排列按俄罗斯方块放置,
+要求行数不超过$n.$ 它们之间由转置联系. 因此集合数相同.</p>
+<p>对于任意$k$划分$I,$</p>
 <script type="math/tex; mode=display">
-O(n)\hookrightarrow U(n),\quad A\mapsto A\otimes_\mathbb{R}\mathbb{C}(=A).</script><p> 这诱导了$BO(n)\rightarrow BU(n),$ 拉回得到$H^{4i}(BO(n);\mathbb{Z})\leftrightarrow H^{4i}(BU(n);\mathbb{Z}),$ $c_{2i}\mapsto (-1)^ip_i.$* </p>
-<h2 id="实向量丛-复向量丛与定向实向量丛"><a href="#实向量丛-复向量丛与定向实向量丛" class="headerlink" title="实向量丛, 复向量丛与定向实向量丛"></a>实向量丛, 复向量丛与定向实向量丛</h2><p>一个实向量丛复化后得到一个复向量丛,
-一个复向量丛可以忘掉复结构成为定向实向量丛,
-定向实向量丛又可以忘掉定向成为实向量丛. 从实向量丛$\xi$出发,
-转一圈我们得到的是$(\xi\otimes \mathbb{C})_\mathbb{R}\cong \xi\oplus\xi.$
-一个复向量丛$\omega$转一圈得到的是$\omega_\mathbb{R}\otimes \mathbb{C}\cong \omega\oplus\overline\omega.$
-只需验证纤维上$x\mapsto (x,-ix)$给出了同构即可.</p>
-<p>这样,</p>
+m_I(t_1,\cdots,t_n)\in \mathbb{Z}[t_1,\cdots,t_n]^{S_n}=\mathbb{Z}[\sigma_1,\cdots,\sigma_n].</script><script type="math/tex; mode=display">
+m_I(t_1,\cdots,t_n)=S_I(\sigma_1,\cdots,\sigma_n).</script><p> 可以验证,
+$\,\forall\,n&lt;k,$</p>
 <script type="math/tex; mode=display">
-(1+c_1+\cdots+c_n)(1-c_1+\cdots \pm c_n)=c(\omega)c(\overline\omega)=c(\omega_\mathbb{R}\otimes \mathbb{C})=p^{\pm}(\omega_\mathbb{R})=1-p_1+\cdots\pm p_n.</script><p><strong>推论 2</strong>. <em>复向量丛的Chern类决定了它实化的Pontrjagin类, 即</em> </p>
+S_{I,n}(\sigma_1,\cdots,\sigma_n)=S_{I,k}(\sigma_1,\cdots,\sigma_n,0,\cdots,0);</script><p>$\,\forall\,n\ge k,$ $S_I$不变.</p>
+<p>因此, 若$n\ge k,$
+那么$\{m_I\}=\{S_I(\sigma_1,\cdots,\sigma_n)\}$构成了$S^k=\mathbb{Z}[\sigma_1,\cdots,\sigma_n]$的一组$\mathbb{Z}$-基.</p>
+<p>例如, $k=1,$ $S_1(\sigma_1)=\sigma_1,$</p>
 <script type="math/tex; mode=display">
-p_k(\omega_\mathbb{R})=c_k^2-2c_{k-1}c_{k+1}+\cdots\pm 2c_1c_{2k-1}\mp 2c_{2k}</script><p><strong>注 3</strong>. <em>上面的三个转换化为结构群理论, 为$U(n)\rightarrow SO(2n)\rightarrow O(2n)\rightarrow U(2n).$ 那么拉回映射就是$(-1)^ic_{2i}\mapsto p_i\rightarrow$推论结论右侧.</em> </p>
-<p>取$\tau:=\tau_{\mathbb{C}\mathrm{P}^n},$
-我们希望研究$p_k(\tau_{\mathbb{C}\mathrm{P}^n}).$
-回忆$c(\tau)=(1+a)^{n+1},$
-$a=-c_1(\gamma_n^1)\in H^2(\mathbb{C}\mathrm{P}^n).$
-这是通过如下过程得到:</p>
+S_2(\sigma_1,\sigma_2)=\sigma_1^2-2\sigma_2=(t_1+t_2)^2-2t_1t_2=t_1^2+t_2^2=m_2(t_1,t_2).</script><script type="math/tex; mode=display">
+S_{1,1}(\sigma_1,\sigma_2)=t_1t_2=\sigma_2,</script><script type="math/tex; mode=display">
+S
+ _3=\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3.</script><p>应用到拓扑上,</p>
 <script type="math/tex; mode=display">
-\tau_{\mathbb{C}\mathrm{P}^n}\cong \operatorname{Hom}(\gamma^1,(\gamma^1)^\perp),</script><script type="math/tex; mode=display">
-\tau_{\mathbb{C}\mathrm{P}^n}\oplus \varepsilon^1\cong \operatorname{Hom}(\gamma^1,\varepsilon^{n+1})\cong \operatorname{Hom}(\gamma^1,\varepsilon^1)^{\oplus (n+1)}</script><p>令$p_k:=p_k(\tau_\mathbb{R}),$ 那么</p>
+H^\ast (BU(n))\rightarrow H^\ast (BU(1)^{\times n})^{S_n},\quad c_i\mapsto \sigma_i(t_1,\cdots,t_n),</script><p>$\{c_I|I\text{ 为$k$的划分, }i_j\le n\}$构成了$H^{2k}(BU(n))$的一组$\mathbb{Z}$基.
+改变基后, $\{S_I(c_1,\cdots,c_n)|r\le n\}$也是一组$\mathbb{Z}$基.</p>
+<p>对秩$n$复向量丛$\omega,$
+定义$S_I(c(\omega)):=S_I(c_1(\omega),\cdots,c_n(\omega))\in H^{2n}(B;\mathbb{Z}).$</p>
+<p><strong>引理 6</strong> (Thom). <em>$S_I(c(\omega\oplus\omega’))=\sum_{JK=I}S_J(c(\omega))S_K(c(\omega’)).$</em> </p>
+<p>考虑$\sigma_k$为$k$基本对称多项式($t_1,\cdots,t_n$),
+$\sigma_k’$为$(t_{n+1},\cdots,t_{n+m}),$
+$\sigma_k’’=\sum_{i=0}^k\sigma_i\sigma_{k-i}’,$
+验证有$\sigma_k’’$为$(t_1,\cdots,t_{n+m})$基本对称多项式. 这样就有</p>
 <script type="math/tex; mode=display">
-1-p_1+\cdots\pm p_n=c(\tau)c(\overline\tau)=(1-a^2)^{n+1},</script><script type="math/tex; mode=display">
-p=1+p_1+\cdots+p_n=(1+a^2)^{n+1},\quad p_k=\binom{n+1}{k}a^{2k}\neq 0.</script><p>从一个实定向丛$\xi$出发,
-我们转一圈得到$(\xi\otimes \mathbb{C})_\mathbb{R}.$
-我们已经知道$(\xi\otimes \mathbb{C})_\mathbb{R}\cong \xi\oplus\xi.$
-但不清楚的是定向是否发生改变?</p>
-<p>取$(v_1,\cdots,v_n)$为$\xi_b$的正定向基, $b\in B.$
-那么$(v_1,iv_1,\cdots,v_n,iv_n)$为$(\xi\otimes \mathbb{C})_\mathbb{R}$的正定向基.
-但$\xi\oplus\xi$自然的正定向基为$(v_1,\cdots,v_n,v_1,\cdots,v_n).$
-它们之间差了$\binom{n}{2}$次置换.</p>
-<p><strong>命题 4</strong>. <em>$(\xi\otimes \mathbb{C})_\mathbb{R}\cong \xi\oplus\xi$保持定向当且仅当$\binom{n}{2}$为偶数.</em> </p>
-<p>‘</p>
-<p><strong>推论 5</strong>. <em>若$\xi$为秩$2n$实向量丛, 则$p_n(\xi)=e(\xi)^2\in H^{4n}(B;\mathbb{Z}).$</em> </p>
-<p>$p_n(\xi)=(-1)^nc_{2n}(\xi\otimes\mathbb{C})=(-1)^ne(\xi\otimes\mathbb{C}).$
-由推论, 这等于 $(-1)^ne(\xi\oplus \xi)(-1)^{\binom{2n}{2} }=e(\xi)^2.$</p>
-<p><strong>注 6</strong>. <em>通过BG理论, 我们事实上给出了$SO(n)\rightarrow O(n)\rightarrow U(n)\rightarrow SO(2n),$ 拉回得到$H^\ast BSO(2n)\rightarrow H^\ast BSO(n),$ $p_n\mapsto e^2.$</em> </p>
-<h2 id="万有丛"><a href="#万有丛" class="headerlink" title="万有丛"></a>万有丛</h2><script type="math/tex; mode=display">
-\{\pm 1\}\cong \frac{O(n)}{SO(n)}\rightarrow BSO(n)\rightarrow BO(n),</script><script type="math/tex; mode=display">
-BSO(n)\cong \widetilde G_n=\{X|X\subset \mathbb{R}^\infty, \text{秩$n$定向}\}.</script><p><strong>定理 7</strong>. <em>令$R$为i.d., $\frac{1}{2}\in \mathbb{R},$ 那么</em> </p>
+S_I(\sigma_1'',\cdots,\sigma_k'')=\sum_{JK=I} S_J(\sigma)S_K(\sigma').</script><p>左侧为$m_I(t_1,\cdots,t_{n+m})=\sum t_{a_1}^{i_1}\cdots t_{a_r}^{i_r},$
+令$J:=\{i_q:1\le a_q\le n\},$ $K:=\{i_q:n+1\le a_q\le n+m\},$ $JK=I.$</p>
+<p>当$I$作为$k$划分就是$k=k,$ 记$S_k=S_I.$
+那么唯一的$JK=I=k$为$J=\varnothing$或$K=\varnothing.$</p>
+<p><strong>推论 7</strong>. <em>$S_k(c(\omega\oplus\omega’))=S_k(c(\omega))+S_k(c(\omega’)).$ $S_k$将和映到和.</em> </p>
+<p><strong>注 8</strong>. <em>形式定义Chern特征$ch(\omega):=n+\sum_{k=1}^\infty \frac{S_k(c(\omega))}{k!}\in H^\pi(B;\mathbb{Q}),$ 那么$ch(\omega\oplus\omega’)=ch(\omega)+ch(\omega’),$ $ch(\omega\otimes \omega’)=ch(\omega)ch(\omega’),$ 形式上比Chern示性类要好.</em> </p>
 <script type="math/tex; mode=display">
-H^\ast (\widetilde G_{2m+1};R)\cong R[p_1,\cdots,p_m],\quad H^\ast (\widetilde G_{2m};R)\cong R[p_1,\cdots,p_{m-1},e],</script><script type="math/tex; mode=display">
-p_i=p_i(\widetilde\gamma^n),\quad e=e(\widetilde\gamma^n)</script><p> 等价的,</p>
-<script type="math/tex; mode=display">
-H^\ast (\widetilde G_n;R)=R[p_1,\cdots,p_{[\frac{n}{2}]},e]|\text{$n$为奇数时$e=0,$ $n$为偶数时$e=p^2_{\frac{n}{2} }$}.</script><p><strong>推论 8</strong>. <em>对上述的$R,$</em> </p>
-<script type="math/tex; mode=display">
-H^\ast (G_n;R)=R[p_1,\cdots,p_{\frac{n}{2} }].</script><h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>我们将证明:</p>
-<ol>
-<li><p>不存在一个反定向的微分同胚$\mathbb{C}\mathrm{P}^{2n}\rightarrow \mathbb{C}\mathrm{P}^{2n}.$</p>
-</li>
-<li><p>$\mathbb{C}\mathrm{P}^{2n}\neq \partial V^{2n+1}.$</p>
-</li>
-<li><p>$\mathbb{C}\mathrm{P}^{2n}\not\cong X\times Y,$ $X,Y$都不是点.</p>
-</li>
-</ol>
-<p>我们的工具是Chern, Pontrjagin数.</p>
-<p>考虑$n$-划分$I=(i_1,\cdots,i_r),$ $i_1+\cdots+i_r=n.$
-取$I,J$分别为$n,m$划分, 那么</p>
-<script type="math/tex; mode=display">
-IJ:=(i_1,\cdots,i_r,j_1,\cdots,j_s),\quad IJ\text{为$n+m$划分}.</script><p>定义一个$I$的加细为$I’=I_1\cdots I_r,$ 使得$I_j$为$i_j$划分, $j\le r$.
-定义划分数$p(n)=n$划分个数.</p>
-<p>对于$n$维闭复流形$K^n,$ $I=(i_1,\cdots,i_r),$ 定义第$I$个Chern数为</p>
-<script type="math/tex; mode=display">
-c_I[K^n]:=\left<{}c_{i_1}\cdots c_{i_r},[K^n]\right>_K\in \mathbb{Z},</script><p>$c_i=c_i(\tau_K).$ 等价地, 定义$f$为$\tau_K$的分类映射:</p>
-<script type="math/tex; mode=display">
-f:K\rightarrow G_n(\mathbb{C}^\infty),\quad f^\ast \gamma^n=\tau_K.</script><script type="math/tex; mode=display">
-f_\ast [K]\in H_{2n}(G_n;\mathbb{Z}).</script><script type="math/tex; mode=display">
-c_I[K^n]=\left<{}c_{i_1}\cdots c_{i_r},f_\ast [K]\right>_{G_n}.</script><p>由于$H^\ast (G_n;\mathbb{Z})=\mathbb{Z}[c_1,\cdots,c_n],$
-$\{c_I\}$组成了$H^{2n}(G_n;\mathbb{Z})$的一组$\mathbb{Z}$-基(秩为$p(n)$),
-Chern数$\{c_I[K]:I\in n\}\subset \mathbb{Z}$完全决定了$f_\ast [K]\in H_{2n}(G_n;\mathbb{Z}).$</p>
-<p>文章最后更新于 2022-12-01 10:09:56 </p>
+S_I[K^n]:=\left<{}S_I(c(\tau_K)),[K^n]\right>\in\mathbb{Z}.</script><p><strong>推论 9</strong>. <em>$S_I$的积公式: 对于$I$为$m+n$划分, $S_I[K^m\times L^n]=\sum_{I_1I_2=I}S_{I_1}[K^m]S_{I_2}[K^n].$</em> </p>
+<p>$\tau:=\tau_{K^m},$ $\tau’:=\tau_{L^n},$
+$\tau\times\tau’\cong (\pi_1^\ast \tau)\oplus(\pi_2^\ast \tau’).$</p>
+<p>$S_I[K\times L]=\left&lt;{}S_I(\tau\times\tau’),[K\times L]\right&gt;.$
+由前面的引理即有结果.</p>
+<p>文章最后更新于 2022-12-02 16:39:40 </p>
 
         </div>
 
@@ -297,11 +291,11 @@ Chern数$\{c_I[K]:I\in n\}\subset \mathbb{Z}$完全决定了$f_\ast [K]\in H_{2n
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(21)-Pontrjagin示性类</li>
+        <li>本文标题：《代数拓扑2》笔记(22)-Pontrjagin数</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-12-01 10:09:53</li>
+        <li>创建时间：2022-12-02 16:39:37</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/12/01/《代数拓扑2》笔记(21)-Pontrjagin示性类/
+            本文链接：https://dream0ar.github.io/2022/12/02/《代数拓扑2》笔记(22)-Pontrjagin数/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -318,13 +312,13 @@ Chern数$\{c_I[K]:I\in n\}\subset \mathbb{Z}$完全决定了$f_\ast [K]\in H_{2n
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/12/02/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(22)-Pontrjagin%E6%95%B0/"
+                           href="/2022/12/02/%E3%80%8APDE2%E3%80%8B%E7%AC%94%E8%AE%B0-%E7%89%B9%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(22)-Pontrjagin数</span>
+                                <span class="post-nav-title-item">《PDE2》笔记-特征值问题</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -334,10 +328,10 @@ Chern数$\{c_I[K]:I\in n\}\subset \mathbb{Z}$完全决定了$f_\ast [K]\in H_{2n
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/11/23/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(20)-%E4%B8%BB%E4%B8%9B%E5%BA%94%E7%94%A8(%E7%A7%91%E6%99%AE)/"
+                           href="/2022/12/01/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(21)-Pontrjagin%E7%A4%BA%E6%80%A7%E7%B1%BB/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(20)-主丛应用(科普)</span>
+                                <span class="post-nav-title-item">《代数拓扑2》笔记(21)-Pontrjagin示性类</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -544,7 +538,7 @@ Chern数$\{c_I[K]:I\in n\}\subset \mathbb{Z}$完全决定了$f_\ast [K]\in H_{2n
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pontrjagin%E7%B1%BB"><span class="nav-text">Pontrjagin类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E5%90%91%E9%87%8F%E4%B8%9B-%E5%A4%8D%E5%90%91%E9%87%8F%E4%B8%9B%E4%B8%8E%E5%AE%9A%E5%90%91%E5%AE%9E%E5%90%91%E9%87%8F%E4%B8%9B"><span class="nav-text">实向量丛, 复向量丛与定向实向量丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%87%E6%9C%89%E4%B8%9B"><span class="nav-text">万有丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pontrjagin%E6%95%B0"><span class="nav-text">Pontrjagin数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%87%BD%E6%95%B0%E8%AE%BA"><span class="nav-text">对称函数论</span></a></li></ol>
     </div>
 </div>
         </aside>
