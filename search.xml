@@ -10935,4 +10935,91 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
         <category>泛函分析</category>
       </categories>
   </entry>
+  <entry>
+    <title>《代数拓扑2》笔记(23)-$S_I$示性类</title>
+    <url>/2022/12/08/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(23)-$S_I$%E7%A4%BA%E6%80%A7%E7%B1%BB/</url>
+    <content><![CDATA[<h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于对称多项式$S=\mathbb{Z}[t_1,\cdots,t_n]^{S_n},$
+$S^k$为$k$次对称多项式, 它有两种基的选取, $\{\sigma_I\}$或$\{m_I\},$
+$I$为$k$-划分. $m_I=S_I(\sigma_1,\cdots,\sigma_n).$</p>
+<p>拓扑上, $H^\ast (BU(1)^{\times n})\cong \mathbb{Z}[t_1,\cdots,t_n],$
+$|t_i|=2.$
+$H^\ast (BU(n))\cong \mathbb{Z}[t_1,\cdots,t_n]^{S_n}=\mathbb{Z}[c_1,\cdots,c_n],$
+$c_i=\sigma_i.$
+定义$S_I(c(\omega)):=S_I(c_1(\omega),\cdots,c_n(\omega)).$</p>
+<p><strong>引理 1</strong> (Thom). <em>$S_I(c(\omega\oplus\omega’))=\sum_{JK=I}S_J(c(\omega))S_K(c(\omega’)).$</em> </p>
+<p>有由之定义的示性类.</p>
+<h2 id="新示性类"><a href="#新示性类" class="headerlink" title="新示性类"></a>新示性类</h2><p><strong>推论 2</strong>. <em>若$m,n\neq 0,$ 那么$S_{m+n}[K^m\times L^n]=0.$</em> </p>
+<p>对于$\tau=\tau_{\mathbb{C}\mathrm{P}^n},$ $c(\tau)=(1+a)^{n+1},$
+$c_k(\tau)=\sigma_k(a,\cdots,a),$</p>
+<script type="math/tex; mode=display">
+S_k(c_1,\cdots,c_k)=m_k(a,\cdots,a)=(n+1)a^k.</script><p> 取$n=k,$
+那么$S_n[\mathbb{C}\mathrm{P}^n]=\left&lt;{}S_n(\tau_{\mathbb{C}\mathrm{P}^n}),[\mathbb{C}\mathrm{P}^n]\right&gt;=n+1\neq 0.$
+因此$\mathbb{C}\mathrm{P}^n\neq K\times L,$
+除非$K$或$L$为$\mathbb{C}\mathrm{P}^n.$</p>
+<p>类似地, 对于Pontrjagin示性类,</p>
+<script type="math/tex; mode=display">
+S_I(p(\xi)):=S_I(p_1(\xi),\cdots,p_n(\xi))\in H^{4n}(B;\mathbb{Z}).</script><p>同样的, 我们有</p>
+<p><strong>命题 3</strong>. <em>$S_I(p(\xi\oplus\xi’))=\sum_{JK=I}S_J(p(\xi))S_k(p(\xi’))+2\:torsions.$</em> </p>
+<p><strong>推论 4</strong>. <em>$S_I(p)[M\times N]=\sum_{JK=I}S_J(p)[M]\cdot S_K(p)[N].$ 两侧都是整数, 不涉及挠部.</em> </p>
+<p>$S_I(p)[M\times N]=0$ 除非 $4|\dim_\mathbb{R}M, \dim_\mathbb{R}N.$</p>
+<p>Chern数和Pontrjagin数线性无关.</p>
+<p><strong>定理 5</strong> (Thom). <em>若$K^1,\cdots,K^n$为复流形, 使得 $S_k(c)[K^k]\neq 0,$ 那么$p(m)\times p(n)$维矩阵 $[c_{i_1}\cdots c_{i_r}[K^{j_1}\times\cdots\times K^{j_s}]]_{I,J}$ 非奇异.</em> </p>
+<p>这给出$\{c_I\}$作为复流形不变量是独立的. 取$K^k=\mathbb{C}\mathrm{P}^k,$
+那么这满足要求, 因此存在这样的复流形列.</p>
+<p>对于$2$维时的情况, 唯一的划分为$1+1,2.$ 那么矩阵为 </p>
+<script type="math/tex; mode=display">
+\begin{bmatrix}
+ c_1c_1[\mathbb{C}\mathrm{P}^1\times \mathbb{C}\mathrm{P}^1]&c_1c_1[\mathbb{C}\mathrm{P}^2]\\
+ c_2[\mathbb{C}\mathrm{P}^1\times \mathbb{C}\mathrm{P}^1]& c_2[\mathbb{C}\mathrm{P}^2]
+ \end{bmatrix}</script><p>类似的结论对Pontrjagin示性类也成立.</p>
+<p><strong>定理 6</strong> (Thom). <em>若$M^{4k}$为定向流形, $S_k(p)[M^{4k}]\neq 0,$ $\,\forall\,k,$ 那么矩阵$[p_{i_1}\cdots p_{i_r}[M^{4j_1}\times\cdots\times M^{4j_s}]]_{I,J}$非奇异.</em> </p>
+<p>此时取得流形例子为$M^{4k}=\mathbb{C}\mathrm{P}^{2k},$
+$p(\mathbb{C}\mathrm{P}^{2k})=(1+a^2)^{2k+1},$
+那么$S_k(p)[\mathbb{C}\mathrm{P}^{2k}]=2k+1\neq 0.$</p>
+<p>注意$\{c_I\},$ $\{S_I(c)\}$都构成$H^{2n}(BU(n);\mathbb{Z})$的一组基,
+那么基改变后, 只需证明</p>
+<script type="math/tex; mode=display">
+[S_I(K^{j_1}\times\cdots\times K^{j_s})]_{I,J}</script><p> 非奇异.</p>
+<script type="math/tex; mode=display">
+(\ast )=\sum_{I_1\cdots I_s=I}S_{I_1}[K^{j_1}]\cdots S_{I_s}[K^{j_s}].</script><p>上式只在$I$加细$J$的时候非零. 因此$[S_I[K^J]]_{I,J}$为上三角阵,
+若合适排序$I,J.$</p>
+<p>因此,</p>
+<script type="math/tex; mode=display">
+\det=\prod_I S_I[K^I]=\prod_I S_{i_1}[K^{i_1}]\cdots S_{i_r}[K^{i_r}]</script><h2 id="定向配边环-Omega-ast"><a href="#定向配边环-Omega-ast" class="headerlink" title="定向配边环$\Omega_\ast $"></a>定向配边环$\Omega_\ast $</h2><p>设$(X^{n+1},\partial X)$为光滑流形,
+$TX$上的定向诱导了$T(\partial X)$上的定向. 称$v_1,\cdots, v_n$正定向,
+若$\,\exists\,v_0\in T_xX\setminus T_x(\partial X),$
+$v_0,\cdots,v_n$正定向.</p>
+<p>记$M$为定向闭流形, $-M$为其反定向, $M+M’:=M\sqcup M’.$</p>
+<p>定义两个$n$维光滑闭流形$M,M’$具正定向配边, 若存在紧定向流形, 具边界$X,$
+使得$\partial X\cong M+(-M’),$ 同胚是保定向的. 容易验证这是一个等价关系.
+等价类称为配边类.</p>
+<script type="math/tex; mode=display">
+\Omega_n:=\{[M^n]|M^n\text{光滑,闭, 定向}\}.</script><p> 这构成了加法下的Abel群.
+记 </p>
+<script type="math/tex; mode=display">
+\Omega_\ast :=\bigoplus_{n=0}^\infty \Omega_n,</script><p> 构成了分级交换环,
+$[M]\times [N]:=[M\times N].$
+注意$[M^m\times N^n]=(-1)^{mn}[N^n\times M^m].$</p>
+<p>回忆$M^{4k}=\partial V^{4k+1},$ 那么它所有的$p_I[M]=0,$
+$\,\forall\,I$划分$k.$</p>
+<p><strong>推论 7</strong>. <em>$\,\forall\,I$划分$k,$ 我们有群同态$p_I:\Omega_{4k}\rightarrow \mathbb{Z}$良定, $[M^{4k}]\mapsto p_I[M^{4k}]=0.$</em> </p>
+<p><strong>推论 8</strong>. <em>$\{\mathbb{C}\mathrm{P}^{2i_1}\times\cdots\times \mathbb{C}\mathrm{P}^{2i_r}|I\text{为$k$划分}\}\subset \Omega_{4k}.$ 是$\mathbb{Z}$-线性无关的.</em> </p>
+<p>因此, $r(\Omega_{4k})\ge p(k).$</p>
+<p>$[P_I(\mathbb{C}\mathrm{P}^J)]_{I,J}$非奇异.</p>
+<p>之后我们说明$r(\Omega_{4k})=p(k).$ 我们有如下事实:</p>
+<p>$\Omega_0\cong \mathbb{Z}=\mathbb{Z}\{[\ast ]\},$ $\Omega_1=0,$
+$\Omega_2=0,$ $\Omega_3=0,$
+$\Omega_4\cong \mathbb{Z}=\mathbb{Z}\{[\mathbb{C}\mathrm{P}^2]\},$
+$\Omega_5\cong \mathbb{Z}_2=\left&lt;{}Y\right&gt;,$ $\Omega_6=0,$
+$\Omega_7=0,$ $\Omega_8=\mathbb{Z}\oplus\mathbb{Z},$
+$\Omega_9=\mathbb{Z}_2\oplus\mathbb{Z}_2,$ $\Omega_{10}=\mathbb{Z}_2,$
+$\cdots.$</p>
+<p>文章最后更新于 2022-12-08 10:21:47 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>代数拓扑2</category>
+      </categories>
+  </entry>
 </search>
