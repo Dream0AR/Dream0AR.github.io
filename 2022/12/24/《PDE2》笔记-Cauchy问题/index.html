@@ -9,7 +9,7 @@
     
     <title>
         
-            《PDE2》笔记-Galerkin逼近 |
+            《PDE2》笔记-Cauchy问题 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《PDE2》笔记-Galerkin逼近</span>
+            <span class="title-hover-animation">《PDE2》笔记-Cauchy问题</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-12-08 10:24:07
+        <i class="fas fa-edit"></i>&nbsp;2022-12-24 09:06:41
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,117 +206,107 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>考虑问题 </p>
+            <h2 id="非散度型方程"><a href="#非散度型方程" class="headerlink" title="非散度型方程"></a>非散度型方程</h2><p>记$\Omega_T=\Omega\times(0,T],$
+抛物边界$\partial_p\Omega=\overline\Omega_T\setminus \Omega_T.$
+考虑方程$u_t+Lu=f,$ $Lu=-a^{ij}u_{ij}+b^iu_i+cu.$
+要求$[a^{ij}]$在$\Omega_T$内半正定.</p>
+<p>设$u\in C^{2,1}(\Omega_T):=\{u(x,t)\in C^2_x(\Omega),C^1_t\in (0,T]\}.$</p>
+<p><strong>定理 1</strong> (弱极值原理). <em>设$\Omega$为有界开集, $a^{ij},b^i,c\in \Omega_T$满足适当光滑性条件, $u\in C^{2,1}(\Omega_T)\cap C(\overline\Omega_T),$ $c\ge 0,$ 则$u_t+Lu\le 0$可以推出$\max_{\overline\Omega_T}u\le \sup_{\partial_p\Omega_T}u^+.$ 取负可以得到最小值的控制.</em> </p>
+<p>反证法, 假设有</p>
 <script type="math/tex; mode=display">
-\left\{\begin{aligned}
- u_t-\Delta u=0&\quad in\:\Omega_T\\
- u=0&\quad on\:\partial\Omega\\
- u|_{t=0}=h&\quad in\:\Omega 
- \end{aligned}\right.</script><p>一种很经典的处理方法是分离变量法, 如果有$u(x,t)=w(x)H(t),$ 那么</p>
+\max_{\overline\Omega_T}=u(x_0,t_0)>\sup_{\partial_p\Omega_T}u^+\ge 0.</script><p>取$v_\varepsilon=u-\varepsilon t,$ 只要$\varepsilon$充分小,
+那么$v_\varepsilon$仍在内部取到非负最大值.</p>
+<p>因此在最大值点$(x_\varepsilon,t_\varepsilon),$ $Dv_{\varepsilon}=0,$
+$D^2v_\varepsilon\le 0,$ $v_{\varepsilon}’\ge 0.$
+将$L$展开即可得到$v_{\varepsilon}’+Lv_\varepsilon\ge 0.$
+(利用$c,v_\varepsilon\ge 0.$)</p>
+<p>另一方面,</p>
 <script type="math/tex; mode=display">
-H_tw-\Delta wH=0,\quad w|_{\partial\Omega}=0.</script><p> 进而,</p>
+0\le v_\epsilon'+Lv_\varepsilon=u_t+Lu-\varepsilon-c\varepsilon t\le -\varepsilon.</script><p>矛盾, 因此$u$非负最大值在抛物边界上取到.</p>
+<p>当$c\equiv 0$时, 可忽略正部的要求; 当$c\ge \mu$为常数时,
+可取$v=e^{\mu t}u,$ 那么 </p>
 <script type="math/tex; mode=display">
-\frac{\Delta w}{w}=\frac{H_t}{H}=-\lambda,</script><p>此时$w$为$\Delta$的特征函数.
-取$\lambda_1\le \lambda_2\le\cdots\rightarrow \infty,$
-那么$\{w_k\}_{k=1}^\infty$构成一组正交基.
-我们希望通过$u_m=\sum_{k=1}^m C_m^k(t) w_k\rightarrow u$给出弱解.</p>
-<h2 id="Galerkin逼近"><a href="#Galerkin逼近" class="headerlink" title="Galerkin逼近"></a>Galerkin逼近</h2><p>可以取到$\{w_k\}\subset C^\infty(\Omega)\cap H_0^1(\Omega)\cap H^2(\Omega),$
-使得$\{w_k\}$为$L^2(\Omega)$标准正交基, $H_0^1(\Omega)$正交基.</p>
-<p>考虑条件</p>
+v_t+(L-\mu)v=e^{\mu t}(u_t+Lu).</script><p> 因此,</p>
 <script type="math/tex; mode=display">
-a^{ij},b^i,c\in L^\infty(\Omega_T),\quad f\in L^2(\Omega_T),\quad h\in L^2(\Omega).</script><p>$\,\forall\,m\ge 1,$ 取$u_m=\sum_{k=1}^m C_m^k(t)w_k(x),$
-使得$\,\forall\,v\in L(w_1,\cdots,w_m),$ </p>
-<script type="math/tex; mode=display">
-\begin{cases}
- \left<{}u_m'(t),v\right>+B_L[u_m,v,t]=(f,v),&a.e.\,t\in (0,T)\\
- u_m|_{t=0}=h_m:=\sum_{k=1}^m (h,w_k)w_k(x)
- \end{cases}</script><p> $h_m\rightarrow h=\sum_{k=1}^\infty (h,w_k)w_k.$
-将$u_m$展开, 记$e_l^k=B[w_l,w_k;t],$ 我们只需解ODE方程组 </p>
+u_t+Lu\le 0\Rightarrow v_t+\widehat Lv\le 0\Rightarrow \max_{\overline\Omega_T}e^{\mu t}u\le \sup_{\partial_p\Omega_T}(e^{\mu t}u)^{+}.</script><p><strong>定理 2</strong>. <em>设$\Omega\subset \mathbb{R}^n$为有界开集, $[a^{ij}]\ge 0,$ $c\ge \mu,$ 那么热方程初边值问题在$C(\overline\Omega_T)\cap C^{2,1}(\Omega_T)$上有唯一解.</em> </p>
+<h2 id="最大模估计"><a href="#最大模估计" class="headerlink" title="最大模估计"></a>最大模估计</h2><p>考虑Cauchy问题: </p>
 <script type="math/tex; mode=display">
 \begin{cases}
- {C_m^k}'(t)+C_m^le_l^k=(f,w_k)\\
- C_m^k(0)=(h,w_k)
- \end{cases}</script><p>注意到$(f,w_k)(t)=\int_\Omega f(x,t)w_k(x)dx\in L^2(0,T),$
-$e_l^k(t)\in L^\infty(0,T),$ 由ODE理论, 我们有如下引理:</p>
-<p><strong>引理 1</strong>. <em>上述ODE方程组在$W^{1,2}(0,T)$中解$\{C_m^k\}$存在唯一. 因此原方程有$W^{1,2}(0,T;H_0^1(\Omega))$中的解$u_m.$</em> </p>
-<p>在$f$关于时间$L^\infty$有界时, 方程在$W^{1,\infty}(0,\infty)$中也有解,
-此时$u_m$还可以取在 $W^{1,\infty}(0,T;H_0^1(\Omega))$ 中.</p>
-<h2 id="能量估计"><a href="#能量估计" class="headerlink" title="能量估计"></a>能量估计</h2><h3 id="零阶项估计"><a href="#零阶项估计" class="headerlink" title="零阶项估计"></a>零阶项估计</h3><p>为了说明收敛性, 我们需要给出能量的有界性. 在方程组中取$v=u_m,$ 那么</p>
+ u_t+Lu=f&in\:Q_T:=\mathbb{R}^n\times (0,T]\\
+ u|_{t=0}=\psi&in\:\mathbb{R}^n
+ \end{cases}</script><p> 设系数满足: $\,\exists\,\alpha_1\in [0,2),$
+$\alpha_2\in [0,1),$ $\mu_0\in \mathbb{R},$ $\mu_1\ge 0,$ 使得</p>
 <script type="math/tex; mode=display">
-\frac{1}{2}\frac{d {} }{d {}t}\Vert u_m(t)\Vert_{L^2(\Omega)}^2+B[u_m,u_m,t]=(f,u_m)\le \frac{\Vert f(t)\Vert_{L^2(\Omega)}^2+\Vert u_m(t)\Vert_{L^2(\Omega)}^2}{2}.</script><p>由椭圆型方程能量估计,</p>
+c\ge \mu_0,\quad\sum_{i,j=1}^n |a^{ij}|\le \mu_1(|x|^{\alpha_1}+1),\quad \sum_{i=1}^n |b^i|\le \mu_1(|x|^{\alpha_2}+1).</script><p><strong>定理 3</strong>. <em>设$u\in C(\overline Q_T)\cap C^{2,1}(Q_T)$为Cauchy问题解, $\lim\limits_{r\rightarrow\infty} \frac{M(r)}{r^2}=0,$ $M(r):=\sup\limits_{\begin{subarray}{c}  |x|=r\\  0&lt;t&lt;T  \end{subarray} }|u(t)|,$ 则</em> </p>
 <script type="math/tex; mode=display">
-B[u_m,u_m;t]\ge \frac{\lambda}{2}\Vert Du_m\Vert_{L^2}^2-\mu(L,\Omega)\Vert u_m\Vert_{L^2}^2.</script><p>因此,</p>
+\sup_{Q_T}|u|\le e^{(-\mu_0)^+T}[T\Vert f\Vert_{L^\infty(Q_T)}+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].</script><h3 id="mu-0-gt-0"><a href="#mu-0-gt-0" class="headerlink" title="$\mu_0&gt;0$"></a>$\mu_0&gt;0$</h3><p>先来讨论$\mu_0&gt;0$的情形, 此时只需证明 </p>
 <script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\Vert u_m\Vert_{L^2}^2+\lambda\Vert u_m\Vert_{H^1}^2\le C(\Vert f\Vert_{L^2}^2+\Vert u_m\Vert_{L^2}^2).</script><p>对于</p>
+\pm u+At+B\ge 0.</script><p>取$v_r(x,t)=\frac{M(r)}{r^2}[|x|^2+mt],$ $m\ge 0$待定,
+$w=\pm u+At+B+v_r.$ 我们希望通过证明$w\ge 0,$
+令$r\rightarrow\infty$给出原不等式. 我们利用弱极值原理给出证明,
+因此考虑$w_t+Lw\ge 0.$</p>
 <script type="math/tex; mode=display">
-\frac{d {}F}{d {}t}\le CF(t)+g(t),\quad \frac{d {} }{d {}t}(e^{-Ct}F(t))\le e^{-Ct}g(t),</script><script type="math/tex; mode=display">
-e^{-Ct}F(t)\le F(0)+\int_0^te^{-cs}g(s)ds,\quad F(t)\le e^{Ct}F(0)+\int_0^te^{C(t-s)}g(s)ds.</script><p>这样我们就得到了Gronwall不等式. 进一步有</p>
+w_t+Lw=\pm f+A+c(At+B)+\frac{M(r)}{r^2}[m-2a^{ij}\delta_{ij}+2b^ix_i+c|x|^2+cmt]</script><p>注意到$|x|^{\alpha_1}\le \varepsilon|x|^2+\frac{1}{4\varepsilon},$
+那么由系数条件, 可以令$\varepsilon$充分小,
+使得$a^{ij}$项被$c|x|^2,m$控制. $b^i$项同理.
+因此当$m=C(\mu_0,\alpha_1,\alpha_2,\mu_1)&gt;&gt;1$时, $Q_T$上有$w_t+Lw\ge 0.$</p>
+<p>由于$w|_{\partial B_r\times (0,t]}\ge (M(r)\pm u)|_{\partial B_r\times (0,t]}\ge 0,$
+$w|_{t=0}\ge B\pm \psi\ge 0,$ 由弱极值原理我们有$w\ge 0,$
+在$\overline B_r(0)\times [0,t]$上, 即 </p>
 <script type="math/tex; mode=display">
-F(t)\le C(T)\left(F(0)+\int_0^Tg(s)ds\right).</script><p> 若$g$非负非减,
-我们也能给出更精确的估计.</p>
-<p>于是由原不等式, 我们得到</p>
+|u(x,t)|\le At+B+v_r(x,t).</script><p>那么任意固定一个$(x_0,t_0)\in Q_T,$ $\,\forall\,r&gt;|x_0|,$ 有</p>
 <script type="math/tex; mode=display">
-\Vert u_m(t)\Vert_{L^2(\Omega)}^2\le C(T)\left(\Vert\varphi_m\Vert_{L^2(\Omega)}^2+\Vert f\Vert_{L^2(\Omega_T)}^2\right).</script><p>进一步有</p>
+|u(x_0,t_0)|\le AT+B+v_r(x_0,t_0)\rightarrow AT+B.</script><p> 这样就给出了结论.</p>
+<h3 id="mu-0-le-0"><a href="#mu-0-le-0" class="headerlink" title="$\mu_0\le 0$"></a>$\mu_0\le 0$</h3><p>作$v(x,t)=u(x,t)e^{(\mu_0-\delta)t},$ $\delta&gt;0.$
+那么定义$\widehat L=L-(\mu_0-\delta),$ $\widehat c\ge \delta&gt;0.$
+我们有热方程 </p>
 <script type="math/tex; mode=display">
-\Vert u_m(t)\Vert_{L^2(\Omega)}^2+\int_0^t\Vert u_m(s)\Vert_{H^1}^2ds\le C(T)\left(\Vert\varphi_m\Vert_{L^2(\Omega)}^2+\Vert f\Vert_{L^2(\Omega_T)}^2\right).</script><p>于是$u_m\in L^2(0,T;H_0^1(\Omega)),$
-事实上也在$L^\infty(0,T;H_0^1(\Omega))$中.
-接下来需要说明的是$u_m’\in L^2(0,T;H^{-1}(\Omega)).$</p>
-<h3 id="导数项估计"><a href="#导数项估计" class="headerlink" title="导数项估计"></a>导数项估计</h3><p>$\,\forall\,v\in H_0^1(\Omega),$ 取$v_m=\sum_{k=1}^m (v,w_k)w_k.$
-对几乎处处的$t\in (0,T),$ 有 </p>
+v_t+\widehat Lv=\widehat f:=fe^{(\mu_0-\delta)t}.</script><p>此时对$v$就可以应用得到的结果, 给出</p>
 <script type="math/tex; mode=display">
-\begin{aligned}
- |\left<{}u_m',v\right>|&=|(u_m',v_m)|=|(f,v_m)-B[u_m,v_m;t]|\\
- &\le \Vert f\Vert_{L^2}\Vert v_m\Vert_{L^2}+C\Vert u_m\Vert_{H^1}\Vert v_m\Vert_{H^1}\le (\Vert f\Vert_{L^2}+C\Vert u_m\Vert_{H^1})\Vert v\Vert_{H^1}
- \end{aligned}</script><p> 因此,</p>
+|v|\le \widehat AT+B,\quad |u|\le e^{-(\mu_0-\delta)t}[T\Vert e^{(\mu_0-\delta)t}f\Vert_{L^\infty(Q_T)}+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].</script><p>令$\delta\rightarrow 0+$就给出了结论. 定理证毕.</p>
+<p>一般的, 可以要求$M(r)=o(r^\alpha),$ 同时调整$\alpha_1,\alpha_2$的范围.</p>
+<p>对于有界区域问题, 我们有</p>
+<p><strong>定理 4</strong>. <em>设$\Omega$为有界开集, $u\in C^{2,1}(\Omega_T)\cap C(\overline\Omega_T)$为热方程初边值问题的解, 若$[a^{ij}]$对称半正定, 则</em> </p>
 <script type="math/tex; mode=display">
-\Vert u_m'(t)\Vert_{H^{-1}(\Omega)}\le \Vert f\Vert_{L^2}+C\Vert u_m\Vert_{H^1}</script><p><strong>定理 2</strong>. <em>在合适的系数条件下, 逼近解$u_m\in C([0,T];L^2(\Omega))$满足</em> </p>
+\sup_{\Omega_T}|u|\le e^{(-\mu_0)^+T}[T\Vert f\Vert_{L^\infty(\Omega_T)}+\Vert g\Vert_{L^\infty(\partial_p\Omega_T)}].</script><p>由此立即得到热方程初边值问题解的唯一性.</p>
+<h2 id="Cauchy问题唯一性"><a href="#Cauchy问题唯一性" class="headerlink" title="Cauchy问题唯一性"></a>Cauchy问题唯一性</h2><p>Cauchy问题的唯一性要做很多要求, 如通过前面的估计, 我们有:</p>
+<p><strong>定理 5</strong>. <em>在最大模估计条件基础上, Cauchy方程至多只有一个由$r^\alpha$控制(多项式增长)的$C^{2,1}(\Omega_T)\cap C(\overline\Omega_T)$中的解.</em> </p>
+<p>接下来, 我们讨论在一种超指数增长控制下的解的唯一性. 设系数满足</p>
 <script type="math/tex; mode=display">
-\max_{[0,T]}\Vert u_m\Vert_{L^2}+\Vert u_m\Vert_{L^2(0,T;H_0^1)}+\Vert u_m'\Vert_{L^2(0,T;H^{-1})}\le C(T,L,\Omega,n)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert\varphi_m\Vert_{L^2(\Omega)}\right).</script><p>当然可将$\varphi_m$换为$\varphi$给出一致的上界.</p>
-<h2 id="弱解存在性"><a href="#弱解存在性" class="headerlink" title="弱解存在性"></a>弱解存在性</h2><p>分为三步进行:</p>
-<h3 id="弱收敛"><a href="#弱收敛" class="headerlink" title="弱收敛"></a>弱收敛</h3><p>由于$\Vert u_m\Vert_{L^2(0,T;H_0^1)},$
-$\Vert u_m’\Vert_{L^2(0,T;H^{-1})}$一致有界, 我们可以取到弱收敛子列,
-分别在各自空间中弱收敛到$u,v.$ 下证$u’=v\in H^{-1},$ $a.e.$
-$t\in [0,T].$</p>
-<p>结论等价于</p>
+\sum|a^{ij}|+\sum |b^i|+|c|\le m,\quad \,\forall\,(x,t)\in Q_T,</script><script type="math/tex; mode=display">
+E(Q_T):=\{u\in C(\overline Q_T):\,\exists\,k>1,\text{\,s.t.\,}|u|\le ke^{k|x|^2},\:\,\forall\,(x,t)\in Q_T\}.</script><p><strong>定理 6</strong>. <em>在$[a_{ij}]$半正定且系数满足如上条件下, Cauchy问题在$C^{2,1}(Q_T)\cap E(Q_T)$中的解唯一.</em> </p>
+<p>只需讨论$f=0,\psi=0$的情况. 我们希望构造$w_t+Lw\ge 0,$
+然后令$v=\varepsilon w\pm u.$ 证明$v_t+Lv\ge 0$推出$v\ge 0.$
+这样$|u|\le \varepsilon w,$ 令$\varepsilon\rightarrow 0$即可.
+采用分层法解决. 断言存在$T_0=C(m,n,T)&gt;0,$ 问题在$Q_{T_0}$内解唯一.</p>
+<p>记$\widehat k=k+1.$
+$w(x,t):=(\widehat k^2\mu t+\widehat k)e^{(\widehat k^2\mu t+\widehat k)|x|^2}.$
+$\mu&gt;0$待定. 计算:</p>
 <script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\left<{}u(t),\varphi\right>=\left<{}u'(t),\varphi\right>=\left<{}v,\varphi\right>,\quad \,\forall\,\varphi\in H_0^1(\Omega),\quad a.e.\:t\in [0,T].</script><p>由关于时间弱导数定义, 这又等价于$\,\forall\,\eta\in C_0^\infty(0,T),$</p>
+w_t=(\widehat k^2\mu+\widehat k^2\mu|x|^2 (\widehat k^2\mu t+\widehat k))e^{(\widehat k^2\mu t+\widehat k)|x|^2}</script><script type="math/tex; mode=display">
+Lw=(\widehat k^2\mu t+\widehat k)e^{(\widehat k^2\mu t+\widehat k)|x|^2}(-2a_{ij}(\delta^{ij}(\widehat k^2\mu t+\widehat k)+x_ix_j(\widehat k^2\mu t+\widehat k)^2)+2b^ix_i(\widehat k^2\mu t+\widehat k)+c)</script><p>取$T_0\le \min\{T,\frac{1}{\mu \widehat k}\},$
+则$\,\forall\,t\in [0,T_0],$</p>
 <script type="math/tex; mode=display">
--\int_0^T\left<{}u(t),\varphi\right>\eta'=\int_0^T\left<{}v,\varphi\right>\eta.</script><p>而$\,\forall\,\varphi\in H_0^1(\Omega),$</p>
+w_t\ge e^{(\widehat k^2\mu t+\widehat k)|x|^2}(\widehat k^2\mu +\widehat k^3\mu |x|^2),</script><script type="math/tex; mode=display">
+|Lw|\le C(n,m)e^{(\widehat k^2\mu t+\widehat k)|x|^2}(\widehat k^2+\widehat k^3|x|^2).</script><p>令$\mu\ge 2C$即有$w_t+Lw&gt;0.$</p>
+<p>令$v=\varepsilon w\pm u,$ 取$r$使得$\varepsilon e^{r^2}=1.$
+当$\varepsilon\rightarrow 0$时,
+$r_\varepsilon=\sqrt{|\log \varepsilon|}\rightarrow\infty.$ 记</p>
 <script type="math/tex; mode=display">
-\int_0^T\left<{}v,\varphi\right>\eta dt=\lim_{m\rightarrow\infty}\int_0^T(u_m',\varphi)\eta dt=-\lim_{m\rightarrow\infty}\int_0^T(u_m,\varphi)\eta' dt=-\int_0^T(u,\varphi)\eta'dt.</script><p>这就给出了$u’=v$.</p>
-<h3 id="热方程弱解"><a href="#热方程弱解" class="headerlink" title="热方程弱解"></a>热方程弱解</h3><p>接下来验证$u$确实是热方程的弱解. 取$v_N:=\sum_{k=1}^N(v,w_k)w_k.$
-若$m&gt;N,$ 则有</p>
+Q_{r,T_0}=\{|x|<r,0<t\le T_0\}.</script><p> 当$|x|=r$时,</p>
 <script type="math/tex; mode=display">
-\int_0^T(u_m',v_N)\eta dt=\int_0^T\left((f,v_N)-B[u_m,v_N;t]\right)\eta dt.</script><p>令$m\rightarrow\infty,$ 再令$N\rightarrow\infty,$ 即有</p>
+\varepsilon w\ge \varepsilon\widehat k e^{\widehat k r^2}\ge ke^{kr^2}\ge \pm u.</script><p>因此由极值原理, $Q_{r,T_0}$上恒有$v\ge 0,$ 即$|u|\le \varepsilon w.$
+$\,\forall\,(x_0,t_0)\in Q_{T_0},$ 总有充分小的$\varepsilon_0,$
+使得$\,\forall\,\varepsilon\in (0,\varepsilon_0),$
+$|x_0|&lt;r_\varepsilon,$
+因此$|u(x_0,t_0)|\le \varepsilon w(x_0,t_0)\rightarrow 0,$
+由$(x_0,t_0)$任意性, $u\equiv 0.$</p>
+<p>我们只证明了$Q_{T_0}$上的唯一性. 但从$t=T_0$平面出发,
+我们可得到$Q_{2T_0}$上的唯一性. 逐层归纳,
+我们便得到了$Q_T$上问题的唯一性.</p>
+<p><strong>定理 7</strong>. <em>在上述定理基础上, 有最大模估计</em> </p>
 <script type="math/tex; mode=display">
-\int_0^T(u',v)\eta dt=\int_0^T\left((f,v)-B[u,v;t]\right)\eta dt,\quad \,\forall\,\eta\in C[0,T].</script><p>这就说明了$u$为热方程弱解.</p>
-<h3 id="初值条件"><a href="#初值条件" class="headerlink" title="初值条件"></a>初值条件</h3><p>最后还需验证满足初值条件. 由于取$u_m$时考虑了初值条件,
-取$\eta\in C^1[0,T],$ $\eta(T)=0,$ $\eta(0)=1.$ 对于$m&gt;N,$ 我们有</p>
-<script type="math/tex; mode=display">
-\int_0^T(u_m',v_N)\eta dt=(u_m,v_N)\eta|^{T}_{t=0}-\int_0^T(u_m,v_N)\eta'dt=-(\varphi_m,v_N)-\int_0^T(u_m,v_N)\eta'dt.</script><p>令$m\rightarrow\infty,$ 再令$N\rightarrow\infty,$ 我们有:</p>
-<script type="math/tex; mode=display">
-\int_0^T(u',v)\eta dt=-(\varphi,v)-\int_0^T(u,v)\eta'dt.</script><p>另一方面, 由Lions定理, $u\in C([0,T],L^2),$
-在$L^2$意义下$u(0)=\lim_{t\rightarrow 0+}u(t).$ 因此和前面一样的有</p>
-<script type="math/tex; mode=display">
-\int_0^T(u',v)\eta dt=(u,v)\eta|^{T}_{t=0}-\int_0^T(u,v)\eta'dt=-(u(0),v)-\int_0^T(u,v)\eta'dt</script><p>于是$u$也满足初值条件. 由范数的弱sharp连续性, 我们有:</p>
-<p><strong>定理 3</strong>. <em>在热方程系数满足适当条件时, 热方程存在弱解, 且满足能量估计:</em> </p>
-<script type="math/tex; mode=display">
-\max_{[0,T]}\Vert u\Vert_{L^2}+\Vert u\Vert_{L^2(0,T;H_0^1)}+\Vert u'\Vert_{L^2(0,T;H^{-1})}\le C(T,L,\Omega,n)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert\varphi\Vert_{L^2(\Omega)}\right).</script><h2 id="弱解唯一性"><a href="#弱解唯一性" class="headerlink" title="弱解唯一性"></a>弱解唯一性</h2><p>前面的能量估计只能说明通过Galerkin方法得到的弱解唯一,
-但不见得所有弱解都是通过Galerkin方法得到的, 因此我们仍需寻求另外的做法.
-另外证明了唯一性之后,
-我们便说明了唯一的弱解一定可以通过Galerkin方法逼近得到.
-这样任意的弱解也就都适用前面得到的能量估计了.</p>
-<p>只需考虑$f\equiv 0,$ $\varphi\equiv 0$的情形. $u(t)\in H_0^1(\Omega),$
-$a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
-<script type="math/tex; mode=display">
-\left<{}u_t,u\right>+B[u,u;t]=0.</script><p> 和前面一样的, 我们有</p>
-<script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\Vert u(t)\Vert^2_{L^2}=\left<{}u_t,u\right>,\quad B[u,u;t]\ge \frac{\lambda}{2}\Vert Du\Vert_{L^2}^2-\mu\Vert u\Vert_{L^2}^2.</script><p>因此</p>
-<script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\Vert u(t)\Vert_{L^2}^2=-B\le \mu\Vert u\Vert_{L^2}^2.</script><p>这样由基本的ODE知识, 就有</p>
-<script type="math/tex; mode=display">
-\Vert u(0)\Vert_{L^2}^2=0\quad\Rightarrow\quad \Vert u(t)\Vert_{L^2}^2\equiv 0\quad\Rightarrow\quad u\equiv 0\quad in\:\Omega_T.</script><p>这样我们就证明了弱解的唯一性, 也证明了弱解总可由Galerkin逼近得到.</p>
-<p>文章最后更新于 2022-12-08 10:24:09 </p>
+\Vert u\Vert_{L^\infty(Q_T)}\le C(T,n,m,k)[\Vert f\Vert_{L^\infty(Q_T)}T+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].</script><p>文章最后更新于 2022-12-24 09:06:43 </p>
 
         </div>
 
@@ -324,11 +314,11 @@ $a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《PDE2》笔记-Galerkin逼近</li>
+        <li>本文标题：《PDE2》笔记-Cauchy问题</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-12-08 10:24:07</li>
+        <li>创建时间：2022-12-24 09:06:41</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/12/08/《PDE2》笔记-Galerkin逼近/
+            本文链接：https://dream0ar.github.io/2022/12/24/《PDE2》笔记-Cauchy问题/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -345,13 +335,13 @@ $a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/12/24/%E3%80%8APDE2%E3%80%8B%E7%AC%94%E8%AE%B0-%E7%83%AD%E6%96%B9%E7%A8%8B%E6%AD%A3%E5%88%99%E6%80%A7/"
+                           href="/2022/12/24/%E3%80%8APDE2%E3%80%8B%E7%AC%94%E8%AE%B0-%E5%8F%8C%E6%9B%B2%E6%96%B9%E7%A8%8B%E5%BC%B1%E8%A7%A3/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《PDE2》笔记-热方程正则性</span>
+                                <span class="post-nav-title-item">《PDE2》笔记-双曲方程弱解</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -361,10 +351,10 @@ $a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/12/08/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(23)-$S_I$%E7%A4%BA%E6%80%A7%E7%B1%BB/"
+                           href="/2022/12/24/%E3%80%8APDE2%E3%80%8B%E7%AC%94%E8%AE%B0-%E7%83%AD%E6%96%B9%E7%A8%8B%E6%AD%A3%E5%88%99%E6%80%A7/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(23)-$S_I$示性类</span>
+                                <span class="post-nav-title-item">《PDE2》笔记-热方程正则性</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -571,7 +561,7 @@ $a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%9C%BA"><span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Galerkin%E9%80%BC%E8%BF%91"><span class="nav-text">Galerkin逼近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%BD%E9%87%8F%E4%BC%B0%E8%AE%A1"><span class="nav-text">能量估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%B6%E9%98%B6%E9%A1%B9%E4%BC%B0%E8%AE%A1"><span class="nav-text">零阶项估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E9%A1%B9%E4%BC%B0%E8%AE%A1"><span class="nav-text">导数项估计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E8%A7%A3%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-text">弱解存在性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E6%94%B6%E6%95%9B"><span class="nav-text">弱收敛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%AD%E6%96%B9%E7%A8%8B%E5%BC%B1%E8%A7%A3"><span class="nav-text">热方程弱解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%80%BC%E6%9D%A1%E4%BB%B6"><span class="nav-text">初值条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E8%A7%A3%E5%94%AF%E4%B8%80%E6%80%A7"><span class="nav-text">弱解唯一性</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E6%95%A3%E5%BA%A6%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text">非散度型方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E6%A8%A1%E4%BC%B0%E8%AE%A1"><span class="nav-text">最大模估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mu-0-gt-0"><span class="nav-text">$\mu_0&gt;0$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mu-0-le-0"><span class="nav-text">$\mu_0\le 0$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cauchy%E9%97%AE%E9%A2%98%E5%94%AF%E4%B8%80%E6%80%A7"><span class="nav-text">Cauchy问题唯一性</span></a></li></ol>
     </div>
 </div>
         </aside>

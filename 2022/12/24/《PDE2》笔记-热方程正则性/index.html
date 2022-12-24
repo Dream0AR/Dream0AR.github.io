@@ -9,7 +9,7 @@
     
     <title>
         
-            《PDE2》笔记-Galerkin逼近 |
+            《PDE2》笔记-热方程正则性 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《PDE2》笔记-Galerkin逼近</span>
+            <span class="title-hover-animation">《PDE2》笔记-热方程正则性</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-12-08 10:24:07
+        <i class="fas fa-edit"></i>&nbsp;2022-12-24 09:06:17
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,117 +206,104 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>考虑问题 </p>
+            <h2 id="时间一阶正则性"><a href="#时间一阶正则性" class="headerlink" title="时间一阶正则性"></a>时间一阶正则性</h2><p>和椭圆型方程类似地, 由于 </p>
 <script type="math/tex; mode=display">
-\left\{\begin{aligned}
- u_t-\Delta u=0&\quad in\:\Omega_T\\
- u=0&\quad on\:\partial\Omega\\
- u|_{t=0}=h&\quad in\:\Omega 
- \end{aligned}\right.</script><p>一种很经典的处理方法是分离变量法, 如果有$u(x,t)=w(x)H(t),$ 那么</p>
+Lu=f-u_t\quad in\:\Omega,</script><p>当$\partial\Omega\in C^{m+2},$ $a^{i,j}\in C^{m+1},$ $b^i,c\in C^m,$
+$f\in H^m$时, 我们希望有</p>
 <script type="math/tex; mode=display">
-H_tw-\Delta wH=0,\quad w|_{\partial\Omega}=0.</script><p> 进而,</p>
+\Vert u\Vert_{H^{m+2} }\le C\left(\Vert f\Vert_{H^m}+\Vert u_t\Vert_{H^m}\right).</script><p>由椭圆型方程正则性估计, 在$\partial\Omega\in C^2,$ $a^{ij}\in C^1$时,
+我们有</p>
 <script type="math/tex; mode=display">
-\frac{\Delta w}{w}=\frac{H_t}{H}=-\lambda,</script><p>此时$w$为$\Delta$的特征函数.
-取$\lambda_1\le \lambda_2\le\cdots\rightarrow \infty,$
-那么$\{w_k\}_{k=1}^\infty$构成一组正交基.
-我们希望通过$u_m=\sum_{k=1}^m C_m^k(t) w_k\rightarrow u$给出弱解.</p>
-<h2 id="Galerkin逼近"><a href="#Galerkin逼近" class="headerlink" title="Galerkin逼近"></a>Galerkin逼近</h2><p>可以取到$\{w_k\}\subset C^\infty(\Omega)\cap H_0^1(\Omega)\cap H^2(\Omega),$
-使得$\{w_k\}$为$L^2(\Omega)$标准正交基, $H_0^1(\Omega)$正交基.</p>
-<p>考虑条件</p>
+\Vert u\Vert_{H^2}\le C\left(\Vert f\Vert_{L^2}+\Vert u_t\Vert_{L^2}+\Vert u\Vert_{L^2}\right),\quad a.e.\:t.</script><p><strong>定理 1</strong>. <em>$\Omega\subset \mathbb{R}^n$为有界开集, $\partial \Omega\in C^2$. 在系数满足基本条件使得$u$为热方程弱解时, 若$\varphi\in H_0^1(\Omega),$ $a^{ij}\in L^\infty(0,T;C^1(\overline\Omega))\cap C^1([0,T];L^\infty(\Omega)),$ 则$u\in L^2(0,T;H^2(\Omega))\cap L^\infty(0,T;H_0^1(\Omega)),$ $u_t\in L^2(\Omega_T),$ 有正则性估计</em> </p>
 <script type="math/tex; mode=display">
-a^{ij},b^i,c\in L^\infty(\Omega_T),\quad f\in L^2(\Omega_T),\quad h\in L^2(\Omega).</script><p>$\,\forall\,m\ge 1,$ 取$u_m=\sum_{k=1}^m C_m^k(t)w_k(x),$
-使得$\,\forall\,v\in L(w_1,\cdots,w_m),$ </p>
+\Vert u\Vert_{L^\infty(0,T;H_0^1(\Omega))}+\Vert u_t\Vert_{L^2(\Omega_T)}+\Vert u\Vert_{L^2(0,T;H^2(\Omega))}\le C(L,n,\Omega)\left(\Vert\varphi\Vert_{H^1(\Omega)}+\Vert f\Vert_{L^2(\Omega_T)}\right)</script><p>由椭圆型估计, $u$的$H^2$模已有估计, 只需控制其它两项即可.</p>
+<p>在热方程弱解中, 取$v=u_m’(t),$</p>
 <script type="math/tex; mode=display">
-\begin{cases}
- \left<{}u_m'(t),v\right>+B_L[u_m,v,t]=(f,v),&a.e.\,t\in (0,T)\\
- u_m|_{t=0}=h_m:=\sum_{k=1}^m (h,w_k)w_k(x)
- \end{cases}</script><p> $h_m\rightarrow h=\sum_{k=1}^\infty (h,w_k)w_k.$
-将$u_m$展开, 记$e_l^k=B[w_l,w_k;t],$ 我们只需解ODE方程组 </p>
+\Vert u_m'(t)\Vert_{L^2}^2+B[u_m,u_m';t]=(f,u_m')\le \frac{1}{2}\left(\Vert f\Vert_{L^2}^2+\Vert u_m'(t)\Vert_{L^2}^2\right).</script><p>逐项分析, 我们有</p>
 <script type="math/tex; mode=display">
-\begin{cases}
- {C_m^k}'(t)+C_m^le_l^k=(f,w_k)\\
- C_m^k(0)=(h,w_k)
- \end{cases}</script><p>注意到$(f,w_k)(t)=\int_\Omega f(x,t)w_k(x)dx\in L^2(0,T),$
-$e_l^k(t)\in L^\infty(0,T),$ 由ODE理论, 我们有如下引理:</p>
-<p><strong>引理 1</strong>. <em>上述ODE方程组在$W^{1,2}(0,T)$中解$\{C_m^k\}$存在唯一. 因此原方程有$W^{1,2}(0,T;H_0^1(\Omega))$中的解$u_m.$</em> </p>
-<p>在$f$关于时间$L^\infty$有界时, 方程在$W^{1,\infty}(0,\infty)$中也有解,
-此时$u_m$还可以取在 $W^{1,\infty}(0,T;H_0^1(\Omega))$ 中.</p>
-<h2 id="能量估计"><a href="#能量估计" class="headerlink" title="能量估计"></a>能量估计</h2><h3 id="零阶项估计"><a href="#零阶项估计" class="headerlink" title="零阶项估计"></a>零阶项估计</h3><p>为了说明收敛性, 我们需要给出能量的有界性. 在方程组中取$v=u_m,$ 那么</p>
+-B[u_m,u_m';t]\le -\frac{1}{2}\frac{d {} }{d {}t}\int_\Omega a^{ij}{u_{m} }_i{u_m}_j+\frac{1}{4}\Vert u_m'\Vert_{L^2}^2+C\Vert u_m\Vert_{H^1}^2.</script><p>因此,</p>
 <script type="math/tex; mode=display">
-\frac{1}{2}\frac{d {} }{d {}t}\Vert u_m(t)\Vert_{L^2(\Omega)}^2+B[u_m,u_m,t]=(f,u_m)\le \frac{\Vert f(t)\Vert_{L^2(\Omega)}^2+\Vert u_m(t)\Vert_{L^2(\Omega)}^2}{2}.</script><p>由椭圆型方程能量估计,</p>
+\Vert u_m'(t)\Vert_{L^2}^2+\frac{1}{2}\frac{d {} }{d {}t}\int_\Omega a^{ij}{u_m}_i{u_m}_j\le C\left(\Vert f\Vert_{L^2}^2+\Vert u_m\Vert_{H^1}^2\right).</script><p>对时间项积分, 应用能量估计得到</p>
 <script type="math/tex; mode=display">
-B[u_m,u_m;t]\ge \frac{\lambda}{2}\Vert Du_m\Vert_{L^2}^2-\mu(L,\Omega)\Vert u_m\Vert_{L^2}^2.</script><p>因此,</p>
+\Vert u_m'\Vert_{L^2(\Omega_t)}^2+\int_\Omega a^{ij}{u_m}_i{u_m}_j-\int_\Omega a^{ij}(0){\varphi_m}_i{\varphi_m}_j\le C(L,\Omega)\left(\Vert f\Vert_{L^2(\Omega_T)}^2+\Vert\varphi_m\Vert^2_{L^2(\Omega)}\right).</script><p>整理得到</p>
 <script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\Vert u_m\Vert_{L^2}^2+\lambda\Vert u_m\Vert_{H^1}^2\le C(\Vert f\Vert_{L^2}^2+\Vert u_m\Vert_{L^2}^2).</script><p>对于</p>
-<script type="math/tex; mode=display">
-\frac{d {}F}{d {}t}\le CF(t)+g(t),\quad \frac{d {} }{d {}t}(e^{-Ct}F(t))\le e^{-Ct}g(t),</script><script type="math/tex; mode=display">
-e^{-Ct}F(t)\le F(0)+\int_0^te^{-cs}g(s)ds,\quad F(t)\le e^{Ct}F(0)+\int_0^te^{C(t-s)}g(s)ds.</script><p>这样我们就得到了Gronwall不等式. 进一步有</p>
-<script type="math/tex; mode=display">
-F(t)\le C(T)\left(F(0)+\int_0^Tg(s)ds\right).</script><p> 若$g$非负非减,
-我们也能给出更精确的估计.</p>
-<p>于是由原不等式, 我们得到</p>
-<script type="math/tex; mode=display">
-\Vert u_m(t)\Vert_{L^2(\Omega)}^2\le C(T)\left(\Vert\varphi_m\Vert_{L^2(\Omega)}^2+\Vert f\Vert_{L^2(\Omega_T)}^2\right).</script><p>进一步有</p>
-<script type="math/tex; mode=display">
-\Vert u_m(t)\Vert_{L^2(\Omega)}^2+\int_0^t\Vert u_m(s)\Vert_{H^1}^2ds\le C(T)\left(\Vert\varphi_m\Vert_{L^2(\Omega)}^2+\Vert f\Vert_{L^2(\Omega_T)}^2\right).</script><p>于是$u_m\in L^2(0,T;H_0^1(\Omega)),$
-事实上也在$L^\infty(0,T;H_0^1(\Omega))$中.
-接下来需要说明的是$u_m’\in L^2(0,T;H^{-1}(\Omega)).$</p>
-<h3 id="导数项估计"><a href="#导数项估计" class="headerlink" title="导数项估计"></a>导数项估计</h3><p>$\,\forall\,v\in H_0^1(\Omega),$ 取$v_m=\sum_{k=1}^m (v,w_k)w_k.$
-对几乎处处的$t\in (0,T),$ 有 </p>
+\Vert u_m'\Vert_{L^2(\Omega_T)}+\operatorname{ess}\operatorname{sup}_{t}\Vert u_m\Vert_{H^1}\le C(L,\Omega)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert\varphi_m\Vert_{H^1(\Omega)}\right).</script><p>令$m\rightarrow\infty$即可得到结论.</p>
+<h2 id="时间二阶正则性"><a href="#时间二阶正则性" class="headerlink" title="时间二阶正则性"></a>时间二阶正则性</h2><p><strong>定理 2</strong>. <em>在前定理条件基础上, 若$a^{ij}\in C^1(\overline\Omega_T),$ $b^i,c\in C^1([0,T];L^\infty(\Omega)),$ $\varphi\in H_0^1(\Omega)\cap H^2(\Omega),$ $f\in H^1(0,T;L^2(\Omega))\hookrightarrow C([0,T];L^2(\Omega)),$ 则$u\in L^\infty(0,T;H^2(\Omega)),$ $u_t\in C([0,T];L^2(\Omega))\cap L^2(0,T;H_0^1(\Omega)),$ $u_{tt}\in L^2(0,T;H^{-1}(\Omega)),$ 且</em> </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
- |\left<{}u_m',v\right>|&=|(u_m',v_m)|=|(f,v_m)-B[u_m,v_m;t]|\\
- &\le \Vert f\Vert_{L^2}\Vert v_m\Vert_{L^2}+C\Vert u_m\Vert_{H^1}\Vert v_m\Vert_{H^1}\le (\Vert f\Vert_{L^2}+C\Vert u_m\Vert_{H^1})\Vert v\Vert_{H^1}
- \end{aligned}</script><p> 因此,</p>
+ \Vert u\Vert_{L^\infty(0,T;H^2(\Omega))}+\Vert u_t\Vert_{C([0,T];L^2(\Omega))}+&\Vert u_t\Vert_{L^2(0,T;H_0^1(\Omega))}+\Vert u_{tt}\Vert_{L^2(0,T;H^{-1}(\Omega))}\\
+ &\le C(L,\Omega,T)\left(\Vert f\Vert_{H^1(0,T;L^2(\Omega))}+\Vert\varphi\Vert_{H^2(\Omega)}\right)
+ \end{aligned}</script><p>我们分步给出证明.</p>
+<h3 id="问题约化"><a href="#问题约化" class="headerlink" title="问题约化"></a>问题约化</h3><p>首先由椭圆型正则性估计,</p>
 <script type="math/tex; mode=display">
-\Vert u_m'(t)\Vert_{H^{-1}(\Omega)}\le \Vert f\Vert_{L^2}+C\Vert u_m\Vert_{H^1}</script><p><strong>定理 2</strong>. <em>在合适的系数条件下, 逼近解$u_m\in C([0,T];L^2(\Omega))$满足</em> </p>
+\Vert u\Vert_{H^2}\le C\left(\Vert f\Vert_{L^2}+\Vert u_t\Vert_{L^2}+\Vert u\Vert_{L^2}\right),</script><p>关于时间取$L^\infty$模即可知原式第一项由后面的项给出控制.
+对$u_t$应用Lions定理, 可知给出后两项估计后,
+只需考虑$\Vert u_t\Vert_{L^\infty(0,T;L^2)}$即可.
+因此我们先给出后两项的控制.</p>
+<h3 id="方程求导"><a href="#方程求导" class="headerlink" title="方程求导"></a>方程求导</h3><p>由于${C_m^k}’’=f_k’-(C_m^le_l^k)’,$
+我们知道$u_m’’\in H_0^1(\Omega)$是几乎处处存在的.
+将它还原为关于$u_m$的方程, 有:</p>
 <script type="math/tex; mode=display">
-\max_{[0,T]}\Vert u_m\Vert_{L^2}+\Vert u_m\Vert_{L^2(0,T;H_0^1)}+\Vert u_m'\Vert_{L^2(0,T;H^{-1})}\le C(T,L,\Omega,n)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert\varphi_m\Vert_{L^2(\Omega)}\right).</script><p>当然可将$\varphi_m$换为$\varphi$给出一致的上界.</p>
-<h2 id="弱解存在性"><a href="#弱解存在性" class="headerlink" title="弱解存在性"></a>弱解存在性</h2><p>分为三步进行:</p>
-<h3 id="弱收敛"><a href="#弱收敛" class="headerlink" title="弱收敛"></a>弱收敛</h3><p>由于$\Vert u_m\Vert_{L^2(0,T;H_0^1)},$
-$\Vert u_m’\Vert_{L^2(0,T;H^{-1})}$一致有界, 我们可以取到弱收敛子列,
-分别在各自空间中弱收敛到$u,v.$ 下证$u’=v\in H^{-1},$ $a.e.$
-$t\in [0,T].$</p>
-<p>结论等价于</p>
+\left<{}u_m'',v\right>+B[u_m',v;t]=(f',v)-B_{(1)}[u_m,v;t],</script><script type="math/tex; mode=display">
+B_{(k)}[u,v;t]:=\int_\Omega \frac{d {}^ka^{ij} }{d {}t^k} u_iv_j+\frac{d {}^kb^i}{d {}t^k} u_iv+\frac{d {}^kc}{d {}t^k}uv dx</script><p>取$v=u_m’(t),$ 那么由Young不等式, 可以给出</p>
 <script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\left<{}u(t),\varphi\right>=\left<{}u'(t),\varphi\right>=\left<{}v,\varphi\right>,\quad \,\forall\,\varphi\in H_0^1(\Omega),\quad a.e.\:t\in [0,T].</script><p>由关于时间弱导数定义, 这又等价于$\,\forall\,\eta\in C_0^\infty(0,T),$</p>
+\frac{d {} }{d {}t}\frac{1}{2}\Vert u_m'\Vert_{L^2}^2+B[u_m',u_m';t]\le C(\Vert f'\Vert_{L^2}+\Vert u_m'\Vert_{L^2}^2+\Vert u_m\Vert_{H^1}^2)+\frac{\lambda}{4} \Vert Du_m'\Vert_{L^2}^2</script><p>由椭圆型方程能量估计,</p>
 <script type="math/tex; mode=display">
--\int_0^T\left<{}u(t),\varphi\right>\eta'=\int_0^T\left<{}v,\varphi\right>\eta.</script><p>而$\,\forall\,\varphi\in H_0^1(\Omega),$</p>
+B[u_m',u_m';t]\ge \frac{\lambda}{2}\Vert Du_m'\Vert_{L^2}^2-C_1\Vert u_m'\Vert_{L^2(\Omega)}^2</script><p>因此, 结合对$\Vert u_m\Vert_{H^1},$
+$\Vert u_m’\Vert_{L^2(\Omega_T)}$的已有估计, 应用Gronwall不等式,
+积分得到</p>
 <script type="math/tex; mode=display">
-\int_0^T\left<{}v,\varphi\right>\eta dt=\lim_{m\rightarrow\infty}\int_0^T(u_m',\varphi)\eta dt=-\lim_{m\rightarrow\infty}\int_0^T(u_m,\varphi)\eta' dt=-\int_0^T(u,\varphi)\eta'dt.</script><p>这就给出了$u’=v$.</p>
-<h3 id="热方程弱解"><a href="#热方程弱解" class="headerlink" title="热方程弱解"></a>热方程弱解</h3><p>接下来验证$u$确实是热方程的弱解. 取$v_N:=\sum_{k=1}^N(v,w_k)w_k.$
-若$m&gt;N,$ 则有</p>
+\operatorname{ess}\operatorname{sup}_{t}\Vert u_m'\Vert_{L^2}^2+\Vert u_m'\Vert_{L^2(0,T;H^1)}^2\le C\left(\Vert f\Vert_{H^1(0,T;L^2)}^2+\Vert\varphi_m\Vert_{H_0^1}^2+\Vert u_m'(0)\Vert_{L^2}^2\right).</script><p>考虑$u_m’$在$t=0$时的热方程, 可以进一步给出</p>
 <script type="math/tex; mode=display">
-\int_0^T(u_m',v_N)\eta dt=\int_0^T\left((f,v_N)-B[u_m,v_N;t]\right)\eta dt.</script><p>令$m\rightarrow\infty,$ 再令$N\rightarrow\infty,$ 即有</p>
+\operatorname{ess}\operatorname{sup}_{t}\Vert u_m'\Vert_{L^2}^2+\Vert u_m'\Vert_{L^2(0,T;H^1)}^2\le C\left(\Vert f\Vert_{H^1(0,T;L^2)}^2+\Vert\varphi_m\Vert_{H^2}^2\right)</script><h3 id="初值-H-2-模控制"><a href="#初值-H-2-模控制" class="headerlink" title="初值$H^2$模控制"></a>初值$H^2$模控制</h3><p>我们希望通过$m\rightarrow\infty$直接给出中间两项的估计. 然而,
+$\{w_k\}$在$L^2,H_0^1$中是正交基, 但是在$H^2$中不是,
+因此最后一项不能直接用收敛性. 我们来证明</p>
 <script type="math/tex; mode=display">
-\int_0^T(u',v)\eta dt=\int_0^T\left((f,v)-B[u,v;t]\right)\eta dt,\quad \,\forall\,\eta\in C[0,T].</script><p>这就说明了$u$为热方程弱解.</p>
-<h3 id="初值条件"><a href="#初值条件" class="headerlink" title="初值条件"></a>初值条件</h3><p>最后还需验证满足初值条件. 由于取$u_m$时考虑了初值条件,
-取$\eta\in C^1[0,T],$ $\eta(T)=0,$ $\eta(0)=1.$ 对于$m&gt;N,$ 我们有</p>
+\Vert\varphi_m\Vert_{H^2(\Omega)}\le C\Vert\varphi\Vert_{H^2(\Omega)}.</script><p>$\varphi_m=\sum_{k=1}^m (\varphi,w_k)w_k,$
+取$h_m:=L\varphi_m=\sum_{k=1}^m \lambda_k(\varphi,w_k)w_k.$
+以$L=-\Delta$为例, 那么由于$T(L\varphi_m)=0,$ 由Poincaré不等式,</p>
 <script type="math/tex; mode=display">
-\int_0^T(u_m',v_N)\eta dt=(u_m,v_N)\eta|^{T}_{t=0}-\int_0^T(u_m,v_N)\eta'dt=-(\varphi_m,v_N)-\int_0^T(u_m,v_N)\eta'dt.</script><p>令$m\rightarrow\infty,$ 再令$N\rightarrow\infty,$ 我们有:</p>
+\Vert\varphi_m\Vert_{H^2}\le C\Vert L\varphi_m\Vert_{L^2}=C\Vert h_m\Vert_{L^2}</script><script type="math/tex; mode=display">
+\Vert h_m\Vert_{L^2}^2=\sum_{k=1}^m (\lambda_kw_k,\varphi)^2=\sum_{k=1}^m(\Delta w_k,\varphi)^2=\sum_{k=1}^m(w_k,\Delta \varphi)^2\le \Vert\Delta \varphi\Vert_{L^2}^2\le \Vert\varphi\Vert_{H^2}^2.</script><p>这样就得到了结论.</p>
+<p>这样我们就证明了原始命题中中间两项的控制</p>
+<h3 id="时间二阶项估计"><a href="#时间二阶项估计" class="headerlink" title="时间二阶项估计"></a>时间二阶项估计</h3><p>希望证明</p>
 <script type="math/tex; mode=display">
-\int_0^T(u',v)\eta dt=-(\varphi,v)-\int_0^T(u,v)\eta'dt.</script><p>另一方面, 由Lions定理, $u\in C([0,T],L^2),$
-在$L^2$意义下$u(0)=\lim_{t\rightarrow 0+}u(t).$ 因此和前面一样的有</p>
+\Vert{u_m}_{tt}\Vert_{L^2(0,T;H^{-1}(\Omega))}\le C[\Vert f\Vert_{H^1(0,T;L^2(\Omega))+\Vert\varphi\Vert_{H^2} }].</script><p>这样$\{ {u_m}_{tt}\}$有弱收敛子列. 由之前证明同样的方法, 它就是$u_{tt},$
+且有同样的控制.</p>
+<p>$\,\forall\,\psi\in H_0^1(\Omega),$ $\psi_m:=\sum_{k=1}^m(\psi,w_k)w_k.$</p>
 <script type="math/tex; mode=display">
-\int_0^T(u',v)\eta dt=(u,v)\eta|^{T}_{t=0}-\int_0^T(u,v)\eta'dt=-(u(0),v)-\int_0^T(u,v)\eta'dt</script><p>于是$u$也满足初值条件. 由范数的弱sharp连续性, 我们有:</p>
-<p><strong>定理 3</strong>. <em>在热方程系数满足适当条件时, 热方程存在弱解, 且满足能量估计:</em> </p>
+\begin{aligned}
+ |\left<{}{u_m}_{tt},\psi\right>|=|({u_m}_{tt},\psi_m)|&\le |(f_t,\psi_m)|+|B[u_m',\psi_m,t]|+|B_{(1)}[u_m,\psi_m;t]|\\
+ &\le \Vert f'\Vert_{L^2}\Vert\psi_m\Vert_{L^2}+C\Vert u_m'\Vert_{H^1}\Vert\psi_m\Vert_{H^1}\\
+ &\le C(\Vert f'\Vert_{L^2}+\Vert u_m'\Vert_{H^1})\Vert\psi\Vert_{H^1} 
+ \end{aligned}</script><p>由此得到$H^{-1}$模的估计. 对时间取$L^2$积分,
+由$u_m’$已有的估计即可得到结论.</p>
+<h2 id="高阶正则性"><a href="#高阶正则性" class="headerlink" title="高阶正则性"></a>高阶正则性</h2><p>对方程求$n$阶导, 记$u_n=\frac{d {}^nu}{d {}t^n},$ 有: </p>
 <script type="math/tex; mode=display">
-\max_{[0,T]}\Vert u\Vert_{L^2}+\Vert u\Vert_{L^2(0,T;H_0^1)}+\Vert u'\Vert_{L^2(0,T;H^{-1})}\le C(T,L,\Omega,n)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert\varphi\Vert_{L^2(\Omega)}\right).</script><h2 id="弱解唯一性"><a href="#弱解唯一性" class="headerlink" title="弱解唯一性"></a>弱解唯一性</h2><p>前面的能量估计只能说明通过Galerkin方法得到的弱解唯一,
-但不见得所有弱解都是通过Galerkin方法得到的, 因此我们仍需寻求另外的做法.
-另外证明了唯一性之后,
-我们便说明了唯一的弱解一定可以通过Galerkin方法逼近得到.
-这样任意的弱解也就都适用前面得到的能量估计了.</p>
-<p>只需考虑$f\equiv 0,$ $\varphi\equiv 0$的情形. $u(t)\in H_0^1(\Omega),$
-$a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
+\begin{cases}
+ u_{n}'=\frac{d {}^n}{d {}t^n}f-\frac{d {}^n}{d {}t^n}(Lu)\\
+ u_n|_{t=0}=\frac{d {}^{n-1} }{d {}t^{n-1} }f(0)-\frac{d {}^{n-1} }{d {}t^{n-1} }(Lu)|_{t=0}=:\varphi_n
+ \end{cases}</script><p> 回忆对方程求解必须有$\varphi\in H_0^1,$
+这样才能利用正交基$\{w_k\}$给出收敛性.
+但一般的$\varphi_n$不见得有这个性质. 因此我们需要施加相容性条件:</p>
+<p>归纳地, 对于$\varphi_0:=\varphi,$</p>
 <script type="math/tex; mode=display">
-\left<{}u_t,u\right>+B[u,u;t]=0.</script><p> 和前面一样的, 我们有</p>
+\varphi_j:=\frac{d {}^{j-1} }{d {}t^{j-1} }f(0)-\sum_{k=0}^{j-1}\binom{j-1}{k}L^k\varphi_{j-1-k},</script><p>要求全部的$\varphi_j\in H_0^1(\Omega),$ $j=0,\cdots,n.$</p>
+<p><strong>定理 3</strong>. <em>设$\Omega\subset \mathbb{R}^n$为有界开集, 整数$m\ge 0.$ $\partial\Omega\in C^{2(m+1)}.$ $a^{ij},b^i,c\in C^{2m+1}(\overline\Omega_T),$ $\varphi\in H^{2m+1}(\Omega),$ $\frac{d {}^kf}{d {}t^k}\in L^2(0,T;H^{2m-2k}(\Omega)),$ $k\le m.$ 若方程满足$m$阶相容性条件, 则存在弱解$u,$ 满足$\frac{d {}^ku}{d {}t^k}\in L^2(0,T;H^{2(m+1)-2k}),$ $k\le m+1,$ 且</em> </p>
 <script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\Vert u(t)\Vert^2_{L^2}=\left<{}u_t,u\right>,\quad B[u,u;t]\ge \frac{\lambda}{2}\Vert Du\Vert_{L^2}^2-\mu\Vert u\Vert_{L^2}^2.</script><p>因此</p>
+\sum_{k=0}^{m+1}\left\Vert\frac{d {}^ku}{d {}t^k}\right\Vert_{L^2(0,T;H^{2(m+1)-2k}(\Omega))}\le C(\Omega,m,n,L,T)\left(\Vert\varphi\Vert_{H^{2m+1}(\Omega)}+\sum_{k=0}^m \left\Vert\frac{d {}^kf}{d {}t^k}\right\Vert_{L^2(0,T;H^{2m-2k}(\Omega))}\right)</script><p>采用归纳法. $m=0$时已有结论. 考虑证明$m+1$时的情形.
+记$\widetilde u=u_t,$ $\widetilde f=f_t=L^{(1)}u,$
+$\widetilde\varphi=\varphi_1=f(0)-L\varphi_0.$ 那么考虑 </p>
 <script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\Vert u(t)\Vert_{L^2}^2=-B\le \mu\Vert u\Vert_{L^2}^2.</script><p>这样由基本的ODE知识, 就有</p>
-<script type="math/tex; mode=display">
-\Vert u(0)\Vert_{L^2}^2=0\quad\Rightarrow\quad \Vert u(t)\Vert_{L^2}^2\equiv 0\quad\Rightarrow\quad u\equiv 0\quad in\:\Omega_T.</script><p>这样我们就证明了弱解的唯一性, 也证明了弱解总可由Galerkin逼近得到.</p>
-<p>文章最后更新于 2022-12-08 10:24:09 </p>
+\begin{cases}
+ \widetilde{u}_t+L\widetilde u=\widetilde f\\
+ \widetilde u|_{t=0}=\widetilde\varphi
+ \end{cases}</script><p> 就给出了$\widetilde u=u_t$的正则性估计.
+只需再估计$\Vert u\Vert_{L^1(0,T;H^{2(m+2)})}$即可, 但这由$Lu=f-u_t,$
+通过椭圆型方程估计立即得到.</p>
+<p><strong>推论 4</strong>. <em>设$\Omega$为有界光滑区域, $a^{ij},b^i,c,f\in C^\infty(\overline\Omega_T),$ $\varphi\in C^\infty(\overline\Omega),$ 满足无穷阶相容性条件, 那么$u\in C^\infty(\overline\Omega_T)$为光滑解.</em> </p>
+<p>由Lions定理与Sobolev嵌入定理, 分别得到时间和空间上的光滑性即可.</p>
+<p>文章最后更新于 2022-12-24 09:06:18 </p>
 
         </div>
 
@@ -324,11 +311,11 @@ $a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《PDE2》笔记-Galerkin逼近</li>
+        <li>本文标题：《PDE2》笔记-热方程正则性</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-12-08 10:24:07</li>
+        <li>创建时间：2022-12-24 09:06:17</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/12/08/《PDE2》笔记-Galerkin逼近/
+            本文链接：https://dream0ar.github.io/2022/12/24/《PDE2》笔记-热方程正则性/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -345,13 +332,13 @@ $a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2022/12/24/%E3%80%8APDE2%E3%80%8B%E7%AC%94%E8%AE%B0-%E7%83%AD%E6%96%B9%E7%A8%8B%E6%AD%A3%E5%88%99%E6%80%A7/"
+                           href="/2022/12/24/%E3%80%8APDE2%E3%80%8B%E7%AC%94%E8%AE%B0-Cauchy%E9%97%AE%E9%A2%98/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《PDE2》笔记-热方程正则性</span>
+                                <span class="post-nav-title-item">《PDE2》笔记-Cauchy问题</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -361,10 +348,10 @@ $a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2022/12/08/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(23)-$S_I$%E7%A4%BA%E6%80%A7%E7%B1%BB/"
+                           href="/2022/12/08/%E3%80%8APDE2%E3%80%8B%E7%AC%94%E8%AE%B0-Galerkin%E9%80%BC%E8%BF%91/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑2》笔记(23)-$S_I$示性类</span>
+                                <span class="post-nav-title-item">《PDE2》笔记-Galerkin逼近</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -571,7 +558,7 @@ $a.e.$ $t.$ 只需考虑如下方程是否只有零解.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%9C%BA"><span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Galerkin%E9%80%BC%E8%BF%91"><span class="nav-text">Galerkin逼近</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%BD%E9%87%8F%E4%BC%B0%E8%AE%A1"><span class="nav-text">能量估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%B6%E9%98%B6%E9%A1%B9%E4%BC%B0%E8%AE%A1"><span class="nav-text">零阶项估计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E9%A1%B9%E4%BC%B0%E8%AE%A1"><span class="nav-text">导数项估计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E8%A7%A3%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-text">弱解存在性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%B1%E6%94%B6%E6%95%9B"><span class="nav-text">弱收敛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%83%AD%E6%96%B9%E7%A8%8B%E5%BC%B1%E8%A7%A3"><span class="nav-text">热方程弱解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%80%BC%E6%9D%A1%E4%BB%B6"><span class="nav-text">初值条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E8%A7%A3%E5%94%AF%E4%B8%80%E6%80%A7"><span class="nav-text">弱解唯一性</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E4%B8%80%E9%98%B6%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text">时间一阶正则性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E4%BA%8C%E9%98%B6%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text">时间二阶正则性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E7%BA%A6%E5%8C%96"><span class="nav-text">问题约化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E7%A8%8B%E6%B1%82%E5%AF%BC"><span class="nav-text">方程求导</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%80%BC-H-2-%E6%A8%A1%E6%8E%A7%E5%88%B6"><span class="nav-text">初值$H^2$模控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E4%BA%8C%E9%98%B6%E9%A1%B9%E4%BC%B0%E8%AE%A1"><span class="nav-text">时间二阶项估计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E9%98%B6%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text">高阶正则性</span></a></li></ol>
     </div>
 </div>
         </aside>
