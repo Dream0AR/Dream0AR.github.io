@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《几何专题》笔记(3)-欧氏空间中的极小子流形 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3"};
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">分类</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">标签</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">《几何专题》笔记(3)-欧氏空间中的极小子流形</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2023-03-02 19:47:53
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98/">几何专题</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="高度函数"><a href="#高度函数" class="headerlink" title="高度函数"></a>高度函数</h2><p>首先考虑外围空间$X$为$N$维欧氏空间$E^N$的情形.
+此时所有切空间可以等同于$E^N.$ 考虑浸入子流形$x:M\rightarrow E^n.$ 此时</p>
+<script type="math/tex; mode=display">
+dx=\theta_i e_i,\quad de_i=\theta_{ij}e_j+\theta_{i\alpha}e_\alpha=\theta_{ij}e_j+h_{i\alpha j}\theta_j e_\alpha.</script><p>固定一个向量$a\in E^N,$ 那么取$M$上函数$f=\left&lt;{}a,x\right&gt;,$
+表示沿$a$的高度函数. 那么,</p>
+<script type="math/tex; mode=display">
+f_i\theta_i=df=\left<{}a,dx\right>=\left<{}a,e_i\right>\theta_i,</script><script type="math/tex; mode=display">
+f_{ij}\theta_j=d f_i+f_j\theta_{ji}=\left<{}a,de_i\right>+\left<{}a,e_j\right>\theta_{ji}=\left<{}a,\theta_{ij}e_j+h_{i\alpha j}\theta_j e_\alpha+\theta_{ji}e_j\right>=\left<{}a,h_{i\alpha j}\theta_je_\alpha\right>.</script><p>这就给出了</p>
+<script type="math/tex; mode=display">
+\Delta f=f_{ii}=\left<{}a,h_{i\alpha i}e_\alpha\right>=n\left<{}a,H\right>.</script><p>这在$n&gt;0$时说明了如下定理</p>
+<p><strong>定理 1</strong>. <em>欧氏空间中的浸入子流形极小当且仅当在诱导度量下, 全部坐标函数都是调和函数. 进而欧氏空间中没有紧致无边极小子流形.</em> </p>
+<p>这是因为紧致无边流形上的调和函数都是常数.</p>
+<h2 id="曲率"><a href="#曲率" class="headerlink" title="曲率"></a>曲率</h2><p>回忆</p>
+<script type="math/tex; mode=display">
+d\omega_{AB}-\omega_{AC}\wedge\omega_{CB}=-\frac{1}{2}\widehat R_{ABCD}\omega_C\wedge\omega_D.</script><p>注意到欧氏空间中曲率为零. 因此拉回得到</p>
+<script type="math/tex; mode=display">
+d\theta_{ij}-\theta_{ik}\wedge\theta_{kj}=-\theta_{i\alpha}\wedge\theta_{j\alpha}=-\frac{1}{2}(h_{i\alpha k}h_{j\alpha l}-h_{i\alpha l}h_{j\alpha k})\theta_k\wedge\theta_l.</script><p>记$S_{ijkl}$为$M$上度量的曲率张量, 那么</p>
+<script type="math/tex; mode=display">
+S_{ijkl}=h_{i\alpha k}h_{j\alpha l}-h_{i\alpha l}h_{j\alpha k}.</script><p>事实上, 这是高斯方程.</p>
+<p>若$M$是极小的, 那么它的Ricci张量为</p>
+<script type="math/tex; mode=display">
+S_{ik}=S_{ijkj}=-h_{i\alpha j}h_{k\alpha j},</script><p> 是半负定的.
+进一步它的数量曲率为 </p>
+<script type="math/tex; mode=display">
+S=S_{ii}=-h_{i\alpha j}^2\le 0.</script><p>因此我们有如下定理</p>
+<p><strong>定理 2</strong>. <em>极小子流形$M$的Ricci张量是半负定的. 它是全测地的(为线性子空间)当且仅当它的数量曲率为零.</em> </p>
+<h2 id="极小超曲面"><a href="#极小超曲面" class="headerlink" title="极小超曲面"></a>极小超曲面</h2><p>此时余维数为$1,$ 简记$h_{i,n+1,j}=h_{ij}.$
+那么$\theta_{i,n+1}=h_{ij}\theta_j.$ 我们有 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ 0&=d\theta_{i,n+1}-\theta_{iC}\theta_{C,n+1}\\
+ &=dh_{ij}\wedge\theta_j+h_{ij}\theta_k\wedge\theta_{kj}-h_{jk}\theta_{ij}\wedge\theta_k\\
+ &=(dh_{ik}+h_{ij}\theta_{jk}+h_{jk}\theta_{ji})\wedge\theta_k\\
+ &=h_{ik,j}\theta_j\wedge\theta_k
+ \end{aligned}</script><p> 进而$h_{ik,j}=h_{ij,k}.$ 这就是Codazzi方程.</p>
+<p>由于$\theta_{n+1}=0,$</p>
+<script type="math/tex; mode=display">
+0=d\theta_{n+1}=\theta_i\wedge\theta_{i,n+1}=h_{ij}\theta_i\wedge\theta_j.</script><p>因此$h_{ij}=h_{ji}.$ 于是$h_{ij,k}$三变元都是对称的.
+于是极小超曲面任意两下标求和均为零.</p>
+<p>记$f=\left&lt;{}a,e_{n+1}\right&gt;,$ 那么</p>
+<script type="math/tex; mode=display">
+d e_{n+1}=\theta_{n+1,i}e_i=-h_{ij}\theta_je_i,</script><script type="math/tex; mode=display">
+f_i=-\left<{}a,e_j\right>h_{ji},</script><script type="math/tex; mode=display">
+f_{ij}\theta_j=-\left<{}a,\theta_{jk}e_k+h_{jk}\theta_ke_{n+1}\right>h_{ij}-\left<{}a,e_j\right>dh_{ij}-\left<{}a,e_k\right>h_{kj}\theta_{ji}.</script><p>由</p>
+<script type="math/tex; mode=display">
+dh_{ij}+h_{kj}\theta_{ki}+h_{ik}\theta_{kj}=h_{ij,k}\theta_k,</script><script type="math/tex; mode=display">
+f_{ij}\theta_j=-\left<{}a,e_{n+1}\right>h_{ij}h_{jk}\theta_k-\left<{}a,e_j\right>h_{ij,k}\theta_k,</script><script type="math/tex; mode=display">
+f_{ik}=-\left<{}a,e_{n+1}\right>h_{ij}h_{jk}-\left<{}a,e_j\right>h_{ij,k},</script><script type="math/tex; mode=display">
+\Delta f=f_{ii}=-\left<{}a,e_{n+1}\right>h_{ij}^2=\left<{}a,e_{n+1}\right>S.</script><p>考虑形如$z=z(x_1,\cdots,x_n)$的极小超曲面. 那么切向量为</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}r}{\partial {}x_i}=(0,\cdots,1,\cdots,0,p_i),\quad p_i=\frac{\partial {}z}{\partial {}x_i}.</script><script type="math/tex; mode=display">
+g_{ij}=\delta_{ij}+p_ip_j.</script><script type="math/tex; mode=display">
+e_{n+1}=\frac{1}{W}(p_1,\cdots,p_n,-1),\quad W=\sqrt{1+p_k^2}.</script><p>该曲面有到超平面的一一映射. Bernstein问题为是否极小曲面总是超平面.
+我们希望证明$z=a_ix_i+a_{n+1}.$ 但是这在$n\ge 8$时有反例.
+现考虑$n=2$的情形.</p>
+<p>希望利用$\Delta \left&lt;{}a,e_{n+1}\right&gt;=S\left&lt;{}a,e_{n+1}\right&gt;.$
+取$a=(0,\cdots,0,1),$ 此时$\left&lt;{}a,e_{n+1}\right&gt;=-\frac{1}{W}.$ 因此,</p>
+<script type="math/tex; mode=display">
+\Delta(\frac{1}{W})=\frac{2K}{W}\le 0.</script><p>那么$\frac{1}{W}$是上调和的正值函数, 必为常数. 这就说明了结论.</p>
+<p>或者我们有高斯方程</p>
+<script type="math/tex; mode=display">
+S_{ijkl}=h_{ik}h_{jl}-h_{il}h_{jk},\quad S_{ik}=nHh_{ik}-h_{ij}h_{jk}.</script><p>曲面极小时, 有 </p>
+<script type="math/tex; mode=display">
+S_{ik}=K\delta_{ik}=-h_{il}h_{lk}.</script><p> 由于</p>
+<script type="math/tex; mode=display">
+\Delta\log (1+\frac{1}{W})=\frac{1}{1+\frac{1}{W} }\Delta(\frac{1}{W})-\frac{1}{(1+\frac{1}{W})^2}|\nabla (\frac{1}{W})|^2.</script><p>设$f=1+\frac{1}{W},$ 那么</p>
+<script type="math/tex; mode=display">
+\Delta \log f=\frac{\Delta f}{f}-\frac{f_k^2}{f^2}.</script><p> 回忆</p>
+<script type="math/tex; mode=display">
+\left<{}a,e_3\right>_i=-\left<{}a,e_j\right>h_{ij}.</script><p>由于$e_3=\frac{1}{W}(p_1,p_2,-1),$</p>
+<script type="math/tex; mode=display">
+|\nabla (\frac{1}{W})|^2=|\nabla\left<{}a,e_3\right>|^2=\left<{}a,e_3\right>_i^2=\left<{}a,e_j\right>h_{ij}\left<{}a,e_k\right>h_{ik}=-K\left<{}a,e_j\right>^2.</script><p>由于</p>
+<script type="math/tex; mode=display">
+(0,0,1)=a=\left<{}a,e_i\right>e_i+\left<{}a,e_3\right>e_3=\left<{}a,e_i\right>e_i-\frac{1}{W}e_3,</script><script type="math/tex; mode=display">
+1=\left<{}a,e_i\right>^2+(\frac{1}{W})^2.</script><p> 因此</p>
+<script type="math/tex; mode=display">
+\Delta(\log (1+\frac{1}{W}))=\frac{1}{1+\frac{1}{W} }\frac{2K}{W}+\frac{1}{(1+\frac{1}{W})^2}(-K)(1-(\frac{1}{W})^2)=K.</script><p>考虑一个新度量$d\sigma=(1+\frac{1}{W})ds,$ $ds$由浸入诱导.
+$d\sigma\ge ds$ 是完备的. 断言在$\sigma$下, $\widetilde K\equiv 0,$
+进而它是可展曲面. 那么, </p>
+<script type="math/tex; mode=display">
+d\sigma^2=d\xi^2+d\eta^2.</script><script type="math/tex; mode=display">
+\Delta_{ds^2}=\Lambda(\frac{\partial {} }{\partial {}\xi^2}+\frac{\partial {} }{\partial {}\eta^2}),\quad \Lambda=(1+\frac{1}{W})>0.</script><p>已知$K\le 0.$ 因此</p>
+<script type="math/tex; mode=display">
+0\ge K=\Delta\log(1+\frac{1}{W})= \Lambda(\frac{\partial {} }{\partial {}\xi^2}+\frac{\partial {} }{\partial {}\eta^2})(\log (1+\frac{1}{W})),</script><script type="math/tex; mode=display">
+(\frac{\partial {} }{\partial {}\xi^2}+\frac{\partial {} }{\partial {}\eta^2})\log(1+\frac{1}{W})\le 0,</script><p>上调和正函数为常数, 因此$K\equiv 0.$ 由前面的定理, 它是全测地的,
+进而为超平面.</p>
+<p>对前面的断言, 设$d\sigma^2=e^{2\lambda}ds^2,$ 那么</p>
+<script type="math/tex; mode=display">
+e^{2\lambda}\widetilde K=K-\Delta \lambda,\quad e^{2\lambda}=(1+\frac{1}{W})^2,\quad \lambda=\log(1+\frac{1}{W}).</script><p>于是$\widetilde K=0$当且仅当$K=\Delta \log (1+\frac{1}{W}).$</p>
+<h2 id="极小曲面方程"><a href="#极小曲面方程" class="headerlink" title="极小曲面方程"></a>极小曲面方程</h2><p>回顾$ds^2=g_{ij}dx_idx_j,$ $g_{ij}=\delta_{ij}+p_ip_j.$
+$g_{ik}g^{kj}=\delta_i^k,$ $g^{ij}=\delta_{ij}-\frac{1}{W^2}p_ip_j.$
+考虑第二基本型</p>
+<script type="math/tex; mode=display">
+l_{ij}dx_idx_j=\Theta_{n+1}=-\left<{}dr,de_{n+1}\right>=-dx_i d(\frac{p_i}{W})+dzd(\frac{1}{W}).</script><script type="math/tex; mode=display">
+\Theta_{n+1}=\left<{}d^2r,e_{n+1}\right>=-\frac{1}{W}\frac{\partial^2 {}z}{\partial {}x_i\partial {}x_j}dx^idx^j.</script><p>因此</p>
+<script type="math/tex; mode=display">
+nH=g^{ij}l_{ij}=-\frac{1}{W}g^{ij}p_{ij}=0\Leftrightarrow g^{ij}p_{ij}=0.</script><p>这当且仅当 </p>
+<script type="math/tex; mode=display">
+\frac{\partial {} }{\partial {}x_i}(\frac{p_i}{W})=0.</script><p>这是因为</p>
+<script type="math/tex; mode=display">
+0=g^{ij}p_{ij}=(\delta_{ij}-\frac{p_ip_j}{W^2})p_{ij}=p_{ii}-\frac{1}{W^2}p_ip_jp_{ij}.</script><p>另一方面,</p>
+<script type="math/tex; mode=display">
+\frac{\partial {} }{\partial {}x_i}(\frac{p_i}{W})=\frac{1}{W}p_{ii}-\frac{1}{W^2}p_i\frac{\partial {}W}{\partial {}x_i}=\frac{1}{W}p_{ii}-\frac{1}{W^3}p_ip_kp_{ki}=\frac{1}{W}(p_{ii}-\frac{1}{W^2}p_ip_kp_{ki}).</script><p>因此两者相等. 这样我们就得到了极小曲面方程.</p>
+<p>文章最后更新于 2023-03-02 19:47:54 </p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《几何专题》笔记(3)-欧氏空间中的极小子流形</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2023-03-02 19:47:53</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2023/03/02/《几何专题》笔记(3)-欧氏空间中的极小子流形/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/03/02/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(2)-%E7%AC%AC%E4%B8%80%E5%8F%98%E5%88%86/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《几何专题》笔记(2)-第一变分</span>
+                                <span class="post-nav-item">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            function loadValine() {
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: '欢迎交流讨论',
+                    lang: 'zh-CN'.toLowerCase()
+                });
+
+                function getAuthor(language) {
+                    switch (language) {
+                        case 'en':
+                            return 'Author';
+                        case 'zh-CN':
+                            return '博主';
+                        default:
+                            return 'Master';
+                    }
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 08:00:00 GMT+0800 (香港标准时间)</span>&nbsp;-&nbsp;
+            
+            2023&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+            
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="nav-text">高度函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87"><span class="nav-text">曲率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E5%B0%8F%E8%B6%85%E6%9B%B2%E9%9D%A2"><span class="nav-text">极小超曲面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E6%96%B9%E7%A8%8B"><span class="nav-text">极小曲面方程</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>
