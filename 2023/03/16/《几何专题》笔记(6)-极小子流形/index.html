@@ -9,7 +9,7 @@
     
     <title>
         
-            《抛物方程》笔记(1)-极值原理 |
+            《几何专题》笔记(6)-极小子流形 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《抛物方程》笔记(1)-极值原理</span>
+            <span class="title-hover-animation">《几何专题》笔记(6)-极小子流形</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-03-06 13:00:27
+        <i class="fas fa-edit"></i>&nbsp;2023-03-16 15:52:32
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B/">抛物方程</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98/">几何专题</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,71 +206,37 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><p>略. 参考辜联崑《二阶抛物型偏微分方程》.</p>
-<p>抛物方程在仿射变换$x=Ay$下还是抛物方程.</p>
-<h2 id="弱极值原理"><a href="#弱极值原理" class="headerlink" title="弱极值原理"></a>弱极值原理</h2><p>设$u\in C_p^2,$ $\Delta_x u-u_t&gt;0.$ 假设$u$在$P(D)$内取极大值,
-那么在极值点$\Delta_x u(x_0,t_0)\le 0,$
-$\frac{\partial {}u}{\partial {}t}\ge 0,$ 矛盾.
-此时$u$只能在边界取到极大值.</p>
-<p>对于一般的$L,$ 我们有定理:</p>
-<p><strong>定理 1</strong>. <em>若$c\le 0,$ $Lu&gt;0,$ 则$u$不能在$P(D)$内达到非负极大值; $Lu&lt;0,$ 则$u$不能在$P(D)$内达到非正极小值.</em> </p>
-<p>不失一般性, 设$Hess=\operatorname{diag}\{\Gamma_1,\cdots,\Gamma_n\}.$
-假设有这样的极值, 在极值点$\frac{\partial {}u}{\partial {}x_i}=0,$
-$\frac{\partial {}u}{\partial {}t}\ge 0,$ $a^{ij}u_{ij}\le 0,$
-$cu\le 0,$ 因此$0&lt;Lu\le 0.$ 矛盾.</p>
-<p>对于$c=0$的情形, $u$的正负性限制可以取消. 因为此时$Lu=L(u+C),$
-总能将极值改为正负性适当.</p>
-<p>若$Lu\ge 0,$ $c\le 0,$ $u\in C_p^2(D)\cap C(\overline D),$
-那么考虑$v=u-\varepsilon t$即可(更严谨的, $t-t_0$).
-此时$Lv=Lu-c\varepsilon t+\varepsilon&gt;0.$
-那么$u\le \max_{\partial_pD}(u-\varepsilon t)^++\varepsilon t\le \max_{\partial_pD}u^++\varepsilon T.$
-令$\varepsilon\rightarrow 0$即可. 注意此时的极值原理是弱的.</p>
-<p>若$Lu\ge 0,$ $c\le C_0,$ 可考虑$v=ue^{-(C_0+1)t}$满足的方程. 此时</p>
+            <h2 id="Schur定理"><a href="#Schur定理" class="headerlink" title="Schur定理"></a>Schur定理</h2><p>若$R_{AB}=c\delta_{AB},$ 则称$M$为Einstein流形.</p>
+<p><strong>定理 1</strong> (Schur). <em>若$R_{AB}=\lambda \delta_{AB},$ 那么$M$也是Einstein流形.</em> </p>
+<h2 id="曲率"><a href="#曲率" class="headerlink" title="曲率"></a>曲率</h2><p>回忆有</p>
 <script type="math/tex; mode=display">
-\widetilde Lv:=a_{ij}v_{ij}+b_iv_i+(c-(C_0+1))v-v_t=e^{-(C_0+1)t}Lu\ge 0,</script><p>$\widetilde L$中常数项系数非正, 因此可用前面的结论.
-不过此时只能推断出$u\le e^{(C_0+1)t}\max_{\partial_pD}(ue^{-(C_0+1)t})^+.$
-常用的结论是若$u|_{\partial_pD}\le 0,$ 则$u\le 0.$</p>
-<h2 id="强极值原理"><a href="#强极值原理" class="headerlink" title="强极值原理"></a>强极值原理</h2><p><strong>定理 2</strong>. <em>考虑$Q=Q(x_0,r,t_1,t_0).$ 若$Lu\ge 0,$ $c\le 0,$ $u\in C_p^2(P(Q))\cap C(\overline Q),$ $u(x_0,t_0)=\max_{P(Q)}u&gt; 0,$ 则$u$在$\overline{Q(x_0,r,t_1,t_0)}$上为常数.</em> </p>
-<p>首先说明$u(x_0,t_0)=u(x_0,t),$ $\,\forall\,t<t_0.$
-不然不妨假设$0<u(x_0,t_1)<u(x_0,t_0).$
-取$\delta$使得在$B_n^\delta(x_0)\times\{t_1\}$处,
-$u(x)<u(x_0,t_0)-\varepsilon_1.$ 希望找到函数$v$使得$Lv>0,$
-同时其在$\widetilde Q:=Q(x_0,\delta,t_1,t_0)$内部达到极值. 考虑</p>
+d\omega_{AB}=\omega_{AC}\wedge\omega_{CB}-\frac{1}{2}\widetilde R_{ABCD}\omega_C\wedge\omega_D.</script><p>拉回得到</p>
 <script type="math/tex; mode=display">
-v=\varepsilon(\delta^2-r^2)^2e^{-a(t-t_0)}+u.</script><p>固定$a,$ 存在这样的$\varepsilon,$
-使得$v|_{B_n^\delta(x_0)\times \{t_1\} }&lt;u(x_0,t_0).$
-在$S(\widetilde Q)$上, $v=u\le u(x_0,t_0).$ 结合来看,
-在抛物边界$\partial_p\widetilde Q$上, $v\le u(x_0,t_0).$
-因此其在$P(\widetilde Q)$内部达到极值.</p>
-<p>只需验证$Lv&gt;0,$ </p>
+d\theta_{ij}-\theta_{ik}\wedge\theta_{kj}=-\theta_{i\alpha}\wedge\theta_{j\alpha}-\frac{1}{2}\widetilde R_{ijkl}\theta_k\wedge\theta_l=-\frac{1}{2}R_{ijkl}\theta_k\wedge\theta_l,</script><script type="math/tex; mode=display">
+R_{ijkl}=\widetilde{R}_{ijkl}+h_{i\alpha k}h_{j\alpha l}-h_{i\alpha l}h_{j\alpha k}.</script><p>这就是<strong>Gauss方程</strong>. 从而</p>
 <script type="math/tex; mode=display">
-\begin{aligned}
- Lv=Lu+\varepsilon e^{-a(t-t_0)}&\left\{8a_{ij}(x_i-x_{0,i})(x_j-x_{0,j})-4a_{ii}(\delta^2-r^2)\right.\\
- &\left.-4b_i(\delta^2-r^2)(x_i-x_{0,i})+(a+c)(\delta^2-r^2)^2\right\}
- \end{aligned}</script><p> 只需说明大括号内可以取正即可.
-在$r$靠近$\delta$时, 利用第一项. 由$a_{ij}$的一致椭圆性,
-$\,\exists\,\delta_0,$ 当$\delta_0&lt;r&lt;\delta$时, 括号内取正;
-当$\delta&lt;\delta_0$时, 利用最后一项. 令$a$充分大, 即可令括号内取正.</p>
-<p>这样与$v$的极值原理矛盾, 从而$u(x_0,t)=u(x_0,t_0),$ $\,\forall\,t&lt;t_0.$</p>
-<p>接下来, 由仿射变换, $u(x_0,t_0)=u(k(x_0’,t_0’)+(1-k)(x_0,t_0)),$
-$\,\forall\,k\in (0,1),$ $(x_0’,t_0’)\in Q.$ 于是我们得到了结论.</p>
-<p>对一般的区域$D$, 利用多个小柱体可以得到更一般的结论.
-$u(x_0,t_0)&gt;0$若是极大值, 则可以控制沿时间单调递减能到达的区域,
-其上函数值均为常数.</p>
-<p>若$c=0,$ 同理可去掉正负性的要求.</p>
-<h2 id="先验估计"><a href="#先验估计" class="headerlink" title="先验估计"></a>先验估计</h2><p>基本思路是利用弱极值原理加加减减.</p>
-<p><strong>定理 3</strong>. <em>若$c\le C_0,$ $u\in C_p^2(P(D))\cap C(\overline D).$ 当$Lu\ge f$时, $u\le e^{C_0^+t}(\max_{\partial_pD}u^++t\max_{\overline D}f^-);$ 若$Lu\le f,$ 则$u\ge -e^{C_0^+t}(\max_{\partial_pD}u^-+t\max_{\overline D} f^+).$</em> </p>
-<p>令$v=u-e^{C_0^+t}(\max_{\partial_pD}u^++t\max_{\overline D} f^-),$
-那么$v|_{\partial_pD}\le 0,$</p>
+R_{ik}=\widetilde R_{ik}+nH^\alpha h_{i\alpha k}-h_{i\alpha j}h_{j\alpha k},</script><script type="math/tex; mode=display">
+R=\widetilde R+n^2|H|^2-S.</script><p>对于<strong>法向联络</strong>$\{\theta_{\alpha\beta}\},$</p>
 <script type="math/tex; mode=display">
-Lv=Lu+e^{C_0^+t}(C_0^+-c)(\max_{\partial_pD}u^++t\max_{\overline D} f^-)+e^{C_0^+t}\max_{\overline D} f^-\ge f+\max_{\overline D} f^-\ge 0.</script><p>这就说明了$v\le 0,$
-从而$u\le e^{C_0^+}(\max_{\partial_pD}u^++t\max_{\overline D}f^-).$</p>
-<p>若$Lu\le f,$ 则$L(-u)\ge -f,$</p>
+d\theta_{\alpha \beta}-\theta_{\alpha i}\wedge\theta_{i\beta}-\theta_{\alpha \gamma}\wedge\theta_{\gamma\beta}=-\frac{1}{2}\widetilde R_{\alpha\beta kl}\theta_k\wedge\theta_l</script><p>定义<strong>法向曲率张量</strong></p>
 <script type="math/tex; mode=display">
-u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}(\max_{\partial_pD}u^-+t\max_{\overline D} f^+).</script><p><strong>推论 4</strong>. <em>$Lu=f,$ $c\le C_0,$ 那么$\Vert u\Vert_{C_0(\overline D)}\le e^{C_0^+t}(\Vert u\Vert_{C_0(\partial_pD)}+t\Vert f\Vert_{C_0(\overline D)}).$</em> </p>
-<p><strong>推论 5</strong>. <em>若$Lu_1=Lu_2=f,$ $c\le C_0,$ 在$\partial_pD$上$u_1=u_2.$ 那么在整个$\overline D$上, 也有$u_1\equiv u_2.$</em> </p>
-<p><strong>推论 6</strong>. <em>若$c=0,$ $Lu=0,$ 则$\min_{\partial_pD}u\le u\le \max_{\partial_pD}u.$</em> </p>
-<p>文章最后更新于 2023-03-06 13:01:03 </p>
+d\theta_{\alpha\beta}-\theta_{\alpha\gamma}\wedge\theta_{\gamma\beta}=-\frac{1}{2}R_{\alpha\beta kl}\theta_k\wedge\theta_l.</script><p>同理, 我们有<strong>Ricci方程</strong></p>
+<script type="math/tex; mode=display">
+R_{\alpha\beta ij}=\widetilde R_{\alpha\beta ij}+h_{i\alpha k}h_{k\beta j}-h_{j\alpha k}h_{k\beta i}.</script><p>这只对余维数大于等于$2$的子流形有意义.</p>
+<p>最后, 考虑</p>
+<script type="math/tex; mode=display">
+d\theta_{i\alpha}-\theta_{ik}\wedge\theta_{k\alpha}-\theta_{i\beta}\wedge\theta_{\beta\alpha}=-\frac{1}{2}\widetilde R_{i\alpha kl}\theta_k\wedge\theta_l.</script><script type="math/tex; mode=display">
+(dh_{i\alpha l}+h_{i\alpha j}\theta_{jl}+h_{k\alpha l}\theta_{ki}+h_{i\beta l}\theta_{\beta \alpha})\wedge\theta_l=-\frac{1}{2}\widetilde{R}_{i\alpha kl}\theta_k\wedge\theta_l.</script><script type="math/tex; mode=display">
+(h_{i\alpha l,k}+\frac{1}{2}\widetilde R_{i\alpha kl})\theta_k\wedge\theta_l=0.</script><p>这就推出了Codazzi方程</p>
+<script type="math/tex; mode=display">
+h_{i\alpha l,k}-h_{i\alpha k,l}=\widetilde R_{i\alpha lk}=\widetilde R_{\alpha ikl}.</script><p>我们希望$kl$对称, 即$\widetilde R_{\alpha ikl}=0.$
+一个例子是常截面曲率$c$的黎曼流形都如此. 若$N=R^{n+p}(c),$</p>
+<script type="math/tex; mode=display">
+\widetilde R_{ABCD}=c(\delta_{AC}\delta_{BD}-\delta_{AD}\delta_{BC}).</script><p>此时Codazzi方程, Ricci方程均可简化.</p>
+<p>考虑二次协变导数, 我们有</p>
+<script type="math/tex; mode=display">
+h_{i\alpha j,k,l}-h_{i\alpha j,l,k}=h_{m\alpha j}R_{mikl}+h_{i\alpha m}R_{mjkl}+h_{i\beta j} R_{\beta\alpha kl}.</script><p>类似地, 也可以考虑$H^\alpha$的协变导数.</p>
+<p>文章最后更新于 2023-03-16 15:52:33 </p>
 
         </div>
 
@@ -278,11 +244,11 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《抛物方程》笔记(1)-极值原理</li>
+        <li>本文标题：《几何专题》笔记(6)-极小子流形</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-03-06 13:00:27</li>
+        <li>创建时间：2023-03-16 15:52:32</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/03/06/《抛物方程》笔记(1)-极值原理/
+            本文链接：https://dream0ar.github.io/2023/03/16/《几何专题》笔记(6)-极小子流形/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -296,29 +262,14 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E7%90%83%E9%9D%A2%E4%B8%AD%E7%9A%84%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何专题》笔记(4)-球面中的极小子流形</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/03/02/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(3)-%E6%AC%A7%E6%B0%8F%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
+                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Chern-%E5%85%A8%E7%BA%AF%E5%BD%A2%E5%BC%8F/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何专题》笔记(3)-欧氏空间中的极小子流形</span>
+                                <span class="post-nav-title-item">《几何专题》笔记(5)-Chern-全纯形式</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -525,7 +476,7 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%8F%B7"><span class="nav-text">记号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E6%9E%81%E5%80%BC%E5%8E%9F%E7%90%86"><span class="nav-text">弱极值原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E6%9E%81%E5%80%BC%E5%8E%9F%E7%90%86"><span class="nav-text">强极值原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E4%BC%B0%E8%AE%A1"><span class="nav-text">先验估计</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Schur%E5%AE%9A%E7%90%86"><span class="nav-text">Schur定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87"><span class="nav-text">曲率</span></a></li></ol>
     </div>
 </div>
         </aside>

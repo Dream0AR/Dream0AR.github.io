@@ -9,7 +9,7 @@
     
     <title>
         
-            《抛物方程》笔记(1)-极值原理 |
+            《几何专题》笔记(4)-球面中的极小子流形 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《抛物方程》笔记(1)-极值原理</span>
+            <span class="title-hover-animation">《几何专题》笔记(4)-球面中的极小子流形</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-03-06 13:00:27
+        <i class="fas fa-edit"></i>&nbsp;2023-03-16 15:51:54
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B/">抛物方程</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98/">几何专题</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,71 +206,102 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><p>略. 参考辜联崑《二阶抛物型偏微分方程》.</p>
-<p>抛物方程在仿射变换$x=Ay$下还是抛物方程.</p>
-<h2 id="弱极值原理"><a href="#弱极值原理" class="headerlink" title="弱极值原理"></a>弱极值原理</h2><p>设$u\in C_p^2,$ $\Delta_x u-u_t&gt;0.$ 假设$u$在$P(D)$内取极大值,
-那么在极值点$\Delta_x u(x_0,t_0)\le 0,$
-$\frac{\partial {}u}{\partial {}t}\ge 0,$ 矛盾.
-此时$u$只能在边界取到极大值.</p>
-<p>对于一般的$L,$ 我们有定理:</p>
-<p><strong>定理 1</strong>. <em>若$c\le 0,$ $Lu&gt;0,$ 则$u$不能在$P(D)$内达到非负极大值; $Lu&lt;0,$ 则$u$不能在$P(D)$内达到非正极小值.</em> </p>
-<p>不失一般性, 设$Hess=\operatorname{diag}\{\Gamma_1,\cdots,\Gamma_n\}.$
-假设有这样的极值, 在极值点$\frac{\partial {}u}{\partial {}x_i}=0,$
-$\frac{\partial {}u}{\partial {}t}\ge 0,$ $a^{ij}u_{ij}\le 0,$
-$cu\le 0,$ 因此$0&lt;Lu\le 0.$ 矛盾.</p>
-<p>对于$c=0$的情形, $u$的正负性限制可以取消. 因为此时$Lu=L(u+C),$
-总能将极值改为正负性适当.</p>
-<p>若$Lu\ge 0,$ $c\le 0,$ $u\in C_p^2(D)\cap C(\overline D),$
-那么考虑$v=u-\varepsilon t$即可(更严谨的, $t-t_0$).
-此时$Lv=Lu-c\varepsilon t+\varepsilon&gt;0.$
-那么$u\le \max_{\partial_pD}(u-\varepsilon t)^++\varepsilon t\le \max_{\partial_pD}u^++\varepsilon T.$
-令$\varepsilon\rightarrow 0$即可. 注意此时的极值原理是弱的.</p>
-<p>若$Lu\ge 0,$ $c\le C_0,$ 可考虑$v=ue^{-(C_0+1)t}$满足的方程. 此时</p>
+            <h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><p>记空间形式$R^{n+p}(c)$为$n+p$维黎曼流形, 具常截面曲率$c$. 我们知道,</p>
 <script type="math/tex; mode=display">
-\widetilde Lv:=a_{ij}v_{ij}+b_iv_i+(c-(C_0+1))v-v_t=e^{-(C_0+1)t}Lu\ge 0,</script><p>$\widetilde L$中常数项系数非正, 因此可用前面的结论.
-不过此时只能推断出$u\le e^{(C_0+1)t}\max_{\partial_pD}(ue^{-(C_0+1)t})^+.$
-常用的结论是若$u|_{\partial_pD}\le 0,$ 则$u\le 0.$</p>
-<h2 id="强极值原理"><a href="#强极值原理" class="headerlink" title="强极值原理"></a>强极值原理</h2><p><strong>定理 2</strong>. <em>考虑$Q=Q(x_0,r,t_1,t_0).$ 若$Lu\ge 0,$ $c\le 0,$ $u\in C_p^2(P(Q))\cap C(\overline Q),$ $u(x_0,t_0)=\max_{P(Q)}u&gt; 0,$ 则$u$在$\overline{Q(x_0,r,t_1,t_0)}$上为常数.</em> </p>
-<p>首先说明$u(x_0,t_0)=u(x_0,t),$ $\,\forall\,t<t_0.$
-不然不妨假设$0<u(x_0,t_1)<u(x_0,t_0).$
-取$\delta$使得在$B_n^\delta(x_0)\times\{t_1\}$处,
-$u(x)<u(x_0,t_0)-\varepsilon_1.$ 希望找到函数$v$使得$Lv>0,$
-同时其在$\widetilde Q:=Q(x_0,\delta,t_1,t_0)$内部达到极值. 考虑</p>
+R^{n+p}(c)=\begin{cases}
+ E^{n+p},&c=0\\
+ S^{n+p},&c=1,\quad x_1^2+\cdots+x_{n+p+1}^2=1\\
+ H^{n+p},&c=-1,\quad x_1^2+\cdots+x_{n+p}^2-x_{n+p+1}^2=-1
+ \end{cases}</script><p>考虑$x:M^n\rightarrow S^{n+1}\hookrightarrow E^{n+p+1},$
+$\left&lt;{}x,x\right&gt;=1.$ 类似地考虑$\{e_i\},\{e_\alpha\}.$
+那么$\{e_i,e_\alpha,x\}$构成$E^{n+p+1}$中的正交标架. 我们有</p>
 <script type="math/tex; mode=display">
-v=\varepsilon(\delta^2-r^2)^2e^{-a(t-t_0)}+u.</script><p>固定$a,$ 存在这样的$\varepsilon,$
-使得$v|_{B_n^\delta(x_0)\times \{t_1\} }&lt;u(x_0,t_0).$
-在$S(\widetilde Q)$上, $v=u\le u(x_0,t_0).$ 结合来看,
-在抛物边界$\partial_p\widetilde Q$上, $v\le u(x_0,t_0).$
-因此其在$P(\widetilde Q)$内部达到极值.</p>
-<p>只需验证$Lv&gt;0,$ </p>
+dx=\theta_ie_i,\quad de_i=\theta_{ij}e_j+\theta_{i\alpha}e_\alpha-\theta_ix.</script><script type="math/tex; mode=display">
+de_\alpha=\theta_{\alpha i}e_i+\theta_{\alpha\beta}e_\beta,\quad \theta_{i\alpha}=h_{i\alpha j}\theta_j.</script><p>$x$项系数是通过内积得到的, 如</p>
+<script type="math/tex; mode=display">
+\left<{}de_i,x\right>=-\left<{}e_i,dx\right>=-\theta_i.</script><h2 id="极小子流形"><a href="#极小子流形" class="headerlink" title="极小子流形"></a>极小子流形</h2><p>设有浸入</p>
+<script type="math/tex; mode=display">
+x:M\hookrightarrow S^{n+p}\hookrightarrow \mathbb{R}^{n+p+1},</script><p>$\,\forall\,a\in \mathbb{R}^{n+p+1},$ 我们来计算</p>
+<script type="math/tex; mode=display">
+\Delta\left<{}x,a\right>=n\left<{}a,H\right>-n\left<{}x,a\right>.</script><p>记$f=\left&lt;{}x,a\right&gt;,$ 通过类似的计算,
+我们有$f_i=\left&lt;{}e_i,a\right&gt;,$</p>
+<script type="math/tex; mode=display">
+f_{ij}\theta_j=df_i+f_j\theta_{ji}=\left<{}de_i,a\right>+\left<{}e_j,a\right>\theta_{ji}=\left<{}\theta_{ij}e_j+h_{i\alpha j}\theta_je_\alpha-\theta_ix,a\right>+\left<{}e_j,a\right>\theta_ji=\left<{}h_{i\alpha j}\theta_je_\alpha-\theta_ix,a\right>,</script><script type="math/tex; mode=display">
+\Delta\left<{}x,a\right>=f_{ii}=n\left<{}a,H\right>-n\left<{}x,a\right>.</script><p>从而</p>
+<p><strong>定理 1</strong>. <em>$x:M\rightarrow S^{n+p}$极小当且仅当$\Delta\left&lt;{}x,a\right&gt;=-n\left&lt;{}x,a\right&gt;,$ 当且仅当$\Delta x=-nx.$</em> </p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="大圆"><a href="#大圆" class="headerlink" title="大圆"></a>大圆</h3><p>$n$-大圆都是全测地的. 取固定的$a\neq 0,$ 大圆可表示为</p>
+<script type="math/tex; mode=display">
+M_0:=\{x\in S^{n+1}|\left<{}x,a\right>=0\},</script><script type="math/tex; mode=display">
+dx=\theta_i e_i,\quad de_i=\theta_{ij}e_j+h_{ij}e_je_{n+1}-\theta_ix,</script><script type="math/tex; mode=display">
+de_{n+1}=-h_{ij}\theta_je_i.</script><p> 对$\left&lt;{}x,a\right&gt;=0$求导,
+我们有$\left&lt;{}dx,a\right&gt;=0,$ 因此$a\perp T_pM.$ 又由$a\perp x,$</p>
+<script type="math/tex; mode=display">
+a=ke_{n+1}.</script><p> 由$\left&lt;{}e_i,a\right&gt;=0,$ $\left&lt;{}de_i,a\right&gt;=0,$</p>
+<script type="math/tex; mode=display">
+\left<{}\theta_{ij}e_j+h_{ij}\theta_je_{n+1}-\theta_ix,a\right>=0,\quad h_{ij}\theta_j=0,</script><p>于是$h_{ij}=0.$</p>
+<p>对于$n$-小圆 </p>
+<script type="math/tex; mode=display">
+M_c:=\{x\in S^{n+1}|\left<{}x,a\right>=c,0<c<1\},</script><p>第二基本型特征值均为固定非零常数,
+即$\lambda_1=\cdots=\lambda_n=const\neq 0,$ 称为totally umbilical的.</p>
+<h3 id="Clifford-tori"><a href="#Clifford-tori" class="headerlink" title="Clifford tori"></a>Clifford tori</h3><p>考虑极小超曲面$x:S^r(a_1)\times S^{n-r}(a_2)\hookrightarrow S^{n+1}\hookrightarrow \mathbb{R}^{n+2},$
+$1\le r\le n-1.$ 我们通过</p>
+<script type="math/tex; mode=display">
+x:S^r(a_1)\times S^{n-r}(a_2)\hookrightarrow E^{r+1}\times E^{n-r+1}=E^{n+2}</script><p>来实现这样的嵌入,
+那么设$x=(a_1\xi_1,a_2\xi_2),$ $|\xi_1|=|\xi_2|=1,$ $\xi_1\in E^{r+1},$
+$\xi_2\in E^{n-r+1},$</p>
+<script type="math/tex; mode=display">
+\left<{}x,x\right>=a_1^2\left<{}\xi_1,\xi_1\right>+a_2^2\left<{}\xi_2,\xi_2\right>=a_1^2+a_2^2=1.</script><script type="math/tex; mode=display">
+dx=(a_1d\xi_1,a_2d\xi_2),\quad \uppercase{\romannumeral 1\relax}=\left<{}dx,dx\right>=a_1^2\left<{}d\xi_1,d\xi_1\right>+a_2^2\left<{}d\xi_2,d\xi_2\right>.</script><p>选取$e_{n+1}=(-a_2\xi_1,a_1\xi_2),$ 那么我们选取到了正交基. 第二基本型</p>
+<script type="math/tex; mode=display">
+\uppercase{\romannumeral 2\relax}=-\left<{}dx,de_{n+1}\right>=-\left<{}(a_1d\xi_1,a_2d\xi_2),(-a_2d\xi_1,a_1d\xi_2)\right>=a_1a_2\left(\left<{}d\xi_1,d\xi_1\right>-\left<{}d\xi_2,d\xi_2\right>\right),</script><p>主曲率$\lambda_1=\cdots=\lambda_r=\frac{a_2}{a_1},$
+$\lambda_{r+1}=\cdots=\lambda_n=-\frac{a_1}{a_2}.$ 于是</p>
+<script type="math/tex; mode=display">
+n H=\lambda_1+\cdots+\lambda_n=r\frac{a_2}{a_1}-(n-r)\frac{a_1}{a_2}=0\Leftrightarrow r\frac{a_2}{a_1}=(n-r)\frac{a_1}{a_2},</script><p>回忆$a_1^2+a_2^2=1,$ 从而这当且仅当$a_1=\sqrt{\frac{r}{n} },$
+$a_2=\sqrt{\frac{n-r}{n} },$ 称为Clifford tori, $1\le r\le n-1.$</p>
+<h3 id="Veronese曲面"><a href="#Veronese曲面" class="headerlink" title="Veronese曲面"></a>Veronese曲面</h3><p>考虑$S^2(\sqrt{3})\hookrightarrow S^4(1),$
+$(x,y,z)\mapsto (u_1,\cdots,u_5),$</p>
+<script type="math/tex; mode=display">
+u_1=\frac{1}{\sqrt{3} }yz,\quad u_2=\frac{1}{\sqrt{3} }zx,\quad u_3=\frac{1}{\sqrt{3} }xy,</script><script type="math/tex; mode=display">
+u_4=\frac{1}{2\sqrt{3} }(x^2-y^2),\quad u_5=\frac{1}{6}(x^2+y^2-2z^2).</script><p>希望它是极小曲面, 因此要有$\Delta u_i=-2u_i.$ 显然$\Delta_E u_i=0.$
+我们可以通过研究两者的联系证明, 也可以直接进行计算.</p>
+<p>该嵌入可以拉到$\mathbb{R}\mathrm{P}^2$上, 称为Veronese曲面.</p>
+<h2 id="Gauss映射"><a href="#Gauss映射" class="headerlink" title="Gauss映射"></a>Gauss映射</h2><p>设$x:M\rightarrow S^{n+1}$为极小曲面. 类似于第三章, 我们有</p>
+<script type="math/tex; mode=display">
+\Delta \left<{}a,e_{n+1}\right>=-\sigma\left<{}a,e_{n+1}\right>,</script><p>取$f=\left&lt;{}a,e_{n+1}\right&gt;,$ 那么</p>
+<script type="math/tex; mode=display">
+df=-\left<{}a,h_{ji}\theta_ie_j\right>=f_i\theta_i,</script><script type="math/tex; mode=display">
+f_{ij}\theta_j=df_i+f_j\theta_{ji}=-d(h_{ij}\left<{}a,e_j\right>)-h_{jk}\left<{}a,e_k\right>\theta_{ji},</script><script type="math/tex; mode=display">
+f_{ij}=-h_{ikj}\left<{}a,e_k\right>-h_{ik}\left<{}a,h_{kj}e_{n+1}-x\delta_{kj}\right>,</script><script type="math/tex; mode=display">
+\Delta f=f_{ii}=-h_{ij}^2f,\quad \Delta\left<{}a,e_{n+1}\right>=-\sigma\left<{}a,e_{n+1}\right>.</script><p>$M$定向时, 有良定义的$e_{n+1}:M\hookrightarrow S^{n+1}$给出了Gauss映射.</p>
+<p><strong>定理 2</strong>. <em>令$M^n\rightarrow S^{n+1}$为定向闭极小超曲面. 若Gauss映射像在某个开半球内, 则$M^n$全测地.</em> </p>
+<p>即存在$a,$ 使得$\left&lt;{}a,e_{n+1}\right&gt;&gt;0.$ 注意到</p>
+<script type="math/tex; mode=display">
+0=\int_M\Delta \left<{}a,e_{n+1}\right>dA=-\int_M\sigma \left<{}a,e_{n+1}\right>dA.</script><p>因此$\sigma=0,$ 即$M$全测地.</p>
+<p><strong>定理 3</strong>. <em>设$x:M^2\hookrightarrow S^3$为极小曲面, 那么$x(S^2)$为$S^3$上的大圆.</em> </p>
+<p>思路是, 首先构造一个全纯二次型$Q(dz)^2,$ 由$g(S^2)=0,$ 推出$Q\equiv 0$.
+这样就有$h_{ij}=0,$ $M=S^2(1).$</p>
+<p>存在等温坐标系</p>
+<script type="math/tex; mode=display">
+ds^2=\lambda^2(dx^2+dy^2)=\lambda^2dzd\overline z,\quad z=x+iy,\quad \lambda\in C^\infty(M).</script><p>记 </p>
+<script type="math/tex; mode=display">
+\alpha=\theta_1+i\theta_2=\lambda dz, \quad h=h_{11}+ih_{12},</script><script type="math/tex; mode=display">
+\beta=\theta_{13}+i\theta_{23}=h_{11}\theta_1+h_{12}\theta_2+i(h_{12}\theta_1-h_{11}\theta_2)=h_{11}(\theta_1-i\theta_2) +ih_{12}(\theta_1-i\theta_2)=h\overline\alpha.</script><p>那么</p>
+<script type="math/tex; mode=display">
+d\alpha=\theta_{12}\wedge \theta_2+i\theta_{21}\wedge \theta_1=\theta_{12}\wedge (\theta_2-i\theta_1)=-i\theta_{12}\wedge\alpha,</script><script type="math/tex; mode=display">
+(d\lambda + i\lambda \theta_{12})\wedge dz=0, \quad d\lambda=-i\lambda \theta_{12}+\Lambda_1dz.</script><script type="math/tex; mode=display">
+d\beta=d\theta_{13}+id\theta_{23}=\theta_{12}\wedge\theta_{23}+i\theta_{21}\wedge\theta_{13}=-i\theta_{12}\wedge \beta.</script><p>那么,</p>
+<script type="math/tex; mode=display">
+dh\overline\alpha=dh\wedge\overline\alpha+hd\overline\alpha=dh\wedge\overline\alpha+h(i\theta_{12}\wedge \overline\alpha)=-hi\theta_{12}\wedge \overline\alpha,</script><p>于是,</p>
+<script type="math/tex; mode=display">
+\lambda(dh+2ih\theta_{12})\wedge\overline z=0,\quad d\overline h-2i\overline h\theta_{12}=\Lambda_2 d z.</script><p>取$q=\lambda^2\overline h,$ 那么 </p>
 <script type="math/tex; mode=display">
 \begin{aligned}
- Lv=Lu+\varepsilon e^{-a(t-t_0)}&\left\{8a_{ij}(x_i-x_{0,i})(x_j-x_{0,j})-4a_{ii}(\delta^2-r^2)\right.\\
- &\left.-4b_i(\delta^2-r^2)(x_i-x_{0,i})+(a+c)(\delta^2-r^2)^2\right\}
- \end{aligned}</script><p> 只需说明大括号内可以取正即可.
-在$r$靠近$\delta$时, 利用第一项. 由$a_{ij}$的一致椭圆性,
-$\,\exists\,\delta_0,$ 当$\delta_0&lt;r&lt;\delta$时, 括号内取正;
-当$\delta&lt;\delta_0$时, 利用最后一项. 令$a$充分大, 即可令括号内取正.</p>
-<p>这样与$v$的极值原理矛盾, 从而$u(x_0,t)=u(x_0,t_0),$ $\,\forall\,t&lt;t_0.$</p>
-<p>接下来, 由仿射变换, $u(x_0,t_0)=u(k(x_0’,t_0’)+(1-k)(x_0,t_0)),$
-$\,\forall\,k\in (0,1),$ $(x_0’,t_0’)\in Q.$ 于是我们得到了结论.</p>
-<p>对一般的区域$D$, 利用多个小柱体可以得到更一般的结论.
-$u(x_0,t_0)&gt;0$若是极大值, 则可以控制沿时间单调递减能到达的区域,
-其上函数值均为常数.</p>
-<p>若$c=0,$ 同理可去掉正负性的要求.</p>
-<h2 id="先验估计"><a href="#先验估计" class="headerlink" title="先验估计"></a>先验估计</h2><p>基本思路是利用弱极值原理加加减减.</p>
-<p><strong>定理 3</strong>. <em>若$c\le C_0,$ $u\in C_p^2(P(D))\cap C(\overline D).$ 当$Lu\ge f$时, $u\le e^{C_0^+t}(\max_{\partial_pD}u^++t\max_{\overline D}f^-);$ 若$Lu\le f,$ 则$u\ge -e^{C_0^+t}(\max_{\partial_pD}u^-+t\max_{\overline D} f^+).$</em> </p>
-<p>令$v=u-e^{C_0^+t}(\max_{\partial_pD}u^++t\max_{\overline D} f^-),$
-那么$v|_{\partial_pD}\le 0,$</p>
-<script type="math/tex; mode=display">
-Lv=Lu+e^{C_0^+t}(C_0^+-c)(\max_{\partial_pD}u^++t\max_{\overline D} f^-)+e^{C_0^+t}\max_{\overline D} f^-\ge f+\max_{\overline D} f^-\ge 0.</script><p>这就说明了$v\le 0,$
-从而$u\le e^{C_0^+}(\max_{\partial_pD}u^++t\max_{\overline D}f^-).$</p>
-<p>若$Lu\le f,$ 则$L(-u)\ge -f,$</p>
-<script type="math/tex; mode=display">
-u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}(\max_{\partial_pD}u^-+t\max_{\overline D} f^+).</script><p><strong>推论 4</strong>. <em>$Lu=f,$ $c\le C_0,$ 那么$\Vert u\Vert_{C_0(\overline D)}\le e^{C_0^+t}(\Vert u\Vert_{C_0(\partial_pD)}+t\Vert f\Vert_{C_0(\overline D)}).$</em> </p>
-<p><strong>推论 5</strong>. <em>若$Lu_1=Lu_2=f,$ $c\le C_0,$ 在$\partial_pD$上$u_1=u_2.$ 那么在整个$\overline D$上, 也有$u_1\equiv u_2.$</em> </p>
-<p><strong>推论 6</strong>. <em>若$c=0,$ $Lu=0,$ 则$\min_{\partial_pD}u\le u\le \max_{\partial_pD}u.$</em> </p>
-<p>文章最后更新于 2023-03-06 13:01:03 </p>
+ d(\lambda^2\overline h)=&2\lambda d\lambda \overline h+\lambda^2 d\overline h\\
+ =&2\lambda (-i\lambda \theta_{12}+\Lambda_1dz)\overline h+\lambda^2(2i\overline h\theta_{12}+\Lambda_2dz)\\
+ =&\lambda (2\overline h\Lambda_1+\lambda\Lambda_2)dz.
+ \end{aligned}</script><p> 于是$q$是全纯形式,
+$\frac{\partial {} }{\partial {}\overline z}(\lambda^2\overline h)=0.$</p>
+<p>文章最后更新于 2023-03-16 15:51:56 </p>
 
         </div>
 
@@ -278,11 +309,11 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《抛物方程》笔记(1)-极值原理</li>
+        <li>本文标题：《几何专题》笔记(4)-球面中的极小子流形</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-03-06 13:00:27</li>
+        <li>创建时间：2023-03-16 15:51:54</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/03/06/《抛物方程》笔记(1)-极值原理/
+            本文链接：https://dream0ar.github.io/2023/03/16/《几何专题》笔记(4)-球面中的极小子流形/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -299,13 +330,13 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E7%90%83%E9%9D%A2%E4%B8%AD%E7%9A%84%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
+                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Chern-%E5%85%A8%E7%BA%AF%E5%BD%A2%E5%BC%8F/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何专题》笔记(4)-球面中的极小子流形</span>
+                                <span class="post-nav-title-item">《几何专题》笔记(5)-Chern-全纯形式</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -315,10 +346,10 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/03/02/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(3)-%E6%AC%A7%E6%B0%8F%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
+                           href="/2023/03/06/%E3%80%8A%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E6%9E%81%E5%80%BC%E5%8E%9F%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何专题》笔记(3)-欧氏空间中的极小子流形</span>
+                                <span class="post-nav-title-item">《抛物方程》笔记(1)-极值原理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -525,7 +556,7 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%8F%B7"><span class="nav-text">记号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E6%9E%81%E5%80%BC%E5%8E%9F%E7%90%86"><span class="nav-text">弱极值原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E6%9E%81%E5%80%BC%E5%8E%9F%E7%90%86"><span class="nav-text">强极值原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E4%BC%B0%E8%AE%A1"><span class="nav-text">先验估计</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%8F%B7"><span class="nav-text">记号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">极小子流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%9C%86"><span class="nav-text">大圆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clifford-tori"><span class="nav-text">Clifford tori</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Veronese%E6%9B%B2%E9%9D%A2"><span class="nav-text">Veronese曲面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss%E6%98%A0%E5%B0%84"><span class="nav-text">Gauss映射</span></a></li></ol>
     </div>
 </div>
         </aside>

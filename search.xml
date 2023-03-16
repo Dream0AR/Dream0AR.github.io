@@ -11840,4 +11840,220 @@ $\Delta (h_k-h_{k-1})=\Delta h_k$为$k-2$次齐次多项式, 又是常数,
         <category>PDE</category>
       </categories>
   </entry>
+  <entry>
+    <title>《几何专题》笔记(5)-Chern-全纯形式</title>
+    <url>/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Chern-%E5%85%A8%E7%BA%AF%E5%BD%A2%E5%BC%8F/</url>
+    <content><![CDATA[<h2 id="常平均曲率极小子流形"><a href="#常平均曲率极小子流形" class="headerlink" title="常平均曲率极小子流形"></a>常平均曲率极小子流形</h2><p>设</p>
+<script type="math/tex; mode=display">
+Q=q(dz)^2,\quad q=\lambda^2 \widehat H,\quad \widehat H=\frac{1}{2}(h_{11}-h_{22})-ih_{12}.</script><p>那么$q$就是想要的全纯形式.</p>
+<script type="math/tex; mode=display">
+h\left(\frac{\partial {} }{\partial {}z},\frac{\partial {} }{\partial {}z}\right)=\frac{1}{4}\lambda^2(h_{11}-h_{22}-2ih_{12})=\frac{1}{2}q.</script><p>回忆 </p>
+<script type="math/tex; mode=display">
+h_{ijk}\theta_k=dh_{ij}+h_{kj}\theta_{ki}+h_{ik}\theta_{kj},</script><script type="math/tex; mode=display">
+\begin{aligned}
+ dh_{11}&=2h_{12}\theta_{12}+h_{111}\theta_1+h_{112}\theta_2,\\
+ dh_{12}&=-(h_{11}-h_{22})\theta_{12}+h_{121}\theta_1+h_{122}\theta_2,\\
+ dh_{22}&=-2h_{12}\theta_{12}+h_{221}\theta_1+h_{222}\theta_2.
+ \end{aligned}</script><script type="math/tex; mode=display">
+
+\begin{aligned}
+ d\widehat H=&\frac{1}{2}(dh_{11}-dh_{22})-idh_{12}\\
+ =&\frac{1}{2}[(h_{111}-h_{221})\theta_1+(h_{112}-h_{222})\theta_2+4h_{12}\theta_{12}]-i[h_{121}\theta_1+h_{122}\theta_2-(h_{11}-h_{22})\theta_{12}]\\
+ =&h_{111}\theta_1+h_{112}\theta_2+2h_{12}\theta_{12}-ih_{112}\theta_1+ih_{111}\theta_2+i(h_{11}-h_{22})\theta_{12}\\
+ =&h_{111}(\theta_1+i\theta_2)-ih_{112}(\theta_1+i\theta_2)+2i\widehat H\theta_{12}\\
+ =&(h_{111}-ih_{112})\lambda dz+2i\widehat H\theta_{12}
+ \end{aligned}</script><script type="math/tex; mode=display">
+
+\begin{aligned}
+ dq=&2\lambda d\lambda \widehat H+\lambda^2d\widehat H\\
+ =&2\lambda \widehat H[-i\lambda\theta_{12}+\Lambda_1 dz]+\lambda^2[(h_{111}-ih_{112})\lambda dz+2i\widehat H\theta_{12}]\\
+ =&(*)dz
+ \end{aligned}</script><p> 从而$q$为全纯形式, 若亏格为零, 则$q=0,$
+$h_{11}=h_{22},$ $h_{12}=0.$ $k_1=k_2,$ 因此为球面.</p>
+<h2 id="Chern-Walfson"><a href="#Chern-Walfson" class="headerlink" title="Chern-Walfson"></a>Chern-Walfson</h2><p>考虑$x:M^2\hookrightarrow X,$ $X$为$(2+p)$维常截面曲率$c$的黎曼流形.</p>
+<script type="math/tex; mode=display">
+h\left(\frac{\partial {} }{\partial {}z},\frac{\partial {} }{\partial {}z}\right)=\frac{1}{4}(h_{11}-h_{22}-2ih_{12}).</script><p>定义</p>
+<script type="math/tex; mode=display">
+q=\left<{}h(\partial_z,\partial_z),h(\partial_z,\partial_z)\right>,\quad Q=q(dz)^4.</script><p><strong>定理 1</strong>. <em>若$x:M\rightarrow X$为极小曲面, $X$为常曲率黎曼流形. 那么$Q=qdz^4$为全纯形式.</em> </p>
+<p>记 </p>
+<script type="math/tex; mode=display">
+H_\alpha=h_{1\alpha 1}+ih_{1\alpha 2}.</script><script type="math/tex; mode=display">
+q=\lambda^4\overline H_\alpha^2.</script><p> 若有</p>
+<script type="math/tex; mode=display">
+d\overline H_\alpha ^2=4i\overline H_\alpha^2 \theta_{12}+(\ast )dz</script><p> 则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ dq=&4\lambda^3d\lambda \overline H_\alpha ^2+\lambda^4d\overline H_\alpha^2\\
+ =&4\lambda^3\overline H_\alpha^2[-i\lambda\theta_{12}+\Lambda_1dz]+\lambda^4[4j\overline H_\alpha^2\theta_{12}+(*)dz]\\
+ =&(**)dz
+ \end{aligned}.</script><p> 命题得证. 因此只要证明前面的式子.</p>
+<script type="math/tex; mode=display">
+\theta_{1\alpha}=h_{1\alpha 1}\theta_1+h_{1\alpha 2}\theta_2,</script><script type="math/tex; mode=display">
+\theta_{2\alpha}=h_{2\alpha 1}\theta_1+h_{2\alpha 2}\theta_2.</script><script type="math/tex; mode=display">
+h_{i\alpha jk}\theta_k=dh_{i\alpha j}+h_{k\alpha j}\theta_{ki}+h_{i\alpha k}\theta_{kj}+h_{i\beta j}\theta_{\beta\alpha}.</script><script type="math/tex; mode=display">
+h_{i\alpha jk}=h_{i\alpha kj}.</script><script type="math/tex; mode=display">
+d\overline H_\alpha^2=2\overline H_\alpha d\overline H_\alpha =2\overline H_\alpha d(h_{1\alpha 1}-ih_{1\alpha 2})</script><script type="math/tex; mode=display">
+\begin{aligned}
+ h_{1\alpha 1k}\theta_k=&dh_{1\alpha 1}+2h_{k\alpha 1}\theta_{k1}+h_{1\beta 1}\theta_{\beta\alpha}\\
+ =&dh_{1\alpha 1}+2h_{2\alpha 1}\theta_{21}+h_{1\beta 1}\theta_{\beta\alpha}
+ \end{aligned}</script><script type="math/tex; mode=display">
+dh_{1\alpha 1}=h_{1\alpha 11}\theta_1+h_{1\alpha 12}\theta_2+2h_{2\alpha 1}\theta_{12}-h_{1\beta 1}\theta_{\beta\alpha}.</script><script type="math/tex; mode=display">
+dh_{1\alpha 2}=h_{1\alpha 21}\theta_1+h_{1\alpha 22}\theta_2+h_{2\alpha 2}\theta_{12}-h_{1\alpha 1}\theta_{12}-h_{1\beta 2}\theta_{\beta\alpha}</script><script type="math/tex; mode=display">
+d\overline H_\alpha ^2=2\overline H_\alpha (2i\theta_{12}\overline H_\alpha+h_{1\alpha 11}(\theta_{1}+i\theta_2)-ih_{1\alpha 12}(\theta_1+i\theta_2)-(h_{1\beta 1}-ih_{1\beta 2})\theta_{\beta\alpha})</script><script type="math/tex; mode=display">
+d\overline H_\alpha^2=4i\overline H_\alpha\theta_{12}+2\overline H_\alpha (h_{1\alpha 11}-ih_{1\alpha 12})\lambda dz.</script><p>这就给出了结论.</p>
+<p>文章最后更新于 2023-03-16 15:52:14 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>几何专题</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《几何专题》笔记(4)-球面中的极小子流形</title>
+    <url>/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E7%90%83%E9%9D%A2%E4%B8%AD%E7%9A%84%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/</url>
+    <content><![CDATA[<h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><p>记空间形式$R^{n+p}(c)$为$n+p$维黎曼流形, 具常截面曲率$c$. 我们知道,</p>
+<script type="math/tex; mode=display">
+R^{n+p}(c)=\begin{cases}
+ E^{n+p},&c=0\\
+ S^{n+p},&c=1,\quad x_1^2+\cdots+x_{n+p+1}^2=1\\
+ H^{n+p},&c=-1,\quad x_1^2+\cdots+x_{n+p}^2-x_{n+p+1}^2=-1
+ \end{cases}</script><p>考虑$x:M^n\rightarrow S^{n+1}\hookrightarrow E^{n+p+1},$
+$\left&lt;{}x,x\right&gt;=1.$ 类似地考虑$\{e_i\},\{e_\alpha\}.$
+那么$\{e_i,e_\alpha,x\}$构成$E^{n+p+1}$中的正交标架. 我们有</p>
+<script type="math/tex; mode=display">
+dx=\theta_ie_i,\quad de_i=\theta_{ij}e_j+\theta_{i\alpha}e_\alpha-\theta_ix.</script><script type="math/tex; mode=display">
+de_\alpha=\theta_{\alpha i}e_i+\theta_{\alpha\beta}e_\beta,\quad \theta_{i\alpha}=h_{i\alpha j}\theta_j.</script><p>$x$项系数是通过内积得到的, 如</p>
+<script type="math/tex; mode=display">
+\left<{}de_i,x\right>=-\left<{}e_i,dx\right>=-\theta_i.</script><h2 id="极小子流形"><a href="#极小子流形" class="headerlink" title="极小子流形"></a>极小子流形</h2><p>设有浸入</p>
+<script type="math/tex; mode=display">
+x:M\hookrightarrow S^{n+p}\hookrightarrow \mathbb{R}^{n+p+1},</script><p>$\,\forall\,a\in \mathbb{R}^{n+p+1},$ 我们来计算</p>
+<script type="math/tex; mode=display">
+\Delta\left<{}x,a\right>=n\left<{}a,H\right>-n\left<{}x,a\right>.</script><p>记$f=\left&lt;{}x,a\right&gt;,$ 通过类似的计算,
+我们有$f_i=\left&lt;{}e_i,a\right&gt;,$</p>
+<script type="math/tex; mode=display">
+f_{ij}\theta_j=df_i+f_j\theta_{ji}=\left<{}de_i,a\right>+\left<{}e_j,a\right>\theta_{ji}=\left<{}\theta_{ij}e_j+h_{i\alpha j}\theta_je_\alpha-\theta_ix,a\right>+\left<{}e_j,a\right>\theta_ji=\left<{}h_{i\alpha j}\theta_je_\alpha-\theta_ix,a\right>,</script><script type="math/tex; mode=display">
+\Delta\left<{}x,a\right>=f_{ii}=n\left<{}a,H\right>-n\left<{}x,a\right>.</script><p>从而</p>
+<p><strong>定理 1</strong>. <em>$x:M\rightarrow S^{n+p}$极小当且仅当$\Delta\left&lt;{}x,a\right&gt;=-n\left&lt;{}x,a\right&gt;,$ 当且仅当$\Delta x=-nx.$</em> </p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="大圆"><a href="#大圆" class="headerlink" title="大圆"></a>大圆</h3><p>$n$-大圆都是全测地的. 取固定的$a\neq 0,$ 大圆可表示为</p>
+<script type="math/tex; mode=display">
+M_0:=\{x\in S^{n+1}|\left<{}x,a\right>=0\},</script><script type="math/tex; mode=display">
+dx=\theta_i e_i,\quad de_i=\theta_{ij}e_j+h_{ij}e_je_{n+1}-\theta_ix,</script><script type="math/tex; mode=display">
+de_{n+1}=-h_{ij}\theta_je_i.</script><p> 对$\left&lt;{}x,a\right&gt;=0$求导,
+我们有$\left&lt;{}dx,a\right&gt;=0,$ 因此$a\perp T_pM.$ 又由$a\perp x,$</p>
+<script type="math/tex; mode=display">
+a=ke_{n+1}.</script><p> 由$\left&lt;{}e_i,a\right&gt;=0,$ $\left&lt;{}de_i,a\right&gt;=0,$</p>
+<script type="math/tex; mode=display">
+\left<{}\theta_{ij}e_j+h_{ij}\theta_je_{n+1}-\theta_ix,a\right>=0,\quad h_{ij}\theta_j=0,</script><p>于是$h_{ij}=0.$</p>
+<p>对于$n$-小圆 </p>
+<script type="math/tex; mode=display">
+M_c:=\{x\in S^{n+1}|\left<{}x,a\right>=c,0<c<1\},</script><p>第二基本型特征值均为固定非零常数,
+即$\lambda_1=\cdots=\lambda_n=const\neq 0,$ 称为totally umbilical的.</p>
+<h3 id="Clifford-tori"><a href="#Clifford-tori" class="headerlink" title="Clifford tori"></a>Clifford tori</h3><p>考虑极小超曲面$x:S^r(a_1)\times S^{n-r}(a_2)\hookrightarrow S^{n+1}\hookrightarrow \mathbb{R}^{n+2},$
+$1\le r\le n-1.$ 我们通过</p>
+<script type="math/tex; mode=display">
+x:S^r(a_1)\times S^{n-r}(a_2)\hookrightarrow E^{r+1}\times E^{n-r+1}=E^{n+2}</script><p>来实现这样的嵌入,
+那么设$x=(a_1\xi_1,a_2\xi_2),$ $|\xi_1|=|\xi_2|=1,$ $\xi_1\in E^{r+1},$
+$\xi_2\in E^{n-r+1},$</p>
+<script type="math/tex; mode=display">
+\left<{}x,x\right>=a_1^2\left<{}\xi_1,\xi_1\right>+a_2^2\left<{}\xi_2,\xi_2\right>=a_1^2+a_2^2=1.</script><script type="math/tex; mode=display">
+dx=(a_1d\xi_1,a_2d\xi_2),\quad \uppercase{\romannumeral 1\relax}=\left<{}dx,dx\right>=a_1^2\left<{}d\xi_1,d\xi_1\right>+a_2^2\left<{}d\xi_2,d\xi_2\right>.</script><p>选取$e_{n+1}=(-a_2\xi_1,a_1\xi_2),$ 那么我们选取到了正交基. 第二基本型</p>
+<script type="math/tex; mode=display">
+\uppercase{\romannumeral 2\relax}=-\left<{}dx,de_{n+1}\right>=-\left<{}(a_1d\xi_1,a_2d\xi_2),(-a_2d\xi_1,a_1d\xi_2)\right>=a_1a_2\left(\left<{}d\xi_1,d\xi_1\right>-\left<{}d\xi_2,d\xi_2\right>\right),</script><p>主曲率$\lambda_1=\cdots=\lambda_r=\frac{a_2}{a_1},$
+$\lambda_{r+1}=\cdots=\lambda_n=-\frac{a_1}{a_2}.$ 于是</p>
+<script type="math/tex; mode=display">
+n H=\lambda_1+\cdots+\lambda_n=r\frac{a_2}{a_1}-(n-r)\frac{a_1}{a_2}=0\Leftrightarrow r\frac{a_2}{a_1}=(n-r)\frac{a_1}{a_2},</script><p>回忆$a_1^2+a_2^2=1,$ 从而这当且仅当$a_1=\sqrt{\frac{r}{n} },$
+$a_2=\sqrt{\frac{n-r}{n} },$ 称为Clifford tori, $1\le r\le n-1.$</p>
+<h3 id="Veronese曲面"><a href="#Veronese曲面" class="headerlink" title="Veronese曲面"></a>Veronese曲面</h3><p>考虑$S^2(\sqrt{3})\hookrightarrow S^4(1),$
+$(x,y,z)\mapsto (u_1,\cdots,u_5),$</p>
+<script type="math/tex; mode=display">
+u_1=\frac{1}{\sqrt{3} }yz,\quad u_2=\frac{1}{\sqrt{3} }zx,\quad u_3=\frac{1}{\sqrt{3} }xy,</script><script type="math/tex; mode=display">
+u_4=\frac{1}{2\sqrt{3} }(x^2-y^2),\quad u_5=\frac{1}{6}(x^2+y^2-2z^2).</script><p>希望它是极小曲面, 因此要有$\Delta u_i=-2u_i.$ 显然$\Delta_E u_i=0.$
+我们可以通过研究两者的联系证明, 也可以直接进行计算.</p>
+<p>该嵌入可以拉到$\mathbb{R}\mathrm{P}^2$上, 称为Veronese曲面.</p>
+<h2 id="Gauss映射"><a href="#Gauss映射" class="headerlink" title="Gauss映射"></a>Gauss映射</h2><p>设$x:M\rightarrow S^{n+1}$为极小曲面. 类似于第三章, 我们有</p>
+<script type="math/tex; mode=display">
+\Delta \left<{}a,e_{n+1}\right>=-\sigma\left<{}a,e_{n+1}\right>,</script><p>取$f=\left&lt;{}a,e_{n+1}\right&gt;,$ 那么</p>
+<script type="math/tex; mode=display">
+df=-\left<{}a,h_{ji}\theta_ie_j\right>=f_i\theta_i,</script><script type="math/tex; mode=display">
+f_{ij}\theta_j=df_i+f_j\theta_{ji}=-d(h_{ij}\left<{}a,e_j\right>)-h_{jk}\left<{}a,e_k\right>\theta_{ji},</script><script type="math/tex; mode=display">
+f_{ij}=-h_{ikj}\left<{}a,e_k\right>-h_{ik}\left<{}a,h_{kj}e_{n+1}-x\delta_{kj}\right>,</script><script type="math/tex; mode=display">
+\Delta f=f_{ii}=-h_{ij}^2f,\quad \Delta\left<{}a,e_{n+1}\right>=-\sigma\left<{}a,e_{n+1}\right>.</script><p>$M$定向时, 有良定义的$e_{n+1}:M\hookrightarrow S^{n+1}$给出了Gauss映射.</p>
+<p><strong>定理 2</strong>. <em>令$M^n\rightarrow S^{n+1}$为定向闭极小超曲面. 若Gauss映射像在某个开半球内, 则$M^n$全测地.</em> </p>
+<p>即存在$a,$ 使得$\left&lt;{}a,e_{n+1}\right&gt;&gt;0.$ 注意到</p>
+<script type="math/tex; mode=display">
+0=\int_M\Delta \left<{}a,e_{n+1}\right>dA=-\int_M\sigma \left<{}a,e_{n+1}\right>dA.</script><p>因此$\sigma=0,$ 即$M$全测地.</p>
+<p><strong>定理 3</strong>. <em>设$x:M^2\hookrightarrow S^3$为极小曲面, 那么$x(S^2)$为$S^3$上的大圆.</em> </p>
+<p>思路是, 首先构造一个全纯二次型$Q(dz)^2,$ 由$g(S^2)=0,$ 推出$Q\equiv 0$.
+这样就有$h_{ij}=0,$ $M=S^2(1).$</p>
+<p>存在等温坐标系</p>
+<script type="math/tex; mode=display">
+ds^2=\lambda^2(dx^2+dy^2)=\lambda^2dzd\overline z,\quad z=x+iy,\quad \lambda\in C^\infty(M).</script><p>记 </p>
+<script type="math/tex; mode=display">
+\alpha=\theta_1+i\theta_2=\lambda dz, \quad h=h_{11}+ih_{12},</script><script type="math/tex; mode=display">
+\beta=\theta_{13}+i\theta_{23}=h_{11}\theta_1+h_{12}\theta_2+i(h_{12}\theta_1-h_{11}\theta_2)=h_{11}(\theta_1-i\theta_2) +ih_{12}(\theta_1-i\theta_2)=h\overline\alpha.</script><p>那么</p>
+<script type="math/tex; mode=display">
+d\alpha=\theta_{12}\wedge \theta_2+i\theta_{21}\wedge \theta_1=\theta_{12}\wedge (\theta_2-i\theta_1)=-i\theta_{12}\wedge\alpha,</script><script type="math/tex; mode=display">
+(d\lambda + i\lambda \theta_{12})\wedge dz=0, \quad d\lambda=-i\lambda \theta_{12}+\Lambda_1dz.</script><script type="math/tex; mode=display">
+d\beta=d\theta_{13}+id\theta_{23}=\theta_{12}\wedge\theta_{23}+i\theta_{21}\wedge\theta_{13}=-i\theta_{12}\wedge \beta.</script><p>那么,</p>
+<script type="math/tex; mode=display">
+dh\overline\alpha=dh\wedge\overline\alpha+hd\overline\alpha=dh\wedge\overline\alpha+h(i\theta_{12}\wedge \overline\alpha)=-hi\theta_{12}\wedge \overline\alpha,</script><p>于是,</p>
+<script type="math/tex; mode=display">
+\lambda(dh+2ih\theta_{12})\wedge\overline z=0,\quad d\overline h-2i\overline h\theta_{12}=\Lambda_2 d z.</script><p>取$q=\lambda^2\overline h,$ 那么 </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ d(\lambda^2\overline h)=&2\lambda d\lambda \overline h+\lambda^2 d\overline h\\
+ =&2\lambda (-i\lambda \theta_{12}+\Lambda_1dz)\overline h+\lambda^2(2i\overline h\theta_{12}+\Lambda_2dz)\\
+ =&\lambda (2\overline h\Lambda_1+\lambda\Lambda_2)dz.
+ \end{aligned}</script><p> 于是$q$是全纯形式,
+$\frac{\partial {} }{\partial {}\overline z}(\lambda^2\overline h)=0.$</p>
+<p>文章最后更新于 2023-03-16 15:51:56 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>几何专题</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《几何专题》笔记(6)-极小子流形</title>
+    <url>/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/</url>
+    <content><![CDATA[<h2 id="Schur定理"><a href="#Schur定理" class="headerlink" title="Schur定理"></a>Schur定理</h2><p>若$R_{AB}=c\delta_{AB},$ 则称$M$为Einstein流形.</p>
+<p><strong>定理 1</strong> (Schur). <em>若$R_{AB}=\lambda \delta_{AB},$ 那么$M$也是Einstein流形.</em> </p>
+<h2 id="曲率"><a href="#曲率" class="headerlink" title="曲率"></a>曲率</h2><p>回忆有</p>
+<script type="math/tex; mode=display">
+d\omega_{AB}=\omega_{AC}\wedge\omega_{CB}-\frac{1}{2}\widetilde R_{ABCD}\omega_C\wedge\omega_D.</script><p>拉回得到</p>
+<script type="math/tex; mode=display">
+d\theta_{ij}-\theta_{ik}\wedge\theta_{kj}=-\theta_{i\alpha}\wedge\theta_{j\alpha}-\frac{1}{2}\widetilde R_{ijkl}\theta_k\wedge\theta_l=-\frac{1}{2}R_{ijkl}\theta_k\wedge\theta_l,</script><script type="math/tex; mode=display">
+R_{ijkl}=\widetilde{R}_{ijkl}+h_{i\alpha k}h_{j\alpha l}-h_{i\alpha l}h_{j\alpha k}.</script><p>这就是<strong>Gauss方程</strong>. 从而</p>
+<script type="math/tex; mode=display">
+R_{ik}=\widetilde R_{ik}+nH^\alpha h_{i\alpha k}-h_{i\alpha j}h_{j\alpha k},</script><script type="math/tex; mode=display">
+R=\widetilde R+n^2|H|^2-S.</script><p>对于<strong>法向联络</strong>$\{\theta_{\alpha\beta}\},$</p>
+<script type="math/tex; mode=display">
+d\theta_{\alpha \beta}-\theta_{\alpha i}\wedge\theta_{i\beta}-\theta_{\alpha \gamma}\wedge\theta_{\gamma\beta}=-\frac{1}{2}\widetilde R_{\alpha\beta kl}\theta_k\wedge\theta_l</script><p>定义<strong>法向曲率张量</strong></p>
+<script type="math/tex; mode=display">
+d\theta_{\alpha\beta}-\theta_{\alpha\gamma}\wedge\theta_{\gamma\beta}=-\frac{1}{2}R_{\alpha\beta kl}\theta_k\wedge\theta_l.</script><p>同理, 我们有<strong>Ricci方程</strong></p>
+<script type="math/tex; mode=display">
+R_{\alpha\beta ij}=\widetilde R_{\alpha\beta ij}+h_{i\alpha k}h_{k\beta j}-h_{j\alpha k}h_{k\beta i}.</script><p>这只对余维数大于等于$2$的子流形有意义.</p>
+<p>最后, 考虑</p>
+<script type="math/tex; mode=display">
+d\theta_{i\alpha}-\theta_{ik}\wedge\theta_{k\alpha}-\theta_{i\beta}\wedge\theta_{\beta\alpha}=-\frac{1}{2}\widetilde R_{i\alpha kl}\theta_k\wedge\theta_l.</script><script type="math/tex; mode=display">
+(dh_{i\alpha l}+h_{i\alpha j}\theta_{jl}+h_{k\alpha l}\theta_{ki}+h_{i\beta l}\theta_{\beta \alpha})\wedge\theta_l=-\frac{1}{2}\widetilde{R}_{i\alpha kl}\theta_k\wedge\theta_l.</script><script type="math/tex; mode=display">
+(h_{i\alpha l,k}+\frac{1}{2}\widetilde R_{i\alpha kl})\theta_k\wedge\theta_l=0.</script><p>这就推出了Codazzi方程</p>
+<script type="math/tex; mode=display">
+h_{i\alpha l,k}-h_{i\alpha k,l}=\widetilde R_{i\alpha lk}=\widetilde R_{\alpha ikl}.</script><p>我们希望$kl$对称, 即$\widetilde R_{\alpha ikl}=0.$
+一个例子是常截面曲率$c$的黎曼流形都如此. 若$N=R^{n+p}(c),$</p>
+<script type="math/tex; mode=display">
+\widetilde R_{ABCD}=c(\delta_{AC}\delta_{BD}-\delta_{AD}\delta_{BC}).</script><p>此时Codazzi方程, Ricci方程均可简化.</p>
+<p>考虑二次协变导数, 我们有</p>
+<script type="math/tex; mode=display">
+h_{i\alpha j,k,l}-h_{i\alpha j,l,k}=h_{m\alpha j}R_{mikl}+h_{i\alpha m}R_{mjkl}+h_{i\beta j} R_{\beta\alpha kl}.</script><p>类似地, 也可以考虑$H^\alpha$的协变导数.</p>
+<p>文章最后更新于 2023-03-16 15:52:33 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>几何专题</category>
+      </categories>
+  </entry>
 </search>

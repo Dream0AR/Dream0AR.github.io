@@ -9,7 +9,7 @@
     
     <title>
         
-            《抛物方程》笔记(1)-极值原理 |
+            《几何专题》笔记(5)-Chern-全纯形式 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《抛物方程》笔记(1)-极值原理</span>
+            <span class="title-hover-animation">《几何专题》笔记(5)-Chern-全纯形式</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-03-06 13:00:27
+        <i class="fas fa-edit"></i>&nbsp;2023-03-16 15:52:13
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B/">抛物方程</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98/">几何专题</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,71 +206,65 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><p>略. 参考辜联崑《二阶抛物型偏微分方程》.</p>
-<p>抛物方程在仿射变换$x=Ay$下还是抛物方程.</p>
-<h2 id="弱极值原理"><a href="#弱极值原理" class="headerlink" title="弱极值原理"></a>弱极值原理</h2><p>设$u\in C_p^2,$ $\Delta_x u-u_t&gt;0.$ 假设$u$在$P(D)$内取极大值,
-那么在极值点$\Delta_x u(x_0,t_0)\le 0,$
-$\frac{\partial {}u}{\partial {}t}\ge 0,$ 矛盾.
-此时$u$只能在边界取到极大值.</p>
-<p>对于一般的$L,$ 我们有定理:</p>
-<p><strong>定理 1</strong>. <em>若$c\le 0,$ $Lu&gt;0,$ 则$u$不能在$P(D)$内达到非负极大值; $Lu&lt;0,$ 则$u$不能在$P(D)$内达到非正极小值.</em> </p>
-<p>不失一般性, 设$Hess=\operatorname{diag}\{\Gamma_1,\cdots,\Gamma_n\}.$
-假设有这样的极值, 在极值点$\frac{\partial {}u}{\partial {}x_i}=0,$
-$\frac{\partial {}u}{\partial {}t}\ge 0,$ $a^{ij}u_{ij}\le 0,$
-$cu\le 0,$ 因此$0&lt;Lu\le 0.$ 矛盾.</p>
-<p>对于$c=0$的情形, $u$的正负性限制可以取消. 因为此时$Lu=L(u+C),$
-总能将极值改为正负性适当.</p>
-<p>若$Lu\ge 0,$ $c\le 0,$ $u\in C_p^2(D)\cap C(\overline D),$
-那么考虑$v=u-\varepsilon t$即可(更严谨的, $t-t_0$).
-此时$Lv=Lu-c\varepsilon t+\varepsilon&gt;0.$
-那么$u\le \max_{\partial_pD}(u-\varepsilon t)^++\varepsilon t\le \max_{\partial_pD}u^++\varepsilon T.$
-令$\varepsilon\rightarrow 0$即可. 注意此时的极值原理是弱的.</p>
-<p>若$Lu\ge 0,$ $c\le C_0,$ 可考虑$v=ue^{-(C_0+1)t}$满足的方程. 此时</p>
+            <h2 id="常平均曲率极小子流形"><a href="#常平均曲率极小子流形" class="headerlink" title="常平均曲率极小子流形"></a>常平均曲率极小子流形</h2><p>设</p>
 <script type="math/tex; mode=display">
-\widetilde Lv:=a_{ij}v_{ij}+b_iv_i+(c-(C_0+1))v-v_t=e^{-(C_0+1)t}Lu\ge 0,</script><p>$\widetilde L$中常数项系数非正, 因此可用前面的结论.
-不过此时只能推断出$u\le e^{(C_0+1)t}\max_{\partial_pD}(ue^{-(C_0+1)t})^+.$
-常用的结论是若$u|_{\partial_pD}\le 0,$ 则$u\le 0.$</p>
-<h2 id="强极值原理"><a href="#强极值原理" class="headerlink" title="强极值原理"></a>强极值原理</h2><p><strong>定理 2</strong>. <em>考虑$Q=Q(x_0,r,t_1,t_0).$ 若$Lu\ge 0,$ $c\le 0,$ $u\in C_p^2(P(Q))\cap C(\overline Q),$ $u(x_0,t_0)=\max_{P(Q)}u&gt; 0,$ 则$u$在$\overline{Q(x_0,r,t_1,t_0)}$上为常数.</em> </p>
-<p>首先说明$u(x_0,t_0)=u(x_0,t),$ $\,\forall\,t<t_0.$
-不然不妨假设$0<u(x_0,t_1)<u(x_0,t_0).$
-取$\delta$使得在$B_n^\delta(x_0)\times\{t_1\}$处,
-$u(x)<u(x_0,t_0)-\varepsilon_1.$ 希望找到函数$v$使得$Lv>0,$
-同时其在$\widetilde Q:=Q(x_0,\delta,t_1,t_0)$内部达到极值. 考虑</p>
+Q=q(dz)^2,\quad q=\lambda^2 \widehat H,\quad \widehat H=\frac{1}{2}(h_{11}-h_{22})-ih_{12}.</script><p>那么$q$就是想要的全纯形式.</p>
 <script type="math/tex; mode=display">
-v=\varepsilon(\delta^2-r^2)^2e^{-a(t-t_0)}+u.</script><p>固定$a,$ 存在这样的$\varepsilon,$
-使得$v|_{B_n^\delta(x_0)\times \{t_1\} }&lt;u(x_0,t_0).$
-在$S(\widetilde Q)$上, $v=u\le u(x_0,t_0).$ 结合来看,
-在抛物边界$\partial_p\widetilde Q$上, $v\le u(x_0,t_0).$
-因此其在$P(\widetilde Q)$内部达到极值.</p>
-<p>只需验证$Lv&gt;0,$ </p>
+h\left(\frac{\partial {} }{\partial {}z},\frac{\partial {} }{\partial {}z}\right)=\frac{1}{4}\lambda^2(h_{11}-h_{22}-2ih_{12})=\frac{1}{2}q.</script><p>回忆 </p>
+<script type="math/tex; mode=display">
+h_{ijk}\theta_k=dh_{ij}+h_{kj}\theta_{ki}+h_{ik}\theta_{kj},</script><script type="math/tex; mode=display">
+\begin{aligned}
+ dh_{11}&=2h_{12}\theta_{12}+h_{111}\theta_1+h_{112}\theta_2,\\
+ dh_{12}&=-(h_{11}-h_{22})\theta_{12}+h_{121}\theta_1+h_{122}\theta_2,\\
+ dh_{22}&=-2h_{12}\theta_{12}+h_{221}\theta_1+h_{222}\theta_2.
+ \end{aligned}</script><script type="math/tex; mode=display">
+
+\begin{aligned}
+ d\widehat H=&\frac{1}{2}(dh_{11}-dh_{22})-idh_{12}\\
+ =&\frac{1}{2}[(h_{111}-h_{221})\theta_1+(h_{112}-h_{222})\theta_2+4h_{12}\theta_{12}]-i[h_{121}\theta_1+h_{122}\theta_2-(h_{11}-h_{22})\theta_{12}]\\
+ =&h_{111}\theta_1+h_{112}\theta_2+2h_{12}\theta_{12}-ih_{112}\theta_1+ih_{111}\theta_2+i(h_{11}-h_{22})\theta_{12}\\
+ =&h_{111}(\theta_1+i\theta_2)-ih_{112}(\theta_1+i\theta_2)+2i\widehat H\theta_{12}\\
+ =&(h_{111}-ih_{112})\lambda dz+2i\widehat H\theta_{12}
+ \end{aligned}</script><script type="math/tex; mode=display">
+
+\begin{aligned}
+ dq=&2\lambda d\lambda \widehat H+\lambda^2d\widehat H\\
+ =&2\lambda \widehat H[-i\lambda\theta_{12}+\Lambda_1 dz]+\lambda^2[(h_{111}-ih_{112})\lambda dz+2i\widehat H\theta_{12}]\\
+ =&(*)dz
+ \end{aligned}</script><p> 从而$q$为全纯形式, 若亏格为零, 则$q=0,$
+$h_{11}=h_{22},$ $h_{12}=0.$ $k_1=k_2,$ 因此为球面.</p>
+<h2 id="Chern-Walfson"><a href="#Chern-Walfson" class="headerlink" title="Chern-Walfson"></a>Chern-Walfson</h2><p>考虑$x:M^2\hookrightarrow X,$ $X$为$(2+p)$维常截面曲率$c$的黎曼流形.</p>
+<script type="math/tex; mode=display">
+h\left(\frac{\partial {} }{\partial {}z},\frac{\partial {} }{\partial {}z}\right)=\frac{1}{4}(h_{11}-h_{22}-2ih_{12}).</script><p>定义</p>
+<script type="math/tex; mode=display">
+q=\left<{}h(\partial_z,\partial_z),h(\partial_z,\partial_z)\right>,\quad Q=q(dz)^4.</script><p><strong>定理 1</strong>. <em>若$x:M\rightarrow X$为极小曲面, $X$为常曲率黎曼流形. 那么$Q=qdz^4$为全纯形式.</em> </p>
+<p>记 </p>
+<script type="math/tex; mode=display">
+H_\alpha=h_{1\alpha 1}+ih_{1\alpha 2}.</script><script type="math/tex; mode=display">
+q=\lambda^4\overline H_\alpha^2.</script><p> 若有</p>
+<script type="math/tex; mode=display">
+d\overline H_\alpha ^2=4i\overline H_\alpha^2 \theta_{12}+(\ast )dz</script><p> 则</p>
 <script type="math/tex; mode=display">
 \begin{aligned}
- Lv=Lu+\varepsilon e^{-a(t-t_0)}&\left\{8a_{ij}(x_i-x_{0,i})(x_j-x_{0,j})-4a_{ii}(\delta^2-r^2)\right.\\
- &\left.-4b_i(\delta^2-r^2)(x_i-x_{0,i})+(a+c)(\delta^2-r^2)^2\right\}
- \end{aligned}</script><p> 只需说明大括号内可以取正即可.
-在$r$靠近$\delta$时, 利用第一项. 由$a_{ij}$的一致椭圆性,
-$\,\exists\,\delta_0,$ 当$\delta_0&lt;r&lt;\delta$时, 括号内取正;
-当$\delta&lt;\delta_0$时, 利用最后一项. 令$a$充分大, 即可令括号内取正.</p>
-<p>这样与$v$的极值原理矛盾, 从而$u(x_0,t)=u(x_0,t_0),$ $\,\forall\,t&lt;t_0.$</p>
-<p>接下来, 由仿射变换, $u(x_0,t_0)=u(k(x_0’,t_0’)+(1-k)(x_0,t_0)),$
-$\,\forall\,k\in (0,1),$ $(x_0’,t_0’)\in Q.$ 于是我们得到了结论.</p>
-<p>对一般的区域$D$, 利用多个小柱体可以得到更一般的结论.
-$u(x_0,t_0)&gt;0$若是极大值, 则可以控制沿时间单调递减能到达的区域,
-其上函数值均为常数.</p>
-<p>若$c=0,$ 同理可去掉正负性的要求.</p>
-<h2 id="先验估计"><a href="#先验估计" class="headerlink" title="先验估计"></a>先验估计</h2><p>基本思路是利用弱极值原理加加减减.</p>
-<p><strong>定理 3</strong>. <em>若$c\le C_0,$ $u\in C_p^2(P(D))\cap C(\overline D).$ 当$Lu\ge f$时, $u\le e^{C_0^+t}(\max_{\partial_pD}u^++t\max_{\overline D}f^-);$ 若$Lu\le f,$ 则$u\ge -e^{C_0^+t}(\max_{\partial_pD}u^-+t\max_{\overline D} f^+).$</em> </p>
-<p>令$v=u-e^{C_0^+t}(\max_{\partial_pD}u^++t\max_{\overline D} f^-),$
-那么$v|_{\partial_pD}\le 0,$</p>
+ dq=&4\lambda^3d\lambda \overline H_\alpha ^2+\lambda^4d\overline H_\alpha^2\\
+ =&4\lambda^3\overline H_\alpha^2[-i\lambda\theta_{12}+\Lambda_1dz]+\lambda^4[4j\overline H_\alpha^2\theta_{12}+(*)dz]\\
+ =&(**)dz
+ \end{aligned}.</script><p> 命题得证. 因此只要证明前面的式子.</p>
 <script type="math/tex; mode=display">
-Lv=Lu+e^{C_0^+t}(C_0^+-c)(\max_{\partial_pD}u^++t\max_{\overline D} f^-)+e^{C_0^+t}\max_{\overline D} f^-\ge f+\max_{\overline D} f^-\ge 0.</script><p>这就说明了$v\le 0,$
-从而$u\le e^{C_0^+}(\max_{\partial_pD}u^++t\max_{\overline D}f^-).$</p>
-<p>若$Lu\le f,$ 则$L(-u)\ge -f,$</p>
-<script type="math/tex; mode=display">
-u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}(\max_{\partial_pD}u^-+t\max_{\overline D} f^+).</script><p><strong>推论 4</strong>. <em>$Lu=f,$ $c\le C_0,$ 那么$\Vert u\Vert_{C_0(\overline D)}\le e^{C_0^+t}(\Vert u\Vert_{C_0(\partial_pD)}+t\Vert f\Vert_{C_0(\overline D)}).$</em> </p>
-<p><strong>推论 5</strong>. <em>若$Lu_1=Lu_2=f,$ $c\le C_0,$ 在$\partial_pD$上$u_1=u_2.$ 那么在整个$\overline D$上, 也有$u_1\equiv u_2.$</em> </p>
-<p><strong>推论 6</strong>. <em>若$c=0,$ $Lu=0,$ 则$\min_{\partial_pD}u\le u\le \max_{\partial_pD}u.$</em> </p>
-<p>文章最后更新于 2023-03-06 13:01:03 </p>
+\theta_{1\alpha}=h_{1\alpha 1}\theta_1+h_{1\alpha 2}\theta_2,</script><script type="math/tex; mode=display">
+\theta_{2\alpha}=h_{2\alpha 1}\theta_1+h_{2\alpha 2}\theta_2.</script><script type="math/tex; mode=display">
+h_{i\alpha jk}\theta_k=dh_{i\alpha j}+h_{k\alpha j}\theta_{ki}+h_{i\alpha k}\theta_{kj}+h_{i\beta j}\theta_{\beta\alpha}.</script><script type="math/tex; mode=display">
+h_{i\alpha jk}=h_{i\alpha kj}.</script><script type="math/tex; mode=display">
+d\overline H_\alpha^2=2\overline H_\alpha d\overline H_\alpha =2\overline H_\alpha d(h_{1\alpha 1}-ih_{1\alpha 2})</script><script type="math/tex; mode=display">
+\begin{aligned}
+ h_{1\alpha 1k}\theta_k=&dh_{1\alpha 1}+2h_{k\alpha 1}\theta_{k1}+h_{1\beta 1}\theta_{\beta\alpha}\\
+ =&dh_{1\alpha 1}+2h_{2\alpha 1}\theta_{21}+h_{1\beta 1}\theta_{\beta\alpha}
+ \end{aligned}</script><script type="math/tex; mode=display">
+dh_{1\alpha 1}=h_{1\alpha 11}\theta_1+h_{1\alpha 12}\theta_2+2h_{2\alpha 1}\theta_{12}-h_{1\beta 1}\theta_{\beta\alpha}.</script><script type="math/tex; mode=display">
+dh_{1\alpha 2}=h_{1\alpha 21}\theta_1+h_{1\alpha 22}\theta_2+h_{2\alpha 2}\theta_{12}-h_{1\alpha 1}\theta_{12}-h_{1\beta 2}\theta_{\beta\alpha}</script><script type="math/tex; mode=display">
+d\overline H_\alpha ^2=2\overline H_\alpha (2i\theta_{12}\overline H_\alpha+h_{1\alpha 11}(\theta_{1}+i\theta_2)-ih_{1\alpha 12}(\theta_1+i\theta_2)-(h_{1\beta 1}-ih_{1\beta 2})\theta_{\beta\alpha})</script><script type="math/tex; mode=display">
+d\overline H_\alpha^2=4i\overline H_\alpha\theta_{12}+2\overline H_\alpha (h_{1\alpha 11}-ih_{1\alpha 12})\lambda dz.</script><p>这就给出了结论.</p>
+<p>文章最后更新于 2023-03-16 15:52:14 </p>
 
         </div>
 
@@ -278,11 +272,11 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《抛物方程》笔记(1)-极值原理</li>
+        <li>本文标题：《几何专题》笔记(5)-Chern-全纯形式</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-03-06 13:00:27</li>
+        <li>创建时间：2023-03-16 15:52:13</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/03/06/《抛物方程》笔记(1)-极值原理/
+            本文链接：https://dream0ar.github.io/2023/03/16/《几何专题》笔记(5)-Chern-全纯形式/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -299,13 +293,13 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E7%90%83%E9%9D%A2%E4%B8%AD%E7%9A%84%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
+                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何专题》笔记(4)-球面中的极小子流形</span>
+                                <span class="post-nav-title-item">《几何专题》笔记(6)-极小子流形</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -315,10 +309,10 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/03/02/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(3)-%E6%AC%A7%E6%B0%8F%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
+                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E7%90%83%E9%9D%A2%E4%B8%AD%E7%9A%84%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《几何专题》笔记(3)-欧氏空间中的极小子流形</span>
+                                <span class="post-nav-title-item">《几何专题》笔记(4)-球面中的极小子流形</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -525,7 +519,7 @@ u\ge -e^{C_0^+t}(\max_{\partial_pD}(-u)^++t\max_{\overline D}(-f)^-)=-e^{C_0^+t}
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%8F%B7"><span class="nav-text">记号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E6%9E%81%E5%80%BC%E5%8E%9F%E7%90%86"><span class="nav-text">弱极值原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%BA%E6%9E%81%E5%80%BC%E5%8E%9F%E7%90%86"><span class="nav-text">强极值原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E4%BC%B0%E8%AE%A1"><span class="nav-text">先验估计</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E5%B9%B3%E5%9D%87%E6%9B%B2%E7%8E%87%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">常平均曲率极小子流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chern-Walfson"><span class="nav-text">Chern-Walfson</span></a></li></ol>
     </div>
 </div>
         </aside>
