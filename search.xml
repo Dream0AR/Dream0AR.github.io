@@ -12056,4 +12056,79 @@ h_{i\alpha j,k,l}-h_{i\alpha j,l,k}=h_{m\alpha j}R_{mikl}+h_{i\alpha m}R_{mjkl}+
         <category>几何专题</category>
       </categories>
   </entry>
+  <entry>
+    <title>《微分拓扑》复习笔记(1)-基础知识</title>
+    <url>/2023/06/07/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(1)-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+    <content><![CDATA[<h2 id="浸入-淹没-嵌入"><a href="#浸入-淹没-嵌入" class="headerlink" title="浸入, 淹没, 嵌入"></a>浸入, 淹没, 嵌入</h2><p>浸入, 淹没有着典范表示. 局部常秩映射也有类似的典范表示.
+前两者证明方法是标准化$D\widehat f,$ 然后补全维度构造局部微分同胚.
+利用这一微分同胚改造坐标系即可.</p>
+<p>浸入+同胚=嵌入, 即嵌入子流形的子空间拓扑和诱导拓扑一致.
+由浸入的局部表示, 子流形具有子流形坐标卡, 为切片.</p>
+<h2 id="正则值"><a href="#正则值" class="headerlink" title="正则值"></a>正则值</h2><p>对于光滑映射$f:M\rightarrow N,$ 若其在$p\in M$为淹没, 则$p$为<strong>正则点</strong>,
+否则为<strong>临界点</strong>. 临界点的像称为<strong>临界值</strong>.
+$N$上不是临界值的点称为<strong>正则值</strong>. 也就是说,
+正则值的原像都要是正则点(淹没), 允许为空集.</p>
+<p><strong>定理 1</strong> (正则值原像定理). <em>设$f:M\rightarrow N$为光滑映射, $q\in N$为$f$的正则值. 那么$f^{-1}(q)$为$(\dim M-\dim N)$维嵌入子流形.</em> </p>
+<p>$\,\forall\,p\in f^{-1}(q),$ 由淹没的局部表示,
+有坐标邻域$(U,\varphi)\ni p,$ $(V,\psi)\ni q,$ 使得
+$\widehat f:\varphi(U)\rightarrow \psi(V)$ 为投影映射, $\varphi(p)=0,$
+$\psi(q)=0$. 于是</p>
+<script type="math/tex; mode=display">
+\widehat f^{-1}(0)=\{(0,y)|y\in \mathbb{R}^{\dim M-\dim N}\}=\varphi\circ f^{-1}(q).</script><p>这就给出了$f^{-1}(q)$作为$(\dim M-\dim N)$维切片的子流形坐标卡$(U\cap f^{-1}(q),\varphi)$.</p>
+<p><strong>定理 2</strong> (唱片引理). <em>设$M,N$为维数相同的光滑流形, $M$紧致. 设$f:M\rightarrow N$为光滑映射. 若$q\in N$为$f$的正则值, 那么$f^{-1}(q)\subset M$为有限点集$\{p_i\}_{i=1}^k$, 且存在$q$在$N$中的开邻域$V,$ 使得$f^{-1}(V)=\bigsqcup_{i=1}^k U_i,$ $p_i\in U_i,$ 且$f|_{U_i}$为微分同胚.</em> </p>
+<p>由正则值原像定理, $f^{-1}(q)=\{p_i\}$为 $0$ 维子流形,
+有子流形坐标邻域$W_i,$ 两两无交. 由于$M$紧致,
+若$\{p_i\}$为无限点集将有聚点, 而聚点处取不到这样的坐标邻域$W_i$.
+[或$f^{-1}(q)$为闭集, 故紧.]{style=”color: red”}</p>
+<p>由于$f$既是浸入又是淹没, 为局部微分同胚.
+不妨设它在每个$W_i$上为微分同胚. 接下来取</p>
+<script type="math/tex; mode=display">
+V=\bigcap_{i=1}^k f(W_i) \setminus f(M\setminus \bigcup_{i=1}^k W_i).</script><p>其中$M\setminus \bigcup_{i=1}^k W_i$为闭集, 紧集中闭集是紧的.
+从而$f(M\setminus \bigcup_{i=1}^k W_i)$为紧集, 进而为闭集.
+于是$V$的确是开邻域, 且$f^{-1}(V)\subset \bigcup_{i=1}^k W_i.$
+由于$f|_{W_i}$为微分同胚,
+$\,\exists\,U_i\textcolor{red}{(=f^{-1}(V)\cap W_i)}\subset W_i,$
+使得$f^{-1}(V)=\bigsqcup_{i=1}^k U_i,$ 且$f|_{U_i}$为微分同胚.</p>
+<p><strong>定理 3</strong> (Sard定理). <em>光滑映射$f:M\rightarrow N$的临界值集为零测集, 几乎处处为正则值(进而稠密).</em> </p>
+<h2 id="横截"><a href="#横截" class="headerlink" title="横截"></a>横截</h2><p>设$f:M\rightarrow N$为光滑映射, $Z\subset N$为嵌入子流形.
+若$\,\forall\,p\in f^{-1}(Z),$ </p>
+<script type="math/tex; mode=display">
+df_p(T_pM)+T_{f(p)}Z=T_{f(p)}N,</script><p>则称$f$与$Z$横截, 记为$f\pitchfork Z.$ 当$Z$为单点集时,
+$Z$就是$f$的正则值.</p>
+<p>特别地, 若$M\subset N$为嵌入子流形, 那么称$M\pitchfork Z$,
+若放入映射$\iota:M\rightarrow N$与$Z$横截. 此时有</p>
+<script type="math/tex; mode=display">
+T_pM+T_pZ=T_pN,\quad \,\forall\,p\in M\cap Z.</script><p>类似地, 也可以定义两映射横截, 此时不见得要求映射为嵌入.</p>
+<p><strong>定理 4</strong> (横截原像定理). <em>设$f:M\rightarrow N$为光滑映射, $Z\subset N$为嵌入子流形. 若$f\pitchfork Z,$ 则$f^{-1}(Z)$为$M$中的嵌入子流形, 且$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</em> </p>
+<p>由于$Z$为嵌入子流形, $\,\forall\,q\in Z,$ 有子流形坐标卡$(V,\psi),$
+$q\in V,$ 使得$\psi(Z\cap V)\subset \mathbb{R}^{\dim Z}$为切片.
+取投影$\pi:\mathbb{R}^{n}\rightarrow \mathbb{R}^{\operatorname{codim}_N Z},$
+那么$\psi (Z\cap V)=\pi^{-1}(0).$</p>
+<p>断言$g:=\pi \circ \psi \circ f:f^{-1}(V)\rightarrow \mathbb{R}^{\operatorname{codim}_NZ}$以$0$为正则值.
+只需说明$\,\forall\,p\in f^{-1}(Z)\cap f^{-1}(V)=f^{-1}(Z\cap V),$
+$dg_p$为淹没. 由横截性条件,</p>
+<script type="math/tex; mode=display">
+d\psi \circ df_p(T_pM)+ T_{\psi\circ f(p)}\psi(Z)=T_{\psi\circ f(p)}\psi(N)=\mathbb{R}^n,\quad T_{\psi\circ f(p)}\psi(Z)=\mathbb{R}^{\dim Z}.</script><p>再作用$d\pi=\pi,$ 即有</p>
+<script type="math/tex; mode=display">
+dg_p(T_pM)=d\pi\circ d\psi\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.</script><p>由正则值原像定理,
+[$g^{-1}(0)=f^{-1}(Z\cap V)=f^{-1}(Z)\cap f^{-1}(V)$为嵌入子流形,
+且]{style=”color: red”}</p>
+<script type="math/tex; mode=display">
+\dim g^{-1}(0)=\dim M-\operatorname{codim}_NZ,\quad \operatorname{codim}_M (f^{-1}(Z)\cap f^{-1}(V))=\operatorname{codim}_NZ.</script><p>由$q\in V$的任意性即有$f^{-1}(Z)$为嵌入子流形,
+且$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_NZ.$</p>
+<p>对子流形横截相交的情形使用横截原像定理, 即有</p>
+<script type="math/tex; mode=display">
+\operatorname{codim}_M (M\cap Z)=\operatorname{codim}_N Z,\quad \operatorname{codim}_N (M\cap Z)=\operatorname{codim}_N M+\operatorname{codim}_N Z.</script><p>对映射横截相交的情形使用横截原像定理, 可以得到纤维积</p>
+<script type="math/tex; mode=display">
+M \times_N Z:=\{(a,b)\in M\times Z|f(a)=g(b)\}</script><p> 为光滑流形.
+证明考虑图像$\Gamma_f,\Gamma_g$与对角流形$\Delta\subset M\times N\times Z\times N,$
+通过说明$(\Gamma_f\times \Gamma_g)\pitchfork \Delta,$ 投影得到结论.</p>
+<p>文章最后更新于 2023-06-07 09:16:15 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>微分拓扑</category>
+      </categories>
+  </entry>
 </search>
