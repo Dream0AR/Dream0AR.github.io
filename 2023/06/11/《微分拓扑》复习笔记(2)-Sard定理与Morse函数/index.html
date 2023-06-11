@@ -9,7 +9,7 @@
     
     <title>
         
-            《代数拓扑与微分形式》笔记(3)-MV序列 |
+            《微分拓扑》复习笔记(2)-Sard定理与Morse函数 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《代数拓扑与微分形式》笔记(3)-MV序列</span>
+            <span class="title-hover-animation">《微分拓扑》复习笔记(2)-Sard定理与Morse函数</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-20 15:04:13
+        <i class="fas fa-edit"></i>&nbsp;2023-06-11 14:37:24
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91/">微分拓扑</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,91 +206,39 @@
         
 
         <div class="article-content markdown-body">
-            <p>Mayer-Vietoris序列是代数拓扑中经典的结论, 对于计算同调群有着莫大的帮助.
-它当然也存在于de Rham复形中.</p>
-<h2 id="上同调MV序列"><a href="#上同调MV序列" class="headerlink" title="上同调MV序列"></a>上同调MV序列</h2><h3 id="复形的短正合列"><a href="#复形的短正合列" class="headerlink" title="复形的短正合列"></a>复形的短正合列</h3><p>在代数拓扑中我们知道, 若存在复形的短正合列</p>
-<script type="math/tex; mode=display">0\rightarrow A\rightarrow B\rightarrow C\rightarrow 0,</script><p>则由zig-zag引理(图追踪), 可以构造长正合列</p>
-<script type="math/tex; mode=display">...\rightarrow H^p(A)\rightarrow H^p(B)\rightarrow H^p(C)\rightarrow H^{p+\varepsilon}(A)\rightarrow ...</script><p>其中$\varepsilon=\pm 1$, 取决于考虑上同调还是下同调. 因此为了得到MV序列,
-我们只需构造出复形的短正合列即可.</p>
-<p>设$U,V$为流形$M$的开子集, $M=U\cup V$, $U\cap V$是开的, 其上有到$U$,
-$V$的包含映射:</p>
-<script type="math/tex; mode=display">\partial_0:U\cap V\rightarrow V, \quad \partial_1:U\cap V\rightarrow U,</script><p>下标的数字指遗忘第几个位置, 用于在之后考虑更一般的MV序列(可列多个开集).</p>
-<p>记$U\sqcup V$为两者做无交并, 也称为拓扑和(因为在同一空间中看,
-它们当然是有交的). 注意不是笛卡尔积.
-于是有包含映射$U,V\rightarrow M$诱导的映射$U\sqcup V\rightarrow M$,
-从而我们有映射列</p>
-<script type="math/tex; mode=display">M=U\cup V\leftarrow U\sqcup V\mathop{\leftleftarrows}\limits_{\partial_1}^{\partial_0} U\cap V,</script><p>这里双箭头指选取其中一个映射, 即事实上我们有两个映射列.
-应用反变函子$\Omega^\ast$, 做拉回映射得到</p>
-<script type="math/tex; mode=display">\Omega^\ast (M)\rightarrow \Omega^\ast (U)\oplus \Omega^\ast (V)\mathop{\rightrightarrows}\limits_{\partial_1^\ast }^{\partial_0^\ast }\Omega^\ast (U\cap V),</script><p>上面每个拉回都等价于对微分形式的限制. 为了得到正合列,
-我们需适当改造该映射列:</p>
-<script type="math/tex; mode=display">0\rightarrow\Omega^\ast (M)\xrightarrow{r}\Omega^\ast (U)\oplus\Omega^\ast (V)\xrightarrow{\delta}\Omega^\ast (U\cap V)\rightarrow 0,</script><p>其中$r(\omega)=(\omega|_U, \omega|_V)$,
-$\delta=\partial_0^\ast -\partial_1^\ast$,
-即$\delta(\omega,\tau)=\tau|_{U\cap V}-\omega|_{U\cap V}$. 一般的,
-若定义域明了, 方便起见也可简记为$\tau-\omega$.</p>
-<p>我们需要验证上述复形列正合.</p>
-<p><strong>证</strong> $r$即为将微分形式分别限制在$U$和$V$上, 很自然它是单射;
-由$\delta$的特殊构造, 容易看到在中间项也正合, 只需证$\delta$满.</p>
-<p>$\,\forall\,\omega\in \Omega^q(U\cap V)$,
-取从属于$\{U,V\}$的单位分解$\{\rho_U,\rho_V\}$, 在$U$上定义</p>
-<script type="math/tex; mode=display">\rho_V\omega=
-            \begin{cases}
-                \rho_V|_{U\cap V}\cdot\omega, \quad & \text{on}\quad U\cap V\\
-                0, &\text{on} \quad U-U\cap V       
-            \end{cases},</script><p>这里$\rho_V$定义域是$V$, 在$U$上自然地零延拓至0.
-$\omega$定义域是$U\cap V$,
-因此此时$\rho_V\omega$扩充到$U$上也可以给定定义, 且是光滑的.</p>
-<p>在$V$上类似定义$\rho_U\omega$. 取$\xi=(-\rho_V\omega, \rho_U\omega)$,
-则$\delta\xi=\omega$. 从而复形列正合.</p>
-<h3 id="Mayer-Vietoris序列"><a href="#Mayer-Vietoris序列" class="headerlink" title="Mayer-Vietoris序列"></a>Mayer-Vietoris序列</h3><p>由zig-zag引理, 短正合列诱导了长正合列</p>
-<script type="math/tex; mode=display">\cdots\rightarrow H^q(M)\xrightarrow{r}H^q(U)\oplus H^q(V)\xrightarrow{\delta}H^q(U\cap V)\xrightarrow{d^\ast }H^{q+1}(M)\rightarrow \cdots</script><p>这里连接同态$d^\ast$的定义由zig-zag引理过程给出: 利用图追踪,
-$\omega\Rightarrow \xi=(-\rho_V\omega,\rho_U\omega)$,
-再推出$r\eta=d\xi$. $r$就是限制映射, 因此$\eta=
-        \begin{cases}
-            d(-\rho_V\omega) &amp;\quad\text{on}\quad U\\
-            d(\rho_U\omega) &amp;\quad\text{on}\quad V
-        \end{cases}$.</p>
-<p>在$U\cap V$处, 由$\rho_U+\rho_V=1$, 与$d\omega=0$, 知定义合法.
-于是$d^\ast [\omega]=[\eta]$.</p>
-<p>注意$\rho_U \omega, \rho_V\omega$ 均不是整体定义在$M$上的,
-不一定有$\eta=d\tau$, $\tau\in\Omega^\ast (M)$,
-因此$\eta$并不一定是恰当的.</p>
-<h2 id="紧支集MV序列"><a href="#紧支集MV序列" class="headerlink" title="紧支集MV序列"></a>紧支集MV序列</h2><p>设$f:N\rightarrow M$为光滑映射,
-但$f^\ast :\Omega^\ast _c(M)\rightarrow \Omega^\ast _c(N)$一般并不成立,
-无法确保将紧支撑的微分形式仍然拉回到紧支撑的微分形式,
-如取$f$为投射$(x_1,x_2)\mapsto x_1$. 不过光滑的逆紧映射就可以了,
-因为其定义就是满足\”紧集的逆像仍是紧集\”的映射.</p>
-<p>一般的, 我们更多考虑的是包含映射: 若有$j: U\rightarrow M$,
-定义$j_\ast : \Omega^\ast _c(U)\rightarrow \Omega^\ast _c(M)$,
-$j_\ast \omega$为将$\omega$<strong>零延拓</strong>到$M-U$上.
-注意这时映射的星号标在下方.</p>
-<p>若只考虑开集间的包含映射, $\Omega^\ast _c$成为共变函子. 类似地,
-对这个函子也有MV序列,
-由包含映射列$U\cap V\mathop \rightrightarrows \limits_{j_U}^{j_V} U\sqcup V\rightarrow M$诱导.
-这里双箭头指分别映到$U,V$上. 由此构造出复形的短正合列:</p>
-<script type="math/tex; mode=display">0\rightarrow \Omega^\ast _c(U\cap V)\xrightarrow{\delta} \Omega^\ast _c(U)\oplus \Omega^\ast _c(V)\xrightarrow{s} \Omega^\ast _c(M)\rightarrow 0,</script><p>其中$\delta\omega=(-j_\ast \omega,j_\ast \omega)$,
-$s(\omega,\tau)=j_\ast \omega+j_\ast \tau$.</p>
-<p>为了证明正合性, 同理只需证明$s$满,
-类似地取$\{\rho_U,\rho_V\}$为单位分解,
-构造$\rho_U\omega,\rho_V\omega$分别是$U$,$V$上的微分形式就可以了.
-由于$\omega$在$M$上有紧支撑, $\rho_U$支集在$U$中,
-可证$\rho_U\omega$在$U$上有紧支撑, $\rho_V\omega$同理.</p>
-<p>进而由zig-zag引理导出长正合列:</p>
-<script type="math/tex; mode=display">\cdots\rightarrow H^q_c(U\cap V)\xrightarrow{\delta} H^q_c(U)\oplus H^q_c(V)\xrightarrow{s} H^q_c(M) \xrightarrow{d_\ast }H^{q+1}_c(U\cap V)\rightarrow \cdots</script><p>同理可判断连接同态.
-图追踪找到$\eta=d(\rho_V\omega)|_{U\cap V}=-d(\rho_U\omega)|_{U\cap V}$,
-$d_\ast [\omega]=[\eta]$.</p>
-<p>同样的在紧上同调中, $\eta$并不一定恰当.
-因为无论是$\rho_U\omega$还是$\rho_V\omega$, 虽然这时有了整体定义,
-但限制在$U\cap V$中不一定具有紧支集.</p>
-<h2 id="H-1-S-1-simeq-mathbb-R"><a href="#H-1-S-1-simeq-mathbb-R" class="headerlink" title="$H^1(S^1)\simeq \mathbb{R}$"></a>$H^1(S^1)\simeq \mathbb{R}$</h2><p>看一个简单的例子. 由于$S^1$紧, $H_c^\ast (S^1)=H^\ast (S^1)$.
-这时用上同调, 紧上同调的MV序列都可以容易地证出这个命题,
-只需将$S^1$切成两半即可.</p>
-<p>或者用局部坐标$\theta$, $d\theta$为$S^1$上$1$-形式.
-$1$-形式$\omega$恰当时,
-$\omega=dF=ad\theta \Leftrightarrow \int_{S^1}\omega=0.$ 因此
-$B^1(S^1)=\ker \int_{S^1}.$
-注意到$\int_{S^1}:\Omega^1(S^1)\rightarrow \mathbb{R}.$</p>
-<p>从而$H^1(S^1)=Z^1(S^1)/B^1(S^1)=\Omega^1(S^1)/\ker \int_{S^1}\cong \mathbb{R}$.</p>
-<p>文章最后更新于 2021-10-09 12:32:30 </p>
+            <h2 id="Sard定理"><a href="#Sard定理" class="headerlink" title="Sard定理"></a>Sard定理</h2><p><strong>定理 1</strong>. <em>光滑映射$f:M\rightarrow N$的临界值集合为$N$中的零测集.</em> </p>
+<p><strong>注 2</strong>. <em>Sard定理对$C^k$映射$f:M^m\rightarrow N^n$成立, $k\ge \max\{1,m-n+1\}.$ 注意临界点集未必零测.</em> </p>
+<p><strong>推论 3</strong>. <em>光滑映射$f:M\rightarrow N$的正则值在$N$中稠密. 且同时为可列个光滑映射正则值的点也稠密.</em> </p>
+<p>证明由如下步骤组成:</p>
+<p><strong>引理 4</strong>. <em>$f:I^m\rightarrow \mathbb{R}^n$为$C^1$映射. 若$m=n,$ $A\subset I^m$零测, 则$f(A)\subset \mathbb{R}^n$为零测集. 若$m&lt;n,$ $f(I^m)\subset \mathbb{R}^n$是零测集.</em> </p>
+<p>测度由Lipschitz常数控制, 由此证明第一部分结论即可.</p>
+<p><strong>推论 5</strong> (Mini Sard). <em>设$f:M\rightarrow N$为$C^1$映射, $\dim M=\dim N,$ 则$M$中零测集$A\subset M$的像$f(A)$为$N$中零测集. 若$\dim M&lt;\dim N,$ 则$f(M)$为$N$中的零测集. ($M$上都是临界点.)</em> </p>
+<p><strong>定理 6</strong> (等维数Sard定理). <em>设$f:M\rightarrow N$为$n$维流形间的$C^1$映射, $C\subset M$为临界点集. 则$f(C)$为零测集.</em> </p>
+<p>由Taylor定理, 在临界值附近, 像集可以用超平面处小邻域控制.
+做分割让邻域充分小即可.</p>
+<p><strong>引理 7</strong>. <em>设$I_1,\cdots,I_n$为闭区间$[a,b]$的覆盖, 则存在加细覆盖$I_1’,\cdots,I_N’,$ 使得$I_j’\subset I_i,$ $\sum_{j=1}^N |I_j’|\le 2(b-a).$</em> </p>
+<p><strong>定理 8</strong> (零测集Fubini定理). <em>设$A\subset \mathbb{R}^n$为紧致集. 若$\,\forall\,c\in \mathbb{R},$ $A\cap (\{c\}\times \mathbb{R}^{n-1})$为$\{c\}\times \mathbb{R}^{n-1}$中零测集, 则$A$为$\mathbb{R}^n$中零测集.</em> </p>
+<p>由此可证明Sard定理. 只需利用归纳法,
+讨论$f:U^m\rightarrow \mathbb{R}^n$即可. 按导数次数讨论.
+对于次数最高的情形用Taylor公式估计即可.</p>
+<h2 id="Morse函数"><a href="#Morse函数" class="headerlink" title="Morse函数"></a>Morse函数</h2><p>设$f:M\rightarrow \mathbb{R}$为光滑函数, 若$df_p=0,$ 则称$p$为临界点.
+若$M$紧致, 至少有两个临界点: 最大值点与最小值点. 若临界点处二阶导非退化,
+则称临界点为<strong>非退化临界点</strong>. 该定义与坐标卡选取无关.</p>
+<p><strong>命题 9</strong>. <em>非退化临界点附近没有其它临界点.</em> </p>
+<p><strong>引理 10</strong> (Morse引理). <em>设$c$为函数$f:M\rightarrow \mathbb{R}$的非退化临界点, 则存在$c$的Morse坐标卡$(U,\phi),$ Morse指标$i,$ 使得</em> </p>
+<script type="math/tex; mode=display">
+f\circ \phi^{-1}(x_1,\cdots,x_n)=f(c)-\sum_{j=1}^i x_j^2+\sum_{j=i+1}^n x_j^2.</script><p>证明利用Taylor展开进行, 对维数进行归纳.</p>
+<p><strong>推论 11</strong>. <em>函数的非退化临界点是孤立的. 特别的, 紧流形上Morse函数有有限个临界点.</em> </p>
+<p>若函数$f$所有临界点都是非退化的, 那么称$f$为Morse函数.</p>
+<p><strong>命题 12</strong>. <em>设$M^m\subset \mathbb{R}^n$为嵌入子流形. 对几乎所有的$a\in \mathbb{R}^n,$ 有Morse函数</em> </p>
+<script type="math/tex; mode=display">
+f_a:M\rightarrow \mathbb{R},\quad f(x)=\Vert x-a\Vert^2.</script><p>证明只需考虑非退化临界点发生当且仅当</p>
+<script type="math/tex; mode=display">
+x-a\perp T_xM,\quad \left|\frac{\partial^2 {}f}{\partial {}u_i\partial {}u_j}\right|\neq 0,</script><p>说明不满足该条件的$a$为光滑映射$T^\perp M\ni w\mapsto x+w$的临界值即可.</p>
+<p><strong>命题 13</strong>. <em>设$M$为光滑流形, $f:M\rightarrow \mathbb{R}$为光滑函数, $k\in \mathbb{Z}_+.$ 则在任意紧子集上, $f$及其直到$k$阶导数被Morse函数一致逼近.</em> </p>
+<p>考虑用$f_a$对坐标分量进行逼近即可.</p>
+<p><strong>定理 14</strong>. <em>设$M$为紧致流形, 则$M$上Morse函数的集合为$C^\infty(M,\mathbb{R})$的稠密开集.</em> </p>
+<p>文章最后更新于 2023-06-11 14:37:26 </p>
 
         </div>
 
@@ -298,11 +246,11 @@ $B^1(S^1)=\ker \int_{S^1}.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(3)-MV序列</li>
+        <li>本文标题：《微分拓扑》复习笔记(2)-Sard定理与Morse函数</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-20 15:04:13</li>
+        <li>创建时间：2023-06-11 14:37:24</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/20/《代数拓扑与微分形式》笔记(3)-MV序列/
+            本文链接：https://dream0ar.github.io/2023/06/11/《微分拓扑》复习笔记(2)-Sard定理与Morse函数/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -316,29 +264,14 @@ $B^1(S^1)=\ker \int_{S^1}.$
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2021/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E5%BA%9E%E5%8A%A0%E8%8E%B1%E5%BC%95%E7%90%86/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(4)-庞加莱引理</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/19/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(2)-%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E5%BE%AE%E7%A7%AF%E5%88%86/"
+                           href="/2023/06/07/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(1)-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《代数拓扑与微分形式》笔记(2)-流形上的微积分</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(1)-基础知识</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -545,7 +478,7 @@ $B^1(S^1)=\ker \int_{S^1}.$
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%90%8C%E8%B0%83MV%E5%BA%8F%E5%88%97"><span class="nav-text">上同调MV序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%BD%A2%E7%9A%84%E7%9F%AD%E6%AD%A3%E5%90%88%E5%88%97"><span class="nav-text">复形的短正合列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mayer-Vietoris%E5%BA%8F%E5%88%97"><span class="nav-text">Mayer-Vietoris序列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E6%94%AF%E9%9B%86MV%E5%BA%8F%E5%88%97"><span class="nav-text">紧支集MV序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#H-1-S-1-simeq-mathbb-R"><span class="nav-text">$H^1(S^1)\simeq \mathbb{R}$</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sard%E5%AE%9A%E7%90%86"><span class="nav-text">Sard定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Morse%E5%87%BD%E6%95%B0"><span class="nav-text">Morse函数</span></a></li></ol>
     </div>
 </div>
         </aside>

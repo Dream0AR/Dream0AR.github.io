@@ -210,7 +210,7 @@
 前两者证明方法是标准化$D\widehat f,$ 然后补全维度构造局部微分同胚.
 利用这一微分同胚改造坐标系即可.</p>
 <p>浸入+同胚=嵌入, 即嵌入子流形的子空间拓扑和诱导拓扑一致.
-由浸入的局部表示, 子流形具有子流形坐标卡, 为切片.</p>
+由浸入的局部表示(与同胚性质), 子流形具有子流形坐标卡, 为切片.</p>
 <h2 id="正则值"><a href="#正则值" class="headerlink" title="正则值"></a>正则值</h2><p>对于光滑映射$f:M\rightarrow N,$ 若其在$p\in M$为淹没, 则$p$为<strong>正则点</strong>,
 否则为<strong>临界点</strong>. 临界点的像称为<strong>临界值</strong>.
 $N$上不是临界值的点称为<strong>正则值</strong>. 也就是说,
@@ -221,12 +221,12 @@ $N$上不是临界值的点称为<strong>正则值</strong>. 也就是说,
 $\widehat f:\varphi(U)\rightarrow \psi(V)$ 为投影映射, $\varphi(p)=0,$
 $\psi(q)=0$. 于是</p>
 <script type="math/tex; mode=display">
-\widehat f^{-1}(0)=\{(0,y)|y\in \mathbb{R}^{\dim M-\dim N}\}=\varphi\circ f^{-1}(q).</script><p>这就给出了$f^{-1}(q)$作为$(\dim M-\dim N)$维切片的子流形坐标卡$(U\cap f^{-1}(q),\varphi)$.</p>
+\widehat f^{-1}(0)=\{(0,y)|y\in \mathbb{R}^{\dim M-\dim N}\}=\varphi\circ f^{-1}(q).</script><p>这就给出了$f^{-1}(q)$作为$(\dim M-\dim N)$维切片的子流形坐标卡$(U\cap f^{-1}(q),{\color{red}\pi_y}\circ \varphi)$.</p>
 <p><strong>定理 2</strong> (唱片引理). <em>设$M,N$为维数相同的光滑流形, $M$紧致. 设$f:M\rightarrow N$为光滑映射. 若$q\in N$为$f$的正则值, 那么$f^{-1}(q)\subset M$为有限点集$\{p_i\}_{i=1}^k$, 且存在$q$在$N$中的开邻域$V,$ 使得$f^{-1}(V)=\bigsqcup_{i=1}^k U_i,$ $p_i\in U_i,$ 且$f|_{U_i}$为微分同胚.</em> </p>
 <p>由正则值原像定理, $f^{-1}(q)=\{p_i\}$为 $0$ 维子流形,
 有子流形坐标邻域$W_i,$ 两两无交. 由于$M$紧致,
 若$\{p_i\}$为无限点集将有聚点, 而聚点处取不到这样的坐标邻域$W_i$.
-[或$f^{-1}(q)$为闭集, 故紧.]{style=”color: red”}</p>
+或$f^{-1}(q)$为闭集, 故紧.</p>
 <p>由于$f$既是浸入又是淹没, 为局部微分同胚.
 不妨设它在每个$W_i$上为微分同胚. 接下来取</p>
 <script type="math/tex; mode=display">
@@ -234,7 +234,7 @@ V=\bigcap_{i=1}^k f(W_i) \setminus f(M\setminus \bigcup_{i=1}^k W_i).</script><p
 从而$f(M\setminus \bigcup_{i=1}^k W_i)$为紧集, 进而为闭集.
 于是$V$的确是开邻域, 且$f^{-1}(V)\subset \bigcup_{i=1}^k W_i.$
 由于$f|_{W_i}$为微分同胚,
-$\,\exists\,U_i\textcolor{red}{(=f^{-1}(V)\cap W_i)}\subset W_i,$
+$\,\exists\,U_i{\color{red}{(=f^{-1}(V)\cap W_i)} }\subset W_i,$
 使得$f^{-1}(V)=\bigsqcup_{i=1}^k U_i,$ 且$f|_{U_i}$为微分同胚.</p>
 <p><strong>定理 3</strong> (Sard定理). <em>光滑映射$f:M\rightarrow N$的临界值集为零测集, 几乎处处为正则值(进而稠密).</em> </p>
 <h2 id="横截"><a href="#横截" class="headerlink" title="横截"></a>横截</h2><p>设$f:M\rightarrow N$为光滑映射, $Z\subset N$为嵌入子流形.
@@ -247,8 +247,8 @@ $Z$就是$f$的正则值.</p>
 <script type="math/tex; mode=display">
 T_pM+T_pZ=T_pN,\quad \,\forall\,p\in M\cap Z.</script><p>类似地, 也可以定义两映射横截, 此时不见得要求映射为嵌入.</p>
 <p><strong>定理 4</strong> (横截原像定理). <em>设$f:M\rightarrow N$为光滑映射, $Z\subset N$为嵌入子流形. 若$f\pitchfork Z,$ 则$f^{-1}(Z)$为$M$中的嵌入子流形, 且$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</em> </p>
-<p>由于$Z$为嵌入子流形, $\,\forall\,q\in Z,$ 有子流形坐标卡$(V,\psi),$
-$q\in V,$ 使得$\psi(Z\cap V)\subset \mathbb{R}^{\dim Z}$为切片.
+<p>由于$Z$为嵌入子流形, $\,\forall\,q\in Z,$ 有坐标卡$(V,\psi),$ $q\in V,$
+使得$\psi(Z\cap V)\subset \mathbb{R}^{\dim Z}$为切片.
 取投影$\pi:\mathbb{R}^{n}\rightarrow \mathbb{R}^{\operatorname{codim}_N Z},$
 那么$\psi (Z\cap V)=\pi^{-1}(0).$</p>
 <p>断言$g:=\pi \circ \psi \circ f:f^{-1}(V)\rightarrow \mathbb{R}^{\operatorname{codim}_NZ}$以$0$为正则值.
@@ -258,8 +258,8 @@ $dg_p$为淹没. 由横截性条件,</p>
 d\psi \circ df_p(T_pM)+ T_{\psi\circ f(p)}\psi(Z)=T_{\psi\circ f(p)}\psi(N)=\mathbb{R}^n,\quad T_{\psi\circ f(p)}\psi(Z)=\mathbb{R}^{\dim Z}.</script><p>再作用$d\pi=\pi,$ 即有</p>
 <script type="math/tex; mode=display">
 dg_p(T_pM)=d\pi\circ d\psi\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.</script><p>由正则值原像定理,
-[$g^{-1}(0)=f^{-1}(Z\cap V)=f^{-1}(Z)\cap f^{-1}(V)$为嵌入子流形,
-且]{style=”color: red”}</p>
+${\color{red}{g^{-1}(0)=f^{-1}(Z\cap V)=f^{-1}(Z)\cap f^{-1}(V)} }$为嵌入子流形,
+且</p>
 <script type="math/tex; mode=display">
 \dim g^{-1}(0)=\dim M-\operatorname{codim}_NZ,\quad \operatorname{codim}_M (f^{-1}(Z)\cap f^{-1}(V))=\operatorname{codim}_NZ.</script><p>由$q\in V$的任意性即有$f^{-1}(Z)$为嵌入子流形,
 且$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_NZ.$</p>
@@ -270,7 +270,71 @@ dg_p(T_pM)=d\pi\circ d\psi\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.</
 M \times_N Z:=\{(a,b)\in M\times Z|f(a)=g(b)\}</script><p> 为光滑流形.
 证明考虑图像$\Gamma_f,\Gamma_g$与对角流形$\Delta\subset M\times N\times Z\times N,$
 通过说明$(\Gamma_f\times \Gamma_g)\pitchfork \Delta,$ 投影得到结论.</p>
-<p>文章最后更新于 2023-06-07 09:16:15 </p>
+<h2 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h2><p>若光滑映射$f$的某种性质在任意小扰动光滑同伦$f_t$下保持($t&lt;\varepsilon$),
+那么称该性质在扰动下是<strong>稳定的</strong>.</p>
+<p><strong>定理 5</strong>. <em>紧流形$M$上的浸入/淹没$f:M\rightarrow N$是稳定的.</em> </p>
+<p>若$f$为浸入, 那么$\,\forall\,p\in M,$
+$df_p$中存在$m\times m$阶子式行列式非零. 由连续性,
+存在邻域$U_p$以及$\varepsilon_p&gt;0,$ 使得$U_p\times [0,\varepsilon_p]$上,
+$d(f_t)_q$中同样位置的$m\times m$阶子式行列式仍非零.</p>
+<p>取$\bigcup_{i=1}^k U_i$覆盖$M,$ 记$\varepsilon=\min_i\{\varepsilon_i\},$
+那么$f_t$就在$M$上是浸入, $\,\forall\,t\le \varepsilon.$
+从而浸入都是稳定的, 同理淹没也是.</p>
+<p><strong>定理 6</strong>. <em>$n$维光滑流形$M$的子集$S$是$M$中余维数为$l$的嵌入子流形, 当且仅当$\,\forall\,p\in S,$ $\,\exists\,$淹没$g:U\rightarrow \mathbb{R}^l,$ 使得$p\in U,$ 且$S\cap U=g^{-1}(0).$</em> </p>
+<p>$\Rightarrow:$ 只需取子流形坐标卡,
+投影到$\mathbb{R}^{\operatorname{codim}S}$即可.</p>
+<p>$\Leftarrow:$ 由正则值原像定理立即得到.</p>
+<p><strong>推论 7</strong>. <em>设$M$为紧致流形, 若光滑映射$f:M\rightarrow N$与$N$中闭嵌入子流形$Z$横截, 那么横截性在$f$的扰动下稳定.</em> </p>
+<p>记$F(x,t)=F_t.$ 由于$F^{-1}(N\setminus Z)$为开集,
+$(M\setminus f^{-1}(Z))\times \{0\}\subset F^{-1}(N\setminus Z),$
+$\,\forall\,p\in M\setminus f^{-1}(Z),$ $\,\exists\,U_p\subset M,$
+$I_p=[0,\varepsilon_p),$ 使得$F(U_p\times I_p)\cap Z=\varnothing.$
+于是$\,\forall\,t&lt;\varepsilon_p,$ 在$U_p$上$f_t\pitchfork Z.$</p>
+<p>由上一定理, $\,\forall\,q\in Z,$
+存在淹没$g:V\rightarrow \mathbb{R}^{\operatorname{codim}Z},$
+使得$Z\cap V=g^{-1}(0).$ 断言$\,\forall\,p\in f^{-1}(q),$
+$g\circ f$也是淹没. 只需说明</p>
+<script type="math/tex; mode=display">
+dg_q\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.</script><p>而这是因为横截性与淹没性质,</p>
+<script type="math/tex; mode=display">
+df_p(T_pM)+T_qZ=T_qN,\quad dg_p(T_qN)=\mathbb{R}^{\operatorname{codim}Z},\quad dg_q(T_qZ)=0.</script><p>最后的等式是因为$g(Z\cap V)=0.$</p>
+<p>进而, $g\circ f$在$p$点邻域$\overline U_p\subset f^{-1}(V)$上为淹没.
+由淹没的稳定性, 存在充分小的$\varepsilon_p&gt;0,$
+使得$g\circ f_t$在$U_p$上仍是淹没, $\,\forall\,t&lt;\varepsilon_p$.
+欲证$U_p$上$f_t\pitchfork Z,$ 要求横截性</p>
+<script type="math/tex; mode=display">
+d(f_t)_p(T_pM)+T_{f(p)}Z=T_{f(p)}N,\quad \,\forall\,p\in f^{-1}_t(Z)\cap U_p.</script><p>而我们有</p>
+<script type="math/tex; mode=display">
+dg\circ d(f_t)_x(T_xM)=\mathbb{R}^{\operatorname{codim}Z},\quad \ker dg_q=T_qZ,\quad \,\forall\,x\in U_p,\quad q\in Z\cap V.</script><p>这就给出了横截性.</p>
+<p>由$M$的紧性, 可以取到开覆盖$M=\bigcup_{i=1}^k U_i,$
+$\varepsilon=\min_i\{\varepsilon_i\}.$ 于是$\,\forall\,t&lt;\varepsilon,$
+$f_t\pitchfork Z.$ 这就给出了横截的稳定性.</p>
+<p>我们有拓扑学中经典引理:</p>
+<p><strong>引理 8</strong>. <em>设$f:M\rightarrow N$为单的光滑浸入. 若$M$紧致, 则$f$为光滑嵌入.</em> </p>
+<p>利用紧性与Hausdorff性质即可. 接下来有如下稳定性定理:</p>
+<p><strong>定理 9</strong>. <em>设$M$为紧致流形, $f:M^n\rightarrow N^n$为光滑嵌入, 则嵌入性在$f$的扰动下稳定.</em> </p>
+<p>已知$f$在小扰动下仍为浸入. 由引理, 只需证明$\,\exists\,\varepsilon&gt;0,$
+$\,\forall\,t&lt;\varepsilon,$ $f_t$为单射.</p>
+<p>不然, 存在$t_i\rightarrow 0,$ $p_i\neq q_i\in M,$
+$f_{t_i}(p_i)=f_{t_i}(q_i).$ 由紧性, 存在$p_i\rightarrow p_0,$
+$q_i\rightarrow q_0,$ $f(p_0)=f(q_0).$ 由$f$为嵌入, $p_0=q_0=:p.$</p>
+<p>记$G(x,t)=(f_t(x),t),$ 那么 </p>
+<script type="math/tex; mode=display">
+d_{(p,0)}G=\begin{bmatrix}
+ d_pf&*\\
+ 0&1
+ \end{bmatrix}</script><p> 列满秩, 即$G$在$p$点为浸入.
+故$G$在$p$点小邻域处为单射. 然而</p>
+<script type="math/tex; mode=display">
+G(p_i,t_i)=(f_t(p_i),t_i)=(f_t(q_i),t_i)=G(q_i,t_i),\quad p_i,q_i\rightarrow p,\quad t_i\rightarrow 0.</script><p>这就与小邻域矛盾.</p>
+<p><strong>定理 10</strong>. <em>设$M$为紧致流形, $f:M\rightarrow N$为微分同胚, 则微分同胚性在$f$的扰动下稳定.</em> </p>
+<p>微分同胚为嵌入+满射, 故只需证明满射性在扰动下稳定. 不妨设$N$为连通的,
+不然依连通分支讨论即可.</p>
+<p>由于淹没在扰动下稳定, $\,\exists\,\varepsilon&gt;0,$
+$\,\forall\,t&lt;\varepsilon,$ $f_t$为淹没. 由淹没的典范表示,
+$f_t$为开映射. 另一方面, 由$f_t$从紧集打到Hausdorff空间,
+$f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了结论.</p>
+<p>文章最后更新于 2023-06-11 14:37:16 </p>
 
         </div>
 
@@ -295,6 +359,21 @@ M \times_N Z:=\{(a,b)\in M\times Z|f(a)=g(b)\}</script><p> 为光滑流形.
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2023/06/11/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(2)-Sard%E5%AE%9A%E7%90%86%E4%B8%8EMorse%E5%87%BD%E6%95%B0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(2)-Sard定理与Morse函数</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -510,7 +589,7 @@ M \times_N Z:=\{(a,b)\in M\times Z|f(a)=g(b)\}</script><p> 为光滑流形.
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B8%E5%85%A5-%E6%B7%B9%E6%B2%A1-%E5%B5%8C%E5%85%A5"><span class="nav-text">浸入, 淹没, 嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%80%BC"><span class="nav-text">正则值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA"><span class="nav-text">横截</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B8%E5%85%A5-%E6%B7%B9%E6%B2%A1-%E5%B5%8C%E5%85%A5"><span class="nav-text">浸入, 淹没, 嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%80%BC"><span class="nav-text">正则值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA"><span class="nav-text">横截</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-text">稳定性</span></a></li></ol>
     </div>
 </div>
         </aside>
@@ -574,24 +653,5 @@ M \times_N Z:=\{(a,b)\in M\times Z|f(a)=g(b)\}</script><p> 为光滑流形.
 
 
 
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-		TeX: { 
-			equationNumbers: { autoNumber: "AMS" },
-			extensions: ["AMSmath.js", "AMSsymbols.js"]
-		},
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i) 
-			all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 </body>
 </html>
