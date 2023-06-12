@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分拓扑》复习笔记(2)-Sard定理与Morse函数 |
+            《微分拓扑》复习笔记(3)-带边流形 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分拓扑》复习笔记(2)-Sard定理与Morse函数</span>
+            <span class="title-hover-animation">《微分拓扑》复习笔记(3)-带边流形</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-06-11 14:37:24
+        <i class="fas fa-edit"></i>&nbsp;2023-06-11 15:06:15
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,39 +206,59 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Sard定理"><a href="#Sard定理" class="headerlink" title="Sard定理"></a>Sard定理</h2><p><strong>定理 1</strong>. <em>光滑映射$f:M\rightarrow N$的临界值集合为$N$中的零测集.</em> </p>
-<p><strong>注 2</strong>. <em>Sard定理对$C^k$映射$f:M^m\rightarrow N^n$成立, $k\ge \max\{1,m-n+1\}.$ 注意临界点集未必零测.</em> </p>
-<p><strong>推论 3</strong>. <em>光滑映射$f:M\rightarrow N$的正则值在$N$中稠密. 且同时为可列个光滑映射正则值的点也稠密.</em> </p>
-<p>证明由如下步骤组成:</p>
-<p><strong>引理 4</strong>. <em>$f:I^m\rightarrow \mathbb{R}^n$为$C^1$映射. 若$m=n,$ $A\subset I^m$零测, 则$f(A)\subset \mathbb{R}^n$为零测集. 若$m&lt;n,$ $f(I^m)\subset \mathbb{R}^n$是零测集.</em> </p>
-<p>测度由Lipschitz常数控制, 由此证明第一部分结论即可.</p>
-<p><strong>推论 5</strong> (Mini Sard). <em>设$f:M\rightarrow N$为$C^1$映射, $\dim M=\dim N,$ 则$M$中零测集$A\subset M$的像$f(A)$为$N$中零测集. 若$\dim M&lt;\dim N,$ 则$f(M)$为$N$中的零测集. ($M$上都是临界点.)</em> </p>
-<p><strong>定理 6</strong> (等维数Sard定理). <em>设$f:M\rightarrow N$为$n$维流形间的$C^1$映射, $C\subset M$为临界点集. 则$f(C)$为零测集.</em> </p>
-<p>由Taylor定理, 在临界值附近, 像集可以用超平面处小邻域控制.
-做分割让邻域充分小即可.</p>
-<p><strong>引理 7</strong>. <em>设$I_1,\cdots,I_n$为闭区间$[a,b]$的覆盖, 则存在加细覆盖$I_1’,\cdots,I_N’,$ 使得$I_j’\subset I_i,$ $\sum_{j=1}^N |I_j’|\le 2(b-a).$</em> </p>
-<p><strong>定理 8</strong> (零测集Fubini定理). <em>设$A\subset \mathbb{R}^n$为紧致集. 若$\,\forall\,c\in \mathbb{R},$ $A\cap (\{c\}\times \mathbb{R}^{n-1})$为$\{c\}\times \mathbb{R}^{n-1}$中零测集, 则$A$为$\mathbb{R}^n$中零测集.</em> </p>
-<p>由此可证明Sard定理. 只需利用归纳法,
-讨论$f:U^m\rightarrow \mathbb{R}^n$即可. 按导数次数讨论.
-对于次数最高的情形用Taylor公式估计即可.</p>
-<h2 id="Morse函数"><a href="#Morse函数" class="headerlink" title="Morse函数"></a>Morse函数</h2><p>设$f:M\rightarrow \mathbb{R}$为光滑函数, 若$df_p=0,$ 则称$p$为临界点.
-若$M$紧致, 至少有两个临界点: 最大值点与最小值点. 若临界点处二阶导非退化,
-则称临界点为<strong>非退化临界点</strong>. 该定义与坐标卡选取无关.</p>
-<p><strong>命题 9</strong>. <em>非退化临界点附近没有其它临界点.</em> </p>
-<p><strong>引理 10</strong> (Morse引理). <em>设$c$为函数$f:M\rightarrow \mathbb{R}$的非退化临界点, 则存在$c$的Morse坐标卡$(U,\phi),$ Morse指标$i,$ 使得</em> </p>
+            <h2 id="带边流形"><a href="#带边流形" class="headerlink" title="带边流形"></a>带边流形</h2><p>$n$维拓扑带边流形是满足第二可数公理的Hausdorff空间,
+且每点有一个邻域同胚于$H^n$的一个开集.</p>
+<p><strong>定理 1</strong> (边界的拓扑不变性). <em>$M$是带边拓扑流形, 则$M$上的点不能既是边界点又是内点. 于是$\partial M\cap \operatorname{Int}M=\varnothing,$ $\partial M\cup \operatorname{Int}M=M.$</em> </p>
+<p><strong>定理 2</strong> (Brouwer区域不变性定理). <em>设$U\subset \mathbb{R}^n$为$\mathbb{R}^n$中开集, $f:U\rightarrow \mathbb{R}^n$为单的连续映射, 则$f(U)$是$\mathbb{R}^n$中开集.</em> </p>
+<p><strong>定理 3</strong> (边界的微分不变性). <em>设$M$为光滑带边流形, $p\in M.$ 若存在$M$的光滑坐标卡$(U,\phi)$使$\phi(U)\subset H^n,$ $\phi(p)\in \partial H^n,$ 则任意含$p$的坐标卡都如此.</em> </p>
+<p>光滑情形利用逆映射定理即可.</p>
+<p><strong>命题 4</strong>. <em>若$M$为$n$维带边流形, 则$\operatorname{Int}M$是$n$维流形, $\partial M$是$(n-1)$维无边流形.</em> </p>
+<p><strong>命题 5</strong>. <em>无边流形$M$和带边流形$N$的乘积是带边流形. 并且, $\partial(M\times N)=M\times \partial N,$ $\dim (M\times N)=\dim M+\dim N.$</em> </p>
+<p><strong>引理 6</strong>. <em>设 $M$ 是 $m$ 维光滑无边流形, 设 $0$ 是光滑函数 $f:M\rightarrow \mathbb{R}$ 的正则值. 则 $M_0:=\{p\in M|f(p)\ge 0\}$ 是 $m$ 维带边流形, 且 $\partial M_0=f^{-1}(0).$</em> </p>
+<p>$\{p\in M|f(p)&gt;0\}$为开集, 因此是$m$维开子流形, 只需确定边界.
+由正则原像定理, $f^{-1}(0)$为$m-1$维嵌入子流形,
+有坐标卡$(U,\phi)$使得$U\cap f^{-1}(0)$为切片.</p>
+<p>由$f$为淹没, $\frac{\partial {}f}{\partial {}x_m}(p)\neq 0,$
+$\,\forall\,p\in f^{-1}(0).$ 不妨设其为正, 那么$\,\forall\,q\in U_p,$
+$q\in M_0$当且仅当$x_m(q)\ge 0.$ 于是$U_0:=U\cap M_0$为边界坐标卡.</p>
+<h2 id="带边版本定理"><a href="#带边版本定理" class="headerlink" title="带边版本定理"></a>带边版本定理</h2><p><strong>定理 7</strong> (正则原像定理带边版本). <em>设$M$是$m$维光滑带边流形, $N$是$n$维光滑无边流形. 设$f:M\rightarrow N$是光滑映射. 若$q\in N$为$f,\partial f:=f|_{\partial M}$的正则值, 那么$S:=f^{-1}(q)$是$M$的$(m-n)$维子流形, $\partial S=S\cap \partial M.$</em> </p>
+<p>只需给出边界处的坐标系, 考虑$M=H^m,$ $N=\mathbb{R}^n,$ $q=0.$
+设$p\in f^{-1}(0)\cap \partial H^m.$ 由$f$光滑,
+存在$p$处邻域$U\subset \mathbb{R}^m,$
+$F:U\rightarrow \mathbb{R}^n$使得$F|_{U\cap H^m}=f|_{U\cap H^m}.$</p>
+<p>由$0$为$\partial f$的正则值,
+$d(\partial f)_p=dF_p|_{T_x\partial M}$为满射.
+设$dF_p|_{\operatorname{span}\{\frac{\partial {} }{\partial {}x_1},\cdots,\frac{\partial {} }{\partial {}x_n}\} }$为同构.
+现取$U$上的坐标映射(类似淹没典范映射证明.
+不能直接用典范表示的原因是确保边界$\{x_m=0\}$不动).</p>
 <script type="math/tex; mode=display">
-f\circ \phi^{-1}(x_1,\cdots,x_n)=f(c)-\sum_{j=1}^i x_j^2+\sum_{j=i+1}^n x_j^2.</script><p>证明利用Taylor展开进行, 对维数进行归纳.</p>
-<p><strong>推论 11</strong>. <em>函数的非退化临界点是孤立的. 特别的, 紧流形上Morse函数有有限个临界点.</em> </p>
-<p>若函数$f$所有临界点都是非退化的, 那么称$f$为Morse函数.</p>
-<p><strong>命题 12</strong>. <em>设$M^m\subset \mathbb{R}^n$为嵌入子流形. 对几乎所有的$a\in \mathbb{R}^n,$ 有Morse函数</em> </p>
+\Phi:U\rightarrow \mathbb{R}^m,\quad \Phi(x)=(F(x),x_{n+1},\cdots,x_m).</script><p>此时 </p>
 <script type="math/tex; mode=display">
-f_a:M\rightarrow \mathbb{R},\quad f(x)=\Vert x-a\Vert^2.</script><p>证明只需考虑非退化临界点发生当且仅当</p>
+d\Phi_p=\begin{bmatrix}
+ dF_p|_{\operatorname{span}\{\frac{\partial {} }{\partial {}x_1},\cdots,\frac{\partial {} }{\partial {}x_n}\} }&0\\
+ *&I
+ \end{bmatrix},</script><p> 为同构, 因此由反函数定理,
+$\Phi$为局部微分同胚, 不妨设$\Phi:U\rightarrow V$为微分同胚.</p>
+<p>此时$\Phi:U\cap S\mapsto V\cap (\{0\}\times H^{m-n}).$
+这就给出了$p$处的子流形边界坐标卡.</p>
+<p><strong>定理 8</strong> (横截原像定理的带边版本). <em>设$M$为光滑带边流形, $N$为光滑无边流形. $f:M\rightarrow N$为光滑映射. 设$Z\subset N$为$N$中的无边子流形, 且$f\pitchfork Z,$ $\partial f\pitchfork Z,$ 则$S:=f^{-1}(Z)$为$M$中的带边子流形, 且$\partial (f^{-1}(Z))=f^{-1}(Z)\cap \partial M,$ $\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</em> </p>
+<p>只需考虑边界处的坐标卡. 考虑$M=H^m,$ $N=\mathbb{R}^n,$
+$Z=\mathbb{R}^{\dim Z}.$ 设$p\in f^{-1}(Z)\cap \partial H^m.$
+同上题取光滑映射$F.$</p>
+<p>取投影$\pi:\mathbb{R}^n\rightarrow \mathbb{R}^{\operatorname{codim}Z},$
+$Z=\pi^{-1}(0).$ 断言$0$为$\pi\circ F$的正则值. 只需证</p>
 <script type="math/tex; mode=display">
-x-a\perp T_xM,\quad \left|\frac{\partial^2 {}f}{\partial {}u_i\partial {}u_j}\right|\neq 0,</script><p>说明不满足该条件的$a$为光滑映射$T^\perp M\ni w\mapsto x+w$的临界值即可.</p>
-<p><strong>命题 13</strong>. <em>设$M$为光滑流形, $f:M\rightarrow \mathbb{R}$为光滑函数, $k\in \mathbb{Z}_+.$ 则在任意紧子集上, $f$及其直到$k$阶导数被Morse函数一致逼近.</em> </p>
-<p>考虑用$f_a$对坐标分量进行逼近即可.</p>
-<p><strong>定理 14</strong>. <em>设$M$为紧致流形, 则$M$上Morse函数的集合为$C^\infty(M,\mathbb{R})$的稠密开集.</em> </p>
-<p>文章最后更新于 2023-06-11 14:37:26 </p>
+d\pi\circ dF_p T_xM=\mathbb{R}^{\operatorname{codim}Z}.</script><p> 而这是因为</p>
+<script type="math/tex; mode=display">
+dF_p T_xM+T_{F(x)}Z=\mathbb{R}^n,\quad d\pi (T_{F(x)}Z)=0.</script><p>同理$0$为$\pi\circ \partial f$的正则值. 从而由正则原像定理带边版本,
+$f^{-1}\circ \pi^{-1}(0)=f^{-1}(Z)=S$为$M$的$(m-\operatorname{codim}Z)$维子流形,
+$\partial S=S\cap \partial M,$
+$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</p>
+<p><strong>定理 9</strong> (带边流形的Sard定理). <em>设$f:M\rightarrow N$为带边流形$M$到无边流形$N$的光滑映射. $f,\partial f$的公共正则值集在$N$中稠密.</em> </p>
+<p>只需说明$f,\partial f$的临界值集零测. $f|_{\operatorname{Int}M},$
+$\partial f$已有说明. 只需讨论$p\in \partial M$为$f$的临界点的情形.
+然而此时它必是$\partial f$的临界点, 已有讨论. 这就给出了结论.</p>
+<p>文章最后更新于 2023-06-11 15:06:16 </p>
 
         </div>
 
@@ -246,11 +266,11 @@ x-a\perp T_xM,\quad \left|\frac{\partial^2 {}f}{\partial {}u_i\partial {}u_j}\ri
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(2)-Sard定理与Morse函数</li>
+        <li>本文标题：《微分拓扑》复习笔记(3)-带边流形</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-11 14:37:24</li>
+        <li>创建时间：2023-06-11 15:06:15</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/11/《微分拓扑》复习笔记(2)-Sard定理与Morse函数/
+            本文链接：https://dream0ar.github.io/2023/06/11/《微分拓扑》复习笔记(3)-带边流形/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -267,13 +287,13 @@ x-a\perp T_xM,\quad \left|\frac{\partial^2 {}f}{\partial {}u_i\partial {}u_j}\ri
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2023/06/11/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(3)-%E5%B8%A6%E8%BE%B9%E6%B5%81%E5%BD%A2/"
+                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(4)-Brouwer%E4%B8%8D%E5%8A%A8%E7%82%B9%E5%AE%9A%E7%90%86/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(3)-带边流形</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(4)-Brouwer不动点定理</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -283,10 +303,10 @@ x-a\perp T_xM,\quad \left|\frac{\partial^2 {}f}{\partial {}u_i\partial {}u_j}\ri
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/06/07/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(1)-%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"
+                           href="/2023/06/11/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(2)-Sard%E5%AE%9A%E7%90%86%E4%B8%8EMorse%E5%87%BD%E6%95%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(1)-基础知识</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(2)-Sard定理与Morse函数</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -493,7 +513,7 @@ x-a\perp T_xM,\quad \left|\frac{\partial^2 {}f}{\partial {}u_i\partial {}u_j}\ri
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sard%E5%AE%9A%E7%90%86"><span class="nav-text">Sard定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Morse%E5%87%BD%E6%95%B0"><span class="nav-text">Morse函数</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E8%BE%B9%E6%B5%81%E5%BD%A2"><span class="nav-text">带边流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E8%BE%B9%E7%89%88%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-text">带边版本定理</span></a></li></ol>
     </div>
 </div>
         </aside>
