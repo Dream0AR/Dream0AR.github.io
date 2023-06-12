@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分拓扑》复习笔记(4)-Brouwer不动点定理 |
+            《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分拓扑》复习笔记(4)-Brouwer不动点定理</span>
+            <span class="title-hover-animation">《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-06-12 15:19:21
+        <i class="fas fa-edit"></i>&nbsp;2023-06-12 20:43:52
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,30 +206,64 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Brouwer不动点定理"><a href="#Brouwer不动点定理" class="headerlink" title="Brouwer不动点定理"></a>Brouwer不动点定理</h2><p><strong>引理 1</strong>. <em>设$M$为紧致光滑带边流形, 则不存在保持边界的光滑映射$f:M\rightarrow \partial M.$</em> </p>
-<p>不然, 由Sard定理, 存在$f^{-1}(q)$为$1$维紧致带边子流形, 有偶数个端点. 而</p>
+            <h2 id="模-2-相交数"><a href="#模-2-相交数" class="headerlink" title="模$2$相交数"></a>模$2$相交数</h2><p>设$Y$的两个子流形$X,Z\subset Y$维数互补, 即$\dim X+\dim Z=\dim Y.$
+此时由横截原像定理,</p>
 <script type="math/tex; mode=display">
-\partial (f^{-1}(q))=f^{-1}(q)\cap \partial M=\{q\},</script><p> 矛盾.</p>
-<p><strong>引理 2</strong>. <em>设$f:B^n\rightarrow B^n$为光滑映射, 则存在不动点$x\in B^n.$</em> </p>
-<p>不然, 取$g(x)=x+t\frac{x-f(x)}{|x-f(x)|},$
-$t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
-<p><strong>定理 3</strong> (Brouwer不动点定理). <em>任何闭圆盘到自身的连续映射有不动点.</em> </p>
-<p>不然, 由光滑函数逼近连续映射, 构造矛盾.</p>
-<h2 id="一维光滑流形分类"><a href="#一维光滑流形分类" class="headerlink" title="一维光滑流形分类"></a>一维光滑流形分类</h2><p><strong>引理 4</strong>. <em>设$f:I\rightarrow M,$ $g:J\rightarrow M$为$M$的两个弧长参数表示, 则$f(I)\cap g(J)$至多有两个连通分支. 若有一个连通分支, 弧长参数可延拓到$f(I)\cup g(J)$上. 若有两个连通分支, 则$M$微分同胚于$S^1.$</em> </p>
-<p>证明考虑$g^{-1}\circ f$的图像. 由此可证明分类定理.</p>
-<p><strong>定理 5</strong>. <em>任何连通的一维光滑流形微分同胚于圆周$S^1$或区间$\{0,1\}.$</em> </p>
-<h2 id="Brouwer区域不变性定理"><a href="#Brouwer区域不变性定理" class="headerlink" title="Brouwer区域不变性定理"></a>Brouwer区域不变性定理</h2><p><strong>定理 6</strong> (区域不变性). <em>若$U\subset \mathbb{R}^n$为开集, $f:U\rightarrow \mathbb{R}^n$为连续单射, 则$f(U)$为$\mathbb{R}^n$的开集.</em> </p>
-<p><strong>定理 7</strong> (维数不变性). <em>设$U\subset \mathbb{R}^n,$ $V\subset \mathbb{R}^m$为开集. 若$m\neq n,$ 则$U,V$不同胚.</em> </p>
-<p>设$n&gt;m,$ 考虑映射$U\approx V\hookrightarrow \mathbb{R}^n$为连续单射,
-与Brouwer区域不变性定理矛盾.</p>
-<p>区域不变性定理由如下定理得证.</p>
-<p><strong>定理 8</strong>. <em>设$f:B^n\rightarrow \mathbb{R}^n$为连续单射, 则$f(0)$为$f(B^n)$内点.</em> </p>
-<p><strong>引理 9</strong> (零点稳定性). <em>设$f:B^n\rightarrow \mathbb{R}^n$为任意连续映射. 若连续映射$h:f(\mathbb{R}^n)\rightarrow \mathbb{R}^n$满足$|h(f(x))-x|\le 1,$ $\,\forall\,x\in B^n,$ 则$\,\exists\,x_0\in B^n,$ 使得$h(f(x_0))=0.$</em> </p>
-<p>取$g:=\mathrm{id}-h\circ f$即可, 由Brouwer不动点定理得证.</p>
-<p>对于定理证明, 用反证法, 若$f(0)$不是内点,
-则总存在$c\in \mathbb{R}^n\setminus f(B^n)$靠近$f(0).$
-由此构造无零点的映射逼近逆映射即可.</p>
-<p>文章最后更新于 2023-06-12 15:19:22 </p>
+\operatorname{codim}(X\cap Z)=\operatorname{codim}X+\operatorname{codim}Z=\dim Z+\dim X=\dim Y,</script><p>从而$X\cap Z$为零维嵌入子流形, 在紧流形中为有限点集.</p>
+<p>设 $X$ 紧致, $f:X\rightarrow Y$ 为光滑映射, $f\pitchfork Z,$
+$Z\subset Y$ 为与 $X$ 维数互补的闭子流形.
+那么$f^{-1}(Z)$为$X$的零维闭子流形, 是有限点集.
+定义$f$和$Z$的模$2$相交数为 </p>
+<script type="math/tex; mode=display">
+I_2(f,Z):=\# f^{-1}(Z)\mod 2.</script><p>对一般的光滑映射$g:X\rightarrow Y,$ 由横截同伦定理定义即可.
+合理性由如下定理保证.</p>
+<p><strong>定理 1</strong>. <em>如上假设, 若$f_0\sim f_1$且$f_0,f_1\pitchfork Z,$ 那么$I_2(f_0,Z)=I_2(f_1,Z).$</em> </p>
+<p>取光滑同伦 $F:X\times I\rightarrow Y.$ 那么 $\partial F\pitchfork Z.$
+由横截延拓定理, 存在 $G:X\times I\rightarrow Y,$ $G\pitchfork Z$ 且
+$\partial G=\partial F.$ 此时 $G^{-1}(Z)$ 为 $1$ 维紧致带边子流形,
+$\partial G^{-1}(Z)=f_0^{-1}(Z)\cup f_1^{-1}(Z)$ 含偶数个点, 从而
+$#_2 f_0^{-1}(Z)=#_2f_1^{-1}(Z).$</p>
+<p><strong>推论 2</strong>. <em>模$2$相交数为同伦不变量.</em> </p>
+<p><strong>定理 3</strong> (边界定理). <em>设$W$为紧致流形, $X=\partial W,$ $g:X\rightarrow Y$为光滑映射. 若$g$可以延拓到$W,$ 则$I_2(g,Z)=0,$ $\,\forall\,Z\subset Y$为与$X$维数互补闭子流形.</em> </p>
+<p>设 $G$ 为 $g$ 的延拓. 存在 $F\sim G,$ 使得 $F,\partial F\pitchfork Z.$
+$F^{-1}(Z)$ 为一维紧致带边子流形, $\partial F^{-1}(Z)$ 含偶数个点, 从而</p>
+<script type="math/tex; mode=display">
+I_2(g,Z)=I_2(\partial F,Z)=0.</script><h2 id="模-2-映射度"><a href="#模-2-映射度" class="headerlink" title="模$2$映射度"></a>模$2$映射度</h2><p>设 $f:X\rightarrow Y$ 为紧流形到连通流形上的光滑映射, $\dim X=\dim Y,$
+那么任取 $y\in Y,$ 定义模 $2$ 映射度为 </p>
+<script type="math/tex; mode=display">
+\deg_2f:=I_2(f,\{y\}).</script><p>它与$y$选取无关. 因为任取$Y$上正则值$y$, 由唱片引理,
+存在$\bigsqcup_{i=1}^n U_i= f^{-1}(V),$ $f:U_i\rightarrow V$为微分同胚,
+因此对于$y$周围的点,</p>
+<script type="math/tex; mode=display">
+I_2(f,\{z\})\equiv n\mod 2,\quad \,\forall\,z\in V.</script><p>即模$2$映射度是局部常值的. 由连通性得到良定性.</p>
+<p>模$2$映射度自然也是同伦不变量, 且若$X=\partial W,$
+$f:X\rightarrow Y$可延拓到$W$上, 那么$\deg_2 f=0.$ 特别地,
+$\deg_2f\neq 0$给出了不可延拓的障碍, 内部存在奇点.
+这可以用来证明奇数次复多项式必有根.</p>
+<h2 id="模-2-环绕数"><a href="#模-2-环绕数" class="headerlink" title="模$2$环绕数"></a>模$2$环绕数</h2><p>设 $X^{n-1}$ 为 $n-1$ 维紧致连通流形, $f:X\rightarrow \mathbb{R}^n$
+为光滑映射. $\,\forall\,z\notin f(X),$ 定义映射 $u:X\rightarrow S^{n-1}$
+为单位向量 $u(x)=\frac{f(x)-z}{|f(x)-z|}.$ 定义 $f$ 围绕 $z$ 的模 $2$
+环绕数为 </p>
+<script type="math/tex; mode=display">
+W_2(f,z):=\deg_2 u.</script><p><strong>定理 4</strong>. <em>设 $D^n$ 为紧致带边流形, $X=\partial D^n$ 为紧致连通流形, $f:X^{n-1}\rightarrow \mathbb{R}^n$ 为光滑映射. 设 $F:D^n\rightarrow \mathbb{R}^n$ 为 $f$ 的光滑延拓. 若 $z\notin \operatorname{Im}f$ 为 $F$ 的正则值, 则 $F^{-1}(z)$ 为有限点集, 且 $W_2(f,z)=# F^{-1}(z)\mod 2.$</em> </p>
+<p>由于$z$为$F$的正则值, $F^{-1}(z)$为零维嵌入子流形, 是有限点集.
+若$z\notin \operatorname{Im}F,$ $u$可延拓, 立即得证;
+若$z\in \operatorname{Im}F,$ 由唱片引理得证.</p>
+<h2 id="Jordan-Brouwer分离定理"><a href="#Jordan-Brouwer分离定理" class="headerlink" title="Jordan-Brouwer分离定理"></a>Jordan-Brouwer分离定理</h2><p><strong>定理 5</strong>. <em>设$X\subset \mathbb{R}^n$为$\mathbb{R}^n$中的紧致光滑连通嵌入超曲面, 则$\mathbb{R}^n\setminus X$由外部$D_0$和内部$D_1$两个连通开集组成, 并且$\overline D_1$为紧致流形, 满足$\partial\overline D_1=X.$</em> </p>
+<p>首先证明$\mathbb{R}^n\setminus X$至多有两个连通分支, 接下来利用射线说明</p>
+<script type="math/tex; mode=display">
+D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和内部即可. 特别的,
+构造射线可以轻易看出点在区域内部还是外部.</p>
+<h2 id="Borsuk-Ulam定理"><a href="#Borsuk-Ulam定理" class="headerlink" title="Borsuk-Ulam定理"></a>Borsuk-Ulam定理</h2><p><strong>定理 6</strong>. <em>设$f:S^k\rightarrow \mathbb{R}^{k+1}\setminus\{0\}$为光滑映射, 且$f(-x)=-f(x),$ $\,\forall\,x\in S^k.$ 则$W_2(f,0)=1.$</em> </p>
+<p>该定理可以推出Brouwer不动点定理.
+证明将球面上的环绕数与赤道上的环绕数等同起来, 由归纳法得到.
+方法是将映射限制在上半球面上, 再对像空间做投影(以使用归纳假设).</p>
+<p><strong>推论 7</strong>. <em>若$f:S^k\rightarrow \mathbb{R}^{k+1}\setminus\{0\}$关于原点对称, 则$f$与任意过原点的直线至少相交一次.</em> </p>
+<p><strong>定理 8</strong>. <em>设$f_1,\cdots,f_k$为$S^k$上的$k$个关于原点对称的光滑函数, 它们必有公共零点.</em> </p>
+<p>考虑$f(x)=(f_1(x),\cdots,f_k(x),0),$ 应用推论即可,</p>
+<p><strong>定理 9</strong>. <em>对$S^k$上任意$k$个光滑函数$g_1,\cdots,g_k,$ 必存在$p\in S^k,$ 使得$g_i(p)=g_i(-p).$</em> </p>
+<p>人为构造对称函数$f_i(x)=g_i(x)-g_i(-x).$</p>
+<p>文章最后更新于 2023-06-12 20:43:53 </p>
 
         </div>
 
@@ -237,11 +271,11 @@ $t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(4)-Brouwer不动点定理</li>
+        <li>本文标题：《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-12 15:19:21</li>
+        <li>创建时间：2023-06-12 20:43:52</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(4)-Brouwer不动点定理/
+            本文链接：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -255,29 +289,14 @@ $t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(5)-%E6%A8%AA%E6%88%AA/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(5)-横截</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/06/11/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(3)-%E5%B8%A6%E8%BE%B9%E6%B5%81%E5%BD%A2/"
+                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(5)-%E6%A8%AA%E6%88%AA/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(3)-带边流形</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(5)-横截</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -484,7 +503,7 @@ $t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Brouwer%E4%B8%8D%E5%8A%A8%E7%82%B9%E5%AE%9A%E7%90%86"><span class="nav-text">Brouwer不动点定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E5%85%89%E6%BB%91%E6%B5%81%E5%BD%A2%E5%88%86%E7%B1%BB"><span class="nav-text">一维光滑流形分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brouwer%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8F%98%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-text">Brouwer区域不变性定理</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E7%9B%B8%E4%BA%A4%E6%95%B0"><span class="nav-text">模$2$相交数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E6%98%A0%E5%B0%84%E5%BA%A6"><span class="nav-text">模$2$映射度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E7%8E%AF%E7%BB%95%E6%95%B0"><span class="nav-text">模$2$环绕数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jordan-Brouwer%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86"><span class="nav-text">Jordan-Brouwer分离定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Borsuk-Ulam%E5%AE%9A%E7%90%86"><span class="nav-text">Borsuk-Ulam定理</span></a></li></ol>
     </div>
 </div>
         </aside>

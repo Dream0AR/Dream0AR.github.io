@@ -12335,4 +12335,145 @@ $u-1$在$\Sigma$上具有限能量, 取$\varphi=u.$ 由$R_M&gt;0,$</p>
         <category>黎曼几何</category>
       </categories>
   </entry>
+  <entry>
+    <title>《微分拓扑》复习笔记(5)-横截</title>
+    <url>/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(5)-%E6%A8%AA%E6%88%AA/</url>
+    <content><![CDATA[<h2 id="varepsilon-邻域定理"><a href="#varepsilon-邻域定理" class="headerlink" title="$\varepsilon$-邻域定理"></a>$\varepsilon$-邻域定理</h2><p>设 $Y^n\hookrightarrow \mathbb{R}^k$ 为 $n$ 维光滑嵌入子流形.
+$\,\forall\,y\in Y,$ $n$ 维子空间
+$T_yY\subset T_y\mathbb{R}^k\cong \mathbb{R}^k$ 决定了一个正交补空间</p>
+<script type="math/tex; mode=display">
+N_y(Y):=\{v\in \mathbb{R}^k|v\perp T_yY\}.</script><p>称$N(Y):=\{(y,v)\in Y\times \mathbb{R}^k|v\in N_yY\}\subset T\mathbb{R}^k$为$Y$在$\mathbb{R}^k$中的<strong>法丛</strong>.</p>
+<p><strong>命题 1</strong>. <em>设$Y^n\hookrightarrow \mathbb{R}^k$是嵌入子流形. 法丛$N(Y)$是$k$维流形, 且投影$\sigma:N(Y)\rightarrow Y$为淹没.</em> </p>
+<p>$\,\forall\,y\in Y,$ 存在$\mathbb{R}^k$中开集$\widetilde U,$
+淹没$\phi:\widetilde U\rightarrow \mathbb{R}^l,$
+使得$U=Y\cap \widetilde U=\phi^{-1}(0).$ 有$N(Y)$中开集</p>
+<script type="math/tex; mode=display">
+N(U):=\{(x,v)\in U\times \mathbb{R}^k|v\in N_xY\}.</script><p>由 $d\phi_x$ 为满射, $\ker d\phi_x=T_xY,$
+$(d\phi_x)^T:\mathbb{R}^l\rightarrow N_xY$ 为线性同构
+($N(A)^\perp=R(A^T)$). 取微分同胚</p>
+<script type="math/tex; mode=display">
+\psi:U\times \mathbb{R}^l\rightarrow N(U),\quad (y,v)\mapsto (y,(d\phi_y)^T(v)).</script><p>这就给出了$N(Y)$的局部参数化. $\sigma\circ \psi$为标准投影,
+因此$\sigma$为淹没.</p>
+<p><strong>定理 2</strong> ($\varepsilon$-邻域定理). <em>$\mathbb{R}^k$ 任意光滑嵌入无边子流形$Y$有一个$\varepsilon$-邻域$Y^\varepsilon:=h(V)\subset \mathbb{R}^k,$ 其中$V=\{(y,v)\in N(Y)\mid |v|&lt;\varepsilon(y)\}\subset N(Y)$为开子集, $\varepsilon:Y\rightarrow \mathbb{R}^+$为正连续函数, $h:(y,v)\mapsto y+v$为微分同胚, 且光滑映射$\pi:Y^\varepsilon\rightarrow Y$既是淹没, 又是收缩. 特别的, 当$Y$紧致时$\varepsilon$可取为常数.</em> </p>
+<p>$dh_{(y,0)}$为线性同构, 因此$Y$上每点有小邻域使得$h$在其上为微分同胚.
+若$Y$紧, 可令小邻域充分小使得有限覆盖构成$\varepsilon$-邻域.
+$\pi=\sigma\circ h^{-1}$既是淹没, 又是收缩. 若$Y$非紧, 取连续函数</p>
+<script type="math/tex; mode=display">
+\rho(y):=\sup\{\delta\le 1|h_{V_\delta(y)}\text{为微分同胚}\},</script><p>用$\varepsilon=\frac{\rho}{2}$控制邻域即可.</p>
+<p><strong>定理 3</strong> (Whitney逼近定理). <em>设$X,Y$为光滑流形, $f:X\rightarrow Y$为连续映射. 则$f$同伦于光滑映射$g:X\rightarrow Y.$ 若$f|_A$在闭子集$A\subset X$上光滑, 则同伦可取得在$A$不变.</em> </p>
+<p>取$\mathbb{R}^k$上的光滑逼近, 利用管状邻域投影即可.</p>
+<p><strong>推论 4</strong> (光滑映射的延拓引理). <em>设$X,Y$是光滑流形, $A\subset X$为闭子集, $f:A\rightarrow Y$为光滑映射. 则$f$有到$X$的光滑延拓当且仅当$f$有到$X$的连续延拓.</em> </p>
+<p><strong>推论 5</strong>. <em>若$X^m$是$m$维光滑流形, $m&lt;n,$ 则连续映射$f:X^m\rightarrow S^n$同伦于常值映射.</em> </p>
+<h2 id="参数横截定理"><a href="#参数横截定理" class="headerlink" title="参数横截定理"></a>参数横截定理</h2><p><strong>定理 6</strong>. <em>设$F:X\rightarrow Y$为光滑映射, 只有$X$带边. $Z\subset Y$为任意无边嵌入子流形. 若$F\pitchfork Z,$ $\partial F\pitchfork Z,$ 则对几乎所有的$s\in S,$ $f_s\pitchfork Z,$ $\partial f_s\pitchfork Z.$</em> </p>
+<p>由横截原像定理, $W:=F^{-1}(Z)$为$X\times S$中的嵌入子流形, 且</p>
+<script type="math/tex; mode=display">
+\partial W=F^{-1}(Z)\cap \partial (X\times S)=F^{-1}(Z)\cap (\partial X\times S).</script><p>设$\pi:X\times S\rightarrow S$为投影映射,
+只需证当$s$为$\pi|_W,\partial (\pi|_W)$正则值时,
+$f_s,\partial f_s\pitchfork Z.$ 这样由Sard定理得到结论.</p>
+<p>若$s$为$\pi|_W$正则值,</p>
+<script type="math/tex; mode=display">
+d\pi_{(x,s)}(T_{(x,s)}W)=T_sS,\quad dF_{(x,s)}(T_{(x,s)}(X\times S))+T_zZ=T_zY.</script><p>欲证 </p>
+<script type="math/tex; mode=display">
+df_s(T_xX)+T_zZ=T_zY.</script><p> 注意到</p>
+<script type="math/tex; mode=display">
+T_{(x,s)}(X\times S)=T_xX\oplus T_sS,\quad dF_{(x,s)}|_{T_xX}=df_s.</script><p>只需说明$\,\forall\,e\neq 0\in T_sS,$ $\,\exists\,w\in T_xX,$
+使得$dF_{(x,s)}(w,e)\in T_zZ.$ 只需令$(w,e)\in T_{(x,s)}W$即可,
+而这由正则性保证. 边界映射同理.</p>
+<p>现设$f:X\rightarrow Y$为光滑映射,
+$Y\hookrightarrow \mathbb{R}^k$有$\varepsilon$邻域.
+取单位开球$S\subset \mathbb{R}^k,$ 定义</p>
+<script type="math/tex; mode=display">
+\widetilde F:X\times S\rightarrow \mathbb{R}^k,\quad (x,s)\mapsto f(x)+\varepsilon(f(x))s</script><p>为淹没, $\partial \widetilde F$也是.
+进一步取$F:=\sigma \circ \widetilde F:X\times S\rightarrow Y$满足同样淹没条件.
+这样对$Y$中无边嵌入子流形$Z,$ $F,\partial F\pitchfork Z.$
+从而对于几乎所有的$s\in S,$ 有$f_s,\partial f_s\pitchfork Z.$
+由于$f_0=f,$ 这就给出了横截同伦定理.</p>
+<p><strong>定理 7</strong> (横截同伦定理). <em>对任意光滑映射$f:X\rightarrow Y$和嵌入子流形$Z\subset Y,$ $Y,Z$无边. 存在光滑映射$g:X\rightarrow Y,$ 使得$g\sim f,$ $g,\partial g\pitchfork Z.$</em> </p>
+<h2 id="横截延拓定理"><a href="#横截延拓定理" class="headerlink" title="横截延拓定理"></a>横截延拓定理</h2><p>称$f:X\rightarrow Y$在$A$上与$Z\subset Y$横截, 若</p>
+<script type="math/tex; mode=display">
+df_x(T_xX)+T_{f(x)}Z=T_{f(x)}Y,\quad \,\forall\,x\in A\cap f^{-1}(Z).</script><p>记为$f\pitchfork_A Z.$</p>
+<p><strong>定理 8</strong> (横截延拓定理). <em>设$Z\subset Y$是$Y$的无边闭子流形, $A\subset X$为闭子集. 设$f:X\rightarrow Y$为光滑映射, $f\pitchfork_A Z,$ $\partial f\pitchfork_{A\cap \partial X} Z.$ 则存在光滑映射$g:X\rightarrow Y,$ 使得$g\sim f,$ $g,\partial g\pitchfork Z,$ 且在$A$的一个邻域上$g=f.$</em> </p>
+<p>改造横截同伦定理中的$g,$ 使得在$A$附近保持不变即可.
+方法是将$\widetilde F:X\times S\rightarrow \mathbb{R}^k$改造为</p>
+<script type="math/tex; mode=display">
+(x,s)\mapsto f(x)+\varepsilon(f(x))\rho^2(x)s.</script><p> $\rho(x)$为截断函数.
+它的加入使得$A$的小邻域上$F(x,\rho^2(x)s)=F(x,0)=f(x).$</p>
+<p>由于$\partial X$为闭子集, 我们有</p>
+<p><strong>推论 9</strong>. <em>若$f:X\rightarrow Y$为光滑映射, $Z\subset Y$为无边闭子流形, $\partial f\pitchfork Z,$ 则存在光滑映射$g:X\rightarrow Y$满足$g\sim f,$ $\partial g=\partial f,$ $g\pitchfork Z.$</em> </p>
+<p>文章最后更新于 2023-06-12 18:39:59 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>微分拓扑</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</title>
+    <url>/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(6)-%E6%A8%A1$2$%E7%9B%B8%E4%BA%A4%E6%95%B0,%20%E6%98%A0%E5%B0%84%E5%BA%A6,%20%E7%8E%AF%E7%BB%95%E6%95%B0%E4%B8%8E%E5%BA%94%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="模-2-相交数"><a href="#模-2-相交数" class="headerlink" title="模$2$相交数"></a>模$2$相交数</h2><p>设$Y$的两个子流形$X,Z\subset Y$维数互补, 即$\dim X+\dim Z=\dim Y.$
+此时由横截原像定理,</p>
+<script type="math/tex; mode=display">
+\operatorname{codim}(X\cap Z)=\operatorname{codim}X+\operatorname{codim}Z=\dim Z+\dim X=\dim Y,</script><p>从而$X\cap Z$为零维嵌入子流形, 在紧流形中为有限点集.</p>
+<p>设 $X$ 紧致, $f:X\rightarrow Y$ 为光滑映射, $f\pitchfork Z,$
+$Z\subset Y$ 为与 $X$ 维数互补的闭子流形.
+那么$f^{-1}(Z)$为$X$的零维闭子流形, 是有限点集.
+定义$f$和$Z$的模$2$相交数为 </p>
+<script type="math/tex; mode=display">
+I_2(f,Z):=\# f^{-1}(Z)\mod 2.</script><p>对一般的光滑映射$g:X\rightarrow Y,$ 由横截同伦定理定义即可.
+合理性由如下定理保证.</p>
+<p><strong>定理 1</strong>. <em>如上假设, 若$f_0\sim f_1$且$f_0,f_1\pitchfork Z,$ 那么$I_2(f_0,Z)=I_2(f_1,Z).$</em> </p>
+<p>取光滑同伦 $F:X\times I\rightarrow Y.$ 那么 $\partial F\pitchfork Z.$
+由横截延拓定理, 存在 $G:X\times I\rightarrow Y,$ $G\pitchfork Z$ 且
+$\partial G=\partial F.$ 此时 $G^{-1}(Z)$ 为 $1$ 维紧致带边子流形,
+$\partial G^{-1}(Z)=f_0^{-1}(Z)\cup f_1^{-1}(Z)$ 含偶数个点, 从而
+$#_2 f_0^{-1}(Z)=#_2f_1^{-1}(Z).$</p>
+<p><strong>推论 2</strong>. <em>模$2$相交数为同伦不变量.</em> </p>
+<p><strong>定理 3</strong> (边界定理). <em>设$W$为紧致流形, $X=\partial W,$ $g:X\rightarrow Y$为光滑映射. 若$g$可以延拓到$W,$ 则$I_2(g,Z)=0,$ $\,\forall\,Z\subset Y$为与$X$维数互补闭子流形.</em> </p>
+<p>设 $G$ 为 $g$ 的延拓. 存在 $F\sim G,$ 使得 $F,\partial F\pitchfork Z.$
+$F^{-1}(Z)$ 为一维紧致带边子流形, $\partial F^{-1}(Z)$ 含偶数个点, 从而</p>
+<script type="math/tex; mode=display">
+I_2(g,Z)=I_2(\partial F,Z)=0.</script><h2 id="模-2-映射度"><a href="#模-2-映射度" class="headerlink" title="模$2$映射度"></a>模$2$映射度</h2><p>设 $f:X\rightarrow Y$ 为紧流形到连通流形上的光滑映射, $\dim X=\dim Y,$
+那么任取 $y\in Y,$ 定义模 $2$ 映射度为 </p>
+<script type="math/tex; mode=display">
+\deg_2f:=I_2(f,\{y\}).</script><p>它与$y$选取无关. 因为任取$Y$上正则值$y$, 由唱片引理,
+存在$\bigsqcup_{i=1}^n U_i= f^{-1}(V),$ $f:U_i\rightarrow V$为微分同胚,
+因此对于$y$周围的点,</p>
+<script type="math/tex; mode=display">
+I_2(f,\{z\})\equiv n\mod 2,\quad \,\forall\,z\in V.</script><p>即模$2$映射度是局部常值的. 由连通性得到良定性.</p>
+<p>模$2$映射度自然也是同伦不变量, 且若$X=\partial W,$
+$f:X\rightarrow Y$可延拓到$W$上, 那么$\deg_2 f=0.$ 特别地,
+$\deg_2f\neq 0$给出了不可延拓的障碍, 内部存在奇点.
+这可以用来证明奇数次复多项式必有根.</p>
+<h2 id="模-2-环绕数"><a href="#模-2-环绕数" class="headerlink" title="模$2$环绕数"></a>模$2$环绕数</h2><p>设 $X^{n-1}$ 为 $n-1$ 维紧致连通流形, $f:X\rightarrow \mathbb{R}^n$
+为光滑映射. $\,\forall\,z\notin f(X),$ 定义映射 $u:X\rightarrow S^{n-1}$
+为单位向量 $u(x)=\frac{f(x)-z}{|f(x)-z|}.$ 定义 $f$ 围绕 $z$ 的模 $2$
+环绕数为 </p>
+<script type="math/tex; mode=display">
+W_2(f,z):=\deg_2 u.</script><p><strong>定理 4</strong>. <em>设 $D^n$ 为紧致带边流形, $X=\partial D^n$ 为紧致连通流形, $f:X^{n-1}\rightarrow \mathbb{R}^n$ 为光滑映射. 设 $F:D^n\rightarrow \mathbb{R}^n$ 为 $f$ 的光滑延拓. 若 $z\notin \operatorname{Im}f$ 为 $F$ 的正则值, 则 $F^{-1}(z)$ 为有限点集, 且 $W_2(f,z)=# F^{-1}(z)\mod 2.$</em> </p>
+<p>由于$z$为$F$的正则值, $F^{-1}(z)$为零维嵌入子流形, 是有限点集.
+若$z\notin \operatorname{Im}F,$ $u$可延拓, 立即得证;
+若$z\in \operatorname{Im}F,$ 由唱片引理得证.</p>
+<h2 id="Jordan-Brouwer分离定理"><a href="#Jordan-Brouwer分离定理" class="headerlink" title="Jordan-Brouwer分离定理"></a>Jordan-Brouwer分离定理</h2><p><strong>定理 5</strong>. <em>设$X\subset \mathbb{R}^n$为$\mathbb{R}^n$中的紧致光滑连通嵌入超曲面, 则$\mathbb{R}^n\setminus X$由外部$D_0$和内部$D_1$两个连通开集组成, 并且$\overline D_1$为紧致流形, 满足$\partial\overline D_1=X.$</em> </p>
+<p>首先证明$\mathbb{R}^n\setminus X$至多有两个连通分支, 接下来利用射线说明</p>
+<script type="math/tex; mode=display">
+D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和内部即可. 特别的,
+构造射线可以轻易看出点在区域内部还是外部.</p>
+<h2 id="Borsuk-Ulam定理"><a href="#Borsuk-Ulam定理" class="headerlink" title="Borsuk-Ulam定理"></a>Borsuk-Ulam定理</h2><p><strong>定理 6</strong>. <em>设$f:S^k\rightarrow \mathbb{R}^{k+1}\setminus\{0\}$为光滑映射, 且$f(-x)=-f(x),$ $\,\forall\,x\in S^k.$ 则$W_2(f,0)=1.$</em> </p>
+<p>该定理可以推出Brouwer不动点定理.
+证明将球面上的环绕数与赤道上的环绕数等同起来, 由归纳法得到.
+方法是将映射限制在上半球面上, 再对像空间做投影(以使用归纳假设).</p>
+<p><strong>推论 7</strong>. <em>若$f:S^k\rightarrow \mathbb{R}^{k+1}\setminus\{0\}$关于原点对称, 则$f$与任意过原点的直线至少相交一次.</em> </p>
+<p><strong>定理 8</strong>. <em>设$f_1,\cdots,f_k$为$S^k$上的$k$个关于原点对称的光滑函数, 它们必有公共零点.</em> </p>
+<p>考虑$f(x)=(f_1(x),\cdots,f_k(x),0),$ 应用推论即可,</p>
+<p><strong>定理 9</strong>. <em>对$S^k$上任意$k$个光滑函数$g_1,\cdots,g_k,$ 必存在$p\in S^k,$ 使得$g_i(p)=g_i(-p).$</em> </p>
+<p>人为构造对称函数$f_i(x)=g_i(x)-g_i(-x).$</p>
+<p>文章最后更新于 2023-06-12 20:43:53 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>几何</category>
+        <category>微分拓扑</category>
+      </categories>
+  </entry>
 </search>

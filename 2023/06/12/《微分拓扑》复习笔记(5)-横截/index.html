@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分拓扑》复习笔记(4)-Brouwer不动点定理 |
+            《微分拓扑》复习笔记(5)-横截 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分拓扑》复习笔记(4)-Brouwer不动点定理</span>
+            <span class="title-hover-animation">《微分拓扑》复习笔记(5)-横截</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-06-12 15:19:21
+        <i class="fas fa-edit"></i>&nbsp;2023-06-12 18:39:58
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,30 +206,69 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Brouwer不动点定理"><a href="#Brouwer不动点定理" class="headerlink" title="Brouwer不动点定理"></a>Brouwer不动点定理</h2><p><strong>引理 1</strong>. <em>设$M$为紧致光滑带边流形, 则不存在保持边界的光滑映射$f:M\rightarrow \partial M.$</em> </p>
-<p>不然, 由Sard定理, 存在$f^{-1}(q)$为$1$维紧致带边子流形, 有偶数个端点. 而</p>
+            <h2 id="varepsilon-邻域定理"><a href="#varepsilon-邻域定理" class="headerlink" title="$\varepsilon$-邻域定理"></a>$\varepsilon$-邻域定理</h2><p>设 $Y^n\hookrightarrow \mathbb{R}^k$ 为 $n$ 维光滑嵌入子流形.
+$\,\forall\,y\in Y,$ $n$ 维子空间
+$T_yY\subset T_y\mathbb{R}^k\cong \mathbb{R}^k$ 决定了一个正交补空间</p>
 <script type="math/tex; mode=display">
-\partial (f^{-1}(q))=f^{-1}(q)\cap \partial M=\{q\},</script><p> 矛盾.</p>
-<p><strong>引理 2</strong>. <em>设$f:B^n\rightarrow B^n$为光滑映射, 则存在不动点$x\in B^n.$</em> </p>
-<p>不然, 取$g(x)=x+t\frac{x-f(x)}{|x-f(x)|},$
-$t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
-<p><strong>定理 3</strong> (Brouwer不动点定理). <em>任何闭圆盘到自身的连续映射有不动点.</em> </p>
-<p>不然, 由光滑函数逼近连续映射, 构造矛盾.</p>
-<h2 id="一维光滑流形分类"><a href="#一维光滑流形分类" class="headerlink" title="一维光滑流形分类"></a>一维光滑流形分类</h2><p><strong>引理 4</strong>. <em>设$f:I\rightarrow M,$ $g:J\rightarrow M$为$M$的两个弧长参数表示, 则$f(I)\cap g(J)$至多有两个连通分支. 若有一个连通分支, 弧长参数可延拓到$f(I)\cup g(J)$上. 若有两个连通分支, 则$M$微分同胚于$S^1.$</em> </p>
-<p>证明考虑$g^{-1}\circ f$的图像. 由此可证明分类定理.</p>
-<p><strong>定理 5</strong>. <em>任何连通的一维光滑流形微分同胚于圆周$S^1$或区间$\{0,1\}.$</em> </p>
-<h2 id="Brouwer区域不变性定理"><a href="#Brouwer区域不变性定理" class="headerlink" title="Brouwer区域不变性定理"></a>Brouwer区域不变性定理</h2><p><strong>定理 6</strong> (区域不变性). <em>若$U\subset \mathbb{R}^n$为开集, $f:U\rightarrow \mathbb{R}^n$为连续单射, 则$f(U)$为$\mathbb{R}^n$的开集.</em> </p>
-<p><strong>定理 7</strong> (维数不变性). <em>设$U\subset \mathbb{R}^n,$ $V\subset \mathbb{R}^m$为开集. 若$m\neq n,$ 则$U,V$不同胚.</em> </p>
-<p>设$n&gt;m,$ 考虑映射$U\approx V\hookrightarrow \mathbb{R}^n$为连续单射,
-与Brouwer区域不变性定理矛盾.</p>
-<p>区域不变性定理由如下定理得证.</p>
-<p><strong>定理 8</strong>. <em>设$f:B^n\rightarrow \mathbb{R}^n$为连续单射, 则$f(0)$为$f(B^n)$内点.</em> </p>
-<p><strong>引理 9</strong> (零点稳定性). <em>设$f:B^n\rightarrow \mathbb{R}^n$为任意连续映射. 若连续映射$h:f(\mathbb{R}^n)\rightarrow \mathbb{R}^n$满足$|h(f(x))-x|\le 1,$ $\,\forall\,x\in B^n,$ 则$\,\exists\,x_0\in B^n,$ 使得$h(f(x_0))=0.$</em> </p>
-<p>取$g:=\mathrm{id}-h\circ f$即可, 由Brouwer不动点定理得证.</p>
-<p>对于定理证明, 用反证法, 若$f(0)$不是内点,
-则总存在$c\in \mathbb{R}^n\setminus f(B^n)$靠近$f(0).$
-由此构造无零点的映射逼近逆映射即可.</p>
-<p>文章最后更新于 2023-06-12 15:19:22 </p>
+N_y(Y):=\{v\in \mathbb{R}^k|v\perp T_yY\}.</script><p>称$N(Y):=\{(y,v)\in Y\times \mathbb{R}^k|v\in N_yY\}\subset T\mathbb{R}^k$为$Y$在$\mathbb{R}^k$中的<strong>法丛</strong>.</p>
+<p><strong>命题 1</strong>. <em>设$Y^n\hookrightarrow \mathbb{R}^k$是嵌入子流形. 法丛$N(Y)$是$k$维流形, 且投影$\sigma:N(Y)\rightarrow Y$为淹没.</em> </p>
+<p>$\,\forall\,y\in Y,$ 存在$\mathbb{R}^k$中开集$\widetilde U,$
+淹没$\phi:\widetilde U\rightarrow \mathbb{R}^l,$
+使得$U=Y\cap \widetilde U=\phi^{-1}(0).$ 有$N(Y)$中开集</p>
+<script type="math/tex; mode=display">
+N(U):=\{(x,v)\in U\times \mathbb{R}^k|v\in N_xY\}.</script><p>由 $d\phi_x$ 为满射, $\ker d\phi_x=T_xY,$
+$(d\phi_x)^T:\mathbb{R}^l\rightarrow N_xY$ 为线性同构
+($N(A)^\perp=R(A^T)$). 取微分同胚</p>
+<script type="math/tex; mode=display">
+\psi:U\times \mathbb{R}^l\rightarrow N(U),\quad (y,v)\mapsto (y,(d\phi_y)^T(v)).</script><p>这就给出了$N(Y)$的局部参数化. $\sigma\circ \psi$为标准投影,
+因此$\sigma$为淹没.</p>
+<p><strong>定理 2</strong> ($\varepsilon$-邻域定理). <em>$\mathbb{R}^k$ 任意光滑嵌入无边子流形$Y$有一个$\varepsilon$-邻域$Y^\varepsilon:=h(V)\subset \mathbb{R}^k,$ 其中$V=\{(y,v)\in N(Y)\mid |v|&lt;\varepsilon(y)\}\subset N(Y)$为开子集, $\varepsilon:Y\rightarrow \mathbb{R}^+$为正连续函数, $h:(y,v)\mapsto y+v$为微分同胚, 且光滑映射$\pi:Y^\varepsilon\rightarrow Y$既是淹没, 又是收缩. 特别的, 当$Y$紧致时$\varepsilon$可取为常数.</em> </p>
+<p>$dh_{(y,0)}$为线性同构, 因此$Y$上每点有小邻域使得$h$在其上为微分同胚.
+若$Y$紧, 可令小邻域充分小使得有限覆盖构成$\varepsilon$-邻域.
+$\pi=\sigma\circ h^{-1}$既是淹没, 又是收缩. 若$Y$非紧, 取连续函数</p>
+<script type="math/tex; mode=display">
+\rho(y):=\sup\{\delta\le 1|h_{V_\delta(y)}\text{为微分同胚}\},</script><p>用$\varepsilon=\frac{\rho}{2}$控制邻域即可.</p>
+<p><strong>定理 3</strong> (Whitney逼近定理). <em>设$X,Y$为光滑流形, $f:X\rightarrow Y$为连续映射. 则$f$同伦于光滑映射$g:X\rightarrow Y.$ 若$f|_A$在闭子集$A\subset X$上光滑, 则同伦可取得在$A$不变.</em> </p>
+<p>取$\mathbb{R}^k$上的光滑逼近, 利用管状邻域投影即可.</p>
+<p><strong>推论 4</strong> (光滑映射的延拓引理). <em>设$X,Y$是光滑流形, $A\subset X$为闭子集, $f:A\rightarrow Y$为光滑映射. 则$f$有到$X$的光滑延拓当且仅当$f$有到$X$的连续延拓.</em> </p>
+<p><strong>推论 5</strong>. <em>若$X^m$是$m$维光滑流形, $m&lt;n,$ 则连续映射$f:X^m\rightarrow S^n$同伦于常值映射.</em> </p>
+<h2 id="参数横截定理"><a href="#参数横截定理" class="headerlink" title="参数横截定理"></a>参数横截定理</h2><p><strong>定理 6</strong>. <em>设$F:X\rightarrow Y$为光滑映射, 只有$X$带边. $Z\subset Y$为任意无边嵌入子流形. 若$F\pitchfork Z,$ $\partial F\pitchfork Z,$ 则对几乎所有的$s\in S,$ $f_s\pitchfork Z,$ $\partial f_s\pitchfork Z.$</em> </p>
+<p>由横截原像定理, $W:=F^{-1}(Z)$为$X\times S$中的嵌入子流形, 且</p>
+<script type="math/tex; mode=display">
+\partial W=F^{-1}(Z)\cap \partial (X\times S)=F^{-1}(Z)\cap (\partial X\times S).</script><p>设$\pi:X\times S\rightarrow S$为投影映射,
+只需证当$s$为$\pi|_W,\partial (\pi|_W)$正则值时,
+$f_s,\partial f_s\pitchfork Z.$ 这样由Sard定理得到结论.</p>
+<p>若$s$为$\pi|_W$正则值,</p>
+<script type="math/tex; mode=display">
+d\pi_{(x,s)}(T_{(x,s)}W)=T_sS,\quad dF_{(x,s)}(T_{(x,s)}(X\times S))+T_zZ=T_zY.</script><p>欲证 </p>
+<script type="math/tex; mode=display">
+df_s(T_xX)+T_zZ=T_zY.</script><p> 注意到</p>
+<script type="math/tex; mode=display">
+T_{(x,s)}(X\times S)=T_xX\oplus T_sS,\quad dF_{(x,s)}|_{T_xX}=df_s.</script><p>只需说明$\,\forall\,e\neq 0\in T_sS,$ $\,\exists\,w\in T_xX,$
+使得$dF_{(x,s)}(w,e)\in T_zZ.$ 只需令$(w,e)\in T_{(x,s)}W$即可,
+而这由正则性保证. 边界映射同理.</p>
+<p>现设$f:X\rightarrow Y$为光滑映射,
+$Y\hookrightarrow \mathbb{R}^k$有$\varepsilon$邻域.
+取单位开球$S\subset \mathbb{R}^k,$ 定义</p>
+<script type="math/tex; mode=display">
+\widetilde F:X\times S\rightarrow \mathbb{R}^k,\quad (x,s)\mapsto f(x)+\varepsilon(f(x))s</script><p>为淹没, $\partial \widetilde F$也是.
+进一步取$F:=\sigma \circ \widetilde F:X\times S\rightarrow Y$满足同样淹没条件.
+这样对$Y$中无边嵌入子流形$Z,$ $F,\partial F\pitchfork Z.$
+从而对于几乎所有的$s\in S,$ 有$f_s,\partial f_s\pitchfork Z.$
+由于$f_0=f,$ 这就给出了横截同伦定理.</p>
+<p><strong>定理 7</strong> (横截同伦定理). <em>对任意光滑映射$f:X\rightarrow Y$和嵌入子流形$Z\subset Y,$ $Y,Z$无边. 存在光滑映射$g:X\rightarrow Y,$ 使得$g\sim f,$ $g,\partial g\pitchfork Z.$</em> </p>
+<h2 id="横截延拓定理"><a href="#横截延拓定理" class="headerlink" title="横截延拓定理"></a>横截延拓定理</h2><p>称$f:X\rightarrow Y$在$A$上与$Z\subset Y$横截, 若</p>
+<script type="math/tex; mode=display">
+df_x(T_xX)+T_{f(x)}Z=T_{f(x)}Y,\quad \,\forall\,x\in A\cap f^{-1}(Z).</script><p>记为$f\pitchfork_A Z.$</p>
+<p><strong>定理 8</strong> (横截延拓定理). <em>设$Z\subset Y$是$Y$的无边闭子流形, $A\subset X$为闭子集. 设$f:X\rightarrow Y$为光滑映射, $f\pitchfork_A Z,$ $\partial f\pitchfork_{A\cap \partial X} Z.$ 则存在光滑映射$g:X\rightarrow Y,$ 使得$g\sim f,$ $g,\partial g\pitchfork Z,$ 且在$A$的一个邻域上$g=f.$</em> </p>
+<p>改造横截同伦定理中的$g,$ 使得在$A$附近保持不变即可.
+方法是将$\widetilde F:X\times S\rightarrow \mathbb{R}^k$改造为</p>
+<script type="math/tex; mode=display">
+(x,s)\mapsto f(x)+\varepsilon(f(x))\rho^2(x)s.</script><p> $\rho(x)$为截断函数.
+它的加入使得$A$的小邻域上$F(x,\rho^2(x)s)=F(x,0)=f(x).$</p>
+<p>由于$\partial X$为闭子集, 我们有</p>
+<p><strong>推论 9</strong>. <em>若$f:X\rightarrow Y$为光滑映射, $Z\subset Y$为无边闭子流形, $\partial f\pitchfork Z,$ 则存在光滑映射$g:X\rightarrow Y$满足$g\sim f,$ $\partial g=\partial f,$ $g\pitchfork Z.$</em> </p>
+<p>文章最后更新于 2023-06-12 18:39:59 </p>
 
         </div>
 
@@ -237,11 +276,11 @@ $t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(4)-Brouwer不动点定理</li>
+        <li>本文标题：《微分拓扑》复习笔记(5)-横截</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-12 15:19:21</li>
+        <li>创建时间：2023-06-12 18:39:58</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(4)-Brouwer不动点定理/
+            本文链接：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(5)-横截/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -258,13 +297,13 @@ $t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(5)-%E6%A8%AA%E6%88%AA/"
+                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(6)-%E6%A8%A1$2$%E7%9B%B8%E4%BA%A4%E6%95%B0,%20%E6%98%A0%E5%B0%84%E5%BA%A6,%20%E7%8E%AF%E7%BB%95%E6%95%B0%E4%B8%8E%E5%BA%94%E7%94%A8/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(5)-横截</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -274,10 +313,10 @@ $t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/06/11/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(3)-%E5%B8%A6%E8%BE%B9%E6%B5%81%E5%BD%A2/"
+                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(4)-Brouwer%E4%B8%8D%E5%8A%A8%E7%82%B9%E5%AE%9A%E7%90%86/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(3)-带边流形</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(4)-Brouwer不动点定理</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -484,7 +523,7 @@ $t&gt;0$使得$g(x)\in S^{n-1}$即可. 这是与前一引理矛盾的映射.</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Brouwer%E4%B8%8D%E5%8A%A8%E7%82%B9%E5%AE%9A%E7%90%86"><span class="nav-text">Brouwer不动点定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E5%85%89%E6%BB%91%E6%B5%81%E5%BD%A2%E5%88%86%E7%B1%BB"><span class="nav-text">一维光滑流形分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Brouwer%E5%8C%BA%E5%9F%9F%E4%B8%8D%E5%8F%98%E6%80%A7%E5%AE%9A%E7%90%86"><span class="nav-text">Brouwer区域不变性定理</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#varepsilon-%E9%82%BB%E5%9F%9F%E5%AE%9A%E7%90%86"><span class="nav-text">$\varepsilon$-邻域定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E6%A8%AA%E6%88%AA%E5%AE%9A%E7%90%86"><span class="nav-text">参数横截定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E5%BB%B6%E6%8B%93%E5%AE%9A%E7%90%86"><span class="nav-text">横截延拓定理</span></a></li></ol>
     </div>
 </div>
         </aside>
