@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用 |
+            《微分拓扑》复习笔记(7)-定向与定向相交数 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</span>
+            <span class="title-hover-animation">《微分拓扑》复习笔记(7)-定向与定向相交数</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-06-12 20:43:52
+        <i class="fas fa-edit"></i>&nbsp;2023-06-13 12:33:47
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,64 +206,69 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="模-2-相交数"><a href="#模-2-相交数" class="headerlink" title="模$2$相交数"></a>模$2$相交数</h2><p>设$Y$的两个子流形$X,Z\subset Y$维数互补, 即$\dim X+\dim Z=\dim Y.$
-此时由横截原像定理,</p>
+            <h2 id="定向"><a href="#定向" class="headerlink" title="定向"></a>定向</h2><p>向量空间的定向由有序基决定. 由此可定义矩阵的保(反)定向.
+称流形<strong>可定向</strong>, 若$\,\forall\,x\in X,$
+有坐标卡$(U,\phi)$使得$\,\forall\,y\in U,$
+$d\phi_y: T_yX\rightarrow \mathbb{R}^k$保定向.</p>
+<p><strong>命题 1</strong>. <em>连通可定向流形有且仅有两个定向.</em> </p>
+<p>$X\times Y$的乘积定向由$T_xX+T_yY$的直和定向决定. 具体的,
+决定定向的有序基为$\{(\alpha,0),(0,\beta)\},$
+$\alpha,\beta$分别为$T_xX$和$T_yY$的有序基.</p>
+<p>带边流形在边界处的定向可由流形诱导. 具体的,
+令边界处有序基$\beta$的符号由$\{n,\beta\}$决定, $n$为外法向量.</p>
+<p>设$f:X\rightarrow Y$为光滑映射, $f,\partial f\pitchfork Z.$
+$X,Y,Z$为定向流形, $Y,Z$无边. 记$S:=f^{-1}(Z)$为嵌入子流形,
+欲取定逆像定向.</p>
+<p>由$T_xS^\perp\oplus T_xS=T_xX,$ 可通过直和定向决定其定向.
+先取$T_xS^\perp$定向. 由横截性,</p>
 <script type="math/tex; mode=display">
-\operatorname{codim}(X\cap Z)=\operatorname{codim}X+\operatorname{codim}Z=\dim Z+\dim X=\dim Y,</script><p>从而$X\cap Z$为零维嵌入子流形, 在紧流形中为有限点集.</p>
-<p>设 $X$ 紧致, $f:X\rightarrow Y$ 为光滑映射, $f\pitchfork Z,$
-$Z\subset Y$ 为与 $X$ 维数互补的闭子流形.
-那么$f^{-1}(Z)$为$X$的零维闭子流形, 是有限点集.
-定义$f$和$Z$的模$2$相交数为 </p>
+df_x(T_xX)+T_zZ=T_zY,\quad df_x(T_xS^\perp) \oplus T_zZ=T_zY.</script><p>设$df_x$保定向,
+即$T_xS^\perp$定向通过$df_x(T_xS^\perp)$由直和定向决定的定向诱导.</p>
+<p>此时$\partial S=\partial (f^{-1}(Z))=(\partial f)^{-1}(Z)$有两种定向方式.
+一种是逆像定向, 考虑</p>
 <script type="math/tex; mode=display">
-I_2(f,Z):=\# f^{-1}(Z)\mod 2.</script><p>对一般的光滑映射$g:X\rightarrow Y,$ 由横截同伦定理定义即可.
-合理性由如下定理保证.</p>
-<p><strong>定理 1</strong>. <em>如上假设, 若$f_0\sim f_1$且$f_0,f_1\pitchfork Z,$ 那么$I_2(f_0,Z)=I_2(f_1,Z).$</em> </p>
-<p>取光滑同伦 $F:X\times I\rightarrow Y.$ 那么 $\partial F\pitchfork Z.$
-由横截延拓定理, 存在 $G:X\times I\rightarrow Y,$ $G\pitchfork Z$ 且
-$\partial G=\partial F.$ 此时 $G^{-1}(Z)$ 为 $1$ 维紧致带边子流形,
-$\partial G^{-1}(Z)=f_0^{-1}(Z)\cup f_1^{-1}(Z)$ 含偶数个点, 从而
-$#_2 f_0^{-1}(Z)=#_2f_1^{-1}(Z).$</p>
-<p><strong>推论 2</strong>. <em>模$2$相交数为同伦不变量.</em> </p>
-<p><strong>定理 3</strong> (边界定理). <em>设$W$为紧致流形, $X=\partial W,$ $g:X\rightarrow Y$为光滑映射. 若$g$可以延拓到$W,$ 则$I_2(g,Z)=0,$ $\,\forall\,Z\subset Y$为与$X$维数互补闭子流形.</em> </p>
-<p>设 $G$ 为 $g$ 的延拓. 存在 $F\sim G,$ 使得 $F,\partial F\pitchfork Z.$
-$F^{-1}(Z)$ 为一维紧致带边子流形, $\partial F^{-1}(Z)$ 含偶数个点, 从而</p>
+T_x \partial S^\perp\oplus T_x\partial S=T_x\partial X,\quad d\partial f_x(T_x\partial S^\perp)\oplus T_zZ=T_zY.</script><p>注意到$T_xS^\perp=T_x\partial S^\perp,$ 这两个定向是一致的.
+取其正定向有序基$\alpha,$ 那么</p>
 <script type="math/tex; mode=display">
-I_2(g,Z)=I_2(\partial F,Z)=0.</script><h2 id="模-2-映射度"><a href="#模-2-映射度" class="headerlink" title="模$2$映射度"></a>模$2$映射度</h2><p>设 $f:X\rightarrow Y$ 为紧流形到连通流形上的光滑映射, $\dim X=\dim Y,$
-那么任取 $y\in Y,$ 定义模 $2$ 映射度为 </p>
+\operatorname{sgn}(\beta)=\operatorname{sgn}(\alpha,\beta)=\operatorname{sgn}(n,\alpha,\beta).</script><p>$n$为$\partial S$在$S$中的外法向量. 另一种是边界定向.
+取定$T_x\partial S$上的有序基$\beta,$ 那么
+$\operatorname{sgn}(\beta)=\operatorname{sgn}(n,\beta)$
+在$T_xS$中的符号决定, 即</p>
 <script type="math/tex; mode=display">
-\deg_2f:=I_2(f,\{y\}).</script><p>它与$y$选取无关. 因为任取$Y$上正则值$y$, 由唱片引理,
-存在$\bigsqcup_{i=1}^n U_i= f^{-1}(V),$ $f:U_i\rightarrow V$为微分同胚,
-因此对于$y$周围的点,</p>
+\operatorname{sgn}(\beta)=\operatorname{sgn}(n,\beta)=\operatorname{sgn}(\alpha,n,\beta).</script><p>由于$\alpha$是$T_xS^\perp$的有序基,
+维数为$\operatorname{codim}_XS=\operatorname{codim}_YZ.$
+因此这两种定向也差了$(-1)^{\operatorname{codim}_YZ}.$</p>
+<h2 id="定向相交数"><a href="#定向相交数" class="headerlink" title="定向相交数"></a>定向相交数</h2><p>基本假设同模$2$相交数. 额外假设所有流形都是可定向的.
+$df_x(T_xX)$的定向由$X$赋予.
+若$df_x(T_xX)\oplus T_zZ=T_zY$两侧定向定向一致,
+则记$x$处的定向数为$\operatorname{sgn}_x(f,Z)=1,$ 不然为$-1.$
+称定向数的和为$f$与$Z$的定向相交数, 记为</p>
 <script type="math/tex; mode=display">
-I_2(f,\{z\})\equiv n\mod 2,\quad \,\forall\,z\in V.</script><p>即模$2$映射度是局部常值的. 由连通性得到良定性.</p>
-<p>模$2$映射度自然也是同伦不变量, 且若$X=\partial W,$
-$f:X\rightarrow Y$可延拓到$W$上, 那么$\deg_2 f=0.$ 特别地,
-$\deg_2f\neq 0$给出了不可延拓的障碍, 内部存在奇点.
-这可以用来证明奇数次复多项式必有根.</p>
-<h2 id="模-2-环绕数"><a href="#模-2-环绕数" class="headerlink" title="模$2$环绕数"></a>模$2$环绕数</h2><p>设 $X^{n-1}$ 为 $n-1$ 维紧致连通流形, $f:X\rightarrow \mathbb{R}^n$
-为光滑映射. $\,\forall\,z\notin f(X),$ 定义映射 $u:X\rightarrow S^{n-1}$
-为单位向量 $u(x)=\frac{f(x)-z}{|f(x)-z|}.$ 定义 $f$ 围绕 $z$ 的模 $2$
-环绕数为</p>
-<script type="math/tex; mode=display">
-W_2(f,z):=\deg_2 u.</script><p><strong>定理 4</strong>. <em>设 $D^n$ 为紧致带边流形, $X=\partial D^n$ 为紧致连通流形, $f:X^{n-1}\rightarrow \mathbb{R}^n$ 为光滑映射. 设 $F:D^n\rightarrow \mathbb{R}^n$ 为 $f$ 的光滑延拓. 若 $z\notin \operatorname{Im}f$ 为 $F$ 的正则值, 则 $F^{-1}(z)$ 为有限点集, 且 $W_2(f,z)=# F^{-1}(z)\mod 2.$</em> </p>
-<p>由于$z$为$F$的正则值, $F^{-1}(z)$为零维嵌入子流形, 是有限点集.
-若$z\notin \operatorname{Im}F,$ $u$可延拓, 立即得证;
-若$z\in \operatorname{Im}F,$ 由唱片引理得证.</p>
-<h2 id="Jordan-Brouwer分离定理"><a href="#Jordan-Brouwer分离定理" class="headerlink" title="Jordan-Brouwer分离定理"></a>Jordan-Brouwer分离定理</h2><p><strong>定理 5</strong>. <em>设$X\subset \mathbb{R}^n$为$\mathbb{R}^n$中的紧致光滑连通嵌入超曲面, 则$\mathbb{R}^n\setminus X$由外部$D_0$和内部$D_1$两个连通开集组成, 并且$\overline D_1$为紧致流形, 满足$\partial\overline D_1=X.$</em> </p>
-<p>首先证明$\mathbb{R}^n\setminus X$至多有两个连通分支, 接下来利用射线说明</p>
-<script type="math/tex; mode=display">
-D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和内部即可. 特别的,
-构造射线可以轻易看出点在区域内部还是外部.</p>
-<h2 id="Borsuk-Ulam定理"><a href="#Borsuk-Ulam定理" class="headerlink" title="Borsuk-Ulam定理"></a>Borsuk-Ulam定理</h2><p><strong>定理 6</strong>. <em>设$f:S^k\rightarrow \mathbb{R}^{k+1}\setminus\{0\}$为光滑映射, 且$f(-x)=-f(x),$ $\,\forall\,x\in S^k.$ 则$W_2(f,0)=1.$</em> </p>
-<p>该定理可以推出Brouwer不动点定理.
-证明将球面上的环绕数与赤道上的环绕数等同起来, 由归纳法得到.
-方法是将映射限制在上半球面上, 再对像空间做投影(以使用归纳假设).</p>
-<p><strong>推论 7</strong>. <em>若$f:S^k\rightarrow \mathbb{R}^{k+1}\setminus\{0\}$关于原点对称, 则$f$与任意过原点的直线至少相交一次.</em> </p>
-<p><strong>定理 8</strong>. <em>设$f_1,\cdots,f_k$为$S^k$上的$k$个关于原点对称的光滑函数, 它们必有公共零点.</em> </p>
-<p>考虑$f(x)=(f_1(x),\cdots,f_k(x),0),$ 应用推论即可,</p>
-<p><strong>定理 9</strong>. <em>对$S^k$上任意$k$个光滑函数$g_1,\cdots,g_k,$ 必存在$p\in S^k,$ 使得$g_i(p)=g_i(-p).$</em> </p>
-<p>人为构造对称函数$f_i(x)=g_i(x)-g_i(-x).$</p>
-<p>文章最后更新于 2023-06-13 12:34:42 </p>
+I(f,Z):=\sum_{x\in f^{-1}(Z)}\operatorname{sgn}_x(f,Z).</script><p>由于任意紧致定向$1$维带边流形的边界点定向数之和为$0,$
+同模$2$相交数可证明定向相交数为同伦不变量.
+因此对一般的映射可通过横截同伦定理给出定义. 同理我们还有</p>
+<p><strong>命题 2</strong>. <em>若$X=\partial W,$ $W$紧致, $f:X\rightarrow Y$可延拓到$W,$ $Z\subset Y$为闭子流形, 则$I(f,Z)=0.$</em> </p>
+<p>若$\dim X=\dim Y,$ 则可定义$\deg f:=I(f,\{y\}),$ $y$在$Y$中任意选取.
+良定性由横截同伦定理与唱片引理得证. 此时若$y$为$f$的正则值,
+有$\deg f=\sum_{x\in f^{-1}(y)}\operatorname{sgn}_x(f,y),$
+$\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
+映射度也是同伦不变量, 且对于可从边界延拓到内部的函数, 映射度为零.</p>
+<p>用映射度就可以给出代数学基本定理的证明了, 和模$2$相交数一致.
+同时在紧区域边界处可用$\deg \frac{p}{|p|}$来数内部零点个数.</p>
+<p>接下来讨论映射间的定向相交数. 设$f:X\rightarrow Y,$ $g:Z\rightarrow Y.$
+若$f\pitchfork g,$ 可定义$I_{(x,z)}(f,g),$
+正负号由$df_x(T_xX)\oplus dg_z(T_zZ)=T_yY$左右两侧定向决定.</p>
+<p><strong>命题 3</strong>. <em>$f\pitchfork g$当且仅当$f\times g\pitchfork \Delta,$ 且$I(f,g)=(-1)^{\dim Z}I(f\times g,\Delta).$</em> </p>
+<p>这主要就是如下的引理</p>
+<p><strong>引理 4</strong>. <em>设$U,W$为$V$的定向子空间, 那么$U\oplus W=V$当且仅当$(U\times W)\oplus \Delta=(-1)^{\dim W}V\times V.$</em> </p>
+<p>这样就可以用横截同伦定理对一般的函数给出定义了.
+此时可说明$I(f,Z)=I(f,\iota_Z),$
+特别的$\deg f=I(f,\{y\})$与$y$选取无关可给出新的证明. 比较直和定向有:</p>
+<p><strong>命题 5</strong>. <em>$I(f,g)=(-1)^{\dim X\dim Z}I(g,f),$ $I(X,Z)=(-1)^{\dim X\dim Z}I(Z,X).$</em> </p>
+<p>特别的, 若$Z=X,$ 奇数维流形自相交数$I(X,X)=0.$ 若$X$为紧致定向流形,
+定义其欧拉示性数为$\chi(Y):=I(\Delta,\Delta).$ 因此它是同伦不变量.</p>
+<p><strong>推论 6</strong>. <em>奇数维紧致可定向流形欧拉示性数为$0.$</em> </p>
+<p>文章最后更新于 2023-06-13 12:33:48 </p>
 
         </div>
 
@@ -271,11 +276,11 @@ D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</li>
+        <li>本文标题：《微分拓扑》复习笔记(7)-定向与定向相交数</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-12 20:43:52</li>
+        <li>创建时间：2023-06-13 12:33:47</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用/
+            本文链接：https://dream0ar.github.io/2023/06/13/《微分拓扑》复习笔记(7)-定向与定向相交数/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -292,13 +297,13 @@ D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和�
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2023/06/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(7)-%E5%AE%9A%E5%90%91%E4%B8%8E%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0/"
+                           href="/2023/06/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(8)-%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0%E5%BA%94%E7%94%A8/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
                             </span>
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(7)-定向与定向相交数</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(8)-定向相交数应用</span>
                                 <span class="post-nav-item">上一篇</span>
                             </span>
                         </a>
@@ -308,10 +313,10 @@ D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和�
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(5)-%E6%A8%AA%E6%88%AA/"
+                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(6)-%E6%A8%A1$2$%E7%9B%B8%E4%BA%A4%E6%95%B0,%20%E6%98%A0%E5%B0%84%E5%BA%A6,%20%E7%8E%AF%E7%BB%95%E6%95%B0%E4%B8%8E%E5%BA%94%E7%94%A8/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(5)-横截</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -518,7 +523,7 @@ D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E7%9B%B8%E4%BA%A4%E6%95%B0"><span class="nav-text">模$2$相交数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E6%98%A0%E5%B0%84%E5%BA%A6"><span class="nav-text">模$2$映射度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E7%8E%AF%E7%BB%95%E6%95%B0"><span class="nav-text">模$2$环绕数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jordan-Brouwer%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86"><span class="nav-text">Jordan-Brouwer分离定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Borsuk-Ulam%E5%AE%9A%E7%90%86"><span class="nav-text">Borsuk-Ulam定理</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91"><span class="nav-text">定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0"><span class="nav-text">定向相交数</span></a></li></ol>
     </div>
 </div>
         </aside>

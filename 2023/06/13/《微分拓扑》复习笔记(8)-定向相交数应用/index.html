@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用 |
+            《微分拓扑》复习笔记(8)-定向相交数应用 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</span>
+            <span class="title-hover-animation">《微分拓扑》复习笔记(8)-定向相交数应用</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-06-12 20:43:52
+        <i class="fas fa-edit"></i>&nbsp;2023-06-13 12:33:59
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,64 +206,64 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="模-2-相交数"><a href="#模-2-相交数" class="headerlink" title="模$2$相交数"></a>模$2$相交数</h2><p>设$Y$的两个子流形$X,Z\subset Y$维数互补, 即$\dim X+\dim Z=\dim Y.$
-此时由横截原像定理,</p>
+            <h2 id="Lefschetz不动点理论"><a href="#Lefschetz不动点理论" class="headerlink" title="Lefschetz不动点理论"></a>Lefschetz不动点理论</h2><p>为了计数不动点$x=f(x),$ 只需数$\Delta\cap G(f)$的交点个数.
+由此定义$f$的整体Lefschetz数为$L(f):=I(\Delta,G(f)).$ 它是同伦不变量.</p>
+<p><strong>定理 1</strong>. <em>设$f$为紧致定向流形$X$的光滑自映射. 若$L(f)\neq 0,$ 则$f$有不动点.</em> </p>
+<p><strong>推论 2</strong>. <em>若映射同伦于常值映射, 则$L(f)=\pm $</em> </p>
+<p>由此可推出Brouwer不动点定理.</p>
+<p>称光滑映射$f:X\rightarrow X$为Lefschetz映射, 若$\Delta\pitchfork G(f).$
+由于$G(\mathrm{id})=\Delta,$ $L(\mathrm{id})=\chi(X).$
+若$\mathrm{id}$同伦于无不动点映射, 则$\chi(X)=0.$
+特别地对于非零欧拉示性数的流形, 无不动点映射必不同伦于恒同映射.</p>
+<p><strong>命题 3</strong>. <em>任意光滑映射$f$同伦于一个Lefschetz映射.</em> </p>
+<p>重复横截同伦定理的证明即可. 不能直接使用是因为要得到图像的横截.</p>
+<p>从横截性条件来看, $f$是Lefschetz映射当且仅当$df_x$不以$1$为特征值.
+可定义局部Lefschetz数$L_x(f)=1,$
+若$T_{(x,x)}\Delta+T_{(x,x)}G(f)=T_{x,x}(X\times X).$ 定向不匹配为$-1.$
+此时$L(f)=\sum_{f(x)=x}L_x(f).$</p>
+<p><strong>命题 4</strong>. <em>$L_x(f)=\operatorname{sgn}\det(df_x-I).$</em> </p>
+<p>由此可通过构造同伦于恒同映射的Lefschetz映射来计算欧拉示性数.</p>
+<p>对于非Lefschetz映射, 我们有</p>
+<p><strong>命题 5</strong> (分裂命题). <em>设$U$为映射$f$的不动点$x$处邻域, 且$U$中不含其它不动点. 那么存在同伦映射$f_t$使得$f_1$在$U$中仅含Lefschetz不动点, 且在$U$的某个紧集外同伦保持不变.</em> </p>
+<p>取局部小扰动 $f_t(x)=f(x)-t\rho(x) a$ 即可. 特别地, 令扰动 $a$ 为
+$f(x)-x$ 的正则值, 即有 $\det df_x-I\neq 0.$</p>
+<p>设$x$为$f$的孤立不动点. 若$B$为以$x$为球心的小闭球, 且不含其它不动点, 则</p>
 <script type="math/tex; mode=display">
-\operatorname{codim}(X\cap Z)=\operatorname{codim}X+\operatorname{codim}Z=\dim Z+\dim X=\dim Y,</script><p>从而$X\cap Z$为零维嵌入子流形, 在紧流形中为有限点集.</p>
-<p>设 $X$ 紧致, $f:X\rightarrow Y$ 为光滑映射, $f\pitchfork Z,$
-$Z\subset Y$ 为与 $X$ 维数互补的闭子流形.
-那么$f^{-1}(Z)$为$X$的零维闭子流形, 是有限点集.
-定义$f$和$Z$的模$2$相交数为 </p>
+F:\partial B\rightarrow S^{k-1},\quad z\mapsto \frac{f(z)-z}{|f(z)-z|}</script><p>为光滑映射. 称$\deg F$为$f$在$x$处的局部Lefschetz数, 记为$L_x(f).$
+定义与$B$选取无关.</p>
+<p><strong>命题 6</strong>. <em>在Lefschetz不动点, 关于Lefschetz不动点和孤立不动点的局部Lefschetz数定义一致.</em> </p>
+<p>只需利用线性同痕引理, 令$F\sim F_0$为标准保定向/反定向函数即可.</p>
+<p><strong>命题 7</strong>. <em>设$f:\mathbb{R}^k\rightarrow \mathbb{R}^k$有孤立不动点$x$, 设$B$为以$x$为球心的不含$f$其它不动点的闭球. 选取满足分裂命题的函数$f_1\sim f,$ 那么$L_x(f)=\sum_{f_1(z)=z}L_z(f_1),$ $z\in B.$</em> </p>
+<p>前述说明都是在欧氏空间上进行的, 容易搬到流形上说明.
+定义与坐标卡选取无关.</p>
+<p><strong>定理 8</strong> (Lefschetz数的局部计算). <em>设$f:X\rightarrow X$为紧定向流形$X$上的光滑自映射, 且$f$只有有限个不动点. 则$f$的整体Lefschetz数等于局部Lefschetz数之和, 即</em> </p>
 <script type="math/tex; mode=display">
-I_2(f,Z):=\# f^{-1}(Z)\mod 2.</script><p>对一般的光滑映射$g:X\rightarrow Y,$ 由横截同伦定理定义即可.
-合理性由如下定理保证.</p>
-<p><strong>定理 1</strong>. <em>如上假设, 若$f_0\sim f_1$且$f_0,f_1\pitchfork Z,$ 那么$I_2(f_0,Z)=I_2(f_1,Z).$</em> </p>
-<p>取光滑同伦 $F:X\times I\rightarrow Y.$ 那么 $\partial F\pitchfork Z.$
-由横截延拓定理, 存在 $G:X\times I\rightarrow Y,$ $G\pitchfork Z$ 且
-$\partial G=\partial F.$ 此时 $G^{-1}(Z)$ 为 $1$ 维紧致带边子流形,
-$\partial G^{-1}(Z)=f_0^{-1}(Z)\cup f_1^{-1}(Z)$ 含偶数个点, 从而
-$#_2 f_0^{-1}(Z)=#_2f_1^{-1}(Z).$</p>
-<p><strong>推论 2</strong>. <em>模$2$相交数为同伦不变量.</em> </p>
-<p><strong>定理 3</strong> (边界定理). <em>设$W$为紧致流形, $X=\partial W,$ $g:X\rightarrow Y$为光滑映射. 若$g$可以延拓到$W,$ 则$I_2(g,Z)=0,$ $\,\forall\,Z\subset Y$为与$X$维数互补闭子流形.</em> </p>
-<p>设 $G$ 为 $g$ 的延拓. 存在 $F\sim G,$ 使得 $F,\partial F\pitchfork Z.$
-$F^{-1}(Z)$ 为一维紧致带边子流形, $\partial F^{-1}(Z)$ 含偶数个点, 从而</p>
+L(f)=\sum_{f(x)=x}L_x(f)</script><h2 id="Poincare-Hopf-定理"><a href="#Poincare-Hopf-定理" class="headerlink" title="Poincaré-Hopf 定理"></a>Poincaré-Hopf 定理</h2><p>对$\mathbb{R}^k$中向量场$v,$ 在$x=0$处有一个孤立零点.
+取充分小开球$B_\varepsilon$不包含其它零点, 定义指标</p>
 <script type="math/tex; mode=display">
-I_2(g,Z)=I_2(\partial F,Z)=0.</script><h2 id="模-2-映射度"><a href="#模-2-映射度" class="headerlink" title="模$2$映射度"></a>模$2$映射度</h2><p>设 $f:X\rightarrow Y$ 为紧流形到连通流形上的光滑映射, $\dim X=\dim Y,$
-那么任取 $y\in Y,$ 定义模 $2$ 映射度为 </p>
+\operatorname{Ind}_0(v):=\deg \left(\partial B_\varepsilon\rightarrow S^{k-1},x\mapsto \frac{v(x)}{|v(x)|}\right)=W(v,0)</script><p><strong>定理 9</strong> (Poincaré-Hopf 定理). <em>$\sum_{v(x)=0} \operatorname{Ind}_x(v)=\chi(X).$</em> </p>
+<p>只需利用管状邻域构造向量场的积分曲线, 定义映射$f_t\sim \mathrm{id},$
+说明</p>
 <script type="math/tex; mode=display">
-\deg_2f:=I_2(f,\{y\}).</script><p>它与$y$选取无关. 因为任取$Y$上正则值$y$, 由唱片引理,
-存在$\bigsqcup_{i=1}^n U_i= f^{-1}(V),$ $f:U_i\rightarrow V$为微分同胚,
-因此对于$y$周围的点,</p>
+\chi(X)=L(\mathrm{id})=L(f_t)=\sum_{f_t(z)=z} L_{z}f_t=\sum_{v(x)=0} \operatorname{Ind}_x(v).</script><p>由于 </p>
 <script type="math/tex; mode=display">
-I_2(f,\{z\})\equiv n\mod 2,\quad \,\forall\,z\in V.</script><p>即模$2$映射度是局部常值的. 由连通性得到良定性.</p>
-<p>模$2$映射度自然也是同伦不变量, 且若$X=\partial W,$
-$f:X\rightarrow Y$可延拓到$W$上, 那么$\deg_2 f=0.$ 特别地,
-$\deg_2f\neq 0$给出了不可延拓的障碍, 内部存在奇点.
-这可以用来证明奇数次复多项式必有根.</p>
-<h2 id="模-2-环绕数"><a href="#模-2-环绕数" class="headerlink" title="模$2$环绕数"></a>模$2$环绕数</h2><p>设 $X^{n-1}$ 为 $n-1$ 维紧致连通流形, $f:X\rightarrow \mathbb{R}^n$
-为光滑映射. $\,\forall\,z\notin f(X),$ 定义映射 $u:X\rightarrow S^{n-1}$
-为单位向量 $u(x)=\frac{f(x)-z}{|f(x)-z|}.$ 定义 $f$ 围绕 $z$ 的模 $2$
-环绕数为</p>
+L_z(f_t)=\deg \frac{f_t(z)-z}{|f_t(z)-z|},</script><p>对$f_t(z)$做Taylor展开, 线性近似得到结论.</p>
+<h2 id="Hopf-映射度定理"><a href="#Hopf-映射度定理" class="headerlink" title="Hopf 映射度定理"></a>Hopf 映射度定理</h2><p><strong>定理 10</strong>. <em>$f_0,f_1:X^k\rightarrow S^k$同伦当且仅当$\deg f_0=\deg f_1.$</em> </p>
+<p>设$f:X^k\rightarrow \mathbb{R}^{k+1},$ 定义环绕数</p>
 <script type="math/tex; mode=display">
-W_2(f,z):=\deg_2 u.</script><p><strong>定理 4</strong>. <em>设 $D^n$ 为紧致带边流形, $X=\partial D^n$ 为紧致连通流形, $f:X^{n-1}\rightarrow \mathbb{R}^n$ 为光滑映射. 设 $F:D^n\rightarrow \mathbb{R}^n$ 为 $f$ 的光滑延拓. 若 $z\notin \operatorname{Im}f$ 为 $F$ 的正则值, 则 $F^{-1}(z)$ 为有限点集, 且 $W_2(f,z)=# F^{-1}(z)\mod 2.$</em> </p>
-<p>由于$z$为$F$的正则值, $F^{-1}(z)$为零维嵌入子流形, 是有限点集.
-若$z\notin \operatorname{Im}F,$ $u$可延拓, 立即得证;
-若$z\in \operatorname{Im}F,$ 由唱片引理得证.</p>
-<h2 id="Jordan-Brouwer分离定理"><a href="#Jordan-Brouwer分离定理" class="headerlink" title="Jordan-Brouwer分离定理"></a>Jordan-Brouwer分离定理</h2><p><strong>定理 5</strong>. <em>设$X\subset \mathbb{R}^n$为$\mathbb{R}^n$中的紧致光滑连通嵌入超曲面, 则$\mathbb{R}^n\setminus X$由外部$D_0$和内部$D_1$两个连通开集组成, 并且$\overline D_1$为紧致流形, 满足$\partial\overline D_1=X.$</em> </p>
-<p>首先证明$\mathbb{R}^n\setminus X$至多有两个连通分支, 接下来利用射线说明</p>
-<script type="math/tex; mode=display">
-D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和内部即可. 特别的,
-构造射线可以轻易看出点在区域内部还是外部.</p>
-<h2 id="Borsuk-Ulam定理"><a href="#Borsuk-Ulam定理" class="headerlink" title="Borsuk-Ulam定理"></a>Borsuk-Ulam定理</h2><p><strong>定理 6</strong>. <em>设$f:S^k\rightarrow \mathbb{R}^{k+1}\setminus\{0\}$为光滑映射, 且$f(-x)=-f(x),$ $\,\forall\,x\in S^k.$ 则$W_2(f,0)=1.$</em> </p>
-<p>该定理可以推出Brouwer不动点定理.
-证明将球面上的环绕数与赤道上的环绕数等同起来, 由归纳法得到.
-方法是将映射限制在上半球面上, 再对像空间做投影(以使用归纳假设).</p>
-<p><strong>推论 7</strong>. <em>若$f:S^k\rightarrow \mathbb{R}^{k+1}\setminus\{0\}$关于原点对称, 则$f$与任意过原点的直线至少相交一次.</em> </p>
-<p><strong>定理 8</strong>. <em>设$f_1,\cdots,f_k$为$S^k$上的$k$个关于原点对称的光滑函数, 它们必有公共零点.</em> </p>
-<p>考虑$f(x)=(f_1(x),\cdots,f_k(x),0),$ 应用推论即可,</p>
-<p><strong>定理 9</strong>. <em>对$S^k$上任意$k$个光滑函数$g_1,\cdots,g_k,$ 必存在$p\in S^k,$ 使得$g_i(p)=g_i(-p).$</em> </p>
-<p>人为构造对称函数$f_i(x)=g_i(x)-g_i(-x).$</p>
-<p>文章最后更新于 2023-06-13 12:34:42 </p>
+W(f,z):=\deg (u:X^k\rightarrow S^k,x\mapsto \frac{f(x)-z}{|f(x)-z|}),\quad z\notin \operatorname{Im}f.</script><p><strong>命题 11</strong>. <em>设$x$为正则点, $f(x)=z.$ 令$B$为以$x$为心的充分小闭球. 记$\partial f=f|_{\partial B}:\partial B\rightarrow \mathbb{R}^k,$ 则$W(\partial f,z)=1,$ 若$df_x$保定向. 反之为$-1.$</em> </p>
+<p>证明和Lefschetz不动点类似.</p>
+<p><strong>命题 12</strong>. <em>设$f:B\rightarrow \mathbb{R}^k$为闭球上的光滑映射, $z$为正则值, $f^{-1}(z)\cap \partial B=\varnothing.$ 那么按定向计数有$# f^{-1}(z)=W(\partial f,z).$</em> </p>
+<p>证明利用唱片引理即可.</p>
+<p><strong>命题 13</strong>. <em>设$B$为$\mathbb{R}^k$中闭球, $f:\mathbb{R}^k\setminus \operatorname{Int}B\rightarrow Y$为光滑映射. 若$\partial f:\partial B\rightarrow Y$同伦于常值映射, 则$f$可延拓为光滑映射$\mathbb{R}^k\rightarrow Y.$</em> </p>
+<p>证明利用Whitney逼近定理.</p>
+<p>对于Hopf映射度定理, 首先证明映射度为零的情形. 对维数进行归纳证明.</p>
+<p><strong>定理 14</strong> (延拓定理). <em>设$W$是$k+1$维紧致连通定向带边流形, $f:\partial W\rightarrow S^k$为光滑映射, 则$f$可延拓为$F:W\rightarrow S^k$当且仅当$\deg f=0.$</em> </p>
+<p><strong>命题 15</strong>. <em>设$W$是任意紧致带边流形, $f:\partial W\rightarrow \mathbb{R}^{k+1}$为任意光滑映射, 则$f$可延拓到整个$W$上.</em> </p>
+<p>现对于任意映射度相同的$f_0,f_1,$ 将其定义在$X^k\times I$上,
+延拓给出同伦.</p>
+<p><strong>定理 16</strong>. <em>紧致连通定向流形$X$上有处处非零的向量场当且仅当$\chi(X)=0.$</em> </p>
+<p>文章最后更新于 2023-06-13 12:33:59 </p>
 
         </div>
 
@@ -271,11 +271,11 @@ D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</li>
+        <li>本文标题：《微分拓扑》复习笔记(8)-定向相交数应用</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-12 20:43:52</li>
+        <li>创建时间：2023-06-13 12:33:59</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用/
+            本文链接：https://dream0ar.github.io/2023/06/13/《微分拓扑》复习笔记(8)-定向相交数应用/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -289,29 +289,14 @@ D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和�
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/06/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(7)-%E5%AE%9A%E5%90%91%E4%B8%8E%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(7)-定向与定向相交数</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(5)-%E6%A8%AA%E6%88%AA/"
+                           href="/2023/06/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(7)-%E5%AE%9A%E5%90%91%E4%B8%8E%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(5)-横截</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(7)-定向与定向相交数</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -518,7 +503,7 @@ D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>分别决定了外部和�
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E7%9B%B8%E4%BA%A4%E6%95%B0"><span class="nav-text">模$2$相交数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E6%98%A0%E5%B0%84%E5%BA%A6"><span class="nav-text">模$2$映射度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1-2-%E7%8E%AF%E7%BB%95%E6%95%B0"><span class="nav-text">模$2$环绕数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jordan-Brouwer%E5%88%86%E7%A6%BB%E5%AE%9A%E7%90%86"><span class="nav-text">Jordan-Brouwer分离定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Borsuk-Ulam%E5%AE%9A%E7%90%86"><span class="nav-text">Borsuk-Ulam定理</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lefschetz%E4%B8%8D%E5%8A%A8%E7%82%B9%E7%90%86%E8%AE%BA"><span class="nav-text">Lefschetz不动点理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Poincare-Hopf-%E5%AE%9A%E7%90%86"><span class="nav-text">Poincaré-Hopf 定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hopf-%E6%98%A0%E5%B0%84%E5%BA%A6%E5%AE%9A%E7%90%86"><span class="nav-text">Hopf 映射度定理</span></a></li></ol>
     </div>
 </div>
         </aside>
