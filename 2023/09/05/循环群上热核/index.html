@@ -9,7 +9,7 @@
     
     <title>
         
-            Jacobi Theta函数 |
+            循环群上热核 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">Jacobi Theta函数</span>
+            <span class="title-hover-animation">循环群上热核</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-09-05 15:44:11
+        <i class="fas fa-edit"></i>&nbsp;2023-09-05 15:46:57
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,73 +206,86 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="格点上的Poisson求和"><a href="#格点上的Poisson求和" class="headerlink" title="格点上的Poisson求和"></a>格点上的Poisson求和</h2><p>对充分好的函数, 我们有Fourier变换</p>
+            <p>Heat kernels on cyclic groups - Anders Karlsson and Markus Neuhauser</p>
+<h2 id="图上热核"><a href="#图上热核" class="headerlink" title="图上热核"></a>图上热核</h2><p>令$X$为图, $N(x)$为$x$的全体邻居, $X$上的组合Laplacian定义为</p>
 <script type="math/tex; mode=display">
-\widehat f(x)=\int_{-\infty}^{\infty} f(y)e^{-2\pi ixy}dy.</script><p><strong>命题 1</strong> (Parseval恒等式). <em>$\sum_{n=-\infty}^{\infty} f(n)=\sum_{n=-\infty}^{\infty}\widehat f(n).$</em> </p>
-<p>考虑周期函数 </p>
+\Delta f(x)=f(x)-\frac{1}{|N(x)|} \sum_{y\in N(x)}f(y).</script><p> 热方程为</p>
 <script type="math/tex; mode=display">
-F(x)=\sum_{n=-\infty}^{\infty} f(x+n).</script><p>$F$可以视作$\mathbb{R}/\mathbb{Z}$上的函数, 有Fourier展开</p>
+\left(\Delta +\frac{\partial {} }{\partial {}t}\right)f(t,x)=0.</script><p>热核$K^X(t,x)$即为热方程的基本解, 满足$K^X(0,x)=\delta_0(x),$
+基点$0\in X.$</p>
+<p>若$X$为有限图, 那么Laplacian为对称阵,
+有实特征值$0=\lambda_0\le \lambda_1\le \cdots\le \lambda_{m-1},$
+对应正规特征向量$\varphi_0,\varphi_1,\cdots,\varphi_{m-1}.$
+我们可以将$\delta_0$用基表示:</p>
 <script type="math/tex; mode=display">
-F(x)=\sum_{m=-\infty}^{\infty} a_m e^{2\pi imx},</script><script type="math/tex; mode=display">
-a_m=\int_0^1 F(x) e^{-2\pi imx}dx=\int_0^1 \sum_{n=-\infty}^{\infty} f(x+n)e^{-2\pi im(x+n)}dx=\int_{-\infty}^\infty f(x)e^{-2\pi imx}dx=\widehat f(m).</script><p>从而</p>
+\delta_0=\sum_{j=0}^{m-1}\overline{\varphi_j(0)}\varphi_j.</script><p>那么热核就等于</p>
 <script type="math/tex; mode=display">
-\sum_{n=-\infty}^{\infty}f(n)=F(0)=\sum_{m=-\infty}^{\infty}a_m=\sum_{n=-\infty}^\infty \widehat f(n).</script><p>命题得证.</p>
-<p>一般的, 对于任意$n$维实向量空间, 配备平移不变测度$\mu,$ 有Fourier变换</p>
+K^X(t,x)=e^{-t\Delta}\delta_0(x)=\sum_{j=0}^{m-1}e^{-\lambda_jt}\varphi_j(x)\overline{\varphi_j(0)}.</script><h2 id="改进Bessel函数"><a href="#改进Bessel函数" class="headerlink" title="改进Bessel函数"></a>改进Bessel函数</h2><p>对于整数$x\ge 0,$ $z\in\mathbb{C},$ 第一类改进Bessel函数为</p>
 <script type="math/tex; mode=display">
-\widehat f(x)=\int_V e^{-2\pi i\left<{}y,x\right>}f(y)\mu(y).</script><p>此时$\widehat f$是在$V^\ast $上充分好的函数.</p>
-<p>称$\Gamma$为$V$中的格点,
-若$\Gamma$以$V$中一组线性无关向量$\{v_1,\cdots,v_n\}$为$\mathbb{Z}$-基.
-$V^\ast $中的对偶格点$\Gamma’$定义为</p>
+I_x(z)=\sum_{k=0}^\infty \frac{(z/2)^{x+2k} }{k!(x+k)!}=\frac{1}{\pi}\int_0^\pi e^{z\cos \theta}\cos x\theta d\theta.</script><p>对于$x&lt;0,$ 令$I_x=I_{-x}.$ 它是微分方程</p>
 <script type="math/tex; mode=display">
-\Gamma':=\{x\in V^\ast \mid \left<{}y,x\right>\in \mathbb{Z}, \,\forall\,y\in \Gamma\}.</script><p>此时记$A=[v_1,\cdots,v_n],$
-那么$(A^{\ast })^{-1}$的列向量就是$\Gamma’$的一组$\mathbb{Z}$-基,
-其中${}^\ast $为对偶阵. 当$V=\mathbb{R}^n,$
-$\left&lt;{}-,-\right&gt;$取标准内积时, ${}^\ast $即为转置.</p>
-<p><strong>命题 2</strong> (格点上的Poisson求和). <em>格点$\Gamma$在$V$中的体积记为$\mu(V/\Gamma).$ 若函数$f$有Fourier变换, 我们有</em> </p>
+z^2\frac{d {}^2w}{d {}z^2}+z\frac{d {}w}{d {}z}-(z^2+x^2)w=0</script><p> 的解,
+与经典$J$-Bessel函数的关系是 </p>
 <script type="math/tex; mode=display">
-\sum_{y\in\Gamma} f(y)=\frac{1}{\mu(V/\Gamma)}\sum_{x\in \Gamma'}\widehat f(x).</script><p>做尺度变换, 等式两侧保持(Fourier变换中有测度项),
-因此总可设$\mu(V/\Gamma)=1.$ 记$\Gamma$的基拼为矩阵$A,$ 那么</p>
+I_x(z)=e^{-\pi ix/2}J_x(z e^{\pi i/2}).</script><p>$I_x$满足的一个重要的性质是</p>
 <script type="math/tex; mode=display">
-\sum_{y\in \Gamma}f(y)=\sum_{y\in \mathbb{Z}^n}f(Ay)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y),\quad \widetilde f(y)=:f(Ay).</script><script type="math/tex; mode=display">
-\widehat f(x)=\int_V e^{-2\pi i\left<{}y,x\right>}f(y)\mu(y)=\int_V e^{-2\pi i\left<{}Ay,x\right>}\widetilde f(y)\mu(y)=\int_V e^{-2\pi i\left<{}y,A^\ast x\right>}\widetilde f(y)\mu(y)=\mathcal{F}[\widetilde f] (A^\ast x).</script><script type="math/tex; mode=display">
-\sum_{x\in\Gamma'}\widehat f(x)=\sum_{x\in\mathbb{Z}^n}\widehat f((A^{\ast })^{-1}x)=\sum_{x\in \mathbb{Z}^n}\mathcal{F}[\widetilde f] (x)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y)=\sum_{y\in\Gamma}f(y).</script><p>其中利用到了格点$\mathbb{Z}^n\subset \mathbb{R}^n$上的标准Poisson求和,
-证明和前一命题证明类似.</p>
-<h2 id="Theta函数"><a href="#Theta函数" class="headerlink" title="Theta函数"></a>Theta函数</h2><p>设$V$上有一个对称正定非退化二次型$B(x,y)=x\cdot y$ (与测度相容),
-那么此时$V$可以和$V^\ast $等同起来, $\Gamma’$也是$V$中的格点.
-对任意格点$\Gamma,$ 定义</p>
+I_{x+1}+I_{x-1}=2I_x',\quad \,\forall\,x\in \mathbb{Z}.</script><p>在$t$充分大时, 我们有渐进估计</p>
 <script type="math/tex; mode=display">
-\Theta_\Gamma(t)=\sum_{x\in \Gamma} e^{-\pi tx\cdot x},\quad t>0,\quad t\in \mathbb{R}.</script><p><strong>定理 3</strong>. <em>$\Theta_\Gamma(t)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta_{\Gamma’}(t^{-1}).$ 特别地, 若$\Gamma=\Gamma’=\mathbb{Z}\subset \mathbb{R},$ 那么$\Theta(t)=\frac{1}{\sqrt{t} }\Theta(\frac{1}{t}).$</em> </p>
-<p>对函数$f(x)=e^{-\pi x\cdot x}$使用Poisson求和, 那么</p>
+I_v(t)\sim \frac{e^t}{\sqrt{2\pi t} }\left(1-\frac{4\nu^2-1}{8t}\right).</script><h2 id="mathbb-Z-上热核"><a href="#mathbb-Z-上热核" class="headerlink" title="$\mathbb{Z}$上热核"></a>$\mathbb{Z}$上热核</h2><p>$\mathbb{Z}$上Laplacian由</p>
 <script type="math/tex; mode=display">
-\Theta_\Gamma(t)=\sum_{x\in \sqrt{t}\Gamma} f(x)=\frac{1}{\mu(V/\sqrt{t}\Gamma)}\sum_{x\in(\sqrt{t}\Gamma)'}\widehat f(x)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)} \sum_{x\in\Gamma'}\widehat f\left(\frac{1}{\sqrt{t} }x\right)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta_{\Gamma'}(t^{-1}).</script><p>最后的等式是由于$f=\widehat f,$</p>
+\Delta f(x)=f(x)-\frac{1}{2}(f(x+1)+f(x-1)),\quad x\in\mathbb{Z}</script><p>给出. 我们可以通过Fourier变换(关于$x$变量)的方法给出基本解</p>
 <script type="math/tex; mode=display">
-\Theta_{\Gamma'(t^{-1})}=\sum_{x\in\Gamma'} e^{-\pi \frac{1}{t}x\cdot x}=\sum_{x\in\Gamma'}\widehat f\left(\frac{1}{\sqrt{t} }x\right).</script><p>记二次型的gram矩阵为$A=(a_{ij}),$ $a_{ij}=e_i\cdot e_j,$
-其中$\{e_i\}$为$\Gamma$的基底. 那么$\Gamma$的体积为$\sqrt{\det(A)}.$
-若$B$为$A$的逆阵, 那么$B=(b_{ij})$是对偶基对应的gram阵,
-$\Gamma’$由对偶基$e_i’=b_{ij}e_j$拼成.
-$\Gamma’$的体积为$\det(A)^{-\frac{1}{2} }.$</p>
-<p>记$r_\Gamma(m)$为使得$x\cdot x=2m$的$x\in\Gamma$的个数, $m\ge 0$.
-$r_\Gamma(m)$由关于$m$的多项式控制, Serre给出了$O(m^\frac{n}{2})$的界.
-于是级数$\sum_{m=0}^\infty r_\Gamma(m)q^m$在$|q|&lt;1$时收敛.
-取$q=e^{2\pi iz},$ 那么对于$z\in\mathbb{H},$ 我们定义了全纯函数</p>
+K^\mathbb{Z}(t,x)=(-1)^x\sum_{n=|x|}^\infty \frac{(-t/2)^n}{n!}\binom{2n}{n-x},</script><p>事实上后面将给出 </p>
 <script type="math/tex; mode=display">
-\theta_\Gamma(z)=\sum_{m=0}^\infty r_\Gamma(m)q^m=\sum_{x\in\Gamma} e^{\pi iz(x\cdot x)}=\sum_{x\in\Gamma} q^{(x\cdot x)/2}.</script><p>这里我们需要要求$x\cdot x\equiv 0\mod 2,$ $\,\forall\,x\in \Gamma.$
-这即是要求$A=(e_i\cdot e_j)$对角线上均为偶数.</p>
-<p>之前的Theta函数是实参数$t,$ 此时的小theta函数满足</p>
+K^\mathbb{Z}(t,x)=e^{-t}I_x(t).</script><p>我们可以直接验证$e^{-t}I_x(t)$为热核. </p>
 <script type="math/tex; mode=display">
-\Theta_\Gamma(t)=\theta_\Gamma(it),\quad \Theta_\Gamma\left(\frac{1}{t}\right)=\theta_\Gamma\left(\frac{i}{t}\right)=\theta_\Gamma\left(-\frac{1}{it}\right).</script><p>进一步假设$\Gamma$是自对偶的, 即$\Gamma’=\Gamma.$
-这要求$A=(e_i\cdot e_j)$是整系数的, 且行列式为$1.$ 在这样的假设下,
-由前面的Poisson和公式, 有</p>
+\begin{aligned}
+ \left(\Delta+\frac{\partial {} }{\partial {}t}\right)e^{-t}I_x(t)&= e^{-t}\left(I_x(t)-\frac{1}{2}(I_{x+1}(t)+I_{x-1}(t))-I_x(t)+I_x'(t)\right)=0.
+ \end{aligned}</script><p>$e^{-t}I_x(t)$是$\mathbb{R}$上热核(Gaussian)$\frac{1}{\sqrt{4\pi t} }e^{-\frac{x^2}{4t} }$的类比,
+有渐进估计 </p>
 <script type="math/tex; mode=display">
-\theta_\Gamma\left(-\frac{1}{it}\right)=t^{\frac{n}{2} }\theta_\Gamma(it).</script><p>由于$\theta_\Gamma(-\frac{1}{z}),$
-$(-iz)^{\frac{n}{2} }\theta_\Gamma(z)$都是解析函数,
-现证明了它们在纯虚轴(正半轴)上相等, 由解析连续性,
-它们在上半平面上都相等.</p>
-<p><strong>命题 4</strong>. <em>对满足上述条件的格点$\Gamma,$ $\theta_\Gamma\left(-\frac{1}{z}\right)=(-iz)^{\frac{n}{2} }\theta_\Gamma(z),$ $\,\forall\,z\in\mathbb{H}.$</em> </p>
-<p>事实上, 可以证明满足自对偶且$x\cdot x\equiv 0\mod 2,$
-$\,\forall\,x\in \Gamma$的格点$\Gamma\subset V$必须是$8k$维的,
-$k\in\mathbb{Z}_+.$</p>
-<p>文章最后更新于 2023-09-05 15:45:49 </p>
+\frac{1}{\sqrt{2\pi t} }\left(1-\frac{4x^2-1}{8t}\right).</script><h2 id="mathbb-Z-m-上热核"><a href="#mathbb-Z-m-上热核" class="headerlink" title="$\mathbb{Z}_m$上热核"></a>$\mathbb{Z}_m$上热核</h2><p>$\mathbb{Z}_m$上的Laplacian和$\mathbb{Z}$上一致, 取等价类即可.
+取函数族$\{\chi_j\}$为</p>
+<script type="math/tex; mode=display">
+\chi_j(x):=e^{2\pi ijx/m},\quad j=0,1,\cdots,m-1.</script><p>$\chi_j$满足$\chi_j(x+y)=\chi_j(x)\chi_j(y).$ 从而</p>
+<script type="math/tex; mode=display">
+\Delta \chi=\left(1-\frac{1}{2}(\chi(1)+\chi(-1))\right)\chi.</script><p>这意味着$\chi_j$为特征值$\lambda_j=1-\cos(2\pi j/m)$对应的特征函数. 进而</p>
+<script type="math/tex; mode=display">
+e^{-t\Delta}\chi_j=e^{-t(1-\cos(2\pi j/m))}\chi_j=e^{-2\sin^2(\pi j/m)t}\chi_j.</script><p>由正交性,</p>
+<script type="math/tex; mode=display">
+\delta_y=\frac{1}{m}\sum_{j=0}^{m-1} \overline{\chi_j(y)}\chi_j.</script><p>从而热核为</p>
+<script type="math/tex; mode=display">
+K^{\mathbb{Z}_m}(t,x):=e^{-t\Delta}\delta_0(x)=\frac{1}{m}\sum_{j=0}^{m-1}e^{-2\sin^2(\pi j/m)t}e^{2\pi ijx/m}.</script><h2 id="Theta反演公式"><a href="#Theta反演公式" class="headerlink" title="Theta反演公式"></a>Theta反演公式</h2><p>考虑函数 </p>
+<script type="math/tex; mode=display">
+e^{-t}\sum_{k=-\infty}^\infty I_{x+km}(t),</script><p>它是$\mathbb{Z}$上的周期函数, 可以诱导$\mathbb{Z}_m$上的函数.
+这对所有$t$收敛, 因为对于$x\ge 0,$</p>
+<script type="math/tex; mode=display">
+\left|\sum_{k=0}^\infty I_{x+km}(t)\right|\le \sum_{k=0}^\infty \sum_{n=0}^\infty \frac{|t/2|^{x+km+2n} }{n!(x+km+n)!}\le \sum_{k=0}^\infty \sum_{n=0}^\infty \frac{|t/2|^{k+n} }{n!k!}\le e^{|t|}.</script><p>于是该函数也是$\mathbb{Z}_m$上的热核. 由热核唯一性, 我们有</p>
+<script type="math/tex; mode=display">
+e^{-t}\sum_{k=-\infty}^\infty I_{x+km}(t)=\frac{1}{m}\sum_{j=0}^{m-1}e^{-2\sin^2(\pi j/m)t}e^{2\pi ijx/m}.</script><p>另一方面, 我们也可以由如下两引理直接证明,
+将右边视为左边以$x$为自变量的Fourier展开即可.</p>
+<p><strong>引理 1</strong>. <em>函数$\omega\mapsto e^{-2\sin^2(\omega/2)t}$的第$x$个Fourier系数有级数表示$(-1)^x\sum_{n=|x|}^\infty \frac{(-t/2)^n}{n!}\binom{2n}{n-x},$ 等于$e^{-t}I_x(t)$.</em> </p>
+<p>直接计算即可, 利用展开</p>
+<script type="math/tex; mode=display">
+e^{-2\sin^2(\omega/2)t}=\sum_{n=0}^\infty \frac{(-2t)^n}{n!}\sin^{2n}(\omega/2),</script><script type="math/tex; mode=display">
+\sin^{2n}(\omega/2)=\left(\frac{1}{2i}(e^{i\omega/2}-e^{-i\omega/2})\right)^{2n}=(2i)^{-2n}\sum_{y=0}^{2n}\binom{2n}{y}(-1)^ye^{i\omega(n-y)}.</script><p>这样可得到第$x$个Fourier系数为</p>
+<script type="math/tex; mode=display">
+(-1)^x\sum_{n=|x|}^\infty \frac{(-t/2)^n}{n!}\binom{2n}{n-x}.</script><p>由于 </p>
+<script type="math/tex; mode=display">
+e^{-2\sin^2(\omega/2)t}=e^{-t}e^{t\cos\omega},</script><p>第$x$个Fourier系数又有表示</p>
+<script type="math/tex; mode=display">
+\frac{1}{2\pi}\int_0^{2\pi} e^{-t}e^{t\cos \omega}e^{-i\omega x}d\omega=\frac{e^{-t} }{\pi}\int_0^\pi e^{t\cos\omega}\cos(\omega x)d\omega=e^{-t}I_x(t).</script><p>这就给出了引理.</p>
+<p><strong>引理 2</strong>. <em>函数$x\mapsto \sum_{k=-\infty}^\infty (-1)^{x+km}\sum_{n=|x+km|}^\infty \frac{(-t/2)^n}{n!}\binom{2n}{n-x-km}$的第$j$个Fourier系数为$e^{-2t\sin^2(\pi j/m)}.$</em> </p>
+<p>直接计算$\sum_{x=0}^{m-1}\bullet \cdot e^{-2\pi ijx/m}$即可.</p>
+<p>这样就给出了Fourier展开</p>
+<script type="math/tex; mode=display">
+e^{-t}\sum_{k=-\infty}^\infty I_{x+km}(t)=\frac{1}{m}\sum_{j=0}^{m-1}e^{-2\sin^2(\pi j/m)t}e^{2\pi ijx/m}.</script><p>这类似于反演公式. 当然也有如下常用的表示</p>
+<script type="math/tex; mode=display">
+\sum_{k=-\infty}^\infty I_{x+km}(t)=\frac{1}{m}\sum_{j=0}^{m-1}e^{\cos(2\pi j/m)z+2\pi ijx/m},\quad z\in \mathbb{C},\quad x,m\in\mathbb{Z},\quad m>0.</script><p>通过取特殊情况求导($x=0,$ $t=0,$ $n$阶导), 我们还有</p>
+<p><strong>推论 3</strong>. <em>$\sum_{j=0}^{m-1}\cos^n(2\pi j/m)=\frac{m}{2^n}\sum_{l\in L(n,m)}\binom{n}{l},$ 其中$L(n,m)$为$l\in \mathbb{Z},$ 满足$0\le l\le n$且$l=\frac{n-mq}{2},$ $q\in\mathbb{Z}.$ 特别的, 若$n$为奇数, $m$为偶数, 那么$L(n,m)=\varnothing,$ 和取零.</em> </p>
+<p>当$n=2,$ $m\ge 3$时, 我们有</p>
+<script type="math/tex; mode=display">
+\sum_{j=0}^{m-1}\cos^2(2\pi j/m)=\frac{m}{2}.</script><p>文章最后更新于 2023-09-05 15:47:41 </p>
 
         </div>
 
@@ -280,11 +293,11 @@ $k\in\mathbb{Z}_+.$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Jacobi Theta函数</li>
+        <li>本文标题：循环群上热核</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-09-05 15:44:11</li>
+        <li>创建时间：2023-09-05 15:46:57</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/09/05/Jacobi Theta函数/
+            本文链接：https://dream0ar.github.io/2023/09/05/循环群上热核/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -298,29 +311,14 @@ $k\in\mathbb{Z}_+.$</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/09/05/%E5%BE%AA%E7%8E%AF%E7%BE%A4%E4%B8%8A%E7%83%AD%E6%A0%B8/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">循环群上热核</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/06/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(8)-%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0%E5%BA%94%E7%94%A8/"
+                           href="/2023/09/05/Jacobi%20Theta%E5%87%BD%E6%95%B0/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(8)-定向相交数应用</span>
+                                <span class="post-nav-title-item">Jacobi Theta函数</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -527,7 +525,7 @@ $k\in\mathbb{Z}_+.$</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E7%82%B9%E4%B8%8A%E7%9A%84Poisson%E6%B1%82%E5%92%8C"><span class="nav-text">格点上的Poisson求和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theta%E5%87%BD%E6%95%B0"><span class="nav-text">Theta函数</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E4%B8%8A%E7%83%AD%E6%A0%B8"><span class="nav-text">图上热核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%B9%E8%BF%9BBessel%E5%87%BD%E6%95%B0"><span class="nav-text">改进Bessel函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbb-Z-%E4%B8%8A%E7%83%AD%E6%A0%B8"><span class="nav-text">$\mathbb{Z}$上热核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbb-Z-m-%E4%B8%8A%E7%83%AD%E6%A0%B8"><span class="nav-text">$\mathbb{Z}_m$上热核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theta%E5%8F%8D%E6%BC%94%E5%85%AC%E5%BC%8F"><span class="nav-text">Theta反演公式</span></a></li></ol>
     </div>
 </div>
         </aside>

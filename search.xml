@@ -12694,4 +12694,94 @@ $k\in\mathbb{Z}_+.$</p>
         <category>格点</category>
       </categories>
   </entry>
+  <entry>
+    <title>循环群上热核</title>
+    <url>/2023/09/05/%E5%BE%AA%E7%8E%AF%E7%BE%A4%E4%B8%8A%E7%83%AD%E6%A0%B8/</url>
+    <content><![CDATA[<p>Heat kernels on cyclic groups - Anders Karlsson and Markus Neuhauser</p>
+<h2 id="图上热核"><a href="#图上热核" class="headerlink" title="图上热核"></a>图上热核</h2><p>令$X$为图, $N(x)$为$x$的全体邻居, $X$上的组合Laplacian定义为</p>
+<script type="math/tex; mode=display">
+\Delta f(x)=f(x)-\frac{1}{|N(x)|} \sum_{y\in N(x)}f(y).</script><p> 热方程为</p>
+<script type="math/tex; mode=display">
+\left(\Delta +\frac{\partial {} }{\partial {}t}\right)f(t,x)=0.</script><p>热核$K^X(t,x)$即为热方程的基本解, 满足$K^X(0,x)=\delta_0(x),$
+基点$0\in X.$</p>
+<p>若$X$为有限图, 那么Laplacian为对称阵,
+有实特征值$0=\lambda_0\le \lambda_1\le \cdots\le \lambda_{m-1},$
+对应正规特征向量$\varphi_0,\varphi_1,\cdots,\varphi_{m-1}.$
+我们可以将$\delta_0$用基表示:</p>
+<script type="math/tex; mode=display">
+\delta_0=\sum_{j=0}^{m-1}\overline{\varphi_j(0)}\varphi_j.</script><p>那么热核就等于</p>
+<script type="math/tex; mode=display">
+K^X(t,x)=e^{-t\Delta}\delta_0(x)=\sum_{j=0}^{m-1}e^{-\lambda_jt}\varphi_j(x)\overline{\varphi_j(0)}.</script><h2 id="改进Bessel函数"><a href="#改进Bessel函数" class="headerlink" title="改进Bessel函数"></a>改进Bessel函数</h2><p>对于整数$x\ge 0,$ $z\in\mathbb{C},$ 第一类改进Bessel函数为</p>
+<script type="math/tex; mode=display">
+I_x(z)=\sum_{k=0}^\infty \frac{(z/2)^{x+2k} }{k!(x+k)!}=\frac{1}{\pi}\int_0^\pi e^{z\cos \theta}\cos x\theta d\theta.</script><p>对于$x&lt;0,$ 令$I_x=I_{-x}.$ 它是微分方程</p>
+<script type="math/tex; mode=display">
+z^2\frac{d {}^2w}{d {}z^2}+z\frac{d {}w}{d {}z}-(z^2+x^2)w=0</script><p> 的解,
+与经典$J$-Bessel函数的关系是 </p>
+<script type="math/tex; mode=display">
+I_x(z)=e^{-\pi ix/2}J_x(z e^{\pi i/2}).</script><p>$I_x$满足的一个重要的性质是</p>
+<script type="math/tex; mode=display">
+I_{x+1}+I_{x-1}=2I_x',\quad \,\forall\,x\in \mathbb{Z}.</script><p>在$t$充分大时, 我们有渐进估计</p>
+<script type="math/tex; mode=display">
+I_v(t)\sim \frac{e^t}{\sqrt{2\pi t} }\left(1-\frac{4\nu^2-1}{8t}\right).</script><h2 id="mathbb-Z-上热核"><a href="#mathbb-Z-上热核" class="headerlink" title="$\mathbb{Z}$上热核"></a>$\mathbb{Z}$上热核</h2><p>$\mathbb{Z}$上Laplacian由</p>
+<script type="math/tex; mode=display">
+\Delta f(x)=f(x)-\frac{1}{2}(f(x+1)+f(x-1)),\quad x\in\mathbb{Z}</script><p>给出. 我们可以通过Fourier变换(关于$x$变量)的方法给出基本解</p>
+<script type="math/tex; mode=display">
+K^\mathbb{Z}(t,x)=(-1)^x\sum_{n=|x|}^\infty \frac{(-t/2)^n}{n!}\binom{2n}{n-x},</script><p>事实上后面将给出 </p>
+<script type="math/tex; mode=display">
+K^\mathbb{Z}(t,x)=e^{-t}I_x(t).</script><p>我们可以直接验证$e^{-t}I_x(t)$为热核. </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \left(\Delta+\frac{\partial {} }{\partial {}t}\right)e^{-t}I_x(t)&= e^{-t}\left(I_x(t)-\frac{1}{2}(I_{x+1}(t)+I_{x-1}(t))-I_x(t)+I_x'(t)\right)=0.
+ \end{aligned}</script><p>$e^{-t}I_x(t)$是$\mathbb{R}$上热核(Gaussian)$\frac{1}{\sqrt{4\pi t} }e^{-\frac{x^2}{4t} }$的类比,
+有渐进估计 </p>
+<script type="math/tex; mode=display">
+\frac{1}{\sqrt{2\pi t} }\left(1-\frac{4x^2-1}{8t}\right).</script><h2 id="mathbb-Z-m-上热核"><a href="#mathbb-Z-m-上热核" class="headerlink" title="$\mathbb{Z}_m$上热核"></a>$\mathbb{Z}_m$上热核</h2><p>$\mathbb{Z}_m$上的Laplacian和$\mathbb{Z}$上一致, 取等价类即可.
+取函数族$\{\chi_j\}$为</p>
+<script type="math/tex; mode=display">
+\chi_j(x):=e^{2\pi ijx/m},\quad j=0,1,\cdots,m-1.</script><p>$\chi_j$满足$\chi_j(x+y)=\chi_j(x)\chi_j(y).$ 从而</p>
+<script type="math/tex; mode=display">
+\Delta \chi=\left(1-\frac{1}{2}(\chi(1)+\chi(-1))\right)\chi.</script><p>这意味着$\chi_j$为特征值$\lambda_j=1-\cos(2\pi j/m)$对应的特征函数. 进而</p>
+<script type="math/tex; mode=display">
+e^{-t\Delta}\chi_j=e^{-t(1-\cos(2\pi j/m))}\chi_j=e^{-2\sin^2(\pi j/m)t}\chi_j.</script><p>由正交性,</p>
+<script type="math/tex; mode=display">
+\delta_y=\frac{1}{m}\sum_{j=0}^{m-1} \overline{\chi_j(y)}\chi_j.</script><p>从而热核为</p>
+<script type="math/tex; mode=display">
+K^{\mathbb{Z}_m}(t,x):=e^{-t\Delta}\delta_0(x)=\frac{1}{m}\sum_{j=0}^{m-1}e^{-2\sin^2(\pi j/m)t}e^{2\pi ijx/m}.</script><h2 id="Theta反演公式"><a href="#Theta反演公式" class="headerlink" title="Theta反演公式"></a>Theta反演公式</h2><p>考虑函数 </p>
+<script type="math/tex; mode=display">
+e^{-t}\sum_{k=-\infty}^\infty I_{x+km}(t),</script><p>它是$\mathbb{Z}$上的周期函数, 可以诱导$\mathbb{Z}_m$上的函数.
+这对所有$t$收敛, 因为对于$x\ge 0,$</p>
+<script type="math/tex; mode=display">
+\left|\sum_{k=0}^\infty I_{x+km}(t)\right|\le \sum_{k=0}^\infty \sum_{n=0}^\infty \frac{|t/2|^{x+km+2n} }{n!(x+km+n)!}\le \sum_{k=0}^\infty \sum_{n=0}^\infty \frac{|t/2|^{k+n} }{n!k!}\le e^{|t|}.</script><p>于是该函数也是$\mathbb{Z}_m$上的热核. 由热核唯一性, 我们有</p>
+<script type="math/tex; mode=display">
+e^{-t}\sum_{k=-\infty}^\infty I_{x+km}(t)=\frac{1}{m}\sum_{j=0}^{m-1}e^{-2\sin^2(\pi j/m)t}e^{2\pi ijx/m}.</script><p>另一方面, 我们也可以由如下两引理直接证明,
+将右边视为左边以$x$为自变量的Fourier展开即可.</p>
+<p><strong>引理 1</strong>. <em>函数$\omega\mapsto e^{-2\sin^2(\omega/2)t}$的第$x$个Fourier系数有级数表示$(-1)^x\sum_{n=|x|}^\infty \frac{(-t/2)^n}{n!}\binom{2n}{n-x},$ 等于$e^{-t}I_x(t)$.</em> </p>
+<p>直接计算即可, 利用展开</p>
+<script type="math/tex; mode=display">
+e^{-2\sin^2(\omega/2)t}=\sum_{n=0}^\infty \frac{(-2t)^n}{n!}\sin^{2n}(\omega/2),</script><script type="math/tex; mode=display">
+\sin^{2n}(\omega/2)=\left(\frac{1}{2i}(e^{i\omega/2}-e^{-i\omega/2})\right)^{2n}=(2i)^{-2n}\sum_{y=0}^{2n}\binom{2n}{y}(-1)^ye^{i\omega(n-y)}.</script><p>这样可得到第$x$个Fourier系数为</p>
+<script type="math/tex; mode=display">
+(-1)^x\sum_{n=|x|}^\infty \frac{(-t/2)^n}{n!}\binom{2n}{n-x}.</script><p>由于 </p>
+<script type="math/tex; mode=display">
+e^{-2\sin^2(\omega/2)t}=e^{-t}e^{t\cos\omega},</script><p>第$x$个Fourier系数又有表示</p>
+<script type="math/tex; mode=display">
+\frac{1}{2\pi}\int_0^{2\pi} e^{-t}e^{t\cos \omega}e^{-i\omega x}d\omega=\frac{e^{-t} }{\pi}\int_0^\pi e^{t\cos\omega}\cos(\omega x)d\omega=e^{-t}I_x(t).</script><p>这就给出了引理.</p>
+<p><strong>引理 2</strong>. <em>函数$x\mapsto \sum_{k=-\infty}^\infty (-1)^{x+km}\sum_{n=|x+km|}^\infty \frac{(-t/2)^n}{n!}\binom{2n}{n-x-km}$的第$j$个Fourier系数为$e^{-2t\sin^2(\pi j/m)}.$</em> </p>
+<p>直接计算$\sum_{x=0}^{m-1}\bullet \cdot e^{-2\pi ijx/m}$即可.</p>
+<p>这样就给出了Fourier展开</p>
+<script type="math/tex; mode=display">
+e^{-t}\sum_{k=-\infty}^\infty I_{x+km}(t)=\frac{1}{m}\sum_{j=0}^{m-1}e^{-2\sin^2(\pi j/m)t}e^{2\pi ijx/m}.</script><p>这类似于反演公式. 当然也有如下常用的表示</p>
+<script type="math/tex; mode=display">
+\sum_{k=-\infty}^\infty I_{x+km}(t)=\frac{1}{m}\sum_{j=0}^{m-1}e^{\cos(2\pi j/m)z+2\pi ijx/m},\quad z\in \mathbb{C},\quad x,m\in\mathbb{Z},\quad m>0.</script><p>通过取特殊情况求导($x=0,$ $t=0,$ $n$阶导), 我们还有</p>
+<p><strong>推论 3</strong>. <em>$\sum_{j=0}^{m-1}\cos^n(2\pi j/m)=\frac{m}{2^n}\sum_{l\in L(n,m)}\binom{n}{l},$ 其中$L(n,m)$为$l\in \mathbb{Z},$ 满足$0\le l\le n$且$l=\frac{n-mq}{2},$ $q\in\mathbb{Z}.$ 特别的, 若$n$为奇数, $m$为偶数, 那么$L(n,m)=\varnothing,$ 和取零.</em> </p>
+<p>当$n=2,$ $m\ge 3$时, 我们有</p>
+<script type="math/tex; mode=display">
+\sum_{j=0}^{m-1}\cos^2(2\pi j/m)=\frac{m}{2}.</script><p>文章最后更新于 2023-09-05 15:47:41 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>科研</category>
+        <category>格点</category>
+      </categories>
+  </entry>
 </search>
