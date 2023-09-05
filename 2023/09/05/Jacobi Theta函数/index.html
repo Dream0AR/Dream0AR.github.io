@@ -9,7 +9,7 @@
     
     <title>
         
-            《微分拓扑》复习笔记(8)-定向相交数应用 |
+            Jacobi Theta函数 |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">《微分拓扑》复习笔记(8)-定向相交数应用</span>
+            <span class="title-hover-animation">Jacobi Theta函数</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2023-06-13 12:33:59
+        <i class="fas fa-edit"></i>&nbsp;2023-09-05 15:44:11
     </span>
     
         <span class="article-categories article-meta-item">
@@ -178,11 +178,11 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/">科研</a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91/">微分拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/%E6%A0%BC%E7%82%B9/">格点</a>&nbsp;
                     </li>
                 
             </ul>
@@ -206,64 +206,73 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Lefschetz不动点理论"><a href="#Lefschetz不动点理论" class="headerlink" title="Lefschetz不动点理论"></a>Lefschetz不动点理论</h2><p>为了计数不动点$x=f(x),$ 只需数$\Delta\cap G(f)$的交点个数.
-由此定义$f$的整体Lefschetz数为$L(f):=I(\Delta,G(f)).$ 它是同伦不变量.</p>
-<p><strong>定理 1</strong>. <em>设$f$为紧致定向流形$X$的光滑自映射. 若$L(f)\neq 0,$ 则$f$有不动点.</em> </p>
-<p><strong>推论 2</strong>. <em>若映射同伦于常值映射, 则$L(f)=\pm $</em> </p>
-<p>由此可推出Brouwer不动点定理.</p>
-<p>称光滑映射$f:X\rightarrow X$为Lefschetz映射, 若$\Delta\pitchfork G(f).$
-由于$G(\mathrm{id})=\Delta,$ $L(\mathrm{id})=\chi(X).$
-若$\mathrm{id}$同伦于无不动点映射, 则$\chi(X)=0.$
-特别地对于非零欧拉示性数的流形, 无不动点映射必不同伦于恒同映射.</p>
-<p><strong>命题 3</strong>. <em>任意光滑映射$f$同伦于一个Lefschetz映射.</em> </p>
-<p>重复横截同伦定理的证明即可. 不能直接使用是因为要得到图像的横截.</p>
-<p>从横截性条件来看, $f$是Lefschetz映射当且仅当$df_x$不以$1$为特征值.
-可定义局部Lefschetz数$L_x(f)=1,$
-若$T_{(x,x)}\Delta+T_{(x,x)}G(f)=T_{x,x}(X\times X).$ 定向不匹配为$-1.$
-此时$L(f)=\sum_{f(x)=x}L_x(f).$</p>
-<p><strong>命题 4</strong>. <em>$L_x(f)=\operatorname{sgn}\det(df_x-I).$</em> </p>
-<p>由此可通过构造同伦于恒同映射的Lefschetz映射来计算欧拉示性数.</p>
-<p>对于非Lefschetz映射, 我们有</p>
-<p><strong>命题 5</strong> (分裂命题). <em>设$U$为映射$f$的不动点$x$处邻域, 且$U$中不含其它不动点. 那么存在同伦映射$f_t$使得$f_1$在$U$中仅含Lefschetz不动点, 且在$U$的某个紧集外同伦保持不变.</em> </p>
-<p>取局部小扰动 $f_t(x)=f(x)-t\rho(x) a$ 即可. 特别地, 令扰动 $a$ 为
-$f(x)-x$ 的正则值, 即有 $\det df_x-I\neq 0.$</p>
-<p>设$x$为$f$的孤立不动点. 若$B$为以$x$为球心的小闭球, 且不含其它不动点, 则</p>
+            <h2 id="格点上的Poisson求和"><a href="#格点上的Poisson求和" class="headerlink" title="格点上的Poisson求和"></a>格点上的Poisson求和</h2><p>对充分好的函数, 我们有Fourier变换</p>
 <script type="math/tex; mode=display">
-F:\partial B\rightarrow S^{k-1},\quad z\mapsto \frac{f(z)-z}{|f(z)-z|}</script><p>为光滑映射. 称$\deg F$为$f$在$x$处的局部Lefschetz数, 记为$L_x(f).$
-定义与$B$选取无关.</p>
-<p><strong>命题 6</strong>. <em>在Lefschetz不动点, 关于Lefschetz不动点和孤立不动点的局部Lefschetz数定义一致.</em> </p>
-<p>只需利用线性同痕引理, 令$F\sim F_0$为标准保定向/反定向函数即可.</p>
-<p><strong>命题 7</strong>. <em>设$f:\mathbb{R}^k\rightarrow \mathbb{R}^k$有孤立不动点$x$, 设$B$为以$x$为球心的不含$f$其它不动点的闭球. 选取满足分裂命题的函数$f_1\sim f,$ 那么$L_x(f)=\sum_{f_1(z)=z}L_z(f_1),$ $z\in B.$</em> </p>
-<p>前述说明都是在欧氏空间上进行的, 容易搬到流形上说明.
-定义与坐标卡选取无关.</p>
-<p><strong>定理 8</strong> (Lefschetz数的局部计算). <em>设$f:X\rightarrow X$为紧定向流形$X$上的光滑自映射, 且$f$只有有限个不动点. 则$f$的整体Lefschetz数等于局部Lefschetz数之和, 即</em> </p>
+\widehat f(x)=\int_{-\infty}^{\infty} f(y)e^{-2\pi ixy}dy.</script><p><strong>命题 1</strong> (Parseval恒等式). <em>$\sum_{n=-\infty}^{\infty} f(n)=\sum_{n=-\infty}^{\infty}\widehat f(n).$</em> </p>
+<p>考虑周期函数 </p>
 <script type="math/tex; mode=display">
-L(f)=\sum_{f(x)=x}L_x(f)</script><h2 id="Poincare-Hopf-定理"><a href="#Poincare-Hopf-定理" class="headerlink" title="Poincaré-Hopf 定理"></a>Poincaré-Hopf 定理</h2><p>对$\mathbb{R}^k$中向量场$v,$ 在$x=0$处有一个孤立零点.
-取充分小开球$B_\varepsilon$不包含其它零点, 定义指标</p>
+F(x)=\sum_{n=-\infty}^{\infty} f(x+n).</script><p>$F$可以视作$\mathbb{R}/\mathbb{Z}$上的函数, 有Fourier展开</p>
 <script type="math/tex; mode=display">
-\operatorname{Ind}_0(v):=\deg \left(\partial B_\varepsilon\rightarrow S^{k-1},x\mapsto \frac{v(x)}{|v(x)|}\right)=W(v,0)</script><p><strong>定理 9</strong> (Poincaré-Hopf 定理). <em>$\sum_{v(x)=0} \operatorname{Ind}_x(v)=\chi(X).$</em> </p>
-<p>只需利用管状邻域构造向量场的积分曲线, 定义映射$f_t\sim \mathrm{id},$
-说明</p>
+F(x)=\sum_{m=-\infty}^{\infty} a_m e^{2\pi imx},</script><script type="math/tex; mode=display">
+a_m=\int_0^1 F(x) e^{-2\pi imx}dx=\int_0^1 \sum_{n=-\infty}^{\infty} f(x+n)e^{-2\pi im(x+n)}dx=\int_{-\infty}^\infty f(x)e^{-2\pi imx}dx=\widehat f(m).</script><p>从而</p>
 <script type="math/tex; mode=display">
-\chi(X)=L(\mathrm{id})=L(f_t)=\sum_{f_t(z)=z} L_{z}f_t=\sum_{v(x)=0} \operatorname{Ind}_x(v).</script><p>由于 </p>
+\sum_{n=-\infty}^{\infty}f(n)=F(0)=\sum_{m=-\infty}^{\infty}a_m=\sum_{n=-\infty}^\infty \widehat f(n).</script><p>命题得证.</p>
+<p>一般的, 对于任意$n$维实向量空间, 配备平移不变测度$\mu,$ 有Fourier变换</p>
 <script type="math/tex; mode=display">
-L_z(f_t)=\deg \frac{f_t(z)-z}{|f_t(z)-z|},</script><p>对$f_t(z)$做Taylor展开, 线性近似得到结论.</p>
-<h2 id="Hopf-映射度定理"><a href="#Hopf-映射度定理" class="headerlink" title="Hopf 映射度定理"></a>Hopf 映射度定理</h2><p><strong>定理 10</strong>. <em>$f_0,f_1:X^k\rightarrow S^k$同伦当且仅当$\deg f_0=\deg f_1.$</em> </p>
-<p>设$f:X^k\rightarrow \mathbb{R}^{k+1},$ 定义环绕数</p>
+\widehat f(x)=\int_V e^{-2\pi i\left<{}y,x\right>}f(y)\mu(y).</script><p>此时$\widehat f$是在$V^\ast $上充分好的函数.</p>
+<p>称$\Gamma$为$V$中的格点,
+若$\Gamma$以$V$中一组线性无关向量$\{v_1,\cdots,v_n\}$为$\mathbb{Z}$-基.
+$V^\ast $中的对偶格点$\Gamma’$定义为</p>
 <script type="math/tex; mode=display">
-W(f,z):=\deg (u:X^k\rightarrow S^k,x\mapsto \frac{f(x)-z}{|f(x)-z|}),\quad z\notin \operatorname{Im}f.</script><p><strong>命题 11</strong>. <em>设$x$为正则点, $f(x)=z.$ 令$B$为以$x$为心的充分小闭球. 记$\partial f=f|_{\partial B}:\partial B\rightarrow \mathbb{R}^k,$ 则$W(\partial f,z)=1,$ 若$df_x$保定向. 反之为$-1.$</em> </p>
-<p>证明和Lefschetz不动点类似.</p>
-<p><strong>命题 12</strong>. <em>设$f:B\rightarrow \mathbb{R}^k$为闭球上的光滑映射, $z$为正则值, $f^{-1}(z)\cap \partial B=\varnothing.$ 那么按定向计数有$# f^{-1}(z)=W(\partial f,z).$</em> </p>
-<p>证明利用唱片引理即可.</p>
-<p><strong>命题 13</strong>. <em>设$B$为$\mathbb{R}^k$中闭球, $f:\mathbb{R}^k\setminus \operatorname{Int}B\rightarrow Y$为光滑映射. 若$\partial f:\partial B\rightarrow Y$同伦于常值映射, 则$f$可延拓为光滑映射$\mathbb{R}^k\rightarrow Y.$</em> </p>
-<p>证明利用Whitney逼近定理.</p>
-<p>对于Hopf映射度定理, 首先证明映射度为零的情形. 对维数进行归纳证明.</p>
-<p><strong>定理 14</strong> (延拓定理). <em>设$W$是$k+1$维紧致连通定向带边流形, $f:\partial W\rightarrow S^k$为光滑映射, 则$f$可延拓为$F:W\rightarrow S^k$当且仅当$\deg f=0.$</em> </p>
-<p><strong>命题 15</strong>. <em>设$W$是任意紧致带边流形, $f:\partial W\rightarrow \mathbb{R}^{k+1}$为任意光滑映射, 则$f$可延拓到整个$W$上.</em> </p>
-<p>现对于任意映射度相同的$f_0,f_1,$ 将其定义在$X^k\times I$上,
-延拓给出同伦.</p>
-<p><strong>定理 16</strong>. <em>紧致连通定向流形$X$上有处处非零的向量场当且仅当$\chi(X)=0.$</em> </p>
-<p>文章最后更新于 2023-06-13 12:33:59 </p>
+\Gamma':=\{x\in V^\ast \mid \left<{}y,x\right>\in \mathbb{Z}, \,\forall\,y\in \Gamma\}.</script><p>此时记$A=[v_1,\cdots,v_n],$
+那么$(A^{\ast })^{-1}$的列向量就是$\Gamma’$的一组$\mathbb{Z}$-基,
+其中${}^\ast $为对偶阵. 当$V=\mathbb{R}^n,$
+$\left&lt;{}-,-\right&gt;$取标准内积时, ${}^\ast $即为转置.</p>
+<p><strong>命题 2</strong> (格点上的Poisson求和). <em>格点$\Gamma$在$V$中的体积记为$\mu(V/\Gamma).$ 若函数$f$有Fourier变换, 我们有</em> </p>
+<script type="math/tex; mode=display">
+\sum_{y\in\Gamma} f(y)=\frac{1}{\mu(V/\Gamma)}\sum_{x\in \Gamma'}\widehat f(x).</script><p>做尺度变换, 等式两侧保持(Fourier变换中有测度项),
+因此总可设$\mu(V/\Gamma)=1.$ 记$\Gamma$的基拼为矩阵$A,$ 那么</p>
+<script type="math/tex; mode=display">
+\sum_{y\in \Gamma}f(y)=\sum_{y\in \mathbb{Z}^n}f(Ay)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y),\quad \widetilde f(y)=:f(Ay).</script><script type="math/tex; mode=display">
+\widehat f(x)=\int_V e^{-2\pi i\left<{}y,x\right>}f(y)\mu(y)=\int_V e^{-2\pi i\left<{}Ay,x\right>}\widetilde f(y)\mu(y)=\int_V e^{-2\pi i\left<{}y,A^\ast x\right>}\widetilde f(y)\mu(y)=\mathcal{F}[\widetilde f] (A^\ast x).</script><script type="math/tex; mode=display">
+\sum_{x\in\Gamma'}\widehat f(x)=\sum_{x\in\mathbb{Z}^n}\widehat f((A^{\ast })^{-1}x)=\sum_{x\in \mathbb{Z}^n}\mathcal{F}[\widetilde f] (x)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y)=\sum_{y\in\Gamma}f(y).</script><p>其中利用到了格点$\mathbb{Z}^n\subset \mathbb{R}^n$上的标准Poisson求和,
+证明和前一命题证明类似.</p>
+<h2 id="Theta函数"><a href="#Theta函数" class="headerlink" title="Theta函数"></a>Theta函数</h2><p>设$V$上有一个对称正定非退化二次型$B(x,y)=x\cdot y$ (与测度相容),
+那么此时$V$可以和$V^\ast $等同起来, $\Gamma’$也是$V$中的格点.
+对任意格点$\Gamma,$ 定义</p>
+<script type="math/tex; mode=display">
+\Theta_\Gamma(t)=\sum_{x\in \Gamma} e^{-\pi tx\cdot x},\quad t>0,\quad t\in \mathbb{R}.</script><p><strong>定理 3</strong>. <em>$\Theta_\Gamma(t)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta_{\Gamma’}(t^{-1}).$ 特别地, 若$\Gamma=\Gamma’=\mathbb{Z}\subset \mathbb{R},$ 那么$\Theta(t)=\frac{1}{\sqrt{t} }\Theta(\frac{1}{t}).$</em> </p>
+<p>对函数$f(x)=e^{-\pi x\cdot x}$使用Poisson求和, 那么</p>
+<script type="math/tex; mode=display">
+\Theta_\Gamma(t)=\sum_{x\in \sqrt{t}\Gamma} f(x)=\frac{1}{\mu(V/\sqrt{t}\Gamma)}\sum_{x\in(\sqrt{t}\Gamma)'}\widehat f(x)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)} \sum_{x\in\Gamma'}\widehat f\left(\frac{1}{\sqrt{t} }x\right)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta_{\Gamma'}(t^{-1}).</script><p>最后的等式是由于$f=\widehat f,$</p>
+<script type="math/tex; mode=display">
+\Theta_{\Gamma'(t^{-1})}=\sum_{x\in\Gamma'} e^{-\pi \frac{1}{t}x\cdot x}=\sum_{x\in\Gamma'}\widehat f\left(\frac{1}{\sqrt{t} }x\right).</script><p>记二次型的gram矩阵为$A=(a_{ij}),$ $a_{ij}=e_i\cdot e_j,$
+其中$\{e_i\}$为$\Gamma$的基底. 那么$\Gamma$的体积为$\sqrt{\det(A)}.$
+若$B$为$A$的逆阵, 那么$B=(b_{ij})$是对偶基对应的gram阵,
+$\Gamma’$由对偶基$e_i’=b_{ij}e_j$拼成.
+$\Gamma’$的体积为$\det(A)^{-\frac{1}{2} }.$</p>
+<p>记$r_\Gamma(m)$为使得$x\cdot x=2m$的$x\in\Gamma$的个数, $m\ge 0$.
+$r_\Gamma(m)$由关于$m$的多项式控制, Serre给出了$O(m^\frac{n}{2})$的界.
+于是级数$\sum_{m=0}^\infty r_\Gamma(m)q^m$在$|q|&lt;1$时收敛.
+取$q=e^{2\pi iz},$ 那么对于$z\in\mathbb{H},$ 我们定义了全纯函数</p>
+<script type="math/tex; mode=display">
+\theta_\Gamma(z)=\sum_{m=0}^\infty r_\Gamma(m)q^m=\sum_{x\in\Gamma} e^{\pi iz(x\cdot x)}=\sum_{x\in\Gamma} q^{(x\cdot x)/2}.</script><p>这里我们需要要求$x\cdot x\equiv 0\mod 2,$ $\,\forall\,x\in \Gamma.$
+这即是要求$A=(e_i\cdot e_j)$对角线上均为偶数.</p>
+<p>之前的Theta函数是实参数$t,$ 此时的小theta函数满足</p>
+<script type="math/tex; mode=display">
+\Theta_\Gamma(t)=\theta_\Gamma(it),\quad \Theta_\Gamma\left(\frac{1}{t}\right)=\theta_\Gamma\left(\frac{i}{t}\right)=\theta_\Gamma\left(-\frac{1}{it}\right).</script><p>进一步假设$\Gamma$是自对偶的, 即$\Gamma’=\Gamma.$
+这要求$A=(e_i\cdot e_j)$是整系数的, 且行列式为$1.$ 在这样的假设下,
+由前面的Poisson和公式, 有</p>
+<script type="math/tex; mode=display">
+\theta_\Gamma\left(-\frac{1}{it}\right)=t^{\frac{n}{2} }\theta_\Gamma(it).</script><p>由于$\theta_\Gamma(-\frac{1}{z}),$
+$(-iz)^{\frac{n}{2} }\theta_\Gamma(z)$都是解析函数,
+现证明了它们在纯虚轴(正半轴)上相等, 由解析连续性,
+它们在上半平面上都相等.</p>
+<p><strong>命题 4</strong>. <em>对满足上述条件的格点$\Gamma,$ $\theta_\Gamma\left(-\frac{1}{z}\right)=(-iz)^{\frac{n}{2} }\theta_\Gamma(z),$ $\,\forall\,z\in\mathbb{H}.$</em> </p>
+<p>事实上, 可以证明满足自对偶且$x\cdot x\equiv 0\mod 2,$
+$\,\forall\,x\in \Gamma$的格点$\Gamma\subset V$必须是$8k$维的,
+$k\in\mathbb{Z}_+.$</p>
+<p>文章最后更新于 2023-09-05 15:45:49 </p>
 
         </div>
 
@@ -271,11 +280,11 @@ W(f,z):=\deg (u:X^k\rightarrow S^k,x\mapsto \frac{f(x)-z}{|f(x)-z|}),\quad z\not
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(8)-定向相交数应用</li>
+        <li>本文标题：Jacobi Theta函数</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-13 12:33:59</li>
+        <li>创建时间：2023-09-05 15:44:11</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/13/《微分拓扑》复习笔记(8)-定向相交数应用/
+            本文链接：https://dream0ar.github.io/2023/09/05/Jacobi Theta函数/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -289,29 +298,14 @@ W(f,z):=\deg (u:X^k\rightarrow S^k,x\mapsto \frac{f(x)-z}{|f(x)-z|}),\quad z\not
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2023/09/05/Jacobi%20Theta%E5%87%BD%E6%95%B0/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">Jacobi Theta函数</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2023/06/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(7)-%E5%AE%9A%E5%90%91%E4%B8%8E%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0/"
+                           href="/2023/06/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(8)-%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0%E5%BA%94%E7%94%A8/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">《微分拓扑》复习笔记(7)-定向与定向相交数</span>
+                                <span class="post-nav-title-item">《微分拓扑》复习笔记(8)-定向相交数应用</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -518,7 +512,7 @@ W(f,z):=\deg (u:X^k\rightarrow S^k,x\mapsto \frac{f(x)-z}{|f(x)-z|}),\quad z\not
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lefschetz%E4%B8%8D%E5%8A%A8%E7%82%B9%E7%90%86%E8%AE%BA"><span class="nav-text">Lefschetz不动点理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Poincare-Hopf-%E5%AE%9A%E7%90%86"><span class="nav-text">Poincaré-Hopf 定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hopf-%E6%98%A0%E5%B0%84%E5%BA%A6%E5%AE%9A%E7%90%86"><span class="nav-text">Hopf 映射度定理</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A0%BC%E7%82%B9%E4%B8%8A%E7%9A%84Poisson%E6%B1%82%E5%92%8C"><span class="nav-text">格点上的Poisson求和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Theta%E5%87%BD%E6%95%B0"><span class="nav-text">Theta函数</span></a></li></ol>
     </div>
 </div>
         </aside>
