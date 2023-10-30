@@ -12804,4 +12804,50 @@ $\Vert f_n\Vert$也是, 记其收敛到$f.$
         <category>泛函分析</category>
       </categories>
   </entry>
+  <entry>
+    <title>音乐同构</title>
+    <url>/2023/10/30/%E9%9F%B3%E4%B9%90%E5%90%8C%E6%9E%84/</url>
+    <content><![CDATA[<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>音乐同构</strong>(musical isomorphism), 又称典范(canonical)同构,
+指黎曼流形切丛和余切丛间的同构, 由黎曼度量给出.</p>
+<p>黎曼度量$g=g_{ij}dx^i\otimes dx^j$是一个正定二阶的张量场, 每点有映射</p>
+<script type="math/tex; mode=display">
+\widehat g_x:T_xM\rightarrow T_x^\ast M,</script><p> 使得</p>
+<script type="math/tex; mode=display">
+\widehat g_x(X)(Y)=\left<{}X,Y\right>.</script><p>这给出了微分同胚$\widehat g:TM\rightarrow T^\ast M.$</p>
+<p>若$X=X^i\partial_i,$ 那么计算得到 </p>
+<script type="math/tex; mode=display">
+\widehat g(X)=g_{ij}X^j\partial_i.</script><p>由正定性, 它是一个同构. 上述同构称为<strong>降号音乐同构</strong>(flat),
+记为$\widehat g(X)=X^\flat,$ 表示指标$X^i$下降为下标$g_{ij}X^j.$
+逆运算自然称作<strong>升号音乐同构</strong>(sharp),
+记为$\widehat g^{-1}(\omega)=\omega^\sharp,$
+将指标$\omega_i$升为上标$g^{ij}\omega_j.$</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>使用音乐同构可以更简洁地表示一些公式, 如对于一般的向量丛$(E,\nabla,h)$,
+计算联络$\nabla:\Gamma(M,E)\rightarrow\Gamma(M,E\otimes T^\ast M)$关于$L^2$内积对偶$\nabla^\ast $的表达式.</p>
+<p>对于紧支撑的$f\in\Gamma(M,E),$ $\omega\in \Gamma(M,E\otimes T^\ast M),$
+设$\nabla f=f_i\otimes dx^i,$ 那么</p>
+<script type="math/tex; mode=display">
+\left<{}\nabla f,\omega\right>=\int_M g\otimes h (\nabla f,\omega) d\mathrm{vol}_g=\int_M g^{ij}h(f_i,\omega_j)d\mathrm{vol}_g,\quad \omega=\omega_j \otimes dx^j,</script><p>希望得到$\left&lt;{}f,\nabla^\ast \omega\right&gt;=\int_M h(f,\nabla^\ast \omega)d\mathrm{vol}_g$的形式,
+因此要利用联络与度量的相容性, </p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ LHS&=\int_M g^{ij} \partial_i h(f,\omega_j) - g^{ij}h(f,\nabla_{\partial_i}\omega_j)d\mathrm{vol}_g\\
+ &=\int_M (dx^j)^\sharp h(f,\omega_j)-h(f,\nabla_{(dx^j)^\sharp}\omega_j)d\mathrm{vol}_g\\
+ &=\int_M \operatorname{div}(h(f,\omega_j)(dx^j)^\sharp)-h(f,(\operatorname{div}(dx^j)^\sharp+\nabla_{(dx^j)^\sharp})\omega_j)d\mathrm{vol}_g\\
+ &=\int_M h(f,\nabla^*\omega)d\mathrm{vol}_g=\left<{}f,\nabla^*\omega\right>.
+ \end{aligned}</script><p> 由于等式对所有$f$对,
+这就用音乐同构给出了$\nabla^\ast $的表达式. 用降号来表示,
+就是对于$\omega=u\otimes X^\flat,$</p>
+<script type="math/tex; mode=display">
+\nabla^\ast \omega=-\operatorname{div}(X)\omega-\nabla_X\omega.</script><p>过程中用到的散度$\operatorname{div}:T_xM\rightarrow \mathbb{R}$指</p>
+<script type="math/tex; mode=display">
+\operatorname{div}X=\left<{}\nabla_{\partial_i}X,\partial_i\right>=\partial_iX^i+\Gamma_{ij}^iX^j,</script><p>满足 </p>
+<script type="math/tex; mode=display">
+\operatorname{div}(fX)=Xf+f\operatorname{div}X.</script><p>文章最后更新于 2023-10-30 20:56:03 </p>
+]]></content>
+      <categories>
+        <category>命题与定理</category>
+        <category>几何</category>
+        <category>黎曼几何</category>
+      </categories>
+  </entry>
 </search>
