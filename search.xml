@@ -12911,4 +12911,59 @@ $\Delta (h_k-h_{k-1})=\Delta h_k$为$k-2$次齐次多项式, 又是常数,
         <category>PDE</category>
       </categories>
   </entry>
+  <entry>
+    <title>道路同调(2)</title>
+    <url>/2024/02/28/%E9%81%93%E8%B7%AF%E5%90%8C%E8%B0%83(2)/</url>
+    <content><![CDATA[<h2 id="Omega-2-结构"><a href="#Omega-2-结构" class="headerlink" title="$\Omega_2$结构"></a>$\Omega_2$结构</h2><p>给定有向图$G=(V,E),$
+$\mathcal{A}_p=\left&lt;{}e_{i_0\cdots i_p}:i_0\rightarrow\cdots\rightarrow i_p\right&gt;_\mathbb{K},$
+为由准许基本$p$-道路张成的空间.
+记$\Omega_p=\left&lt;{}v\in \mathcal{A}_p:\partial v\in \mathcal{A}_{p-1}\right&gt;,$
+那么$(\Omega_\ast ,\partial)$构成$G$的道路链复形.</p>
+<p>我们知道有$\Omega_0=\mathcal{A}_0,$ $\Omega_1=\mathcal{A}_1,$
+但之后只能保证$\Omega_2\subset \mathcal{A}_2,$ $\cdots.$
+称$(x,y)$为半有向边若其不是有向边且$x\neq y$,
+但存在中转点$z$使得$x\rightarrow z\rightarrow y.$
+记为$x\rightharpoonup y.$</p>
+<p><strong>定理 1</strong>. <em>$|\Omega_2|=|\mathcal{A}_2|-s,$ $s$为半有向边个数. 事实上$\Omega_2$由全体三角形, 正方形, 双箭头生成.</em> </p>
+<p>设$v=\sum_{a\rightarrow b\rightarrow c}v^{abc}e_{abc}\in \mathcal{A}_2,$
+那么</p>
+<script type="math/tex; mode=display">
+\partial v=\sum_{a\rightarrow b\rightarrow c} v^{abc}(e_{bc}-e_{ac}+e_{ab})\equiv-\sum_{a\rightarrow b\rightarrow c} v^{abc}e_{ac}\mod \mathcal{A}_1.</script><p>若$a\rightarrow c$那么显然$\partial v\in \mathcal{A}_1,$ 此时为三角形;
+若$a=c$更显然, 此时为双箭头; 若$a\rightharpoonup c,$
+那么只需$\sum_{b:a\rightarrow b\rightarrow c} v^{abc}=0,$
+即有$\partial v\in \mathcal{A}_1,$ 这对应于若干正方形($v^{ab_1c}=1,$
+$v^{ab_2c}=-1,$ 其它为零)的线性组合. 共有$s$个这样的约束,
+因此$|\Omega_2|=|\mathcal{A}_2|-s.$</p>
+<p>若半有向边$a\rightharpoonup c$有$m+1$个中转点$b_i,$
+称它们构成一个$m$-正方形. 此时这部分构成的有向图满足$|\Omega_2|=m,$
+$|\mathcal{A}_2|=m+1,$ 半有向边只有一条$a\rightharpoonup c.$</p>
+<h2 id="有向图同态"><a href="#有向图同态" class="headerlink" title="有向图同态"></a>有向图同态</h2><p>对于有向图$X,Y$, 称$f:X\rightarrow Y$为有向图同态(映射),
+若对于任意$X$中的$a\rightarrow b,$ 在$Y$中要么有$f(a)\rightarrow f(b),$
+要么有$f(a)=f(b).$</p>
+<p>给定这样的同态, 有诱导映射$f_\ast :\Lambda_n(X)\rightarrow \Lambda_n(Y),$
+$f_\ast (e_{i_0\cdots i_n}):=e_{f(i_0)\cdots f(i_n)}.$</p>
+<p><strong>命题 2</strong>. <em>令$f:X\rightarrow Y$为有向图间的同态, 那么$f_\ast $延拓为链映射$f_\ast :\Omega_n(X)\rightarrow \Omega_n(Y),$ 进而$f_\ast :H_n(X)\rightarrow H_n(Y).$</em> </p>
+<p>只需注意到$f_\ast $将非正则基本道路映为非正则基本道路,
+取模后将准许基本道路映为准许基本道路(可能被模掉为零).
+同时显然有$\partial f_\ast =f_\ast \partial.$</p>
+<p>正方形通过有向图同态可以变成三角形或双箭头.</p>
+<h2 id="有向多边形"><a href="#有向多边形" class="headerlink" title="有向多边形"></a>有向多边形</h2><p>设$G$为嵌入在$S^1$上的一个$n$边形,
+每个有向边$\xi$定义$\sigma^\xi=\pm 1,$ 取正若有向边为逆时针方向,
+反之为负. $\sigma=\sum_\xi \sigma^\xi e_\xi \in \mathcal{A}_1.$</p>
+<p><strong>引理 3</strong>. <em>我们有$\partial \sigma=0,$ 进而$\sigma\in \Omega_$ 进一步, $\ker \sigma|_{\Omega_1}=\left&lt;{}\sigma\right&gt;.$</em> </p>
+<p>$\,\forall\,v\in \mathcal{A}_1,$ $v=\sum_\xi v^\xi e_\xi.$
+$\partial v=\sum_{k=0}^{n-1} c_ke_k.$</p>
+<p>设$(k-1)\xrightarrow{\xi} k\xrightarrow{\eta} (k+1),$
+那么$c_k=v^{\xi}\sigma^\xi - v^\eta \sigma^\eta.$
+于是$c_k=0$当且仅当$v^\xi \sigma^\xi=v^\eta \sigma^\eta,$
+而$v^\xi=\sigma^\xi$构成解的基底.</p>
+<p><strong>命题 4</strong>. <em>令$P$为$n$边形, 若$P$为三角形或正方形, 那么$|\Omega_2|=1,$ $|\Omega_p|=0,$ $p\ge 3,$ $|H_p|=0,$ $p\ge 1;$ 不然, $|\Omega_p|=0,$ $\,\forall\,p\ge 2,$ $|H_1|=1,$ $|H_p|=0,$ $p\ge 2.$</em> </p>
+<p>文章最后更新于 2024-02-28 16:15:26 </p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+        <category>代数拓扑</category>
+        <category>道路同调</category>
+      </categories>
+  </entry>
 </search>
