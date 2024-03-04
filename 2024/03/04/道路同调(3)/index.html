@@ -9,7 +9,7 @@
     
     <title>
         
-            道路同调(2) |
+            道路同调(3) |
         
         梦之居
     </title>
@@ -150,7 +150,7 @@
     <div class="article-content-container">
 
         <div class="article-title">
-            <span class="title-hover-animation">道路同调(2)</span>
+            <span class="title-hover-animation">道路同调(3)</span>
         </div>
 
         
@@ -166,7 +166,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2024-02-28 16:15:24
+        <i class="fas fa-edit"></i>&nbsp;2024-03-04 15:10:33
     </span>
     
         <span class="article-categories article-meta-item">
@@ -206,51 +206,32 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="Omega-2-结构"><a href="#Omega-2-结构" class="headerlink" title="$\Omega_2$结构"></a>$\Omega_2$结构</h2><p>给定有向图$G=(V,E),$
-$\mathcal{A}_p=\left&lt;{}e_{i_0\cdots i_p}:i_0\rightarrow\cdots\rightarrow i_p\right&gt;_\mathbb{K},$
-为由准许基本$p$-道路张成的空间.
-记$\Omega_p=\left&lt;{}v\in \mathcal{A}_p:\partial v\in \mathcal{A}_{p-1}\right&gt;,$
-那么$(\Omega_\ast ,\partial)$构成$G$的道路链复形.</p>
-<p>我们知道有$\Omega_0=\mathcal{A}_0,$ $\Omega_1=\mathcal{A}_1,$
-但之后只能保证$\Omega_2\subset \mathcal{A}_2,$ $\cdots.$
-称$(x,y)$为半有向边若其不是有向边且$x\neq y$,
-但存在中转点$z$使得$x\rightarrow z\rightarrow y.$
-记为$x\rightharpoonup y.$</p>
-<p><strong>定理 1</strong>. <em>$|\Omega_2|=|\mathcal{A}_2|-s,$ $s$为半有向边个数. 事实上$\Omega_2$由全体三角形, 正方形, 双箭头生成.</em> </p>
-<p>设$v=\sum_{a\rightarrow b\rightarrow c}v^{abc}e_{abc}\in \mathcal{A}_2,$
-那么</p>
+            <h2 id="有向图的连接"><a href="#有向图的连接" class="headerlink" title="有向图的连接"></a>有向图的连接</h2><h3 id="增广链复形"><a href="#增广链复形" class="headerlink" title="增广链复形"></a>增广链复形</h3><p>对于链复形</p>
 <script type="math/tex; mode=display">
-\partial v=\sum_{a\rightarrow b\rightarrow c} v^{abc}(e_{bc}-e_{ac}+e_{ab})\equiv-\sum_{a\rightarrow b\rightarrow c} v^{abc}e_{ac}\mod \mathcal{A}_1.</script><p>若$a\rightarrow c$那么显然$\partial v\in \mathcal{A}_1,$ 此时为三角形;
-若$a=c$更显然, 此时为双箭头; 若$a\rightharpoonup c,$
-那么只需$\sum_{b:a\rightarrow b\rightarrow c} v^{abc}=0,$
-即有$\partial v\in \mathcal{A}_1,$ 这对应于若干正方形($v^{ab_1c}=1,$
-$v^{ab_2c}=-1,$ 其它为零)的线性组合. 共有$s$个这样的约束,
-因此$|\Omega_2|=|\mathcal{A}_2|-s.$</p>
-<p>若半有向边$a\rightharpoonup c$有$m+1$个中转点$b_i,$
-称它们构成一个$m$-正方形. 此时这部分构成的有向图满足$|\Omega_2|=m,$
-$|\mathcal{A}_2|=m+1,$ 半有向边只有一条$a\rightharpoonup c.$</p>
-<h2 id="有向图同态"><a href="#有向图同态" class="headerlink" title="有向图同态"></a>有向图同态</h2><p>对于有向图$X,Y$, 称$f:X\rightarrow Y$为有向图同态(映射),
-若对于任意$X$中的$a\rightarrow b,$ 在$Y$中要么有$f(a)\rightarrow f(b),$
-要么有$f(a)=f(b).$</p>
-<p>给定这样的同态, 有诱导映射$f_\ast :\Lambda_n(X)\rightarrow \Lambda_n(Y),$
-$f_\ast (e_{i_0\cdots i_n}):=e_{f(i_0)\cdots f(i_n)}.$</p>
-<p><strong>命题 2</strong>. <em>令$f:X\rightarrow Y$为有向图间的同态, 那么$f_\ast $延拓为链映射$f_\ast :\Omega_n(X)\rightarrow \Omega_n(Y),$ 进而$f_\ast :H_n(X)\rightarrow H_n(Y).$</em> </p>
-<p>只需注意到$f_\ast $将非正则基本道路映为非正则基本道路,
-取模后将准许基本道路映为准许基本道路(可能被模掉为零).
-同时显然有$\partial f_\ast =f_\ast \partial.$</p>
-<p>正方形通过有向图同态可以变成三角形或双箭头.</p>
-<h2 id="有向多边形"><a href="#有向多边形" class="headerlink" title="有向多边形"></a>有向多边形</h2><p>设$G$为嵌入在$S^1$上的一个$n$边形,
-每个有向边$\xi$定义$\sigma^\xi=\pm 1,$ 取正若有向边为逆时针方向,
-反之为负. $\sigma=\sum_\xi \sigma^\xi e_\xi \in \mathcal{A}_1.$</p>
-<p><strong>引理 3</strong>. <em>我们有$\partial \sigma=0,$ 进而$\sigma\in \Omega_$ 进一步, $\ker \sigma|_{\Omega_1}=\left&lt;{}\sigma\right&gt;.$</em> </p>
-<p>$\,\forall\,v\in \mathcal{A}_1,$ $v=\sum_\xi v^\xi e_\xi.$
-$\partial v=\sum_{k=0}^{n-1} c_ke_k.$</p>
-<p>设$(k-1)\xrightarrow{\xi} k\xrightarrow{\eta} (k+1),$
-那么$c_k=v^{\xi}\sigma^\xi - v^\eta \sigma^\eta.$
-于是$c_k=0$当且仅当$v^\xi \sigma^\xi=v^\eta \sigma^\eta,$
-而$v^\xi=\sigma^\xi$构成解的基底.</p>
-<p><strong>命题 4</strong>. <em>令$P$为$n$边形, 若$P$为三角形或正方形, 那么$|\Omega_2|=1,$ $|\Omega_p|=0,$ $p\ge 3,$ $|H_p|=0,$ $p\ge 1;$ 不然, $|\Omega_p|=0,$ $\,\forall\,p\ge 2,$ $|H_1|=1,$ $|H_p|=0,$ $p\ge 2.$</em> </p>
-<p>文章最后更新于 2024-02-28 16:15:26 </p>
+0\xleftarrow{\partial}\Lambda_0\xleftarrow{\partial}\Lambda_1\leftarrow\cdots,</script><p>我们考虑</p>
+<script type="math/tex; mode=display">
+0\xleftarrow{\partial} \mathbb{K}\xleftarrow{\partial}\Lambda_0\xleftarrow \Lambda_1\leftarrow\cdots,\quad \Lambda_{-1}:=\mathbb{K},</script><p>其中$\partial e_i:=e,$ 为$\mathbb{K}$的单位元.
+此时的同调群记为$\widetilde H_p,$ 称为约化同调群.
+除了$\widetilde H_0=H_0/\mathbb{K},$ 模掉一个$\mathbb{K}$外,
+其它同调群不变, 即$\widetilde H_p=H_p,$ $\,\forall\,p\ge 1,$
+$\widetilde H_{-1}=\{0\}.$</p>
+<p>记$\widetilde\beta_p=|\widetilde H_p|$为约化Betti数,
+那么$\widetilde\beta_0=0$当且仅当$G$是连通的.</p>
+<h3 id="道路的连接"><a href="#道路的连接" class="headerlink" title="道路的连接"></a>道路的连接</h3><p>若$u=e_{i_0\cdots i_p},v=e_{j_0\cdots j_q}$分别是$X,Y$中的两条道路,
+记其连接$u\ast v=e_{i_0\cdots i_p j_0\cdots j_q},$ 为$X\sqcup Y$中的道路.
+做线性扩展, 我们有</p>
+<script type="math/tex; mode=display">
+\ast :\Lambda_p(X)\times \Lambda_q(Y)\rightarrow \Lambda_{p+q+1}(X\sqcup Y).</script><p><strong>引理 1</strong>. <em>$\partial (u\ast v)=(\partial u)\ast v+(-1)^{p+1}u\ast \partial v,$ $u\in \Lambda_p(X).$</em> </p>
+<h3 id="有向图的连接-1"><a href="#有向图的连接-1" class="headerlink" title="有向图的连接"></a>有向图的连接</h3><p>有向图$Z:=X\ast Y$的点集由$X\sqcup Y$组成, 将所有$X$中的点连接到$Y$中的点,
+即$x\rightarrow y,$ $\,\forall\,x\in X,$ $y\in Y.$
+这样就保证了$\mathcal{A}_p(X)\ast \mathcal{A}_q(Y)\subset \mathcal{A}_{p+q+1}(X\ast Y).$</p>
+<p><strong>引理 2</strong>. <em>$\Omega_p(X)\ast \Omega_q(Y)\subset \Omega_{p+q+1}(X\ast Y),$ 对于约化同调群有同样的结论.</em> </p>
+<p><strong>定理 3</strong> (Künneth公式). <em>$\,\forall\,p,q,r\ge -1,$ 我们有$\Omega_r(Z)= \bigoplus_{p+q+1=r}\Omega_p(X)\ast \Omega_q(Y).$ 进而$\widetilde H_r(Z)=\bigoplus_{p+q+1=r} \widetilde H_p(X)\ast \widetilde H_q(Y),$ $\widetilde\beta_r(Z)=\sum_{p+q+1=r} \widetilde\beta_p(X)\widetilde\beta_q(Y).$</em> </p>
+<p>借助这个公式, 我们可以得到对于有向图$X,$ 锥体$X\ast \{\bullet\}$是零调的,
+双锥$X\ast \{\bullet,\bullet\}$的$r$-约化Betti数恰好是$X$的$r-1$-约化Betti数.
+由此可以凭借$S^0=\{\bullet,\bullet\},$ 不断做双锥得到任意维球面$S^n,$
+满足$\widetilde\beta_n(S^n)=1$是唯一非平凡的约化Betti数.</p>
+<p>文章最后更新于 2024-03-04 15:10:35 </p>
 
         </div>
 
@@ -258,11 +239,11 @@ $\partial v=\sum_{k=0}^{n-1} c_ke_k.$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：道路同调(2)</li>
+        <li>本文标题：道路同调(3)</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2024-02-28 16:15:24</li>
+        <li>创建时间：2024-03-04 15:10:33</li>
         <li>
-            本文链接：https://dream0ar.github.io/2024/02/28/道路同调(2)/
+            本文链接：https://dream0ar.github.io/2024/03/04/道路同调(3)/
         </li>
         <li>
             版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -276,29 +257,14 @@ $\partial v=\sum_{k=0}^{n-1} c_ke_k.$</p>
         
             <div class="article-nav">
                 
-                    <div class="article-prev">
-                        <a class="prev"
-                           rel="prev"
-                           href="/2024/03/04/%E9%81%93%E8%B7%AF%E5%90%8C%E8%B0%83(3)/"
-                        >
-                            <span class="left arrow-icon flex-center">
-                              <i class="fas fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">道路同调(3)</span>
-                                <span class="post-nav-item">上一篇</span>
-                            </span>
-                        </a>
-                    </div>
-                
                 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2024/02/26/%E9%81%93%E8%B7%AF%E5%90%8C%E8%B0%83(1)/"
+                           href="/2024/02/28/%E9%81%93%E8%B7%AF%E5%90%8C%E8%B0%83(2)/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">道路同调(1)</span>
+                                <span class="post-nav-title-item">道路同调(2)</span>
                                 <span class="post-nav-item">下一篇</span>
                             </span>
                             <span class="right arrow-icon flex-center">
@@ -505,7 +471,7 @@ $\partial v=\sum_{k=0}^{n-1} c_ke_k.$</p>
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Omega-2-%E7%BB%93%E6%9E%84"><span class="nav-text">$\Omega_2$结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE%E5%90%8C%E6%80%81"><span class="nav-text">有向图同态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E5%A4%9A%E8%BE%B9%E5%BD%A2"><span class="nav-text">有向多边形</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="nav-text">有向图的连接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A2%9E%E5%B9%BF%E9%93%BE%E5%A4%8D%E5%BD%A2"><span class="nav-text">增广链复形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%81%93%E8%B7%AF%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="nav-text">道路的连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%90%91%E5%9B%BE%E7%9A%84%E8%BF%9E%E6%8E%A5-1"><span class="nav-text">有向图的连接</span></a></li></ol></li></ol>
     </div>
 </div>
         </aside>
