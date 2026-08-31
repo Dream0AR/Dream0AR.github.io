@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《现代PDE基础》笔记(4)-Sobolev空间 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(4)-Sobolev空间</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (4)-Sobolev Space</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-24 19:48:18
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    basic definition
+--------
+
+By default $\Omega\subset \mathbb{R}^n$ is the bounded area or outer area (the complement of the bounded area closure),
+The boundary is $C^\infty$ submanifold or $C^m$ submanifold. The smoothness requirement of the boundary is determined by the implicit function theorem,
+Equivalent to requiring $\,\forall\,x\in \partial \Omega,$ $\,\exists\,$neighborhood $U\ni x,$
+$U\cap \partial\Omega$ can be represented by $x_j=\varphi(\widehat{x}_j)\in C^\infty/C^m$,
+$1\le j\le n.$
+For $m\in \mathbb{N},$ $1\le p\le \infty,$
+Define the Sobolev space $H^{m,p}(\Omega)$ to satisfy the condition $D^\alpha u\in L^p(\Omega),$
+$\quad |\alpha|\le m$ generalized function $u$ ensemble. Equipped with norm
+$$\parallel u\parallel_{H^{m,p}(\Omega)}=\left(\sum_{|\alpha|\le m}\parallel D^\alpha u\parallel_{L^p(\Omega)}^p\right)^{\frac{1}{p} },\quad 1\le p<\infty,$$
+$$\parallel u\parallel_{H^{m,\infty}(\Omega)}=\max_{|\alpha|\le m}\parallel D^\alpha u\parallel_{L^\infty(\Omega)}.$$
+
+Since $L^p(\Omega)$ is a Banach space, it is easy to prove that $H^{m,p}(\Omega)$ is also a Banach space.
+Recall that $C^\infty$ is dense in $L^p$,
+Through a similar method, it can be proved that $C^\infty(\overline{\Omega})$ is dense in $H^{m,p}(\Omega)$ (of course $C^m(\overline{\Omega})$ is also dense in $H^{m,p}(\Omega)$).
+Therefore $H^{m,p}(\Omega)$ can be regarded as the complete space of $C^\infty(\overline{\Omega})$ equipped with $\parallel\cdot\parallel_{H^{m,p}(\Omega)}$ module.
+
+Equivalent modular theorem
+----------
+For $f\in H^{m,p}(\Omega),$ define the model based on $H^{m,p}(\mathbb{R}^n)$
+$$\parallel f\parallel_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_{\Omega}=f}\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)},$$
+$\widetilde{f}$ is the continuation of $f$ on $\mathbb{R}^n$.
+Obviously for any continuation $\widetilde{f},$
+$\parallel f\parallel_{H^{m,p}(\Omega)}\le \parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)},$
+Therefore $\parallel f\parallel_{H^{m,p}(\Omega)}\le \parallel f\parallel_{\widetilde{H}^{m,p}(\mathbb{R}^n)}.$
+Next we prove that we can find constants that make the converse inequality true, so we have the following theorem:
+**Theorem 1.1**. *$H^{m,p},\widetilde{H}^{m,p}$ are equivalent modules.*
+
+**Proof:** Just construct a continuation $\widetilde{f},$
+Such that $\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\Omega)},$
+$C=C(m,p,\Omega)$ has nothing to do with $f$. In this way, we have
+$$\parallel f\parallel_{H^{m,p}(\Omega)}\le\parallel f\parallel_{\widetilde{H}^{m,p}(\Omega)}\le \parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\Omega)},$$
+The theorem is proved. Since $C^m(\overline\Omega)$ is dense in $H^{m,p}(\Omega)$,
+Let us first discuss the case of $f\in C^m(\overline{\Omega})$.
+We use the Lions continuation method. $\,\forall\,x\in \overline{\Omega},$
+If $x\in \Omega,$ take $O_\delta(x)\subset \Omega;$ if $x\in \partial\Omega,$
+Take $O_\delta(x)$ so that $O_\delta(x)\cap \partial\Omega$ can be represented by the $C^m$ function.
+Then $\{O_\delta(x)\}$ constitutes the open coverage of $\overline{\Omega}$,
+There is a finite subcover $\{O_{\delta_i}(x_i)\}.$
+Take the unit decomposition that belongs to $\{\varphi_i\}.$ Then since $f=\sum_i \varphi_if,$
+Just do an extension $F_i.$ for each $\varphi_i f$. Since $\varphi_i$ is only related to $\Omega$,
+$\,\exists\,C>0$ such that
+$$\parallel\varphi_i f\parallel_{H^{m,p}(\Omega)}\le C\parallel f\parallel_{H^{m,p}(\Omega)}.$$
+Just let the continuation $F_i$ satisfy
+$$\parallel F_i\parallel_{H^{m,p}(\mathbb{R}^n)}\le C_i\parallel\varphi_i f\parallel_{H^{m,p}(\Omega)},$$
+In this way, just take $\widetilde{f}=\sum_i F_i$.
+If $x_i\in \Omega,$ then take $F_i$ as the zero continuation of $\varphi_i f$;
+If $x_i\in \partial \Omega,$
+Flatten $\partial \Omega\cap O_{\delta_i}(x_i)$,
+Let $\Omega\cap O_{\delta_i}(x_i)$ be contained in the upper half-plane $\mathbb{H}$,
+During the process, $H^{m,p}$ remains unchanged. When determining $O_{\delta}(x)$, additional conditions may be required:
+After $\Omega^c\cap O_{\delta}(x)$ is flattened, the lower half plane contains the mirror symmetry of $\Omega\cap O_{\delta}(x)$.
+Otherwise, the part of $O_{\delta}(x)$ in $\Omega$ can be reduced,
+Although $O_{\delta}(x)$ is no longer a spherical neighborhood.
+
+Still use the same symbols to record the flattened elements. Let’s assume that the flattening is about $x_1$,
+Remember $y=(x_2,\cdots,x_n),$
+Then define the continuation supported on $O_{\delta_i}(x_i)$ (zero continuation can be done)
+$$F_i(x_1,y)=\begin{cases}
+                \varphi_i f(x_1,y)&x_1\ge 0\\
+                 \sum_{j=0}^m C_j\varphi_if(-\lambda_j x_1,y)&x_1<0
+            \end{cases}.$$
+
+It is $C^m$ in the upper and lower half-planes respectively, and only needs to verify the regularity in the $x_1$ direction when $x_1=0$.
+Note that you only need to ensure that $\sum_{j=0}^m (-\lambda_j)^kC_j=1,$
+$\,\forall\,0\le k\le m,$
+That is, there is $F_i\in C^m(\mathbb{R}^n)\subset H^{m,p}(\mathbb{R}^n).$
+And since $\det(-\lambda_j)^k$ is the Vandermonde determinant,
+As long as $\lambda_j>0$ are mutually different, there is a solution $\{C_j\}.$
+Therefore, the continuation $F_i\in C^m(\mathbb{R}^n)$ is achievable.
+Pull it back to the initial $O_{\delta_i}(x_i), $ just do zero extension.
+
+In this way, $f\in C^m(\Omega),$
+We found a suitable continuation $\widetilde{f}\in C^m(\mathbb{R}^n),$
+Satisfies $\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\Omega)}.$
+Generally, for $f\in H^{m,p}(\Omega),$ there is $f_i\xrightarrow{H^{m,p} } f.$
+At this time, follow the same method to construct the continuation,
+It is not difficult to prove that $\widetilde{f_i}\xrightarrow{H^{m,p} } \widetilde{f}.$
+Therefore there is still $\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\mathbb{R}^n)}.$
+The proposition is proved.
+
+In fact, in the proof, just let $j$ start counting from $1$. In this way, although the continuation is $C^{m-1}$,
+But since there are $C^m$ on both sides of $x_1=0$, the continuation $F_i$ is still generalized differentiable of order $m$,
+And the derivative falls in $L^p$ space.
+
+Sobolev's inequality
+-------------
+
+Also known as **embedding theorem**. Define homogeneous Sobolev modules
+$$|f|_{\dot{H}^{m,p}(\Omega)}=\left(\sum_{|\alpha|=m}\parallel\partial^\alpha f\parallel_{L^p(\Omega)}^p\right)^{\frac{1}{p} }.$$
+Do dimensional analysis on $x$: Replace $x$ with $kx,$ and there will be an extra constant $k^{\frac{n}{p}-m}.$
+The dimensions of the elements matching this formula with respect to $x$ should also be $\frac{n}{p}-m.$
+
+**Theorem 1.2** (Sobolev’s inequality (embedded theorem)). *When $\frac{n}{p}=\frac{n}{q}-m$, there is*
+$$\parallel f\parallel_{L^p(\Omega)}\le C|f|_{\dot{H}^{m,q}(\Omega)},\quad \,\forall\,f\in C_c^\infty(\Omega)$$
+
+**Proof:** First make basic observations to make the conclusion of the proof as simple as possible. Assume $m\ge 2,$
+For all inequalities below $m-1$, then
+$$\parallel f\parallel_{L^{p}(\Omega)}\le C_{m-1}|f|_{\dot{H}^{m-1,q_1}(\Omega)}.$$
+Remember $g_\alpha=\partial^\alpha f,$ then
+$$\parallel g_\alpha\parallel_{L^{q_1}(\Omega)}\le C_1|g_\alpha|_{\dot{H}^{1,q_2}(\Omega)}.$$
+thus getting
+$$\parallel f\parallel_{L^p(\Omega)}\le C_1C_{m-1}\sum_{\alpha}|g_\alpha|_{\dot{H}^{1,q_2}(\Omega)}\le C_m|f|_{\dot{H}^{m,q_2}(\Omega)},$$
+$C_m$ can be taken as $nC_1 C_{m-1}.$ due to $\begin{cases}
+                \frac{n}{p}=\frac{n}{q_1}-m+1,\\
+                \frac{n}{q_1}=\frac{n}{q_2}-1.
+\end{cases},$ found that $q_2=q,$ satisfies $\frac{n}{p}=\frac{n}{q}-m.$
+Therefore, it only needs to be proved for the case $m=1$.
+
+Next, assume that $q=1,$ $p=\frac{n}{n-1}$ has been proved. Then for general $p,q,$
+Taking $g=|f|^{\frac{p(n-1)}{n} },$ we have:
+$$\parallel f\parallel_{L^p}^{\frac{p(n-1)}{n} }=\parallel g\parallel_{L^{\frac{n}{n-1} } }\le C|g|_{\dot{H}^{1,1} }=\widetilde{C}\sum_{j=1}^n\parallel|f|^{\frac{p(n-1)}{n}-1}\partial_jf\parallel_{L^1}\le \widetilde{\widetilde{C} }|f|_{\dot{H}^{1,q} }\parallel|f|^{\frac{p(n-1)}{n}-1}\parallel_{L^{q^\ast } }.$$
+Among them, $q^\ast $ satisfies $\frac{1}{q}+\frac{1}{q^\ast }=1.$
+Combining $\frac{n}{p}=\frac{n}{q}-1,$ we have $q^\ast [\frac{p(n-1)}{n}-1]=p.$ Therefore
+$$\parallel|f|^{\frac{p(n-1)}{n}-1}\parallel_{L^{q^\ast } }=\parallel f\parallel_{L^{p} }^{\frac{p(n-1)}{n}-1},$$
+By moving this term to the left side of the inequality, the proof in the general case is given. So we only need to consider $q=1,$
+The case of $p=\frac{n}{n-1}$.
+
+When $n=1$, $p=\infty,$
+Certificate required$\parallel f\parallel_{L^\infty}\le C|f|_{\dot{H}^{1,1} }.$
+Since the function $f\in C_c^\infty(\Omega),$ on $\mathbb{R}^1$, the conclusion is obvious,
+Just take $C=1$ or even $\frac{1}{2}$. For general $n,$ assuming $n-1$ is correct,
+Remember $y=(x_2,\cdots,x_n),$ then we have:
+
+$$\begin{aligned}
+                \parallel f\parallel_{L^{\frac{n}{n-1} } }&=\left(\int_{\mathbb{R} }\int_{\mathbb{R}^{n-1} }|f(x_1,y)|^{\frac{n}{n-1} }dx_1dy\right)^{\frac{n-1}{n} }\\
+                &\le\left(\int_{\mathbb{R}^{n-1} }\int_{\mathbb{R} }|f(x_1,y)|dx_1\left(\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right)^{\frac{1}{n-1} }\right)^{\frac{n-1}{n} }\\
+                &\le \left|\left|\left(\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right)^{\frac{1}{n-1} }\right|\right|_{L^p(\mathbb{R}^{n-1}_y)}^{\frac{n-1}{n} }\left|\left|\int_{\mathbb{R} }|f(y_1,y)|dy_1\right|\right|_{L^q(\mathbb{R}^{n-1}_y)}^{\frac{n-1}{n} }
+            \end{aligned}$$
+
+Taking $q=\frac{n-1}{n-2},$ then $p=n-1.$ Applying the assumption, we have:
+$$\begin{aligned}
+                \parallel f\parallel_{L^{\frac{n}{n-1} } }&\le C\left|\left|\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right|\right|_{L^1(\mathbb{R}^{n-1}_y)}^{\frac{1}{n} }\left(\sum_{j=2}^m\left|\left|\partial_j\int_{\mathbb{R} }|f(y_1,y)|dy_1\right|\right|_{L^1(\mathbb{R}^{n-1}_y)}\right)^{\frac{n-1}{n} }\\
+                &\le C\parallel\partial_1 f\parallel_{L^1(\mathbb{R}^n)}^{\frac{1}{n} }\left(\sum_{j=2}^m\parallel\partial_j f\parallel_{L^1(\mathbb{R}^n)}\right)^\frac{n-1}{n}\\
+                &\le \widetilde{C}\sum_{j=1}^m \parallel\partial_j f\parallel_{L^1(\mathbb{R}^n)}=\widetilde{C}|f|_{\dot{H}^{1,1} }
+            \end{aligned}$$
+
+The inequality sign in the last line is obtained from Young's inequality. This gives the final proof.
+
+Let $C_c^\infty(\Omega)$ be completed by $H^{m,q}$ norm and the space obtained is $H_0^{m,q}(\Omega),$
+Then the inequality is also true for the functions in $H_0^{m,q}(\Omega)\cap L^p(\Omega)$. In particular,
+When $\Omega=\mathbb{R}^n$,
+$H_0^{m,q}(\mathbb{R}^n)$ is $H^{m,q}(\mathbb{R}^n).$
+
+The article was last updated on 2021-10-25 18:35:52
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《现代PDE基础》笔记(4)-Sobolev空间</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-10-24 19:48:18</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/10/24/《现代PDE基础》笔记(4)-Sobolev空间/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/25/%E3%80%8A%E5%87%A0%E4%BD%95%E6%B5%8B%E5%BA%A6%E8%AE%BA%E5%AF%BC%E8%AE%BA%E3%80%8B%E8%AE%B2%E4%B9%89%E7%AC%94%E8%AE%B0(1.2)-Hausdorff%E6%B5%8B%E5%BA%A6/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《几何测度论导论》讲义笔记(1.2)-Hausdorff测度</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Introduction to Geometric Measure Theory&#34; Lecture Notes (1.2)-Hausdorff Measure</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/23/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Forman%E6%9B%B2%E7%8E%87%E4%B8%8EOllivier%E6%9B%B2%E7%8E%87/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">论文笔记-Forman曲率与Ollivier曲率</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Thesis Notes-Forman Curvature and Ollivier Curvature</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

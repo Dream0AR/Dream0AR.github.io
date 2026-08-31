@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《黎曼几何初步》笔记(13)-子流形和第二基本形式 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(13)-子流形和第二基本形式</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (13)-Submanifolds and the second basic form</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-04-27 20:54:19
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    second basic form
+----------
+
+Let $\widetilde{M}$ be the $\widetilde{n}$ dimensional Riemannian manifold, $M$ be the $n$-dimensional submanifold,
+$n<\widetilde{n}.$
+Let $\mathscr{N}(M)$ be the entire **normal vector field** of $M$ in $\widetilde{M}$,
+$\mathscr{T}(M)$ is the entire tangent vector field. In order to examine the appearance of the submanifold,
+We take the normal vector field $N\in \mathscr{N}(M),$ and consider $\widetilde{D}_XN.$
+This is equivalent to examining all $\left<{}\widetilde D_XN,Y\right>,$
+$Y\in \mathscr{T}(M).$ This defines the **second basic form**.
+For the given $\nu\in \mathscr{N}(M),$ define:
+
+
+$$
+\Pi_\nu(X,Y)=\left<{}\widetilde{D}_X\nu,Y\right>,\quad X,Y\in \mathscr{T}(M),
+$$
+
+
+Call $M$ corresponding to the second fundamental form of $\nu$.
+**Lemma 1**. *For each fixed $\nu,$ $\Pi_\nu$ is a quadratic symmetric covariant tensor field on $M$.*
+
+**Certificate:** Since $\left<{}\nu,Y\right>\equiv 0,$ $Y\in \mathscr{T}(M),$
+For any $X,Y\in \mathscr{T}(M),$ we have:
+$$
+0=X\left<{}\nu,Y\right>=\left<{}\widetilde{D}_X\nu,Y\right>+\left<{}\nu,\widetilde{D}_XY\right>,
+$$
+
+
+Therefore we also have the **Weingarten equation**:
+
+
+$$
+\Pi_\nu(X,Y)=-\left<{}\nu,\widetilde{D}_XY\right>.
+$$
+
+ Next,
+Since $[X,Y]\in \mathscr{T}(M),$
+$$
+\left<{}\nu,\widetilde{D}_XY\right>=\left<{}\nu,\widetilde{D}_YX\right>+\left<{}\nu,[X,Y]\right>=\left<{}\nu,\widetilde{D}_YX\right>,
+$$
+
+
+Then from the Weingarten equation, $\Pi_\nu(X,Y)=\Pi_\nu(Y,X).$ In addition, it is easy to see
+
+
+$$
+\Pi_\nu(fX,Y)=f\Pi_\nu(X,Y)=\Pi_\nu(X,fY),
+$$
+Therefore $\Pi_\nu$ is indeed a tensor field on $M$. The lemma is proved.
+
+It can be seen that $\Pi_\nu(X,Y)(x)$ also only depends on $\nu(x),$
+And it is $C^\infty$ linear with respect to $\nu$.
+Note that $M_x^\perp$ is the orthogonal complement of $M_x$ in $\widetilde{M}_x$, and **quadratic form** can be defined
+$$
+S:M_x\otimes M_x\rightarrow M_x^\perp,
+$$
+
+ make
+
+
+$$
+\left<{}S(v,w),\nu\right>:=\Pi_\nu(v,w),\quad \,\forall\,\nu\in \mathscr{N}(M).
+$$
+
+
+It is easy to see that $S(v,w)$ is the projection of $-\widetilde{D}_XY(x)$ on $M_x^\perp$,
+The value of $X(x)=v,Y(x)=w,$ has nothing to do with the selection of vector field.
+
+The trace $\sum_{i=1}^nS(e_i,e_i)\in M_x^\perp,$ of $S$ is denoted as $\eta(x),$
+$\{e_i\}\subset M_x$ is a standard orthonormal basis. Then $\eta\in \mathscr{N}(M),$
+It is called the **average curvature normal vector field** of $M$, and $|\eta|$ is called the **average curvature** of $M$.
+
+Sometimes the symmetric linear transformation $A_\nu:M_x\rightarrow M_x,$ is also defined such that
+
+
+$$
+\left<{}A_\nu(v),w\right>=\Pi_\nu(v,w)=\left<{}v,A_\nu(w)\right>,
+$$
+That is, $A_\nu(v)$ is the projection of $\widetilde{D}_v\nu$ on $M_x$,
+We also call $A_\nu$ the **second fundamental form** corresponding to $\nu$. Its relationship with the average curvature is:
+
+
+$$
+\left<{}\eta(x),\nu\right>=\sum_{i=1}^n\left<{}S(e_i,e_i),\nu\right>=\sum_{i=1}^n\Pi_\nu(e_i,e_i)=\sum_{i=1}^n\left<{}A_\nu(e_i),e_i\right>=\operatorname{tr}A_\nu.
+$$
+When $\widetilde{n}=n+1$, $M$ is the **hypersurface** in $\widetilde{M}$,
+At this time, the unit normal vector field $\nu,$ can be locally fixed, denoted as $A:=A_\nu.$
+At this time $\widetilde{D}_v\nu\in M_x,$ $A(v)=\widetilde{D}_v\nu.$
+The eigenvalues of $A$ are called principal curvatures. They are all real due to symmetry, and are denoted as $p_1,\cdots,p_n.$
+$\det A$ is called the **Gauss curvature** of $M$. When $n=2$, it is consistent with the cross-sectional curvature,
+This is Gauss's **Egregium (brilliant) theorem**.
+
+Suppose $\widetilde{M}=\mathbb{R}^{n+1},$ If the hypersurface $M$ is orientable,
+Then there is an overall unit normal vector field $\nu,$ that can be defined $\Gamma:M\rightarrow S^n,$
+$x\mapsto \nu(x),$ is called **Gauss map**. Then,
+
+
+$$
+d\Gamma(X)=\widetilde{D}_X\nu=A(X),\quad \frac{\Gamma^\ast \Omega_0}{\Omega}=\det d\Gamma=\det A,
+$$
+Where $\Omega_0,\Omega$ are the volume elements of $S^n,M$ respectively,
+From this we can see the geometric meaning of Gauss curvature $\det A$.
+
+If $M$ is assumed to have positive Gauss curvature, then the Gauss map $\Gamma$ is an immersion.
+Taking the standard Riemannian metric $g_0,$ on $S^n$ can give $M$ a new Riemannian metric $\Gamma^\ast g_0.$
+When $M$ is compact, $\Gamma^\ast g_0$ is complete. Selected by the metric, $\Gamma$ is locally isosome,
+Therefore, it is a covering map. And since $S^n$ is simply connected, $\Gamma$ is a diffeomorphism.
+Thus we have the lemma:
+**Lemma 2**. *Suppose $M$ is a compact hypersurface in $\mathbb{R}^{n+1}$ with positive Gauss curvature, then the Gauss map $\Gamma:M\rightarrow S^n$ is a diffeomorphism.*
+
+**Corollary 3**. *The compact hypersurface with positive curvature in $\mathbb{R}^{n+1}$ must be a convex surface, that is, it always falls on one side of its tangent plane.*
+
+Now define two orthogonal projections:
+$$
+\top:\widetilde{M}_x\rightarrow M_x,\quad \perp:\widetilde{M}_x\rightarrow M_x^\perp,
+$$
+
+
+It is easy to verify that $\top(\widetilde{D}_XY)$ satisfies the properties of Levi-Civita contact on $M$,
+Therefore $D_XY=\top(\widetilde{D}_XY).$
+Recall that we explained earlier that $S(X,Y)$ is the projection of $-\widetilde{D}_XY(x)$ on $M_x^\perp$,
+Therefore we have:
+
+$$
+S(X,Y)=\perp(-\widetilde{D}_XY)=D_XY-\widetilde{D}_XY.
+$$
+
+
+This is exactly the definition introduced when discussing fully geodesic submanifolds earlier.
+Now we can say that $M$* is fully geodesic if and only if its second fundamental form is always zero.*
+The second fundamental form thus characterizes the difference from the full geodesic.
+
+Gauss equation
+----------
+
+Recall that the cross-sectional curvature of any $2$ dimensional tangent plane of the full geodesic submanifold is the same as the original manifold,
+For the general case we have the following equation:
+**Proposition 4** (Gauss equation). *$\,\forall\,X,Y\in \mathscr{T}(M),$ We have:*
+
+
+
+$$
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}R_{XY}X,Y\right>-\left<{}S(X,X),S(Y,Y)\right>+|S(X,Y)|^2.
+$$
+
+
+
+**Proof:** The proof is a straightforward calculation:
+$$
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}\widetilde{D}_{[X,Y]}X,Y\right>-\left<{}\widetilde{D}_X\widetilde{D}_YX,Y\right>+\left<{}\widetilde{D}_Y\widetilde{D}_XX,Y\right>,
+$$
+
+
+Among them, since the image of $S$ falls in $M_x^\perp$,
+
+
+$$
+\left<{}\widetilde{D}_{[X,Y]}X,Y\right>=\left<{}D_{[X,Y]}X,Y\right>-\left<{}S([X,Y],X),Y\right>=\left<{}D_{[X,Y]}X,Y\right>,
+$$
+$$
+\begin{aligned}
+ \left<{}\widetilde{D}_X\widetilde{D}_YX,Y\right>&=\left<{}\widetilde{D}_X(D_YX-S(X,Y)),Y\right>\\
+ &=\left<{}\widetilde{D}_XD_YX,Y\right>-\left<{}\widetilde{D}_XS(X,Y),Y\right>\\
+ &=\left<{}D_XD_YX,Y\right>-\left<{}S(X,D_YX),Y\right>-X\left<{}S(X,Y),Y\right>+\left<{}S(X,Y),\widetilde{D}_XY\right>\\
+ &=\left<{}D_XD_YX,Y\right>+\left<{}S(X,Y),D_XY-S(X,Y)\right>\\
+ &=\left<{}D_XD_YX,Y\right>-\left<{}S(X,Y),S(X,Y)\right>
+ \end{aligned}
+$$
+ Similarly,
+
+
+$$
+\left<{}\widetilde{D}_Y\widetilde{D}_XX,Y\right>=\left<{}D_YD_XX,Y\right>-\left<{}S(X,X),S(Y,Y)\right>.
+$$
+
+
+The conclusion can be obtained by integrating the above equations.
+**Note:** The Gauss equation describes $\top\widetilde{R}_{XY}Z,$
+And $\perp \widetilde{R}_{XY}Z$ will be given by the following **Codazzi equation**. In fact,
+Using the same method used to prove the Gauss equation, we can prove that the following equation holds:
+$$
+\left<{}\widetilde{R}_{XY}Z,W\right>=\left<{}R_{XY}Z,W\right>-\left<{}S(X,Z),S(Y,W)\right>+\left<{}S(X,W),S(Y,Z)\right>.
+$$
+
+
+
+**Corollary 5**. *Suppose $M$ is a hypersurface in $\widetilde{M}$, and $A$ is the second fundamental form of the unit normal vector field $\nu$.
+If $P$ is the $2$-plane in $M_x$, let $A|_P:P\rightarrow P$ be $A:P\rightarrow M_x$ and then composite the orthogonal projection $M_x\rightarrow P,$ then*
+
+
+
+$$
+\widetilde{K}(P)=K(P)-\det(A|_P).
+$$
+**Certificate:** When $M$ is a hypersurface,
+Since $\left<{}S(X,Y),\nu\right>=\Pi_\nu(X,Y)=\left<{}A(X),Y\right>,$
+$S(X,Y)=\left<{}A(X),Y\right>\nu.$ Therefore, take $\{e_1,e_2\}$ as the standard orthonormal basis of $P$,
+rule
+$$
+\left<{}S(e_1,e_1),S(e_2,e_2)\right>-|S(e_1,e_2)|^2=\left<{}A(e_1),e_1\right>\left<{}A(e_2),e_2\right>-\left<{}A(e_1),e_2\right>^2=\det(A|_P).
+$$
+
+
+
+Since $\widetilde{K}(P)=\left<{}\widetilde{R}_{e_1e_2}e_1,e_2\right>,$
+$K(P)=\left<{}R_{e_1e_2}e_1,e_2\right>,$ The conclusion is obtained immediately from the Gauss equation.
+
+**Corollary 6** (Gauss's wonderful theorem). *Suppose $M$ is a surface in $\mathbb{R}^3$, then its cross-sectional curvature is equal to its Gauss curvature.*
+**Corollary 7**. *Suppose $\{\nu_1,\cdots,\nu_{\widetilde{n}-n}\}$ is the unitary basis of $M_x^\perp$, then $\,\forall\,X,Y\in M_x,$*
+
+
+
+$$
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}R_{XY}X,Y\right>-\sum_i \Pi_{\nu_i}(X,X)\Pi_{\nu_i}(Y,Y)+\sum_i \Pi_{\nu_i}(X,Y).
+$$
+**Corollary 8** (Synge Lemma). *Assume $M$ contains a geodesic $\widetilde{M}$$\gamma,$, then for any tangent plane $P$ satisfies $\dot\gamma\in P\subset M_x,$ we have $K(P)\le \widetilde{K}(P).$*
+**Proof:** Suppose $P$ is formed by $\dot\gamma,Y$. Since $\gamma$ is a geodesic,
+$S(\dot\gamma,\dot\gamma)=0.$ Then let $X=\dot\gamma,$ in Gauss equation
+Get to the conclusion immediately.
+
+**Corollary 9**. The **ruled surface** (single parameter straight line family) in *$\mathbb{R}^3$ has non-positive Gauss curvature.*
+**Corollary 10**. *Suppose $M$ is a $2$-dimensional surface in $\widetilde{M}$, including a geodesic $\gamma,$ of $\widetilde{M}$, then $K(M_{\gamma(t)})\equiv \widetilde{K}(M_{\gamma(t)})$ if and only if $M_{\gamma(t)}$ is parallel to $\gamma$ in $\widetilde{M}$.*
+**Proof:** Suppose $\gamma$ is a regular geodesic, $X$ is the unit vector field in $M$, and is perpendicular to $\gamma$, then
+
+
+$$
+\widetilde{K}(M_{\gamma(t)})=K(M_{\gamma(t)})+|S(\dot\gamma(t),X(t))|^2.
+$$
+Therefore the equality holds if and only if $\widetilde{D}_{\dot\gamma}X\equiv D_{\dot\gamma}X.$
+
+$\dot\gamma$ is of course parallel to $\gamma$ in $M,\widetilde{M}$, and
+
+
+$$
+\left<{}D_{\dot\gamma}X,\dot\gamma\right>=\dot\gamma\left<{}X,\dot\gamma\right>-\left<{}X,D_{\dot\gamma}\dot\gamma\right>=0, \quad \left<{}D_{\dot\gamma}X,X\right>=0\:\Rightarrow\: D_{\dot\gamma}X=0,
+$$
+$X$ is parallel along $\gamma$ in $M$.
+Therefore, the equation is always true if and only if $X$ is also parallel along $\gamma$ in $\widetilde{M}$,
+That is, $M_{\gamma(t)}$ is parallel to $\gamma$ in $\widetilde{M}$.
+**Corollary 11**. *Suppose $M$ is a Riemannian manifold, $x\in M.$ takes $\{x^i\}$ as the normal coordinate system of $x$, $P\subset M_x$ is formed by $\{\frac{\partial {} }{\partial {}x^1},\frac{\partial {} }{\partial {}x^2}\}$,
+$\mathscr{S}$ is the surface $\{x^i=0:i\ge 3\}.$, then the cross-sectional curvature of $P$ is equal to the Gauss curvature of $\mathscr{S}$ under the induced metric.*
+
+**Proof:** Just note that for the normal coordinate system, $S\equiv 0 at point $O$, $ the second fundamental form is zero,
+Then it is obtained from the Gauss equation.
+
+Codazzi equation
+----------
+Codazzi equation is also called Codazzi-Mainardi equation,
+By directly calculating, we can get the following results about $\widetilde{R}_{XY}Z$.
+
+**Proposition 12** (Codazzi equation). *If $X,Y,Z\in \mathscr{T}(M),$ $R,\widetilde{R}$ is the curvature tensor of $M,\widetilde{M}$, then*
+$$
+\begin{aligned}
+ \perp\widetilde{R}_{XY}Z=&\left(\perp \widetilde{D}_XS(Y,Z)-S(D_XY,Z)-S(Y,D_XZ)\right)\\
+ &-\left(\perp \widetilde{D}_YS(X,Z)-S(D_YX,Z)-S(X,D_YZ)\right)
+ \end{aligned}
+$$
+
+The Codazzi equation and the Gauss equation are often collectively referred to as the **Gauss-Codazzi equation**.
+The Codazzi equation is generally complex, but is simpler in special cases.
+**Proposition 13**. *Suppose $\widetilde M$ is a constant curvature space, $M$ is the hypersurface therein, then $(D_X\Pi)(Y,Z)$ is symmetric about $X,Y,Z$, where $X,Y,Z\in \mathscr{T}(M).$*
+
+**Proof:** Since $\Pi(Y,Z)=\Pi(Z,Y),$ is obviously symmetric about $Y,Z$. So we only need to prove
+$$
+(D_X\Pi)(Y,Z)=(D_Y\Pi)(X,Z).
+$$
+
+
+
+Taking the unit normal vector field $\nu,$ then $S(X,Z)=\Pi(X,Z)\nu.$ Therefore
+
+
+$$
+\perp\widetilde{D}_YS(X,Z)=\perp\left((Y\Pi(X,Z))\nu+\Pi(X,Z)\widetilde{D}_Y\nu\right)=(Y\Pi(X,Z))\nu.
+$$
+When $\widetilde{M}$ has constant cross-section curvature $c$,
+
+
+$$
+\widetilde{R}_{XY}Z=c(\left<{}X,Z\right>Y-\left<{}Y,Z\right>X).
+$$
+
+
+This is because the right formula constitutes the curvature tensor on $\widetilde{M}$, and also has constant cross-section curvature $c.$
+At this point you can find $\perp\widetilde{R}_{XY}Z=0.$
+Substituting into the Codazzi equation, we have:
+
+
+$$
+Y\Pi(X,Z)-\Pi(D_YX,Z)-\Pi(X,D_YZ)=(D_Y\Pi)(X,Z)=(D_X\Pi)(Y,Z)=\cdots.
+$$
+
+
+
+A fundamental application of the Gauss-Codazzi equation is to illustrate the existence and uniqueness of a hypersurface given its second fundamental form.
+The core of the proof is to consider a system of overdetermined first-order partial differential equations determined by:
+$$
+S(Y_i,Y_j)=\Pi(Y_i,Y_j)\nu=D_{Y_i}Y_j-\widetilde{D}_{Y_i}Y_j,\quad \widetilde{D}_{Y_i}\nu=A(Y_i).
+$$
+
+
+Since the equation is overdetermined, it may not have a solution.
+In fact, the necessary and sufficient condition for solvability is to satisfy the previous Gauss-Codazzi equation,
+This is obtained by considering **Frobenius theorem**. Below we only describe the theorem of existence and uniqueness.
+**Theorem 14** (Uniqueness). *Suppose $M,M'$ are two hypersurfaces in $\mathbb{R}^{n+1}$, with unit normal vector fields $\nu,\nu'.$ Let $\varphi:M\rightarrow M'$ be isometry, such that $\Pi(X,Y)=\Pi'(d\varphi(X),d\varphi(Y)),$ Then $M, M'$ are **contract**,
+That is, there is an isometric isomorphism $\Phi:\mathbb{R}^{n+1}\rightarrow \mathbb{R}^{n+1},$ such that $\Phi_M=\varphi.$*
+**Theorem 15** (Existence). *Given that the $n$ Veriemannian manifold and the symmetric tensor $\Pi,$ satisfy the Gauss-Codazzi equation, then $M$ can be locally isometrically embedded in $\mathbb{R}^{n+1}$, so that its second basic form relative to a certain unit normal vector field is exactly $\Pi.
+$ Furthermore this embedding is unique in the sense of a phase-difference global isometric isomorphism $\overline{\varphi}:\mathbb{R}^{n+1}\rightarrow \mathbb{R}^{n+1}$.*
+
+We can generalize the theorem to $n+1$ Viriemannian manifolds $\widetilde{M},$
+But the form of the Gauss-Codazzi equation will be more complex. In addition, it can also be extended to cases with higher codimension,
+But at this time, additional integrability conditions **Ricci equation** need to be added,
+It is obtained by considering the $\perp\widetilde{R}_{XY}\nu$ term.
+
+Ricci equation
+----------
+
+Take $\{\nu_i\}$ as the standard orthonormal basis of $M_x^\perp$,
+Definition **Basic form**$\beta_{r}^s(X_p)=\left<{}\widetilde{D}_{X_p}\nu_r,\nu_s\right>.$
+Denote $\Pi_r:=\Pi_{\nu_r},$ take $\{U_i\}$ as the standard orthonormal basis of $\{M_x\}$,
+Define the convolution between the second basic forms:
+$$
+\Pi_r\ast \Pi_s(X,Y)=\sum_i \Pi_r(X,U_i)\Pi_s(U_i,Y),
+$$
+
+
+It is easy to see that this equation can be defined reductively as a convolution between quadratic symmetric tensor fields.
+The following **Ricci equation** is calculated:
+
+$$
+\begin{aligned}
+ \left<{}\widetilde{R}_{XY}\nu_r,\nu_s\right>=&\left(\Pi_r*\Pi_s(Y,X)+(D_Y\beta_r^s)(X)+\beta_w^s(Y)\beta_r^w(X)\right)\\
+ &-\left(\Pi_r*\Pi_s(X,Y)+(D_X\beta_r^s)(Y)+\beta_w^s(X)\beta_r^w(Y)\right)\\
+ \end{aligned}
+$$
+The article was last updated on 2022-04-27 21:03:42
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《黎曼几何初步》笔记(13)-子流形和第二基本形式</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-04-27 20:54:19</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/04/27/《黎曼几何初步》笔记(13)-子流形和第二基本形式/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/04/30/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(14)-%E4%BD%93%E7%A7%AF%E7%9A%84%E5%8F%98%E5%88%86%E5%92%8C%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(14)-体积的变分和极小子流形</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (14) - Variations of Volume and Minimal Submanifolds</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/22/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E5%BC%A7%E9%95%BF%E7%AC%AC%E4%B8%80%E4%B8%8E%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; notes (6) - the first and second variational formulas of arc length</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

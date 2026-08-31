@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分几何初步》3.4-3.5 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《微分几何初步》3.4-3.5</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; 3.4-3.5</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-08-25 10:42:10
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/">微分几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    vector field
+------
+
+### Vector field on the plane
+
+The **vector field** on the open set $U\subset \mathbb{R}^2$ is a map,
+For each $q=(x,y)\in U$, specify a $w(q)=(a(x,y),b(x,y))\in \mathbb{R}^2.$
+The vector field is said to be **differentiable**, if $w$ is differentiable, that is, $a, b$ are both differentiable.
+By default we always consider differentiable vector fields.
+
+Given a vector field, we consider whether there is a locus of the field,
+That is, whether there is a differentiable curve $\alpha(t)=(x(t),y(t)),$
+Such that $\alpha'(t)=w(\alpha(t)).$ In fact, this is the solution to the system of ordinary differential equations: $$\left\{
+        \begin{aligned}
+            \frac{dx}{dt}=a(x,y)\\
+            \frac{dy}{dt}=b(x,y)
+        \end{aligned}
+        \right.$$
+We say that the vector field $w$ determines the above system of differential equations. For example, for the vector field $w(x,y)=(x,y),$
+The trajectory passing through $(x_0,y_0)$ is $\alpha(t)=(x_0e^t,y_0 e^t);$
+For the vector field $w(x,y)=(y,-x),$
+The trajectory passing through $(x_0,y_0)$ is $\beta(t)=(r\sin t,r\cos t),$ $r^2=x_0^2+y_0^2.$
+
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/clUGft9ZwT41PN2.png width='50%' height='50%'>
+From the basic theory of ordinary differential equations (existence, uniqueness), we have the following theorem:
+
+**Theorem 1.1**. *For a given vector field $w,$ and a fixed point $p\in U,$ on any open set $U\subset \mathbb{R}^2$, there is a trajectory of the field $\alpha:I\rightarrow U,$ where $I$ is the small neighborhood at the origin, $\alpha(0)=p.
+$ Such a trajectory is unique, that is, if there is another trajectory $\beta:J\rightarrow U,$ $J$ is a small neighborhood of the origin, $\beta(0)=p,$ is limited to $I\cap J$$\alpha=\beta.$*
+
+Based on the dependence of the solution on the initial value, we further have:
+**Theorem 1.2**. *The meaning of the letters is the same as above, there is $p$ point neighborhood $V\subset U\subset \mathbb{R}^2,$ and there is a differentiable mapping $\alpha:V\times I\rightarrow U,$ such that $\,\forall\,q\in V,$ $\alpha(q,\cdot)$ is the trajectory of field $w$ through $q$ point.*
+Such a mapping $\alpha$ is called the (local) **flow** (local flow) of $w$ at point $p$. From the diagram,
+It "shoots" the cylinder onto the plane $(U)$, mapping each vertical line as a trajectory.
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/PS3wZrAmsBXEnfL.png width='50%' height='50%'>
+
+From the above theorem, the conclusion is as follows:
+**Lemma 1.3**. *Let $w$ be a vector field on the open set $U\subset \mathbb{R}^2$, $p\in U$ has $w(p)\neq 0.$ Then there exists $p$ point neighborhood $W\subset U$ and a differentiable function $f:W\rightarrow \mathbb{R},$ such that $f$ is constant along the trajectory, and $df_q\neq 0,$ $\,\forall\,q\in W.$*
+**Proof:** Let $p$ be the origin, and $w(p)$ be along the direction of $x$ axis.
+From the above theorem we have local flow $\alpha:V\times I\rightarrow U.$
+Take $\tilde\alpha$ as $\alpha$ and limit it to the rectangle $(V\times I)\cap \{(0,y,t)\in \mathbb{R}^3\}$.
+By definition, $d\tilde \alpha_p$ maps the tangent direction of the $t$ axis to $w(p),$
+Reflect the tangent direction of the $y$ axis to itself, so $d\tilde \alpha_p$ does not degenerate. According to the inverse function theorem,
+On a sufficiently small neighborhood $W\subset U$, there exists a differentiable function $\tilde \alpha^{-1}.$
+Then take $f$ as the component of $\tilde \alpha^{-1}$ on the $y$ axis. It is easy to see that $f$ meets the requirements.
+
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/2Fl7eQPofshRBVb.png width='50%' height='50%'>
+Such a function $f$ that is constant along the trajectory (solution) is called the (local) first integral of the field $w$ in the neighborhood of point $p$.
+For example, for the field $w(x,y)=(y,-x),$
+A first integral on $\mathbb{R}^2-O$ is $f(x,y)=x^2+y^2.$
+It is easy to see that the first integral defined in this way is not unique. According to the implicit function theorem, where the differential of $f$ does not disappear,
+$f=C$ gives the relationship between $x, y$, thereby eliminating an unknown quantity and making the solution easier.
+
+The **direction field**$r,$ on the open set $U\subset \mathbb{R}^2$ refers to each point $p\in U,$
+Specify a straight line $r(p).$ on $\mathbb{R}^2$ that passes through point $p$. $ is said to be differentiable at point $p$,
+If there is a non-zero differentiable vector field $w,$ on $p$ point neighborhood $V\subset U$
+Satisfying $\,\forall\,q\in V$, non-zero $w(q)$ is the basis of $r(q)$.
+The fact that $r$ is differentiable on $U$ naturally means that it is slightly differentiable on $U$.
+Each non-zero differentiable vector field $w$ can naturally generate a differentiable direction field $r.$
+It should be noted that, according to the definition, each differentiable direction field point locally corresponds to a non-zero differentiable vector field $w,$
+But it does not necessarily correspond to a non-zero differentiable vector field as a whole, as shown in the figure below.
+It can be said that the vector field corresponding to the direction field locally gives an orientation of the direction field,
+Then a direction field that cannot be oriented as a whole cannot correspond to an overall non-zero vector field.
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/a5mbLhMNnPXVSUZ.png width='50%' height='50%'>
+
+A regular curve $C\subset U$ is called the **integral curve** of the direction field $r$ above $U$,
+If $\,\forall\,q\in C,$ $r(q)$ is the tangent line of $C$ at point $q$.
+It is easy to see that the integral curve is locally the trajectory of the vector field corresponding to the differentiable direction field,
+Therefore, each differentiable direction field can always find the integral curve passing through any fixed point,
+That is, similar to the splicing of solutions in ordinary differential equations, the integral curve is to splice the trajectories of the vector fields together.
+
+Since the trajectory and the integral curve seem to correspond to the same thing, why introduce a new definition?
+Because the overall direction field does not necessarily correspond to the overall vector field, there is no concept of the so-called overall trajectory.
+But the overall integral curve does exist. It can be seen that differentiability is also very important for the direction field.
+By default we always consider differentiable direction fields.
+
+The direction field can also be given by a differential equation. For any vector field $w,$
+It is easy to see that the direction fields generated by $\,\forall\,\lambda\neq 0,$ $\lambda w$ and $w$ are consistent,
+$\lambda$ can be a differentiable function that is non-zero everywhere. For a system of ordinary differential equations $\begin{cases}
+        \frac{dx}{dt}=\lambda(x,y)a(x,y)\\ \frac{dy}{dt}=\lambda(x,y)b(x,y)
+        \end{cases},$ In order to eliminate $\lambda,$
+This direction field can be expressed by the differential equation $b(x,y)\frac{dx}{dt}-a(x,y)\frac{dy}{dt}=0$,
+The solution to the equation corresponds to the integral curve.
+For the direction field, we don’t care about the parameterization of the curve (for the trajectory of the vector field, we need to pay attention to parameter selection),
+Therefore, we often use differential equations of the form $adx+bdy=0$ to represent the direction field.
+
+### Vector field on surface
+All the previous contents only use the local properties on $\mathbb{R}^2$, mainly relying on its differentiable structure.
+Therefore, we can naturally transfer the above discussion to the surface.
+
+**Definition 1.4**. *The vector field $w,$ on the open set $U$ in the surface $S$ specifies a correspondence of $w(p)\in T_p(S)$ for each point $p\in U,$.
+It is said to be differentiable at $p$ point. If there are differentiable $a(u,v), b(u,v),$ for parameterized $x(u,v),$ in a neighborhood of $p$ point, such that $w(x(u,v))=a(u,v)x_u+b(u,v)x_v.$ It has nothing to do with parameterization selection.*
+
+Similarly, you can define the trajectory of the vector field, the direction field, the integral curve, etc.
+Just replace $\mathbb{R}^2$ with $S$, and the theorem and lemma are naturally established.
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/INDqrGEuOld7iYy.png width='50%' height='50%'>
+
+Next, we introduce the main theorem of this section.
+**Theorem 1.5**. *On the open set $U\subset S$, there are two vector fields $w_1, w_2,$ that are linearly independent at a certain point $p\in U$. Then there is a certain $p$ point neighborhood $V\subset U,$ on which there is parameterization such that $\,\forall\,q\in V,$ The two coordinate curves passing through the point are tangent to $w_1(q), w_2(q)$ respectively.*
+**Proof:** Take the $p$ point neighborhood $W\subset U,$ so that it has the first integral $f_1,f_2.$
+Definition $\varphi:W\rightarrow \mathbb{R}^2,$ $\varphi(q)=(f_1(q),f_2(q)),$
+Then $d\varphi_p(w_1)=(0,(df_2)_p(w_1))\neq 0,$
+$d\varphi_p(w_2)=((df_1)_p(w_2),0)\neq 0,$ and linearly independent,
+$d\varphi_p$ does not degenerate. Therefore $\varphi$ is a local homeomorphism,
+Therefore, $\varphi$ can be taken as the coordinate function on the smaller neighborhood $V\subset W$.
+The coordinate curves $f_1(q)=const, f_2(q)=const$ are tangent to $w_1(q), w_2(q)$ respectively.
+
+It should be noted that the theorem does not mean that the velocity vector of the coordinate curve is $w_1(q),w_2(q).$
+In fact, the above theorem can be expressed in the following form.
+**Corollary 1.6**. *There are two direction fields $r_1, r_2,$ on the open set $U\subset S$. At a certain point $p\in U$, $r_1(p)\neq r_2(p).$ then there is a certain $p$ point neighborhood $V\subset U,$ on which there is a parameterization such that $\,\forall\,q\in V,$ The two coordinate curves passing through this point are the integral curves of $r_1 and r_2$ respectively.*
+The theorem can illustrate the existence of orthogonal parameterization:
+
+**Corollary 1.7**. *$\,\forall\,p\in S,$ $p$ There is a parameterization $x(u,v),$ on a certain neighborhood $V$, such that the coordinate curves $u=const, v=const$ are orthogonal to each other at any point $q\in V$. Such $x$ is called an orthogonal parameterization.*
+**Proof:** Take any parameterized $\bar x:\bar U\rightarrow S,$ at point $p$
+Take the vector field $w_1=\bar x_{\bar u},$
+$w_2=-(\bar F/\bar E)\bar x_{\bar u}+\bar x_{\bar v}.$
+Then $w_1\cdot w_2=-\bar F +\bar F=0,$ is at any point $q$.
+Applying the theorem yields the required parameterization.
+
+Not only that, you can also arbitrarily specify two orthogonal directions at point $p$ to generate the required orthogonal parameterization. In particular,
+For special parameterizations, we have the following corollary:
+
+**Corollary 1.8**. *There is parameterization near the hyperbolic point, so that the coordinate curve forms an asymptote network; there is (orthogonal) parameterization near the non-umbilical point, so that the coordinate curve forms a curvature line network.*
+**Proof:** Near the hyperbolic point, satisfy $eg-f^2<0,$
+From this, the asymptotic differential equation $e{u'}^2+2fu'v'+g{v'}^2=0$ can be linearly decomposed into the form of $(Au'+Bv')(Au'+Dv')=0$,
+Thus, the two direction fields are determined, and their integral curves are the asymptotes. The conclusion can be drawn from the previous inference.
+
+Near the non-umbilical point, since the differential equation of the curvature line is more complicated, from the previous inference,
+We might as well take the orthogonal parameterization first to make $F=0.$ Since it is a non-umbilical point, we can take the orthogonal parameterization to make $f\neq 0,$
+Then from $EGf^2>0,$ the differential equation can be linearly decomposed using the same method as above to obtain the direction field,
+The integral curve is the curvature line. The conclusion can be drawn from the previous inference.
+
+Ruled surfaces and minimally curved surfaces
+----------------
+
+### Ruled surface
+A differentiable single-parameter straight line family $\{L_t\}$, refers to the differentiable $\{\alpha(t),w(t)\},$
+For each $t\in I,$ specify a point $\alpha(t)\in \mathbb{R}^2$ and vector $w(t).$
+The straight line $L_t$ passes through $\alpha(t),$ with $w(t)$ as the direction.
+A ruled surface is a surface generated by a single-parameter straight line family, that is, $x(t,v)=\alpha(t)+vw(t),$
+$(t,v)\in I\times \mathbb{R}.$ Straight line $L_t$ is called straight busbar (rulings),
+The curve $\alpha(t)$ is called the directrix of the surface. Generally speaking, singular points are allowed to occur in $x$.
+It is always assumed next that $|w(t)|=1,$ $w'(t)\neq 0.$ The latter assumption is that the surface is non-cylindrical.
+From the previous assumption, we have $\left<{}w(t),w'(t)\right>=0.$
+We hope to find a curve $\beta(t)$ such that $\left<{}\beta'(t),w'(t)\right>=0,$
+And $\beta$ falls on $x$. Let $\beta(t)=\alpha(t)+u(t)w(t),$
+Then $\beta'=\alpha'+u'w+uw'.$ If the requirements are met,
+Then $0=\left<{}\beta',w'\right>=\left<{}\alpha',w'\right>+u\left<{}w',w'\right>,$
+$u=-\frac{\left<{}\alpha',w'\right>}{\left<{}w',w'\right>}.$
+Therefore, taking such $u$, the corresponding $\beta$ meets the requirements.
+
+Next, it will be explained that $\beta$ has nothing to do with the selection of the directrix.
+If $x(t,u)=\alpha(t)+uw(t)=\bar\alpha(t)+v(u)w(t).$
+Then $\beta-\bar \beta=(\alpha-\bar\alpha)+\frac{\left<{}\bar\alpha'-\alpha',w'\right>}{\left<{}w',w'\right>}w.$
+Since $\alpha-\bar\alpha=(u-v)w,$ and $\left<{}w,w'\right>=0,$
+Then there is $\beta=\bar\beta.$. Therefore, such a curve $\beta$ is only related to the ruled surface itself,
+It is called the **waistline**, and the point on it is called the **center point** of the ruled surface. For example, the waistline of the spiral surface is the central axis,
+The waist line of a single-leaf hyperboloid is the latitude line with the smallest radius.\
+Select $\beta$ as the directrix of the ruled surface, $x(t,u)=\beta(t)+uw(t),$
+Then $x_t=\beta'+uw',$ $x_u=w,$
+$x_t\wedge x_u=\beta'\wedge w+uw'\wedge w.$ $w'$ is perpendicular to $\beta',w,$
+Thus we can remember $\beta'\wedge w=\lambda w',$ $\lambda=\lambda(t).$
+Then $|x_t\wedge x_u|^2=(\lambda^2+u^2)|w'|^2,$
+Therefore, the singular point can only appear on $u=0$, that is, the directrix $\beta$. And the singular point appears when and only if $\lambda=0,$
+That is, $w(t)$ is on the tangent to the directrix.
+It can be expressed specifically that $\lambda=\frac{(\beta',w,w')}{|w'|^2}.$
+Let's calculate the Gauss curvature of the ruled surface at the regular point. $x_{tt}=\beta''+uw'',$
+$x_{tu}=w',$ $x_{uu}=0,$ thus $g=0,$
+$f=\frac{(x_t,x_u,x_{tu})}{|x_t\wedge x_u|}=\frac{(\beta',w,w')}{|x_t\wedge x_u|}.$
+Therefore $K=\frac{eg-f^2}{EG-F^2}=-\frac{\lambda^2 |w'|^4}{(\lambda^2+u^2)^2|w'|^4}=-\frac{\lambda^2}{(\lambda^2+u^2)^2}.$
+Therefore, at the regular point, the Gauss curvature of the ruled surface $K\le 0,$
+And is equal to zero only when $w(t)$ falls on the tangent line $\beta(t)$, which occurs along the straight bus. It can be seen that,
+If $\lambda\neq 0,$ then $|K(u)|$ is a continuous function on the straight bus, and its value is symmetric about the center point,
+At the center point $|K(u)|$ reaches the maximum value.
+
+The function $\lambda(t)$ is called the distribution parameter of $x$. Since the waistline has nothing to do with the selection of the directrix,
+The same goes for $\lambda$. If $x$ is regular,
+There is $N(t,u)=\frac{x_t\wedge x_u}{|x_t\wedge x_u|}=\frac{\lambda w'+uw'\wedge w}{\sqrt{\lambda^2+u^2}|w'|}.$
+If $\lambda\neq 0,$ $N(t,0)=\frac{w'}{|w'|}\frac{\lambda}{|\lambda|}.$
+Consider the angle between $N(t,u)$ and $N(t,0)$, $\tan\theta=\frac{u}{|\lambda|},$
+Proportional to $u$, the proportional coefficient is the reciprocal of the distribution parameter.
+
+Using this property, an interesting conclusion can be drawn:
+The ruled surface generated by the single-parameter straight line family corresponding to the normal vector on the straight bus is exactly a hyperbolic parabola $z=kxy,$
+$k=\frac{1}{\lambda}.$
+
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/h17DmyHNwXn6vRx.png width='50%' height='50%'>
+For the ruled surface $x(t,v)=\alpha(t)+vw(t),$ we call it **developable**,
+If $(\alpha',w,w')=0.$, calculate $g=0,$
+$f=\frac{(\alpha',w,w')}{|x_t\wedge x_u|}=0,$
+Therefore, $K=\frac{eg-f^2}{EG-F^2}=0,$ means that the Gauss curvature of the developable surface is always zero.
+In fact, the reverse is also true, that is, a surface with zero Gauss curvature must also be developable.
+It is locally equidistant from the plane, so you can cut a piece of the surface and expand it into a plane,
+This is also the reason why developable surfaces are named.
+
+A basic fact is that the tangent plane of a developable curve remains unchanged along the straight generator.
+Just explain $\left<{}N_v,x_v\right>=\left<{}N_v,x_t\right>=0,$ that is $f=g=0.$
+This has been obtained.\
+Next, we explain that there are only three types of developable surfaces: cylinder, cone, and tangent surface.
+The part with $w'=0$ is a columnar area. After removing the part with $w'=0$, the surface is non-columnar.
+From the previous discussion, it can be obtained that the waistline $\beta(t),$ and the distribution parameter $\lambda=0,$
+Therefore, there are singular points on the waistline. At the place where $\beta'=0$, the surface at this point is a cone;
+After removing the place where $\beta'=0$, we get from $\lambda=0$ that $\beta'$ and $w$ are in the same direction,
+That is, the surface is a tangent surface.
+
+An important property of a developable surface, or the equivalent definition is,
+It is the envelope surface of the single-parameter plane family. Take the regular surface $S$ and the arc length parameterized curve $\alpha,$
+Assume that its direction is asymptotic. Let $N(s)=N\circ\alpha(s),$
+Then $\left<{}dN(\alpha'),\alpha'\right>=\left<{}N',\alpha'\right>\neq 0,$
+Thus $N'\neq 0.$
+Take the ruled surface $x(s,v)=\alpha(s)+v\frac{N(s)\wedge N'(s)}{|N'(s)|}.$
+Consider the family of tangent planes $\{T_{\alpha(s)}(S)\},$ of $S$ along $\alpha(s)$
+Two very close planes intersect at a straight line,
+Take $\frac{N(s)\wedge N(s+\Delta s)}{\Delta s}$ as the direction.
+Let $\Delta s\rightarrow 0$ mean that the direction is $N\wedge N'.$
+Therefore, the direct busbar of $x$ is the limit of the intersection of adjacent planes of the plane family.
+Such $x$ is called the envelope surface of the single-parameter plane family $\{T_{\alpha(s)}(S)\}$.
+Cylinders and cones can obviously be generated by this method.
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/t9pCgwDZ51FOz6a.png width='50%' height='50%'>
+
+It can be calculated very directly,
+$(\alpha',w,w')=\frac{1}{|N'|^2}\left<{}(N\wedge N')\wedge (N\wedge N')',\alpha'\right>=\frac{1}{|N'|^2}\left<{}\left<{}N\wedge N',N''\right>N,\alpha'\right>=0,$
+Therefore, the envelope surface of the single-parameter plane family is developable. For a developable surface,
+It is also possible to find the corresponding single-parameter plane family and use it as the envelope surface.
+
+Next, we explain that $x$ is regular near $\alpha$, and is tangent to $S$ along $\alpha$. On $\alpha$,
+$x_s\wedge x_v=\alpha'\wedge\frac{N\wedge N'}{|N'|}=\left<{}N',\alpha'\right>\frac{N}{|N'|}=-\frac{k_nN}{|N'|}.$
+Due to the non-asymptotic direction of $\alpha'$, $k_n$ is zero everywhere, so $x$ is regular near $\alpha$,
+And the normal vector at $\alpha$ is consistent with $S$, that is, tangent to $S$.
+
+### Minimal surface
+
+A regular parametric surface is **minimally small** if its mean curvature disappears everywhere.
+Let $x:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$ be a regular parameterized surface.
+Take the bounded region $D\subset U,$ and the differentiable function $h:\bar D\rightarrow \mathbb{R}.$
+$x(\bar D)$ is the **normal variation** determined by $h$,
+Refers to the mapping $\varphi:\bar D\times (-\varepsilon,\varepsilon)\rightarrow \mathbb{R}^3,$
+$\varphi(u,v,t)=x(u,v)+th(u,v)N(u,v).$
+For each fixed $t\in (-\varepsilon,\varepsilon),$
+$x^t:D\rightarrow \mathbb{R}^3,$
+$x^t(u,v)=\varphi(u,v,t)$ is a parametric surface. Calculate $I^t=I-2thII+o(t).$
+From the average curvature $H=\frac{1}{2}\frac{Eg-2fF+Ge}{EG-F^2},$
+You can get $E^tG^t-(F^t)^2=(EG-F^2)(1-4thH)+o(t).$
+Thus $x^t(\bar D)$ surface area$A(t)=\int_{\bar D}\sqrt{1-4thH+o(t)}\sqrt{EG-F^2}dudv,$
+For sufficiently small $\varepsilon$, it is a differentiable function,
+And the derivative at zero point $A'(0)=\int_{\bar D}-2hH \sqrt{EG-F^2}dudv.$
+
+**Proposition 1.9**. *The conditions are the same as above, $x$ is a minimal surface if and only if $A'(0)=0$ holds for any normal variation.*
+
+**Proof:** The necessity is easy to see. Assume $H(q)\neq 0,$
+Take $h that is supported on the sufficiently small neighborhood of point $q$:\bar D\rightarrow \mathbb{R}$ such that $h(q)=H(q),$
+$hH>0.$ Then for the normal variation determined by $h$, $A'(0)<0,$ is contradictory.
+
+It should be noted that, in fact, we only stated that the minimum surface area reaches the critical value, which may not really be the minimum value.
+However, the definition of minimal surface was proposed by Lagrange as early as 1760, so it is still used today.
+
+When talking about minimal surfaces, soap films are often mentioned. Given a frame, put it into soapy water,
+Take it out carefully, and soap films will be set up on the frame. These soap films are curved surfaces with extremely small areas.
+In this way we create a minimal surface.
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/N5vfHc93B2qnDJZ.png width='50%' height='50%'>
+
+Generally, the average curvature vector is defined as $H=HN,$ and let $h=H$,
+Then $A'(0)=\int_{\bar D}-2\left<{}H,H\right>\sqrt{EG-F^2}dudv<0,$
+That is, along the average curvature vector, the area decreases near the zero point.
+
+For isothermal surfaces, that is, $E=G=\lambda^2,$ $F=0,$ there are the following propositions:
+**Proposition 1.10**. *Suppose $x(u,v)$ is a regular parameterized isothermal surface, then $x_{uu}+x_{vv}=2\lambda^2 H.$*
+
+**Certificate:** First from the differential, we have:
+$\left<{}x_{uu},x_u\right>=\left<{}x_{vu},x_v\right>=-\left<{}x_u,x_{vv}\right>,$
+Thus $\left<{}x_{uu}+x_{vv},x_u\right>=0.$
+Similar $\left<{}x_{uu}+x_{vv},x_v\right>=0.$
+Thus $x_{uu}+x_{vv}$ is along the $N$ direction.
+The average curvature is calculated $H=\frac{1}{2}\frac{g+e}{\lambda^2}.$ Therefore,
+$2\lambda^2 H=g+e=\left<{}N,x_{uu}+x_{vv}\right>,$
+Thus $x_{uu}+x_{vv}=2\lambda^2 H.$
+
+**Corollary 1.11**. *For a regular parameterized isothermal surface $x(u,v)=(x(u,v),y(u,v),z(u,v)), $ $x$ is minimal if and only if the coordinate components are all harmonic.*
+There are several classic examples of minimal surfaces. For example, the catenary surface is the only minimal surface among surfaces of revolution.
+Just take the parametric calculation of the rotation surface. This is not difficult to understand,
+Minimal surfaces and catenary lines are naturally formed,
+Therefore, there is reason to believe that the catenary surface formed by the catenary line is a minimal surface.
+<img style='margin: auto;' src=https://i.loli.net/2021/08/25/oeVBy5GjR3CQJML.png width='50%' height='50%'>
+
+Another example is that spiral surfaces are the only minimal surfaces among ruled surfaces, other than planes.
+Osserman's survey is quoted in the textbook,
+The property of zero-point isolation of Gaussian curvature of minimal surfaces (except planes).
+
+Except where the Gauss curvature takes zero point, since the average curvature is zero, the Gauss curvature must be negative.
+Since $k_1=-k_2,$ according to Euler's formula, the surface has orthogonal asymptotic curves. Obviously the straight generatrices are asymptotic curves,
+Since the surface is non-planar, the point $q\in W,$ can be obtained
+Another asymptotic curve passing through this point has $\tau=\sqrt{-K}$ as the torsion rate.
+Since the close plane of the asymptotic curve is the tangent plane of the surface,
+The straight busbar on $q$ point neighborhood $V\subset W$ is exactly the normal of another asymptotic curve family.
+This occurs if and only if the family of curves is a family of spirals (Bertrand curves), so $V$ is part of a spiral.
+Since the helical torsion is constant, it can be seen that the entire curved surface is a helical surface.
+
+Minimal surfaces are an important research topic in differential geometry, and many conclusions about it are very vivid.
+But it is quite difficult to prove. The book mentions the following theorem:
+
+**Theorem 1.12**. *Let $S$ be a non-planar regular minimal closed surface, then the Gauss map image is dense on the sphere.*
+
+The article was last updated on 2021-08-25 10:50:16
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分几何初步》3.4-3.5</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-08-25 10:42:10</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/08/25/《微分几何初步》3.4-3.5/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/09/15/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(1)/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第一章-微分流形(1)</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 1 - Differential Manifolds (1)</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/08/12/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">Hexo博客搭建流程</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Hexo Blog Building Process</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

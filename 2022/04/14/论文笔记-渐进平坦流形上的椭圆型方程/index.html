@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            论文笔记-渐进平坦流形上的椭圆型方程 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">论文笔记-渐进平坦流形上的椭圆型方程</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Thesis notes - Elliptic equations on asymptotically flat manifolds</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-04-14 15:00:19
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/">科研</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/PDE/">PDE</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    The Mass of an Asymptotically Flat Manifold - Robert Bartnik
+
+Powered Sobolev Space
+---------------
+
+We first discuss in $\mathbb{R}^n,$ $n\ge 3$. Note $r=|x|,$
+$\sigma=\sqrt{1+r^2},$ respectively in $L_{\mathrm{loc} }^p(\mathbb{R}^n),$
+The weighted Lebesgue space is defined in $L_{\mathrm{loc} }^p(\mathbb{R}^n\setminus\{0\})$:
+$$
+L_\delta^p:\quad \Vert u\Vert_{p,\delta}=
+ \left\{
+ \begin{aligned}
+ &\left(\int_{\mathbb{R}^n}|u|^p\sigma^{-\delta p-n}dx\right)^{\frac{1}{p} },&p<\infty,\\
+ &\operatorname{ess}\operatorname{sup}_{\mathbb{R}^n}(\sigma^{-\delta}|u|), &p=\infty,
+ \end{aligned}
+ \right.
+$$
+
+$$
+{L'}_\delta^p:\quad \Vert u\Vert'_{p,\delta}=
+ \left\{
+ \begin{aligned}
+ &\left(\int_{\mathbb{R}^n\setminus\{0\} }|u|^pr^{-\delta p-n}dx\right)^{\frac{1}{p} },&p<\infty,\\
+ &\operatorname{ess}\operatorname{sup}_{\mathbb{R}^n\setminus\{0\} }(r^{-\delta}|u|), &p=\infty,
+ \end{aligned}
+ \right.
+$$
+
+Next, define the weighted Sobolev space:
+$$
+W_\delta^{k,p}:\quad \Vert u\Vert_{k,p,\delta}=\sum_{j=0}^k\Vert D^ju\Vert_{p,\delta-j},
+$$
+
+
+
+
+
+$$
+{W'}_\delta^{k,p}:\quad \Vert u\Vert'_{k,p,\delta}=\sum_{j=0}^k\Vert D^ju\Vert'_{p,\delta-j},
+$$
+
+
+
+Note that the difference in weight here makes the dimensions of the addition terms basically the same. When $p\in [1,\infty)$,
+$C_c^\infty(\mathbb{R}^n),$
+$C_c^\infty(\mathbb{R}^n\setminus\{0\})$ is dense among them respectively.
+The weights are selected such that for the function $u_R(x)=u(Rx),$
+
+
+$$
+\Vert u\Vert'_{k,p,\delta}=R^{-\delta}\Vert u_R\Vert'_{k,p,\delta},
+$$
+$$
+\Vert u\Vert_{k,p,\delta;A_R}\approx R^{-\delta}\Vert u_R\Vert_{k,p,\delta;A_1}, \quad R\ge 1.
+$$
+
+
+Here $A_R:=B_{2R}\setminus B_R,$ $B_R$ is a closed sphere with radius $R$ at the origin.
+"$\approx$" means that the two can be controlled by a constant multiple independent of $R$, just consider controlling $\sigma$.
+Next we enumerate the following properties without proof:
+**Theorem 1**. *For $1\le p\le q\le \infty,$ $\delta_2<\delta_1,$ $u\in L_{\delta_2}^q,$ there is $\Vert u\Vert_{p,\delta_1}\le c\Vert u\Vert_{q,\delta_2},
+$ Therefore $L_{\delta_2}^q\subset L_{\delta_1}^p.$ That is, the higher $p$ is, the smaller $\delta$ is, the better the properties of $L_\delta^p$ are, and the higher the function requirements are.*
+**Theorem 2** (Hölder's inequality). *$u\in L_{\delta_1}^q,$ $v\in L_{\delta_2}^r,$ $\delta=\delta_1+\delta_2,$ $1\le p,q,r\le \infty,$ $\frac{1}{p}=\frac{1}{q}+\frac{1}{r},$ then*
+$$
+\Vert uv\Vert_{p,\delta}\le \Vert u\Vert_{q,\delta_1}\Vert v\Vert_{r,\delta_2}.
+$$
+
+
+
+**Theorem 3** (Interpolation Inequality).
+*$\,\forall\,\varepsilon>0,$ $\,\exists\,C(\varepsilon)>0,$ $\,\forall\,u\in W_{\delta}^{2,p},$ $p\in [1,\infty],$*
+
+
+
+$$
+\Vert u\Vert_{1,p,\delta}\le \varepsilon\Vert u\Vert_{2,p,\delta}+C(\varepsilon)\Vert u\Vert_{0,p,\delta}.
+$$
+**Theorem 4** (Sobolev’s inequality). *If $u\in W_{\delta}^{k,p},$ then*
+
+
+
+$$
+\Vert u\Vert_{q,\delta}\le C\Vert u\Vert_{k,p,\delta},\quad 0<\frac{n}{p}-k\le \frac{n}{q}\le \frac{n}{p};
+$$
+
+
+
+
+$$
+\Vert u\Vert_{\infty,\delta}\le C\Vert u\Vert_{k,p,\delta},\quad \frac{n}{p}-k<0,\quad \text{且} |u(x)|=o(r^{\delta}).
+$$
+Define the weighted Hölder module:
+
+
+$$
+\Vert u\Vert_{C_\delta^{0,\alpha} }:=\sup_{x\in \mathbb{R}^n}\left(\sigma^{-\delta+\alpha}(x)\sup_{4|x-y|\le \sigma(x)}\frac{|u(x)-u(y)|}{|x-y|^{\alpha} }\right)+\sup_{x\in\mathbb{R}^n}\sigma^{-\delta}(x)|u(x)|.
+$$
+
+
+
+**Theorem 5** (Negative exponential Sobolev inequality). *If $u\in W_{\delta}^{k,p},$ $0<\alpha\le k-\frac{n}{p}\le 1,$ then*
+$$
+\Vert u\Vert_{C_{\delta}^{0,\alpha} }\le C\Vert u\Vert_{k,p,\delta},\quad \Vert u\Vert_{C_{\delta}^{0,\alpha}(A_R)}=o(1).
+$$
+
+
+
+**Theorem 6** (Poincaré inequality). *$\,\forall\,u\in {W'}_{\delta}^{1,p},$ $1\le p<\infty,$ $\delta\neq 0,$*
+$$
+\Vert u\Vert_{p,\delta}'\le |\delta|^{-1}\Vert u_r\Vert'_{p,\delta-1}\le |\delta|^{-1}\Vert Du\Vert'_{p,\delta-1},\quad u_r=\partial_ru=r^{-1}x\cdot Du.
+$$
+
+
+
+
+$$
+\Vert u\Vert_{p,\delta}\le C\Vert u_r\Vert_{p,\delta-1},\quad \delta<0,\quad u\in W_{\delta}^{1,p}.
+$$
+**Lemma 7**. *$k>j,$ $\delta<\varepsilon,$ $1\le p<\infty,$ $W_\delta^{k,p}\Subset W_{\varepsilon}^{j,p}$ is a compact embedding.*
+
+Asymptotic elliptic operator
+----------
+
+### Inequality estimation
+**Definition 8**. *Operator $Pu:=a^{ij}(x)\partial_{ij}^2u+b^i(x)\partial_iu+c(x)u$ is called (asymptotic)** to $\Delta$ (at rate $\tau$), if $\,\exists\,n<q<\infty,$ $\tau\ge 0,$ $C_1,\lambda,$ makes*
+$$
+\lambda |\xi|^2\le a^{ij}(x)\xi_i\xi_j\le \lambda^{-1}|\xi|^2,\quad \,\forall\,x,\xi\in \mathbb{R}^n;
+$$
+
+
+
+
+$$
+\Vert a^{ij}-\delta_{ij}\Vert_{1,q,-\tau}+\Vert b^i\Vert_{0,q-1,-1-\tau}+\Vert c\Vert_{0,\frac{q}{2},-2-\tau}\le C_1.
+$$
+
+
+
+According to the previous theorem, $a^{ij}$ is Hölder continuous,
+And $|a^{ij}-\delta_{ij}|=o(r^{-\tau}).$ for $1\le p\le q,$
+$\delta\in \mathbb{R},$
+$P:W_{\delta}^{2,p}\rightarrow W_{\delta-2}^{0,p}$ is a bounded operator.
+In fact, the following estimates are true:
+**Proposition 9**. *Suppose $P$ is asymptotic to $\Delta,$ $1<p\le q,$ $\delta\in \mathbb{R},$ then there is a constant $C=C(n,p,q,\delta,C_1,\lambda),$ such that if $u\in L_\delta^{0,p},$ $Pu\in L_{\delta-2}^{0,p},$ then $u\in W_{\delta}^{2,p},
+$*
+
+
+
+$$
+\Vert u\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta}).
+$$
+
+
+
+To prove this proposition, just do the usual $L^p$ estimation in the second-order elliptic equation.
+Note that this estimate also holds for ${W'}_{\delta}^{k,p}$ modules.
+
+Next we will discuss the Fredholm property of operator $P$, that is, consider whether its image is closed,
+As well as the finiteness of the dimensions of the core and co-core. The above proposition is not sufficient to explain that it has this property.
+We need to strengthen the estimation so that the right-hand error term is compact with respect to $W_\delta^{2,p}$.
+
+The weight parameter $\delta$ is called **nonexceptional**,
+If $\delta\in \mathbb{R}\setminus\{k\in \mathbb{Z},k\neq -1,-2,\cdots,3-n\}.$
+**Exceptional value(exceptional
+value)**$\{k\in \mathbb{Z}, k\neq -1,-2,\cdots,3-n\}$ corresponds to the growth order of the up-regulation sum function of $\mathbb{R}^n\setminus B_1$.
+definition
+
+$$
+k^-(\delta)=\max\{k \text{ exceptional},k<\delta\}.
+$$
+**Theorem 10**. *Suppose $\delta$ is not an exception, $p\in (1,\infty),$ $s$ is a non-negative integer. Then there is an isomorphism*
+
+
+
+$$
+\Delta:{W'}_\delta^{s+2,p}\rightarrow {W'}_{\delta-2}^{s,p},
+$$
+
+
+
+*And there is a constant*$C=C(n,p,\delta,s),$
+$$
+\Vert u\Vert'_{s+2,p,\delta}\le C\Vert\Delta u\Vert'_{s,p,\delta-2}.
+$$
+
+
+
+**Proof:** It only needs to be proved for the case $s=0$.
+First, we explain that the distribution inverse of $\Delta$ has a convolution kernel $K(x,y):$
+
+$$
+c_nK(x,y)=
+ \left\{\begin{aligned}
+ &|x-y|^{2-n} &2-n<\delta<0,\\
+ &|x-y|^{2-n}-|y|^{2-n}\sum_{j=0}^k P_j^\lambda(\mu)\left(\frac{|x|}{|y|}\right)^j &k\ge 0,\\
+ &|x-y|^{2-n}-|x|^{2-n}\sum_{j=0}^k P_j^\lambda(\mu)\left(\frac{|y|}{|x|}\right)^j &k<2-n.
+ \end{aligned}\right.
+$$
+Here $k=k^-(\delta),$ $\mu=\frac{\left<{}x,y\right>}{|x||y|},$
+$P_j^\lambda$ is an ultraspherical function, which appears in the Taylor expansion:
+
+
+$$
+|x-y|^{2-n}=|x|^{2-n}\sum_0^\infty P_j^\lambda(\mu)\left(\frac{|y|}{|x|}\right)^j,\quad |y|<|x|.
+$$
+First, let's verify that the convolution kernel $K$ indeed defines the bounded operator of ${W'}_{\delta-2}^{0,p}\rightarrow {W'}_{\delta}^{0,p}$.
+Taking the case of $k\ge 0$ as an example, we have an estimate
+$$
+|K(x,y)|\le c(n,k)|x-y|^{2-n}
+ \left\{\begin{aligned}
+ &\left(\frac{|x|}{|y|}\right)^{k+1} &\frac{|x|}{|y|}<\frac{1}{2},\\
+ &\left(\frac{|x|}{|y|}\right)^{n+k-2} & \frac{|x|}{|y|}\ge \frac{1}{2}.
+ \end{aligned}\right.
+$$
+
+We have the following lemma:
+**Lemma 11**. *Fix $p\in (1,\infty),$ $\frac{1}{p}+\frac{1}{p'}=1,$ $a,b\in \mathbb{R}$ and $a+b>0.$ There is a kernel
+
+$$
+K'(x,y)=|x|^{-a}|x-y|^{2-n}|y|^{-b},\quad x\neq y.
+$$
+* *For $u\in L^p(\mathbb{R}^n),$ define $K'u(x)=\int K'(x,y)u(y)dy,$ then $K':L^p\rightarrow L^p$ is a bounded operator if and only if $a<\frac{n}{p},$ $b<\frac{n}{p'}.$*
+Let $K_1,K_2$ be the accounting operators $|x-y|^{2-n}\left(\frac{|x|}{|y|}\right)^\alpha,$
+Corresponding to $\alpha=k+1,$ $\alpha=n+k-2$ respectively.
+The above lemma shows that when $3-n+k<\delta<k+1$, the kernel
+$$
+K_1'(x,y)=|x|^{-\delta-\frac{n}{p} }K_1(x,y)|y|^{\delta-2+\frac{n}{p} }
+$$
+
+
+Defines the bounded operator of $L^p\rightarrow L^p$. Then
+
+
+$$
+\Vert K_1u\Vert_{p,\delta}'\le c\Vert r^{2-\delta-\frac{n}{p} }u\Vert_{L^p}\le c\Vert u\Vert'_{p,\delta-2},
+$$
+That is, $K_1:{W'}_{\delta-2}^{0,p}\rightarrow {W'}_{\delta}^{0,p}$ is a bounded operator.
+
+Similarly, when $k<\delta<n+k-2$, $K_2'$ is a bounded operator on $L^p\rightarrow L^p$,
+Furthermore, $K_2$ is also a bounded operator. These two estimates illustrate that when $k<\delta<k+1$,
+$K$ is also a bounded operator, and $k=k^-(\delta),$ conditions are automatically satisfied.
+The other two cases in the definition of $K$ are handled similarly.
+
+We have the distribution identity:
+
+$$
+\Delta_x K(x,y)=\Delta_y K(x,y)=\delta(x-y),
+$$
+
+
+Therefore $K(\Delta u)=u,$
+$\,\forall\,u\in C_c^\infty(\mathbb{R}^n\setminus \{0\}).$
+So it is given by the boundedness of $K$ and the density of $C_c^\infty$
+
+
+$$
+\Vert u\Vert_{0,p,\delta}'=\Vert K(\Delta u)\Vert_{0,p,\delta}'\le C\Vert\Delta u\Vert'_{0,p,\delta-2},\quad \,\forall\,u\in {W'}_\delta^{k,p}.
+$$
+Combined with the previous $L^p$ estimate, the proof of the inequality stated in the theorem is given ($s=0$).
+Since $\Delta:{W'}_{\delta}^{2,p}\rightarrow {W'}_{\delta-2}^{0,p}$ is a bounded operator,
+This inequality immediately shows that it seems to be closed.
+
+From the distribution identity, we see that,
+$$
+\Delta(Kf)(x)=f(x),\quad f\in C_c^\infty(\mathbb{R}^n\setminus \{0\}),\quad Kf\in {W'}_{\delta}^{0,p}.
+$$
+
+
+So $\Delta$ is isomorphism, and the theorem is proved.
+
+The theorem gives the following well-known Liouville theorem:
+**Corollary 12**. *Suppose $\Delta u=0,$ $u\in L_\delta^p,$ $1<p<\infty.$ Let $k=k^-(\delta).$ If $k<0,$ then $u\equiv 0;$ If $k\ge 0,$ then $u$ is a harmonic polynomial of order $k$ and below.*
+**Certificate:** Since $0\in {W'}_\delta^{s,p},$ $\,\forall\,s\ge 0,$
+Derive $u\in {W'}_\delta^{s+2,p}.$ from Sobolev's inequality,
+$u\in C^\infty(\mathbb{R}^n).$ Let $h_k(x)$ be the $k$ degree Taylor expansion of $u(x)$,
+That is
+$$
+u(x)=h_k(x)+O(|x|^{k+1}).
+$$
+
+
+
+Since $u$ is harmonic, we know that $h_k$ is a harmonic polynomial.
+At this time $u-h_k\in {L'}_\delta^p,$ From the previous propositions and theorem,
+$u-h_k\in {W'}_\delta^{2,p},$
+And there is an estimate $\Vert u-h_k\Vert'_{2,p,\delta}\le C\Vert\Delta(u-h_k)\Vert_{0,p,\delta-2}'=0,$
+Thus $u=h_k.$
+
+Next, we give an estimate similar to the previous proposition. At first glance, the dimensions of the inequality are a bit confusing,
+Hence the name scale-broken estimation (I guess).
+**Theorem 13**. *Suppose $P$ is asymptotic to $\Delta, $ $\delta\in \mathbb{R}$ is no exception, and $q\ge p>1.$ in the asymptotic condition, then the kernel of operator $P:W_\delta^{2,p}\rightarrow W_{\delta-2}^{0,p}$ is finite-dimensional, has a closed range, and for any $u\in W_{\delta}^{2,p},$ has constant $C,
+R$ is controlled by $P,\delta,n,p,q$, such that*
+
+
+
+$$
+\Vert u\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{L^p(B_R)}).
+$$
+
+
+
+**Proof:** Take the operator module
+
+
+$$
+\Vert P-\Delta\Vert_{op}:=\sup\{\Vert(P-\Delta)u\Vert_{0,p,\delta-2}:u\in W_{\delta}^{2,p},\Vert u\Vert_{2,p,\delta}=1\}.
+$$
+Similarly define $\Vert\cdot\Vert_{op,R},$
+The selected function $u$ is required to have a support set in $E_R=\mathbb{R}^n\setminus B_R$,
+That is, zero is taken in $B_R$. Then if $\operatorname{supp}(u)\subset E_R,$ is given by $q>n,$
+$$
+\begin{aligned}
+ \Vert(P-\Delta)u\Vert_{0,p,\delta-2}\le& \sup_{|x|>R}\{|a^{ij}(x)-\delta_{ij}|\}\Vert D^2u\Vert_{0,p,\delta-2}\\
+ &+C\Vert b\Vert_{0,q,-1;E_R}\Vert Du\Vert_{1,p,\delta-1}+C\Vert c\Vert_{0,\frac{q}{2},-2;E_R}\Vert u\Vert_{2,p,\delta}
+ \end{aligned}
+$$
+
+Since $P$ is asymptotic to $\Delta,$
+
+
+$$
+\Vert P-\Delta\Vert_{op,R}=o(1),\quad R\rightarrow \infty.
+$$
+Take $\chi\in C_c^\infty(B_2),$ $\chi\in [0,1],$ $\chi|_{B_1}=1.$
+Take the undetermined constant $R,$ and let $\chi_R(x)=\chi(\frac{x}{R}),$ $u_0=\chi_Ru,$
+$u_\infty=(1-\chi_R)u,$ $u=u_0+u_\infty.$ From the previous theorem, we have:
+$$
+\begin{aligned}
+ \Vert u_\infty\Vert_{2,p,\delta}&\le C\Vert\Delta u_{\infty}\Vert_{0,p,\delta-2}=C\Vert(\Delta-P+P) u_{\infty}\Vert_{0,p,\delta-2}\\
+ &\le C(\Vert Pu_{\infty}\Vert_{0,p,\delta-2}+\Vert P-\Delta\Vert_{op,R}\Vert u_{\infty}\Vert_{2,p,\delta}) 
+ \end{aligned}
+$$
+
+Since $\Vert P-\Delta\Vert_{op,R}=o(1),$ has for sufficiently large $R,$
+
+
+$$
+\Vert u_{\infty}\Vert_{2,p,\delta}\le C\Vert Pu_\infty\Vert_{0,p,\delta-2}.
+$$
+To further estimate, there are
+$$
+\begin{aligned}
+ \Vert Pu_\infty\Vert_{0,p,\delta-2}&\le \Vert Pu\Vert_{0,p,\delta-2}+\Vert 2a^{ij}u_i\partial_j\chi_R+(a^{ij}\partial^2_{ij}\chi_R+b^i\partial_i \chi_R)u\Vert_{0,p,\delta-2;A_R}\\
+ &\le \Vert Pu\Vert_{0,p,\delta-2}+C\Vert u\Vert_{1,p,\delta;A_R}
+ \end{aligned}
+$$
+
+Then use the interpolation inequality to further transform the $\Vert\cdot\Vert_{1,p,\delta}$ term,
+And $L^p$ estimate, that is, we have
+$$
+\Vert u_\infty\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta;A_R}).
+$$
+
+
+
+At the same time, it is estimated by $L^p$, for $u_0$
+
+
+$$
+\Vert u_0\Vert_{2,p,\delta}\le C(\Vert Pu_0\Vert_{0,p,\delta-2}+\Vert u_0\Vert_{0,p,\delta})\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert Pu_{\infty}\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta;{B_{2R} } }).
+$$
+Using the previous estimates about $Pu_\infty$ again, we get the inequalities required by the theorem:
+
+
+$$
+\Vert u\Vert_{2,p,\delta}\le \Vert u_0\Vert_{2,p,\delta}+\Vert u_\infty\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{L^p(B_R)}).
+$$
+
+
+
+Next, we discuss the finiteness of the kernel dimension. Let $\{u_k\}$ be the function sequence in $\ker P$,
+Satisfies $\Vert u_k\Vert_{2,p,\delta}=1.$ By the compact embedding theorem,
+It may be assumed that $\{u_k\}$ itself converges strongly in $L^p(B_R)$. At this time, since $Pu_k\equiv 0,$
+The inequality just proved shows that $\{u_k\}$ is the Cauchy column in $W_\delta^{2,p}$.
+Therefore, the unit sphere in $\ker P$ is compact, so its dimension is limited.
+Since the dimension of $\ker P$ is limited, there is a decomposition of $W_\delta^{2,p}=\ker P\oplus Z, and $ $Z$ is a closed set.
+Assert that there exists a constant $C$ such that
+
+
+$$
+\Vert u\Vert_{2,p,\delta}\le C\Vert Pu\Vert_{0,p,\delta-2},\quad \,\forall\,u\in Z.
+$$
+Otherwise, there exists $\{u_k\},$ $\Vert u_k\Vert_{2,p,\delta}\equiv 1,$
+And $\Vert Pu_k\Vert_{0,p,\delta-2}\rightarrow 0.$ At this time, according to the compact embedding theorem,
+Using the inequality in the theorem, we once again obtain that $\{u_k\}$ is the Cauchy column in $W_{\delta}^{2,p}$.
+Due to the closure of $Z$, it converges to $u_0\in Z.$ However, due to the continuity of $P$, $Pu_0=0,$
+$u_0\in \ker P.$ thus $u_0=0,$
+But this is contradictory to $\Vert u_k\Vert_{2,p,\delta}\equiv 1$,
+Because $u_k\rightarrow u_0.$ then the assertion is true, immediately indicating that $P$ has a closed range.
+### Semi-Fredholm nature
+
+Next, we further consider the dimension of the kernel of $P$. Note
+
+
+$$
+N(P,\delta)=\dim\ker (P:W_\delta^{2,p}\rightarrow W_{\delta-2}^{0,p}), \quad 1<p\le q.
+$$
+
+
+From $L^p$ estimation and Sobolev's inequality, it can be shown that $N(P,\delta)$ has nothing to do with the selection of $p$.
+In order to simplify the notation below, we write $X=W_\delta^{2,p},$ $Y=W_{\delta-2}^{0,p},$
+$\delta$ is not an exception, $1<p\le q.$ Then according to the theorem just now,
+We know that $P:X\rightarrow Y$ is **semi-Fredholm**, that is, the kernel is finite-dimensional,
+and has a closed range.
+**Proposition 14**. *Suppose $P:X\rightarrow Y$ is the semi-Fredholm operator between Banach spaces, then there exists a constant $C>0, $ has an estimate*
+
+
+
+$$
+\Vert u-\ker P\Vert_{X}=\Vert u\Vert_{X/\ker P}\le C\Vert Pu\Vert_Y.
+$$
+
+
+
+*At the same time, there*$\varepsilon>0,$
+* Such that for any other semi-Fredholm operator *$P',$ that satisfies *$\Vert P-P'\Vert_{op}<\varepsilon$*
+
+
+$$
+\dim \ker P'\le \dim \ker P.
+$$
+**Proof:** It is known that $\operatorname{Im}P$ is closed, then it is a Banach space,
+Therefore the first estimate is obtained immediately from the inverse operator theorem. Now let $\varepsilon=\frac{1}{2C},$
+Assuming that the kernel dimension inequality does not hold, then there exists $u\in \ker P',$ $\Vert u\Vert_X=1,$
+$\Vert u-\ker P\Vert_X>\frac{1}{2}.$ at this time
+
+
+$$
+\frac{1}{2}<\Vert u-\ker P\Vert_{X}\le C\Vert Pu\Vert_{Y}\le C\Vert P-P'\Vert_{op}\Vert u\Vert_X<C\varepsilon,
+$$
+
+
+produce conflicts.
+
+It can be seen that $\frac{1}{C}$ measures the distance between $P$ and other semi-Fredholm operators with larger kernels.
+The following proposition in the opposite direction makes this point even more profound:
+**Proposition 15**. *Same as above for $\,\exists\,\varepsilon,C>0,
+$ makes*
+
+
+
+$$
+\Vert u-\ker P'\Vert_{X}\le C\Vert P'u\Vert_Y,\quad \,\forall\,u\in X,P'\in \mathcal{U}, \Vert P-P'\Vert_{op}\le \varepsilon.
+$$
+
+
+
+**Proof:** Otherwise, there exists the sequence $P_k\rightarrow P\in \mathcal{U},$
+$\{u_k\}\subset X,$ satisfies $\Vert u_k\Vert_X=1,$
+$\Vert u_k-\ker P_k\Vert_{X}>\frac{1}{2},$ and
+
+
+$$
+\Vert u_k-\ker P_k\Vert_{X}\ge k\Vert P_ku_k\Vert_Y.
+$$
+
+
+
+This shows that $P_ku_k\rightarrow 0.$
+At this time, we can continue to use the tight embedding method in the previous theorem to obtain the subsequence $u_k\rightarrow u,$
+Satisfy $Pu=0,$ $\Vert u\Vert_X=1,$
+And for sufficiently large $k$, we have $\Vert u-\ker P_k\Vert\ge \frac{1}{4}.$
+
+Similarly, any $v_k\in \ker P_k,$ $\Vert v_k\Vert_X=1,$
+In the same way, it also has sub-columns that converge to $v\in \ker P.$
+This shows that the $N$-dimensional $\ker P_k$ converges to the $N$-dimensional subspace in $\ker P$.
+However, according to the estimation in the previous paragraph, $u$ is not in such a subspace, but $u\in \ker P.$
+This shows that $\dim \ker P\ge N+1,$ is contradictory.
+
+Finally, we give the following theorem, which shows that the set of semi-Fredholm operators with larger kernels is smaller.
+**Theorem 16**. *Suppose $P:
+$ Then there exists $\lambda_0>0,$ such that for $|\lambda|<\lambda_0,$ $P+\lambda A$ is always semi-Fredholm, and $\dim \ker (P+\lambda A)$ is constant when $0<\lambda<\lambda_0$ (note that $\lambda=0$ is not among them).*
+
+### Fredholm Indicator
+We have the adjoint operator $P^\ast :W^{0,p'}_{2-n-\delta}\rightarrow W^{-2,p'}_{-n-\delta},$
+$\frac{1}{p'}+\frac{1}{p}=1.$ If it is also asymptotic,
+Then we can get more information through **Fredholm indicator**. From the previous proposition,
+When $1<p'\le \widetilde{q}$, $\ker P^\ast \subset W^{2,p'}_{2-n-\delta}.$
+When $\delta$ is not exceptional, the adjoint is also a semi-Fredholm operator, thus:
+
+
+$$
+\dim \operatorname{coker}P=\dim \ker P^\ast =N(P^\ast ,2-n-\delta).
+$$
+Therefore $P$ becomes the **Fredholm operator**, with the **Fredholm indicator**:
+
+
+$$
+\iota(P,\delta)=N(P,\delta)-N(P^\ast ,2-n-\delta).
+$$
+
+
+
+Since the index is locally constant on the Fredholm operator space, we have
+$$
+\iota(P,\delta)=\iota(\Delta,\delta)=:\iota_0(\delta).
+$$
+
+
+
+And $\iota_0(\delta)$ can be calculated.
+Let $H_k$ be the total number of homogeneous harmonic polynomials of degree $k$ in $\mathbb{R}^n$,
+We have $n_k=\dim H_k=\frac{(n-2+2k)(n-3+k)!}{k!(n-2)!}.$
+Next define $N_0(\delta):=N(\Delta,\delta),$ we have:
+
+
+$$
+N_0(\delta)=n_0+\cdots+n_k=\frac{(n-1+2k)(n-2+k)!}{k!(n-1)!},\quad k=k^-(\delta)>0.
+$$
+
+
+Therefore, $\iota_0(\delta)=\begin{cases}
+ N_0(\delta),&\delta>0;\\
+-N_0(2-n-\delta),&\delta<0.
+ \end{cases}$ The above derivation gives the following proposition:
+
+**Proposition 17**. *Suppose $P, P^\ast $ are all asymptotic to $\Delta$, $\delta$ is no exception, when $1<p\le q$, $P:W^{2,p}_\delta\rightarrow W^{0,
+p}_{\delta-2}$ is the Fredholm operator, $N(P,\delta)=\dim\ker P$ has nothing to do with the selection of $p$. If $k^-(\delta)<\delta'\le \delta,$ then $N(P,\delta)=N(P,\delta'),$ and if $u\in W_\delta^{2,p},$ $Pu\in W_{\delta'}^{0,p},
+$ then $u\in W_{\delta'}^{2,p}.$*
+
+**Proof:** Since $k^-(\delta)=k^-(\delta'),$
+$\iota(P,\delta)-\iota(P,\delta')=\iota_0(\delta)-\iota_0(\delta')=0.$
+Expand it
+$$
+N(P,\delta)-N(P,\delta')=N(P^\ast ,2-n-\delta)-N(P^\ast ,2-n-\delta').
+$$
+
+
+
+Since $L^p_{\delta'}\subset L^p_{\delta},$ the left side is non-negative and the right side is non-positive,
+Therefore both sides are zero, $N(P,\delta)=N(P,\delta').$
+This shows that $\ker(P,\delta)=\ker(P,\delta').$ Now if $Pu\in W_{\delta'}^{0,p},$
+Then $\left<{}Pu,v\right>=\left<{}u,P^\ast v\right>=0,$
+$\,\forall\,v\in \ker(P^\ast ,2-n-\delta').$ has a closed range from $P$,
+$Pu\in \operatorname{Im}(P,\delta').$
+Therefore $\,\exists\,w\in W_{\delta'}^{2,p}\subset W_\delta^{2,p},$
+So that $Pu=Pw.$
+That is, $w-u\in\ker(P,\delta)=\ker (P,\delta')\subset W_{\delta'}^{2,p}.$
+Then $u\in W_{\delta'}^{2,p}.$
+
+When $P=\Delta_g$, $P^\ast =P.$
+Note that the adjoint is determined by the pairing $(u,v)=\int uvd\mathcal{H}^n=\int uv\sqrt{g}dx$.
+
+**Proposition 18**. *Suppose $g_{ij}(x)$ is a uniform ellipse on $\mathbb{R}^n$, $(g_{ij}-\delta_{ij})\in W_0^{1,q},$ $n<q<\infty.
+$ If $\delta$ is not an exception, $1<p\le q,$ then $\Delta_g:W_{\delta}^{2,p}\rightarrow W_{\delta-2}^{0,p}$ is Fredholm's, $N(\Delta_g,\delta)=N_0(\delta).$*
+
+**Proof:** According to the regularity condition, $\Delta_g$ is asymptotic to the standard Laplace operator,
+$$
+\Delta_g=g^{ij}\partial^2_{ij}+\frac{\partial {}g^{ij} }{\partial {}x^j}\partial_i+\frac{g^{ik}g^{lj} }{2}\frac{\partial {}g_{jl} }{\partial {}x^l}\partial_i.
+$$
+
+
+From the self-adjoint property of $\Delta_g$, we can see that $\Delta_g$ can inherit the above discussion and is the Fredholm operator.
+From the index invariance, it only needs to be proved that when $\delta<0$, $N(\Delta_g,\delta)=0.$
+When $\Delta_gu=0,$ $\delta<0$, starting from $u\in W_{\delta}^{2,p}$,
+By repeatedly using the previous proposition and combining it with Sobolev's inequality, we get that $u$ tends to zero at infinity.
+In this way, conclusions can be drawn using the extreme value principle.
+
+From the previous proposition, we automatically have:
+**Corollary 19**. *Let $\delta$ be non-exceptional, $n<q<\infty,$ $1<p\le q.$ Then there exists a positive constant $C,\varepsilon,$ such that for any metric $g_{ij},$ satisfies $\Vert g_{ij}-\delta_{ij}\Vert_{1,q,0}\le \varepsilon,$*
+$$
+\Vert u-\ker \Delta_g\Vert_{2,p,\delta}\le C\Vert\Delta_g u\Vert_{0,p,\delta-2},\quad \,\forall\,u\in W_{\delta}^{2,p}.
+$$
+
+
+
+Finally, let’s look at the most important conclusion drawn in this section:
+**Theorem 20**. *Suppose $P$ is asymptotic to $\Delta, the rate is $\tau>0,$ $u\in W_{\delta}^{2,q},$ $\delta$ is not exceptional, on $E_R$ $Pu=0.$ then there is an exception value $k\le k^-(\delta),$ $k$ homogeneous harmonic function $h_k\in C^\infty(\mathbb{R}^n),$ makes*
+$$
+u-h_k=o(r^{k-\tau}),\quad r\rightarrow \infty.
+$$
+
+
+
+**Certificate:** Record $Pu=f,$ in $\mathbb{R}^n$
+Then $\Delta u=F\in W^{0,q}_{\delta-2-\tau}.$ is on $E_R$,
+$$
+F=(\delta_{ij}-a^{ij})\partial^2_{ij}u-b^i\partial_iu-cu.
+$$
+
+
+
+Since $\Delta:{W'}_{\delta-\tau}^{2,q}\rightarrow {W'}_{\delta-\tau-2}^{0,q}$ is isomorphic,
+$\,\exists\,v\in W_{\delta-\tau}^{2,q},$ such that
+
+
+$$
+\Delta(u-v)=0,\quad |x|>R.
+$$
+
+ From the classic harmonic function expansion, we have:
+$$
+u-v=h_k+O(r^{k-1}),
+$$
+
+ $k\le k^-(\delta),$ $h_k$ as above.
+Now $u-h_k=v+O(r^{k-1})\in W_{\delta-\tau}^{2,q},$
+Corresponds to $F\in W_{\delta-2-2\tau}^{0,q},$
+Continue to explain $v\in W_{\delta-2\tau}^{2,q}.$
+Repeat until we get $u-h_k\in W_{k-\tau}^{2,q}$.
+
+The article was last updated on 2022-04-14 16:45:33
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：论文笔记-渐进平坦流形上的椭圆型方程</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-04-14 15:00:19</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/04/14/论文笔记-渐进平坦流形上的椭圆型方程/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/04/17/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(4)-%E7%AD%89%E8%B7%9D%E5%8F%98%E6%8D%A2%E5%92%8C%E7%A9%BA%E9%97%B4%E5%BD%A2%E5%BC%8F/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(4)-等距变换和空间形式</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (4)-Isometric Transformation and Space Form</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/03/30/%E8%B0%83%E5%92%8C%E5%87%BD%E6%95%B0%E7%9A%84Taylor%E5%B1%95%E5%BC%80/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">调和函数的Taylor展开</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Taylor expansion of harmonic functions</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

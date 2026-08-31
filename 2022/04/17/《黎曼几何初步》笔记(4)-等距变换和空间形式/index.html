@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《黎曼几何初步》笔记(4)-等距变换和空间形式 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(4)-等距变换和空间形式</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (4)-Isometric Transformation and Space Form</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-04-17 17:56:21
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Introduction
+----
+
+Now we begin to study the **space form**, that is, the complete Riemannian manifold* with constant cross-section curvature.
+We have the following basic results:
+
+**Theorem 1**. *$\,\forall\,c\in \mathbb{R},$ $n\in \mathbb{Z}_+,$ $\,\exists\,$The only simply connected $n$-dimensional space form of constant cross-section curvature $c$ under isometric transformation.*
+The complete proof of the theorem is given in the next chapter. In this section we focus on the existence part. Let the Riemannian metric $g,$
+The cross-sectional curvature is $K,$. Then for the positive constant $A,$, the cross-sectional curvature of $Ag$ is $\frac{1}{A}K.$
+Therefore, we only need to consider the spatial form with cross-sectional curvature $0,\pm 1$. For $c=0,$
+Just take $\mathbb{R}^n$; for $c=1,$, just take the well-known unit sphere $S^n$; for $c=-1,$
+It is necessary to obtain the equipment **hyperbolic metric**, that is
+
+
+$$
+g=\frac{4}{\left(1-\sum_i \left(x^i\right)^2\right)^2}\sum_i dx^i\otimes dx^i
+$$
+
+
+The unit ball $B^n.$ We introduce new concepts and later illustrate the last two conclusions.
+
+Full geodesic submanifold
+----------
+
+### Definition
+
+Let $M$ be a submanifold of the Riemannian manifold $\overline{M}$, equipped with an induced metric.
+If any geodesic tangent to $M$ in $\overline{M}$ is all located in $M$,
+Then $M$ is said to be a fully geodesic submanifold in $\overline{M}$. It can be seen that,
+Fully geodesic submanifolds are very rare, and almost all Riemannian manifolds do not have any fully geodesic submanifolds.
+However, a new geometric quantity can be introduced, which is very meaningful.
+
+**Lemma 2**. *The necessary and sufficient condition that $M$ is the total geodesic submanifold of $\overline{M}$ is that for any vector field $X,Y,$ in $M$ $D_XY=\overline{D}_XY,$ where $D,\overline{D}$ are the Levi-Civita connections on $M,\overline{M}$ respectively.*
+**Proof:** First, let $M$ be any submanifold of $\overline{M}$. Define the vector fields $X, Y, $ in $M$
+
+
+$$
+S(X,Y):=D_XY-\overline{D}_XY,
+$$
+
+
+$S(X,Y)$ is the vector field in $\overline{M}$ that is only defined on $M$. At this time,
+For any function $f,$ on $M$
+$$
+S(fX,Y)=fS(X,Y)=S(X,fY).
+$$
+
+
+Therefore, $S:M_x\otimes M_x\rightarrow \overline{M}_x,$ can be defined
+
+
+$$
+S(v,w)=S(V,W),\quad \,\forall\,V(x)=v,W(x)=w\in M_x,
+$$
+$V, W$ are any vector fields in $M$ that satisfy the above conditions. From the symmetry of the Levi-Civita connection, we can know that,
+
+
+$$
+S(v,w)=S(w,v).
+$$
+
+
+
+Now suppose $M$ is the total geodesic submanifold of $\overline{M}$, assert:
+$$
+S(v,v)=0,\quad \,\forall\,v\in M_x, x\in M.
+$$
+
+
+
+Let $\gamma$ be the geodesic in $\overline{M}$ with $v$ as the initial tangent vector,
+$\overline{D}_{\dot\gamma}\dot\gamma=0,$ then $\gamma$ is also the geodesic in $M$,
+$D_{\dot\gamma}\dot\gamma=0.$ Therefore
+
+
+$$
+S(v,v)=D_{\dot\gamma(0)}\dot\gamma-\overline{D}_{\dot\gamma(0)}\dot\gamma=0.
+$$
+
+
+Thus,
+
+
+$$
+S(v+w,v+w)=2S(v,w)=0\,\Rightarrow\, D_XY=\overline{D}_XY,\quad \,\forall\,X,Y\in \mathfrak{X}(M).
+$$
+On the contrary, let $S\equiv 0.$ take the geodesic $\gamma,$ in $\overline{M}$ that is tangent to $M$
+To illustrate $\gamma\subset M.$, take the geodesic $\xi,$ in $M$ to be the same as the initial tangent vector of $\gamma$.
+At this time,
+
+$$
+\overline{D}_{\dot\xi}\dot\xi=D_{\dot\xi}\dot\xi\equiv 0,
+$$
+Therefore $\xi$ is also the geodesic in $\overline{M}$. From the uniqueness, we know that $\xi=\gamma,$
+Therefore $\gamma$ does fall in $M$.
+
+**Note 3**. *The above $S$ is called the **second basic form** of $M$ in $\overline{M}$, and its discussion will be mentioned in subsequent chapters.*
+
+Since the curvature tensor is defined by the Levi-Civita connection, we have the following inference:
+**Lemma 4**. *Suppose $M$ is a fully geodesic submanifold of $\overline{M}$, $K,\overline{K}$ are the cross-sectional curvature functions of $M,\overline{M}$ respectively, then $\,\forall\,x\in M,$ for any $2$-plane $\Pi\subset M_x,$ $K(\Pi)=\overline{K}(\Pi).$*
+
+### Isometric transformation
+Let’s look at an example first. Let $\gamma$ be the arc length parameter curve,
+And there is an isometric transformation $\varphi$ with $\gamma$ as the fixed point set.
+Then assert that $\gamma$ is a normal geodesic. $\,\forall\,t,$
+Let $\xi$ be the geodesic with $\dot{\gamma}(t)$ as the initial tangent vector,
+Then since the isometric transformation maintains the local minimal property, $\varphi(\xi)$ is also a geodesic,
+And take $d\varphi (\dot\gamma(t))=\dot\gamma(t)$ as the initial tangent vector.
+From the uniqueness, we know that $\varphi(\xi)=\xi, $ $\xi$ trajectory is a fixed point set,
+Therefore $\gamma$ and $\xi$ are the same in the common domain and are regular geodesics. More generally,
+We have the following conclusions:
+**Lemma 5**. *The fixed point set of an isometric transformation is a complete geodesic submanifold (not necessarily connected).*
+
+**Certificate:**
+We only need to focus on proving that the fixed point set $M$ of $\overline{M}$ with respect to the isometric transformation $\varphi$ is indeed a submanifold,
+The instructions that follow are consistent with the previous discussion. Definition
+
+
+$$
+\mathscr{F}:=\{v\in \overline{M}_x:d\varphi(v)=v\},
+$$
+Just state $\exp_x(\mathscr{F}\cap B(\delta))=M\cap B_\delta,$
+Among them, $\delta$ is a sufficient miniscule such that $\exp_x$ is diffeomorphism on the sphere.
+In this way, the coordinate neighborhood on $M$ is established, making it a submanifold. The proof of this point is,
+Also pay attention to using isometric transformation to maintain geodesics and the uniqueness of geodesics.
+
+spatial form
+--------
+### Unit sphere
+
+**Lemma 6**. *The unit sphere $S^n$ has constant cross-sectional curvature $+1,$ $\,\forall\,n\ge 2.$*
+
+**Proof:** When $n=2$, the cross-section curvature of $S^2$ is Gaussian curvature, which is known as $+1.$ for $n\ge 3,$
+Remember $x\in \mathbb{R}^3,$ $y\in \mathbb{R}^{n-2},$
+The isometric transformation $\widetilde\varphi on $\mathbb{R}^{n+1}$:(x,y)=(x,-y)$ induces the isometric transformation $\varphi,$ on $S^n$
+Let $\{(x,0)\}=S^2$ be the fixed point set. Therefore $S^2$ is a fully geodesic submanifold. According to the lemma,
+The cross-sectional curvature of the plane tangent to $S^2$ in $S^n$ is the same as the cross-sectional curvature of $S^2$, which is $+1.$
+For $S^n,$ there is an isometric transformation between any two two-dimensional tangent planes at any two points,
+Therefore, it is the spatial form with $+1$ as the constant cross-section curvature.
+
+### Hyperbolic metric
+
+**Lemma 7**. *The unit ball $B^n$ equipped with a hyperbolic metric is a complete Riemannian manifold with constant cross-section curvature $-1$.*
+
+**Proof:** First discuss the completeness. According to the Hopf-Rinow theorem,
+We can prove that a geodesic starting from the origin can always extend infinitely,
+Furthermore, $\exp_O$ is defined on the entire tangent space, so the manifold is complete.
+Consider the curve $\xi(s)=\left(\frac{e^s-1}{e^s+1},0,\cdots,0\right).$
+The calculated $s$ is the arc length parameter,
+And $\xi$ is the fixed point set of the isometric transformation $(x^1,x^2,\cdots,x^n)\mapsto (x^1,-x^2,\cdots,-x^n)$,
+Therefore $\xi$ is a geodesic. Furthermore, due to symmetry, geodesics starting in all directions can be extended infinitely.
+
+Next, take any tangent plane $\Pi\subset \mathbb{R}^n,$ of $B^n$ at point $p$
+Let $E$ be any $3$-dimensional subspace containing $\Pi,p$. Due to symmetry, we might as well assume that $E=\mathbb{R}^3,$
+Then $E\cap B^n=B^3$ is the fixed point set of the isometric transformation $(x^1,x^2,x^3,x^4,\cdots,x^n)\mapsto (x^1,x^2,x^3,-x^4,\cdots,-x^n)$,
+is a fully geodesic submanifold. Therefore, it is only necessary to prove that $B^3$ has a constant cross-section curvature $-1$ under the induced hyperbolic metric.
+For this purpose, spherical coordinates can be used for calculation. In the case of $n=2$, polar coordinates can be used for calculation.
+We will later refer to the unit ball equipped with a hyperbolic metric as $H^n.$
+
+### Geodesic properties
+
+Next we consider the properties of geodesics in spatial form. Intuitively,
+Consider two geodesics starting from a point with a fixed initial tangent vector angle,
+If $\mathbb{R}^n$ is used as the benchmark, $S^n$ will be closer in comparison, while $H^n$ will diverge.
+This is an important connection between section curvature and geodesics. Next, we take $n=2$ to express this point strictly.
+Note that since the case $n=2$ is the total geodesic submanifold of the respective general case,
+This is also true for general $n$ properties.
+
+Now suppose $M=\mathbb{R}^2,S^2,H^2,$ and select the reference point $O\in M,$
+Define a geodesic circle with radius $r$:
+$$
+C(r)=\{x\in M,d(0,x)=r\}.
+$$
+
+ When $r$ is sufficiently small,
+$C(r)$ is the image of the circle with radius $r$ in $M_O$ under diffeomorphism $\exp_O$.
+Its length measures the divergence rate of the geodesics on $M$ starting from point $O$.
+Let $c_0(r), c_+(r), c_-(r)$ be the length of $C(r)$ in $\mathbb{R}^2, S^2, H^2$ respectively.
+Obviously $c_0(r)=2\pi r,$ $c_+(r)=2\pi \sin r.$
+The final calculation shows $c_-(r)=2\pi \sinh r.$
+They are all homogeneous spaces (the homogeneity of $H^n$ will be explained later),
+Therefore, the selection of reference point $O$ does not affect the length of $C(r)$. It can be immediately seen from the image that the negative curvature pushes the geodesic apart,
+And positive curvature brings geodesics together.
+
+<img style='margin: auto;' src=https://s2.loli.net/2022/04/17/iVt4jSC8doG7u9A.png width='50%' height='50%'>
+For any complete two-dimensional Riemannian manifold $M,$, select the reference point $O\in M,$
+Let us also consider the length $c(r).$ of the geodesic circle $C(r)$. Let $r$ be sufficiently small, then
+
+
+$$
+c(r)=\int_0^{2\pi}\left|d\exp_O\left(\frac{d {} }{d {}\theta}(r,\theta)\right)\right|d\theta.
+$$
+
+
+It can be seen that we do not need to specifically consider the influence of $d\exp$ on the radial direction.
+Let's turn to another object first and come back to this issue later.
+
+### Jacobi Field
+
+The so-called $C^\infty$**matrix mapping**,
+Refers to the smooth mapping $\gamma:[a,b]\times [c,d]\rightarrow M.$
+From this we can define two vector fields **$T,U:$ along **$\gamma$**
+$$
+T(\gamma(t,u)):=d\gamma\left(\frac{\partial {} }{\partial {}t}(t,u)\right),\quad U(\gamma(t,u)):=d\gamma\left(\frac{\partial {} }{\partial {}u}(t,u)\right).
+$$
+
+
+Each $u\in[c,d]$ determines a curve $\gamma_u(t)=\gamma(t,u).$
+When $0\in[c,d]$, $\gamma_0$ is called the base curve of $C^\infty$ rectangle $\gamma$.
+If we further assume that each $\gamma_u$ is a geodesic of $M$,
+Then the matrix mapping $\gamma$ is said to be a **single-parameter geodesic family**$\{\gamma_u\}.$ So we have
+
+
+$$
+[T,U]=d\gamma\left(\left[\frac{\partial {} }{\partial {}t},\frac{\partial {} }{\partial {}u}\right]\right)=0,\quad D_TT=0.
+$$
+
+
+Furthermore,
+$$
+D_TD_TU=D_TD_UT=D_TD_UT-D_UD_TT-D_{[T,U]}T=-R_{TU}T.
+$$
+
+
+Restricted to the base curve, we get:
+
+
+$$
+\ddot{U}+R_{\dot{\gamma}_0U}\dot{\gamma}_0=0.
+$$
+
+
+Call the above formula **Jacobi equation**, and call it along the curve $\gamma_0,$
+The vector field $U$ that conforms to the above formula is **Jacobi field**.
+The vector field $U$ is called the **transversal vector field** of $\{\gamma_u\}$, so we get:
+
+**Lemma 8**. *The transverse vector field of the single-parameter geodesic family along the base curve is a Jacobi field.*
+
+conversely,
+We will explain later that every Jacobi field along a geodesic is a transverse vector field of a certain single-parameter geodesic family.
+Below we return to the original discussion.
+We explain that $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$ is the transverse vector field of a certain single-parameter geodesic family,
+Therefore, the Jacobi equation gives the decisive connection between curvature and $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$,
+We can also see the important relationship between curvature and $c(r)$.
+<img style='margin: auto;' src=https://s2.loli.net/2022/04/17/kSh9Tma3VMfrNe4.png width='50%' height='50%'>
+
+Let $p\in M_O,$ $X$ be the vector in $M_O$,
+Then $\Gamma(t,u):=\exp_O\frac{t}{r}(p+uX)$ defines a single-parameter geodesic family,
+$r=|p|,$ satisfies
+
+$$
+U(0)=0,\quad \dot{U}(0)=\frac{1}{r}X.
+$$
+To prove the second formula, the coordinate system determined by $\exp_O:B(\delta)\approx B_\delta$ is introduced,
+It is called **normal coordinate system** and satisfies:
+$$
+\left\{\begin{aligned}
+ &\left<{}\frac{\partial {} }{\partial {}x^i}(0),\frac{\partial {} }{\partial {}x^j}(0)\right>=\delta_{ij},&\,\forall\,i,j,\\
+ &D_{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j}=0,&\,\forall\,i,j.
+ \end{aligned}\right.
+$$
+The first formula is obvious. For the second formula, define $\beta:M_O\times M_O\rightarrow \mathbb{R},$
+$\beta(e_i,e_j)=D_{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j},$
+The linear extension becomes a symmetric bilinear form. Since the radial straight lines in the normal coordinate system are all geodesics,
+$\beta(v,v)=0,$ So $\beta\equiv 0,$ This gives us the second formula, so in the normal coordinate system,
+$\Gamma_{ij}^k\equiv 0.$
+
+Now we can come back and explain that $\dot{U}(0)=\frac{1}{r}X.$ Since $X$ is a constant vector,
+$\Gamma_{ij}^k\equiv 0,$
+
+
+$$
+D_{\dot{\gamma}_0(0)}U=\frac{1}{r}X+\frac{t}{r}D_{\dot{\gamma}_0(0)}X=\frac{1}{r}X.
+$$
+Now taking $X=\frac{d {} }{d {}\theta}(r,\theta)$ shows that $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$ is indeed the transverse vector field of a certain single-parameter geodesic family.
+Let $\gamma$ be the base curve $\Gamma_0, $ $W(t)$ be the unit parallel vector field along $\gamma$,
+$W(t)\perp\dot{\gamma}(t).$ For the transverse vector field $U,$ by Gauss's lemma,
+It is also orthogonal to $\dot{\gamma}(t)$. Therefore $U(t)=f(t)W(t).$ By Jacobi equation,
+
+
+$$
+\ddot{f}+Kf=0,\quad f(0)=0,\quad \dot{f}(0)=1. \eqno{(\ast )}
+$$
+Here $K(t)$ is the Gauss curvature at $\gamma(t)$.
+
+Applying it to the two-dimensional space form, we get:
+$$
+f(r)=\left\{\begin{aligned}
+ &r, &&K=0,\\
+ &\sin r, &&K=+1,\\
+ &\sinh r, &&K=-1. 
+ \end{aligned}\right.
+$$
+ This is the $c_0,c_+,c_-.$ we asked for previously.
+The formula $(\ast )$ was discovered by Jacobi, and the initial conditions are called **standard initial conditions**.
+Due to the curvature-controlled properties of the geodesic,
+It can be expected that a manifold with sufficient positive curvature should be compact (Bonnet-Myers theorem),
+The negative curvature manifold makes us expect that the exponential map at a point will be a diffeomorphism (Cartan-Hadamard theorem).
+
+Finally, some comments are given. Suppose $\dim M\ge 3,$ say $M$ is **pointwise constant section curvature**,
+If the cross-sectional curvatures of all $2$-planes at each point on $M$ are the same. The classic **Schur's theorem** means,
+*A manifold is of point-wise constant cross-section curvature if and only if it is of constant cross-section curvature*.
+The proof makes use of the second Bianchi identity.
+
+This section only discusses the simply connected space form. Other space forms come from geometry, group theory,
+Topology and other viewpoints are also very important to consider. Their classification is also an important topic.
+The article was last updated on 2022-04-19 14:01:46
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《黎曼几何初步》笔记(4)-等距变换和空间形式</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-04-17 17:56:21</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/04/17/《黎曼几何初步》笔记(4)-等距变换和空间形式/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/04/21/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Jacobi%E5%9C%BA%E5%92%8CCartan-Hadamard%E5%AE%9A%E7%90%86/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(5)-Jacobi场和Cartan-Hadamard定理</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/14/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-%E6%B8%90%E8%BF%9B%E5%B9%B3%E5%9D%A6%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E6%A4%AD%E5%9C%86%E5%9E%8B%E6%96%B9%E7%A8%8B/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">论文笔记-渐进平坦流形上的椭圆型方程</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Thesis notes - Elliptic equations on asymptotically flat manifolds</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

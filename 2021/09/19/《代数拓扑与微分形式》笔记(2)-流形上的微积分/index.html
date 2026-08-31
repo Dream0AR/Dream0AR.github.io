@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数拓扑与微分形式》笔记(2)-流形上的微积分 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(2)-流形上的微积分</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (2) - Calculus on Manifolds</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-19 19:06:22
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Reference book: Warner "Basics of Differential Manifolds and Lie Groups"
+
+Differential forms on manifolds
+----------------
+
+### Pull back mapping
+
+The smooth function $f:\mathbb{R}^n\rightarrow \mathbb{R}^m$ can induce the pullback mapping $f^\ast
+:\Omega^0(\mathbb{R}^m)\rightarrow\Omega^0(\mathbb{R}^n)$,
+$f^\ast (g)=g\circ f$;
+
+At the same time, it can also induce $f^\ast :\Omega^1(\mathbb{R}^m)\rightarrow \Omega^1(\mathbb{R}^n)$,
+$f^\ast (dy_i)=df_i=d(y_i\circ f)$.
+
+It is easy to extend this definition to get $f^\ast :\Omega^\ast (\mathbb{R}^m)\rightarrow\Omega^\ast (\mathbb{R}^n)$,
+$f^\ast (g_Idy_{i_1}\wedge ...\wedge dy_{i_q})$ =
+$f^\ast (g_I)f^\ast (dy_{i_1}\wedge ...\wedge dy_{i_q})=(g_I\circ f)df_{i_1}\wedge ... \wedge df_{i_q}$.
+
+The definition on the $0$ dimension is more natural. Why does the $1$ dimension need to define the basis $dy_i$ in this way? You need to think about it.
+We know $d:\Omega^0\rightarrow \Omega^1$,
+Found $df^\ast (g)=d(g\circ f)=\sum_i\frac{\partial {}g\circ f}{\partial {}f_i}df_i$,
+$dg=\sum_i\frac{\partial {}g}{\partial {}y_i}dy_i$.
+Note that $f^\ast (\frac{\partial {}g}{\partial {}y_i})=\frac{\partial {}g\circ f}{\partial {}f_i}$,
+So it is quite natural for us to define $f^\ast (dy_i)=df_i$.
+At the same time, from the above analysis we get the following proposition:
+**Proposition 1.1** (Commutatability). *$df^\ast =f^\ast d$.*
+
+It can also be said that our definition is based on the hope of satisfying exchangeability.
+
+### First-order differential invariance
+
+Let $f:\mathbb{R}^n\rightarrow\mathbb{R}^n$ be a diffeomorphism,
+$f_i=x_i\circ f$ is the new coordinate, which is called the coordinate defined by diffeomorphism $f$.
+According to the chain rule,
+$dg=\sum_{i=1}^{n}\frac{\partial {}g}{\partial {}f_i} df_i=\sum_{i,
+j=1}^{n}\frac{\partial {}g}{\partial {}f_i}\frac{\partial {}f_i}{\partial {}x_j} dx_j=\sum_{j=1}^n \frac{\partial {}g}{\partial {}x_j}dx_j,$
+So $dg$ has nothing to do with the coordinate system, which is to say **first-order differential invariance**.
+**Pullback mapping and first-order differential invariance are the basis for defining differential forms and differential operators $d$ on manifolds.**
+
+### Differential form on manifold
+
+Let $M$ be a smooth $n$-dimensional manifold,
+$\{(U_\alpha, \phi_\alpha)\}_{\alpha\in\Lambda}$ is the coordinate atlas.
+The differential form $\omega$ on $M$ is a set class $\{\omega_\alpha\in \Omega^\ast (U_\alpha)\}$,
+This set class needs to satisfy the compatibility conditions: $\,\forall\,U_\alpha\cap U_\beta\neq \varnothing$,
+Remember $U_\alpha\cap U_\beta=U_{\alpha\beta}$,
+$\omega_\alpha|_{U_{\alpha\beta} }=\omega_\beta|_{U_{\alpha\beta} }$,
+In this way, the differential forms given locally can be assembled into a whole,
+That is, the set class $\{\omega_\alpha\in \Omega^\ast (U_\alpha)\}$ is spelled into $\omega$.
+Here $\omega_\alpha=\sum_I {f_\alpha}_I d{\phi_\alpha}_I$,
+$\phi_\alpha:U_\alpha\approx \mathbb{R}^n$,
+That is, the differential form on the surface patch is pulled into $\mathbb{R}^n$ for consideration.
+The definition of $\omega_\alpha|_{U_{\alpha\beta} }$ is by embedding $i:U_{\alpha\beta}\rightarrow U_\alpha$,
+Pulled from $\Omega^\ast (U_\alpha)$ back to $\Omega^\ast (U_{\alpha\beta})$,
+That is, it is defined as $i^\ast \omega_\alpha$.
+Let the differential form on $M$ be $\Omega^\ast (M)$. Similarly, the differential operator $d$ and the outer product $\wedge$ can be defined.
+It should be noted here that due to the requirements for the differential form on the manifold, the compatibility conditions need to be verified.
+Due to the commutability of $d$ and $i^\ast$, $\{d\omega_\alpha\}$ does satisfy the compatibility condition,
+It can be spelled as $d\omega$, so it is well defined. The same goes for $\wedge$.
+Similarly, there is $\Omega^q(M)$ on the manifold, which can be decomposed according to the shape.
+$\{\Omega^\ast (M),d\}$ is called the de Rham complex of the manifold $M$.
+Further, $Z^q(M), B^q(M), H^q(M)$ can be defined.
+
+Now consider the smooth mapping between manifolds $f:M\rightarrow N$,
+This induces $f^\ast :\Omega^\ast (N)\rightarrow\Omega^\ast (M)$.
+Since $d,f^\ast$ is commutative, this induces
+$f^\ast : H^\ast (N)\rightarrow H^\ast (M)$,
+$f^\ast [\omega]=[f^\ast \omega]$. In particular,
+Consider $i:U\rightarrow M$ to be the inclusion map of the open subset,
+Then there is $i^\ast : H^\ast (M)\rightarrow H^\ast (U)$,
+$i^\ast [\omega]=[i^\ast \omega]=[\omega|_U]$.
+Also write $i^\ast [\omega]$ as $[\omega]|_U$, so we have $[\omega]|_U=[\omega|_U]$.
+
+unit decomposition
+--------
+
+**The existence of unit decomposition is the most basic tool for differential manifolds.**
+
+We recall that the manifold satisfies the $T_2$ separability axiom and is pseudocompact.
+$M$上的单位分解是非负光滑函数集族$\{\rho_\alpha\}_{\alpha\in\Lambda}$,
+It satisfies that every point on $M$ has a neighborhood, and there are only a finite number of $\rho_\alpha$ on which are not zero.
+In this way $\sum\rho_\alpha$ is meaningful, and further requires that the sum is $1$ everywhere.
+
+Since the manifold is quasi-compact, there is always unit decomposition on it.
+For a given open coverage $\{U_\alpha\}$ (often the open coverage in the coordinate atlas is taken),
+Being is subject to the decomposition of its units,
+That is $\operatorname{supp} \rho_\alpha\subset U_\alpha$.
+
+Orientation of the manifold
+----------
+
+Remember diffeomorphism$T:\mathbb{R}^n\rightarrow \mathbb{R}^n$,
+$T(y)=x$, denote $T_i=x_i\circ T$,
+$J(T)=\det (\frac{\partial {}T_i}{\partial {}y_j})$. Since $T$ is a diffeomorphism,
+$J(T)$ is not zero, so it is either always positive or always negative. When $J(T)>0$, it is said that $T$ is oriented,
+The opposite is called reverse orientation.
+Generally, if it is a diffeomorphism between open sets, it is required to be constant positive on all connected branches.
+This is called Bao Zhi.
+
+Suppose $M$ is a smooth manifold, $\{(U_\alpha, \phi_\alpha)\}$ is a coordinate atlas,
+If $\,\forall\,U_{\alpha\beta}$ is not empty,
+Diffeomorphism$\phi_\beta\circ \phi_\alpha^{-1}: \phi_\alpha(U_{\alpha\beta})\rightarrow\phi_\beta(U_{\alpha\beta})$ maintains the orientation,
+Then the coordinate atlas is called an oriented coordinate atlas. If $M$ has an oriented coordinate atlas, it is said that $M$ can be oriented.
+**Proposition 1.2**. *A $n$-dimensional manifold $M$ is orientable if and only if it has a globally defined smooth $n$ form that is non-zero everywhere.*
+
+Note that any two everywhere non-zero $n$-forms $\eta,\eta'$,
+The only difference between them is a non-zero function $f$: $\eta=f\eta'$. If $M$ is connected,
+Then $f$ is always positive or always negative. When $f$ is positive, it is said that $\eta and \eta'$ are equivalent.
+So every everywhere non-zero smooth $n$-form on $M$ falls into two equivalence classes,
+Each equivalence class is called an orientation of $M$, denoted $[M]$.
+
+integrals on manifolds
+----------
+
+Let $\omega$ be a smooth $n$-form with compact support in $\mathbb{R}^n$:
+$\omega=f(x)dx_1\wedge \cdots\wedge dx_n$,
+Define integral $\int_{\mathbb{R}^n}\omega=\int_{\mathbb{R}^n}fdx_1\cdots dx_n$.
+
+Let $T:\mathbb{R}^n\rightarrow\mathbb{R}^n$, $T(y)=x$ be a diffeomorphism,
+Then we can prove the variable substitution formula:
+**Proposition 1.3** (Variable substitution). *$dT_1\wedge ...\wedge dT_n=J(T)dy_1\wedge ...\wedge dy_n$.*
+Thus $T^\ast \omega=T^\ast fdT_1\wedge ... \wedge dT_n=(f\circ T)J(T)dy_1\wedge ...\wedge dy_n,$
+Integrate the above equation to get
+$$\int_{\mathbb{R}^n}T^\ast \omega=\int_{\mathbb{R}^n}(f\circ T)J(T)dy_1\wedge  ...\wedge  dy_n,$$
+And by the integral transformation formula
+$$\int_{\mathbb{R}^n} \omega=\int_{\mathbb{R}^n}(f\circ T)|J(T)|dy_1\wedge  ...\wedge  dy_n,$$
+Therefore $\int_{\mathbb{R}^n}T^\ast \omega=\pm \int_{\mathbb{R}^n}\omega$,
+The sign is determined by the sign of $J(T)$.
+
+Now give the integral on $M$.
+Selected orientation $[M]$ and corresponding orientation coordinate atlas $\{(U_\alpha,\phi_\alpha)\}$.
+Let $\{\rho_\alpha\}$ be the unit decomposition subordinate to $\{U_\alpha\}$,
+There is a decomposition of $\tau\in H^n_{c}(M)$$\tau=\sum_\alpha \rho_\alpha \tau$.
+We would like to have $$\int_{[M]}\tau=\sum_\alpha \int_{[M]}\rho_\alpha\tau,$$
+Then study the right formula and hope that
+$$\int_{[M]}\rho_\alpha\tau=\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha},$$
+Use variable substitution to pull the integral back to $\mathbb{R}^n$.
+$$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^{-1})^\ast (\rho_\alpha\tau)|_{U_\alpha},$$
+Note that the integrand form zero is extended outside $\phi(U_\alpha)$.
+So we will $\int_{[M]}\tau:=\sum_\alpha \int_{\mathbb{R}^n}(\phi_\alpha^{-1})^\ast (\rho_\alpha\tau)|_{U_\alpha}$,
+If the direction is clear, $\int_{[M]}$ can be rewritten as $\int_{M}$.
+
+What needs to be verified is that this definition has nothing to do with the directional coordinate atlas and unit decomposition.
+Regarding this point, we can make a more detailed division based on two different divisions, and then sum them up,
+It follows that the integral formulas obtained by the two different divisions are equal.
+
+manifold with edges
+--------
+
+The oriented coordinate atlas of the edged manifold $M$ induces the oriented coordinate atlas at the boundary,
+First define how the upper half plane is induced,
+Then hit the boundary of any $M$ to the upper half plane to determine the induced orientation.
+**Theorem 1.1** (Stokes Theorem). *$\int_Md\omega=\int_{\partial M}\omega|_{\partial M}$.*
+
+The article was last updated on 2021-09-19 19:06:22
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数拓扑与微分形式》笔记(2)-流形上的微积分</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-09-19 19:06:22</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/09/19/《代数拓扑与微分形式》笔记(2)-流形上的微积分/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/09/20/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(3)-MV%E5%BA%8F%E5%88%97/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(3)-MV序列</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (3)-MV Sequence</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/09/19/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(1)-de%20Rham%20%E5%A4%8D%E5%BD%A2/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(1)-de Rham 复形</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (1)-de Rham Complex</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

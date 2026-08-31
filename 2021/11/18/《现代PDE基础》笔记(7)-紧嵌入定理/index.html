@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《现代PDE基础》笔记(7)-紧嵌入定理 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(7)-紧嵌入定理</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (7) - Compact Embedding Theorem</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-11-18 20:12:52
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    compact embedding theorem
+----------
+
+The following proves the embedding
+
+$$\Vert f\Vert_{L^p(\Omega)}\le C\Vert f\Vert_{H^{m,q}(\Omega)},\quad \,\forall\,\frac{n}{p}\ge \frac{n}{q}-m,$$
+
+When the inequality is strict, i.e. $\frac{n}{p}>\frac{n}{q}-m,$ the embedding is compact,
+Map bounded sets to compact sets.
+First, let us simplify the proof. Assume that $m=1$ has been proved, then $\,\forall\,m>1,$
+Take $q_1>q,$ such that $\frac{n}{q_1}-1=\frac{n}{q}-m<\frac{n}{p},$
+Thus from Sobolev's inequality, we have
+$$H^{m,q}\hookrightarrow H^{1,q_1}\stackrel{c}\hookrightarrow L^p$$
+
+Therefore, embedding maps bounded sets to bounded sets and then to compact sets. Therefore, we only need to prove the situation when $m=1$.
+
+Assume that $p>q$ has been proved, then when $p\le q$, $\,\exists\,p_1>q\ge p,$
+$\frac{n}{q}>\frac{n}{p_1}>\frac{n}{q}-1.$ has embedding
+
+$$H^{1,q}\stackrel{c}\hookrightarrow L^{p_1}\hookrightarrow L^p.$$
+
+This maps bounded sets to column compact sets and back to column compact sets, so we only need to prove the case $p>q$.
+At this time $\frac{n}{q}>\frac{n}{p}>\frac{n}{q}-1.$
+
+First we consider the following lemma:
+
+**Lemma 1**. *$\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ $\frac{n}{p}=\theta+\frac{n}{q}-1,$ $\theta\in(0,1),
+$ We have the following inequality:*
+
+
+$$\Vert f(x+h)-f(x)\Vert_{L^p(\mathbb{R}^n)}\le C|h|^{\theta}\Vert f\Vert_{H^{1,q}(\mathbb{R}^n)}.$$
+
+
+**Proof:** In fact, the right side can take a homogeneous module.
+Remember $\frac{n}{p}>\frac{n}{q}-1=\frac{n}{p_1}.$ $q<p<p_1,$
+Then $\frac{1}{p}=\frac{\theta}{q}+\frac{1-\theta}{p_1}.$ thus
+
+$$\begin{aligned}
+                \Vert f(x+h)-f(x)\Vert_{L^p}&\le \Vert f(x+h)-f(x)\Vert_{L^q}^\theta \Vert f(x+h)-f(x)\Vert_{L^{p_1} }^{1-\theta}\\
+                &\le C\left\Vert\int_0^1 \nabla f(x+sh)\cdot hds\right\Vert_{L^{q} }^\theta\Vert f\Vert_{\dot{H}^{1,q} }^{1-\theta}\\
+                &\le C |h|^\theta \Vert f\Vert^{1-\theta}_{\dot{H}^{1,q} }
+            \end{aligned}$$
+**Corollary 2**. *$\Vert\alpha_\varepsilon\ast f-f\Vert_{L^p(\mathbb{R}^n)}\le C\varepsilon^{\theta}\Vert f\Vert_{H^{1,q}(\mathbb{R}^n)}$*
+Therefore, let $\{f_{\nu}\}$ be $H^{1,q}(\mathbb{R}^n)$ bounded function sequence,
+Then $\,\forall\,\varepsilon>0,$
+$\{\alpha_\varepsilon\ast f_\nu\}$ is $H^{m,q}$ bounded function sequence,
+$\,\forall\,m\ge 1.$
+Because the derivation of $\alpha_\varepsilon\ast f_{\nu}$ can be attributed to $\alpha_\varepsilon$.
+Suppose that $\frac{n}{q}-m<-1,$ has $\frac{n}{q}-m<-1,$ for a sufficiently large $m$. Then according to the Sobolev inequality in the negative exponential case,
+$\{\alpha_\varepsilon\ast f_\nu\}$ is $C_{loc}^1$ bounded.
+Therefore, according to the Arzela-Ascoli lemma, there is a subsequence that $C^0$ converges on any compact set,
+That is, $C_{loc}^{0}$ is compact. Naturally, a convergent sequence on a compact set also converges in the modular sense of $L^{p}$,
+Therefore it is $L^{p}_{loc}$ compact.
+
+By inference,
+Consistently for $\nu$ we have $\alpha_\varepsilon\ast f_{\nu} \xrightarrow{L^p} f_{\nu}.$
+It can be proved by the diagonal method that $\{f_{\nu}\}$ has a subsequence that becomes a Cauchy sequence on any compact set,
+Thus $L^p_{loc}$ is compact.
+Therefore, the embedding from $H^{1,q}(\mathbb{R}^n)$ to $L^p_{loc}(\mathbb{R}^n)$ is tight.
+
+Introduction to PDE
+-------
+
+Call $\sum_{|\alpha|\le m}a_\alpha(x)\partial^\alpha u=f(x)$ to be $m$ order linear PDE,
+$a_\alpha,f\in C^\infty.$ If the solution $u\in C^m,$ is called **classical solution**;
+If $u\in C^{m-1},$ has the first type discontinuity of order $m$ only along the normal direction on the surface $\{\psi(x)=0\}$,
+For other $C^m,$, $u$ is called **weak discontinuity solution**. This surface is called **weak discontinuity surface**.
+If the surface $\psi(x)=x_1=0,$ then the normal derivative is $\frac{\partial {} }{\partial {}x_1}.$
+For a weak discontinuous solution $u,$ if $\beta=(m,0,\cdots,0),$ is on the surface $\psi(x)=0$,
+There is $a_\beta(x)\neq 0,$ then there is a small neighborhood near the point,
+Make $$\partial_{x_1}^m u(x)=\sum\limits_{\begin{subarray}{c}
+                |\alpha|\le m\\
+                \alpha\neq \beta
+            \end{subarray} } \frac{a_\alpha(x)}{a_\beta(x)}\partial^\alpha u(x)\in C^0$$
+It is inconsistent with $u$ being a weak discontinuity solution. Therefore $a_\beta(x)=0$ occurs along the weak discontinuity surface.
+
+For any surface $\psi(x)=0,$, through the flattening technique, let $y_1=\psi,$ $y_i=x_i,$ then
+$$\left\{\begin{aligned}
+            \frac{\partial {}u}{\partial {}x_1}&=\frac{\partial {}u}{\partial {}y_1}\frac{\partial {}\psi}{\partial {}x_1}\\
+            \frac{\partial {}u}{\partial {}x_i}&=\frac{\partial {}u}{\partial {}y_1}\frac{\partial {}\psi}{\partial {}x_i}+\frac{\partial {}u}{\partial {}y_i}
+        \end{aligned}\right.$$
+At this time, the weak discontinuity surface satisfies $\widetilde{a}_\beta(x)=\sum_{|\alpha|\le m}a_\alpha(x)(\nabla \psi)^\alpha=0.$
+
+Call $\psi(x)=0$ a **characteristic surface**,
+If it satisfies $\sum_{|\alpha|\le m}a_\alpha(x)(\nabla \psi)^\alpha=0.$
+Call its normal direction **characteristic direction**. Therefore, the weakest discontinuity surface must be a characteristic surface*.
+
+In PDE theory, a classic existence theorem is the Cauchy-Kovalevskaya theorem.
+It shows that if the parameter functions are all real analytic, then given any analytic initial value,
+Analytical solutions are always the only ones that exist. However, the technology used by this theorem is older,
+We use a modern approach to illustrate.
+
+We consider the solution $\frac{\partial {}u}{\partial {}t}=F(t,x,u,\nabla u),$
+Transformed into an integral equation $u(t,x)=u_0(x)+\int_0^t F(\tau,x,u,\nabla u)d\tau.$
+In ODE theory, since derivatives are no longer involved in $F$,
+We can use Picard iteration method to get the unique solution.
+If we can get a suitable module $\Vert\cdot\Vert$ about $x$,
+So that $\Vert\nabla u\Vert$ can be better controlled, then for
+$$\Vert u(t,x)\Vert\le \Vert u_0\Vert+\int_0^t \Vert F(\tau,x,u,\nabla u)\Vert d\tau,$$
+
+It can be analyzed and processed from the ODE perspective. In particular, a theoretical estimate of the solution can be given in this way.
+
+For general functions, it is obviously impossible to use $\Vert u\Vert$ to control $\Vert\nabla u\Vert.$
+But for analytic functions, the derivative and the function value are integrated, so such a module can be obtained.
+
+For the analytic function $f(x)=\sum_\alpha \frac{\partial^\alpha f(0)}{\alpha!}x^\alpha,$
+Let its convergence radius be $R.$ Then $\,\forall\,r\le R,$ is defined
+$$\Vert f\Vert_r=\sum_\alpha \frac{|\partial^\alpha f(0)|}{\alpha!}r^{|\alpha|}<\infty.$$
+
+Obviously it is a module, and satisfies $\Vert fg\Vert_r\le \Vert f\Vert_r\Vert g\Vert_r.$
+In particular $\Vert f^n\Vert_r\le \Vert f\Vert_r^n.$
+A function $f$ is analytic if and only if there exists $r$ such that $\Vert f\Vert_r<\infty.$
+
+Since the derivative term only appears in the integral, we only need to control $\Vert\nabla u\Vert:$ in the integral sense
+
+$$\begin{aligned}
+            \left\Vert\int_{0}^t \partial_{x_1} u(\tau,x)d\tau\right\Vert_{R-MT}&\le \int_0^t \sum_\alpha \frac{|\partial^\alpha \partial_{x_1}u(\tau,0)|}{\alpha! (\alpha_1+1)}(\alpha_1+1)(R-MT)^{|\alpha|}d\tau\\
+            &\le \int_0^t \sum_{\alpha} \frac{|\partial^\alpha u(\tau,0)|}{\alpha!}(R-M\tau)^{|\alpha|} \frac{\alpha_1}{R-MT}\left(\frac{R-MT}{R-M\tau}\right)^{|\alpha|}d\tau\\
+            &\le \sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau} \int_0^t\sum_k \frac{k}{R-MT}\left(\frac{R-MT}{R-M\tau}\right)^kd\tau\\
+            &=\sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau} \int_0^t \frac{R-M\tau}{(MT-M\tau)^2} d\tau\\
+            &=C(M,R,T,t)\sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau}
+        \end{aligned}$$
+Note that the analytic radius of the solution is not necessarily fixed, and may decay over time $t$,
+Therefore, the model taken during analysis cannot be examined on a fixed $r$.
+
+However, the C-K theorem only explains the existence and uniqueness of understanding.
+Hadamard pointed out that the **stability** of the solution also needs to be considered. That is, we must pay attention to the dependence of the solution on the initial value.
+
+The article was last updated on 2021-11-18 20:12:53
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《现代PDE基础》笔记(7)-紧嵌入定理</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-11-18 20:12:52</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/11/18/《现代PDE基础》笔记(7)-紧嵌入定理/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/11/21/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(11-1)-%E7%90%83%E9%9D%A2%E4%B8%9B/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(11-1)-球面丛</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (11-1)-Spherical Bundle</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/16/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-%E5%9B%BE%E4%B8%8A%E5%A4%A7%E8%8C%83%E5%9B%B4Ricci%E6%9B%B2%E7%8E%87/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">论文笔记-图上大范围Ricci曲率</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Paper Notes-Large-scale Ricci curvature on the graph</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

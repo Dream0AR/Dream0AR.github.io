@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分流形》练习 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》练习</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Exercise</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-12-28 19:33:04
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Exam questions
+------
+
+**Exercise 1**. *Describe the definition of $C^\infty$-differential manifold. Suppose $M$ and $N$ are $m$-dimensional and $n$-dimensional $C^\infty$-differential manifolds respectively, prove that $M\times N$ is an $m+n$-dimensional $C^\infty$-differential manifold.*
+
+**Proof:** Call $M$ a topological manifold. If $M$ is a topological space that satisfies the conditions $C_2$ and $T_2$,
+That is, there are countable topological bases, and $\,\forall\,p,q\in M,$
+$\,\exists\,U,V$ are the open neighborhoods of $p,q$ respectively, satisfying $U\cap V=\varnothing.$ In addition,
+It also needs to be locally Euclidean, that is, $\,\forall\,p\in M,$ $\,\exists\,U$ is the open neighborhood of $p$,
+$\varphi:U\approx \varphi(U)\subset \mathbb{R}^m$ is a homeomorphism.
+Such a topological space is called an $m$-dimensional topological manifold.
+
+Given the open covering $\{U_\alpha\},$ of $M$ and the homeomorphism to Euclidean space $\{\varphi_\alpha\}.$
+Call $\{(U_\alpha,\varphi_\alpha)\}$ the coordinate atlas of $M$.
+If it satisfies $\,\forall\,U_\alpha\cap U_\beta\neq \varnothing,$
+$\varphi_\alpha\circ\varphi_{\beta}^{-1}:\varphi_{\beta}(U_\alpha\cap U_\beta)\rightarrow \varphi_{\alpha}(U_\alpha\cap
+U_\beta)$ is a diffeomorphism of $C^\infty$,
+That is, as a homeomorphism, both the mapping and the inverse mapping are $C^\infty$,
+Then $\{(U_\alpha,\varphi_\alpha)\}$ is called $C^\infty$ coordinate atlas,
+$M$ is given a differential structure.
+A topological manifold with $C^\infty$ differential structure is called a $C^\infty$ differential manifold.
+Suppose $\{U_\alpha\},\{V_\beta\}$ are the topological bases of $M and N$ respectively,
+Then $\{U_\alpha\times V_\beta\}$ is the topological basis of $M\times N$.
+$M\times N$ takes the product topology. At the same time, for $(p_1,q_1)\neq (p_2,q_2),$
+Let us assume $p_1\neq p_2,$ and take the open neighborhood $U_1,U_2,V_1,V_2,$ of $p_1,p_2,q_1,q_2$
+Can guarantee $U_1\cap U_2=\varnothing.$
+Then at this time $U_1\times V_1\cap U_2\times V_2=\varnothing,$
+is the non-intersecting open neighborhood of $(p_1,q_1),(p_2,q_2)$.
+If $\{(U_\alpha,\varphi_\alpha)\},\{(V_\beta,\psi_\beta)\}$ is the $C^\infty$-coordinate atlas of $M,N$,
+It is proved that $\{(U_\alpha\times V_\beta,\varphi_\alpha\times \psi_\beta)\}$ is the $C^\infty$-coordinate atlas of $M\times N$.
+Obviously $\varphi_\alpha\times \psi_\beta:U_\alpha\times V_\beta\approx \varphi_\alpha(U_\alpha)\times \psi_\beta(V_\beta)\subset \mathbb{R}^{m+n},$
+At the same time, $(f\times g)'=f'\times g',$ transfer functions are also $C^\infty$ diffeomorphisms,
+It is indeed a $C^\infty$-coordinate atlas. Therefore $M\times N$ is an $m+n$ dimensional $C^\infty$-differential manifold.
+**Exercise 2**. *If $M$ and $N$ are $m$-dimensional and $n$-dimensional $C^\infty$-differential manifolds respectively, $F:M\rightarrow N$ is a smooth mapping between $C^\infty$-differential manifolds.
+For $p\in M$ and $q = F(p) \in N$, $F$ naturally determines a pullback mapping of the cotangent space $F^\ast _q:T^\ast _qN\rightarrow T^\ast _pM.
+$ If there are local coordinates $(U, u^i) at $p$, and there are local coordinates $(V,v^\alpha) at $$q$,$ they give the natural basis $\{(du^i)_p\}$ and $\{(dv^\alpha)_q\} of $T^\ast _pM$ and $T^\ast _qN$ respectively.
+$ Please write down the matrix representation of $F^\ast _q$ under this basis, and prove that when $F$ is a diffeomorphism, the above $F^\ast _q$ is still a linear isomorphism.*
+
+**Proof:** Suppose $F^\ast _q(d v^\alpha)=a^\alpha_i du^i,$
+Acts on $X_i=\frac{\partial {} }{\partial {}u^i}$,
+Get $a_i^\alpha=X_i(v^\alpha\circ F).$
+Let $\widehat{F}=\psi\circ F\circ \varphi^{-1}$ be the local representation,
+Then the matrix is the transpose of $J(\widehat{F})$,
+$F_q^\ast (b_\alpha dv^\alpha)=b_\alpha a_i^\alpha du^i.$ When $F$ is a diffeomorphism,
+Denote $\widehat{F}$ as diffeomorphism, then $\det J(\widehat{F})\neq 0,$
+Therefore, the matrix representation of $F_q^\ast $ is full rank and thus linearly isomorphic.
+**Exercise 3**. *Suppose the specific form of mapping $f : \mathbb{R}^2\rightarrow \mathbb{R}^2$ is $y_1 = x_1e^{x_2} + x_2,$ $y_2 = x_1e^{x_2}-x_2.$ Try to write $f$ under the natural basis of Euclidean space, inducing the mapping $f_\ast between tangent spaces Matrix representation of $, and prove that $f$ is a smooth homeomorphism.*
+**Certificate:**
+Recall $f_\ast (\frac{\partial {} }{\partial {}x_i})=a_i^j \frac{\partial {} }{\partial {}y_j},$
+Apply $dy^j,$ to get $a_i^j=\frac{\partial {}y^j\circ f}{\partial {}x_i}.$
+Therefore $f^\ast (b^i\frac{\partial {} }{\partial {}x_i})=b^ia_i^j \frac{\partial {} }{\partial {}y_j},$
+The matrix representation $a_i^j$ is the Jacobi matrix of the local representation $\widehat{f}=\mathrm{id}\circ f\circ \mathrm{id}^{-1}=f$.
+
+Calculated, $J(f)=\begin{bmatrix}
+ e^{x_2} & x_1e^{x_2}+1\\
+ e^{x_2} & x_1e^{x_2}-1
+\end{bmatrix}.$ 此即为$f_*$的矩阵表示. 易见$f\in C^\infty,$
+且$\det J(f)=-2e^{x_2}\neq 0,$ 因此$f$处处为局部微分同胚, 且为单射.
+
+Note that $\frac{y_1-y_2}{2}=x_2,$
+$y_1=x_1e^{\frac{y_1-y_2}{2} }+\frac{y_1-y_2}{2},$
+$x_1=\frac{y_1+y_2}{2}e^{\frac{y_2-y_1}{2} }.$
+This gives the specific form of $f^{-1}$. It is easy to see that it has no restriction on the definition domain.
+And it is also $C^\infty$, so $f$ is surjective and smooth homeomorphism,
+That is, both simultaneous mapping and inverse mapping as homeomorphisms are smooth.
+
+**Exercise 4**. *Suppose $M$ is a $C^\infty$-differential manifold, $f, g \in C^\infty(M),$ $X, Y \in X (M),$ $[-, -]$ is a Lie bracket. Please expand $[fX, gY].$*
+
+**Certificate:**
+$$
+\begin{aligned}
+ [fX,gY]&=fX(gY)-gY(fX)\\
+ &=fX(g)Y+fgXY-gY(f)X-fgYX\\
+ &=fX(g)Y-gY(f)X+fg[X,Y] 
+ \end{aligned}
+$$
+
+Here $X(g)(p)=X_p(g),$ $[X,Y]_p(h)=X_p(Y_q(h))-Y_p(X_q(h)),$
+Where $X_q(h)$ is the $C^\infty$ function about $q$.
+**Exercise 5**. *Suppose $M$ is a $C^\infty$-differential manifold, $X, Y \in \mathfrak{X}(M),$ $\omega \in \Lambda^1(M),$ $[-, -]$ is a Lie bracket. Proof formula:*
+
+
+
+$$
+d\omega (X, Y ) = X\omega (Y ) - Y \omega(X) - \omega([X, Y ])
+$$
+**Proof:** Since the formula is linear, we only need to verify the case $\omega=fdg$.
+$d\omega=df\wedge dg.$ at this time
+
+
+$$
+d\omega(X,Y)=df\wedge dg(X,Y)=df(X)dg(Y)-df(Y)dg(X)=X(f)Y(g)-Y(f)X(g).
+$$
+$$
+X\omega(Y)=X(fY(g))=X(f)Y(g)+fXY(g)
+$$
+
+
+
+
+$$
+Y\omega(X)=Y(fX(g))=Y(f)X(g)+fYX(g)
+$$
+
+
+
+
+$$
+\omega([X,Y])=f[X,Y] (g)=fXY(g)-fYX(g)
+$$
+Therefore,
+$X\omega(Y)-Y\omega(X)-\omega([X,Y])=X(f)Y(g)-Y(f)X(g)=d\omega(X,Y).$
+**Exercise 6**. *Suppose $M$ is a $m$-dimensional $C^\infty$-compact boundless differential manifold, $f : M \rightarrow \mathbb{R}^m$ is a smooth mapping. Try to prove that there exists $p\in M,$ such that the rank of $f$ at $p$ is less than $m.$*
+
+**Proof:** Otherwise, the rank of $f$ is equal to $m$ everywhere (obviously it cannot be greater than $m$). According to the inverse function theorem,
+$f$ is a local diffeomorphism everywhere. That is, $\,\forall\,p\in M,$
+$\,\exists\,U$ is the open neighborhood of $p$, $f:U\approx f(U),$
+And it can be required that $f(U)$ is also an open set. According to the rank theorem,
+In fact, it can be required that $U, f(U)$ are all square boxes in the appropriate coordinate system. By $M$,
+$\,\exists\,\{U_i\}_{i=1}^m,$ $f:U_i\approx f(U_i),$
+$\bigcup_{i=1}^m U_i=M.$
+
+Let $M$ be a connected manifold, otherwise we can discuss it on each connected branch. A connected branch is both open and closed,
+At the same time, a closed set in a compact space is still a compact set. Note that we have
+$$
+\bigcup^m_{i=1} f(U_i)= f(\bigcup^m_{i=1}U_i)=f(M),
+$$
+
+ This creates a contradiction.
+Because the continuous image of a compact set is compact, $f(M)$ is a compact set, and thus a bounded closed set.
+But $f(M)=\bigcup_{i=1}^m f(U_i)$ is an open set again,
+Therefore it can only be the full space $\mathbb{R}^m,$ and this will contradict compactness.
+Therefore $f$ has a rank smaller than $m.$ at a certain point.
+
+The edgelessness in the problem is used in the inverse function theorem. When $p$ is a point on the edge of the manifold with edges,
+There is no longer a similar inverse function theorem. Even if a local diffeomorphism on the neighborhood $U$ is found,
+It is also impossible to explain that the image set is an open set in the entire space, so similar discussions cannot be carried out.
+**Exercise 7**. *Suppose $M_1, M_2$ are $C^\infty$-differential manifolds, $f : M_1 \rightarrow M_2$ is a local diffeomorphism. If $M_2$ is orientable, prove that $M_1$ is also orientable.*
+
+**Proof:** Since $f$ is a local diffeomorphism, its local representation is a diffeomorphism,
+Therefore, $M_1 and M_2$ have the same dimensions. It can be oriented by $M_2$,
+There exists $\Omega\in \mathcal{A}^{m}(M_2)$ which is an external differential form that is non-zero everywhere.
+Assert that $f^\ast \Omega\in \mathcal{A}^m(M_1)$ is also a non-zero external differential form everywhere,
+It is therefore orientable.
+
+Consider in the local coordinate system. Let $f:U\approx V,$
+$\Omega=hdy^1\wedge\cdots \wedge dy^m\in \mathcal{A}^m(V),$ $h\neq 0,$
+rule
+
+
+$$
+f^\ast \Omega=f^\ast h\cdot f^\ast (dy^1\wedge\cdots\wedge dy^m)=h\circ f \cdot \det J(f) {}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(M_1).
+$$
+Since $f$ is a local diffeomorphism, $\det J(f)\neq 0,$ and $h\circ f\neq 0.$
+Therefore $f^\ast \Omega$ is indeed a non-zero external differential form everywhere.
+
+Another method is to take appropriate thinning so that $f:U_\alpha\approx V_\alpha,$
+And $\{(V_\alpha,\psi_\alpha)\}$ constitutes a direction-preserving smooth coordinate atlas on $M_2$.
+Assert that $\{(U_\alpha,\varphi_\alpha=\psi_\alpha\circ f)\}$ constitutes a direction-preserving smooth coordinate atlas on $M_1$.
+Just notice
+$$
+\varphi_\beta\circ\varphi_\alpha^{-1}=(\psi_\beta\circ f)\circ (f^{-1}\circ \psi_\alpha^{-1})=\psi_\beta\circ\psi_\alpha^{-1}.
+$$
+
+
+
+**Exercise 8**. *Prove that integrals in the form of compact supports are independent of the choice of unit decomposition. Restate Stokes' theorem.*
+
+**Proof:** First, it is explained that the integral in the form of a compactly supported set has nothing to do with the selection of the coordinate system.
+If $\omega\in \mathcal{A}^m_c(U\cap V),$ then
+
+
+$$
+\int_U \omega=\int_{\varphi(U\cap V)}(\varphi^{-1})^\ast \omega=\int_{\psi(U\cap V)}(\psi^{-1})^\ast \omega=\int_V\omega,
+$$
+
+
+The equal sign in the middle is obtained by the integral transformation formula between $\mathbb{R}^m$,
+Note that the coordinate selection of $U, V$ needs to be consistent with the orientation of $M$.
+This ensures that $\det J(\varphi\circ\psi^{-1})> 0.$
+
+Next, the decomposition of two sets of units $\{f_i\},\{g_j\},$ $\{f_ig_j\}$ is also a set of unit decompositions.
+Therefore,
+
+
+$$
+\sum_i \int_{U_i} f_i \omega=\sum_{i,j}\int_{U_i\cap V_j} f_ig_j \omega=\sum_{j}\int_{V_j} g_j\omega.
+$$
+
+
+Therefore, the integral has nothing to do with the choice of unit decomposition.
+Stokes' theorem: For an oriented $m$-dimensional smooth manifold $M,$ if $D$ is its upper (closed) edge region,
+That is, $D$ consists of the interior point $p\in U\approx \varphi(U)\subset \mathbb{R}^m$ and the boundary point $p\in U,$
+Composed of $U\cap D\approx \varphi(U)\cap \mathbb{H}$.
+$D$** induces orientation** from **$M$**,
+Then for the $m-1$ degree **compact support** $C^1$ external differential form $\omega$ on $M$, we have
+
+
+$$
+\int_D d\omega=\int_{\partial D}\omega.
+$$
+
+ When $D$ has no boundary points, the right end disappears.
+
+The article was last updated on 2021-12-28 19:33:06
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分流形》练习</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-12-28 19:33:04</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/12/28/《微分流形》练习/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/14/%E3%80%8A%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E7%BA%BF%E6%80%A7%E8%81%94%E7%BB%9C/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(1)-线性联络</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (1)-Linear Connection</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/26/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E5%A4%8D%E4%B9%A0/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《现代PDE基础》笔记(10)-复习</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (10)-Review</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

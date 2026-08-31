@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《黎曼几何初步》笔记(1)-线性联络 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(1)-线性联络</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (1)-Linear Connection</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-01-14 12:21:56
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Linear connection
+--------
+
+### Definition
+
+Recall that the Riemannian metric $g$ on $C^\infty$ manifold $M$ means specifying a vector inner product $g_x(-,-),$ for each $T_xM$
+Also recorded as $\left<{}-,-\right>_x.$, it is called $C^\infty$,
+If we take any coordinate system $(x^1,\cdots,x^n),$
+$g_{ij}(x)=g_{x}(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j})$ are all $C^\infty$ functions,
+$1\le i,j\le n.$
+
+In $\mathbb{R}^n$,
+For vector field $X=\sum_i X^i\frac{\partial {} }{\partial {}x^i},$
+Directional derivative $D_vX along $v$:=\sum_i D_vX^i\frac{\partial {} }{\partial {}x^i}.$
+If $V$ is a vector field, then a new vector field $D_VX(x)=D_{V(x)}X,$ can be defined
+It is called **directional derivative** and satisfies the following properties:
+
+1. $D_{fV+gW}X=fD_VX+gD_WX;$
+
+2. $D_V(fX)=(D_Vf)X+fD_VX;$
+
+3. $D_V(X+Y)=D_VX+D_VY.$
+**Definition 1**. *On the $C^\infty$ manifold $M$, **Contact** means specifying a new $C^\infty$ vector field $D_VX,$ for each pair of $C^\infty$ vector fields $V,
+
+The directional derivatives in $\mathbb{R}^n$ are **standard contacts**.
+*Contacts the tangent space* of each point in *$M$*. Call $D_VX$ the **covariant derivative** of $X$ along $V$,
+$D$ is sometimes called a covariant differential.
+Since the first property shows that $D_VX$ is linear on $C^\infty$ function ring $\mathscr{F}(M)$ for $V$,
+Sometimes it is emphasized that the connection defined at this time is **linear connection**, which is different from affine connection and projective connection.
+The linear connection satisfies the following properties. If $x\in M$ has $V(x)=W(x),$ then $D_VX(x)=D_WX(x).$
+From this, it can be defined that $D_vX:=D_VX(x)\in T_xM,$ $V$ is any vector field that satisfies $V(x)=v$.
+But for $X(x)=Y(x),$ $D_VX(x)$ is not necessarily equal to $D_VY(x).$ But if $V(x)=v,$
+On a short arc $\gamma$ starting from $x$ with $v$ as the tangent direction, there is $X|_{\gamma}=Y|_{\gamma},$
+Then it can be proved that $D_VX(x)=D_VY(x).$ Therefore it can be said that $D_vX$ is determined by $X|_{\gamma}$.
+
+By pulling back the standard connections, it is always possible to define linear connections locally. Decomposed by units,
+The overall connection can also be given, because the entire connection on the manifold forms a convex set. It can be seen from this that,
+There are many contacts. We hope to find interesting ones.
+
+### Levi-Civita Contact
+
+**Proposition 2**. *For a given Riemannian metric $g,$ on $M$, there is a unique connection $D,$ on $M$ such that for any vector field $X,Y,Z,$, it satisfies the following two properties:*
+1. $X\left<{}Y,Z\right>=\left<{}D_XY,Z\right>+\left<{}Y,D_XZ\right>;$
+
+2. $D_XY-D_YX=[X,Y]=XY-YX.$
+
+*Such a connection is called a **Levi-Civita connection** of metric $g$ or a **Riemannian connection** of metric $g$.
+It is equivalent to the property of "parallel movement" explained later.*
+The first property gives the method of deriving the inner product, while the second property matches the definition of Lie brackets.
+
+**Proof:** First prove the uniqueness. In the following way, the function $\Gamma^k_{ij}\in C^\infty:$ is given
+
+
+$$
+D_{\frac{\partial {} }{\partial {}x^i} }\frac{\partial {} }{\partial {}x^j}=\sum_{k=1}^n \Gamma_{ij}^k \frac{\partial {} }{\partial {}x^k},\quad 1\le i,j\le n.
+$$
+We only need to state that the **contact coefficient**$\Gamma_{ij}^k$ is uniquely determined by the metric $g$.
+
+According to property (L1), the Einstein summation convention will be adopted by default in the future, we have
+$$
+\frac{\partial {}g_{jk} }{\partial {}x^i}=\frac{\partial {} }{\partial {}x^i}\left<{}\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k}\right>=
+ \left<{}\Gamma_{ij}^l\frac{\partial {} }{\partial {}x^l},\frac{\partial {} }{\partial {}x^k}\right>+\left<{}\frac{\partial {} }{\partial {}x^j},\Gamma_{ik}^l\frac{\partial {} }{\partial {}x^l}\right>=\Gamma_{ij}^l g_{lk}+\Gamma_{ik}^l g_{jl} \eqno(*)
+$$
+
+From the property (L2),
+$$
+(\Gamma_{ij}^k-\Gamma_{ji}^k)\frac{\partial {} }{\partial {}x^k}=\left[\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right]=0 \,\Rightarrow\, \Gamma_{ij}^k=\Gamma_{ji}^k.
+$$
+
+
+
+Rotate $(\ast )$ formula$i,j,k$, and get
+
+
+$$
+\frac{\partial {}g_{jk} }{\partial {}x^i}+\frac{\partial {}g_{ik} }{\partial {}x^j}-\frac{\partial {}g_{ij} }{\partial {}x^k}=2\Gamma_{ij}^lg_{lk}\,\Rightarrow\, \Gamma_{ij}^k=\frac{g^{kl} }{2}\left(\frac{\partial {}g_{jl} }{\partial {}x^i}+\frac{\partial {}g_{il} }{\partial {}x^j}-\frac{\partial {}g_{ij} }{\partial {}x^l}\right).
+$$
+Among them, $(g^{ij})$ is the inverse matrix of $(g_{ij})$, which satisfies $g^{ik}g_{kj}=\delta^i_j,$
+$\,\forall\,i,j.$
+
+The above formula shows that $\Gamma_{ij}^k$ is determined by the metric $g$, which illustrates the uniqueness. As for existence,
+Suffice it to say that $\Gamma_{ij}^k$ can also give a connection in turn.
+For the vector field $X=f^i\frac{\partial {} }{\partial {}x_i},$
+$Y=h^i\frac{\partial {} }{\partial {}x_i},$ is naturally defined by the contact property
+
+
+$$
+D_XY=f^i\frac{\partial {}h^j}{\partial {}x_i}\frac{\partial {} }{\partial {}x_j}+f^ih^j \left(D_{\frac{\partial {} }{\partial {}x_i} }\frac{\partial {} }{\partial {}x_j}\right)=f^i\left(\frac{\partial {}h^j}{\partial {}x_j}+h^k \Gamma_{ik}^j\right)\frac{\partial {} }{\partial {}x_j}.
+$$
+Verification shows that it has nothing to do with the selection of the coordinate system, so the vector field is well-defined. From the definition process,
+It certainly satisfies the property of connection, so $D$ is the desired one, and its existence is proved.
+
+The way to express the connection coefficient using a metric in the proof was obtained by Christoffel,
+Therefore, $\Gamma_{ij}^k$ of Levi-Civita connection is called Christoffel notation.
+Without the help of a coordinate system, the following expression can also be obtained through the properties of Levi-Civita connection:
+
+
+$$
+\left<{}D_XY,Z\right>=\frac{1}{2}\left(X\left<{}Y,Z\right>+Y\left<{}Z,X\right>-Z\left<{}X,Y\right>+\left<{}Z,[X,Y]\right>+\left<{}Y,[Z,X]\right>-\left<{}X,[Y,Z]\right>\right).
+$$
+
+
+This completely confirms the Levi-Civita connection. When $X, Y, Z$ satisfy good properties, such as being orthogonal to each other,
+Then the expression of the above formula will be greatly simplified.
+
+### Geometric meaning
+We know that the original Riemannian metric $g$ in the peripheral space $M$ can be inherited on the submanifold $N$,
+A good fact to get the induced metric $\overline{g}.$ is that $\,\forall\,p\in N,$
+Let $P:T_pM\rightarrow T_pN$ be the **orthogonal projection**,
+Then $\,\forall\,X,Y\in \mathfrak{X}(N)\subset \mathfrak{X}(M),$
+Define $\overline{D}_XY=P(D_XY),$
+Then $\overline{D}$ is exactly the Levi-Civita connection of measure $\overline{g}$ on $N$.
+In particular, when the peripheral space $M=\mathbb{R}^n$, it has a natural **flat metric**$g,$
+Natural basis orthonormal. It is easy to verify that the directional derivative mentioned at the beginning is its Levi-Civita connection.
+Therefore, the above facts indicate the geometric meaning of the Levi-Civita connection when $N\subset \mathbb{R}^n$:
+*It is the projection of the directional derivative of the vector field in the peripheral space*.
+It can be seen that property (L2) can also be discussed without giving the Riemannian metric.
+It is equivalent to $\Gamma_{ij}^k=\Gamma_{ji}^k,$ $\,\forall\,1\le i,j,k\le n.$
+Therefore, the connection satisfying (L2) is said to be **symmetric**, also called **torsionless**.
+We still need to understand the connection more intuitively. Let $\gamma:[a,b]\rightarrow M$ be an embedded curve,
+The image falls in a certain coordinate neighborhood. Let $X$ be the vector field on $\gamma(t)$ (neighborhood).
+We care about when $D_{\dot\gamma(t)}X=0,$ $\,\forall\,t\in [a,b].$
+$$
+\begin{aligned}
+ D_{\dot\gamma(t)}X&=D_{\dot\gamma(t)}\left(X^j\frac{\partial {} }{\partial {}x^j}\right)\\
+ &=\frac{d {}X^j}{d {}t}\frac{\partial {} }{\partial {}x_j}+\dot\gamma^iX^jD_{\frac{\partial {} }{\partial {}x_i} }\frac{\partial {} }{\partial {}x^j}\\
+ &=\left(\frac{d {}X^k}{d {}t}+\dot\gamma^iX^j\Gamma_{ij}^k\right)\frac{\partial {} }{\partial {}x^k}
+ \end{aligned}
+$$
+
+Therefore $D_{\dot\gamma(t)}X=0$ requires $\,\forall\,k,$
+It is established that $\frac{d {}X^k}{d {}t}+\dot\gamma^iX^j\Gamma_{ij}^k=0$ is established.
+This is a system of ODE equations, $\,\forall\,v\in T_{\gamma(a)}M,$ always exists $X_v(t),$
+Satisfy $X_v(a)=v,$ $D_{\dot\gamma(t)}X_v=0.$
+
+A vector field $X$ along $\gamma$ is said to be **parallel** if $D_{\dot\gamma}X=0.$
+Given $\gamma:[a,b]\rightarrow M,$
+It is said that $w\in T_{\gamma(b)}M$ is obtained by moving $v\in T_{\gamma(a)}M$ in parallel along $\gamma$**,
+If there is a **parallel vector field**$X,$ along $\gamma$ such that $X(a)=v,$ $X(b)=w.$
+The above are the results of the discussion on a small section of embedded curve. For a general immersion curve, the interval needs to be divided.
+Translate the vector piecewise.
+
+From this we can define the isomorphism of the vector space $P^\gamma:M_{\gamma(a)}\rightarrow M_{\gamma(b)},$
+Its inverse is exactly the parallel movement along the $\gamma$ reverse curve. This isomorphism is called **Translational Isomorphism**.
+Note that translation isomorphism is closely related to the selection of curves. Therefore,
+We can say that *the connection is related to the tangent space* at both ends of the curve, and of course this connection is related to the curve itself.
+
+Now we can have a deeper understanding of the property (L1): it is equivalent to preserving inner products for all translational isomorphisms.
+When (L1) holds, there is an arc length parameterized curve $\gamma:[0,1]\rightarrow M,$
+$x,y$ is its endpoint. Take $T_xM$ standard orthonormal basis $\{e_i\},$
+Let $e_i(t)=P^{\gamma|_{[0,t]} }(e_i),$ have $D_{\dot\gamma(t)}e_i(t)=0.$
+Therefore,
+
+
+
+$$
+\frac{d {} }{d {}t}\left<{}e_i(t),e_j(t)\right>=\dot\gamma(t)\left<{}e_i(t),e_j(t)\right>=\left<{}D_{\dot\gamma(t)}e_i(t),e_j(t)\right>+\left<{}e_i(t),D_{\dot\gamma(t)}e_j(t)\right>=0.
+$$
+Thus, $\left<{}e_i(t),e_j(t)\right>\equiv \delta_{ij}.$ Therefore,
+The translational isomorphism maps the orthonormal basis to the orthonormal basis, thus it is an isomorphism that preserves the inner product. In turn,
+Assume that each translational isomorphism maintains the inner product, and takes the vector field $X,Y,Z.$ for any point $x,$
+Take the arc length parameterized curve $\gamma:[0,1]\rightarrow M,$
+Taking $x$ as the starting point and $\dot\gamma(0)=X(x).$
+Similarly, take $\{e_i(t)\}$ as the orthonormal basis of $T_{\gamma(t)}M$, then let $Y=Y^ie_i,$
+$Z=Z^ie_i,$ then:
+
+$$
+\begin{aligned}
+ X(x)\left<{}Y,Z\right>&=\dot\gamma(0)\left<{}Y,Z\right>=\frac{d {} }{d {}t}\sum_i Y^iZ^i|_{t=0}\\
+ &=\sum_i \frac{d {}Y^i}{d {}t}(0)Z^i(0) + \sum_i Y^i(0)\frac{d {}Z^i}{d {}t}(0)\\
+ &=\left<{}D_{\dot{\gamma}(0)}Y,Z\right>+\left<{}Y,D_{\dot{\gamma}(0)}Z\right>\\
+ &=\left<{}D_{X(x)}Y,Z\right>+\left<{}Y,D_{X(x)}Z\right>
+ \end{aligned}
+$$
+That is, if the translational isomorphism always maintains the inner product, then it must also satisfy the condition (L1). Therefore,
+It can be said that the Levi-Civita connection is the only symmetric connection, making all translational isomorphisms isometric isomorphisms.
+**Note 3**. *The connection $D$ determines the translational isomorphism, and in turn the translational isomorphism also determines the connection: It can be proved that if $v\in T_xM,$ vector field $X,$ and the curve $\gamma$ starts from $x$, $\dot{\gamma}(0)=v,$ then for the translational isomorphism $P_t:T_xM\rightarrow T_{\gamma(t)}M,$ has*
+$$
+D_vX=\frac{d {} }{d {}t}[P_t^{-1}(X\circ\gamma(t))]|_{t=0}.
+$$
+
+
+
+**Note 4**. *The concept of geodesic is introduced by the geodesic curvature being zero, that is, the curvature vector of the curve coincides with the normal, and the projection of the curve on the tangent plane has zero curvature everywhere, which is the generalization of the straight line.
+Another way to generalize is to consider the tangent vector field on the curve. If the tangent vector field is a parallel vector field along the curve, then the curve is called a connected **geodesic**, that is, $D_{\dot\gamma}\dot\gamma=0.$ So the two definitions are equivalent, and through the latter definition, it can be immediately seen that the definition of geodesic is intrinsic.*
+
+The article was last updated on 2022-01-14 12:22:00
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《黎曼几何初步》笔记(1)-线性联络</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-01-14 12:21:56</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/01/14/《黎曼几何初步》笔记(1)-线性联络/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/01/24/Jacobi%E5%85%AC%E5%BC%8F/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">Jacobi公式</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Jacobi formula</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/28/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%BB%83%E4%B9%A0/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》练习</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Exercise</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

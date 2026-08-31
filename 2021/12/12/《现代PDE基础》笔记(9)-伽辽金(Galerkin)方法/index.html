@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (9)-Galerkin Method</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-12-12 18:12:10
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/">PDE</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Elliptic equation
+--------
+
+Recall from the previous section that the existence of $Ax=b$ is equivalent to the uniqueness of $A^\ast y=0$.
+If $A$ is an $n\times n$ matrix, then the uniqueness of $A^\ast y=0$ is equivalent to the uniqueness of $Ay=0$.
+Therefore, the existence of $Ax=b$ is equivalent to uniqueness.
+For elliptic equations, consider the homogeneous Dirichlet boundary problem $Lu=f\in H^{-1}(\Omega).$
+We have Garding's inequality:
+
+
+$$
+\left<{}-Lu,u\right>_{L^2}\ge C_1\Vert u\Vert_1^2-C_2\Vert u\Vert^2.
+$$
+
+
+When $C_2\le 0$, we can illustrate the uniqueness of the problem. As for the existence,
+According to the original method, it is necessary to consider whether there is $C_2^\ast \le 0,$ in the Garding inequality corresponding to the dual operator $L^\ast $
+Thus, the existence of the original problem is explained through the uniqueness of the dual problem.
+But in fact, $C_2\le 0$ can directly illustrate the existence of the solution to the original problem.
+
+Consider the **Galerkin method**.
+The method of deriving existence from the uniqueness of the dual problem only explains the theoretical existence.
+The construction of the solution cannot be given specifically. However, this method can give the construction method of the solution,
+It is the theoretical basis of the **finite element method** in the numerical solution of differential equations.
+
+Recall that $H^{m,p}$ is a separable space, because it can be equidistantly embedded in $(L^p)^N$,
+The latter is a separable space. Therefore, $H_0^1(\Omega)$ is a separable Hilbert space,
+There is a set of complete orthonormal bases $\{\phi_i\}.$ Theoretically,
+The characteristic function system can be taken $-\Delta \phi_j=\lambda_j\phi_j,$
+$\phi_j|_{\partial\Omega}=0.$ When the operator is self-conjugated, the characteristic function system is of course orthogonal.
+
+Since $C_c^\infty(\Omega)$ is dense in $H_0^1(\Omega)$,
+Of course we can take $\{\phi_i\}\subset C_c^\infty(\Omega).$
+Consider $u_m=\sum_{i=1}^ma_i\phi_i,$ $f=\sum_{i=1}^\infty f_i\phi_i,$
+$f_m=\sum_{i=1}^m f_i\phi_i\rightharpoonup f.$ To understand $Lu=f,$
+One expectation is to get $u_m$ and give $u.$ by solving $Lu_m=f_m$, but this expectation is often disappointed.
+Because for the equation
+
+$$
+Lu_m=\sum_{i=1}^m a_iL\phi_i=\sum_{i=1}^mf_i\phi_i=f_m,
+$$
+
+
+When $\{\phi_i\}$ does not take the characteristic function system, this will be an infinite-dimensional equation,
+It cannot be solved for a finite number of unknown quantities.
+Galerkin's approach is that we consider the following questions:
+
+
+$$
+\left<{}Lu_m,\phi_j\right>=\left<{}f_m,\phi_j\right>,\quad j=1,\cdots,m.
+$$
+That is $\sum_{i=1}^m a_i\left<{}L\phi_i,\phi_j\right>=\sum_{i=1}^mf_i\left<{}\phi_i,\phi_j\right>,$
+$j=1,\cdots,m.$ This is the form of the matrix equation $Ax=b$. As stated at the beginning,
+In order to prove the existence of the solution, it is only necessary to explain the uniqueness of the solution. For this purpose, elliptic estimation can be used.
+Consider $\left<{}Lu_m-f_m,u_m\right>=0,$ by Garding inequality, when $C_2\le 0$,
+$$
+\begin{aligned}
+            C_1\Vert u_m\Vert^2_1&\le \left<{}-f_m,u_m\right>\le \Vert f_m\Vert_{-1}\Vert u_m\Vert_1\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2+\frac{C_1}{2}\Vert u_m\Vert_1^2\\
+            \frac{C_1}{2}\Vert u_m\Vert^2_1&\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2\\
+            \Vert u_m\Vert_1&\le \frac{1}{C_1}\Vert f_m\Vert_{-1}\le \frac{1}{C_1}\Vert f\Vert_{H^{-1} }+M
+        \end{aligned}
+$$
+The last inequality sign is because $f_m\rightharpoonup f$ is weakly $\ast$ convergent,
+It is derived that $\Vert f_m-f\Vert_{H^{-1}}$ is bounded (resonance theorem).
+Substitute $f_m=0$ to get the uniqueness of the solution to the equation, so the solution also exists. The matrix $A$ is invertible,
+We can find $u_m$ as the solution to the problem.
+
+In particular, according to the last line, we can see that $\{u_m\}\subset H_0^1(\Omega)$ is bounded.
+It is a Hilbert space, which is of course the dual space (reflexive) of a certain space (self),
+Therefore $\{u_m\}$ is weakly compact, that is, it has sub-sequences that are weakly convergent. We might as well assume that it is weakly convergent to $u.$
+Assert that $u$ is a weak solution.
+
+$\,\forall\,v\in H_0^1(\Omega),$ take $v_m=\sum_{i=1}^m\xi_i\phi_i,$
+Then $v_m\xrightarrow{H^1}v.$
+Since $\left<{}Lu_m,\phi_j\right>=\left<{}f_m,\phi_j\right>,$
+$j=1,\cdots,m.$ We have $\left<{}Lu_m,v_m\right>=\left<{}f_m,v_m\right>.$
+Note that $\left<{}f_m,v_m\right>=\left<{}f_m,v_m-v\right>+\left<{}f_m,v\right>\rightarrow \left<{}f,v\right>.$
+Among them
+
+
+$$
+|\left<{}f_m,v_m-v\right>|\le \Vert f_m\Vert_{-1}\Vert v_m-v\Vert_1\le (\Vert f\Vert_{-1}+M)\Vert v_m-v\Vert_1\rightarrow 0.
+$$
+
+
+At the same time,
+$$
+\left<{}Lu_m,v_m\right>=-\sum_{i,j=1}^n\int_{\Omega}\partial_ju_m\partial_i(a_{ij}(x)v_m)dx-\sum_{i=1}^n \int_\Omega u_m\partial_i(b_i(x)v_m)dx+\int_\Omega c(x)u_mv_mdx.
+$$
+
+
+Similarly,
+$\left<{}Lu_m,v_m\right>=\left<{}Lu_m,v_m-v\right>+\left<{}Lu_m,v\right>,$
+Among them, according to strong convergence and integral by parts,
+$$
+|\left<{}Lu_m,v_m-v\right>|\le \alpha\Vert u_m\Vert_1\Vert v_m-v\Vert_1\rightarrow 0;
+$$
+
+
+
+
+$$
+\left<{}Lu_m,v\right>=\left<{}u_m,L^\ast v\right>\rightarrow \left<{}u,L^\ast v\right>=\left<{}Lu,v\right>.
+$$
+
+
+Therefore $\left<{}Lu_m,v_m\right>\rightarrow \left<{}Lu,v\right>.$
+So $\left<{}Lu,v\right>=\left<{}f,v\right>,$
+$\,\forall\,v\in H_0^1(\Omega).$ This shows that $u$ is a weak solution,
+This proves the existence of the solution to the original problem and provides a specific method to obtain the solution.
+
+hyperbolic equation
+----------
+
+Consider the hyperbolic equation
+$$
+Mu=\frac{\partial^2 u}{\partial t^2}-\left(\sum_{i,j=1}^n\frac{\partial}{\partial x_i}\left(a_{ij}(t,x)\frac{\partial u}{\partial x_j}\right)+\sum_{i=1}^nb_i(t,x)\frac{\partial u}{\partial x_i}+c(t,x)u\right)=f(t,x).
+$$
+
+
+Among them, suppose $a_{ij}$ satisfies the **consistent ellipticity condition**: $\,\exists\,\alpha>0,$ such that
+
+
+$$
+\sum_{i,j=1}^n a_{ij}(t,x)\xi_i\xi_j\ge \alpha\sum_{i=1}^n \xi_i^2, \quad\,\forall\,\xi\in \mathbb{R}^n\setminus\{0\}.
+$$
+We consider the Galerkin method: For the Dirichlet homogeneous boundary problem,
+Take a set of $C_c^\infty$ complete orthonormal bases $\{\phi_i(x)\},$ of $H_0^1(\Omega)$
+Then write $u_m(t,x)=\sum_{i=1}^m a_i(t)\phi_i(x),$ and solve the equation given the initial value
+$$
+\left<{}Mu_m,\phi_j\right>=\left<{}f,\phi_j\right>, \quad j=1,\cdots,m,
+$$
+
+
+Find the coefficient $a_i(t).$ This is a system of ODE equations composed of $m$ second-order ordinary differential equations, which is always solvable.
+In order to illustrate that $\{u_m\}$ has subsequences that weakly converge to weak solutions, we only need to discuss its boundedness.
+The difference method can be considered. Here we give the energy inequality and use the energy method to solve it.
+Using integrals by parts, it can be deduced that $u_t$ also has a homogeneous boundary from $u$. Consider
+
+
+$$
+\int_\Omega u_tMudx=\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx-\int_\Omega\sum_i u_tb_iu_idx-\int_\Omega u_tcudx=\int_\Omega u_tfdx.
+$$
+
+
+Using symmetry, we can get
+
+
+$$
+\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx= \frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx.
+$$
+
+
+Therefore,
+$$
+\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx=\int_\Omega u_tfdx+\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx+\int_\Omega\sum_i u_tb_iu_idx+\int_\Omega u_tcudx.
+$$
+
+
+Consider on $\overline{\Omega_T}=[0,T]\times \overline{\Omega}$,
+It can be obtained that $C>0,$ makes
+$$
+\partial_t \int_\Omega u_t^2+\sum_{i,j=1}^n a_{ij}u_iu_j dx\le C(\Vert u\Vert_1^2+\Vert u_t\Vert^2+\Vert f\Vert^2)
+$$
+
+
+Integrate both sides, then at time $t$, the initial value is recorded as $u=g,$ $u_t=h,$ then
+
+
+$$
+\Vert u_t\Vert^2+\Vert u\Vert^2_1\le \Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^t\Vert u_t\Vert^2+\Vert u\Vert_1^2+\Vert f\Vert^2d\tau
+$$
+Remember $E(t)=\Vert u_t\Vert^2+\Vert u\Vert^2_1,$
+$E_0=\Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^T\Vert f\Vert^2d\tau,$ then
+
+
+$$
+E(t)\le E_0+C\int_0^tE(\tau)d\tau.
+$$
+To summarize the above methods,
+We transform PDE into ODE by taking modulo, and obtain an ordinary differential inequality.
+Then use Gronwall's inequality to get the energy inequality.
+
+**Lemma 1** (Gronwall inequality). *Suppose non-negative $E(t)\in C[0,T],$ satisfies $E(t)\le E_0+C\int_0^tE(\tau)d\tau,$ $C,E_0>0,$ then*
+$$
+E(t)\le E_0e^{Ct}.
+$$
+
+
+
+**Certificate:** Remember $I(t)=\int_0^tE(\tau)d\tau,$
+Then the original formula is equal to $\partial_t I(t)\le E_0+CI(t).$ Therefore,
+$$
+\partial_t(e^{-Ct}I(t))\le E_0e^{-Ct}\,\Rightarrow\, e^{-Ct}I(t)\le \frac{E_0}{C}(1-e^{-Ct})\,\Rightarrow\, I(t)\le \frac{E_0}{C}(e^{Ct}-1).
+$$
+
+
+Substituting into the above formula, we have
+
+$$
+E(t)=\partial_t I(t)\le E_0e^{Ct}.
+$$
+In particular, we have $E(t)\le E_0e^{CT},$ $\,\forall\,t\in [0,T].$ Therefore locally,
+$u$ is bounded and therefore weakly compact. Furthermore, similarly to the elliptic equation,
+
+
+$$
+\left<{}f,v\right>\leftarrow \left<{}Mu_m,v\right>=\left<{}u_m,M^\ast v\right>\rightarrow \left<{}u,M\ast v\right>=\left<{}Mu,v\right>
+$$
+Therefore, $u$ that $\{u_m\}$ weakly converges to is a weak solution. Of course,
+The uniqueness can also be explained through the energy estimation of the dual problem, thereby giving the existence of the solution to the original problem.
+But again, this can only give a theoretical explanation. Let $E_0=0$ to illustrate the uniqueness,
+A stability statement is given for the general $E_0,$ energy method.
+
+parabolic equation
+----------
+Parabolic equations are similar to hyperbolic equations, and only the derivation of energy estimates is done here.
+
+
+$$
+\left<{}Mu,u\right>=\frac{1}{2}\partial_t\int_\Omega u^2dx+\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\int_\Omega \sum_{i=1}^n b_iu_iudx-\int_\Omega cu^2dx=\int_\Omega fudx
+$$
+
+
+It can be explained by $ab\le \varepsilon{a^2}+\frac{b^2}{\varepsilon},$:
+$$
+\frac{1}{2}\partial_t\Vert u\Vert^2\le \frac{1}{2}\partial_t\Vert u\Vert^2+\frac{\lambda}{2} \Vert\nabla u\Vert^2\le C(\Vert u\Vert^2+\Vert f\Vert^2)
+$$
+
+
+Therefore, assuming the initial value $u=g,$ then
+
+
+$$
+\Vert u\Vert^2\le \Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau + C\int_0^t \Vert u\Vert^2d\tau.
+$$
+
+
+Remember $E(t)=\Vert u\Vert^2,$
+$E_0=\Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau,$
+Then similarly from Gronwall's inequality, we have
+
+$$
+E(t)\le E_0e^{Ct}.
+$$
+
+
+Therefore, the weak solution can be obtained through the Galerkin method, and the uniqueness and stability of the solution are also discussed.
+operator semigroup
+--------
+
+Another very practical method is the operator semigroup method. For example, for parabolic problems,
+Consider solving the homogeneous Dirichlet boundary initial value problem:
+$$
+\left\{\begin{aligned}
+            &u_t=Au=\sum_{i,j=1}^n\partial_j(a_{ij}u_i)\\
+            &u(0,x)=g(x)\\
+            &u|_{\partial\Omega\times [0,T]}=0
+        \end{aligned}\right.
+$$
+ So formally,
+$u(t,x)=e^{At}g(x)$ gives the solution to the problem, because $u_t=Ae^{At}g(x)=Au,$
+And satisfy the initial value and boundary conditions. Here $e^{At}:=\sum_n \frac{A^n}{n!}t^n.$
+In order to give a strict explanation, take modulo the operator, then
+$$
+\Vert e^{At}\Vert\le \sum_n\frac{\Vert A^n\Vert}{n!}t^n\le \sum_n\frac{\Vert A\Vert^n}{n!}t^n
+$$
+
+
+The compatibility condition $\Vert AB\Vert\le \Vert A\Vert\Vert B\Vert.$ is used here.
+Thus if $\Vert A\Vert\le 1,$ then $\Vert e^{At}\Vert\le e^t,$
+The operator is meaningful.
+However, in general, it is obvious that $\Vert A\Vert\le 1$ is not necessarily true.
+Recall that $(\lambda-A)^{-1}$ is a bounded linear operator for sufficiently large $\lambda$,
+Therefore, discussion on it is promising.
+Imitate $a=\lim\limits_{\lambda\rightarrow\infty}\lambda a(\lambda-a)^{-1},$
+definition
+$$
+A_\lambda=\lambda A(\lambda-A)^{-1}=\lambda(A-\lambda+\lambda)(\lambda-A)^{-1}=-\lambda+\lambda^2(\lambda-A)^{-1}.
+$$
+
+
+
+We can expect the following limits to hold:
+
+
+$$
+e^{At}=\lim\limits_{\lambda\rightarrow \infty}e^{A_\lambda t}=\lim\limits_{\lambda\rightarrow \infty}e^{-\lambda t}e^{\lambda^2(\lambda-A)^{-1}t}
+$$
+At this time $\Vert e^{A_\lambda t}\Vert=e^{-\lambda t}\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert.$
+And $\Vert(\lambda-A)^{-1}\Vert\le \frac{1}{\lambda},$
+Therefore $\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert\le e^{\lambda t},$
+$\Vert e^{A_\lambda t}\Vert\le 1,$ operator is meaningful.
+
+The article was last updated on 2021-12-13 11:11:02
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-12-12 18:12:10</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/12/12/《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/12/19/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第七章-微分形式</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Differential Forms</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/08/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%BC%A0%E9%87%8F%E4%B8%9B/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第六章-张量丛</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 6 - Tensor Bundle</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

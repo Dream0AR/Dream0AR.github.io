@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数图论》第一章-基本概念 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数图论》第一章-基本概念</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Graph Theory&#34; Chapter 1-Basic Concepts</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-16 14:51:40
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/GTM207-%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/">GTM207-代数图论</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Figure
+--
+
+The graph $X$ consists of **vertex set**$V(X),$ **edge set**$E(X)$.
+Each (undirected) edge is an unordered pair $\{x,y\},$ often represented by $xy$. If $xy\in E,$
+Then $x, y$ points are said to be **adjacent**, denoted as $x\sim y.$
+If there is a bijection $\varphi: V(X)\rightarrow V(Y),$
+Let $x\sim y$ in $V(X)$ if and only if $\varphi(x)\sim\varphi(y),$ in $V(Y)$
+Then the graph $X$ and $Y$ are said to be **isomorphic**. When drawing representations, numbers are often used to label the vertices.
+
+A graph is said to be complete if every pair of its vertices are adjacent.
+Remember that a complete graph with $n$ vertices is $K_n.$. The graph is said to be **empty**,
+If the edge set is an empty set and has at least one vertex; the graph is said to be **null**,
+If the edge set and the point set are both empty sets. These two concepts are proposed for narrative convenience.
+
+The previous graphs are all **simple graphs**. Sometimes the edge set $E(X)$ is replaced by the directed edge set $A(X),$
+It is called **directed graph**. At this time, the edges are ordered pairs, which are represented by arrows in the diagram and are called **arcs**.
+An undirected graph is sometimes also considered as a directed graph in which each undirected edge is two directed edges.
+Generally, simple graphs are considered by default. The vertex set can actually have an infinite number of elements,
+But this book considers **finite graphs** by default.
+
+subplot
+----
+
+If the graph $Y$ satisfies $V(X)\subset V(Y),$ $E(X)\subset E(Y),$
+Then $Y$ is called the **subgraph** of $X$. If $V(Y)=V(X),$ also satisfies $V(Y)=V(X),$, then $Y$ is called the **generated subgraph** of $X$.
+If the vertices in a subgraph $Y$ are adjacent if and only if they are adjacent in $X$, then $Y$ is said to be an induced subgraph of $X$.
+It can be seen that the generated subgraph is obtained by deleting edges, while the induced subgraph is obtained by deleting points and their adjacent edges.
+There are several important concepts related to subgraphs: If a subgraph is a complete graph, it is called a clique.
+If the induced subgraph of a vertex set is empty, it is called an independent set.
+The size of the largest clique in graph $X$ is denoted as $\omega(X), and the size of the largest independent set is denoted as $\alpha(X).$
+These are two very important properties of graphs.
+
+The **road** with length $r$ from vertex $x$ to $y$ on the graph,
+Refers to a sequence composed of $r+1$ different vertices, with $x$ as the head and $y$ as the tail.
+And adjacent vertices in the sequence are also adjacent in the graph. If any two points on the graph have roads starting and ending with them,
+Then the graph is said to be **connected**, otherwise it is said to be disconnected.
+
+The graph is disconnected, which is equivalent to that we can divide the graph $X$ vertex set into two sets $R, S, $
+So that the vertices in $R$ and the vertices in $S$ are not adjacent.
+At this time we can say that the graph $X$ is the intersection-free union of the vertex sets $R$ and $S$ induced subgraphs. A maximum connected induced subgraph,
+It is called the **connected branch** of the graph $X$, abbreviated as **branch**.
+
+A cycle refers to a connected graph, where each vertex has exactly two neighbors;
+A ring in a graph refers to a ring that is a subgraph. It is easy to prove that if every point in the graph has at least two neighboring points,
+Then the graph must contain a cycle. A connected acyclic graph is called a **tree**,
+The acyclic graph can be split into the non-intersecting union of several maximal connected acyclic graphs, so it is called **forest**.
+If a spanning subgraph is a tree, it is called a spanning tree. It is easy to see that a graph has a spanning tree if and only if it is connected.
+A maximal spanning forest refers to a spanning subgraph composed of spanning trees for each branch.
+
+automorphism
+------
+
+The isomorphism of graph $X$ to itself is an automorphism. It is easy to prove that all automorphisms form a group,
+Denoted as $\operatorname{Aut}(X).$
+Obviously $\operatorname{Aut}(X)\subset \operatorname{Sym}(V(X)).$
+The latter refers to the symmetry group, that is, all permutations of the set $V(X)$.
+A basic example is $\operatorname{Aut}(K_n)\cong \operatorname{Sym}(V(K_n))=S_n.$
+Generally speaking, it is not easy to determine whether two graphs are isomorphic, and whether a graph has non-trivial automorphism.
+
+The image of $v$ under the substitution of $g$ is denoted as $v^g.$ When $g\in \operatorname{Aut}(X)$,
+For the subgraph $Y\subset X,$, the subgraph $Y^g\subset X.$ can be defined edge-preservingly.
+$Y$ and $Y^g$ are naturally isomorphic.
+
+The **degree/valency** of vertex $x$ refers to the number of neighbors of $x$. The maximum (minimum) degree of graph $X$,
+That is, it refers to the maximum (minimum) value of all vertex degrees. If the degree of each vertex of the graph is $k,$
+It is called **$k-$regular graph**.
+**Lemma 1.1**. *If $x\in X,$ $g\in \operatorname{Aut}(X),$ then $x$ has the same degree as $x^g$.*
+
+**Certificate:**
+Just use the induced subgraph $N(x)$ of $x$ and all its neighbors to satisfy $N(x)\cong N(x)^g=N(x^g)$.
+The **distance**$d_X(x,y),$ between two vertices $x,y$ in the graph $X$ refers to the length of the shortest path connecting $x,y$.
+If $X$ is clear, the distance can be abbreviated as $d(x,y).$ A simple lemma is as follows:
+
+**Lemma 1.2**. *$\,\forall\,x,y\in X,$ $g\in \operatorname{Aut}(X),$ $d(x,y)=d(x^g,y^g).$*
+The **complementary graph**$\overline X$ of the graph $X$ is such a graph: It satisfies $V(X)=V(\overline X),$
+But two vertices are adjacent in $\overline X$ if and only if they are not adjacent in $X$.
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/NqFdbRUiZGYM5em.png width='50%' height='50%'>
+
+It is easy to prove the following lemma:
+**Lemma 1.3**. *$\operatorname{Aut}(X)\cong \operatorname{Aut}(\overline X).$*
+
+If $X$ is a directed graph, then for isomorphism, we require it to be direction-preserving.
+
+homomorphism
+----
+
+Mapping $f:V(X)\rightarrow V(Y)$ to two graphs $X,Y,$ is called **homomorphism,**
+If $x\sim y\in X\Rightarrow f(x)\sim f(y)\in Y.$, the previous isomorphism is of course also a isomorphism.
+The graph $X$ is a **bipartite graph**, if $V(X)$ can be divided into $V_1, V_2,$
+Such that the endpoints of each edge are in these two sets respectively.
+An example of a homomorphism is $V(X)\rightarrow V(K_2),$ mapping $V_i$ to vertex $i$.
+This example raises the issue of graph coloring. The **normal coloring (proper coloring)** of a graph,
+It refers to the mapping from $V(X)$ to a certain finite (color) set, so that adjacent points are mapped to different colors.
+If $X$ can be dyed normally by $k$ colors, it is said to be dyeable by $k-$**.
+The smallest $k$ is called the **chromatic number** of the graph $X$, recorded as $\chi(X).$
+All points dyed with a certain color form an independent set, called a color class.
+For a bipartite graph with at least one edge, its coloring number is $2.$
+
+**Lemma 1.4**. *The coloring number of $X$ is the smallest $r,$ such that there is a homomorphism of $X\rightarrow K_r$.*
+
+**Proof:** For homomorphism $f:X\rightarrow Y,$ it is easy to see for $y\in Y,$
+$f^{-1}(y):=\{x\in V(X): f(x)=y\}$ is an independent set. Therefore, if there is a homomorphism from $X$ to $K_r$,
+Taking $K_r$ vertices as $r$ different colors, just color the vertices in $X$ according to their images,
+Thus $\chi(X)\le r.$
+
+If $\chi(X)$ can be dyed by $r-$, let the color set be $\{1,\cdots,r\},$
+Just map each color class to the corresponding vertex in $K_r$. Because the adjacent points in $X$ have different colors,
+And different colors are adjacent to each other in $K_r$.
+
+The homomorphism $f$ of graph $X$ to its subgraph $Y$ is called contraction, if $f|_Y$ is an identity mapping.
+At this time, $Y$ is called the contraction kernel of $X$. For example, in the following figure, construct a homomorphism as shown by the red arrow,
+Then the five inner sides form the contraction core of the original image.
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/qD6o2IO3FYmjvui.png width='50%' height='50%'>
+
+For the homomorphism of directed graphs, just change the preservation of adjacency to the preservation of ordered pairs. It should be noted that,
+The above discussion assumes that there is no loop in the graph. An edge is called a loop if its two endpoints are the same point.
+The properties of homomorphisms of graphs that allow cycles will be quite different.
+An example is that any mapping from a set of vertices to a point with a cycle is homomorphic.
+
+The homomorphism of graph $X$ to itself is called an automorphism, and all automorphisms constitute a monoid group. The automorphism group is included in it.
+
+cycle diagram
+------
+Next, we introduce a very important type of graph, called circulant graph:
+It is a directed graph $X=X(\mathbb{Z}_n,C),$
+The vertex of the set $C\subset \mathbb{Z}_n\setminus\{0\}.$ is the element in $\mathbb{Z}_n$,
+$(i,j)$ is an arc in $X$ if and only if $j-i\in C.$
+$X(\mathbb{Z}_n,C)$ is called a cyclic graph of order $n$, with $C$ as a connected set.
+
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/5lzsWJ1NDBaf2ru.png width='50%' height='50%'>
+If $\,\forall\,c\in C,$ $-c\in C,$ then $(i,j)$ is an arc if and only if $(j,i)$ is an arc,
+Therefore $X$ can be regarded as an undirected graph. It is easy to see that the ring mentioned above is $X(\mathbb{Z}_n,\{\pm 1\}),$
+It is a type of cyclic graph, denoted as $C_n$.
+
+Johnson diagram
+----------
+For positive integers $v\ge k\ge i,$ the graph $J(v,k,i)$ is such an undirected graph:
+Let there be a set $\Omega,$ with $v$ elements
+The graph takes all subsets containing $k$ elements in $\Omega$ as vertices,
+An edge is connected between two points if and only if the intersection of its corresponding subsets contains $i$ elements. Therefore, it contains $\binom{v}{k}$ vertices,
+It is a regular graph, and each point has $\binom{k}{i}\binom{v-k}{k-i}$ as its degree.
+
+**Lemma 1.5**. *$J(v,k,i)\cong J(v,v-k,v-2k+i).$*
+
+**Proof:** Just map each subset containing $k$ elements to its complement in $\Omega$.
+It is easy to see that the intersection of two complementary sets contains $v-2k+i$ elements if and only if the original two sets contain $i$ elements.
+Therefore such mappings are isomorphic.
+
+According to this lemma, we can always default to $v\ge 2k.$. At this time, $J(v,k,k-1)$ is called **Johnson graph**,
+$J(v,k,0)$ is the **Kneser graph**. Since the replacement of elements in $\Omega$ induces the replacement between subsets,
+We have the following lemma:
+**Lemma 1.6**. *$S_v\subset \operatorname{Aut}(J(v,k,i)).$*
+
+side picture
+----
+
+The **edge graph (line graph)**$L(X)$ of the graph $X$ is such a graph: it has the edges of $X$ as vertices,
+Two vertices are connected by an edge if and only if their corresponding edges in $X$ have common vertices.
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/RPjdVz8KtTUnNFr.png width='50%' height='50%'>
+
+**Star graph**$K_{1,n}$ is a graph composed of $1$ vertices and their $n$ neighbors.
+Its edge graph is the complete graph $K_n.$ For the ring $C_n,$ it is isomorphic to its edge graph.
+
+Considering its two vertices for each edge, we have the following lemma:
+
+**Lemma 1.7**. *If $X$ is a $k-$regular graph, then $L(X)$ is $2k-2$regular.*
+
+Each vertex of degree $k$ in $X$ determines a clique of size $k$ in $L(X)$. If $X$ contains $n$ vertices,
+Then there are corresponding $n$ clusters in $L(X)$, so that each vertex of $L(X)$ is in at most two of the clusters,
+Each edge is in exactly one of the groups. In fact, through the construction method, there is the following inverse proposition:
+
+**Theorem 1.8** (Krausz). *A non-empty graph is an edge graph of a graph if and only if its edge set can be divided into several cliques, such that each vertex is in at most two of the cliques.*
+If $X$ does not contain **triangle** (a group with size $3$), then when a point in $L(X)$ has two neighboring points,
+When two neighboring points are in a certain group as mentioned above, this point is also in that group.
+Otherwise, their corresponding sides form a triangle at $X$.
+Therefore, the cliques in $L(X)$ determined by the vertices of $X$ are all maximal.
+
+Obviously $X\cong Y\Rightarrow L(X)\cong L(Y),$ but the reverse is not necessarily true,
+For example $L(K_{1,3})\cong L(K_3).$
+However, Whitney proved that this is in fact the only counterexample in the connected case.
+Let us prove the weaker proposition below.
+
+**Lemma 1.9**. *If the minimum degree of $X,Y$ is greater than $3,$ then $X\cong Y\Leftrightarrow L(X)\cong L(Y).$*
+
+**Proof:** Just note that in the side plot,
+A cluster containing less than three points may not necessarily be reduced to a star graph starting from a certain vertex.
+However, when a group with more than three points is restored, it must be restored to a star graph. It only needs to be explained that when four sides have common vertices in pairs,
+It must be in the shape of $K_{1,4}$. Otherwise, three of the sides must be restored to a triangle when restored.
+At this time, it is impossible to add a fourth edge so that both sides have common vertices.
+
+Therefore, when the degree of each vertex is greater than $3$,
+The size of $n$ maximal cliques corresponding to $n$ vertices is greater than $3,$
+And conversely, each maximal clique with a size greater than $3$ corresponds to a vertex.
+Therefore, there is a bijection between the vertex set and the maximum group with size greater than $3$,
+And the vertices are adjacent if and only if the corresponding maximal cliques have common points.
+Therefore, the properties of the graph and its edge graph properties determine each other,
+Therefore $X\cong Y\Leftrightarrow L(X)\cong L(Y).$
+
+Another interesting description of edge graphs is:
+**Theorem 1.10** (Beineke). *A graph is an edge graph if and only if its induced subgraphs each containing at most six points are edge graphs.*
+
+We call a bipartite graph **semi-regular** if it has 2$-coloring such that points with the same color have the same degree.
+The simplest example is **complete bipartite graph**$K_{m,n},$
+It consists of two independent sets containing $m$ points and $n$ points, connected in pairs.
+**Lemma 1.11**. *If the edge graph $L(X)$ of the connected graph $X$ is a regular graph, then $X$ is a regular or semi-regular bipartite graph.*
+
+**Proof:** Suppose $L(X)$ is $k-$ regular, then the sum of the degrees of each pair of neighboring points in $X$ is always $k+2.$
+Therefore, the degree of all points in connected $X$ can only take on at most two values. If there is only one value,
+Then it is a regular graph; if there are two different values, then just color it according to these two values.
+In this way, only the sum of point degrees of different colors meets the requirements, so points of the same color must not be adjacent.
+And after dyeing in this way, points with the same color have the same degree, which is semi-regular.
+
+Available floor plan
+--------
+
+We have seen that it is convenient to represent graphs graphically. If the graph can be drawn without intersecting lines,
+It is called a planar graph. More precisely, we consider mapping the graph onto a plane.
+Map vertices to points and edges to continuous curves connecting two points without self-intersection,
+Such a mapping is called **Plane Embedding**. If the corresponding curves of the edges without common points do not intersect,
+Curves corresponding to edges with common vertices only intersect at corresponding points on the plane.
+A graph is called planar if and only if there exists such a planar embedding.
+
+**Plane graph** is a planar graph with good plane embedding.
+The edges of a plan view divide the plane into several areas, which are called the **faces** of the plan view. Except for one area,
+All other areas are bounded. This unbounded area is called the **infinity surface** or **external (external).
+face)**. The length of a face refers to the number of sides that frame it.
+
+The famous Euler's formula gives the relationship between points, lines and surfaces in a plane diagram:
+**Theorem 1.12** (Euler). *If a connected plane graph has $n$ vertices, $e$ edges and $f$ faces, then $n-e+f=2.$*
+
+A planar graph is called a maximally planar graph. If one more edge is added, it is no longer planar.
+If the plane of a planar graph is embedded with a face whose length is greater than $3$, then it is possible to add another edge.
+Therefore, the plane embedding of a maximally planar graph has the length of all faces $3$. If the degree of each point is at least $2$,
+Then each edge lies in exactly two faces, and we have $2e=3f,$ so $e=3n-6.$
+In fact, if a planar graph containing $n$ points has $3n-6$ edges, it must be maximal.
+Such a graph is called a plane triangulation.
+
+There are many kinds of planar embeddings for a graph, which will cause the faces of the planar graph to be different, as shown in the figure below.
+A very important topological conclusion is that $3-$ connected graphs essentially have only one embedding method.
+
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/bNgKA27E9TuIDkq.png width='50%' height='50%'>
+Given a planar graph $X,$ we can generate **dual graph**$X^\ast,$
+Taking the face of $X$ as the vertex of $X^\ast$, for each common edge between two faces in $X$,
+Draw an edge in $X^\ast$ (across a common edge) connecting the corresponding vertices on both sides.
+Note that there may be multiple edges in $X^\ast$, that is, there are multiple edges connecting two points.
+Unless otherwise specified, we do not consider duplicate edges in the graph by default.
+
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/OqilQ1K7n2I4XAu.png width='50%' height='50%'>
+If a graph is isomorphic to its dual graph, it is called **self-dual**, such as the complete graph $K_4.$
+For a connected graph $X,$ we can explain $X\cong (X^\ast)^\ast.$
+The concept of embedding can be generalized from the plane to any surface, and the duality is similar.
+An example is that the complete graph $K_6$ of a non-planar graph can be embedded on the projective plane,
+is a triangulation of the projective plane.
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/Fs8nIm63LMXyvaE.png width='50%' height='50%'>
+
+Another example is that the complete graph $K_7$ is not a planar graph and cannot be embedded on the projective plane,
+But it can be embedded on the torus.
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/UZLdoX21VqCADpw.png width='50%' height='50%'>
+
+The article was last updated on 2021-09-16 14:51:40
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数图论》第一章-基本概念</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-09-16 14:51:40</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/09/16/《代数图论》第一章-基本概念/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/09/16/%E3%80%8A%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BE%A4%E8%AE%BA%E5%9B%9E%E9%A1%BE/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数图论》第二章-群论回顾</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Chapter 2 of &#34;Algebraic Graph Theory&#34; - Review of Group Theory</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/09/15/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2(1)/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第一章-微分流形(1)</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 1 - Differential Manifolds (1)</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

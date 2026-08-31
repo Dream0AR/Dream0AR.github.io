@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《几何测度论导论》讲义笔记(1.2)-Hausdorff测度 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《几何测度论导论》讲义笔记(1.2)-Hausdorff测度</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Introduction to Geometric Measure Theory&#34; Lecture Notes (1.2)-Hausdorff Measure</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-25 10:56:40
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E6%B5%8B%E5%BA%A6%E8%AE%BA/">几何测度论</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Hausdorff measure
+-------------
+
+### Basic definition
+
+This section assumes that $(X,d)$ is a metric space.
+Remember $\omega_m=\frac{\pi^{m/2} }{\Gamma(\frac{m}{2}+1)},$
+Among them $\Gamma(q)=\int_0^\infty t^{q-1}e^{-t}dt,$ $q>0.$
+When $m\in \mathbb{Z}_+$, $\omega_m$ represents the volume of the $m$-dimensional unit ball $B_1^m(0)$.
+For any $m\ge 0,$, define the $m$-dimensional Hausdorff (external) measure as
+$$\mathcal{H}^m(A)=\lim\limits_{\delta\rightarrow 0+}\mathcal{H}_\delta^m(A),\quad A\subset X,$$
+Among them, $\mathcal{H}_\delta^m$ is called the $\delta$ approximation of $\mathcal{H}^m$,
+$\mathcal{H}_\delta^m(\varnothing):=0;$ $\,\forall\,$not empty$A\subset X,$
+$\mathcal{H}_\delta^m(A):=\omega_m\inf\sum_{j}\left(\frac{\operatorname{diam}C_j}{2}\right)^m,$
+The lower bound satisfies $C_1,\cdots\subset X,$ $\operatorname{diam}C_j<\delta,$
+Take the set column of $A\subset \bigcup_j C_j$. If no such set column is found,
+It is regarded as $\inf \varnothing=+\infty.$
+It is easy to verify that $\mathcal{H}_\delta^m$ and $\mathcal{H}^m$ are both external measures.
+
+Since $H_\delta^m$ is reduced with respect to $\delta$,
+Therefore, the limit at $\delta\rightarrow 0+$ always exists (possibly $+\infty$),
+Therefore, we can remember $\mathcal{H}^m(A)=\sup_{\delta>0}\mathcal{H}_\delta^m(A).$
+It is easy to verify that $\mathcal{H}^m$ and $\mathcal{H}_\delta^m$ are both external measures.
+Note that $\mathcal{H}^0$ is actually a counting measure.
+
+**Note 1.1**. *Since $\operatorname{diam}C=\operatorname{diam}\overline{C},$ can additionally require that the set selected in $\mathcal{H}_\delta^m$ be a closed set. Since a closed set has a small open neighborhood, an open set can also be selected.
+For a completely bounded set $A,$ $\mathcal{H}_\delta^m(A)<\infty,$ $\,\forall\,m\ge0,$ $\delta>0.$*
+
+It is easy to see that $\mathcal{H}^m$ satisfies the Caratheodory criterion,
+Therefore $\mathcal{H}^m$ is a Borel measure. In particular, from the previous notation,
+It is easy to show that it is still a Borel regular measure. However, it should be noted that,
+$\mathcal{H}_\delta^m$ is not necessarily a Borel measure, for example, on $\mathbb{R}^2$,
+For $\mathcal{H}_1^1,$ take $S_\frac{1}{2}=I\times \{0,\frac{1}{2}\},$
+$I=[0,1].$ Then $\mathcal{H}_1^1(S_\frac{1}{2})<2,$
+But for the Borel set $\mathbb{H}=\{y>0\},$
+$\mathcal{H}_1^1(S_\frac{1}{2}\cap \mathbb{H})=\mathcal{H}_1^1(S_\frac{1}{2}\setminus \mathbb{H})=1,$
+Therefore $\mathbb{H}$ does not satisfy the Caratheodory condition and is not a $\mathcal{H}_1^1$-measurable set.
+
+### Geometric meaning
+In fact, for the integer $m\ge 1,$
+$\mathcal{H}^m$ is exactly the volume measure of the $m$-dimensional $C^1$ submanifold in $\mathbb{R}^{n}$,
+$n\ge m.$ Let us first explain that $\mathcal{H}^n,\mathcal{L}^n$ are consistent on $\mathbb{R}^n$.
+
+First recall the definition of $\mathcal{L}^n$.
+Define $\mathcal{K}$ to be the set of all $n$-dimensional open intervals $I=(a_1,b_1)\times\cdots\times(a_n,b_n)$.
+Define the volume of the open interval $|I|=(b_1-a_1)\cdots(b_n-a_n).$
+Next define $\mathcal{L}^n(A)=\inf\sum_j |I_j|,$
+The lower bound satisfies $\{I_j\}\in \mathcal{K},$
+Take it from the set column of $A\subset\bigcup_jI_j$.
+
+It is easy to see that $\mathcal{L}^n$ is characterized by an external measure with the following characteristics:
+$$\mu^n(I)=|I|,\,\forall\,I\in \mathcal{K},\quad \mu^n(A)=\inf_{\text{开}U\supset A}\mu^n(U),\,\forall\,A\subset \mathbb{R}^n.$$
+This is because according to the Caratheodory criterion, $\mu^n$ is a Borel (regular) measure,
+Therefore, the sets generated by $\mathcal{K}$ under columnable union/intersection/complement operations are all measurable sets.
+$\mathcal{K}$ is closed under finite union, so it is not difficult to prove that for finite union,
+There are $\mu^n(\bigcup_jI_j)=\mathcal{L}^n(\bigcup_jI_j),$
+Furthermore, pairs of monotonicity can be combined into pairs. And $\mathcal{K}$ is the topological basis,
+Generate all open sets under the union operation,
+Therefore $\mu^n(U)=\mathcal{L}^n(U)$ holds for all open sets $U$,
+Then by definition, $\mu^n=\mathcal{L}^n.$
+
+Next we prove that $\mathcal{L}^n(A)=\mathcal{H}^n(A),$
+In fact, it can be explained that $\mathcal{L}^n(A)=\mathcal{H}_\delta^n(A),$ For this reason, first explain:
+
+**Lemma 1.2**. *$\mathcal{H}_\delta^n(A)\le \mathcal{L}^n(A),$ $\,\forall\,\delta>0.$*
+**Proof:** By Vitali/Besicovitch covering lemma (introduced in the next section), for any open set $U,$
+A family of unintersected closed spheres can be found $\{B_j\},$ $\operatorname{diam}B_j<\delta,$
+$B_j\subset U,$ $\mathcal{L}^n(U\setminus \bigcup_j B_j)=0.$
+That is, the closed sphere family covers $U.$ in the sense of $\mathcal{L}^n$ measure.
+It is easy to see from the definition that $\mathcal{L}^n(A)=0\Leftrightarrow \mathcal{H}_\delta^n(A)=0,$
+Therefore, there is also $\mathcal{H}_\delta^n(U\setminus \bigcup_j B_j)=0.$
+Let $U$ be $I_k\in \mathcal{K}.$ then
+
+$$\begin{aligned}
+                \mathcal{H}_\delta^n(I_k)&=\mathcal{H}_\delta^n(\cup_jB_j)\le\sum_j \omega_n\left(\frac{\operatorname{diam}B_j}{2}\right)^n\\
+                &=\sum_j\mathcal{L}^n(B_j)=\mathcal{L}^n(\cup_j B_j)=\mathcal{L}^n(I_k)=|I_k|.
+            \end{aligned}$$
+
+Then $\,\forall\,A\subset \bigcup_k I_k,$
+$$\mathcal{H}_\delta^n(A)\le\mathcal{H}_\delta^n(\cup_k I_k)\le \sum_k\mathcal{H}_\delta^n(I_k)\le \sum_k |I_k|.$$
+
+Take the exact bound for all such $\{I_k\}$,
+That means $\mathcal{H}_\delta^n(A)\le \mathcal{L}^n(A).$
+
+In order to explain the reverse inequality, we first need the following theorem:
+**Theorem 1.3** (equal diameter inequality). *$\mathcal{L}^n(A)\le \omega_n\left(\frac{\operatorname{diam}A}{2}\right)^n.$*
+
+**Proof:** Just prove that $A$ is a compact set,
+Because $\operatorname{diam}A=\infty$ is trivial (bounded),
+And $A\subset \overline{A},$
+$\operatorname{diam}{\overline{A} }=\operatorname{diam}{A}$(closed).
+For the compact set $A,$ we do *Steiner symmetrization*: in the $x^j$ direction,
+For all coordinate points $\xi,$ whose $j$ component is $0$
+Intercept the part where $A$ intersects $x^j$ line $\ell_j(\xi)$ starting from $\xi$ point,
+Reset to a line segment of the same length with $\xi$ as the midpoint and falling on the $x^j$ line, as shown in the figure below.
+<img style='margin: auto;' src=https://i.loli.net/2021/10/25/SvNI7n2hjz1woxJ.png width='50%' height='50%'>
+
+First, it is explained that the symmetrized set is compact, which will be used later when the diameter is reduced.
+Just say that it is closed. Let $A$ intercept the length in $x^j$ direction at $\xi$ point as $2f(\xi),$
+Then $\,\forall\,\xi_i\rightarrow \xi,$ $t_i\rightarrow t,$
+$|t_i|\le f(\xi_i),$ Need to explain $|t|\le f(\xi).$ Just need to explain that $f$ is upper semi-continuous,
+In this way, we have $f(\xi)\ge \varlimsup_i f(\xi_i)\ge \varlimsup_i |t_i|=|t|.$
+
+Let $\pi:\mathbb{R}^n\rightarrow \mathbb{R}$ be the projection in the $x^j$ direction,
+Then $f(\xi)=\mathcal{L}^1(\pi(A\cap \ell_j(\xi))).$
+$\,\forall\,\varepsilon>0,$
+You can take the open interval $U\supset\pi(A\cap \ell_j(\xi)),$
+Such that $\mathcal{L}^1(U)\le f(\xi)+\varepsilon.$
+Take the open set $\pi^{-1}(U)\supset A\cap \ell_j(\xi),$
+We show that for $\eta,$ that is sufficiently close to $\xi$
+There is $A\cap\ell_j(\eta)\subset \pi^{-1}(U).$ otherwise there is $\xi_i\rightarrow \xi,$
+So that there is always a point $x_i=\xi_i+s_i e_j,$ in $A\cap \ell_j(\xi_i)$ that is not in $\pi^{-1}(U)$
+$s_i\in \mathbb{R}.$ Since $A$ is bounded, the bounded point sequence $\{s_i=\pi(x_i)\}$ has a convergent subsequence,
+Let's assume it converges itself, then $x_i=\xi_i+s_i e_j\rightarrow \xi+s e_j=:x.$
+Since $U^c$ is closed, $\pi(x)\notin U,$
+But $x\in A\cap \ell_j(\xi)\subset \pi^{-1}(U),$ is contradictory.
+This means $\,\exists\,\delta>0,$ $\,\forall\,\eta\in O_\delta(\xi),$
+$f(\eta)\le f(\xi)+\varepsilon,$ means $f$ is upper semi-continuous.
+According to Fubini's theorem, the measure of $\mathcal{L}^n$ remains unchanged after symmetry,
+The diameter after symmetrization is smaller than the original, so just consider the case after symmetry to prove it.
+The diameter decreases because assuming that after symmetry $a, b$ is $|b-a|$, two points of the diameter length are obtained,
+Then their symmetry points $\widetilde{a} and \widetilde{b}$ about $x^j=0$ are also two points where $|\widetilde{b}-\widetilde{a}|$ takes the diameter length.
+If the distance between $a,b$ in the original set is less than $|b-a|,$
+Then the distance between $\widetilde{a},\widetilde{b}$ in the original set will definitely be enlarged.
+This can be simply explained using the Pythagorean theorem.
+It is easy to prove that after performing Steiner symmetrization in the $x^j$ direction on a set that is already symmetric about $x^i=0$,
+It is still symmetric about $x^i=0$. Therefore, after doing Steiner symmetrization of $A$ in all $x^j$ directions,
+It is symmetrical in all $x^j$ directions, especially centrally symmetrical. Denote it as $\widetilde{A},$
+Then it must be included in the sphere with the origin as the center,
+$\operatorname{diam}\widetilde{A}$ is inside a closed sphere with diameter. This proposition is proved.
+
+**Theorem 1.4**. *$\mathcal{L}^n(A)=\mathcal{H}^n(A)=\mathcal{H}^n_\delta(A),$ $\,\forall\,A\subset \mathbb{R}^n, \delta>0.$*
+**Proof:** From the previous lemma,
+Just explain $\mathcal{L}^n(A)\le \mathcal{H}_\delta^n(A).$
+And this is obtained immediately from the above inequality, which is the same as the lemma proof method.
+That is $\,\forall\,A\subset C_j,$
+$$\mathcal{L}^n(A)\le \mathcal{L}^n(\cup_j C_j)\le \sum_j\mathcal{L}^n(C_j)\le \sum_j\omega_n\left(\frac{\operatorname{diam}C_j}{2}\right)^n.$$
+Then take the exact bound for all such $\{C_j\}$,
+That is, $\mathcal{L}^n(A)\le \mathcal{H}_\delta^n(A).$
+
+The article was last updated on 2021-10-25 10:58:21
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《几何测度论导论》讲义笔记(1.2)-Hausdorff测度</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-10-25 10:56:40</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/10/25/《几何测度论导论》讲义笔记(1.2)-Hausdorff测度/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/25/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(9)-%E6%98%BE%E5%BC%8F%E5%90%8C%E6%9E%84/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(9)-显式同构</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (9) - Explicit Isomorphism</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/24/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(4)-Sobolev%E7%A9%BA%E9%97%B4/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《现代PDE基础》笔记(4)-Sobolev空间</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (4)-Sobolev Space</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

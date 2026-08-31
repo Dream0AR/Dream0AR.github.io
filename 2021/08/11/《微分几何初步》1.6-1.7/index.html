@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分几何初步》1.6-1.7 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《微分几何初步》1.6-1.7</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; 1.6-1.7</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-08-11 11:41:58
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/">微分几何</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Partial standard type
+----------
+
+We know that when studying the local properties of curves, it is much more convenient to use the Frenet frame.
+Take (no first-order singularity) arc length parameterized curve $\alpha:I\rightarrow \mathbb{R}^3,$
+Expanded by Taylor,
+$\alpha(s)=\alpha(0)+s\alpha'(0)+\frac{s^2}{2}\alpha''(0)+\frac{s^3}{6}\alpha'''(0)+R,$
+$R=o(s^3).$ We know $\alpha'(0)=t,$ $\alpha''(0)=kn,$
+$\alpha'''(0)=(kn)'=k'n+kn'=k'n-k^2t-k\tau b.$
+
+After finishing, we get $\alpha(s)-\alpha(0)=(s-\frac{k^2s^3}{6})t+(\frac{s^2k}{2}+\frac{s^3k'}{6})n-\frac{s^3}{6}k\tau b+R,$
+Thus we obtain the (high-order) local approximate coordinates of the curve under the Frenet frame:
+
+$$\left\{
+        \begin{aligned}
+            x(s)&=s-\frac{k^2s^3}{6}+R_x\\
+            y(s)&=\frac{k}{2}s^2+\frac{k's^3}{6}+R_y\\
+            z(s)&=-\frac{k\tau}{6}s^3+R_z
+        \end{aligned}
+        \right.$$
+
+The above formula is called the local standard form of the curve $\alpha$ in the neighborhood of the zero point. Viewed from a first-order perspective,
+Only the tangent vector $t,$ can be seen, that is, only the information in the $x$ direction; and from a third-order perspective,
+You can see more information in $\mathbb{R}^3$, such as the direction of the curve ($n$ direction),
+Climb ($b$ direction) and so on.
+
+<img style='margin: auto;' src=https://i.loli.net/2021/08/11/iKONHwLEfYuytgQ.png width='50%' height='50%'>
+From this we can see some geometric properties: When the torsion is negative,
+Locally, the curve goes up through the osculating plane; while the curve with positive torsion goes down.
+From the tangent plane (rectifying), the curve can be divided on one side in a certain neighborhood $(k\neq 0).$
+
+An important piece of information about the oblique plane is that it is the closest (most dense) plane to the curve.
+In mathematical language, that is,
+It is the limit of the plane determined by the tangent line at point $s$ and point $s+h$ when $h\rightarrow 0$.
+Let’s set $s=0,$ using Frenet frame and local standard form,
+This plane can be recorded as $z=cy$ (excluded from the tangent plane $y=0$).
+Then calculate $c=\frac{z(h)}{y(h)}=\frac{-\frac{k\tau}{6}h^3+o(h^3)}{\frac{k}{2}h^2+o(h^2)}=-\frac{\tau h}{3}+o(h).$
+Therefore, the plane tends to $z=0,$, which is the close plane.
+
+**Note 1.1**. *Some books may define torsion as $b'=-\tau n,$. Please note.*
+Let’s do some exercises. We mentioned that from the tangent plane, the curve can be divided on one side in a neighborhood of point $P$,
+In fact, any plane containing a tangent to point $P$ can be used, except close planes.
+Just consider the projection of the curve along the $x$ axis (tangential direction) on the normal plane,
+Then the previous $z=cy$ is the secant line between the zero point and $h$ point of the curve, and the slope of the secant line tends to zero.
+So for any given plane $z=c_0y,$ $c_0\neq 0,$
+It is always possible to find a small enough neighborhood so that the secant slope is less than $c_0,$
+Therefore, the projected curve remains below the $z=c_0 y$ straight line, that is, the original curve remains on one side of the plane.
+
+The close plane can also be determined in other ways,
+For example, the limit of the plane determined by the three points $\alpha(s),\alpha(s+h_1),\alpha(s+h_2)$ is $h_1,h_2\rightarrow 0$.
+Also take the local standard form, then the plane can be recorded as $ax+by+cz=0.$
+Take $F(s)=ax(s)+by(s)+cz(s),$ then $F'(0)=a,$ $F''(0)=bk.$
+Here $a,b$ are functions about $h_1,h_2$. Since $F(0),F(h_1),F(h_2)=0,$
+From the mean value theorem, we know that $a,b\rightarrow 0.$, so the plane tends to $z=0,$, which is a close plane.
+
+A classic conclusion is that the curvature of the curve at point $P$ is consistent with the curvature of the close plane curve projected at point $P$ at that point.
+This is because from the local standard type,
+The curvature of $P$ point$(s=0)$ can be determined by $\lim\limits_{s\rightarrow 0}\frac{2y(s)}{x^2(s)}$,
+It has nothing to do with $z$.
+
+Overall properties of plane curves
+----------------
+
+Next, we discuss the global differential properties of some plane curves. Chapter 5 will discuss them more systematically,
+Interested students can take a look later.
+
+Do some simple review,
+Plane closed curve $\alpha:[a,b]\rightarrow R^2$ while requiring $\alpha(a)=\alpha(b)$,
+It also requires the higher order derivatives to be consistent. It is **simple** if the closed curve does not self-intersect.
+Generally, the arc length is parameterized, and the curvature of the plane curve will have positive and negative signs.
+
+We say that a simple closed curve in the plane will frame an internal region, which can be obtained from the Jordan Curve Theorem,
+See Chapter 5. If you look in the direction in which the curve parameters increase, the interior always remains on the left side of the curve.
+Then the curve is said to be **positively oriented**.
+
+### Equal period inequalities
+This is the oldest overall problem in differential geometry. When do simple closed curves of equal length enclose the largest area?
+Weierstrass gave the earliest proof of the variational method, but it was rather cumbersome.
+Here we introduce the proof given by Schmidt in 1939. For the area enclosed by the curve, according to Green's formula,
+We have the formula for calculating area:
+$$A=-\int_{a}^b yx'dt=\int_a^bxy'dt=\frac{1}{2}\int_a^b xy'-yx'dt.$$
+Or as the book proves through elementary methods, but the method is essentially similar to the elementary proof of Green's formula,
+And need to admit some conclusions (can find a straight line,
+Such that the distance function of the curve with respect to the straight line has a finite number of extreme points).
+**Theorem 1.2** (Isoperipheral inequality). *Suppose $C$ is a plane simple closed curve with length $l$, $A$ is the area enclosed by $C$, then $l^2-4\pi A\ge 0,$ The equality sign is true if and only if $C$ is the circumference.*
+
+**Certificate:** As shown in the figure, take appropriate parallel lines $L, L'$ and clamp the curve $C$.
+Take a circle $S^1$ with a radius $r$ below that is also stuck, with the center of the circle as the origin,
+The vertical $L, L'$ direction is the $x$ axis, and the $L, L'$ direction is the $y$ axis.
+Parameterize the arc length of $C$ $\alpha(s)=(x(s),y(s)).$
+Suppose $S^1$ curve is $\bar\alpha(s)=(x(s),\bar y(s)),$ that is, the two curves in $x$ direction are synchronized.
+<img style='margin: auto;' src=https://i.loli.net/2021/08/11/iopQHbWf8AqnCRs.png width='50%' height='50%'>
+
+From the area formula, we have: $$\begin{aligned}
+                A+\pi r^2=\int_0^l(xy'-\bar yx')ds\le \int_0^l\sqrt{x^2+\bar y^2} \cdot \sqrt{ {y'}^2+{x'}^2}ds=lr.
+            \end{aligned}$$
+Thus, the geometric mean $\sqrt{A}\sqrt{\pi r^2}\le \frac{1}{2}(A+\pi r^2)\le \frac{1}{2}lr,$
+$4 \pi A r^2\le l^2 r^2,$ is $l^2-4\pi A\ge 0.$ (note that it has nothing to do with $r$.)
+
+When the equal sign holds, all inequalities are equal. From the geometric mean inequality, $A=\pi r^2.$
+Therefore, $l=2\pi r,$ and any rotation of $L, L'$ direction, the distance is still $2r$.
+At the same time $(x,\bar y)=\lambda (y',-x'),$ we know from the module length relationship $|\lambda|=r,$
+Thus $x=\pm r y'.$ Rotate $L,L'$ by $90$ degrees, and get $y=\pm r x'.$
+So $x^2+y^2=r^2({x'}^2+{y'}^2)=r^2,$ that is, $C$ is the circumference of the circle.
+
+**Note 1.3**. *It is easy to see that the equal period inequality holds for the simple closed curve $C^1$, and it also naturally holds for the segmented $C^1$. (When not specified, the default is smooth.)*
+
+### Four vertex theorem
+
+Closed curve parameterized for arc length $\alpha(s)=(x(s),y(s)),$
+Introduce the tangent line $t(s)=(x'(s),y'(s)).$ and its trajectory falls on the unit circle,
+And the velocity vector is $kn$. Let $\theta(s)$ be the intersection angle between $t(s)$ and $x$ axis,
+If it is restricted to fall on $[0,2\pi)$, then $\theta$ may not be continuous.
+Since it can be defined locally by inverse trigonometric functions $(\theta(s)=\arctan\frac{y'(s)}{x'(s)}(+\pi)),$
+It is differentiable.
+<img style='margin: auto;' src=https://i.loli.net/2021/08/11/6zPdoZalT9r5vW7.png width='50%' height='50%'>
+
+From $t(s)=(\cos \theta(s),\sin \theta(s)),$ velocity vector $t'=\theta' n,$
+That is $\theta'=k.$
+Thus the continuous function $\theta(s)=\int_0^s k(s)ds.$ can be redefined as a whole
+It differs from the original function by $2k\pi.$ This function describes the total rotation angle of the tangent vector,
+Since the tangent vectors at the beginning and end of the closed curve are the same, the rotation angle is an integer multiple of $2\pi$.
+Remember $\int_0^l k(s)ds=\theta(l)-\theta(0)=2\pi I,$
+Call the integer $I$ the **rotation index** of the curve $\alpha$. Note that since $k$ is signed,
+The same goes for the rotation indicator $I$. When the simple closed curve has a positive orientation, the rotation indicator is also positive.
+
+We have the following theorem, which is proved in Theorem 2 of Section 5.7:
+
+**Theorem 1.4** (Rotation Index Theorem). *The rotation index of a simple closed curve is $\pm 1,$ The sign depends on the orientation of the curve.*
+Next, the concept of curve vertices is introduced.
+The regular plane curve $\alpha:[a,b]\rightarrow \mathbb{R}^2$ is said to be **convex**,
+If $\,\forall\,t\in [a,b], the trajectory of $ $\alpha$ always falls on the tangent side of point $t$.
+The **vertex** of a plane curve is defined as all points $t$ such that $k'(t)=0$,
+That is, the global stationary point of curvature (some books will define it more accurately as an extreme point). For example,
+An ellipse has exactly four vertices. Interestingly, any simple convex closed curve has at least four vertices.
+
+First prove a lemma.
+**Lemma 1.5**. *Denote $\alpha(s)=(x(s),y(s)):[0,l]\rightarrow \mathbb{R}^2$ as the arc length parameterized plane closed curve. Then $\,\forall\,A,B,C\in \mathbb{R},$ $\int_0^l(Ax+By+C)k'ds=0.$*
+
+**Certificate:** The $\theta$ function defined at the beginning,
+We have $(x',y')=(\cos \theta,\sin \theta),$ $k=\theta'$ and $x''=-ky',$
+$y''=kx'.$ Therefore, for a closed curve, there are $\int_0^l k'ds=0,$
+$\int_0^l xk'ds=-\int_0^lkx'ds=-\int_0^ly''ds=0,$
+$\int_0^l yk'ds=-\int_0^lky'ds=\int_0^lx''ds=0.$ Thus the lemma is proved.
+
+**Theorem 1.6** (Four Vertices Theorem). *A simple convex closed curve has at least four vertices.*
+
+**Proof:** To parameterize the arc length of the curve, we only need to examine the behavior of the continuous function $k(s)$ on $[0,l]$.
+Since it is a periodic function, the maximum value point and the minimum value point are both stationary points.
+Therefore, we have found two vertices $p, q.$. These two points divide the arcs at both ends, and draw a straight line $L$ through $p, q$,
+First, it needs to be stated that each arc remains on one side of $L$.
+
+Otherwise, assuming that a certain arc also intersects $L$ at point $r$, then for the three points $p, q, r$ on $L$,
+The middle point may be selected as $p$. The tangent line of point $p$ must be exactly $L$, otherwise $q, r$ are on both sides of the tangent line.
+Contradictory to convexity. However, even if the tangent to point $p$ is $L$,
+The tangent line near point $p$ will still divide $q, r$ on both sides of the tangent line, which is inconsistent with convexity.
+Unless $p$ remains a straight line near point $q, r$. At this time, $k=0$ at the maximum point of $p, q$,
+This shows that $k\equiv 0$ cannot be a closed curve.
+
+On the other hand, if the two end arcs remain on the same side of $L$, then a certain arc can be degenerated into a straight line due to the similarity of convexity,
+The same contradiction occurs. Therefore, the two end arcs are on both sides of $L$. Let $Ax+By+C=0$ be the equation of the straight line $L$.
+If there are no other vertices, then $k'$ is always negative and always positive on the two arcs respectively.
+Furthermore, the sign can be adjusted so that $(Ax+By+C)k'$ is always positive except for $p, q$ points on $C$. This is contradictory to the previous lemma,
+Thus, it can be found that the third vertex is located on a certain arc, and $k'$ changes sign at this point.
+Since the arc connects the minimum and maximum points of $k(s)$, the sign of $k'(s)$ changes an even number of times,
+Therefore, the fourth vertex must be found on this arc.
+
+The four-vertex theorem has been the subject of many studies. In fact, the theorem is true for simple closed curves.
+But the proof is a little more complicated, you can check the references. I have always mentioned the *simple convex* closed curve,
+But in fact it is somewhat redundant. Proposition 1 of Section 5.7 will prove that a plane closed curve is convex if and only if it is simple,
+And there is an orientation such that the curvature is non-negative. Therefore, the four-vertex theorem can be expressed more accurately as follows:
+
+**Theorem 1.7** (Four Vertex Theorem'). *There is an orientation such that the curvature function of a closed convex curve is non-negative, and there are (strictly) at least two maximum points and minimum points, or the curvature is constant (in this case, the curve is a circle).*
+
+A natural question is, for any given periodic function $k:[a,b]\rightarrow \mathbb{R},$
+If it satisfies the conclusion of the four vertex theorem,
+Is it possible to find a simple closed curve such that $k$ becomes its curvature function?
+That is the converse of the four-vertex theorem. This is similar to the fundamental theorem of curve theory in three-dimensional space.
+
+For the case where the function is strictly positive, H.Gluck gave a positive answer in 1971.
+B.Dahlberg obtained the complete inverse theorem in 1997.
+The topic of the four-vertex theorem and its inverse theorem was edited and integrated into a very detailed paper in 2005.
+Interested students can check it out.
+
+### Cauchy-Crofton formula
+
+We first give this interesting theorem directly, and then only give the proof of the theorem:
+**Theorem 1.8** (Cauchy-Crofton formula). *Let $C$ be a plane regular curve with length $l$, then the overall measure of all straight lines (with multiplicity) that have intersections with $C$ is $2l.$*
+
+Two points need to be explained here. First, the multiplicity refers to the number of intersections between the straight line and the curve $C$.
+That is, if a straight line has $n$ intersection points with curve $C$, then the straight line is recorded $n$ times in the set.
+Secondly, we need to explain what the measure is.
+Take the unit vector perpendicular to the straight line $v=(\cos \theta,\sin \theta)$,
+Let $p$ be the inner product of any point on the straight line and $v$, then the straight line is completely determined by these two parameters.
+Denote the entire straight line as $\mathcal{L}=\{(p,\theta)\in \mathbb{R}^2; (p,\theta)\sim (-p,\theta+\pi)\},$
+We show that a reasonable measure can be uniquely defined on it.
+Reasonable here means that we hope that the measure remains unchanged under rigid transformation. First, there is the following simple proposition:
+
+**Proposition 1.9**. *Denote $f(x,y)$ as a continuous function on $\mathbb{R}^2$, and define its area $A(S)=\iint_S f(x,y)dxdy for the set $S\subset \mathbb{R}^2,$.
+$ If $A$ is a rigid transformation invariant, then $f$ must be a constant.*
+
+**Proof:** Let the rigid transformation be $F$. Since the Jacobian of the rigid transformation is $1$,
+We have $A(F(S))=\iint_S f(F(x,y))dxdy=\iint_S f(x,y)dxdy=A(S).$
+Since it holds for any $S$, $f\circ F=f.$ is transferable in $\mathbb{R}^2$ due to rigid transformation,
+That is $\,\forall\,p,q\in \mathbb{R}^2,$
+$\,\exists\,$ Rigidly transform $F$ so that $F(p)=q,$ means $f=\text{const}.$
+For the curve $x\cos\theta+y\sin\theta=p,$ in $\mathcal{L}$
+Its rigid transformation$\begin{cases}
+            \bar x=a+x\cos \varphi -y\sin \varphi\\
+            \bar y=b+x\sin \varphi +y\cos \varphi
+\end{cases}$, the parameters become $\begin{cases}
+            \bar \theta=\theta + \varphi\\
+            \bar p=p+a\cos(\theta+\varphi)+b\sin(\theta+\varphi)
+\end{cases}.$ It is easy to see that the Jacobian of this transformation under $(p,\theta)$ coordinates is also $1,$
+At the same time, this effect is obviously transferable on the entire straight line $\mathcal{L}$,
+Therefore, in the same way, it can be seen that the measure can be uniquely defined as $\mu(\mathcal{G})=\iint_\mathcal{G} dpd\theta$,
+This measure is called a kinematic measure.
+Next we give the general idea of proving the theorem.
+
+**Proof:** For $l$ long straight line segment $C,$ since the measure is invariant under rigid transformation,
+Let’s assume that $C$ is centered on the origin and falls on the $x$ axis. Then the measure of the desired set is:
+$$\int_0^{2\pi} \int_0^{|\cos\theta|l/2}dpd\theta=\int_0^{2\pi}\frac{l}{2}|\cos\theta |d\theta=2l.$$
+Next, for a polyline $C composed of a finite number of line segments, $ sum the measures of the straight lines corresponding to each line segment,
+It can be obtained that the measure of the desired set with multiplicity is $\iint n(p,\theta)dpd\theta=2\sum_i l_i=2l.$
+Finally, taking the limit, we can expect that the above formula is applicable to any regular curve, which proves the theorem.
+
+One thing to note is that for straight line segments, there will actually be straight lines with infinite multiplicity.
+But it measures zero under the kinematic measure. For the proof in the book,
+It is cumbersome to describe the process of taking the limit precisely. A more concrete proof is as follows:
+
+**Proof:** For the straight line corresponding to $(p,\theta)$,
+It can also be converted into the more common method of first determining the point $Z(s)=(x(s),y(s))\in C,$ and then determining the angle $\eta.$
+That is, convert $(p,\theta)$ coordinates to $(s,\eta)$ coordinates. Here let $\theta=\eta,$
+The geometric meaning is the same. Then $p=x(s)\cos \eta+y(s)\sin \eta.$
+Note that $(x',y')$ can be expressed as $(\cos\phi,\sin \phi),$
+Then the Jacobian is $|\cos(\phi(s)-\eta)|.$
+Therefore, according to Fubini's theorem, the required measure is: $$\begin{aligned}
+                \int_{\{L:L\cap C\neq \varnothing\} }ndpd\theta&=\int_{\{L:L\cap C\neq \varnothing\} }(\sum_{Z\in L\cap C}1)dpd\theta\\
+                &=\int_{\{Z:Z\in C\} }\int_{\{L:Z\in L\} }dpd\theta\\
+                &=\int_0^{l}\int_{0}^{\pi} |\cos(\phi(s)-\eta)|d\eta ds\\
+                &=\int_0^l 2 ds=2l.
+            \end{aligned}$$
+
+The basic ideas of this topic belong to the branch of Integral Geometry.
+An interesting application of the Cauchy-Crofton formula is to estimate curve lengths.
+Take a family of straight lines with equal spacing $r$, and then rotate them at equal angles $\alpha$ across the entire plane,
+Then $l=\frac{1}{2}\int ndpd\theta\approx \frac{1}{2}nr\alpha,$
+$n$ is the total number of intersection points (number of points) between the curve and these straight lines, that is, the integral is discretized.
+The book mentions that this has applications in fields such as biology, such as estimating the length of DNA molecules.
+The article was last updated on 2021-08-11 12:07:07
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分几何初步》1.6-1.7</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-08-11 11:41:58</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/08/11/《微分几何初步》1.6-1.7/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/08/12/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%B5%81%E7%A8%8B/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">Hexo博客搭建流程</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Hexo Blog Building Process</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/07/20/LaTeX-%E6%B5%8B%E8%AF%95/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">LaTeX-测试</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">LaTeX-Test</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

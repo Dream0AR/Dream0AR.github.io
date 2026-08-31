@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分流形》讨论稿-紧流形嵌入定理 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》讨论稿-紧流形嵌入定理</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Paper - Compact Manifold Embedding Theorem</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-11-01 17:27:25
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/">讨论稿</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E8%AE%A8%E8%AE%BA%E7%A8%BF/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Compactly supported smooth function
+---------------
+
+First consider how the Klein bottle is embedded in $\mathbb{R}^4$,
+This directly leads us to need the following tools.
+
+On $\mathbb{R}^n$, take $\varphi(x)=\begin{cases}
+            e^{\frac{1}{|x|^2-1} },&|x|<1\\
+0,&|x|\ge 1.
+        \end{cases},$
+Let $\alpha(x)=\frac{1}{\int_{\mathbb{R}^n} \varphi dx}\varphi(x).$
+Then $\alpha(x)\in C_c^\infty(\mathbb{R}^n),$
+$\operatorname{supp}\alpha=B_1,$ satisfies $\int_{\mathbb{R}^n}\alpha dx=1.$
+Take $\alpha_\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$
+Then $\operatorname{supp}\alpha_\varepsilon=B_\varepsilon,$
+Also satisfies $\int_{\mathbb{R}^n}\alpha_\varepsilon dx=1.$
+
+Define the convolution operation $f\ast g:=\int_{\mathbb{R}^n}f(y)g(x-y)dy.$ Then for any open set $E,$
+$f=1_E\ast \alpha_\varepsilon=\int_E \alpha_\varepsilon(x-y)dy,$
+Satisfy the following properties:
+
+1. $f\in [0,1];$
+
+2. $\,\forall\,x$ satisfies $d(x,E^c)< \varepsilon,$ $f(x)=1;$
+3. $\operatorname{supp}f=\overline{O_\varepsilon(E)};$
+
+4. $f\in C_c^\infty(\mathbb{R}^n).$
+
+Then on the manifold coordinate card $(U,\varphi),$ if there is an open set $V\Subset W\Subset U,$
+Then $\varphi(V)\Subset \varphi(W)\Subset \varphi(U).$
+Remember $\delta=\min(d(\overline{\varphi(V)},\varphi(W)^c),d(\overline{\varphi(W)},\varphi(U)^c))>0,$
+Then take $f=(1_{\varphi(W)}\ast \alpha_{\frac{\delta}{2} })\circ \varphi,$
+Satisfy $f\in [0,1],$ $f|_{V}=1,$ and $f\in C_c^\infty(U).$
+
+embedding of compact manifolds
+----------
+The basic idea is to embed the coordinate neighborhoods into their respective $\mathbb{R}^m$ for each coordinate card,
+Just leave one more dimension for identification.
+
+**Theorem 1.1**. *Suppose $M$ is an $m$-dimensional compact smooth manifold, then there are positive integers $n,$ and smooth maps $\varphi:M\rightarrow \mathbb{R}^n,$ such that $(M,\varphi)$ is a regular submanifold of $\mathbb{R}^n$.
+*
+
+**Certificate:** Take the coordinate atlas of $M$$\{(U_i,\varphi_i;u_i^j)\}_{i=1}^k,$
+Since it is a compact manifold, a finite coordinate atlas can be obtained.
+Take $M\setminus\bigcup_{j=2}^k U_j\subset V_1\Subset W_1\Subset U_1,$
+Inductively take $M\setminus(\bigcup_{j=1}^{i-1}V_j\cup\bigcup_{j=i+1}^k U_j)\subset V_i\Subset W_i\Subset U_i,$
+Obtain the detailed $\{V_i\}$ to cover $M,$ and for each $V_i$ according to the previous description,
+There exists $f_i\in C_c^\infty(U_i),$ $f_i|_{V_i}=1.$, and $f_i$ zero can be extended to $M$.
+
+Define $n=k(m+1)$ smooth functions on $M$: $$\begin{aligned}
+                x_i^0&=f_i\\
+                x_i^j&=f_i \cdot u_{i}^j\\
+            \end{aligned}$$ where $i=1,\cdots,k,$ $j=1,\cdots,m.$
+Although each function is only defined on $U_i$, it can also be extended to the entire $M$.
+This gives a smooth map $\Phi:M\rightarrow \mathbb{R}^n,$
+Assert that $(M,\Phi)$ is the regular submanifold of $\mathbb{R}^n$.
+
+First of all, it is indeed a submanifold: first verify the rank, since $\,\forall\,p\in M,$
+$\,\exists\,V_i\supset O_p\ni p,$ then $f_i|_{O_p}\equiv 1,$
+Thus $\det \frac{\partial(x^{1}_i,\cdots,x^m_i)}{\partial (u_i^1,\cdots,u_i^m)}=1,$
+$r(\Phi)=m.$ Therefore $(M,\Phi)$ is an immersed submanifold.
+Next if $\Phi(p)=\Phi(q),$ then if $V_i\supset p,$
+$f_i(p)=1=f_i(q)\Rightarrow q\in V_i.$ Thus $\varphi_i(p)=\varphi_i(q),$
+Since $\varphi_i$ is a homeomorphism, $p=q.$ therefore $\Phi$ is an injective, $(M,\Phi)$ is a submanifold.
+Since $M$ is compact, according to the theorem of the previous lesson, $(M,\Phi)$ is automatically an embedded submanifold,
+And another theorem shows that $(M,\Phi)$ is also a regular submanifold.
+
+Dimension theory
+------
+
+The embedding obtained in this way is obviously a bit violent and has too many redundant dimensions. Take $S^2$ as an example,
+At least two coordinate cards must be used to describe,
+At this time, according to the above method, it needs to be embedded into the $n=2\times(2+1)=6$ dimensional space.
+If you use standard six coordinate cards to describe it, it will even be embedded in an $18$ dimensional space.
+In fact, we can use dimension theory to reduce the dimension of the peripheral space. First we need to introduce Sard's theorem:
+
+**Theorem 1.2** (Sard's theorem). *Suppose the smooth mapping $f:M^m\rightarrow N^n,$ then the upper critical value of $N$ is all zero-measured.*
+
+The critical value is the image of the critical point on $M$, and the critical point refers to the point where $r(f)<n$,
+That is, $f$ is not submerged at the critical point.
+
+**Theorem 1.3**. *If the $m$-dimensional smooth manifold $M$ can be single-immersed in $\mathbb{R}^K$, $K>2m+1,$, then it can also be single-immersed in $\mathbb{R}^{K-1}$.*
+
+**Certificate:** The order immersion is $\Phi,$
+All hyperplanes $P$ in $\mathbb{R}^K$ passing through the origin are $\mathbb{R}\mathrm{P}^{K-1},$
+It is a $K-1$ dimensional smooth manifold.
+We show that $P$ such that $\pi_P\circ \Phi$ is not a single immersion is a zero test set on $\mathbb{R}\mathrm{P}^{K-1}$.
+
+If it is not an injective, then there are two points $p, q, $ on $M$
+Make $P$ determined by the normal line $[v]=[\Phi(p)-\Phi(q)]$ at the origin. Thus $[v]$ falls on
+$$\alpha:M\times M\setminus \Delta_M\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,q)\mapsto[\Phi(p)-\Phi(q)]$$
+image set, where $\Delta_M=\{(p,p)|p\in M\}.$ then $\alpha$ is a smooth mapping,
+$M\times M\setminus \Delta_M$ is a $2m$-dimensional open submanifold, assuming $2m<K-1,$
+Therefore $\alpha$ is not submerged everywhere, thus it is like a set with zero measurement.
+
+If it is not immersed, then $\,\exists\,p\in M,$
+$0\neq X_p\in T_pM$ makes $(d\pi_P)_{\Phi(p)} (d\Phi)_p(X_p)\neq 0.$
+And $\pi_P$ itself is a linear mapping, $d\pi_P=\pi_P,$
+Therefore $[(d\Phi)_p(X_p)]=[v]\neq 0.$ and thus $[v]$ falls in
+$$\beta:TM\setminus\{(p,0)\,|\,p\in M\}\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,X_p)\mapsto[(d\Phi)_p(X_p)]$$
+The image concentration of . $\beta$ is a smooth mapping, and the left side is also a $2m$-dimensional open submanifold,
+In the same way as Sard's theorem, there is a zero measure of the image set.
+In summary, it is not the case that $P$ with single immersion is zero-measured on $\mathbb{R}\mathrm{P}^{K-1}$,
+So projection can be used almost everywhere to reduce the dimensionality.
+
+So we get that if $M$ can be immersed in $\mathbb{R}^K$ alone,
+Then it must be immersed in $\mathbb{R}^{2m+1}$. In fact, the proof that it is not immersed is,
+$TM$ can be replaced by a spherical bundle $SM=\{(p,X_p)\,|\,|X_p|=1\},$
+The tangent bundle metric is induced by the peripheral space. At this time, $SM$ is a $2m-1$ dimensional smooth manifold, and the dimension can be further reduced.
+Therefore, when $M$ can be embedded in $\mathbb{R}^{2m+1}$, $M$ can be immersed in $\mathbb{R}^{2m}.$
+In summary, any $m$-dimensional smooth compact manifold can be embedded in $\mathbb{R}^{2m+1}$,
+Can be immersed in $\mathbb{R}^{2m}$.
+
+Whitney embedding theorem
+---------------
+
+For the non-compact case, we give the idea of proof.
+
+**Theorem 1.4**. *Any non-compact smooth manifold $M$ can be simply immersed in $\mathbb{R}^K$.*
+We divide $M$ into the union $M=\cup_{i}{M_i}$ that can list multiple compact submanifolds,
+Guarantee $M_i\cap M_j=\varnothing,$ if $|j-i|\ge 2.$
+In this way, suppose $M_i$ has an embedding $\varphi_i,$ to $\mathbb{R}^{2m+1}$
+Taking the unit decomposition $\rho_i$ of the small neighborhood $M_i$, then
+$$\left(\sum_{i-odd}\rho_i \varphi_i, \sum_{i-even}\rho_i \varphi_i, f\right)$$
+The desired single immersion is given, $f$ is the control function, and the division method of $M_i$ is provided.
+
+In this way $M^m$ can be immersed in $\mathbb{R}^{2m+1}$ alone, but it is not necessarily embedded.
+However, single immersion can be transformed into embedding, using the following proposition,
+That is Proposition 4.22(b) in Lee’s Introduction to Smooth Manifolds:
+
+**Proposition 1.5**. *The smooth single immersion of inverse compactness is embedding. (As long as the image space is locally compact $T_2$, the inverse compact continuous map is a closed map.)*
+
+By transforming single immersion into inverse compact single immersion, the classic Whitney embedding theorem is obtained.
+**Theorem 1.6** (Whitney Embedding Theorem). *$m$-dimensional smooth manifold $M$ can be embedded in $\mathbb{R}^{2m+1},$ can be immersed in $\mathbb{R}^{2m}.$*
+
+Other results
+--------
+
+Applying the Whitney trick, the following theorem can be proved:
+**Theorem 1.7** (Strong Whitney Embedding Theorem). *Any smooth manifold with dimensions above $m\ge 2$ can be embedded in $\mathbb{R}^{2m}$, and can be immersed in $\mathbb{R}^{2m-1}$.*
+
+There are many more detailed results as follows:
+
+- $m$-dimensional smooth compact directed manifold can be embedded in $\mathbb{R}^{2m-1}$.
+- When $m\neq 2^k$, the $m$-dimensional smooth manifold can be embedded in $\mathbb{R}^{2m-1}$. When $m=2^k$,
+    $\mathbb{R}\mathrm{P}^m$ cannot be embedded in $\mathbb{R}^{2m-1}$.
+
+- $m$-dimensional smooth manifold can be immersed in $\mathbb{R}^{2m-a(m)}$,
+$a(m)$ is the number of $1$ in the binary representation of $m$, $m\ge 2.$
+
+The last result comes from The Immersion Conjecture for Differentiable Manifolds,
+Ralph L. Cohen. Method derived from the work of E.H. Brown and F.P. Peterson.
+In fact, according to the Smale-Hirsch theory,
+The only obstacle to immersion is the Stiefel-Whitney demonstrative class,
+This can explain that $m=2^{i_1}+\cdots+2^{i_l},$
+Take $M^m=\mathbb{R}\mathrm{P}^{2^{i_1} }\times\cdots\times \mathbb{R}\mathrm{P}^{2^{i_l} },$
+The minimum dimension of $M^m$ immersion is $\sum_j(2i_j-1)=2m-a(m).$ so this result is the best.
+
+The article was last updated on 2021-11-01 17:27:27
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分流形》讨论稿-紧流形嵌入定理</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-11-01 17:27:25</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/11/01/《微分流形》讨论稿-紧流形嵌入定理/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/11/03/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E5%88%86%E5%B8%83/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第四章-分布</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 4-Distribution</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/31/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%C4%8Cech%E4%B8%8A%E5%90%8C%E8%B0%83/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(10)-Čech上同调</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (10)-Čech Cohomology</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

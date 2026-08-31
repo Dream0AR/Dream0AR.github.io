@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分流形》第六章-张量丛 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第六章-张量丛</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 6 - Tensor Bundle</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-12-08 15:50:08
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    external algebra
+------
+
+**Corollary 1**. *If $r>n,$ then $\Lambda^r(V^\ast )=\{0\}.$ If $0\le r\le n,$ then $\dim \Lambda^r(V^\ast )=\binom{n}{r},
+$ is based on $\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1<\cdots<i_r\le n\}$.*
+
+**Certificate:**
+$\,\forall\,\Phi\in \Lambda^r(V^\ast )\subset V^\ast \otimes \cdots\otimes V^\ast =\mathcal{L}(V,\cdots,V,\mathbb{R}),$
+$\Phi=\Phi_{i_1\cdots i_r}\omega^{i_1}\otimes\cdots\otimes\omega^{i_r}.$
+Then
+
+$$\Phi=A(\Phi)=\frac{1}{r!}\Phi_{i_1\cdots i_r} \omega^{i_1}\wedge\cdots\wedge \omega^{i_n}=\sum_{1\le i_1<\cdots<i_r\le n}a_{i_1\cdots i_r}\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}.$$
+Therefore, when $r>n$, the summation set is the empty set, $\Phi\equiv 0.$ $0\le r\le n$,
+Just prove that $\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1<\cdots<i_r\le n\}$ is linearly independent.
+Use $\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}(e_{i_1},\cdots,e_{i_r})=\det(\omega^{i_\alpha}e_{i_\beta})=1,$
+All other functions are $0$.
+**Corollary 2**. *Suppose $\{\theta^i\},\{\omega^i\}$ is $V^\ast $ two sets of bases, $\theta^i=a^i_j\omega^j.$ then $\theta^1\wedge\cdots\wedge \theta^n=\det(a^i_j)\omega^1\wedge\cdots\wedge\omega^n.$*
+**Proof:** Take the dual basis $\{e_i\},$ of $\{\omega^i\}$
+Just apply $(e_1,\cdots,e_n)$ to both sides of the equation.
+
+$$\mathrm{LHS}=\det(\theta^ie_j)=\det(a^i_k\omega^ke_j)=\det(a^i_j)=\mathrm{RHS}.$$
+**Lemma 3** (Cartan's Lemma). *Suppose $\omega^i,\theta^i\in V^\ast ,$ $1\le i\le r\le \dim V.$ Suppose $\{\omega^i\}$ is linearly independent, then:*
+
+
+$$\sum_{i=1}^r\omega^i\wedge \theta^i=0\,\Leftrightarrow\, \theta^i=\sum_{j=1}^ra_{ij}\omega^j,\quad a_{ij}=a_{ji}.$$
+**Proof:** Expand $\{\omega^i\}$ to a set of basis. Then $\theta^i=a_{ij}\omega^j,$
+$\omega^i\wedge\theta^i=a_{ij}\omega^i\wedge\omega^j.$ In this way,
+
+$$\sum_{i=1}^r \omega^i\wedge\theta^i=\sum_{1\le i<j\le r}(a_{ij}-a_{ji})\omega^i\wedge\omega^j+\sum_{1\le i\le r<j}a_{ij}\omega^i\wedge\omega^j.$$
+Note that the right side is represented by the basis of $\Lambda^2(V^\ast)$. This proves the equivalence.
+
+**Theorem 4**. *Suppose $\omega^1,\cdots,\omega^r\in V^\ast $ are linearly independent, $\Phi\in \Lambda^s(V^\ast ),$ then $\,\exists\,\psi^1,\cdots,
+\psi^r\in \Lambda^{s-1}(V^\ast ),$ makes $\Phi=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r$ $\Leftrightarrow$ $\omega^1\wedge\cdots\wedge \omega^r\wedge \Phi=0.$*
+**Certificate:** Just prove sufficiency.
+Let $\omega^1\wedge\cdots\wedge\omega^r\wedge \Phi=0,$ express $\Phi$ in base,
+
+$$\Phi=c_{i_1\cdots i_s}\omega^{i_1}\wedge\cdots\wedge\omega^{i_s}=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r+\sum_{r+1\le \alpha_1<\cdots<\alpha_s\le n}a_{\alpha_1\cdots\alpha_s}\omega^{\alpha_1}\wedge\cdots\wedge\omega^{\alpha_s}.$$
+When $r+s>n$, the backside summation set is the empty set; when $r+s\le n$, using the condition,
+Do the outer product with $\omega^1\wedge\cdots\wedge\omega^r$.
+Due to linear independence, the following coefficients are all zero.
+**Proposition 5**. *Suppose $f\in \mathcal{L}(V;W),$ $f^\ast :\Lambda^r(W^\ast )\rightarrow\Lambda^r(V^\ast )$ is the pullback mapping, then $f^\ast (\Phi\wedge\Psi)=f^\ast \Phi\wedge f^\ast \Psi.$*
+**Proof:** Just use the commutativity of $f^\ast $ and $A,\otimes$:
+$$\begin{aligned}
+                f^*(\Phi\wedge\Psi)(x_1,\cdots,x_{r+s})&=(\Phi\wedge\Psi)(f(x_1),\cdots,f(x_{r+s}))\\
+                &=\frac{(r+s)!}{r!s!}A(\Phi\otimes \Psi) (f(x_1),\cdots,f(x_{r+s}))\\
+                &=\frac{(r+s)!}{r!s!}A(f^*(\Phi\otimes \Psi))(x_1,\cdots,x_{r+s})\\
+                &=f^*\Phi \wedge f^*\Psi (x_1,\cdots,x_{r+s}).
+            \end{aligned}$$
+Do the direct sum of the form $\Lambda(V^\ast )=\bigoplus_{r=0}^n \Lambda^r(V^\ast )=\{\omega_0+\cdots+\omega_n|\omega_r\in \Lambda^r(V^\ast )\}.$
+Then it becomes a $2^n$-dimensional vector space, and with $\wedge$ as the multiplication that satisfies the distributive law, it becomes algebra.
+Call it the **external algebra** on $V^\ast $. Similarly,
+You can define $\Lambda(V)=\bigoplus_{r=0}^n \Lambda^r(V),$
+It is called **external algebra** on $V$.
+
+tensor bundle
+------
+
+Let $M^m$ be an $m$-dimensional $C^\infty$ manifold, $\,\forall\,p\in M,$ has a tangent space $T_pM.$
+We define $(r,s)$-type tensor space $T_s^r(p)=T_pM\otimes\cdots\otimes T_pM\otimes T_p^\ast M\otimes\cdots\otimes T_p^\ast M.$
+$\dim T_s^r(p)=m^{r+s}.$ Define the bundle space $T_s^r(M)=\bigcup_{p\in M}T_s^r(p),$
+Natural topology and differential structure can be given to make it a $m+m^{r+s}$-dimensional $C^\infty$ manifold.
+
+$T_s^r(q)$ has natural basis $\{\frac{\partial {} }{\partial {}x^{i_1} }\otimes\cdots\otimes\frac{\partial {} }{\partial {}x^{i_r} }\otimes
+dx^{j_1}\otimes \cdots\otimes dx^{j_s}|1\le i_1,\cdots,i_r,j_1,\cdots,j_s\le n\}.$
+$\Phi\in T_s^r$ has coordinates $(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s}).$
+Take $\pi:T_s^r(M)\rightarrow M$ as the natural projection,
+$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$ maps $\Phi$ to $(q,(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s})).$
+Then define
+$$\widetilde{\Psi}=(\varphi\times \mathrm{id}_{\mathbb{R}^N})\circ \Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N\rightarrow \varphi(U)\times \mathbb{R}^N\subset \mathbb{R}^{m+N}.$$
+
+The topology assigned to $T_s^r(M)$ is such that $\pi^{-1}(U)$ is an open subset of $T_s^r(M)$ and $\widetilde{\Psi}$ is homeomorphic.
+If $\{(U_\alpha,\varphi_\alpha)\}$ is the smooth coordinate atlas of $M$,
+Then $\{(\pi^{-1}(U_\alpha),\widetilde{\Psi}_\alpha)\}$ is the smooth coordinate atlas of $T_s^r(M)$.
+
+It satisfies the following properties, $\pi:T_s^r(M)\rightarrow M$ is surjective to $C^\infty$,
+$\pi^{-1}(q)=T_s^r(q)$ is $m^{r+s}$ dimensional vector space,
+$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$ is reflected by $C^\infty$,
+$\pi_1\circ \Psi=\pi,$ and $\Psi|_q$ are linear isomorphisms.
+These elements make it a **vector bundle**, which is called a **tensor bundle**.
+
+tensor field
+------
+If $\Phi:M\rightarrow T_s^r(M),$ satisfies $\pi\circ\Phi=\mathrm{id}_M,$
+Then $\Phi$ is said to be a $(r,s)$-type **tensor field** on $M$. When $\Phi$ is a smooth mapping,
+It is called a smooth $(r,s)$-type **tensor field**. This is if and only if each component of $\Phi$ is a smooth function.
+$\Phi\in T_s^r(p)=\mathcal{L}(T_p^\ast M,\cdots,T_p^\ast M,T_pM,\cdots,T_pM;\mathbb{R})$ can be regarded as $(r+s)$-heavy linear function.
+Consider $(0,s)$-type tensor field $\Phi.$ and take any $X_1,\cdots,X_s\in \mathfrak{X}(M),$
+Define the role of the tensor field on the vector field:
+
+$$[\Phi(X_1,\cdots,X_s)] (p):=\Phi(p)(X_1(p),\cdots,X_s(p)),$$
+
+Then $\Phi(X_1,\cdots,X_s)\in C^\infty(M).$ because each component is a smooth function,
+After linear combination or multiplication, it is still a smooth function.
+Since the tensor is a multilinear function, any $f_1,\cdots,f_s\in C^\infty(M),$
+Considered point by point
+
+$$\Phi(f_1X_1,\cdots,f_sX_s)=f_1\cdots f_s\Phi(X_1,\cdots,X_s)\in C^\infty(M).$$
+
+conversely,
+If there is a mapping $\Phi:\mathfrak{X}(M)\times \cdots\times \mathfrak{X}(M)\rightarrow C^\infty(M)$ is $C^\infty(M)$ linear,
+Then $\Phi$ must be a $(0,s)$-type $C^\infty$-tensor field.
+Generally, let $\Gamma(T_s^r(M))$ represent the entire $(r,s)$-type tensor field of $C^\infty$,
+Then it is an infinite-dimensional vector space, $f\Phi+g\Psi(p):=f(p)\Phi(p)+g(p)\Psi(p).$
+Similar to the previous one, it acts on the combination of cotangent vector field and vector field,
+And it is also $C^\infty(M)$ linear. The reverse is also true.
+
+external differential form
+----------
+
+$M^m$ is a $C^\infty$-manifold.
+Let $\Lambda^r(T^\ast M)=\bigcup_{p\in M}\Lambda^r(T_p^\ast M),$ Similarly,
+Give it natural topological structure and differential structure to make it a $m+\binom{m}{r}$-dimensional $C^\infty$ manifold,
+It is called the $r$-sub **external form bundle** on $M$.
+If $\Phi:M\rightarrow \Lambda^rT^\ast M$ is a smooth mapping,
+$\pi\circ\Phi=\mathrm{id}_M,$ then $\Phi$ is said to be $r$-time **external differential form**.
+This is if and only if its components are smooth functions.
+Let $\mathcal{A}^r(M)=\Gamma(\Lambda^rT^\ast M)$ be the totality of $r$-sub-external differential forms,
+is an infinite-dimensional vector space. Similarly,
+You can also define $f\omega_1+g\omega_2\in \mathcal{A}^r(M).$
+
+Since we have multiplication $\wedge,$ on $\Lambda^r T^\ast M$
+We can define $\wedge point by point:\mathcal{A}^r(M)\times \mathcal{A}^s(M)\rightarrow \mathcal{A}^{r+s}(M).$
+That is
+
+$$(\omega\wedge\sigma)(p)=\omega(p)\wedge \sigma(p)\in \Lambda^{r+s}(T_p^\ast M).$$
+
+Of course it also satisfies the distributive law, the anti-commutative law and the associative law.
+Let $F:M\rightarrow N$ be a smooth reflection,
+Then ${F_{\ast } }_p:T_pM\rightarrow T_{F(p)}N$ is the cut mapping,
+$F^\ast :T^\ast _{F(p)}N\rightarrow T_p^\ast (M)$ is the pull-back mapping,
+Induced to $\Lambda^r T_q^\ast N\rightarrow \Lambda^r T_p^\ast M$,
+Then the pullback on $\mathcal{A}^r(N)\rightarrow \mathcal{A}^r(M)$ is induced,
+Satisfy $F^\ast (\omega\wedge\sigma)=F^\ast \omega\wedge F^\ast \sigma.$
+
+The article was last updated on 2021-12-08 15:50:09
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分流形》第六章-张量丛</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-12-08 15:50:08</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/12/08/《微分流形》第六章-张量丛/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/12/12/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(9)-%E4%BC%BD%E8%BE%BD%E9%87%91(Galerkin)%E6%96%B9%E6%B3%95/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (9)-Galerkin Method</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/07/%E9%97%AD%E5%80%BC%E5%9F%9F%E5%AE%9A%E7%90%86/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">闭值域定理</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">closed range theorem</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            论文笔记-Forman曲率与Ollivier曲率 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">论文笔记-Forman曲率与Ollivier曲率</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Thesis Notes-Forman Curvature and Ollivier Curvature</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-10-23 10:50:16
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/">科研</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/%E5%9B%BE%E4%B8%8A%E6%9B%B2%E7%8E%87/">图上曲率</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    Characterizations of Forman curvature - Jürgen Jost, Florentin Münch
+
+basic definition
+--------
+
+### Cell cavity complex and diagram
+
+Given the cell complex $X=\bigcup X_k.$
+Take $\delta:X_k\rightarrow X_{k+1}$ as the incident operator,
+$\delta v(z)=\pm 1$ or $0.$ requires the cell complex to satisfy the following properties:
+
+- $\dim(z)\ge 1\Rightarrow \,\exists\,x\prec z;$
+
+- $|\{w\in X_0:\delta w(x)=1\}|=|\{w\in X_0:\delta w(x)=-1\}|=1,$
+$\,\forall\,x\in X_1;$ (two vertices on each side)
+
+- $\dim(z)-\dim(v)=2,$ $\{x:v\prec x\prec z\}\neq \varnothing$
+
+    $\Rightarrow$ $|\{x:v\prec x\prec z\}|=2$ and
+$\pm 1\in \{\delta v(x)\delta x(z):x\in X\}.$ (diamond&
+    $\delta^2=0$)
+
+- (directional) connectivity;
+
+- $\{x:x\prec z\}=\{x:x\prec z'\},$ $\dim z\ge 1\Rightarrow z=z'.$
+    (simple picture)
+$\,\forall\,x,y\in X,$
+Let $x\sim y$ if $\,\exists\,v\prec x,y$ or $x,y\prec z.$ This induces distance:
+$$d(x,y)=\inf\{n:x=x_0\sim\cdots\sim x_n=y\}.$$
+Note that this is not a general path distance on $X_0$. When the complex dimension is higher,
+Point to point can be transferred more quickly with the help of high-dimensional cells.
+
+Define weighted inner product $$\left<{}f,g\right>=\sum_x f(x)g(x)m(x).$$
+
+Treat $x$ as $1_x,$ linear expansion$\delta:C(X)\rightarrow C(X).$
+Define adjoint $\delta^\ast :C(X)\rightarrow C(X),$
+$$\delta^\ast  z(x)=\frac{1}{m(x)}\left<{}\delta^\ast  z,x\right>=\frac{1}{m(x)}\left<{}\delta x,z\right>=\frac{m(z)}{m(x)}\delta x(z).$$
+
+This is different from $\partial$ in Forman’s definition,
+$$\partial z(x)=\delta x(z)=\frac{m(x)}{m(z)}\delta^\ast  z(x).$$
+
+### Hodge Laplacian
+Definition Hodge Laplacian $$H=\delta \delta^\ast +\delta^\ast \delta.$$
+
+Calculate $Hy(x),$ respectively as follows:
+$$\delta\delta^\ast  y(x)=\frac{1}{m(x)}\left<{}\delta^\ast y,\delta^\ast  x\right>=\frac{1}{m(x)}\sum_{v\prec x,y}m(v)\frac{m(y)}{m(v)}\delta v(y)\frac{m(x)}{m(v)}\delta v(x)=\sum_{v\prec x,y}\frac{m(y)}{m(v)}\delta v(x)\delta v(y),$$
+The simpler ones are:
+$$\delta^\ast \delta y(x)=\sum_{x,y\prec z}\frac{m(z)}{m(x)}\delta x(z)\delta y(z).$$
+
+**Note that unlike Forman's definition, the weight of cells with smaller dimensions is always in the denominator.**
+
+When $X=X_0\cup X_1$ is a weighted directed graph, remember $m(x)=m(v,w)=m(w,v),$ $x\in X_1,$
+$v,w$ are two vertices. $H$ acts on $C(X_0)$ as:
+
+$$\begin{aligned}
+            Hf(v)=\delta^*\delta f(v)&=\sum_w\sum_{v,w\prec x}\frac{m(x)}{m(v)}\delta v(x)\delta w(x)f(w)\\
+            &=\sum_{v\prec x}\frac{m(x)}{m(v)}\sum_{w\prec x}\delta v(x)\delta w(x)f(w)\\
+            &=\sum_{w\neq v}\frac{m(v,w)}{m(v)}(f(v)-f(w))          
+        \end{aligned}$$
+
+That is, $H_0$ is the Laplacian of the weighted graph.
+
+### Forman Curvature
+
+For $x\neq y\in X_1,$ there is at most one non-zero item in the first sum,
+The signs of the non-zero terms in the second sum are the same. When non-zero terms appear in both sums,
+There is $\delta v(x)\delta v(y)=-\delta x(z)\delta y(z).$ Therefore
+$$|Hy(x)|=\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$
+easy to get
+$$Hx(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}.$$
+
+There is a decomposition of (arbitrary) self-adjoint operator $H,$ $$H=\Delta+D,$$ $\Delta$ is a minimal diagonal dominant operator,
+$D$ is a diagonal matrix. Obviously there is $$Dx(x)=Hx(x)-\sum_{y\neq x}|Hy(x)|.$$
+
+Decompose the Hodge Laplacian and call the resulting $D$ **Forman curvature**. For $x\in X_1,$
+$$F(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$
+
+If $m\equiv 1,$
+$$F(x)=\#\{v\in X_0:v\prec x\}+\#\{z\in X_2:x\prec z\}-\#\{\text{parallel neighbors of } x\},$$
+It is indeed the same as Forman curvature.
+But in fact, the process of obtaining $F$ is not completely consistent with Forman curvature, and they are not the same for general $m$.
+Before decomposing the Hodge Laplacian, Forman first symmetrized $H$, that is, it is a symmetric matrix under constant weights.
+
+However, depending on the steps, two different Forman curvatures can be converted.
+
+Duality
+--------
+
+### Dual representation of Forman curvature
+For the complex $K=(X,\delta,m),$ $K'=(X',\delta,m'),$ denote $K'\le_k K,$
+If the following conditions are met:
+
+1. $X_j=X_j',$ $\,\forall\,j\le k;$
+
+2. $X_j'\subset X_j,$ $\,\forall\,j>k;$
+3. $m(x)=m'(x),$ $\,\forall\,\dim x\le k;$
+
+4. $\delta'v(x)=\delta v(x),$ $\,\forall\,x,v\in X'.$
+
+That is, $K'\subset K$ and their weighted orientation $k$-skeletons are the same.
+**Theorem 1.1**. *$K=(X,\delta,m),$ $x\in X_k,$ $k\in \mathbb{N}.$ Then we have*
+
+$$\max_{K'\le_k K}F'(x)=\min_{
+                \begin{subarray}{c}
+                    h(x)=1\\
+                    |h|\le 1\\
+                    \delta h\cdot \delta x\le 0
+            \end{subarray} }\delta\delta^*h(x)$$
+
+### Ollivier Curvature
+
+For $x\in X_1,$ its Ollivier curvature can be written as
+$$\kappa(x)=\inf_{\begin{subarray}{c}
+                    \delta f(x)=1\\
+                    |\delta f|\le 1
+            \end{subarray} }\delta\delta^*\delta f(x),$$
+
+In fact, we only need to consider $f\in C(X_0).$
+
+Obviously there are the following transformations:
+
+$$\kappa(x)=\inf_{\begin{subarray}{c}
+                    h(x)=1\\
+                    |h|\le 1\\
+                    h\in \delta(C(X_0))
+            \end{subarray} }\delta\delta^*h(x),$$
+**Theorem 1.2**. *$K=(X,\delta,m),$ $x\in
+
+$$\kappa(x)=\inf_{\begin{subarray}{c}
+                    h(x)=1\\
+                    |h|\le 1\\
+                    \delta x\cdot\delta h\le 0
+            \end{subarray} }\delta\delta^*h(x),$$
+
+### Contact the two
+**Corollary 1.3**. *$G=(X,\delta,m)$ is the $1$ dimensional cavity complex, then $\,\forall\,x\in X_1,$*
+
+$$\kappa(x)=\max_{G\le_1 K}F_K(x),$$
+
+**Proof:** Let $G\le_1 X,$ $X$ include all possible $2$-cells,
+Naturally, all cycles whose length does not exceed $5$ are $2$-cells. Then:
+$$\kappa(x)=\inf_{\begin{subarray}{c}
+                            h(x)=1\\
+                            |h|\le 1\\
+                            \delta x\cdot\delta h\le 0
+                    \end{subarray} }\delta\delta^*h(x)=\max_{K\le_1 X} F_K(x)=\max_{X^{(1)}\le_1 K}F_K(x)=\max_{G\le_1 K}F_K(x).$$
+
+That is, you can paste the $2$-cell with appropriate weights,
+Make the Forman curvature of the new graph the same as the original Ollivier curvature.
+**Corollary 1.4**. *$K=(X,\delta,m),$ $x\in X,$ Then:*
+
+$$F(x)\le\kappa(x).$$
+
+**Certificate:**
+$$F(x)\le \max_{K^{(1)}\le_1 X}F_X(x)=\kappa_{K^{(1)} }(x)=\kappa(x).$$
+
+Adjust distance
+--------
+
+### Basic properties
+
+You can choose other distances when defining Ollivier curvature. Give the graph another weight $\omega,$
+Define path distance $d_\omega:X_0\rightarrow [0,\infty),$
+$$d_\omega(v,w):=\inf\{\sum_{k=1}^n \omega(v_k,v_{k-1}):v=v_0\sim\cdots\sim v_n=w\}.$$
+It is always assumed that $\omega$ is non-degenerate, that is, an edge is always the shortest distance between vertices. Define with respect to $\omega,$
+Or called the Ollivier curvature about $d_\omega$:
+$$\omega(x)\kappa_\omega(x):=\inf_{\begin{subarray}{c}
+        \delta f(x)=\omega(x)\\
+        |\delta f|\le \omega\end{subarray} }\delta\delta^*\delta f.$$
+The non-degenerate requirement actually means that the Ollivier curvature on $X_1$ is finite.
+In order to make Forman curvature compatible with the new Ollivier curvature,
+Transform it into the Forman curvature about $\omega$:
+$$F_\omega:=Hx(x)-\sum_{y\neq x}\frac{\omega(y)}{\omega(x)}|Hy(x)|.$$
+When $x\in X_1$, that is
+$$F_\omega(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\frac{\omega(y)}{\omega(x)}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$
+In fact, it can be made consistent with the previous process of obtaining Forman curvature:
+$$\omega F_\omega=D(\omega H)=\omega(x) Hx(x)-\sum_{y\neq x}|\omega(y)H_y(x)|.$$
+
+### Duality properties
+
+Similarly there are:
+**Theorem 1.5**. *$K=(X,\delta,m,\omega),$ $x\in X_k,$ $k\in \mathbb{N}.$ Then we have*
+
+$$\max_{K'\le_k K}\omega(x)F_\omega'(x)=\min_{
+            \begin{subarray}{c}
+                h(x)=\omega(x)\\
+                |h|\le \omega\\
+                \delta h\cdot \delta x\le 0
+        \end{subarray} }\delta\delta^*h(x)$$
+**Theorem 1.6**. *$K=(X,\delta,m,\omega),$ $x\in X_k,$ $k\in \mathbb{N}.$ If all minimal cycles containing $x$ are $2$-cells, then we have:*
+
+$$\omega(x)\kappa(x)=\inf_{\begin{subarray}{c}
+                h(x)=\omega(x)\\
+                |h|\le \omega\\
+                \delta x\cdot\delta h\le 0
+        \end{subarray} }\delta\delta^*h(x),$$
+**Corollary 1.7**. *$G=(X,\delta,m,\omega)$ is the $1$ dimensional cell cavity complex, then $\,\forall\,x\in X_1,$*
+
+$$\kappa_\omega(x)=\max_{G\le_1 K}F_{K,\omega}(x),$$
+**Corollary 1.8**. *$K=(X,\delta,m,\omega),$ $x\in X,$ Then:*
+
+$$F_\omega(x)\le\kappa_\omega(x).$$
+
+### Original definition of Forman curvature
+
+The curvature of weight $w$ defined by Forman is:
+$$\frac{F_o(x)}{w(x)}:=\sum_{v\prec x} \frac{w(v)}{w(x)}+\sum_{x\prec z}\frac{w(x)}{w(z)}-\sum_{y\neq x}\left|\sum_{v\prec x,y}\frac{w(v)}{\sqrt{w(y)w(x)} }-\sum_{x,y\prec z}\frac{\sqrt{w(x)w(y)} }{w(z)}\right|,$$
+$x\in
+
+The text defines:
+$$F_\omega(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\frac{\omega(y)}{\omega(x)}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|,$$
+It is not difficult to find that when $m=\frac{1}{w},$ $\omega=\sqrt{w}$,
+There is $F_\omega(x)=\frac{F_o(x)}{w(x)}.$
+
+The article was last updated on 2021-10-23 11:13:29
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：论文笔记-Forman曲率与Ollivier曲率</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-10-23 10:50:16</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/10/23/论文笔记-Forman曲率与Ollivier曲率/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/10/24/%E3%80%8A%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80%E3%80%8B%E7%AC%94%E8%AE%B0(4)-Sobolev%E7%A9%BA%E9%97%B4/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《现代PDE基础》笔记(4)-Sobolev空间</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (4)-Sobolev Space</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/10/20/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%A7%A9%E5%AE%9A%E7%90%86/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第二章-秩定理</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Chapter 2 of &#34;Differential Manifolds&#34;-Rank Theorem</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数图论》第二章-群论回顾 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数图论》第二章-群论回顾</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Chapter 2 of &#34;Algebraic Graph Theory&#34; - Review of Group Theory</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-09-16 14:51:49
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/GTM207-%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/">GTM207-代数图论</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    permutation group
+------
+
+Recall that any subgroup of a symmetry group is called a permutation group,
+The automorphism group of a graph is a permutation group. A permutation representation of the group $G$
+representation)** refers to the homomorphism of $G$ to a certain symmetry group $\operatorname{Sym}(V)$,
+It is also called the **action (action)** of the group $G$ on the set $V$.
+A representation is faithful if it is injective, mapping identity elements only to identity permutations.
+
+The effect of group $G$ on set $V$ also induces other effects,
+As it does on the set $V$ power set $2^V$, it gives the permutation between subsets.
+Note that the effect preserves the size of the subset, so it can also be applied to all $k-$ subsets of $V$,
+Or change the subset to an ordered tuple.
+
+A subset $S$ of a set $V$ is said to be $G-$**invariant** if $\,\forall\,s\in S, g\in G,$
+$s^g\in S.$ At this time, any $g\in G$ gives the replacement of the elements in $S$,
+It can be **restricted** to $S$, denoted as $g|_S.$, and the restriction of the entire substitution is denoted as $G|_S,$ or $G^S.$
+The effect of $G$ on $V$ is **transitive**, if $x,y\in V,$ is given arbitrarily
+There exists $g\in G$ such that $x^g=y.$
+The invariant subset $S$ of $G-$ is called an orbit if $G|_S$ is transportable on $S$.
+$\,\forall\,x\in V,$ $x^G:=\{x^g:g\in G\}$ is an orbit.
+The orbitals do not intersect each other, giving a partition of $V$. Each element falls in exactly one orbital.
+Each $G-$ invariant subset is the union of a series of orbitals, so the orbits can also be called minimal $G-$ invariant subsets.
+
+count
+----
+
+Let $G$ be the permutation group of $V$, $\,\forall\,x\in V,$
+**Stabilizer**$G_x$ is the total permutation such that $x^g=x$, forming a subgroup.
+Given $S=\{x_1,\cdots,x_r\}\subset V,$
+**Pointwise Stabilizer**$G_{x_1,\cdots,x_r}:=\bigcap_{i=1}^r G_{x_i},$
+**Set Stabilizer**$G_S$ is a global permutation that only requires $S^g=S$. It is easy to see that the former is a subgroup of the latter.
+**Lemma 1.1**. *Suppose $G$ acts on $V$, and $S$ is the orbit of $G$. If $x,y\in S,$ then all the permutations from $x$ to $y$ will be mapped to a certain right coset of $G_x$. In turn, all the permutations in the right coset of $G_x$ will map $x$ to the same point in $S$.*
+
+The proofs in this section are basically basic exercises in abstract algebra and will be skipped here.
+**Lemma 1.2** (Orbital Stable Set Theorem). *$|G_x||x^G|=|G|.$*
+
+Take $h\in G,$ and say that an element of the form $g^{-1}hg$ is conjugate to $h$**,
+The entire set of elements that are conjugated to $h$ is called the **conjugate class** of $h$.
+The mapping $\tau_g:h\rightarrow g^{-1}hg$ gives the permutation of $G$,
+Therefore $G$ has a conjugation effect on itself, with the conjugate class as the orbit. If $H$ is a subgroup of $G$,
+Then $g^{-1}Hg$ is also a subgroup, which is said to be conjugate with $H$.
+
+**Lemma 1.3**. *Suppose $G$ has an effect on $V$, then $\,\forall\,x\in V, g\in G,$ $g^{-1}G_x g=G_{x^g}.$*
+Let $\operatorname{fix}(g)$ represent the number of fixed points under permutation $g$. We are familiar with the following lemma:
+
+**Lemma 1.4** (Burnside). *The number of orbits $G$ acts on $V$ is equal to the average number of fixed points of elements in $G$.*
+
+asymmetric graph
+--------
+
+A graph is asymmetric if its automorphism group is trivial.
+In this section we prove that almost all graphs are asymmetric, that is, for graphs with $n$ points,
+The proportion of asymmetric graphs approaches $1.$ when $n\rightarrow \infty$
+
+Suppose $V$ contains $n$ points, let $K_V$ be the complete graph of $n$ points.
+All graphs containing $n$ points are obtained by $K_V$ by deleting edges, so there are a total of $2^{\binom{n}{2} }$ graphs,
+One-to-one correspondence with $E(K_V)$ subset.
+Given a graph $
+It can be seen that the isomorphism class is the orbit of the symmetry group $\operatorname{Sym}(V)$ acting on the power set $E(K_V)$.
+According to the orbital stable set theorem, there is the following lemma:
+
+**Lemma 1.5**. *The size of the isomorphic class containing $X$ is $\frac{n!}{|\operatorname{Aut}(X)|}.$*
+By Burnside's lemma, we count isomorphic classes.
+Set $g$ (the generated subgroup) to act on $E(K_V)$ and there are $r$ orbitals,
+It is recorded as $\operatorname{orb}_2(g)=r.$ Then when $g$ acts on the power set of $E(K_V)$,
+These orbits are all minimal $g-$ fixed points, and combined there are a total of $2^r$ fixed points.
+Therefore, the number of isomorphism classes of the graph is $\frac{1}{n!}\sum_{g\in \operatorname{Sym}(V)}2^{\operatorname{orb}_2(g)}$.
+
+If all graphs are asymmetric, then each equivalence class contains $n!$ graphs,
+Therefore, there are $\frac{2^{\binom{n}{2} } }{n!}$ equivalence classes.
+Next we show that in fact when $n\rightarrow \infty$, the number of equivalence classes tends to this value,
+It is further inferred that almost all graphs are asymmetric.
+
+**Lemma 1.6**. *The number of isomorphism classes of a graph with $n$ vertices is at most $(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$.*
+
+**Proof:** It is said that all the points that cannot be fixed by a certain displacement are the **support** of the displacement,
+That is, the effect of substitution is only reflected on the support. It is asserted that for all substitutions with support size $2r$,
+The maximum value of $\operatorname{orb}_2$ is achieved by a permutation consisting of $r$ swaps.
+
+The non-permuted fixed point of edge $xy$ is if and only if $x and y$ are both in the support and not in the same permutation,
+Or one is in the support and the other is not. The set exchange contains $k$ exchanges,
+Then there are $\binom{n-2r}{2}+k$ immovable edges, and each edge is a separate orbit.
+
+For the moving edge, directly consider the number of orbits: one is in the support,
+The number of orbitals contributed by the edge where the other is not present is at most $(n-2r)(k+2(r-k)/3)=(n-2r)(2r+k)/3$;
+The number of orbits that are all in the support and not in the same swap is at most $2k\cdot 2(r-k)/3+k(k-1)+\binom{2(r-k)}{2}/3=4/3 \cdot k(r-k)+k(k-1)+(r-k)(2r-2k-1)/3=[2r^2+k^2-r-2k]/3.$
+The total of the previous ones is at most $\binom{n-2r}{2}+[r(2n-2r-1)+k(k+n-2r+1)]/3$,
+Reaching the maximum value at $k=r$$(n-2r)(n-2r-1)/2+nr-r^2=n^2/2-rn+r^2-n/2+r=\binom{n}{2}+r(r-n+1).$
+
+And for a permutation consisting of $k=r$ substitutions,
+The previous number of orbits only performs a scaled estimate on the $r-k$ part (the non-swapping part), so when $k=r$,
+The calculation is precise,
+Therefore, the maximum value of $\operatorname{orb}_2$ is indeed realized by a permutation consisting of $r$ swaps,
+And the specific value has been given.
+
+Note that the maximum estimate of the orbital number also holds for permutations with non-even support sizes,
+That is, $2r$ is replaced by the support size $t\in[2,n]$ (the maximum estimate may not be realized at this time).
+Then the maximum estimate of the orbital number $\varphi(t)=\binom{n}{2}+\frac{t}{2}(\frac{t}{2}-n+1)$ is a quadratic function,
+Take $t=n-1$ as the axis of symmetry.
+
+Take $m\le n-2,$ and now divide $\operatorname{Sym}(V)$ into three categories: identity transformation,
+Supports permutations and remaining permutations whose size does not exceed $m$.
+Their sizes do not exceed $1,\binom{n}{m}m!<n^m, n!<n^n.$ respectively, estimated by the maximum number of orbits,
+The number of permutation orbitals of each second type is at most $\binom{n}{2}-(n-2)$,
+Each third type of permutation orbital number has at most $\binom{n}{2}-\frac{m}{2}(n-\frac{m}{2}-1)\le \binom{n}{2}-\frac{nm}{4}$.
+Therefore, the number of isomorphic classes of the graph is at most $\frac{1}{n!}[2^{\binom{n}{2} }+n^m2^{\binom{n}{2}-(n-2)}+n^n2^{\binom{n}{2}-\frac{nm}{4} }]=\frac{2^{\binom{n}{2} } }{n!}(1+n^m2^{-(n-2)}+n^n2^{-\frac{nm}{4} }).$
+Remember $n^m2^{-(n-2)}+n^n2^{-\frac{nm}{4} }=2^{m\log_2 n-(n-2)}+2^{n\log_2 n-\frac{nm}{4} },$
+It is found that for sufficiently large $n,$, take $m=\lceil 8log_2 n\rceil$, that is, this term is an infinitesimal quantity.
+Therefore, the number of isomorphic classes is at most $(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$.
+
+**Corollary 1.7**. *Almost all graphs are asymmetric.*
+
+**Proof:** Suppose that among all isomorphic classes, the proportion of isomorphic classes of asymmetric graphs is $\mu.$
+Each asymmetric graph contains $n!$ graphs in the isomorphism class,
+The other isomorphism classes contain at most $\frac{n!}{2}$ pictures.
+Therefore the average size of isomorphic classes is at most $\mu n!+(1-\mu) \frac{n!}{2}=(1+\mu) \frac{n!}{2}.$
+
+And of course every graph appears in a certain isomorphism class,
+Therefore $(1+\mu)\frac{n!}{2}(1+o(1))\frac{2^{\binom{n}{2} } }{n!}\ge 2^{\binom{n}{2} },$
+$(1+\mu)(1+o(1))\ge 2.$ Thus when $n\rightarrow\infty$,
+$\mu\rightarrow 1.$
+
+Therefore, if all isomorphic graphs are regarded as the same graph, almost all graphs are asymmetric.
+If each graph in the isomorphic class is regarded as a different graph, since the asymmetric graph contains the largest number of graphs in the isomorphic class,
+We still get that almost all graphs are asymmetric.
+
+the right track
+----------
+
+Suppose $G$ has a transferable effect on $V$, it will naturally have an effect on $V\times V$,
+We study the orbits on it. Since $G$ is transportable, $\{(x,x):x\in V\}$ is an orbital,
+It is called **diagonal orbit**. Let $\Omega\subset V\times V,$
+Remember its **transpose**$\Omega^T$ as $\{(y,x):(x,y)\in \Omega\}.$
+It is easy to see that $\Omega^T$ is $G-$ invariant if and only if $\Omega$ is also invariant. If $\Omega$ is an orbital,
+Then $\Omega=\Omega^T$ or no intersection. When $\Omega=\Omega^T$ it is called a **symmetric** orbit.
+**Lemma 1.8**. *Suppose $G$ has a transferable action on $V$, $x\in V,$ Then the orbit of $G$ on $V\times V$ corresponds one-to-one with the orbit of $G_x$ on $V$.*
+
+The proof is an exercise in abstraction and will be skipped here.
+
+Therefore, the orbit $\Omega$ of $G$ on $V\times V$ is connected with the orbital $G_x$ of $V$.
+The number of orbits of $G_x$ on $V$ is called the rank of $G$. If $\Omega$ is symmetric,
+The corresponding orbit of $G_x$ on $V$ is said to be **self-paired**.
+The orbit $\Omega$ on each $V\times V$ can be viewed as having $V$ as the vertex set,
+$\Omega$ is a directed graph of arc sets, and when $\Omega$ is symmetric, it is an undirected graph.
+Note that when $\Omega$ is asymmetric, there is only one arc between two points, which is called an oriented graph.
+graph)**.
+
+**Lemma 1.9**. *Let $G$ be the transferable permutation group on $V$, and $\Omega$ be the orbit on $V\times V$.
+Suppose $(x,y)\in \Omega,$ then $\Omega$ is symmetric if and only if $\,\exists\,g\in G,$ such that $(x^g,y^g)=(y,x).$*
+
+If $g$ exchanges $x,y,$, then $(xy)$ is exchanged in $g$, then $g$ is of even order, and therefore $G$ is also of even order.
+It is said that $G$ is **generously transitive** on $V$, if $x,y\in V,$ are given arbitrarily
+There is a permutation that exchanges them. All orbitals on $V\times V$ are symmetric if and only if $G$ is generously transferable.
+
+Each orbit on $V\times V$ gives a graph, and the elements in $G$ are all automorphisms of the graph,
+And the effect is transferable on both vertex sets and edge sets. For the union of several orbits,
+The elements in $G$ are also automorphisms of the graph, but they only act on the vertex set and are transferable.
+Note that $G$ is not necessarily the automorphism group of the graph. The book gives $G=S_7,$ which can generate $J(7,3,1),$
+However, the example of $S_8\subset \operatorname{Aut}(J(7,3,1))$ is omitted here.
+
+originality
+------
+Let $G$ be migrated to $V$, and the non-empty subset $S\subset V$ is called the ** non-original block of $G$ (block of
+imprimitivity)**, if $\,\forall\,g\in G,$
+$S^g=S$ or $S^g\cap S=\varnothing.$ Since $G$ is removable,
+All transformations of $S$ constitute partitions of $V$.
+The set of these different transformations is called a non-primitive system of $G$.
+
+As shown in the figure below, the automorphism group of the cube $Q$ is transferable on the vertex set. It is easy to see when considering the distance.
+The set of all points of the same color is a non-primitive block,
+The four sets constitute a non-primitive system of automorphism groups.
+<img style='margin: auto;' src=https://i.loli.net/2021/09/16/PlVHYLgGbunfSz2.png width='50%' height='50%'>
+
+Except for the case where $S$ is a single point and a universal set, all other non-primitive systems are called non-trivial.
+A group is said to be primitive if it has no non-trivial and non-primitive systems.
+Otherwise it is non-primitive.
+
+**Lemma 1.10**. *$G$ can be transferred to $V$, $x\in V.$ $G$ is a primitive if and only if $G_x$ is a maximal subgroup of $G$.*
+
+**Proof:** Let us prove that $G$ has a non-trivial non-primitive system if and only if $G_x$ is not a maximal subgroup of $G$.
+Suppose $G$ has a non-trivial non-primitive system, let $x\in B,$ $B$ be a non-primitive block.
+Prove below that $G_x\subsetneq G_B\subsetneq G.$ Since $\,\forall\,g\in G_x,$
+$x\in B\cap B^g,$ Therefore $B=B^g,$ $g\in G_B.$ Take another element in $B$ $y\neq x.$
+Due to portability, $h\in G$ exists such that $y=x^h.$ and thus $y\in B\cap B^h,$ $B=B^h,$
+$h\in G_B.$ However, $h\notin G_x,$ therefore $G_x$ is really included in $G_B.$
+
+Let $G_x\subsetneq H\subsetneq G,$
+We explain that the orbit of $H$ is the non-trivial non-primitive system of $G$. Let $B$ be the orbit of $H$ containing $x$,
+Taking $g\in G,$ requires proving that either $B=B^g,$ or $B\cap B^g=\varnothing.$
+Suppose $y\in B\cap B^g,$ Since $x,y$ are both in orbit $B$, $\,\exists\,h\in H,$
+Make $y=x^h.$ and since $y\in B^g,$ has elements $x^{h'},$ $x^{h'g}=y.$ in $B$
+Therefore $x^{h'gh^{-1} }=x,$ $h'gh^{-1}\in G_x\subsetneq H,$ and thus $g\in H.$
+Since $B$ is the orbit of $H$, there is $B=B^g.$
+Since $G_x\subsetneq H,$ $B$ is not only composed of $x$. In order to illustrate that the orbit of $H$ is not the entire $V,$
+Recall that $\,\forall\,y\in V,$ $G$ replaces all mappings from $x$ to $y$ to a certain right coset of $G_x$.
+If $H$ is also transferable, then $G_x H\supset G.$ However, $G_x H=H$, therefore $H=G,$
+It is inconsistent with $H$ being a real subgroup. Therefore $B\neq V$, that is, $B$ is a non-trivial non-primitive system.
+
+Originality and connectivity
+---------------
+
+Another description of originality is reflected in the orbit of $G$ acting on $V\times V$.
+Let's do some preparatory work first.
+A path of a directed graph refers to a sequence composed of different vertices $\{u_0,\cdots,u_r\},$
+$(u_{i-1},u_i)$ is an arc; the weak path of a directed graph (weak
+path)** only requires $(u_{i-1},u_i)$ or $(u_{i},u_{i-1})$ to be an arc.
+A directed graph is **strongly connected**, if any two points are connected by a path;
+Calling it **weakly connected** means that any two points are connected by a weak path.
+The weak connectivity of a directed graph is the connectivity of an undirected graph regardless of direction. The **strongly connected branch** of a directed graph,
+Refers to a strongly connected maximal induced subgraph. According to the definition, a single point is strongly connected,
+Therefore a strongly connected branch constitutes a partition of the graph.
+
+The **in-valency** of a vertex in a directed graph is the number of arcs ending at that point;
+**Out-valency** is the number of arcs starting from this point.
+**Lemma 1.11**. *If $D$ is a directed graph with the same out-degree and in-degree of all points, then $D$ is strongly connected if and only if it is weakly connected.*
+
+**Proof:** Just prove that when $D$ is weakly connected, it is also strongly connected. Otherwise,
+$D$ can be split into strongly connected branches $D_1,\cdots,D_r.$ If there is an arc starting from $D_i$ to $D_j,$
+Then all arcs connecting $D_i, D_j$ must start from $D_i$,
+Otherwise $D_i,D_j$ can be merged into strongly connected subgraphs.
+
+Construct a directed graph $D',$ with the strongly connected branches of $D$ as vertices.
+There is a directed edge connecting $D_i$ to $D_j$ if and only if there is an arc in $D$ starting from $D_i$ to $D_j.$
+Since $D$ is weakly connected, so is $D'$. Cycles cannot appear in $D'$,
+Otherwise, the union of all strongly connected branches involved in the ring is strongly connected.
+Therefore, it is easy to prove that at least one point in $D'$ has an in-degree of zero, and we might as well assume that it corresponds to a strongly connected branch $D_1.$
+
+For all arcs involving $D_1$, if its end point is within $D_1$, the starting point must be within $D_1$,
+Out-degree and in-degree cancel; but there is at least one edge starting from $D_1$ and ending outside $D_1$,
+Because $D'$ is weakly connected. Therefore, the sum of the out-degrees of all points in $D_1$ must be greater than the in-degree, which is inconsistent with the condition.
+Recall that when $G$ can be transferred to $V$, the orbit $\Omega$ on $V\times V$ can be regarded as a directed graph.
+When $\Omega$ is asymmetric, the graph is a directed graph. Since $G$ is transferable, all points have the same out-degree.
+The in-degrees are the same. And since the sum of out-degrees is equal to the sum of in-degrees (equal to the number of arcs), the out-degrees of all points are equal to the in-degrees.
+Therefore, the strong connectivity of the directed graph corresponding to the orbit is equal to the weak connectivity, which is generally called the connectivity of the orbit.
+**Lemma 1.12**. *$G$ is transferable on $V$. $G$ is primitive if and only if every non-diagonal orbit is connected.*
+
+**Proof:** Suppose $G$ is non-primitive, $B_1,\cdots, B_r$ are non-primitive systems.
+Let $x\neq y\in B_1,$ $\Omega$ be the orbit containing $(x,y)$ on $V\times V$. For $g\in G,$
+$x^g,y^g$ are in the same non-original block. Therefore, the starting and end points of each arc of $\Omega$ are in the same block,
+Obviously not connected.
+
+On the contrary, suppose a certain orbit of $\Omega$ is not connected, and $B$ is all the vertices of a certain connected branch of $\Omega$.
+At this time $\,\forall\,g\in G,$ $B^g$ is obviously connected,
+Therefore $B^g=B$ or $B^g\cap B=\varnothing.$ Therefore $B$ is a non-original block,
+$G$ is non-primitive.
+
+The article was last updated on 2021-09-16 14:51:49
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数图论》第二章-群论回顾</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-09-16 14:51:49</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/09/16/《代数图论》第二章-群论回顾/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/09/19/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(1)-de%20Rham%20%E5%A4%8D%E5%BD%A2/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(1)-de Rham 复形</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (1)-de Rham Complex</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/09/16/%E3%80%8A%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数图论》第一章-基本概念</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Graph Theory&#34; Chapter 1-Basic Concepts</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
