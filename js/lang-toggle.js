@@ -333,6 +333,11 @@ KEEP.initLanguageToggle = () => {
 
     document.documentElement.lang = htmlLanguage(currentLanguage);
     document.body.dataset.lang = currentLanguage;
+    const relativeDates = getLanguageDictionary(currentLanguage).ago;
+    if (relativeDates) KEEP.language_ago = relativeDates;
+    if (KEEP.utils && typeof KEEP.utils.setHowLongAgoInHome === 'function') {
+      KEEP.utils.setHowLongAgoInHome();
+    }
     requestMathRender();
     // main.js initializes KEEP.utils after this controller on the first load.
     window.setTimeout(refreshTOC, 0);

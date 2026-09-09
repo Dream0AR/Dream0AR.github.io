@@ -345,7 +345,7 @@ $$\left&lt;{}F[T],\varphi(x)\right&gt;=(2\pi)^n\left&lt;{}T,F^{-1}[\varphi(-x)]\
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
                     
-                <h2 id="en-常义Fourier变换"><a href="#en-常义Fourier变换" class="headerlink" title="常义Fourier变换"></a> Common sense Fourier transformation</h2><h3 id="en-基本性质"><a href="#en-基本性质" class="headerlink" title="基本性质"></a> basic properties</h3><p>$\,\forall\,f\in \mathscr{S}(\mathbb{R}_x^n),$ Define its <strong> Fourier transform </strong> for
+                <h2 id="en-常义Fourier变换"><a href="#en-常义Fourier变换" class="headerlink" title="常义Fourier变换"></a> Classical Fourier Transform</h2><h3 id="en-基本性质"><a href="#en-基本性质" class="headerlink" title="基本性质"></a> basic properties</h3><p>$\,\forall\,f\in \mathscr{S}(\mathbb{R}_x^n),$ Define its <strong> Fourier transform </strong> for
 $$F[f]=\int_{\mathbb{R}_x^n}f(x)e^{-ix\cdot \xi} dx;$$
 Define $g(\xi)\in\mathscr{S}(\mathbb{R}_\xi^n),$ for <strong> Inverse Fourier transform </strong> for
 $$F^{-1}g=\int_{\mathbb{R}_\xi^n}g(\xi)e^{ix\cdot \xi}\bar{d}\xi.$$
@@ -368,18 +368,18 @@ The fourth proposition is the integral by parts. The difficulty of the last prop
 Do derivatives of $\widehat{f}$. Note that the left equation has given us the limit of our expectations,
 Therefore, it is enough to prove that their difference tends to zero. A simple proof can be given using Euler&#39;s formula and the differential mean value theorem.
 This property tells us that $\widehat{f}\in C^\infty(\mathbb{R}_\xi^n).$ further has:</p>
-<p><strong> Theorem 1.1 </strong>. <em>$f\in \mathscr{S}(\mathbb{R}^n)$ $\Rightarrow$ $\widehat f\in \mathscr{S}(\mathbb{R}^n).$</em> </p>
-<p><strong> Certificate: </strong> Note that $\widehat{f}=F[f]$ is bounded. Then from the previous properties,
+<p><strong>Theorem 1.1</strong>. <em>$f\in \mathscr{S}(\mathbb{R}^n)$ $\Rightarrow$ $\widehat f\in \mathscr{S}(\mathbb{R}^n).$</em> </p>
+<p><strong>Certificate:</strong> Note that $\widehat{f}=F[f]$ is bounded. Then from the previous properties,
 $(-1)^{|\beta|}\xi^\alpha D^\beta\widehat{f}(\xi)=F[D^\beta(x^\alpha f(x))]$ is also bounded.
 Therefore $\widehat f\in \mathscr{S}(\mathbb{R}^n).$</p>
 <p>Next, we show that $F^{-1}$ is indeed the inverse of $F$. First, based on Fubini&#39;s theorem, we have the following proposition:</p>
-<p><strong> Proposition 1.2 </strong>. <em> When $f,g\in \mathscr{S}(\mathbb{R}^n)$, there is $$\int_{\mathbb{R}^n}f\widehat gdx=\int_{\mathbb{R}^n}\widehat fgdx.$$ </em> </p>
+<p><strong>Proposition 1.2</strong>. <em>When $f,g\in \mathscr{S}(\mathbb{R}^n)$, there is $$\int_{\mathbb{R}^n}f\widehat gdx=\int_{\mathbb{R}^n}\widehat fgdx.$$</em> </p>
 <p>Recall that in probability theory the mean is zero,
 The normal distribution density function with standard deviation $\sigma I$ is $K_\sigma(x)={(\sqrt{2\pi}\sigma)^{-n} }e^{-\frac{|x|^2}{2\sigma^2} }.$
 Note$G_\sigma(x)=(2\pi)^{-n}e^{-\frac{\sigma^2 |x|^2}{2} },$
 Then the calculation is $F[G_\sigma]=K_\sigma.$. We use this to prove the following theorem:</p>
-<p><strong> Theorem 1.3 </strong> (Fourier inverse transform). <em>$f\in \mathscr{S}(\mathbb{R}^n),$ $f=F^{-1}\circ F[f].$</em> </p>
-<p><strong> Certificate: </strong> From the previous proposition,
+<p><strong>Theorem 1.3</strong> (Fourier inverse transform). <em>$f\in \mathscr{S}(\mathbb{R}^n),$ $f=F^{-1}\circ F[f].$</em> </p>
+<p><strong>Certificate:</strong> From the previous proposition,
 $\int_{\mathbb{R}^n}f K_\sigma dx=\int_{\mathbb{R}^n}\widehat{f} G_\sigma d\xi.$
 When $\sigma\rightarrow 0$,
 The left side converges to $f(0)$ (i.e. $K_\sigma\rightarrow \delta$),
@@ -395,8 +395,8 @@ That is, on $\mathscr{S}(\mathbb{R}^n)$,
 $F^{-1}\circ F=F^{-1}\circ F=\mathrm{id},$
 Therefore, linear continuous mapping $F$ establishes an isomorphic correspondence, and the inverse mapping is also continuous.</p>
 <h3 id="en-卷积"><a href="#en-卷积" class="headerlink" title="卷积"></a> Convolution</h3><p>The convolution operation also has good properties under Fourier transform.</p>
-<p><strong> Proposition 1.4 </strong>. <em> $\,\forall\,f,g\in \mathscr{S}(\mathbb{R}^n),$ $f\ast g\in \mathscr{S}(\mathbb{R}^n),$ and $F[f\ast g]=F[f]F[g].$ </em> </p>
-<p><strong> Certificate: </strong> $\,\forall\,l\ge 0,$
+<p><strong>Proposition 1.4</strong>. <em>$\,\forall\,f,g\in \mathscr{S}(\mathbb{R}^n),$ $f\ast g\in \mathscr{S}(\mathbb{R}^n),$ and $F[f\ast g]=F[f]F[g].$</em> </p>
+<p><strong>Certificate:</strong> $\,\forall\,l\ge 0,$
 $\,\exists\,M_l&gt;0$ makes $\sup_x |x|^l|g(x)|\le M_l.$ so we have:
 $$|x||g(x-y)|^{1/l}\le M_l^{1/l}\frac{|x|}{|x-y|}\le 2M_l^{1/l},\quad |x|\ge 2|y|;$$
 $$\frac{|x|}{|y|}|g(x-y)|^{1/l}\le 2|g(x-y)|\le 2M_0^{1/l},\quad |x|&lt;2|y|.$$</p>
@@ -412,10 +412,10 @@ Therefore, according to Fubini’s theorem,
 $$\widehat{f\ast g}(\xi)=\int_{\mathbb{R}^n\times \mathbb{R}^n}F(x,y)dydx=\int_{\mathbb{R}^n\times \mathbb{R}^n}F(x,y)d(x-y)dy=\widehat{f}(\xi)\widehat{g}(\xi).$$
 That is $F[f\ast g]=F[f]F[g].$</p>
 <p>Using the conversion relationship between $F$ and $F^{-1}$, we can immediately get:</p>
-<p><strong> Corollary 1.5 </strong>. <em>$F[fg]=(2\pi)^{-n}F[f]\ast F[g]$</em> </p>
+<p><strong>Corollary 1.5</strong>. <em>$F[fg]=(2\pi)^{-n}F[f]\ast F[g]$</em> </p>
 <p>For the Parseval identity of the Fourier series, we have a similar Fourier transform version:</p>
-<p><strong> Theorem 1.6 </strong> (Plancherel). <em>$f\in \mathscr{S}(\mathbb{R}^n)\Rightarrow (2\pi)^{-n}\parallel\widehat{f}\parallel_{L^2(\mathbb{R}^n)}=\parallel f\parallel_{L^2(\mathbb{R}^n)}$</em> </p>
-<p><strong> Certificate: </strong> Take $f^\ast (x)=\overline{f(-x)},$ then
+<p><strong>Theorem 1.6</strong> (Plancherel). <em>$f\in \mathscr{S}(\mathbb{R}^n)\Rightarrow (2\pi)^{-n}\parallel\widehat{f}\parallel_{L^2(\mathbb{R}^n)}=\parallel f\parallel_{L^2(\mathbb{R}^n)}$</em> </p>
+<p><strong>Certificate:</strong> Take $f^\ast (x)=\overline{f(-x)},$ then
 $$Ff^\ast (\xi)=\int_{\mathbb{R}^n}\overline{f(-x)}e^{-ix\cdot \xi}dx=\overline{\int_{\mathbb{R}^n}f(-x)e^{ix\cdot \xi}dx}=\overline{\widehat{f}(\xi)}.$$</p>
 <p>Take $h=f\ast f^\ast ,$
 So on the one hand $h(0)=\int_{\mathbb{R}^n}f(y)\overline{f(y)}dy=\parallel f\parallel^2_{L^2(\mathbb{R}^n)}.$
@@ -449,7 +449,7 @@ We have $F[\varphi\cdot T]=(2\pi)^{-n}F[\varphi]\ast F[T].$</p>
 <h3 id="en-例子"><a href="#en-例子" class="headerlink" title="例子"></a> Example</h3><p>$F[\delta(x-a)]=e^{-ia\cdot \xi},$ In particular, $F[\delta]=1.$</p>
 <p>The generalized function with compact support is of course in $\mathscr{S}&#39;(\mathbb{R}^n)$. In particular,
 It satisfies the following theorem:</p>
-<p><strong> Theorem 1.7 </strong>. <em> If $T\in \mathscr{E}&#39;(\mathbb{R}_x^n),$, then $F[T] (\xi)=\left&lt;{}T_x,e^{-ix\cdot \xi}\right&gt;\in \mathscr{S}&#39;(\mathbb{R}_\xi^n)$ is a normal function about $\xi$. </em> </p>
+<p><strong>Theorem 1.7</strong>. <em>If $T\in \mathscr{E}&#39;(\mathbb{R}_x^n),$, then $F[T] (\xi)=\left&lt;{}T_x,e^{-ix\cdot \xi}\right&gt;\in \mathscr{S}&#39;(\mathbb{R}_\xi^n)$ is a normal function about $\xi$.</em> </p>
 <p>The proof can be given using regularization of generalized functions.</p>
 <p>The article was last updated on 2021-10-23 13:03:45 </p>
 
@@ -771,7 +771,7 @@ It satisfies the following theorem:</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%B8%B8%E4%B9%89Fourier%E5%8F%98%E6%8D%A2"><span class="nav-text"> Common sense Fourier transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-text"> basic properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%8D%B7%E7%A7%AF"><span class="nav-text"> Convolution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%B9%BF%E4%B9%89Fourier%E5%8F%98%E6%8D%A2"><span class="nav-text"> Generalized Fourier Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text"> basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E4%BE%8B%E5%AD%90"><span class="nav-text"> Example</span></a></li></ol></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%B8%B8%E4%B9%89Fourier%E5%8F%98%E6%8D%A2"><span class="nav-text"> Classical Fourier Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-text"> basic properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%8D%B7%E7%A7%AF"><span class="nav-text"> Convolution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%B9%BF%E4%B9%89Fourier%E5%8F%98%E6%8D%A2"><span class="nav-text"> Generalized Fourier Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text"> basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E4%BE%8B%E5%AD%90"><span class="nav-text"> Example</span></a></li></ol></li></ol>
         </div>
     
 </div>

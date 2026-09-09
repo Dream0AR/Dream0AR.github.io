@@ -380,12 +380,12 @@ $0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
                     
-                <h2 id="en-外测度"><a href="#en-外测度" class="headerlink" title="外测度"></a> external measure</h2><p>Recall that the external measure $\mu$ on $X$ refers to the monotonic subadditive function of $2^X\rightarrow [0,\infty]$,
+                <h2 id="en-外测度"><a href="#en-外测度" class="headerlink" title="外测度"></a> Outer Measure</h2><p>Recall that the external measure $\mu$ on $X$ refers to the monotonic subadditive function of $2^X\rightarrow [0,\infty]$,
 Satisfies $\mu(\varnothing)=0.$ It is sometimes simply called a measure, if this does not cause confusion.
 A set $A\subset X$ is said to be $\mu$-measurable if $\,\forall\,S\subset X,$
 $\mu(S)=\mu(S\setminus A)+\mu(S\cap A).$ The latter is called the Caratheodory condition,
 It means that the set $A$ can cut other sets additively with respect to $\mu$.</p>
-<p><strong> Note 1.1 </strong>. <em> In fact, due to subadditivity, the condition is equivalent to $\mu(S)\ge\mu(S\setminus A)+\mu(S\cap A).$, so it is easy to prove that any $\mu$-zero test set is $\mu$-measurable. </em> </p>
+<p><strong>Note 1.1</strong>. <em>In fact, due to subadditivity, the condition is equivalent to $\mu(S)\ge\mu(S\setminus A)+\mu(S\cap A).$, so it is easy to prove that any $\mu$-zero test set is $\mu$-measurable.</em> </p>
 <p>Due to $S\setminus A=S\cap (X\setminus A),$
 It is easy to see that $A$ is $\mu$-measurable if and only if $X\setminus A$ is also.
 Assume $A_1,A_2$ is $\mu$-measurable, then $\,\forall\,S\subset X,$</p>
@@ -400,16 +400,16 @@ Then $X\setminus((X\setminus A_1)\cup (X\setminus A_2))=A_1\cap A_2$ is also $\m
 $A_2\setminus A_1=A_2\cap (X\setminus A_1)$ Same thing.
 It can be concluded by induction that the finite-step union, intersection, and complement operations all maintain the $\mu$-measurable property.
 The Caratheodory condition confers additivity to unintersecting $\mu$-measurable sets:</p>
-<p><strong> Lemma 1.2 </strong> (Additivity is possible). <em> If $A_1,\cdots$ is a disjoint $\mu$-measurable set, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).$ </em> </p>
-<p><strong> Certificate: </strong> By subsumable additivity,
+<p><strong>Lemma 1.2</strong> (Additivity is possible). <em>If $A_1,\cdots$ is a disjoint $\mu$-measurable set, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).$</em> </p>
+<p><strong>Certificate:</strong> By subsumable additivity,
 $\mu(S\cap \bigcup_{i=1}^\infty A_i)\le \sum_{i=1}^\infty\mu(S\cap A_i).$
 Conditioned by Caratheodory, $\,\forall\,S\subset X,$
 $\mu(S\cap (A_1\cup A_2))=\mu((S\cap (A_1\cup A_2))\setminus A_1)+\mu(S\cap(A_1\cup A_2)\cap A_1)= \mu(S\cap A_1)+\mu(S\cap A_2).$
 This can be summarized into the case of a finite number of disjoint $\mu$-measurable sets.</p>
 <p>Existing$\sum_{i=1}^n \mu(S\cap A_i)=\mu(S\cap\bigcup_{i=1}^n A_i)\le \mu(S\cap \bigcup_{i=1}^\infty A_i).$
 Let $n\rightarrow\infty,$ get the inequality in the other direction, so the proposition is proved.</p>
-<p><strong> Lemma 1.3 </strong>. <em> If $A_1,\cdots$ is an increasing $\mu$-measurable set, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$ </em> </p>
-<p><strong> Certificate: </strong> Remember$A_0=\varnothing,$
+<p><strong>Lemma 1.3</strong>. <em>If $A_1,\cdots$ is an increasing $\mu$-measurable set, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
+<p><strong>Certificate:</strong> Remember$A_0=\varnothing,$
 Due to $\bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty (A_i\setminus A_{i-1}),$
 By listability and additivity,</p>
 <p>$$\begin{aligned}
@@ -419,14 +419,14 @@ By listability and additivity,</p>
                 &amp;=\lim\limits_{n}\mu(S\cap A_n),
             \end{aligned}$$</p>
 <p>The proposition is proved.</p>
-<p><strong> Corollary 1.4 </strong>. <em> Let $A_1,\cdots$ be a decreasing $\mu$-measurable set. If $\,\exists\,A_k$ has limited measure, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$ </em> </p>
+<p><strong>Corollary 1.4</strong>. <em>Let $A_1,\cdots$ be a decreasing $\mu$-measurable set. If $\,\exists\,A_k$ has limited measure, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
 <p>The set $\mathcal{S}$ of a series of subsets of $X$ is called $\sigma$-algebra, if:</p>
 <p>(1) $\varnothing,X\in \mathcal{S};$</p>
 <p>(2) $A\in \mathcal{S}\Rightarrow X\setminus A\in \mathcal{S};$</p>
 <p>(3) $A_1,\cdots \in \mathcal{S}\Rightarrow \bigcup_{i=1}^\infty A_i\in \mathcal{S}.$</p>
-<p><strong> Note 1.5 </strong>. <em> The $\sigma$-algebra is closed to listable union and complement operations, and it is easy to see that it is also closed to listable intersections. Since the intersection of $\sigma$-algebras is still a $\sigma$-algebra, the smallest $\sigma$-algebra containing a series of specified sets can be found. In particular, the smallest $\sigma$-algebra containing all open sets for the topological space $X,$ is called the Borel algebra in $X$, and the set is called a Borel set. </em> </p>
-<p><strong> Lemma 1.6 </strong>. <em> $\mu$-Measurable set as a whole constitutes $\sigma$-algebra, including $\mu$-zero measurable set of all $X$. </em> </p>
-<p><strong> Certificate: </strong> Just prove that if $A_1,\cdots$ is $\mu$-measurable,
+<p><strong>Note 1.5</strong>. <em>The $\sigma$-algebra is closed to listable union and complement operations, and it is easy to see that it is also closed to listable intersections. Since the intersection of $\sigma$-algebras is still a $\sigma$-algebra, the smallest $\sigma$-algebra containing a series of specified sets can be found. In particular, the smallest $\sigma$-algebra containing all open sets for the topological space $X,$ is called the Borel algebra in $X$, and the set is called a Borel set.</em> </p>
+<p><strong>Lemma 1.6</strong>. <em>$\mu$-Measurable set as a whole constitutes $\sigma$-algebra, including $\mu$-zero measurable set of all $X$.</em> </p>
+<p><strong>Certificate:</strong> Just prove that if $A_1,\cdots$ is $\mu$-measurable,
 Then $\bigcup_{i=1}^\infty A_i$ is also.
 Note $B_i=\bigcup_{j=1}^i A_j$ as increasing $\mu$-measurable set,
 Then $\,\forall\,S\subset X,$</p>
@@ -440,7 +440,7 @@ Then $\,\forall\,S\subset X,$</p>
                 &amp;= \mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap \bigcup_{i=1}^\infty A_i),
             \end{aligned}$$</p>
 <p>Thus the proposition is proved.</p>
-<h2 id="en-Borel正则测度"><a href="#en-Borel正则测度" class="headerlink" title="Borel正则测度"></a> Borel regular measure</h2><p>The external measure $\mu$ is said to be <strong> regular </strong> , if$\,\forall\,A\subset X,$
+<h2 id="en-Borel正则测度"><a href="#en-Borel正则测度" class="headerlink" title="Borel正则测度"></a> Borel regular measure</h2><p>The external measure $\mu$ is said to be <strong> regular</strong>, if$\,\forall\,A\subset X,$
 There exists $\mu$-measurable set $B\supset A$ satisfying $\mu(B)=\mu(A).$
 At this point, the previous property that $A_i$ is a monotonic sequence no longer needs to be assumed that $A_i$ is $\mu$-measurable.</p>
 <p>When $X$ is a topological space,
@@ -448,7 +448,7 @@ The outer measure $\mu$ is <strong> Borel regular </strong> If all Borel sets ar
 And $\,\forall\,A\subset X,$ exists a Borel set $B\supset A$ that satisfies $\mu(B)=\mu(A).$</p>
 <p>It should be emphasized that $\mu(B)=\mu(A)$ does not mean $\mu(B\setminus A)=0,$
 Unless $A$ is measurable by $\mu-$ and $\mu(A)&lt;\infty.$</p>
-<p><strong> Note 1.7 </strong>. <em> Recall that the Borel measure $\mu_0$ is the mapping of the entire Borel set to $[0,\infty]$, satisfying $\mu_0(\varnothing)=0$ and listable additivity (thus implying monotonicity). At this time, $\,\forall\,A\subset X,$ $\mu(A):=\inf\limits_{B\text{ Borel, }B\supset A}\mu_0(B)$ defines a Borel regular external measure, which is consistent with $\mu_0$ on the entire Borel set. In turn, the restriction of a Borel regular external measure on the entire Borel set is a Borel measure. </em> </p>
+<p><strong>Note 1.7</strong>. <em>Recall that the Borel measure $\mu_0$ is the mapping of the entire Borel set to $[0,\infty]$, satisfying $\mu_0(\varnothing)=0$ and listable additivity (thus implying monotonicity). At this time, $\,\forall\,A\subset X,$ $\mu(A):=\inf\limits_{B\text{ Borel, }B\supset A}\mu_0(B)$ defines a Borel regular external measure, which is consistent with $\mu_0$ on the entire Borel set. In turn, the restriction of a Borel regular external measure on the entire Borel set is a Borel measure.</em> </p>
 <p>Given any subset $Y\subset X$ and external measure $\mu,$, a new external measure $\mu |_Y,$ can be defined
 $\mu|_Y(Z):=\mu(Y\cap Z),$ $Z\subset X.$
 Any $\mu$-measurable set is $\mu|_Y$-measurable, even if $Y$ itself is not necessarily $\mu$-measurable.
@@ -459,8 +459,8 @@ $B_2\supset B_1\setminus Y,$ $B_3\supset A\cap Y.$
 Then $A\subset (X\setminus B_1)\cup B_2\cup B_3$ and both $\mu|_Y$ have the same measure.</p>
 <p>When $X$ is a metric space, for $A,B\subset X,$
 Note $d(A,B)=\inf\{d(a,b):a\in A,b\in B\}.$ $\inf\varnothing:=+\infty.$</p>
-<p><strong> Theorem 1.8 </strong> (Caratheodory discrimination method). <em> Let $(X,d)$ be the metric space and $\mu$ be the external measure. If $\mu(A\cup B)=\mu(A)+\mu(B),$ $\,\forall\,A,B\subset X$ satisfies $d(A,B)&gt;0,$, then all Borel sets are $\mu$-measurable. </em> </p>
-<p><strong> Certificate: </strong> Just prove that all closed sets are $\mu$-measurable. $\,\forall\,$ Closed sets $C\subset X,$
+<p><strong>Theorem 1.8</strong> (Caratheodory discrimination method). <em>Let $(X,d)$ be the metric space and $\mu$ be the external measure. If $\mu(A\cup B)=\mu(A)+\mu(B),$ $\,\forall\,A,B\subset X$ satisfies $d(A,B)&gt;0,$, then all Borel sets are $\mu$-measurable.</em> </p>
+<p><strong>Certificate:</strong> Just prove that all closed sets are $\mu$-measurable. $\,\forall\,$ Closed sets $C\subset X,$
 Take $C_j=\{x\in X:d(x,C)\le \frac{1}{j}\}.$ then $\,\forall\,S\subset X,$
 $d(S\setminus C_j,S\cap C)&gt;0.$
 Thus there is $$\mu(S)\ge \mu(S\setminus C_j)+\mu(S\cap C),\quad \,\forall\,j&gt;0.$$</p>
@@ -470,13 +470,13 @@ Thus $\lim\limits_{j\rightarrow \infty}\mu(S\setminus C_j)=\mu(S\setminus \bigca
 The last equal sign is because $C$ is a closed set, so all points with a zero distance from $C$ are in $C$.
 Therefore $$\mu(S)\ge \mu(S\setminus C)+\mu(S\cap C),$$ and thus any closed set $C$ is measurable,
 The proposition is proved.</p>
-<p><strong> Definition 1.9 </strong>. <em> The Borel regular measure $\mu$ is said to be <strong> open </strong>$\sigma$<strong> -Limited </strong> , if $X=\bigcup_j V_j,$ $V_j$ is an open set and the measure is limited. </em> </p>
+<p><strong>Definition 1.9</strong>. <em>The Borel regular measure $\mu$ is said to be <strong> open </strong>$\sigma$<strong> -Limited </strong>, if $X=\bigcup_j V_j,$ $V_j$ is an open set and the measure is limited.</em> </p>
 <p>Obviously, when $X$ is a separable metric space and $\mu$ is locally finite, it is open $\sigma$-finite.</p>
-<p><strong> Theorem 1.10 </strong>. <em> Assume that every closed set in the topological space $X$ is the intersection of enumerable open sets, and $\mu$ is an open $\sigma$-finite Borel regular measure, then $\,\forall\,A\subset X,$ $$\mu(A)=\inf_{\text{开集}U\supset A}\mu(U).$$ </em>  <em> If $A$ is $\mu$-measurable, then there is also $$\mu(A)=\sup_{\text{闭集}C\subset A}\mu(C).$$ </em> </p>
-<p><strong> Idea: </strong> Discuss the case where the measure of the whole space is finite/infinite. Take the total set that makes the conclusion true,
+<p><strong>Theorem 1.10</strong>. <em>Assume that every closed set in the topological space $X$ is the intersection of enumerable open sets, and $\mu$ is an open $\sigma$-finite Borel regular measure, then $\,\forall\,A\subset X,$ $$\mu(A)=\inf_{\text{开集}U\supset A}\mu(U).$$</em>  <em>If $A$ is $\mu$-measurable, then there is also $$\mu(A)=\sup_{\text{闭集}C\subset A}\mu(C).$$</em> </p>
+<p><strong>Idea:</strong> Discuss the case where the measure of the whole space is finite/infinite. Take the total set that makes the conclusion true,
 Prove that it contains the $\sigma$-algebra, which in turn contains all open sets, and in turn contains the entire Borel algebra.
 Finally, the conclusion is drawn from regularity.</p>
-<p><strong> Certificate: </strong> First assume $\mu(X)&lt;\infty,$ at this time $(1)\Rightarrow (2).$
+<p><strong>Certificate:</strong> First assume $\mu(X)&lt;\infty,$ at this time $(1)\Rightarrow (2).$
 Since the measure is Borel regular, we only need to prove that $A$ is a Borel set.
 Take $\mathcal{A}:=\{\text{Borel集}A\subset X:\text{(1)成立}\},$
 Then $\mathcal{A}$ naturally contains all open sets.</p>
@@ -502,10 +502,10 @@ So when $\mu(A)=\infty$, $\mu(\bigcup_{j=1}^NC_j)\rightarrow \infty;$
 When $\mu(A)&lt;\infty$,
 For large enough $N$ there is $\mu(A\setminus \bigcup_{j=1}^N C_j)\le 2\varepsilon.$
 Therefore (2) is proved.</p>
-<p><strong> Note 1.11 </strong>. <em> Note that if $X$ is a $\sigma$-compact Hausdorff space, that is, the whole space is the union of a list of compact sets. Then the second property can be derived from $$\mu(A)=\sup_{\text{紧集}K\subset A}\mu(K).$$. This is because under the above assumption, any closed set is the union of a list of increasing compact sets. </em> </p>
+<p><strong>Note 1.11</strong>. <em>Note that if $X$ is a $\sigma$-compact Hausdorff space, that is, the whole space is the union of a list of compact sets. Then the second property can be derived from $$\mu(A)=\sup_{\text{紧集}K\subset A}\mu(K).$$. This is because under the above assumption, any closed set is the union of a list of increasing compact sets.</em> </p>
 <p>From the above theorem, Lusin’s theorem can be proved:</p>
-<p><strong> Theorem 1.12 </strong> (Lusin). <em> Let $\mu$ be the Borel canonical outer measure, and all closed sets in the topological space $X$ are intersections of listable open sets (for example, $X$ can take the metric space). Let $A$ be $\mu$ - a measurable set with limited measure, and $f:A\rightarrow \mathbb{R}$ be a measurable function. Then $\,\forall\,\varepsilon&gt;0,$ exists in $X$ and the closed set $C\subset A,$ satisfies $\mu(A\setminus C)&lt;\varepsilon,$ and $f|_C$ is continuous. </em> </p>
-<p><strong> Certificate: </strong> Take $A_{ij}=f^{-1}[\frac{j-1}{i},\frac{j}{i}),$
+<p><strong>Theorem 1.12</strong> (Lusin). <em>Let $\mu$ be the Borel canonical outer measure, and all closed sets in the topological space $X$ are intersections of listable open sets (for example, $X$ can take the metric space). Let $A$ be $\mu$ - a measurable set with limited measure, and $f:A\rightarrow \mathbb{R}$ be a measurable function. Then $\,\forall\,\varepsilon&gt;0,$ exists in $X$ and the closed set $C\subset A,$ satisfies $\mu(A\setminus C)&lt;\varepsilon,$ and $f|_C$ is continuous.</em> </p>
+<p><strong>Certificate:</strong> Take $A_{ij}=f^{-1}[\frac{j-1}{i},\frac{j}{i}),$
 $i\in \mathbb{Z}_+,$ $j\in \mathbb{Z}.$
 Then $\mu$-measurable $A_{ij}$ have no intersection, and the measure is limited.
 And $\bigcup_{j}A_{ij}=A$ holds for any $i$. Since $\mu|_{A}$ is Borel regular,
@@ -566,7 +566,7 @@ Thus $f|_C$ is continuous.</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第二章-切丛(1)</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 2-Tangential Cluster (1)</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 2 — Tangent Bundles (1)</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -588,7 +588,7 @@ Thus $f|_C$ is continuous.</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》讨论稿-解析流形</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Paper-Analytical Manifolds</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Notes — Analytic Manifolds</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -841,7 +841,7 @@ Thus $f|_C$ is continuous.</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%A4%96%E6%B5%8B%E5%BA%A6"><span class="nav-text"> external measure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Borel%E6%AD%A3%E5%88%99%E6%B5%8B%E5%BA%A6"><span class="nav-text"> Borel regular measure</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%A4%96%E6%B5%8B%E5%BA%A6"><span class="nav-text"> Outer Measure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Borel%E6%AD%A3%E5%88%99%E6%B5%8B%E5%BA%A6"><span class="nav-text"> Borel regular measure</span></a></li></ol>
         </div>
     
 </div>

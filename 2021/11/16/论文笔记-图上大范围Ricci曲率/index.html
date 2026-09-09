@@ -472,15 +472,15 @@ Since $P_tf$ changes continuously, $\,\exists\,y_0\in B_R(x)$ makes</p>
 <p>$$K|\nabla_R f|(x)\le\Delta |\nabla_R f|(x)-(\Delta f(y)-\Delta f(x))\operatorname{sgn}(f(y)-f(x)).$$</p>
 <p>The left and right dimensions of $f$ are $1,$. Let’s assume $|\nabla_R f|=1,$
 The following curvature definition method is derived from this:</p>
-<p><strong> Definition 1.1 </strong>. <em> Arbitrarily specify $R\in \mathbb{N},$ $x,y\in V,$ definition <strong> Gradient - Ollivier Curvature </strong>:</em> </p>
+<p><strong>Definition 1.1</strong>. <em>Arbitrarily specify $R\in \mathbb{N},$ $x,y\in V,$ definition <strong> Gradient - Ollivier Curvature</strong>:</em> </p>
 <p>$$K_R(x,y):=\inf_{\begin{subarray}{c}
                     f:V\rightarrow \mathbb{R}\\
                     |\nabla_Rf|(x)=1\\
                     |f(y)-f(x)|=|\nabla_R f|(x)
             \end{subarray} }\Delta|\nabla_R f|(x)-(\Delta f(y)-\Delta f(x))\operatorname{sgn}(f(y)-f(x)).$$</p>
-<h2 id="en-与Ollivier曲率联系"><a href="#en-与Ollivier曲率联系" class="headerlink" title="与Ollivier曲率联系"></a> Contact Ollivier Curvature</h2><p><strong> Theorem 1.2 </strong>. <em> $\,\forall\,x\sim y,$ We have: </em> </p>
+<h2 id="en-与Ollivier曲率联系"><a href="#en-与Ollivier曲率联系" class="headerlink" title="与Ollivier曲率联系"></a> Contact Ollivier Curvature</h2><p><strong>Theorem 1.2</strong>. <em>$\,\forall\,x\sim y,$ We have:</em> </p>
 <p>$$K_1^{Ol}(x,y)\ge K_1(x,y).$$</p>
-<p><strong> Certificate: </strong> By definition,
+<p><strong>Certificate:</strong> By definition,
 $$K_1^{Ol}(x,y)=\min_{\begin{subarray}{c}
                     \parallel\nabla f\parallel_{\infty}=1\\
                     f(y)-f(x)=1
@@ -489,10 +489,10 @@ $$K_1^{Ol}(x,y)=\min_{\begin{subarray}{c}
 $|\nabla_1 f|(z)\le 1.$ This means $\Delta |\nabla_1 f|(x)\le 0.$ Therefore:</p>
 <p>$$K_1(x,y)\le \Delta |\nabla_1f|(x)+K_1^{Ol}(x,y)\le K_1^{Ol}(x,y).$$</p>
 <h2 id="en-梯度估计"><a href="#en-梯度估计" class="headerlink" title="梯度估计"></a> Gradient estimation</h2><p>Next, it will be shown that this way of defining curvature is actually sufficient. First, the following lemma is required:</p>
-<p><strong> Lemma 1.3 </strong>. <em> If $K_R(x,y)\ge K,$ $\,\forall\,d(x,y)\le R.$ given $t&gt;0,$, get the function </em> </p>
+<p><strong>Lemma 1.3</strong>. <em>If $K_R(x,y)\ge K,$ $\,\forall\,d(x,y)\le R.$ given $t&gt;0,$, get the function</em> </p>
 <p>$$G_s:=e^{-Ks}P_s|\nabla_R P_{t-s}f|,\quad s\in[0,t]$$</p>
-<p><em> Then $G_s$ is an increasing function. </em></p>
-<p><strong> Certificate: </strong>
+<p><em>Then $G_s$ is an increasing function.</em></p>
+<p><strong>Certificate:</strong>
 It is only necessary to prove that the lower derivative $\underline{\partial}_sG_s:=\varliminf\limits_{h\rightarrow 0}\frac{G_{s+h}-G_s}{h}\ge0.$ of $G_s$
 Calculated:</p>
 <p>$$\underline{\partial}_sG_s=-KG_s+e^{-Ks}(P_s(\underline\partial_s|\nabla_RP_{t-s}f|)+\Delta P_s|\nabla_R P_{t-s}f|).$$</p>
@@ -509,16 +509,16 @@ $$\begin{aligned}
 <p>Since $P_s\Delta=\Delta P_s$ and for nonnegative functions $f\ge 0,$ $P_sf\ge 0,$ we have
 $\underline{\partial}_s G_s\ge 0,$ The lemma is proved.</p>
 <p>Comparing $G_0$ and $G_t,$, we immediately get the following theorem:</p>
-<p><strong> Theorem 1.4 </strong>. <em> If $K_R(x,y)\ge K,$ $\,\forall\,d(x,y)\le R,$ then </em> </p>
+<p><strong>Theorem 1.4</strong>. <em>If $K_R(x,y)\ge K,$ $\,\forall\,d(x,y)\le R,$ then</em> </p>
 <p>$$|\nabla_R P_tf|\le e^{-Kt}P_t|\nabla_R f|.$$</p>
 <h2 id="en-衰减性"><a href="#en-衰减性" class="headerlink" title="衰减性"></a> attenuation</h2><p>When $K=0$, the above gradient estimate no longer gives good decay properties. We wish to prove the following estimate:</p>
-<p><strong> Theorem 1.5 </strong>. <em> If $\,\forall\,x,y\in V,$ $d(x,y)\le R,$ has $K_R(x,y)\ge 0.$ then </em> </p>
+<p><strong>Theorem 1.5</strong>. <em>If $\,\forall\,x,y\in V,$ $d(x,y)\le R,$ has $K_R(x,y)\ge 0.$ then</em> </p>
 <p>$$|\nabla_R P_tf|^2\le \frac{C}{t}\parallel f\parallel^2_{\infty},$$</p>
 <p>We hope to use $\Gamma f$ to estimate $|\nabla_R f|^2,$ to give its upper bound.
 However, $R\ge 2,$ $\Gamma$ only involves one step neighborhood,
 So the basic idea is to sum $\Gamma f$ over a large enough neighborhood to control $|\nabla_R f|.$
 We need the following tools.</p>
-<p><strong> Definition 1.6 </strong>. <em> For graph $G=(G,w,m),$, write $Q(x,y):=\frac{w(x,y)}{m(x)},$ then $\Delta f(x)=\sum_y Q(x,y)(f(y)-f(x)).$ </em>  <em> Note $\deg(x):=\sum_y Q(x,y),$ $Q_{\min} :=\inf_{x\sim y}Q(x,y).$ and define $A:=\Delta+\deg_{\max},$ as <strong> average operator </strong>.</em> </p>
+<p><strong>Definition 1.6</strong>. <em>For graph $G=(G,w,m),$, write $Q(x,y):=\frac{w(x,y)}{m(x)},$ then $\Delta f(x)=\sum_y Q(x,y)(f(y)-f(x)).$</em>  <em>Note $\deg(x):=\sum_y Q(x,y),$ $Q_{\min} :=\inf_{x\sim y}Q(x,y).$ and define $A:=\Delta+\deg_{\max},$ as <strong> average operator</strong>.</em> </p>
 <p>It is easy to see that it satisfies some simple properties:</p>
 <ol>
 <li><p>$f\ge 0\Rightarrow Af\ge 0;$</p>
@@ -528,9 +528,9 @@ We need the following tools.</p>
 <li><p>$P_t A=AP_t.$</p>
 </li>
 </ol>
-<p><strong> Lemma 1.7 </strong>. <em> $\,\forall\,f:V\rightarrow \mathbb{R},$ We have </em> </p>
+<p><strong>Lemma 1.7</strong>. <em>$\,\forall\,f:V\rightarrow \mathbb{R},$ We have</em> </p>
 <p>$$|\nabla_R f|^2\le \frac{2R}{Q_{\min}^R}A^{R-1}\Gamma f.$$</p>
-<p><strong> Certificate: </strong> First estimate $A^{R-1}\Gamma f.$ and note $\,\forall\,g\ge 0,$</p>
+<p><strong>Certificate:</strong> First estimate $A^{R-1}\Gamma f.$ and note $\,\forall\,g\ge 0,$</p>
 <p>$$Ag(x)\ge \sum_y Q(x,y) g(y)\ge Q_{\min}\sum_{y\sim x}g(y).$$
  Therefore,</p>
 <p>$$A^{R-1}\Gamma f\ge Q_{\min}^{R-1}\sum_{x\sim x_1\sim\cdots\sim x_{R-1} } \Gamma f(x_{R-1}).$$</p>
@@ -549,10 +549,10 @@ $$\begin{aligned}
             \end{aligned}$$
  The lemma is proved.</p>
 <p>Now we can prove the previous theorem. In fact we can prove the following stronger version:</p>
-<p><strong> Theorem 1.8 </strong>. <em> Let $K_R(x,y)\ge K,$ $\,\forall\,x,y\in V,$ $d(x,y)\le R.$ then </em> </p>
+<p><strong>Theorem 1.8</strong>. <em>Let $K_R(x,y)\ge K,$ $\,\forall\,x,y\in V,$ $d(x,y)\le R.$ then</em> </p>
 <p>$$\frac{e^{2Kt}-1}{2K}|\nabla_R P_tf|^2\le R\frac{\deg_{\max}^{R-1} }{Q_{\min}^{R} }\parallel f\parallel_{\infty}^2.$$</p>
-<p><em> When $K=0$, $\frac{e^{2Kt}-1}{2K}:=t,$ is the previous theorem. </em></p>
-<p><strong> Certificate: </strong> Let$H_s:=A^{R-1}P_s[(P_{t-s}f)^2],$
+<p><em>When $K=0$, $\frac{e^{2Kt}-1}{2K}:=t,$ is the previous theorem.</em></p>
+<p><strong>Certificate:</strong> Let$H_s:=A^{R-1}P_s[(P_{t-s}f)^2],$
 $G_s:=e^{-Ks}P_s|\nabla_R P_{t-s} f|.$ Then take the derivative of $H$ and apply the previous lemma:</p>
 <p>$$\begin{aligned}
                 \partial_s H_s&amp;= P_s A^{R-1}\Delta(P_{t-s}f)^2-2P_s A^{R-1}P_{t-s}f \cdot \Delta P_{t-s} f\\
@@ -587,15 +587,15 @@ And $\log f(y)-\log f(x)=\parallel\nabla_R \log f\parallel_{\infty},$
 Similar to the previous derivation method, we derive the derivative on both sides. At $t=0$, we have</p>
 <p>$$\partial_t (\log P_t f(y)-\log P_t f(x))=\frac{\Delta f(y)}{f(y)}-\frac{\Delta f(x)}{f(x)}\le -K\parallel\nabla_R \log f\parallel_{\infty}.$$</p>
 <p>Let $f=\exp(g),$ have the following definition:</p>
-<p><strong> Definition 1.9 </strong>. <em> Arbitrarily specify $R\in \mathbb{N},$ $x,y\in V,$ definition <strong> Exponential Gradient - Ollivier Curvature </strong>:</em> </p>
+<p><strong>Definition 1.9</strong>. <em>Arbitrarily specify $R\in \mathbb{N},$ $x,y\in V,$ definition <strong> Exponential Gradient - Ollivier Curvature</strong>:</em> </p>
 <p>$$K_R^e(x,y)=\inf_{\begin{subarray}{c}
                 r&gt;0\\
                 \parallel\nabla_R g\parallel_{\infty}=r\\
                 g(y)-g(x)=r \end{subarray} }\frac{1}{r} \left(\frac{\Delta \exp(g)}{\exp(g)}(x)-\frac{\Delta \exp(g)}{\exp(g)}(y)\right)$$</p>
 <p>Similarly, the way it is defined is adequate.</p>
-<p><strong> Theorem 1.10 </strong>. <em> If $K_R^e(x,y)\ge K,$ $\,\forall\,d(x,y)\le R,$ and $G$ are finite graphs. Then $\,\forall\,0&lt;f\in \ell^\infty(V),$ </em> </p>
+<p><strong>Theorem 1.10</strong>. <em>If $K_R^e(x,y)\ge K,$ $\,\forall\,d(x,y)\le R,$ and $G$ are finite graphs. Then $\,\forall\,0&lt;f\in \ell^\infty(V),$</em> </p>
 <p>$$\parallel\nabla_R\log P_tf\parallel_{\infty}\le e^{-Kt}\parallel\nabla_R \log f\parallel_{\infty}.$$</p>
-<p><strong> Certificate: </strong> Since $G$ is assumed to be finite, the maximum module can be obtained at a certain point. Denote $g_0=\log P_tf,$
+<p><strong>Certificate:</strong> Since $G$ is assumed to be finite, the maximum module can be obtained at a certain point. Denote $g_0=\log P_tf,$
 $r_0=\parallel\nabla_R g_0\parallel_{\infty},$ then
 $$\begin{aligned}
                 \partial_t\parallel\nabla_R\log P_t f\parallel_{\infty}
@@ -682,7 +682,7 @@ The integral leads to the theorem being established.</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《现代PDE基础》笔记(6)-实指数Sobolev模</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (6)-Real Exponential Sobolev Module</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Fundamentals of Modern PDE&#34; Notes (6) — Sobolev Norms of Real Order</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>

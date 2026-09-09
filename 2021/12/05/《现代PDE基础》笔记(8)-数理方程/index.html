@@ -352,39 +352,39 @@ $\lambda_i\rightarrow \infty,$ 特征值趋于无穷.</p>
                     
                 <h2 id="en-经典方程"><a href="#en-经典方程" class="headerlink" title="经典方程"></a> classical equations</h2><p>Recalling mathematical equations, the ones we most often come into contact with are the following equations:</p>
 <ol>
-<li><p>$-\Delta u=f,$ <strong> Poisson equation </strong> . Discuss boundary value problems,
+<li><p>$-\Delta u=f,$ <strong>Poisson equation</strong>. Discuss boundary value problems,
 The boundary conditions are of Dirichlet or Neumann type.</p>
 </li>
-<li><p>$u_{tt}-\Delta u=f,$ <strong> wave equation </strong> . Discuss the Cauchy problem on unbounded regions,
+<li><p>$u_{tt}-\Delta u=f,$ <strong>wave equation</strong>. Discuss the Cauchy problem on unbounded regions,
 The initial boundary value problem is discussed in the bounded area. The initial conditions need to be given for $u$ and $u_t$,
 The boundary conditions are of Dirichlet or Neumann type.</p>
 </li>
-<li><p>$u_t-\Delta u=f,$ <strong> Heat conduction equation </strong> .Discuss the basic same-wave equation,
+<li><p>$u_t-\Delta u=f,$ <strong>Heat conduction equation</strong>.Discuss the basic same-wave equation,
 The initial conditions only need to be given for $u$.</p>
 </li>
 </ol>
 <p>Considering the generalized form of the above equation, there is the following linear equation,
 The problems discussed correspond to the classic problems above and will not be repeated. The coefficients are all set to smooth.
-and satisfied <strong> ellipticity condition </strong> :
+and satisfied <strong> ellipticity condition</strong>:
 $\sum_{ij=1}^n a_{ij(x)}\xi_i\xi_j\ge \alpha \Vert\xi\Vert^2,$
 $\,\forall\,\xi\neq 0.$ Let’s assume that the coefficients are symmetric.</p>
 <ol>
 <li><p>$Lu=\sum_{i,j=1}^{n}a_{ij}(x)u_{ij}+\sum_{i=1}^n b_i(x)u_i+c(x)u=f,$
-<strong> Second order elliptic equation </strong>.</p>
+<strong>Second order elliptic equation</strong>.</p>
 </li>
 <li><p>$u_{tt}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(t,x)\frac{\partial {}u}{\partial {}x_j})+\sum_{i=1}^n b_i(t,x)\frac{\partial {}u}{\partial {}x_i}+c(t,x)u=f,$
-<strong> Second-order hyperbolic equation </strong>.</p>
+<strong>Second-order hyperbolic equation</strong>.</p>
 </li>
 <li><p>$u_{t}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(t,x)\frac{\partial {}u}{\partial {}x_j})+\sum_{i=1}^n b_i(t,x)\frac{\partial {}u}{\partial {}x_i}+c(t,x)u=f,$
-<strong> second order parabolic equation </strong>.</p>
+<strong>second order parabolic equation</strong>.</p>
 </li>
 </ol>
 <p>We start by considering <strong> Classic solution </strong> ($C^2$ solution) is transferred to consideration <strong> Weak solution </strong> (Generalized function solution) (Weak
-Formulation). By <strong> Stokes formula </strong>:</p>
+Formulation). By <strong> Stokes formula</strong>:</p>
 <p>$$\int_\Omega d\omega=\int_{\partial\Omega} \omega,$$</p>
-<p>we have <strong> Gauss-Green formula </strong>:</p>
+<p>we have <strong> Gauss-Green formula</strong>:</p>
 <p>$$\int_\Omega \partial_i fdx=\int_\Omega \nabla \cdot e_i fdx=\int_{\partial\Omega} n\cdot e_i \gamma fdS=\int_{\partial\Omega} n_i\gamma fdS.$$</p>
-<p>where $\gamma$ is the trace, which makes the formula true for more functions. Then we have <strong> Integral by parts formula </strong>:</p>
+<p>where $\gamma$ is the trace, which makes the formula true for more functions. Then we have <strong> Integral by parts formula</strong>:</p>
 <p>$$\int_{\Omega} \partial_i fgdx+\int_\Omega f\partial_i gdx=\int_\Omega{\partial_i (fg)}dx=\int_{\partial\Omega} n_i\gamma(fg)dS.$$</p>
 <p>To solve partial differential equations, a commonly used method is <strong> operator semigroup </strong> method,
 This turns the problem into solving an infinite-dimensional ODE.</p>
@@ -406,8 +406,8 @@ From this we get the dual operator $L^\ast .$</p>
 <p>$$M^\ast v=\frac{\partial {}^2v}{\partial {}t^2}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v_j)-\sum_{i=1}^n\frac{\partial {} }{\partial {}x_i}(b_i(x)v)+c(x)v,$$</p>
 <p>$$M^\ast v=-\frac{\partial {}v}{\partial {}t}-\sum_{i,j=1}^n\frac{\partial {} }{\partial {}x_i}(a_{ij}(x)v_j)-\sum_{i=1}^n\frac{\partial {} }{\partial {}x_i}(b_i(x)v)+c(x)v.$$</p>
 <p>The importance of the dual operator lies in the following important propositions from functional analysis:</p>
-<p><strong> Proposition 1 </strong>. <em> For Hilbert space $H,$ bounded linear operator $A:H\rightarrow H,$, the existence of problem $Ax=b,$ $\,\forall\,b\in H$ is equivalent to the uniqueness of problem $A^\ast y=0$ (that is, it has only zero solution). </em> </p>
-<p><strong> Certificate: </strong> Existence $\Rightarrow$ Uniqueness: $\,\forall\,y$ makes $A^\ast y=0,$
+<p><strong>Proposition 1</strong>. <em>For Hilbert space $H,$ bounded linear operator $A:H\rightarrow H,$, the existence of problem $Ax=b,$ $\,\forall\,b\in H$ is equivalent to the uniqueness of problem $A^\ast y=0$ (that is, it has only zero solution).</em> </p>
+<p><strong>Certificate:</strong> Existence $\Rightarrow$ Uniqueness: $\,\forall\,y$ makes $A^\ast y=0,$
 There exists $x$ such that $Ax=y.$ Therefore,</p>
 <p>$$0=(x,A^\ast y)=(Ax,y)=(y,y) \,\Rightarrow\, y=0.$$</p>
 <p>Uniqueness $\Rightarrow$ Existence: For $b\in H,$, just find $x$ that satisfies:</p>
@@ -434,7 +434,7 @@ $$\begin{aligned}
         \end{aligned}$$
 Inequality $2ab\le \varepsilon a^2+\frac{1}{\varepsilon} b^2.$ is used in the process
 This inequality is called Garding&#39;s inequality:</p>
-<p><strong> Theorem 2 </strong> (Garding&#39;s inequality). <em> Let $\Omega$ be a bounded area in $\mathbb{R}^n$ with a smooth boundary. If $L$ is a second-order elliptical operator, then $\,\forall\,u\in H_0^1(\Omega),$ has the following inequality: </em> </p>
+<p><strong>Theorem 2</strong> (Garding&#39;s inequality). <em>Let $\Omega$ be a bounded area in $\mathbb{R}^n$ with a smooth boundary. If $L$ is a second-order elliptical operator, then $\,\forall\,u\in H_0^1(\Omega),$ has the following inequality:</em> </p>
 <p>$$\operatorname{Re}(-Lu,u)_{L^2(\Omega)}\ge C_1\Vert u\Vert_{1}^2-C_2\Vert u\Vert^2.$$</p>
 <p>The coefficients can be calculated specifically. When $C_2\le 0$, consider uniqueness for problem $Lu=0$:</p>
 <p>$$C_1\Vert u\Vert_{1}^2-C_2\Vert u\Vert^2\le 0\,\Rightarrow\, u\equiv 0.$$</p>

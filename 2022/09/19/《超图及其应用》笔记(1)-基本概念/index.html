@@ -360,18 +360,18 @@ We require $E$ to satisfy:</p>
 </li>
 </ol>
 <p>Mark the hypergraph as $H=(V,E).$. Due to the second condition, sometimes $V$ is also hidden directly.
-Directly record $H=E$ as <strong> hypergraph </strong>.</p>
+Directly record $H=E$ as <strong> hypergraph</strong>.</p>
 <p>Similar to simple graphs, there are also <strong> simple hypergraph </strong> Concept: $\,\forall\,E_i\subset E_j,$
 $i=j.$ That is, there is no inclusion relationship between hyperedges. Therefore, there are no duplicate edges in simple hypergraphs.
 We also have <strong> correlation matrix </strong> $A=(a_{ij})_{n\times m},$
 $a_{ij}=1$ if and only if $x_i\in E_j$, otherwise it is zero.</p>
-<p>Call $H&#39;=(V&#39;,E&#39;=(e_j))$ a hypergraph $H$ <strong> sub-hypergraph </strong> , if$V&#39;\subset V,$
+<p>Call $H&#39;=(V&#39;,E&#39;=(e_j))$ a hypergraph $H$ <strong> sub-hypergraph</strong>, if$V&#39;\subset V,$
 $E&#39;\subset E,$ and $e_j\subset V&#39;.$
-Call $H&#39;=(E_j|j\in J)$ derived from $J$ <strong> Edge derived subgraph </strong> , for $A\subset X,$
-Call $H&#39;=(E_j\cap A|E_j\cap A\neq \varnothing)$ derived from $A$ <strong> Click to export subgraph </strong> .
-A special derived subgraph is $H(x)=\{E_j|x\in E_j\}$, call it <strong> star </strong>.</p>
+Call $H&#39;=(E_j|j\in J)$ derived from $J$ <strong> Edge derived subgraph</strong>, for $A\subset X,$
+Call $H&#39;=(E_j\cap A|E_j\cap A\neq \varnothing)$ derived from $A$ <strong> Click to export subgraph</strong>.
+A special derived subgraph is $H(x)=\{E_j|x\in E_j\}$, call it <strong> star</strong>.</p>
 <p>Similar to dual graphs, we also have dual hypergraphs.
-Call $H^\ast =(X_1,\cdots,X_n)$ $H=(E_1,\cdots,E_m)$ <strong> Dual hypergraph </strong> ,
+Call $H^\ast =(X_1,\cdots,X_n)$ $H=(E_1,\cdots,E_m)$ <strong> Dual hypergraph</strong>,
 The point set $e_1,\cdots,e_m$ corresponds to the edge in $H$, and the hyperedge $X_i=\{e_j|x_i\in E_j\}.$
 Note that using the definition of star, we have: </p>
 <p>$$
@@ -379,10 +379,10 @@ H^\ast =(V^\ast =E,E^\ast =(H(x))_{x\in V}).
 $$</p>
 <p>The dual hypergraph has good properties. For example, its correlation matrix $A^\ast $ is the transpose of the correlation matrix $A$ of the original hypergraph.
 At this point you can intuitively discover $(H^\ast )^\ast =H.$</p>
-<p>Let $n(H)=|V|$ be the hypergraph $H$ <strong> level </strong> , $m(H)=|E|$ is a hypergraph <strong> Number of sides </strong> ,
-$r(H)=\max_j|E_j|$ is a hypergraph <strong> rank </strong> ,
-$s(H)=\min_j|E_j|$ is <strong> anti-rank </strong> , also known as <strong> co-rank </strong> .
-If $r(H)=s(H)$, call $H$ <strong> consistent hypergraph </strong> , at this time the number of all hyperedge elements is equal.
+<p>Let $n(H)=|V|$ be the hypergraph $H$ <strong> level</strong>, $m(H)=|E|$ is a hypergraph <strong> Number of sides</strong>,
+$r(H)=\max_j|E_j|$ is a hypergraph <strong> rank</strong>,
+$s(H)=\min_j|E_j|$ is <strong> anti-rank</strong>, also known as <strong> co-rank</strong>.
+If $r(H)=s(H)$, call $H$ <strong> consistent hypergraph</strong>, at this time the number of all hyperedge elements is equal.
 A simple consistent hypergraph of rank $r$ is also called $r$ consistent.</p>
 <h2 id="en-度"><a href="#en-度" class="headerlink" title="度"></a> Degree</h2><p>Record the degree of $x$ as $d_H(x)=m(H(x)),$ and record the maximum degree of the graph as $\Delta(x)=\max d_H(x).$
 If each point has the same degree $k$, the hypergraph $H$ is said to be $k$ regular,
@@ -392,7 +392,7 @@ Also available:</p>
 <p>$$
 \Delta(H)=r(H^\ast ),\quad r(H)=\Delta(H^\ast ).
 $$</p>
-<p><strong> Proposition 1 </strong>. <em> An $n$ tuple $d_1\ge \cdots\ge d_n$ is the degree sequence of a consistent hypergraph with order $n$ and rank $r$, if and only if $\sum_{i=1}^nd_i\ge d_1r$ is a multiple of $r$, and $d_n\ge 1.$ </em> </p>
+<p><strong>Proposition 1</strong>. <em>An $n$ tuple $d_1\ge \cdots\ge d_n$ is the degree sequence of a consistent hypergraph with order $n$ and rank $r$, if and only if $\sum_{i=1}^nd_i\ge d_1r$ is a multiple of $r$, and $d_n\ge 1.$</em> </p>
 <p>The necessity is obvious. For a consistent hypergraph $H$ of rank $r$, each edge contains $r$ points. When each point counts,
 Each hyperedge is counted $r$ times, so $\sum_{i=1}^nd_i=m(H)r,$
 At the same time, it is obvious that $m(H)\ge d_1.$ $d_n\ge 1$ is also a natural condition.</p>
@@ -413,7 +413,7 @@ The new degree sequence still satisfies all conditions (except for the zero degr
 <p>Next, use proof by contradiction, assuming that after the operation reaches a certain moment, there are not enough $r$ non-zero degree points,
 Then $\sum_{i=1}^n d_i\le (r-1)d_1&lt;d_1r,$ does not meet the conditions, resulting in a contradiction.
 Therefore, this algorithm can always operate to the situation $d_1=0$, that is, the hypergraph is constructed.</p>
-<p><strong> Theorem 2 </strong>. <em> Given an integer sequence $r_1,\cdots,r_m,$ $d_1\ge \cdots \ge d_n,$, there exists a hypergraph $H=(E_1,\cdots,E_m),$ $X=\{x_1,\cdots,x_n\},$ such that $d_H(x_i)=d_i,$ $|E_j|=r_j,$ if and only if $\sum_{j=1}^mr_j=\sum_{i=1}^nd_i,$ and $\sum_{j=1}^m\min\{r_j,k\}\ge \sum_{i=1}^k d_i,$ $\,\forall\,k\le n.$ </em> </p>
+<p><strong>Theorem 2</strong>. <em>Given an integer sequence $r_1,\cdots,r_m,$ $d_1\ge \cdots \ge d_n,$, there exists a hypergraph $H=(E_1,\cdots,E_m),$ $X=\{x_1,\cdots,x_n\},$ such that $d_H(x_i)=d_i,$ $|E_j|=r_j,$ if and only if $\sum_{j=1}^mr_j=\sum_{i=1}^nd_i,$ and $\sum_{j=1}^m\min\{r_j,k\}\ge \sum_{i=1}^k d_i,$ $\,\forall\,k\le n.$</em> </p>
 <p>First to illustrate the sufficiency, we try to use network flow to construct a hypergraph. Take source $a$ sink $z.$
 Denote each hyperedge as $j,$ and each point as $x_i.$ and connect $(a,j),$ with capacity $r_j$.
 Join $(x_i,z),$ with capacity $d_i$ Join $(j,x_i).$ with capacity $1$ For integer streams,
@@ -436,7 +436,7 @@ The existence of the hypergraph directly illustrates the existence of the maximu
 Therefore, the other cutting methods mentioned above are no lower than the direct cutting of foreign exchange, which expresses the conditions to be proved.</p>
 <h2 id="en-其它性质"><a href="#en-其它性质" class="headerlink" title="其它性质"></a> Other properties</h2><p>For $1\le r\le n,$
 Define the $r$ uniform complete hypergraph $K_n^r$ with order $n$ as a hypergraph in which all subsets $r$ with cardinality $n$ serve as hyperedges.</p>
-<p><strong> Theorem 3 </strong>. <em> Every simple hypergraph of order $n$ satisfies $\sum_{E\in H}\binom{n}{|E|}^{-1}\le 1,$ and further $m(H)\le \binom{n}{[\frac{n}{2}]}.$. The latter expression is equivalent if and only if $H=K^{[\frac{n}{2}]}_n,$. When $n$ is an odd number, it can also be $K^{\frac{n+1}{2} }_n.$. </em> </p>
+<p><strong>Theorem 3</strong>. <em>Every simple hypergraph of order $n$ satisfies $\sum_{E\in H}\binom{n}{|E|}^{-1}\le 1,$ and further $m(H)\le \binom{n}{[\frac{n}{2}]}.$. The latter expression is equivalent if and only if $H=K^{[\frac{n}{2}]}_n,$. When $n$ is an odd number, it can also be $K^{\frac{n+1}{2} }_n.$.</em> </p>
 <p>Haas diagram can be used to assist analysis.
 There are $|E|!(n-|E|)!$ roads from $\varnothing$ to $X$ passing through node $E$.
 For $E&#39;\neq E,$ there are no duplications between roads because they do not have an inclusive relationship.
@@ -446,7 +446,7 @@ Available immediately from $\binom{n}{|E|}\le \binom{n}{[\frac{n}{2}]}$.</p>
 <p>For the case of equality, if $n$ is an even number, $|E|=\frac{n}{2},$ is a consistent hypergraph,
 Then completeness can be obtained; if $n$ is an odd number, $|E|=\frac{n-1}{2}$ or $\frac{n+1}{2}.$
 It only needs to be stated that the number of sides must not be enough when they are inconsistent.</p>
-<p>Hypergraph $H$ is called <strong> detachable </strong> , if$\bigcap_{E\in H(x)}E=\{x\}.$
+<p>Hypergraph $H$ is called <strong> detachable</strong>, if$\bigcap_{E\in H(x)}E=\{x\}.$
 Note that the graph $H$ is separable if and only if $H^\ast $ is a simple hypergraph. Therefore, from the previous theorem,
 The degree sequence $d_1\ge \cdots\ge d_n$ of the separable hypergraph can be obtained satisfying</p>
 <p>$$
@@ -454,12 +454,12 @@ The degree sequence $d_1\ge \cdots\ge d_n$ of the separable hypergraph can be ob
 $$</p>
 <p>A hypergraph $H$ is said to be linear if $|E_i\cap E_j|\le 1,$ $\,\forall\,i\neq j$.
 A simple discussion using proof by contradiction:</p>
-<p><strong> Proposition 4 </strong>. <em> $H$ is linear if and only if the dual graph $H^\ast $ is linear. </em> </p>
-<p><strong> Theorem 5 </strong>. <em> For each linear hypergraph of order $n$, there is $\sum_{E\in H}\binom{|E|}{2}\le \binom{n}{2}.$. If further $H$ is consistent with $r$, then the number of edges satisfies $m(H)\le\frac{n(n-1)}{r(r-1)}.$ and is equal if and only if $H$ is a Steiner system $S(2,r,n).$. The Steiner system is an edge-derived subgraph of the complete hypergraph $K^r_n$, requiring each pair of points to be in exactly one hyperedge. </em> </p>
+<p><strong>Proposition 4</strong>. <em>$H$ is linear if and only if the dual graph $H^\ast $ is linear.</em> </p>
+<p><strong>Theorem 5</strong>. <em>For each linear hypergraph of order $n$, there is $\sum_{E\in H}\binom{|E|}{2}\le \binom{n}{2}.$. If further $H$ is consistent with $r$, then the number of edges satisfies $m(H)\le\frac{n(n-1)}{r(r-1)}.$ and is equal if and only if $H$ is a Steiner system $S(2,r,n).$. The Steiner system is an edge-derived subgraph of the complete hypergraph $K^r_n$, requiring each pair of points to be in exactly one hyperedge.</em> </p>
 <p>exist between hypergraphs <strong> isomorphism </strong> Relation. Called hypergraph$H\cong H&#39;,$
 If there is a bijection $f:V\rightarrow V&#39;,$ such that $e=\{x_1,\cdots,x_k\}\in E$
 $\Leftrightarrow$ $f(e)=\{f(x_1),\cdots,f(x_k)\}\in E&#39;.$</p>
-<p><strong> Proposition 6 </strong>. <em>$H\cong H&#39;\Leftrightarrow H^\ast \cong {H&#39;}^\ast $</em> </p>
+<p><strong>Proposition 6</strong>. <em>$H\cong H&#39;\Leftrightarrow H^\ast \cong {H&#39;}^\ast $</em> </p>
 <p>Just use the correlation matrix to judge.</p>
 <p>The article was last updated on 2022-09-19 19:43:37 </p>
 

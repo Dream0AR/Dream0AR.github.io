@@ -426,50 +426,50 @@ $G$是非本原的.</p>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
                     
-                <h2 id="en-置换群"><a href="#en-置换群" class="headerlink" title="置换群"></a> permutation group</h2><p>Recall that any subgroup of a symmetric group is called <strong> permutation group </strong> ,
+                <h2 id="en-置换群"><a href="#en-置换群" class="headerlink" title="置换群"></a> permutation group</h2><p>Recall that any subgroup of a symmetric group is called <strong> permutation group</strong>,
 The automorphism group of a graph is a permutation group. A member of the group $G$ <strong> permutation
 representation) </strong> Refers to the homomorphism of $G$ to a certain symmetric group $\operatorname{Sym}(V)$,
-Also called the group $G$ on the set $V$ <strong> action </strong> .
+Also called the group $G$ on the set $V$ <strong> action</strong>.
 One representation is <strong> faithful(faithful) </strong> If it is injective, only the identity element is mapped to the identity permutation.</p>
 <p>The effect of group $G$ on set $V$ also induces other effects,
 As it does on the set $V$ power set $2^V$, it gives the permutation between subsets.
 Note that the effect preserves the size of the subset, so it can also be applied to the entire subset $k-$ of $V$.
 Or change the subset to an ordered tuple.</p>
-<p>A subset $S$ of the set $V$ is said to be $G-$ <strong> unchanged </strong> , if$\,\forall\,s\in S, g\in G,$
+<p>A subset $S$ of the set $V$ is said to be $G-$ <strong> unchanged </strong>, if$\,\forall\,s\in S, g\in G,$
 $s^g\in S.$ At this time, any $g\in G$ gives the permutation of the elements in $S$,
 can be <strong> Limit </strong> On $S$, it is recorded as $g|_S.$, and the restricted permutation is recorded as $G|_S,$ or $G^S.$.</p>
-<p>The function of $G$ on $V$ is <strong> transitive </strong> , if $x,y\in V,$ is given arbitrarily
+<p>The function of $G$ on $V$ is <strong> transitive </strong>, if $x,y\in V,$ is given arbitrarily
 There exists $g\in G$ such that $x^g=y.$
 $G-$ The invariant subset $S$ is called <strong> orbit </strong> If $G|_S$ is transitive on $S$.
 $\,\forall\,x\in V,$ $x^G:=\{x^g:g\in G\}$ is a orbit.</p>
 <p>The orbits do not intersect each other, giving a partition of $V$. Each element falls in exactly one orbit.
 Each $G-$ invariant subset is the union of a series of orbits, so the orbits can also be called minimal $G-$ invariant subsets.</p>
 <h2 id="en-计数"><a href="#en-计数" class="headerlink" title="计数"></a> count</h2><p>Let $G$ be the permutation group of $V$, $\,\forall\,x\in V,$
-<strong> stabilizer </strong> $G_x$ is the total permutation of $x^g=x$, forming a subgroup.
+<strong>stabilizer </strong> $G_x$ is the total permutation of $x^g=x$, forming a subgroup.
 Given$S=\{x_1,\cdots,x_r\}\subset V,$
-<strong> pointwise stabilizer </strong>$G_{x_1,\cdots,x_r}:=\bigcap_{i=1}^r G_{x_i},$
-<strong> collective stabilizer </strong> $G_S$ is a total permutation that only requires $S^g=S$. It is easy to see that the former is a subgroup of the latter.</p>
-<p><strong> Lemma 1.1 </strong>. <em> Suppose $G$ acts on $V$, and $S$ is the orbit of $G$. If $x,y\in S,$, then all permutations from $x$ to $y$ will be mapped to a certain right coset of $G_x$. Conversely, all permutations in the right coset of $G_x$ will map $x$ to the same point in $S$. </em> </p>
+<strong>pointwise stabilizer </strong>$G_{x_1,\cdots,x_r}:=\bigcap_{i=1}^r G_{x_i},$
+<strong>collective stabilizer </strong> $G_S$ is a total permutation that only requires $S^g=S$. It is easy to see that the former is a subgroup of the latter.</p>
+<p><strong>Lemma 1.1</strong>. <em>Suppose $G$ acts on $V$, and $S$ is the orbit of $G$. If $x,y\in S,$, then all permutations from $x$ to $y$ will be mapped to a certain right coset of $G_x$. Conversely, all permutations in the right coset of $G_x$ will map $x$ to the same point in $S$.</em> </p>
 <p>The proofs in this section are basically basic exercises in abstract algebra and will be skipped here.</p>
-<p><strong> Lemma 1.2 </strong> (Orbit Stability Set Theorem). <em>$|G_x||x^G|=|G|.$</em> </p>
-<p>Take $h\in G,$ and call the elements of the form $g^{-1}hg$ and $h$ <strong> conjugate </strong> ,
-All elements conjugated with $h$ are called $h$ <strong> conjugate class </strong> .
+<p><strong>Lemma 1.2</strong> (Orbit Stability Set Theorem). <em>$|G_x||x^G|=|G|.$</em> </p>
+<p>Take $h\in G,$ and call the elements of the form $g^{-1}hg$ and $h$ <strong> conjugate</strong>,
+All elements conjugated with $h$ are called $h$ <strong> conjugate class</strong>.
 The mapping $\tau_g:h\rightarrow g^{-1}hg$ gives the permutation of $G$,
 Therefore $G$ has a conjugation effect on itself, with the conjugate class as the orbit. If $H$ is a subgroup of $G$,
 Then $g^{-1}Hg$ is also a subgroup, which is said to be conjugate with $H$.</p>
-<p><strong> Lemma 1.3 </strong>. <em> Suppose $G$ has an effect on $V$, then $\,\forall\,x\in V, g\in G,$ $g^{-1}G_x g=G_{x^g}.$ </em> </p>
+<p><strong>Lemma 1.3</strong>. <em>Suppose $G$ has an effect on $V$, then $\,\forall\,x\in V, g\in G,$ $g^{-1}G_x g=G_{x^g}.$</em> </p>
 <p>Let $\operatorname{fix}(g)$ represent the number of fixed points under permutation $g$. We are familiar with the following lemma:</p>
-<p><strong> Lemma 1.4 </strong> (Burnside). <em> The number of orbits $G$ acts on $V$ is equal to the average number of fixed points of elements in $G$. </em> </p>
-<h2 id="en-非对称图"><a href="#en-非对称图" class="headerlink" title="非对称图"></a> asymmetric graph</h2><p>The picture is <strong> asymmetric </strong> , if its automorphism group is trivial.
+<p><strong>Lemma 1.4</strong> (Burnside). <em>The number of orbits $G$ acts on $V$ is equal to the average number of fixed points of elements in $G$.</em> </p>
+<h2 id="en-非对称图"><a href="#en-非对称图" class="headerlink" title="非对称图"></a> asymmetric graph</h2><p>The picture is <strong> asymmetric </strong>, if its automorphism group is trivial.
 In this section we prove that almost all graphs are asymmetric, that is, for graphs with $n$ points,
 The proportion of asymmetric graphs approaches $1.$ when $n\rightarrow \infty$</p>
 <p>Assume $V$ contains $n$ points, let $K_V$ be the complete graph of $n$ points.
 All graphs containing $n$ points are obtained by deleting edges from $K_V$, so there are a total of $2^{\binom{n}{2} }$ graphs.
 Corresponds one-to-one with the $E(K_V)$ subset.</p>
-<p>Given a graph $X,$, all graphs isomorphic to it are called $X$ <strong> Isomorphism class </strong> .Recall the definition of isomorphism,
+<p>Given a graph $X,$, all graphs isomorphic to it are called $X$ <strong> Isomorphism class</strong>.Recall the definition of isomorphism,
 It can be seen that the isomorphism class is the orbit of the symmetric group $\operatorname{Sym}(V)$ acting on the power set $E(K_V)$.
 According to the orbit-stabilizer theorem, there is the following lemma:</p>
-<p><strong> Lemma 1.5 </strong>. <em> The size of the isomorphism class containing $X$ is $\frac{n!}{|\operatorname{Aut}(X)|}.$ </em> </p>
+<p><strong>Lemma 1.5</strong>. <em>The size of the isomorphism class containing $X$ is $\frac{n!}{|\operatorname{Aut}(X)|}.$</em> </p>
 <p>By Burnside&#39;s lemma, we count isomorphism classes.
 Setting $g$ (the generated subgroup) acts on $E(K_V)$ and there are $r$ orbits,
 Marked as $\operatorname{orb}_2(g)=r.$, then when $g$ acts on the $E(K_V)$ power set,
@@ -479,8 +479,8 @@ Therefore, the number of isomorphism classes of the graph totals $\frac{1}{n!}\s
 Therefore there are $\frac{2^{\binom{n}{2} } }{n!}$ equivalence classes.
 Next we explain that in fact when $n\rightarrow \infty$, the number of equivalence classes tends to this value,
 It is further inferred that almost all graphs are asymmetric.</p>
-<p><strong> Lemma 1.6 </strong>. <em> A graph with $n$ vertices has at most $(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$ isomorphism classes. </em> </p>
-<p><strong> Certificate: </strong> All points that cannot be fixed by a certain permutation are called displaced <strong> support </strong> ,
+<p><strong>Lemma 1.6</strong>. <em>A graph with $n$ vertices has at most $(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$ isomorphism classes.</em> </p>
+<p><strong>Certificate:</strong> All points that cannot be fixed by a certain permutation are called displaced <strong> support</strong>,
 That is, the effect of permutation is only reflected on the support. It is asserted that for all permutations with support size $2r$,
 The $\operatorname{orb}_2$ maximum is achieved by a permutation consisting of $r$ permutations.</p>
 <p>The non-permuted fixed point of edge $xy$ is if and only if $x,y$ are both in the support and not in the same permutation,
@@ -509,8 +509,8 @@ Each third type of permutation orbit has at most $\binom{n}{2}-\frac{m}{2}(n-\fr
 Note$n^m2^{-(n-2)}+n^n2^{-\frac{nm}{4} }=2^{m\log_2 n-(n-2)}+2^{n\log_2 n-\frac{nm}{4} },$
 It is found that if $m=\lceil 8log_2 n\rceil$ is taken for a sufficiently large $n,$, then this term is an infinitesimal quantity.
 Therefore, the number of isomorphism classes is at most $(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$.</p>
-<p><strong> Corollary 1.7 </strong>. <em> Almost all graphs are asymmetric. </em> </p>
-<p><strong> Certificate: </strong> Assume that among all isomorphism classes, the proportion of isomorphism classes of asymmetric graphs is $\mu.$
+<p><strong>Corollary 1.7</strong>. <em>Almost all graphs are asymmetric.</em> </p>
+<p><strong>Certificate:</strong> Assume that among all isomorphism classes, the proportion of isomorphism classes of asymmetric graphs is $\mu.$
 Each asymmetric graph contains $n!$ graphs in the isomorphism class,
 The other isomorphism classes contain at most $\frac{n!}{2}$ pictures.
 Therefore the average size of isomorphism classes is at most $\mu n!+(1-\mu) \frac{n!}{2}=(1+\mu) \frac{n!}{2}.$</p>
@@ -523,11 +523,11 @@ If each graph in the isomorphism class is regarded as a different graph, since t
 We still get that almost all graphs are asymmetric.</p>
 <h2 id="en-对上的轨道"><a href="#en-对上的轨道" class="headerlink" title="对上的轨道"></a> the right orbit</h2><p>Assume $G$ has a transitive effect on $V$, and it will naturally have an effect on $V\times V$,
 We study the orbits on it. Since $G$ is transportable and $\{(x,x):x\in V\}$ is an orbit,
-called <strong> diagonal orbit </strong> . Let $\Omega\subset V\times V,$
+called <strong> diagonal orbit</strong>. Let $\Omega\subset V\times V,$
 remember it <strong> Transpose </strong> $\Omega^T$ is $\{(y,x):(x,y)\in \Omega\}.$
 It is easy to see that $\Omega^T$ is invariant to $G-$ if and only if $\Omega$ is also invariant. If $\Omega$ is an orbit,
 Then $\Omega=\Omega^T$ or no communication. When $\Omega=\Omega^T$ is called <strong> Symmetry </strong> Orbit.</p>
-<p><strong> Lemma 1.8 </strong>. <em> Suppose $G$ has a transitive effect on $V$, $x\in V,$, then the orbit of $G$ on $V\times V$ corresponds one-to-one with the orbit of $G_x$ on $V$. </em> </p>
+<p><strong>Lemma 1.8</strong>. <em>Suppose $G$ has a transitive effect on $V$, $x\in V,$, then the orbit of $G$ on $V\times V$ corresponds one-to-one with the orbit of $G_x$ on $V$.</em> </p>
 <p>The proof is an exercise in abstraction and will be skipped here.</p>
 <p>Therefore, the orbit $\Omega$ of $G$ on $V\times V$ is connected with the orbit of $G_x$ on $V$.
 The number of orbits of $G_x$ on $V$ is called the rank of $G$. If $\Omega$ is symmetrical,
@@ -535,10 +535,10 @@ It is said that the corresponding orbit of $G_x$ on $V$ is <strong> self-paired 
 The orbit $\Omega$ on each $V\times V$ can be viewed as having $V$ as the vertex set,
 $\Omega$ is a directed graph of arc sets, and when $\Omega$ is symmetric, it is an undirected graph.
 Note that when $\Omega$ is asymmetric, there is only one arc between the two points, which is called <strong> oriented
-graph) </strong>.</p>
-<p><strong> Lemma 1.9 </strong>. <em> Let $G$ be the transitive permutation group on $V$, and $\Omega$ be the upper orbit of $V\times V$. Let $(x,y)\in \Omega,$ be the upper orbit of $\Omega$ if and only if $\,\exists\,g\in G,$ makes $(x^g,y^g)=(y,x).$ </em> </p>
+graph)</strong>.</p>
+<p><strong>Lemma 1.9</strong>. <em>Let $G$ be the transitive permutation group on $V$, and $\Omega$ be the upper orbit of $V\times V$. Let $(x,y)\in \Omega,$ be the upper orbit of $\Omega$ if and only if $\,\exists\,g\in G,$ makes $(x^g,y^g)=(y,x).$</em> </p>
 <p>If $g$ exchanges $x,y,$, then $(xy)$ is exchanged in $g$, then $g$ is of even order, and therefore $G$ is also of even order.
-Weigh $G$ on $V$ <strong> Generously transitive </strong> , if $x,y\in V,$ is given arbitrarily
+Weigh $G$ on $V$ <strong> Generously transitive</strong>, if $x,y\in V,$ is given arbitrarily
 There is a permutation that exchanges them. All orbits on $V\times V$ are symmetric if and only if $G$ is generously transitive.</p>
 <p>Each orbit on $V\times V$ gives a graph, and the elements in $G$ are automorphisms of the graph,
 And the effect is transitive on both vertex sets and edge sets. For the union of several orbits,
@@ -546,10 +546,10 @@ The elements in $G$ are also automorphisms of the graph, but they only act on th
 Note that $G$ is not necessarily the automorphism group of the graph. The book gives $G=S_7,$ to generate $J(7,3,1),$
 However, the example of $S_8\subset \operatorname{Aut}(J(7,3,1))$ is omitted here.</p>
 <h2 id="en-本原性"><a href="#en-本原性" class="headerlink" title="本原性"></a> primitivity</h2><p>Let $G$ be movable on $V$, and the non-empty subset $S\subset V$ is called $G$ <strong> Non-original block (block of
-imprimitivity) </strong> , if$\,\forall\,g\in G,$
+imprimitivity)</strong>, if$\,\forall\,g\in G,$
 $S^g=S$ or $S^g\cap S=\varnothing.$ Since $G$ can be migrated,
 All transformations of $S$ constitute the division of $V$.
-The set of these different transformations is called $G$ <strong> system of imprimitivity </strong>.</p>
+The set of these different transformations is called $G$ <strong> system of imprimitivity</strong>.</p>
 <p>As shown in the figure below, the automorphism group of the cube $Q$ is transitive on the vertex set. It is easy to see when considering the distance.
 The set of all points of the same color is a non-primitive block,
 The four sets constitute a non-primitive system of automorphism groups.</p>
@@ -557,8 +557,8 @@ The four sets constitute a non-primitive system of automorphism groups.</p>
 <p>Except for the case where $S$ is a single point and a universal set, all other non-primitive systems are called non-trivial.
 If a group has no non-trivial non-primitive systems, then the group is said to be <strong> primitive </strong> of,
 Otherwise it is non-primitive.</p>
-<p><strong> Lemma 1.10 </strong>. <em> $G$ can transfer to $V$, $x\in V.$ $G$ is primitive if and only if $G_x$ is the maximum subgroup of $G$. </em> </p>
-<p><strong> Certificate: </strong> Let us prove that $G$ has a non-trivial non-primitive system if and only if $G_x$ is not a maximal subgroup of $G$.
+<p><strong>Lemma 1.10</strong>. <em>$G$ can transfer to $V$, $x\in V.$ $G$ is primitive if and only if $G_x$ is the maximum subgroup of $G$.</em> </p>
+<p><strong>Certificate:</strong> Let us prove that $G$ has a non-trivial non-primitive system if and only if $G_x$ is not a maximal subgroup of $G$.
 Suppose $G$ has a non-trivial non-primitive system, let $x\in B,$ $B$ be a non-primitive block.
 Prove below that $G_x\subsetneq G_B\subsetneq G.$ is due to $\,\forall\,g\in G_x,$
 $x\in B\cap B^g,$ Therefore $B=B^g,$ $g\in G_B.$ takes another element $y\neq x.$ in $B$
@@ -580,15 +580,15 @@ Let&#39;s do some preparatory work first.
 A path of a directed graph refers to a sequence composed of different vertices $\{u_0,\cdots,u_r\},$
 $(u_{i-1},u_i)$ is an arc; a directed graph <strong> weak
 path) </strong> It only requires that $(u_{i-1},u_i)$ or $(u_{i},u_{i-1})$ be an arc.
-The directed graph is <strong> Strong connectivity </strong> , if any two points are connected by a path;
+The directed graph is <strong> Strong connectivity </strong>, if any two points are connected by a path;
 call it <strong> weak connectivity </strong> This means that any two points are connected by a weak path.
-The weak connectivity of a directed graph is the connectivity of an undirected graph regardless of direction. <strong> Strongly connected component </strong> ,
+The weak connectivity of a directed graph is the connectivity of an undirected graph regardless of direction. <strong> Strongly connected component</strong>,
 Refers to a strongly connected maximal induced subgraph. According to the definition, a single point is strongly connected,
 Therefore a strongly connected component constitutes a partition of the graph.</p>
 <p>Vertices in directed graphs <strong> in-valency </strong> is the number of arcs ending at this point;
-<strong> out-valency </strong> That is the number of arcs starting from this point.</p>
-<p><strong> Lemma 1.11 </strong>. <em> If $D$ is a directed graph with the same out-degree and in-degree of all points, then $D$ is strongly connected if and only if it is weakly connected. </em> </p>
-<p><strong> Certificate: </strong> Just prove that when $D$ is weakly connected, it is also strongly connected. Otherwise,
+<strong>out-valency </strong> That is the number of arcs starting from this point.</p>
+<p><strong>Lemma 1.11</strong>. <em>If $D$ is a directed graph with the same out-degree and in-degree of all points, then $D$ is strongly connected if and only if it is weakly connected.</em> </p>
+<p><strong>Certificate:</strong> Just prove that when $D$ is weakly connected, it is also strongly connected. Otherwise,
 $D$ can be split into a strongly connected component $D_1,\cdots,D_r.$ if there is an arc starting from $D_i$ to $D_j,$
 Then all arcs connecting $D_i,D_j$ must start from $D_i$,
 Otherwise $D_i,D_j$ can be merged into strongly connected subgraphs.</p>
@@ -604,8 +604,8 @@ Because $D&#39;$ is weakly connected. Therefore, the sum of the out-degrees of a
 When $\Omega$ is asymmetric, the picture is a directed graph. Since $G$ is transitive, all points have the same degree.
 The in-degrees are the same. And since the sum of out-degrees is equal to the sum of in-degrees (equal to the number of arcs), the out-degrees of all points are equal to the in-degrees.
 Therefore, the strong connectivity of the directed graph corresponding to the orbit is equal to the weak connectivity, which is generally called the connectivity of the orbit.</p>
-<p><strong> Lemma 1.12 </strong>. <em> $G$ is transitive on $V$. $G$ is primitive if and only if every off-diagonal orbit is connected. </em> </p>
-<p><strong> Certificate: </strong> Assume that $G$ is non-primitive and $B_1,\cdots, B_r$ is a non-primitive system.
+<p><strong>Lemma 1.12</strong>. <em>$G$ is transitive on $V$. $G$ is primitive if and only if every off-diagonal orbit is connected.</em> </p>
+<p><strong>Certificate:</strong> Assume that $G$ is non-primitive and $B_1,\cdots, B_r$ is a non-primitive system.
 Let $x\neq y\in B_1,$ $\Omega$ be the orbit containing $(x,y)$ on $V\times V$. For $g\in G,$
 $x^g,y^g$ is in the same non-original block. Therefore, the starting and end points of each arc of $\Omega$ are in the same block,
 Obviously not connected.</p>
