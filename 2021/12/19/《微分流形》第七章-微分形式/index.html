@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第七章-微分形式</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Differential Forms</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Differential Forms</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-19 11:26:50
+        <i class="fas fa-edit"></i>&nbsp;2021-12-19 13:26:50
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,98 +230,148 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h2><p>回忆$\,\forall\,f\in C^\infty(M),$ $(df)_p\in T_p^\ast M,$
+称为$f$在$p$处的微分. 局部上我们有</p>
+<p>$$
+df|_U=\sum_i \frac{\partial {} }{\partial {}x^i} fdx^i,\quad \frac{\partial {} }{\partial {}x^i}f\in C^\infty(U)\,\Rightarrow\,df\in \mathcal{A}^1(M).
+$$</p>
+<p>$\omega\in\Gamma(\Lambda^rT^\ast M)=\mathcal{A}^r(M),$ 称为$r$次外微分形式.
+令$\mathcal{A}(M):=\bigoplus_{r=0}^m \mathcal{A}^r(M),$
+称为<strong>微分形式空间</strong>. 它以外积$\wedge$为乘法结构, 是一个<strong>分层代数</strong>.</p>
+<p>若$f\in C^\infty(M,N),$
+则它诱导了拉回映照$f^\ast :\Gamma(T_r^0(N))\rightarrow \Gamma(T_r^0(M)),$</p>
+<p>$$
+f^\ast (\Phi)(v_1,\cdots,v_r):=\Phi(f_\ast (v_1),\cdots,f_\ast (v_r)).
+$$</p>
+<p> 考察系数:</p>
+<p>$$
+(f^\ast \Phi)_{i_1\cdots i_r}=\Phi\left(f_\ast \frac{\partial {} }{\partial {}x_{i_1} },\cdots,f_\ast \frac{\partial {} }{\partial {}x_{i_r} }\right)=\frac{\partial {}y^{\alpha_1}\circ f}{\partial {}x^{i_1} }\cdots\frac{\partial {}y^{\alpha_r}\circ f}{\partial {}x^{i_r} }\cdot \Phi_{\alpha_1\cdots\alpha_r}\circ f.
+$$</p>
+<p>确实是光滑的, 因此$f^\ast \Phi\in \Gamma(T_r^0(M)).$</p>
+<p>于是$f^\ast :\mathcal{A}(N)\rightarrow \mathcal{A}(M),$
+$f^\ast \sigma=\sum_{r=0}^n f^\ast \sigma_r,$
+且$f^\ast (\omega\wedge\sigma)=f^\ast \omega\wedge f^\ast \sigma,$
+$\,\forall\,\omega,\sigma\in \mathcal{A}(N).$ 它是一个代数同态.</p>
+<h2 id="外微分"><a href="#外微分" class="headerlink" title="外微分"></a>外微分</h2><p>设$d:\mathcal{A}(M)\rightarrow \mathcal{A}(M)$为线性映照, 满足:</p>
+<ol>
+<li><p>$d:\mathcal{A}^r(M)\rightarrow\mathcal{A}^{r+1}(M);$</p>
+</li>
+<li><p>$\omega\in \mathcal{A}^r(M),$ $\sigma\in \mathcal{A}(M),$
+$d(\omega\wedge\sigma)=d\omega\wedge\sigma+(-1)^r\omega\wedge d\sigma.$</p>
+</li>
+<li><p>$f\in \mathcal{A}^0(M)=C^\infty(M)$时, $df$为普通微分, 且$d^2f=0.$</p>
+</li>
+</ol>
+<p>则称$d$为$M$上<strong>外微分算子</strong>, 或简称<strong>外微分</strong>.</p>
+<p><strong>引理 1</strong>. <em>外微分算子为局部算子, 即若$\omega_1|_U=\omega_2|_U,$ 则$(d\omega_1)|_U=(d\omega_2)|_U.$</em> </p>
+<p><strong>证:</strong> 只需说明$\omega|_U=0\Rightarrow (d\omega)|_U=0.$
+取截断函数$f|_V\equiv 1,$ $\operatorname{supp}f\subset U$即可.
+这样$f\omega=0.$ 从而$0=d(f\omega)=df\wedge \omega+f(d\omega),$
+在$V$上有$df=0,$ 从而$(d\omega)|_V=0.$
+由$V$的任意性即有$(d\omega)|_U=0.$</p>
+<p><strong>定理 2</strong>. <em>$C^\infty$-流形$M$上外微分算子是存在唯一的.</em> </p>
+<p><strong>证:</strong> 先证唯一性. 由截断函数, $d$可以诱导$U$上的外微分算子.
+取引理中的$f,$ 对$\omega\in \mathcal{A}(U),$
+局部定义$(d\omega)|_V:=(d(f\omega))|_V.$ 现证$d$在坐标系里是唯一的:</p>
+<p>取$(U,\varphi;x^i)\subset M,$ $\omega\in \mathcal{A}^r(M),$
+$\omega|_U=adx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ 由外微分算子性质,
+$d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ 由局部性,
+$(d\omega)|_U=d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r},$
+$d\omega$在$U$内有确切表达式, 因此$d$在坐标系中唯一. 从而,
+$d$在整体上也唯一.</p>
+<p>接下来说明$d$的存在性. 首先由上段,
+局部定义$d\omega:=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}$即可,
+$\omega=adx^{i_1}\wedge\cdots\wedge dx^{i_r}\in \mathcal{A}^r(U).$
+这样它自然延拓为外微分算子. 由于它处处有局部定义, 整体上也有定义,
+且由局部唯一性, 它与坐标系选取无关.</p>
+<p>由$d$的局部定义, 我们自然得到如下引理:</p>
+<p><strong>引理 3</strong> (Poincaré引理). <em>$d^2=0.$ 即$\,\forall\,\omega\in \mathcal{A}(M),$ $d(d\omega)=0.$</em> </p>
+<p>设$\omega=Adx+Bdy+Cdz\in \mathcal{A}^1(\mathbb{R}^3)$与$X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$相应,
+当$\omega=df$时$X$即为$\nabla f.$ 那么$d\omega$与$\nabla\times X$相应.</p>
+<p>设$\omega=Ady\wedge dz+Bdz\wedge dx+Cdx\wedge dy,$
+与$X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$相应.
+那么$d\omega=(\nabla\cdot X)dx\wedge dy\wedge dz.$</p>
+<p>因此$\nabla\times (\nabla f)=0$由$d(df)=0$保证,
+$\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
+<p><strong>定理 4</strong>. <em>设$\omega\in \mathcal{A}^1(M),$ $X,Y\in \mathfrak{X}(M),$ 则$d\omega(X,Y)=X(\omega(Y))-Y(\omega(X))-\omega([X,Y]).$</em> </p>
+<p><strong>证:</strong> 设$\omega=fdg,$ 则$d\omega=df\wedge dg.$
+此时$df\wedge dg(X,Y)=X(f)Y(g)-Y(f)X(g).$ 计算右侧得到相同的结果,
+定理得证.</p>
+<p>文章最后更新于 2021-12-19 11:27:06 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    differential form
---------
-
-Recall $\,\forall\,f\in C^\infty(M),$ $(df)_p\in T_p^\ast M,$
-is called the differential of $f$ at $p$. Locally we have
-
-
-$$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h2><p>回忆$\,\forall\,f\in C^\infty(M),$ $(df)_p\in T_p^\ast M,$
+称为$f$在$p$处的微分. 局部上我们有</p>
+<p>$$
 df|_U=\sum_i \frac{\partial {} }{\partial {}x^i} fdx^i,\quad \frac{\partial {} }{\partial {}x^i}f\in C^\infty(U)\,\Rightarrow\,df\in \mathcal{A}^1(M).
-$$
-$\omega\in\Gamma(\Lambda^rT^\ast M)=\mathcal{A}^r(M),$ is called $r$ second-order differential form.
-Let $\mathcal{A}(M):=\bigoplus_{r=0}^m \mathcal{A}^r(M),$
-It is called **differential form space**. It has an outer product $\wedge$ as a multiplicative structure and is a **layered algebra**.
-If $f\in C^\infty(M,N),$
-Then it induces the pullback mapping $f^\ast :\Gamma(T_r^0(N))\rightarrow \Gamma(T_r^0(M)),$
-
-
-$$
+$$</p>
+<p>$\omega\in\Gamma(\Lambda^rT^\ast M)=\mathcal{A}^r(M),$ 称为$r$次外微分形式.
+令$\mathcal{A}(M):=\bigoplus_{r=0}^m \mathcal{A}^r(M),$
+称为<strong>微分形式空间</strong>. 它以外积$\wedge$为乘法结构, 是一个<strong>分层代数</strong>.</p>
+<p>若$f\in C^\infty(M,N),$
+则它诱导了拉回映照$f^\ast :\Gamma(T_r^0(N))\rightarrow \Gamma(T_r^0(M)),$</p>
+<p>$$
 f^\ast (\Phi)(v_1,\cdots,v_r):=\Phi(f_\ast (v_1),\cdots,f_\ast (v_r)).
-$$
-
- Examination coefficient:
-$$
+$$</p>
+<p> 考察系数:</p>
+<p>$$
 (f^\ast \Phi)_{i_1\cdots i_r}=\Phi\left(f_\ast \frac{\partial {} }{\partial {}x_{i_1} },\cdots,f_\ast \frac{\partial {} }{\partial {}x_{i_r} }\right)=\frac{\partial {}y^{\alpha_1}\circ f}{\partial {}x^{i_1} }\cdots\frac{\partial {}y^{\alpha_r}\circ f}{\partial {}x^{i_r} }\cdot \Phi_{\alpha_1\cdots\alpha_r}\circ f.
-$$
-
-
-It is indeed smooth, so $f^\ast \Phi\in \Gamma(T_r^0(M)).$
-
-So $f^\ast :\mathcal{A}(N)\rightarrow \mathcal{A}(M),$
+$$</p>
+<p>确实是光滑的, 因此$f^\ast \Phi\in \Gamma(T_r^0(M)).$</p>
+<p>于是$f^\ast :\mathcal{A}(N)\rightarrow \mathcal{A}(M),$
 $f^\ast \sigma=\sum_{r=0}^n f^\ast \sigma_r,$
-And $f^\ast (\omega\wedge\sigma)=f^\ast \omega\wedge f^\ast \sigma,$
-$\,\forall\,\omega,\sigma\in \mathcal{A}(N).$ It is an algebraic homomorphism.
-
-external differential
-------
-
-Let $d:\mathcal{A}(M)\rightarrow \mathcal{A}(M)$ be a linear mapping, satisfying:
-
-1. $d:\mathcal{A}^r(M)\rightarrow\mathcal{A}^{r+1}(M);$
-2. $\omega\in \mathcal{A}^r(M),$ $\sigma\in \mathcal{A}(M),$
- $d(\omega\wedge\sigma)=d\omega\wedge\sigma+(-1)^r\omega\wedge d\sigma.$
-3. When $f\in \mathcal{A}^0(M)=C^\infty(M)$, $df$ is an ordinary differential, and $d^2f=0.$
-
-Then $d$ is called the **external differential operator** on $M$, or simply **external differential**.
-**Lemma 1**. *External differential operators are local operators, that is, if $\omega_1|_U=\omega_2|_U,$ then $(d\omega_1)|_U=(d\omega_2)|_U.$*
-
-**Certificate:** Just state $\omega|_U=0\Rightarrow (d\omega)|_U=0.$
-Just take the truncation function $f|_V\equiv 1,$ $\operatorname{supp}f\subset U$.
-So $f\omega=0.$ and thus $0=d(f\omega)=df\wedge \omega+f(d\omega),$
-On $V$ we have $df=0,$ so $(d\omega)|_V=0.$
-From the arbitrariness of $V$, we have $(d\omega)|_U=0.$
-
-**Theorem 2**. *There is a unique external differential operator on $C^\infty$-manifold $M$.*
-
-**Proof:** Proof of uniqueness. From the truncation function, $d$ can induce the external differential operator on $U$.
-Take $f,$ in the lemma to $\omega\in \mathcal{A}(U),$
-Local definition $(d\omega)|_V:=(d(f\omega))|_V.$ Show that $d$ is unique in the coordinate system:
-
-Take $(U,\varphi;x^i)\subset M,$ $\omega\in \mathcal{A}^r(M),$
-$\omega|_U=adx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ From the properties of external differential operators,
-$d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ By locality,
+且$f^\ast (\omega\wedge\sigma)=f^\ast \omega\wedge f^\ast \sigma,$
+$\,\forall\,\omega,\sigma\in \mathcal{A}(N).$ 它是一个代数同态.</p>
+<h2 id="外微分"><a href="#外微分" class="headerlink" title="外微分"></a>外微分</h2><p>设$d:\mathcal{A}(M)\rightarrow \mathcal{A}(M)$为线性映照, 满足:</p>
+<ol>
+<li><p>$d:\mathcal{A}^r(M)\rightarrow\mathcal{A}^{r+1}(M);$</p>
+</li>
+<li><p>$\omega\in \mathcal{A}^r(M),$ $\sigma\in \mathcal{A}(M),$
+$d(\omega\wedge\sigma)=d\omega\wedge\sigma+(-1)^r\omega\wedge d\sigma.$</p>
+</li>
+<li><p>$f\in \mathcal{A}^0(M)=C^\infty(M)$时, $df$为普通微分, 且$d^2f=0.$</p>
+</li>
+</ol>
+<p>则称$d$为$M$上<strong>外微分算子</strong>, 或简称<strong>外微分</strong>.</p>
+<p><strong>引理 1</strong>. <em>外微分算子为局部算子, 即若$\omega_1|_U=\omega_2|_U,$ 则$(d\omega_1)|_U=(d\omega_2)|_U.$</em> </p>
+<p><strong>证:</strong> 只需说明$\omega|_U=0\Rightarrow (d\omega)|_U=0.$
+取截断函数$f|_V\equiv 1,$ $\operatorname{supp}f\subset U$即可.
+这样$f\omega=0.$ 从而$0=d(f\omega)=df\wedge \omega+f(d\omega),$
+在$V$上有$df=0,$ 从而$(d\omega)|_V=0.$
+由$V$的任意性即有$(d\omega)|_U=0.$</p>
+<p><strong>定理 2</strong>. <em>$C^\infty$-流形$M$上外微分算子是存在唯一的.</em> </p>
+<p><strong>证:</strong> 先证唯一性. 由截断函数, $d$可以诱导$U$上的外微分算子.
+取引理中的$f,$ 对$\omega\in \mathcal{A}(U),$
+局部定义$(d\omega)|_V:=(d(f\omega))|_V.$ 现证$d$在坐标系里是唯一的:</p>
+<p>取$(U,\varphi;x^i)\subset M,$ $\omega\in \mathcal{A}^r(M),$
+$\omega|_U=adx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ 由外微分算子性质,
+$d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ 由局部性,
 $(d\omega)|_U=d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r},$
-$d\omega$ has an exact expression in $U$, so $d$ is unique in the coordinate system. Thus,
-$d$ is also unique as a whole.
-
-Next, we will explain the existence of $d$. First, from the above paragraph,
-Just define $d\omega:=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}$ locally,
+$d\omega$在$U$内有确切表达式, 因此$d$在坐标系中唯一. 从而,
+$d$在整体上也唯一.</p>
+<p>接下来说明$d$的存在性. 首先由上段,
+局部定义$d\omega:=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}$即可,
 $\omega=adx^{i_1}\wedge\cdots\wedge dx^{i_r}\in \mathcal{A}^r(U).$
-In this way, it is naturally extended to the external differential operator. Since it is locally defined everywhere, it is also defined overall,
-And due to local uniqueness, it has nothing to do with the selection of the coordinate system.
+这样它自然延拓为外微分算子. 由于它处处有局部定义, 整体上也有定义,
+且由局部唯一性, 它与坐标系选取无关.</p>
+<p>由$d$的局部定义, 我们自然得到如下引理:</p>
+<p><strong>引理 3</strong> (Poincaré引理). <em>$d^2=0.$ 即$\,\forall\,\omega\in \mathcal{A}(M),$ $d(d\omega)=0.$</em> </p>
+<p>设$\omega=Adx+Bdy+Cdz\in \mathcal{A}^1(\mathbb{R}^3)$与$X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$相应,
+当$\omega=df$时$X$即为$\nabla f.$ 那么$d\omega$与$\nabla\times X$相应.</p>
+<p>设$\omega=Ady\wedge dz+Bdz\wedge dx+Cdx\wedge dy,$
+与$X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$相应.
+那么$d\omega=(\nabla\cdot X)dx\wedge dy\wedge dz.$</p>
+<p>因此$\nabla\times (\nabla f)=0$由$d(df)=0$保证,
+$\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
+<p><strong>定理 4</strong>. <em>设$\omega\in \mathcal{A}^1(M),$ $X,Y\in \mathfrak{X}(M),$ 则$d\omega(X,Y)=X(\omega(Y))-Y(\omega(X))-\omega([X,Y]).$</em> </p>
+<p><strong>证:</strong> 设$\omega=fdg,$ 则$d\omega=df\wedge dg.$
+此时$df\wedge dg(X,Y)=X(f)Y(g)-Y(f)X(g).$ 计算右侧得到相同的结果,
+定理得证.</p>
+<p>文章最后更新于 2021-12-19 11:27:06 </p>
 
-From the local definition of $d$, we naturally get the following lemma:
-**Lemma 3** (Poincaré’s Lemma). *$d^2=0.$ That is, $\,\forall\,\omega\in \mathcal{A}(M),$ $d(d\omega)=0.$*
-Suppose $\omega=Adx+Bdy+Cdz\in \mathcal{A}^1(\mathbb{R}^3)$ corresponds to $X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$,
-When $\omega=df$, $X$ is $\nabla f.$ Then $d\omega$ corresponds to $\nabla\times X$.
-Let $\omega=Ady\wedge dz+Bdz\wedge dx+Cdx\wedge dy,$
-Corresponds to $X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$.
-Then $d\omega=(\nabla\cdot X)dx\wedge dy\wedge dz.$
-Therefore $\nabla\times (\nabla f)=0$ is guaranteed by $d(df)=0$,
-$\nabla\cdot(\nabla\times X)$ is guaranteed by $d(d\omega)=0$.
-**Theorem 4**. *Suppose $\omega\in \mathcal{A}^1(M),$ $X,Y\in \mathfrak{X}(M),$ then $d\omega(X,Y)=X(\omega(Y))-Y(\omega(X))-\omega([X,Y]).$*
-
-**Proof:** Suppose $\omega=fdg,$ then $d\omega=df\wedge dg.$
-At this time $df\wedge dg(X,Y)=X(f)Y(g)-Y(f)X(g).$ The same result is obtained by calculating the right side,
-The theorem is proved.
-
-The article was last updated on 2021-12-19 11:27:06
                 </div>
             
         </div>
@@ -332,7 +382,7 @@ The article was last updated on 2021-12-19 11:27:06
     <ul>
         <li>本文标题：《微分流形》第七章-微分形式</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-19 11:26:50</li>
+        <li>创建时间：2021-12-19 13:26:50</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/12/19/《微分流形》第七章-微分形式/
         </li>
@@ -364,7 +414,7 @@ The article was last updated on 2021-12-19 11:27:06
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第七章-流形的定向</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Orientation of Manifolds</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Orientation of Manifolds</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -386,7 +436,7 @@ The article was last updated on 2021-12-19 11:27:06
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (9)-Galerkin Method</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Modern PDE Basics Notes (9) - Galerkin Method</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -638,11 +688,11 @@ The article was last updated on 2021-12-19 11:27:06
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">微分形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86"><span class="nav-text">外微分</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">微分形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86"><span class="nav-text">外微分</span></a></li></ol>
         </div>
     
 </div>
@@ -693,6 +743,36 @@ The article was last updated on 2021-12-19 11:27:06
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -716,46 +796,6 @@ The article was last updated on 2021-12-19 11:27:06
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

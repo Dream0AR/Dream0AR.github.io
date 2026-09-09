@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第七章-流形上的积分</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Integrals on Manifolds</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Integrating on a Manifold</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-22 18:49:33
+        <i class="fas fa-edit"></i>&nbsp;2021-12-22 20:49:33
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,153 +230,210 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="外微分形式的积分"><a href="#外微分形式的积分" class="headerlink" title="外微分形式的积分"></a>外微分形式的积分</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>我们熟知有<strong>积分变量代换公式</strong>: 设$f\in C_c(\mathbb{R}^m),$
+$h:\mathbb{R}^m\approx \mathbb{R}^m$为微分同胚, 则</p>
+<p>$$
+\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m=\int_{\mathbb{R}^m}(f\circ h)(y)|\det Dh|dy^1\cdots dy^m.
+$$</p>
+<p>若$h:\mathbb{R}^m\rightarrow \mathbb{R}^m$满足$\det Dh(y)&gt;0,$
+则处处有$\det Dh&gt;0.$ 称它是<strong>保定向</strong>的微分同胚.</p>
+<p>由上节课内容,
+$\Omega={}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(\mathbb{R}^m)$给了$\mathbb{R}^m$一个自然的定向.
+现$(\mathbb{R}^m,\mathrm{id};x),(\mathbb{R}^m,h^{-1};y)$为两个不同坐标系,
+令$\omega=f(x)dx^1\wedge\cdots\wedge dx^m$为具紧支集连续$m$次外微分形式,
+那么由于</p>
+<p>$$
+dx^1\wedge\cdots\wedge dx^m=\det(Dh)(y){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m},
+$$</p>
+<p>我们知道$\omega=f\circ h(y)\det(Dh){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}$为另一表示.
+上述公式提示:</p>
+<p>$$
+\int_{\mathbb{R}^m}\omega:=\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m.
+$$</p>
+<p>设$(M^m,\Omega)$是定向$C^\infty$-流形,
+$\omega$为$M$上具紧支集$m$次外微分形式,
+即$\operatorname{supp}\omega=\overline{\left\{q\mid\omega(q)\neq 0\right\}} \Subset M.$
+下面来定义$\omega$在$M$上的积分.</p>
+<p>当$\operatorname{supp}\omega\subset (U,\varphi;x^i),$
+与定向$\Omega$相符的坐标系时, $\omega=f dx^1\wedge\cdots\wedge dx^m,$
+$f\in C_c(U).$ 由前面的叙述, 定义</p>
+<p>$$
+\int_M \omega:=\int_U \omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.
+$$</p>
+<p>一般地, 取$\{(U_i,\varphi_i)\}$为与定向相符的坐标图册,
+以及从属于它的单位分解. 那么$\omega=\sum_i f_i\omega,$
+$\operatorname{supp}(f_i\omega)\subset U_i.$ 由$\omega$具紧支集,
+$\{\operatorname{supp}f_i\}$局部有限, 和式总有意义. 于是我们定义</p>
+<p>$$
+\int_M \omega:=\sum_i \int_M f_i\omega,
+$$</p>
+<p>其中$\int_M f_i\omega$是已定义好的.</p>
+<h3 id="良定性"><a href="#良定性" class="headerlink" title="良定性"></a>良定性</h3><p>我们需要验证该定义的良定性: 是否与坐标系/图册以及单位分解选取无关?</p>
+<p>若$\operatorname{supp}\omega \subset (U,\varphi;x)\cap (V,\psi;y),$
+$f{}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}=\omega=g{}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}.$
+需验证:</p>
+<p>$$
+\int_{\psi(U)}(g\circ\psi^{-1})(y)dy^1\cdots dy^m=\int_M\omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.
+$$</p>
+<p>令$h=\varphi\circ\psi^{-1},$ $h(y)=x.$ 那么由积分变量代换公式,
+以及$g=f\det(Dh),$ 结合坐标系都是与定向$\Omega$相符的, 即有等式成立.</p>
+<p>设有两种单位分解$\{f_i\},\{g_j\},$
+那么$\{f_ig_j=g_jf_i\}$也是一个单位分解. 因此</p>
+<p>$$
+\sum_j\int_M g_j\omega=\sum_{i,j}\int_M f_ig_j\omega=\sum_i\int_M f_i\omega.
+$$</p>
+<h3 id="其它性质"><a href="#其它性质" class="headerlink" title="其它性质"></a>其它性质</h3><p>容易看出, $\int_{(M,\Omega)}\omega=-\int_{(M,-\Omega)}\omega.$</p>
+<p>定义$\mathcal{K}$为全体具紧支集连续的$m$次形式, 构成向量空间,
+且$\int_M:\mathcal{K}\rightarrow \mathbb{R}$为线性泛函.</p>
+<p>设$\varphi:N^k\rightarrow M$为$k$维子流形.
+若$\varphi^\ast \omega$在$N$中具紧支集, 则</p>
+<p>$$
+\int_N \varphi^\ast \omega:=\int_{\varphi(N)} \omega.
+$$</p>
+<h2 id="Stokes公式"><a href="#Stokes公式" class="headerlink" title="Stokes公式"></a>Stokes公式</h2><p>回忆$\mathbb{R}^m$上的多元微积分, 我们可将微积分基本定理, Green公式,
+Gauss公式, Stokes公式统一为:</p>
+<p>$$
+\int_D d\omega=\int_{\partial D}\omega,\quad D\subset \mathbb{R}^m.
+$$</p>
+<p>设$M^m$为$m$维$C^\infty$流形. 如果$M$中子集$D$由下面两类点构成:</p>
+<ol>
+<li><p>内点: $p\in D,$ $\,\exists\,V\ni p$为开邻域, $V\subset D.$</p>
+</li>
+<li><p>边界点: $p\in D,$ $\,\exists\,(U,\varphi;x^i)$使得$\varphi(p)=0,$
+$\varphi(U\cap D)=\{q\in D|x^m(q)\ge 0\}.$
+称这样的坐标系为<strong>适应坐标系</strong>.</p>
+</li>
+</ol>
+<p>则称$D$为$M$中<strong>带边区域</strong>. 用$\partial D$表示边界全体.</p>
+<p>易见内点全体$D^\circ$为$M$中开子集,
+$U\cap \partial D=\{x^m(q)=0\}$为$(m-1)$维切片.
+从而$\partial D$为$M$中正则超曲面.</p>
+<p>全体适应坐标系构成了$\partial D$的一个覆盖,
+构成了$\partial D$的坐标图册. 它确定了$\partial D$的$C^\infty$结构.
+现$M$是定向流形, 则可要求$\partial D$的每个适应坐标系与定向$\Omega$相符.</p>
+<p>在每个$(U_\alpha\cap \partial D;x_{\alpha}^1,\cdots,x_{\alpha}^{m-1})$上,
+局部定义$(-1)^m{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}.$
+下面证明它与$(-1)^m{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m-1}$定向相符,
+因此$\partial D$上有一诱导定向.</p>
+<p><strong>定理 1</strong>. <em>设$D$是$C^\infty$-流形$M$中带边区域, 如果$(M,\Omega)$是可定向的, 则$\partial D$也是可定向的.</em> </p>
+<p><strong>证:</strong> 取$(U,\varphi;x^i),(V,\psi;y^j)$为$\partial D$的适应坐标系,
+与定向$\Omega$相符,
+需考虑$\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}$的符号.
+已知$\det D(\psi\circ \varphi^{-1})&gt;0.$
+由于$\frac{\partial {}y^m}{\partial {}x^{i} }=0,$ $\,\forall\,i\neq m;$
+$\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
+立即推得$\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}&gt;0.$
+因此$\partial D$是可定向的.</p>
+<p>特别地,
+我们选取$(-1)^m {}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}$与$\partial D$定向相符,
+使Stokes公式成立.</p>
+<p><strong>定理 2</strong> (Stokes公式). <em>设$(M^m,\Omega)$是定向$C^\infty$流形, $D$是$M$中带边区域, 从$M$中自然诱导定向. $\omega$是$M$一个具紧支集$C^1$的$(m-1)$次外微分形式, 则$\int_D d\omega=\int_{\partial D}\omega.$ 如果$\partial D=\varnothing,$ 则右端为零.</em> </p>
+<p>文章最后更新于 2021-12-22 18:57:10 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Integral in external differential form
-----------------
-
-### Definition
-
-We are familiar with the **integral variable substitution formula**: Let $f\in C_c(\mathbb{R}^m),$
-$h:\mathbb{R}^m\approx \mathbb{R}^m$ is a diffeomorphism, then
-$$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="外微分形式的积分"><a href="#外微分形式的积分" class="headerlink" title="外微分形式的积分"></a>外微分形式的积分</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>我们熟知有<strong>积分变量代换公式</strong>: 设$f\in C_c(\mathbb{R}^m),$
+$h:\mathbb{R}^m\approx \mathbb{R}^m$为微分同胚, 则</p>
+<p>$$
 \int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m=\int_{\mathbb{R}^m}(f\circ h)(y)|\det Dh|dy^1\cdots dy^m.
-$$
-
-
-If $h:\mathbb{R}^m\rightarrow \mathbb{R}^m$ satisfies $\det Dh(y)>0,$
-Then there is $\det Dh>0.$ everywhere, which is called a **direction-preserving diffeomorphism**.
-
-From the content of the previous lesson,
-$\Omega={}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(\mathbb{R}^m)$ gives $\mathbb{R}^m$ a natural orientation.
-Now $(\mathbb{R}^m,\mathrm{id};x), (\mathbb{R}^m,h^{-1};y)$ are two different coordinate systems,
-Let $\omega=f(x)dx^1\wedge\cdots\wedge dx^m$ be the continuous $m$ times external differential form with compact support,
-Then due to
-
-
-$$
+$$</p>
+<p>若$h:\mathbb{R}^m\rightarrow \mathbb{R}^m$满足$\det Dh(y)&gt;0,$
+则处处有$\det Dh&gt;0.$ 称它是<strong>保定向</strong>的微分同胚.</p>
+<p>由上节课内容,
+$\Omega={}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(\mathbb{R}^m)$给了$\mathbb{R}^m$一个自然的定向.
+现$(\mathbb{R}^m,\mathrm{id};x),(\mathbb{R}^m,h^{-1};y)$为两个不同坐标系,
+令$\omega=f(x)dx^1\wedge\cdots\wedge dx^m$为具紧支集连续$m$次外微分形式,
+那么由于</p>
+<p>$$
 dx^1\wedge\cdots\wedge dx^m=\det(Dh)(y){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m},
-$$
-We know that $\omega=f\circ h(y)\det(Dh){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}$ is another representation.
-Tips for the above formula:
-
-
-$$
+$$</p>
+<p>我们知道$\omega=f\circ h(y)\det(Dh){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}$为另一表示.
+上述公式提示:</p>
+<p>$$
 \int_{\mathbb{R}^m}\omega:=\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m.
-$$
-Let $(M^m,\Omega)$ be the oriented $C^\infty$-manifold,
-$\omega$ is the external differential form of $m$ with compact support on $M$,
-That is $\operatorname{supp}\omega=\overline{\{q|\omega(q)\neq 0\} }\Subset M.$
-Let's define the integral of $\omega$ on $M$.
-When $\operatorname{supp}\omega\subset (U,\varphi;x^i),$
-When the coordinate system is consistent with the orientation $\Omega$, $\omega=f dx^1\wedge\cdots\wedge dx^m,$
-$f\in C_c(U).$ is defined by the previous description
-$$
+$$</p>
+<p>设$(M^m,\Omega)$是定向$C^\infty$-流形,
+$\omega$为$M$上具紧支集$m$次外微分形式,
+即$\operatorname{supp}\omega=\overline{\left\{q\mid\omega(q)\neq 0\right\}} \Subset M.$
+下面来定义$\omega$在$M$上的积分.</p>
+<p>当$\operatorname{supp}\omega\subset (U,\varphi;x^i),$
+与定向$\Omega$相符的坐标系时, $\omega=f dx^1\wedge\cdots\wedge dx^m,$
+$f\in C_c(U).$ 由前面的叙述, 定义</p>
+<p>$$
 \int_M \omega:=\int_U \omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.
-$$
-
-
-
-Generally speaking, take $\{(U_i,\varphi_i)\}$ as the coordinate atlas consistent with the orientation,
-And the unit decomposition subordinate to it. Then $\omega=\sum_i f_i\omega,$
-$\operatorname{supp}(f_i\omega)\subset U_i.$ has a compact support set by $\omega$,
-$\{\operatorname{supp}f_i\}$ is locally finite, and the sum is always meaningful. So we define
-
-
-$$
+$$</p>
+<p>一般地, 取$\{(U_i,\varphi_i)\}$为与定向相符的坐标图册,
+以及从属于它的单位分解. 那么$\omega=\sum_i f_i\omega,$
+$\operatorname{supp}(f_i\omega)\subset U_i.$ 由$\omega$具紧支集,
+$\{\operatorname{supp}f_i\}$局部有限, 和式总有意义. 于是我们定义</p>
+<p>$$
 \int_M \omega:=\sum_i \int_M f_i\omega,
-$$
-Where $\int_M f_i\omega$ is defined.
-
-### Good quality
-
-We need to verify the soundness of this definition: Is it independent of the coordinate system/atlas and unit decomposition selection?
-
-If $\operatorname{supp}\omega \subset (U,\varphi;x)\cap (V,\psi;y),$
+$$</p>
+<p>其中$\int_M f_i\omega$是已定义好的.</p>
+<h3 id="良定性"><a href="#良定性" class="headerlink" title="良定性"></a>良定性</h3><p>我们需要验证该定义的良定性: 是否与坐标系/图册以及单位分解选取无关?</p>
+<p>若$\operatorname{supp}\omega \subset (U,\varphi;x)\cap (V,\psi;y),$
 $f{}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}=\omega=g{}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}.$
-Need to verify:
-
-
-$$
+需验证:</p>
+<p>$$
 \int_{\psi(U)}(g\circ\psi^{-1})(y)dy^1\cdots dy^m=\int_M\omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.
-$$
-Let $h=\varphi\circ\psi^{-1},$ $h(y)=x.$ Then substitute the formula by the integral variable,
-And $g=f\det(Dh),$ the combined coordinate system is consistent with the orientation $\Omega$, that is, the equation is established.
-
-There are two unit decompositions $\{f_i\},\{g_j\},$
-Then $\{f_ig_j=g_jf_i\}$ is also a unit decomposition. Therefore
-$$
+$$</p>
+<p>令$h=\varphi\circ\psi^{-1},$ $h(y)=x.$ 那么由积分变量代换公式,
+以及$g=f\det(Dh),$ 结合坐标系都是与定向$\Omega$相符的, 即有等式成立.</p>
+<p>设有两种单位分解$\{f_i\},\{g_j\},$
+那么$\{f_ig_j=g_jf_i\}$也是一个单位分解. 因此</p>
+<p>$$
 \sum_j\int_M g_j\omega=\sum_{i,j}\int_M f_ig_j\omega=\sum_i\int_M f_i\omega.
-$$
-
-
-
-### Other properties
-
-It is easy to see, $\int_{(M,\Omega)}\omega=-\int_{(M,-\Omega)}\omega.$
-
-Define $\mathcal{K}$ as the continuous $m$ form of all compact supported sets, forming a vector space,
-And $\int_M:\mathcal{K}\rightarrow \mathbb{R}$ is a linear functional.
-
-Let $\varphi:N^k\rightarrow M$ be a $k$-dimensional submanifold.
-If $\varphi^\ast \omega$ has compact support in $N$, then
-$$
+$$</p>
+<h3 id="其它性质"><a href="#其它性质" class="headerlink" title="其它性质"></a>其它性质</h3><p>容易看出, $\int_{(M,\Omega)}\omega=-\int_{(M,-\Omega)}\omega.$</p>
+<p>定义$\mathcal{K}$为全体具紧支集连续的$m$次形式, 构成向量空间,
+且$\int_M:\mathcal{K}\rightarrow \mathbb{R}$为线性泛函.</p>
+<p>设$\varphi:N^k\rightarrow M$为$k$维子流形.
+若$\varphi^\ast \omega$在$N$中具紧支集, 则</p>
+<p>$$
 \int_N \varphi^\ast \omega:=\int_{\varphi(N)} \omega.
-$$
-
-
-
-Stokes formula
-----------
-
-Recalling the multivariable calculus on $\mathbb{R}^m$, we can convert the fundamental theorem of calculus, Green's formula,
-Gauss formula and Stokes formula are unified as:
-$$
+$$</p>
+<h2 id="Stokes公式"><a href="#Stokes公式" class="headerlink" title="Stokes公式"></a>Stokes公式</h2><p>回忆$\mathbb{R}^m$上的多元微积分, 我们可将微积分基本定理, Green公式,
+Gauss公式, Stokes公式统一为:</p>
+<p>$$
 \int_D d\omega=\int_{\partial D}\omega,\quad D\subset \mathbb{R}^m.
-$$
-
-
-
-Let $M^m$ be the $m$-dimensional $C^\infty$ manifold. If the subset $D$ in $M$ consists of the following two types of points:
-
-1. Interior points: $p\in D,$ $\,\exists\,V\ni p$ is an open neighborhood, $V\subset D.$
-2. Boundary point: $p\in D,$ $\,\exists\,(U,\varphi;x^i)$ makes $\varphi(p)=0,$
- $\varphi(U\cap D)=\{q\in D|x^m(q)\ge 0\}.$
- Such a coordinate system is called an adaptive coordinate system.
-
-Then $D$ is called the **edge region** in $M$. Use $\partial D$ to represent the entire boundary.
-It is easy to see that all interior points $D^\circ$ are open subsets of $M$,
-$U\cap \partial D=\{x^m(q)=0\}$ is a $(m-1)$ dimensional slice.
-Thus $\partial D$ is a regular hypersurface in $M$.
-
-The overall adaptive coordinate system constitutes a cover of $\partial D$,
-It constitutes the coordinate atlas of $\partial D$. It determines the $C^\infty$ structure of $\partial D$.
-Now $M$ is an oriented manifold, then each adaptive coordinate system of $\partial D$ can be required to be consistent with the orientation $\Omega$.
-
-On each $(U_\alpha\cap \partial D;x_{\alpha}^1,\cdots,x_{\alpha}^{m-1})$,
-Local definition $(-1)^m{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}.$
-The following proves that it is consistent with the $(-1)^m{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m-1}$ orientation,
-Therefore there is an induced orientation on $\partial D$.
-**Theorem 1**. *Suppose $D$ is an edge region in $C^\infty$-manifold $M$. If $(M,\Omega)$ is orientable, then $\partial D$ is also orientable.*
-
-**Proof:** Take $(U,\varphi;x^i),(V,\psi;y^j)$ as the adaptive coordinate system of $\partial D$,
-Consistent with orientation $\Omega$,
-The sign of $\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}$ needs to be considered.
-It is known that $\det D(\psi\circ \varphi^{-1})>0.$
-Since $\frac{\partial {}y^m}{\partial {}x^{i} }=0,$ $\,\forall\,i\neq m;$
+$$</p>
+<p>设$M^m$为$m$维$C^\infty$流形. 如果$M$中子集$D$由下面两类点构成:</p>
+<ol>
+<li><p>内点: $p\in D,$ $\,\exists\,V\ni p$为开邻域, $V\subset D.$</p>
+</li>
+<li><p>边界点: $p\in D,$ $\,\exists\,(U,\varphi;x^i)$使得$\varphi(p)=0,$
+$\varphi(U\cap D)=\{q\in D|x^m(q)\ge 0\}.$
+称这样的坐标系为<strong>适应坐标系</strong>.</p>
+</li>
+</ol>
+<p>则称$D$为$M$中<strong>带边区域</strong>. 用$\partial D$表示边界全体.</p>
+<p>易见内点全体$D^\circ$为$M$中开子集,
+$U\cap \partial D=\{x^m(q)=0\}$为$(m-1)$维切片.
+从而$\partial D$为$M$中正则超曲面.</p>
+<p>全体适应坐标系构成了$\partial D$的一个覆盖,
+构成了$\partial D$的坐标图册. 它确定了$\partial D$的$C^\infty$结构.
+现$M$是定向流形, 则可要求$\partial D$的每个适应坐标系与定向$\Omega$相符.</p>
+<p>在每个$(U_\alpha\cap \partial D;x_{\alpha}^1,\cdots,x_{\alpha}^{m-1})$上,
+局部定义$(-1)^m{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}.$
+下面证明它与$(-1)^m{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m-1}$定向相符,
+因此$\partial D$上有一诱导定向.</p>
+<p><strong>定理 1</strong>. <em>设$D$是$C^\infty$-流形$M$中带边区域, 如果$(M,\Omega)$是可定向的, 则$\partial D$也是可定向的.</em> </p>
+<p><strong>证:</strong> 取$(U,\varphi;x^i),(V,\psi;y^j)$为$\partial D$的适应坐标系,
+与定向$\Omega$相符,
+需考虑$\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}$的符号.
+已知$\det D(\psi\circ \varphi^{-1})&gt;0.$
+由于$\frac{\partial {}y^m}{\partial {}x^{i} }=0,$ $\,\forall\,i\neq m;$
 $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
-Immediately push $\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}>0.$
-Therefore $\partial D$ is orientable.
+立即推得$\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}&gt;0.$
+因此$\partial D$是可定向的.</p>
+<p>特别地,
+我们选取$(-1)^m {}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}$与$\partial D$定向相符,
+使Stokes公式成立.</p>
+<p><strong>定理 2</strong> (Stokes公式). <em>设$(M^m,\Omega)$是定向$C^\infty$流形, $D$是$M$中带边区域, 从$M$中自然诱导定向. $\omega$是$M$一个具紧支集$C^1$的$(m-1)$次外微分形式, 则$\int_D d\omega=\int_{\partial D}\omega.$ 如果$\partial D=\varnothing,$ 则右端为零.</em> </p>
+<p>文章最后更新于 2021-12-22 18:57:10 </p>
 
-In particular,
-We select $(-1)^m {}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m-1}$ consistent with the $\partial D$ orientation,
-Make Stokes formula hold.
-**Theorem 2** (Stokes formula). *Suppose $(M^m,\Omega)$ is an oriented $C^\infty$ manifold, $D$ is an edge region in $M$, and the orientation is naturally induced from $M$. $\omega$ is a $(m-1)$ second-order differential form of $M$ with a compact support set $C^1$, then $\int_D d\omega=\int_{\partial D}\omega.
-$ If $\partial D=\varnothing,$ then the right end is zero.*
-
-The article was last updated on 2021-12-22 18:57:10
                 </div>
             
         </div>
@@ -387,7 +444,7 @@ The article was last updated on 2021-12-22 18:57:10
     <ul>
         <li>本文标题：《微分流形》第七章-流形上的积分</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-22 18:49:33</li>
+        <li>创建时间：2021-12-22 20:49:33</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/12/22/《微分流形》第七章-流形上的积分/
         </li>
@@ -419,7 +476,7 @@ The article was last updated on 2021-12-22 18:57:10
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《现代PDE基础》笔记(10)-复习</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (10)-Review</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Modern PDE Basics Notes (10) - Review</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -441,7 +498,7 @@ The article was last updated on 2021-12-22 18:57:10
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第七章-流形的定向</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Orientation of Manifolds</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Orientation of Manifolds</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -693,11 +750,11 @@ The article was last updated on 2021-12-22 18:57:10
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E7%9A%84%E7%A7%AF%E5%88%86"><span class="nav-text">外微分形式的积分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%89%AF%E5%AE%9A%E6%80%A7"><span class="nav-text">良定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E6%80%A7%E8%B4%A8"><span class="nav-text">其它性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stokes%E5%85%AC%E5%BC%8F"><span class="nav-text">Stokes公式</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E7%9A%84%E7%A7%AF%E5%88%86"><span class="nav-text">外微分形式的积分</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%89%AF%E5%AE%9A%E6%80%A7"><span class="nav-text">良定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E6%80%A7%E8%B4%A8"><span class="nav-text">其它性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stokes%E5%85%AC%E5%BC%8F"><span class="nav-text">Stokes公式</span></a></li></ol>
         </div>
     
 </div>
@@ -748,6 +805,36 @@ The article was last updated on 2021-12-22 18:57:10
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -771,46 +858,6 @@ The article was last updated on 2021-12-22 18:57:10
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

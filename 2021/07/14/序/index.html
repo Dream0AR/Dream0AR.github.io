@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">序</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">sequence</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Serial No.</span>
                 
             </span>
         </div>
@@ -222,14 +222,17 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>今天开始博客正式启动啦! 之前一直在知乎记录一些学习生活, 但感觉有一些个人用的学习材料不太适合放到知乎上, 所以一直在计划搭建一个自己的个人博客, 这样也能更自在一些.</p>
+<p>除了学习生活, 还计划记录一些其它生活中的点滴, 比如在玩的游戏, 喜欢的沙雕图, 以及一些随想之类的. 这样看我的博客就能够了解我, 知道我喜欢什么, 以及最近在干啥了.</p>
+<p>人生一场, 总是希望能够留下些什么的, 留下一些不会消散的东西. <strong>记录</strong>, 便是最简单的一种形式. 希望能够坚持记录人生的习惯, 让今后的我能够回顾我走过的一程. </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Today the blog is officially launched! I have been recording some study life on Zhihu before, but I feel that some personal study materials are not suitable for posting on Zhihu, so I have been planning to build my own personal blog so that I can be more comfortable.
+                    <p>The blog is officially launched today! I have been interested in recording some of my study life before, but I feel that some personal study materials are not suitable for knowing, so I have been planning to build my own personal blog, so I can feel more at ease.</p>
+<p>In addition to studying life, there are also plans to record some other life bits, such as playing games, favorite sand sculptures, and some casual thoughts. By reading my blog this way, you’ll be able to get to know me, what I like, and what I’ve been doing lately.</p>
+<p>Life is a battle, always hoping to leave something behind, leaving something that will not dissipate. <em> </em> Recording <em> </em> is the simplest form. I hope to be able to keep track of my life habits so that I can look back on my journey in the future.</p>
 
-In addition to studying and living, I also plan to record some other details in life, such as the games I play, the sand sculptures I like, and some random thoughts. In this way, by reading my blog, you can get to know me, what I like, and what I have been doing recently.
-In life, I always hope to leave something behind, something that will not disappear. **Recording** is the simplest form. I hope that I can stick to the habit of recording life, so that I can look back on the journey I have taken in the future.
                 </div>
             
         </div>
@@ -577,6 +580,36 @@ In life, I always hope to leave something behind, something that will not disapp
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -600,46 +633,6 @@ In life, I always hope to leave something behind, something that will not disapp
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

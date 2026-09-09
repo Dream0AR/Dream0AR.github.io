@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (6-3)-Poincaré Duality and Thom Classes</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (6-3) - Poincaré Dual and Thom Class</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-10 21:10:51
+        <i class="fas fa-edit"></i>&nbsp;2021-10-11 00:10:51
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,123 +230,170 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>本节解释如何将子流形Poincaré对偶与子流形上向量丛的Thom类联系起来.</p>
+<h2 id="商丛"><a href="#商丛" class="headerlink" title="商丛"></a>商丛</h2><p>称$F$是秩$n$向量丛$E$的秩$k$<strong>子丛</strong>, 若$\,\forall\,x\in M$,
+$F_x$为$E_x$子空间.</p>
+<p>由此可定义<strong>商丛</strong>$Q=E/F$,
+它是一个向量丛使得$0\rightarrow F\rightarrow E\rightarrow Q\rightarrow 0$正合.
+即$\,\forall\,x\in M$, $Q_x=E_x/F_x$为商空间.</p>
+<p>首先, 先取$F$中自然标架, 再扩张为$E$的一组标架,
+这样它们的局部平凡化相容. 设$E$的局部平凡化转移函数为$g_{\alpha\beta},$
+$F$为$h_{\alpha\beta}.$ 则对于$F$上的点, 只有$h_{\alpha\beta}$起作用,
+从而有$g_{\alpha\beta}=\begin{pmatrix}
+            h_{\alpha\beta} &amp; *\\
+            0 &amp; q_{\alpha\beta}
+        \end{pmatrix}$. 那么$q_{\alpha\beta}$便是$Q$的转移函数.
+易见若$E,F$可定向, $Q$也可定向, 称$Q$的定向使得$E$的定向是直和定向.</p>
+<p>因为我们有内积, 所以纤维上有正交补空间$F_x^\perp\subset E_x$.
+那么$F^\perp=\bigsqcup F_x^\perp$是$E$的子丛且$E=F\oplus F^\perp$,
+其上还有继承于$E$的内积. 显然$Q\cong F^\perp$,
+从而$Q/E$上也有诱导的内积. $F^\perp$上也有定向使得$E$的定向为直和定向.</p>
+<h2 id="子流形法丛与管状邻域引理"><a href="#子流形法丛与管状邻域引理" class="headerlink" title="子流形法丛与管状邻域引理"></a>子流形法丛与管状邻域引理</h2><p>$k$维子流形$S\subset M$, $S$上有切丛$TS$与$i^{-1}TM=TM|_S$,
+$i$为包含映射.</p>
+<p>显然$TS\subset TM|_S$. 定义$N_{S/M}=TM|_S/TS$, 简记为$N$. 若$M,S$可定向,
+则切丛可定向, 从而$N$可定向.</p>
+<p>$\,\forall\,x\in S$, 存在$x$点坐标卡$(U,\phi)$,
+使得$\phi|_{S\cap U}$为$x$在$S$中坐标卡, 且只有前$k$个坐标有值.
+由此诱导切丛上的标架. 限制在$U_\alpha$或$U_\alpha\cap S$上,
+记$TM$标架为$\{\frac{\partial {} }{\partial {}x_A^\alpha}\}_{1\le A\le n}$,
+$TS$标架为$\{\frac{\partial {} }{\partial {}x_i^\alpha}\}_{1\le i\le k}$,
+$N$标架为$\{\frac{\partial {} }{\partial {}x_a^\alpha}\}_{k+1\le a\le n}$.</p>
+<p>在$S\cap U_{\alpha\beta}$上,
+$\frac{\partial {}x_a^\alpha}{\partial {}x_i^\beta}=0$,
+因此$TS$转移函数为$h_{\alpha\beta}=(\frac{\partial {}x_j^\alpha}{\partial {}x_i^\beta})_{k\times k}$.</p>
+<p>然而,
+$\frac{\partial {}x_j^\alpha}{\partial {}x_a^\beta}$显然不一定为$0$,
+但我们在做商丛时模掉了这部分,
+因此$N$的转移函数为$q_{\alpha\beta}=(\frac{\partial {}x_b^\alpha}{\partial {}x_a^\beta})_{(n-k)\times (n-k)}$.
+$TM|_S$的转移函数即为$g_{\alpha\beta}=\begin{pmatrix}
+            h_{\alpha\beta} &amp; *\\
+            0 &amp; q_{\alpha\beta}
+        \end{pmatrix}=(\frac{\partial {}x_A^\alpha}{\partial {}x_B^\beta})_{n\times n}$.</p>
+<p>我们有如下重要定理, 证明可参考其它微分流形教材.</p>
+<p><strong>定理 1.1</strong> (管状邻域定理). <em>存在$j$将$N$嵌入$M$, 且$j\circ s=i$, 即将零截面映到$S$.</em> </p>
+<p>称开集$j(N)\subset M$为管状邻域, 记为$T$.</p>
+<h2 id="Poincare对偶与Thom类"><a href="#Poincare对偶与Thom类" class="headerlink" title="Poincaré对偶与Thom类"></a>Poincaré对偶与Thom类</h2><p>记$\Phi$为$S$法丛$N$的Thom类, 则由Thom同构,
+$H^\ast (S)\cong H_{cv}^{\ast +n-k}(N)\cong H_{cv}^{\ast +n-k}(T)\rightarrow H^{\ast +n-k}(M)$,
+最后一个映射为零延拓.</p>
+<p><strong>引理 1.1</strong>. <em>$S$的闭Poincaré对偶$[\eta_S]=j_\ast \Phi\in H^{n-k}(M)$,</em> </p>
+<p><strong>证:</strong> 只需证明$j_\ast \Phi$满足对偶性质. 记$l:S\rightarrow T$为包含,
+其为$\pi:T\rightarrow S$为零截面. 它们在上同调的层面为互逆的,
+从而$\omega|_T=\pi^\ast l^\ast (\omega|_T)+d\tau$, $\tau\in \Omega^{k-1}(T)$</p>
+<p>$$\begin{aligned}
+                \int_M\omega\wedge j_*\Phi&amp;=\int_T\omega|_T\wedge \Phi &amp; j_*\text{为零延拓}\\
+                &amp;=\int_T \pi^*l^*(\omega|_T)\wedge \Phi+\int_T d\tau \wedge \Phi&amp;\\
+                &amp;=\int_S l^*(\omega|_T)\wedge \pi_*\Phi&amp;\text{Stokes定理+投射公式}\\
+                &amp;=\int_S i^*\omega.&amp;\pi_*\Phi=1\quad+\quad{\omega|_T}|_S=\omega|_S
+            \end{aligned}$$</p>
+<p>又因为子流形$S$在$M$中的管状邻域可充分小, 我们得到:</p>
+<p><strong>命题 1.1</strong> (局部化原理). <em>闭子流形$S$的Poincaré对偶的支集可缩小到$S$任意给定的管状邻域中.</em> </p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="横截相交子流形的Poincare对偶"><a href="#横截相交子流形的Poincare对偶" class="headerlink" title="横截相交子流形的Poincaré对偶"></a>横截相交子流形的Poincaré对偶</h3><p>称$M$中两个子流形$R,S$为横截相交的, 若$\,\forall\,x\in R\cap S$,
+$T_xR+T_xS=T_xM$.</p>
+<p>设$R,S$为流形$M$中横截相交的闭子流形,
+则$R\cap S$也是闭子流形且$\dim R\cap S=\dim R+\dim S-\dim M$.
+进一步$\operatorname{codim}_M R\cap S=\operatorname{codim}_M R+\operatorname{codim}_M S$.</p>
+<p>$R\cap S$在$M$中法丛$N_{(R\cap S)/M}=(N_{R/M}\oplus N_{S/M}) |_{R\cap S}$.
+将法丛嵌入到$M$中为管状邻域,
+则$\Phi(N_{(R\cap S)/M})=\Phi(N_{R/M})\wedge \Phi(N_{S/M})$,
+从而$\eta_{R\cap S}=\eta_R\wedge \eta_S$.</p>
+<p><strong>命题 1.2</strong>. <em>两个横截相交闭子流形的交的Poincaré对偶等于这两个子流形的Poincaré对偶的外积.</em> </p>
+<h3 id="Poincare对偶的拉回"><a href="#Poincare对偶的拉回" class="headerlink" title="Poincaré对偶的拉回"></a>Poincaré对偶的拉回</h3><p>设$f:M&#39;\rightarrow M$是光滑映射, $S$是$M$的闭子流形.
+若$\,\forall\,x\in f^{-1}(S)$, $f_\ast (T_x M&#39;)+T_{f(x)}S=T_{f(x)}M$,
+则称映射$f$横截于子流形$S$.
+即$f(M&#39;)$要么与子流形$S$不相交($f^{-1}(S)=\varnothing$自动成立),
+要么横截相交($f_\ast (T_x M&#39;)=T_{f(x)}f(M&#39;)$).</p>
+<p>这时, $f^{-1}(S)$是$M&#39;$的光滑子流形, 且任意$S$在$M$中的管状邻域$T$,
+$f^{-1}T$是$f^{-1}(S)$在$M&#39;$中的管状邻域. 由Thom类的函子性,
+$f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
+这时我们有$f^\ast \eta_S=f^\ast j_\ast \Phi(T)=j_\ast \mathcal{T}f^\ast (1)=j_\ast \Phi(f^{-1}T)=\eta_{f^{-1}(S)}$.
+即:</p>
+<p><strong>命题 1.3</strong>. <em>设$f:M&#39;\rightarrow M$是光滑映射, 横截于$M$的闭子流形$S$. 若$[\eta_S]$是$S$在$M$中的Poincaré对偶, 则$f^\ast [\eta_S]$是$f^{-1}(S)$在$M&#39;$中的Poincaré对偶.</em> </p>
+<p>文章最后更新于 2021-10-10 21:10:53 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    This section explains how to relate the Poincaré duality of a submanifold to the Thom class of vector bundles on the submanifold.
-
-Shang Cong
-----
-
-Say $F$ is a rank$k$**subbundle** of a rank$n$ vector bundle$E$, if $\,\forall\,x\in M$,
-$F_x$ is $E_x$ subspace.
-
-From this we can define the **quotient cluster**$Q=E/F$,
-It is a vector bundle such that $0\rightarrow F\rightarrow E\rightarrow Q\rightarrow 0$ is exact.
-That is, $\,\forall\,x\in M$, $Q_x=E_x/F_x$ is the quotient space.
-
-First, take the natural frame in $F$, and then expand it to a set of frames in $E$,
-In this way, their local trivializations are compatible. Let the local trivialization transfer function of $E$ be $g_{\alpha\beta},$
-$F$ is $h_{\alpha\beta}.$, then for the point on $F$, only $h_{\alpha\beta}$ works,
-Thus $g_{\alpha\beta}=\begin{pmatrix}
-            h_{\alpha\beta} & *\\
-0 & q_{\alpha\beta}
-        \end{pmatrix}$. Then $q_{\alpha\beta}$ is the transfer function of $Q$.
-It is easy to see that if $E, F$ can be oriented, $Q$ can also be oriented, it is said that the orientation of $Q$ makes the orientation of $E$ be straight and oriented.
-
-Because we have an inner product, there is an orthogonal complementary space $F_x^\perp\subset E_x$ on the fiber.
-Then $F^\perp=\bigsqcup F_x^\perp$ is a subbundle of $E$ and $E=F\oplus F^\perp$,
-There is also an inner product inherited from $E$. Obviously $Q\cong F^\perp$,
-Therefore, there is also an induced inner product on $Q/E$. There is also an orientation on $F^\perp$ such that the orientation of $E$ is straight and directed.
-
-Submanifold normal bundle and tubular neighborhood lemma
---------------------------
-
-$k$-dimensional submanifold $S\subset M$, there are tangent bundles $TS$ and $i^{-1}TM=TM|_S$ on $S$,
-$i$ is an inclusion mapping.
-
-Obviously $TS\subset TM|_S$. Define $N_{S/M}=TM|_S/TS$, abbreviated as $N$. If $M, S$ can be oriented,
-Then the tangent bundle can be oriented, so $N$ can be oriented.
-$\,\forall\,x\in S$, there is $x$ point coordinate card $(U,\phi)$,
-Let $\phi|_{S\cap U}$ be the coordinate card of $x$ in $S$, and only the first $k$ coordinates have values.
-This induces a frame on the tangent bundle. Restricted to $U_\alpha$ or $U_\alpha\cap S$,
-Let $TM$ frame be $\{\frac{\partial {} }{\partial {}x_A^\alpha}\}_{1\le A\le n}$,
-The $TS$ frame is $\{\frac{\partial {} }{\partial {}x_i^\alpha}\}_{1\le i\le k}$,
-The $N$ frame is $\{\frac{\partial {} }{\partial {}x_a^\alpha}\}_{k+1\le a\le n}$.
-
-On $S\cap U_{\alpha\beta}$,
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>本节解释如何将子流形Poincaré对偶与子流形上向量丛的Thom类联系起来.</p>
+<h2 id="商丛"><a href="#商丛" class="headerlink" title="商丛"></a>商丛</h2><p>称$F$是秩$n$向量丛$E$的秩$k$<strong>子丛</strong>, 若$\,\forall\,x\in M$,
+$F_x$为$E_x$子空间.</p>
+<p>由此可定义<strong>商丛</strong>$Q=E/F$,
+它是一个向量丛使得$0\rightarrow F\rightarrow E\rightarrow Q\rightarrow 0$正合.
+即$\,\forall\,x\in M$, $Q_x=E_x/F_x$为商空间.</p>
+<p>首先, 先取$F$中自然标架, 再扩张为$E$的一组标架,
+这样它们的局部平凡化相容. 设$E$的局部平凡化转移函数为$g_{\alpha\beta},$
+$F$为$h_{\alpha\beta}.$ 则对于$F$上的点, 只有$h_{\alpha\beta}$起作用,
+从而有$g_{\alpha\beta}=\begin{pmatrix}
+            h_{\alpha\beta} &amp; *\\
+            0 &amp; q_{\alpha\beta}
+        \end{pmatrix}$. 那么$q_{\alpha\beta}$便是$Q$的转移函数.
+易见若$E,F$可定向, $Q$也可定向, 称$Q$的定向使得$E$的定向是直和定向.</p>
+<p>因为我们有内积, 所以纤维上有正交补空间$F_x^\perp\subset E_x$.
+那么$F^\perp=\bigsqcup F_x^\perp$是$E$的子丛且$E=F\oplus F^\perp$,
+其上还有继承于$E$的内积. 显然$Q\cong F^\perp$,
+从而$Q/E$上也有诱导的内积. $F^\perp$上也有定向使得$E$的定向为直和定向.</p>
+<h2 id="子流形法丛与管状邻域引理"><a href="#子流形法丛与管状邻域引理" class="headerlink" title="子流形法丛与管状邻域引理"></a>子流形法丛与管状邻域引理</h2><p>$k$维子流形$S\subset M$, $S$上有切丛$TS$与$i^{-1}TM=TM|_S$,
+$i$为包含映射.</p>
+<p>显然$TS\subset TM|_S$. 定义$N_{S/M}=TM|_S/TS$, 简记为$N$. 若$M,S$可定向,
+则切丛可定向, 从而$N$可定向.</p>
+<p>$\,\forall\,x\in S$, 存在$x$点坐标卡$(U,\phi)$,
+使得$\phi|_{S\cap U}$为$x$在$S$中坐标卡, 且只有前$k$个坐标有值.
+由此诱导切丛上的标架. 限制在$U_\alpha$或$U_\alpha\cap S$上,
+记$TM$标架为$\{\frac{\partial {} }{\partial {}x_A^\alpha}\}_{1\le A\le n}$,
+$TS$标架为$\{\frac{\partial {} }{\partial {}x_i^\alpha}\}_{1\le i\le k}$,
+$N$标架为$\{\frac{\partial {} }{\partial {}x_a^\alpha}\}_{k+1\le a\le n}$.</p>
+<p>在$S\cap U_{\alpha\beta}$上,
 $\frac{\partial {}x_a^\alpha}{\partial {}x_i^\beta}=0$,
-Therefore, the $TS$ transfer function is $h_{\alpha\beta}=(\frac{\partial {}x_j^\alpha}{\partial {}x_i^\beta})_{k\times k}$.
-
-However,
-$\frac{\partial {}x_j^\alpha}{\partial {}x_a^\beta}$ is obviously not necessarily $0$,
-But we modeled out this part when we were doing the business cluster.
-Therefore, the transfer function of $N$ is $q_{\alpha\beta}=(\frac{\partial {}x_b^\alpha}{\partial {}x_a^\beta})_{(n-k)\times (n-k)}$.
-The transfer function of $TM|_S$ is $g_{\alpha\beta}=\begin{pmatrix}
-h_{\alpha\beta} & *\\
-            0 & q_{\alpha\beta}
-        \end{pmatrix}=(\frac{\partial {}x_A^\alpha}{\partial {}x_B^\beta})_{n\times n}$.
-
-We have the following important theorem. For proof, please refer to other differential manifold textbooks.
-**Theorem 1.1** (Tubular Neighborhood Theorem). *There is $j$ that embeds $N$ into $M$, and $j\circ s=i$, that is, the zero section is mapped to $S$.*
-
-The open set $j(N)\subset M$ is called a tubular neighborhood, denoted as $T$.
-
-Poincaré duality and Thom class
--------------------
-Let $\Phi$ be the Thom class of the $S$ method bundle $N$, then it is isomorphic to Thom,
+因此$TS$转移函数为$h_{\alpha\beta}=(\frac{\partial {}x_j^\alpha}{\partial {}x_i^\beta})_{k\times k}$.</p>
+<p>然而,
+$\frac{\partial {}x_j^\alpha}{\partial {}x_a^\beta}$显然不一定为$0$,
+但我们在做商丛时模掉了这部分,
+因此$N$的转移函数为$q_{\alpha\beta}=(\frac{\partial {}x_b^\alpha}{\partial {}x_a^\beta})_{(n-k)\times (n-k)}$.
+$TM|_S$的转移函数即为$g_{\alpha\beta}=\begin{pmatrix}
+            h_{\alpha\beta} &amp; *\\
+            0 &amp; q_{\alpha\beta}
+        \end{pmatrix}=(\frac{\partial {}x_A^\alpha}{\partial {}x_B^\beta})_{n\times n}$.</p>
+<p>我们有如下重要定理, 证明可参考其它微分流形教材.</p>
+<p><strong>定理 1.1</strong> (管状邻域定理). <em>存在$j$将$N$嵌入$M$, 且$j\circ s=i$, 即将零截面映到$S$.</em> </p>
+<p>称开集$j(N)\subset M$为管状邻域, 记为$T$.</p>
+<h2 id="Poincare对偶与Thom类"><a href="#Poincare对偶与Thom类" class="headerlink" title="Poincaré对偶与Thom类"></a>Poincaré对偶与Thom类</h2><p>记$\Phi$为$S$法丛$N$的Thom类, 则由Thom同构,
 $H^\ast (S)\cong H_{cv}^{\ast +n-k}(N)\cong H_{cv}^{\ast +n-k}(T)\rightarrow H^{\ast +n-k}(M)$,
-The last mapping is zero continuation.
-**Lemma 1.1**. *Closed Poincaré duality of $S$$[\eta_S]=j_\ast \Phi\in H^{n-k}(M)$,*
+最后一个映射为零延拓.</p>
+<p><strong>引理 1.1</strong>. <em>$S$的闭Poincaré对偶$[\eta_S]=j_\ast \Phi\in H^{n-k}(M)$,</em> </p>
+<p><strong>证:</strong> 只需证明$j_\ast \Phi$满足对偶性质. 记$l:S\rightarrow T$为包含,
+其为$\pi:T\rightarrow S$为零截面. 它们在上同调的层面为互逆的,
+从而$\omega|_T=\pi^\ast l^\ast (\omega|_T)+d\tau$, $\tau\in \Omega^{k-1}(T)$</p>
+<p>$$\begin{aligned}
+                \int_M\omega\wedge j_*\Phi&amp;=\int_T\omega|_T\wedge \Phi &amp; j_*\text{为零延拓}\\
+                &amp;=\int_T \pi^*l^*(\omega|_T)\wedge \Phi+\int_T d\tau \wedge \Phi&amp;\\
+                &amp;=\int_S l^*(\omega|_T)\wedge \pi_*\Phi&amp;\text{Stokes定理+投射公式}\\
+                &amp;=\int_S i^*\omega.&amp;\pi_*\Phi=1\quad+\quad{\omega|_T}|_S=\omega|_S
+            \end{aligned}$$</p>
+<p>又因为子流形$S$在$M$中的管状邻域可充分小, 我们得到:</p>
+<p><strong>命题 1.1</strong> (局部化原理). <em>闭子流形$S$的Poincaré对偶的支集可缩小到$S$任意给定的管状邻域中.</em> </p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><h3 id="横截相交子流形的Poincare对偶"><a href="#横截相交子流形的Poincare对偶" class="headerlink" title="横截相交子流形的Poincaré对偶"></a>横截相交子流形的Poincaré对偶</h3><p>称$M$中两个子流形$R,S$为横截相交的, 若$\,\forall\,x\in R\cap S$,
+$T_xR+T_xS=T_xM$.</p>
+<p>设$R,S$为流形$M$中横截相交的闭子流形,
+则$R\cap S$也是闭子流形且$\dim R\cap S=\dim R+\dim S-\dim M$.
+进一步$\operatorname{codim}_M R\cap S=\operatorname{codim}_M R+\operatorname{codim}_M S$.</p>
+<p>$R\cap S$在$M$中法丛$N_{(R\cap S)/M}=(N_{R/M}\oplus N_{S/M}) |_{R\cap S}$.
+将法丛嵌入到$M$中为管状邻域,
+则$\Phi(N_{(R\cap S)/M})=\Phi(N_{R/M})\wedge \Phi(N_{S/M})$,
+从而$\eta_{R\cap S}=\eta_R\wedge \eta_S$.</p>
+<p><strong>命题 1.2</strong>. <em>两个横截相交闭子流形的交的Poincaré对偶等于这两个子流形的Poincaré对偶的外积.</em> </p>
+<h3 id="Poincare对偶的拉回"><a href="#Poincare对偶的拉回" class="headerlink" title="Poincaré对偶的拉回"></a>Poincaré对偶的拉回</h3><p>设$f:M&#39;\rightarrow M$是光滑映射, $S$是$M$的闭子流形.
+若$\,\forall\,x\in f^{-1}(S)$, $f_\ast (T_x M&#39;)+T_{f(x)}S=T_{f(x)}M$,
+则称映射$f$横截于子流形$S$.
+即$f(M&#39;)$要么与子流形$S$不相交($f^{-1}(S)=\varnothing$自动成立),
+要么横截相交($f_\ast (T_x M&#39;)=T_{f(x)}f(M&#39;)$).</p>
+<p>这时, $f^{-1}(S)$是$M&#39;$的光滑子流形, 且任意$S$在$M$中的管状邻域$T$,
+$f^{-1}T$是$f^{-1}(S)$在$M&#39;$中的管状邻域. 由Thom类的函子性,
+$f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
+这时我们有$f^\ast \eta_S=f^\ast j_\ast \Phi(T)=j_\ast \mathcal{T}f^\ast (1)=j_\ast \Phi(f^{-1}T)=\eta_{f^{-1}(S)}$.
+即:</p>
+<p><strong>命题 1.3</strong>. <em>设$f:M&#39;\rightarrow M$是光滑映射, 横截于$M$的闭子流形$S$. 若$[\eta_S]$是$S$在$M$中的Poincaré对偶, 则$f^\ast [\eta_S]$是$f^{-1}(S)$在$M&#39;$中的Poincaré对偶.</em> </p>
+<p>文章最后更新于 2021-10-10 21:10:53 </p>
 
-**Proof:** We only need to prove that $j_\ast \Phi$ satisfies the duality property. Let $l:S\rightarrow T$ be included,
-It is $\pi:T\rightarrow S$ with zero cross section. They are mutually inverse at the level of cohomology,
-Thus $\omega|_T=\pi^\ast l^\ast (\omega|_T)+d\tau$, $\tau\in \Omega^{k-1}(T)$
-
-$$\begin{aligned}
-                \int_M\omega\wedge j_*\Phi&=\int_T\omega|_T\wedge \Phi & j_*\text{为零延拓}\\
-                &=\int_T \pi^*l^*(\omega|_T)\wedge \Phi+\int_T d\tau \wedge \Phi&\\
-                &=\int_S l^*(\omega|_T)\wedge \pi_*\Phi&\text{Stokes定理+投射公式}\\
-                &=\int_S i^*\omega.&\pi_*\Phi=1\quad+\quad{\omega|_T}|_S=\omega|_S
-            \end{aligned}$$
-
-And because the tubular neighborhood of submanifold $S$ in $M$ can be sufficiently small, we get:
-**Proposition 1.1** (Localization principle). *The support of the Poincaré dual of a closed submanifold $S$ can be reduced to any given tubular neighborhood of $S$.*
-
-Application
-----
-
-### Poincaré duality of transversal intersecting submanifolds
-
-Two submanifolds $R, S$ in $M$ are said to intersect transversely, if $\,\forall\,x\in R\cap S$,
-$T_xR+T_xS=T_xM$.
-Let $R, S$ be the closed submanifolds that intersect transversely in the manifold $M$,
-Then $R\cap S$ is also a closed submanifold and $\dim R\cap S=\dim R+\dim S-\dim M$.
-Further$\operatorname{codim}_M R\cap S=\operatorname{codim}_M R+\operatorname{codim}_M S$.
-$R\cap S$ is in $M$ with the French bundle $N_{(R\cap S)/M}=(N_{R/M}\oplus N_{S/M}) |_{R\cap S}$.
-Embedding the normal bundle into $M$ is a tubular neighborhood,
-Then $\Phi(N_{(R\cap S)/M})=\Phi(N_{R/M})\wedge \Phi(N_{S/M})$,
-Thus $\eta_{R\cap S}=\eta_R\wedge \eta_S$.
-
-**Proposition 1.2**. *The Poincaré duality of the intersection of two transversely intersecting closed submanifolds is equal to the outer product of the Poincaré duality of the two submanifolds.*
-
-### Pullback of Poincaré duality
-
-Let $f:M'\rightarrow M$ be a smooth map, and $S$ be the closed submanifold of $M$.
-If $\,\forall\,x\in f^{-1}(S)$, $f_\ast (T_x M')+T_{f(x)}S=T_{f(x)}M$,
-Then the map $f$ is said to be transverse to the submanifold $S$.
-That is, $f(M')$ is either disjoint with the submanifold $S$ ($f^{-1}(S)=\varnothing$ is automatically established),
-Either crosswise intersection ($f_\ast (T_x M')=T_{f(x)}f(M')$).
-
-At this time, $f^{-1}(S)$ is a smooth submanifold of $M'$, and any tubular neighborhood $T$ of $S$ in $M$,
-$f^{-1}T$ is the tubular neighborhood of $f^{-1}(S)$ in $M'$. According to the functor property of Thom class,
-$f^\ast $ can be replaced with $\mathcal{T}$, $j_\ast $.
-At this time we have $f^\ast \eta_S=f^\ast j_\ast \Phi(T)=j_\ast \mathcal{T}f^\ast (1)=j_\ast \Phi(f^{-1}T)=\eta_{f^{-1}(S)}$.
-That is:
-**Proposition 1.3**. *Suppose $f:M'\rightarrow M$ is a smooth map, a closed submanifold $S$ transverse to $M$. If $[\eta_S]$ is the Poincaré dual of $S$ in $M$, then $f^\ast [\eta_S]$ is the Poincaré dual of $f^{-1}(S)$ in $M'$.*
-
-The article was last updated on 2021-10-10 21:10:53
                 </div>
             
         </div>
@@ -357,7 +404,7 @@ The article was last updated on 2021-10-10 21:10:53
     <ul>
         <li>本文标题：《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-10 21:10:51</li>
+        <li>创建时间：2021-10-11 00:10:51</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/10/10/《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类/
         </li>
@@ -389,7 +436,7 @@ The article was last updated on 2021-10-10 21:10:53
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (6-4) - Explicit representation of Thom class of plane bundles</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (6-4) - Explicit Representation of Thom Class of Planar Plexus</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -411,7 +458,7 @@ The article was last updated on 2021-10-10 21:10:53
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第二章-切丛(1)</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 2-Tangential Cluster (1)</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifold Chapter 2 - Tangent Plexus (1)</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -663,11 +710,11 @@ The article was last updated on 2021-10-10 21:10:53
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%86%E4%B8%9B"><span class="nav-text">商丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2%E6%B3%95%E4%B8%9B%E4%B8%8E%E7%AE%A1%E7%8A%B6%E9%82%BB%E5%9F%9F%E5%BC%95%E7%90%86"><span class="nav-text">子流形法丛与管状邻域引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Poincare%E5%AF%B9%E5%81%B6%E4%B8%8EThom%E7%B1%BB"><span class="nav-text">Poincaré对偶与Thom类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E7%9B%B8%E4%BA%A4%E5%AD%90%E6%B5%81%E5%BD%A2%E7%9A%84Poincare%E5%AF%B9%E5%81%B6"><span class="nav-text">横截相交子流形的Poincaré对偶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Poincare%E5%AF%B9%E5%81%B6%E7%9A%84%E6%8B%89%E5%9B%9E"><span class="nav-text">Poincaré对偶的拉回</span></a></li></ol></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%95%86%E4%B8%9B"><span class="nav-text">商丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2%E6%B3%95%E4%B8%9B%E4%B8%8E%E7%AE%A1%E7%8A%B6%E9%82%BB%E5%9F%9F%E5%BC%95%E7%90%86"><span class="nav-text">子流形法丛与管状邻域引理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Poincare%E5%AF%B9%E5%81%B6%E4%B8%8EThom%E7%B1%BB"><span class="nav-text">Poincaré对偶与Thom类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E7%9B%B8%E4%BA%A4%E5%AD%90%E6%B5%81%E5%BD%A2%E7%9A%84Poincare%E5%AF%B9%E5%81%B6"><span class="nav-text">横截相交子流形的Poincaré对偶</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Poincare%E5%AF%B9%E5%81%B6%E7%9A%84%E6%8B%89%E5%9B%9E"><span class="nav-text">Poincaré对偶的拉回</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -718,6 +765,36 @@ The article was last updated on 2021-10-10 21:10:53
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -741,46 +818,6 @@ The article was last updated on 2021-10-10 21:10:53
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

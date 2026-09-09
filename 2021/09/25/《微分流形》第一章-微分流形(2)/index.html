@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第一章-微分流形(2)</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 1 - Differential Manifolds (2)</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds, Chapter 1 - Differential Manifolds (2)</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-25 13:12:19
+        <i class="fas fa-edit"></i>&nbsp;2021-09-25 16:12:19
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,94 +230,154 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="拓扑流形"><a href="#拓扑流形" class="headerlink" title="拓扑流形"></a>拓扑流形</h2><ul>
+<li><p>局部道路连通(坐标邻域);</p>
+</li>
+<li><p>连通$\Leftrightarrow$道路连通(局部道路连通);</p>
+</li>
+<li><p>连通分支可数(第二可数性);</p>
+</li>
+<li><p>局部紧(局部欧氏).</p>
+</li>
+</ul>
+<p>第二可数性 + 局部紧 $\Rightarrow$ <strong>仿紧性</strong>(任意开覆盖有开的,
+局部有限的加细).</p>
+<p>局部有限: 称覆盖$\{A_\alpha\}$是<strong>局部有限</strong>的, 若$\,\forall\,p\in M,$
+$\,\exists\,$邻域$U\ni p$使得$U$只与有限个$A_\alpha$相交.</p>
+<h2 id="微分流形例子"><a href="#微分流形例子" class="headerlink" title="微分流形例子"></a>微分流形例子</h2><p>研究微分流形上的微积分需要$C^\infty$微分结构$[\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}].$
+$C^\infty$流形=拓扑流形+$C^\infty$结构.</p>
+<p>$M$为$C^\infty$流形, $[\mathcal{F}]=[\{(U_\alpha,\varphi_\alpha)\}],$
+$U\subset M$为开子集. 那么$U$也是拓扑流形,
+同时有诱导的$C^\infty$坐标图册$[\mathcal{F}_U]=[\{U_\alpha\cap U,\varphi_\alpha|_{U\cap U_\alpha}\}]$,
+从而$U$也是$C^\infty$流形, 称为<strong>开子流形</strong>.</p>
+<p>$m$阶方阵全体$M_m=\{(a_{ij})_{m\times m}|a_{ij}\in \mathbb{R}\}\leftrightarrow \mathbb{R}^{m^2},$
+为向量空间的同构. 因此也可视为一个$C^\infty$流形.</p>
+<p>$GL(m,\mathbb{R}):=\{A\in M_{m}|\det A\neq 0\}\subset M_m=\mathbb{R}^{m^2}.$
+$\det:M_m\rightarrow \mathbb{R}$为连续函数.
+由于$GL(m,\mathbb{R})=(\det)^{-1}(\mathbb{R}\setminus \{0\})$为$M_m$的开子集,
+它是开子流形. 因此$GL(m,\mathbb{R})$也是一个$m^2$维$C^\infty$流形,
+称为($\mathbb{R}$上)<strong>一般线性群</strong>, 以矩阵乘法为群上运算.</p>
+<p>后面将说明, 矩阵乘法与求逆运算均为$C^\infty$流形间的$C^\infty$映照,
+给出了其上两种结构($C^\infty$流形结构与群结构)之间的关系.
+这样的群称为<strong>李群(Lie Group)</strong>.</p>
+<p>设$(M^m,[\mathcal{F}=\{(U_{\alpha},\varphi_\alpha)\}]),$
+$(N^n,[\widetilde {\mathcal{F} }=\{(V_\beta,\psi_\beta)\}])$是$C^\infty$流形.
+赋予$M^m\times N^n$积拓扑,
+即$U\times V$为开子集当且仅当两者分别为各自空间开子集.
+容易验证$M^m\times N^n$是一个$m+n$维拓扑流形,
+以$[\mathcal{F}\times \widetilde {\mathcal{F} }:=\{(U_{\alpha}\times V_{\beta},\varphi_\alpha\times \psi_\beta)\}]$为$C^\infty$坐标图册,
+成为$C^\infty$微分流形. 称$M\times N$为$M,N$的<strong>积流形</strong>.
+可归纳定义$M_1\times\cdots\times M_k.$</p>
+<p>$\mathbb{R}^{m+1}\setminus \{0\}$引入等价关系$\sim,$
+$x\sim y\Leftrightarrow x=\lambda y.$
+商空间$M=\mathbb{R}^{m+1}\setminus\{0\}/_\sim,$ 赋予<strong>商拓扑</strong>,
+即$U\subset M$为开子集$\Leftrightarrow$ $\pi^{-1}(U)$为原空间开子集,
+其中$\pi:x\mapsto [x]$为<strong>自然投影</strong>. $[x]$可视为过原点的直线,
+或球面上的两点粘贴. 可以说明<em>商拓扑是Hausdorff, 第二可数的</em>.</p>
+<p>令开集$U_i=\{[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0\},$
+$(x^1,\cdots,x^{m+1})$称为$[x]$的<strong>齐次坐标</strong>.
+$M=\bigcup_{i=1}^{m+1} U_i.$
+定义同胚$\varphi_i:U_i\rightarrow \mathbb{R}^m,$
+$[x]\mapsto\frac{1}{x_i}(x^1,\cdots, \widehat{x^{i} },\cdots, x^{m+1}).$
+$(U_i,\varphi_i)$即为$M$的一个坐标图册. 称对应的坐标为<strong>非齐次坐标</strong>.</p>
+<p>记$\xi_{(i)}^k=\frac{x^k}{x^i}.$ 任取$1\le i&lt;j\le m+1,$
+$U_i\cap U_j$上坐标变换为$\xi_{(i)}^j\mapsto \xi_{(j)}^i=\frac{1}{\xi_{(i)}^j},$
+$\xi_{(i)}^l\mapsto \xi_{(j)}^l=\frac{\xi^l_{(i)} }{\xi_{(i)}^j},$
+$l\neq i,j,$ 是$\mathbb{R}^m$上的$C^\infty$映射,
+因此坐标图册是$C^\infty$的.
+从而$(M,[\{(U_i,\varphi_i)\}])$成为$m$维$C^\infty$流形,
+记为<strong>实射影空间</strong>$\mathbb{R}\mathrm{P}^m.$</p>
+<p>取$\mathbb{R}^N$为$N$维欧氏空间,
+记$G_{k,N}=\{\text{$P$为$\mathbb{R}^N$的$k$维子空间}\}.$
+赋予拓扑与$C^\infty$结构使之成为一个$C^\infty$流形, 称为Grassman流形.
+易见$G_{1,N}=\mathbb{R}\mathrm{P}^{N-1}.$</p>
+<h2 id="流形间的映射"><a href="#流形间的映射" class="headerlink" title="流形间的映射"></a>流形间的映射</h2><p>设$(M^m,[\mathcal{F}])$是$C^\infty$流形, $f:M\rightarrow \mathbb{R}.$
+$\,\forall\,p\in M,$
+若存在含$p$的<strong>允许坐标系</strong>$(U,\varphi)$使$f\circ \varphi^{-1}\in C^\infty(\varphi(U)),$
+则称$f$在$p$点是$C^\infty$的.
+称$(f\circ \varphi^{-1})(x^1,\cdots,x^m)$为<strong>局部表示</strong>.
+这里<strong>允许坐标系</strong>指包含在$[\mathcal{F}]$极大坐标图册中的坐标卡.
+如果$f$点点$C^\infty,$ 则称$f\in C^\infty(M).$</p>
+<p><strong>注 1.1</strong>. <em>上述概念与坐标系选取无关. 注意$f$在$p$点$C^\infty$等价于$f\circ \varphi^{-1}$在$\varphi(p)$某个小邻域$C^\infty.$</em> </p>
+<p><strong>注 1.2</strong>. <em>类似可给出$f$在$p$点是$C^r$的, 以及$f\in C^r(M)$的定义.</em> </p>
+<p>文章最后更新于 2021-09-25 16:22:50 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    topological manifold
---------
-
-- Local road connectivity (coordinate neighborhood);
-
-- Connected $\Leftrightarrow$ road connected (local road connected);
-
-- Connected branches are countable (second countability);
-
-- Locally compact (locally Euclidean).
-
-Second countability + local compactness $\Rightarrow$ **Paracompactness** (Any open covering is open,
-Limited local detailing).
-Locally finite: The coverage $\{A_\alpha\}$ is said to be **locally finite**, if $\,\forall\,p\in M,$
-$\,\exists\,$Neighborhood $U\ni p$ makes $U$ intersect only a limited number of $A_\alpha$.
-
-Differential manifold example
-----------
-Studying calculus on differential manifolds requires $C^\infty$ differential structures $[\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}].$
-$C^\infty$ manifold = topological manifold + $C^\infty$ structure.
-
-$M$ is the $C^\infty$ manifold, $[\mathcal{F}]=[\{(U_\alpha,\varphi_\alpha)\}],$
-$U\subset M$ is an open subset. Then $U$ is also a topological manifold,
-At the same time, there is an induced $C^\infty$ coordinate atlas $[\mathcal{F}_U]=[\{U_\alpha\cap U,\varphi_\alpha|_{U\cap U_\alpha}\}]$,
-Therefore $U$ is also a $C^\infty$ manifold, which is called an **open submanifold**.
-All square matrices of order $m$$M_m=\{(a_{ij})_{m\times m}|a_{ij}\in \mathbb{R}\}\leftrightarrow \mathbb{R}^{m^2},$
-is the isomorphism of the vector space. Therefore, it can also be regarded as a $C^\infty$ manifold.
-$GL(m,\mathbb{R}):=\{A\in M_{m}|\det A\neq 0\}\subset M_m=\mathbb{R}^{m^2}.$
-$\det:M_m\rightarrow \mathbb{R}$ is a continuous function.
-Since $GL(m,\mathbb{R})=(\det)^{-1}(\mathbb{R}\setminus \{0\})$ is an open subset of $M_m$,
-It is an open submanifold. Therefore $GL(m,\mathbb{R})$ is also an $m^2$ dimensional $C^\infty$ manifold,
-It is called ($\mathbb{R}$ on)** general linear group**, and matrix multiplication is used as the upper operation on the group.
-It will be explained later that matrix multiplication and inversion operations are $C^\infty$ mappings between $C^\infty$ manifolds.
-The relationship between the above two structures ($C^\infty$ manifold structure and group structure) is given.
-Such a group is called a Lie Group.
-
-Let $(M^m,[\mathcal{F}=\{(U_{\alpha},\varphi_\alpha)\}]),$
-$(N^n,[\widetilde {\mathcal{F} }=\{(V_\beta,\psi_\beta)\}])$ is a $C^\infty$ manifold.
-Given $M^m\times N^n$ product topology,
-That is, $U\times V$ is an open subset if and only if both are open subsets of their respective spaces.
-It is easy to verify that $M^m\times N^n$ is an $m+n$ dimensional topological manifold,
-Taking $[\mathcal{F}\times \widetilde {\mathcal{F} }:=\{(U_{\alpha}\times V_{\beta},\varphi_\alpha\times \psi_\beta)\}]$ as the $C^\infty$ coordinate atlas,
-Becomes a $C^\infty$ differential manifold. Call $M\times N$ the **product manifold** of $M, N$.
-It can be defined inductively $M_1\times\cdots\times M_k.$
-
-$\mathbb{R}^{m+1}\setminus \{0\}$ introduces the equivalence relationship $\sim,$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="拓扑流形"><a href="#拓扑流形" class="headerlink" title="拓扑流形"></a>拓扑流形</h2><ul>
+<li><p>局部道路连通(坐标邻域);</p>
+</li>
+<li><p>连通$\Leftrightarrow$道路连通(局部道路连通);</p>
+</li>
+<li><p>连通分支可数(第二可数性);</p>
+</li>
+<li><p>局部紧(局部欧氏).</p>
+</li>
+</ul>
+<p>第二可数性 + 局部紧 $\Rightarrow$ <strong>仿紧性</strong>(任意开覆盖有开的,
+局部有限的加细).</p>
+<p>局部有限: 称覆盖$\{A_\alpha\}$是<strong>局部有限</strong>的, 若$\,\forall\,p\in M,$
+$\,\exists\,$邻域$U\ni p$使得$U$只与有限个$A_\alpha$相交.</p>
+<h2 id="微分流形例子"><a href="#微分流形例子" class="headerlink" title="微分流形例子"></a>微分流形例子</h2><p>研究微分流形上的微积分需要$C^\infty$微分结构$[\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}].$
+$C^\infty$流形=拓扑流形+$C^\infty$结构.</p>
+<p>$M$为$C^\infty$流形, $[\mathcal{F}]=[\{(U_\alpha,\varphi_\alpha)\}],$
+$U\subset M$为开子集. 那么$U$也是拓扑流形,
+同时有诱导的$C^\infty$坐标图册$[\mathcal{F}_U]=[\{U_\alpha\cap U,\varphi_\alpha|_{U\cap U_\alpha}\}]$,
+从而$U$也是$C^\infty$流形, 称为<strong>开子流形</strong>.</p>
+<p>$m$阶方阵全体$M_m=\{(a_{ij})_{m\times m}|a_{ij}\in \mathbb{R}\}\leftrightarrow \mathbb{R}^{m^2},$
+为向量空间的同构. 因此也可视为一个$C^\infty$流形.</p>
+<p>$GL(m,\mathbb{R}):=\{A\in M_{m}|\det A\neq 0\}\subset M_m=\mathbb{R}^{m^2}.$
+$\det:M_m\rightarrow \mathbb{R}$为连续函数.
+由于$GL(m,\mathbb{R})=(\det)^{-1}(\mathbb{R}\setminus \{0\})$为$M_m$的开子集,
+它是开子流形. 因此$GL(m,\mathbb{R})$也是一个$m^2$维$C^\infty$流形,
+称为($\mathbb{R}$上)<strong>一般线性群</strong>, 以矩阵乘法为群上运算.</p>
+<p>后面将说明, 矩阵乘法与求逆运算均为$C^\infty$流形间的$C^\infty$映照,
+给出了其上两种结构($C^\infty$流形结构与群结构)之间的关系.
+这样的群称为<strong>李群(Lie Group)</strong>.</p>
+<p>设$(M^m,[\mathcal{F}=\{(U_{\alpha},\varphi_\alpha)\}]),$
+$(N^n,[\widetilde {\mathcal{F} }=\{(V_\beta,\psi_\beta)\}])$是$C^\infty$流形.
+赋予$M^m\times N^n$积拓扑,
+即$U\times V$为开子集当且仅当两者分别为各自空间开子集.
+容易验证$M^m\times N^n$是一个$m+n$维拓扑流形,
+以$[\mathcal{F}\times \widetilde {\mathcal{F} }:=\{(U_{\alpha}\times V_{\beta},\varphi_\alpha\times \psi_\beta)\}]$为$C^\infty$坐标图册,
+成为$C^\infty$微分流形. 称$M\times N$为$M,N$的<strong>积流形</strong>.
+可归纳定义$M_1\times\cdots\times M_k.$</p>
+<p>$\mathbb{R}^{m+1}\setminus \{0\}$引入等价关系$\sim,$
 $x\sim y\Leftrightarrow x=\lambda y.$
-Quotient space $M=\mathbb{R}^{m+1}\setminus\{0\}/_\sim,$ gives **quotient topology**,
-That is, $U\subset M$ is an open subset $\Leftrightarrow$ $\pi^{-1}(U)$ is an open subset of the original space,
-Among them, $\pi:x\mapsto [x]$ is the **natural projection**. $[x]$ can be regarded as a straight line passing through the origin,
-Or two points on the sphere are pasted. It can be said that the * quotient topology is Hausdorff, the second countable *.
-
-Let the open set $U_i=\{[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0\},$
-$(x^1,\cdots,x^{m+1})$ is called the **homogeneous coordinate** of $[x]$.
+商空间$M=\mathbb{R}^{m+1}\setminus\{0\}/_\sim,$ 赋予<strong>商拓扑</strong>,
+即$U\subset M$为开子集$\Leftrightarrow$ $\pi^{-1}(U)$为原空间开子集,
+其中$\pi:x\mapsto [x]$为<strong>自然投影</strong>. $[x]$可视为过原点的直线,
+或球面上的两点粘贴. 可以说明<em>商拓扑是Hausdorff, 第二可数的</em>.</p>
+<p>令开集$U_i=\{[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0\},$
+$(x^1,\cdots,x^{m+1})$称为$[x]$的<strong>齐次坐标</strong>.
 $M=\bigcup_{i=1}^{m+1} U_i.$
-Define homeomorphism$\varphi_i:U_i\rightarrow \mathbb{R}^m,$
+定义同胚$\varphi_i:U_i\rightarrow \mathbb{R}^m,$
 $[x]\mapsto\frac{1}{x_i}(x^1,\cdots, \widehat{x^{i} },\cdots, x^{m+1}).$
-$(U_i,\varphi_i)$ is a coordinate atlas of $M$. The corresponding coordinates are called **non-homogeneous coordinates**.
-Remember $\xi_{(i)}^k=\frac{x^k}{x^i}.$ and choose $1\le i<j\le m+1,$
-The upper coordinate transformation of $U_i\cap U_j$ is $\xi_{(i)}^j\mapsto \xi_{(j)}^i=\frac{1}{\xi_{(i)}^j},$
+$(U_i,\varphi_i)$即为$M$的一个坐标图册. 称对应的坐标为<strong>非齐次坐标</strong>.</p>
+<p>记$\xi_{(i)}^k=\frac{x^k}{x^i}.$ 任取$1\le i&lt;j\le m+1,$
+$U_i\cap U_j$上坐标变换为$\xi_{(i)}^j\mapsto \xi_{(j)}^i=\frac{1}{\xi_{(i)}^j},$
 $\xi_{(i)}^l\mapsto \xi_{(j)}^l=\frac{\xi^l_{(i)} }{\xi_{(i)}^j},$
-$l\neq i,j,$ is the $C^\infty$ mapping on $\mathbb{R}^m$,
-Therefore, the coordinate atlas is $C^\infty$.
-Thus $(M,[\{(U_i,\varphi_i)\}])$ becomes an $m$-dimensional $C^\infty$ manifold,
-Denoted as **real projective space**$\mathbb{R}\mathrm{P}^m.$
-
-Let $\mathbb{R}^N$ be an $N$-dimensional Euclidean space,
-Let $G_{k,N}=\{\text{$P$ be the $k$-dimensional subspace of $\mathbb{R}^N$}\}.$
-Endow the topology and $C^\infty$ structure to make it a $C^\infty$ manifold, called a Grassman manifold.
-It is easy to see $G_{1,N}=\mathbb{R}\mathrm{P}^{N-1}.$
-
-Mapping between manifolds
-----------
-Suppose $(M^m,[\mathcal{F}])$ is a $C^\infty$ manifold, $f:M\rightarrow \mathbb{R}.$
+$l\neq i,j,$ 是$\mathbb{R}^m$上的$C^\infty$映射,
+因此坐标图册是$C^\infty$的.
+从而$(M,[\{(U_i,\varphi_i)\}])$成为$m$维$C^\infty$流形,
+记为<strong>实射影空间</strong>$\mathbb{R}\mathrm{P}^m.$</p>
+<p>取$\mathbb{R}^N$为$N$维欧氏空间,
+记$G_{k,N}=\{\text{$P$为$\mathbb{R}^N$的$k$维子空间}\}.$
+赋予拓扑与$C^\infty$结构使之成为一个$C^\infty$流形, 称为Grassman流形.
+易见$G_{1,N}=\mathbb{R}\mathrm{P}^{N-1}.$</p>
+<h2 id="流形间的映射"><a href="#流形间的映射" class="headerlink" title="流形间的映射"></a>流形间的映射</h2><p>设$(M^m,[\mathcal{F}])$是$C^\infty$流形, $f:M\rightarrow \mathbb{R}.$
 $\,\forall\,p\in M,$
-If there is an **allowed coordinate system**$(U,\varphi)$ containing $p$, let $f\circ \varphi^{-1}\in C^\infty(\varphi(U)),$
-Then $f$ is said to be $C^\infty$ at point $p$.
-Call $(f\circ \varphi^{-1})(x^1,\cdots,x^m)$ a **local representation**.
-Here the **allowed coordinate system** refers to the coordinate card contained in the $[\mathcal{F}]$ maximum coordinate atlas.
-If $f$ points to $C^\infty,$, it is called $f\in C^\infty(M).$
-**Note 1.1**. *The above concepts have nothing to do with the selection of the coordinate system. Note that $f$ at $p$ point $C^\infty$ is equivalent to $f\circ \varphi^{-1}$ in a small neighborhood $C^\infty.$* of $\varphi(p)$
+若存在含$p$的<strong>允许坐标系</strong>$(U,\varphi)$使$f\circ \varphi^{-1}\in C^\infty(\varphi(U)),$
+则称$f$在$p$点是$C^\infty$的.
+称$(f\circ \varphi^{-1})(x^1,\cdots,x^m)$为<strong>局部表示</strong>.
+这里<strong>允许坐标系</strong>指包含在$[\mathcal{F}]$极大坐标图册中的坐标卡.
+如果$f$点点$C^\infty,$ 则称$f\in C^\infty(M).$</p>
+<p><strong>注 1.1</strong>. <em>上述概念与坐标系选取无关. 注意$f$在$p$点$C^\infty$等价于$f\circ \varphi^{-1}$在$\varphi(p)$某个小邻域$C^\infty.$</em> </p>
+<p><strong>注 1.2</strong>. <em>类似可给出$f$在$p$点是$C^r$的, 以及$f\in C^r(M)$的定义.</em> </p>
+<p>文章最后更新于 2021-09-25 16:22:50 </p>
 
-**Note 1.2**. *Similarly, it can be given that $f$ is $C^r$ at point $p$, and the definition of $f\in C^r(M)$.*
-The article was last updated on 2021-09-25 16:22:50
                 </div>
             
         </div>
@@ -328,7 +388,7 @@ The article was last updated on 2021-09-25 16:22:50
     <ul>
         <li>本文标题：《微分流形》第一章-微分流形(2)</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-25 13:12:19</li>
+        <li>创建时间：2021-09-25 16:12:19</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/09/25/《微分流形》第一章-微分流形(2)/
         </li>
@@ -360,7 +420,7 @@ The article was last updated on 2021-09-25 16:22:50
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第一章-流形间的映射</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Chapter 1 of &#34;Differential Manifolds&#34; - Mapping between manifolds</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 1 - Mapping Between Manifolds</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -382,7 +442,7 @@ The article was last updated on 2021-09-25 16:22:50
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(6-2)-Thom同构</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (6-2)-Thom Isomorphism</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (6-2) -Thomomomorphism</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -634,11 +694,11 @@ The article was last updated on 2021-09-25 16:22:50
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E6%B5%81%E5%BD%A2"><span class="nav-text">拓扑流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E4%BE%8B%E5%AD%90"><span class="nav-text">微分流形例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E9%97%B4%E7%9A%84%E6%98%A0%E5%B0%84"><span class="nav-text">流形间的映射</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%93%E6%89%91%E6%B5%81%E5%BD%A2"><span class="nav-text">拓扑流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E4%BE%8B%E5%AD%90"><span class="nav-text">微分流形例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E9%97%B4%E7%9A%84%E6%98%A0%E5%B0%84"><span class="nav-text">流形间的映射</span></a></li></ol>
         </div>
     
 </div>
@@ -689,6 +749,36 @@ The article was last updated on 2021-09-25 16:22:50
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -712,46 +802,6 @@ The article was last updated on 2021-09-25 16:22:50
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

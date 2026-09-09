@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第一章-微分流形(1)</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 1 - Differential Manifolds (1)</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds, Chapter 1 - Differential Manifolds (1)</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-15 16:10:47
+        <i class="fas fa-edit"></i>&nbsp;2021-09-15 19:10:47
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,98 +230,152 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="流形基本概念与例子"><a href="#流形基本概念与例子" class="headerlink" title="流形基本概念与例子"></a>流形基本概念与例子</h2><h3 id="拓扑"><a href="#拓扑" class="headerlink" title="拓扑"></a>拓扑</h3><ul>
+<li><p>$M,N$为两拓扑空间, $\varphi:M\rightarrow N$为双射,
+且$\varphi$和$\varphi^{-1}$都是连续的,
+则称$\varphi:M\rightarrow N$为<strong>同胚</strong>. <em>同胚的拓扑空间视为一样的.</em></p>
+</li>
+<li><p>如果拓扑空间具有可数拓扑基, 则称$M$满足<strong>第二可数公理</strong>.</p>
+</li>
+<li><p>设$M$为拓扑空间,
+如果$\,\forall\,p,q\in M$存在含$p$和$q$的开邻域$U$和$V$,
+使$U\cap V=\varnothing$, 则称$M$是<strong>Hausdorff</strong>的(满足第二分离公理).</p>
+</li>
+</ul>
+<p>欧氏空间$\mathbb{R}^m$为向量空间, 其上有加法, 有数乘.
+一般用$l^2$距离定义$\mathbb{R}^m$上距离$d,$
+$(\mathbb{R}^m,d)$成为度量空间, 由开球$B(x,r)$全体定义拓扑(构成拓扑基).</p>
+<p>给定开集$U\subset\mathbb{R}^m,$ 函数$f:U\rightarrow \mathbb{R}.$
+若$0\le r\le \infty,$ $f$直到$r$阶偏导存在且连续, 则记$f\in C^r(U).$
+若$f$可展开为幂级数, 称其为<strong>解析函数</strong>, 记$f\in C^\omega(U).$</p>
+<p>设$F:U\rightarrow V,$ $U\subset \mathbb{R}^m,$
+$V\subset \mathbb{R}^n$为开子集,
+$F(x)=(f^1(x^1,\cdots x^m),\cdots, f^n(x^1,\cdots, x^m)).$
+若$f^i\in C^r(U),$ $1\le i\le n,$ 则记$F\in C^r(U,V).$</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>曲线- $F:(a,b)\rightarrow \mathbb{R}^3$</p>
+<p>曲面片- 同胚$F:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$</p>
+<p>任意过点$p$曲线可表为$C(t)=F(u(t),v(t)),$
+切向量$C&#39;(t_0)=F_uu&#39;(t_0)+F_vv&#39;(t_0).$ 默认要求$F_u\times F_v\neq 0,$
+称其满足<strong>正则性</strong>. 切向量全体张成一个平面, 称为<strong>切平面</strong>.</p>
+<p>球面无法用单张曲面片来描述(紧性, 同调群...) 但可以用若干张曲面片来描述.</p>
+<h3 id="流形"><a href="#流形" class="headerlink" title="流形"></a>流形</h3><p>设$M$为拓扑空间, 满足$\,\forall\,p\in M,$ 存在含$p$的邻域$U_p$,
+及从$U_p$到$m$维欧氏空间$\mathbb{R}^m$中开集$D$的同胚$\varphi:U_p\rightarrow D.$
+即它是<strong>局部欧氏</strong>的. 若其还满足第二可数公理与Hausdorff性,
+则称$M$为$m$维<strong>拓扑流形</strong>. 流形的概念是曲线,曲面概念<em>高维,内蕴的推广</em>,
+可视为一块块欧氏空间粘贴起来的一种拓扑空间.</p>
+<p>设$M^m$为$m$维拓扑流形, 称$(U,\varphi)$为<strong>局部坐标系/图/卡</strong>,
+$x^i(q)$称为$q$在$(U,\varphi)$中第$i$个坐标($1\le i\le m$).
+若$(U,\varphi),(V,\psi)$为两个坐标系, $U\cap V\neq \varnothing,$
+则$\psi\circ \varphi^{-1}$称为<strong>坐标变换</strong>.
+如果$\varphi\circ \psi^{-1},\psi\circ \varphi^{-1}\in C^r,$
+则称$(U,\varphi)$与$(V,\psi)$是$C^r$<strong>相容</strong>的.
+它们当然至少是$C^0$相容的.</p>
+<p>设$\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}_{\alpha}$是拓扑流形$M^m$的一族坐标图.
+如果$\bigcup_{\alpha\in \Lambda} U_{\alpha}=M,$
+则称$\{(U_\alpha,\varphi_\alpha)\}_{\alpha\in \Lambda}$是$M$的<strong>坐标图册</strong>.
+如$\,\forall\,\alpha,\beta\in \Lambda,$
+$(U_\alpha,\varphi_\alpha),(U_\beta,\varphi_\beta)$是$C^r$相容的,
+则记$\mathcal{F}\in C^r.$</p>
+<p>分析流形上函数$f:M\rightarrow \mathbb{R}$时,
+只需将$M$中的点在局部坐标系上考虑,
+那么$f\circ\varphi^{-1}$即为欧氏空间到欧氏空间上的函数,
+称为$f$的<strong>局部表示</strong>, 以分析$f$的性质.
+易见两种局部表示可由坐标变换转化, 若坐标变换是光滑的,
+那么局部表示的微分性质在变换下保持, 即<em>不依赖坐标系选取</em>.
+可见为了在流形上研究微分学, 必须要有好的坐标图册.</p>
+<p>设$\mathcal{F}_1=\{(U_\alpha,\varphi_\alpha)\},$
+$\mathcal{F}_2=\{(V_\beta,\psi_\beta)\}$是$M$上两个$C^\infty$坐标图册,
+若$\,\forall\,\alpha,\beta,$
+$(U_\alpha,\varphi_\alpha)$与$(V_\beta,\psi_\beta)$是$C^\infty$相容的,
+则称$\mathcal{F}_1$与$\mathcal{F}_2$是$C^\infty$<strong>等价</strong>的,
+记为$\mathcal{F}_1\sim \mathcal{F}_2.$
+$M$上所有$C^\infty$坐标图册可划分为等价类集,
+每一个$[\mathcal{F}]$称为$M$上一个$C^\infty$<strong>微分结构</strong>.</p>
+<p><strong>定义 1.1</strong>. <em>$m$维$C^\infty$流形=$m$维拓扑流形+$C^\infty$结构\[$\mathcal{F}$\].</em> </p>
+<p><strong>注 1.2</strong>. <em>类似地可以引入$C^r$微分结构, $C^\omega$微分结构, 定义$C^r$微分流形, $C^\omega$微分流形(解析流形).</em> </p>
+<p><strong>注 1.3</strong>. <em>设$[\mathcal{F}]$是$M^m$上$C^\infty$结构, $\mathcal{F}_1=\{(U_\alpha,\varphi_\alpha)\}\in [\mathcal{F}].$ 若$(V,\psi)$与其中每个坐标图$C^\infty$相容, 可加入该图, 得到扩充的坐标图册$\mathcal{F}_1&#39;.$ 它也是$C^\infty$坐标图册, 且仍在等价类$[\mathcal{F}]$中. 这样可得到极大$C^\infty$坐标图册$\mathcal{F}_{\max}\in [\mathcal{F}],$ 也称为$C^\infty$结构.</em> </p>
+<p>对$M=\mathbb{R}^m,$
+取$\mathcal{F}=\{(\mathbb{R}^m,\mathrm{id})\}$即为$C^\infty$
+$(C^\omega)$ 坐标图册,
+称$[\mathcal{F}]$为$\mathbb{R}^m$上标准$C^\infty$结构,
+$(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
+<p>文章最后更新于 2021-09-15 16:12:46 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Basic concepts and examples of manifolds
-------------------
-
-### Topology
-
-- $M, N$ are two topological spaces, $\varphi:M\rightarrow N$ is a bijection,
-    And $\varphi$ and $\varphi^{-1}$ are both continuous,
-Then $\varphi:M\rightarrow N$ is called **homeomorphism**. *The topological spaces of homeomorphism are regarded as the same.*
-
-- If the topological space has a countable topological basis, then $M$ is said to satisfy the **Second countable axiom**.
-
-- Let $M$ be the topological space,
-    If $\,\forall\,p,q\in M$ exists open neighborhoods $U$ and $V$ containing $p$ and $q$,
-Let $U\cap V=\varnothing$, then $M$ is said to be **Hausdorff** (satisfying the second separation axiom).
-
-Euclidean space $\mathbb{R}^m$ is a vector space, on which there are additions and multiplications.
-Generally, $l^2$ distance is used to define the distance $d,$ on $\mathbb{R}^m$
-$(\mathbb{R}^m,d)$ becomes a metric space, and the topology (constituting the topological basis) is defined by the ball $B(x,r)$ as a whole.
-
-Given an open set $U\subset\mathbb{R}^m,$ function $f:U\rightarrow \mathbb{R}.$
-If $0\le r\le \infty,$ $f$ exists and is continuous up to order $r$, then it is recorded as $f\in C^r(U).$
-If $f$ can be expanded into a power series, it is called an **analytic function**, denoted as $f\in C^\omega(U).$
-
-Let $F:U\rightarrow V,$ $U\subset \mathbb{R}^m,$
-$V\subset \mathbb{R}^n$ is an open subset,
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="流形基本概念与例子"><a href="#流形基本概念与例子" class="headerlink" title="流形基本概念与例子"></a>流形基本概念与例子</h2><h3 id="拓扑"><a href="#拓扑" class="headerlink" title="拓扑"></a>拓扑</h3><ul>
+<li><p>$M,N$为两拓扑空间, $\varphi:M\rightarrow N$为双射,
+且$\varphi$和$\varphi^{-1}$都是连续的,
+则称$\varphi:M\rightarrow N$为<strong>同胚</strong>. <em>同胚的拓扑空间视为一样的.</em></p>
+</li>
+<li><p>如果拓扑空间具有可数拓扑基, 则称$M$满足<strong>第二可数公理</strong>.</p>
+</li>
+<li><p>设$M$为拓扑空间,
+如果$\,\forall\,p,q\in M$存在含$p$和$q$的开邻域$U$和$V$,
+使$U\cap V=\varnothing$, 则称$M$是<strong>Hausdorff</strong>的(满足第二分离公理).</p>
+</li>
+</ul>
+<p>欧氏空间$\mathbb{R}^m$为向量空间, 其上有加法, 有数乘.
+一般用$l^2$距离定义$\mathbb{R}^m$上距离$d,$
+$(\mathbb{R}^m,d)$成为度量空间, 由开球$B(x,r)$全体定义拓扑(构成拓扑基).</p>
+<p>给定开集$U\subset\mathbb{R}^m,$ 函数$f:U\rightarrow \mathbb{R}.$
+若$0\le r\le \infty,$ $f$直到$r$阶偏导存在且连续, 则记$f\in C^r(U).$
+若$f$可展开为幂级数, 称其为<strong>解析函数</strong>, 记$f\in C^\omega(U).$</p>
+<p>设$F:U\rightarrow V,$ $U\subset \mathbb{R}^m,$
+$V\subset \mathbb{R}^n$为开子集,
 $F(x)=(f^1(x^1,\cdots x^m),\cdots, f^n(x^1,\cdots, x^m)).$
-If $f^i\in C^r(U),$ $1\le i\le n,$ then write $F\in C^r(U,V).$
+若$f^i\in C^r(U),$ $1\le i\le n,$ 则记$F\in C^r(U,V).$</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>曲线- $F:(a,b)\rightarrow \mathbb{R}^3$</p>
+<p>曲面片- 同胚$F:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$</p>
+<p>任意过点$p$曲线可表为$C(t)=F(u(t),v(t)),$
+切向量$C&#39;(t_0)=F_uu&#39;(t_0)+F_vv&#39;(t_0).$ 默认要求$F_u\times F_v\neq 0,$
+称其满足<strong>正则性</strong>. 切向量全体张成一个平面, 称为<strong>切平面</strong>.</p>
+<p>球面无法用单张曲面片来描述(紧性, 同调群...) 但可以用若干张曲面片来描述.</p>
+<h3 id="流形"><a href="#流形" class="headerlink" title="流形"></a>流形</h3><p>设$M$为拓扑空间, 满足$\,\forall\,p\in M,$ 存在含$p$的邻域$U_p$,
+及从$U_p$到$m$维欧氏空间$\mathbb{R}^m$中开集$D$的同胚$\varphi:U_p\rightarrow D.$
+即它是<strong>局部欧氏</strong>的. 若其还满足第二可数公理与Hausdorff性,
+则称$M$为$m$维<strong>拓扑流形</strong>. 流形的概念是曲线,曲面概念<em>高维,内蕴的推广</em>,
+可视为一块块欧氏空间粘贴起来的一种拓扑空间.</p>
+<p>设$M^m$为$m$维拓扑流形, 称$(U,\varphi)$为<strong>局部坐标系/图/卡</strong>,
+$x^i(q)$称为$q$在$(U,\varphi)$中第$i$个坐标($1\le i\le m$).
+若$(U,\varphi),(V,\psi)$为两个坐标系, $U\cap V\neq \varnothing,$
+则$\psi\circ \varphi^{-1}$称为<strong>坐标变换</strong>.
+如果$\varphi\circ \psi^{-1},\psi\circ \varphi^{-1}\in C^r,$
+则称$(U,\varphi)$与$(V,\psi)$是$C^r$<strong>相容</strong>的.
+它们当然至少是$C^0$相容的.</p>
+<p>设$\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}_{\alpha}$是拓扑流形$M^m$的一族坐标图.
+如果$\bigcup_{\alpha\in \Lambda} U_{\alpha}=M,$
+则称$\{(U_\alpha,\varphi_\alpha)\}_{\alpha\in \Lambda}$是$M$的<strong>坐标图册</strong>.
+如$\,\forall\,\alpha,\beta\in \Lambda,$
+$(U_\alpha,\varphi_\alpha),(U_\beta,\varphi_\beta)$是$C^r$相容的,
+则记$\mathcal{F}\in C^r.$</p>
+<p>分析流形上函数$f:M\rightarrow \mathbb{R}$时,
+只需将$M$中的点在局部坐标系上考虑,
+那么$f\circ\varphi^{-1}$即为欧氏空间到欧氏空间上的函数,
+称为$f$的<strong>局部表示</strong>, 以分析$f$的性质.
+易见两种局部表示可由坐标变换转化, 若坐标变换是光滑的,
+那么局部表示的微分性质在变换下保持, 即<em>不依赖坐标系选取</em>.
+可见为了在流形上研究微分学, 必须要有好的坐标图册.</p>
+<p>设$\mathcal{F}_1=\{(U_\alpha,\varphi_\alpha)\},$
+$\mathcal{F}_2=\{(V_\beta,\psi_\beta)\}$是$M$上两个$C^\infty$坐标图册,
+若$\,\forall\,\alpha,\beta,$
+$(U_\alpha,\varphi_\alpha)$与$(V_\beta,\psi_\beta)$是$C^\infty$相容的,
+则称$\mathcal{F}_1$与$\mathcal{F}_2$是$C^\infty$<strong>等价</strong>的,
+记为$\mathcal{F}_1\sim \mathcal{F}_2.$
+$M$上所有$C^\infty$坐标图册可划分为等价类集,
+每一个$[\mathcal{F}]$称为$M$上一个$C^\infty$<strong>微分结构</strong>.</p>
+<p><strong>定义 1.1</strong>. <em>$m$维$C^\infty$流形=$m$维拓扑流形+$C^\infty$结构\[$\mathcal{F}$\].</em> </p>
+<p><strong>注 1.2</strong>. <em>类似地可以引入$C^r$微分结构, $C^\omega$微分结构, 定义$C^r$微分流形, $C^\omega$微分流形(解析流形).</em> </p>
+<p><strong>注 1.3</strong>. <em>设$[\mathcal{F}]$是$M^m$上$C^\infty$结构, $\mathcal{F}_1=\{(U_\alpha,\varphi_\alpha)\}\in [\mathcal{F}].$ 若$(V,\psi)$与其中每个坐标图$C^\infty$相容, 可加入该图, 得到扩充的坐标图册$\mathcal{F}_1&#39;.$ 它也是$C^\infty$坐标图册, 且仍在等价类$[\mathcal{F}]$中. 这样可得到极大$C^\infty$坐标图册$\mathcal{F}_{\max}\in [\mathcal{F}],$ 也称为$C^\infty$结构.</em> </p>
+<p>对$M=\mathbb{R}^m,$
+取$\mathcal{F}=\{(\mathbb{R}^m,\mathrm{id})\}$即为$C^\infty$
+$(C^\omega)$ 坐标图册,
+称$[\mathcal{F}]$为$\mathbb{R}^m$上标准$C^\infty$结构,
+$(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
+<p>文章最后更新于 2021-09-15 16:12:46 </p>
 
-### Example
-
-Curve- $F:(a,b)\rightarrow \mathbb{R}^3$
-Surface patch-homeomorphism$F:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$
-
-Any curve passing through point $p$ can be expressed as $C(t)=F(u(t),v(t)),$
-Tangent vector $C'(t_0)=F_uu'(t_0)+F_vv'(t_0).$ The default requirement is $F_u\times F_v\neq 0,$
-It is said to satisfy **regularity**. The tangent vectors all span into a plane, which is called **tangent plane**.
-
-The spherical surface cannot be described by a single surface patch (compactness, homology group\...) but can be described by several surface patches.
-
-### Manifold
-
-Let $M$ be a topological space, satisfying $\,\forall\,p\in M,$ and there is a neighborhood $U_p$ containing $p$,
-And the homeomorphism of the open set $D$ from $U_p$ to $m$-dimensional Euclidean space $\mathbb{R}^m$ $\varphi:U_p\rightarrow D.$
-That is, it is **locally Euclidean**. If it also satisfies the second countability axiom and Hausdorff property,
-Then $M$ is called $m$-dimensional **topological manifold**. The concept of manifold is a high-dimensional and implicit generalization of the concept of curve and surface,
-It can be regarded as a topological space in which pieces of Euclidean space are pasted together.
-Let $M^m$ be the $m$-dimensional topological manifold, and call $(U,\varphi)$ the **local coordinate system/graph/card**,
-$x^i(q)$ is called the $i$th coordinate ($1\le i\le m$) of $q$ in $(U,\varphi)$.
-If $(U,\varphi),(V,\psi)$ are two coordinate systems, $U\cap V\neq \varnothing,$
-Then $\psi\circ \varphi^{-1}$ is called **coordinate transformation**.
-If $\varphi\circ \psi^{-1},\psi\circ \varphi^{-1}\in C^r,$
-Then it is said that $(U,\varphi)$ and $(V,\psi)$ are $C^r$** compatible**.
-They are certainly at least $C^0$ compatible.
-Let $\mathcal{F}=\{(U_\alpha,\varphi_\alpha)\}_{\alpha}$ be a family of coordinate graphs of the topological manifold $M^m$.
-If $\bigcup_{\alpha\in \Lambda} U_{\alpha}=M,$
-Then it is said that $\{(U_\alpha,\varphi_\alpha)\}_{\alpha\in \Lambda}$ is the **coordinate atlas** of $M$.
-Such as $\,\forall\,\alpha,\beta\in \Lambda,$
-$(U_\alpha,\varphi_\alpha),(U_\beta,\varphi_\beta)$ are compatible with $C^r$,
-Then record $\mathcal{F}\in C^r.$
-
-When analyzing the function $f:M\rightarrow \mathbb{R}$ on the manifold,
-Just consider the points in $M$ on the local coordinate system,
-Then $f\circ\varphi^{-1}$ is the function from Euclidean space to Euclidean space,
-It is called a **local representation** of $f$ to analyze the properties of $f$.
-It is easy to see that the two local representations can be transformed by coordinate transformation. If the coordinate transformation is smooth,
-Then the differential properties of the local representation are maintained under transformation, that is, it does not depend on the coordinate system selection.
-It can be seen that in order to study differential calculus on manifolds, a good coordinate atlas is necessary.
-
-Let $\mathcal{F}_1=\{(U_\alpha,\varphi_\alpha)\},$
-$\mathcal{F}_2=\{(V_\beta,\psi_\beta)\}$ is the two $C^\infty$ coordinate atlases on $M$,
-If $\,\forall\,\alpha,\beta,$
-$(U_\alpha,\varphi_\alpha)$ and $(V_\beta,\psi_\beta)$ are $C^\infty$ compatible,
-Then $\mathcal{F}_1$ and $\mathcal{F}_2$ are said to be $C^\infty$** equivalent**,
-Denoted as $\mathcal{F}_1\sim \mathcal{F}_2.$
-All $C^\infty$ coordinate atlases on $M$ can be divided into equivalent clusters,
-Each $[\mathcal{F}]$ is called the previous $C^\infty$**differential structure** of $M$.
-**Definition 1.1**. *$m$-dimensional $C^\infty$ manifold = $m$-dimensional topological manifold + $C^\infty$ structure\[$\mathcal{F}$\].*
-**Note 1.2**. *Similarly, you can introduce $C^r$ differential structure, $C^\omega$ differential structure, define $C^r$ differential manifold, $C^\omega$ differential manifold (analytical manifold).*
-**Note 1.3**. *Suppose $[\mathcal{F}]$ is the $C^\infty$ structure on $M^m$, $\mathcal{F}_1=\{(U_\alpha,\varphi_\alpha)\}\in [\mathcal{F}].$ If $(V,\psi)$ is compatible with each coordinate diagram $C^\infty$, it can be added to the diagram, Get the expanded coordinate atlas $\mathcal{F}_1'.
-$ It is also a $C^\infty$ coordinate atlas, and is still in the equivalence class $[\mathcal{F}]$. This results in a maximum $C^\infty$ coordinate atlas $\mathcal{F}_{\max}\in [\mathcal{F}],$ which is also called a $C^\infty$ structure.*
-
-For $M=\mathbb{R}^m,$
-Taking $\mathcal{F}=\{(\mathbb{R}^m,\mathrm{id})\}$ is $C^\infty$
-$(C^\omega)$ coordinate atlas,
-Call $[\mathcal{F}]$ the standard $C^\infty$ structure on $\mathbb{R}^m$,
-$(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$ is an $m$-dimensional $C^\infty$ manifold.
-
-The article was last updated on 2021-09-15 16:12:46
                 </div>
             
         </div>
@@ -332,7 +386,7 @@ The article was last updated on 2021-09-15 16:12:46
     <ul>
         <li>本文标题：《微分流形》第一章-微分流形(1)</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-15 16:10:47</li>
+        <li>创建时间：2021-09-15 19:10:47</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/09/15/《微分流形》第一章-微分流形(1)/
         </li>
@@ -364,7 +418,7 @@ The article was last updated on 2021-09-15 16:12:46
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数图论》第一章-基本概念</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Graph Theory&#34; Chapter 1-Basic Concepts</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Diagrams Chapter 1 - Basic Concepts</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -386,7 +440,7 @@ The article was last updated on 2021-09-15 16:12:46
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分几何初步》3.4-3.5</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; 3.4-3.5</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Differential Geometry 3.4-3.5</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -638,11 +692,11 @@ The article was last updated on 2021-09-15 16:12:46
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BE%8B%E5%AD%90"><span class="nav-text">流形基本概念与例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%93%E6%89%91"><span class="nav-text">拓扑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2"><span class="nav-text">流形</span></a></li></ol></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BE%8B%E5%AD%90"><span class="nav-text">流形基本概念与例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%93%E6%89%91"><span class="nav-text">拓扑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2"><span class="nav-text">流形</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -693,6 +747,36 @@ The article was last updated on 2021-09-15 16:12:46
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -716,46 +800,6 @@ The article was last updated on 2021-09-15 16:12:46
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数拓扑2》笔记(14)-横截性理论 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑2》笔记(14)-横截性理论</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (14) - Transversity Theory</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-10-28 19:41:54
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上次课我们对定向实向量丛$\xi^n,$
+定义了Thom类$u(\xi)\in H^n(E,E_0;\mathbb{Z}).$
+这给出了Euler类$e(\xi)\in H^n(B;\mathbb{Z}),$ 当$B=M^n$光滑时,</p>
+<p>$$
+e(\tau_M)=\chi(M)\cdot PD([\ast ]).
+$$</p>
+<p> 一般的,
+对$\xi$截面$s$与$M$横截相交的零截面$Z_s,$ 有</p>
+<p>$$
+e(\xi)=PD(Z_s),\quad Z_s=\{s=0\}
+$$</p>
+<h2 id="横截性理论"><a href="#横截性理论" class="headerlink" title="横截性理论"></a>横截性理论</h2><p>设$X$为紧定向$n$维流形, 那么有Poincaré对偶:</p>
+<p>$$
+PD_X:H_i(X)\rightarrow H^{n-i}(X), \alpha\cap [M]\leftarrow \alpha.
+$$</p>
+<p>考虑横截积:</p>
+<p>$$
+H_i(X)\times H_j(X)\rightarrow H_{i+j-n}(X),\quad (a,b)\mapsto a\cdot b,
+$$</p>
+<p>$$
+PD_X(a\cdot b)=PD_X(b)\cup PD_X(a).
+$$</p>
+<p><strong>定理 1</strong>. <em>设$X$还是光滑的, $A,B$为横截相交闭光滑定向子流形. 那么$[A]_X\cdot [B]_X=[A\cap B]_X,$ 其中$[A]_X=i_\ast [A].$</em> </p>
+<p>给定$A\subset X,$ 定义$\tau_A^X:=PD([A]_X)\in H^{x-a}(X;\mathbb{Z}),$
+称为$A$在$X$中的Thom类. 那么 </p>
+<p>$$
+[A]_X=\tau_A^X\cap [X].
+$$</p>
+<p>记$\nu_A^X$为$A$在$X$中法丛, 我们有管状邻域定理:
+存在$A$在$X$中的管状邻域$N$, 满足: </p>
+<p>$$
+E(\nu_A^X)\cong N.
+$$</p>
+<p>这样,</p>
+<p>$$
+u(\nu_A^X)\in H^{x-a}(E(\nu_A^X),E_0(\nu_A^X))\cong H^{x-a}(N,N\setminus A)\cong H^{x-a}(X,X\setminus A)\rightarrow H^{x-a}(X)\ni \tau_A^X.
+$$</p>
+<p>我们将说明$\nu_A^X$的Thom类打到$A$在$X$中的Thom类, 这也是命名后者的原因.</p>
+<p>我们希望说明, </p>
+<p>$$
+\nu_{B\cap A}^A\cong \nu_B^X|_{B\cap A}.
+$$</p>
+<p>我们依纤维来检查: $\,\forall\,x\in A\cap B,$ $T_pA+T_pB=T_pX,$ 那么</p>
+<p>$$
+T(i_A^X):T_pA/T_p(B\cap A)\cong T_pX/T_pB.
+$$</p>
+<p>因此, $\tau^A_{B\cap A}=(i_A^X)^\ast \tau_B^X.$ 现在就可以证明定理了:
+$$
+\begin{aligned}
+ [B\cap A]_X&amp;=(i_A^X)_*(i^A_{B\cap A})_*[B\cap A]\\
+ &amp;=(i_A^X)_*(\tau_{B\cap A}^A\cap [A])\\
+ &amp;=(i_A^X)_*((i_A^X)^*\tau_B^X\cap [A])\\
+ &amp;=\tau_B^X\cap ((i_A^X)_*[A])\\
+ &amp;=\tau_B^X\cap (\tau_A^X\cap [X])\\
+ &amp;=(\tau_B^X\cup\tau_A^X)\cap [X]\\
+ &amp;=PD^{-1}(PD([B]_X)\cup PD([A]_X))\\
+ &amp;=[B]_X\cdot [A]_X.
+ \end{aligned}
+$$</p>
+<h2 id="Euler类"><a href="#Euler类" class="headerlink" title="Euler类"></a>Euler类</h2><p>回忆对定向丛$\xi,$ 我们给出Euler类:</p>
+<p>$$
+H^n(E,E_0)\rightarrow H^n(E)\leftarrow H^n(B), \quad u(\xi)\mapsto u(\xi)|_E\leftarrow e(\xi).
+$$</p>
+<p><strong>定理 2</strong>. <em>若$B$为闭定向光滑流形, $e(\xi)=PD([Z_s]).$ $Z_s=\{b\in B|s(b)=0\},$ $s$为$\xi$截面, 与零截面横截相交.</em> </p>
+<p>记$Z:=Z_s.$ 考虑$\nu_Z^B\cong \xi|_Z.$ $E(\nu_Z^B)\cong N\subset B.$</p>
+<p>$$
+H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B,B\setminus Z)\rightarrow H^n(B).
+$$</p>
+<p>$$
+u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B=PD([Z]).
+$$</p>
+<p>$$
+H^n(B)\rightarrow H^n(E)\leftarrow H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B),
+$$</p>
+<p>$$
+e(\xi)\mapsto u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B.
+$$</p>
+<p> 这样就看到了
+$e(\xi)=\tau_Z^B.$</p>
+<p><strong>定理 3</strong>. <em>$B=M^n$为闭定向流形, $\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$ 这与Poincaré-Hopf定理等价.</em> </p>
+<p>任取一个横截相交截面, 那么: 
+$$
+\begin{aligned}
+ \left&lt;{}e(\tau_M),[M]\right&gt;=\left&lt;{}PD_M[Z_s],[M]\right&gt;=\left&lt;{}PD_M[M],[Z_s]\right&gt;=\sum_{p\in Z_s} \text{index of $s$ at $p$}=\chi(M)
+ \end{aligned}
+$$
+指标由$\det(\nabla s:T_pM\rightarrow T_pM)$的符号决定.</p>
+<p>一个应用是, $\chi(S^n)=2,$ 若$n$为偶数. 这样$e(\tau_{S^n})=2,$
+这与$w_n(\tau_{S^n})=0$对应. 那么$\tau_{S^n}$非平凡,
+且$\tau_{S^n}$不包含任何真子丛$\eta^m.$
+这是因为$e(\tau_{S^n})=e(\eta)\cup e(\eta^\perp).$</p>
+<h2 id="横截性理论的应用"><a href="#横截性理论的应用" class="headerlink" title="横截性理论的应用"></a>横截性理论的应用</h2><h3 id="杯积"><a href="#杯积" class="headerlink" title="杯积"></a>杯积</h3><p>回忆$H^\ast (\mathbb{C}\mathrm{P}^n;\mathbb{Z})$中的杯积. 取</p>
+<p>$$
+\mathbb{C}\mathrm{P}^{n-1}\approx h_i=\{x_i=0\}\subset \mathbb{C}\mathrm{P}^n,
+$$</p>
+<p>$$
+[h_i]\in H_{2n-2}(\mathbb{C}\mathrm{P}^n).
+$$</p>
+<p> 由横截性理论,</p>
+<p>$$
+[h_1]\cdots[h_n]=[h_1\cap\cdots\cap h_n]=[\ast ]\in H_0(\mathbb{C}\mathrm{P}^n).
+$$</p>
+<p>令$\tau_i:=PD[h_i]\in H^2(\mathbb{C}\mathrm{P}^n),$
+$\tau_1\cup\cdots\cup \tau_n=PD[\ast ].$</p>
+<p>断言$\tau_1=\cdots=\tau_n=\tau,$ 称为超(射影)平面类.
+这样$H^\ast (\mathbb{C}\mathrm{P}^n)=\mathbb{Z}[\tau]/\tau^{n+1}=0.$</p>
+<h3 id="Bezout’s-定理"><a href="#Bezout’s-定理" class="headerlink" title="Bezout’s 定理"></a>Bezout’s 定理</h3><p>假设$F_1(x,y,z),$ $F_2(x,y,z)$为齐次多项式, $\deg F_i=d_i.$</p>
+<p>$$
+V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,
+$$</p>
+<p>在代数几何中称为$\deg=d_i$的代数曲线.</p>
+<p><strong>定理 4</strong>. <em>若$V_1,V_2$横截相交, 那么$[V_1\cap V_2]_{\mathbb{C}\mathrm{P}^2}=d_1d_2[\ast ]_{\mathbb{C}\mathrm{P}^2}.$</em> </p>
+<p>简单来看, 就是因为$PD[V_1]=d_1\cdot \tau,$ $PD[V_2]=d_2\cdot \tau.$</p>
+<p>文章最后更新于 2022-10-28 16:41:58 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>上次课我们对定向实向量丛$\xi^n,$
+定义了Thom类$u(\xi)\in H^n(E,E_0;\mathbb{Z}).$
+这给出了Euler类$e(\xi)\in H^n(B;\mathbb{Z}),$ 当$B=M^n$光滑时,</p>
+<p>$$
+e(\tau_M)=\chi(M)\cdot PD([\ast ]).
+$$</p>
+<p> 一般的,
+对$\xi$截面$s$与$M$横截相交的零截面$Z_s,$ 有</p>
+<p>$$
+e(\xi)=PD(Z_s),\quad Z_s=\{s=0\}
+$$</p>
+<h2 id="横截性理论"><a href="#横截性理论" class="headerlink" title="横截性理论"></a>横截性理论</h2><p>设$X$为紧定向$n$维流形, 那么有Poincaré对偶:</p>
+<p>$$
+PD_X:H_i(X)\rightarrow H^{n-i}(X), \alpha\cap [M]\leftarrow \alpha.
+$$</p>
+<p>考虑横截积:</p>
+<p>$$
+H_i(X)\times H_j(X)\rightarrow H_{i+j-n}(X),\quad (a,b)\mapsto a\cdot b,
+$$</p>
+<p>$$
+PD_X(a\cdot b)=PD_X(b)\cup PD_X(a).
+$$</p>
+<p><strong>定理 1</strong>. <em>设$X$还是光滑的, $A,B$为横截相交闭光滑定向子流形. 那么$[A]_X\cdot [B]_X=[A\cap B]_X,$ 其中$[A]_X=i_\ast [A].$</em> </p>
+<p>给定$A\subset X,$ 定义$\tau_A^X:=PD([A]_X)\in H^{x-a}(X;\mathbb{Z}),$
+称为$A$在$X$中的Thom类. 那么 </p>
+<p>$$
+[A]_X=\tau_A^X\cap [X].
+$$</p>
+<p>记$\nu_A^X$为$A$在$X$中法丛, 我们有管状邻域定理:
+存在$A$在$X$中的管状邻域$N$, 满足: </p>
+<p>$$
+E(\nu_A^X)\cong N.
+$$</p>
+<p>这样,</p>
+<p>$$
+u(\nu_A^X)\in H^{x-a}(E(\nu_A^X),E_0(\nu_A^X))\cong H^{x-a}(N,N\setminus A)\cong H^{x-a}(X,X\setminus A)\rightarrow H^{x-a}(X)\ni \tau_A^X.
+$$</p>
+<p>我们将说明$\nu_A^X$的Thom类打到$A$在$X$中的Thom类, 这也是命名后者的原因.</p>
+<p>我们希望说明, </p>
+<p>$$
+\nu_{B\cap A}^A\cong \nu_B^X|_{B\cap A}.
+$$</p>
+<p>我们依纤维来检查: $\,\forall\,x\in A\cap B,$ $T_pA+T_pB=T_pX,$ 那么</p>
+<p>$$
+T(i_A^X):T_pA/T_p(B\cap A)\cong T_pX/T_pB.
+$$</p>
+<p>因此, $\tau^A_{B\cap A}=(i_A^X)^\ast \tau_B^X.$ 现在就可以证明定理了:
+$$
+\begin{aligned}
+ [B\cap A]_X&amp;=(i_A^X)_*(i^A_{B\cap A})_*[B\cap A]\\
+ &amp;=(i_A^X)_*(\tau_{B\cap A}^A\cap [A])\\
+ &amp;=(i_A^X)_*((i_A^X)^*\tau_B^X\cap [A])\\
+ &amp;=\tau_B^X\cap ((i_A^X)_*[A])\\
+ &amp;=\tau_B^X\cap (\tau_A^X\cap [X])\\
+ &amp;=(\tau_B^X\cup\tau_A^X)\cap [X]\\
+ &amp;=PD^{-1}(PD([B]_X)\cup PD([A]_X))\\
+ &amp;=[B]_X\cdot [A]_X.
+ \end{aligned}
+$$</p>
+<h2 id="Euler类"><a href="#Euler类" class="headerlink" title="Euler类"></a>Euler类</h2><p>回忆对定向丛$\xi,$ 我们给出Euler类:</p>
+<p>$$
+H^n(E,E_0)\rightarrow H^n(E)\leftarrow H^n(B), \quad u(\xi)\mapsto u(\xi)|_E\leftarrow e(\xi).
+$$</p>
+<p><strong>定理 2</strong>. <em>若$B$为闭定向光滑流形, $e(\xi)=PD([Z_s]).$ $Z_s=\{b\in B|s(b)=0\},$ $s$为$\xi$截面, 与零截面横截相交.</em> </p>
+<p>记$Z:=Z_s.$ 考虑$\nu_Z^B\cong \xi|_Z.$ $E(\nu_Z^B)\cong N\subset B.$</p>
+<p>$$
+H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B,B\setminus Z)\rightarrow H^n(B).
+$$</p>
+<p>$$
+u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B=PD([Z]).
+$$</p>
+<p>$$
+H^n(B)\rightarrow H^n(E)\leftarrow H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B),
+$$</p>
+<p>$$
+e(\xi)\mapsto u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B.
+$$</p>
+<p> 这样就看到了
+$e(\xi)=\tau_Z^B.$</p>
+<p><strong>定理 3</strong>. <em>$B=M^n$为闭定向流形, $\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$ 这与Poincaré-Hopf定理等价.</em> </p>
+<p>任取一个横截相交截面, 那么: 
+$$
+\begin{aligned}
+ \left&lt;{}e(\tau_M),[M]\right&gt;=\left&lt;{}PD_M[Z_s],[M]\right&gt;=\left&lt;{}PD_M[M],[Z_s]\right&gt;=\sum_{p\in Z_s} \text{index of $s$ at $p$}=\chi(M)
+ \end{aligned}
+$$
+指标由$\det(\nabla s:T_pM\rightarrow T_pM)$的符号决定.</p>
+<p>一个应用是, $\chi(S^n)=2,$ 若$n$为偶数. 这样$e(\tau_{S^n})=2,$
+这与$w_n(\tau_{S^n})=0$对应. 那么$\tau_{S^n}$非平凡,
+且$\tau_{S^n}$不包含任何真子丛$\eta^m.$
+这是因为$e(\tau_{S^n})=e(\eta)\cup e(\eta^\perp).$</p>
+<h2 id="横截性理论的应用"><a href="#横截性理论的应用" class="headerlink" title="横截性理论的应用"></a>横截性理论的应用</h2><h3 id="杯积"><a href="#杯积" class="headerlink" title="杯积"></a>杯积</h3><p>回忆$H^\ast (\mathbb{C}\mathrm{P}^n;\mathbb{Z})$中的杯积. 取</p>
+<p>$$
+\mathbb{C}\mathrm{P}^{n-1}\approx h_i=\{x_i=0\}\subset \mathbb{C}\mathrm{P}^n,
+$$</p>
+<p>$$
+[h_i]\in H_{2n-2}(\mathbb{C}\mathrm{P}^n).
+$$</p>
+<p> 由横截性理论,</p>
+<p>$$
+[h_1]\cdots[h_n]=[h_1\cap\cdots\cap h_n]=[\ast ]\in H_0(\mathbb{C}\mathrm{P}^n).
+$$</p>
+<p>令$\tau_i:=PD[h_i]\in H^2(\mathbb{C}\mathrm{P}^n),$
+$\tau_1\cup\cdots\cup \tau_n=PD[\ast ].$</p>
+<p>断言$\tau_1=\cdots=\tau_n=\tau,$ 称为超(射影)平面类.
+这样$H^\ast (\mathbb{C}\mathrm{P}^n)=\mathbb{Z}[\tau]/\tau^{n+1}=0.$</p>
+<h3 id="Bezout’s-定理"><a href="#Bezout’s-定理" class="headerlink" title="Bezout’s 定理"></a>Bezout’s 定理</h3><p>假设$F_1(x,y,z),$ $F_2(x,y,z)$为齐次多项式, $\deg F_i=d_i.$</p>
+<p>$$
+V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,
+$$</p>
+<p>在代数几何中称为$\deg=d_i$的代数曲线.</p>
+<p><strong>定理 4</strong>. <em>若$V_1,V_2$横截相交, 那么$[V_1\cap V_2]_{\mathbb{C}\mathrm{P}^2}=d_1d_2[\ast ]_{\mathbb{C}\mathrm{P}^2}.$</em> </p>
+<p>简单来看, 就是因为$PD[V_1]=d_1\cdot \tau,$ $PD[V_2]=d_2\cdot \tau.$</p>
+<p>文章最后更新于 2022-10-28 16:41:58 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数拓扑2》笔记(14)-横截性理论</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-10-28 19:41:54</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/10/28/《代数拓扑2》笔记(14)-横截性理论/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/11/07/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(15)-Chern%E7%A4%BA%E6%80%A7%E7%B1%BB/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑2》笔记(15)-Chern示性类</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology 2 notes (15) -Chern indicative class</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/10/26/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(13)-%E5%AE%9A%E5%90%91%E4%B8%8E%E6%AC%A7%E6%8B%89%E7%B1%BB/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑2》笔记(13)-定向与欧拉类</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (13) - Orientation and Euler Class</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">横截性理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Euler%E7%B1%BB"><span class="nav-text">Euler类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">横截性理论的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%AF%E7%A7%AF"><span class="nav-text">杯积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bezout%E2%80%99s-%E5%AE%9A%E7%90%86"><span class="nav-text">Bezout’s 定理</span></a></li></ol></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">横截性理论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Euler%E7%B1%BB"><span class="nav-text">Euler类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA%E6%80%A7%E7%90%86%E8%AE%BA%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">横截性理论的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%AF%E7%A7%AF"><span class="nav-text">杯积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bezout%E2%80%99s-%E5%AE%9A%E7%90%86"><span class="nav-text">Bezout’s 定理</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

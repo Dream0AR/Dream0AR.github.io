@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(3)-测地线</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (3) - Geodesics</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (3) - Geodesic</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-03-13 18:52:06
+        <i class="fas fa-edit"></i>&nbsp;2022-03-13 20:52:06
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,210 +230,316 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="指数映射"><a href="#指数映射" class="headerlink" title="指数映射"></a>指数映射</h2><h3 id="测地线"><a href="#测地线" class="headerlink" title="测地线"></a>测地线</h3><p>回忆$\gamma:[0,1]\rightarrow M$为<strong>测地线</strong>的充要条件是$D_{\dot\gamma}\dot\gamma=0.$
+因此若$\gamma$为测地线, 对内积求导可知$|\dot\gamma|$为常数.
+因此通过参数变换, 不妨总假定其具单位切向量, 是弧长参数化的.
+称其为<strong>正规的</strong>测地线.</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>接下来我们引入<strong>指数映射</strong>的概念. 粗略地说,
+$x\in M$处的指数映射$\exp:M_x\rightarrow M$定义如下: 任给$v\in M_x,$
+从$x$出发,沿以$v$为初始切向量的测地线$\gamma_v$走到$y,$
+使得$x$到$y$弧长恰为$|v|.$ 那么由$\exp_xv=y$来定义指数映射. 直观看来,
+$M_x$原点邻域上是可以定义的, 但未必能定义在整体上.
+后面将说明指数映射能整体定义等价于要求黎曼流形$M$是<strong>完备的</strong>.</p>
+<p>上述直观在几何上的证明相当笨拙, 用微分方程的方式说明更为简便.
+回忆测地线由常微分方程组确定:</p>
+<p>$$
+\frac{d {}^2\gamma^i}{d {}t^2}+\Gamma^i_{jk}\frac{d {}\gamma^j}{d {}t}\frac{d {}\gamma^k}{d {}t}=0,\quad \,\forall\,i=1,\cdots,n.
+$$</p>
+<p>由ODE基本定理, $\,\forall\,x\in M,$ $\varepsilon&gt;0,$
+$\,\exists\,x$的邻域$\mathscr{U}\subset M$以及$\delta&gt;0,$
+使得$\,\forall\,y\in \mathscr{U},$ $v\in B_y(\delta)\subset M_y,$
+存在初始切向量为$v$的测地线$\gamma_v,$ 定义域包含$[0,\varepsilon].$</p>
+<p>注意到参数线性变换后的测地线仍是测地线, 因此得到下述命题:</p>
+<p>$\,\forall\,x\in M,$ $\,\exists\,x$的邻域$\mathscr{U}\subset M,$
+$\omega&gt;0,$ $\,\forall\,y\in \mathscr{U},$
+$v\in B_y(\omega)\subset M_y,$ 存在以$v$为初始切向量的测地线$\gamma_v,$
+定义域包含$I=[0,1].$</p>
+<p>此时由$\exp_x v=\gamma_v(1)$定义的$\exp_x:B_x(\omega)\rightarrow M$就是满足前述定义的指数映射.
+同时, 它可定义在切丛$TM$中的开集$U:=\mathscr{U}\times B(\omega)$上,
+由$\exp(y,v):=\exp_y v$给出$\exp:U\rightarrow M.$
+由解对参数的依赖性可知指数映射$\exp$是光滑的.</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>下面我们说明在小邻域上, 指数映射$\exp_x$是一个微分同胚.
+由于$M_x\cong \mathbb{R}^n,$ 其上的切空间自然地等于$M_x$本身.
+考虑$(d\exp_x)_O:M_x\rightarrow M_x,$ 容易验证其为恒等映射.
+这样它是非奇异的, 从而$\exp_x$在原点邻域的确是微分同胚.
+容易证明它在大范围上的叙述:</p>
+<p><strong>引理 1</strong>. <em>$\,\forall\,K\Subset M,$ $\,\exists\,\varepsilon&gt;0,$ $\,\forall\,x\in K,$ $\exp_x$在$B_x(\varepsilon)$上为微分同胚.</em> </p>
+<p>接下来讨论测地线的局部最短性质. 下面默认固定$x,$ 将$x$的下标略去.
+设$\exp$在$B(\delta)$上为微分同胚. 记$B_\delta:=\exp B(\delta).$
+$\,\forall\,v\in B(\delta),$
+称<strong>径向线段</strong>$c(t):=tv:[0,1]\rightarrow B_\delta$在指数映射$\exp$下的像为$B_\delta$中的<strong>径向测地线.</strong>
+我们将证明下述定理:</p>
+<p><strong>定理 2</strong>. <em>设分段$C^\infty$曲线$\sigma$连接$x,y\in B_\delta.$ 若$\xi$为连接$x,y$的径向测地线, 则$L(\sigma)\ge L(\xi),$ 等号成立当且仅当$\sigma$为$\xi$的单调再参数化.</em> </p>
+<p>我们注意到在欧氏空间中这是显然的,
+证明只需将曲线的切向量分解为径向分量和球面切向分量即可.
+显然没有球面切向时是最短的, 且需要径向分量保持正向.
+为了将证明搬到流形上, 需要考虑如何取球面以及做分解.</p>
+<p>在$M_x\setminus\{0\}$中定义向量场$\mathscr{R}:$</p>
+<p>$$
+\mathscr{R}(v)=\frac{v}{|v|},\quad v\in M_x\setminus\{0\}.
+$$</p>
+<p><strong>引理 3</strong>. <em>$|d\exp(\mathscr{R})|\equiv 1$</em> </p>
+<p><strong>证:</strong> $\,\forall\,v\in M_x\setminus\{0\},$
+取$\gamma$为$M$中正规测地线, 以$\frac{v}{|v|}$为初始切向量.
+那么$\exp(v)=\gamma(|v|),$</p>
+<p>$$
+|d\exp(\mathscr{R}(v))|=|\dot{\gamma}(|v|)|=|\dot{\gamma}(0)|=1.
+$$</p>
+<p><strong>引理 4</strong> (Gauss引理). <em>$\,\forall\,t&lt;\delta,$ 令$S_t:=\exp(S(t))$为$B_\delta$中半径为$t$的测地球面, 则径向测地线正交于每一个$S_t.$ 即$d\exp(\mathscr{R})$垂直于$S_t$的切空间.</em> </p>
+<p><strong>证:</strong> 由于$\exp$是微分同胚, 可以取到如下微分同胚:</p>
+<p>$$
+F:S^{n-1}\times(0,\delta)\rightarrow B_\delta\setminus\{x\},
+$$</p>
+<p>其中$S^{n-1}=S(1)$为$M_x$中单位球面. $F(p,t):=\exp(tp).$
+对每个固定的$t,$ $F$将$S^{n-1}\times\{t\}$微分同胚地映至$S_t.$
+取$S^{n-1}$局部坐标系$\{y^i\},$ $r$为$(0,\delta)$上的自然参数,
+记$R=dF\left(\frac{\partial {} }{\partial {}r}\right),$
+$Y_i=dF\left(\frac{\partial {} }{\partial {}r}\right),$
+则只需证$\left&lt;{}Y_i,R\right&gt;=0.$</p>
+<p>$$
+\begin{aligned}
+ R\left&lt;{}Y_i,R\right&gt;&amp;=\left&lt;{}D_RY_i,R\right&gt;+\left&lt;{}Y_i,D_RR\right&gt;\\
+ &amp;=\left&lt;{}D_{Y_i}R,R\right&gt;&amp;D_RY_i-D_{Y_i}R=[R,Y_i]=dF\left[\frac{\partial {} }{\partial {}r},\frac{\partial {} }{\partial {}y_i}\right], D_RR=0\\
+ &amp;=\frac{1}{2}Y_i\left&lt;{}R,R\right&gt;=0&amp;|R|\equiv 1
+ \end{aligned}
+$$</p>
+<p>因此$\left&lt;{}Y_i,R\right&gt;$沿径向测地线为常数. 由于当$z\rightarrow x$时,
+$Y_i(z)\rightarrow 0,$ $\left&lt;{}Y_i,R\right&gt;\rightarrow 0.$ 因此
+$\left&lt;{}Y_i,R\right&gt;\equiv 0.$</p>
+<p>有了这两个引理, 就可以仿照欧氏空间, 将定理的证明搬运到流形上了.
+只需将曲线的切向量分解为$d\exp(\mathscr{R})$与$S_t$切空间上的分量,
+求长度, 说明只具$d\exp(\mathscr{R})$上分量且保持正向时, 曲线最短即可.
+特别地, 此时曲线即为径向测地线的单调再参数化.</p>
+<p>由该定理可知, 最短线一定是测地线,
+不然局部上可以取测地线将曲线改造得更短. 但反过来不一定成立,
+测地线不见得是最短的, 如考虑球面与圆柱面上的测地线.</p>
+<h2 id="度量完备性"><a href="#度量完备性" class="headerlink" title="度量完备性"></a>度量完备性</h2><p>事实上, 流形上并不见得存在最短线, 如圆盘挖去中心点.
+这就牵涉到流形<strong>完备性</strong>的讨论. 我们现在在$M$上引入<strong>距离空间结构</strong>,
+通常也叫<strong>度量空间结构</strong>.</p>
+<p>定义$d(x,y)=\inf_{\gamma}L(\gamma),$
+$\gamma$为连接$x,y$的$C^\infty$曲线. 断言$d$是$M$上的距离.
+只需证明$x\neq y$时, $d(x,y)\neq 0.$ 这并不是显然的,
+因为定义里涉及到了下确界. 不过由前面的测地线局部最短性质,
+下确界局部上是可以达到的. 因此接下来只要说明$y\not\in B_\delta,$
+$d(x,y)\ge \delta&gt;0$即可, 而这是容易说明的.</p>
+<p>由于度量$g_{ij}$是连续变换的, 它的最小最大特征值也是,
+从而紧集上有$\varepsilon|v|^2\le g_{ij}v^iv^j\le \alpha|v|^2.$
+这能够说明距离空间$(M,d)$与原先流形上的拓扑是一致的.
+称黎曼流形$M$是完备的, 若$(M,d)$是一个完备的距离空间.</p>
+<p><strong>定理 5</strong> (Hopf-Rinow定理). <em>在一个黎曼流形中, 下述条件是等价的:</em> </p>
+<ol>
+<li><p>$M$<em>是完备的.</em></p>
+</li>
+<li><p>$\,\forall\,x\in M,$ $\exp_x$<em>定义在整个</em>$M_x$<em>上.</em></p>
+</li>
+<li><p>$\,\exists\,x\in M,$ $\exp_x$<em>定义在整个</em>$M_x$<em>上.</em></p>
+</li>
+<li><p>$M$<em>中每个有界闭集是紧的.</em></p>
+</li>
+</ol>
+<p><strong>证:</strong>
+我们来证明$(1)\Rightarrow(2)\Rightarrow (3)\Rightarrow (4)\Rightarrow (1),$
+不过只有$(1)\Rightarrow (2),$ $(3)\Rightarrow (4)$不是那么平凡的.</p>
+<p>对于$(1)\Rightarrow (2),$ 只需说明每条正规测地线能无限延伸.
+倘若测地线只能延伸到$(a,b),$ 那么由完备性,
+$x=\lim\limits_{t\rightarrow b}\gamma(t)\in M.$
+那么在$x$点附近就可以延伸测地线了.</p>
+<p>$(3)\Rightarrow (4)$是较为困难的.
+首先考虑已有的$\exp_x:M_x\rightarrow M.$
+记$\overline{B}_r:=\exp_x\overline{B(r)},$ 那么紧集的连续像也是紧的.
+对任意有界闭集$K,$ 只需证明$\,\exists\,\overline{B}_r\supset K,$
+这样紧集中闭集也是紧的. 为此我们证明如下命题: $\,\forall\,y\in M,$
+<em>存在最短测地线连接</em>$x,y.$ 这样有界集便总能被某个测地球包含.</p>
+<p>$\,\forall\,y\in M,$ 设$d(x,y)=r.$
+取$\delta&gt;0$使得$\overline{B}_{\delta}$上指数映射是微分同胚.
+取$x_\delta\in S_\delta=\partial B_\delta,$ 使得$d(x_\delta,y)$达到最小.
+那么$x_\delta=\exp{\delta v},$ $|v|=1.$
+断言由$v$引出的测地线$\gamma(t)=\exp(tv)$满足$\gamma(r)=y.$
+这样测地线$\gamma$即是连接$x,y$的最短曲线, 命题得证.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/03/13/fQeKRanWMDhJ45V.png width='50%' height='50%'></p>
+<p>我们采用连续性方法证明. 记$A:=\{s\in[0,r]:d(\gamma(s),y)=r-s\}.$
+首先$0\in A,$ $A$非空. 其次由连续性$A$当然是闭的. 只需证明$A$是开的,
+即有$A=[0,r].$ 这样就推得了$\gamma(r)=y.$</p>
+<p>$\,\forall\,s\in A,$ 考虑$\gamma(s)$处的$\overline{B}_{\delta&#39;},$
+使得指数映射在其上为微分同胚.
+取$x_{\delta&#39;}\in S_{\delta&#39;}$使得$d(x_{\delta&#39;},y)$达到最小.
+欲证$d(\gamma(s+\delta&#39;),y)=r-s-\delta&#39;.$ 已知</p>
+<p>$$
+d(\gamma(s),x_{\delta&#39;})=\delta&#39;, \quad d(\gamma(s),y)=r-s=\delta&#39;+\min_{x&#39;\in S_{\delta&#39;} }d(x&#39;,y),
+$$</p>
+<p>因此$d(x_{\delta&#39;},y)=r-s-\delta&#39;,$
+只需说明$\gamma(s+\delta&#39;)=x_{\delta&#39;}.$ 注意到</p>
+<p>$$
+d(x,x_{\delta&#39;})\ge d(x,y)-d(x_{\delta&#39;},y)=s+\delta&#39;,
+$$</p>
+<p>而连接$x\sim\gamma(s),$
+$\gamma(s)\sim x_{\delta&#39;}$的两段测地线拼接起来刚好弧长为$s+\delta&#39;.$
+回忆最短线一定是测地线, 因此这个分段曲线是测地线. 由测地线的分析性质,
+曲线实际上是整体不分段的,
+故连接$\gamma(s)\sim x_{\delta&#39;}$的部分就是$\gamma(s)$处测地线的延伸,
+从而$\gamma(s+\delta&#39;)=x_{\delta&#39;}.$ 至此论证完毕.</p>
+<p>在证明过程中, 我们看到了如下推论:</p>
+<p><strong>推论 6</strong>. <em>在一个完备的黎曼流形中, 任意两点均可用一条最短测地线连接.</em> </p>
+<p><strong>推论 7</strong>. <em>在一个完备的黎曼流形$M$中, $\exp_x:M_x\rightarrow M$是满的, $\,\forall\,x\in M.$</em> </p>
+<p>文章最后更新于 2022-03-13 18:52:14 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    exponential mapping
---------
-
-### Geodesic
-
-Recall that $\gamma:[0,1]\rightarrow The necessary and sufficient condition for M$ to be a **geodesic** is $D_{\dot\gamma}\dot\gamma=0.$
-Therefore, if $\gamma$ is a geodesic, derivation of the inner product shows that $|\dot\gamma|$ is a constant.
-Therefore, through parameter transformation, we may always assume that it has a unit tangent vector and is parameterized by arc length.
-Call it a **regular** geodesic.
-
-### Definition
-
-Next we introduce the concept of **exponential mapping**. Roughly speaking,
-The exponential mapping $\exp:M_x\rightarrow M$ at $x\in M$ is defined as follows: Given $v\in M_x,$
-Starting from $x$, walk along the geodesic $\gamma_v$ with $v$ as the initial tangent vector to $y,$
-So that the arc length from $x$ to $y$ is exactly $|v|.$ then the exponential mapping is defined by $\exp_xv=y$. Intuitively,
-$M_x$ can be defined in the neighborhood of the origin, but it may not be defined as a whole.
-It will be shown later that the overall definition of exponential mapping is equivalent to requiring that the Riemannian manifold $M$ is **complete**.
-The geometric proof of the above intuition is quite clumsy, and it is simpler to explain it in the form of differential equations.
-Recall that geodesics are determined by a system of ordinary differential equations:
-
-
-$$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="指数映射"><a href="#指数映射" class="headerlink" title="指数映射"></a>指数映射</h2><h3 id="测地线"><a href="#测地线" class="headerlink" title="测地线"></a>测地线</h3><p>回忆$\gamma:[0,1]\rightarrow M$为<strong>测地线</strong>的充要条件是$D_{\dot\gamma}\dot\gamma=0.$
+因此若$\gamma$为测地线, 对内积求导可知$|\dot\gamma|$为常数.
+因此通过参数变换, 不妨总假定其具单位切向量, 是弧长参数化的.
+称其为<strong>正规的</strong>测地线.</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>接下来我们引入<strong>指数映射</strong>的概念. 粗略地说,
+$x\in M$处的指数映射$\exp:M_x\rightarrow M$定义如下: 任给$v\in M_x,$
+从$x$出发,沿以$v$为初始切向量的测地线$\gamma_v$走到$y,$
+使得$x$到$y$弧长恰为$|v|.$ 那么由$\exp_xv=y$来定义指数映射. 直观看来,
+$M_x$原点邻域上是可以定义的, 但未必能定义在整体上.
+后面将说明指数映射能整体定义等价于要求黎曼流形$M$是<strong>完备的</strong>.</p>
+<p>上述直观在几何上的证明相当笨拙, 用微分方程的方式说明更为简便.
+回忆测地线由常微分方程组确定:</p>
+<p>$$
 \frac{d {}^2\gamma^i}{d {}t^2}+\Gamma^i_{jk}\frac{d {}\gamma^j}{d {}t}\frac{d {}\gamma^k}{d {}t}=0,\quad \,\forall\,i=1,\cdots,n.
-$$
-
-
-According to the basic theorem of ODE, $\,\forall\,x\in M,$ $\varepsilon>0,$
-Neighborhood $\mathscr{U}\subset M$ of $\,\exists\,x$ and $\delta>0,$
-Such that $\,\forall\,y\in \mathscr{U},$ $v\in B_y(\delta)\subset M_y,$
-There is a geodesic $\gamma_v,$ with initial tangent vector $v$, and its domain includes $[0,\varepsilon].$
-Note that the geodesic after linear transformation of parameters is still a geodesic, so the following proposition is obtained:
-
-$\,\forall\,x\in M,$ $\,\exists\,neighborhood of x$$\mathscr{U}\subset M,$
-$\omega>0,$ $\,\forall\,y\in \mathscr{U},$
-$v\in B_y(\omega)\subset M_y,$ There is a geodesic $\gamma_v,$ with $v$ as the initial tangent vector
-The domain includes $I=[0,1].$
-
-At this time, $\exp_x:B_x(\omega)\rightarrow M$ defined by $\exp_x v=\gamma_v(1)$ is the exponential mapping that satisfies the aforementioned definition.
-At the same time, it can be defined on the open set $U:=\mathscr{U}\times B(\omega)$ in the tangent bundle $TM$,
-Given by $\exp(y,v):=\exp_y v$$\exp:U\rightarrow M.$
-It can be seen from the dependence of the solution on the parameters that the exponential map $\exp$ is smooth.
-
-### Properties
-
-Below we explain that in small neighborhoods, the exponential map $\exp_x$ is a diffeomorphism.
-Since $M_x\cong \mathbb{R}^n,$ the tangent space on it is naturally equal to $M_x$ itself.
-Consider $(d\exp_x)_O:M_x\rightarrow M_x,$ and it is easy to verify that it is an identity mapping.
-In this way, it is non-singular, so $\exp_x$ is indeed diffeomorphism in the neighborhood of the origin.
-It is easy to prove its statement on a large scale:
-**Lemma 1**. *$\,\forall\,K\Subset M,$ $\,\exists\,\varepsilon>0,$ $\,\forall\,x\in K,$ $\exp_x$ is a diffeomorphism on $B_x(\varepsilon)$.*
-
-Next, we discuss the local shortest property of the geodesic. In the following, $x is fixed by default, and the subscript of $x$ is omitted.
-Let $\exp$ be a diffeomorphism on $B(\delta)$. Let $B_\delta:=\exp B(\delta).$
+$$</p>
+<p>由ODE基本定理, $\,\forall\,x\in M,$ $\varepsilon&gt;0,$
+$\,\exists\,x$的邻域$\mathscr{U}\subset M$以及$\delta&gt;0,$
+使得$\,\forall\,y\in \mathscr{U},$ $v\in B_y(\delta)\subset M_y,$
+存在初始切向量为$v$的测地线$\gamma_v,$ 定义域包含$[0,\varepsilon].$</p>
+<p>注意到参数线性变换后的测地线仍是测地线, 因此得到下述命题:</p>
+<p>$\,\forall\,x\in M,$ $\,\exists\,x$的邻域$\mathscr{U}\subset M,$
+$\omega&gt;0,$ $\,\forall\,y\in \mathscr{U},$
+$v\in B_y(\omega)\subset M_y,$ 存在以$v$为初始切向量的测地线$\gamma_v,$
+定义域包含$I=[0,1].$</p>
+<p>此时由$\exp_x v=\gamma_v(1)$定义的$\exp_x:B_x(\omega)\rightarrow M$就是满足前述定义的指数映射.
+同时, 它可定义在切丛$TM$中的开集$U:=\mathscr{U}\times B(\omega)$上,
+由$\exp(y,v):=\exp_y v$给出$\exp:U\rightarrow M.$
+由解对参数的依赖性可知指数映射$\exp$是光滑的.</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><p>下面我们说明在小邻域上, 指数映射$\exp_x$是一个微分同胚.
+由于$M_x\cong \mathbb{R}^n,$ 其上的切空间自然地等于$M_x$本身.
+考虑$(d\exp_x)_O:M_x\rightarrow M_x,$ 容易验证其为恒等映射.
+这样它是非奇异的, 从而$\exp_x$在原点邻域的确是微分同胚.
+容易证明它在大范围上的叙述:</p>
+<p><strong>引理 1</strong>. <em>$\,\forall\,K\Subset M,$ $\,\exists\,\varepsilon&gt;0,$ $\,\forall\,x\in K,$ $\exp_x$在$B_x(\varepsilon)$上为微分同胚.</em> </p>
+<p>接下来讨论测地线的局部最短性质. 下面默认固定$x,$ 将$x$的下标略去.
+设$\exp$在$B(\delta)$上为微分同胚. 记$B_\delta:=\exp B(\delta).$
 $\,\forall\,v\in B(\delta),$
-Call the image of **radial line segment**$c(t):=tv:[0,1]\rightarrow B_\delta$ under exponential mapping $\exp$ to be the **radial geodesic in $B_\delta$.**
-We will prove the following theorem:
-
-**Theorem 2**. *Suppose the piecewise $C^\infty$ curve $\sigma$ connects $x,y\in B_\delta.$ If $\xi$ is a radial geodesic connecting $x,y$, then $L(\sigma)\ge L(\xi),$ is equal if and only if $\sigma$ is a monotonic reparameterization of $\xi$.*
-
-We note that this is obvious in Euclidean space,
-It is proved that it is only necessary to decompose the tangent vector of the curve into a radial component and a spherical tangential component.
-Obviously it is the shortest when there is no spherical tangent, and the radial component needs to be kept positive.
-In order to move the proof to the manifold, we need to consider how to obtain the sphere and decompose it.
-
-Define vector field $\mathscr{R}:$ in $M_x\setminus\{0\}$
-$$
+称<strong>径向线段</strong>$c(t):=tv:[0,1]\rightarrow B_\delta$在指数映射$\exp$下的像为$B_\delta$中的<strong>径向测地线.</strong>
+我们将证明下述定理:</p>
+<p><strong>定理 2</strong>. <em>设分段$C^\infty$曲线$\sigma$连接$x,y\in B_\delta.$ 若$\xi$为连接$x,y$的径向测地线, 则$L(\sigma)\ge L(\xi),$ 等号成立当且仅当$\sigma$为$\xi$的单调再参数化.</em> </p>
+<p>我们注意到在欧氏空间中这是显然的,
+证明只需将曲线的切向量分解为径向分量和球面切向分量即可.
+显然没有球面切向时是最短的, 且需要径向分量保持正向.
+为了将证明搬到流形上, 需要考虑如何取球面以及做分解.</p>
+<p>在$M_x\setminus\{0\}$中定义向量场$\mathscr{R}:$</p>
+<p>$$
 \mathscr{R}(v)=\frac{v}{|v|},\quad v\in M_x\setminus\{0\}.
-$$
-
-
-
-**Lemma 3**. *$|d\exp(\mathscr{R})|\equiv 1$*
-
-**Certificate:** $\,\forall\,v\in M_x\setminus\{0\},$
-Take $\gamma$ as the normal geodesic in $M$, and $\frac{v}{|v|}$ as the initial tangent vector.
-Then $\exp(v)=\gamma(|v|),$
-
-
-$$
+$$</p>
+<p><strong>引理 3</strong>. <em>$|d\exp(\mathscr{R})|\equiv 1$</em> </p>
+<p><strong>证:</strong> $\,\forall\,v\in M_x\setminus\{0\},$
+取$\gamma$为$M$中正规测地线, 以$\frac{v}{|v|}$为初始切向量.
+那么$\exp(v)=\gamma(|v|),$</p>
+<p>$$
 |d\exp(\mathscr{R}(v))|=|\dot{\gamma}(|v|)|=|\dot{\gamma}(0)|=1.
-$$
-**Lemma 4** (Gauss' lemma). *$\,\forall\,t<\delta,$ Let $S_t:=\exp(S(t))$ be the geodesic surface with radius $t$ in $B_\delta$, then the radial geodesic is orthogonal to each $S_t.$, that is, $d\exp(\mathscr{R})$ is perpendicular to the tangent space of $S_t$.*
-**Proof:** Since $\exp$ is a diffeomorphism, the following diffeomorphism can be obtained:
-
-
-$$
+$$</p>
+<p><strong>引理 4</strong> (Gauss引理). <em>$\,\forall\,t&lt;\delta,$ 令$S_t:=\exp(S(t))$为$B_\delta$中半径为$t$的测地球面, 则径向测地线正交于每一个$S_t.$ 即$d\exp(\mathscr{R})$垂直于$S_t$的切空间.</em> </p>
+<p><strong>证:</strong> 由于$\exp$是微分同胚, 可以取到如下微分同胚:</p>
+<p>$$
 F:S^{n-1}\times(0,\delta)\rightarrow B_\delta\setminus\{x\},
-$$
-
-
-Where $S^{n-1}=S(1)$ is the unit sphere in $M_x$. $F(p,t):=\exp(tp).$
-For each fixed $t, $ $F$ diffeomorphically maps $S^{n-1}\times\{t\}$ to $S_t.$
-Taking $S^{n-1}$ local coordinate system $\{y^i\}, $ $r$ is the natural parameter on $(0,\delta)$,
-Remember $R=dF\left(\frac{\partial {} }{\partial {}r}\right),$
+$$</p>
+<p>其中$S^{n-1}=S(1)$为$M_x$中单位球面. $F(p,t):=\exp(tp).$
+对每个固定的$t,$ $F$将$S^{n-1}\times\{t\}$微分同胚地映至$S_t.$
+取$S^{n-1}$局部坐标系$\{y^i\},$ $r$为$(0,\delta)$上的自然参数,
+记$R=dF\left(\frac{\partial {} }{\partial {}r}\right),$
 $Y_i=dF\left(\frac{\partial {} }{\partial {}r}\right),$
-Then we only need to prove that $\left<{}Y_i,R\right>=0.$
-
-$$
+则只需证$\left&lt;{}Y_i,R\right&gt;=0.$</p>
+<p>$$
 \begin{aligned}
- R\left<{}Y_i,R\right>&=\left<{}D_RY_i,R\right>+\left<{}Y_i,D_RR\right>\\
- &=\left<{}D_{Y_i}R,R\right>&D_RY_i-D_{Y_i}R=[R,Y_i]=dF\left[\frac{\partial {} }{\partial {}r},\frac{\partial {} }{\partial {}y_i}\right], D_RR=0\\
- &=\frac{1}{2}Y_i\left<{}R,R\right>=0&|R|\equiv 1
+ R\left&lt;{}Y_i,R\right&gt;&amp;=\left&lt;{}D_RY_i,R\right&gt;+\left&lt;{}Y_i,D_RR\right&gt;\\
+ &amp;=\left&lt;{}D_{Y_i}R,R\right&gt;&amp;D_RY_i-D_{Y_i}R=[R,Y_i]=dF\left[\frac{\partial {} }{\partial {}r},\frac{\partial {} }{\partial {}y_i}\right], D_RR=0\\
+ &amp;=\frac{1}{2}Y_i\left&lt;{}R,R\right&gt;=0&amp;|R|\equiv 1
  \end{aligned}
-$$
-Therefore $\left<{}Y_i,R\right>$ is constant along the radial geodesic. Since when $z\rightarrow x$,
-$Y_i(z)\rightarrow 0,$ $\left<{}Y_i,R\right>\rightarrow 0.$ Therefore
-$\left<{}Y_i,R\right>\equiv 0.$
-With these two lemmas, we can imitate the Euclidean space and transfer the proof of the theorem to the manifold.
-Just decompose the tangent vector of the curve into components on the tangent space of $d\exp(\mathscr{R})$ and $S_t$,
-Find the length and show that when it only has the upper component of $d\exp(\mathscr{R})$ and remains positive, the curve will be the shortest.
-In particular, the curve at this time is a monotonic reparameterization of the radial geodesic.
-It can be seen from this theorem that the shortest line must be a geodesic.
-Otherwise, the local geodesic can be used to transform the curve into a shorter one. But the converse may not necessarily be true.
-The geodesic is not necessarily the shortest, for example, consider the geodesics on the sphere and cylinder.
-
-Metric completeness
-----------
-
-In fact, there may not necessarily be a shortest line on the manifold, such as a disk digging out the center point.
-This involves the discussion of **completeness** of manifolds. We now introduce **distance space structure** on $M$,
-Usually also called **metric space structure**.
-
-Definition$d(x,y)=\inf_{\gamma}L(\gamma),$
-$\gamma$ is the $C^\infty$ curve connecting $x, y$. Assert that $d$ is the distance on $M$.
-Just prove that when $x\neq y$, $d(x,y)\neq 0.$ This is not obvious,
-Because the definition involves the lower bound. However, based on the local shortest property of the geodesic,
-The indefinite bound is locally achievable. Therefore, we only need to explain $y\not\in B_\delta,$
-$d(x,y)\ge \delta>0$ is enough, and this is easy to explain.
-
-Since the metric $g_{ij}$ is continuously transformed, its minimum and maximum eigenvalues are also,
-Therefore, there is $\varepsilon|v|^2\le g_{ij}v^iv^j\le \alpha|v|^2.$ on the compact set
-This can show that the distance space $(M,d)$ is consistent with the topology on the original manifold.
-The Riemannian manifold $M$ is said to be complete if $(M,d)$ is a complete distance space.
-
-**Theorem 5** (Hopf-Rinow theorem). *In a Riemannian manifold, the following conditions are equivalent:*
-
-1. $M$* is complete.*
-2. $\,\forall\,x\in M,$ $\exp_x$* is defined on the entire *$M_x$*.*
-
-3. $\,\exists\,x\in M,$ $\exp_x$* is defined on the entire *$M_x$*.*
-
-4. Every bounded closed set in $M$* is compact.*
-
-**Certificate:**
-Let us prove that $(1)\Rightarrow(2)\Rightarrow (3)\Rightarrow (4)\Rightarrow (1),$
-But only $(1)\Rightarrow (2), $ $(3)\Rightarrow (4)$ are not so trivial.
-
-For $(1)\Rightarrow (2),$ only needs to show that each regular geodesic can extend infinitely.
-If the geodesic can only extend to $(a,b),$ then by completeness,
+$$</p>
+<p>因此$\left&lt;{}Y_i,R\right&gt;$沿径向测地线为常数. 由于当$z\rightarrow x$时,
+$Y_i(z)\rightarrow 0,$ $\left&lt;{}Y_i,R\right&gt;\rightarrow 0.$ 因此
+$\left&lt;{}Y_i,R\right&gt;\equiv 0.$</p>
+<p>有了这两个引理, 就可以仿照欧氏空间, 将定理的证明搬运到流形上了.
+只需将曲线的切向量分解为$d\exp(\mathscr{R})$与$S_t$切空间上的分量,
+求长度, 说明只具$d\exp(\mathscr{R})$上分量且保持正向时, 曲线最短即可.
+特别地, 此时曲线即为径向测地线的单调再参数化.</p>
+<p>由该定理可知, 最短线一定是测地线,
+不然局部上可以取测地线将曲线改造得更短. 但反过来不一定成立,
+测地线不见得是最短的, 如考虑球面与圆柱面上的测地线.</p>
+<h2 id="度量完备性"><a href="#度量完备性" class="headerlink" title="度量完备性"></a>度量完备性</h2><p>事实上, 流形上并不见得存在最短线, 如圆盘挖去中心点.
+这就牵涉到流形<strong>完备性</strong>的讨论. 我们现在在$M$上引入<strong>距离空间结构</strong>,
+通常也叫<strong>度量空间结构</strong>.</p>
+<p>定义$d(x,y)=\inf_{\gamma}L(\gamma),$
+$\gamma$为连接$x,y$的$C^\infty$曲线. 断言$d$是$M$上的距离.
+只需证明$x\neq y$时, $d(x,y)\neq 0.$ 这并不是显然的,
+因为定义里涉及到了下确界. 不过由前面的测地线局部最短性质,
+下确界局部上是可以达到的. 因此接下来只要说明$y\not\in B_\delta,$
+$d(x,y)\ge \delta&gt;0$即可, 而这是容易说明的.</p>
+<p>由于度量$g_{ij}$是连续变换的, 它的最小最大特征值也是,
+从而紧集上有$\varepsilon|v|^2\le g_{ij}v^iv^j\le \alpha|v|^2.$
+这能够说明距离空间$(M,d)$与原先流形上的拓扑是一致的.
+称黎曼流形$M$是完备的, 若$(M,d)$是一个完备的距离空间.</p>
+<p><strong>定理 5</strong> (Hopf-Rinow定理). <em>在一个黎曼流形中, 下述条件是等价的:</em> </p>
+<ol>
+<li><p>$M$<em>是完备的.</em></p>
+</li>
+<li><p>$\,\forall\,x\in M,$ $\exp_x$<em>定义在整个</em>$M_x$<em>上.</em></p>
+</li>
+<li><p>$\,\exists\,x\in M,$ $\exp_x$<em>定义在整个</em>$M_x$<em>上.</em></p>
+</li>
+<li><p>$M$<em>中每个有界闭集是紧的.</em></p>
+</li>
+</ol>
+<p><strong>证:</strong>
+我们来证明$(1)\Rightarrow(2)\Rightarrow (3)\Rightarrow (4)\Rightarrow (1),$
+不过只有$(1)\Rightarrow (2),$ $(3)\Rightarrow (4)$不是那么平凡的.</p>
+<p>对于$(1)\Rightarrow (2),$ 只需说明每条正规测地线能无限延伸.
+倘若测地线只能延伸到$(a,b),$ 那么由完备性,
 $x=\lim\limits_{t\rightarrow b}\gamma(t)\in M.$
-Then the geodesic can be extended near point $x$.
+那么在$x$点附近就可以延伸测地线了.</p>
+<p>$(3)\Rightarrow (4)$是较为困难的.
+首先考虑已有的$\exp_x:M_x\rightarrow M.$
+记$\overline{B}_r:=\exp_x\overline{B(r)},$ 那么紧集的连续像也是紧的.
+对任意有界闭集$K,$ 只需证明$\,\exists\,\overline{B}_r\supset K,$
+这样紧集中闭集也是紧的. 为此我们证明如下命题: $\,\forall\,y\in M,$
+<em>存在最短测地线连接</em>$x,y.$ 这样有界集便总能被某个测地球包含.</p>
+<p>$\,\forall\,y\in M,$ 设$d(x,y)=r.$
+取$\delta&gt;0$使得$\overline{B}_{\delta}$上指数映射是微分同胚.
+取$x_\delta\in S_\delta=\partial B_\delta,$ 使得$d(x_\delta,y)$达到最小.
+那么$x_\delta=\exp{\delta v},$ $|v|=1.$
+断言由$v$引出的测地线$\gamma(t)=\exp(tv)$满足$\gamma(r)=y.$
+这样测地线$\gamma$即是连接$x,y$的最短曲线, 命题得证.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/03/13/fQeKRanWMDhJ45V.png width='50%' height='50%'></p>
+<p>我们采用连续性方法证明. 记$A:=\{s\in[0,r]:d(\gamma(s),y)=r-s\}.$
+首先$0\in A,$ $A$非空. 其次由连续性$A$当然是闭的. 只需证明$A$是开的,
+即有$A=[0,r].$ 这样就推得了$\gamma(r)=y.$</p>
+<p>$\,\forall\,s\in A,$ 考虑$\gamma(s)$处的$\overline{B}_{\delta&#39;},$
+使得指数映射在其上为微分同胚.
+取$x_{\delta&#39;}\in S_{\delta&#39;}$使得$d(x_{\delta&#39;},y)$达到最小.
+欲证$d(\gamma(s+\delta&#39;),y)=r-s-\delta&#39;.$ 已知</p>
+<p>$$
+d(\gamma(s),x_{\delta&#39;})=\delta&#39;, \quad d(\gamma(s),y)=r-s=\delta&#39;+\min_{x&#39;\in S_{\delta&#39;} }d(x&#39;,y),
+$$</p>
+<p>因此$d(x_{\delta&#39;},y)=r-s-\delta&#39;,$
+只需说明$\gamma(s+\delta&#39;)=x_{\delta&#39;}.$ 注意到</p>
+<p>$$
+d(x,x_{\delta&#39;})\ge d(x,y)-d(x_{\delta&#39;},y)=s+\delta&#39;,
+$$</p>
+<p>而连接$x\sim\gamma(s),$
+$\gamma(s)\sim x_{\delta&#39;}$的两段测地线拼接起来刚好弧长为$s+\delta&#39;.$
+回忆最短线一定是测地线, 因此这个分段曲线是测地线. 由测地线的分析性质,
+曲线实际上是整体不分段的,
+故连接$\gamma(s)\sim x_{\delta&#39;}$的部分就是$\gamma(s)$处测地线的延伸,
+从而$\gamma(s+\delta&#39;)=x_{\delta&#39;}.$ 至此论证完毕.</p>
+<p>在证明过程中, 我们看到了如下推论:</p>
+<p><strong>推论 6</strong>. <em>在一个完备的黎曼流形中, 任意两点均可用一条最短测地线连接.</em> </p>
+<p><strong>推论 7</strong>. <em>在一个完备的黎曼流形$M$中, $\exp_x:M_x\rightarrow M$是满的, $\,\forall\,x\in M.$</em> </p>
+<p>文章最后更新于 2022-03-13 18:52:14 </p>
 
-$(3)\Rightarrow (4)$ is more difficult.
-First consider the existing $\exp_x:M_x\rightarrow M.$
-Note $\overline{B}_r:=\exp_x\overline{B(r)},$ then the continuous image of the compact set is also compact.
-For any bounded closed set $K,$ we only need to show that $\,\exists\,\overline{B}_r\supset K,$
-In this way, the closed set of compact sets is also compact. For this reason, we prove the following proposition: $\,\forall\,y\in M,$
-*There is a shortest geodesic connection*$x,y.$ so that the bounded set can always be contained by a certain geodesic.
-
-$\,\forall\,y\in M,$ Let $d(x,y)=r.$
-Take $\delta>0$ so that the exponential map on $\overline{B}_{\delta}$ is a diffeomorphism.
-Take $x_\delta\in S_\delta=\partial B_\delta,$ so that $d(x_\delta,y)$ reaches the minimum.
-Then $x_\delta=\exp{\delta v},$ $|v|=1.$
-Assert that the geodesic $\gamma(t)=\exp(tv)$ drawn by $v$ satisfies $\gamma(r)=y.$
-In this way, the geodesic $\gamma$ is the shortest curve connecting $x, y$, and the proposition is proved.
-
-<img style='margin: auto;' src=https://s2.loli.net/2022/03/13/fQeKRanWMDhJ45V.png width='50%' height='50%'>
-We use the continuity method to prove. Note $A:=\{s\in[0,r]:d(\gamma(s),y)=r-s\}.$
-First, $0\in A,$ $A$ is not empty. Secondly, $A$ is of course closed due to continuity. Just prove that $A$ is open,
-That is, $A=[0,r].$, so it can be deduced that $\gamma(r)=y.$
-$\,\forall\,s\in A,$ Consider $\overline{B}_{\delta'},$ at $\gamma(s)$
-Make the exponential map on it a diffeomorphism.
-Take $x_{\delta'}\in S_{\delta'}$ so that $d(x_{\delta'},y)$ reaches the minimum.
-We want to prove that $d(\gamma(s+\delta'),y)=r-s-\delta'.$ is known
-$$
-d(\gamma(s),x_{\delta'})=\delta', \quad d(\gamma(s),y)=r-s=\delta'+\min_{x'\in S_{\delta'} }d(x',y),
-$$
-
-
-Therefore $d(x_{\delta'},y)=r-s-\delta',$
-Just say $\gamma(s+\delta')=x_{\delta'}.$ Note
-$$
-d(x,x_{\delta'})\ge d(x,y)-d(x_{\delta'},y)=s+\delta',
-$$
-
-
-And connect $x\sim\gamma(s),$
-The two geodesics of $\gamma(s)\sim x_{\delta'}$ are spliced together to have an arc length of $s+\delta'.$
-Recall that the shortest line must be a geodesic, so this piecewise curve is a geodesic. According to the analytical properties of geodesics,
-The curve is actually not segmented as a whole.
-Therefore, the part connecting $\gamma(s)\sim x_{\delta'}$ is the extension of the geodesic at $\gamma(s)$,
-Thus $\gamma(s+\delta')=x_{\delta'}.$ This completes the argument.
-
-During the proof, we saw the following inference:
-**Corollary 6**. *In a complete Riemannian manifold, any two points can be connected by a shortest geodesic.*
-
-**Corollary 7**. *In a complete Riemannian manifold $M$, $\exp_x:M_x\rightarrow M$ is full, $\,\forall\,x\in M.$*
-
-The article was last updated on 2022-03-13 18:52:14
                 </div>
             
         </div>
@@ -444,7 +550,7 @@ The article was last updated on 2022-03-13 18:52:14
     <ul>
         <li>本文标题：《黎曼几何初步》笔记(3)-测地线</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-03-13 18:52:06</li>
+        <li>创建时间：2022-03-13 20:52:06</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/03/13/《黎曼几何初步》笔记(3)-测地线/
         </li>
@@ -498,7 +604,7 @@ The article was last updated on 2022-03-13 18:52:14
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">论文笔记-正质量定理</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Thesis Notes-Positive Mass Theorem</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Thesis Notes - Positive Mass Theorem</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -750,11 +856,11 @@ The article was last updated on 2022-03-13 18:52:14
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E6%98%A0%E5%B0%84"><span class="nav-text">指数映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E7%BA%BF"><span class="nav-text">测地线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E5%AE%8C%E5%A4%87%E6%80%A7"><span class="nav-text">度量完备性</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E6%98%A0%E5%B0%84"><span class="nav-text">指数映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E7%BA%BF"><span class="nav-text">测地线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%A7%E8%B4%A8"><span class="nav-text">性质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E5%AE%8C%E5%A4%87%E6%80%A7"><span class="nav-text">度量完备性</span></a></li></ol>
         </div>
     
 </div>
@@ -805,6 +911,36 @@ The article was last updated on 2022-03-13 18:52:14
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -828,46 +964,6 @@ The article was last updated on 2022-03-13 18:52:14
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

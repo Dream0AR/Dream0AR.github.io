@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(5)-Jacobi场和Cartan-Hadamard定理</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Preliminary Notes on Riemannian Geometry (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-04-21 19:11:29
+        <i class="fas fa-edit"></i>&nbsp;2022-04-21 22:11:29
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,225 +230,304 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="Jacobi场"><a href="#Jacobi场" class="headerlink" title="Jacobi场"></a>Jacobi场</h2><p>回忆若$\{\gamma_s\}$为单参数测地线族, 以$U$为横截向量场.
+那么$U$限制在基线$\gamma=\gamma_0$上是一个Jacobi场, 满足Jacobi方程:</p>
+<p>$$
+\ddot{U}+R_{\dot{\gamma}U}\dot{\gamma}=0.
+$$</p>
+<p>它是一个二阶常微分方程组, 因此有如下引理:</p>
+<p><strong>引理 1</strong>. <em>对测地线$\gamma,$ 任意给定$v,w\in M_{\gamma_0},$ 存在唯一沿$\gamma$的Jacobi场, 使得$U(0)=v,$ $\dot U(0)=w,$ 且沿测地线的Jacobi场零点离散.</em> </p>
+<p>对上节的(单方向的)引理, 我们有更完整的命题成立:</p>
+<p><strong>引理 2</strong>. <em>给定测地线$\gamma$与沿它的向量场$U,$ 它是Jacobi场当且仅当$U$是某个单参数测地线族$\{\gamma_s\}$的横截向量场在$\gamma$上的限制, $\gamma_0\equiv \gamma.$</em> </p>
+<p><strong>证:</strong> 只需证明$U$是Jacobi场的情形.
+取以$U(0)$为初始切向量的测地线(或任一曲线)$\zeta,$
+在其上取平行向量场$T,W,$ 满足$T(0)=\dot\gamma(0),$ $W(0)=\dot U(0),$
+我们准备编织出单参数测地线族.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/04/21/7Ww3nPTFcBIaxV9.png width='50%' height='50%'></p>
+<p>取$\gamma_u(t)=\exp_{\zeta(u)}t(T(u)+uW(u)),$
+那么$\{\gamma_u\}$构成单参数测地线族, 且$\gamma_0\equiv \gamma.$
+记其横截向量场限制在$\gamma$上为$U_1,$ 只需验证$U_1(0)=U(0),$
+$\dot U_1(0)=\dot U(0).$ 一式由下式即得,</p>
+<p>$$
+U_1(0)=\left.\frac{\partial {} }{\partial {}u}\gamma_u(0)\right|_{u=0}=\dot\zeta(0)=U(0).
+$$</p>
+<p>对于二式, 记$\Gamma(t,u):=\gamma_u(t),$
+$T_1:=d\Gamma\left(\frac{\partial {} }{\partial {}t}\right).$
+回忆上节中的$[T,U]\equiv0,$ 类似地我们有:</p>
+<p>$$
+\dot U_1(0)=D_{\dot\gamma(0)}U_1=D_{U_1(0)}\dot\gamma=D_{\dot\zeta(0)}T_1.
+$$</p>
+<p>而我们知道, 由于$d\exp_O=\mathrm{id},$</p>
+<p>$$
+T_1(\zeta(u))=\left.\frac{\partial {} }{\partial {}t}\exp_{\zeta(u)}t(T(u)+uW(u))\right|_{t=0}=T(u)+uW(u).
+$$</p>
+<p>最后由于我们选取的是平行向量场, 就得到了</p>
+<p>$$
+\dot U_1(0)=D_{\dot\zeta(0)}(T(u)+uW(u))=W(0)=\dot U(0).
+$$</p>
+<p><strong>引理 3</strong>. <em>设$U$是沿测地线$\gamma$的Jacobi场, 那么存在Jacobi场$U^\perp$满足$\left&lt;{}U^\perp,\dot\gamma\right&gt;,$ $a,b\in \mathbb{R},$ 使得</em> </p>
+<p>$$
+U=U^\perp +(at+b)\dot\gamma.
+$$</p>
+<p><strong>证:</strong> 首先我们可以看到,</p>
+<p>$$
+D_TD_T\left&lt;{}U,\dot\gamma\right&gt;=D_T\left&lt;{}\dot U,\dot\gamma\right&gt;=\left&lt;{}\ddot U,\dot\gamma\right&gt;=\left&lt;{}-R_{\dot\gamma U}\dot\gamma,\dot\gamma\right&gt;=-R(\dot\gamma,U,\dot\gamma,\dot\gamma)=0.
+$$</p>
+<p>因此$\left&lt;{}U,\dot\gamma\right&gt;(t)=a&#39;t+b&#39;.$ 做正交化, 令</p>
+<p>$$
+a=\frac{a&#39;}{|\dot\gamma|^2},\quad b=\frac{b&#39;}{|\dot\gamma|^2},\quad U^\perp=U-(at+b)\dot\gamma,
+$$</p>
+<p>则$\left&lt;{}U^\perp,\dot\gamma\right&gt;=0,$ 且$U^\perp$的确是Jacobi场:</p>
+<p>$$
+\ddot{U}^\perp=\ddot U=-R_{\dot\gamma U}\dot\gamma=-R_{\dot\gamma U^\perp}\dot\gamma-(at+b)R_{\dot\gamma\dot\gamma}\dot\gamma=-R_{\dot\gamma U^\perp}\dot\gamma.
+$$</p>
+<p>因此垂直于$\dot\gamma$的Jacobi场是有意思的, 称其为<strong>正常Jacobi场</strong>.
+由于$\left&lt;{}U,\dot\gamma\right&gt;=at+b,$
+只要初值条件有$\left&lt;{}U(0),\dot\gamma\right&gt;=\left&lt;{}\dot U(0),\dot\gamma\right&gt;=0,$
+那么$U(t)$就是正常Jacobi场. 类似地, 我们还有推论:</p>
+<p><strong>推论 4</strong>. <em>若$U$是沿测地线$\gamma$的Jacobi场, 存在$t_1\neq t_2,$ $\left&lt;{}U,\dot\gamma\right&gt;(t_1)=\left&lt;{}U,\dot\gamma\right&gt;(t_2)=0,$ 则$U$是正常Jacobi场.</em> </p>
+<p>现在我们用Jacobi场来了解$d\exp_x.$ 回忆第三章中,
+我们得到了$d\exp_x$在半径方向总是不退化的. 现考虑$p\in M$处的奇异性,
+取$X$为$p$点处切向量, 垂直于径向直线$t\mapsto tp.$ 取单参数测地线族:</p>
+<p>$$
+\gamma_u(t)=\exp_xt(T+uX),\quad T=p.
+$$</p>
+<p> 由于$U(t)=d\exp_x tX,$
+$U(0)=0,$ $\dot U(0)=X,$ $\left&lt;{}X,T\right&gt;=0,$
+横截向量场$U$在基曲线$\gamma=\gamma_0$上的限制是正常Jacobi场.
+由于$U(1)=d\exp_x X,$ 我们可以得到<em>Gauss引理</em>, 同时还有如下引理:</p>
+<p><strong>引理 5</strong>. <em>$d\exp_x$在$p\in M_x$处退化的充要条件是$\gamma(t)=\exp_x tp$上存在不恒为零的正常Jacobi场, 在$x$与$\exp_xp$处取零.</em> </p>
+<p>若$d\exp_x$在$p\in M_x$处退化, 则称$p$是映射$\exp_x$的<strong>共轭点</strong>,
+称$\exp_x p$为$x$沿测地线$\gamma(t)=\exp_x tp$的<strong>共轭点</strong>.
+由刚刚的引理, 可以看出称之为”共轭”是有道理的: 这一关系具有对称性.</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>接下来我们介绍第一个<strong>“整体性”</strong>定理, 即只需对流形全貌做一些拓扑,
+几何假定后即可成立的性质.</p>
+<p><strong>定理 6</strong> (Cartan-Hadamard定理). <em>设$M$是完备黎曼流形, 具非正截面曲率, 则$\,\forall\,x\in M,$ $\exp_x:M_x\rightarrow M$无共轭点; 当$M$是单连通完备黎曼流形时, 若$\exp_x:M_x\rightarrow M$无共轭点, 则$\exp_x$为微分同胚.</em> </p>
+<p><strong>证:</strong> 只需证明对于任意测地线$\gamma,$ 其上非平凡正常Jacobi场$U,$
+只要$U(0)=0,$ 则$\,\forall\,t&gt;0,$ $U(t)\neq 0.$
+定义$f(t)=\left&lt;{}U,U\right&gt;(t),$ 那么</p>
+<p>$$
+\ddot f=2\left(\left&lt;{}\dot U,\dot U\right&gt;+\left&lt;{}\ddot U,U\right&gt;\right)=2\left(\left&lt;{}\dot U,\dot U\right&gt;-\left&lt;{}R_{\dot \gamma U}\dot\gamma,U\right&gt;\right)\ge 0.
+$$</p>
+<p>最后一个不等号是因为$R(\dot\gamma,U,\dot\gamma,U)=K(\Pi)|\dot\gamma\wedge U|^2\le 0,$
+$\Pi$为由$\left&lt;{}\dot\gamma,U\right&gt;$张成的子空间.
+因此$f\ge 0$是凸函数, 结合Jacobi场的零点离散性就证明了结论.</p>
+<p>事实上, 可以证明更精密的估计:</p>
+<p>$$
+\frac{d {}^2}{d {}t^2}|U(t)|\ge -|U(t)|\cdot |\dot\gamma(t)|\cdot|K(\Pi(t))|\ge 0.
+$$</p>
+<p>由该式可导出<em>Rauch比较定理</em>.</p>
+<p>第二部分的证明只需说明$\exp_x$是覆盖映射. 由于底空间$M$是单连通的,
+得到$\exp_x$是单射, 从而是微分同胚. 我们通过后面两个引理来说明这一点.</p>
+<p><strong>引理 7</strong>. <em>设$\varphi:M\rightarrow M&#39;$是局部等距映射, $M$是完备的, 那么$\varphi$是覆盖映射, 且$M&#39;$也是完备的.</em> </p>
+<p><strong>证:</strong> 证明除了用到完备性与测地线性质外, 更多是拓扑上的技巧, 在此略过.
+核心是利用等距变换保测地性,
+说明局部上$\varphi=\exp_{\varphi(x)}\circ d\varphi \circ \exp_{x}^{-1}.$</p>
+<p><strong>引理 8</strong>. <em>设$M$是完备的黎曼流形, $x\in M,$ $\exp_x:M_x\rightarrow M$无共轭点, 则$\exp_x$是覆盖映射.</em> </p>
+<p><strong>证:</strong> 取$g&#39;=\exp_x^\ast g,$ 将$M$上的度量拉回到$M_x$上.
+易见从原点出发的射线在$g&#39;$意义下是$M_x$中的测地线, 那么由$M$的完备性,
+这些射线均可无限延伸, 从而由Hopf-Rinow定理, $(M_x,g&#39;)$是完备的.
+由$g&#39;$定义, $\exp_x:(M_x,g&#39;)\rightarrow (M,g)$自然是局部等距映射,
+那么由上述引理立即得到结论.</p>
+<p>现在我们用Jacobi定理说明单连通空间形式的唯一性.</p>
+<p><strong>定理 9</strong>. <em>设$M,M&#39;$是两个$n$维单连通的空间形式, 截面曲率为$c.$ 设$x\in M,$ $x&#39;\in M&#39;,$ $\{e_i\},\{e&#39;_i\}$分别是$M_x,M&#39;_x$中的标准正交基. 那么存在唯一的等距映射$\varphi:M\rightarrow M&#39;,$ 使得$\varphi(x)=x&#39;,$ $d\varphi(e_i)=e&#39;_i.$</em> </p>
+<p><strong>证:</strong> 定理的证明较为繁琐, 在此省略. 证明不妨取$c=0,\pm 1,$
+$M=S^n,\mathbb{R}^n,H^n$即可.
+主要步骤是说明$\varphi=\exp_{x&#39;}\circ\Phi\circ \exp_{x}^{-1}$即为所求.
+其中$\Phi$是使得$\Phi(e_i)=e&#39;_i$的唯一线性映照. 另外,
+$c\le 0$时由Cartan-Hadamard定理可以直接取出这样的$\varphi,$
+$c&gt;0$时需要局部上取这样的$\varphi$再做合适的延拓.
+证明中用到如下三个引理, 前两个引理用于展开Jacobi方程,
+最后一个引理说明了等距变换的唯一性.</p>
+<p><strong>引理 10</strong>. <em>设$M$为$n$维空间形式, 截面曲率为$c.$ 设$x\in M,$ $\{e_i\}$为$M_x$标准正交基. 那么$M$的曲率张量满足:</em> </p>
+<p>$$
+R_{e_ie_j}e_k=c(\delta_{ik}e_j-\delta_{jk}e_i),\quad 1\le i,j,k\le n.
+$$</p>
+<p><strong>证:</strong> 只需证明依该式的确定义了一个曲率张量即可,
+且该曲率张量的截面曲率也是$c.$ 那么由于截面曲率决定了曲率张量,
+我们就建立了两个曲率张量的恒等关系.</p>
+<p><strong>推论 11</strong>. <em>记号同上一引理, 设$v$是$M_x$中单位向量, $v^\perp$是$v$的正交补, 那么</em> </p>
+<p>$$
+R_{vw}v=
+ \left\{\begin{aligned}
+ &amp;cw, &amp;&amp;w\in v^\perp,\\
+ &amp;0, &amp;&amp;w=\alpha v.
+ \end{aligned}\right.
+$$</p>
+<p><strong>引理 12</strong>. <em>设$\varphi_1,\varphi_2:M\rightarrow N$为两个局部等距, 满足$\,\exists\,x\in M,$ $\varphi_1(x)=\varphi_2(x)=y\in N,$ 且$d\varphi_1(x)=d\varphi_2(x):M_x\rightarrow M_y.$ 那么我们有$\varphi_1=\varphi_2.$</em> </p>
+<p><strong>证:</strong> 取$M$中子集</p>
+<p>$$
+\mathscr{S}:=\{y\in M: \varphi_1(y)=\varphi_2(y),d\varphi_1(y)=d\varphi_2(y)\},
+$$</p>
+<p>说明其既开又闭即可(连通性假设总是默认的). 开集利用$\exp_y$说明,
+闭集由连续性说明.</p>
+<p>注意我们的主定理有值得注意的推论. 当$M=M&#39;$时, 我们得到:</p>
+<p><strong>推论 13</strong>. <em>设$M$为$n$维完备单连通黎曼流形, 则$M$是空间形式当且仅当对于任意$x,x&#39;\in M,$ $M_x,M_x&#39;$中任意标准正交基$\{e_i\},\{e_i&#39;\},$ 存在等距自变换$\varphi,$ 使得</em> </p>
+<p>$$
+\varphi(x)=x&#39;, \quad d\varphi(e_i)=e_i&#39;.
+$$</p>
+<p>这表明任一单连通空间形式必是齐性黎曼流形, 特别地$H^n$是齐性的,
+而这并不能平凡地看出. 进一步可说明这些空间形式都是<strong>两点齐性的</strong>,
+即对于任意$p_1,p_2,q_1,q_2\in M,$ $d(p_1,p_2)=d(q_1,q_2),$
+存在等距映射$\varphi:M\rightarrow M,$ 使得$\varphi(p_i)=q_i,$ $i=1,2.$</p>
+<p><strong>推论 14</strong>. <em>所有单连通空间形式都是两点齐性的.</em> </p>
+<p><strong>证:</strong> 由于流形是完备的,
+存在测地线$\zeta,\xi$分别连接$p_1,p_2;q_1,q_2.$ 取等距变换$\varphi,$
+使得$\varphi(\zeta(0))=\xi(0),$ $d\varphi(\dot\zeta(0))=\dot\xi(0).$
+由等距变换保持测地线的性质即可知$\varphi(\zeta)=\xi,$ 命题得证.</p>
+<p>文章最后更新于 2022-04-21 19:11:30 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Jacobi field
---------
-
-Recall that $\{\gamma_s\}$ is a single-parameter geodesic family, and $U$ is a transverse vector field.
-Then $U$ is a Jacobi field restricted to the baseline $\gamma=\gamma_0$, satisfying the Jacobi equation:
-
-
-
-$$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="Jacobi场"><a href="#Jacobi场" class="headerlink" title="Jacobi场"></a>Jacobi场</h2><p>回忆若$\{\gamma_s\}$为单参数测地线族, 以$U$为横截向量场.
+那么$U$限制在基线$\gamma=\gamma_0$上是一个Jacobi场, 满足Jacobi方程:</p>
+<p>$$
 \ddot{U}+R_{\dot{\gamma}U}\dot{\gamma}=0.
-$$
-It is a system of second-order ordinary differential equations, so it has the following lemma:
-
-**Lemma 1**. *For the geodesic $\gamma,$, for any given $v,w\in M_{\gamma_0},$, there is a unique Jacobi field along $\gamma$, such that $U(0)=v,$ $\dot U(0)=w,$ and the zero points of the Jacobi field along the geodesic are discrete.*
-
-For the (unidirectional) lemma in the previous section, we have a more complete proposition:
-**Lemma 2**. *Given a geodesic $\gamma$ and a vector field $U along it, it is a Jacobi field if and only if $U$ is the restriction of the transverse vector field on $\gamma$ of a single-parameter geodesic family $\{\gamma_s\}$, $\gamma_0\equiv \gamma.$*
-
-**Proof:** Just prove that $U$ is the case of Jacobi field.
-Take the geodesic (or any curve) $\zeta,$ with $U(0)$ as the initial tangent vector
-Take the parallel vector field $T,W,$ on it to satisfy $T(0)=\dot\gamma(0),$ $W(0)=\dot U(0),$
-We are going to knit a family of single-parameter geodesics.
-<img style='margin: auto;' src=https://s2.loli.net/2022/04/21/7Ww3nPTFcBIaxV9.png width='50%' height='50%'>
-
-Take $\gamma_u(t)=\exp_{\zeta(u)}t(T(u)+uW(u)),$
-Then $\{\gamma_u\}$ forms a single-parameter geodesic family, and $\gamma_0\equiv \gamma.$
-Remember that its transverse vector field is limited to $\gamma$ as $U_1,$. Just verify that $U_1(0)=U(0),$
-$\dot U_1(0)=\dot U(0).$ can be obtained from the following formula,
-$$
+$$</p>
+<p>它是一个二阶常微分方程组, 因此有如下引理:</p>
+<p><strong>引理 1</strong>. <em>对测地线$\gamma,$ 任意给定$v,w\in M_{\gamma_0},$ 存在唯一沿$\gamma$的Jacobi场, 使得$U(0)=v,$ $\dot U(0)=w,$ 且沿测地线的Jacobi场零点离散.</em> </p>
+<p>对上节的(单方向的)引理, 我们有更完整的命题成立:</p>
+<p><strong>引理 2</strong>. <em>给定测地线$\gamma$与沿它的向量场$U,$ 它是Jacobi场当且仅当$U$是某个单参数测地线族$\{\gamma_s\}$的横截向量场在$\gamma$上的限制, $\gamma_0\equiv \gamma.$</em> </p>
+<p><strong>证:</strong> 只需证明$U$是Jacobi场的情形.
+取以$U(0)$为初始切向量的测地线(或任一曲线)$\zeta,$
+在其上取平行向量场$T,W,$ 满足$T(0)=\dot\gamma(0),$ $W(0)=\dot U(0),$
+我们准备编织出单参数测地线族.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/04/21/7Ww3nPTFcBIaxV9.png width='50%' height='50%'></p>
+<p>取$\gamma_u(t)=\exp_{\zeta(u)}t(T(u)+uW(u)),$
+那么$\{\gamma_u\}$构成单参数测地线族, 且$\gamma_0\equiv \gamma.$
+记其横截向量场限制在$\gamma$上为$U_1,$ 只需验证$U_1(0)=U(0),$
+$\dot U_1(0)=\dot U(0).$ 一式由下式即得,</p>
+<p>$$
 U_1(0)=\left.\frac{\partial {} }{\partial {}u}\gamma_u(0)\right|_{u=0}=\dot\zeta(0)=U(0).
-$$
-
-
-
-For the second equation, write $\Gamma(t,u):=\gamma_u(t),$
+$$</p>
+<p>对于二式, 记$\Gamma(t,u):=\gamma_u(t),$
 $T_1:=d\Gamma\left(\frac{\partial {} }{\partial {}t}\right).$
-Recall $[T,U]\equiv0,$ from the previous section. Similarly we have:
-
-
-$$
+回忆上节中的$[T,U]\equiv0,$ 类似地我们有:</p>
+<p>$$
 \dot U_1(0)=D_{\dot\gamma(0)}U_1=D_{U_1(0)}\dot\gamma=D_{\dot\zeta(0)}T_1.
-$$
-
-
-And we know that since $d\exp_O=\mathrm{id},$
-$$
+$$</p>
+<p>而我们知道, 由于$d\exp_O=\mathrm{id},$</p>
+<p>$$
 T_1(\zeta(u))=\left.\frac{\partial {} }{\partial {}t}\exp_{\zeta(u)}t(T(u)+uW(u))\right|_{t=0}=T(u)+uW(u).
-$$
-
-
-Finally, since we choose a parallel vector field, we get
-
-
-$$
+$$</p>
+<p>最后由于我们选取的是平行向量场, 就得到了</p>
+<p>$$
 \dot U_1(0)=D_{\dot\zeta(0)}(T(u)+uW(u))=W(0)=\dot U(0).
-$$
-**Lemma 3**. *Suppose $U$ is the Jacobi field along the geodesic $\gamma$, then there is a Jacobi field $U^\perp$ that satisfies $\left<{}U^\perp,\dot\gamma\right>,$ $a,b\in \mathbb{R},$ such that*
-$$
+$$</p>
+<p><strong>引理 3</strong>. <em>设$U$是沿测地线$\gamma$的Jacobi场, 那么存在Jacobi场$U^\perp$满足$\left&lt;{}U^\perp,\dot\gamma\right&gt;,$ $a,b\in \mathbb{R},$ 使得</em> </p>
+<p>$$
 U=U^\perp +(at+b)\dot\gamma.
-$$
-
-
-
-**Certificate:** First we can see,
-
-
-$$
-D_TD_T\left<{}U,\dot\gamma\right>=D_T\left<{}\dot U,\dot\gamma\right>=\left<{}\ddot U,\dot\gamma\right>=\left<{}-R_{\dot\gamma U}\dot\gamma,\dot\gamma\right>=-R(\dot\gamma,U,\dot\gamma,\dot\gamma)=0.
-$$
-Therefore $\left<{}U,\dot\gamma\right>(t)=a't+b'.$ is orthogonalized, let
-
-
-$$
-a=\frac{a'}{|\dot\gamma|^2},\quad b=\frac{b'}{|\dot\gamma|^2},\quad U^\perp=U-(at+b)\dot\gamma,
-$$
-
-
-Then $\left<{}U^\perp,\dot\gamma\right>=0,$ and $U^\perp$ is indeed a Jacobi field:
-$$
+$$</p>
+<p><strong>证:</strong> 首先我们可以看到,</p>
+<p>$$
+D_TD_T\left&lt;{}U,\dot\gamma\right&gt;=D_T\left&lt;{}\dot U,\dot\gamma\right&gt;=\left&lt;{}\ddot U,\dot\gamma\right&gt;=\left&lt;{}-R_{\dot\gamma U}\dot\gamma,\dot\gamma\right&gt;=-R(\dot\gamma,U,\dot\gamma,\dot\gamma)=0.
+$$</p>
+<p>因此$\left&lt;{}U,\dot\gamma\right&gt;(t)=a&#39;t+b&#39;.$ 做正交化, 令</p>
+<p>$$
+a=\frac{a&#39;}{|\dot\gamma|^2},\quad b=\frac{b&#39;}{|\dot\gamma|^2},\quad U^\perp=U-(at+b)\dot\gamma,
+$$</p>
+<p>则$\left&lt;{}U^\perp,\dot\gamma\right&gt;=0,$ 且$U^\perp$的确是Jacobi场:</p>
+<p>$$
 \ddot{U}^\perp=\ddot U=-R_{\dot\gamma U}\dot\gamma=-R_{\dot\gamma U^\perp}\dot\gamma-(at+b)R_{\dot\gamma\dot\gamma}\dot\gamma=-R_{\dot\gamma U^\perp}\dot\gamma.
-$$
-
-
-
-Therefore, the Jacobi field perpendicular to $\dot\gamma$ is interesting and is called **normal Jacobi field**.
-Since $\left<{}U,\dot\gamma\right>=at+b,$
-As long as the initial value conditions are $\left<{}U(0),\dot\gamma\right>=\left<{}\dot U(0),\dot\gamma\right>=0,$
-Then $U(t)$ is the normal Jacobi field. Similarly, we also have the inference:
-**Corollary 4**. *If $U$ is the Jacobi field along the geodesic $\gamma$, there exists $t_1\neq t_2,$ $\left<{}U,\dot\gamma\right>(t_1)=\left<{}U,\dot\gamma\right>(t_2)=0,$ then $U$ is the normal Jacobi field.*
-Now we use the Jacobi field to understand $d\exp_x.$. Recall from Chapter 3,
-We get that $d\exp_x$ is always non-degenerate in the radial direction. Now consider the singularity at $p\in M$,
-Let $X$ be the tangent vector at point $p$, perpendicular to the radial straight line $t\mapsto tp.$ and take the single-parameter geodesic family:
-$$
+$$</p>
+<p>因此垂直于$\dot\gamma$的Jacobi场是有意思的, 称其为<strong>正常Jacobi场</strong>.
+由于$\left&lt;{}U,\dot\gamma\right&gt;=at+b,$
+只要初值条件有$\left&lt;{}U(0),\dot\gamma\right&gt;=\left&lt;{}\dot U(0),\dot\gamma\right&gt;=0,$
+那么$U(t)$就是正常Jacobi场. 类似地, 我们还有推论:</p>
+<p><strong>推论 4</strong>. <em>若$U$是沿测地线$\gamma$的Jacobi场, 存在$t_1\neq t_2,$ $\left&lt;{}U,\dot\gamma\right&gt;(t_1)=\left&lt;{}U,\dot\gamma\right&gt;(t_2)=0,$ 则$U$是正常Jacobi场.</em> </p>
+<p>现在我们用Jacobi场来了解$d\exp_x.$ 回忆第三章中,
+我们得到了$d\exp_x$在半径方向总是不退化的. 现考虑$p\in M$处的奇异性,
+取$X$为$p$点处切向量, 垂直于径向直线$t\mapsto tp.$ 取单参数测地线族:</p>
+<p>$$
 \gamma_u(t)=\exp_xt(T+uX),\quad T=p.
-$$
-
- Since $U(t)=d\exp_x tX,$
-$U(0)=0,$ $\dot U(0)=X,$ $\left<{}X,T\right>=0,$
-The limit of the transverse vector field $U$ on the base curve $\gamma=\gamma_0$ is the normal Jacobi field.
-Since $U(1)=d\exp_x X,$ we can get *Gauss's lemma*, and there are also the following lemmas:
-
-**Lemma 5**. *The necessary and sufficient condition for $d\exp_x$ to degenerate at $p\in M_x$ is that there is a normal Jacobi field that is not constant zero on $\gamma(t)=\exp_x tp$, and it is zero at $x$ and $\exp_xp$.*
-If $d\exp_x$ degenerates at $p\in M_x$, then $p$ is said to be the **conjugate point** of the mapping $\exp_x$,
-Call $\exp_x p$ the **conjugate point** of $x$ along the geodesic $\gamma(t)=\exp_x tp$.
-From the lemma just mentioned, we can see that it makes sense to call it "conjugation": this relationship is symmetrical.
-
-Application
-----
-Next we introduce the first **"holistic"** theorem, that is, we only need to do some topology on the entire manifold,
-Properties that can be established after geometric assumptions.
-
-**Theorem 6** (Cartan-Hadamard theorem).
-*Suppose $M$ is a complete Riemannian manifold with non-positive cross-section curvature, then $\,\forall\,x\in M,$ $\exp_x:M_x\rightarrow M$ has no conjugate points; when $M$ is a simply connected complete Riemannian manifold, if $\exp_x:M_x\rightarrow M$ has no conjugate points, then $\exp_x$ is a diffeomorphism.*
-**Proof:** Just prove that for any geodesic $\gamma,$ there is a non-trivial normal Jacobi field $U,$
-As long as $U(0)=0,$ then $\,\forall\,t>0,$ $U(t)\neq 0.$
-Define $f(t)=\left<{}U,U\right>(t),$ then
-$$
-\ddot f=2\left(\left<{}\dot U,\dot U\right>+\left<{}\ddot U,U\right>\right)=2\left(\left<{}\dot U,\dot U\right>-\left<{}R_{\dot \gamma U}\dot\gamma,U\right>\right)\ge 0.
-$$
-
-
-The last inequality sign is because $R(\dot\gamma,U,\dot\gamma,U)=K(\Pi)|\dot\gamma\wedge U|^2\le 0,$
-$\Pi$ is the subspace formed by $\left<{}\dot\gamma,U\right>$.
-Therefore $f\ge 0$ is a convex function, and the conclusion is proved by combining the zero-point discreteness of the Jacobi field.
-
-In fact, a more precise estimate can be proved:
-
-
-$$
+$$</p>
+<p> 由于$U(t)=d\exp_x tX,$
+$U(0)=0,$ $\dot U(0)=X,$ $\left&lt;{}X,T\right&gt;=0,$
+横截向量场$U$在基曲线$\gamma=\gamma_0$上的限制是正常Jacobi场.
+由于$U(1)=d\exp_x X,$ 我们可以得到<em>Gauss引理</em>, 同时还有如下引理:</p>
+<p><strong>引理 5</strong>. <em>$d\exp_x$在$p\in M_x$处退化的充要条件是$\gamma(t)=\exp_x tp$上存在不恒为零的正常Jacobi场, 在$x$与$\exp_xp$处取零.</em> </p>
+<p>若$d\exp_x$在$p\in M_x$处退化, 则称$p$是映射$\exp_x$的<strong>共轭点</strong>,
+称$\exp_x p$为$x$沿测地线$\gamma(t)=\exp_x tp$的<strong>共轭点</strong>.
+由刚刚的引理, 可以看出称之为”共轭”是有道理的: 这一关系具有对称性.</p>
+<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>接下来我们介绍第一个<strong>“整体性”</strong>定理, 即只需对流形全貌做一些拓扑,
+几何假定后即可成立的性质.</p>
+<p><strong>定理 6</strong> (Cartan-Hadamard定理). <em>设$M$是完备黎曼流形, 具非正截面曲率, 则$\,\forall\,x\in M,$ $\exp_x:M_x\rightarrow M$无共轭点; 当$M$是单连通完备黎曼流形时, 若$\exp_x:M_x\rightarrow M$无共轭点, 则$\exp_x$为微分同胚.</em> </p>
+<p><strong>证:</strong> 只需证明对于任意测地线$\gamma,$ 其上非平凡正常Jacobi场$U,$
+只要$U(0)=0,$ 则$\,\forall\,t&gt;0,$ $U(t)\neq 0.$
+定义$f(t)=\left&lt;{}U,U\right&gt;(t),$ 那么</p>
+<p>$$
+\ddot f=2\left(\left&lt;{}\dot U,\dot U\right&gt;+\left&lt;{}\ddot U,U\right&gt;\right)=2\left(\left&lt;{}\dot U,\dot U\right&gt;-\left&lt;{}R_{\dot \gamma U}\dot\gamma,U\right&gt;\right)\ge 0.
+$$</p>
+<p>最后一个不等号是因为$R(\dot\gamma,U,\dot\gamma,U)=K(\Pi)|\dot\gamma\wedge U|^2\le 0,$
+$\Pi$为由$\left&lt;{}\dot\gamma,U\right&gt;$张成的子空间.
+因此$f\ge 0$是凸函数, 结合Jacobi场的零点离散性就证明了结论.</p>
+<p>事实上, 可以证明更精密的估计:</p>
+<p>$$
 \frac{d {}^2}{d {}t^2}|U(t)|\ge -|U(t)|\cdot |\dot\gamma(t)|\cdot|K(\Pi(t))|\ge 0.
-$$
-
-
-From this formula, *Rauch's comparison theorem* can be derived.
-The second part of the proof only needs to show that $\exp_x$ is a covering map. Since the bottom space $M$ is simply connected,
-Obtaining $\exp_x$ is an injection, and thus a diffeomorphism. We illustrate this through the following two lemmas.
-
-**Lemma 7**. *Suppose $\varphi:M\rightarrow M'$ is a local isometric map, $M$ is complete, then $\varphi$ is a covering map, and $M'$ is also complete.*
-**Proof:** In addition to using completeness and geodesic properties, the proof is more about topological techniques and will be skipped here.
-The core is to use isometric transformation to ensure geodesic properties.
-Explain that locally $\varphi=\exp_{\varphi(x)}\circ d\varphi \circ \exp_{x}^{-1}.$
-**Lemma 8**. *Suppose $M$ is a complete Riemannian manifold, $x\in M,$ $\exp_x:M_x\rightarrow M$ has no conjugate points, then $\exp_x$ is a covering map.*
-
-**Proof:** Take $g'=\exp_x^\ast g,$ and pull the measure on $M$ back to $M_x$.
-It is easy to see that the ray starting from the origin is a geodesic in $M_x$ in the sense of $g'$, then based on the completeness of $M$,
-These rays can be extended infinitely, so according to the Hopf-Rinow theorem, $(M_x,g')$ is complete.
-Defined by $g'$, $\exp_x:(M_x,g')\rightarrow (M,g)$ is naturally a local isometric mapping,
-Then we get the conclusion immediately from the above lemma.
-
-Now we use Jacobi's theorem to illustrate the uniqueness of the form of a simply connected space.
-**Theorem 9**. *Suppose $M,M'$ are two $n$-dimensional simply connected space forms, and the cross-sectional curvature is $c.$ Let $x\in M,$ $x'\in M',$ $\{e_i\},\{e'_i\}$ be the standard orthonormal basis in $M_x,M'_x$ respectively.
-Then there is a unique isometric mapping $\varphi:M\rightarrow M',$ such that $\varphi(x)=x',$ $d\varphi(e_i)=e'_i.$*
-
-**Proof:** The proof of the theorem is relatively complicated and will be omitted here. The proof may as well take $c=0,\pm 1,$
-$M=S^n,\mathbb{R}^n,H^n$ is enough.
-The main step is to show that $\varphi=\exp_{x'}\circ\Phi\circ \exp_{x}^{-1}$ is what you want.
-Among them, $\Phi$ is the only linear mapping such that $\Phi(e_i)=e'_i$. In addition,
-When $c\le 0$, the Cartan-Hadamard theorem can directly take out such $\varphi,$
-When $c>0$, it is necessary to take such $\varphi$ locally and then make appropriate continuation.
-The following three lemmas are used in the proof. The first two lemmas are used to expand the Jacobi equation,
-The last lemma illustrates the uniqueness of isometric transformation.
-
-**Lemma 10**. *Suppose $M$ is an $n$-dimensional space form, and the cross-sectional curvature is $c.$ Let $x\in M,$ $\{e_i\}$ be the $M_x$ standard orthonormal basis. Then the curvature tensor of $M$ satisfies:*
-$$
+$$</p>
+<p>由该式可导出<em>Rauch比较定理</em>.</p>
+<p>第二部分的证明只需说明$\exp_x$是覆盖映射. 由于底空间$M$是单连通的,
+得到$\exp_x$是单射, 从而是微分同胚. 我们通过后面两个引理来说明这一点.</p>
+<p><strong>引理 7</strong>. <em>设$\varphi:M\rightarrow M&#39;$是局部等距映射, $M$是完备的, 那么$\varphi$是覆盖映射, 且$M&#39;$也是完备的.</em> </p>
+<p><strong>证:</strong> 证明除了用到完备性与测地线性质外, 更多是拓扑上的技巧, 在此略过.
+核心是利用等距变换保测地性,
+说明局部上$\varphi=\exp_{\varphi(x)}\circ d\varphi \circ \exp_{x}^{-1}.$</p>
+<p><strong>引理 8</strong>. <em>设$M$是完备的黎曼流形, $x\in M,$ $\exp_x:M_x\rightarrow M$无共轭点, 则$\exp_x$是覆盖映射.</em> </p>
+<p><strong>证:</strong> 取$g&#39;=\exp_x^\ast g,$ 将$M$上的度量拉回到$M_x$上.
+易见从原点出发的射线在$g&#39;$意义下是$M_x$中的测地线, 那么由$M$的完备性,
+这些射线均可无限延伸, 从而由Hopf-Rinow定理, $(M_x,g&#39;)$是完备的.
+由$g&#39;$定义, $\exp_x:(M_x,g&#39;)\rightarrow (M,g)$自然是局部等距映射,
+那么由上述引理立即得到结论.</p>
+<p>现在我们用Jacobi定理说明单连通空间形式的唯一性.</p>
+<p><strong>定理 9</strong>. <em>设$M,M&#39;$是两个$n$维单连通的空间形式, 截面曲率为$c.$ 设$x\in M,$ $x&#39;\in M&#39;,$ $\{e_i\},\{e&#39;_i\}$分别是$M_x,M&#39;_x$中的标准正交基. 那么存在唯一的等距映射$\varphi:M\rightarrow M&#39;,$ 使得$\varphi(x)=x&#39;,$ $d\varphi(e_i)=e&#39;_i.$</em> </p>
+<p><strong>证:</strong> 定理的证明较为繁琐, 在此省略. 证明不妨取$c=0,\pm 1,$
+$M=S^n,\mathbb{R}^n,H^n$即可.
+主要步骤是说明$\varphi=\exp_{x&#39;}\circ\Phi\circ \exp_{x}^{-1}$即为所求.
+其中$\Phi$是使得$\Phi(e_i)=e&#39;_i$的唯一线性映照. 另外,
+$c\le 0$时由Cartan-Hadamard定理可以直接取出这样的$\varphi,$
+$c&gt;0$时需要局部上取这样的$\varphi$再做合适的延拓.
+证明中用到如下三个引理, 前两个引理用于展开Jacobi方程,
+最后一个引理说明了等距变换的唯一性.</p>
+<p><strong>引理 10</strong>. <em>设$M$为$n$维空间形式, 截面曲率为$c.$ 设$x\in M,$ $\{e_i\}$为$M_x$标准正交基. 那么$M$的曲率张量满足:</em> </p>
+<p>$$
 R_{e_ie_j}e_k=c(\delta_{ik}e_j-\delta_{jk}e_i),\quad 1\le i,j,k\le n.
-$$
-
-
-
-**Proof:** Just prove that a curvature tensor is indeed defined according to this formula,
-And the cross-sectional curvature of this curvature tensor is also $c.$ Then since the cross-sectional curvature determines the curvature tensor,
-We have established the identity relationship between the two curvature tensors.
-**Corollary 11**. *The notation is the same as the previous lemma, assuming $v$ is the unit vector in $M_x$, $v^\perp$ is the orthogonal complement of $v$, then*
-
-$$
+$$</p>
+<p><strong>证:</strong> 只需证明依该式的确定义了一个曲率张量即可,
+且该曲率张量的截面曲率也是$c.$ 那么由于截面曲率决定了曲率张量,
+我们就建立了两个曲率张量的恒等关系.</p>
+<p><strong>推论 11</strong>. <em>记号同上一引理, 设$v$是$M_x$中单位向量, $v^\perp$是$v$的正交补, 那么</em> </p>
+<p>$$
 R_{vw}v=
  \left\{\begin{aligned}
- &cw, &&w\in v^\perp,\\
- &0, &&w=\alpha v.
+ &amp;cw, &amp;&amp;w\in v^\perp,\\
+ &amp;0, &amp;&amp;w=\alpha v.
  \end{aligned}\right.
-$$
-**Lemma 12**. *Suppose $\varphi_1,\varphi_2:M\rightarrow N$ are two local isometries, satisfying $\,\exists\,x\in M,$ $\varphi_1(x)=\varphi_2(x)=y\in N,$ and $d\varphi_1(x)=d\varphi_2(x):M_x\rightarrow M_y.
-$ Then we have $\varphi_1=\varphi_2.$*
-
-**Proof:** Take $M$ neutron set
-
-
-$$
+$$</p>
+<p><strong>引理 12</strong>. <em>设$\varphi_1,\varphi_2:M\rightarrow N$为两个局部等距, 满足$\,\exists\,x\in M,$ $\varphi_1(x)=\varphi_2(x)=y\in N,$ 且$d\varphi_1(x)=d\varphi_2(x):M_x\rightarrow M_y.$ 那么我们有$\varphi_1=\varphi_2.$</em> </p>
+<p><strong>证:</strong> 取$M$中子集</p>
+<p>$$
 \mathscr{S}:=\{y\in M: \varphi_1(y)=\varphi_2(y),d\varphi_1(y)=d\varphi_2(y)\},
-$$
+$$</p>
+<p>说明其既开又闭即可(连通性假设总是默认的). 开集利用$\exp_y$说明,
+闭集由连续性说明.</p>
+<p>注意我们的主定理有值得注意的推论. 当$M=M&#39;$时, 我们得到:</p>
+<p><strong>推论 13</strong>. <em>设$M$为$n$维完备单连通黎曼流形, 则$M$是空间形式当且仅当对于任意$x,x&#39;\in M,$ $M_x,M_x&#39;$中任意标准正交基$\{e_i\},\{e_i&#39;\},$ 存在等距自变换$\varphi,$ 使得</em> </p>
+<p>$$
+\varphi(x)=x&#39;, \quad d\varphi(e_i)=e_i&#39;.
+$$</p>
+<p>这表明任一单连通空间形式必是齐性黎曼流形, 特别地$H^n$是齐性的,
+而这并不能平凡地看出. 进一步可说明这些空间形式都是<strong>两点齐性的</strong>,
+即对于任意$p_1,p_2,q_1,q_2\in M,$ $d(p_1,p_2)=d(q_1,q_2),$
+存在等距映射$\varphi:M\rightarrow M,$ 使得$\varphi(p_i)=q_i,$ $i=1,2.$</p>
+<p><strong>推论 14</strong>. <em>所有单连通空间形式都是两点齐性的.</em> </p>
+<p><strong>证:</strong> 由于流形是完备的,
+存在测地线$\zeta,\xi$分别连接$p_1,p_2;q_1,q_2.$ 取等距变换$\varphi,$
+使得$\varphi(\zeta(0))=\xi(0),$ $d\varphi(\dot\zeta(0))=\dot\xi(0).$
+由等距变换保持测地线的性质即可知$\varphi(\zeta)=\xi,$ 命题得证.</p>
+<p>文章最后更新于 2022-04-21 19:11:30 </p>
 
-
-Just show that it is both open and closed (the connectivity assumption is always the default). The open set is explained using $\exp_y$,
-Closed sets are described by continuity.
-Note that our main theorem has a noteworthy corollary. When $M=M'$, we get:
-
-**Corollary 13**. *Suppose $M$ is an $n$-dimensional complete simply connected Riemannian manifold, then $M$ is a space form if and only if for any standard orthonormal basis $\{e_i\},\{e_i'\},$ in any $x,x'\in M,$ $M_x,M_x'$, there is an isometric autotransformation $\varphi,$ such that*
-$$
-\varphi(x)=x', \quad d\varphi(e_i)=e_i'.
-$$
-
-
-
-This shows that any simply connected space form must be a homogeneous Riemannian manifold, especially $H^n$ is homogeneous,
-And this cannot be seen trivially. It can be further explained that these spatial forms are all homogeneous at two points,
-That is, for any $p_1,p_2,q_1,q_2\in M,$ $d(p_1,p_2)=d(q_1,q_2),$
-There is an isometric mapping $\varphi:M\rightarrow M,$ such that $\varphi(p_i)=q_i,$ $i=1,2.$
-
-**Corollary 14**. *All simply connected space forms are homogeneous at two points.*
-
-**Proof:** Since the manifold is complete,
-There are geodesics $\zeta,\xi$ connecting $p_1,p_2;q_1,q_2.$ respectively. Take the isometric transformation $\varphi,$
-Make $\varphi(\zeta(0))=\xi(0),$ $d\varphi(\dot\zeta(0))=\dot\xi(0).$
-By preserving the properties of geodesics through isometric transformation, we know that the proposition $\varphi(\zeta)=\xi,$ is proved.
-The article was last updated on 2022-04-21 19:11:30
                 </div>
             
         </div>
@@ -459,7 +538,7 @@ The article was last updated on 2022-04-21 19:11:30
     <ul>
         <li>本文标题：《黎曼几何初步》笔记(5)-Jacobi场和Cartan-Hadamard定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-04-21 19:11:29</li>
+        <li>创建时间：2022-04-21 22:11:29</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/04/21/《黎曼几何初步》笔记(5)-Jacobi场和Cartan-Hadamard定理/
         </li>
@@ -491,7 +570,7 @@ The article was last updated on 2022-04-21 19:11:30
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; notes (6) - the first and second variational formulas of arc length</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (6) - Arc Length First and Second Variational Formulas</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -513,7 +592,7 @@ The article was last updated on 2022-04-21 19:11:30
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(4)-等距变换和空间形式</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (4)-Isometric Transformation and Space Form</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (4) - Equidistant Transformations and Spatial Forms</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -765,11 +844,11 @@ The article was last updated on 2022-04-21 19:11:30
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jacobi%E5%9C%BA"><span class="nav-text">Jacobi场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jacobi%E5%9C%BA"><span class="nav-text">Jacobi场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a></li></ol>
         </div>
     
 </div>
@@ -820,6 +899,36 @@ The article was last updated on 2022-04-21 19:11:30
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -843,46 +952,6 @@ The article was last updated on 2022-04-21 19:11:30
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

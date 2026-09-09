@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-03-24 21:24:47
+        <i class="fas fa-edit"></i>&nbsp;2022-03-24 23:24:47
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,56 +230,76 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p><strong>定理 1</strong>. <em>$X,Y$为赋范线性空间. 若$\phi:X\rightarrow Y$为等距满射, 则$\phi$为仿射变换.</em> </p>
+<p><strong>证:</strong> 首先由于$\phi$是等距变换, $\phi$是单射, 且$\phi$连续. 同时,
+$\phi-\phi(0)$也是等距满射. 故不妨设$\phi(0)=0,$
+只需验证$\phi$为线性变换. 为此, 只要有$\phi(x+y)=\phi(x)+\phi(y)$即可.
+这等价于总有</p>
+<p>$$
+\phi\left(\frac{x+y}{2}\right)=\frac{\phi\left(x\right)+\phi\left(y\right)}{2}.
+$$</p>
+<p>$\,\forall\,x,y\in X,$ 记$z=\frac{x+y}{2},$
+取$X$上关于$z$点的中心对称变换$\psi(w):=2z-w.$ 那么</p>
+<p>$$
+|\phi(w)-z|=|w-z|,\quad |\phi(w)-w|=2|w-z|.
+$$</p>
+<p>取$G$为保持$x,y$两点不动的等距自变换群,
+记$\lambda=\sup\{|gz-z|:g\in G\},$ 那么$\,\forall\,g\in G,$</p>
+<p>$$
+|gz-x|=|gz-gx|=|z-x|,\quad |gz-z|\le |gz-x|+|x-z|=2|z-x|,\quad \lambda&lt;\infty.
+$$</p>
+<p>定义$g^\ast :=\psi g^{-1}\psi g,$ 那么$\,\forall\,g\in G,$</p>
+<p>$$
+2|gz-z|=|\psi gz-gz|=|g^{-1}\psi gz-z|=|\psi g^{-1}\psi gz-z|=|g^\ast z-z|\le \lambda.
+$$</p>
+<p>关于$g$取上确界, 就得到了$\lambda=0.$
+从而<em>所有保持两点不动的等距自变换也保持中点不动.</em></p>
+<p>接下来,
+我们取$\psi&#39;$为$Y$中关于$z&#39;:=\frac{\phi(x)+\phi(y)}{2}$的中心对称变换.
+此时$h:=\psi\phi^{-1}\psi&#39;\phi$保持$x,y$两点不动, 从而由前面的结论,
+$hz=z.$ 具体展开并化简移项得到$\psi&#39;\phi z=\phi z.$
+然而中心对称变换$\psi&#39;$的唯一不动点为$z&#39;,$ 这就说明$\phi z=z&#39;,$
+从而命题得证.</p>
+<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24978670" >https://zhuanlan.zhihu.com/p/24978670<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-03-24 21:24:48 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    * * Theorem 1 * *. * $ X, Y $ is the nominal linear space. If $\ phi: X\ rightarrow Y $ is full distance, then $\ phi $ is an affine transformation. * 
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p><strong>定理 1</strong>. <em>$X,Y$为赋范线性空间. 若$\phi:X\rightarrow Y$为等距满射, 则$\phi$为仿射变换.</em> </p>
+<p><strong>证:</strong> 首先由于$\phi$是等距变换, $\phi$是单射, 且$\phi$连续. 同时,
+$\phi-\phi(0)$也是等距满射. 故不妨设$\phi(0)=0,$
+只需验证$\phi$为线性变换. 为此, 只要有$\phi(x+y)=\phi(x)+\phi(y)$即可.
+这等价于总有</p>
+<p>$$
+\phi\left(\frac{x+y}{2}\right)=\frac{\phi\left(x\right)+\phi\left(y\right)}{2}.
+$$</p>
+<p>$\,\forall\,x,y\in X,$ 记$z=\frac{x+y}{2},$
+取$X$上关于$z$点的中心对称变换$\psi(w):=2z-w.$ 那么</p>
+<p>$$
+|\phi(w)-z|=|w-z|,\quad |\phi(w)-w|=2|w-z|.
+$$</p>
+<p>取$G$为保持$x,y$两点不动的等距自变换群,
+记$\lambda=\sup\{|gz-z|:g\in G\},$ 那么$\,\forall\,g\in G,$</p>
+<p>$$
+|gz-x|=|gz-gx|=|z-x|,\quad |gz-z|\le |gz-x|+|x-z|=2|z-x|,\quad \lambda&lt;\infty.
+$$</p>
+<p>定义$g^\ast :=\psi g^{-1}\psi g,$ 那么$\,\forall\,g\in G,$</p>
+<p>$$
+2|gz-z|=|\psi gz-gz|=|g^{-1}\psi gz-z|=|\psi g^{-1}\psi gz-z|=|g^\ast z-z|\le \lambda.
+$$</p>
+<p>关于$g$取上确界, 就得到了$\lambda=0.$
+从而<em>所有保持两点不动的等距自变换也保持中点不动.</em></p>
+<p>接下来,
+我们取$\psi&#39;$为$Y$中关于$z&#39;:=\frac{\phi(x)+\phi(y)}{2}$的中心对称变换.
+此时$h:=\psi\phi^{-1}\psi&#39;\phi$保持$x,y$两点不动, 从而由前面的结论,
+$hz=z.$ 具体展开并化简移项得到$\psi&#39;\phi z=\phi z.$
+然而中心对称变换$\psi&#39;$的唯一不动点为$z&#39;,$ 这就说明$\phi z=z&#39;,$
+从而命题得证.</p>
+<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24978670" >https://zhuanlan.zhihu.com/p/24978670<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-03-24 21:24:48 </p>
 
-* * Proof: * * First of all, because $\ phi $ is an isometric transformation, $\ phi $ is ejective, and $\ phi $ is continuous. At the same time,
-$\ phi-\ phi (0) $ is also isometric. So $\ phi (0) = 0, $
-Simply verify that $\ phi $ is a linear transformation. To do this, just have $\ phi (x + y) =\ phi (x) +\ phi (y) $.
-This is equivalent to always having
-
-
-
-
-
-
-$\,\ forall\, x, y\ in X, $ remember $ z =\ frac {x + y} {2}, $
-Take the center symmetry transform on $ X $ about $ z $ points $\ psi (w): = 2z-w. $ then
-
-
-
-
-
-Take $ G $ as an isometric self-transforming group that keeps $ x, y $ two points immovable,
-Remember $\ lambda =\ sup\ {| gz-z |: g\ in G\}, $ then $\,\ forall\, g\ in G, $
-
-
-
-
-
-
-Define $ g ^\ ast: =\ psi g ^ {-1}\ psi g, $ then $\,\ forall\, g\ in G, $
-
-
-
-
-
-About $ g $ Taking the exact bound, we get $\ lambda = 0. $
-Thus * all isometric self-transforms that keep two points immovable also keep the midpoint immovable. *
-
-Next,
-We take $\ psi '$ as the center symmetry transform of about $ z': =\ frac {\ phi (x) +\ phi (y)} {2} $ in $ Y $.
-At this point, $ h: =\ psi\ phi ^ {-1}\ psi '\ phi $ keeps $ x, y $ two points still, thus from the previous conclusion,
-$ hz = z. $ concretely expand and simplify the shorthand term to get $\ psi '\ phi z =\ phi z. $
-However, the only fixed point of the central symmetric transformation $\ psi '$ is $ z', $ which means $\ phi z = z ', $
-This proves the proposition.
-
-Reference: https://zhuanlan.zhihu.com/p/24978670
-
-Article last updated on 2022-03-24 21:24:48
                 </div>
             
         </div>
@@ -290,7 +310,7 @@ Article last updated on 2022-03-24 21:24:48
     <ul>
         <li>本文标题：Mazur-Ulam定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-03-24 21:24:47</li>
+        <li>创建时间：2022-03-24 23:24:47</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/03/24/Mazur-Ulam定理/
         </li>
@@ -322,7 +342,7 @@ Article last updated on 2022-03-24 21:24:48
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">弱导数与连续性</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Weak derivatives and continuity</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Weak Derivatives and Continuity</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -651,6 +671,36 @@ Article last updated on 2022-03-24 21:24:48
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -674,46 +724,6 @@ Article last updated on 2022-03-24 21:24:48
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

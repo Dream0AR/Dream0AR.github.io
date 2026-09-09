@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(1)-de Rham 复形</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (1)-de Rham Complex</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (1) - de Rham complex</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-19 18:59:49
+        <i class="fas fa-edit"></i>&nbsp;2021-09-19 21:59:49
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,101 +230,148 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>de Rham
+上同调是流形的最重要的微分同胚不变量，而不变量是我们很期待的东西，用不变量可以快速区分/分类流形。</p>
+<h2 id="mathbb-R-n-de-Rham-上同调"><a href="#mathbb-R-n-de-Rham-上同调" class="headerlink" title="$\mathbb{R}^n$ de Rham 上同调"></a>$\mathbb{R}^n$ de Rham 上同调</h2><h3 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h3><p>在$\mathbb{R}^n$中坐标为$(x_1,...,x_n)$, 记自变量微分$dx_1,...,dx_n$,
+引入记号$\wedge$(wedge), 满足$dx_i\wedge dx_i=0$,
+$dx_i\wedge dx_j=-dx_j\wedge dx_i$, $i\neq j$.</p>
+<p>记$\Omega^q=\operatorname{span}_R\{dx_{i_1}\wedge\cdots\wedge dx_{i_q}|{}i_{1}&lt;...&lt;{}i_{ {}q}\},$
+$\Omega^\ast=\oplus_{q=0}^n \Omega^q$, 易见其维数为$2^n$.</p>
+<p>记光滑$q-$形式全体为$\Omega^q(\mathbb{R}^n)=C^\infty(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^q$,
+光滑形式全体为$\Omega^\ast(\mathbb{R}^n)=\oplus_{q=0}^n \Omega^q(\mathbb{R}^n)$.</p>
+<p>于是任意光滑形式$\omega\in \Omega^\ast(\mathbb{R}^n)$可以<strong>按型分解</strong>为$\omega=\sum_{q=0}^{n} \omega_q$,
+$\omega_q\in \Omega^q(\mathbb{R}^n)$.
+$\omega_q=\sum_{I:{}i_{1}&lt;...&lt;{}i_{ {}q} }f_Idx_I$, $I$称为<strong>多重指标</strong>。</p>
+<h3 id="算子"><a href="#算子" class="headerlink" title="算子"></a>算子</h3><p>外积算子$\wedge$:(可以看成原来记号的扩充定义)
+$\tau=\sum_{I:{}i_{1}&lt;...&lt;{}i_{ {}p} }f_Idx_I\in \Omega^p(\mathbb{R}^n)$,
+$\omega=\sum_{J:{}j_{1}&lt;...&lt;{}j_{ {}q} }g_Jdx_J\in \Omega^q(\mathbb{R}^n)$,
+则
+$\tau\wedge\omega=\sum_{I,J}f_Ig_Jdx_I\wedge dx_J=\sum_{K:{}k_{1}&lt;...&lt;{}k_{ {}p+q} }h_Kdx_K$.
+其中$h_K$可由$f_I,g_J$表出。</p>
+<p><strong>命题 1.1</strong>. <em>$\tau\wedge \omega = (-1)^{pq}\omega \wedge \tau$</em> </p>
+<p>外微分算子$d:\Omega^q(\mathbb{R}^n)\rightarrow \Omega^{q+1}(\mathbb{R}^n)$,
+$\omega=\sum_I f_I dx_I$,
+$d\omega=\sum_I df_I\wedge dx_I=\sum_{i,I} \frac{\partial {}f_I}{\partial {}x_i}dx_i\wedge dx_I$,
+是$C^\infty$上微分算子的自然延拓.</p>
+<p><strong>命题 1.2</strong>. <em>$\tau\in \Omega^p(\mathbb{R}^n)$, 则$d(\tau\wedge \omega)=d\tau \wedge \omega + (-1)^p \tau\wedge d\omega,$ $d^2=0$.</em> </p>
+<h3 id="de-Rham-复形"><a href="#de-Rham-复形" class="headerlink" title="de Rham 复形"></a>de Rham 复形</h3><p>由于$d^2=0$, $\{\Omega^\ast(\mathbb{R}^n),d\}$形成$\mathbb{R}^n$的<strong>de
+Rham复形</strong>：
+$$\Omega^0(\mathbb{R}^n)\xrightarrow{d}\cdots\xrightarrow{d}\Omega^n(\mathbb{R}^n).$$
+可以对$q&lt;0$及$q&gt;n$添加$\Omega^q(\mathbb{R}^n)=0$.</p>
+<p>定义$Z^q(\mathbb{R}^n)=\{\omega\in\Omega^q(\mathbb{R}^n)|d\omega=0\},$
+其中元素称为<strong>闭的</strong>$q$-形式.
+定义$B^q(\mathbb{R}^n)=\{d\tau | \tau\in\Omega^{q-1}(\mathbb{R}^n)\},$
+其中元素称为<strong>恰当的</strong>$q$-形式. 特别地,
+规定$Z^n(\mathbb{R}^n)=\Omega^n(\mathbb{R}^n),$ $B^0(\mathbb{R}^n)=0.$</p>
+<p>由于$d^2=0$, $B^q(\mathbb{R}^n)\subset Z^q(\mathbb{R}^n).$
+定义$\mathbb{R}^n$的第$q$个de
+Rham上同调为$H^q_{dR}(\mathbb{R}^n)=Z^q(\mathbb{R}^n)/B^q(\mathbb{R}^n).$
+不引起歧义时, 通常隐去下标.
+闭$q$-形式$\omega$所在上同调类记为$[\omega].$</p>
+<p>类似地, 对$\mathbb{R}^n$开集$U$上的de Rham复形,
+只需在一开始将光滑函数定义域设置为$U$即可.</p>
+<p>我们有<strong>上同调的Poincaré引理</strong>: $H^q(\mathbb{R}^n)=\begin{cases}
+    \mathbb{R}\quad&amp;q=0\\
+    0&amp;q\neq 0
+\end{cases}.$</p>
+<h2 id="紧上同调"><a href="#紧上同调" class="headerlink" title="紧上同调"></a>紧上同调</h2><p>记$\Omega^\ast_c(\mathbb{R}^n)=C^\infty_c(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^\ast,$
+即将光滑函数改为具有紧支集的光滑函数. 类似地, 可以将其按型分解.
+由于光滑函数偏导支集闭包含于原来的紧支集, 它也是有紧支撑的,
+因此$\{\Omega^\ast_c(\mathbb{R}^n),d\}$是一个复形, 称为<strong>具紧支集的de
+Rham复形</strong>.</p>
+<p>类似地,
+定义$Z^q_c(\mathbb{R}^n)=\{\omega\in\Omega_c^q(\mathbb{R}^n)|d\omega=0\},$
+$B^q_c(\mathbb{R}^n)=\{d\tau | \tau\in\Omega_c^{q-1}(\mathbb{R}^n)\},$
+$H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
+<p>注意$Z_c^q(\mathbb{R}^n)=\Omega^q_c(\mathbb{R}^n)\cap Z^q(\mathbb{R}^n),$
+但一般$B^q_c(\mathbb{R}^n)\neq B^q(\mathbb{R}^n)\cap \Omega_c^q(\mathbb{R}^n).$
+即不是$d\tau$有紧支集而是$d\tau$中$\tau$有紧支集.</p>
+<p>我们有<strong>紧上同调的Poincaré引理</strong>: $H^q_c(\mathbb{R}^n)=\begin{cases}
+        \mathbb{R}\quad&amp;q=n\\
+        0&amp;q\neq n
+    \end{cases}.$</p>
+<p>注意这说明了<strong>紧上同调不是同伦不变量</strong>. 类似地,
+我们可对一般的$U\subset \mathbb{R}^n$定义$H_c^\ast(U)$.</p>
+<h2 id="微分复形"><a href="#微分复形" class="headerlink" title="微分复形"></a>微分复形</h2><p>称向量空间直和$C=\oplus_{q\in\mathbb{Z} } C^q$为<strong>微分复形</strong>,
+若有同态$d:C\rightarrow C,$ 满足$d:C^q\rightarrow C^{q+1},$ $d^2=0.$
+可以由$d$对复形定义上同调. de Rham复形即为微分复形.</p>
+<p>与代数拓扑相同, 我们可定义复形间的链映射及其诱导同态, 复形的短正合列,
+以及至关重要的zig-zag引理(图追踪定义同调的长正合列).</p>
+<p>文章最后更新于 2021-09-19 18:59:49 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    de Rham
-Cohomology is the most important diffeomorphic invariant of manifolds, and invariants are something we are looking forward to. Invariants can be used to quickly distinguish/classify manifolds.
-
-$\mathbb{R}^n$ de Rham cohomology
---------------------------
-
-### Differential form
-The coordinates in $\mathbb{R}^n$ are $(x_1,...,x_n)$, record the independent variable differential $dx_1,...,dx_n$,
-Introduce the notation $\wedge$(wedge) to satisfy $dx_i\wedge dx_i=0$,
-$dx_i\wedge dx_j=-dx_j\wedge dx_i$, $i\neq j$.
-Remember $\Omega^q=\operatorname{span}_R\{dx_{i_1}\wedge\cdots\wedge dx_{i_q}|{}i_{1}<...<{}i_{ {}q}\},$
-$\Omega^\ast=\oplus_{q=0}^n \Omega^q$, it is easy to see that its dimension is $2^n$.
-Remember the smooth $q-$ form as $\Omega^q(\mathbb{R}^n)=C^\infty(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^q$,
-The overall smooth form is $\Omega^\ast(\mathbb{R}^n)=\oplus_{q=0}^n \Omega^q(\mathbb{R}^n)$.
-Therefore, any smooth form $\omega\in \Omega^\ast(\mathbb{R}^n)$ can be **decomposed** by type as $\omega=\sum_{q=0}^{n} \omega_q$,
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>de Rham
+上同调是流形的最重要的微分同胚不变量，而不变量是我们很期待的东西，用不变量可以快速区分/分类流形。</p>
+<h2 id="mathbb-R-n-de-Rham-上同调"><a href="#mathbb-R-n-de-Rham-上同调" class="headerlink" title="$\mathbb{R}^n$ de Rham 上同调"></a>$\mathbb{R}^n$ de Rham 上同调</h2><h3 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h3><p>在$\mathbb{R}^n$中坐标为$(x_1,...,x_n)$, 记自变量微分$dx_1,...,dx_n$,
+引入记号$\wedge$(wedge), 满足$dx_i\wedge dx_i=0$,
+$dx_i\wedge dx_j=-dx_j\wedge dx_i$, $i\neq j$.</p>
+<p>记$\Omega^q=\operatorname{span}_R\{dx_{i_1}\wedge\cdots\wedge dx_{i_q}|{}i_{1}&lt;...&lt;{}i_{ {}q}\},$
+$\Omega^\ast=\oplus_{q=0}^n \Omega^q$, 易见其维数为$2^n$.</p>
+<p>记光滑$q-$形式全体为$\Omega^q(\mathbb{R}^n)=C^\infty(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^q$,
+光滑形式全体为$\Omega^\ast(\mathbb{R}^n)=\oplus_{q=0}^n \Omega^q(\mathbb{R}^n)$.</p>
+<p>于是任意光滑形式$\omega\in \Omega^\ast(\mathbb{R}^n)$可以<strong>按型分解</strong>为$\omega=\sum_{q=0}^{n} \omega_q$,
 $\omega_q\in \Omega^q(\mathbb{R}^n)$.
-$\omega_q=\sum_{I:{}i_{1}<...<{}i_{ {}q} }f_Idx_I$, $I$ is called **multiple indicators**.
-
-### Operator
-
-External product operator $\wedge$: (can be seen as an expanded definition of the original symbol)
-$\tau=\sum_{I:{}i_{1}<...<{}i_{ {}p} }f_Idx_I\in \Omega^p(\mathbb{R}^n)$,
-$\omega=\sum_{J:{}j_{1}<...<{}j_{ {}q} }g_Jdx_J\in \Omega^q(\mathbb{R}^n)$,
-rule
-$\tau\wedge\omega=\sum_{I,J}f_Ig_Jdx_I\wedge dx_J=\sum_{K:{}k_{1}<...<{}k_{ {}p+q} }h_Kdx_K$.
-Among them, $h_K$ can be expressed by $f_I, g_J$.
-**Proposition 1.1**. *$\tau\wedge \omega = (-1)^{pq}\omega \wedge \tau$*
-
-External differential operator $d:\Omega^q(\mathbb{R}^n)\rightarrow \Omega^{q+1}(\mathbb{R}^n)$,
+$\omega_q=\sum_{I:{}i_{1}&lt;...&lt;{}i_{ {}q} }f_Idx_I$, $I$称为<strong>多重指标</strong>。</p>
+<h3 id="算子"><a href="#算子" class="headerlink" title="算子"></a>算子</h3><p>外积算子$\wedge$:(可以看成原来记号的扩充定义)
+$\tau=\sum_{I:{}i_{1}&lt;...&lt;{}i_{ {}p} }f_Idx_I\in \Omega^p(\mathbb{R}^n)$,
+$\omega=\sum_{J:{}j_{1}&lt;...&lt;{}j_{ {}q} }g_Jdx_J\in \Omega^q(\mathbb{R}^n)$,
+则
+$\tau\wedge\omega=\sum_{I,J}f_Ig_Jdx_I\wedge dx_J=\sum_{K:{}k_{1}&lt;...&lt;{}k_{ {}p+q} }h_Kdx_K$.
+其中$h_K$可由$f_I,g_J$表出。</p>
+<p><strong>命题 1.1</strong>. <em>$\tau\wedge \omega = (-1)^{pq}\omega \wedge \tau$</em> </p>
+<p>外微分算子$d:\Omega^q(\mathbb{R}^n)\rightarrow \Omega^{q+1}(\mathbb{R}^n)$,
 $\omega=\sum_I f_I dx_I$,
 $d\omega=\sum_I df_I\wedge dx_I=\sum_{i,I} \frac{\partial {}f_I}{\partial {}x_i}dx_i\wedge dx_I$,
-It is the natural continuation of the differential operator on $C^\infty$.
-**Proposition 1.2**. *$\tau\in \Omega^p(\mathbb{R}^n)$, then $d(\tau\wedge \omega)=d\tau \wedge \omega + (-1)^p \tau\wedge d\omega,$ $d^2=0$.*
-
-### de Rham complex
-Since $d^2=0$, $\{\Omega^\ast(\mathbb{R}^n),d\}$ forms the **de of $\mathbb{R}^n$
-Rham complex**:
+是$C^\infty$上微分算子的自然延拓.</p>
+<p><strong>命题 1.2</strong>. <em>$\tau\in \Omega^p(\mathbb{R}^n)$, 则$d(\tau\wedge \omega)=d\tau \wedge \omega + (-1)^p \tau\wedge d\omega,$ $d^2=0$.</em> </p>
+<h3 id="de-Rham-复形"><a href="#de-Rham-复形" class="headerlink" title="de Rham 复形"></a>de Rham 复形</h3><p>由于$d^2=0$, $\{\Omega^\ast(\mathbb{R}^n),d\}$形成$\mathbb{R}^n$的<strong>de
+Rham复形</strong>：
 $$\Omega^0(\mathbb{R}^n)\xrightarrow{d}\cdots\xrightarrow{d}\Omega^n(\mathbb{R}^n).$$
-You can add $\Omega^q(\mathbb{R}^n)=0$ to $q<0$ and $q>n$.
-Definition$Z^q(\mathbb{R}^n)=\{\omega\in\Omega^q(\mathbb{R}^n)|d\omega=0\},$
-where the elements are called **closed**$q$-forms.
-Definition $B^q(\mathbb{R}^n)=\{d\tau | \tau\in\Omega^{q-1}(\mathbb{R}^n)\},$
-where the elements are called **proper**$q$-forms. In particular,
-It is stipulated that $Z^n(\mathbb{R}^n)=\Omega^n(\mathbb{R}^n),$ $B^0(\mathbb{R}^n)=0.$
-
-Since $d^2=0$, $B^q(\mathbb{R}^n)\subset Z^q(\mathbb{R}^n).$
-Define the $q$th de of $\mathbb{R}^n$
-Rham cohomology is $H^q_{dR}(\mathbb{R}^n)=Z^q(\mathbb{R}^n)/B^q(\mathbb{R}^n).$
-When no ambiguity is caused, subscripts are usually omitted.
-The cohomology class of the closed $q$-form $\omega$ is denoted as $[\omega].$
-Similarly, for the de Rham complex on $\mathbb{R}^n$ open set $U$,
-Just set the domain of the smooth function to $U$ at the beginning.
-
-We have **Cohomological Poincaré's Lemma**: $H^q(\mathbb{R}^n)=\begin{cases}
-    \mathbb{R}\quad&q=0\\
-    0&q\neq 0
-\end{cases}.$
-cohomology
---------
-
-Remember $\Omega^\ast_c(\mathbb{R}^n)=C^\infty_c(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^\ast,$
-That is to say, the smooth function is changed into a smooth function with compact support set. Similarly, it can be decomposed according to the shape.
-Since the set of partial derivative supports of smooth functions is contained in the original compact support set, it also has compact support,
-Therefore $\{\Omega^\ast_c(\mathbb{R}^n),d\}$ is a complex shape, which is called de with compact support
-Rham complex**.
-
-Similarly,
-Definition$Z^q_c(\mathbb{R}^n)=\{\omega\in\Omega_c^q(\mathbb{R}^n)|d\omega=0\},$
+可以对$q&lt;0$及$q&gt;n$添加$\Omega^q(\mathbb{R}^n)=0$.</p>
+<p>定义$Z^q(\mathbb{R}^n)=\{\omega\in\Omega^q(\mathbb{R}^n)|d\omega=0\},$
+其中元素称为<strong>闭的</strong>$q$-形式.
+定义$B^q(\mathbb{R}^n)=\{d\tau | \tau\in\Omega^{q-1}(\mathbb{R}^n)\},$
+其中元素称为<strong>恰当的</strong>$q$-形式. 特别地,
+规定$Z^n(\mathbb{R}^n)=\Omega^n(\mathbb{R}^n),$ $B^0(\mathbb{R}^n)=0.$</p>
+<p>由于$d^2=0$, $B^q(\mathbb{R}^n)\subset Z^q(\mathbb{R}^n).$
+定义$\mathbb{R}^n$的第$q$个de
+Rham上同调为$H^q_{dR}(\mathbb{R}^n)=Z^q(\mathbb{R}^n)/B^q(\mathbb{R}^n).$
+不引起歧义时, 通常隐去下标.
+闭$q$-形式$\omega$所在上同调类记为$[\omega].$</p>
+<p>类似地, 对$\mathbb{R}^n$开集$U$上的de Rham复形,
+只需在一开始将光滑函数定义域设置为$U$即可.</p>
+<p>我们有<strong>上同调的Poincaré引理</strong>: $H^q(\mathbb{R}^n)=\begin{cases}
+    \mathbb{R}\quad&amp;q=0\\
+    0&amp;q\neq 0
+\end{cases}.$</p>
+<h2 id="紧上同调"><a href="#紧上同调" class="headerlink" title="紧上同调"></a>紧上同调</h2><p>记$\Omega^\ast_c(\mathbb{R}^n)=C^\infty_c(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^\ast,$
+即将光滑函数改为具有紧支集的光滑函数. 类似地, 可以将其按型分解.
+由于光滑函数偏导支集闭包含于原来的紧支集, 它也是有紧支撑的,
+因此$\{\Omega^\ast_c(\mathbb{R}^n),d\}$是一个复形, 称为<strong>具紧支集的de
+Rham复形</strong>.</p>
+<p>类似地,
+定义$Z^q_c(\mathbb{R}^n)=\{\omega\in\Omega_c^q(\mathbb{R}^n)|d\omega=0\},$
 $B^q_c(\mathbb{R}^n)=\{d\tau | \tau\in\Omega_c^{q-1}(\mathbb{R}^n)\},$
-$H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$
-Note that $Z_c^q(\mathbb{R}^n)=\Omega^q_c(\mathbb{R}^n)\cap Z^q(\mathbb{R}^n),$
-But generally $B^q_c(\mathbb{R}^n)\neq B^q(\mathbb{R}^n)\cap \Omega_c^q(\mathbb{R}^n).$
-That is, it is not that $d\tau$ has a compact support set but $\tau$ in $d\tau$ has a compact support set.
+$H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
+<p>注意$Z_c^q(\mathbb{R}^n)=\Omega^q_c(\mathbb{R}^n)\cap Z^q(\mathbb{R}^n),$
+但一般$B^q_c(\mathbb{R}^n)\neq B^q(\mathbb{R}^n)\cap \Omega_c^q(\mathbb{R}^n).$
+即不是$d\tau$有紧支集而是$d\tau$中$\tau$有紧支集.</p>
+<p>我们有<strong>紧上同调的Poincaré引理</strong>: $H^q_c(\mathbb{R}^n)=\begin{cases}
+        \mathbb{R}\quad&amp;q=n\\
+        0&amp;q\neq n
+    \end{cases}.$</p>
+<p>注意这说明了<strong>紧上同调不是同伦不变量</strong>. 类似地,
+我们可对一般的$U\subset \mathbb{R}^n$定义$H_c^\ast(U)$.</p>
+<h2 id="微分复形"><a href="#微分复形" class="headerlink" title="微分复形"></a>微分复形</h2><p>称向量空间直和$C=\oplus_{q\in\mathbb{Z} } C^q$为<strong>微分复形</strong>,
+若有同态$d:C\rightarrow C,$ 满足$d:C^q\rightarrow C^{q+1},$ $d^2=0.$
+可以由$d$对复形定义上同调. de Rham复形即为微分复形.</p>
+<p>与代数拓扑相同, 我们可定义复形间的链映射及其诱导同态, 复形的短正合列,
+以及至关重要的zig-zag引理(图追踪定义同调的长正合列).</p>
+<p>文章最后更新于 2021-09-19 18:59:49 </p>
 
-We have **Compactly cohomological Poincaré's Lemma**: $H^q_c(\mathbb{R}^n)=\begin{cases}
-        \mathbb{R}\quad&q=n\\
-        0&q\neq n
-    \end{cases}.$
-Note that this illustrates that compact cohomology is not homotopy invariant. Similarly,
-We can define $H_c^\ast(U)$ for general $U\subset \mathbb{R}^n$.
-
-differential complex
---------
-
-The vector space direct sum $C=\oplus_{q\in\mathbb{Z}} C^q$ is called **differential complex**,
-If there is a homomorphism $d:C\rightarrow C,$ satisfies $d:C^q\rightarrow C^{q+1},$ $d^2=0.$
-Cohomology can be defined for a complex by $d$. The de Rham complex is a differential complex.
-
-As in algebraic topology, we can define chain mappings between complexes and their induced homomorphisms, short exact sequences of complexes,
-And the crucial zig-zag lemma (graph tracing defines homologous long exact sequences).
-The article was last updated on 2021-09-19 18:59:49
                 </div>
             
         </div>
@@ -335,7 +382,7 @@ The article was last updated on 2021-09-19 18:59:49
     <ul>
         <li>本文标题：《代数拓扑与微分形式》笔记(1)-de Rham 复形</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-19 18:59:49</li>
+        <li>创建时间：2021-09-19 21:59:49</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/09/19/《代数拓扑与微分形式》笔记(1)-de Rham 复形/
         </li>
@@ -367,7 +414,7 @@ The article was last updated on 2021-09-19 18:59:49
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(2)-流形上的微积分</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (2) - Calculus on Manifolds</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (2) - Calculus on Manifolds</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -379,7 +426,7 @@ The article was last updated on 2021-09-19 18:59:49
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/09/16/%E3%80%8A%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA%E3%80%8B%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BE%A4%E8%AE%BA%E5%9B%9E%E9%A1%BE/"
+                           href="/2021/09/18/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E3%80%8B%E7%AC%94%E8%AE%B0(1)%20-%20de%20Rham%20%E5%A4%8D%E5%BD%A2/"
                         >
                             <span class="title flex-center">
                                     <span class="post-nav-title-item">
@@ -387,9 +434,9 @@ The article was last updated on 2021-09-19 18:59:49
                                         
                                         
                                         
-                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数图论》第二章-群论回顾</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(1) - de Rham 复形</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Chapter 2 of &#34;Algebraic Graph Theory&#34; - Review of Group Theory</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (1) - de Rham complex</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -641,11 +688,11 @@ The article was last updated on 2021-09-19 18:59:49
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbb-R-n-de-Rham-%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text">$\mathbb{R}^n$ de Rham 上同调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">微分形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E5%AD%90"><span class="nav-text">算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#de-Rham-%E5%A4%8D%E5%BD%A2"><span class="nav-text">de Rham 复形</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text">紧上同调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%A4%8D%E5%BD%A2"><span class="nav-text">微分复形</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbb-R-n-de-Rham-%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text">$\mathbb{R}^n$ de Rham 上同调</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">微分形式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E5%AD%90"><span class="nav-text">算子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#de-Rham-%E5%A4%8D%E5%BD%A2"><span class="nav-text">de Rham 复形</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text">紧上同调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%A4%8D%E5%BD%A2"><span class="nav-text">微分复形</span></a></li></ol>
         </div>
     
 </div>
@@ -696,6 +743,36 @@ The article was last updated on 2021-09-19 18:59:49
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -719,46 +796,6 @@ The article was last updated on 2021-09-19 18:59:49
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

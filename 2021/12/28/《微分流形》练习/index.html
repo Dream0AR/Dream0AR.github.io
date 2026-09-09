@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》练习</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Exercise</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifold Exercise</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-28 19:33:04
+        <i class="fas fa-edit"></i>&nbsp;2021-12-28 21:33:04
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,215 +230,314 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="考试题"><a href="#考试题" class="headerlink" title="考试题"></a>考试题</h2><p><strong>习题 1</strong>. <em>叙述$C^\infty$-微分流形的定义. 设若$M$和$N$分别是$m$维和$n$维的$C^\infty$-微分流形, 证明$M\times N$是$m+n$维$C^\infty$-微分流形.</em> </p>
+<p><strong>证:</strong> 称$M$为拓扑流形, 若$M$为一个拓扑空间, 满足$C_2$与$T_2$条件,
+即有可数拓扑基, 且$\,\forall\,p,q\in M,$
+$\,\exists\,U,V$分别为$p,q$的开邻域, 满足$U\cap V=\varnothing.$ 另外,
+还需是局部欧氏的, 即$\,\forall\,p\in M,$ $\,\exists\,U$为$p$的开邻域,
+$\varphi:U\approx \varphi(U)\subset \mathbb{R}^m$为同胚.
+这样的拓扑空间称为$m$维拓扑流形.</p>
+<p>给定$M$的开覆盖$\{U_\alpha\},$ 以及同胚到欧氏空间的$\{\varphi_\alpha\}.$
+称$\{(U_\alpha,\varphi_\alpha)\}$为$M$的坐标图册.
+若其满足$\,\forall\,U_\alpha\cap U_\beta\neq \varnothing,$
+$\varphi_\alpha\circ\varphi_{\beta}^{-1}:\varphi_{\beta}(U_\alpha\cap U_\beta)\rightarrow \varphi_{\alpha}(U_\alpha\cap U_\beta)$为$C^\infty$微分同胚,
+即作为同胚的同时, 映射与逆映射都是$C^\infty$的,
+则称$\{(U_\alpha,\varphi_\alpha)\}$为$C^\infty$坐标图册,
+赋予了$M$一个微分结构.
+具$C^\infty$微分结构的拓扑流形称为$C^\infty$微分流形.</p>
+<p>设$\{U_\alpha\},\{V_\beta\}$分别是$M,N$的拓扑基,
+则$\{U_\alpha\times V_\beta\}$为$M\times N$的拓扑基.
+$M\times N$取积拓扑. 同时, 对$(p_1,q_1)\neq (p_2,q_2),$
+不妨设$p_1\neq p_2,$ 取$p_1,p_2,q_1,q_2$的开邻域$U_1,U_2,V_1,V_2,$
+能保证$U_1\cap U_2=\varnothing.$
+那么此时$U_1\times V_1\cap U_2\times V_2=\varnothing,$
+为$(p_1,q_1),(p_2,q_2)$的无交开邻域.</p>
+<p>若$\{(U_\alpha,\varphi_\alpha)\},\{(V_\beta,\psi_\beta)\}$为$M,N$的$C^\infty$-坐标图册,
+下证$\{(U_\alpha\times V_\beta,\varphi_\alpha\times \psi_\beta)\}$为$M\times N$的$C^\infty$-坐标图册.
+显然$\varphi_\alpha\times \psi_\beta:U_\alpha\times V_\beta\approx \varphi_\alpha(U_\alpha)\times \psi_\beta(V_\beta)\subset \mathbb{R}^{m+n},$
+同时由$(f\times g)&#39;=f&#39;\times g&#39;,$ 转移函数也都是$C^\infty$微分同胚,
+确实是$C^\infty$-坐标图册. 因此$M\times N$是$m+n$维$C^\infty$-微分流形.</p>
+<p><strong>习题 2</strong>. <em>设若$M$和$N$分别是$m$维和$n$维的$C^\infty$-微分流形, $F:M\rightarrow N$是$C^\infty$-微分流形之间的光滑映照. 对于$p\in M$以及$q = F(p) \in N$, $F$自然地确定了一个余切空间的拉回映照$F^\ast _q:T^\ast _qN\rightarrow T^\ast _pM.$ 如果$p$处有局部坐标$(U, u^i),$ $q$处有局部坐标$(V,v^\alpha),$ 它们分别给出了$T^\ast _pM$和$T^\ast _qN$的自然基$\{(du^i)_p\}$和$\{(dv^\alpha)_q\}.$ 请写出$F^\ast _q$在该基下的矩阵表示, 并证明, 当$F$是微分同胚时, 上述$F^\ast _q$还 是线性同构.</em> </p>
+<p><strong>证:</strong> 设$F^\ast _q(d v^\alpha)=a^\alpha_i du^i,$
+作用到$X_i=\frac{\partial {} }{\partial {}u^i}$上,
+得到$a_i^\alpha=X_i(v^\alpha\circ F).$
+记$\widehat{F}=\psi\circ F\circ \varphi^{-1}$为局部表示,
+则矩阵为$J(\widehat{F})$的转置,
+$F_q^\ast (b_\alpha dv^\alpha)=b_\alpha a_i^\alpha du^i.$ 当$F$为微分同胚时,
+记$\widehat{F}$为微分同胚, 此时$\det J(\widehat{F})\neq 0,$
+因此$F_q^\ast $的矩阵表示是满秩的, 从而是线性同构.</p>
+<p><strong>习题 3</strong>. <em>设映照$f : \mathbb{R}^2\rightarrow \mathbb{R}^2$的具体形式是$y_1 = x_1e^{x_2} + x_2,$ $y_2 = x_1e^{x_2}-x_2.$ 试写出$f$在欧式空间自然基底下, 诱导出切空间之间映照$f_\ast $的矩阵表示, 并证明$f$是个光滑同胚.</em> </p>
+<p><strong>证:</strong>
+回忆$f_\ast (\frac{\partial {} }{\partial {}x_i})=a_i^j \frac{\partial {} }{\partial {}y_j},$
+作用$dy^j,$ 得到$a_i^j=\frac{\partial {}y^j\circ f}{\partial {}x_i}.$
+因此$f^\ast (b^i\frac{\partial {} }{\partial {}x_i})=b^ia_i^j \frac{\partial {} }{\partial {}y_j},$
+矩阵表示$a_i^j$为局部表示$\widehat{f}=\mathrm{id}\circ f\circ \mathrm{id}^{-1}=f$的Jacobi矩阵.</p>
+<p>计算得到, $J(f)=\begin{bmatrix}
+ e^{x_2} &amp; x_1e^{x_2}+1\\
+ e^{x_2} &amp; x_1e^{x_2}-1
+ \end{bmatrix}.$ 此即为$f_*$的矩阵表示. 易见$f\in C^\infty,$
+且$\det J(f)=-2e^{x_2}\neq 0,$ 因此$f$处处为局部微分同胚, 且为单射.</p>
+<p>注意到$\frac{y_1-y_2}{2}=x_2,$
+$y_1=x_1e^{\frac{y_1-y_2}{2} }+\frac{y_1-y_2}{2},$
+$x_1=\frac{y_1+y_2}{2}e^{\frac{y_2-y_1}{2} }.$
+这就给出了$f^{-1}$的具体形式, 易见它没有定义域的限制,
+且也是$C^\infty$的, 因此$f$为满射, 且是光滑同胚,
+即作为同胚的同时映射与逆映射都是光滑的.</p>
+<p><strong>习题 4</strong>. <em>设$M$是$C^\infty$-微分流形, $f, g \in C^\infty(M),$ $X, Y \in X (M),$ $[-, -]$是Lie括号. 请展开$[fX, gY].$</em> </p>
+<p><strong>证:</strong> 
+$$
+\begin{aligned}
+ [fX,gY]&amp;=fX(gY)-gY(fX)\\
+ &amp;=fX(g)Y+fgXY-gY(f)X-fgYX\\
+ &amp;=fX(g)Y-gY(f)X+fg[X,Y] 
+ \end{aligned}
+$$</p>
+<p>这里$X(g)(p)=X_p(g),$ $[X,Y]_p(h)=X_p(Y_q(h))-Y_p(X_q(h)),$
+其中$X_q(h)$为关于$q$的$C^\infty$函数.</p>
+<p><strong>习题 5</strong>. <em>设$M$是$C^\infty$-微分流形, $X, Y \in \mathfrak{X}(M),$ $\omega \in \Lambda^1(M),$ $[-, -]$是Lie括号. 证明公式:</em> </p>
+<p>$$
+d\omega (X, Y ) = X\omega (Y ) - Y \omega(X) - \omega([X, Y ])
+$$</p>
+<p><strong>证:</strong> 由于公式具线性性, 只需验证$\omega=fdg$的情形.
+$d\omega=df\wedge dg.$ 此时</p>
+<p>$$
+d\omega(X,Y)=df\wedge dg(X,Y)=df(X)dg(Y)-df(Y)dg(X)=X(f)Y(g)-Y(f)X(g).
+$$</p>
+<p>$$
+X\omega(Y)=X(fY(g))=X(f)Y(g)+fXY(g)
+$$</p>
+<p>$$
+Y\omega(X)=Y(fX(g))=Y(f)X(g)+fYX(g)
+$$</p>
+<p>$$
+\omega([X,Y])=f[X,Y] (g)=fXY(g)-fYX(g)
+$$</p>
+<p>因此,
+$X\omega(Y)-Y\omega(X)-\omega([X,Y])=X(f)Y(g)-Y(f)X(g)=d\omega(X,Y).$</p>
+<p><strong>习题 6</strong>. <em>设$M$是$m$维$C^\infty$-紧致无边微分流形, $f : M \rightarrow \mathbb{R}^m$是光滑映照. 试证明存在$p\in M,$ 使得$f$在$p$处的秩小于$m.$</em> </p>
+<p><strong>证:</strong> 不然, $f$处处秩等于$m$(显然不可能大于$m$). 由反函数定理,
+$f$处处为局部微分同胚. 即$\,\forall\,p\in M,$
+$\,\exists\,U$为$p$的开邻域, $f:U\approx f(U),$
+且可以要求$f(U)$也是开集. 由秩定理,
+事实上可以要求$U,f(U)$在适当坐标系下都是开方盒. 由$M$紧,
+$\,\exists\,\{U_i\}_{i=1}^m,$ $f:U_i\approx f(U_i),$
+$\bigcup_{i=1}^m U_i=M.$</p>
+<p>设$M$为连通流形, 不然在每个连通分支上讨论即可. 连通分支既开又闭,
+同时紧空间中闭集仍是紧集. 注意到我们有</p>
+<p>$$
+\bigcup^m_{i=1} f(U_i)= f(\bigcup^m_{i=1}U_i)=f(M),
+$$</p>
+<p> 这产生了矛盾.
+因为紧集连续像是紧的, $f(M)$为紧集, 从而是有界闭集.
+但$f(M)=\bigcup_{i=1}^m f(U_i)$又是开集,
+因此它只能是全空间$\mathbb{R}^m,$ 而这又会与紧性矛盾.
+从而$f$在某点秩小于$m.$</p>
+<p>题设中无边性用在了反函数定理中. 当$p$为带边流形边上点时,
+不再有类似的反函数定理. 即使找到了邻域$U$上的局部微分同胚,
+也无法说明像集在全空间中是开集, 从而无法进行类似的讨论.</p>
+<p><strong>习题 7</strong>. <em>设$M_1, M_2$是$C^\infty$-微分流形, $f : M_1 \rightarrow M_2$是局部微分同胚. 若$M_2$是可定向的, 证明$M_1$也是 可定向的.</em> </p>
+<p><strong>证:</strong> 由于$f$是局部微分同胚, 它的局部表示是微分同胚,
+从而$M_1,M_2$维数相同. 由$M_2$可定向,
+存在$\Omega\in \mathcal{A}^{m}(M_2)$为处处非零的外微分形式.
+断言$f^\ast \Omega\in \mathcal{A}^m(M_1)$也是处处非零的外微分形式,
+从而是可定向的.</p>
+<p>在局部坐标系中考虑. 设$f:U\approx V,$
+$\Omega=hdy^1\wedge\cdots \wedge dy^m\in \mathcal{A}^m(V),$ $h\neq 0,$
+则</p>
+<p>$$
+f^\ast \Omega=f^\ast h\cdot f^\ast (dy^1\wedge\cdots\wedge dy^m)=h\circ f \cdot \det J(f) {}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(M_1).
+$$</p>
+<p>由于$f$为局部微分同胚, $\det J(f)\neq 0,$ 同时$h\circ f\neq 0.$
+因此$f^\ast \Omega$确实是处处非零的外微分形式.</p>
+<p>另一种方法是, 取合适的加细, 使得$f:U_\alpha\approx V_\alpha,$
+且$\{(V_\alpha,\psi_\alpha)\}$构成$M_2$上的保定向光滑坐标图册.
+断言$\{(U_\alpha,\varphi_\alpha=\psi_\alpha\circ f)\}$构成$M_1$上的保定向光滑坐标图册.
+只需注意到</p>
+<p>$$
+\varphi_\beta\circ\varphi_\alpha^{-1}=(\psi_\beta\circ f)\circ (f^{-1}\circ \psi_\alpha^{-1})=\psi_\beta\circ\psi_\alpha^{-1}.
+$$</p>
+<p><strong>习题 8</strong>. <em>证明, 具有紧支集的形式的积分和单位分解的选取无关. 再叙述Stokes定理.</em> </p>
+<p><strong>证:</strong> 首先说明紧支集形式的积分和坐标系选取无关.
+若$\omega\in \mathcal{A}^m_c(U\cap V),$ 则</p>
+<p>$$
+\int_U \omega=\int_{\varphi(U\cap V)}(\varphi^{-1})^\ast \omega=\int_{\psi(U\cap V)}(\psi^{-1})^\ast \omega=\int_V\omega,
+$$</p>
+<p>中间的等号由$\mathbb{R}^m$间的积分变换公式得到,
+注意$U,V$的坐标选取需要与$M$定向相符,
+这样保证$\det J(\varphi\circ\psi^{-1})&gt; 0.$</p>
+<p>接下来, 对两组单位分解$\{f_i\},\{g_j\},$ $\{f_ig_j\}$也是一组单位分解.
+因此,</p>
+<p>$$
+\sum_i \int_{U_i} f_i \omega=\sum_{i,j}\int_{U_i\cap V_j} f_ig_j \omega=\sum_{j}\int_{V_j} g_j\omega.
+$$</p>
+<p>从而积分与单位分解选取无关.</p>
+<p>Stokes定理: 对定向$m$维光滑流形$M,$ 若$D$为其上(闭)带边区域,
+即$D$由内点$p\in U\approx \varphi(U)\subset \mathbb{R}^m$与边界点$p\in U,$
+$U\cap D\approx \varphi(U)\cap \mathbb{H}$组成.
+$D$<strong>从</strong>$M$<strong>上诱导定向</strong>,
+那么对于$M$上的$m-1$次的<strong>紧支撑</strong>$C^1$外微分形式$\omega$, 有</p>
+<p>$$
+\int_D d\omega=\int_{\partial D}\omega.
+$$</p>
+<p> 当$D$无边界点时, 右端消失.</p>
+<p>文章最后更新于 2021-12-28 19:33:06 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Exam questions
-------
-
-**Exercise 1**. *Describe the definition of $C^\infty$-differential manifold. Suppose $M$ and $N$ are $m$-dimensional and $n$-dimensional $C^\infty$-differential manifolds respectively, prove that $M\times N$ is an $m+n$-dimensional $C^\infty$-differential manifold.*
-
-**Proof:** Call $M$ a topological manifold. If $M$ is a topological space that satisfies the conditions $C_2$ and $T_2$,
-That is, there are countable topological bases, and $\,\forall\,p,q\in M,$
-$\,\exists\,U,V$ are the open neighborhoods of $p,q$ respectively, satisfying $U\cap V=\varnothing.$ In addition,
-It also needs to be locally Euclidean, that is, $\,\forall\,p\in M,$ $\,\exists\,U$ is the open neighborhood of $p$,
-$\varphi:U\approx \varphi(U)\subset \mathbb{R}^m$ is a homeomorphism.
-Such a topological space is called an $m$-dimensional topological manifold.
-
-Given the open covering $\{U_\alpha\},$ of $M$ and the homeomorphism to Euclidean space $\{\varphi_\alpha\}.$
-Call $\{(U_\alpha,\varphi_\alpha)\}$ the coordinate atlas of $M$.
-If it satisfies $\,\forall\,U_\alpha\cap U_\beta\neq \varnothing,$
-$\varphi_\alpha\circ\varphi_{\beta}^{-1}:\varphi_{\beta}(U_\alpha\cap U_\beta)\rightarrow \varphi_{\alpha}(U_\alpha\cap
-U_\beta)$ is a diffeomorphism of $C^\infty$,
-That is, as a homeomorphism, both the mapping and the inverse mapping are $C^\infty$,
-Then $\{(U_\alpha,\varphi_\alpha)\}$ is called $C^\infty$ coordinate atlas,
-$M$ is given a differential structure.
-A topological manifold with $C^\infty$ differential structure is called a $C^\infty$ differential manifold.
-Suppose $\{U_\alpha\},\{V_\beta\}$ are the topological bases of $M and N$ respectively,
-Then $\{U_\alpha\times V_\beta\}$ is the topological basis of $M\times N$.
-$M\times N$ takes the product topology. At the same time, for $(p_1,q_1)\neq (p_2,q_2),$
-Let us assume $p_1\neq p_2,$ and take the open neighborhood $U_1,U_2,V_1,V_2,$ of $p_1,p_2,q_1,q_2$
-Can guarantee $U_1\cap U_2=\varnothing.$
-Then at this time $U_1\times V_1\cap U_2\times V_2=\varnothing,$
-is the non-intersecting open neighborhood of $(p_1,q_1),(p_2,q_2)$.
-If $\{(U_\alpha,\varphi_\alpha)\},\{(V_\beta,\psi_\beta)\}$ is the $C^\infty$-coordinate atlas of $M,N$,
-It is proved that $\{(U_\alpha\times V_\beta,\varphi_\alpha\times \psi_\beta)\}$ is the $C^\infty$-coordinate atlas of $M\times N$.
-Obviously $\varphi_\alpha\times \psi_\beta:U_\alpha\times V_\beta\approx \varphi_\alpha(U_\alpha)\times \psi_\beta(V_\beta)\subset \mathbb{R}^{m+n},$
-At the same time, $(f\times g)'=f'\times g',$ transfer functions are also $C^\infty$ diffeomorphisms,
-It is indeed a $C^\infty$-coordinate atlas. Therefore $M\times N$ is an $m+n$ dimensional $C^\infty$-differential manifold.
-**Exercise 2**. *If $M$ and $N$ are $m$-dimensional and $n$-dimensional $C^\infty$-differential manifolds respectively, $F:M\rightarrow N$ is a smooth mapping between $C^\infty$-differential manifolds.
-For $p\in M$ and $q = F(p) \in N$, $F$ naturally determines a pullback mapping of the cotangent space $F^\ast _q:T^\ast _qN\rightarrow T^\ast _pM.
-$ If there are local coordinates $(U, u^i) at $p$, and there are local coordinates $(V,v^\alpha) at $$q$,$ they give the natural basis $\{(du^i)_p\}$ and $\{(dv^\alpha)_q\} of $T^\ast _pM$ and $T^\ast _qN$ respectively.
-$ Please write down the matrix representation of $F^\ast _q$ under this basis, and prove that when $F$ is a diffeomorphism, the above $F^\ast _q$ is still a linear isomorphism.*
-
-**Proof:** Suppose $F^\ast _q(d v^\alpha)=a^\alpha_i du^i,$
-Acts on $X_i=\frac{\partial {} }{\partial {}u^i}$,
-Get $a_i^\alpha=X_i(v^\alpha\circ F).$
-Let $\widehat{F}=\psi\circ F\circ \varphi^{-1}$ be the local representation,
-Then the matrix is the transpose of $J(\widehat{F})$,
-$F_q^\ast (b_\alpha dv^\alpha)=b_\alpha a_i^\alpha du^i.$ When $F$ is a diffeomorphism,
-Denote $\widehat{F}$ as diffeomorphism, then $\det J(\widehat{F})\neq 0,$
-Therefore, the matrix representation of $F_q^\ast $ is full rank and thus linearly isomorphic.
-**Exercise 3**. *Suppose the specific form of mapping $f : \mathbb{R}^2\rightarrow \mathbb{R}^2$ is $y_1 = x_1e^{x_2} + x_2,$ $y_2 = x_1e^{x_2}-x_2.$ Try to write $f$ under the natural basis of Euclidean space, inducing the mapping $f_\ast between tangent spaces Matrix representation of $, and prove that $f$ is a smooth homeomorphism.*
-**Certificate:**
-Recall $f_\ast (\frac{\partial {} }{\partial {}x_i})=a_i^j \frac{\partial {} }{\partial {}y_j},$
-Apply $dy^j,$ to get $a_i^j=\frac{\partial {}y^j\circ f}{\partial {}x_i}.$
-Therefore $f^\ast (b^i\frac{\partial {} }{\partial {}x_i})=b^ia_i^j \frac{\partial {} }{\partial {}y_j},$
-The matrix representation $a_i^j$ is the Jacobi matrix of the local representation $\widehat{f}=\mathrm{id}\circ f\circ \mathrm{id}^{-1}=f$.
-
-Calculated, $J(f)=\begin{bmatrix}
- e^{x_2} & x_1e^{x_2}+1\\
- e^{x_2} & x_1e^{x_2}-1
-\end{bmatrix}.$ 此即为$f_*$的矩阵表示. 易见$f\in C^\infty,$
-且$\det J(f)=-2e^{x_2}\neq 0,$ 因此$f$处处为局部微分同胚, 且为单射.
-
-Note that $\frac{y_1-y_2}{2}=x_2,$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="考试题"><a href="#考试题" class="headerlink" title="考试题"></a>考试题</h2><p><strong>习题 1</strong>. <em>叙述$C^\infty$-微分流形的定义. 设若$M$和$N$分别是$m$维和$n$维的$C^\infty$-微分流形, 证明$M\times N$是$m+n$维$C^\infty$-微分流形.</em> </p>
+<p><strong>证:</strong> 称$M$为拓扑流形, 若$M$为一个拓扑空间, 满足$C_2$与$T_2$条件,
+即有可数拓扑基, 且$\,\forall\,p,q\in M,$
+$\,\exists\,U,V$分别为$p,q$的开邻域, 满足$U\cap V=\varnothing.$ 另外,
+还需是局部欧氏的, 即$\,\forall\,p\in M,$ $\,\exists\,U$为$p$的开邻域,
+$\varphi:U\approx \varphi(U)\subset \mathbb{R}^m$为同胚.
+这样的拓扑空间称为$m$维拓扑流形.</p>
+<p>给定$M$的开覆盖$\{U_\alpha\},$ 以及同胚到欧氏空间的$\{\varphi_\alpha\}.$
+称$\{(U_\alpha,\varphi_\alpha)\}$为$M$的坐标图册.
+若其满足$\,\forall\,U_\alpha\cap U_\beta\neq \varnothing,$
+$\varphi_\alpha\circ\varphi_{\beta}^{-1}:\varphi_{\beta}(U_\alpha\cap U_\beta)\rightarrow \varphi_{\alpha}(U_\alpha\cap U_\beta)$为$C^\infty$微分同胚,
+即作为同胚的同时, 映射与逆映射都是$C^\infty$的,
+则称$\{(U_\alpha,\varphi_\alpha)\}$为$C^\infty$坐标图册,
+赋予了$M$一个微分结构.
+具$C^\infty$微分结构的拓扑流形称为$C^\infty$微分流形.</p>
+<p>设$\{U_\alpha\},\{V_\beta\}$分别是$M,N$的拓扑基,
+则$\{U_\alpha\times V_\beta\}$为$M\times N$的拓扑基.
+$M\times N$取积拓扑. 同时, 对$(p_1,q_1)\neq (p_2,q_2),$
+不妨设$p_1\neq p_2,$ 取$p_1,p_2,q_1,q_2$的开邻域$U_1,U_2,V_1,V_2,$
+能保证$U_1\cap U_2=\varnothing.$
+那么此时$U_1\times V_1\cap U_2\times V_2=\varnothing,$
+为$(p_1,q_1),(p_2,q_2)$的无交开邻域.</p>
+<p>若$\{(U_\alpha,\varphi_\alpha)\},\{(V_\beta,\psi_\beta)\}$为$M,N$的$C^\infty$-坐标图册,
+下证$\{(U_\alpha\times V_\beta,\varphi_\alpha\times \psi_\beta)\}$为$M\times N$的$C^\infty$-坐标图册.
+显然$\varphi_\alpha\times \psi_\beta:U_\alpha\times V_\beta\approx \varphi_\alpha(U_\alpha)\times \psi_\beta(V_\beta)\subset \mathbb{R}^{m+n},$
+同时由$(f\times g)&#39;=f&#39;\times g&#39;,$ 转移函数也都是$C^\infty$微分同胚,
+确实是$C^\infty$-坐标图册. 因此$M\times N$是$m+n$维$C^\infty$-微分流形.</p>
+<p><strong>习题 2</strong>. <em>设若$M$和$N$分别是$m$维和$n$维的$C^\infty$-微分流形, $F:M\rightarrow N$是$C^\infty$-微分流形之间的光滑映照. 对于$p\in M$以及$q = F(p) \in N$, $F$自然地确定了一个余切空间的拉回映照$F^\ast _q:T^\ast _qN\rightarrow T^\ast _pM.$ 如果$p$处有局部坐标$(U, u^i),$ $q$处有局部坐标$(V,v^\alpha),$ 它们分别给出了$T^\ast _pM$和$T^\ast _qN$的自然基$\{(du^i)_p\}$和$\{(dv^\alpha)_q\}.$ 请写出$F^\ast _q$在该基下的矩阵表示, 并证明, 当$F$是微分同胚时, 上述$F^\ast _q$还 是线性同构.</em> </p>
+<p><strong>证:</strong> 设$F^\ast _q(d v^\alpha)=a^\alpha_i du^i,$
+作用到$X_i=\frac{\partial {} }{\partial {}u^i}$上,
+得到$a_i^\alpha=X_i(v^\alpha\circ F).$
+记$\widehat{F}=\psi\circ F\circ \varphi^{-1}$为局部表示,
+则矩阵为$J(\widehat{F})$的转置,
+$F_q^\ast (b_\alpha dv^\alpha)=b_\alpha a_i^\alpha du^i.$ 当$F$为微分同胚时,
+记$\widehat{F}$为微分同胚, 此时$\det J(\widehat{F})\neq 0,$
+因此$F_q^\ast $的矩阵表示是满秩的, 从而是线性同构.</p>
+<p><strong>习题 3</strong>. <em>设映照$f : \mathbb{R}^2\rightarrow \mathbb{R}^2$的具体形式是$y_1 = x_1e^{x_2} + x_2,$ $y_2 = x_1e^{x_2}-x_2.$ 试写出$f$在欧式空间自然基底下, 诱导出切空间之间映照$f_\ast $的矩阵表示, 并证明$f$是个光滑同胚.</em> </p>
+<p><strong>证:</strong>
+回忆$f_\ast (\frac{\partial {} }{\partial {}x_i})=a_i^j \frac{\partial {} }{\partial {}y_j},$
+作用$dy^j,$ 得到$a_i^j=\frac{\partial {}y^j\circ f}{\partial {}x_i}.$
+因此$f^\ast (b^i\frac{\partial {} }{\partial {}x_i})=b^ia_i^j \frac{\partial {} }{\partial {}y_j},$
+矩阵表示$a_i^j$为局部表示$\widehat{f}=\mathrm{id}\circ f\circ \mathrm{id}^{-1}=f$的Jacobi矩阵.</p>
+<p>计算得到, $J(f)=\begin{bmatrix}
+ e^{x_2} &amp; x_1e^{x_2}+1\\
+ e^{x_2} &amp; x_1e^{x_2}-1
+ \end{bmatrix}.$ 此即为$f_*$的矩阵表示. 易见$f\in C^\infty,$
+且$\det J(f)=-2e^{x_2}\neq 0,$ 因此$f$处处为局部微分同胚, 且为单射.</p>
+<p>注意到$\frac{y_1-y_2}{2}=x_2,$
 $y_1=x_1e^{\frac{y_1-y_2}{2} }+\frac{y_1-y_2}{2},$
 $x_1=\frac{y_1+y_2}{2}e^{\frac{y_2-y_1}{2} }.$
-This gives the specific form of $f^{-1}$. It is easy to see that it has no restriction on the definition domain.
-And it is also $C^\infty$, so $f$ is surjective and smooth homeomorphism,
-That is, both simultaneous mapping and inverse mapping as homeomorphisms are smooth.
-
-**Exercise 4**. *Suppose $M$ is a $C^\infty$-differential manifold, $f, g \in C^\infty(M),$ $X, Y \in X (M),$ $[-, -]$ is a Lie bracket. Please expand $[fX, gY].$*
-
-**Certificate:**
+这就给出了$f^{-1}$的具体形式, 易见它没有定义域的限制,
+且也是$C^\infty$的, 因此$f$为满射, 且是光滑同胚,
+即作为同胚的同时映射与逆映射都是光滑的.</p>
+<p><strong>习题 4</strong>. <em>设$M$是$C^\infty$-微分流形, $f, g \in C^\infty(M),$ $X, Y \in X (M),$ $[-, -]$是Lie括号. 请展开$[fX, gY].$</em> </p>
+<p><strong>证:</strong> 
 $$
 \begin{aligned}
- [fX,gY]&=fX(gY)-gY(fX)\\
- &=fX(g)Y+fgXY-gY(f)X-fgYX\\
- &=fX(g)Y-gY(f)X+fg[X,Y] 
+ [fX,gY]&amp;=fX(gY)-gY(fX)\\
+ &amp;=fX(g)Y+fgXY-gY(f)X-fgYX\\
+ &amp;=fX(g)Y-gY(f)X+fg[X,Y] 
  \end{aligned}
-$$
-
-Here $X(g)(p)=X_p(g),$ $[X,Y]_p(h)=X_p(Y_q(h))-Y_p(X_q(h)),$
-Where $X_q(h)$ is the $C^\infty$ function about $q$.
-**Exercise 5**. *Suppose $M$ is a $C^\infty$-differential manifold, $X, Y \in \mathfrak{X}(M),$ $\omega \in \Lambda^1(M),$ $[-, -]$ is a Lie bracket. Proof formula:*
-
-
-
-$$
+$$</p>
+<p>这里$X(g)(p)=X_p(g),$ $[X,Y]_p(h)=X_p(Y_q(h))-Y_p(X_q(h)),$
+其中$X_q(h)$为关于$q$的$C^\infty$函数.</p>
+<p><strong>习题 5</strong>. <em>设$M$是$C^\infty$-微分流形, $X, Y \in \mathfrak{X}(M),$ $\omega \in \Lambda^1(M),$ $[-, -]$是Lie括号. 证明公式:</em> </p>
+<p>$$
 d\omega (X, Y ) = X\omega (Y ) - Y \omega(X) - \omega([X, Y ])
-$$
-**Proof:** Since the formula is linear, we only need to verify the case $\omega=fdg$.
-$d\omega=df\wedge dg.$ at this time
-
-
-$$
+$$</p>
+<p><strong>证:</strong> 由于公式具线性性, 只需验证$\omega=fdg$的情形.
+$d\omega=df\wedge dg.$ 此时</p>
+<p>$$
 d\omega(X,Y)=df\wedge dg(X,Y)=df(X)dg(Y)-df(Y)dg(X)=X(f)Y(g)-Y(f)X(g).
-$$
-$$
+$$</p>
+<p>$$
 X\omega(Y)=X(fY(g))=X(f)Y(g)+fXY(g)
-$$
-
-
-
-
-$$
+$$</p>
+<p>$$
 Y\omega(X)=Y(fX(g))=Y(f)X(g)+fYX(g)
-$$
-
-
-
-
-$$
+$$</p>
+<p>$$
 \omega([X,Y])=f[X,Y] (g)=fXY(g)-fYX(g)
-$$
-Therefore,
-$X\omega(Y)-Y\omega(X)-\omega([X,Y])=X(f)Y(g)-Y(f)X(g)=d\omega(X,Y).$
-**Exercise 6**. *Suppose $M$ is a $m$-dimensional $C^\infty$-compact boundless differential manifold, $f : M \rightarrow \mathbb{R}^m$ is a smooth mapping. Try to prove that there exists $p\in M,$ such that the rank of $f$ at $p$ is less than $m.$*
-
-**Proof:** Otherwise, the rank of $f$ is equal to $m$ everywhere (obviously it cannot be greater than $m$). According to the inverse function theorem,
-$f$ is a local diffeomorphism everywhere. That is, $\,\forall\,p\in M,$
-$\,\exists\,U$ is the open neighborhood of $p$, $f:U\approx f(U),$
-And it can be required that $f(U)$ is also an open set. According to the rank theorem,
-In fact, it can be required that $U, f(U)$ are all square boxes in the appropriate coordinate system. By $M$,
+$$</p>
+<p>因此,
+$X\omega(Y)-Y\omega(X)-\omega([X,Y])=X(f)Y(g)-Y(f)X(g)=d\omega(X,Y).$</p>
+<p><strong>习题 6</strong>. <em>设$M$是$m$维$C^\infty$-紧致无边微分流形, $f : M \rightarrow \mathbb{R}^m$是光滑映照. 试证明存在$p\in M,$ 使得$f$在$p$处的秩小于$m.$</em> </p>
+<p><strong>证:</strong> 不然, $f$处处秩等于$m$(显然不可能大于$m$). 由反函数定理,
+$f$处处为局部微分同胚. 即$\,\forall\,p\in M,$
+$\,\exists\,U$为$p$的开邻域, $f:U\approx f(U),$
+且可以要求$f(U)$也是开集. 由秩定理,
+事实上可以要求$U,f(U)$在适当坐标系下都是开方盒. 由$M$紧,
 $\,\exists\,\{U_i\}_{i=1}^m,$ $f:U_i\approx f(U_i),$
-$\bigcup_{i=1}^m U_i=M.$
-
-Let $M$ be a connected manifold, otherwise we can discuss it on each connected branch. A connected branch is both open and closed,
-At the same time, a closed set in a compact space is still a compact set. Note that we have
-$$
+$\bigcup_{i=1}^m U_i=M.$</p>
+<p>设$M$为连通流形, 不然在每个连通分支上讨论即可. 连通分支既开又闭,
+同时紧空间中闭集仍是紧集. 注意到我们有</p>
+<p>$$
 \bigcup^m_{i=1} f(U_i)= f(\bigcup^m_{i=1}U_i)=f(M),
-$$
-
- This creates a contradiction.
-Because the continuous image of a compact set is compact, $f(M)$ is a compact set, and thus a bounded closed set.
-But $f(M)=\bigcup_{i=1}^m f(U_i)$ is an open set again,
-Therefore it can only be the full space $\mathbb{R}^m,$ and this will contradict compactness.
-Therefore $f$ has a rank smaller than $m.$ at a certain point.
-
-The edgelessness in the problem is used in the inverse function theorem. When $p$ is a point on the edge of the manifold with edges,
-There is no longer a similar inverse function theorem. Even if a local diffeomorphism on the neighborhood $U$ is found,
-It is also impossible to explain that the image set is an open set in the entire space, so similar discussions cannot be carried out.
-**Exercise 7**. *Suppose $M_1, M_2$ are $C^\infty$-differential manifolds, $f : M_1 \rightarrow M_2$ is a local diffeomorphism. If $M_2$ is orientable, prove that $M_1$ is also orientable.*
-
-**Proof:** Since $f$ is a local diffeomorphism, its local representation is a diffeomorphism,
-Therefore, $M_1 and M_2$ have the same dimensions. It can be oriented by $M_2$,
-There exists $\Omega\in \mathcal{A}^{m}(M_2)$ which is an external differential form that is non-zero everywhere.
-Assert that $f^\ast \Omega\in \mathcal{A}^m(M_1)$ is also a non-zero external differential form everywhere,
-It is therefore orientable.
-
-Consider in the local coordinate system. Let $f:U\approx V,$
+$$</p>
+<p> 这产生了矛盾.
+因为紧集连续像是紧的, $f(M)$为紧集, 从而是有界闭集.
+但$f(M)=\bigcup_{i=1}^m f(U_i)$又是开集,
+因此它只能是全空间$\mathbb{R}^m,$ 而这又会与紧性矛盾.
+从而$f$在某点秩小于$m.$</p>
+<p>题设中无边性用在了反函数定理中. 当$p$为带边流形边上点时,
+不再有类似的反函数定理. 即使找到了邻域$U$上的局部微分同胚,
+也无法说明像集在全空间中是开集, 从而无法进行类似的讨论.</p>
+<p><strong>习题 7</strong>. <em>设$M_1, M_2$是$C^\infty$-微分流形, $f : M_1 \rightarrow M_2$是局部微分同胚. 若$M_2$是可定向的, 证明$M_1$也是 可定向的.</em> </p>
+<p><strong>证:</strong> 由于$f$是局部微分同胚, 它的局部表示是微分同胚,
+从而$M_1,M_2$维数相同. 由$M_2$可定向,
+存在$\Omega\in \mathcal{A}^{m}(M_2)$为处处非零的外微分形式.
+断言$f^\ast \Omega\in \mathcal{A}^m(M_1)$也是处处非零的外微分形式,
+从而是可定向的.</p>
+<p>在局部坐标系中考虑. 设$f:U\approx V,$
 $\Omega=hdy^1\wedge\cdots \wedge dy^m\in \mathcal{A}^m(V),$ $h\neq 0,$
-rule
-
-
-$$
+则</p>
+<p>$$
 f^\ast \Omega=f^\ast h\cdot f^\ast (dy^1\wedge\cdots\wedge dy^m)=h\circ f \cdot \det J(f) {}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(M_1).
-$$
-Since $f$ is a local diffeomorphism, $\det J(f)\neq 0,$ and $h\circ f\neq 0.$
-Therefore $f^\ast \Omega$ is indeed a non-zero external differential form everywhere.
-
-Another method is to take appropriate thinning so that $f:U_\alpha\approx V_\alpha,$
-And $\{(V_\alpha,\psi_\alpha)\}$ constitutes a direction-preserving smooth coordinate atlas on $M_2$.
-Assert that $\{(U_\alpha,\varphi_\alpha=\psi_\alpha\circ f)\}$ constitutes a direction-preserving smooth coordinate atlas on $M_1$.
-Just notice
-$$
+$$</p>
+<p>由于$f$为局部微分同胚, $\det J(f)\neq 0,$ 同时$h\circ f\neq 0.$
+因此$f^\ast \Omega$确实是处处非零的外微分形式.</p>
+<p>另一种方法是, 取合适的加细, 使得$f:U_\alpha\approx V_\alpha,$
+且$\{(V_\alpha,\psi_\alpha)\}$构成$M_2$上的保定向光滑坐标图册.
+断言$\{(U_\alpha,\varphi_\alpha=\psi_\alpha\circ f)\}$构成$M_1$上的保定向光滑坐标图册.
+只需注意到</p>
+<p>$$
 \varphi_\beta\circ\varphi_\alpha^{-1}=(\psi_\beta\circ f)\circ (f^{-1}\circ \psi_\alpha^{-1})=\psi_\beta\circ\psi_\alpha^{-1}.
-$$
-
-
-
-**Exercise 8**. *Prove that integrals in the form of compact supports are independent of the choice of unit decomposition. Restate Stokes' theorem.*
-
-**Proof:** First, it is explained that the integral in the form of a compactly supported set has nothing to do with the selection of the coordinate system.
-If $\omega\in \mathcal{A}^m_c(U\cap V),$ then
-
-
-$$
+$$</p>
+<p><strong>习题 8</strong>. <em>证明, 具有紧支集的形式的积分和单位分解的选取无关. 再叙述Stokes定理.</em> </p>
+<p><strong>证:</strong> 首先说明紧支集形式的积分和坐标系选取无关.
+若$\omega\in \mathcal{A}^m_c(U\cap V),$ 则</p>
+<p>$$
 \int_U \omega=\int_{\varphi(U\cap V)}(\varphi^{-1})^\ast \omega=\int_{\psi(U\cap V)}(\psi^{-1})^\ast \omega=\int_V\omega,
-$$
-
-
-The equal sign in the middle is obtained by the integral transformation formula between $\mathbb{R}^m$,
-Note that the coordinate selection of $U, V$ needs to be consistent with the orientation of $M$.
-This ensures that $\det J(\varphi\circ\psi^{-1})> 0.$
-
-Next, the decomposition of two sets of units $\{f_i\},\{g_j\},$ $\{f_ig_j\}$ is also a set of unit decompositions.
-Therefore,
-
-
-$$
+$$</p>
+<p>中间的等号由$\mathbb{R}^m$间的积分变换公式得到,
+注意$U,V$的坐标选取需要与$M$定向相符,
+这样保证$\det J(\varphi\circ\psi^{-1})&gt; 0.$</p>
+<p>接下来, 对两组单位分解$\{f_i\},\{g_j\},$ $\{f_ig_j\}$也是一组单位分解.
+因此,</p>
+<p>$$
 \sum_i \int_{U_i} f_i \omega=\sum_{i,j}\int_{U_i\cap V_j} f_ig_j \omega=\sum_{j}\int_{V_j} g_j\omega.
-$$
-
-
-Therefore, the integral has nothing to do with the choice of unit decomposition.
-Stokes' theorem: For an oriented $m$-dimensional smooth manifold $M,$ if $D$ is its upper (closed) edge region,
-That is, $D$ consists of the interior point $p\in U\approx \varphi(U)\subset \mathbb{R}^m$ and the boundary point $p\in U,$
-Composed of $U\cap D\approx \varphi(U)\cap \mathbb{H}$.
-$D$** induces orientation** from **$M$**,
-Then for the $m-1$ degree **compact support** $C^1$ external differential form $\omega$ on $M$, we have
-
-
-$$
+$$</p>
+<p>从而积分与单位分解选取无关.</p>
+<p>Stokes定理: 对定向$m$维光滑流形$M,$ 若$D$为其上(闭)带边区域,
+即$D$由内点$p\in U\approx \varphi(U)\subset \mathbb{R}^m$与边界点$p\in U,$
+$U\cap D\approx \varphi(U)\cap \mathbb{H}$组成.
+$D$<strong>从</strong>$M$<strong>上诱导定向</strong>,
+那么对于$M$上的$m-1$次的<strong>紧支撑</strong>$C^1$外微分形式$\omega$, 有</p>
+<p>$$
 \int_D d\omega=\int_{\partial D}\omega.
-$$
+$$</p>
+<p> 当$D$无边界点时, 右端消失.</p>
+<p>文章最后更新于 2021-12-28 19:33:06 </p>
 
- When $D$ has no boundary points, the right end disappears.
-
-The article was last updated on 2021-12-28 19:33:06
                 </div>
             
         </div>
@@ -449,7 +548,7 @@ The article was last updated on 2021-12-28 19:33:06
     <ul>
         <li>本文标题：《微分流形》练习</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-28 19:33:04</li>
+        <li>创建时间：2021-12-28 21:33:04</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/12/28/《微分流形》练习/
         </li>
@@ -481,7 +580,7 @@ The article was last updated on 2021-12-28 19:33:06
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(1)-线性联络</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (1)-Linear Connection</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (1) - Linear Liaison</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -503,7 +602,7 @@ The article was last updated on 2021-12-28 19:33:06
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《现代PDE基础》笔记(10)-复习</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (10)-Review</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Modern PDE Basics Notes (10) - Review</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -755,11 +854,11 @@ The article was last updated on 2021-12-28 19:33:06
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E9%A2%98"><span class="nav-text">考试题</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%80%83%E8%AF%95%E9%A2%98"><span class="nav-text">考试题</span></a></li></ol>
         </div>
     
 </div>
@@ -810,6 +909,36 @@ The article was last updated on 2021-12-28 19:33:06
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -833,46 +962,6 @@ The article was last updated on 2021-12-28 19:33:06
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

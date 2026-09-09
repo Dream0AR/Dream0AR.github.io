@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-08-12 16:25:29
+        <i class="fas fa-edit"></i>&nbsp;2021-08-12 19:25:29
     </span>
     
         <span class="article-categories article-meta-item">
@@ -222,147 +222,274 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>分享一下搭建个人博客的过程，包括一些细节的处理等等，希望会有帮助。</p>
+<h2 id="Hexo环境配置"><a href="#Hexo环境配置" class="headerlink" title="Hexo环境配置"></a>Hexo环境配置</h2><p>我主要参考的文章是这个<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1201860091307458560" >知乎专栏<i class="fas fa-external-link-alt"></i></a>。前三篇是GitHub使用相关，四六篇若不希望改变域名则非必要（穷学生不打算买域名，也没找到免费的方法QAQ）。我是从第五篇开始的，按步骤安装node.js后，在某个文件夹内搭建Hexo环境即可。</p>
+<p>接下来是第七篇，我设置的是keep主题，与专栏里的主题设置方法大同小异。最后便是第八篇了，只需要选取一些感兴趣的功能，单独看单独设置即可。Hexo博客的功能是插件式管理的，很方便，只需安装想要的插件，然后在主题配置文件或网站配置文件（_config.yml）内设置一下即可。使用hexo new post title即可创建新文章，写好后在网站根目录运行hexo g和hexo d指令即可完成网页的部署。若有对配置文件进行更改，则最好运行hexo clean之后再运行hexo g，hexo d命令。</p>
+<h2 id="数学公式配置"><a href="#数学公式配置" class="headerlink" title="数学公式配置"></a>数学公式配置</h2><p>为了更新数学笔记，数学公式是必不可少的。一种方法是直接上传pdf（需要相关插件支持），但效果不是很好，因此我打算沿用我在知乎上传笔记的方法，先将LaTeX转成Markdown再处理。这一步利用pandoc实现，可参考<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355704286" >我的文章<i class="fas fa-external-link-alt"></i></a>。接下来还需要令网站能够渲染Markdown文件中的数学公式，可参考<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/7ab21c7f0674" >文章<i class="fas fa-external-link-alt"></i></a>，需要先卸载初始渲染引擎xxx-marked，更换为xxx-kramed，然后要取消对部分符号的转义，最后在主题配置文件中开启mathjax，并在每篇文章中设置mathjax开关即可。</p>
+<p>值得一提的是，和LaTeX一样，Markdown也是回车默认不换行，两次回车才换行的，但Hexo博客的默认设置不是这样。参考<a class="link"   target="_blank" rel="noopener" href="https://longrm.com/2017/08/23/2017-08-23-hexo-mathjax/" >博客<i class="fas fa-external-link-alt"></i></a>，浏览“后续”部分即可。</p>
+<h2 id="图床配置"><a href="#图床配置" class="headerlink" title="图床配置"></a>图床配置</h2><p>笔记没有图片当然不行。一种方法是直接将图片放到博客环境的文件夹里，然后利用md文件上传图片的方法，直接将链接设置为图片（相对）位置即可。这种方法简单但是会占用仓库空间。另一种方法是利用图床，我采用的是<a class="link"   target="_blank" rel="noopener" href="https://sm.ms" >SMMS<i class="fas fa-external-link-alt"></i></a>，免费且API简洁易懂。这样将图片上传到图床上，令链接为图床生成的图片链接，就可以节省仓库空间了。使用sm.ms图床时，需要注册用户，在API token页面生成令牌。</p>
+<p>为了让博客上传更加自动化，图床上传图片的过程当然要用程序实现，在此把我的python代码贴出来：</p>
+<p>smms.py（参考<a class="link"   target="_blank" rel="noopener" href="https://github.com/XavierJiezou/python-sm.ms-api/blob/master/smms.py" >GitHub<i class="fas fa-external-link-alt"></i></a>）</p>
+<pre><code>import requests
+import json
+
+
+class SMMS(object):
+    # init
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+        self.token = None
+        self.profile = None
+        self.history = None
+        self.upload_history = None
+        self.url = None
+        self.headers = None
+
+    # user
+    def get_api_token(self):
+        data = &#123;
+            &#39;username&#39;: self.username,
+            &#39;password&#39;: self.password,
+        &#125;
+        url = root+&#39;token&#39;
+        res = requests.post(url, data=data).json()
+        self.token = res[&#39;data&#39;][&#39;token&#39;]
+        self.headers = &#123;&#39;Authorization&#39;: self.token&#125;
+
+    # user
+    def get_user_profile(self):
+        url = root+&#39;profile&#39;
+        res = requests.post(url, headers=self.headers).json()
+        self.profile = res[&#39;data&#39;]
+        print(json.dumps(res, indent=4))
+
+    # image
+    def clear_temporary_history(self):
+        data = &#123;
+            &#39;format&#39;: &#39;json&#39;
+        &#125;
+        url = root+&#39;clear&#39;
+        res = requests.get(url, data=data).json()
+        print(json.dumps(res, indent=4))
+
+    # image
+    def view_temporary_history(self):
+        url = root+&#39;history&#39;
+        res = requests.get(url).json()
+        self.history = res[&#39;data&#39;]
+        print(json.dumps(res, indent=4))
+
+    # image
+    def delete_image(self, hash):
+        url = root+&#39;delete/&#39;+hash
+        res = requests.get(url).json()
+        print(json.dumps(res, indent=4))
+
+    # image
+    def view_upload_history(self):
+        url = root+&#39;upload_history&#39;
+        res = requests.get(url, headers=self.headers).json()
+        self.upload_history = res[&#39;data&#39;]
+        print(json.dumps(res, indent=4))
+
+    # image
+    def upload_image(self, path):
+        try:
+            files = &#123;&#39;smfile&#39;: open(path, &#39;rb&#39;)&#125;
+            url = root+&#39;upload&#39;
+            res = requests.post(url, files=files, headers=self.headers).json()
+            if res[&#39;success&#39;]:
+                self.url = res[&#39;data&#39;][&#39;url&#39;]
+                return self.url
+            else:
+                return res[&#39;images&#39;]
+        except Exception as e:
+            print(e)
+            return &#39;https://i.loli.net/&#39;
+
+
+root = &#39;https://sm.ms/api/v2/&#39;
+smms = SMMS(&#39;username&#39;, &#39;password&#39;)
+smms.get_api_token()
+
+
+def upload(picture):
+    return smms.upload_image(picture)
+</code></pre><p>main.py（补充自<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355704286" >我的文章<i class="fas fa-external-link-alt"></i></a>）</p>
+<pre><code>import re
+import smms
+
+zhihu = open(&quot;zhihu.md&quot;, &quot;r+&quot;, encoding=&quot;utf-8&quot;)
+contents = zhihu.readlines()
+
+for i in range(len(contents)):
+    if re.match(&#39;:::&#39;, contents[i]):
+        contents[i] = &quot;&quot;
+        j = i+1
+        while not re.match(&#39;:::&#39;, contents[j]):
+            contents[j] = re.sub(r&#39;\n&#39;, &#39; &#39;, contents[j])
+            j = j+1
+        contents[j] = &quot;\n&quot;
+
+    if re.match(r&#39;!.*\([\w\d\s]*\.png\)&#39;, contents[i]):
+        print(&quot;Uploading pictures...&quot;)
+        ret = re.search(r&#39;[\w\d\s]*\.png&#39;, contents[i])
+        path = ret.group()
+        contents[i] = re.sub(path, smms.upload(path), contents[i])
+        print(&quot;Done.&quot;)
+
+    while re.match(r&#39;.*&#125;&#125;&#39;, contents[i]):
+        contents[i] = re.sub(r&#39;&#125;&#125;&#39;, r&#39;&#125; &#125;&#39;, contents[i])
+
+    while re.match(r&#39;.*&#123;&#123;&#39;, contents[i]):
+        contents[i] = re.sub(r&#39;&#123;&#123;&#39;, r&#39;&#123; &#123;&#39;, contents[i])
+
+    while re.match(r&#39;.*&#123;#.*&#125;&#39;, contents[i]):
+        contents[i] = re.sub(r&#39;&#123;#.*&#125;&#39;, r&#39;&#39;, contents[i])
+
+zhihu.seek(0)
+zhihu.truncate()
+zhihu.writelines(contents)
+zhihu.close()
+</code></pre><p>这样基本的配置就已经完成了，其它自动化的部分我单开一篇文章继续说明。</p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    I hope that sharing the process of building a personal blog, including the handling of some details, will help.
-
-# # Hexo Environment Configuration
-
-My main reference article is this [know-how column] (https://www.zhihu.com/column/c_1201860091307458560).The first three articles are related to the use of GitHub, and four or six articles are unnecessary if you do not want to change the domain name (poor students do not plan to buy a domain name and do not find a free method QAQ).I started with the fifth part. After installing node.js, follow the steps to build a Hexo environment in a folder.
-
-Next is the seventh chapter. I set the keep theme, which is similar to the theme setting method in the column.Finally, the eighth chapter, you just need to select some interesting features, and look at the individual settings separately.The Hexo blog is plugin-managed and convenient, just install the plugin you want and set it up in your theme profile or website profile (_config.yml).Use hexo new post title to create a new article. After writing it, run hexo g and hexo d commands in the root directory of the website to complete the deployment of the webpage.If there are changes to the configuration file, it is best to run hexo clean before running the hexo g, hexo d commands.
-
-# # Math Equation Configuration
-In order to update mathematical notes, mathematical formulas are essential.One way is to upload the pdf directly (requires the support of the relevant plugin), but the effect is not very good, so I intend to follow the method I know how to upload notes, first convert LaTeX to Markdown and then process it.This step is accomplished using pandoc, which can be found in [my article] (https://zhuanlan.zhihu.com/p/355704286).Next, you need to enable the website to render the mathematical formulas in the Markdown file. Please refer to [article] (https://www.jianshu.com/p/7ab21c7f0674). You need to uninstall the initial rendering engine xxx-marked, replace it with xxx-kramed, then cancel the escape of some symbols, and finally open mathjax in the theme configuration file, and set the mathjax switch in each article.
-
-It is worth mentioning that, like LaTeX, Markdown is also a carriage return without line wrapping by default, and it takes two carriage returns to line wrapping, but the default setting of the Hexo blog is not like this.Refer to the [blog] (https://longrm.com/2017/08/23/2017-08-23-hexo-mathjax/) and navigate to the Follow Up section.
-
-# # Diagram bed configuration
-Of course, notebooks can't do without pictures.One way is to put the image directly in the folder of the blog environment, and then use the md file to upload the image, and set the link directly to the (relative) position of the image.This method is simple but takes up warehouse space.Another way is to use a picture bed, I use [SMMs] (https://sm.ms), which is free and the API is simple and easy to understand.In this way, you can save warehouse space by uploading the picture to the picture bed, so that the link is the picture link generated by the picture bed.When using the sm.ms diagram bed, you need to register the user and generate a token on the API token page.
-
-In order to make blog uploads more automated, the process of uploading images to the image bed should of course be implemented in a program. Paste my python code here:
-
-smms.py (see [GitHub] (https://github.com/XavierJiezou/python-sm.ms-api/blob/master/smms.py))
-
-    import requests
-    import json
-class SMMS (object):
-        # init
-        def __ init __ (self, username, password):
-            self.username = username
-            self.password = password
-            self.token = None
-            self.profile = None
-            self.history = None
-            self.upload_history = None
-            self.url = None
-            self.headers = None
-# user
-        def get_api_token (self):
-            data = {
-                'username': self.username,
-                'password': self.password,
-}
-            url = root + 'token'
-            res = requests.post (url, data = data) .json ()
-            self.token = res ['data'] ['token']
-            self.headers = {'Authorization': self.token}
-# user
-        def get_user_profile (self):
-            url = root + 'profile'
-            res = requests.post (url, headers = self.headers) .json ()
-            self.profile = res ['data']
-            print (json.dumps (res, indent = 4))
-# image
-        def clear_temporary_history (self):
-            data = {
-                'format': 'json'
-}
-            url = root + 'clear'
-            res = requests.get (url, data = data) .json ()
-            print (json.dumps (res, indent = 4))
-
-        # image
-        def view_temporary_history (self):
-            url = root + 'history'
-            res = requests.get (url) .json ()
-            self.history = res ['data']
-            print (json.dumps (res, indent = 4))
-# image
-        def delete_image (self, hash):
-            url = root + 'delete/' + hash
-            res = requests.get (url) .json ()
-            print (json.dumps (res, indent = 4))
-
-        # image
-        def view_upload_history (self):
-            url = root + 'upload_history'
-            res = requests.get (url, headers = self.headers) .json ()
-            self.upload_history = res ['data']
-            print (json.dumps (res, indent = 4))
-# image
-        def upload_image (self, path):
-            try:
-                files = {'smfile': open (path, 'rb')}
-                url = root + 'upload'
-                res = requests.post (url, files = files, headers = self.headers) .json ()
-                if res ['success']:
-                    self.url = res ['data'] ['url']
-                    return self.url
-                else:
-                    return res ['images']
-            except Exception as e:
-                print (e)
-return 'https://i.loli.net/'
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>分享一下搭建个人博客的过程，包括一些细节的处理等等，希望会有帮助。</p>
+<h2 id="Hexo环境配置"><a href="#Hexo环境配置" class="headerlink" title="Hexo环境配置"></a>Hexo环境配置</h2><p>我主要参考的文章是这个<a class="link"   target="_blank" rel="noopener" href="https://www.zhihu.com/column/c_1201860091307458560" >知乎专栏<i class="fas fa-external-link-alt"></i></a>。前三篇是GitHub使用相关，四六篇若不希望改变域名则非必要（穷学生不打算买域名，也没找到免费的方法QAQ）。我是从第五篇开始的，按步骤安装node.js后，在某个文件夹内搭建Hexo环境即可。</p>
+<p>接下来是第七篇，我设置的是keep主题，与专栏里的主题设置方法大同小异。最后便是第八篇了，只需要选取一些感兴趣的功能，单独看单独设置即可。Hexo博客的功能是插件式管理的，很方便，只需安装想要的插件，然后在主题配置文件或网站配置文件（_config.yml）内设置一下即可。使用hexo new post title即可创建新文章，写好后在网站根目录运行hexo g和hexo d指令即可完成网页的部署。若有对配置文件进行更改，则最好运行hexo clean之后再运行hexo g，hexo d命令。</p>
+<h2 id="数学公式配置"><a href="#数学公式配置" class="headerlink" title="数学公式配置"></a>数学公式配置</h2><p>为了更新数学笔记，数学公式是必不可少的。一种方法是直接上传pdf（需要相关插件支持），但效果不是很好，因此我打算沿用我在知乎上传笔记的方法，先将LaTeX转成Markdown再处理。这一步利用pandoc实现，可参考<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355704286" >我的文章<i class="fas fa-external-link-alt"></i></a>。接下来还需要令网站能够渲染Markdown文件中的数学公式，可参考<a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/7ab21c7f0674" >文章<i class="fas fa-external-link-alt"></i></a>，需要先卸载初始渲染引擎xxx-marked，更换为xxx-kramed，然后要取消对部分符号的转义，最后在主题配置文件中开启mathjax，并在每篇文章中设置mathjax开关即可。</p>
+<p>值得一提的是，和LaTeX一样，Markdown也是回车默认不换行，两次回车才换行的，但Hexo博客的默认设置不是这样。参考<a class="link"   target="_blank" rel="noopener" href="https://longrm.com/2017/08/23/2017-08-23-hexo-mathjax/" >博客<i class="fas fa-external-link-alt"></i></a>，浏览“后续”部分即可。</p>
+<h2 id="图床配置"><a href="#图床配置" class="headerlink" title="图床配置"></a>图床配置</h2><p>笔记没有图片当然不行。一种方法是直接将图片放到博客环境的文件夹里，然后利用md文件上传图片的方法，直接将链接设置为图片（相对）位置即可。这种方法简单但是会占用仓库空间。另一种方法是利用图床，我采用的是<a class="link"   target="_blank" rel="noopener" href="https://sm.ms" >SMMS<i class="fas fa-external-link-alt"></i></a>，免费且API简洁易懂。这样将图片上传到图床上，令链接为图床生成的图片链接，就可以节省仓库空间了。使用sm.ms图床时，需要注册用户，在API token页面生成令牌。</p>
+<p>为了让博客上传更加自动化，图床上传图片的过程当然要用程序实现，在此把我的python代码贴出来：</p>
+<p>smms.py（参考<a class="link"   target="_blank" rel="noopener" href="https://github.com/XavierJiezou/python-sm.ms-api/blob/master/smms.py" >GitHub<i class="fas fa-external-link-alt"></i></a>）</p>
+<pre><code>import requests
+import json
 
 
-    root = 'https://sm.ms/api/v2/'
-    smms = SMMS ('username', 'password')
-    smms.get_api_token ()
+class SMMS(object):
+    # init
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+        self.token = None
+        self.profile = None
+        self.history = None
+        self.upload_history = None
+        self.url = None
+        self.headers = None
+
+    # user
+    def get_api_token(self):
+        data = &#123;
+            &#39;username&#39;: self.username,
+            &#39;password&#39;: self.password,
+        &#125;
+        url = root+&#39;token&#39;
+        res = requests.post(url, data=data).json()
+        self.token = res[&#39;data&#39;][&#39;token&#39;]
+        self.headers = &#123;&#39;Authorization&#39;: self.token&#125;
+
+    # user
+    def get_user_profile(self):
+        url = root+&#39;profile&#39;
+        res = requests.post(url, headers=self.headers).json()
+        self.profile = res[&#39;data&#39;]
+        print(json.dumps(res, indent=4))
+
+    # image
+    def clear_temporary_history(self):
+        data = &#123;
+            &#39;format&#39;: &#39;json&#39;
+        &#125;
+        url = root+&#39;clear&#39;
+        res = requests.get(url, data=data).json()
+        print(json.dumps(res, indent=4))
+
+    # image
+    def view_temporary_history(self):
+        url = root+&#39;history&#39;
+        res = requests.get(url).json()
+        self.history = res[&#39;data&#39;]
+        print(json.dumps(res, indent=4))
+
+    # image
+    def delete_image(self, hash):
+        url = root+&#39;delete/&#39;+hash
+        res = requests.get(url).json()
+        print(json.dumps(res, indent=4))
+
+    # image
+    def view_upload_history(self):
+        url = root+&#39;upload_history&#39;
+        res = requests.get(url, headers=self.headers).json()
+        self.upload_history = res[&#39;data&#39;]
+        print(json.dumps(res, indent=4))
+
+    # image
+    def upload_image(self, path):
+        try:
+            files = &#123;&#39;smfile&#39;: open(path, &#39;rb&#39;)&#125;
+            url = root+&#39;upload&#39;
+            res = requests.post(url, files=files, headers=self.headers).json()
+            if res[&#39;success&#39;]:
+                self.url = res[&#39;data&#39;][&#39;url&#39;]
+                return self.url
+            else:
+                return res[&#39;images&#39;]
+        except Exception as e:
+            print(e)
+            return &#39;https://i.loli.net/&#39;
 
 
-    def upload (picture):
-        return smms.upload_image (picture)
+root = &#39;https://sm.ms/api/v2/&#39;
+smms = SMMS(&#39;username&#39;, &#39;password&#39;)
+smms.get_api_token()
 
 
-main.py (Supplemented from [My Articles] (https://zhuanlan.zhihu.com/p/355704286))
+def upload(picture):
+    return smms.upload_image(picture)
+</code></pre><p>main.py（补充自<a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/355704286" >我的文章<i class="fas fa-external-link-alt"></i></a>）</p>
+<pre><code>import re
+import smms
 
-    import re
-    import smms
+zhihu = open(&quot;zhihu.md&quot;, &quot;r+&quot;, encoding=&quot;utf-8&quot;)
+contents = zhihu.readlines()
 
-    zhihu = open ("zhihu.md", "r +", encoding = "utf-8")
-    contents = zhihu.readlines ()
-for i in range (len (contents)):
-        if re.match (':::', contents [i]):
-            contents [i] = ""
-            j = i +1
-            while not re.match (':::', contents [j]):
-                contents [j] = re.sub (r '\ n', '', contents [j])
-                j = j +1
-            contents [j] = "\ n"
-if re.match (r '!.*  ', contents [i]):
-            print ("Uploading pictures...")
-            ret = re.search (r '[\ w\ d\ s] *\ .png', contents [i])
-            path = ret.group ()
-            contents [i] = re.sub (path, smms.upload (path), contents [i])
-            print ("Done.")
+for i in range(len(contents)):
+    if re.match(&#39;:::&#39;, contents[i]):
+        contents[i] = &quot;&quot;
+        j = i+1
+        while not re.match(&#39;:::&#39;, contents[j]):
+            contents[j] = re.sub(r&#39;\n&#39;, &#39; &#39;, contents[j])
+            j = j+1
+        contents[j] = &quot;\n&quot;
 
-        while re.match (r '. *}}', contents [i]):
-            contents [i] = re.sub (r '}}', r '}}', contents [i])
-while re.match (r '. * {{', contents [i]):
-            contents [i] = re.sub (r '{{', r '{{', contents [i]))
+    if re.match(r&#39;!.*\([\w\d\s]*\.png\)&#39;, contents[i]):
+        print(&quot;Uploading pictures...&quot;)
+        ret = re.search(r&#39;[\w\d\s]*\.png&#39;, contents[i])
+        path = ret.group()
+        contents[i] = re.sub(path, smms.upload(path), contents[i])
+        print(&quot;Done.&quot;)
 
-        while re.match (r '. * {#. *}', contents [i]):
-            contents [i] = re.sub (r '{#. *}', r '', contents [i])
+    while re.match(r&#39;.*&#125;&#125;&#39;, contents[i]):
+        contents[i] = re.sub(r&#39;&#125;&#125;&#39;, r&#39;&#125; &#125;&#39;, contents[i])
 
-    zhihu.seek (0)
-    zhihu.truncate ()
-    zhihu.writelines (contents)
-    zhihu.close ()
+    while re.match(r&#39;.*&#123;&#123;&#39;, contents[i]):
+        contents[i] = re.sub(r&#39;&#123;&#123;&#39;, r&#39;&#123; &#123;&#39;, contents[i])
 
-In this way, the basic configuration has been completed, and I will continue to explain the other parts of automation in a separate article.
+    while re.match(r&#39;.*&#123;#.*&#125;&#39;, contents[i]):
+        contents[i] = re.sub(r&#39;&#123;#.*&#125;&#39;, r&#39;&#39;, contents[i])
+
+zhihu.seek(0)
+zhihu.truncate()
+zhihu.writelines(contents)
+zhihu.close()
+</code></pre><p>这样基本的配置就已经完成了，其它自动化的部分我单开一篇文章继续说明。</p>
+
                 </div>
             
         </div>
@@ -373,7 +500,7 @@ In this way, the basic configuration has been completed, and I will continue to 
     <ul>
         <li>本文标题：Hexo博客搭建流程</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-08-12 16:25:29</li>
+        <li>创建时间：2021-08-12 19:25:29</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/08/12/Hexo博客搭建流程/
         </li>
@@ -405,7 +532,7 @@ In this way, the basic configuration has been completed, and I will continue to 
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分几何初步》3.4-3.5</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; 3.4-3.5</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Differential Geometry 3.4-3.5</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -417,7 +544,7 @@ In this way, the basic configuration has been completed, and I will continue to 
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/08/11/%E3%80%8A%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B1.6-1.7/"
+                           href="/2021/08/11/%E3%80%8A%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95%E5%88%9D%E6%AD%A5%E3%80%8B%E7%AC%AC%E4%B8%80%E7%AB%A0-%E4%B8%8B/"
                         >
                             <span class="title flex-center">
                                     <span class="post-nav-title-item">
@@ -425,9 +552,9 @@ In this way, the basic configuration has been completed, and I will continue to 
                                         
                                         
                                         
-                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分几何初步》1.6-1.7</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分几何初步》第一章-下</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; 1.6-1.7</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Differential Geometry Chapter 1 - Part 2</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -679,11 +806,11 @@ In this way, the basic configuration has been completed, and I will continue to 
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">Hexo环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E9%85%8D%E7%BD%AE"><span class="nav-text">数学公式配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE"><span class="nav-text">图床配置</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">Hexo环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E9%85%8D%E7%BD%AE"><span class="nav-text">数学公式配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%BA%8A%E9%85%8D%E7%BD%AE"><span class="nav-text">图床配置</span></a></li></ol>
         </div>
     
 </div>
@@ -734,6 +861,36 @@ In this way, the basic configuration has been completed, and I will continue to 
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -757,46 +914,6 @@ In this way, the basic configuration has been completed, and I will continue to 
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

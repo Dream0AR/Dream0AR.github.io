@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第五章-张量</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 5 - Tensor</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 5 - Tensors</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-01 15:58:06
+        <i class="fas fa-edit"></i>&nbsp;2021-12-01 17:58:06
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,98 +230,152 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="对称张量与反称张量"><a href="#对称张量与反称张量" class="headerlink" title="对称张量与反称张量"></a>对称张量与反称张量</h2><p>对$\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ 若</p>
+<p>$$\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,$$</p>
+<p>则称$\Phi$是<strong>对称(反称)</strong>的.
+用$\odot^k(V^\ast )$表示$V^\ast \otimes\cdots\otimes V^\ast $中对称张量全体,
+$\Lambda^k(V^\ast )$表示反称张量全体.</p>
+<p>令$J(k)$表示$k$阶置换群. 对于$\sigma\in J(k),$
+定义$\operatorname{sgn}:J(k)\rightarrow\{\pm 1\},$ 表示奇偶排列.
+易验证$\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\tau).$
+定义作用$\sigma\Phi(v_1,\cdots,v_k):=\Phi(v_{\sigma(1)},\cdots,v_{\sigma(k)}),$
+易见$\sigma\Phi\in V^\ast \otimes\cdots\otimes V^\ast ,$ 且$\sigma$是线性映照.
+那么$\Phi$是对称(反称)的$\Leftrightarrow$
+$\sigma\Phi=(\operatorname{sgn}\sigma)\Phi.$</p>
+<p>取$V$的一组基$\{e_i\},$ 对偶基$\{\omega^i\}.$
+则对$\Phi=\Phi_{i_1\cdots i_k}\omega^{i_1}\otimes\cdots\otimes \omega^{i_k},$
+可以得到$\Phi$对称(反称)$\Leftrightarrow$
+$\Phi_{i_1\cdots i_k}$关于指标$\{i_1,\cdots,i_k\}$是对称(反称)的.</p>
+<p>定义如下两个线性变换:
+$S_k:\Phi\mapsto \frac{1}{k!}\sum_\sigma \sigma \Phi,$
+称为<strong>对称化算子</strong>;
+$A_k:\Phi\mapsto \frac{1}{k!}\sum_{\sigma} (\operatorname{sgn}\sigma)\sigma \Phi,$
+称为<strong>反称化算子</strong>. 记$V_k=V^\ast \otimes\cdots\otimes V^\ast ,$ 我们有如下命题:</p>
+<p><strong>命题 1</strong>. <em>$\odot^k(V^\ast )=S_k(V_k),$ $\Lambda^k(V^\ast )=A_k(V_k),$ 且$\Phi$是对称(反称)的$\Leftrightarrow$ $S_k(\Phi)=\Phi$($A_k(\Phi)=\Phi.$)</em> </p>
+<p><strong>证:</strong> 取$\tau\in J(k),$ 首先证明$\tau(S_k(\Phi))=S_k(\Phi),$
+$\tau(A_k(\Phi))=(\operatorname{sgn}\tau)A_k (\Phi).$
+其次再说明$A_k|_{\Lambda^k(V^\ast )}=\mathrm{id},$
+$S_k|_{\odot^k(V^\ast )}=\mathrm{id}$即可.</p>
+<h2 id="拉回映照"><a href="#拉回映照" class="headerlink" title="拉回映照"></a>拉回映照</h2><p>设$f:V\rightarrow W$为线性映照, 定义$f^\ast :W^\ast \rightarrow V^\ast ,$
+$(f^\ast w^\ast )(v)=w^\ast (f(v)),$ 称为<strong>拉回映照</strong>.
+可以推广到$f^\ast :W_k\rightarrow V_k,$
+$(f^\ast \Phi)(v_1,\cdots,v_k)=\Phi(f(v_1),\cdots,f(v_k)).$</p>
+<p><strong>命题 2</strong>. <em>$S_kf^\ast =f^\ast S_k,$ $A_kf^\ast =f^\ast A_k.$</em> </p>
+<p><strong>证:</strong> 利用$\sigma f^\ast =f^\ast \sigma$即可.</p>
+<h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p>$\Lambda^r(V^\ast ):=A_r(V_r),$ 称为$r$阶<strong>反称张量空间</strong>.
+约定$\Lambda^0(V^\ast )=\mathbb{R},$ $\Lambda^1(V^\ast )=V^\ast .$
+设$\Phi\in \Lambda^r(V^\ast ),$ $\Psi\in \Lambda^s(V^\ast ),$
+则$\Phi\wedge \Psi:=\binom{r+s}{r,s}A_{r+s}(\Phi\otimes \Psi)\in \Lambda^{r+s}(V^\ast )$称为$\Phi$与$\Psi$的<strong>外积</strong>,
+满足如下性质:</p>
+<ul>
+<li><p>分配律:
+$(a\Phi_1+b\Phi_2)\wedge\Psi=a\Phi_1\wedge \Psi+b\Phi_2\wedge\Psi;$
+$\Phi\wedge(a\Psi_1+b\Psi_2)=a\Phi\wedge \Psi_1+b\Phi\wedge \Psi_2.$</p>
+</li>
+<li><p>反交换律: $\Phi\wedge \Psi=(-1)^{rs}\Psi\wedge \Phi;$</p>
+</li>
+<li><p>结合律: $(\Phi\wedge \Psi)\wedge\eta=\Phi\wedge(\Psi\wedge \eta).$</p>
+</li>
+</ul>
+<p>证明基本利用张量积的性质即可, 外面套上线性的反称化算子$A.$ 对于反交换律,
+利用置换 
+$$\tau=\begin{pmatrix}
+            1&amp;\cdots&amp;r&amp;r+1&amp;\cdots&amp;r+s\\
+            s+1&amp;\cdots&amp;s+r&amp;1&amp;\cdots&amp;s
+        \end{pmatrix}$$
+ 即可, 满足$\operatorname{sgn}\tau=(-1)^{rs}.$
+特别地, 对于$r=s=1$的情形, $\Phi\wedge\Psi=-\Psi\wedge\Phi,$
+$\Phi\wedge\Phi=0.$</p>
+<p>对于结合律, 引入置换 
+$$\widetilde\tau=\begin{pmatrix}
+            1&amp;\cdots&amp;r+s&amp;r+s+1&amp;\cdots&amp;r+s+t\\
+            \tau(1)&amp;\cdots&amp;\tau(r+s)&amp;r+s+1&amp;\cdots&amp;r+s+t
+        \end{pmatrix}$$
+ 进行常规的定义讨论即可. 特别地,
+可以在证明中看到,
+$\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\otimes \cdots\otimes \Phi_k).$</p>
+<p><strong>推论 3</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ $x_1,\cdots,x_k\in V,$ 则$\theta^1\wedge\cdots\wedge\theta^k(x_1,\cdots,x_k)=\det(\theta^i(x_j))_{k\times k}.$</em> </p>
+<p><strong>证:</strong> 展开发现式子恰为行列式的组合定义即可.
+即$\sum_\sigma \operatorname{sgn}(\sigma) \theta^1(x_{\sigma(1)})\cdots\theta^k(x_{\sigma(k)}).$</p>
+<p><strong>推论 4</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ 则$\theta^1,\cdots,\theta^k$线性相关$\Leftrightarrow$ $\theta^1\wedge\cdots\wedge\theta^k=0.$</em> </p>
+<p><strong>证:</strong> 利用反交换律与反证法即可.</p>
+<p>文章最后更新于 2021-12-02 11:36:31 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Symmetric and antisymmetric tensors
-------------------
-
-For $\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ if
-
-$$\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,$$
-Then $\Phi$ is said to be **symmetric (antisymmetric)**.
-Use $\odot^k(V^\ast )$ to represent all symmetric tensors in $V^\ast \otimes\cdots\otimes V^\ast $,
-$\Lambda^k(V^\ast )$ represents the entire inverse tensor.
-
-Let $J(k)$ represent the permutation group of order $k$. For $\sigma\in J(k),$
-Define $\operatorname{sgn}:J(k)\rightarrow\{\pm 1\},$ to represent odd-even arrangement.
-Easy to verify $\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\tau).$
-Definition function$\sigma\Phi(v_1,\cdots,v_k):=\Phi(v_{\sigma(1)},\cdots,v_{\sigma(k)}),$
-It is easy to see that $\sigma\Phi\in V^\ast \otimes\cdots\otimes V^\ast ,$ and $\sigma$ is a linear mapping.
-Then $\Phi$ is the symmetric (antisymmetric) $\Leftrightarrow$
-$\sigma\Phi=(\operatorname{sgn}\sigma)\Phi.$
-
-Take a set of basis $\{e_i\}, $ dual basis $\{\omega^i\}.$ of $V$
-Then for $\Phi=\Phi_{i_1\cdots i_k}\omega^{i_1}\otimes\cdots\otimes \omega^{i_k},$
-You can get $\Phi$ symmetry (antisymmetry) $\Leftrightarrow$
-$\Phi_{i_1\cdots i_k}$ is symmetric (anti-symmetric) with respect to the indicator $\{i_1,\cdots,i_k\}$.
-Define the following two linear transformations:
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="对称张量与反称张量"><a href="#对称张量与反称张量" class="headerlink" title="对称张量与反称张量"></a>对称张量与反称张量</h2><p>对$\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ 若</p>
+<p>$$\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,$$</p>
+<p>则称$\Phi$是<strong>对称(反称)</strong>的.
+用$\odot^k(V^\ast )$表示$V^\ast \otimes\cdots\otimes V^\ast $中对称张量全体,
+$\Lambda^k(V^\ast )$表示反称张量全体.</p>
+<p>令$J(k)$表示$k$阶置换群. 对于$\sigma\in J(k),$
+定义$\operatorname{sgn}:J(k)\rightarrow\{\pm 1\},$ 表示奇偶排列.
+易验证$\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\tau).$
+定义作用$\sigma\Phi(v_1,\cdots,v_k):=\Phi(v_{\sigma(1)},\cdots,v_{\sigma(k)}),$
+易见$\sigma\Phi\in V^\ast \otimes\cdots\otimes V^\ast ,$ 且$\sigma$是线性映照.
+那么$\Phi$是对称(反称)的$\Leftrightarrow$
+$\sigma\Phi=(\operatorname{sgn}\sigma)\Phi.$</p>
+<p>取$V$的一组基$\{e_i\},$ 对偶基$\{\omega^i\}.$
+则对$\Phi=\Phi_{i_1\cdots i_k}\omega^{i_1}\otimes\cdots\otimes \omega^{i_k},$
+可以得到$\Phi$对称(反称)$\Leftrightarrow$
+$\Phi_{i_1\cdots i_k}$关于指标$\{i_1,\cdots,i_k\}$是对称(反称)的.</p>
+<p>定义如下两个线性变换:
 $S_k:\Phi\mapsto \frac{1}{k!}\sum_\sigma \sigma \Phi,$
-It is called **symmetrization operator**;
+称为<strong>对称化算子</strong>;
 $A_k:\Phi\mapsto \frac{1}{k!}\sum_{\sigma} (\operatorname{sgn}\sigma)\sigma \Phi,$
-It is called **desymmetrization operator**. Note $V_k=V^\ast \otimes\cdots\otimes V^\ast ,$ We have the following proposition:
-
-**Proposition 1**.
-*$\odot^k(V^\ast )=S_k(V_k),$ $\Lambda^k(V^\ast )=A_k(V_k),$ and $\Phi$ is symmetric (antisymmetric) $\Leftrightarrow$ $S_k(\Phi)=\Phi$($A_k(\Phi)=\Phi.$)*
-**Proof:** Take $\tau\in J(k),$ and first prove that $\tau(S_k(\Phi))=S_k(\Phi),$
+称为<strong>反称化算子</strong>. 记$V_k=V^\ast \otimes\cdots\otimes V^\ast ,$ 我们有如下命题:</p>
+<p><strong>命题 1</strong>. <em>$\odot^k(V^\ast )=S_k(V_k),$ $\Lambda^k(V^\ast )=A_k(V_k),$ 且$\Phi$是对称(反称)的$\Leftrightarrow$ $S_k(\Phi)=\Phi$($A_k(\Phi)=\Phi.$)</em> </p>
+<p><strong>证:</strong> 取$\tau\in J(k),$ 首先证明$\tau(S_k(\Phi))=S_k(\Phi),$
 $\tau(A_k(\Phi))=(\operatorname{sgn}\tau)A_k (\Phi).$
-Next, explain $A_k|_{\Lambda^k(V^\ast )}=\mathrm{id},$
-$S_k|_{\odot^k(V^\ast )}=\mathrm{id}$ is enough.
-
-Pull back the reflection
---------
-
-Let $f:V\rightarrow W$ be a linear mapping, define $f^\ast :W^\ast \rightarrow V^\ast ,$
-$(f^\ast w^\ast )(v)=w^\ast (f(v)),$ is called **pull back mapping**.
-Can be generalized to $f^\ast :W_k\rightarrow V_k,$
-$(f^\ast \Phi)(v_1,\cdots,v_k)=\Phi(f(v_1),\cdots,f(v_k)).$
-
-**Proposition 2**. *$S_kf^\ast =f^\ast S_k,$ $A_kf^\ast =f^\ast A_k.$*
-**Certificate:** Just use $\sigma f^\ast =f^\ast \sigma$.
-
-external algebra
-------
-
-$\Lambda^r(V^\ast ):=A_r(V_r),$ is called $r$-order **antisymmetric tensor space**.
-It is agreed that $\Lambda^0(V^\ast )=\mathbb{R},$ $\Lambda^1(V^\ast )=V^\ast .$
-Let $\Phi\in \Lambda^r(V^\ast ),$ $\Psi\in \Lambda^s(V^\ast ),$
-Then $\Phi\wedge \Psi:=\binom{r+s}{r,s}A_{r+s}(\Phi\otimes \Psi)\in \Lambda^{r+s}(V^\ast )$ is called the **external product** of $\Phi$ and $\Psi$,
-Satisfy the following properties:
-
-- Distributive law:
-    $(a\Phi_1+b\Phi_2)\wedge\Psi=a\Phi_1\wedge \Psi+b\Phi_2\wedge\Psi;$
-    $\Phi\wedge(a\Psi_1+b\Psi_2)=a\Phi\wedge \Psi_1+b\Phi\wedge \Psi_2.$
-- Inverse commutative law: $\Phi\wedge \Psi=(-1)^{rs}\Psi\wedge \Phi;$
-
-- Associative law: $(\Phi\wedge \Psi)\wedge\eta=\Phi\wedge(\Psi\wedge \eta).$
-
-The proof can be basically made by using the properties of tensor products, and putting a linear desymmetry operator $A.$ on the outside. For the inverse commutative law,
-Use substitution
+其次再说明$A_k|_{\Lambda^k(V^\ast )}=\mathrm{id},$
+$S_k|_{\odot^k(V^\ast )}=\mathrm{id}$即可.</p>
+<h2 id="拉回映照"><a href="#拉回映照" class="headerlink" title="拉回映照"></a>拉回映照</h2><p>设$f:V\rightarrow W$为线性映照, 定义$f^\ast :W^\ast \rightarrow V^\ast ,$
+$(f^\ast w^\ast )(v)=w^\ast (f(v)),$ 称为<strong>拉回映照</strong>.
+可以推广到$f^\ast :W_k\rightarrow V_k,$
+$(f^\ast \Phi)(v_1,\cdots,v_k)=\Phi(f(v_1),\cdots,f(v_k)).$</p>
+<p><strong>命题 2</strong>. <em>$S_kf^\ast =f^\ast S_k,$ $A_kf^\ast =f^\ast A_k.$</em> </p>
+<p><strong>证:</strong> 利用$\sigma f^\ast =f^\ast \sigma$即可.</p>
+<h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p>$\Lambda^r(V^\ast ):=A_r(V_r),$ 称为$r$阶<strong>反称张量空间</strong>.
+约定$\Lambda^0(V^\ast )=\mathbb{R},$ $\Lambda^1(V^\ast )=V^\ast .$
+设$\Phi\in \Lambda^r(V^\ast ),$ $\Psi\in \Lambda^s(V^\ast ),$
+则$\Phi\wedge \Psi:=\binom{r+s}{r,s}A_{r+s}(\Phi\otimes \Psi)\in \Lambda^{r+s}(V^\ast )$称为$\Phi$与$\Psi$的<strong>外积</strong>,
+满足如下性质:</p>
+<ul>
+<li><p>分配律:
+$(a\Phi_1+b\Phi_2)\wedge\Psi=a\Phi_1\wedge \Psi+b\Phi_2\wedge\Psi;$
+$\Phi\wedge(a\Psi_1+b\Psi_2)=a\Phi\wedge \Psi_1+b\Phi\wedge \Psi_2.$</p>
+</li>
+<li><p>反交换律: $\Phi\wedge \Psi=(-1)^{rs}\Psi\wedge \Phi;$</p>
+</li>
+<li><p>结合律: $(\Phi\wedge \Psi)\wedge\eta=\Phi\wedge(\Psi\wedge \eta).$</p>
+</li>
+</ul>
+<p>证明基本利用张量积的性质即可, 外面套上线性的反称化算子$A.$ 对于反交换律,
+利用置换 
 $$\tau=\begin{pmatrix}
-            1&\cdots&r&r+1&\cdots&r+s\\
-            s+1&\cdots&s+r&1&\cdots&s
+            1&amp;\cdots&amp;r&amp;r+1&amp;\cdots&amp;r+s\\
+            s+1&amp;\cdots&amp;s+r&amp;1&amp;\cdots&amp;s
         \end{pmatrix}$$
- That’s it, satisfy $\operatorname{sgn}\tau=(-1)^{rs}.$
-In particular, for the case $r=s=1$, $\Phi\wedge\Psi=-\Psi\wedge\Phi,$
-$\Phi\wedge\Phi=0.$
-For the associative law, a permutation is introduced
+ 即可, 满足$\operatorname{sgn}\tau=(-1)^{rs}.$
+特别地, 对于$r=s=1$的情形, $\Phi\wedge\Psi=-\Psi\wedge\Phi,$
+$\Phi\wedge\Phi=0.$</p>
+<p>对于结合律, 引入置换 
 $$\widetilde\tau=\begin{pmatrix}
-            1&\cdots&r+s&r+s+1&\cdots&r+s+t\\
-            \tau(1)&\cdots&\tau(r+s)&r+s+1&\cdots&r+s+t
+            1&amp;\cdots&amp;r+s&amp;r+s+1&amp;\cdots&amp;r+s+t\\
+            \tau(1)&amp;\cdots&amp;\tau(r+s)&amp;r+s+1&amp;\cdots&amp;r+s+t
         \end{pmatrix}$$
- Just have the usual definition discussion. In particular,
-As can be seen in the proof,
-$\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\otimes \cdots\otimes \Phi_k).$
-**Corollary 3**. *Suppose $\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ $x_1,\cdots,x_k\in V,$ Then $\theta^1\wedge\cdots\wedge\theta^k(x_1,\cdots,x_k)=\det(\theta^i(x_j))_{k\times k}.
-$*
+ 进行常规的定义讨论即可. 特别地,
+可以在证明中看到,
+$\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\otimes \cdots\otimes \Phi_k).$</p>
+<p><strong>推论 3</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ $x_1,\cdots,x_k\in V,$ 则$\theta^1\wedge\cdots\wedge\theta^k(x_1,\cdots,x_k)=\det(\theta^i(x_j))_{k\times k}.$</em> </p>
+<p><strong>证:</strong> 展开发现式子恰为行列式的组合定义即可.
+即$\sum_\sigma \operatorname{sgn}(\sigma) \theta^1(x_{\sigma(1)})\cdots\theta^k(x_{\sigma(k)}).$</p>
+<p><strong>推论 4</strong>. <em>设$\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ 则$\theta^1,\cdots,\theta^k$线性相关$\Leftrightarrow$ $\theta^1\wedge\cdots\wedge\theta^k=0.$</em> </p>
+<p><strong>证:</strong> 利用反交换律与反证法即可.</p>
+<p>文章最后更新于 2021-12-02 11:36:31 </p>
 
-**Proof:** Expand and find that the expression is exactly the combinatorial definition of the determinant.
-That is $\sum_\sigma \operatorname{sgn}(\sigma) \theta^1(x_{\sigma(1)})\cdots\theta^k(x_{\sigma(k)}).$
-**Corollary 4**. *Suppose $\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ then $\theta^1,\cdots,\theta^k$ is linearly related$\Leftrightarrow$ $\theta^1\wedge\cdots\wedge\theta^k=0.$*
-**Proof:** Just use the anti-commutative law and proof by contradiction.
-
-The article was last updated on 2021-12-02 11:36:31
                 </div>
             
         </div>
@@ -332,7 +386,7 @@ The article was last updated on 2021-12-02 11:36:31
     <ul>
         <li>本文标题：《微分流形》第五章-张量</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-01 15:58:06</li>
+        <li>创建时间：2021-12-01 17:58:06</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/12/01/《微分流形》第五章-张量/
         </li>
@@ -364,7 +418,7 @@ The article was last updated on 2021-12-02 11:36:31
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《现代PDE基础》笔记(8)-数理方程</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (8)-Mathematical Equations</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Modern PDE Basics Notes (8) - Mathematical Equations</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -386,7 +440,7 @@ The article was last updated on 2021-12-02 11:36:31
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》讨论稿-线性映照空间</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Paper-Linear Mapping Space</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Discussion Paper &#34;Differential Manifolds&#34; - Linear Mapping Space</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -638,11 +692,11 @@ The article was last updated on 2021-12-02 11:36:31
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%BC%A0%E9%87%8F%E4%B8%8E%E5%8F%8D%E7%A7%B0%E5%BC%A0%E9%87%8F"><span class="nav-text">对称张量与反称张量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%9B%9E%E6%98%A0%E7%85%A7"><span class="nav-text">拉回映照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E4%BB%A3%E6%95%B0"><span class="nav-text">外代数</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%BC%A0%E9%87%8F%E4%B8%8E%E5%8F%8D%E7%A7%B0%E5%BC%A0%E9%87%8F"><span class="nav-text">对称张量与反称张量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%9B%9E%E6%98%A0%E7%85%A7"><span class="nav-text">拉回映照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E4%BB%A3%E6%95%B0"><span class="nav-text">外代数</span></a></li></ol>
         </div>
     
 </div>
@@ -693,6 +747,36 @@ The article was last updated on 2021-12-02 11:36:31
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -716,46 +800,6 @@ The article was last updated on 2021-12-02 11:36:31
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

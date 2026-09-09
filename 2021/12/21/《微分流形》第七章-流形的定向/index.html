@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第七章-流形的定向</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Orientation of Manifolds</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Orientation of Manifolds</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-21 19:01:27
+        <i class="fas fa-edit"></i>&nbsp;2021-12-21 21:01:27
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,89 +230,116 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="微分形式性质"><a href="#微分形式性质" class="headerlink" title="微分形式性质"></a>微分形式性质</h2><p><strong>定理 1</strong>. <em>设$f\in C^\infty(M,N),$ 则$f^\ast \circ d=d\circ f^\ast .$</em> </p>
+<p><strong>证:</strong> $\,\forall\,\omega\in \mathcal{A}^r(N).$ 当$r=0$时,</p>
+<p>$$
+(f^\ast du)(X)=(du)(f_\ast X)=(f_\ast X)u=X(u\circ f)=X(f^\ast u)=d(f^\ast u)(X).
+$$</p>
+<p>当$r&gt;0$时, 做归纳. 不妨设$\omega=udy^{i_1}\wedge\cdots\wedge dy^{i_r},$
+那么$d\omega=du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}.$ 我们有:</p>
+<p>$$
+f^\ast d\omega=f^\ast [du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}]=df^\ast u\wedge df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}=d[(f^\ast u) df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}]=df^\ast \omega.
+$$</p>
+<h2 id="流形的定向"><a href="#流形的定向" class="headerlink" title="流形的定向"></a>流形的定向</h2><p><strong>定义 2</strong>. <em>若$S$上存在连续单位法向量$\vec{n},$ 则称$S$是<strong>可定向的</strong>.</em> </p>
+<p>一般地, 给定抽象$C^\infty$-流形$M,$ 由于缺少外围空间, 不便谈论法向量.
+但切平面总是存在的. 我们通过选取基来确定法向量. 对任意$m$维向量空间,
+称两组基是等价的, 若转移矩阵行列式为正. 此时它们确定了同一个法向量.
+易见全体基组落在两个等价类中. 选定一个等价类便给定了$V$一个定向.</p>
+<p>为了讨论连续性, 我们任取$0\neq \Omega\in \Lambda^m(V^\ast ).$
+此时对两组等价基, $\{\widetilde{e_j}\}=\{e_i\}\det(a^i_j),$
+$\Omega(\widetilde{e_1},\cdots,\widetilde{e_m})=\Omega(e_1,\cdots,e_m)\det(a^i_j).$
+因此$\Omega$作用在等价基上是同号的.
+那么选定$0\neq \Omega\in \Lambda^m(V^\ast )$就相当于给定了$V$的定向.</p>
+<p><strong>定义 3</strong>. <em>设$M^m$为$m$维$C^\infty$-流形, 如果$M$上存在连续的处处非零的$m$次外微分形式$\Omega,$ 则称$M$是<strong>可定向的</strong>, $(M,\Omega)$称为<strong>定向流形</strong>.</em> </p>
+<p>$\Omega$是$M\rightarrow \Lambda^m T^\ast M$的连续映照.
+由于$\dim \Lambda^m(T_p^\ast M)=1,$ $\Omega=fdx^1\wedge\cdots\wedge dx^m,$
+$f\in C^0(U),$ $\,\forall\,(U,x^i)\subset M.$</p>
+<p>若$\Omega_1,\Omega_2$都是$M$的定向, 则$\Omega_2=f\Omega_1,$
+$f$处处非零连续. 它们定向相同当且仅当$f&gt;0.$ 假设$M$是连通的,
+那么$f$要么处处为正, 或处处为负. 这给出了$M$的两种定向.</p>
+<p>坐标系$(U,x^i)$上的$dx^1\wedge\cdots\wedge dx^m\in \mathcal{A}^m(U)$给出了$U$上的局部定向.
+设$(M,\Omega)$为定向流形, 那么$\Omega|_U=fdx^1\wedge\cdots\wedge dx^m,$
+$f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
+<p><strong>定理 4</strong>. <em>设$M$是$m$维$C^\infty$流形, 则它是可定向的$\Leftrightarrow$存在坐标图册$\{(U_\alpha,\varphi_\alpha;x^i_{(\alpha)})\},$ 使得$\,\forall\,\alpha,\beta,$ 在$U_\alpha\cap U_\beta$上有$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]&gt;0.$</em> </p>
+<p><strong>证:</strong> $\Rightarrow:$
+任取坐标图册$\{(U_\alpha,\varphi_\alpha;x_{(\alpha)}^i)\}.$
+那么$\Omega|_{U_\alpha}=f_\alpha dx^1_{(\alpha)}\wedge\cdots\wedge dx_{(\alpha)}^m.$
+若$f_\alpha&gt;0,$ 则坐标系不动; 若$f_\alpha&lt;0,$
+则可以调整坐标系使得$f_\alpha$取正.
+此时$\,\forall\,p\in U_\alpha\cap U_\beta,$</p>
+<p>$$
+\Omega|_{U_\alpha\cap U_\beta}=f_\alpha{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m}=f_\beta{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m}.
+$$</p>
+<p>因此$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]=\frac{f_\beta}{f_\alpha}&gt;0.$</p>
+<p>$\Leftarrow:$ 将坐标图册加细使得它是局部有限的, 且保持题设性质.
+取$f_i$为单位分解.
+那么令$\omega=\sum_i f_i{}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}$即可.
+此时$\,\forall\,p\in M,$</p>
+<p>$$
+\omega(p)=\sum_i f_i(p){}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}=\sum_i f_i(p)\det[D(\varphi_i\circ \varphi_{j_0}^{-1})]{}dx_{(j_0)}^{1}\wedge\cdots\wedge{}dx_{(j_0)}^{ {}m}.
+$$</p>
+<p>由单位分解与题设性质, 即有$\omega\neq 0.$</p>
+<p>由过程可见, 构造的$\omega\in \mathcal{A}^m(M).$
+因此处处非零的外微分形式可要求为光滑的.</p>
+<p>文章最后更新于 2021-12-21 19:01:28 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Differential formal properties
-----------
-
-**Theorem 1**. *Suppose $f\in C^\infty(M,N),$ then $f^\ast \circ d=d\circ f^\ast .$*
-
-**Certificate:** $\,\forall\,\omega\in \mathcal{A}^r(N).$ When $r=0$,
-$$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="微分形式性质"><a href="#微分形式性质" class="headerlink" title="微分形式性质"></a>微分形式性质</h2><p><strong>定理 1</strong>. <em>设$f\in C^\infty(M,N),$ 则$f^\ast \circ d=d\circ f^\ast .$</em> </p>
+<p><strong>证:</strong> $\,\forall\,\omega\in \mathcal{A}^r(N).$ 当$r=0$时,</p>
+<p>$$
 (f^\ast du)(X)=(du)(f_\ast X)=(f_\ast X)u=X(u\circ f)=X(f^\ast u)=d(f^\ast u)(X).
-$$
-
-
-
-When $r>0$, do the induction. Let's set $\omega=udy^{i_1}\wedge\cdots\wedge dy^{i_r},$
-Then $d\omega=du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}.$ we have:
-
-
-$$
+$$</p>
+<p>当$r&gt;0$时, 做归纳. 不妨设$\omega=udy^{i_1}\wedge\cdots\wedge dy^{i_r},$
+那么$d\omega=du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}.$ 我们有:</p>
+<p>$$
 f^\ast d\omega=f^\ast [du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}]=df^\ast u\wedge df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}=d[(f^\ast u) df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}]=df^\ast \omega.
-$$
-
-
-
-Orientation of the manifold
-----------
-**Definition 2**. *If there is a continuous unit normal vector $\vec{n},$ on $S$, then $S$ is said to be **orientable**.*
-
-In general, given an abstract $C^\infty$-manifold $M,$ it is inconvenient to talk about normal vectors due to the lack of peripheral space.
-But the tangent plane always exists. We determine the normal vector by selecting a basis. For any $m$ dimensional vector space,
-The two sets of basis are said to be equivalent if the determinant of the transfer matrix is positive. At this time, they determine the same normal vector.
-It is easy to see that all basis sets fall into two equivalence classes. Choosing an equivalence class gives $V$ an orientation.
-
-In order to discuss continuity, we randomly choose $0\neq \Omega\in \Lambda^m(V^\ast ).$
-At this time, for two sets of equivalent bases, $\{\widetilde{e_j}\}=\{e_i\}\det(a^i_j),$
+$$</p>
+<h2 id="流形的定向"><a href="#流形的定向" class="headerlink" title="流形的定向"></a>流形的定向</h2><p><strong>定义 2</strong>. <em>若$S$上存在连续单位法向量$\vec{n},$ 则称$S$是<strong>可定向的</strong>.</em> </p>
+<p>一般地, 给定抽象$C^\infty$-流形$M,$ 由于缺少外围空间, 不便谈论法向量.
+但切平面总是存在的. 我们通过选取基来确定法向量. 对任意$m$维向量空间,
+称两组基是等价的, 若转移矩阵行列式为正. 此时它们确定了同一个法向量.
+易见全体基组落在两个等价类中. 选定一个等价类便给定了$V$一个定向.</p>
+<p>为了讨论连续性, 我们任取$0\neq \Omega\in \Lambda^m(V^\ast ).$
+此时对两组等价基, $\{\widetilde{e_j}\}=\{e_i\}\det(a^i_j),$
 $\Omega(\widetilde{e_1},\cdots,\widetilde{e_m})=\Omega(e_1,\cdots,e_m)\det(a^i_j).$
-Therefore $\Omega$ acts on the equivalence basis with the same sign.
-Then selecting $0\neq \Omega\in \Lambda^m(V^\ast )$ is equivalent to giving the orientation of $V$.
-
-**Definition 3**. *Suppose $M^m$ is an $m$-dimensional $C^\infty$-manifold. If there is a continuous everywhere non-zero $m$ sub-external differential form $\Omega,$ on $M$, then $M$ is said to be **orientable**, and $(M,\Omega)$ is called an **oriented manifold**.*
-$\Omega$ is the continuous reflection of $M\rightarrow \Lambda^m T^\ast M$.
-Since $\dim \Lambda^m(T_p^\ast M)=1,$ $\Omega=fdx^1\wedge\cdots\wedge dx^m,$
-$f\in C^0(U),$ $\,\forall\,(U,x^i)\subset M.$
-If $\Omega_1,\Omega_2$ are both orientations of $M$, then $\Omega_2=f\Omega_1,$
-$f$ is non-zero and continuous everywhere. They have the same orientation if and only if $f>0.$ Assume $M$ is connected,
-Then $f$ is either positive everywhere, or negative everywhere. This gives two orientations of $M$.
-$dx^1\wedge\cdots\wedge dx^m\in \mathcal{A}^m(U)$ on the coordinate system $(U,x^i)$ gives the local orientation on $U$.
-Assume $(M,\Omega)$ is a directional manifold, then $\Omega|_U=fdx^1\wedge\cdots\wedge dx^m,$
-$f\in C^0(U).$ If $f>0,$, then the orientation of $(U,x^i)$ is said to be consistent with $\Omega$.
-
-**Theorem 4**. *Suppose $M$ is a $m$-dimensional $C^\infty$ manifold, then it is an orientable $\Leftrightarrow$ and exists in the coordinate atlas $\{(U_\alpha,\varphi_\alpha;
-x^i_{(\alpha)})\},$ makes $\,\forall\,\alpha,\beta,$ have $\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]>0.$* on $U_\alpha\cap U_\beta$
-
-**Certificate:** $\Rightarrow:$
-Take any coordinate atlas $\{(U_\alpha,\varphi_\alpha;x_{(\alpha)}^i)\}.$
-Then $\Omega|_{U_\alpha}=f_\alpha dx^1_{(\alpha)}\wedge\cdots\wedge dx_{(\alpha)}^m.$
-If $f_\alpha>0,$, the coordinate system does not move; if $f_\alpha<0,$
-Then the coordinate system can be adjusted to make $f_\alpha$ positive.
-At this time $\,\forall\,p\in U_\alpha\cap U_\beta,$
-
-
-$$
+因此$\Omega$作用在等价基上是同号的.
+那么选定$0\neq \Omega\in \Lambda^m(V^\ast )$就相当于给定了$V$的定向.</p>
+<p><strong>定义 3</strong>. <em>设$M^m$为$m$维$C^\infty$-流形, 如果$M$上存在连续的处处非零的$m$次外微分形式$\Omega,$ 则称$M$是<strong>可定向的</strong>, $(M,\Omega)$称为<strong>定向流形</strong>.</em> </p>
+<p>$\Omega$是$M\rightarrow \Lambda^m T^\ast M$的连续映照.
+由于$\dim \Lambda^m(T_p^\ast M)=1,$ $\Omega=fdx^1\wedge\cdots\wedge dx^m,$
+$f\in C^0(U),$ $\,\forall\,(U,x^i)\subset M.$</p>
+<p>若$\Omega_1,\Omega_2$都是$M$的定向, 则$\Omega_2=f\Omega_1,$
+$f$处处非零连续. 它们定向相同当且仅当$f&gt;0.$ 假设$M$是连通的,
+那么$f$要么处处为正, 或处处为负. 这给出了$M$的两种定向.</p>
+<p>坐标系$(U,x^i)$上的$dx^1\wedge\cdots\wedge dx^m\in \mathcal{A}^m(U)$给出了$U$上的局部定向.
+设$(M,\Omega)$为定向流形, 那么$\Omega|_U=fdx^1\wedge\cdots\wedge dx^m,$
+$f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
+<p><strong>定理 4</strong>. <em>设$M$是$m$维$C^\infty$流形, 则它是可定向的$\Leftrightarrow$存在坐标图册$\{(U_\alpha,\varphi_\alpha;x^i_{(\alpha)})\},$ 使得$\,\forall\,\alpha,\beta,$ 在$U_\alpha\cap U_\beta$上有$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]&gt;0.$</em> </p>
+<p><strong>证:</strong> $\Rightarrow:$
+任取坐标图册$\{(U_\alpha,\varphi_\alpha;x_{(\alpha)}^i)\}.$
+那么$\Omega|_{U_\alpha}=f_\alpha dx^1_{(\alpha)}\wedge\cdots\wedge dx_{(\alpha)}^m.$
+若$f_\alpha&gt;0,$ 则坐标系不动; 若$f_\alpha&lt;0,$
+则可以调整坐标系使得$f_\alpha$取正.
+此时$\,\forall\,p\in U_\alpha\cap U_\beta,$</p>
+<p>$$
 \Omega|_{U_\alpha\cap U_\beta}=f_\alpha{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m}=f_\beta{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m}.
-$$
-Therefore $\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]=\frac{f_\beta}{f_\alpha}>0.$
-
-$\Leftarrow:$ refines the coordinate atlas so that it is locally finite and maintains the properties of the problem.
-Take $f_i$ as the unit to decompose.
-Then let $\omega=\sum_i f_i{}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}$.
-At this time $\,\forall\,p\in M,$
-
-
-$$
+$$</p>
+<p>因此$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]=\frac{f_\beta}{f_\alpha}&gt;0.$</p>
+<p>$\Leftarrow:$ 将坐标图册加细使得它是局部有限的, 且保持题设性质.
+取$f_i$为单位分解.
+那么令$\omega=\sum_i f_i{}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}$即可.
+此时$\,\forall\,p\in M,$</p>
+<p>$$
 \omega(p)=\sum_i f_i(p){}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}=\sum_i f_i(p)\det[D(\varphi_i\circ \varphi_{j_0}^{-1})]{}dx_{(j_0)}^{1}\wedge\cdots\wedge{}dx_{(j_0)}^{ {}m}.
-$$
-From the unit decomposition and the properties of the question, there is $\omega\neq 0.$
+$$</p>
+<p>由单位分解与题设性质, 即有$\omega\neq 0.$</p>
+<p>由过程可见, 构造的$\omega\in \mathcal{A}^m(M).$
+因此处处非零的外微分形式可要求为光滑的.</p>
+<p>文章最后更新于 2021-12-21 19:01:28 </p>
 
-It can be seen from the process that the constructed $\omega\in \mathcal{A}^m(M).$
-Therefore, the external differential form that is non-zero everywhere can be required to be smooth.
-
-The article was last updated on 2021-12-21 19:01:28
                 </div>
             
         </div>
@@ -323,7 +350,7 @@ The article was last updated on 2021-12-21 19:01:28
     <ul>
         <li>本文标题：《微分流形》第七章-流形的定向</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-21 19:01:27</li>
+        <li>创建时间：2021-12-21 21:01:27</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/12/21/《微分流形》第七章-流形的定向/
         </li>
@@ -355,7 +382,7 @@ The article was last updated on 2021-12-21 19:01:28
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第七章-流形上的积分</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Integrals on Manifolds</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Integrating on a Manifold</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -377,7 +404,7 @@ The article was last updated on 2021-12-21 19:01:28
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第七章-微分形式</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Differential Forms</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Differential Forms</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -629,11 +656,11 @@ The article was last updated on 2021-12-21 19:01:28
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="nav-text">微分形式性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91"><span class="nav-text">流形的定向</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="nav-text">微分形式性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91"><span class="nav-text">流形的定向</span></a></li></ol>
         </div>
     
 </div>
@@ -684,6 +711,36 @@ The article was last updated on 2021-12-21 19:01:28
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -707,46 +764,6 @@ The article was last updated on 2021-12-21 19:01:28
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

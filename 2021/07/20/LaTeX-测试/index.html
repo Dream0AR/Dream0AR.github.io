@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-07-20 15:29:40
+        <i class="fas fa-edit"></i>&nbsp;2021-07-20 18:29:40
     </span>
     
         <span class="article-categories article-meta-item">
@@ -222,19 +222,26 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>测试$\LaTeX$是否正常显示: $e^{ix}=\cos(x)+i\sin(x)$.</p>
+<p>行间公式测试: $$\sum_{i=1}^n a_i^j\qquad \forall j\in \mathbb{Z}$$.</p>
+<p>格式测试: 
+\begin{align}
+    a&amp;=b+c &amp; A\\
+    &amp;=d+e+f &amp; B
+\end{align}</p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Test whether $\ LaTeX $ is displayed correctly: $ e ^ {ix} =\ cos (x) + i\ sin (x) $.
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>测试$\LaTeX$是否正常显示: $e^{ix}=\cos(x)+i\sin(x)$.</p>
+<p>行间公式测试: $$\sum_{i=1}^n a_i^j\qquad \forall j\in \mathbb{Z}$$.</p>
+<p>格式测试: 
+\begin{align}
+    a&amp;=b+c &amp; A\\
+    &amp;=d+e+f &amp; B
+\end{align}</p>
 
-Interline Formula Test: .
-
-Format Test: 
-\ begin {align}
-    a & = b + c & A\\
-    & = d + e + f & B
-\ end {align}
                 </div>
             
         </div>
@@ -245,7 +252,7 @@ Format Test:
     <ul>
         <li>本文标题：LaTeX-测试</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-07-20 15:29:40</li>
+        <li>创建时间：2021-07-20 18:29:40</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/07/20/LaTeX-测试/
         </li>
@@ -277,7 +284,7 @@ Format Test:
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分几何初步》1.6-1.7</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; 1.6-1.7</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Differential Geometry 1.6-1.7</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -299,7 +306,7 @@ Format Test:
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">序</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">sequence</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Serial No.</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -606,6 +613,36 @@ Format Test:
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -629,46 +666,6 @@ Format Test:
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

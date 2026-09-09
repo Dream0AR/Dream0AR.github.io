@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分拓扑》复习笔记(1)-基础知识 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《微分拓扑》复习笔记(1)-基础知识</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Topology Review Notes (1) - Basics</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2023-06-07 12:15:40
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91/">微分拓扑</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="浸入-淹没-嵌入"><a href="#浸入-淹没-嵌入" class="headerlink" title="浸入, 淹没, 嵌入"></a>浸入, 淹没, 嵌入</h2><p>浸入, 淹没有着典范表示. 局部常秩映射也有类似的典范表示.
+前两者证明方法是标准化$D\widehat f,$ 然后补全维度构造局部微分同胚.
+利用这一微分同胚改造坐标系即可.</p>
+<p>浸入+同胚=嵌入, 即嵌入子流形的子空间拓扑和诱导拓扑一致.
+由浸入的局部表示(与同胚性质), 子流形具有子流形坐标卡, 为切片.</p>
+<h2 id="正则值"><a href="#正则值" class="headerlink" title="正则值"></a>正则值</h2><p>对于光滑映射$f:M\rightarrow N,$ 若其在$p\in M$为淹没, 则$p$为<strong>正则点</strong>,
+否则为<strong>临界点</strong>. 临界点的像称为<strong>临界值</strong>.
+$N$上不是临界值的点称为<strong>正则值</strong>. 也就是说,
+正则值的原像都要是正则点(淹没), 允许为空集.</p>
+<p><strong>定理 1</strong> (正则值原像定理). <em>设$f:M\rightarrow N$为光滑映射, $q\in N$为$f$的正则值. 那么$f^{-1}(q)$为$(\dim M-\dim N)$维嵌入子流形.</em> </p>
+<p>$\,\forall\,p\in f^{-1}(q),$ 由淹没的局部表示,
+有坐标邻域$(U,\varphi)\ni p,$ $(V,\psi)\ni q,$ 使得
+$\widehat f:\varphi(U)\rightarrow \psi(V)$ 为投影映射, $\varphi(p)=0,$
+$\psi(q)=0$. 于是</p>
+<p>$$
+\widehat f^{-1}(0)=\{(0,y)|y\in \mathbb{R}^{\dim M-\dim N}\}=\varphi\circ f^{-1}(q).
+$$</p>
+<p>这就给出了$f^{-1}(q)$作为$(\dim M-\dim N)$维切片的子流形坐标卡$(U\cap f^{-1}(q),{\color{red}\pi_y}\circ \varphi)$.</p>
+<p><strong>定理 2</strong> (唱片引理). <em>设$M,N$为维数相同的光滑流形, $M$紧致. 设$f:M\rightarrow N$为光滑映射. 若$q\in N$为$f$的正则值, 那么$f^{-1}(q)\subset M$为有限点集$\{p_i\}_{i=1}^k$, 且存在$q$在$N$中的开邻域$V,$ 使得$f^{-1}(V)=\bigsqcup_{i=1}^k U_i,$ $p_i\in U_i,$ 且$f|_{U_i}$为微分同胚.</em> </p>
+<p>由正则值原像定理, $f^{-1}(q)=\{p_i\}$为 $0$ 维子流形,
+有子流形坐标邻域$W_i,$ 两两无交. 由于$M$紧致,
+若$\{p_i\}$为无限点集将有聚点, 而聚点处取不到这样的坐标邻域$W_i$.
+或$f^{-1}(q)$为闭集, 故紧.</p>
+<p>由于$f$既是浸入又是淹没, 为局部微分同胚.
+不妨设它在每个$W_i$上为微分同胚. 接下来取</p>
+<p>$$
+V=\bigcap_{i=1}^k f(W_i) \setminus f(M\setminus \bigcup_{i=1}^k W_i).
+$$</p>
+<p>其中$M\setminus \bigcup_{i=1}^k W_i$为闭集, 紧集中闭集是紧的.
+从而$f(M\setminus \bigcup_{i=1}^k W_i)$为紧集, 进而为闭集.
+于是$V$的确是开邻域, 且$f^{-1}(V)\subset \bigcup_{i=1}^k W_i.$
+由于$f|_{W_i}$为微分同胚,
+$\,\exists\,U_i{\color{red}{(=f^{-1}(V)\cap W_i)} }\subset W_i,$
+使得$f^{-1}(V)=\bigsqcup_{i=1}^k U_i,$ 且$f|_{U_i}$为微分同胚.</p>
+<p><strong>定理 3</strong> (Sard定理). <em>光滑映射$f:M\rightarrow N$的临界值集为零测集, 几乎处处为正则值(进而稠密).</em> </p>
+<h2 id="横截"><a href="#横截" class="headerlink" title="横截"></a>横截</h2><p>设$f:M\rightarrow N$为光滑映射, $Z\subset N$为嵌入子流形.
+若$\,\forall\,p\in f^{-1}(Z),$ </p>
+<p>$$
+df_p(T_pM)+T_{f(p)}Z=T_{f(p)}N,
+$$</p>
+<p>则称$f$与$Z$横截, 记为$f\pitchfork Z.$ 当$Z$为单点集时,
+$Z$就是$f$的正则值.</p>
+<p>特别地, 若$M\subset N$为嵌入子流形, 那么称$M\pitchfork Z$,
+若放入映射$\iota:M\rightarrow N$与$Z$横截. 此时有</p>
+<p>$$
+T_pM+T_pZ=T_pN,\quad \,\forall\,p\in M\cap Z.
+$$</p>
+<p>类似地, 也可以定义两映射横截, 此时不见得要求映射为嵌入.</p>
+<p><strong>定理 4</strong> (横截原像定理). <em>设$f:M\rightarrow N$为光滑映射, $Z\subset N$为嵌入子流形. 若$f\pitchfork Z,$ 则$f^{-1}(Z)$为$M$中的嵌入子流形, 且$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</em> </p>
+<p>由于$Z$为嵌入子流形, $\,\forall\,q\in Z,$ 有坐标卡$(V,\psi),$ $q\in V,$
+使得$\psi(Z\cap V)\subset \mathbb{R}^{\dim Z}$为切片.
+取投影$\pi:\mathbb{R}^{n}\rightarrow \mathbb{R}^{\operatorname{codim}_N Z},$
+那么$\psi (Z\cap V)=\pi^{-1}(0).$</p>
+<p>断言$g:=\pi \circ \psi \circ f:f^{-1}(V)\rightarrow \mathbb{R}^{\operatorname{codim}_NZ}$以$0$为正则值.
+只需说明$\,\forall\,p\in f^{-1}(Z)\cap f^{-1}(V)=f^{-1}(Z\cap V),$
+$dg_p$为淹没. 由横截性条件,</p>
+<p>$$
+d\psi \circ df_p(T_pM)+ T_{\psi\circ f(p)}\psi(Z)=T_{\psi\circ f(p)}\psi(N)=\mathbb{R}^n,\quad T_{\psi\circ f(p)}\psi(Z)=\mathbb{R}^{\dim Z}.
+$$</p>
+<p>再作用$d\pi=\pi,$ 即有</p>
+<p>$$
+dg_p(T_pM)=d\pi\circ d\psi\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.
+$$</p>
+<p>由正则值原像定理,
+${\color{red}{g^{-1}(0)=f^{-1}(Z\cap V)=f^{-1}(Z)\cap f^{-1}(V)} }$为嵌入子流形,
+且</p>
+<p>$$
+\dim g^{-1}(0)=\dim M-\operatorname{codim}_NZ,\quad \operatorname{codim}_M (f^{-1}(Z)\cap f^{-1}(V))=\operatorname{codim}_NZ.
+$$</p>
+<p>由$q\in V$的任意性即有$f^{-1}(Z)$为嵌入子流形,
+且$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_NZ.$</p>
+<p>对子流形横截相交的情形使用横截原像定理, 即有</p>
+<p>$$
+\operatorname{codim}_M (M\cap Z)=\operatorname{codim}_N Z,\quad \operatorname{codim}_N (M\cap Z)=\operatorname{codim}_N M+\operatorname{codim}_N Z.
+$$</p>
+<p>对映射横截相交的情形使用横截原像定理, 可以得到纤维积</p>
+<p>$$
+M \times_N Z:=\{(a,b)\in M\times Z|f(a)=g(b)\}
+$$</p>
+<p> 为光滑流形.
+证明考虑图像$\Gamma_f,\Gamma_g$与对角流形$\Delta\subset M\times N\times Z\times N,$
+通过说明$(\Gamma_f\times \Gamma_g)\pitchfork \Delta,$ 投影得到结论.</p>
+<h2 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h2><p>若光滑映射$f$的某种性质在任意小扰动光滑同伦$f_t$下保持($t&lt;\varepsilon$),
+那么称该性质在扰动下是<strong>稳定的</strong>.</p>
+<p><strong>定理 5</strong>. <em>紧流形$M$上的浸入/淹没$f:M\rightarrow N$是稳定的.</em> </p>
+<p>若$f$为浸入, 那么$\,\forall\,p\in M,$
+$df_p$中存在$m\times m$阶子式行列式非零. 由连续性,
+存在邻域$U_p$以及$\varepsilon_p&gt;0,$ 使得$U_p\times [0,\varepsilon_p]$上,
+$d(f_t)_q$中同样位置的$m\times m$阶子式行列式仍非零.</p>
+<p>取$\bigcup_{i=1}^k U_i$覆盖$M,$ 记$\varepsilon=\min_i\{\varepsilon_i\},$
+那么$f_t$就在$M$上是浸入, $\,\forall\,t\le \varepsilon.$
+从而浸入都是稳定的, 同理淹没也是.</p>
+<p><strong>定理 6</strong>. <em>$n$维光滑流形$M$的子集$S$是$M$中余维数为$l$的嵌入子流形, 当且仅当$\,\forall\,p\in S,$ $\,\exists\,$淹没$g:U\rightarrow \mathbb{R}^l,$ 使得$p\in U,$ 且$S\cap U=g^{-1}(0).$</em> </p>
+<p>$\Rightarrow:$ 只需取子流形坐标卡,
+投影到$\mathbb{R}^{\operatorname{codim}S}$即可.</p>
+<p>$\Leftarrow:$ 由正则值原像定理立即得到.</p>
+<p><strong>推论 7</strong>. <em>设$M$为紧致流形, 若光滑映射$f:M\rightarrow N$与$N$中闭嵌入子流形$Z$横截, 那么横截性在$f$的扰动下稳定.</em> </p>
+<p>记$F(x,t)=F_t.$ 由于$F^{-1}(N\setminus Z)$为开集,
+$(M\setminus f^{-1}(Z))\times \{0\}\subset F^{-1}(N\setminus Z),$
+$\,\forall\,p\in M\setminus f^{-1}(Z),$ $\,\exists\,U_p\subset M,$
+$I_p=[0,\varepsilon_p),$ 使得$F(U_p\times I_p)\cap Z=\varnothing.$
+于是$\,\forall\,t&lt;\varepsilon_p,$ 在$U_p$上$f_t\pitchfork Z.$</p>
+<p>由上一定理, $\,\forall\,q\in Z,$
+存在淹没$g:V\rightarrow \mathbb{R}^{\operatorname{codim}Z},$
+使得$Z\cap V=g^{-1}(0).$ 断言$\,\forall\,p\in f^{-1}(q),$
+$g\circ f$也是淹没. 只需说明</p>
+<p>$$
+dg_q\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.
+$$</p>
+<p>而这是因为横截性与淹没性质,</p>
+<p>$$
+df_p(T_pM)+T_qZ=T_qN,\quad dg_p(T_qN)=\mathbb{R}^{\operatorname{codim}Z},\quad dg_q(T_qZ)=0.
+$$</p>
+<p>最后的等式是因为$g(Z\cap V)=0.$</p>
+<p>进而, $g\circ f$在$p$点邻域$\overline U_p\subset f^{-1}(V)$上为淹没.
+由淹没的稳定性, 存在充分小的$\varepsilon_p&gt;0,$
+使得$g\circ f_t$在$U_p$上仍是淹没, $\,\forall\,t&lt;\varepsilon_p$.
+欲证$U_p$上$f_t\pitchfork Z,$ 要求横截性</p>
+<p>$$
+d(f_t)_p(T_pM)+T_{f(p)}Z=T_{f(p)}N,\quad \,\forall\,p\in f^{-1}_t(Z)\cap U_p.
+$$</p>
+<p>而我们有</p>
+<p>$$
+dg\circ d(f_t)_x(T_xM)=\mathbb{R}^{\operatorname{codim}Z},\quad \ker dg_q=T_qZ,\quad \,\forall\,x\in U_p,\quad q\in Z\cap V.
+$$</p>
+<p>这就给出了横截性.</p>
+<p>由$M$的紧性, 可以取到开覆盖$M=\bigcup_{i=1}^k U_i,$
+$\varepsilon=\min_i\{\varepsilon_i\}.$ 于是$\,\forall\,t&lt;\varepsilon,$
+$f_t\pitchfork Z.$ 这就给出了横截的稳定性.</p>
+<p>我们有拓扑学中经典引理:</p>
+<p><strong>引理 8</strong>. <em>设$f:M\rightarrow N$为单的光滑浸入. 若$M$紧致, 则$f$为光滑嵌入.</em> </p>
+<p>利用紧性与Hausdorff性质即可. 接下来有如下稳定性定理:</p>
+<p><strong>定理 9</strong>. <em>设$M$为紧致流形, $f:M^n\rightarrow N^n$为光滑嵌入, 则嵌入性在$f$的扰动下稳定.</em> </p>
+<p>已知$f$在小扰动下仍为浸入. 由引理, 只需证明$\,\exists\,\varepsilon&gt;0,$
+$\,\forall\,t&lt;\varepsilon,$ $f_t$为单射.</p>
+<p>不然, 存在$t_i\rightarrow 0,$ $p_i\neq q_i\in M,$
+$f_{t_i}(p_i)=f_{t_i}(q_i).$ 由紧性, 存在$p_i\rightarrow p_0,$
+$q_i\rightarrow q_0,$ $f(p_0)=f(q_0).$ 由$f$为嵌入, $p_0=q_0=:p.$</p>
+<p>记$G(x,t)=(f_t(x),t),$ 那么 
+$$
+d_{(p,0)}G=\begin{bmatrix}
+ d_pf&amp;*\\
+ 0&amp;1
+ \end{bmatrix}
+$$
+ 列满秩, 即$G$在$p$点为浸入.
+故$G$在$p$点小邻域处为单射. 然而</p>
+<p>$$
+G(p_i,t_i)=(f_t(p_i),t_i)=(f_t(q_i),t_i)=G(q_i,t_i),\quad p_i,q_i\rightarrow p,\quad t_i\rightarrow 0.
+$$</p>
+<p>这就与小邻域矛盾.</p>
+<p><strong>定理 10</strong>. <em>设$M$为紧致流形, $f:M\rightarrow N$为微分同胚, 则微分同胚性在$f$的扰动下稳定.</em> </p>
+<p>微分同胚为嵌入+满射, 故只需证明满射性在扰动下稳定. 不妨设$N$为连通的,
+不然依连通分支讨论即可.</p>
+<p>由于淹没在扰动下稳定, $\,\exists\,\varepsilon&gt;0,$
+$\,\forall\,t&lt;\varepsilon,$ $f_t$为淹没. 由淹没的典范表示,
+$f_t$为开映射. 另一方面, 由$f_t$从紧集打到Hausdorff空间,
+$f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了结论.</p>
+<p>文章最后更新于 2023-06-11 14:37:16 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="浸入-淹没-嵌入"><a href="#浸入-淹没-嵌入" class="headerlink" title="浸入, 淹没, 嵌入"></a>浸入, 淹没, 嵌入</h2><p>浸入, 淹没有着典范表示. 局部常秩映射也有类似的典范表示.
+前两者证明方法是标准化$D\widehat f,$ 然后补全维度构造局部微分同胚.
+利用这一微分同胚改造坐标系即可.</p>
+<p>浸入+同胚=嵌入, 即嵌入子流形的子空间拓扑和诱导拓扑一致.
+由浸入的局部表示(与同胚性质), 子流形具有子流形坐标卡, 为切片.</p>
+<h2 id="正则值"><a href="#正则值" class="headerlink" title="正则值"></a>正则值</h2><p>对于光滑映射$f:M\rightarrow N,$ 若其在$p\in M$为淹没, 则$p$为<strong>正则点</strong>,
+否则为<strong>临界点</strong>. 临界点的像称为<strong>临界值</strong>.
+$N$上不是临界值的点称为<strong>正则值</strong>. 也就是说,
+正则值的原像都要是正则点(淹没), 允许为空集.</p>
+<p><strong>定理 1</strong> (正则值原像定理). <em>设$f:M\rightarrow N$为光滑映射, $q\in N$为$f$的正则值. 那么$f^{-1}(q)$为$(\dim M-\dim N)$维嵌入子流形.</em> </p>
+<p>$\,\forall\,p\in f^{-1}(q),$ 由淹没的局部表示,
+有坐标邻域$(U,\varphi)\ni p,$ $(V,\psi)\ni q,$ 使得
+$\widehat f:\varphi(U)\rightarrow \psi(V)$ 为投影映射, $\varphi(p)=0,$
+$\psi(q)=0$. 于是</p>
+<p>$$
+\widehat f^{-1}(0)=\{(0,y)|y\in \mathbb{R}^{\dim M-\dim N}\}=\varphi\circ f^{-1}(q).
+$$</p>
+<p>这就给出了$f^{-1}(q)$作为$(\dim M-\dim N)$维切片的子流形坐标卡$(U\cap f^{-1}(q),{\color{red}\pi_y}\circ \varphi)$.</p>
+<p><strong>定理 2</strong> (唱片引理). <em>设$M,N$为维数相同的光滑流形, $M$紧致. 设$f:M\rightarrow N$为光滑映射. 若$q\in N$为$f$的正则值, 那么$f^{-1}(q)\subset M$为有限点集$\{p_i\}_{i=1}^k$, 且存在$q$在$N$中的开邻域$V,$ 使得$f^{-1}(V)=\bigsqcup_{i=1}^k U_i,$ $p_i\in U_i,$ 且$f|_{U_i}$为微分同胚.</em> </p>
+<p>由正则值原像定理, $f^{-1}(q)=\{p_i\}$为 $0$ 维子流形,
+有子流形坐标邻域$W_i,$ 两两无交. 由于$M$紧致,
+若$\{p_i\}$为无限点集将有聚点, 而聚点处取不到这样的坐标邻域$W_i$.
+或$f^{-1}(q)$为闭集, 故紧.</p>
+<p>由于$f$既是浸入又是淹没, 为局部微分同胚.
+不妨设它在每个$W_i$上为微分同胚. 接下来取</p>
+<p>$$
+V=\bigcap_{i=1}^k f(W_i) \setminus f(M\setminus \bigcup_{i=1}^k W_i).
+$$</p>
+<p>其中$M\setminus \bigcup_{i=1}^k W_i$为闭集, 紧集中闭集是紧的.
+从而$f(M\setminus \bigcup_{i=1}^k W_i)$为紧集, 进而为闭集.
+于是$V$的确是开邻域, 且$f^{-1}(V)\subset \bigcup_{i=1}^k W_i.$
+由于$f|_{W_i}$为微分同胚,
+$\,\exists\,U_i{\color{red}{(=f^{-1}(V)\cap W_i)} }\subset W_i,$
+使得$f^{-1}(V)=\bigsqcup_{i=1}^k U_i,$ 且$f|_{U_i}$为微分同胚.</p>
+<p><strong>定理 3</strong> (Sard定理). <em>光滑映射$f:M\rightarrow N$的临界值集为零测集, 几乎处处为正则值(进而稠密).</em> </p>
+<h2 id="横截"><a href="#横截" class="headerlink" title="横截"></a>横截</h2><p>设$f:M\rightarrow N$为光滑映射, $Z\subset N$为嵌入子流形.
+若$\,\forall\,p\in f^{-1}(Z),$ </p>
+<p>$$
+df_p(T_pM)+T_{f(p)}Z=T_{f(p)}N,
+$$</p>
+<p>则称$f$与$Z$横截, 记为$f\pitchfork Z.$ 当$Z$为单点集时,
+$Z$就是$f$的正则值.</p>
+<p>特别地, 若$M\subset N$为嵌入子流形, 那么称$M\pitchfork Z$,
+若放入映射$\iota:M\rightarrow N$与$Z$横截. 此时有</p>
+<p>$$
+T_pM+T_pZ=T_pN,\quad \,\forall\,p\in M\cap Z.
+$$</p>
+<p>类似地, 也可以定义两映射横截, 此时不见得要求映射为嵌入.</p>
+<p><strong>定理 4</strong> (横截原像定理). <em>设$f:M\rightarrow N$为光滑映射, $Z\subset N$为嵌入子流形. 若$f\pitchfork Z,$ 则$f^{-1}(Z)$为$M$中的嵌入子流形, 且$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</em> </p>
+<p>由于$Z$为嵌入子流形, $\,\forall\,q\in Z,$ 有坐标卡$(V,\psi),$ $q\in V,$
+使得$\psi(Z\cap V)\subset \mathbb{R}^{\dim Z}$为切片.
+取投影$\pi:\mathbb{R}^{n}\rightarrow \mathbb{R}^{\operatorname{codim}_N Z},$
+那么$\psi (Z\cap V)=\pi^{-1}(0).$</p>
+<p>断言$g:=\pi \circ \psi \circ f:f^{-1}(V)\rightarrow \mathbb{R}^{\operatorname{codim}_NZ}$以$0$为正则值.
+只需说明$\,\forall\,p\in f^{-1}(Z)\cap f^{-1}(V)=f^{-1}(Z\cap V),$
+$dg_p$为淹没. 由横截性条件,</p>
+<p>$$
+d\psi \circ df_p(T_pM)+ T_{\psi\circ f(p)}\psi(Z)=T_{\psi\circ f(p)}\psi(N)=\mathbb{R}^n,\quad T_{\psi\circ f(p)}\psi(Z)=\mathbb{R}^{\dim Z}.
+$$</p>
+<p>再作用$d\pi=\pi,$ 即有</p>
+<p>$$
+dg_p(T_pM)=d\pi\circ d\psi\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.
+$$</p>
+<p>由正则值原像定理,
+${\color{red}{g^{-1}(0)=f^{-1}(Z\cap V)=f^{-1}(Z)\cap f^{-1}(V)} }$为嵌入子流形,
+且</p>
+<p>$$
+\dim g^{-1}(0)=\dim M-\operatorname{codim}_NZ,\quad \operatorname{codim}_M (f^{-1}(Z)\cap f^{-1}(V))=\operatorname{codim}_NZ.
+$$</p>
+<p>由$q\in V$的任意性即有$f^{-1}(Z)$为嵌入子流形,
+且$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_NZ.$</p>
+<p>对子流形横截相交的情形使用横截原像定理, 即有</p>
+<p>$$
+\operatorname{codim}_M (M\cap Z)=\operatorname{codim}_N Z,\quad \operatorname{codim}_N (M\cap Z)=\operatorname{codim}_N M+\operatorname{codim}_N Z.
+$$</p>
+<p>对映射横截相交的情形使用横截原像定理, 可以得到纤维积</p>
+<p>$$
+M \times_N Z:=\{(a,b)\in M\times Z|f(a)=g(b)\}
+$$</p>
+<p> 为光滑流形.
+证明考虑图像$\Gamma_f,\Gamma_g$与对角流形$\Delta\subset M\times N\times Z\times N,$
+通过说明$(\Gamma_f\times \Gamma_g)\pitchfork \Delta,$ 投影得到结论.</p>
+<h2 id="稳定性"><a href="#稳定性" class="headerlink" title="稳定性"></a>稳定性</h2><p>若光滑映射$f$的某种性质在任意小扰动光滑同伦$f_t$下保持($t&lt;\varepsilon$),
+那么称该性质在扰动下是<strong>稳定的</strong>.</p>
+<p><strong>定理 5</strong>. <em>紧流形$M$上的浸入/淹没$f:M\rightarrow N$是稳定的.</em> </p>
+<p>若$f$为浸入, 那么$\,\forall\,p\in M,$
+$df_p$中存在$m\times m$阶子式行列式非零. 由连续性,
+存在邻域$U_p$以及$\varepsilon_p&gt;0,$ 使得$U_p\times [0,\varepsilon_p]$上,
+$d(f_t)_q$中同样位置的$m\times m$阶子式行列式仍非零.</p>
+<p>取$\bigcup_{i=1}^k U_i$覆盖$M,$ 记$\varepsilon=\min_i\{\varepsilon_i\},$
+那么$f_t$就在$M$上是浸入, $\,\forall\,t\le \varepsilon.$
+从而浸入都是稳定的, 同理淹没也是.</p>
+<p><strong>定理 6</strong>. <em>$n$维光滑流形$M$的子集$S$是$M$中余维数为$l$的嵌入子流形, 当且仅当$\,\forall\,p\in S,$ $\,\exists\,$淹没$g:U\rightarrow \mathbb{R}^l,$ 使得$p\in U,$ 且$S\cap U=g^{-1}(0).$</em> </p>
+<p>$\Rightarrow:$ 只需取子流形坐标卡,
+投影到$\mathbb{R}^{\operatorname{codim}S}$即可.</p>
+<p>$\Leftarrow:$ 由正则值原像定理立即得到.</p>
+<p><strong>推论 7</strong>. <em>设$M$为紧致流形, 若光滑映射$f:M\rightarrow N$与$N$中闭嵌入子流形$Z$横截, 那么横截性在$f$的扰动下稳定.</em> </p>
+<p>记$F(x,t)=F_t.$ 由于$F^{-1}(N\setminus Z)$为开集,
+$(M\setminus f^{-1}(Z))\times \{0\}\subset F^{-1}(N\setminus Z),$
+$\,\forall\,p\in M\setminus f^{-1}(Z),$ $\,\exists\,U_p\subset M,$
+$I_p=[0,\varepsilon_p),$ 使得$F(U_p\times I_p)\cap Z=\varnothing.$
+于是$\,\forall\,t&lt;\varepsilon_p,$ 在$U_p$上$f_t\pitchfork Z.$</p>
+<p>由上一定理, $\,\forall\,q\in Z,$
+存在淹没$g:V\rightarrow \mathbb{R}^{\operatorname{codim}Z},$
+使得$Z\cap V=g^{-1}(0).$ 断言$\,\forall\,p\in f^{-1}(q),$
+$g\circ f$也是淹没. 只需说明</p>
+<p>$$
+dg_q\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.
+$$</p>
+<p>而这是因为横截性与淹没性质,</p>
+<p>$$
+df_p(T_pM)+T_qZ=T_qN,\quad dg_p(T_qN)=\mathbb{R}^{\operatorname{codim}Z},\quad dg_q(T_qZ)=0.
+$$</p>
+<p>最后的等式是因为$g(Z\cap V)=0.$</p>
+<p>进而, $g\circ f$在$p$点邻域$\overline U_p\subset f^{-1}(V)$上为淹没.
+由淹没的稳定性, 存在充分小的$\varepsilon_p&gt;0,$
+使得$g\circ f_t$在$U_p$上仍是淹没, $\,\forall\,t&lt;\varepsilon_p$.
+欲证$U_p$上$f_t\pitchfork Z,$ 要求横截性</p>
+<p>$$
+d(f_t)_p(T_pM)+T_{f(p)}Z=T_{f(p)}N,\quad \,\forall\,p\in f^{-1}_t(Z)\cap U_p.
+$$</p>
+<p>而我们有</p>
+<p>$$
+dg\circ d(f_t)_x(T_xM)=\mathbb{R}^{\operatorname{codim}Z},\quad \ker dg_q=T_qZ,\quad \,\forall\,x\in U_p,\quad q\in Z\cap V.
+$$</p>
+<p>这就给出了横截性.</p>
+<p>由$M$的紧性, 可以取到开覆盖$M=\bigcup_{i=1}^k U_i,$
+$\varepsilon=\min_i\{\varepsilon_i\}.$ 于是$\,\forall\,t&lt;\varepsilon,$
+$f_t\pitchfork Z.$ 这就给出了横截的稳定性.</p>
+<p>我们有拓扑学中经典引理:</p>
+<p><strong>引理 8</strong>. <em>设$f:M\rightarrow N$为单的光滑浸入. 若$M$紧致, 则$f$为光滑嵌入.</em> </p>
+<p>利用紧性与Hausdorff性质即可. 接下来有如下稳定性定理:</p>
+<p><strong>定理 9</strong>. <em>设$M$为紧致流形, $f:M^n\rightarrow N^n$为光滑嵌入, 则嵌入性在$f$的扰动下稳定.</em> </p>
+<p>已知$f$在小扰动下仍为浸入. 由引理, 只需证明$\,\exists\,\varepsilon&gt;0,$
+$\,\forall\,t&lt;\varepsilon,$ $f_t$为单射.</p>
+<p>不然, 存在$t_i\rightarrow 0,$ $p_i\neq q_i\in M,$
+$f_{t_i}(p_i)=f_{t_i}(q_i).$ 由紧性, 存在$p_i\rightarrow p_0,$
+$q_i\rightarrow q_0,$ $f(p_0)=f(q_0).$ 由$f$为嵌入, $p_0=q_0=:p.$</p>
+<p>记$G(x,t)=(f_t(x),t),$ 那么 
+$$
+d_{(p,0)}G=\begin{bmatrix}
+ d_pf&amp;*\\
+ 0&amp;1
+ \end{bmatrix}
+$$
+ 列满秩, 即$G$在$p$点为浸入.
+故$G$在$p$点小邻域处为单射. 然而</p>
+<p>$$
+G(p_i,t_i)=(f_t(p_i),t_i)=(f_t(q_i),t_i)=G(q_i,t_i),\quad p_i,q_i\rightarrow p,\quad t_i\rightarrow 0.
+$$</p>
+<p>这就与小邻域矛盾.</p>
+<p><strong>定理 10</strong>. <em>设$M$为紧致流形, $f:M\rightarrow N$为微分同胚, 则微分同胚性在$f$的扰动下稳定.</em> </p>
+<p>微分同胚为嵌入+满射, 故只需证明满射性在扰动下稳定. 不妨设$N$为连通的,
+不然依连通分支讨论即可.</p>
+<p>由于淹没在扰动下稳定, $\,\exists\,\varepsilon&gt;0,$
+$\,\forall\,t&lt;\varepsilon,$ $f_t$为淹没. 由淹没的典范表示,
+$f_t$为开映射. 另一方面, 由$f_t$从紧集打到Hausdorff空间,
+$f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了结论.</p>
+<p>文章最后更新于 2023-06-11 14:37:16 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分拓扑》复习笔记(1)-基础知识</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2023-06-07 12:15:40</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2023/06/07/《微分拓扑》复习笔记(1)-基础知识/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2023/06/11/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(2)-Sard%E5%AE%9A%E7%90%86%E4%B8%8EMorse%E5%87%BD%E6%95%B0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分拓扑》复习笔记(2)-Sard定理与Morse函数</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Topology Review Notes (2) - Sard Theorem and Morse Function</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(6)-%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《几何专题》笔记(6)-极小子流形</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Geometric Monograph Notes (6) - Minimal Submanifold</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B8%E5%85%A5-%E6%B7%B9%E6%B2%A1-%E5%B5%8C%E5%85%A5"><span class="nav-text">浸入, 淹没, 嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%80%BC"><span class="nav-text">正则值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA"><span class="nav-text">横截</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-text">稳定性</span></a></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B8%E5%85%A5-%E6%B7%B9%E6%B2%A1-%E5%B5%8C%E5%85%A5"><span class="nav-text">浸入, 淹没, 嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E5%88%99%E5%80%BC"><span class="nav-text">正则值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%AA%E6%88%AA"><span class="nav-text">横截</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%B3%E5%AE%9A%E6%80%A7"><span class="nav-text">稳定性</span></a></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

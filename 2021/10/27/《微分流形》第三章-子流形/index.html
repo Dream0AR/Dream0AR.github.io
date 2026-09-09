@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第三章-子流形</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 3 - Submanifolds</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 3 - Submanifolds</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-27 21:07:03
+        <i class="fas fa-edit"></i>&nbsp;2021-10-28 00:07:03
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,73 +230,110 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="子流形"><a href="#子流形" class="headerlink" title="子流形"></a>子流形</h2><p>设$F:M^m\hookrightarrow N^n$为子流形. 若$\,\forall\,p\in M,$
+存在含$q=F(p)$的$N$中坐标系$(V,\psi,y^\alpha),$
+使得$F(M)\cap V$为$V$中切片, 则称$(M,F)$为$N$中的<strong>正则子流形</strong>.</p>
+<p>另外, $F(M)$是$N$的子集, 可以从$N$中诱导子空间拓扑,
+也可以通过$F$将$M$上的拓扑搬到$F(M)$上. 若两种诱导拓扑一致,
+则称$(M,F)$为<strong>嵌入子流形</strong>.</p>
+<p><strong>定理 1.1</strong>. <em>设$F:M\rightarrow N$是子流形, 则$(M,F)$是正则子流形当且仅当它是嵌入子流形.</em> </p>
+<p>证明可参考白,沈的《黎曼几何初步》.</p>
+<p><strong>定理 1.2</strong>. <em>设$F:M\rightarrow N$是子流形. 如果$M$紧致, 则$(M,F)$一定是嵌入子流形.</em> </p>
+<p><strong>证:</strong> 赋予$F(M)$作为$N$中子集所诱导的拓扑$\mathcal{T},$
+只需说明$F:M\rightarrow F(M)$为同胚. 首先说明$F$是连续的.
+对任意开集$U\subset F(M),$ 存在开集$\widetilde{U}\subset N,$
+使得$U=\widetilde{U}\cap F(M).$
+那么$F^{-1}(U)=F^{-1}(\widetilde{U})$是$M$中开集. 接下来说明$F$为闭映射.
+而紧空间到$T_2$空间的连续映射都是闭映射, 由此得证.</p>
+<p><strong>定理 1.3</strong>. <em>设$F:M^m\rightarrow N^n$是光滑映照. 取$q\in N,$ 定义$P:=F^{-1}(q).$ 若$\,\forall\,p\in P,$ $r({F_{\ast } }_p)=n,$ 则$P$具有唯一的$C^\infty$-流形结构使$(P,i)$是$M$的正则子流形, $\dim P=m-n.$</em> </p>
+<p><strong>证:</strong> 由秩定理, 可以取到合适的盒形坐标系使$\widehat{F}$为投影.
+因此$\widehat{F}^{-1}(0)=\{(0,\cdots,0,x^{n+1},\cdots,x^m)||x^\gamma|&lt;\delta\},$
+即$\widehat{F}^{-1}(0)=F^{-1}(q)\cap U$为$U$中$n$维切片.
+赋予$P$子空间拓扑, 取坐标图册$\{(P\cap U,\pi\circ\varphi)\},$
+易见$P$成为$m-n$维拓扑流形. 同时容易看出图册满足$C^\infty$相容性,
+因此$P$具有$C^\infty$-流形结构. 显然单射$i\in C^\infty(P,M)$且秩为$m-n,$
+因此它是子流形. 由先前说明, 局部来看它又是切片, 因此$(P,i)$是正则子流形.</p>
+<p><strong>推论 1.4</strong>. <em>如果满射$F:M\rightarrow N$是淹没, 则$\,\forall\,q\in N,$ $F^{-1}(q)$为$M$中$m-n$维正则子流形.</em> </p>
+<p>一个问题是给定$C^\infty$流形$M^m,$
+是否存在$F:M\rightarrow \mathbb{R}^N,$
+使$(M,F)$是$\mathbb{R}^N$中子流形. H.Whitney 指出,
+存在$F:M^m\hookrightarrow \mathbb{R}^{2m+1}$为正则子流形.</p>
+<h2 id="向量场的积分曲线"><a href="#向量场的积分曲线" class="headerlink" title="向量场的积分曲线"></a>向量场的积分曲线</h2><p>设$X\in \chi(M),$ $\gamma:(a,b)\rightarrow M$为$C^\infty$-曲线,
+若$\gamma&#39;(t)=X_{\gamma(t)},$ $\,\forall\,t\in (a,b).$
+则称$\gamma$是$X$的<strong>积分曲线</strong>. 如果$0\in(a,b),$
+$p=\gamma(0)$称为$\gamma$的<strong>初始点</strong>.</p>
+<p>给定$X\in\chi(M),$ $p\in M.$ 任取坐标系$(U,\varphi;x^i),$
+$\{X_i\}_{i=1}^m$为自然基. 那么$X|_U=\sum \xi^iX_i,$
+$\xi^i\in C^\infty(U).$ 而$\gamma&#39;(t)=\sum_i \frac{dx^i(t)}{dt}X_i,$
+因此求积分曲线$\gamma$即在给定初值后解常微分方程组:
+$$\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cdots,m.$$
+其中$\widehat{\xi}^i=\xi^i\circ\varphi^{-1}\in C^\infty(\varphi(U)).$
+由常微分方程基本定理, 我们有如下命题:</p>
+<p><strong>命题 1.5</strong>. <em>设$X\in\chi(M),$ 则$\,\forall\,p\in M,$ $\,\exists\,\varepsilon&gt;0,$ $\gamma:(-\varepsilon,\varepsilon)\rightarrow M,$ 使得$\gamma(0)=p$且$\gamma$为$X$的积分曲线.</em> </p>
+<p>设$X\in\chi(M),$ 若$X_p=0,$ 则称$p$为$X$的<strong>奇点</strong>. 一个经典的命题是,
+球面上光滑向量场必有奇点. 一个典型的证明是应用指标定理,
+而球面的欧拉示性数非零.</p>
+<p>回忆切丛$TM$为$2m$维$C^\infty$流形, 对$U\subset M,$
+有局部平凡化$\widetilde{\Phi}:TU=\pi^{-1}(U)\cong U\times \mathbb{R}^m$为微分同胚,
+且$\widetilde{\Phi}|_{T_{p}M}:T_pM\rightarrow \{p\}\times \mathbb{R}^m$为线同构(保纤维).
+那么上面的命题说明, $TS^2\not\cong S^2\times \mathbb{R}^2,$
+即球面切丛非平凡丛.</p>
+<p>文章最后更新于 2021-10-27 21:07:04 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    submanifold
-------
-
-Let $F:M^m\hookrightarrow N^n$ be a submanifold. If $\,\forall\,p\in M,$
-There exists a coordinate system $(V,\psi,y^\alpha),$ in $N$ containing $q=F(p)$
-If $F(M)\cap V$ is a slice in $V$, then $(M,F)$ is said to be a **regular submanifold** in $N$.
-In addition, $F(M)$ is a subset of $N$, and the subspace topology can be induced from $N$,
-You can also move the topology on $M$ to $F(M)$ through $F$. If the two induced topologies are consistent,
-Then $(M,F)$ is called **embedded submanifold**.
-
-**Theorem 1.1**. *Suppose $F:M\rightarrow N$ is a submanifold, then $(M,F)$ is a regular submanifold if and only if it is an embedded submanifold.*
-For proof, please refer to "Preliminary Riemannian Geometry" by Bai and Shen.
-
-**Theorem 1.2**. *Suppose $F:M\rightarrow N$ is a submanifold. If $M$ is compact, then $(M,F)$ must be an embedded submanifold.*
-
-**Proof:** Assign $F(M)$ as the topology $\mathcal{T},$ induced by the subset of $N$
-Just explain that $F:M\rightarrow F(M)$ is a homeomorphism. First, explain that $F$ is continuous.
-For any open set $U\subset F(M),$ there exists an open set $\widetilde{U}\subset N,$
-Such that $U=\widetilde{U}\cap F(M).$
-Then $F^{-1}(U)=F^{-1}(\widetilde{U})$ is an open set in $M$. Next, $F$ is a closed map.
-The continuous mapping from compact space to $T_2$ space is a closed mapping, which is proved.
-**Theorem 1.3**. *Suppose $F:M^m\rightarrow N^n$ is a smooth mapping. Take $q\in N,$ and define $P:=F^{-1}(q).$ if $\,\forall\,p\in P,$ $r({F_{\ast } }_p)=n,$ Then $P$ has a unique $C^\infty$-manifold structure such that $(P,i)$ is a regular submanifold of $M$, $\dim P=m-n.$*
-**Proof:** According to the rank theorem, a suitable box coordinate system can be obtained so that $\widehat{F}$ is a projection.
-Therefore $\widehat{F}^{-1}(0)=\{(0,\cdots,0,x^{n+1},\cdots,x^m)||x^\gamma|<\delta\},$
-That is, $\widehat{F}^{-1}(0)=F^{-1}(q)\cap U$ is an $n$-dimensional slice in $U$.
-Assign $P$ subspace topology, take coordinate atlas $\{(P\cap U,\pi\circ\varphi)\},$
-It is easy to see that $P$ becomes an $m-n$ dimensional topological manifold. At the same time, it is easy to see that the atlas satisfies $C^\infty$ compatibility,
-Therefore $P$ has a $C^\infty$-manifold structure. Obviously injective $i\in C^\infty(P,M)$ with rank $m-n,$
-Therefore it is a submanifold. From the previous explanation, it is also a slice locally, so $(P,i)$ is a regular submanifold.
-
-**Corollary 1.4**. *If the surjection $F:M\rightarrow N$ is submerged, then $\,\forall\,q\in N,$ $F^{-1}(q)$ is an $m-n$ dimensional regular submanifold in $M$.*
-
-One problem is that given $C^\infty$ manifold $M^m,$
-Does $F:M\rightarrow \mathbb{R}^N,$ exist?
-Let $(M,F)$ be the $\mathbb{R}^N$ neutron manifold. H.Whitney pointed out,
-There exists $F:M^m\hookrightarrow \mathbb{R}^{2m+1}$ as a regular submanifold.
-
-Integral curve of vector field
-----------------
-Let $X\in \chi(M),$ $\gamma:(a,b)\rightarrow M$ be $C^\infty$-curve,
-If $\gamma'(t)=X_{\gamma(t)},$ $\,\forall\,t\in (a,b).$
-Then $\gamma$ is said to be the **integral curve** of $X$. If $0\in(a,b),$
-$p=\gamma(0)$ is called the **initial point** of $\gamma$.
-
-Given $X\in\chi(M),$ $p\in M.$ any coordinate system $(U,\varphi;x^i),$
-$\{X_i\}_{i=1}^m$ is a natural basis. Then $X|_U=\sum \xi^iX_i,$
-$\xi^i\in C^\infty(U).$ and $\gamma'(t)=\sum_i \frac{dx^i(t)}{dt}X_i,$
-Therefore, to find the integral curve $\gamma$ is to solve the system of ordinary differential equations after given the initial value:
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="子流形"><a href="#子流形" class="headerlink" title="子流形"></a>子流形</h2><p>设$F:M^m\hookrightarrow N^n$为子流形. 若$\,\forall\,p\in M,$
+存在含$q=F(p)$的$N$中坐标系$(V,\psi,y^\alpha),$
+使得$F(M)\cap V$为$V$中切片, 则称$(M,F)$为$N$中的<strong>正则子流形</strong>.</p>
+<p>另外, $F(M)$是$N$的子集, 可以从$N$中诱导子空间拓扑,
+也可以通过$F$将$M$上的拓扑搬到$F(M)$上. 若两种诱导拓扑一致,
+则称$(M,F)$为<strong>嵌入子流形</strong>.</p>
+<p><strong>定理 1.1</strong>. <em>设$F:M\rightarrow N$是子流形, 则$(M,F)$是正则子流形当且仅当它是嵌入子流形.</em> </p>
+<p>证明可参考白,沈的《黎曼几何初步》.</p>
+<p><strong>定理 1.2</strong>. <em>设$F:M\rightarrow N$是子流形. 如果$M$紧致, 则$(M,F)$一定是嵌入子流形.</em> </p>
+<p><strong>证:</strong> 赋予$F(M)$作为$N$中子集所诱导的拓扑$\mathcal{T},$
+只需说明$F:M\rightarrow F(M)$为同胚. 首先说明$F$是连续的.
+对任意开集$U\subset F(M),$ 存在开集$\widetilde{U}\subset N,$
+使得$U=\widetilde{U}\cap F(M).$
+那么$F^{-1}(U)=F^{-1}(\widetilde{U})$是$M$中开集. 接下来说明$F$为闭映射.
+而紧空间到$T_2$空间的连续映射都是闭映射, 由此得证.</p>
+<p><strong>定理 1.3</strong>. <em>设$F:M^m\rightarrow N^n$是光滑映照. 取$q\in N,$ 定义$P:=F^{-1}(q).$ 若$\,\forall\,p\in P,$ $r({F_{\ast } }_p)=n,$ 则$P$具有唯一的$C^\infty$-流形结构使$(P,i)$是$M$的正则子流形, $\dim P=m-n.$</em> </p>
+<p><strong>证:</strong> 由秩定理, 可以取到合适的盒形坐标系使$\widehat{F}$为投影.
+因此$\widehat{F}^{-1}(0)=\{(0,\cdots,0,x^{n+1},\cdots,x^m)||x^\gamma|&lt;\delta\},$
+即$\widehat{F}^{-1}(0)=F^{-1}(q)\cap U$为$U$中$n$维切片.
+赋予$P$子空间拓扑, 取坐标图册$\{(P\cap U,\pi\circ\varphi)\},$
+易见$P$成为$m-n$维拓扑流形. 同时容易看出图册满足$C^\infty$相容性,
+因此$P$具有$C^\infty$-流形结构. 显然单射$i\in C^\infty(P,M)$且秩为$m-n,$
+因此它是子流形. 由先前说明, 局部来看它又是切片, 因此$(P,i)$是正则子流形.</p>
+<p><strong>推论 1.4</strong>. <em>如果满射$F:M\rightarrow N$是淹没, 则$\,\forall\,q\in N,$ $F^{-1}(q)$为$M$中$m-n$维正则子流形.</em> </p>
+<p>一个问题是给定$C^\infty$流形$M^m,$
+是否存在$F:M\rightarrow \mathbb{R}^N,$
+使$(M,F)$是$\mathbb{R}^N$中子流形. H.Whitney 指出,
+存在$F:M^m\hookrightarrow \mathbb{R}^{2m+1}$为正则子流形.</p>
+<h2 id="向量场的积分曲线"><a href="#向量场的积分曲线" class="headerlink" title="向量场的积分曲线"></a>向量场的积分曲线</h2><p>设$X\in \chi(M),$ $\gamma:(a,b)\rightarrow M$为$C^\infty$-曲线,
+若$\gamma&#39;(t)=X_{\gamma(t)},$ $\,\forall\,t\in (a,b).$
+则称$\gamma$是$X$的<strong>积分曲线</strong>. 如果$0\in(a,b),$
+$p=\gamma(0)$称为$\gamma$的<strong>初始点</strong>.</p>
+<p>给定$X\in\chi(M),$ $p\in M.$ 任取坐标系$(U,\varphi;x^i),$
+$\{X_i\}_{i=1}^m$为自然基. 那么$X|_U=\sum \xi^iX_i,$
+$\xi^i\in C^\infty(U).$ 而$\gamma&#39;(t)=\sum_i \frac{dx^i(t)}{dt}X_i,$
+因此求积分曲线$\gamma$即在给定初值后解常微分方程组:
 $$\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cdots,m.$$
-Where $\widehat{\xi}^i=\xi^i\circ\varphi^{-1}\in C^\infty(\varphi(U)).$
-According to the fundamental theorem of ordinary differential equations, we have the following proposition:
-**Proposition 1.5**. *Suppose $X\in\chi(M),$ then $\,\forall\,p\in M,$ $\,\exists\,\varepsilon>0,$ $\gamma:(-\varepsilon,\varepsilon)\rightarrow M,$ such that $\gamma(0)=p$ and $\gamma$ is the integral curve of $X$.*
-Suppose $X\in\chi(M),$ If $X_p=0,$ then $p$ is called the **singularity** of $X$. A classic proposition is,
-A smooth vector field on a sphere must have singular points. A typical proof is to apply the index theorem,
-The Euler characteristic number of the sphere is non-zero.
+其中$\widehat{\xi}^i=\xi^i\circ\varphi^{-1}\in C^\infty(\varphi(U)).$
+由常微分方程基本定理, 我们有如下命题:</p>
+<p><strong>命题 1.5</strong>. <em>设$X\in\chi(M),$ 则$\,\forall\,p\in M,$ $\,\exists\,\varepsilon&gt;0,$ $\gamma:(-\varepsilon,\varepsilon)\rightarrow M,$ 使得$\gamma(0)=p$且$\gamma$为$X$的积分曲线.</em> </p>
+<p>设$X\in\chi(M),$ 若$X_p=0,$ 则称$p$为$X$的<strong>奇点</strong>. 一个经典的命题是,
+球面上光滑向量场必有奇点. 一个典型的证明是应用指标定理,
+而球面的欧拉示性数非零.</p>
+<p>回忆切丛$TM$为$2m$维$C^\infty$流形, 对$U\subset M,$
+有局部平凡化$\widetilde{\Phi}:TU=\pi^{-1}(U)\cong U\times \mathbb{R}^m$为微分同胚,
+且$\widetilde{\Phi}|_{T_{p}M}:T_pM\rightarrow \{p\}\times \mathbb{R}^m$为线同构(保纤维).
+那么上面的命题说明, $TS^2\not\cong S^2\times \mathbb{R}^2,$
+即球面切丛非平凡丛.</p>
+<p>文章最后更新于 2021-10-27 21:07:04 </p>
 
-Recall that the tangent bundle $TM$ is a $2m$ dimensional $C^\infty$ manifold, for $U\subset M,$
-There is a local trivialization $\widetilde{\Phi}:TU=\pi^{-1}(U)\cong U\times \mathbb{R}^m$ which is a diffeomorphism,
-And $\widetilde{\Phi}|_{T_{p}M}:T_pM\rightarrow \{p\}\times \mathbb{R}^m$ is line isomorphism (fiber preserving).
-Then the above proposition explains, $TS^2\not\cong S^2\times \mathbb{R}^2,$
-That is, the spherical tangent bundle is a non-trivial bundle.
-
-The article was last updated on 2021-10-27 21:07:04
                 </div>
             
         </div>
@@ -307,7 +344,7 @@ The article was last updated on 2021-10-27 21:07:04
     <ul>
         <li>本文标题：《微分流形》第三章-子流形</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-27 21:07:03</li>
+        <li>创建时间：2021-10-28 00:07:03</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/10/27/《微分流形》第三章-子流形/
         </li>
@@ -339,7 +376,7 @@ The article was last updated on 2021-10-27 21:07:04
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">流形是仿紧的</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Manifolds are pseudocompact</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Manifolds are imitated tightly</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -361,7 +398,7 @@ The article was last updated on 2021-10-27 21:07:04
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(9)-显式同构</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (9) - Explicit Isomorphism</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (9) - Explicit Isomorphism</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -613,11 +650,11 @@ The article was last updated on 2021-10-27 21:07:04
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">子流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%9C%BA%E7%9A%84%E7%A7%AF%E5%88%86%E6%9B%B2%E7%BA%BF"><span class="nav-text">向量场的积分曲线</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">子流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E5%9C%BA%E7%9A%84%E7%A7%AF%E5%88%86%E6%9B%B2%E7%BA%BF"><span class="nav-text">向量场的积分曲线</span></a></li></ol>
         </div>
     
 </div>
@@ -668,6 +705,36 @@ The article was last updated on 2021-10-27 21:07:04
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -691,46 +758,6 @@ The article was last updated on 2021-10-27 21:07:04
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

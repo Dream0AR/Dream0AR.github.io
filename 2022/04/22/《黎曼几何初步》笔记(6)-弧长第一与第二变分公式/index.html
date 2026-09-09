@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; notes (6) - the first and second variational formulas of arc length</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (6) - Arc Length First and Second Variational Formulas</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-04-22 21:06:47
+        <i class="fas fa-edit"></i>&nbsp;2022-04-23 00:06:47
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,120 +230,158 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="第一变分公式"><a href="#第一变分公式" class="headerlink" title="第一变分公式"></a>第一变分公式</h2><p>我们来研究$\gamma$曲线的长度极短性.
+取单参数曲线族$\{\gamma_u\}_{-\varepsilon\le u\le \varepsilon},$
+满足$\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b).$
+记$L(u):[-\varepsilon,\varepsilon]\rightarrow \mathbb{R}$为曲线$\gamma_u$的长度.
+那么当$L&#39;(0)=0,$ $L&#39;&#39;(0)&gt;0$时, $L(0)$处有极小值;
+若这对所有满足条件的单参数曲线族$\{\gamma_u\}$都成立,
+则局部上$\gamma$取得极短长度.</p>
+<p>我们先取消$\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b)$的假设,
+令$U$为$\{\gamma_u\}$的横截向量场, $T$切于所有曲线$\gamma_u(t).$
+不妨设$t$是基曲线$\gamma$的弧长参数, $|\dot\gamma|=1.$ 那么,</p>
+<p>$$
+L(u)=\int_a^b |\dot\gamma_u(t)|dt,\quad L&#39;(u)=\int_a^b\frac{d {} }{d {}u}\sqrt{\left&lt;{}\dot\gamma_u(t),\dot\gamma_u(t)\right&gt;}dt,
+$$</p>
+<p>其中积分项可以写为:</p>
+<p>$$
+U\sqrt{\left&lt;{}T,T\right&gt;}=\frac{1}{|T|}\left&lt;{}T,D_UT\right&gt;=\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;=\frac{1}{|T|}\left(T\left&lt;{}T,U\right&gt;-\left&lt;{}D_TT,U\right&gt;\right),
+$$</p>
+<p>这样我们就得到了<strong>弧长第一变分公式</strong>:</p>
+<p>$$
+L&#39;(0)=\int_a^b\frac{d {} }{d {}t}\left&lt;{}\dot\gamma,U\right&gt;-\left&lt;{}D_{\dot\gamma}\dot\gamma,U\right&gt;dt=\left&lt;{}\dot\gamma(t),U(t)\right&gt;|_a^b-\int_a^b\left&lt;{}\ddot\gamma(t),U(t)\right&gt;.
+$$</p>
+<p>称$\{\gamma_u\}$为$\gamma$的<strong>正常变分</strong>, 若$\gamma_u(a)=\gamma(a),$
+$\gamma_u(b)=\gamma(b),$ $\gamma_0=\gamma.$ 对于正常变分, $U(a)=U(b)=0,$
+因此第一变分公式中第一项消失. 现在我们可以看到测地线的另一等价描述:</p>
+<p><strong>引理 1</strong>. <em>曲线$\gamma:[a,b]\rightarrow M$是测地线的充要条件是, 它是长度函数关于所有正常变分的临界点.</em> </p>
+<p>设$N$为$M$中闭子流形, $x\notin N,$
+那么$\,\exists\,y\in N$使得$d(x,y)=d(x,N).$
+取最短的正规测地线$\gamma:[a,b]\rightarrow M$连接$x,y.$</p>
+<p><strong>引理 2</strong>. <em>$\gamma\perp N,$ 即$\dot\gamma(b)\perp N_y.$</em> </p>
+<p><strong>证:</strong> 设$Y\in N_y,$ 取$\xi:[-\varepsilon,\varepsilon]\rightarrow N,$
+$\xi(0)=y,$ $\dot\xi(0)=Y.$ 那么可以取到单参数曲线族$\{\gamma_u\},$
+$\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a)=x,$ $\gamma_u(b)=\xi(u).$
+这样横截向量场$U$满足$U(x)=0,$ $U(y)=Y,$ 从而:</p>
+<p>$$
+L&#39;(0)=\left&lt;{}\dot\gamma(b),U(b)\right&gt;=\left&lt;{}\dot\gamma(b),Y\right&gt;=0 \quad \Rightarrow \quad \gamma\perp N.
+$$</p>
+<h2 id="第二变分公式"><a href="#第二变分公式" class="headerlink" title="第二变分公式"></a>第二变分公式</h2><p>一般当$L&#39;(0)=0$时, 计算$L&#39;&#39;(0)$才有意义. 故现设$\gamma$为正规测地线, 则:</p>
+<p>$$
+L&#39;&#39;(u)=\int_a^b\frac{d {} }{d {}u}\left(\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;\right)dt,
+$$</p>
+<p>其中积分项可写为: 
+$$
+\begin{aligned}
+ U\left(\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;\right)&amp;=-\frac{1}{|T|^3}\left&lt;{}T,D_TU\right&gt;^2+\frac{1}{|T|}\left&lt;{}D_TU,D_TU\right&gt;+\frac{1}{|T|}\left&lt;{}T,D_UD_TU\right&gt;\\
+ &amp;=-\frac{1}{|T|^3}\left(T\left&lt;{}T,U\right&gt;-\left&lt;{}D_TT,U\right&gt;\right)^2+\frac{1}{|T|}|D_TU|^2+\frac{1}{|T|}\left(-\left&lt;{}T,R_{UT}U\right&gt;+\left&lt;{}D_TD_UU,T\right&gt;\right).
+ \end{aligned}
+$$
+ 带入到$u=0$时, 注意此时$\gamma$为正规测地线,
+因此: 
+$$
+\begin{aligned}
+ L&#39;&#39;(0)&amp;=\int_a^b -\left(\frac{d {} }{d {}t}\left&lt;{}\dot\gamma,U\right&gt;\right)^2+|\dot U(t)|^2-\left&lt;{}\dot \gamma,R_{U\dot\gamma}U\right&gt;+\frac{d {} }{d {}t}\left&lt;{}D_UU,\dot\gamma\right&gt;dt\\
+ &amp;=\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a+\int_a^b\left(|\dot U(t)|^2-\left&lt;{}R_{\dot\gamma U}\dot\gamma,U\right&gt;-\left(\left&lt;{}\dot\gamma,U\right&gt;&#39;\right)^2\right)dt.
+ \end{aligned}
+$$</p>
+<p>这就是<strong>弧长第二变分公式</strong>, 决定项为曲率项,
+称$\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a$为边界项,
+当$\{\gamma_u\}$为正常变分时边界项消失.</p>
+<p>由于$U(t)$沿$\dot\gamma$的切向分量并不改变$\gamma$的长度,
+我们只需考虑正交分量$U^\perp(t),$
+即设$\left&lt;{}U^\perp,\dot\gamma\right&gt;=0,$ $U=U^\perp+f\dot\gamma.$ 那么</p>
+<p>$$
+|\dot U(t)|^2-\left(\left&lt;{}\dot\gamma(t),U(t)\right&gt;&#39;\right)^2=|\dot U^\perp (t)|^2+f&#39;(t)^2-f&#39;(t)^2=|\dot U^\perp(t)|^2,
+$$</p>
+<p>$$
+\left&lt;{}R_{\dot\gamma U}\dot\gamma,U\right&gt;=\left&lt;{}R_{\dot\gamma U^\perp}\dot\gamma, U^\perp\right&gt;.
+$$</p>
+<p>因此弧长第二变分公式也可写为:</p>
+<p>$$
+L&#39;&#39;(0)=\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\left&lt;{}R_{\dot\gamma U^\perp}\dot\gamma,U^\perp\right&gt;\right)dt.
+$$</p>
+<p>后面的应用日后补充.</p>
+<p>文章最后更新于 2022-04-22 21:06:49 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    first variation formula
-----------
-
-Let's study the extremely short length of the $\gamma$ curve.
-Take the single-parameter curve family $\{\gamma_u\}_{-\varepsilon\le u\le \varepsilon},$
-Satisfies $\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b).$
-Let $L(u):[-\varepsilon,\varepsilon]\rightarrow \mathbb{R}$ be the length of curve $\gamma_u$.
-Then when $L'(0)=0,$ $L''(0)>0$, there is a minimum value at $L(0)$;
-If this holds true for all single-parameter curve families $\{\gamma_u\}$ that satisfy the conditions,
-Then $\gamma$ locally obtains a very short length.
-Let’s first cancel the assumptions $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b)$,
-Let $U$ be the transverse vector field of $\{\gamma_u\}$, $T$ is tangent to all curves $\gamma_u(t).$
-Let $t$ be the arc length parameter of the base curve $\gamma$, $|\dot\gamma|=1.$ then,
-$$
-L(u)=\int_a^b |\dot\gamma_u(t)|dt,\quad L'(u)=\int_a^b\frac{d {} }{d {}u}\sqrt{\left<{}\dot\gamma_u(t),\dot\gamma_u(t)\right>}dt,
-$$
-
-
-
-The integral term can be written as:
-
-
-$$
-U\sqrt{\left<{}T,T\right>}=\frac{1}{|T|}\left<{}T,D_UT\right>=\frac{1}{|T|}\left<{}T,D_TU\right>=\frac{1}{|T|}\left(T\left<{}T,U\right>-\left<{}D_TT,U\right>\right),
-$$
-
-
-
-In this way we get the first variation formula of arc length:
-$$
-L'(0)=\int_a^b\frac{d {} }{d {}t}\left<{}\dot\gamma,U\right>-\left<{}D_{\dot\gamma}\dot\gamma,U\right>dt=\left<{}\dot\gamma(t),U(t)\right>|_a^b-\int_a^b\left<{}\ddot\gamma(t),U(t)\right>.
-$$
-
-
-
-Call $\{\gamma_u\}$ the **normal variation** of $\gamma$, if $\gamma_u(a)=\gamma(a),$
-$\gamma_u(b)=\gamma(b),$ $\gamma_0=\gamma.$ For normal variation, $U(a)=U(b)=0,$
-Therefore the first term in the first variation formula disappears. Now we can see another equivalent description of the geodesic:
-**Lemma 1**. *The necessary and sufficient condition for curve $\gamma:[a,b]\rightarrow M$ to be a geodesic is that it is the critical point of the length function with respect to all normal variations.*
-
-Let $N$ be a closed submanifold in $M$, $x\notin N,$
-Then $\,\exists\,y\in N$ makes $d(x,y)=d(x,N).$
-Take the shortest regular geodesic $\gamma:[a,b]\rightarrow M$ to connect $x,y.$
-
-**Lemma 2**. *$\gamma\perp N,$ is $\dot\gamma(b)\perp N_y.$*
-
-**Proof:** Let $Y\in N_y,$ take $\xi:[-\varepsilon,\varepsilon]\rightarrow N,$
-$\xi(0)=y,$ $\dot\xi(0)=Y.$ Then we can get the single-parameter curve family $\{\gamma_u\},$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="第一变分公式"><a href="#第一变分公式" class="headerlink" title="第一变分公式"></a>第一变分公式</h2><p>我们来研究$\gamma$曲线的长度极短性.
+取单参数曲线族$\{\gamma_u\}_{-\varepsilon\le u\le \varepsilon},$
+满足$\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b).$
+记$L(u):[-\varepsilon,\varepsilon]\rightarrow \mathbb{R}$为曲线$\gamma_u$的长度.
+那么当$L&#39;(0)=0,$ $L&#39;&#39;(0)&gt;0$时, $L(0)$处有极小值;
+若这对所有满足条件的单参数曲线族$\{\gamma_u\}$都成立,
+则局部上$\gamma$取得极短长度.</p>
+<p>我们先取消$\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b)$的假设,
+令$U$为$\{\gamma_u\}$的横截向量场, $T$切于所有曲线$\gamma_u(t).$
+不妨设$t$是基曲线$\gamma$的弧长参数, $|\dot\gamma|=1.$ 那么,</p>
+<p>$$
+L(u)=\int_a^b |\dot\gamma_u(t)|dt,\quad L&#39;(u)=\int_a^b\frac{d {} }{d {}u}\sqrt{\left&lt;{}\dot\gamma_u(t),\dot\gamma_u(t)\right&gt;}dt,
+$$</p>
+<p>其中积分项可以写为:</p>
+<p>$$
+U\sqrt{\left&lt;{}T,T\right&gt;}=\frac{1}{|T|}\left&lt;{}T,D_UT\right&gt;=\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;=\frac{1}{|T|}\left(T\left&lt;{}T,U\right&gt;-\left&lt;{}D_TT,U\right&gt;\right),
+$$</p>
+<p>这样我们就得到了<strong>弧长第一变分公式</strong>:</p>
+<p>$$
+L&#39;(0)=\int_a^b\frac{d {} }{d {}t}\left&lt;{}\dot\gamma,U\right&gt;-\left&lt;{}D_{\dot\gamma}\dot\gamma,U\right&gt;dt=\left&lt;{}\dot\gamma(t),U(t)\right&gt;|_a^b-\int_a^b\left&lt;{}\ddot\gamma(t),U(t)\right&gt;.
+$$</p>
+<p>称$\{\gamma_u\}$为$\gamma$的<strong>正常变分</strong>, 若$\gamma_u(a)=\gamma(a),$
+$\gamma_u(b)=\gamma(b),$ $\gamma_0=\gamma.$ 对于正常变分, $U(a)=U(b)=0,$
+因此第一变分公式中第一项消失. 现在我们可以看到测地线的另一等价描述:</p>
+<p><strong>引理 1</strong>. <em>曲线$\gamma:[a,b]\rightarrow M$是测地线的充要条件是, 它是长度函数关于所有正常变分的临界点.</em> </p>
+<p>设$N$为$M$中闭子流形, $x\notin N,$
+那么$\,\exists\,y\in N$使得$d(x,y)=d(x,N).$
+取最短的正规测地线$\gamma:[a,b]\rightarrow M$连接$x,y.$</p>
+<p><strong>引理 2</strong>. <em>$\gamma\perp N,$ 即$\dot\gamma(b)\perp N_y.$</em> </p>
+<p><strong>证:</strong> 设$Y\in N_y,$ 取$\xi:[-\varepsilon,\varepsilon]\rightarrow N,$
+$\xi(0)=y,$ $\dot\xi(0)=Y.$ 那么可以取到单参数曲线族$\{\gamma_u\},$
 $\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a)=x,$ $\gamma_u(b)=\xi(u).$
-In this way, the transverse vector field $U$ satisfies $U(x)=0,$ $U(y)=Y,$ thus:
-$$
-L'(0)=\left<{}\dot\gamma(b),U(b)\right>=\left<{}\dot\gamma(b),Y\right>=0 \quad \Rightarrow \quad \gamma\perp N.
-$$
-
-
-
-second variation formula
-----------
-
-Generally, it is meaningful to calculate $L''(0)$ when $L'(0)=0$. Therefore, assuming $\gamma$ is a regular geodesic, then:
-$$
-L''(u)=\int_a^b\frac{d {} }{d {}u}\left(\frac{1}{|T|}\left<{}T,D_TU\right>\right)dt,
-$$
-
-
-The integral term can be written as:
+这样横截向量场$U$满足$U(x)=0,$ $U(y)=Y,$ 从而:</p>
+<p>$$
+L&#39;(0)=\left&lt;{}\dot\gamma(b),U(b)\right&gt;=\left&lt;{}\dot\gamma(b),Y\right&gt;=0 \quad \Rightarrow \quad \gamma\perp N.
+$$</p>
+<h2 id="第二变分公式"><a href="#第二变分公式" class="headerlink" title="第二变分公式"></a>第二变分公式</h2><p>一般当$L&#39;(0)=0$时, 计算$L&#39;&#39;(0)$才有意义. 故现设$\gamma$为正规测地线, 则:</p>
+<p>$$
+L&#39;&#39;(u)=\int_a^b\frac{d {} }{d {}u}\left(\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;\right)dt,
+$$</p>
+<p>其中积分项可写为: 
 $$
 \begin{aligned}
- U\left(\frac{1}{|T|}\left<{}T,D_TU\right>\right)&=-\frac{1}{|T|^3}\left<{}T,D_TU\right>^2+\frac{1}{|T|}\left<{}D_TU,D_TU\right>+\frac{1}{|T|}\left<{}T,D_UD_TU\right>\\
- &=-\frac{1}{|T|^3}\left(T\left<{}T,U\right>-\left<{}D_TT,U\right>\right)^2+\frac{1}{|T|}|D_TU|^2+\frac{1}{|T|}\left(-\left<{}T,R_{UT}U\right>+\left<{}D_TD_UU,T\right>\right).
+ U\left(\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;\right)&amp;=-\frac{1}{|T|^3}\left&lt;{}T,D_TU\right&gt;^2+\frac{1}{|T|}\left&lt;{}D_TU,D_TU\right&gt;+\frac{1}{|T|}\left&lt;{}T,D_UD_TU\right&gt;\\
+ &amp;=-\frac{1}{|T|^3}\left(T\left&lt;{}T,U\right&gt;-\left&lt;{}D_TT,U\right&gt;\right)^2+\frac{1}{|T|}|D_TU|^2+\frac{1}{|T|}\left(-\left&lt;{}T,R_{UT}U\right&gt;+\left&lt;{}D_TD_UU,T\right&gt;\right).
  \end{aligned}
 $$
- When brought to $u=0$, note that $\gamma$ is a regular geodesic at this time,
-Therefore:
+ 带入到$u=0$时, 注意此时$\gamma$为正规测地线,
+因此: 
 $$
 \begin{aligned}
- L''(0)&=\int_a^b -\left(\frac{d {} }{d {}t}\left<{}\dot\gamma,U\right>\right)^2+|\dot U(t)|^2-\left<{}\dot \gamma,R_{U\dot\gamma}U\right>+\frac{d {} }{d {}t}\left<{}D_UU,\dot\gamma\right>dt\\
- &=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b\left(|\dot U(t)|^2-\left<{}R_{\dot\gamma U}\dot\gamma,U\right>-\left(\left<{}\dot\gamma,U\right>'\right)^2\right)dt.
+ L&#39;&#39;(0)&amp;=\int_a^b -\left(\frac{d {} }{d {}t}\left&lt;{}\dot\gamma,U\right&gt;\right)^2+|\dot U(t)|^2-\left&lt;{}\dot \gamma,R_{U\dot\gamma}U\right&gt;+\frac{d {} }{d {}t}\left&lt;{}D_UU,\dot\gamma\right&gt;dt\\
+ &amp;=\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a+\int_a^b\left(|\dot U(t)|^2-\left&lt;{}R_{\dot\gamma U}\dot\gamma,U\right&gt;-\left(\left&lt;{}\dot\gamma,U\right&gt;&#39;\right)^2\right)dt.
  \end{aligned}
-$$
+$$</p>
+<p>这就是<strong>弧长第二变分公式</strong>, 决定项为曲率项,
+称$\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a$为边界项,
+当$\{\gamma_u\}$为正常变分时边界项消失.</p>
+<p>由于$U(t)$沿$\dot\gamma$的切向分量并不改变$\gamma$的长度,
+我们只需考虑正交分量$U^\perp(t),$
+即设$\left&lt;{}U^\perp,\dot\gamma\right&gt;=0,$ $U=U^\perp+f\dot\gamma.$ 那么</p>
+<p>$$
+|\dot U(t)|^2-\left(\left&lt;{}\dot\gamma(t),U(t)\right&gt;&#39;\right)^2=|\dot U^\perp (t)|^2+f&#39;(t)^2-f&#39;(t)^2=|\dot U^\perp(t)|^2,
+$$</p>
+<p>$$
+\left&lt;{}R_{\dot\gamma U}\dot\gamma,U\right&gt;=\left&lt;{}R_{\dot\gamma U^\perp}\dot\gamma, U^\perp\right&gt;.
+$$</p>
+<p>因此弧长第二变分公式也可写为:</p>
+<p>$$
+L&#39;&#39;(0)=\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\left&lt;{}R_{\dot\gamma U^\perp}\dot\gamma,U^\perp\right&gt;\right)dt.
+$$</p>
+<p>后面的应用日后补充.</p>
+<p>文章最后更新于 2022-04-22 21:06:49 </p>
 
-This is the **arc length second variation formula**, the determining term is the curvature term,
-Call $\left<{}D_UU,\dot\gamma\right>|^b_a$ as boundary term,
-The boundary term disappears when $\{\gamma_u\}$ is a normal variation.
-Since the tangential component of $U(t)$ along $\dot\gamma$ does not change the length of $\gamma$,
-We only need to consider the orthogonal components $U^\perp(t),$
-That is, suppose $\left<{}U^\perp,\dot\gamma\right>=0,$ $U=U^\perp+f\dot\gamma.$ Then
-$$
-|\dot U(t)|^2-\left(\left<{}\dot\gamma(t),U(t)\right>'\right)^2=|\dot U^\perp (t)|^2+f'(t)^2-f'(t)^2=|\dot U^\perp(t)|^2,
-$$
-
-
-
-
-$$
-\left<{}R_{\dot\gamma U}\dot\gamma,U\right>=\left<{}R_{\dot\gamma U^\perp}\dot\gamma, U^\perp\right>.
-$$
-
-
-
-Therefore, the second variation formula of arc length can also be written as:
-$$
-L''(0)=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\left<{}R_{\dot\gamma U^\perp}\dot\gamma,U^\perp\right>\right)dt.
-$$
-
-
-
-Later applications will be added in the future.
-
-The article was last updated on 2022-04-22 21:06:49
                 </div>
             
         </div>
@@ -354,7 +392,7 @@ The article was last updated on 2022-04-22 21:06:49
     <ul>
         <li>本文标题：《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-04-22 21:06:47</li>
+        <li>创建时间：2022-04-23 00:06:47</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/04/22/《黎曼几何初步》笔记(6)-弧长第一与第二变分公式/
         </li>
@@ -386,7 +424,7 @@ The article was last updated on 2022-04-22 21:06:49
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(13)-子流形和第二基本形式</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (13)-Submanifolds and the second basic form</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (13) - Submanifold and Second Basic Form</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -408,7 +446,7 @@ The article was last updated on 2022-04-22 21:06:49
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(5)-Jacobi场和Cartan-Hadamard定理</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Notes on Riemannian Geometry (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -660,11 +698,11 @@ The article was last updated on 2022-04-22 21:06:49
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F"><span class="nav-text">第一变分公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F"><span class="nav-text">第二变分公式</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F"><span class="nav-text">第一变分公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F"><span class="nav-text">第二变分公式</span></a></li></ol>
         </div>
     
 </div>
@@ -715,6 +753,36 @@ The article was last updated on 2022-04-22 21:06:49
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -738,46 +806,6 @@ The article was last updated on 2022-04-22 21:06:49
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

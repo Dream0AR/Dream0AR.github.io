@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(14)-体积的变分和极小子流形</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (14) - Variations of Volume and Minimal Submanifolds</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (14) - Volume Variations and Minimal Submanifolds</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-04-30 14:07:59
+        <i class="fas fa-edit"></i>&nbsp;2022-04-30 17:07:59
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,367 +230,480 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="体积第一变分"><a href="#体积第一变分" class="headerlink" title="体积第一变分"></a>体积第一变分</h2><p>本节考虑测地线的推广: $k$维<strong>极小子流形</strong>.
+设在$\widetilde{M}$中给定了具有边界的浸入紧致子流形:</p>
+<p>$$
+f:M\rightarrow \widetilde{M}, \quad\dim M=n&lt;\widetilde{n}=\dim\widetilde{M}.
+$$</p>
+<p>设有$C^\infty$映射$F:M\times [0,\varepsilon]\rightarrow\widetilde{M},$
+$f_t(x):=F(x,t).$ 若$f_0=f,$ $f_t|_{\partial M}=f|_{\partial M},$
+$f_t$为浸入, 则称$\{M_t\}$为$M$的<strong>正常变分</strong>, $M_t$为$f_t$的像.
+沿给定浸入$f$的<strong>变分向量场</strong>为$W=dF\left(\left.\frac{d {} }{d {}t}\right|_{t=0}\right).$
+体积$V(t):=V(M_t)$指$M$在$f_t^\ast \widetilde{g}$下的体积, 那么当$V&#39;=0$时,
+称$M$关于$\widetilde{M}$是<strong>稳态</strong>的.
+若对$M$中每个具$C^\infty$边界$\partial D$的定向紧致子区域$D,$
+$D$关于每个正常变分都是稳态的, 则称$M$为<strong>极小</strong>的.</p>
+<p>由于$f:M\rightarrow\widetilde{M}$为浸入, 局部上$f$是一个嵌入,
+因此可将$M$与$f(M)$恒同,
+将$f(M)$的平均曲率法向量场$\eta$称为$M$在$\widetilde{M}$中的<strong>平均曲率法向量场</strong>,
+$M$的<strong>平均曲率</strong>为$|\eta|.$</p>
+<p><strong>引理 1</strong>. <em>浸入子流形$f:M\rightarrow \widetilde{M}$是极小的, 充要条件是其平均曲率为零.</em> </p>
+<p>事实上它是如下更精确定理的直接推论.</p>
+<p><strong>命题 2</strong> (体积第一变分). <em>设$M$是浸入在$\widetilde{M}$中具边界的定向紧致流形, $\{M_t\}$为其正常变分, 则</em> </p>
+<p>$$
+V&#39;(0)=\int_M\left&lt;{}\eta,W\right&gt;dv.
+$$</p>
+<p><strong>证:</strong> 记$\Omega_t$为$M$上度量$f_t^\ast \widetilde{g}$的体积元. 我们来证明</p>
+<p>$$
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=(\operatorname{div}\top W)\Omega_0+\left&lt;{}\eta,W\right&gt;\Omega_0.
+$$</p>
+<p>一旦式子成立, 那么由Green定理, 以及$W|_{\partial M}=0,$ 即有:</p>
+<p>$$
+V&#39;(0)=\int_M\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=\int_{\partial M}\left&lt;{}\top W,n\right&gt;dv+\int_M\left&lt;{}\eta,W\right&gt;\Omega_0=\int_M\left&lt;{}\eta,W\right&gt;\Omega_0.
+$$</p>
+<p>对于体积元, 我们有:</p>
+<p>$$
+\Omega_t=\sqrt{G_t}{}dx^{1}\wedge\cdots\wedge{}dx^{ {}n}.
+$$</p>
+<p>记$f_t^\ast \widetilde{g}=(g_t)_{ij}dx^idx^j=\left&lt;{}-,-\right&gt;_t,$
+$G_t=\det[(g_t)_{ij}],$
+$\Omega_{\mathbb{R} }={}dx^{1}\wedge\cdots\wedge{}dx^{ {}n},$ 那么</p>
+<p>$$
+\left&lt;{}\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n},\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n}\right&gt;_t=\det\left[\left&lt;{}\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right&gt;_t\right]=\det[(g_t)_{ij}]=G_t.
+$$</p>
+<p>于是我们有:</p>
+<p>$$
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=\left(\left.\frac{d {} }{d {}t}\right|_{t=0}\sqrt{G_t}\right)\Omega_{\mathbb{R} }=\frac{1}{\sqrt{G_0} }\left&lt;{}\widetilde{D}_W\left(\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge\frac{\partial {} }{\partial {}x^n}\right),\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n}\right&gt;_0\Omega_{\mathbb{R} }.
+$$</p>
+<p>记$\perp W=\nu,$ $\top W=\tau,$ 则: 
+$$
+\begin{aligned}
+ \widetilde{D}_W\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }=&amp;\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_W\frac{\partial {} }{\partial {}x^i}\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&amp;\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }W\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&amp;\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }\tau\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}\\
+ &amp;+\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }\nu\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&amp;\left(\operatorname{tr}(X\mapsto \widetilde{D}_X\tau)+\operatorname{tr}A_\nu\right)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }\\
+ =&amp;(\operatorname{div}\tau+\left&lt;{}\eta,\nu\right&gt;)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }\\
+ =&amp;(\operatorname{div}\top W+\left&lt;{}\eta,W\right&gt;)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }
+ \end{aligned}
+$$</p>
+<p>从而,</p>
+<p>$$
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=(\operatorname{div}\top W+\left&lt;{}\eta,W\right&gt;)\sqrt{G_0}\,\Omega_{\mathbb{R} }=(\operatorname{div}\top W)\Omega_0+\left&lt;{}\eta,W\right&gt;\Omega_0.
+$$</p>
+<p>设$M$是$\widetilde{M}$中的浸入超曲面, 则$M$的平均曲率正好是主曲率之和,
+于是我们有如下推论:</p>
+<p><strong>推论 3</strong>. <em>超曲面是极小子流形的充要条件是它在每点处主曲率之和为零.</em> </p>
+<p>利用Gauss方程, 我们可以得到下面的结果.</p>
+<p><strong>推论 4</strong>. <em>非正截面曲率流形的极小子流形具非正Ricci曲率.</em> </p>
+<p>通过建立$M$上Laplace算子$\Delta$与$\widetilde{D}^2f$的关系,
+我们还有如下的结论:</p>
+<p><strong>推论 5</strong>. <em>在非正截面曲率的单连通完备流形$\widetilde{M}$中不存在紧致的极小子流形.</em> </p>
+<p>事实上, 局部上取定坐标系后, 平均曲率$|\eta|=0$可由$f$来表示,
+这将是一个<strong>拟线性的</strong>椭圆型方程组,
+因此极小子流形的研究与偏微分方程关系重大. 特别地,
+当$\widetilde{M}=\mathbb{R}^{n+k}$时, $M$为其中的极小图像当且仅当</p>
+<p>$$
+\sum_{i,j} g^{ij}\frac{\partial^2 {}f^A}{\partial {}y^i\partial {}y^j}=0,\quad A=n+1,\cdots,n+k,
+$$</p>
+<p>其中$g_{ij}=\delta_{ij}+\sum_A\frac{\partial {}f^A}{\partial {}y^i}\frac{\partial {}f^A}{\partial {}y^j}.$</p>
+<h2 id="体积第二变分"><a href="#体积第二变分" class="headerlink" title="体积第二变分"></a>体积第二变分</h2><p>同上假设, 且我们仅讨论$V&#39;(0)=0$基础上的情况, 因为这时第二变分才有意义.
+由体积第一变分, 切向分量$\top W$不起作用,
+因此不妨总假设$\{M_t\}$是<strong>法向正常变分</strong>, 即$W\perp f(M).$</p>
+<p>设$M$是浸入在$\widetilde{M}$中的极小子流形,
+若对每个具$C^\infty$边界$\partial D$的可定向紧致子域$D,$
+它的每个法向变分都具非负体积第二变分, 则称$M$是<strong>稳定的</strong>.
+也即稳定的极小子流形对所有具紧支集的法向正常变分,
+都具非负的体积第二变分.</p>
+<p>对任意同上条件的$D,$
+若$\widetilde{M}$中任意与$D$边界相同的$C^\infty$子流形$\overline{D},$
+总有$V(\overline{D})\ge V(D),$ 则称该极小子流形是<strong>(整体)极小化的</strong>.</p>
+<p>设$\mathscr{N}(M)$为$M$的<strong>法丛</strong>, 对每个$X\in \mathscr{T}(M),$ 定义映射</p>
+<p>$$
+\nabla_X:\mathscr{N}(M)\rightarrow \mathscr{N}(M), \quad \nabla_X\nu=\perp\widetilde{D}_X\nu.
+$$</p>
+<p>容易验证$\nabla$具有联络的所有性质,
+称它是在$M$法丛$\mathscr{N}(M)$上的<strong>诱导联络</strong>. 类似地,
+任意取定$M$中幺正标架场$\{E_i\},$ 我们定义$\nabla$的Laplace算子:</p>
+<p>$$
+\overline{\Delta}\nu:=\operatorname{tr}\nabla^2\nu=\sum_{i=1}^n \nabla_{E_i}\nabla_{E_i}\nu-\nabla_{D_{E_i}E_i}\nu,\quad \,\forall\,\nu\in \mathscr{N}(M).
+$$</p>
+<p>对任意标架场$\{E_i\},$
+我们再引入$\mathscr{N}(M)$上的<strong>Ricci张量</strong>$\overline{\operatorname{Ric} }:$</p>
+<p>$$
+\overline{\operatorname{Ric} }:\mathscr{N}(M)\rightarrow\mathscr{N}(M),\quad \overline{\operatorname{Ric} }(\nu)=\sum_{i=1}^n\widetilde{R}_{E_i\nu}E_i.
+$$</p>
+<p>对于第二基本形式$A_\nu:M_x\rightarrow M_x,$
+对任意$M_x$中标准正交基$\{e_i\},$ 定义算子范数:</p>
+<p>$$
+|A_\nu|^2:=\sum_{i,j}\left&lt;{}A_\nu(e_i),e_j\right&gt;^2=\sum_{i,j}\left&lt;{}S(e_i,e_j),\nu\right&gt;^2.
+$$</p>
+<p>令$S^t$表示$S:M_x\otimes M_x\rightarrow M_x^\perp$的转置,
+即$S^t:M_x^\perp\rightarrow M_x\otimes M_x,$ 使得</p>
+<p>$$
+\left&lt;{}S^t(\mu),V\otimes W\right&gt;=\left&lt;{}\mu,S(V,W)\right&gt;,\quad \,\forall\,\mu\in M_x^\perp, \: V,W\in M_x.
+$$</p>
+<p>那么由线性代数知识($\Vert A\Vert^2=\operatorname{tr}(A^TA)=\operatorname{tr}(AA^T)$),</p>
+<p>$$
+|A_\nu|^2=\left&lt;{}(S\circ S^t)(\nu),\nu\right&gt;.
+$$</p>
+<p><strong>命题 6</strong> (体积第二变分). <em>设$M$是极小地浸入$\widetilde{M}$中的一个具边界定向紧流形, $f:M\rightarrow\widetilde{M},$ 且$\{M_t\}$为$M$的法向正常变分, 变分向量场为$\nu\in \mathscr{N}(M),$ $V(t)=V(M_t).$ 那么,</em> </p>
+<p>$$
+V&#39;&#39;(0)=\int_M\left&lt;{}-\overline{\Delta}\nu-\overline{\operatorname{Ric} }(\nu)-(S\circ S^t)(\nu),\nu\right&gt;dv
+$$</p>
+<p><strong>证:</strong> 首先由体积第一变分, 可以得到:</p>
+<p>$$
+V&#39;(t)=\int_M\left&lt;{}\eta_t,\nu_t\right&gt;\Omega_t,
+$$</p>
+<p>其中局部上$\eta_t$是$f_t(M)\subset \widetilde{M}$的平均曲率法向量场,
+$\nu_t$是$f_t(M)$上的法向变分向量场. 进一步,</p>
+<p>$$
+V&#39;&#39;(0)=\int_M\left&lt;{}\widetilde{D}_\nu\eta,\nu\right&gt;\Omega+\left&lt;{}\eta,\widetilde{D}_\nu\nu\right&gt;\Omega+\left&lt;{}\eta,\nu\right&gt;\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t.
+$$</p>
+<p>由于$\eta=0,$ 通过直接的计算, 可以得到:</p>
+<p>$$
+V&#39;&#39;(0)=\int_M\left&lt;{}\widetilde{D}_\nu\eta,\nu\right&gt;\Omega=\int_M\left(\left&lt;{}-\overline{\Delta}\nu-\overline{\operatorname{Ric} }(\nu)-(S\circ S^t)(\nu),\nu\right&gt;+f\right)\Omega,
+$$</p>
+<p>其中$f$满足$\int_Mf\Omega=0.$ 这样就得到了结论. 具体计算的过程在此略过.</p>
+<p>当$M$为$\widetilde{M}$中的极小超曲面, $\widetilde{M}$可定向时,
+取单位法向量场$N\in\mathscr{N}(M),$ 那么$\nu=uN.$ 此时$\nabla_XN=0,$
+因此$\overline{\Delta} \nu=(\Delta u)N.$ 其次,</p>
+<p>$$
+\left&lt;{}\overline{\operatorname{Ric} }(\nu),\nu\right&gt;=u^2\sum_{i=1}^n\left&lt;{}\widetilde{\operatorname{Ric} }_{E_iN}E_i,N\right&gt;=u^2\widetilde{\operatorname{Ric} }(N,N).
+$$</p>
+<p>最后,</p>
+<p>$$
+\left&lt;{}(S\circ S^t)(\nu),\nu\right&gt;=u^2|A_N|^2=u^2\sum_i p_i^2,
+$$</p>
+<p>$\{p_i\}$为$M\subset \widetilde{M}$的主曲率. 记$A_N$为$A,$
+则此时第二变分公式为:</p>
+<p>$$
+V&#39;&#39;(0)=\int_M(-u\Delta u-u^2(\widetilde{\operatorname{Ric} }(N,N)+|A|^2))dv.
+$$</p>
+<p>由该式, 我们可推得如下命题:</p>
+<p><strong>命题 7</strong>. <em>设$M,\widetilde{M}$可定向, $M$是极小地浸入在$\widetilde{M}$中的超曲面, 则$M$稳定的充要条件是:</em> </p>
+<p>$$
+\int_M u^2(\widetilde{\operatorname{Ric} }(N,N)+|A|^2)dv\le \int_M |du|^2 dv,\quad \,\forall\,u\in C_c^\infty(M,\mathbb{R}).
+$$</p>
+<p><strong>定理 8</strong> (Schoen-Yau定理). <em>设$\widetilde{M}$为具正数量曲率的紧致定向$3$维流形, 则$\widetilde{M}$中不存在亏格为正的, 紧致的稳定极小的浸入$2$维定向子流形.</em> </p>
+<p><strong>证:</strong> 反证法, 假设$M$是这样的子流形. 由于$M$本身紧致,
+可令第二变分公式中$u\equiv 1,$ 则</p>
+<p>$$
+\int_M(\widetilde{\operatorname{Ric} }(N,N)+|A|^2)dv\le 0.
+$$</p>
+<p>此外, 可以证明:</p>
+<p>$$
+\widetilde{\operatorname{Ric} }(N,N)+|A|^2=\frac{1}{2}\sigma-K+\frac{1}{2}|A|^2,\tag*{(\ast )}
+$$</p>
+<p>其中$\sigma$是$\widetilde{M}$数量曲率在$M$上的限制,
+$K$是$M$上诱导度量的Gauss曲率. 积分得到:</p>
+<p>$$
+0\ge \frac{1}{2}\int_M\sigma dv-\int_MKdv+\frac{1}{2}\int_M|A|^2dv.
+$$</p>
+<p>由假设, $\int_M\sigma dv&gt;0;$ 由Gauss-Bonnet定理,</p>
+<p>$$
+\int_MKdv=2\pi \chi(M)=4\pi(1-g)\le 0.
+$$</p>
+<p>最后结合$\int_M|A|^2dv\ge 0$即可推得矛盾.</p>
+<p>于是我们只需证明$(\ast )$式. 取$M_x$的一组标准正交基$\{e_1,e_2\},$
+使得第二基本形式$A$是对角化的, 即</p>
+<p>$$
+A(e_1)=\lambda e_1,\quad A(e_2)=\mu e_2.
+$$</p>
+<p>由于$M$极小, $\operatorname{tr}A=0,$ $\lambda=-\mu.$
+因此$|A|^2=2\lambda^2.$ 令$N=e_3,$
+则$\{e_1,e_2,e_3\}$构成$\widetilde{M}_x$的一组标准正交基.
+记$\widetilde{K}(\operatorname{span}\{e_i,e_j\})=\widetilde{K}_{ij},$ 则</p>
+<p>$$
+\sigma=\sum_{i,j}\widetilde{K}_{ij}=2(\widetilde{\operatorname{Ric} }(N,N)+\widetilde{K}_{12}).
+$$</p>
+<p>由Gauss公式, $\widetilde{K}_{12}=K-\det(A)=K+\lambda^2,$
+因此$(\ast )$式即可得证:</p>
+<p>$$
+\widetilde{\operatorname{Ric} }(N,N)+|A|^2=\left(\frac{1}{2}\sigma-\widetilde{K}_{12}\right)+2\lambda^2=\frac{1}{2}\sigma-K+\lambda^2=\frac{1}{2}\sigma-K+\frac{1}{2}|A|^2.
+$$</p>
+<p>该定理是如下结论的关键, 与<strong>正质量定理</strong>密切相关:</p>
+<p><strong>定理 9</strong>. <em>若$\mathbb{R}^3$中的黎曼度量在紧集$K$外部是平坦的, 且处处具非负数量曲率, 则它必是平坦的.</em> </p>
+<p>最后, 我们来看欧氏空间中极小超曲面的结果.</p>
+<p><strong>引理 10</strong>. <em>设$M$是$\mathbb{R}^{n+1}$中极小超曲面. 若$D$是$M$中充分小的区域, 具$C^\infty$边界$\partial D,$ 则对$\mathbb{R}^{n+1}$中每一个使得$\partial D&#39;=\partial D$的超曲面$D&#39;,$ 有$V(D&#39;)\ge V(D).$</em> </p>
+<p>由于局部上,
+每个超曲面都是某函数$f:\mathscr{U}\rightarrow \mathbb{R}(\mathscr{U}\subset \mathbb{R}^n)$的图像,
+因此该引理为如下引理的直接推论:</p>
+<p><strong>引理 11</strong>. <em>设$\mathscr{U}$为$\mathbb{R}^n$中的区域, 具$C^\infty$边界$\partial \mathscr{U}.$ 有$C^\infty$函数$f:\overline{UUU}\rightarrow\mathbb{R},$ 使得$f$在$\overline{\mathscr{U} }\times\mathbb{R}$中的图像$M$是$\mathbb{R}^{n+1}$中的一个(具边界的)极小超曲面. 若$N$是$\overline{\mathscr{U} }\times \mathbb{R}$中的超曲面, 使得$\partial N=\partial M,$ 则$V(N)\ge V(M),$ 且取等当且仅当$N=M.$</em> </p>
+<p><strong>证:</strong>
+令$\nu=\frac{1}{W}\left(\frac{\partial {}f}{\partial {}x^1},\cdots,\frac{\partial {}f}{\partial {}x^n},-1\right)$为$M$在$(x,f(x))$处的单位外法向量,
+$W=\sqrt{1+|df|^2}.$
+令$\omega$为$\overline{\mathscr{U} }\times\mathbb{R}$中的$n$次微分形式:</p>
+<p>$$
+\omega:=\sum_{i=1}^{n+1}(-1)^{i-1}\nu_idx^1\wedge\cdots\wedge \widehat{dx^i}\wedge \cdots\wedge dx^{n+1}.
+$$</p>
+<p>我们来说明$d\omega=0.$ 首先,
+$d\omega=\sum_i\frac{\partial {}\nu_i}{\partial {}x^i}{}dx^{1}\wedge\cdots\wedge{}dx^{ {}n+1},$
+其次向量场$X_i=\frac{\partial {} }{\partial {}x^i}+\frac{\partial {}f}{\partial {}x^i}\frac{\partial {} }{\partial {}x^{n+1} }$构成了$M_y$的一组基,
+同时, 计算可得</p>
+<p>$$
+A_\nu(X_i)=\frac{\partial {}\nu}{\partial {}x^i}+\frac{\partial {}f}{\partial {}x^i}\frac{\partial {}\nu}{\partial {}x^{n+1} }=\frac{\partial {}\nu}{\partial {}x^i}=\sum_j\frac{\partial {}\nu_j}{\partial {}x^i}X_j.
+$$</p>
+<p>由于$M$是极小的,
+$\operatorname{tr}A_\nu=\sum_i \frac{\partial {}\nu_i}{\partial {}x^i}=0,$
+从而$d\omega=0.$</p>
+<p>设$\Sigma$为由$M,N$围成的区域, $\partial \Sigma=M-N.$ 因此由Stokes公式,</p>
+<p>$$
+\int_M\omega-\int_N\omega=\int_{\Sigma}\omega=\int_\Sigma d\omega=0,
+$$</p>
+<p>从而$\int_M \omega=\int_N\omega.$</p>
+<p>由于单位外法向量$\nu$的对偶微分形式为$\widetilde{\nu}=\nu_idx^i,$
+有$\widetilde{\nu}\wedge \omega=dx^1\wedge\cdots\wedge dx^{n+1}.$
+因此$\omega|_M$就是$M$的体积元. 另一方面, 记$\Omega$为$N$的体积元, 那么</p>
+<p>$$
+V(M)=\int_N\omega=\int_N\left&lt;{}\omega,\Omega\right&gt;\Omega\le \int_N |\omega||\Omega| \Omega=\int_N \Omega=V(N).
+$$</p>
+<p>当$M\neq N$时, 取$p\in M,$ $q\in N$投影到$\mathscr{U}$中相同的点,
+但$M_{p},N_q$并不平行.
+此时在$q$点处$\left&lt;{}\omega,\Omega\right&gt;&lt;1$严格成立,
+进而不等式在$N$上的小邻域也成立. 从而$V(M)&lt;V(N),$ 命题得证.</p>
+<p><strong>推论 12</strong>. <em>如果$f:\mathbb{R}^n\rightarrow \mathbb{R}$的图像是$\mathbb{R}^{n+1}$中的极小超曲面, 那么它是极小化的, 进而是稳定的.</em> </p>
+<p>文章最后更新于 2022-04-30 14:19:16 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    first variation of volume
-----------
-
-This section considers the generalization of geodesics: $k$-dimensional **minimal submanifold**.
-Let an immersed compact submanifold with boundaries be given in $\widetilde{M}$:
-
-
-$$
-f:M\rightarrow \widetilde{M}, \quad\dim M=n<\widetilde{n}=\dim\widetilde{M}.
-$$
-Let $C^\infty$ map $F:M\times [0,\varepsilon]\rightarrow\widetilde{M},$
-$f_t(x):=F(x,t).$ If $f_0=f,$ $f_t|_{\partial M}=f|_{\partial M},$
-$f_t$ is immersion, then $\{M_t\}$ is said to be the **normal variation** of $M$, and $M_t$ is the image of $f_t$.
-The **variation vector field** along a given immersion $f$ is $W=dF\left(\left.\frac{d {} }{d {}t}\right|_{t=0}\right).$
-Volume $V(t):=V(M_t)$ refers to the volume of $M$ under $f_t^\ast \widetilde{g}$, then when $V'=0$,
-$M$ is said to be **steady-state** with respect to $\widetilde{M}$.
-If for each directed compact subregion $D with $C^\infty$ boundary $\partial D$ in $M$,
-If $D$ is stationary with respect to every normal variation, then $M$ is said to be **minimum**.
-Since $f:M\rightarrow\widetilde{M}$ is an immersion, locally $f$ is an embedding,
-Therefore, $M$ and $f(M)$ can be identified,
-The average curvature normal vector field $\eta$ of $f(M)$ is called the **average curvature normal vector field** of $M$ in $\widetilde{M}$,
-The **average curvature** of $M$ is $|\eta|.$
-**Lemma 1**. *The immersed submanifold $f:M\rightarrow \widetilde{M}$ is extremely small, and the necessary and sufficient condition is that its average curvature is zero.*
-
-In fact it is a direct corollary of the following more precise theorem.
-
-**Proposition 2** (First variation of volume). *Suppose $M$ is a directional compact manifold with boundaries immersed in $\widetilde{M}$, and $\{M_t\}$ is its normal variation, then*
-$$
-V'(0)=\int_M\left<{}\eta,W\right>dv.
-$$
-
-
-
-**Proof:** Let $\Omega_t$ be the volume element measuring $f_t^\ast \widetilde{g}$ on $M$. Let us prove
-
-
-$$
-\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=(\operatorname{div}\top W)\Omega_0+\left<{}\eta,W\right>\Omega_0.
-$$
-Once the formula is established, then according to Green's theorem and $W|_{\partial M}=0,$ we have:
-
-
-$$
-V'(0)=\int_M\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=\int_{\partial M}\left<{}\top W,n\right>dv+\int_M\left<{}\eta,W\right>\Omega_0=\int_M\left<{}\eta,W\right>\Omega_0.
-$$
-
-
-
-For volume elements, we have:
-$$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="体积第一变分"><a href="#体积第一变分" class="headerlink" title="体积第一变分"></a>体积第一变分</h2><p>本节考虑测地线的推广: $k$维<strong>极小子流形</strong>.
+设在$\widetilde{M}$中给定了具有边界的浸入紧致子流形:</p>
+<p>$$
+f:M\rightarrow \widetilde{M}, \quad\dim M=n&lt;\widetilde{n}=\dim\widetilde{M}.
+$$</p>
+<p>设有$C^\infty$映射$F:M\times [0,\varepsilon]\rightarrow\widetilde{M},$
+$f_t(x):=F(x,t).$ 若$f_0=f,$ $f_t|_{\partial M}=f|_{\partial M},$
+$f_t$为浸入, 则称$\{M_t\}$为$M$的<strong>正常变分</strong>, $M_t$为$f_t$的像.
+沿给定浸入$f$的<strong>变分向量场</strong>为$W=dF\left(\left.\frac{d {} }{d {}t}\right|_{t=0}\right).$
+体积$V(t):=V(M_t)$指$M$在$f_t^\ast \widetilde{g}$下的体积, 那么当$V&#39;=0$时,
+称$M$关于$\widetilde{M}$是<strong>稳态</strong>的.
+若对$M$中每个具$C^\infty$边界$\partial D$的定向紧致子区域$D,$
+$D$关于每个正常变分都是稳态的, 则称$M$为<strong>极小</strong>的.</p>
+<p>由于$f:M\rightarrow\widetilde{M}$为浸入, 局部上$f$是一个嵌入,
+因此可将$M$与$f(M)$恒同,
+将$f(M)$的平均曲率法向量场$\eta$称为$M$在$\widetilde{M}$中的<strong>平均曲率法向量场</strong>,
+$M$的<strong>平均曲率</strong>为$|\eta|.$</p>
+<p><strong>引理 1</strong>. <em>浸入子流形$f:M\rightarrow \widetilde{M}$是极小的, 充要条件是其平均曲率为零.</em> </p>
+<p>事实上它是如下更精确定理的直接推论.</p>
+<p><strong>命题 2</strong> (体积第一变分). <em>设$M$是浸入在$\widetilde{M}$中具边界的定向紧致流形, $\{M_t\}$为其正常变分, 则</em> </p>
+<p>$$
+V&#39;(0)=\int_M\left&lt;{}\eta,W\right&gt;dv.
+$$</p>
+<p><strong>证:</strong> 记$\Omega_t$为$M$上度量$f_t^\ast \widetilde{g}$的体积元. 我们来证明</p>
+<p>$$
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=(\operatorname{div}\top W)\Omega_0+\left&lt;{}\eta,W\right&gt;\Omega_0.
+$$</p>
+<p>一旦式子成立, 那么由Green定理, 以及$W|_{\partial M}=0,$ 即有:</p>
+<p>$$
+V&#39;(0)=\int_M\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=\int_{\partial M}\left&lt;{}\top W,n\right&gt;dv+\int_M\left&lt;{}\eta,W\right&gt;\Omega_0=\int_M\left&lt;{}\eta,W\right&gt;\Omega_0.
+$$</p>
+<p>对于体积元, 我们有:</p>
+<p>$$
 \Omega_t=\sqrt{G_t}{}dx^{1}\wedge\cdots\wedge{}dx^{ {}n}.
-$$
-
-
-Remember $f_t^\ast \widetilde{g}=(g_t)_{ij}dx^idx^j=\left<{}-,-\right>_t,$
+$$</p>
+<p>记$f_t^\ast \widetilde{g}=(g_t)_{ij}dx^idx^j=\left&lt;{}-,-\right&gt;_t,$
 $G_t=\det[(g_t)_{ij}],$
-$\Omega_{\mathbb{R} }={}dx^{1}\wedge\cdots\wedge{}dx^{ {}n},$ Then
-
-
-$$
-\left<{}\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n},\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n}\right>_t=\det\left[\left<{}\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right>_t\right]=\det[(g_t)_{ij}]=G_t.
-$$
-
-
-
-So we have:
-$$
-\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=\left(\left.\frac{d {} }{d {}t}\right|_{t=0}\sqrt{G_t}\right)\Omega_{\mathbb{R} }=\frac{1}{\sqrt{G_0} }\left<{}\widetilde{D}_W\left(\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge\frac{\partial {} }{\partial {}x^n}\right),\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n}\right>_0\Omega_{\mathbb{R} }.
-$$
-
-
-
-Note $\perp W=\nu,$ $\top W=\tau,$ then:
+$\Omega_{\mathbb{R} }={}dx^{1}\wedge\cdots\wedge{}dx^{ {}n},$ 那么</p>
+<p>$$
+\left&lt;{}\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n},\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n}\right&gt;_t=\det\left[\left&lt;{}\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right&gt;_t\right]=\det[(g_t)_{ij}]=G_t.
+$$</p>
+<p>于是我们有:</p>
+<p>$$
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=\left(\left.\frac{d {} }{d {}t}\right|_{t=0}\sqrt{G_t}\right)\Omega_{\mathbb{R} }=\frac{1}{\sqrt{G_0} }\left&lt;{}\widetilde{D}_W\left(\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge\frac{\partial {} }{\partial {}x^n}\right),\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \frac{\partial {} }{\partial {}x^n}\right&gt;_0\Omega_{\mathbb{R} }.
+$$</p>
+<p>记$\perp W=\nu,$ $\top W=\tau,$ 则: 
 $$
 \begin{aligned}
- \widetilde{D}_W\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }=&\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_W\frac{\partial {} }{\partial {}x^i}\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
- =&\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }W\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
- =&\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }\tau\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}\\
- &+\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }\nu\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
- =&\left(\operatorname{tr}(X\mapsto \widetilde{D}_X\tau)+\operatorname{tr}A_\nu\right)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }\\
- =&(\operatorname{div}\tau+\left<{}\eta,\nu\right>)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }\\
- =&(\operatorname{div}\top W+\left<{}\eta,W\right>)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }
+ \widetilde{D}_W\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }=&amp;\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_W\frac{\partial {} }{\partial {}x^i}\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&amp;\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }W\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&amp;\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }\tau\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}\\
+ &amp;+\sum_i\frac{\partial {} }{\partial {}x^1}\wedge\cdots\wedge \widetilde{D}_{\frac{\partial {} }{\partial {}x^i} }\nu\wedge \cdots\wedge \frac{\partial {} }{\partial {}x^n}.\\
+ =&amp;\left(\operatorname{tr}(X\mapsto \widetilde{D}_X\tau)+\operatorname{tr}A_\nu\right)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }\\
+ =&amp;(\operatorname{div}\tau+\left&lt;{}\eta,\nu\right&gt;)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }\\
+ =&amp;(\operatorname{div}\top W+\left&lt;{}\eta,W\right&gt;)\frac{\partial {} }{\partial {}{}x^{1} }\wedge\cdots\wedge\frac{\partial {} }{\partial {}{}x^{ {}n} }
  \end{aligned}
-$$
-
-Thus,
-$$
-\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=(\operatorname{div}\top W+\left<{}\eta,W\right>)\sqrt{G_0}\,\Omega_{\mathbb{R} }=(\operatorname{div}\top W)\Omega_0+\left<{}\eta,W\right>\Omega_0.
-$$
-
-
-
-Assume $M$ is the immersion hypersurface in $\widetilde{M}$, then the average curvature of $M$ is exactly the sum of the principal curvatures,
-So we have the following inference:
-
-**Corollary 3**. *The necessary and sufficient condition for a hypersurface to be a minimal submanifold is that the sum of its principal curvatures at every point is zero.*
-Using the Gauss equation, we can get the following results.
-
-**Corollary 4**. *The minimal submanifold of a manifold with non-positive cross-section curvature has non-positive Ricci curvature.*
-
-By establishing the relationship between the Laplace operator $\Delta$ and $\widetilde{D}^2f$ on $M$,
-We also have the following conclusions:
-**Corollary 5**. *There is no compact minimal submanifold in the simply connected complete manifold $\widetilde{M}$ with non-positive cross-section curvature.*
-
-In fact, after taking a fixed coordinate system locally, the average curvature $|\eta|=0$ can be represented by $f$,
-This will be a **quasilinear** elliptical system of equations,
-Therefore, the study of minimal submanifolds is closely related to partial differential equations. In particular,
-When $\widetilde{M}=\mathbb{R}^{n+k}$, $M$ is the minimum image if and only if
-
-
-$$
+$$</p>
+<p>从而,</p>
+<p>$$
+\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t=(\operatorname{div}\top W+\left&lt;{}\eta,W\right&gt;)\sqrt{G_0}\,\Omega_{\mathbb{R} }=(\operatorname{div}\top W)\Omega_0+\left&lt;{}\eta,W\right&gt;\Omega_0.
+$$</p>
+<p>设$M$是$\widetilde{M}$中的浸入超曲面, 则$M$的平均曲率正好是主曲率之和,
+于是我们有如下推论:</p>
+<p><strong>推论 3</strong>. <em>超曲面是极小子流形的充要条件是它在每点处主曲率之和为零.</em> </p>
+<p>利用Gauss方程, 我们可以得到下面的结果.</p>
+<p><strong>推论 4</strong>. <em>非正截面曲率流形的极小子流形具非正Ricci曲率.</em> </p>
+<p>通过建立$M$上Laplace算子$\Delta$与$\widetilde{D}^2f$的关系,
+我们还有如下的结论:</p>
+<p><strong>推论 5</strong>. <em>在非正截面曲率的单连通完备流形$\widetilde{M}$中不存在紧致的极小子流形.</em> </p>
+<p>事实上, 局部上取定坐标系后, 平均曲率$|\eta|=0$可由$f$来表示,
+这将是一个<strong>拟线性的</strong>椭圆型方程组,
+因此极小子流形的研究与偏微分方程关系重大. 特别地,
+当$\widetilde{M}=\mathbb{R}^{n+k}$时, $M$为其中的极小图像当且仅当</p>
+<p>$$
 \sum_{i,j} g^{ij}\frac{\partial^2 {}f^A}{\partial {}y^i\partial {}y^j}=0,\quad A=n+1,\cdots,n+k,
-$$
-Where $g_{ij}=\delta_{ij}+\sum_A\frac{\partial {}f^A}{\partial {}y^i}\frac{\partial {}f^A}{\partial {}y^j}.$
-
-second variation of volume
-----------
-
-The same assumption as above, and we only discuss the situation based on $V'(0)=0$, because then the second variation is meaningful.
-From the first variation of the volume, the tangential component $\top W$ does not play a role,
-Therefore, we might as well always assume that $\{M_t\}$ is **normal normal variation**, that is, $W\perp f(M).$
-
-Let $M$ be a minimal submanifold immersed in $\widetilde{M}$,
-If for each orientable compact subdomain $D with $C^\infty$ boundary $\partial D$,
-Each of its normal variations has a non-negative volume second variation, then $M$ is said to be **stable**.
-That is to say, the stable minimal submanifold has normal variation for all normal variations with compact supports,
-All have non-negative second variations of volume.
-
-For any $D,$ with the same conditions as above
-If any $C^\infty$ submanifold $\overline{D},$ in $\widetilde{M}$ has the same boundary as $D$,
-There is always $V(\overline{D})\ge V(D),$, then the minimal submanifold is said to be **(overall) minimized**.
-
-Let $\mathscr{N}(M)$ be the **method bundle** of $M$, define mapping for each $X\in \mathscr{T}(M),$
-
-
-$$
+$$</p>
+<p>其中$g_{ij}=\delta_{ij}+\sum_A\frac{\partial {}f^A}{\partial {}y^i}\frac{\partial {}f^A}{\partial {}y^j}.$</p>
+<h2 id="体积第二变分"><a href="#体积第二变分" class="headerlink" title="体积第二变分"></a>体积第二变分</h2><p>同上假设, 且我们仅讨论$V&#39;(0)=0$基础上的情况, 因为这时第二变分才有意义.
+由体积第一变分, 切向分量$\top W$不起作用,
+因此不妨总假设$\{M_t\}$是<strong>法向正常变分</strong>, 即$W\perp f(M).$</p>
+<p>设$M$是浸入在$\widetilde{M}$中的极小子流形,
+若对每个具$C^\infty$边界$\partial D$的可定向紧致子域$D,$
+它的每个法向变分都具非负体积第二变分, 则称$M$是<strong>稳定的</strong>.
+也即稳定的极小子流形对所有具紧支集的法向正常变分,
+都具非负的体积第二变分.</p>
+<p>对任意同上条件的$D,$
+若$\widetilde{M}$中任意与$D$边界相同的$C^\infty$子流形$\overline{D},$
+总有$V(\overline{D})\ge V(D),$ 则称该极小子流形是<strong>(整体)极小化的</strong>.</p>
+<p>设$\mathscr{N}(M)$为$M$的<strong>法丛</strong>, 对每个$X\in \mathscr{T}(M),$ 定义映射</p>
+<p>$$
 \nabla_X:\mathscr{N}(M)\rightarrow \mathscr{N}(M), \quad \nabla_X\nu=\perp\widetilde{D}_X\nu.
-$$
-It is easy to verify that $\nabla$ has all the properties of contact,
-Call it an **induced contact** on the $M$ method bundle $\mathscr{N}(M)$. Similarly,
-Arbitrarily choosing the unitary frame field $\{E_i\},$ in $M$, we define the Laplace operator of $\nabla$:
-
-
-$$
+$$</p>
+<p>容易验证$\nabla$具有联络的所有性质,
+称它是在$M$法丛$\mathscr{N}(M)$上的<strong>诱导联络</strong>. 类似地,
+任意取定$M$中幺正标架场$\{E_i\},$ 我们定义$\nabla$的Laplace算子:</p>
+<p>$$
 \overline{\Delta}\nu:=\operatorname{tr}\nabla^2\nu=\sum_{i=1}^n \nabla_{E_i}\nabla_{E_i}\nu-\nabla_{D_{E_i}E_i}\nu,\quad \,\forall\,\nu\in \mathscr{N}(M).
-$$
-For any standard field $\{E_i\},$
-We then introduce the **Ricci tensor** on $\mathscr{N}(M)$$\overline{\operatorname{Ric} }:$
-
-
-$$
+$$</p>
+<p>对任意标架场$\{E_i\},$
+我们再引入$\mathscr{N}(M)$上的<strong>Ricci张量</strong>$\overline{\operatorname{Ric} }:$</p>
+<p>$$
 \overline{\operatorname{Ric} }:\mathscr{N}(M)\rightarrow\mathscr{N}(M),\quad \overline{\operatorname{Ric} }(\nu)=\sum_{i=1}^n\widetilde{R}_{E_i\nu}E_i.
-$$
-For the second basic form $A_\nu:M_x\rightarrow M_x,$
-Define the operator norm for any standard orthonormal basis $\{e_i\},$ in any $M_x$:
-
-
-$$
-|A_\nu|^2:=\sum_{i,j}\left<{}A_\nu(e_i),e_j\right>^2=\sum_{i,j}\left<{}S(e_i,e_j),\nu\right>^2.
-$$
-Let $S^t$ represent the transpose of $S:M_x\otimes M_x\rightarrow M_x^\perp$,
-That is $S^t:M_x^\perp\rightarrow M_x\otimes M_x,$ such that
-
-
-$$
-\left<{}S^t(\mu),V\otimes W\right>=\left<{}\mu,S(V,W)\right>,\quad \,\forall\,\mu\in M_x^\perp, \: V,W\in M_x.
-$$
-Then based on linear algebra knowledge ($\Vert A\Vert^2=\operatorname{tr}(A^TA)=\operatorname{tr}(AA^T)$),
-
-
-$$
-|A_\nu|^2=\left<{}(S\circ S^t)(\nu),\nu\right>.
-$$
-**Proposition 6** (Second variation of volume). *Suppose $M$ is a boundary-oriented compact manifold minimally immersed in $\widetilde{M}$, $f:M\rightarrow\widetilde{M},$ and $\{M_t\}$ is the normal normal variation of $M$, and the variation vector field is $\nu\in \mathscr{N}(M),$ $V(t)=V(M_t).$ Then,*
-$$
-V''(0)=\int_M\left<{}-\overline{\Delta}\nu-\overline{\operatorname{Ric} }(\nu)-(S\circ S^t)(\nu),\nu\right>dv
-$$
-
-
-
-**Proof:** First, from the first variation of volume, we can get:
-
-
-$$
-V'(t)=\int_M\left<{}\eta_t,\nu_t\right>\Omega_t,
-$$
-Among them, locally $\eta_t$ is the average curvature normal vector field of $f_t(M)\subset \widetilde{M}$,
-$\nu_t$ is the normal variation vector field on $f_t(M)$. Further,
-
-
-$$
-V''(0)=\int_M\left<{}\widetilde{D}_\nu\eta,\nu\right>\Omega+\left<{}\eta,\widetilde{D}_\nu\nu\right>\Omega+\left<{}\eta,\nu\right>\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t.
-$$
-
-
-Since $\eta=0,$ through direct calculation, we can get:
-$$
-V''(0)=\int_M\left<{}\widetilde{D}_\nu\eta,\nu\right>\Omega=\int_M\left(\left<{}-\overline{\Delta}\nu-\overline{\operatorname{Ric} }(\nu)-(S\circ S^t)(\nu),\nu\right>+f\right)\Omega,
-$$
-
-
-Among them, $f$ satisfies $\int_Mf\Omega=0.$ and thus we get the conclusion. The specific calculation process is skipped here.
-
-When $M$ is a minimal hypersurface in $\widetilde{M}$, and $\widetilde{M}$ can be oriented,
-Take the unit normal vector field $N\in\mathscr{N}(M),$ then $\nu=uN.$ At this time $\nabla_XN=0,$
-Therefore $\overline{\Delta} \nu=(\Delta u)N.$ Secondly,
-
-
-$$
-\left<{}\overline{\operatorname{Ric} }(\nu),\nu\right>=u^2\sum_{i=1}^n\left<{}\widetilde{\operatorname{Ric} }_{E_iN}E_i,N\right>=u^2\widetilde{\operatorname{Ric} }(N,N).
-$$
-
-
-Finally,
-$$
-\left<{}(S\circ S^t)(\nu),\nu\right>=u^2|A_N|^2=u^2\sum_i p_i^2,
-$$
-
-
-$\{p_i\}$ is the principal curvature of $M\subset \widetilde{M}$. Let $A_N$ be $A,$
-Then the second variation formula at this time is:
-$$
-V''(0)=\int_M(-u\Delta u-u^2(\widetilde{\operatorname{Ric} }(N,N)+|A|^2))dv.
-$$
-
-
-
-From this formula, we can derive the following proposition:
-
-**Proposition 7**. *Assume $M,\widetilde{M}$ can be oriented, $M$ is a hypersurface that is minimally immersed in $\widetilde{M}$, then the necessary and sufficient conditions for $M$ to be stable are:*
-$$
+$$</p>
+<p>对于第二基本形式$A_\nu:M_x\rightarrow M_x,$
+对任意$M_x$中标准正交基$\{e_i\},$ 定义算子范数:</p>
+<p>$$
+|A_\nu|^2:=\sum_{i,j}\left&lt;{}A_\nu(e_i),e_j\right&gt;^2=\sum_{i,j}\left&lt;{}S(e_i,e_j),\nu\right&gt;^2.
+$$</p>
+<p>令$S^t$表示$S:M_x\otimes M_x\rightarrow M_x^\perp$的转置,
+即$S^t:M_x^\perp\rightarrow M_x\otimes M_x,$ 使得</p>
+<p>$$
+\left&lt;{}S^t(\mu),V\otimes W\right&gt;=\left&lt;{}\mu,S(V,W)\right&gt;,\quad \,\forall\,\mu\in M_x^\perp, \: V,W\in M_x.
+$$</p>
+<p>那么由线性代数知识($\Vert A\Vert^2=\operatorname{tr}(A^TA)=\operatorname{tr}(AA^T)$),</p>
+<p>$$
+|A_\nu|^2=\left&lt;{}(S\circ S^t)(\nu),\nu\right&gt;.
+$$</p>
+<p><strong>命题 6</strong> (体积第二变分). <em>设$M$是极小地浸入$\widetilde{M}$中的一个具边界定向紧流形, $f:M\rightarrow\widetilde{M},$ 且$\{M_t\}$为$M$的法向正常变分, 变分向量场为$\nu\in \mathscr{N}(M),$ $V(t)=V(M_t).$ 那么,</em> </p>
+<p>$$
+V&#39;&#39;(0)=\int_M\left&lt;{}-\overline{\Delta}\nu-\overline{\operatorname{Ric} }(\nu)-(S\circ S^t)(\nu),\nu\right&gt;dv
+$$</p>
+<p><strong>证:</strong> 首先由体积第一变分, 可以得到:</p>
+<p>$$
+V&#39;(t)=\int_M\left&lt;{}\eta_t,\nu_t\right&gt;\Omega_t,
+$$</p>
+<p>其中局部上$\eta_t$是$f_t(M)\subset \widetilde{M}$的平均曲率法向量场,
+$\nu_t$是$f_t(M)$上的法向变分向量场. 进一步,</p>
+<p>$$
+V&#39;&#39;(0)=\int_M\left&lt;{}\widetilde{D}_\nu\eta,\nu\right&gt;\Omega+\left&lt;{}\eta,\widetilde{D}_\nu\nu\right&gt;\Omega+\left&lt;{}\eta,\nu\right&gt;\left.\frac{d {} }{d {}t}\right|_{t=0}\Omega_t.
+$$</p>
+<p>由于$\eta=0,$ 通过直接的计算, 可以得到:</p>
+<p>$$
+V&#39;&#39;(0)=\int_M\left&lt;{}\widetilde{D}_\nu\eta,\nu\right&gt;\Omega=\int_M\left(\left&lt;{}-\overline{\Delta}\nu-\overline{\operatorname{Ric} }(\nu)-(S\circ S^t)(\nu),\nu\right&gt;+f\right)\Omega,
+$$</p>
+<p>其中$f$满足$\int_Mf\Omega=0.$ 这样就得到了结论. 具体计算的过程在此略过.</p>
+<p>当$M$为$\widetilde{M}$中的极小超曲面, $\widetilde{M}$可定向时,
+取单位法向量场$N\in\mathscr{N}(M),$ 那么$\nu=uN.$ 此时$\nabla_XN=0,$
+因此$\overline{\Delta} \nu=(\Delta u)N.$ 其次,</p>
+<p>$$
+\left&lt;{}\overline{\operatorname{Ric} }(\nu),\nu\right&gt;=u^2\sum_{i=1}^n\left&lt;{}\widetilde{\operatorname{Ric} }_{E_iN}E_i,N\right&gt;=u^2\widetilde{\operatorname{Ric} }(N,N).
+$$</p>
+<p>最后,</p>
+<p>$$
+\left&lt;{}(S\circ S^t)(\nu),\nu\right&gt;=u^2|A_N|^2=u^2\sum_i p_i^2,
+$$</p>
+<p>$\{p_i\}$为$M\subset \widetilde{M}$的主曲率. 记$A_N$为$A,$
+则此时第二变分公式为:</p>
+<p>$$
+V&#39;&#39;(0)=\int_M(-u\Delta u-u^2(\widetilde{\operatorname{Ric} }(N,N)+|A|^2))dv.
+$$</p>
+<p>由该式, 我们可推得如下命题:</p>
+<p><strong>命题 7</strong>. <em>设$M,\widetilde{M}$可定向, $M$是极小地浸入在$\widetilde{M}$中的超曲面, 则$M$稳定的充要条件是:</em> </p>
+<p>$$
 \int_M u^2(\widetilde{\operatorname{Ric} }(N,N)+|A|^2)dv\le \int_M |du|^2 dv,\quad \,\forall\,u\in C_c^\infty(M,\mathbb{R}).
-$$
-
-
-
-**Theorem 8** (Schoen-Yau theorem). *Suppose $\widetilde{M}$ is a compact directed $3$-dimensional manifold with positive curvature, then there is no compact, stable minimal immersed $2$-dimensional directed submanifold with positive genus in $\widetilde{M}$.*
-**Proof:** Proof by contradiction, suppose $M$ is such a submanifold. Since $M$ itself is compact,
-Let $u\equiv 1,$ in the second variation formula be
-
-
-$$
+$$</p>
+<p><strong>定理 8</strong> (Schoen-Yau定理). <em>设$\widetilde{M}$为具正数量曲率的紧致定向$3$维流形, 则$\widetilde{M}$中不存在亏格为正的, 紧致的稳定极小的浸入$2$维定向子流形.</em> </p>
+<p><strong>证:</strong> 反证法, 假设$M$是这样的子流形. 由于$M$本身紧致,
+可令第二变分公式中$u\equiv 1,$ 则</p>
+<p>$$
 \int_M(\widetilde{\operatorname{Ric} }(N,N)+|A|^2)dv\le 0.
-$$
-
-
-
-Furthermore, it can be proven that:
-$$
-\widetilde{\operatorname{Ric} }(N,N)+|A|^2=\frac{1}{2}\sigma-K+\frac{1}{2}|A|^2,\eqno{(\ast )}
-$$
-
-
-where $\sigma$ is the limit of the quantity curvature of $\widetilde{M}$ on $M$,
-$K$ is the Gauss curvature of the induced metric on $M$. Integration gives:
-$$
+$$</p>
+<p>此外, 可以证明:</p>
+<p>$$
+\widetilde{\operatorname{Ric} }(N,N)+|A|^2=\frac{1}{2}\sigma-K+\frac{1}{2}|A|^2,\tag*{(\ast )}
+$$</p>
+<p>其中$\sigma$是$\widetilde{M}$数量曲率在$M$上的限制,
+$K$是$M$上诱导度量的Gauss曲率. 积分得到:</p>
+<p>$$
 0\ge \frac{1}{2}\int_M\sigma dv-\int_MKdv+\frac{1}{2}\int_M|A|^2dv.
-$$
-
-
-
-By assumption, $\int_M\sigma dv>0;$ By Gauss-Bonnet theorem,
-
-
-$$
+$$</p>
+<p>由假设, $\int_M\sigma dv&gt;0;$ 由Gauss-Bonnet定理,</p>
+<p>$$
 \int_MKdv=2\pi \chi(M)=4\pi(1-g)\le 0.
-$$
-Finally, the contradiction can be deduced by combining $\int_M|A|^2dv\ge 0$.
-
-So we only need to prove the $(\ast )$ formula. Take a set of standard orthonormal bases $\{e_1,e_2\},$ of $M_x$
-Make the second fundamental form $A$ diagonal, that is
-
-
-$$
+$$</p>
+<p>最后结合$\int_M|A|^2dv\ge 0$即可推得矛盾.</p>
+<p>于是我们只需证明$(\ast )$式. 取$M_x$的一组标准正交基$\{e_1,e_2\},$
+使得第二基本形式$A$是对角化的, 即</p>
+<p>$$
 A(e_1)=\lambda e_1,\quad A(e_2)=\mu e_2.
-$$
-Since $M$ is extremely small, $\operatorname{tr}A=0,$ $\lambda=-\mu.$
-Therefore $|A|^2=2\lambda^2.$ Let $N=e_3,$
-Then $\{e_1,e_2,e_3\}$ constitutes a set of orthonormal basis of $\widetilde{M}_x$.
-Remember $\widetilde{K}(\operatorname{span}\{e_i,e_j\})=\widetilde{K}_{ij},$ then
-
-
-$$
+$$</p>
+<p>由于$M$极小, $\operatorname{tr}A=0,$ $\lambda=-\mu.$
+因此$|A|^2=2\lambda^2.$ 令$N=e_3,$
+则$\{e_1,e_2,e_3\}$构成$\widetilde{M}_x$的一组标准正交基.
+记$\widetilde{K}(\operatorname{span}\{e_i,e_j\})=\widetilde{K}_{ij},$ 则</p>
+<p>$$
 \sigma=\sum_{i,j}\widetilde{K}_{ij}=2(\widetilde{\operatorname{Ric} }(N,N)+\widetilde{K}_{12}).
-$$
-According to the Gauss formula, $\widetilde{K}_{12}=K-\det(A)=K+\lambda^2,$
-Therefore, the formula $(\ast )$ can be proved:
-
-
-$$
+$$</p>
+<p>由Gauss公式, $\widetilde{K}_{12}=K-\det(A)=K+\lambda^2,$
+因此$(\ast )$式即可得证:</p>
+<p>$$
 \widetilde{\operatorname{Ric} }(N,N)+|A|^2=\left(\frac{1}{2}\sigma-\widetilde{K}_{12}\right)+2\lambda^2=\frac{1}{2}\sigma-K+\lambda^2=\frac{1}{2}\sigma-K+\frac{1}{2}|A|^2.
-$$
-
-
-
-This theorem is the key to the following conclusion, which is closely related to the **Positive Mass Theorem**:
-**Theorem 9**. *If the Riemannian metric in $\mathbb{R}^3$ is flat outside the compact set $K$ and has non-negative quantity curvature everywhere, then it must be flat.*
-
-Finally, we look at the results of minimal hypersurfaces in Euclidean space.
-**Lemma 10**. *Suppose $M$ is a minimal hypersurface in $\mathbb{R}^{n+1}$. If $D$ is a sufficiently small region in $M$ with $C^\infty$ boundary $\partial D,$, then for each $\mathbb{R}^{n+1}$, there is a hypersurface $D',$ such that $\partial D'=\partial D$ There is $V(D')\ge V(D).$*
-
-Because locally,
-Each hypersurface is the image of a certain function $f:\mathscr{U}\rightarrow \mathbb{R}(\mathscr{U}\subset \mathbb{R}^n)$,
-Therefore this lemma is a direct corollary of the following lemma:
-**Lemma 11**. *Let $\mathscr{U}$ be the region in $\mathbb{R}^n$, with $C^\infty$ boundary $\partial \mathscr{U}.
-$ There is a $C^\infty$ function $f:\overline{UUU}\rightarrow\mathbb{R},$ such that the image $M$ of $f$ in $\overline{\mathscr{U} }\times\mathbb{R}$ is a (bounded) minimal hypersurface in $\mathbb{R}^{n+1}$.
-If $N$ is a hypersurface in $\overline{\mathscr{U} }\times \mathbb{R}$ such that $\partial N=\partial M,$ then $V(N)\ge V(M),$ and is equivalent if and only if $N=M.$*
-
-**Certificate:**
-Let $\nu=\frac{1}{W}\left(\frac{\partial {}f}{\partial {}x^1},\cdots,\frac{\partial {}f}{\partial {}x^n},-1\right)$ be the unit outer normal vector of $M$ at $(x,f(x))$,
+$$</p>
+<p>该定理是如下结论的关键, 与<strong>正质量定理</strong>密切相关:</p>
+<p><strong>定理 9</strong>. <em>若$\mathbb{R}^3$中的黎曼度量在紧集$K$外部是平坦的, 且处处具非负数量曲率, 则它必是平坦的.</em> </p>
+<p>最后, 我们来看欧氏空间中极小超曲面的结果.</p>
+<p><strong>引理 10</strong>. <em>设$M$是$\mathbb{R}^{n+1}$中极小超曲面. 若$D$是$M$中充分小的区域, 具$C^\infty$边界$\partial D,$ 则对$\mathbb{R}^{n+1}$中每一个使得$\partial D&#39;=\partial D$的超曲面$D&#39;,$ 有$V(D&#39;)\ge V(D).$</em> </p>
+<p>由于局部上,
+每个超曲面都是某函数$f:\mathscr{U}\rightarrow \mathbb{R}(\mathscr{U}\subset \mathbb{R}^n)$的图像,
+因此该引理为如下引理的直接推论:</p>
+<p><strong>引理 11</strong>. <em>设$\mathscr{U}$为$\mathbb{R}^n$中的区域, 具$C^\infty$边界$\partial \mathscr{U}.$ 有$C^\infty$函数$f:\overline{UUU}\rightarrow\mathbb{R},$ 使得$f$在$\overline{\mathscr{U} }\times\mathbb{R}$中的图像$M$是$\mathbb{R}^{n+1}$中的一个(具边界的)极小超曲面. 若$N$是$\overline{\mathscr{U} }\times \mathbb{R}$中的超曲面, 使得$\partial N=\partial M,$ 则$V(N)\ge V(M),$ 且取等当且仅当$N=M.$</em> </p>
+<p><strong>证:</strong>
+令$\nu=\frac{1}{W}\left(\frac{\partial {}f}{\partial {}x^1},\cdots,\frac{\partial {}f}{\partial {}x^n},-1\right)$为$M$在$(x,f(x))$处的单位外法向量,
 $W=\sqrt{1+|df|^2}.$
-Let $\omega$ be the $n$ differential form in $\overline{\mathscr{U} }\times\mathbb{R}$:
-
-
-$$
+令$\omega$为$\overline{\mathscr{U} }\times\mathbb{R}$中的$n$次微分形式:</p>
+<p>$$
 \omega:=\sum_{i=1}^{n+1}(-1)^{i-1}\nu_idx^1\wedge\cdots\wedge \widehat{dx^i}\wedge \cdots\wedge dx^{n+1}.
-$$
-
-
-
-Let's show that $d\omega=0.$ First,
+$$</p>
+<p>我们来说明$d\omega=0.$ 首先,
 $d\omega=\sum_i\frac{\partial {}\nu_i}{\partial {}x^i}{}dx^{1}\wedge\cdots\wedge{}dx^{ {}n+1},$
-Secondly, the vector field $X_i=\frac{\partial {} }{\partial {}x^i}+\frac{\partial {}f}{\partial {}x^i}\frac{\partial {} }{\partial {}x^{n+1} }$ constitutes a set of basis of $M_y$,
-At the same time, it can be calculated
-$$
+其次向量场$X_i=\frac{\partial {} }{\partial {}x^i}+\frac{\partial {}f}{\partial {}x^i}\frac{\partial {} }{\partial {}x^{n+1} }$构成了$M_y$的一组基,
+同时, 计算可得</p>
+<p>$$
 A_\nu(X_i)=\frac{\partial {}\nu}{\partial {}x^i}+\frac{\partial {}f}{\partial {}x^i}\frac{\partial {}\nu}{\partial {}x^{n+1} }=\frac{\partial {}\nu}{\partial {}x^i}=\sum_j\frac{\partial {}\nu_j}{\partial {}x^i}X_j.
-$$
-
-
-Since $M$ is extremely small,
+$$</p>
+<p>由于$M$是极小的,
 $\operatorname{tr}A_\nu=\sum_i \frac{\partial {}\nu_i}{\partial {}x^i}=0,$
-Thus $d\omega=0.$
-Let $\Sigma$ be the area surrounded by $M, N$, $\partial \Sigma=M-N.$ Therefore, according to Stokes formula,
-
-
-$$
+从而$d\omega=0.$</p>
+<p>设$\Sigma$为由$M,N$围成的区域, $\partial \Sigma=M-N.$ 因此由Stokes公式,</p>
+<p>$$
 \int_M\omega-\int_N\omega=\int_{\Sigma}\omega=\int_\Sigma d\omega=0,
-$$
+$$</p>
+<p>从而$\int_M \omega=\int_N\omega.$</p>
+<p>由于单位外法向量$\nu$的对偶微分形式为$\widetilde{\nu}=\nu_idx^i,$
+有$\widetilde{\nu}\wedge \omega=dx^1\wedge\cdots\wedge dx^{n+1}.$
+因此$\omega|_M$就是$M$的体积元. 另一方面, 记$\Omega$为$N$的体积元, 那么</p>
+<p>$$
+V(M)=\int_N\omega=\int_N\left&lt;{}\omega,\Omega\right&gt;\Omega\le \int_N |\omega||\Omega| \Omega=\int_N \Omega=V(N).
+$$</p>
+<p>当$M\neq N$时, 取$p\in M,$ $q\in N$投影到$\mathscr{U}$中相同的点,
+但$M_{p},N_q$并不平行.
+此时在$q$点处$\left&lt;{}\omega,\Omega\right&gt;&lt;1$严格成立,
+进而不等式在$N$上的小邻域也成立. 从而$V(M)&lt;V(N),$ 命题得证.</p>
+<p><strong>推论 12</strong>. <em>如果$f:\mathbb{R}^n\rightarrow \mathbb{R}$的图像是$\mathbb{R}^{n+1}$中的极小超曲面, 那么它是极小化的, 进而是稳定的.</em> </p>
+<p>文章最后更新于 2022-04-30 14:19:16 </p>
 
-
-Thus $\int_M \omega=\int_N\omega.$
-Since the dual differential form of the unit external normal vector $\nu$ is $\widetilde{\nu}=\nu_idx^i,$
-There are $\widetilde{\nu}\wedge \omega=dx^1\wedge\cdots\wedge dx^{n+1}.$
-Therefore $\omega|_M$ is the volume element of $M$. On the other hand, let $\Omega$ be the volume element of $N$, then
-$$
-V(M)=\int_N\omega=\int_N\left<{}\omega,\Omega\right>\Omega\le \int_N |\omega||\Omega| \Omega=\int_N \Omega=V(N).
-$$
-
-
-
-When $M\neq N$, take $p\in M,$ $q\in N$ to project to the same point in $\mathscr{U}$,
-But $M_{p},N_q$ are not parallel.
-At this time, $\left<{}\omega,\Omega\right><1$ is strictly established at point $q$,
-Furthermore, the inequality also holds in the small neighborhood on $N$. Therefore, the proposition $V(M)<V(N),$ is proved.
-**Corollary 12**. *If the image of $f:\mathbb{R}^n\rightarrow \mathbb{R}$ is a minimal hypersurface in $\mathbb{R}^{n+1}$, then it is minimized and thus stable.*
-
-The article was last updated on 2022-04-30 14:19:16
                 </div>
             
         </div>
@@ -601,7 +714,7 @@ The article was last updated on 2022-04-30 14:19:16
     <ul>
         <li>本文标题：《黎曼几何初步》笔记(14)-体积的变分和极小子流形</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-04-30 14:07:59</li>
+        <li>创建时间：2022-04-30 17:07:59</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/04/30/《黎曼几何初步》笔记(14)-体积的变分和极小子流形/
         </li>
@@ -655,7 +768,7 @@ The article was last updated on 2022-04-30 14:19:16
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(13)-子流形和第二基本形式</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (13)-Submanifolds and the second basic form</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (13) - Submanifold and Second Basic Form</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -907,11 +1020,11 @@ The article was last updated on 2022-04-30 14:19:16
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%A7%AF%E7%AC%AC%E4%B8%80%E5%8F%98%E5%88%86"><span class="nav-text">体积第一变分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%A7%AF%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86"><span class="nav-text">体积第二变分</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%A7%AF%E7%AC%AC%E4%B8%80%E5%8F%98%E5%88%86"><span class="nav-text">体积第一变分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%A7%AF%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86"><span class="nav-text">体积第二变分</span></a></li></ol>
         </div>
     
 </div>
@@ -962,6 +1075,36 @@ The article was last updated on 2022-04-30 14:19:16
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -985,46 +1128,6 @@ The article was last updated on 2022-04-30 14:19:16
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

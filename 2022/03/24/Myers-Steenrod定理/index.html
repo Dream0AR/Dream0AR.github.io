@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-03-24 15:24:32
+        <i class="fas fa-edit"></i>&nbsp;2022-03-24 17:24:32
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,86 +230,130 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>一开始看到流形上的等距变换, 自然想到保持范数$\Leftrightarrow$保持内积,
+从而保持黎曼度量. 但事实上等距(依照初始定义)保持的是流形上的距离,
+而不是切空间上的距离, 因此这件事情是需要来证明的. 更重要的一点是,
+前述的等价关系仅对线性变换成立,
+而切映照是线性变换建立在映照可微的基础上.
+事实上我们不需要事先要求等距变换可微, 这就是Myers-Steenrod定理.</p>
+<p><strong>定理 1</strong>. <em>若$\phi:M\rightarrow N$为等距满射, 则$\phi$为同构, 特别地它是光滑的.</em> </p>
+<p><strong>证:</strong> 由于测地线有局部极短性, 等距变换将测地线映至测地线.
+设$\phi(p)=q,$ 选取$v\in T_pM,$ $|v|$充分小.
+取从$p$点出发以$v$为初始切向量的测地线$\gamma,$
+那么$d(p,\gamma(1))=|v|.$ 由于$\phi$是等距变换,
+$d(q,\phi\circ\gamma(1))=|v|.$ 若$\phi$可微,
+那么由于$\phi\circ\gamma$也是测地线,
+$|v|=|(\phi\circ\gamma)&#39;(0)|=|d\phi(v)|.$
+此时$d\phi$是保持范数的线性变换, 因此$d\phi$保持内积, 即保持黎曼度量,
+故$\phi$是同构.</p>
+<p>当$\phi$不见得可微时, 由于$\phi$保持测地线,
+我们可以通过测地线的切向量来定义$d\phi:T_pM\rightarrow T_pN,$
+它也是保持范数的. 但此时它不见得是线性变换, 不过我们可以来证明这一点.
+假设已知如下结论:</p>
+<p>$$
+\lim_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.
+$$</p>
+<p>选取$A,B\in T_pM,$ 取对应的测地线$\gamma_A,\gamma_B.$ 记$A&#39;=d\phi(A),$
+$B&#39;=d\phi(B),$ 以及对应的测地线$\gamma_{A&#39;},\gamma_{B&#39;},$
+我们有$d(\gamma_A(t),\gamma_B(t))=d(\gamma_{A&#39;}(t),\gamma_{B&#39;}(t)),$
+从而:</p>
+<p>$$
+1=\lim_{t\rightarrow 0}\frac{d(\exp_p(tA),\exp_p(tB))}{t|A-B|}=\lim_{t\rightarrow 0}\frac{d(\exp_q(tA&#39;),\exp_q(tB&#39;))}{t|A-B|}=\frac{|A&#39;-B&#39;|}{|A-B|},
+$$</p>
+<p>因此$|d\phi(A)-d\phi(B)|=|A-B|,$ $\,\forall\,A,B\in T_pM.$
+由Mazur-Ulam定理, 结合$d\phi(0)=0,$ 便说明$d\phi$是线性变换,
+从而命题得证.</p>
+<p><strong>引理 2</strong>. <em>$\lim\limits_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.$</em> </p>
+<p><strong>证:</strong> 我们首先证明如下事实, 对曲线$c:I\rightarrow T_pM,$
+若$|c&#39;|$保持有界,</p>
+<p>$$
+\lim_{c(I)\rightarrow 0}\frac{l(\exp_p(c))}{l(c)}=1.
+$$</p>
+<p>我们有$l(c)=\int |c&#39;|,$
+$l(\exp_p(c))=\int |d\exp_p(c&#39;(t))|_{\exp_p(c(t))}.$
+由于$d\exp_p$在原点处为恒等变换, 同时$g$是光滑的,
+$T_{\exp_p(c(t))}M$与$T_pM$度量在$c(I)\rightarrow 0$时充分接近,
+$l(\exp_p(c))=l(c)+o(l(c)),$ 由此即知事实成立.</p>
+<p>接下来, 记$\gamma$为连接$A,B$的曲线, 使得$\exp_p(\gamma)$为测地线;
+$\xi$为连接$A,B$的直线. 那么 </p>
+<p>$$
+|A-B|=l(\xi)\le l(\gamma),
+$$</p>
+<p>$$
+d(\exp_p(A),\exp_p(B))=l(\exp_p(\gamma))\le l(\exp_p(\xi)).
+$$</p>
+<p>因此,</p>
+<p>$$
+\frac{l(\exp_p(\gamma))}{l(\gamma)}\le \frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=\frac{l(\exp_p(\gamma))}{l(\xi)}\le \frac{l(\exp_p(\xi))}{l(\xi)}.
+$$</p>
+<p>当$A,B\rightarrow 0\in T_pM$时, 两侧趋于$1,$ 从而中间项也趋于$1.$</p>
+<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://ncatlab.org/nlab/show/Myers-Steenrod+theorem" >https://ncatlab.org/nlab/show/Myers-Steenrod+theorem<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-03-24 15:24:34 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    When I first saw the isometric transformation on the manifold, I naturally thought of keeping the norm $\ Leftrightarrow $ and keeping the inner product,
-thus preserving the Riemannian metric. But in fact the equidistance (as originally defined) is the distance on the manifold,
-rather than cutting the spatial distance, so this is something that needs to be proven. More importantly,
-The aforementioned equivalence relationship only holds for linear transformations,
-The cut mapping is a linear transformation based on the differentiation of the mapping.
-In fact, we do not need to require the isometric transformation to be differentiable in advance, which is the Myers-Steenrod theorem.
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>一开始看到流形上的等距变换, 自然想到保持范数$\Leftrightarrow$保持内积,
+从而保持黎曼度量. 但事实上等距(依照初始定义)保持的是流形上的距离,
+而不是切空间上的距离, 因此这件事情是需要来证明的. 更重要的一点是,
+前述的等价关系仅对线性变换成立,
+而切映照是线性变换建立在映照可微的基础上.
+事实上我们不需要事先要求等距变换可微, 这就是Myers-Steenrod定理.</p>
+<p><strong>定理 1</strong>. <em>若$\phi:M\rightarrow N$为等距满射, 则$\phi$为同构, 特别地它是光滑的.</em> </p>
+<p><strong>证:</strong> 由于测地线有局部极短性, 等距变换将测地线映至测地线.
+设$\phi(p)=q,$ 选取$v\in T_pM,$ $|v|$充分小.
+取从$p$点出发以$v$为初始切向量的测地线$\gamma,$
+那么$d(p,\gamma(1))=|v|.$ 由于$\phi$是等距变换,
+$d(q,\phi\circ\gamma(1))=|v|.$ 若$\phi$可微,
+那么由于$\phi\circ\gamma$也是测地线,
+$|v|=|(\phi\circ\gamma)&#39;(0)|=|d\phi(v)|.$
+此时$d\phi$是保持范数的线性变换, 因此$d\phi$保持内积, 即保持黎曼度量,
+故$\phi$是同构.</p>
+<p>当$\phi$不见得可微时, 由于$\phi$保持测地线,
+我们可以通过测地线的切向量来定义$d\phi:T_pM\rightarrow T_pN,$
+它也是保持范数的. 但此时它不见得是线性变换, 不过我们可以来证明这一点.
+假设已知如下结论:</p>
+<p>$$
+\lim_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.
+$$</p>
+<p>选取$A,B\in T_pM,$ 取对应的测地线$\gamma_A,\gamma_B.$ 记$A&#39;=d\phi(A),$
+$B&#39;=d\phi(B),$ 以及对应的测地线$\gamma_{A&#39;},\gamma_{B&#39;},$
+我们有$d(\gamma_A(t),\gamma_B(t))=d(\gamma_{A&#39;}(t),\gamma_{B&#39;}(t)),$
+从而:</p>
+<p>$$
+1=\lim_{t\rightarrow 0}\frac{d(\exp_p(tA),\exp_p(tB))}{t|A-B|}=\lim_{t\rightarrow 0}\frac{d(\exp_q(tA&#39;),\exp_q(tB&#39;))}{t|A-B|}=\frac{|A&#39;-B&#39;|}{|A-B|},
+$$</p>
+<p>因此$|d\phi(A)-d\phi(B)|=|A-B|,$ $\,\forall\,A,B\in T_pM.$
+由Mazur-Ulam定理, 结合$d\phi(0)=0,$ 便说明$d\phi$是线性变换,
+从而命题得证.</p>
+<p><strong>引理 2</strong>. <em>$\lim\limits_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.$</em> </p>
+<p><strong>证:</strong> 我们首先证明如下事实, 对曲线$c:I\rightarrow T_pM,$
+若$|c&#39;|$保持有界,</p>
+<p>$$
+\lim_{c(I)\rightarrow 0}\frac{l(\exp_p(c))}{l(c)}=1.
+$$</p>
+<p>我们有$l(c)=\int |c&#39;|,$
+$l(\exp_p(c))=\int |d\exp_p(c&#39;(t))|_{\exp_p(c(t))}.$
+由于$d\exp_p$在原点处为恒等变换, 同时$g$是光滑的,
+$T_{\exp_p(c(t))}M$与$T_pM$度量在$c(I)\rightarrow 0$时充分接近,
+$l(\exp_p(c))=l(c)+o(l(c)),$ 由此即知事实成立.</p>
+<p>接下来, 记$\gamma$为连接$A,B$的曲线, 使得$\exp_p(\gamma)$为测地线;
+$\xi$为连接$A,B$的直线. 那么 </p>
+<p>$$
+|A-B|=l(\xi)\le l(\gamma),
+$$</p>
+<p>$$
+d(\exp_p(A),\exp_p(B))=l(\exp_p(\gamma))\le l(\exp_p(\xi)).
+$$</p>
+<p>因此,</p>
+<p>$$
+\frac{l(\exp_p(\gamma))}{l(\gamma)}\le \frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=\frac{l(\exp_p(\gamma))}{l(\xi)}\le \frac{l(\exp_p(\xi))}{l(\xi)}.
+$$</p>
+<p>当$A,B\rightarrow 0\in T_pM$时, 两侧趋于$1,$ 从而中间项也趋于$1.$</p>
+<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://ncatlab.org/nlab/show/Myers-Steenrod+theorem" >https://ncatlab.org/nlab/show/Myers-Steenrod+theorem<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-03-24 15:24:34 </p>
 
-* * Theorem 1 * *. * If $\ phi: M\ rightarrow N $ is isometric, then $\ phi $ is isomorphic, especially if it is smooth. * 
-
-* * Proof: * * Due to the local extremely short nature of the geodesic, the isometric transformation mirrors the geodesic to the geodesic.
-Let $\ phi (p) = q, $ select $ v\ in T_pM, $ $ | v | $ sufficiently small.
-Take the geodesic starting at point $ p $ with $ v $ as the initial tangent vector $\ gamma, $
-Then $ d (p,\ gamma (1)) = | v |.$ Since $\ phi $ is an isometric transformation,
-$ d (q,\ phi\ circ\ gamma (1)) = | v |. $ If $\ phi $ is differentiable,
-So since $\ phi\ circ\ gamma $ is also a geodesic,
-$ | v | = | (\ phi\ circ\ gamma) '(0) | = | d\ phi (v) |. $
-At this point, $ d\ phi $ is a linear transformation that keeps the norm, so $ d\ phi $ keeps the inner product, that is, keeps the Riemannian metric,
-Therefore, $\ phi $ is isomorphic.
-
-When $\ phi $ is not necessarily differentiable, since $\ phi $ maintains the geodesic,
-We can define $ d\ phi by the tangent vector of the geodesic: T_pM\ rightarrow T_pN, $
-It also maintains normality. But it doesn't have to be a linear transformation at this point, but we can prove it.
-Assume the following conclusions are known:
-
-
-
-
-
-
-Select $ A, B\ in T_pM, $ to select the corresponding geodesic $\ gamma_A,\ gamma_B.$ remember $ A '= d\ phi (A), $
-$ B '= d\ phi (B), $ and corresponding geodesic $\ gamma_{A'},\ gamma_{B '}, $
-We have $ d (\ gamma_A (t),\ gamma_B (t)) = d (\ gamma_{A '} (t),\ gamma_{B'} (t)), $
-Thus:
-
-
-
-
-
-So $ | d\ phi (A) -d\ phi (B) | = | A-B |, $ $\,\ forall\, A, B\ in T_pM. $
-By Mazur-Ulam theorem, combined with $ d\ phi (0) = 0, $ indicates that $ d\ phi $ is a linear transformation,
-This proves the proposition.
-
-* * Reference 2 * *. * $\ lim\ limits_{A, B\ rightarrow 0\ in T_pM}\ frac {d (\ exp_p (A),\ exp_p (B))} {| A-B |} = 1. $ * 
-
-* * Proof: * * We first prove the fact that for the curve $ c: I\ rightarrow T_pM, $
-If $ | c '| $ remains bounded,
-
-
-
-We have $ l (c) =\ int | c '|, $
-$ l (\ exp_p (c)) =\ int | d\ exp_p (c '(t)) |_{\ exp_p (c (t))}. $
-Since $ d\ exp_p $ is the identity transform at the origin and $ g $ is smooth,
-$ T_{\ exp_p (c (t))} M $ is sufficiently close to the $ T_pM $ metric at $ c (I)\ rightarrow 0$,
-$ l (\ exp_p (c)) = l (c) + o (l (c)), so $ knows the facts.
-
-Next, record $\ gamma $ as the curve connecting $ A, B $, so that $\ exp_p (\ gamma) $ is the geodesic;
-$\ xi $ is the straight line connecting $ A, B $. So 
-
-
-
-
-
-
-
-
-
-
-Therefore,
-
-
-
-When $ A, B\ rightarrow 0\ in T_pM $, both sides tend to $1, $ so the middle term also tends to $1. $
-
-Reference: https://ncatlab.org/nlab/show/Myers-Steenrod+theorem
-
-Article last updated on 2022-03-24 15:24:34
                 </div>
             
         </div>
@@ -320,7 +364,7 @@ Article last updated on 2022-03-24 15:24:34
     <ul>
         <li>本文标题：Myers-Steenrod定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-03-24 15:24:32</li>
+        <li>创建时间：2022-03-24 17:24:32</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/03/24/Myers-Steenrod定理/
         </li>
@@ -374,7 +418,7 @@ Article last updated on 2022-03-24 15:24:34
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(3)-测地线</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (3) - Geodesics</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (3) - Geodesic</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -681,6 +725,36 @@ Article last updated on 2022-03-24 15:24:34
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -704,46 +778,6 @@ Article last updated on 2022-03-24 15:24:34
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

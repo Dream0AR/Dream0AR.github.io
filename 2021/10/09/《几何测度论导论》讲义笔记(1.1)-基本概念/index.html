@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《几何测度论导论》讲义笔记(1.1)-基本概念</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Introduction to Geometric Measure Theory&#34; Lecture Notes (1.1)-Basic Concepts</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Introduction to Geometric Measurement Lecture Notes (1.1) - Basic Concepts</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-09 11:03:10
+        <i class="fas fa-edit"></i>&nbsp;2021-10-09 14:03:10
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,193 +230,296 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="外测度"><a href="#外测度" class="headerlink" title="外测度"></a>外测度</h2><p>回忆$X$上外测度$\mu$指$2^X\rightarrow [0,\infty]$的单调次可加函数,
+满足$\mu(\varnothing)=0.$ 有时简称其为测度, 若不会导致混淆的话.
+称集合$A\subset X$是$\mu$-可测的, 若$\,\forall\,S\subset X,$
+$\mu(S)=\mu(S\setminus A)+\mu(S\cap A).$ 后者称为Caratheodory条件,
+指集合$A$能够关于”$\mu$-可加地”切割其它集合.</p>
+<p><strong>注 1.1</strong>. <em>事实上由次可加性, 条件等价于$\mu(S)\ge\mu(S\setminus A)+\mu(S\cap A).$ 由此易证任意$\mu$-零测集都是$\mu$-可测的.</em> </p>
+<p>由于$S\setminus A=S\cap (X\setminus A),$
+易见$A$为$\mu$-可测的当且仅当$X\setminus A$也是.
+设$A_1,A_2$是$\mu$-可测的, 那么$\,\forall\,S\subset X,$</p>
+<p>$$\begin{aligned}
+            \mu(S)=&amp;\mu(S\setminus A_1)+\mu(S\cap A_1)&amp; A_1\text{是$\mu$-可测的}\\
+            =&amp;\mu((S\setminus A_1)\setminus A_2)+\mu((S\setminus A_1)\cap A_2)+\mu(S\cap A_1)&amp; A_2\text{是$\mu$-可测的}\\
+            \ge&amp;\mu(S\setminus (A_1\cup A_2))+\mu(S\cap((A_2\setminus A_1)\cup A_1))&amp; \text{次可列可加性}\\
+            =&amp;\mu(S\setminus(A_1\cup A_2))+\mu(S\cap(A_1\cup A_2)),
+        \end{aligned}$$</p>
+<p>从而$A_1\cup A_2$是$\mu$-可测的.
+那么$X\setminus((X\setminus A_1)\cup (X\setminus A_2))=A_1\cap A_2$也是$\mu$-可测的,
+$A_2\setminus A_1=A_2\cap (X\setminus A_1)$也是.
+归纳可知有限步并,交,补运算均保持$\mu$-可测的性质.
+Caratheodory条件给无交$\mu$-可测集赋予了可加性:</p>
+<p><strong>引理 1.2</strong> (可列可加性). <em>若$A_1,\cdots$为无交$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).$</em> </p>
+<p><strong>证:</strong> 由次可列可加性,
+$\mu(S\cap \bigcup_{i=1}^\infty A_i)\le \sum_{i=1}^\infty\mu(S\cap A_i).$
+由Caratheodory条件, $\,\forall\,S\subset X,$
+$\mu(S\cap (A_1\cup A_2))=\mu((S\cap (A_1\cup A_2))\setminus A_1)+\mu(S\cap(A_1\cup A_2)\cap A_1)= \mu(S\cap A_1)+\mu(S\cap A_2).$
+从而可归纳到有限个无交$\mu$-可测集的情况.</p>
+<p>现有$\sum_{i=1}^n \mu(S\cap A_i)=\mu(S\cap\bigcup_{i=1}^n A_i)\le \mu(S\cap \bigcup_{i=1}^\infty A_i).$
+令$n\rightarrow\infty,$ 即得到另一个方向的不等式, 从而命题得证.</p>
+<p><strong>引理 1.3</strong>. <em>若$A_1,\cdots$为递增$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
+<p><strong>证:</strong> 记$A_0=\varnothing,$
+由于$\bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty (A_i\setminus A_{i-1}),$
+由可列可加性,</p>
+<p>$$\begin{aligned}
+                \mu(S\cap \bigcup_{i=1}^\infty A_i)&amp;=\mu(S\cap \bigcup_{i=1}^\infty (A_{i}\setminus A_{i-1}))\\
+                &amp;= \sum_{i=1}^\infty \mu(S\cap (A_i\setminus A_{i-1}))\\
+                &amp;=\lim\limits_n \sum_{i=1}^n \mu(S\cap (A_i\setminus A_{i-1}))\\
+                &amp;=\lim\limits_{n}\mu(S\cap A_n),
+            \end{aligned}$$</p>
+<p>命题得证.</p>
+<p><strong>推论 1.4</strong>. <em>设$A_1,\cdots$为递减$\mu$-可测集, 若$\,\exists\,A_k$测度有限, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
+<p>称$X$一系列子集的集合$\mathcal{S}$为$\sigma$-代数, 若:</p>
+<p>(1) $\varnothing,X\in \mathcal{S};$</p>
+<p>(2) $A\in \mathcal{S}\Rightarrow X\setminus A\in \mathcal{S};$</p>
+<p>(3) $A_1,\cdots \in \mathcal{S}\Rightarrow \bigcup_{i=1}^\infty A_i\in \mathcal{S}.$</p>
+<p><strong>注 1.5</strong>. <em>$\sigma$-代数对可列并与取补运算封闭, 易见它对可列交也是封闭的. 由于$\sigma$-代数的交仍为$\sigma$-代数, 可以找到包含一系列指定集合的最小的一个$\sigma$-代数. 特别地, 对拓扑空间$X,$ 包含所有开集的最小$\sigma$-代数称为$X$中的Borel代数, 其中集合称为Borel集.</em> </p>
+<p><strong>引理 1.6</strong>. <em>$\mu$-可测集全体构成$\sigma$-代数, 包含所有$X$的$\mu$-零测集.</em> </p>
+<p><strong>证:</strong> 只需证若$A_1,\cdots$是$\mu$-可测的,
+则$\bigcup_{i=1}^\infty A_i$也是.
+记$B_i=\bigcup_{j=1}^i A_j$为递增$\mu$-可测集,
+则$\,\forall\,S\subset X,$</p>
+<p>$$\begin{aligned}
+                \mu(S)&amp;=\mu(S\setminus \bigcup_{i=1}^n A_i)+\mu(S\cap \bigcup_{i=1}^n A_i)\\
+                &amp;\ge\mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap B_n).
+            \end{aligned}$$</p>
+<p>令$n\rightarrow \infty,$ 即有</p>
+<p>$$\begin{aligned}
+                \mu(S)&amp;\ge \mu(S\setminus \bigcup_{i=1}^\infty A_i)+ \mu(S\cap \bigcup_{n=1}^\infty B_n)\\
+                &amp;= \mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap \bigcup_{i=1}^\infty A_i),
+            \end{aligned}$$</p>
+<p>从而命题得证.</p>
+<h2 id="Borel正则测度"><a href="#Borel正则测度" class="headerlink" title="Borel正则测度"></a>Borel正则测度</h2><p>称外测度$\mu$是<strong>正则的</strong>, 若$\,\forall\,A\subset X,$
+存在$\mu$-可测集$B\supset A$满足$\mu(B)=\mu(A).$
+此时先前关于$A_i$为单调列的性质无需再假设$A_i$是$\mu$-可测的.</p>
+<p>当$X$为拓扑空间时,
+外测度$\mu$是<strong>Borel正则的</strong>若所有Borel集都是$\mu$-可测的,
+且$\,\forall\,A\subset X,$ 存在Borel集$B\supset A$满足$\mu(B)=\mu(A).$</p>
+<p>需要强调的是$\mu(B)=\mu(A)$不意味着$\mu(B\setminus A)=0,$
+除非$A$是$\mu-$可测的且$\mu(A)&lt;\infty.$</p>
+<p><strong>注 1.7</strong>. <em>回忆Borel测度$\mu_0$为Borel集全体到$[0,\infty]$上的映射, 满足$\mu_0(\varnothing)=0$与可列可加性(从而蕴含单调性). 此时$\,\forall\,A\subset X,$ $\mu(A):=\inf\limits_{B\text{ Borel, }B\supset A}\mu_0(B)$便定义了一个Borel正则外测度, 在Borel集全体上与$\mu_0$一致. 反过来一个Borel正则外测度在Borel集全体上的限制即为一个Borel测度.</em> </p>
+<p>给定任意子集$Y\subset X$与外测度$\mu,$ 可以定义一个新的外测度$\mu |_Y,$
+$\mu|_Y(Z):=\mu(Y\cap Z),$ $Z\subset X.$
+任意$\mu$-可测集都是$\mu|_Y$-可测的, 即使$Y$本身不见得$\mu$-可测.
+当$Y$是$\mu$-可测的且$\mu(Y)&lt;\infty$时, 若$\mu$是Borel正则的,
+则$\mu|_Y$也是.
+关于这一点只需利用$\mu$的Borel正则性取合适的$B_1\supset Y,$
+$B_2\supset B_1\setminus Y,$ $B_3\supset A\cap Y.$
+那么$A\subset (X\setminus B_1)\cup B_2\cup B_3$且两者$\mu|_Y$测度相同.</p>
+<p>当$X$为度量空间时, 对$A,B\subset X,$
+记$d(A,B)=\inf\{d(a,b):a\in A,b\in B\}.$ $\inf\varnothing:=+\infty.$</p>
+<p><strong>定理 1.8</strong> (Caratheodory判别法). <em>设$(X,d)$为度量空间, $\mu$为外测度. 若$\mu(A\cup B)=\mu(A)+\mu(B),$ $\,\forall\,A,B\subset X$满足$d(A,B)&gt;0,$ 则所有Borel集都是$\mu$-可测的.</em> </p>
+<p><strong>证:</strong> 只需证明所有闭集均是$\mu$-可测的. $\,\forall\,$闭集$C\subset X,$
+取$C_j=\{x\in X:d(x,C)\le \frac{1}{j}\}.$ 那么$\,\forall\,S\subset X,$
+$d(S\setminus C_j,S\cap C)&gt;0.$
+从而有$$\mu(S)\ge \mu(S\setminus C_j)+\mu(S\cap C),\quad \,\forall\,j&gt;0.$$</p>
+<p>令$j\rightarrow \infty,$ 由于$S\setminus C_j=S\cap (X\setminus C_j),$
+$X\setminus C_j$单增,
+从而$\lim\limits_{j\rightarrow \infty}\mu(S\setminus C_j)=\mu(S\setminus \bigcap_{j}C_j)=\mu(S\setminus C).$
+最后一个等号是因为$C$为闭集, 故所有与$C$距离为零的点都在$C$中.
+因此$$\mu(S)\ge \mu(S\setminus C)+\mu(S\cap C),$$从而任意闭集$C$是可测的,
+命题得证.</p>
+<p><strong>定义 1.9</strong>. <em>称Borel正则测度$\mu$是<strong>开</strong>$\sigma$<strong>-有限</strong>的, 若$X=\bigcup_j V_j,$ $V_j$为开集且测度有限.</em> </p>
+<p>显然当$X$为可分度量空间, $\mu$局部有限时, 它是开$\sigma$-有限的.</p>
+<p><strong>定理 1.10</strong>. <em>设拓扑空间$X$中每个闭集均是可列个开集之交, 设$\mu$是开$\sigma$-有限的Borel正则测度, 那么$\,\forall\,A\subset X,$ $$\mu(A)=\inf_{\text{开集}U\supset A}\mu(U).$$</em>  <em>若$A$是$\mu$-可测的, 那么还有$$\mu(A)=\sup_{\text{闭集}C\subset A}\mu(C).$$</em> </p>
+<p><strong>思路:</strong> 分全空间测度有限/无限的情况讨论. 取使结论成立的集合全体,
+证其包含$\sigma$-代数, 其中又包含所有开集, 进而包含整个Borel代数.
+最后由正则性即得结论.</p>
+<p><strong>证:</strong> 首先假设$\mu(X)&lt;\infty,$ 此时$(1)\Rightarrow (2).$
+由测度是Borel正则的, 只需证明$A$为Borel集的情况.
+取$\mathcal{A}:=\{\text{Borel集}A\subset X:\text{(1)成立}\},$
+那么$\mathcal{A}$自然包含所有开集.</p>
+<p>取$A_1,\cdots\in \mathcal{A}.$ $\,\forall\,\varepsilon&gt;0,$
+$\,\exists\,$开$U_1,\cdots,$ 满足$U_j\supset A_j,$
+且$\mu(U_j\setminus A_j)\le 2^{-j}\varepsilon.$
+那么$$\mu(\bigcup_j U_j \setminus \bigcup_j A_j),\mu(\bigcap_j U_j\setminus \bigcap_j A_j)\le \sum_j\mu(U_j\setminus A_j)\le \varepsilon,$$
+从而$\bigcup_j A_j,\bigcap_j A_j\in \mathcal{A},$ 集合对可列并,
+可列交封闭. 由于任意闭集是开集可列交, 全体闭集均在$\mathcal{A}$中.</p>
+<p>取$\widetilde{\mathcal{A} }:=\{A\in \mathcal{A}:X\setminus A\in \mathcal{A}\},$
+那么容易验证$\widetilde{\mathcal{A} }$为包含全体开集的$\sigma$-代数,
+从而$\mathcal{A}$包含(即为)Borel集全体, $\mu(X)$有限的情况得证.</p>
+<p>对$\mu(X)=\infty$的情况, 只需利用$X$的$\sigma$-有限性,
+取$X=\bigcup_{j} V_j,$ 每个$V_j$测度有限. 此时$\mu|_{V_{j} }(X)&lt;\infty,$
+应用前面的结论, $\,\forall\,\varepsilon&gt;0,$
+有开集$U_j\supset A$满足$\mu(U_j\cap V_j\setminus A)\le2^{-j}\varepsilon,$
+从而$\mu(\bigcup_{j}(U_j\cap V_j)\setminus A)\le \varepsilon.$
+由于$\bigcup_j (U_j\cap V_j)$为含$A$开集, (1)成立.</p>
+<p>对(2), 类似地$\,\forall\,\varepsilon&gt;0,$
+有闭集$C_j\subset A$满足$\mu(A\cap V_j\setminus C_j)\le 2^{-j}\varepsilon.$
+那么$$\mu(A\setminus \bigcup_j C_j)=\mu( A\cap \bigcup_jV_j\setminus \bigcup_jC_j)\le \sum_j \mu(A\cap V_j\setminus C_j) \le \varepsilon.$$
+从而当$\mu(A)=\infty$时, $\mu(\bigcup_{j=1}^NC_j)\rightarrow \infty;$
+$\mu(A)&lt;\infty$时,
+对足够大的$N$有$\mu(A\setminus \bigcup_{j=1}^N C_j)\le 2\varepsilon.$
+因此(2)得证.</p>
+<p><strong>注 1.11</strong>. <em>注意若$X$是$\sigma$-紧的Hausdorff空间, 即全空间为可列个紧集之并. 那么第二个性质可推出$$\mu(A)=\sup_{\text{紧集}K\subset A}\mu(K).$$ 这是因为在上述假设下, 任意闭集为一列递增紧集之并.</em> </p>
+<p>由上述定理可证明Lusin定理:</p>
+<p><strong>定理 1.12</strong> (Lusin). <em>令$\mu$为Borel正则外测度, 拓扑空间$X$中所有闭集均为可列开集之交(如$X$取度量空间即可). 令$A$为$\mu$-可测集且测度有限, $f:A\rightarrow \mathbb{R}$为可测函数. 那么$\,\forall\,\varepsilon&gt;0,$ 存在$X$中闭集$C\subset A,$ 满足$\mu(A\setminus C)&lt;\varepsilon,$ 且$f|_C$连续.</em> </p>
+<p><strong>证:</strong> 取$A_{ij}=f^{-1}[\frac{j-1}{i},\frac{j}{i}),$
+$i\in \mathbb{Z}_+,$ $j\in \mathbb{Z}.$
+那么$\mu$-可测的$A_{ij}$两两无交, 测度有限,
+且有$\bigcup_{j}A_{ij}=A$对任意$i$成立. 由于$\mu|_{A}$是Borel正则的,
+应用上述定理, 可找到$X$中闭集$C_{ij}\subset A_{ij},$
+$\mu(A_{ij}\setminus C_{ij})=\mu|_A(A_{ij}\setminus C_{ij})&lt;2^{-i-|j|-2}\varepsilon.$
+进一步$\mu(A\setminus \bigcup_j C_{ij})&lt; 2^{-i}\varepsilon,$
+因此对每个$i,$
+有$J(i)\in \mathbb{Z}_+$使得$\mu(A\setminus \bigcup_{|j|\le J(i)}C_{ij})\le 2^{-i}\varepsilon.$
+取$C=\bigcap_{i}\bigcup_{|j|\le j(i)}C_{ij}$为闭集,
+那么$\mu(A\setminus C)\le \varepsilon.$</p>
+<p>最后, 定义$g_i:\bigcup_{|j|\le J(i)}C_{ij}\rightarrow \mathbb{R},$
+$g_i|_{C_{ij} }(x)=\frac{j-1}{i}.$ 由于固定$i,$ $C_{ij}$彼此无交,
+因此$g_i|_C$连续. 由于$\,\forall\,x\in C,$
+$0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
+从而$f|_C$连续.</p>
+<p>文章最后更新于 2021-10-09 13:26:19 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    external measure
-------
-
-Recall that the external measure $\mu$ on $X$ refers to the monotonic subadditive function of $2^X\rightarrow [0,\infty]$,
-Satisfies $\mu(\varnothing)=0.$ It is sometimes simply called a measure if it does not cause confusion.
-A set $A\subset X$ is said to be $\mu$-measurable if $\,\forall\,S\subset X,$
-$\mu(S)=\mu(S\setminus A)+\mu(S\cap A).$ The latter is called the Caratheodory condition,
-It means that the set $A$ can cut other sets "$\mu$-additively".
-**Note 1.1**. *In fact, due to subadditivity, the condition is equivalent to $\mu(S)\ge\mu(S\setminus A)+\mu(S\cap A).$. From this, it is easy to prove that any $\mu$-zero test set is $\mu$-measurable.*
-
-Since $S\setminus A=S\cap (X\setminus A),$
-It is easy to see that $A$ is $\mu$-measurable if and only if $X\setminus A$ is also.
-Assume $A_1,A_2$ are $\mu$-measurable, then $\,\forall\,S\subset X,$
-
-$$\begin{aligned}
-            \mu(S)=&\mu(S\setminus A_1)+\mu(S\cap A_1)& A_1\text{是$\mu$-可测的}\\
-            =&\mu((S\setminus A_1)\setminus A_2)+\mu((S\setminus A_1)\cap A_2)+\mu(S\cap A_1)& A_2\text{是$\mu$-可测的}\\
-            \ge&\mu(S\setminus (A_1\cup A_2))+\mu(S\cap((A_2\setminus A_1)\cup A_1))& \text{次可列可加性}\\
-            =&\mu(S\setminus(A_1\cup A_2))+\mu(S\cap(A_1\cup A_2)),
-        \end{aligned}$$
-
-Thus $A_1\cup A_2$ is $\mu$-measurable.
-Then $X\setminus((X\setminus A_1)\cup (X\setminus A_2))=A_1\cap A_2$ is also $\mu$-measurable,
-$A_2\setminus A_1=A_2\cap (X\setminus A_1)$ is the same.
-It can be concluded by induction that the finite-step union, intersection, and complement operations all maintain $\mu$-measurable properties.
-The Caratheodory condition confers additivity to disjoint $\mu$-measurable sets:
-
-**Lemma 1.2** (Listable additivity). *If $A_1,\cdots$ is a disjoint $\mu$-measurable set, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).
-$*
-
-**Proof:** Additivity can be listed by times,
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="外测度"><a href="#外测度" class="headerlink" title="外测度"></a>外测度</h2><p>回忆$X$上外测度$\mu$指$2^X\rightarrow [0,\infty]$的单调次可加函数,
+满足$\mu(\varnothing)=0.$ 有时简称其为测度, 若不会导致混淆的话.
+称集合$A\subset X$是$\mu$-可测的, 若$\,\forall\,S\subset X,$
+$\mu(S)=\mu(S\setminus A)+\mu(S\cap A).$ 后者称为Caratheodory条件,
+指集合$A$能够关于”$\mu$-可加地”切割其它集合.</p>
+<p><strong>注 1.1</strong>. <em>事实上由次可加性, 条件等价于$\mu(S)\ge\mu(S\setminus A)+\mu(S\cap A).$ 由此易证任意$\mu$-零测集都是$\mu$-可测的.</em> </p>
+<p>由于$S\setminus A=S\cap (X\setminus A),$
+易见$A$为$\mu$-可测的当且仅当$X\setminus A$也是.
+设$A_1,A_2$是$\mu$-可测的, 那么$\,\forall\,S\subset X,$</p>
+<p>$$\begin{aligned}
+            \mu(S)=&amp;\mu(S\setminus A_1)+\mu(S\cap A_1)&amp; A_1\text{是$\mu$-可测的}\\
+            =&amp;\mu((S\setminus A_1)\setminus A_2)+\mu((S\setminus A_1)\cap A_2)+\mu(S\cap A_1)&amp; A_2\text{是$\mu$-可测的}\\
+            \ge&amp;\mu(S\setminus (A_1\cup A_2))+\mu(S\cap((A_2\setminus A_1)\cup A_1))&amp; \text{次可列可加性}\\
+            =&amp;\mu(S\setminus(A_1\cup A_2))+\mu(S\cap(A_1\cup A_2)),
+        \end{aligned}$$</p>
+<p>从而$A_1\cup A_2$是$\mu$-可测的.
+那么$X\setminus((X\setminus A_1)\cup (X\setminus A_2))=A_1\cap A_2$也是$\mu$-可测的,
+$A_2\setminus A_1=A_2\cap (X\setminus A_1)$也是.
+归纳可知有限步并,交,补运算均保持$\mu$-可测的性质.
+Caratheodory条件给无交$\mu$-可测集赋予了可加性:</p>
+<p><strong>引理 1.2</strong> (可列可加性). <em>若$A_1,\cdots$为无交$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\sum_{i=1}^\infty\mu(S\cap A_i).$</em> </p>
+<p><strong>证:</strong> 由次可列可加性,
 $\mu(S\cap \bigcup_{i=1}^\infty A_i)\le \sum_{i=1}^\infty\mu(S\cap A_i).$
-By the Caratheodory condition, $\,\forall\,S\subset X,$
+由Caratheodory条件, $\,\forall\,S\subset X,$
 $\mu(S\cap (A_1\cup A_2))=\mu((S\cap (A_1\cup A_2))\setminus A_1)+\mu(S\cap(A_1\cup A_2)\cap A_1)= \mu(S\cap A_1)+\mu(S\cap A_2).$
-This can be summarized into the case of a finite number of unintersecting $\mu$-measurable sets.
-Existing $\sum_{i=1}^n \mu(S\cap A_i)=\mu(S\cap\bigcup_{i=1}^n A_i)\le \mu(S\cap \bigcup_{i=1}^\infty A_i).$
-Let $n\rightarrow\infty,$ get the inequality in the other direction, and thus the proposition is proved.
-**Lemma 1.3**. *If $A_1,\cdots$ is an increasing $\mu$-measurable set, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$*
-
-**Certificate:** Remember $A_0=\varnothing,$
-Since $\bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty (A_i\setminus A_{i-1}),$
-By listability and additivity,
-
-$$\begin{aligned}
-                \mu(S\cap \bigcup_{i=1}^\infty A_i)&=\mu(S\cap \bigcup_{i=1}^\infty (A_{i}\setminus A_{i-1}))\\
-                &= \sum_{i=1}^\infty \mu(S\cap (A_i\setminus A_{i-1}))\\
-                &=\lim\limits_n \sum_{i=1}^n \mu(S\cap (A_i\setminus A_{i-1}))\\
-                &=\lim\limits_{n}\mu(S\cap A_n),
-            \end{aligned}$$
-
-The proposition is proved.
-**Corollary 1.4**. *Suppose $A_1,\cdots$ is a decreasing $\mu$-measurable set. If $\,\exists\,A_k$ has limited measure, then $\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$*
-The set $\mathcal{S}$ of a series of subsets of $X$ is called $\sigma$-algebra, if:
-
-(1) $\varnothing,X\in \mathcal{S};$
-
-(2) $A\in \mathcal{S}\Rightarrow X\setminus A\in \mathcal{S};$
-(3) $A_1,\cdots \in \mathcal{S}\Rightarrow \bigcup_{i=1}^\infty A_i\in \mathcal{S}.$
-**Note 1.5**. *$\sigma$-algebras are closed to listable unions and complement operations. It is easy to see that it is also closed to listable intersections. Since the intersection of $\sigma$-algebras is still a $\sigma$-algebra, the smallest $\sigma$-algebra that contains a series of specified sets can be found. In particular, for the topological space $X,$ The smallest $\sigma$-algebra containing all open sets is called a Borel algebra in $X$, where the set is called a Borel set.*
-**Lemma 1.6**. *The ensemble of $\mu$-measurable sets constitutes a $\sigma$-algebra, including all $\mu$-zero measurable sets of $X$.*
-
-**Proof:** Just prove that if $A_1,\cdots$ is $\mu$-measurable,
-Then $\bigcup_{i=1}^\infty A_i$ is also.
-Let $B_i=\bigcup_{j=1}^i A_j$ be an increasing $\mu$-measurable set,
-Then $\,\forall\,S\subset X,$
-
-$$\begin{aligned}
-                \mu(S)&=\mu(S\setminus \bigcup_{i=1}^n A_i)+\mu(S\cap \bigcup_{i=1}^n A_i)\\
-                &\ge\mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap B_n).
-            \end{aligned}$$
-
-Let $n\rightarrow \infty,$ that is
-
-$$\begin{aligned}
-                \mu(S)&\ge \mu(S\setminus \bigcup_{i=1}^\infty A_i)+ \mu(S\cap \bigcup_{n=1}^\infty B_n)\\
-                &= \mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap \bigcup_{i=1}^\infty A_i),
-            \end{aligned}$$
-
-Thus the proposition is proved.
-Borel regular measure
--------------
-
-An external measure $\mu$ is said to be **regular** if $\,\forall\,A\subset X,$
-There exists a $\mu$-measurable set $B\supset A$ satisfying $\mu(B)=\mu(A).$
-At this time, the previous property that $A_i$ is a monotonic column no longer needs to be assumed that $A_i$ is $\mu$-measurable.
-
-When $X$ is a topological space,
-The external measure $\mu$ is **Borel regular** if all Borel sets are $\mu$-measurable,
-And $\,\forall\,A\subset X,$ exists Borel set $B\supset A$ such that $\mu(B)=\mu(A).$
-
-It should be emphasized that $\mu(B)=\mu(A)$ does not mean $\mu(B\setminus A)=0,$
-Unless $A$ is $\mu-$ measurable and $\mu(A)<\infty.$
-
-**Note 1.7**. *Recall that the Borel measure $\mu_0$ is the mapping of the entire Borel set to $[0,\infty]$, satisfying $\mu_0(\varnothing)=0$ and listable additivity (thereby implying monotonicity).
-At this time, $\,\forall\,A\subset
-Given any subset $Y\subset X$ and external measure $\mu,$, a new external measure $\mu |_Y,$ can be defined
+从而可归纳到有限个无交$\mu$-可测集的情况.</p>
+<p>现有$\sum_{i=1}^n \mu(S\cap A_i)=\mu(S\cap\bigcup_{i=1}^n A_i)\le \mu(S\cap \bigcup_{i=1}^\infty A_i).$
+令$n\rightarrow\infty,$ 即得到另一个方向的不等式, 从而命题得证.</p>
+<p><strong>引理 1.3</strong>. <em>若$A_1,\cdots$为递增$\mu$-可测集, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcup_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
+<p><strong>证:</strong> 记$A_0=\varnothing,$
+由于$\bigcup_{i=1}^\infty A_i=\bigcup_{i=1}^\infty (A_i\setminus A_{i-1}),$
+由可列可加性,</p>
+<p>$$\begin{aligned}
+                \mu(S\cap \bigcup_{i=1}^\infty A_i)&amp;=\mu(S\cap \bigcup_{i=1}^\infty (A_{i}\setminus A_{i-1}))\\
+                &amp;= \sum_{i=1}^\infty \mu(S\cap (A_i\setminus A_{i-1}))\\
+                &amp;=\lim\limits_n \sum_{i=1}^n \mu(S\cap (A_i\setminus A_{i-1}))\\
+                &amp;=\lim\limits_{n}\mu(S\cap A_n),
+            \end{aligned}$$</p>
+<p>命题得证.</p>
+<p><strong>推论 1.4</strong>. <em>设$A_1,\cdots$为递减$\mu$-可测集, 若$\,\exists\,A_k$测度有限, 则$\,\forall\,S\subset X,$ $\mu(S\cap \bigcap_{i=1}^\infty A_i)=\lim\limits_{i}\mu(S\cap A_i).$</em> </p>
+<p>称$X$一系列子集的集合$\mathcal{S}$为$\sigma$-代数, 若:</p>
+<p>(1) $\varnothing,X\in \mathcal{S};$</p>
+<p>(2) $A\in \mathcal{S}\Rightarrow X\setminus A\in \mathcal{S};$</p>
+<p>(3) $A_1,\cdots \in \mathcal{S}\Rightarrow \bigcup_{i=1}^\infty A_i\in \mathcal{S}.$</p>
+<p><strong>注 1.5</strong>. <em>$\sigma$-代数对可列并与取补运算封闭, 易见它对可列交也是封闭的. 由于$\sigma$-代数的交仍为$\sigma$-代数, 可以找到包含一系列指定集合的最小的一个$\sigma$-代数. 特别地, 对拓扑空间$X,$ 包含所有开集的最小$\sigma$-代数称为$X$中的Borel代数, 其中集合称为Borel集.</em> </p>
+<p><strong>引理 1.6</strong>. <em>$\mu$-可测集全体构成$\sigma$-代数, 包含所有$X$的$\mu$-零测集.</em> </p>
+<p><strong>证:</strong> 只需证若$A_1,\cdots$是$\mu$-可测的,
+则$\bigcup_{i=1}^\infty A_i$也是.
+记$B_i=\bigcup_{j=1}^i A_j$为递增$\mu$-可测集,
+则$\,\forall\,S\subset X,$</p>
+<p>$$\begin{aligned}
+                \mu(S)&amp;=\mu(S\setminus \bigcup_{i=1}^n A_i)+\mu(S\cap \bigcup_{i=1}^n A_i)\\
+                &amp;\ge\mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap B_n).
+            \end{aligned}$$</p>
+<p>令$n\rightarrow \infty,$ 即有</p>
+<p>$$\begin{aligned}
+                \mu(S)&amp;\ge \mu(S\setminus \bigcup_{i=1}^\infty A_i)+ \mu(S\cap \bigcup_{n=1}^\infty B_n)\\
+                &amp;= \mu(S\setminus \bigcup_{i=1}^\infty A_i)+\mu(S\cap \bigcup_{i=1}^\infty A_i),
+            \end{aligned}$$</p>
+<p>从而命题得证.</p>
+<h2 id="Borel正则测度"><a href="#Borel正则测度" class="headerlink" title="Borel正则测度"></a>Borel正则测度</h2><p>称外测度$\mu$是<strong>正则的</strong>, 若$\,\forall\,A\subset X,$
+存在$\mu$-可测集$B\supset A$满足$\mu(B)=\mu(A).$
+此时先前关于$A_i$为单调列的性质无需再假设$A_i$是$\mu$-可测的.</p>
+<p>当$X$为拓扑空间时,
+外测度$\mu$是<strong>Borel正则的</strong>若所有Borel集都是$\mu$-可测的,
+且$\,\forall\,A\subset X,$ 存在Borel集$B\supset A$满足$\mu(B)=\mu(A).$</p>
+<p>需要强调的是$\mu(B)=\mu(A)$不意味着$\mu(B\setminus A)=0,$
+除非$A$是$\mu-$可测的且$\mu(A)&lt;\infty.$</p>
+<p><strong>注 1.7</strong>. <em>回忆Borel测度$\mu_0$为Borel集全体到$[0,\infty]$上的映射, 满足$\mu_0(\varnothing)=0$与可列可加性(从而蕴含单调性). 此时$\,\forall\,A\subset X,$ $\mu(A):=\inf\limits_{B\text{ Borel, }B\supset A}\mu_0(B)$便定义了一个Borel正则外测度, 在Borel集全体上与$\mu_0$一致. 反过来一个Borel正则外测度在Borel集全体上的限制即为一个Borel测度.</em> </p>
+<p>给定任意子集$Y\subset X$与外测度$\mu,$ 可以定义一个新的外测度$\mu |_Y,$
 $\mu|_Y(Z):=\mu(Y\cap Z),$ $Z\subset X.$
-Any $\mu$-measurable set is $\mu|_Y$-measurable, even if $Y$ itself is not necessarily $\mu$-measurable.
-When $Y$ is $\mu$-measurable and $\mu(Y)<\infty$, if $\mu$ is Borel regular,
-Then $\mu|_Y$ is also.
-For this point, just use the Borel regularity of $\mu$ to select the appropriate $B_1\supset Y,$
+任意$\mu$-可测集都是$\mu|_Y$-可测的, 即使$Y$本身不见得$\mu$-可测.
+当$Y$是$\mu$-可测的且$\mu(Y)&lt;\infty$时, 若$\mu$是Borel正则的,
+则$\mu|_Y$也是.
+关于这一点只需利用$\mu$的Borel正则性取合适的$B_1\supset Y,$
 $B_2\supset B_1\setminus Y,$ $B_3\supset A\cap Y.$
-Then $A\subset (X\setminus B_1)\cup B_2\cup B_3$ and both $\mu|_Y$ have the same measure.
-
-When $X$ is a metric space, for $A,B\subset X,$
-Remember $d(A,B)=\inf\{d(a,b):a\in A,b\in B\}.$ $\inf\varnothing:=+\infty.$
-**Theorem 1.8** (Caratheodory discriminant method). *Suppose $(X,d)$ is the metric space and $\mu$ is the external measure. If $\mu(A\cup B)=\mu(A)+\mu(B),$ $\,\forall\,A,B\subset X$ satisfies $d(A,B)>0,$, then all Borel sets are $\mu$-measurable.*
-**Proof:** Just prove that all closed sets are $\mu$-measurable. $\,\forall\,$ closed sets $C\subset X,$
-Take $C_j=\{x\in X:d(x,C)\le \frac{1}{j}\}.$ then $\,\forall\,S\subset X,$
-$d(S\setminus C_j,S\cap C)>0.$
-Thus there is $$\mu(S)\ge \mu(S\setminus C_j)+\mu(S\cap C),\quad \,\forall\,j>0.$$
-
-Let $j\rightarrow \infty,$ Since $S\setminus C_j=S\cap (X\setminus C_j),$
-$X\setminus C_j$ single increase,
-Thus $\lim\limits_{j\rightarrow \infty}\mu(S\setminus C_j)=\mu(S\setminus \bigcap_{j}C_j)=\mu(S\setminus C).$
-The last equal sign is because $C$ is a closed set, so all points with a zero distance from $C$ are in $C$.
-Therefore $$\mu(S)\ge \mu(S\setminus C)+\mu(S\cap C),$$ and thus any closed set $C$ is measurable,
-The proposition is proved.
-
-**Definition 1.9**. *The Borel regular measure $\mu$ is said to be **open**$\sigma$**-finite**, if $X=\bigcup_j V_j,$ $V_j$ is an open set and the measure is finite.*
-Obviously, when $X$ is a separable metric space and $\mu$ is locally finite, it is open $\sigma$-finite.
-
-**Theorem 1.10**. *Assume that each closed set in the topological space $
-$ $$\mu(A)=\inf_{\text{开集}U\supset A}\mu(U).$$* *If $A$ is $\mu$-measurable, then there is $$\mu(A)=\sup_{\text{闭集}C\subset A}\mu(C).$$*
-
-**Idea:** Discuss the situation where the whole space measure is finite/infinite. Take the total set that makes the conclusion true,
-Prove that it contains $\sigma$-algebras, which in turn contain all open sets, and thus contain the entire Borel algebra.
-Finally, the conclusion is drawn from regularity.
-
-**Proof:** First assume that $\mu(X)<\infty,$ then $(1)\Rightarrow (2).$
-Since the measure is Borel regular, we only need to prove that $A$ is a Borel set.
-Take $\mathcal{A}:=\{\text{Borel set}A\subset X:\text{(1) is established}\},$
-Then $\mathcal{A}$ naturally contains all open sets.
-
-Take $A_1,\cdots\in \mathcal{A}.$ $\,\forall\,\varepsilon>0,$
-$\,\exists\,$ open $U_1,\cdots,$ satisfying $U_j\supset A_j,$
-And $\mu(U_j\setminus A_j)\le 2^{-j}\varepsilon.$
-Then $$\mu(\bigcup_j U_j \setminus \bigcup_j A_j),\mu(\bigcap_j U_j\setminus \bigcap_j A_j)\le \sum_j\mu(U_j\setminus A_j)\le \varepsilon,$$
-Thus $\bigcup_j A_j,\bigcap_j A_j\in \mathcal{A},$ set pairs can be merged,
-Intersectable and closed. Since any closed set is an open set and can be intersected, all closed sets are in $\mathcal{A}$.
-Take $\widetilde{\mathcal{A} }:=\{A\in \mathcal{A}:X\setminus A\in \mathcal{A}\},$
-Then it is easy to verify that $\widetilde{\mathcal{A} }$ is a $\sigma$-algebra containing all open sets,
-Therefore, $\mathcal{A}$ contains (that is, is) the entire Borel set, and it is proved that $\mu(X)$ is finite.
-
-For the case $\mu(X)=\infty$, just use the $\sigma$-finiteness of $X$,
-Take $X=\bigcup_{j} V_j,$ Each $V_j$ has a finite measure. At this time $\mu|_{V_{j} }(X)<\infty,$
-Applying the previous conclusion, $\,\forall\,\varepsilon>0,$
-There is an open set $U_j\supset A$ that satisfies $\mu(U_j\cap V_j\setminus A)\le2^{-j}\varepsilon,$
-Thus $\mu(\bigcup_{j}(U_j\cap V_j)\setminus A)\le \varepsilon.$
-Since $\bigcup_j (U_j\cap V_j)$ is an open set containing $A$, (1) holds.
-
-For (2), similarly $\,\forall\,\varepsilon>0,$
-There is a closed set $C_j\subset A$ that satisfies $\mu(A\cap V_j\setminus C_j)\le 2^{-j}\varepsilon.$
-Then $$\mu(A\setminus \bigcup_j C_j)=\mu( A\cap \bigcup_jV_j\setminus \bigcup_jC_j)\le \sum_j \mu(A\cap V_j\setminus C_j) \le \varepsilon.$$
-Thus when $\mu(A)=\infty$, $\mu(\bigcup_{j=1}^NC_j)\rightarrow \infty;$
-When $\mu(A)<\infty$,
-For sufficiently large $N$, there is $\mu(A\setminus \bigcup_{j=1}^N C_j)\le 2\varepsilon.$
-Therefore (2) is proved.
-**Note 1.11**. *Note that if $
-
-From the above theorem, Lusin’s theorem can be proved:
-**Theorem 1.12** (Lusin). *Let $\mu$ be the Borel canonical outer measure, and all closed sets in the topological space $X$ are intersections of open sets that can be listed (for example, $X$ can take a metric space). Let $A$ be a $\mu$-measurable set with limited measure, and $f:A\rightarrow \mathbb{R}$ be a measurable function.
-Then $\,\forall\,\varepsilon>0,$ exists a closed set $C\subset A,$ in $X$ such that $\mu(A\setminus C)<\varepsilon,$ and $f|_C$ is continuous.*
-
-**Proof:** Take $A_{ij}=f^{-1}[\frac{j-1}{i},\frac{j}{i}),$
+那么$A\subset (X\setminus B_1)\cup B_2\cup B_3$且两者$\mu|_Y$测度相同.</p>
+<p>当$X$为度量空间时, 对$A,B\subset X,$
+记$d(A,B)=\inf\{d(a,b):a\in A,b\in B\}.$ $\inf\varnothing:=+\infty.$</p>
+<p><strong>定理 1.8</strong> (Caratheodory判别法). <em>设$(X,d)$为度量空间, $\mu$为外测度. 若$\mu(A\cup B)=\mu(A)+\mu(B),$ $\,\forall\,A,B\subset X$满足$d(A,B)&gt;0,$ 则所有Borel集都是$\mu$-可测的.</em> </p>
+<p><strong>证:</strong> 只需证明所有闭集均是$\mu$-可测的. $\,\forall\,$闭集$C\subset X,$
+取$C_j=\{x\in X:d(x,C)\le \frac{1}{j}\}.$ 那么$\,\forall\,S\subset X,$
+$d(S\setminus C_j,S\cap C)&gt;0.$
+从而有$$\mu(S)\ge \mu(S\setminus C_j)+\mu(S\cap C),\quad \,\forall\,j&gt;0.$$</p>
+<p>令$j\rightarrow \infty,$ 由于$S\setminus C_j=S\cap (X\setminus C_j),$
+$X\setminus C_j$单增,
+从而$\lim\limits_{j\rightarrow \infty}\mu(S\setminus C_j)=\mu(S\setminus \bigcap_{j}C_j)=\mu(S\setminus C).$
+最后一个等号是因为$C$为闭集, 故所有与$C$距离为零的点都在$C$中.
+因此$$\mu(S)\ge \mu(S\setminus C)+\mu(S\cap C),$$从而任意闭集$C$是可测的,
+命题得证.</p>
+<p><strong>定义 1.9</strong>. <em>称Borel正则测度$\mu$是<strong>开</strong>$\sigma$<strong>-有限</strong>的, 若$X=\bigcup_j V_j,$ $V_j$为开集且测度有限.</em> </p>
+<p>显然当$X$为可分度量空间, $\mu$局部有限时, 它是开$\sigma$-有限的.</p>
+<p><strong>定理 1.10</strong>. <em>设拓扑空间$X$中每个闭集均是可列个开集之交, 设$\mu$是开$\sigma$-有限的Borel正则测度, 那么$\,\forall\,A\subset X,$ $$\mu(A)=\inf_{\text{开集}U\supset A}\mu(U).$$</em>  <em>若$A$是$\mu$-可测的, 那么还有$$\mu(A)=\sup_{\text{闭集}C\subset A}\mu(C).$$</em> </p>
+<p><strong>思路:</strong> 分全空间测度有限/无限的情况讨论. 取使结论成立的集合全体,
+证其包含$\sigma$-代数, 其中又包含所有开集, 进而包含整个Borel代数.
+最后由正则性即得结论.</p>
+<p><strong>证:</strong> 首先假设$\mu(X)&lt;\infty,$ 此时$(1)\Rightarrow (2).$
+由测度是Borel正则的, 只需证明$A$为Borel集的情况.
+取$\mathcal{A}:=\{\text{Borel集}A\subset X:\text{(1)成立}\},$
+那么$\mathcal{A}$自然包含所有开集.</p>
+<p>取$A_1,\cdots\in \mathcal{A}.$ $\,\forall\,\varepsilon&gt;0,$
+$\,\exists\,$开$U_1,\cdots,$ 满足$U_j\supset A_j,$
+且$\mu(U_j\setminus A_j)\le 2^{-j}\varepsilon.$
+那么$$\mu(\bigcup_j U_j \setminus \bigcup_j A_j),\mu(\bigcap_j U_j\setminus \bigcap_j A_j)\le \sum_j\mu(U_j\setminus A_j)\le \varepsilon,$$
+从而$\bigcup_j A_j,\bigcap_j A_j\in \mathcal{A},$ 集合对可列并,
+可列交封闭. 由于任意闭集是开集可列交, 全体闭集均在$\mathcal{A}$中.</p>
+<p>取$\widetilde{\mathcal{A} }:=\{A\in \mathcal{A}:X\setminus A\in \mathcal{A}\},$
+那么容易验证$\widetilde{\mathcal{A} }$为包含全体开集的$\sigma$-代数,
+从而$\mathcal{A}$包含(即为)Borel集全体, $\mu(X)$有限的情况得证.</p>
+<p>对$\mu(X)=\infty$的情况, 只需利用$X$的$\sigma$-有限性,
+取$X=\bigcup_{j} V_j,$ 每个$V_j$测度有限. 此时$\mu|_{V_{j} }(X)&lt;\infty,$
+应用前面的结论, $\,\forall\,\varepsilon&gt;0,$
+有开集$U_j\supset A$满足$\mu(U_j\cap V_j\setminus A)\le2^{-j}\varepsilon,$
+从而$\mu(\bigcup_{j}(U_j\cap V_j)\setminus A)\le \varepsilon.$
+由于$\bigcup_j (U_j\cap V_j)$为含$A$开集, (1)成立.</p>
+<p>对(2), 类似地$\,\forall\,\varepsilon&gt;0,$
+有闭集$C_j\subset A$满足$\mu(A\cap V_j\setminus C_j)\le 2^{-j}\varepsilon.$
+那么$$\mu(A\setminus \bigcup_j C_j)=\mu( A\cap \bigcup_jV_j\setminus \bigcup_jC_j)\le \sum_j \mu(A\cap V_j\setminus C_j) \le \varepsilon.$$
+从而当$\mu(A)=\infty$时, $\mu(\bigcup_{j=1}^NC_j)\rightarrow \infty;$
+$\mu(A)&lt;\infty$时,
+对足够大的$N$有$\mu(A\setminus \bigcup_{j=1}^N C_j)\le 2\varepsilon.$
+因此(2)得证.</p>
+<p><strong>注 1.11</strong>. <em>注意若$X$是$\sigma$-紧的Hausdorff空间, 即全空间为可列个紧集之并. 那么第二个性质可推出$$\mu(A)=\sup_{\text{紧集}K\subset A}\mu(K).$$ 这是因为在上述假设下, 任意闭集为一列递增紧集之并.</em> </p>
+<p>由上述定理可证明Lusin定理:</p>
+<p><strong>定理 1.12</strong> (Lusin). <em>令$\mu$为Borel正则外测度, 拓扑空间$X$中所有闭集均为可列开集之交(如$X$取度量空间即可). 令$A$为$\mu$-可测集且测度有限, $f:A\rightarrow \mathbb{R}$为可测函数. 那么$\,\forall\,\varepsilon&gt;0,$ 存在$X$中闭集$C\subset A,$ 满足$\mu(A\setminus C)&lt;\varepsilon,$ 且$f|_C$连续.</em> </p>
+<p><strong>证:</strong> 取$A_{ij}=f^{-1}[\frac{j-1}{i},\frac{j}{i}),$
 $i\in \mathbb{Z}_+,$ $j\in \mathbb{Z}.$
-Then $\mu$-measurable $A_{ij}$ has no intersection, and the measure is limited.
-And $\bigcup_{j}A_{ij}=A$ holds for any $i$. Since $\mu|_{A}$ is Borel regular,
-Applying the above theorem, we can find the closed set $C_{ij}\subset A_{ij},$ in $X$
-$\mu(A_{ij}\setminus C_{ij})=\mu|_A(A_{ij}\setminus C_{ij})<2^{-i-|j|-2}\varepsilon.$
-Further$\mu(A\setminus \bigcup_j C_{ij})< 2^{-i}\varepsilon,$
-Therefore for each $i,$
-There is $J(i)\in \mathbb{Z}_+$ such that $\mu(A\setminus \bigcup_{|j|\le J(i)}C_{ij})\le 2^{-i}\varepsilon.$
-Take $C=\bigcap_{i}\bigcup_{|j|\le j(i)}C_{ij}$ as a closed set,
-Then $\mu(A\setminus C)\le \varepsilon.$
+那么$\mu$-可测的$A_{ij}$两两无交, 测度有限,
+且有$\bigcup_{j}A_{ij}=A$对任意$i$成立. 由于$\mu|_{A}$是Borel正则的,
+应用上述定理, 可找到$X$中闭集$C_{ij}\subset A_{ij},$
+$\mu(A_{ij}\setminus C_{ij})=\mu|_A(A_{ij}\setminus C_{ij})&lt;2^{-i-|j|-2}\varepsilon.$
+进一步$\mu(A\setminus \bigcup_j C_{ij})&lt; 2^{-i}\varepsilon,$
+因此对每个$i,$
+有$J(i)\in \mathbb{Z}_+$使得$\mu(A\setminus \bigcup_{|j|\le J(i)}C_{ij})\le 2^{-i}\varepsilon.$
+取$C=\bigcap_{i}\bigcup_{|j|\le j(i)}C_{ij}$为闭集,
+那么$\mu(A\setminus C)\le \varepsilon.$</p>
+<p>最后, 定义$g_i:\bigcup_{|j|\le J(i)}C_{ij}\rightarrow \mathbb{R},$
+$g_i|_{C_{ij} }(x)=\frac{j-1}{i}.$ 由于固定$i,$ $C_{ij}$彼此无交,
+因此$g_i|_C$连续. 由于$\,\forall\,x\in C,$
+$0\le f(x)-g_i(x)\le \frac{1}{i},$ 因此$g_{i}|_C\rightrightarrows f|_C,$
+从而$f|_C$连续.</p>
+<p>文章最后更新于 2021-10-09 13:26:19 </p>
 
-Finally, define $g_i:\bigcup_{|j|\le J(i)}C_{ij}\rightarrow \mathbb{R},$
-$g_i|_{C_{ij} }(x)=\frac{j-1}{i}.$ Since $i is fixed, $ $C_{ij}$ have no intersection with each other,
-Therefore $g_i|_C$ is continuous. Since $\,\forall\,x\in C,$
-$0\le f(x)-g_i(x)\le \frac{1}{i},$ Therefore $g_{i}|_C\rightrightarrows f|_C,$
-Thus $f|_C$ is continuous.
-
-The article was last updated on 2021-10-09 13:26:19
                 </div>
             
         </div>
@@ -427,7 +530,7 @@ The article was last updated on 2021-10-09 13:26:19
     <ul>
         <li>本文标题：《几何测度论导论》讲义笔记(1.1)-基本概念</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-09 11:03:10</li>
+        <li>创建时间：2021-10-09 14:03:10</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/10/09/《几何测度论导论》讲义笔记(1.1)-基本概念/
         </li>
@@ -459,7 +562,7 @@ The article was last updated on 2021-10-09 13:26:19
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第二章-切丛(1)</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 2-Tangential Cluster (1)</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifold Chapter 2 - Tangent Plexus (1)</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -481,7 +584,7 @@ The article was last updated on 2021-10-09 13:26:19
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》讨论稿-解析流形</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Paper-Analytical Manifolds</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Discussion Paper &#34;Differential Manifolds&#34; - Parsing Manifolds</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -733,11 +836,11 @@ The article was last updated on 2021-10-09 13:26:19
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E6%B5%8B%E5%BA%A6"><span class="nav-text">外测度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Borel%E6%AD%A3%E5%88%99%E6%B5%8B%E5%BA%A6"><span class="nav-text">Borel正则测度</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E6%B5%8B%E5%BA%A6"><span class="nav-text">外测度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Borel%E6%AD%A3%E5%88%99%E6%B5%8B%E5%BA%A6"><span class="nav-text">Borel正则测度</span></a></li></ol>
         </div>
     
 </div>
@@ -788,6 +891,36 @@ The article was last updated on 2021-10-09 13:26:19
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -811,46 +944,6 @@ The article was last updated on 2021-10-09 13:26:19
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第五章-多重线性代数</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 5-Multiple Linear Algebra</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 5 - Multilinear Algebra</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-23 18:00:16
+        <i class="fas fa-edit"></i>&nbsp;2021-11-23 20:00:16
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,70 +230,102 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="张量积"><a href="#张量积" class="headerlink" title="张量积"></a>张量积</h2><p>设$V$是数域$\mathbb{F}=\mathbb{R}$上$n$维向量空间,
+$e_1,\cdots,e_n$为$V$的基. $V\ni v=\sum_{i=1}^n a^ie_i.$
+那么$V^\ast =\{\text{linear} f:V\rightarrow \mathbb{R}\}$也构成$n$维向量空间,
+称为对偶空间. $\,\forall\,f\in V^\ast ,$
+$f$由基上取值$\{f(e_1),\cdots,f(e_n)\}$唯一决定.
+仅在$e_i$上取$1$的函数记为$\omega^i$, 即$\omega^i(e_j)=\delta^i_j.$
+$\{\omega^i\}$构成了$V^\ast $的一组基, 称为$\{e_i\}$的<strong>对偶基</strong>.</p>
+<p>对于有限维向量空间, 显然我们总有$(V^\ast )^\ast =V.$ 记$(f,v)=f(v)$为配对.</p>
+<p>设$V_1,\cdots,V_r,Z$为向量空间. 若
+$f:V_1\times\cdots\times V_r\rightarrow Z$ 关于每个分量是线性的,
+则称$f$是$r$-重线性映照. 当$Z=\mathbb{R}$时, 称为$r$-重线性函数.
+内积就是$2$-重线性函数, 称为双线性函数. 向量积(外积)是双线性映照.
+行列式也可视为多重线性函数.</p>
+<p>记$\mathcal{L}(V_1,\cdots,V_r;Z)=\{\text{multi-linear} f:V_1\times\cdots\times V_r\rightarrow Z\},$
+容易验证它也是向量空间. 取$Z$的一组基$\{\eta_\alpha\},$
+那么任意$f\in \mathcal{L}(V_1,\cdots,V_r;Z)$可分解成为基上函数$f^\alpha.$</p>
+<p>对$r=2$的情形, 设$V,W$是向量空间, $\dim V=n,$ $\dim W=m,$
+则$\,\forall\,f\in \mathcal{L}(V,W;\mathbb{R}),$ $\,\forall\,v\in V,$
+$w\in W,$ 
+$$f(\cdot,w)\in V^\ast ,\quad f(v,\cdot) \in W^\ast .$$</p>
+<p>任取$v^\ast \in V^\ast ,$ $w^\ast \in W^\ast ,$ 引入如下双线性函数:</p>
+<p>$$(v^\ast \otimes w^\ast )(v,w):=v^\ast (v)w^\ast (w)\,\Rightarrow\, v^\ast \otimes w^\ast \in \mathcal{L}(V,W;\mathbb{R}).$$</p>
+<p>称为$v^\ast $和$w^\ast $的<strong>张量积</strong>.
+$h=\otimes:V^\ast \times W^\ast \rightarrow \mathcal{L}(V,W;\mathbb{R}).$</p>
+<p>容易验证, 它是双线性的, 即张量积 $\otimes$ 满足分配律.</p>
+<p>定义空间$V^\ast ,W^\ast $间的张量积:</p>
+<p>$$V^\ast \otimes W^\ast =\operatorname{span}\{\operatorname{Im}h\}=\left\{\sum_{i=1}^{k}a_i (v_i^\ast \otimes w_i^\ast )\,|\, \,\forall\,a_i\in \mathbb{R}, v_i\in V^\ast , w_i\in W^\ast , k\in \mathbb{Z}_+\right\}.$$</p>
+<p><strong>命题 1</strong>. <em>$V^\ast \otimes W^\ast =\mathcal{L}(V,W;\mathbb{R}).$</em> </p>
+<p><strong>证:</strong> 只需说明若$\{\omega^i\}, \{\sigma^\alpha\}$分别是$V^\ast ,W^\ast $的基,
+则$\{\omega^i\otimes \sigma^\alpha\}$为$\mathcal{L}(V,W;\mathbb{R})$的基.
+特别地由此可得到$\dim \mathcal{L}(V,W;\mathbb{R})=\dim V^\ast \otimes W^\ast =\dim V^\ast \cdot \dim W^\ast =\dim V\cdot \dim W.$</p>
+<p>易见$V^\ast \otimes W^\ast =\operatorname{span}\{\omega^i\otimes \sigma^\alpha\},$
+证其线性无关, 从而是一组基. 为此, 只需利用对偶基$\{e_i\},$
+$\{\xi_\alpha\}$讨论系数即可.</p>
+<p>而$\,\forall\,f\in \mathcal{L}(V,W),$ $f$由$f(e_i,\xi_\alpha)$唯一决定.
+因此$\dim \mathcal{L}(V,W)=\dim V^\ast \otimes W^\ast .$
+由$V^\ast \otimes W^\ast \subset \mathcal{L}(V,W)$即知$V^\ast \otimes W^\ast =\mathcal{L}(V,W).$</p>
+<p>由于$V,V^\ast ;$ $W,W^\ast $互为对偶, 类似地可以对$v\in V,w\in W,$ 定义</p>
+<p>$$(v\otimes w)(v^\ast ,w^\ast )=v(v^\ast )w(w^\ast )=v^\ast (v)w^\ast (w).$$</p>
+<p>此时$h=\otimes:V\times W\rightarrow \mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$是双线性的,
+类似定义$V$和$W$的张量积$V\otimes W=\operatorname{span}\{\operatorname{Im}h\}.$
+同理它与空间$\mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$等同,
+$\dim V\otimes W=n\cdot m,$
+且$\{e_i\otimes \xi_\alpha\}$为$V\otimes W$的基.</p>
+<p>文章最后更新于 2021-11-23 18:00:20 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    tensor product
-------
-
-Let $V$ be an $n$-dimensional vector space on the number field $\mathbb{F}=\mathbb{R}$,
-$e_1,\cdots,e_n$ is the basis of $V$. $V\ni v=\sum_{i=1}^n a^ie_i.$
-Then $V^\ast =\{\text{linear} f:V\rightarrow \mathbb{R}\}$ also constitutes an $n$-dimensional vector space,
-It is called the dual space. $\,\forall\,f\in V^\ast ,$
-$f$ is uniquely determined by the base values $\{f(e_1),\cdots,f(e_n)\}$.
-The function that only takes $1$ on $e_i$ is denoted as $\omega^i$, that is, $\omega^i(e_j)=\delta^i_j.$
-$\{\omega^i\}$ constitutes a set of basis of $V^\ast $, which is called the **dual basis** of $\{e_i\}$.
-
-For a finite-dimensional vector space, it is obvious that we always have $(V^\ast )^\ast =V.$, let $(f,v)=f(v)$ be the pairing.
-Let $V_1,\cdots,V_r,Z$ be a vector space. If
-$f:V_1\times\cdots\times V_r\rightarrow Z$ is linear with respect to each component,
-Then $f$ is said to be an $r$-heavy linear mapping. When $Z=\mathbb{R}$, it is called an $r$-heavy linear function.
-The inner product is a $2$-multiple linear function, called a bilinear function. The vector product (outer product) is a bilinear mapping.
-Determinants can also be viewed as multilinear functions.
-
-Remember $\mathcal{L}(V_1,\cdots,V_r;Z)=\{\text{multi-linear} f:V_1\times\cdots\times V_r\rightarrow Z\},$
-It is easy to verify that it is also a vector space. Take a set of basis $\{\eta_\alpha\},$ of $Z$
-Then any $f\in \mathcal{L}(V_1,\cdots,V_r;Z)$ can be decomposed into a basis function $f^\alpha.$
-
-For the case of $r=2$, let $V, W$ be vector spaces, $\dim V=n,$ $\dim W=m,$
-Then $\,\forall\,f\in \mathcal{L}(V,W;\mathbb{R}),$ $\,\forall\,v\in V,$
-$w\in W,$
-$$f(\cdot,w)\in V^\ast ,\quad f(v,\cdot) \in W^\ast .$$
-Take $v^\ast \in V^\ast ,$ $w^\ast \in W^\ast ,$ and introduce the following bilinear function:
-
-$$(v^\ast \otimes w^\ast )(v,w):=v^\ast (v)w^\ast (w)\,\Rightarrow\, v^\ast \otimes w^\ast \in \mathcal{L}(V,W;\mathbb{R}).$$
-
-Called the tensor product of $v^\ast $ and $w^\ast $.
-$h=\otimes:V^\ast \times W^\ast \rightarrow \mathcal{L}(V,W;\mathbb{R}).$
-
-It is easy to verify that it is bilinear, that is, the tensor product $\otimes$ satisfies the distributive law.
-
-Define the tensor product between spaces $V^\ast ,W^\ast $:
-$$V^\ast \otimes W^\ast =\operatorname{span}\{\operatorname{Im}h\}=\left\{\sum_{i=1}^{k}a_i (v_i^\ast \otimes w_i^\ast )\,|\, \,\forall\,a_i\in \mathbb{R}, v_i\in V^\ast , w_i\in W^\ast , k\in \mathbb{Z}_+\right\}.$$
-
-
-**Proposition 1**. *$V^\ast \otimes W^\ast =\mathcal{L}(V,W;\mathbb{R}).$*
-**Proof:** It only needs to be stated that if $\{\omega^i\}, \{\sigma^\alpha\}$ are the bases of $V^\ast and W^\ast $ respectively,
-Then $\{\omega^i\otimes \sigma^\alpha\}$ is the basis of $\mathcal{L}(V,W;\mathbb{R})$.
-In particular, it can be obtained that $\dim \mathcal{L}(V,W;\mathbb{R})=\dim V^\ast \otimes W^\ast =\dim V^\ast \cdot \dim W^\ast =\dim V\cdot \dim W.$
-Yi Jian$V^\ast \otimes W^\ast =\operatorname{span}\{\omega^i\otimes \sigma^\alpha\},$
-Prove that it is linearly independent, and thus it is a set of basis. To do this, just use the dual basis $\{e_i\},$
-$\{\xi_\alpha\}$ Just discuss the coefficients.
-And $\,\forall\,f\in \mathcal{L}(V,W),$ $f$ is uniquely determined by $f(e_i,\xi_\alpha)$.
-Therefore $\dim \mathcal{L}(V,W)=\dim V^\ast \otimes W^\ast .$
-From $V^\ast \otimes W^\ast \subset \mathcal{L}(V,W)$, we know that $V^\ast \otimes W^\ast =\mathcal{L}(V,W).$
-
-Since $V,V^\ast ;$ $W,W^\ast $ are dual to each other, $v\in V,w\in W,$ can be defined similarly
-$$(v\otimes w)(v^\ast ,w^\ast )=v(v^\ast )w(w^\ast )=v^\ast (v)w^\ast (w).$$
-
-At this time $h=\otimes:V\times W\rightarrow \mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$ is bilinear,
-Similar to defining the tensor product of $V$ and $W$ $V\otimes W=\operatorname{span}\{\operatorname{Im}h\}.$
-In the same way, it is equivalent to the space $\mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$,
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="张量积"><a href="#张量积" class="headerlink" title="张量积"></a>张量积</h2><p>设$V$是数域$\mathbb{F}=\mathbb{R}$上$n$维向量空间,
+$e_1,\cdots,e_n$为$V$的基. $V\ni v=\sum_{i=1}^n a^ie_i.$
+那么$V^\ast =\{\text{linear} f:V\rightarrow \mathbb{R}\}$也构成$n$维向量空间,
+称为对偶空间. $\,\forall\,f\in V^\ast ,$
+$f$由基上取值$\{f(e_1),\cdots,f(e_n)\}$唯一决定.
+仅在$e_i$上取$1$的函数记为$\omega^i$, 即$\omega^i(e_j)=\delta^i_j.$
+$\{\omega^i\}$构成了$V^\ast $的一组基, 称为$\{e_i\}$的<strong>对偶基</strong>.</p>
+<p>对于有限维向量空间, 显然我们总有$(V^\ast )^\ast =V.$ 记$(f,v)=f(v)$为配对.</p>
+<p>设$V_1,\cdots,V_r,Z$为向量空间. 若
+$f:V_1\times\cdots\times V_r\rightarrow Z$ 关于每个分量是线性的,
+则称$f$是$r$-重线性映照. 当$Z=\mathbb{R}$时, 称为$r$-重线性函数.
+内积就是$2$-重线性函数, 称为双线性函数. 向量积(外积)是双线性映照.
+行列式也可视为多重线性函数.</p>
+<p>记$\mathcal{L}(V_1,\cdots,V_r;Z)=\{\text{multi-linear} f:V_1\times\cdots\times V_r\rightarrow Z\},$
+容易验证它也是向量空间. 取$Z$的一组基$\{\eta_\alpha\},$
+那么任意$f\in \mathcal{L}(V_1,\cdots,V_r;Z)$可分解成为基上函数$f^\alpha.$</p>
+<p>对$r=2$的情形, 设$V,W$是向量空间, $\dim V=n,$ $\dim W=m,$
+则$\,\forall\,f\in \mathcal{L}(V,W;\mathbb{R}),$ $\,\forall\,v\in V,$
+$w\in W,$ 
+$$f(\cdot,w)\in V^\ast ,\quad f(v,\cdot) \in W^\ast .$$</p>
+<p>任取$v^\ast \in V^\ast ,$ $w^\ast \in W^\ast ,$ 引入如下双线性函数:</p>
+<p>$$(v^\ast \otimes w^\ast )(v,w):=v^\ast (v)w^\ast (w)\,\Rightarrow\, v^\ast \otimes w^\ast \in \mathcal{L}(V,W;\mathbb{R}).$$</p>
+<p>称为$v^\ast $和$w^\ast $的<strong>张量积</strong>.
+$h=\otimes:V^\ast \times W^\ast \rightarrow \mathcal{L}(V,W;\mathbb{R}).$</p>
+<p>容易验证, 它是双线性的, 即张量积 $\otimes$ 满足分配律.</p>
+<p>定义空间$V^\ast ,W^\ast $间的张量积:</p>
+<p>$$V^\ast \otimes W^\ast =\operatorname{span}\{\operatorname{Im}h\}=\left\{\sum_{i=1}^{k}a_i (v_i^\ast \otimes w_i^\ast )\,|\, \,\forall\,a_i\in \mathbb{R}, v_i\in V^\ast , w_i\in W^\ast , k\in \mathbb{Z}_+\right\}.$$</p>
+<p><strong>命题 1</strong>. <em>$V^\ast \otimes W^\ast =\mathcal{L}(V,W;\mathbb{R}).$</em> </p>
+<p><strong>证:</strong> 只需说明若$\{\omega^i\}, \{\sigma^\alpha\}$分别是$V^\ast ,W^\ast $的基,
+则$\{\omega^i\otimes \sigma^\alpha\}$为$\mathcal{L}(V,W;\mathbb{R})$的基.
+特别地由此可得到$\dim \mathcal{L}(V,W;\mathbb{R})=\dim V^\ast \otimes W^\ast =\dim V^\ast \cdot \dim W^\ast =\dim V\cdot \dim W.$</p>
+<p>易见$V^\ast \otimes W^\ast =\operatorname{span}\{\omega^i\otimes \sigma^\alpha\},$
+证其线性无关, 从而是一组基. 为此, 只需利用对偶基$\{e_i\},$
+$\{\xi_\alpha\}$讨论系数即可.</p>
+<p>而$\,\forall\,f\in \mathcal{L}(V,W),$ $f$由$f(e_i,\xi_\alpha)$唯一决定.
+因此$\dim \mathcal{L}(V,W)=\dim V^\ast \otimes W^\ast .$
+由$V^\ast \otimes W^\ast \subset \mathcal{L}(V,W)$即知$V^\ast \otimes W^\ast =\mathcal{L}(V,W).$</p>
+<p>由于$V,V^\ast ;$ $W,W^\ast $互为对偶, 类似地可以对$v\in V,w\in W,$ 定义</p>
+<p>$$(v\otimes w)(v^\ast ,w^\ast )=v(v^\ast )w(w^\ast )=v^\ast (v)w^\ast (w).$$</p>
+<p>此时$h=\otimes:V\times W\rightarrow \mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$是双线性的,
+类似定义$V$和$W$的张量积$V\otimes W=\operatorname{span}\{\operatorname{Im}h\}.$
+同理它与空间$\mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$等同,
 $\dim V\otimes W=n\cdot m,$
-And $\{e_i\otimes \xi_\alpha\}$ is the basis of $V\otimes W$.
+且$\{e_i\otimes \xi_\alpha\}$为$V\otimes W$的基.</p>
+<p>文章最后更新于 2021-11-23 18:00:20 </p>
 
-The article was last updated on 2021-11-23 18:00:20
                 </div>
             
         </div>
@@ -304,7 +336,7 @@ The article was last updated on 2021-11-23 18:00:20
     <ul>
         <li>本文标题：《微分流形》第五章-多重线性代数</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-23 18:00:16</li>
+        <li>创建时间：2021-11-23 20:00:16</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/11/23/《微分流形》第五章-多重线性代数/
         </li>
@@ -336,7 +368,7 @@ The article was last updated on 2021-11-23 18:00:20
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">论文笔记-Ollivier Ricci曲率</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Thesis Notes - Ollivier Ricci Curvature</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Paper Notes - Olivier Ricci Curvature</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -358,7 +390,7 @@ The article was last updated on 2021-11-23 18:00:20
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(11-1)-球面丛</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (11-1)-Spherical Bundle</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (11-1) - Spherical Plex</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -610,11 +642,11 @@ The article was last updated on 2021-11-23 18:00:20
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF"><span class="nav-text">张量积</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E7%A7%AF"><span class="nav-text">张量积</span></a></li></ol>
         </div>
     
 </div>
@@ -665,6 +697,36 @@ The article was last updated on 2021-11-23 18:00:20
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -688,46 +750,6 @@ The article was last updated on 2021-11-23 18:00:20
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

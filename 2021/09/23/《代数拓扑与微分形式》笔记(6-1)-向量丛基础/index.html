@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(6-1)-向量丛基础</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (6-1) - Fundamentals of Vector Bunches</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (6-1) - Fundamentals of Vector Plexus</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-23 14:45:05
+        <i class="fas fa-edit"></i>&nbsp;2021-09-23 17:45:05
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,166 +230,252 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>主要为了讨论紧垂直上同调与Thom类.</p>
+<h2 id="向量丛的局部平凡化"><a href="#向量丛的局部平凡化" class="headerlink" title="向量丛的局部平凡化"></a>向量丛的局部平凡化</h2><p>延续上节记号.</p>
+<p>$E_x=\pi^{-1}(x)$是向量空间. 若$\,\exists\,\{U_\alpha\}$为$M$的开覆盖,
+其上有微分同胚$\phi_\alpha:E_{U_\alpha}=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times \mathbb{R}^n$,
+将$E_x\mapsto \{x\}\times \mathbb{R}^n$, 且该映射为向量空间的同构,
+则称$\pi$为秩$n$的光滑(实)<strong>向量丛</strong>,
+$\{(U_\alpha,\phi_\alpha)\}$为<strong>局部平凡化</strong>,
+$E$与$M$称为<strong>全空间</strong>与<strong>底流形</strong>.</p>
+<p>向量丛为纤维为$\mathbb{R}^n$,
+结构群为$\operatorname{GL}(n,\mathbb{R})$的<strong>纤维丛</strong>.
+若将$\mathbb{R}$都换为$\mathbb{C}$, 即为复向量丛.
+我们默认讨论光滑实向量丛.</p>
+<p>光滑映射$s:U\rightarrow E$称为<strong>截面</strong>, 若$\pi\circ s=id$,
+即要求$s(x)\in E_x$. $E$在$U$上所有截面全体记为$\Gamma(U,E)$.
+<strong>零截面</strong>指$s: M\rightarrow E$, $s(x)=0_x\in E_x$.
+$U$上的$n$个截面$s_1,...,s_n$称为<strong>标架</strong>, 若对于每点$x\in U$,
+$s_1(x),...,s_n(x)$为$E_x$的一组基.</p>
+<p>局部平凡化上的自然标架为$\varepsilon_1^\alpha, ...,\varepsilon_n^\alpha$,
+由 $\varepsilon_i^\alpha(x)=\phi_\alpha^{-1}(x,e_i)$定义.
+其中$e_1,...,e_n$为标准单位基. 反过来,
+标架$s_1,...,s_n$也给出$E|_U$的平凡化:
+$\phi(\sum v_is_i(x))=(x,(v_1,...,v_n))$,
+即将$E|_x$上的坐标直接打为$\mathbb{R}^n$上的坐标.</p>
+<p><strong>标架与局部平凡化之间的相互转化是研究向量丛的基本方法.</strong></p>
+<p><strong>向量丛本质: 转移函数.</strong> $\,\forall\,x\in U_{\alpha\beta}$,
+$\phi_{\alpha}\circ(\phi_\beta)^{-1}:\{x\}\times \mathbb{R}^n\rightarrow \{x\}\times \mathbb{R}^n$为自同构.
+存在$g_{\alpha\beta}(x)\in \operatorname{GL}(n,\mathbb{R})$使得,
+$\,\forall\,v\in \mathbb{R}^n$,
+$\phi_\alpha\phi_\beta^{-1}(x,v)=(x,g_{\alpha\beta}(x)v)$.</p>
+<p>其满足<strong>cocycle条件</strong>:
+$g_{\alpha\beta}=g_{\beta\alpha}^{-1}\:\:\text{on}\:\:U_{\alpha\beta};$
+$g_{\alpha\beta}g_{\beta\gamma}=g_{\alpha\gamma} \:\:\text{on}\:\:U_{\alpha\beta\gamma}.$</p>
+<p><strong>引理 1.1</strong>. <em>若有另一平凡化$\{(U_\alpha,\phi_\alpha&#39;)\}$诱导转移函数$g_{\alpha\beta}&#39;$, 则存在光滑矩阵映射$\lambda_\alpha,\lambda_\beta$, 使得$g_{\alpha\beta}(x)=\lambda_\alpha(x)g&#39;_{\alpha\beta}(x)\lambda^{-1}_\beta(x)$.</em> </p>
+<p><strong>证:</strong> 注意到$\phi_\alpha\circ{\phi&#39;_\alpha}^{-1}$为自同构,
+可定义$\lambda_\alpha$,
+使得$\phi_\alpha{\phi&#39;_\alpha}^{-1}(x,v)=(x,\lambda_\alpha(x)v).$
+类似地, 定义$\lambda_\beta.$ 接下来,
+在$\phi_\alpha\phi_\beta^{-1}$中合适地插入$\phi_\alpha&#39;,\phi_\beta&#39;$
+即可.</p>
+<p>定义两个转移函数等价即为存在这样的光滑矩阵映射使得他们相抵,
+注意这里转移函数允许源于两个不同的向量丛. 所以同一向量丛两个不同平凡化,
+对应的转移函数等价.</p>
+<p>光滑映射$f:E\rightarrow E&#39;$称为丛映射,H 若其将每根纤维映到纤维,
+且是线性的. 也成为同态, 记其全体为$\operatorname{Hom}(E,E&#39;).$
+当限制在纤维上是同构时, 也称$f$为同构, $E$和$E&#39;$同构.</p>
+<h2 id="结构群的约化"><a href="#结构群的约化" class="headerlink" title="结构群的约化"></a>结构群的约化</h2><p>若$\pi:E\rightarrow M$存在局部平凡化,
+转移函数只取值于$GL(n,\mathbb{R})$的子群$H$,
+那么称向量丛$E$的结构群可<strong>约化</strong>到$H$.</p>
+<p>也就是对于一般的转移函数$g$, 我们希望找到等价的$g&#39;$只取值于较好的$H$.
+一般的, $H$为(特殊)正交群和行列式为正的$GL^+(n,\mathbb{R}).$
+若确实可约化到$GL^+(n,\mathbb{R})$, 则称向量丛$E$<strong>可定向</strong>.
+称局部平凡化<strong>定向</strong>, 若$\det g_{\alpha\beta}&gt;0$.
+称两个定向平凡化<strong>等价</strong>, 若
+$\phi_\alpha{\phi_\alpha&#39;}^{-1}$Jacobian为正.</p>
+<p>这样若$M$连通, $E$的所有定向平凡化分为两个等价类, 每个等价类为一个定向.
+给定定向的可定向向量丛称为定向向量丛.</p>
+<p><strong>命题 1.1</strong>. <em>秩$n$的向量丛$E$结构群总能约化到$O(n)$. 能约化到$SO(n)$当且仅当$E$可定向.</em> </p>
+<p><strong>证:</strong> 通过自然标架诱导局部内积, 再利用单位分解合成整体内积.
+之后做Gram-Schimit正交化定义新的正交单位标架, 给一个局部平凡化即可.</p>
+<h2 id="向量丛的计算"><a href="#向量丛的计算" class="headerlink" title="向量丛的计算"></a>向量丛的计算</h2><p>设$E$为秩$n$向量丛, $\{(U_\alpha,\phi_\alpha)\}$为局部平凡化,
+转移函数$g_{\alpha\beta}$; $E&#39;$为秩$m$向量丛,
+$\{(U_\alpha,\phi&#39;_\alpha)\}$为局部平凡化, 转移函数$g&#39;_{\alpha\beta}$.
+可以假设两个开覆盖一样是因为$\{(U_\alpha,\phi_\alpha)\}$和$\{(U_{\alpha \beta},\phi_{\alpha})\}$是等价的,
+开覆盖$\{U_{\alpha \beta}\}$为开覆盖$\{U_\alpha\}$和$\{U_\beta\}$交织而成.</p>
+<p><strong>直和</strong>: $E\oplus E&#39;$为一个秩$n+m$向量丛,
+局部平凡化为$\{(U_\alpha, \phi_\alpha\oplus\phi_\alpha&#39;)\}$,
+转移函数为$\begin{pmatrix}
+                g_{\alpha\beta}&amp;0\\
+                0&amp;g_{\alpha\beta}&#39;
+            \end{pmatrix}$</p>
+<p><strong>张量积</strong>: $E\otimes E&#39;$为一个秩$nm$向量丛,
+局部平凡化为$\{(U_\alpha,\phi_\alpha\otimes\phi_\alpha&#39;)\}$,
+转移函数为$g_{\alpha}\otimes g_{\alpha}&#39;.$</p>
+<p>$\operatorname{Hom}(E,E&#39;)$为$E$到$E&#39;$丛映射全体,
+同构于$E^\ast \otimes E&#39;.$</p>
+<p><strong>对偶丛</strong>: 回忆泛函分析中, $f:V\rightarrow W$为有限维空间上的线性泛函,
+$f^\ast :W^\ast \rightarrow V^\ast$为对偶空间上的线性泛函,
+它的表示矩阵为$f$表示矩阵的转置, 因此我们也以$f^t$记$f^\ast$.</p>
+<p>$E^\ast$即为$E$的对偶空间, 称为对偶丛.
+局部平凡化为$\{(U_\alpha,{(\phi^t_\alpha)}^{-1})\}$.
+转移函数$(g_{\alpha\beta}^t)^{-1}$.</p>
+<p><strong>拉回丛</strong>: 设有$f:N\rightarrow M$为光滑映射, 则可构造向量丛:
+$\pi:f^{-1}E\rightarrow N$, 称为$E$由$f$的拉回丛.</p>
+<p>$f^{-1}E=\{(y,e)|f(y)=\pi(e)\}\subset N\times E.$ 即对每点$y\in N$,
+将$f(y)\in M$的纤维$E|_{f(y)}$移植过来称为$f^{-1}E|_{y}$.
+它是$N\times E$的唯一最大子集,
+使得$\pi \circ (f\times \mathrm{id}) =f\circ \operatorname{pr}_1$.</p>
+<p>乘积丛的拉回丛为乘积丛, 因此$f^{-1}E$可局部平凡化,
+转移函数为$f^\ast g_{\alpha\beta}$.</p>
+<h2 id="向量丛的同伦性"><a href="#向量丛的同伦性" class="headerlink" title="向量丛的同伦性"></a>向量丛的同伦性</h2><p><strong>定理 1.1</strong> (向量丛的同伦性质). <em>设$Y$是紧流形, $f_0,f_1:Y\rightarrow X$同伦且$\pi:E\rightarrow X$是向量丛, 则$f_0^{-1}E\cong f_1^{-1}E$, 即同伦映射诱导同构丛.</em> </p>
+<p><strong>证:</strong> 只需证$\,\forall\,t_0\in I$, $\,\exists\,\varepsilon&gt;0$,
+$\,\forall\,t\in O(t_0,\varepsilon)$, $f_{t}^{-1}E\cong f_{t_0}^{-1}E$.
+由$I$紧性则结论成立.</p>
+<p>其中$f:Y\times I\rightarrow X$为$f_0,f_1$间的同伦映射, $f_t(y)=f(y,t)$.
+取$\pi:Y\times I\rightarrow Y$为投射,
+则$f^{-1}E|_{Y\times \{t_0\} }\cong\pi^{-1} f_{t_0}^{-1}E|_{Y\times \{t_0\} },$
+即将$f(y,t_0)$分为两步:$f_{t_0}(\pi(y,t_0)).$</p>
+<p>回忆$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$也是一个向量丛,
+每根纤维是所有线性映射全体;
+取其子群$\operatorname{Iso}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$,
+每根纤维是其中的同构全体.
+因此我们只需要给出一个$(Y,t_0)$附近的一个截面即可.</p>
+<p>我们取$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$的一个局部平凡化$\{(U_\alpha,\phi_\alpha)\}$,
+由于$Y,I$紧, 由管状邻域引理(拓扑学),
+$\,\exists\,Y\times O(t_0,\varepsilon)$被有限个$U_\alpha$包含,
+使得每个$(y,O(t_0,\varepsilon))$在某个$U_\alpha$内.</p>
+<p>取$Y$的坐标邻域$\{V_k\}$覆盖$Y$,
+使得$V_k\times O(t_0,\varepsilon)$包含在某个$U_\alpha$内.
+截面$s(y,t_0)$已经在$Y$上整体定义. 在每个局部平凡化邻域内,
+$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$的$V_k\times O(t_0,\varepsilon)$上的纤维,
+均可视为欧氏空间, 从而在其上任意将截面向外延拓. 即从$s(y,t_0)$出发,
+延拓为$s(y,t)$, $(y,t)\in V_k\times O(t_0,\varepsilon).$ 进一步,
+利用从属于$\{V_k\}$的单位分解将每个$V_k$上的延拓合并,
+形成$Y\times O(t_0,\varepsilon)$上的整体延拓,
+从而截面在条状区域内整体定义.</p>
+<p>延拓时注意, 非同构线性映射全体为闭集, 因此我们可以在开集内进行延拓.
+截面给出了, 从而同构在$t_0$附近成立. 由紧性, 在$I$上成立, 特别地,
+$f_0^{-1}E\cong f_1^{-1}E.$</p>
+<p><strong>推论 1.1</strong>. <em>可缩空间上的向量丛是平凡丛.</em> </p>
+<p>文章最后更新于 2021-09-23 14:45:08 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Mainly to discuss tight vertical cohomology and Thom classes.
-
-Local trivialization of vector bundles
-------------------
-
-Continuation of the previous section’s mark.
-
-$E_x=\pi^{-1}(x)$ is a vector space. If $\,\exists\,\{U_\alpha\}$ is the open cover of $M$,
-There is a diffeomorphism $\phi_\alpha:E_{U_\alpha}=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times \mathbb{R}^n$,
-Let $E_x\mapsto \{x\}\times \mathbb{R}^n$, and the map be the isomorphism of the vector space,
-Then $\pi$ is called a smooth (real) **vector bundle** of rank $n$,
-$\{(U_\alpha,\phi_\alpha)\}$ is **local trivialization**,
-$E$ and $M$ are called **full space** and **base manifold**.
-
-The vector bundle is the fiber $\mathbb{R}^n$,
-The structure group is the **fiber bundle** of $\operatorname{GL}(n,\mathbb{R})$.
-If $\mathbb{R}$ is replaced by $\mathbb{C}$, it is a complex vector bundle.
-By default we discuss smooth real vector bundles.
-
-Smooth mapping $s:U\rightarrow E$ is called **section**, if $\pi\circ s=id$,
-That is, it is required that $s(x)\in E_x$. All sections of $E$ on $U$ are recorded as $\Gamma(U,E)$.
-**Zero cross-section** refers to $s: M\rightarrow E$, $s(x)=0_x\in E_x$.
-The $n$ sections $s_1,...,s_n$ on $U$ are called **frame**, if for each point $x\in U$,
-$s_1(x),...,s_n(x)$ is a set of basis of $E_x$.
-The natural frame on local trivialization is $\varepsilon_1^\alpha, ...,\varepsilon_n^\alpha$,
-Defined by $\varepsilon_i^\alpha(x)=\phi_\alpha^{-1}(x,e_i)$.
-Among them, $e_1,...,e_n$ is the standard unit base. In turn,
-The frame $s_1,...,s_n$ also gives the trivialization of $E|_U$:
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>主要为了讨论紧垂直上同调与Thom类.</p>
+<h2 id="向量丛的局部平凡化"><a href="#向量丛的局部平凡化" class="headerlink" title="向量丛的局部平凡化"></a>向量丛的局部平凡化</h2><p>延续上节记号.</p>
+<p>$E_x=\pi^{-1}(x)$是向量空间. 若$\,\exists\,\{U_\alpha\}$为$M$的开覆盖,
+其上有微分同胚$\phi_\alpha:E_{U_\alpha}=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times \mathbb{R}^n$,
+将$E_x\mapsto \{x\}\times \mathbb{R}^n$, 且该映射为向量空间的同构,
+则称$\pi$为秩$n$的光滑(实)<strong>向量丛</strong>,
+$\{(U_\alpha,\phi_\alpha)\}$为<strong>局部平凡化</strong>,
+$E$与$M$称为<strong>全空间</strong>与<strong>底流形</strong>.</p>
+<p>向量丛为纤维为$\mathbb{R}^n$,
+结构群为$\operatorname{GL}(n,\mathbb{R})$的<strong>纤维丛</strong>.
+若将$\mathbb{R}$都换为$\mathbb{C}$, 即为复向量丛.
+我们默认讨论光滑实向量丛.</p>
+<p>光滑映射$s:U\rightarrow E$称为<strong>截面</strong>, 若$\pi\circ s=id$,
+即要求$s(x)\in E_x$. $E$在$U$上所有截面全体记为$\Gamma(U,E)$.
+<strong>零截面</strong>指$s: M\rightarrow E$, $s(x)=0_x\in E_x$.
+$U$上的$n$个截面$s_1,...,s_n$称为<strong>标架</strong>, 若对于每点$x\in U$,
+$s_1(x),...,s_n(x)$为$E_x$的一组基.</p>
+<p>局部平凡化上的自然标架为$\varepsilon_1^\alpha, ...,\varepsilon_n^\alpha$,
+由 $\varepsilon_i^\alpha(x)=\phi_\alpha^{-1}(x,e_i)$定义.
+其中$e_1,...,e_n$为标准单位基. 反过来,
+标架$s_1,...,s_n$也给出$E|_U$的平凡化:
 $\phi(\sum v_is_i(x))=(x,(v_1,...,v_n))$,
-That is, the coordinates on $E|_x$ are directly mapped to the coordinates on $\mathbb{R}^n$.
-
-**The mutual transformation between the frame and local trivialization is the basic method for studying vector bundles.**
-
-**Essence of vector bundle: transfer function.** $\,\forall\,x\in U_{\alpha\beta}$,
-$\phi_{\alpha}\circ(\phi_\beta)^{-1}:\{x\}\times \mathbb{R}^n\rightarrow \{x\}\times \mathbb{R}^n$ is an automorphism.
-There exists $g_{\alpha\beta}(x)\in \operatorname{GL}(n,\mathbb{R})$ such that,
+即将$E|_x$上的坐标直接打为$\mathbb{R}^n$上的坐标.</p>
+<p><strong>标架与局部平凡化之间的相互转化是研究向量丛的基本方法.</strong></p>
+<p><strong>向量丛本质: 转移函数.</strong> $\,\forall\,x\in U_{\alpha\beta}$,
+$\phi_{\alpha}\circ(\phi_\beta)^{-1}:\{x\}\times \mathbb{R}^n\rightarrow \{x\}\times \mathbb{R}^n$为自同构.
+存在$g_{\alpha\beta}(x)\in \operatorname{GL}(n,\mathbb{R})$使得,
 $\,\forall\,v\in \mathbb{R}^n$,
-$\phi_\alpha\phi_\beta^{-1}(x,v)=(x,g_{\alpha\beta}(x)v)$.
-
-It satisfies **cocycle conditions**:
+$\phi_\alpha\phi_\beta^{-1}(x,v)=(x,g_{\alpha\beta}(x)v)$.</p>
+<p>其满足<strong>cocycle条件</strong>:
 $g_{\alpha\beta}=g_{\beta\alpha}^{-1}\:\:\text{on}\:\:U_{\alpha\beta};$
-$g_{\alpha\beta}g_{\beta\gamma}=g_{\alpha\gamma} \:\:\text{on}\:\:U_{\alpha\beta\gamma}.$
-**Lemma 1.1**. *If there is another trivialization $\{(U_\alpha,\phi_\alpha')\}$ inducing the transfer function $g_{\alpha\beta}'$, then there is a smooth matrix mapping $\lambda_\alpha,\lambda_\beta$,
-Such that $g_{\alpha\beta}(x)=\lambda_\alpha(x)g'_{\alpha\beta}(x)\lambda^{-1}_\beta(x)$.*
-
-**Proof:** Note that $\phi_\alpha\circ{\phi'_\alpha}^{-1}$ is an automorphism,
-Can define $\lambda_\alpha$,
-Such that $\phi_\alpha{\phi'_\alpha}^{-1}(x,v)=(x,\lambda_\alpha(x)v).$
-Similarly, define $\lambda_\beta.$ Next,
-Insert $\phi_\alpha',\phi_\beta'$ appropriately into $\phi_\alpha\phi_\beta^{-1}$
-That’s it.
-Defining the equivalence of two transfer functions means that there is such a smooth matrix mapping that makes them cancel out,
-Note that the transfer function here is allowed to originate from two different vector bundles. So two different trivializations of the same vector bundle,
-The corresponding transfer functions are equivalent.
-
-The smooth map $f:E\rightarrow E'$ is called a bundle map, H if it maps each fiber to fiber,
-And it is linear. It also becomes a homomorphism, and its totality is $\operatorname{Hom}(E,E').$
-When the restriction is isomorphism on the fiber, $f$ is also called isomorphism, and $E$ and $E'$ are isomorphisms.
-
-Reduction of structural groups
-----------
-
-If $\pi:E\rightarrow M$ has local trivialization,
-The transfer function only takes the value of the subgroup $H$ of $GL(n,\mathbb{R})$,
-Then the structural group of the vector bundle $E$ can be **reduced** to $H$.
-That is to say, for the general transfer function $g$, we hope to find the equivalent $g'$ that only takes the value of the better $H$.
-Generally, $H$ is a (special) orthogonal group and $GL^+(n,\mathbb{R}).$ whose determinant is positive.
-If it can indeed be reduced to $GL^+(n,\mathbb{R})$, then the vector bundle $E$ is said to be orientable**.
-It is called local trivialization **directional**, if $\det g_{\alpha\beta}>0$.
-Two directional trivializations are said to be **equivalent**, if
-$\phi_\alpha{\phi_\alpha'}^{-1}$Jacobian is positive.
-
-In this way, if $M$ is connected, all orientations of $E$ can be trivially divided into two equivalence classes, and each equivalence class is an orientation.
-A directional vector bundle with a given orientation is called a directional vector bundle.
-**Proposition 1.1**. *The structure group $E$ of a vector bundle of rank $n$ can always be reduced to $O(n)$. It can be reduced to $SO(n)$ if and only if $E$ can be oriented.*
-
-**Certificate:** The local inner product is induced through the natural frame, and then the unit decomposition is used to synthesize the global inner product.
-Then do Gram-Schimit orthogonalization to define a new orthogonal unit frame and give it a local trivialization.
-
-Calculation of vector bundles
-----------
-Let $E$ be a vector bundle of rank $n$, $\{(U_\alpha,\phi_\alpha)\}$ be a local trivialization,
-Transfer function $g_{\alpha\beta}$; $E'$ is a vector bundle of rank $m$,
-$\{(U_\alpha,\phi'_\alpha)\}$ is the local trivialization, and the transfer function $g'_{\alpha\beta}$.
-It can be assumed that the two open covers are the same because $\{(U_\alpha,\phi_\alpha)\}$ and $\{(U_{\alpha \beta},\phi_{\alpha})\}$ are equivalent,
-The open cover $\{U_{\alpha \beta}\}$ is intertwined with the open cover $\{U_\alpha\}$ and $\{U_\beta\}$.
-**Direct sum**: $E\oplus E'$ is a vector bundle of rank $n+m$,
-The local trivialization is $\{(U_\alpha, \phi_\alpha\oplus\phi_\alpha')\}$,
-The transfer function is $\begin{pmatrix}
-                g_{\alpha\beta}&0\\
-0&g_{\alpha\beta}'
-            \end{pmatrix}$
-
-**Tensor product**: $E\otimes E'$ is a vector bundle of rank $nm$,
-The local trivialization is $\{(U_\alpha,\phi_\alpha\otimes\phi_\alpha')\}$,
-The transfer function is $g_{\alpha}\otimes g_{\alpha}'.$
-
-$\operatorname{Hom}(E,E')$ is the entire cluster mapping from $E$ to $E'$,
-Isomorphic to $E^\ast \otimes E'.$
-
-**Dual Bundle**: Recall that in functional analysis, $f:V\rightarrow W$ is a linear functional on a finite-dimensional space,
-$f^\ast :W^\ast \rightarrow V^\ast$ is a linear functional on the dual space,
-Its representation matrix is $f$, which represents the transpose of the matrix, so we also use $f^t$ to denote $f^\ast$.
-
-$E^\ast$ is the dual space of $E$, which is called the dual bundle.
-The local trivialization is $\{(U_\alpha,{(\phi^t_\alpha)}^{-1})\}$.
-Transfer function $(g_{\alpha\beta}^t)^{-1}$.
-
-**Pullback bundle**: Suppose $f:N\rightarrow M$ is a smooth map, then the vector bundle can be constructed:
-$\pi:f^{-1}E\rightarrow N$, is called the pullback bundle of $E$ from $f$.
-$f^{-1}E=\{(y,e)|f(y)=\pi(e)\}\subset N\times E.$ That is, for each point $y\in N$,
-Transplanting the fiber $E|_{f(y)}$ of $f(y)\in M$ is called $f^{-1}E|_{y}$.
-It is the only largest subset of $N\times E$,
-Such that $\pi \circ (f\times \mathrm{id}) =f\circ \operatorname{pr}_1$.
-
-The pullback bundle of the product bundle is the product bundle, so $f^{-1}E$ can be locally trivialized,
-The transfer function is $f^\ast g_{\alpha\beta}$.
-
-Homotopy of vector bundles
----------------
-**Theorem 1.1** (Homotopy property of vector bundles). *Suppose $Y$ is a compact manifold, $f_0,f_1:Y\rightarrow
-**Certificate:** Only need to prove $\,\forall\,t_0\in I$, $\,\exists\,\varepsilon>0$,
+$g_{\alpha\beta}g_{\beta\gamma}=g_{\alpha\gamma} \:\:\text{on}\:\:U_{\alpha\beta\gamma}.$</p>
+<p><strong>引理 1.1</strong>. <em>若有另一平凡化$\{(U_\alpha,\phi_\alpha&#39;)\}$诱导转移函数$g_{\alpha\beta}&#39;$, 则存在光滑矩阵映射$\lambda_\alpha,\lambda_\beta$, 使得$g_{\alpha\beta}(x)=\lambda_\alpha(x)g&#39;_{\alpha\beta}(x)\lambda^{-1}_\beta(x)$.</em> </p>
+<p><strong>证:</strong> 注意到$\phi_\alpha\circ{\phi&#39;_\alpha}^{-1}$为自同构,
+可定义$\lambda_\alpha$,
+使得$\phi_\alpha{\phi&#39;_\alpha}^{-1}(x,v)=(x,\lambda_\alpha(x)v).$
+类似地, 定义$\lambda_\beta.$ 接下来,
+在$\phi_\alpha\phi_\beta^{-1}$中合适地插入$\phi_\alpha&#39;,\phi_\beta&#39;$
+即可.</p>
+<p>定义两个转移函数等价即为存在这样的光滑矩阵映射使得他们相抵,
+注意这里转移函数允许源于两个不同的向量丛. 所以同一向量丛两个不同平凡化,
+对应的转移函数等价.</p>
+<p>光滑映射$f:E\rightarrow E&#39;$称为丛映射,H 若其将每根纤维映到纤维,
+且是线性的. 也成为同态, 记其全体为$\operatorname{Hom}(E,E&#39;).$
+当限制在纤维上是同构时, 也称$f$为同构, $E$和$E&#39;$同构.</p>
+<h2 id="结构群的约化"><a href="#结构群的约化" class="headerlink" title="结构群的约化"></a>结构群的约化</h2><p>若$\pi:E\rightarrow M$存在局部平凡化,
+转移函数只取值于$GL(n,\mathbb{R})$的子群$H$,
+那么称向量丛$E$的结构群可<strong>约化</strong>到$H$.</p>
+<p>也就是对于一般的转移函数$g$, 我们希望找到等价的$g&#39;$只取值于较好的$H$.
+一般的, $H$为(特殊)正交群和行列式为正的$GL^+(n,\mathbb{R}).$
+若确实可约化到$GL^+(n,\mathbb{R})$, 则称向量丛$E$<strong>可定向</strong>.
+称局部平凡化<strong>定向</strong>, 若$\det g_{\alpha\beta}&gt;0$.
+称两个定向平凡化<strong>等价</strong>, 若
+$\phi_\alpha{\phi_\alpha&#39;}^{-1}$Jacobian为正.</p>
+<p>这样若$M$连通, $E$的所有定向平凡化分为两个等价类, 每个等价类为一个定向.
+给定定向的可定向向量丛称为定向向量丛.</p>
+<p><strong>命题 1.1</strong>. <em>秩$n$的向量丛$E$结构群总能约化到$O(n)$. 能约化到$SO(n)$当且仅当$E$可定向.</em> </p>
+<p><strong>证:</strong> 通过自然标架诱导局部内积, 再利用单位分解合成整体内积.
+之后做Gram-Schimit正交化定义新的正交单位标架, 给一个局部平凡化即可.</p>
+<h2 id="向量丛的计算"><a href="#向量丛的计算" class="headerlink" title="向量丛的计算"></a>向量丛的计算</h2><p>设$E$为秩$n$向量丛, $\{(U_\alpha,\phi_\alpha)\}$为局部平凡化,
+转移函数$g_{\alpha\beta}$; $E&#39;$为秩$m$向量丛,
+$\{(U_\alpha,\phi&#39;_\alpha)\}$为局部平凡化, 转移函数$g&#39;_{\alpha\beta}$.
+可以假设两个开覆盖一样是因为$\{(U_\alpha,\phi_\alpha)\}$和$\{(U_{\alpha \beta},\phi_{\alpha})\}$是等价的,
+开覆盖$\{U_{\alpha \beta}\}$为开覆盖$\{U_\alpha\}$和$\{U_\beta\}$交织而成.</p>
+<p><strong>直和</strong>: $E\oplus E&#39;$为一个秩$n+m$向量丛,
+局部平凡化为$\{(U_\alpha, \phi_\alpha\oplus\phi_\alpha&#39;)\}$,
+转移函数为$\begin{pmatrix}
+                g_{\alpha\beta}&amp;0\\
+                0&amp;g_{\alpha\beta}&#39;
+            \end{pmatrix}$</p>
+<p><strong>张量积</strong>: $E\otimes E&#39;$为一个秩$nm$向量丛,
+局部平凡化为$\{(U_\alpha,\phi_\alpha\otimes\phi_\alpha&#39;)\}$,
+转移函数为$g_{\alpha}\otimes g_{\alpha}&#39;.$</p>
+<p>$\operatorname{Hom}(E,E&#39;)$为$E$到$E&#39;$丛映射全体,
+同构于$E^\ast \otimes E&#39;.$</p>
+<p><strong>对偶丛</strong>: 回忆泛函分析中, $f:V\rightarrow W$为有限维空间上的线性泛函,
+$f^\ast :W^\ast \rightarrow V^\ast$为对偶空间上的线性泛函,
+它的表示矩阵为$f$表示矩阵的转置, 因此我们也以$f^t$记$f^\ast$.</p>
+<p>$E^\ast$即为$E$的对偶空间, 称为对偶丛.
+局部平凡化为$\{(U_\alpha,{(\phi^t_\alpha)}^{-1})\}$.
+转移函数$(g_{\alpha\beta}^t)^{-1}$.</p>
+<p><strong>拉回丛</strong>: 设有$f:N\rightarrow M$为光滑映射, 则可构造向量丛:
+$\pi:f^{-1}E\rightarrow N$, 称为$E$由$f$的拉回丛.</p>
+<p>$f^{-1}E=\{(y,e)|f(y)=\pi(e)\}\subset N\times E.$ 即对每点$y\in N$,
+将$f(y)\in M$的纤维$E|_{f(y)}$移植过来称为$f^{-1}E|_{y}$.
+它是$N\times E$的唯一最大子集,
+使得$\pi \circ (f\times \mathrm{id}) =f\circ \operatorname{pr}_1$.</p>
+<p>乘积丛的拉回丛为乘积丛, 因此$f^{-1}E$可局部平凡化,
+转移函数为$f^\ast g_{\alpha\beta}$.</p>
+<h2 id="向量丛的同伦性"><a href="#向量丛的同伦性" class="headerlink" title="向量丛的同伦性"></a>向量丛的同伦性</h2><p><strong>定理 1.1</strong> (向量丛的同伦性质). <em>设$Y$是紧流形, $f_0,f_1:Y\rightarrow X$同伦且$\pi:E\rightarrow X$是向量丛, 则$f_0^{-1}E\cong f_1^{-1}E$, 即同伦映射诱导同构丛.</em> </p>
+<p><strong>证:</strong> 只需证$\,\forall\,t_0\in I$, $\,\exists\,\varepsilon&gt;0$,
 $\,\forall\,t\in O(t_0,\varepsilon)$, $f_{t}^{-1}E\cong f_{t_0}^{-1}E$.
-From the compactness of $I$, the conclusion holds.
-Among them, $f:Y\times I\rightarrow X$ is the homotopy mapping between $f_0, f_1$, $f_t(y)=f(y,t)$.
-Take $\pi:Y\times I\rightarrow Y$ as the projection,
-Then $f^{-1}E|_{Y\times \{t_0\} }\cong\pi^{-1} f_{t_0}^{-1}E|_{Y\times \{t_0\} },$
-That is, $f(y,t_0)$ is divided into two steps: $f_{t_0}(\pi(y,t_0)).$
+由$I$紧性则结论成立.</p>
+<p>其中$f:Y\times I\rightarrow X$为$f_0,f_1$间的同伦映射, $f_t(y)=f(y,t)$.
+取$\pi:Y\times I\rightarrow Y$为投射,
+则$f^{-1}E|_{Y\times \{t_0\} }\cong\pi^{-1} f_{t_0}^{-1}E|_{Y\times \{t_0\} },$
+即将$f(y,t_0)$分为两步:$f_{t_0}(\pi(y,t_0)).$</p>
+<p>回忆$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$也是一个向量丛,
+每根纤维是所有线性映射全体;
+取其子群$\operatorname{Iso}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$,
+每根纤维是其中的同构全体.
+因此我们只需要给出一个$(Y,t_0)$附近的一个截面即可.</p>
+<p>我们取$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$的一个局部平凡化$\{(U_\alpha,\phi_\alpha)\}$,
+由于$Y,I$紧, 由管状邻域引理(拓扑学),
+$\,\exists\,Y\times O(t_0,\varepsilon)$被有限个$U_\alpha$包含,
+使得每个$(y,O(t_0,\varepsilon))$在某个$U_\alpha$内.</p>
+<p>取$Y$的坐标邻域$\{V_k\}$覆盖$Y$,
+使得$V_k\times O(t_0,\varepsilon)$包含在某个$U_\alpha$内.
+截面$s(y,t_0)$已经在$Y$上整体定义. 在每个局部平凡化邻域内,
+$\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$的$V_k\times O(t_0,\varepsilon)$上的纤维,
+均可视为欧氏空间, 从而在其上任意将截面向外延拓. 即从$s(y,t_0)$出发,
+延拓为$s(y,t)$, $(y,t)\in V_k\times O(t_0,\varepsilon).$ 进一步,
+利用从属于$\{V_k\}$的单位分解将每个$V_k$上的延拓合并,
+形成$Y\times O(t_0,\varepsilon)$上的整体延拓,
+从而截面在条状区域内整体定义.</p>
+<p>延拓时注意, 非同构线性映射全体为闭集, 因此我们可以在开集内进行延拓.
+截面给出了, 从而同构在$t_0$附近成立. 由紧性, 在$I$上成立, 特别地,
+$f_0^{-1}E\cong f_1^{-1}E.$</p>
+<p><strong>推论 1.1</strong>. <em>可缩空间上的向量丛是平凡丛.</em> </p>
+<p>文章最后更新于 2021-09-23 14:45:08 </p>
 
-Recall that $\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$ is also a vector bundle,
-Each fiber is the ensemble of all linear maps;
-Take its subgroup $\operatorname{Iso}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$,
-Each fiber is an isomorphic whole within it.
-Therefore, we only need to give a cross section near $(Y,t_0)$.
-
-We take a local trivialization $\{(U_\alpha,\phi_\alpha)\}$ of $\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$,
-Since $Y,I$ are compact, by the tubular neighborhood lemma (topology),
-$\,\exists\,Y\times O(t_0,\varepsilon)$ is contained by a finite number of $U_\alpha$,
-Make each $(y,O(t_0,\varepsilon))$ within a certain $U_\alpha$.
-
-Take the coordinate neighborhood $\{V_k\}$ of $Y$ to cover $Y$,
-Make $V_k\times O(t_0,\varepsilon)$ included in a certain $U_\alpha$.
-The section $s(y,t_0)$ has been defined globally on $Y$. Within each local trivialization neighborhood,
-Fiber on $V_k\times O(t_0,\varepsilon)$ of $\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}_{t_0}E)$,
-can be regarded as a Euclidean space, so that the section can be extended to the extension arbitrarily on it. That is, starting from $s(y,t_0)$,
-The continuation is $s(y,t)$, $(y,t)\in V_k\times O(t_0,\varepsilon).$ Further,
-Combine the extensions on each $V_k$ using the unit decomposition belonging to $\{V_k\}$,
-Forming an overall continuation on $Y\times O(t_0,\varepsilon)$,
-The cross section is thus defined as a whole within the strip area.
-
-When extending, please note that all non-isomorphic linear maps are closed sets, so we can extend them within open sets.
-The cross section is given, so the isomorphism is established near $t_0$. Due to compactness, it is established on $I$, in particular,
-$f_0^{-1}E\cong f_1^{-1}E.$
-
-**Corollary 1.1**. *A vector bundle on a shrinkable space is a trivial bundle.*
-The article was last updated on 2021-09-23 14:45:08
                 </div>
             
         </div>
@@ -400,7 +486,7 @@ The article was last updated on 2021-09-23 14:45:08
     <ul>
         <li>本文标题：《代数拓扑与微分形式》笔记(6-1)-向量丛基础</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-23 14:45:05</li>
+        <li>创建时间：2021-09-23 17:45:05</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-1)-向量丛基础/
         </li>
@@ -432,7 +518,7 @@ The article was last updated on 2021-09-23 14:45:08
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(6-2)-Thom同构</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (6-2)-Thom Isomorphism</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (6-2) -Thomomomorphism</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -454,7 +540,7 @@ The article was last updated on 2021-09-23 14:45:08
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(5-2)-Künneth公式</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (5-2)-Künneth Formula</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (5-2) - Künneth Formula</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -706,11 +792,11 @@ The article was last updated on 2021-09-23 14:45:08
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%B1%80%E9%83%A8%E5%B9%B3%E5%87%A1%E5%8C%96"><span class="nav-text">向量丛的局部平凡化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%BE%A4%E7%9A%84%E7%BA%A6%E5%8C%96"><span class="nav-text">结构群的约化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-text">向量丛的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%90%8C%E4%BC%A6%E6%80%A7"><span class="nav-text">向量丛的同伦性</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%B1%80%E9%83%A8%E5%B9%B3%E5%87%A1%E5%8C%96"><span class="nav-text">向量丛的局部平凡化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E7%BE%A4%E7%9A%84%E7%BA%A6%E5%8C%96"><span class="nav-text">结构群的约化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-text">向量丛的计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%90%8C%E4%BC%A6%E6%80%A7"><span class="nav-text">向量丛的同伦性</span></a></li></ol>
         </div>
     
 </div>
@@ -761,6 +847,36 @@ The article was last updated on 2021-09-23 14:45:08
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -784,46 +900,6 @@ The article was last updated on 2021-09-23 14:45:08
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

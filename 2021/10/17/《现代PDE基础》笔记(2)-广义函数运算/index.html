@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(2)-广义函数运算</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (2) - Generalized Function Operations</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Modern PDE Basics Notes (2) - Generalized Functional Operations</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-17 21:50:09
+        <i class="fas fa-edit"></i>&nbsp;2021-10-18 00:50:09
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,138 +230,218 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><p>对某基本函数空间的广义函数列$\{T_k\},$
+若对其基本函数空间上的任意元素$\varphi,$
+有$\left&lt;{}T_k,\varphi\right&gt;\rightarrow 0,$ 则称$T_k$(弱)收敛于$0.$
+若$T_k-T$收敛于$0,$ 则称$T_k$的极限是$T,$ 记为$T_k\rightarrow T.$</p>
+<p>对常义函数, 我们可以做正则化$J_\varepsilon.$ 下面我们说明,
+对广义函数也有类似的正则化.</p>
+<p><strong>定理 1.1</strong>. <em>若$T\in \mathscr{D}&#39;(\mathbb{R}_y^n),$ $T_\varepsilon(x):=\left&lt;{}T_y,\alpha_\varepsilon(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n),$ $\alpha_\varepsilon$如上节所示.</em> </p>
+<p><strong>证:</strong> 不难说明$x\rightarrow x_0$时,
+$\alpha_\varepsilon(x-y)\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \alpha_\varepsilon(x_0-y)$(等度连续),
+因此$\left&lt;{}T,\alpha_\varepsilon(x-y)\right&gt;\rightarrow\left&lt;{}T,\alpha_\varepsilon(x_0-y)\right&gt;,$
+$T_\varepsilon(x)$为连续函数. 类似地,
+$\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \partial_k \alpha_\varepsilon(x,y),$
+从而有
+$$\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left&lt;{}T,\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\right&gt;\rightarrow\left&lt;{}T,\partial_k \alpha_\varepsilon(x,y)\right&gt;,$$
+因此$T_\varepsilon(x)$关于$x_k$可导. 同理可证它有任意阶导数,
+因此是光滑函数.</p>
+<p>当$T$为常义函数时, 泛函即为积分,
+因此对广义函数的正则化是对常义函数正则化的推广.
+当然有了下面的定理才让正则化有意义:</p>
+<p><strong>定理 1.2</strong>. <em>$T\in \mathscr{D}&#39;(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{D}&#39;} T.$</em> </p>
+<p><strong>证:</strong>
+即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$
+由于$\varphi$具紧支集, 可以用Riemann积分的方式来逼近式中的积分.
+然而将积分写成求和形式后,
+$\alpha_\varepsilon(x-y)$可以与$\varphi(x)$先行结合, 即
+$$\sum_i\alpha_\varepsilon(x_i-y)\varphi(x_i)\Delta x_i\xrightarrow{\mathscr{E} }\int_{\mathbb{R}_x^n}\alpha_\varepsilon(x-y)\varphi(x)dx,$$
+从而$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\left&lt;{}T,\varphi_\varepsilon\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+命题得证.</p>
+<p><strong>定理 1.3</strong>. <em>$T\in \mathscr{E}&#39;(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{E}&#39;} T.$</em> </p>
+<p><strong>证:</strong>
+即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+$\,\forall\,\varphi\in \mathscr{E}(\mathbb{R}^n).$ 由于$T$具紧支集,
+不难证明$T_\varepsilon$也具紧支集, 且充分靠近$\operatorname{supp}T.$
+取紧支撑的$\zeta$在$\operatorname{supp}T$某邻域上恒为$1,$ 由前面的定理,
+$\left&lt;{}T_\varepsilon,\zeta\varphi\right&gt;\rightarrow \left&lt;{}T,\zeta\varphi\right&gt;.$
+由于在$\operatorname{supp}T$邻域上$\zeta\varphi=\varphi,$
+且对充分小的$\varepsilon,$ 该邻域包含了$T,T_\varepsilon$的支集, 因此
+$$\left&lt;{}T_\varepsilon,\zeta\varphi\right&gt;=\left&lt;{}T_\varepsilon,\varphi\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;=\left&lt;{}T,\zeta\varphi\right&gt;,$$
+命题得证.</p>
+<h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><p>设$T\in\mathscr{D}&#39;(\mathbb{R}^n),$
+定义$T$关于$x_k$的<strong>(广义)导数</strong>$\frac{\partial {}T}{\partial {}x_k}\in \mathscr{D}&#39;(\mathbb{R}^n),$
+满足
+$$\left&lt;{}\frac{\partial {}T}{\partial {}x_k},\varphi\right&gt;=-\left&lt;{}T,\frac{\partial {}\varphi}{\partial {}x_k}\right&gt;.$$
+由分部积分公式, 当$T$为$C^1$函数时, 广义导数即为一般意义下的导数.
+因此广义导数的概念是通常导数概念的推广. 特别地, 对于某些常义函数,
+它无法按照通常概念求导. 但将其视为广义函数,
+就可以得到广义函数空间中的广义导数, 这往往是十分有用的.</p>
+<p>类似地定义高阶导数
+$$\left&lt;{}\partial^\alpha T,\varphi\right&gt;=(-1)^{|\alpha|}\left&lt;{}T,\partial^\alpha \varphi\right&gt;.$$
+可见广义函数任意阶导数存在, 且混合偏导与顺序无关.</p>
+<p>一个有意思的例子是, 若$\operatorname{supp}T=\{0\},$
+则$T$只能是$\delta$及其导数的有限线性组合.
+证明通过对$\varphi$进行Taylor展开给出即可.</p>
+<h2 id="乘子"><a href="#乘子" class="headerlink" title="乘子"></a>乘子</h2><p>对$T\in \mathscr{D}&#39;(\mathbb{R}^n),$ $\alpha\in C^\infty(\mathbb{R}^n),$
+定义$\alpha T\in \mathscr{D}&#39;(\mathbb{R}^n)$为
+$$\left&lt;{}\alpha T,\varphi\right&gt;=\left&lt;{}T,\alpha\varphi\right&gt;.$$
+称$\alpha$为$\mathscr{D}&#39;(\mathbb{R}^n)$的<strong>乘子</strong>.
+类似地它也是$\mathscr{E}&#39;(\mathbb{R}^n)$的乘子,
+但一般不见得是$\mathscr{S}(\mathbb{R}^n)$的乘子.</p>
+<p>类似于常义函数, 我们有Leibniz公式:
+$$\partial^r(\alpha T)=\sum_{p+q=r} \frac{r!}{p!q!}(\partial^p \alpha \cdot \partial^q T).$$</p>
+<h2 id="自变量变换"><a href="#自变量变换" class="headerlink" title="自变量变换"></a>自变量变换</h2><p>仿照$C_c^\infty$函数的自变量变换, 对$T\in \mathscr{D}&#39;(\Omega_x),$
+给光滑同胚$\psi:\Omega_x\rightarrow \Omega_y,$
+定义$S\in \mathscr{D}&#39;(O_y):$
+$$\left&lt;{}S,\varphi\right&gt;=\left&lt;{}T,\det|\psi&#39;|\varphi\circ\psi\right&gt;.$$
+当$T$为常义函数时, $S(y)=T(\psi^{-1}(y)).$ 该定义自然也是通常定义的推广.</p>
+<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>对$f,g\in C_c^\infty(\mathbb{R}^n),$ 考虑$f\ast g$在$\varphi$上的作用,
+类比地定义广义积分间的卷积. 设$S,T$为广义函数, 定义<strong>卷积</strong>$S\ast T:$
+$$\left&lt;{}S\ast T,\varphi\right&gt;=\left&lt;{}S_x,\left&lt;{}T_y,\varphi(x+y)\right&gt;\right&gt;,$$
+$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$ 和常义函数一样,
+广义函数的卷积也不总是有意义的.
+当$S,T\in \mathscr{D}&#39;(\mathbb{R}^n)$中至少一者在$\mathscr{E}&#39;(\mathbb{R}^n)$中时,
+卷积有意义, $S\ast T\in \mathscr{D}&#39;(\mathbb{R}^n).$</p>
+<p>证明过程分为两部分, 首先只有当$T\in \mathscr{D}&#39;/\mathscr{E}&#39;$时,
+$\psi:=\left&lt;{}T_y,\varphi(x+y)\right&gt;\in \mathscr{E}/\mathscr{D},$
+才能使定义有意义; 其次当$\varphi_\nu\xrightarrow{\mathscr{D} } 0$时,
+有$\psi_\nu\xrightarrow{\mathscr{E}/\mathscr{D} }0,$
+因此线性泛函是连续的. 证明方法与先前类似, 在此略过.</p>
+<p>可以证明,
+对$R,S,T\in \mathscr{D}&#39;(\mathbb{R}^n)$且其中至少两个具紧支集时,
+广义函数的卷积(同常义卷积一样)满足如下性质:</p>
+<ol>
+<li><p>$\operatorname{supp}(S\ast T)\subset \operatorname{supp}(S)+\operatorname{supp}(T);$</p>
+</li>
+<li><p>$(R\ast S)\ast T=R\ast (S\ast T);$</p>
+</li>
+<li><p>$S\ast T=T\ast S;$</p>
+</li>
+<li><p>$\delta\ast T=T\ast \delta=T;$</p>
+</li>
+<li><p>$\alpha_1+\alpha_2=\alpha$时,
+$\partial^\alpha(S\ast T)=(\partial^{\alpha_1})\ast (\partial^{\alpha_2});$</p>
+</li>
+<li><p>$T\in \mathscr{D}&#39;/\mathscr{E}&#39;,$
+$\varphi\in \mathscr{D}/\mathscr{E}$时,
+$T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n).$</p>
+</li>
+</ol>
+<p>前四个性质说明$\mathscr{E}&#39;(\mathbb{R}^n)$关于通常的线性运算与卷积运算构成有单位元$\delta$的交换代数,
+称为<strong>卷积代数</strong>. 对函数的正则化有$f_\varepsilon=f\ast \alpha_\varepsilon,$
+类似地对广义函数的正则化也有$T_\varepsilon=T\ast \alpha_\varepsilon.$</p>
+<p>文章最后更新于 2021-10-18 15:02:37 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    limit
-----
-
-For the generalized function sequence $\{T_k\},$ of a certain basic function space
-If for any element $\varphi,$ on its basic function space
-If $\left<{}T_k,\varphi\right>\rightarrow 0,$, it is said that $T_k$ (weakly) converges to $0.$
-If $T_k-T$ converges to $0,$, then the limit of $T_k$ is said to be $T,$ and is denoted as $T_k\rightarrow T.$
-
-For normal functions, we can do regularization $J_\varepsilon.$ Next we explain,
-There are similar regularizations for generalized functions.
-**Theorem 1.1**. *If $T\in \mathscr{D}'(\mathbb{R}_y^n),$ $T_\varepsilon(x):=\left<{}T_y,\alpha_\varepsilon(x-y)\right>\in C^\infty(\mathbb{R}_x^n),$ $\alpha_\varepsilon$ is shown in the previous section.*
-**Proof:** It is not difficult to explain that when $x\rightarrow x_0$,
-$\alpha_\varepsilon(x-y)\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \alpha_\varepsilon(x_0-y)$(equal degree continuous),
-Therefore $\left<{}T,\alpha_\varepsilon(x-y)\right>\rightarrow\left<{}T,\alpha_\varepsilon(x_0-y)\right>,$
-$T_\varepsilon(x)$ is a continuous function. Similarly,
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="极限"><a href="#极限" class="headerlink" title="极限"></a>极限</h2><p>对某基本函数空间的广义函数列$\{T_k\},$
+若对其基本函数空间上的任意元素$\varphi,$
+有$\left&lt;{}T_k,\varphi\right&gt;\rightarrow 0,$ 则称$T_k$(弱)收敛于$0.$
+若$T_k-T$收敛于$0,$ 则称$T_k$的极限是$T,$ 记为$T_k\rightarrow T.$</p>
+<p>对常义函数, 我们可以做正则化$J_\varepsilon.$ 下面我们说明,
+对广义函数也有类似的正则化.</p>
+<p><strong>定理 1.1</strong>. <em>若$T\in \mathscr{D}&#39;(\mathbb{R}_y^n),$ $T_\varepsilon(x):=\left&lt;{}T_y,\alpha_\varepsilon(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n),$ $\alpha_\varepsilon$如上节所示.</em> </p>
+<p><strong>证:</strong> 不难说明$x\rightarrow x_0$时,
+$\alpha_\varepsilon(x-y)\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \alpha_\varepsilon(x_0-y)$(等度连续),
+因此$\left&lt;{}T,\alpha_\varepsilon(x-y)\right&gt;\rightarrow\left&lt;{}T,\alpha_\varepsilon(x_0-y)\right&gt;,$
+$T_\varepsilon(x)$为连续函数. 类似地,
 $\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\xrightarrow{\mathscr{D}(\mathbb{R}_y^n)} \partial_k \alpha_\varepsilon(x,y),$
-Thereby there is
-$$\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left<{}T,\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\right>\rightarrow\left<{}T,\partial_k \alpha_\varepsilon(x,y)\right>,$$
-Therefore $T_\varepsilon(x)$ is differentiable with respect to $x_k$. In the same way, it can be proved that it has any order of derivatives,
-Therefore it is a smooth function.
-
-When $T$ is a normal function, the functional is the integral,
-Therefore, regularization of generalized functions is a generalization of regularization of normal functions.
-Of course, the following theorem makes regularization meaningful:
-**Theorem 1.2**. *$T\in \mathscr{D}'(\mathbb{R}^n)$, $T_\varepsilon\xrightarrow{\mathscr{D}'} T.$*
-
-**Certificate:**
-That is to say, $\left<{}T_\varepsilon,\varphi\right>=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left<{}T,\varphi\right>,$
+从而有
+$$\frac{T_\varepsilon(x+\Delta x_k)-T_\varepsilon(x)}{\Delta x_k}=\left&lt;{}T,\frac{\alpha_\varepsilon(x+\Delta x_k,y)-\alpha_\varepsilon(x,y)}{\Delta x_k}\right&gt;\rightarrow\left&lt;{}T,\partial_k \alpha_\varepsilon(x,y)\right&gt;,$$
+因此$T_\varepsilon(x)$关于$x_k$可导. 同理可证它有任意阶导数,
+因此是光滑函数.</p>
+<p>当$T$为常义函数时, 泛函即为积分,
+因此对广义函数的正则化是对常义函数正则化的推广.
+当然有了下面的定理才让正则化有意义:</p>
+<p><strong>定理 1.2</strong>. <em>$T\in \mathscr{D}&#39;(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{D}&#39;} T.$</em> </p>
+<p><strong>证:</strong>
+即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
 $\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$
-Since $\varphi$ has compact support, the Riemann integral can be used to approximate the integral in the formula.
-However, after writing the integral in summation form,
-$\alpha_\varepsilon(x-y)$ can be combined with $\varphi(x)$ in advance, that is
+由于$\varphi$具紧支集, 可以用Riemann积分的方式来逼近式中的积分.
+然而将积分写成求和形式后,
+$\alpha_\varepsilon(x-y)$可以与$\varphi(x)$先行结合, 即
 $$\sum_i\alpha_\varepsilon(x_i-y)\varphi(x_i)\Delta x_i\xrightarrow{\mathscr{E} }\int_{\mathbb{R}_x^n}\alpha_\varepsilon(x-y)\varphi(x)dx,$$
-Thus $\left<{}T_\varepsilon,\varphi\right>=\left<{}T,\varphi_\varepsilon\right>\rightarrow \left<{}T,\varphi\right>,$
-The proposition is proved.
-**Theorem 1.3**. *$T\in \mathscr{E}'(\mathbb{R}^n)$, $T_\varepsilon\xrightarrow{\mathscr{E}'} T.$*
+从而$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\left&lt;{}T,\varphi_\varepsilon\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+命题得证.</p>
+<p><strong>定理 1.3</strong>. <em>$T\in \mathscr{E}&#39;(\mathbb{R}^n)$时, $T_\varepsilon\xrightarrow{\mathscr{E}&#39;} T.$</em> </p>
+<p><strong>证:</strong>
+即证$\left&lt;{}T_\varepsilon,\varphi\right&gt;=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left&lt;{}T,\varphi\right&gt;,$
+$\,\forall\,\varphi\in \mathscr{E}(\mathbb{R}^n).$ 由于$T$具紧支集,
+不难证明$T_\varepsilon$也具紧支集, 且充分靠近$\operatorname{supp}T.$
+取紧支撑的$\zeta$在$\operatorname{supp}T$某邻域上恒为$1,$ 由前面的定理,
+$\left&lt;{}T_\varepsilon,\zeta\varphi\right&gt;\rightarrow \left&lt;{}T,\zeta\varphi\right&gt;.$
+由于在$\operatorname{supp}T$邻域上$\zeta\varphi=\varphi,$
+且对充分小的$\varepsilon,$ 该邻域包含了$T,T_\varepsilon$的支集, 因此
+$$\left&lt;{}T_\varepsilon,\zeta\varphi\right&gt;=\left&lt;{}T_\varepsilon,\varphi\right&gt;\rightarrow \left&lt;{}T,\varphi\right&gt;=\left&lt;{}T,\zeta\varphi\right&gt;,$$
+命题得证.</p>
+<h2 id="导数"><a href="#导数" class="headerlink" title="导数"></a>导数</h2><p>设$T\in\mathscr{D}&#39;(\mathbb{R}^n),$
+定义$T$关于$x_k$的<strong>(广义)导数</strong>$\frac{\partial {}T}{\partial {}x_k}\in \mathscr{D}&#39;(\mathbb{R}^n),$
+满足
+$$\left&lt;{}\frac{\partial {}T}{\partial {}x_k},\varphi\right&gt;=-\left&lt;{}T,\frac{\partial {}\varphi}{\partial {}x_k}\right&gt;.$$
+由分部积分公式, 当$T$为$C^1$函数时, 广义导数即为一般意义下的导数.
+因此广义导数的概念是通常导数概念的推广. 特别地, 对于某些常义函数,
+它无法按照通常概念求导. 但将其视为广义函数,
+就可以得到广义函数空间中的广义导数, 这往往是十分有用的.</p>
+<p>类似地定义高阶导数
+$$\left&lt;{}\partial^\alpha T,\varphi\right&gt;=(-1)^{|\alpha|}\left&lt;{}T,\partial^\alpha \varphi\right&gt;.$$
+可见广义函数任意阶导数存在, 且混合偏导与顺序无关.</p>
+<p>一个有意思的例子是, 若$\operatorname{supp}T=\{0\},$
+则$T$只能是$\delta$及其导数的有限线性组合.
+证明通过对$\varphi$进行Taylor展开给出即可.</p>
+<h2 id="乘子"><a href="#乘子" class="headerlink" title="乘子"></a>乘子</h2><p>对$T\in \mathscr{D}&#39;(\mathbb{R}^n),$ $\alpha\in C^\infty(\mathbb{R}^n),$
+定义$\alpha T\in \mathscr{D}&#39;(\mathbb{R}^n)$为
+$$\left&lt;{}\alpha T,\varphi\right&gt;=\left&lt;{}T,\alpha\varphi\right&gt;.$$
+称$\alpha$为$\mathscr{D}&#39;(\mathbb{R}^n)$的<strong>乘子</strong>.
+类似地它也是$\mathscr{E}&#39;(\mathbb{R}^n)$的乘子,
+但一般不见得是$\mathscr{S}(\mathbb{R}^n)$的乘子.</p>
+<p>类似于常义函数, 我们有Leibniz公式:
+$$\partial^r(\alpha T)=\sum_{p+q=r} \frac{r!}{p!q!}(\partial^p \alpha \cdot \partial^q T).$$</p>
+<h2 id="自变量变换"><a href="#自变量变换" class="headerlink" title="自变量变换"></a>自变量变换</h2><p>仿照$C_c^\infty$函数的自变量变换, 对$T\in \mathscr{D}&#39;(\Omega_x),$
+给光滑同胚$\psi:\Omega_x\rightarrow \Omega_y,$
+定义$S\in \mathscr{D}&#39;(O_y):$
+$$\left&lt;{}S,\varphi\right&gt;=\left&lt;{}T,\det|\psi&#39;|\varphi\circ\psi\right&gt;.$$
+当$T$为常义函数时, $S(y)=T(\psi^{-1}(y)).$ 该定义自然也是通常定义的推广.</p>
+<h2 id="卷积"><a href="#卷积" class="headerlink" title="卷积"></a>卷积</h2><p>对$f,g\in C_c^\infty(\mathbb{R}^n),$ 考虑$f\ast g$在$\varphi$上的作用,
+类比地定义广义积分间的卷积. 设$S,T$为广义函数, 定义<strong>卷积</strong>$S\ast T:$
+$$\left&lt;{}S\ast T,\varphi\right&gt;=\left&lt;{}S_x,\left&lt;{}T_y,\varphi(x+y)\right&gt;\right&gt;,$$
+$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$ 和常义函数一样,
+广义函数的卷积也不总是有意义的.
+当$S,T\in \mathscr{D}&#39;(\mathbb{R}^n)$中至少一者在$\mathscr{E}&#39;(\mathbb{R}^n)$中时,
+卷积有意义, $S\ast T\in \mathscr{D}&#39;(\mathbb{R}^n).$</p>
+<p>证明过程分为两部分, 首先只有当$T\in \mathscr{D}&#39;/\mathscr{E}&#39;$时,
+$\psi:=\left&lt;{}T_y,\varphi(x+y)\right&gt;\in \mathscr{E}/\mathscr{D},$
+才能使定义有意义; 其次当$\varphi_\nu\xrightarrow{\mathscr{D} } 0$时,
+有$\psi_\nu\xrightarrow{\mathscr{E}/\mathscr{D} }0,$
+因此线性泛函是连续的. 证明方法与先前类似, 在此略过.</p>
+<p>可以证明,
+对$R,S,T\in \mathscr{D}&#39;(\mathbb{R}^n)$且其中至少两个具紧支集时,
+广义函数的卷积(同常义卷积一样)满足如下性质:</p>
+<ol>
+<li><p>$\operatorname{supp}(S\ast T)\subset \operatorname{supp}(S)+\operatorname{supp}(T);$</p>
+</li>
+<li><p>$(R\ast S)\ast T=R\ast (S\ast T);$</p>
+</li>
+<li><p>$S\ast T=T\ast S;$</p>
+</li>
+<li><p>$\delta\ast T=T\ast \delta=T;$</p>
+</li>
+<li><p>$\alpha_1+\alpha_2=\alpha$时,
+$\partial^\alpha(S\ast T)=(\partial^{\alpha_1})\ast (\partial^{\alpha_2});$</p>
+</li>
+<li><p>$T\in \mathscr{D}&#39;/\mathscr{E}&#39;,$
+$\varphi\in \mathscr{D}/\mathscr{E}$时,
+$T\ast \varphi=\left&lt;{}T_y,\varphi(x-y)\right&gt;\in C^\infty(\mathbb{R}_x^n).$</p>
+</li>
+</ol>
+<p>前四个性质说明$\mathscr{E}&#39;(\mathbb{R}^n)$关于通常的线性运算与卷积运算构成有单位元$\delta$的交换代数,
+称为<strong>卷积代数</strong>. 对函数的正则化有$f_\varepsilon=f\ast \alpha_\varepsilon,$
+类似地对广义函数的正则化也有$T_\varepsilon=T\ast \alpha_\varepsilon.$</p>
+<p>文章最后更新于 2021-10-18 15:02:37 </p>
 
-**Certificate:**
-That is to say, $\left<{}T_\varepsilon,\varphi\right>=\int_{\mathbb{R}^n} T_\varepsilon\varphi dx\rightarrow \left<{}T,\varphi\right>,$
-$\,\forall\,\varphi\in \mathscr{E}(\mathbb{R}^n).$ Since $T$ has compact support,
-It is not difficult to prove that $T_\varepsilon$ also has compact support and is sufficiently close to $\operatorname{supp}T.$
-The $\zeta$ of the compact support is always $1 in a certain neighborhood of $\operatorname{supp}T$. From the previous theorem,
-$\left<{}T_\varepsilon,\zeta\varphi\right>\rightarrow \left<{}T,\zeta\varphi\right>.$
-Since $\zeta\varphi=\varphi,$ in the neighborhood of $\operatorname{supp}T$
-And for sufficiently small $\varepsilon,$, the neighborhood contains the supports of $T,T_\varepsilon$, so
-$$\left<{}T_\varepsilon,\zeta\varphi\right>=\left<{}T_\varepsilon,\varphi\right>\rightarrow \left<{}T,\varphi\right>=\left<{}T,\zeta\varphi\right>,$$
-The proposition is proved.
-
-Derivative
-----
-
-Let $T\in\mathscr{D}'(\mathbb{R}^n),$
-Define the **(generalized) derivative of $T$ with respect to $x_k$**$\frac{\partial {}T}{\partial {}x_k}\in \mathscr{D}'(\mathbb{R}^n),$
-satisfy
-$$\left<{}\frac{\partial {}T}{\partial {}x_k},\varphi\right>=-\left<{}T,\frac{\partial {}\varphi}{\partial {}x_k}\right>.$$
-According to the integral formula by parts, when $T$ is a $C^1$ function, the generalized derivative is the derivative in the general sense.
-Therefore, the concept of generalized derivative is an extension of the concept of ordinary derivative. In particular, for some normal functions,
-It cannot be differentiated according to the usual concepts. But consider it as a generalized function,
-You can get the generalized derivatives in the generalized function space, which is often very useful.
-
-Define higher order derivatives similarly
-$$\left<{}\partial^\alpha T,\varphi\right>=(-1)^{|\alpha|}\left<{}T,\partial^\alpha \varphi\right>.$$
-It can be seen that derivatives of any order of generalized functions exist, and mixed partial derivatives have nothing to do with order.
-
-An interesting example is, if $\operatorname{supp}T=\{0\},$
-Then $T$ can only be a finite linear combination of $\delta$ and its derivatives.
-The proof is given by performing Taylor expansion on $\varphi$.
-
-multiplier
-----
-
-For $T\in \mathscr{D}'(\mathbb{R}^n),$ $\alpha\in C^\infty(\mathbb{R}^n),$
-Define $\alpha T\in \mathscr{D}'(\mathbb{R}^n)$ as
-$$\left<{}\alpha T,\varphi\right>=\left<{}T,\alpha\varphi\right>.$$
-Call $\alpha$ the **multiplier** of $\mathscr{D}'(\mathbb{R}^n)$.
-Similarly it is also a multiplier of $\mathscr{E}'(\mathbb{R}^n)$,
-But it is generally not necessarily a multiplier of $\mathscr{S}(\mathbb{R}^n)$.
-
-Similar to normal functions, we have the Leibniz formula:
-$$\partial^r(\alpha T)=\sum_{p+q=r} \frac{r!}{p!q!}(\partial^p \alpha \cdot \partial^q T).$$
-
-independent variable transformation
-----------
-Modeling the argument transformation of the $C_c^\infty$ function, for $T\in \mathscr{D}'(\Omega_x),$
-Give smooth homeomorphism $\psi:\Omega_x\rightarrow \Omega_y,$
-Define $S\in \mathscr{D}'(O_y):$
-$$\left<{}S,\varphi\right>=\left<{}T,\det|\psi'|\varphi\circ\psi\right>.$$
-When $T$ is a normal function, $S(y)=T(\psi^{-1}(y)).$ This definition is naturally an extension of the usual definition.
-
-Convolution
-----
-For $f,g\in C_c^\infty(\mathbb{R}^n),$ consider the role of $f\ast g$ on $\varphi$,
-Analogously define the convolution between generalized integrals. Let $S, T$ be generalized functions, define **convolution**$S\ast T:$
-$$\left<{}S\ast T,\varphi\right>=\left<{}S_x,\left<{}T_y,\varphi(x+y)\right>\right>,$$
-$\,\forall\,\varphi\in \mathscr{D}(\mathbb{R}^n).$ is the same as the normal function,
-Convolution of generalized functions doesn't always make sense either.
-When at least one of $S,T\in \mathscr{D}'(\mathbb{R}^n)$ is in $\mathscr{E}'(\mathbb{R}^n)$,
-Convolution is meaningful, $S\ast T\in \mathscr{D}'(\mathbb{R}^n).$
-
-The proof process is divided into two parts. First, only when $T\in \mathscr{D}'/\mathscr{E}'$,
-$\psi:=\left<{}T_y,\varphi(x+y)\right>\in \mathscr{E}/\mathscr{D},$
-Only then can the definition be meaningful; secondly, when $\varphi_\nu\xrightarrow{\mathscr{D} } 0$,
-There are $\psi_\nu\xrightarrow{\mathscr{E}/\mathscr{D} }0,$
-Therefore, the linear functional is continuous. The proof method is similar to the previous one and is omitted here.
-
-It can be proved that
-For $R,S,T\in \mathscr{D}'(\mathbb{R}^n)$ and at least two of them have compact supports,
-The convolution of generalized functions (same as normal convolution) satisfies the following properties:
-
-1. $\operatorname{supp}(S\ast T)\subset \operatorname{supp}(S)+\operatorname{supp}(T);$
-2. $(R\ast S)\ast T=R\ast (S\ast T);$
-
-3. $S\ast T=T\ast S;$
-
-4. $\delta\ast T=T\ast \delta=T;$
-
-5. When $\alpha_1+\alpha_2=\alpha$,
-$\partial^\alpha(S\ast T)=(\partial^{\alpha_1})\ast (\partial^{\alpha_2});$
-
-6. $T\in \mathscr{D}'/\mathscr{E}',$
-    When $\varphi\in \mathscr{D}/\mathscr{E}$,
-$T\ast \varphi=\left<{}T_y,\varphi(x-y)\right>\in C^\infty(\mathbb{R}_x^n).$
-
-The first four properties describe $\mathscr{E}'(\mathbb{R}^n)$ regarding the usual linear operations and convolution operations forming a commutative algebra with unit element $\delta$,
-It is called **convolution algebra**. The regularization of the function is $f_\varepsilon=f\ast \alpha_\varepsilon,$
-Similarly, the regularization of generalized functions also has $T_\varepsilon=T\ast \alpha_\varepsilon.$
-
-The article was last updated on 2021-10-18 15:02:37
                 </div>
             
         </div>
@@ -372,7 +452,7 @@ The article was last updated on 2021-10-18 15:02:37
     <ul>
         <li>本文标题：《现代PDE基础》笔记(2)-广义函数运算</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-17 21:50:09</li>
+        <li>创建时间：2021-10-18 00:50:09</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/10/17/《现代PDE基础》笔记(2)-广义函数运算/
         </li>
@@ -404,7 +484,7 @@ The article was last updated on 2021-10-18 15:02:37
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《现代PDE基础》笔记(3)-Fourier变换</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (3)-Fourier Transform</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Modern PDE Basics Notes (3) - Fourier Transform</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -426,7 +506,7 @@ The article was last updated on 2021-10-18 15:02:37
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第二章-切丛(2)</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 2-Tangential Cluster (2)</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifold Chapter 2 - Tangent Plexus (2)</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -678,11 +758,11 @@ The article was last updated on 2021-10-18 15:02:37
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90"><span class="nav-text">极限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0"><span class="nav-text">导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%98%E5%AD%90"><span class="nav-text">乘子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8F%98%E9%87%8F%E5%8F%98%E6%8D%A2"><span class="nav-text">自变量变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF"><span class="nav-text">卷积</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E9%99%90"><span class="nav-text">极限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0"><span class="nav-text">导数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%98%E5%AD%90"><span class="nav-text">乘子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8F%98%E9%87%8F%E5%8F%98%E6%8D%A2"><span class="nav-text">自变量变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF"><span class="nav-text">卷积</span></a></li></ol>
         </div>
     
 </div>
@@ -733,6 +813,36 @@ The article was last updated on 2021-10-18 15:02:37
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -756,46 +866,6 @@ The article was last updated on 2021-10-18 15:02:37
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

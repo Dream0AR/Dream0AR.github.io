@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第四章-分布</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 4-Distribution</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 4 - Distribution</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-03 16:49:41
+        <i class="fas fa-edit"></i>&nbsp;2021-11-03 18:49:41
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,68 +230,112 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="积分曲线"><a href="#积分曲线" class="headerlink" title="积分曲线"></a>积分曲线</h2><p><strong>定理 1.1</strong> (Flow box). <em>设$X\in\chi(M),$ 若$X_p\neq 0,$ 则存在含$p$坐标系$(U,\varphi;x^i)$使得$X|_U=\frac{\partial {} }{\partial {}x^1},$ 即$x^1$-曲线就是$X$在$U$中的积分曲线.</em> </p>
+<p><strong>证:</strong> 任取坐标系$(U,\varphi;u^i),$ $\varphi(p)=0.$
+$X|_U=\sum_i\xi^i(u)\frac{\partial {} }{\partial {}u^i}.$
+不妨设$\xi^1(p)\neq 0,$ 且进而设其处处非零.
+设$u$可写为$v$的函数(坐标变换),
+使得$X|_U=\xi^1(v) \frac{\partial {} }{\partial {}v^1}.$
+两边作用$u^\alpha,$ 有 $$\left\{
+                \begin{aligned}
+                    &amp;\frac{\partial {}u^\alpha}{\partial {}v^1}=\frac{\xi^\alpha(u^1,\cdots,u^m)}{\xi^1(u^1,\cdots,u^m)},\quad \alpha=1,\cdots,m.\\
+                    &amp;u^\alpha(0,v^2,\cdots,v^m)=v^\alpha
+                \end{aligned}   
+                \right.$$ 由ODE理论,
+$\,\exists\,\delta&gt;0$使得$C_\delta^m=\{|u^i|&lt;\delta\}\subset U,$
+$\,\forall\,$给定初值$(0,v^2,\cdots,v^m)\in C_\delta^m,$
+在$v^1\in (-\widetilde{\delta},\widetilde{\delta})$内有唯一解$u^\alpha(v).$
+记$\widehat{\delta}=\min\{\delta,\widetilde{\delta}\},$
+那么对于$u^\alpha:C_{\widehat{\delta} }^m\rightarrow \varphi(U),$
+$\det(Du^\alpha)|_0=1,$ 局部为微分同胚.
+不妨设本身就是微分同胚(不然可将$\widetilde{\delta}$缩小), 记为$G.$</p>
+<p>此时在坐标系$(\widetilde{U},G^{-1}\circ\varphi;v^i)$下,
+$X|_{\widetilde{U} }=\xi^1(v)\frac{\partial {} }{\partial {}v^1}.$
+最后再做变换 $$\left\{
+                \begin{aligned}
+                    &amp;w^1=\int_0^{v_1} \frac{dt}{\xi^1(t,v^2,\cdots,v^n)}\\
+                    &amp;w^\alpha=v^\alpha,\quad \alpha=2,\cdots,m
+                \end{aligned}   
+                \right.$$
+即有$X|_{\widetilde{U} }=\frac{\partial {} }{\partial {}w^1},$
+$w^1$-曲线为$X$在$\widetilde{U}$中积分曲线.</p>
+<h2 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h2><p><strong>定义 1.2</strong>. <em>$M^m$为$C^\infty$流形, 若$\,\forall\,p\in M,$ 指定$T_pM$中$k$-维子空间$D_p,$ 则称$\mathcal{D}:p\rightarrow D_p$为$M$上$k$维<strong>分布</strong>.</em> </p>
+<p>若$\,\forall\,p\in M,$ $\,\exists\,U\ni p,$
+$X_1,\cdots, X_k\in \chi(U),$
+使得$\mathcal{D}_q=\operatorname{span}\{X_1(q),\cdots,X_k(q)\},$
+$\,\forall\,q\in U,$ 则称$\mathcal{D}$是$M$上$C^\infty$分布,
+$\{X_1,\cdots,X_k\}$称为$\mathcal{D}$的<strong>局部标架场</strong>. $k\in(0,m)$时,
+$\mathcal{D}$可看作$TM$的非平凡秩$k$子丛.</p>
+<p><strong>定义 1.3</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, $F:W\hookrightarrow M$是子流形, 满足${F_{\ast } }_p(T_pW)=D_{F(p)},$ $\,\forall\,p\in W.$ 则称$(W,F)$为$\mathcal{D}$的<strong>积分子流形</strong>.</em> </p>
+<p>自然的问题是, 给定$M^m$上一个$k$维$C^\infty$-分布$\mathcal{D},$
+$\,\forall\,p\in M,$ 是否存在$\mathcal{D}$的过$p$点的积分子流形?
+答案是否定的. 事实上积分子流形应有积分曲线网,
+那么若在$\mathbb{R}^3$上取$X=\frac{\partial {} }{\partial {}x}+y\frac{\partial {} }{\partial {}z},$
+$Y=\frac{\partial {} }{\partial {}y},$
+$\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流形,
+应包含$xoy$平面的一小部分. 但是在$x$轴外该流形又不是积分子流形, 矛盾.</p>
+<p><strong>定义 1.4</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, 若过每点$p\in M$都存在$\mathcal{D}$的积分子流形, 则我们称$\mathcal{D}$是<strong>可积的</strong>. 否则, 称之为<strong>不可积的</strong>.</em> </p>
+<p>$k=0,m$时平凡. $k=1$时, 由积分曲线存在定理, $1$维分布总是可积的,
+积分子流形即为积分曲线. 但积分曲线不都是某个分布的积分子流形,
+因为积分曲线对应的光滑向量场允许有奇点,
+但有奇点的光滑向量场并不能作为标架张成分布.</p>
+<p>文章最后更新于 2021-11-03 16:49:42 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    integral curve
---------
-
-**Theorem 1.1** (Flow box). *Suppose $X\in\chi(M),$ If $X_p\neq 0,$ then there is a coordinate system $(U,\varphi;x^i)$ containing $p$ such that $X|_U=\frac{\partial {} }{\partial {}x^1},$ That is, the $x^1$-curve is the integral curve of $X$ in $U$.*
-**Certificate:** Take any coordinate system $(U,\varphi;u^i),$ $\varphi(p)=0.$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="积分曲线"><a href="#积分曲线" class="headerlink" title="积分曲线"></a>积分曲线</h2><p><strong>定理 1.1</strong> (Flow box). <em>设$X\in\chi(M),$ 若$X_p\neq 0,$ 则存在含$p$坐标系$(U,\varphi;x^i)$使得$X|_U=\frac{\partial {} }{\partial {}x^1},$ 即$x^1$-曲线就是$X$在$U$中的积分曲线.</em> </p>
+<p><strong>证:</strong> 任取坐标系$(U,\varphi;u^i),$ $\varphi(p)=0.$
 $X|_U=\sum_i\xi^i(u)\frac{\partial {} }{\partial {}u^i}.$
-Let's assume $\xi^1(p)\neq 0,$ and further assume that it is non-zero everywhere.
-Suppose $u$ can be written as a function of $v$ (coordinate transformation),
-Such that $X|_U=\xi^1(v) \frac{\partial {} }{\partial {}v^1}.$
-The effect on both sides $u^\alpha,$ has $$\left\{
+不妨设$\xi^1(p)\neq 0,$ 且进而设其处处非零.
+设$u$可写为$v$的函数(坐标变换),
+使得$X|_U=\xi^1(v) \frac{\partial {} }{\partial {}v^1}.$
+两边作用$u^\alpha,$ 有 $$\left\{
                 \begin{aligned}
-                    &\frac{\partial {}u^\alpha}{\partial {}v^1}=\frac{\xi^\alpha(u^1,\cdots,u^m)}{\xi^1(u^1,\cdots,u^m)},\quad \alpha=1,\cdots,m.\\
-                    &u^\alpha(0,v^2,\cdots,v^m)=v^\alpha
+                    &amp;\frac{\partial {}u^\alpha}{\partial {}v^1}=\frac{\xi^\alpha(u^1,\cdots,u^m)}{\xi^1(u^1,\cdots,u^m)},\quad \alpha=1,\cdots,m.\\
+                    &amp;u^\alpha(0,v^2,\cdots,v^m)=v^\alpha
                 \end{aligned}   
-                \right.$$ According to ODE theory,
-$\,\exists\,\delta>0$ makes $C_\delta^m=\{|u^i|<\delta\}\subset U,$
-$\,\forall\,$Given the initial value $(0,v^2,\cdots,v^m)\in C_\delta^m,$
-There is a unique solution $u^\alpha(v).$ in $v^1\in (-\widetilde{\delta},\widetilde{\delta})$
-Remember $\widehat{\delta}=\min\{\delta,\widetilde{\delta}\},$
-Then for $u^\alpha:C_{\widehat{\delta} }^m\rightarrow \varphi(U),$
-$\det(Du^\alpha)|_0=1,$ is locally diffeomorphism.
-We might as well assume that it is a diffeomorphism (otherwise $\widetilde{\delta}$ can be reduced), denoted as $G.$
-At this time, under the coordinate system $(\widetilde{U},G^{-1}\circ\varphi;v^i)$,
+                \right.$$ 由ODE理论,
+$\,\exists\,\delta&gt;0$使得$C_\delta^m=\{|u^i|&lt;\delta\}\subset U,$
+$\,\forall\,$给定初值$(0,v^2,\cdots,v^m)\in C_\delta^m,$
+在$v^1\in (-\widetilde{\delta},\widetilde{\delta})$内有唯一解$u^\alpha(v).$
+记$\widehat{\delta}=\min\{\delta,\widetilde{\delta}\},$
+那么对于$u^\alpha:C_{\widehat{\delta} }^m\rightarrow \varphi(U),$
+$\det(Du^\alpha)|_0=1,$ 局部为微分同胚.
+不妨设本身就是微分同胚(不然可将$\widetilde{\delta}$缩小), 记为$G.$</p>
+<p>此时在坐标系$(\widetilde{U},G^{-1}\circ\varphi;v^i)$下,
 $X|_{\widetilde{U} }=\xi^1(v)\frac{\partial {} }{\partial {}v^1}.$
-Finally, do the transformation $$\left\{
+最后再做变换 $$\left\{
                 \begin{aligned}
-                    &w^1=\int_0^{v_1} \frac{dt}{\xi^1(t,v^2,\cdots,v^n)}\\
-                    &w^\alpha=v^\alpha,\quad \alpha=2,\cdots,m
+                    &amp;w^1=\int_0^{v_1} \frac{dt}{\xi^1(t,v^2,\cdots,v^n)}\\
+                    &amp;w^\alpha=v^\alpha,\quad \alpha=2,\cdots,m
                 \end{aligned}   
                 \right.$$
-That is, $X|_{\widetilde{U} }=\frac{\partial {} }{\partial {}w^1},$
-The $w^1$-curve is the integral curve of $X$ in $\widetilde{U}$.
-
-Distribution
-----
-**Definition 1.2**. *$M^m$ is a $C^\infty$ manifold. If $\,\forall\,p\in M,$ specifies the $k$-dimensional subspace $D_p,$ in $T_pM$, then $\mathcal{D}:p\rightarrow D_p$ is said to be the $k$-dimensional **distribution** on $M$.*
-
-If $\,\forall\,p\in M,$ $\,\exists\,U\ni p,$
+即有$X|_{\widetilde{U} }=\frac{\partial {} }{\partial {}w^1},$
+$w^1$-曲线为$X$在$\widetilde{U}$中积分曲线.</p>
+<h2 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h2><p><strong>定义 1.2</strong>. <em>$M^m$为$C^\infty$流形, 若$\,\forall\,p\in M,$ 指定$T_pM$中$k$-维子空间$D_p,$ 则称$\mathcal{D}:p\rightarrow D_p$为$M$上$k$维<strong>分布</strong>.</em> </p>
+<p>若$\,\forall\,p\in M,$ $\,\exists\,U\ni p,$
 $X_1,\cdots, X_k\in \chi(U),$
-Make $\mathcal{D}_q=\operatorname{span}\{X_1(q),\cdots,X_k(q)\},$
-$\,\forall\,q\in U,$ then $\mathcal{D}$ is said to be a $C^\infty$ distribution on $M$,
-$\{X_1,\cdots,X_k\}$ is called the **local frame field** of $\mathcal{D}$. When $k\in(0,m)$,
-$\mathcal{D}$ can be regarded as a non-trivial rank $k$ subbundle of $TM$.
-**Definition 1.3**. *Suppose $\mathcal{D}$ is a $k$-dimensional $C^\infty$-distribution on $M$, $F:W\hookrightarrow M$ is a submanifold, satisfying ${F_{\ast } }_p(T_pW)=D_{F(p)},$ $\,\forall\,p\in W.$ Then $(W,F)$ is called the **integral manifold** of $\mathcal{D}$.*
-The natural question is, given $M^m$ the last $k$ dimension $C^\infty$-distribution $\mathcal{D},$
-$\,\forall\,p\in M,$ Is there an integrator manifold of $\mathcal{D}$ passing through $p$ point?
-The answer is no. In fact, the integrator manifold should have a network of integral curves,
-Then if we take $X=\frac{\partial {} }{\partial {}x}+y\frac{\partial {} }{\partial {}z},$ on $\mathbb{R}^3$
+使得$\mathcal{D}_q=\operatorname{span}\{X_1(q),\cdots,X_k(q)\},$
+$\,\forall\,q\in U,$ 则称$\mathcal{D}$是$M$上$C^\infty$分布,
+$\{X_1,\cdots,X_k\}$称为$\mathcal{D}$的<strong>局部标架场</strong>. $k\in(0,m)$时,
+$\mathcal{D}$可看作$TM$的非平凡秩$k$子丛.</p>
+<p><strong>定义 1.3</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, $F:W\hookrightarrow M$是子流形, 满足${F_{\ast } }_p(T_pW)=D_{F(p)},$ $\,\forall\,p\in W.$ 则称$(W,F)$为$\mathcal{D}$的<strong>积分子流形</strong>.</em> </p>
+<p>自然的问题是, 给定$M^m$上一个$k$维$C^\infty$-分布$\mathcal{D},$
+$\,\forall\,p\in M,$ 是否存在$\mathcal{D}$的过$p$点的积分子流形?
+答案是否定的. 事实上积分子流形应有积分曲线网,
+那么若在$\mathbb{R}^3$上取$X=\frac{\partial {} }{\partial {}x}+y\frac{\partial {} }{\partial {}z},$
 $Y=\frac{\partial {} }{\partial {}y},$
-$\mathcal{D}=\operatorname{span}\{X,Y\}.$ Then if there is an integrator manifold crossing zero points,
-It should contain a small part of the $xoy$ plane. But the manifold outside the $x$ axis is not an integrator manifold, which is a contradiction.
-**Definition 1.4**. *Suppose $\mathcal{D}$ is a $k$-dimensional $C^\infty$-distribution on $M$. If there is an integral submanifold of $\mathcal{D}$ through every point $p\in M$, then we say $\mathcal{D}$ is **integrable**. Otherwise, it is called **non-integrable**.*
-When $k=0, m$ is trivial. When $k=1$, according to the existence theorem of integral curves, the $1$-dimensional distribution is always integrable,
-The integrator manifold is the integral curve. But the integral curve is not always the integrator manifold of a certain distribution.
-Because the smooth vector field corresponding to the integral curve allows singular points,
-However, a smooth vector field with singular points cannot be used as a frame span distribution.
+$\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流形,
+应包含$xoy$平面的一小部分. 但是在$x$轴外该流形又不是积分子流形, 矛盾.</p>
+<p><strong>定义 1.4</strong>. <em>设$\mathcal{D}$是$M$上$k$维$C^\infty$-分布, 若过每点$p\in M$都存在$\mathcal{D}$的积分子流形, 则我们称$\mathcal{D}$是<strong>可积的</strong>. 否则, 称之为<strong>不可积的</strong>.</em> </p>
+<p>$k=0,m$时平凡. $k=1$时, 由积分曲线存在定理, $1$维分布总是可积的,
+积分子流形即为积分曲线. 但积分曲线不都是某个分布的积分子流形,
+因为积分曲线对应的光滑向量场允许有奇点,
+但有奇点的光滑向量场并不能作为标架张成分布.</p>
+<p>文章最后更新于 2021-11-03 16:49:42 </p>
 
-The article was last updated on 2021-11-03 16:49:42
                 </div>
             
         </div>
@@ -302,7 +346,7 @@ The article was last updated on 2021-11-03 16:49:42
     <ul>
         <li>本文标题：《微分流形》第四章-分布</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-03 16:49:41</li>
+        <li>创建时间：2021-11-03 18:49:41</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/11/03/《微分流形》第四章-分布/
         </li>
@@ -334,7 +378,7 @@ The article was last updated on 2021-11-03 16:49:42
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第四章-Frobenius定理</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 4-Frobenius Theorem</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 4 - Frobenius Theorem</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -356,7 +400,7 @@ The article was last updated on 2021-11-03 16:49:42
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》讨论稿-紧流形嵌入定理</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Paper - Compact Manifold Embedding Theorem</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Discussion Paper &#34;Differential Manifolds&#34; - Tight Manifold Embedding Theorem</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -608,11 +652,11 @@ The article was last updated on 2021-11-03 16:49:42
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E6%9B%B2%E7%BA%BF"><span class="nav-text">积分曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%83"><span class="nav-text">分布</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%AF%E5%88%86%E6%9B%B2%E7%BA%BF"><span class="nav-text">积分曲线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%83"><span class="nav-text">分布</span></a></li></ol>
         </div>
     
 </div>
@@ -663,6 +707,36 @@ The article was last updated on 2021-11-03 16:49:42
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -686,46 +760,6 @@ The article was last updated on 2021-11-03 16:49:42
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

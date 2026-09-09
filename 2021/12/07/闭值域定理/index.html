@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">闭值域定理</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">closed range theorem</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Closed-Value Domain Theorem</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-07 15:35:09
+        <i class="fas fa-edit"></i>&nbsp;2021-12-07 17:35:09
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,35 +230,52 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p><strong>定理 1</strong>. <em>$H$为Hilbert空间. 若$K:H\rightarrow H$为紧算子, 则$L=I-K$的值域是闭的.</em> </p>
+<p><strong>证:</strong> $H=N(L)\oplus N(L)^\perp.$
+$L:N(L)^\perp\rightarrow R(L)$是一一的. 断言$\,\exists\,c&gt;0,$ 满足</p>
+<p>$$\Vert Lf\Vert\ge c\Vert f\Vert,\quad \,\forall\,f\in N(L)^\perp.$$</p>
+<p>不然, $\,\exists\,\{f_n\}\subset N(L)^\perp,$
+满足$\Vert f_n\Vert\equiv 1,$ $\Vert Lf_n\Vert\rightarrow 0.$
+由于$K$是紧算子, $\{Kf_n\}$有子列收敛, 不妨设为自身收敛. 这样,</p>
+<p>$$\widetilde{f}:=\lim_{n\rightarrow \infty}Kf_n+Lf_n=\lim_{n\rightarrow \infty}f_n.$$</p>
+<p>结合闭性, 这说明了$\{f_n\}$自身也收敛到$\widetilde{f}\in N(L)^\perp.$
+而$L\widetilde{f}=\lim\limits_{n\rightarrow \infty}Lf_n=0,$
+$\widetilde{f}\in N(L).$ 这说明$\widetilde{f}=0.$
+然而$\Vert f_n\Vert\equiv 1,$ 不可能收敛到$0,$ 矛盾.</p>
+<p>接下来, $\,\forall\,\{g_n\}\subset R(L)$满足$g_n\rightarrow g,$
+我们需要证明$g\in R(L).$
+我们取$\{f_n\}\subset N(L)^\perp$满足$Lf_n=g_n,$
+那么$\Vert g_n\Vert\ge c\Vert f_n\Vert.$ 由于$\{g_n\}$构成Cauchy列,
+$\Vert f_n\Vert$也是, 记其收敛到$f.$
+这样就有$Lf=\lim\limits_{n\rightarrow \infty} Lf_n=g.$</p>
+<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf" >https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2021-12-07 16:09:09 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    **Theorem 1**. *$H$ is a Hilbert space. If $K:H\rightarrow H$ is a compact operator, then the range of $L=I-K$ is closed.*
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p><strong>定理 1</strong>. <em>$H$为Hilbert空间. 若$K:H\rightarrow H$为紧算子, 则$L=I-K$的值域是闭的.</em> </p>
+<p><strong>证:</strong> $H=N(L)\oplus N(L)^\perp.$
+$L:N(L)^\perp\rightarrow R(L)$是一一的. 断言$\,\exists\,c&gt;0,$ 满足</p>
+<p>$$\Vert Lf\Vert\ge c\Vert f\Vert,\quad \,\forall\,f\in N(L)^\perp.$$</p>
+<p>不然, $\,\exists\,\{f_n\}\subset N(L)^\perp,$
+满足$\Vert f_n\Vert\equiv 1,$ $\Vert Lf_n\Vert\rightarrow 0.$
+由于$K$是紧算子, $\{Kf_n\}$有子列收敛, 不妨设为自身收敛. 这样,</p>
+<p>$$\widetilde{f}:=\lim_{n\rightarrow \infty}Kf_n+Lf_n=\lim_{n\rightarrow \infty}f_n.$$</p>
+<p>结合闭性, 这说明了$\{f_n\}$自身也收敛到$\widetilde{f}\in N(L)^\perp.$
+而$L\widetilde{f}=\lim\limits_{n\rightarrow \infty}Lf_n=0,$
+$\widetilde{f}\in N(L).$ 这说明$\widetilde{f}=0.$
+然而$\Vert f_n\Vert\equiv 1,$ 不可能收敛到$0,$ 矛盾.</p>
+<p>接下来, $\,\forall\,\{g_n\}\subset R(L)$满足$g_n\rightarrow g,$
+我们需要证明$g\in R(L).$
+我们取$\{f_n\}\subset N(L)^\perp$满足$Lf_n=g_n,$
+那么$\Vert g_n\Vert\ge c\Vert f_n\Vert.$ 由于$\{g_n\}$构成Cauchy列,
+$\Vert f_n\Vert$也是, 记其收敛到$f.$
+这样就有$Lf=\lim\limits_{n\rightarrow \infty} Lf_n=g.$</p>
+<p>参考: <a class="link"   target="_blank" rel="noopener" href="https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf" >https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2021-12-07 16:09:09 </p>
 
-**Certificate:** $H=N(L)\oplus N(L)^\perp.$
-$L:N(L)^\perp\rightarrow R(L)$ is one-to-one. Assert that $\,\exists\,c>0,$ satisfies
-$$\Vert Lf\Vert\ge c\Vert f\Vert,\quad \,\forall\,f\in N(L)^\perp.$$
-
-Otherwise, $\,\exists\,\{f_n\}\subset N(L)^\perp,$
-Satisfies $\Vert f_n\Vert\equiv 1,$ $\Vert Lf_n\Vert\rightarrow 0.$
-Since $K$ is a compact operator, $\{Kf_n\}$ has subsequence convergence, so we might as well set it to self-convergence. In this way,
-
-$$\widetilde{f}:=\lim_{n\rightarrow \infty}Kf_n+Lf_n=\lim_{n\rightarrow \infty}f_n.$$
-
-Combined with the closure property, this shows that $\{f_n\}$ itself also converges to $\widetilde{f}\in N(L)^\perp.$
-And $L\widetilde{f}=\lim\limits_{n\rightarrow \infty}Lf_n=0,$
-$\widetilde{f}\in N(L).$ This means $\widetilde{f}=0.$
-However, $\Vert f_n\Vert\equiv 1,$ cannot converge to $0,$, which is a contradiction.
-Next, $\,\forall\,\{g_n\}\subset R(L)$ satisfies $g_n\rightarrow g,$
-We need to prove $g\in R(L).$
-We take $\{f_n\}\subset N(L)^\perp$ to satisfy $Lf_n=g_n,$
-Then $\Vert g_n\Vert\ge c\Vert f_n\Vert.$ Since $\{g_n\}$ constitutes the Cauchy column,
-The same is true for $\Vert f_n\Vert$, note that it converges to $f.$
-In this way, we have $Lf=\lim\limits_{n\rightarrow \infty} Lf_n=g.$
-Reference: https://www.math.tamu.edu/\~fnarc/m641/m641_notes/closed_range.pdf
-
-The article was last updated on 2021-12-07 16:09:09
                 </div>
             
         </div>
@@ -269,7 +286,7 @@ The article was last updated on 2021-12-07 16:09:09
     <ul>
         <li>本文标题：闭值域定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-07 15:35:09</li>
+        <li>创建时间：2021-12-07 17:35:09</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/12/07/闭值域定理/
         </li>
@@ -301,7 +318,7 @@ The article was last updated on 2021-12-07 16:09:09
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第六章-张量丛</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 6 - Tensor Bundle</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 6 - Tensor Plexus</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -323,7 +340,7 @@ The article was last updated on 2021-12-07 16:09:09
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《现代PDE基础》笔记(8)-数理方程</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (8)-Mathematical Equations</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Modern PDE Basics Notes (8) - Mathematical Equations</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -630,6 +647,36 @@ The article was last updated on 2021-12-07 16:09:09
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -653,46 +700,6 @@ The article was last updated on 2021-12-07 16:09:09
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

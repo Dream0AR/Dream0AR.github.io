@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数拓扑2》笔记(22)-Pontrjagin数 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑2》笔记(22)-Pontrjagin数</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (22) - Pontrjagin Numbers</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-12-02 18:39:37
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="Pontrjagin数"><a href="#Pontrjagin数" class="headerlink" title="Pontrjagin数"></a>Pontrjagin数</h2><p>对于实流形$M^{4n},$ 为一个定向闭流形, $I=(i_1,\cdots,i_r)$为$n$的划分.
+定义第$I$个Pontrjagin数为</p>
+<p>$$
+P_I[M^{4n}]=\left&lt;{}p_{i_1}\cdots p_{i_r},[M^{4n}]\right&gt;\in \mathbb{Z}.
+$$</p>
+<p><strong>注 1</strong>. <em>记$\overline M$为$M$反定向, $[\overline M]=-[M],$ 但$p_k(\tau_M)=p_k(\tau_{\overline M}),$ 从而$P_I[\overline M]=-p_I[M].$</em> </p>
+<p><strong>推论 2</strong>. <em>若$M^{4n}$ Pontrjagin数非零, 那么不存在反定向的微分同胚$M\rightarrow M.$</em> </p>
+<p>若$M=\mathbb{C}\mathrm{P}^m,$
+$p(\tau_{\mathbb{C}\mathrm{P}^m})=(1+a^2)^{m+1},$ $a=-c_1(\gamma^1),$
+$p_k(\mathbb{C}\mathrm{P}^m)=\binom{m+1}{k} a^{2k}\in H^{4k}.$ 若$m=2n,$
+则$M^{4n}=\mathbb{C}\mathrm{P}^{2n},$ $\,\forall\,I$为$n$的划分,
+$p_{i_1}\cdots p_{i_r}[\mathbb{C}\mathrm{P}^{2n}]=\binom{2n+1}{i_1}\cdots \binom{2n+1}{i_r}\neq 0.$
+作为一个推论, $\mathbb{C}\mathrm{P}^{2n}$上不存在反定向的微分自同胚.</p>
+<p>对于$m$为奇数的情形, 复共轭是一个反定向的微分自同胚. 注意$m$为奇数时,
+没有top Pontrjagin类.</p>
+<p><strong>命题 3</strong>. <em>若$M^{4n}=\partial V^{4n+1},$ $V$紧定向, 则$M^{4n}$所有的Pontrjagin数为零.</em> </p>
+<p><strong>推论 4</strong>. <em>$\mathbb{C}\mathrm{P}^{2n}\neq \partial V^{4n+1}$(定向), 且有限copy $\sqcup \mathbb{C}\mathrm{P}^{2n}\neq \partial V.$</em> </p>
+<p>注意对$\mathbb{C}\mathrm{P}^{2n+1}$不对,
+有例子$\mathbb{C}\mathrm{P}^1\approx S^2\approx \partial D^3.$</p>
+<h2 id="对称函数论"><a href="#对称函数论" class="headerlink" title="对称函数论"></a>对称函数论</h2><p>回顾$T^n=U(1)^{\times n}\hookrightarrow U(n),$ 映到对角阵中.
+这诱导了$BT^n\rightarrow BU(n),$
+拉回得到$H^\ast (BT^n;\mathbb{Z})\leftarrow H^\ast (BU(n);\mathbb{Z}),$
+$c_i\mapsto \sigma_i(t_1,\cdots t_n).$
+$1+\sigma_1+\cdots+\sigma_n=(1+t_1)\cdots (1+t_n).$</p>
+<p>记$S=\mathbb{Z}[\sigma_1,\cdots,\sigma_n]=\oplus_{k=0}^\infty S^k,$
+$S^k$为$k$次对称多项式. 它的基为</p>
+<p>$$
+\{\sigma_{i_1}\cdots\sigma_{i_r}|i_1+\cdots+i_r=k,\quad i_j\le n\}.
+$$</p>
+<p>$$
+S^k=\mathbb{Z}\{\sigma_I|I\text{ 为$k$的划分, 每个元小于等于$n$}\}.
+$$</p>
+<p>称两个单项等价, 若它们差一个置换. 如$t_1t_2^3t_3^5\sim t_4t_7^3t_2^5.$
+对$k$划分$I,$ $I$单项对称多项式定义为</p>
+<p>$$
+m_I:=\sum \text{ 单项等价于 }t^I:=t_1^{i_1}\cdots t_r^{i_r}.
+$$</p>
+<p>例如$k=3,$ $I=2+1=3,$ $m_I=t_1t_2^2+t_1^2t_2+t_1t_3^2+\cdots.$</p>
+<p><strong>引理 5</strong>. <em>$\{m_I|\text{$I$为$k$划分, $r\le n$.}\}$构成了$S^k=S^k_{(n)}$的一组$\mathbb{Z}$-基.</em> </p>
+<p>这组元素显然张成了$S^k.$ 只需检验维数.</p>
+<p>$$
+\dim_\mathbb{Z}S^k_{(n)}=\#\{\sigma_I\}=\{I|i_j\le n\}.
+$$</p>
+<p>希望证明它和$\{I|r\le n\}$相等. (都是$k$划分.)</p>
+<p>我们发现前者为$n$列以下的Young diagrams with $k$ boxes,
+后者为$n$行以下的Young diagrams with $k$ boxes. 例如对于$I=(4,4,3,1,1),$
+逆序排列, 像俄罗斯方块一样放置, 那么要求列数不超过$n$.
+和它对应的是$I&#39;=(5,3,3,2),$ 同样逆序排列按俄罗斯方块放置,
+要求行数不超过$n.$ 它们之间由转置联系. 因此集合数相同.</p>
+<p>对于任意$k$划分$I,$</p>
+<p>$$
+m_I(t_1,\cdots,t_n)\in \mathbb{Z}[t_1,\cdots,t_n]^{S_n}=\mathbb{Z}[\sigma_1,\cdots,\sigma_n].
+$$</p>
+<p>$$
+m_I(t_1,\cdots,t_n)=S_I(\sigma_1,\cdots,\sigma_n).
+$$</p>
+<p> 可以验证,
+$\,\forall\,n&lt;k,$</p>
+<p>$$
+S_{I,n}(\sigma_1,\cdots,\sigma_n)=S_{I,k}(\sigma_1,\cdots,\sigma_n,0,\cdots,0);
+$$</p>
+<p>$\,\forall\,n\ge k,$ $S_I$不变.</p>
+<p>因此, 若$n\ge k,$
+那么$\{m_I\}=\{S_I(\sigma_1,\cdots,\sigma_n)\}$构成了$S^k=\mathbb{Z}[\sigma_1,\cdots,\sigma_n]$的一组$\mathbb{Z}$-基.</p>
+<p>例如, $k=1,$ $S_1(\sigma_1)=\sigma_1,$</p>
+<p>$$
+S_2(\sigma_1,\sigma_2)=\sigma_1^2-2\sigma_2=(t_1+t_2)^2-2t_1t_2=t_1^2+t_2^2=m_2(t_1,t_2).
+$$</p>
+<p>$$
+S_{1,1}(\sigma_1,\sigma_2)=t_1t_2=\sigma_2,
+$$</p>
+<p>$$
+S
+ _3=\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3.
+$$</p>
+<p>应用到拓扑上,</p>
+<p>$$
+H^\ast (BU(n))\rightarrow H^\ast (BU(1)^{\times n})^{S_n},\quad c_i\mapsto \sigma_i(t_1,\cdots,t_n),
+$$</p>
+<p>$\{c_I|I\text{ 为$k$的划分, }i_j\le n\}$构成了$H^{2k}(BU(n))$的一组$\mathbb{Z}$基.
+改变基后, $\{S_I(c_1,\cdots,c_n)|r\le n\}$也是一组$\mathbb{Z}$基.</p>
+<p>对秩$n$复向量丛$\omega,$
+定义$S_I(c(\omega)):=S_I(c_1(\omega),\cdots,c_n(\omega))\in H^{2n}(B;\mathbb{Z}).$</p>
+<p><strong>引理 6</strong> (Thom). <em>$S_I(c(\omega\oplus\omega&#39;))=\sum_{JK=I}S_J(c(\omega))S_K(c(\omega&#39;)).$</em> </p>
+<p>考虑$\sigma_k$为$k$基本对称多项式($t_1,\cdots,t_n$),
+$\sigma_k&#39;$为$(t_{n+1},\cdots,t_{n+m}),$
+$\sigma_k&#39;&#39;=\sum_{i=0}^k\sigma_i\sigma_{k-i}&#39;,$
+验证有$\sigma_k&#39;&#39;$为$(t_1,\cdots,t_{n+m})$基本对称多项式. 这样就有</p>
+<p>$$
+S_I(\sigma_1&#39;&#39;,\cdots,\sigma_k&#39;&#39;)=\sum_{JK=I} S_J(\sigma)S_K(\sigma&#39;).
+$$</p>
+<p>左侧为$m_I(t_1,\cdots,t_{n+m})=\sum t_{a_1}^{i_1}\cdots t_{a_r}^{i_r},$
+令$J:=\{i_q:1\le a_q\le n\},$ $K:=\{i_q:n+1\le a_q\le n+m\},$ $JK=I.$</p>
+<p>当$I$作为$k$划分就是$k=k,$ 记$S_k=S_I.$
+那么唯一的$JK=I=k$为$J=\varnothing$或$K=\varnothing.$</p>
+<p><strong>推论 7</strong>. <em>$S_k(c(\omega\oplus\omega&#39;))=S_k(c(\omega))+S_k(c(\omega&#39;)).$ $S_k$将和映到和.</em> </p>
+<p><strong>注 8</strong>. <em>形式定义Chern特征$ch(\omega):=n+\sum_{k=1}^\infty \frac{S_k(c(\omega))}{k!}\in H^\pi(B;\mathbb{Q}),$ 那么$ch(\omega\oplus\omega&#39;)=ch(\omega)+ch(\omega&#39;),$ $ch(\omega\otimes \omega&#39;)=ch(\omega)ch(\omega&#39;),$ 形式上比Chern示性类要好.</em> </p>
+<p>$$
+S_I[K^n]:=\left&lt;{}S_I(c(\tau_K)),[K^n]\right&gt;\in\mathbb{Z}.
+$$</p>
+<p><strong>推论 9</strong>. <em>$S_I$的积公式: 对于$I$为$m+n$划分, $S_I[K^m\times L^n]=\sum_{I_1I_2=I}S_{I_1}[K^m]S_{I_2}[K^n].$</em> </p>
+<p>$\tau:=\tau_{K^m},$ $\tau&#39;:=\tau_{L^n},$
+$\tau\times\tau&#39;\cong (\pi_1^\ast \tau)\oplus(\pi_2^\ast \tau&#39;).$</p>
+<p>$S_I[K\times L]=\left&lt;{}S_I(\tau\times\tau&#39;),[K\times L]\right&gt;.$
+由前面的引理即有结果.</p>
+<p>文章最后更新于 2022-12-02 16:39:40 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="Pontrjagin数"><a href="#Pontrjagin数" class="headerlink" title="Pontrjagin数"></a>Pontrjagin数</h2><p>对于实流形$M^{4n},$ 为一个定向闭流形, $I=(i_1,\cdots,i_r)$为$n$的划分.
+定义第$I$个Pontrjagin数为</p>
+<p>$$
+P_I[M^{4n}]=\left&lt;{}p_{i_1}\cdots p_{i_r},[M^{4n}]\right&gt;\in \mathbb{Z}.
+$$</p>
+<p><strong>注 1</strong>. <em>记$\overline M$为$M$反定向, $[\overline M]=-[M],$ 但$p_k(\tau_M)=p_k(\tau_{\overline M}),$ 从而$P_I[\overline M]=-p_I[M].$</em> </p>
+<p><strong>推论 2</strong>. <em>若$M^{4n}$ Pontrjagin数非零, 那么不存在反定向的微分同胚$M\rightarrow M.$</em> </p>
+<p>若$M=\mathbb{C}\mathrm{P}^m,$
+$p(\tau_{\mathbb{C}\mathrm{P}^m})=(1+a^2)^{m+1},$ $a=-c_1(\gamma^1),$
+$p_k(\mathbb{C}\mathrm{P}^m)=\binom{m+1}{k} a^{2k}\in H^{4k}.$ 若$m=2n,$
+则$M^{4n}=\mathbb{C}\mathrm{P}^{2n},$ $\,\forall\,I$为$n$的划分,
+$p_{i_1}\cdots p_{i_r}[\mathbb{C}\mathrm{P}^{2n}]=\binom{2n+1}{i_1}\cdots \binom{2n+1}{i_r}\neq 0.$
+作为一个推论, $\mathbb{C}\mathrm{P}^{2n}$上不存在反定向的微分自同胚.</p>
+<p>对于$m$为奇数的情形, 复共轭是一个反定向的微分自同胚. 注意$m$为奇数时,
+没有top Pontrjagin类.</p>
+<p><strong>命题 3</strong>. <em>若$M^{4n}=\partial V^{4n+1},$ $V$紧定向, 则$M^{4n}$所有的Pontrjagin数为零.</em> </p>
+<p><strong>推论 4</strong>. <em>$\mathbb{C}\mathrm{P}^{2n}\neq \partial V^{4n+1}$(定向), 且有限copy $\sqcup \mathbb{C}\mathrm{P}^{2n}\neq \partial V.$</em> </p>
+<p>注意对$\mathbb{C}\mathrm{P}^{2n+1}$不对,
+有例子$\mathbb{C}\mathrm{P}^1\approx S^2\approx \partial D^3.$</p>
+<h2 id="对称函数论"><a href="#对称函数论" class="headerlink" title="对称函数论"></a>对称函数论</h2><p>回顾$T^n=U(1)^{\times n}\hookrightarrow U(n),$ 映到对角阵中.
+这诱导了$BT^n\rightarrow BU(n),$
+拉回得到$H^\ast (BT^n;\mathbb{Z})\leftarrow H^\ast (BU(n);\mathbb{Z}),$
+$c_i\mapsto \sigma_i(t_1,\cdots t_n).$
+$1+\sigma_1+\cdots+\sigma_n=(1+t_1)\cdots (1+t_n).$</p>
+<p>记$S=\mathbb{Z}[\sigma_1,\cdots,\sigma_n]=\oplus_{k=0}^\infty S^k,$
+$S^k$为$k$次对称多项式. 它的基为</p>
+<p>$$
+\{\sigma_{i_1}\cdots\sigma_{i_r}|i_1+\cdots+i_r=k,\quad i_j\le n\}.
+$$</p>
+<p>$$
+S^k=\mathbb{Z}\{\sigma_I|I\text{ 为$k$的划分, 每个元小于等于$n$}\}.
+$$</p>
+<p>称两个单项等价, 若它们差一个置换. 如$t_1t_2^3t_3^5\sim t_4t_7^3t_2^5.$
+对$k$划分$I,$ $I$单项对称多项式定义为</p>
+<p>$$
+m_I:=\sum \text{ 单项等价于 }t^I:=t_1^{i_1}\cdots t_r^{i_r}.
+$$</p>
+<p>例如$k=3,$ $I=2+1=3,$ $m_I=t_1t_2^2+t_1^2t_2+t_1t_3^2+\cdots.$</p>
+<p><strong>引理 5</strong>. <em>$\{m_I|\text{$I$为$k$划分, $r\le n$.}\}$构成了$S^k=S^k_{(n)}$的一组$\mathbb{Z}$-基.</em> </p>
+<p>这组元素显然张成了$S^k.$ 只需检验维数.</p>
+<p>$$
+\dim_\mathbb{Z}S^k_{(n)}=\#\{\sigma_I\}=\{I|i_j\le n\}.
+$$</p>
+<p>希望证明它和$\{I|r\le n\}$相等. (都是$k$划分.)</p>
+<p>我们发现前者为$n$列以下的Young diagrams with $k$ boxes,
+后者为$n$行以下的Young diagrams with $k$ boxes. 例如对于$I=(4,4,3,1,1),$
+逆序排列, 像俄罗斯方块一样放置, 那么要求列数不超过$n$.
+和它对应的是$I&#39;=(5,3,3,2),$ 同样逆序排列按俄罗斯方块放置,
+要求行数不超过$n.$ 它们之间由转置联系. 因此集合数相同.</p>
+<p>对于任意$k$划分$I,$</p>
+<p>$$
+m_I(t_1,\cdots,t_n)\in \mathbb{Z}[t_1,\cdots,t_n]^{S_n}=\mathbb{Z}[\sigma_1,\cdots,\sigma_n].
+$$</p>
+<p>$$
+m_I(t_1,\cdots,t_n)=S_I(\sigma_1,\cdots,\sigma_n).
+$$</p>
+<p> 可以验证,
+$\,\forall\,n&lt;k,$</p>
+<p>$$
+S_{I,n}(\sigma_1,\cdots,\sigma_n)=S_{I,k}(\sigma_1,\cdots,\sigma_n,0,\cdots,0);
+$$</p>
+<p>$\,\forall\,n\ge k,$ $S_I$不变.</p>
+<p>因此, 若$n\ge k,$
+那么$\{m_I\}=\{S_I(\sigma_1,\cdots,\sigma_n)\}$构成了$S^k=\mathbb{Z}[\sigma_1,\cdots,\sigma_n]$的一组$\mathbb{Z}$-基.</p>
+<p>例如, $k=1,$ $S_1(\sigma_1)=\sigma_1,$</p>
+<p>$$
+S_2(\sigma_1,\sigma_2)=\sigma_1^2-2\sigma_2=(t_1+t_2)^2-2t_1t_2=t_1^2+t_2^2=m_2(t_1,t_2).
+$$</p>
+<p>$$
+S_{1,1}(\sigma_1,\sigma_2)=t_1t_2=\sigma_2,
+$$</p>
+<p>$$
+S
+ _3=\sigma_1^3-3\sigma_1\sigma_2+3\sigma_3.
+$$</p>
+<p>应用到拓扑上,</p>
+<p>$$
+H^\ast (BU(n))\rightarrow H^\ast (BU(1)^{\times n})^{S_n},\quad c_i\mapsto \sigma_i(t_1,\cdots,t_n),
+$$</p>
+<p>$\{c_I|I\text{ 为$k$的划分, }i_j\le n\}$构成了$H^{2k}(BU(n))$的一组$\mathbb{Z}$基.
+改变基后, $\{S_I(c_1,\cdots,c_n)|r\le n\}$也是一组$\mathbb{Z}$基.</p>
+<p>对秩$n$复向量丛$\omega,$
+定义$S_I(c(\omega)):=S_I(c_1(\omega),\cdots,c_n(\omega))\in H^{2n}(B;\mathbb{Z}).$</p>
+<p><strong>引理 6</strong> (Thom). <em>$S_I(c(\omega\oplus\omega&#39;))=\sum_{JK=I}S_J(c(\omega))S_K(c(\omega&#39;)).$</em> </p>
+<p>考虑$\sigma_k$为$k$基本对称多项式($t_1,\cdots,t_n$),
+$\sigma_k&#39;$为$(t_{n+1},\cdots,t_{n+m}),$
+$\sigma_k&#39;&#39;=\sum_{i=0}^k\sigma_i\sigma_{k-i}&#39;,$
+验证有$\sigma_k&#39;&#39;$为$(t_1,\cdots,t_{n+m})$基本对称多项式. 这样就有</p>
+<p>$$
+S_I(\sigma_1&#39;&#39;,\cdots,\sigma_k&#39;&#39;)=\sum_{JK=I} S_J(\sigma)S_K(\sigma&#39;).
+$$</p>
+<p>左侧为$m_I(t_1,\cdots,t_{n+m})=\sum t_{a_1}^{i_1}\cdots t_{a_r}^{i_r},$
+令$J:=\{i_q:1\le a_q\le n\},$ $K:=\{i_q:n+1\le a_q\le n+m\},$ $JK=I.$</p>
+<p>当$I$作为$k$划分就是$k=k,$ 记$S_k=S_I.$
+那么唯一的$JK=I=k$为$J=\varnothing$或$K=\varnothing.$</p>
+<p><strong>推论 7</strong>. <em>$S_k(c(\omega\oplus\omega&#39;))=S_k(c(\omega))+S_k(c(\omega&#39;)).$ $S_k$将和映到和.</em> </p>
+<p><strong>注 8</strong>. <em>形式定义Chern特征$ch(\omega):=n+\sum_{k=1}^\infty \frac{S_k(c(\omega))}{k!}\in H^\pi(B;\mathbb{Q}),$ 那么$ch(\omega\oplus\omega&#39;)=ch(\omega)+ch(\omega&#39;),$ $ch(\omega\otimes \omega&#39;)=ch(\omega)ch(\omega&#39;),$ 形式上比Chern示性类要好.</em> </p>
+<p>$$
+S_I[K^n]:=\left&lt;{}S_I(c(\tau_K)),[K^n]\right&gt;\in\mathbb{Z}.
+$$</p>
+<p><strong>推论 9</strong>. <em>$S_I$的积公式: 对于$I$为$m+n$划分, $S_I[K^m\times L^n]=\sum_{I_1I_2=I}S_{I_1}[K^m]S_{I_2}[K^n].$</em> </p>
+<p>$\tau:=\tau_{K^m},$ $\tau&#39;:=\tau_{L^n},$
+$\tau\times\tau&#39;\cong (\pi_1^\ast \tau)\oplus(\pi_2^\ast \tau&#39;).$</p>
+<p>$S_I[K\times L]=\left&lt;{}S_I(\tau\times\tau&#39;),[K\times L]\right&gt;.$
+由前面的引理即有结果.</p>
+<p>文章最后更新于 2022-12-02 16:39:40 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数拓扑2》笔记(22)-Pontrjagin数</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-12-02 18:39:37</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/12/02/《代数拓扑2》笔记(22)-Pontrjagin数/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/12/02/%E3%80%8APDE2%E3%80%8B%E7%AC%94%E8%AE%B0-%E7%89%B9%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《PDE2》笔记-特征值问题</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">PDE2 Notes - Eigenvalue Issues</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/12/01/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(21)-Pontrjagin%E7%A4%BA%E6%80%A7%E7%B1%BB/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑2》笔记(21)-Pontrjagin示性类</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (21) - Pontrjagin Explanatory Class</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pontrjagin%E6%95%B0"><span class="nav-text">Pontrjagin数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%87%BD%E6%95%B0%E8%AE%BA"><span class="nav-text">对称函数论</span></a></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pontrjagin%E6%95%B0"><span class="nav-text">Pontrjagin数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E7%A7%B0%E5%87%BD%E6%95%B0%E8%AE%BA"><span class="nav-text">对称函数论</span></a></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

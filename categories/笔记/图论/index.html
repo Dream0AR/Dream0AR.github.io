@@ -174,6 +174,38 @@
     
         <section class="archive-item">
             <div class="archive-item-header">
+                <span class="archive-year">2022</span>
+                <span class="archive-year-post-count">[1]</span>
+            </div>
+            <ul class="article-list">
+                
+            
+                
+                
+                
+                
+                
+                    <li class="article-item">
+                        <a class="article-title"
+                           href="/2022/09/19/%E3%80%8A%E8%B6%85%E5%9B%BE%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/"
+                        >
+                            <span data-lang-group="archive-post-title-2022-0" data-lang="zh-cn">
+                                《超图及其应用》笔记(1)-基本概念
+                            </span>
+                            
+                                <span data-lang-group="archive-post-title-2022-0" data-lang="en" style="display:none">
+                                    Hypergraphics and Applications Notes (1) - Basic Concepts
+                                </span>
+                            
+                        </a>
+                        <span class="article-date">09-19</span>
+                    </li>
+                
+            </ul>
+        </section>
+    
+        <section class="archive-item">
+            <div class="archive-item-header">
                 <span class="archive-year">2021</span>
                 <span class="archive-year-post-count">[2]</span>
             </div>
@@ -194,7 +226,7 @@
                             </span>
                             
                                 <span data-lang-group="archive-post-title-2021-0" data-lang="en" style="display:none">
-                                    Chapter 2 of &#34;Algebraic Graph Theory&#34; - Review of Group Theory
+                                    &#34;Algebraic Graph Theory&#34; Chapter 2 - Review of Group Theory
                                 </span>
                             
                         </a>
@@ -215,7 +247,7 @@
                             </span>
                             
                                 <span data-lang-group="archive-post-title-2021-1" data-lang="en" style="display:none">
-                                    &#34;Algebraic Graph Theory&#34; Chapter 1-Basic Concepts
+                                    Algebraic Diagrams Chapter 1 - Basic Concepts
                                 </span>
                             
                         </a>
@@ -374,6 +406,36 @@
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -395,46 +457,6 @@
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

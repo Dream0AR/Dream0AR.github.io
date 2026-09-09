@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》讨论稿-紧流形嵌入定理</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Paper - Compact Manifold Embedding Theorem</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Discussion Paper &#34;Differential Manifolds&#34; - Tight Manifold Embedding Theorem</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-11-01 17:27:25
+        <i class="fas fa-edit"></i>&nbsp;2021-11-01 19:27:25
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,169 +230,262 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="紧支撑光滑函数"><a href="#紧支撑光滑函数" class="headerlink" title="紧支撑光滑函数"></a>紧支撑光滑函数</h2><p>首先考虑克莱因瓶如何嵌入到$\mathbb{R}^4$里,
+这直接导致我们需要如下的工具.</p>
+<p>在$\mathbb{R}^n$上, 取$\varphi(x)=\begin{cases}
+            e^{\frac{1}{|x|^2-1} },&amp;|x|&lt;1\\
+            0,&amp;|x|\ge 1.
+        \end{cases},$
+令$\alpha(x)=\frac{1}{\int_{\mathbb{R}^n} \varphi dx}\varphi(x).$
+那么$\alpha(x)\in C_c^\infty(\mathbb{R}^n),$
+$\operatorname{supp}\alpha=B_1,$ 满足$\int_{\mathbb{R}^n}\alpha dx=1.$
+取$\alpha_\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$
+则$\operatorname{supp}\alpha_\varepsilon=B_\varepsilon,$
+也满足$\int_{\mathbb{R}^n}\alpha_\varepsilon dx=1.$</p>
+<p>定义卷积运算$f\ast g:=\int_{\mathbb{R}^n}f(y)g(x-y)dy.$ 那么对任意开集$E,$
+$f=1_E\ast \alpha_\varepsilon=\int_E \alpha_\varepsilon(x-y)dy,$
+满足如下性质:</p>
+<ol>
+<li><p>$f\in [0,1];$</p>
+</li>
+<li><p>$\,\forall\,x$满足$d(x,E^c)&lt; \varepsilon,$ $f(x)=1;$</p>
+</li>
+<li><p>$\operatorname{supp}f=\overline{O_\varepsilon(E)};$</p>
+</li>
+<li><p>$f\in C_c^\infty(\mathbb{R}^n).$</p>
+</li>
+</ol>
+<p>那么对流形上坐标卡$(U,\varphi),$ 倘若有开集$V\Subset W\Subset U,$
+则$\varphi(V)\Subset \varphi(W)\Subset \varphi(U).$
+记$\delta=\min(d(\overline{\varphi(V)},\varphi(W)^c),d(\overline{\varphi(W)},\varphi(U)^c))&gt;0,$
+那么取$f=(1_{\varphi(W)}\ast \alpha_{\frac{\delta}{2} })\circ \varphi,$
+满足$f\in [0,1],$ $f|_{V}=1,$ 且$f\in C_c^\infty(U).$</p>
+<h2 id="紧流形的嵌入"><a href="#紧流形的嵌入" class="headerlink" title="紧流形的嵌入"></a>紧流形的嵌入</h2><p>基本思路是对每个坐标卡, 把坐标邻域分别嵌入到各自的$\mathbb{R}^m$里,
+再留一维用来标识即可.</p>
+<p><strong>定理 1.1</strong>. <em>设$M$为$m$维紧致光滑流形, 则存在正整数$n,$ 以及光滑映射$\varphi:M\rightarrow \mathbb{R}^n,$ 使得$(M,\varphi)$是$\mathbb{R}^n$的正则子流形.</em> </p>
+<p><strong>证:</strong> 取$M$的坐标图册$\{(U_i,\varphi_i;u_i^j)\}_{i=1}^k,$
+由于是紧流形, 可取到有限坐标图册.
+取$M\setminus\bigcup_{j=2}^k U_j\subset V_1\Subset W_1\Subset U_1,$
+归纳地取$M\setminus(\bigcup_{j=1}^{i-1}V_j\cup\bigcup_{j=i+1}^k U_j)\subset V_i\Subset W_i\Subset U_i,$
+得到加细$\{V_i\}$覆盖$M,$ 且对每个$V_i$由前面的说明,
+存在$f_i\in C_c^\infty(U_i),$ $f_i|_{V_i}=1.$ 可以将$f_i$零延拓到$M$上.</p>
+<p>在$M$上定义$n=k(m+1)$个光滑函数: $$\begin{aligned}
+                x_i^0&amp;=f_i\\
+                x_i^j&amp;=f_i \cdot u_{i}^j\\
+            \end{aligned}$$ 其中$i=1,\cdots,k,$ $j=1,\cdots,m.$
+虽然每个函数只定义在$U_i$上, 但是同样可零延拓到整个$M$上.
+这给出了光滑映射$\Phi:M\rightarrow \mathbb{R}^n,$
+断言$(M,\Phi)$即为$\mathbb{R}^n$的正则子流形.</p>
+<p>首先它确实是子流形: 先验证秩, 由于$\,\forall\,p\in M,$
+$\,\exists\,V_i\supset O_p\ni p,$ 那么$f_i|_{O_p}\equiv 1,$
+从而$\det \frac{\partial(x^{1}_i,\cdots,x^m_i)}{\partial (u_i^1,\cdots,u_i^m)}=1,$
+$r(\Phi)=m.$ 因此$(M,\Phi)$是浸入子流形.</p>
+<p>接下来若$\Phi(p)=\Phi(q),$ 那么倘若$V_i\supset p,$
+$f_i(p)=1=f_i(q)\Rightarrow q\in V_i.$ 从而$\varphi_i(p)=\varphi_i(q),$
+由于$\varphi_i$为同胚, $p=q.$ 因此$\Phi$是单射, $(M,\Phi)$是子流形.</p>
+<p>由于$M$紧, 由上节课定理, $(M,\Phi)$自动是嵌入子流形,
+而由另一定理又说明$(M,\Phi)$也是正则子流形.</p>
+<h2 id="维数论"><a href="#维数论" class="headerlink" title="维数论"></a>维数论</h2><p>通过这种方式得到的嵌入显然有些暴力, 多余的维数太多了. 以$S^2$为例,
+至少要用两个坐标卡来描述,
+此时按照上面的方法里要嵌入到$n=2\times(2+1)=6$维空间里.
+倘若用标准的六个坐标卡来描述甚至要嵌到$18$维空间里.
+事实上我们可以用维数论的方法将外围空间维数降低. 首先需要介绍Sard定理:</p>
+<p><strong>定理 1.2</strong> (Sard定理). <em>设有光滑映照$f:M^m\rightarrow N^n,$ 则$N$上临界值全体零测.</em> </p>
+<p>临界值即为$M$上临界点的像, 临界点指使得$r(f)&lt;n$的点,
+即$f$在临界点非淹没.</p>
+<p><strong>定理 1.3</strong>. <em>若$m$维光滑流形$M$可单浸入$\mathbb{R}^K$中, $K&gt;2m+1,$ 那么它也可以单浸入$\mathbb{R}^{K-1}$中.</em> </p>
+<p><strong>证:</strong> 记单浸入为$\Phi,$
+$\mathbb{R}^K$中所有过原点的超平面$P$全体为$\mathbb{R}\mathrm{P}^{K-1},$
+它是一个$K-1$维光滑流形.
+我们说明使得$\pi_P\circ \Phi$不是单浸入的$P$在$\mathbb{R}\mathrm{P}^{K-1}$上是零测集.</p>
+<p>若其不是单射, 则$M$上有两点$p,q,$
+使得$P$在原点法线$[v]=[\Phi(p)-\Phi(q)]$决定. 从而$[v]$落在
+$$\alpha:M\times M\setminus \Delta_M\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,q)\mapsto[\Phi(p)-\Phi(q)]$$
+的像集中, 其中$\Delta_M=\{(p,p)|p\in M\}.$ 那么$\alpha$是光滑映射,
+$M\times M\setminus \Delta_M$为$2m$维开子流形, 由假设$2m&lt;K-1,$
+因此$\alpha$处处非淹没, 从而像集零测.</p>
+<p>若其不是浸入, 则$\,\exists\,p\in M,$
+$0\neq X_p\in T_pM$使得$(d\pi_P)_{\Phi(p)} (d\Phi)_p(X_p)\neq 0.$
+而$\pi_P$本身是线性映照, $d\pi_P=\pi_P,$
+因此$[(d\Phi)_p(X_p)]=[v]\neq 0.$ 从而$[v]$落在
+$$\beta:TM\setminus\{(p,0)\,|\,p\in M\}\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,X_p)\mapsto[(d\Phi)_p(X_p)]$$
+的像集中. $\beta$是光滑映射, 左侧同样为$2m$维开子流形,
+由Sard定理同理有像集零测.
+综上不是单浸入的$P$在$\mathbb{R}\mathrm{P}^{K-1}$上零测,
+于是几乎处处可以取到投影将维数降低.</p>
+<p>于是我们得到若$M$可单浸入$\mathbb{R}^K$中,
+则必可单浸入$\mathbb{R}^{2m+1}$中. 事实上对不是浸入的证明,
+可将$TM$更换为球面丛$SM=\{(p,X_p)\,|\,|X_p|=1\},$
+切丛度量由外围空间诱导. 此时$SM$是$2m-1$维光滑流形, 维数可以再降低.
+因此当$M$可嵌入$\mathbb{R}^{2m+1}$时, $M$可浸入$\mathbb{R}^{2m}.$</p>
+<p>综上, 任意$m$维光滑紧流形可嵌入$\mathbb{R}^{2m+1}$中,
+可浸入$\mathbb{R}^{2m}$中.</p>
+<h2 id="Whitney嵌入定理"><a href="#Whitney嵌入定理" class="headerlink" title="Whitney嵌入定理"></a>Whitney嵌入定理</h2><p>对于非紧情形, 我们给出证明的思路.</p>
+<p><strong>定理 1.4</strong>. <em>任意非紧光滑流形$M$可单浸入到$\mathbb{R}^K$中.</em> </p>
+<p>我们将$M$划分为可列多个紧子流形的并$M=\cup_{i}{M_i}$,
+保证$M_i\cap M_j=\varnothing,$ 若$|j-i|\ge 2.$
+这样设$M_i$上有到$\mathbb{R}^{2m+1}$的嵌入$\varphi_i,$
+取$M_i$小邻域的单位分解$\rho_i$, 则
+$$\left(\sum_{i-odd}\rho_i \varphi_i, \sum_{i-even}\rho_i \varphi_i, f\right)$$
+给出了想要的单浸入, $f$为控制函数, 提供了$M_i$的划分方法.</p>
+<p>这样$M^m$可单浸入到$\mathbb{R}^{2m+1}$中, 不过不见得是嵌入.
+不过可以改造单浸入成为嵌入, 利用如下命题,
+即Lee的光滑流形导论中的命题4.22(b):</p>
+<p><strong>命题 1.5</strong>. <em>逆紧的光滑单浸入是嵌入. (像空间是局部紧$T_2$的即可, 此时逆紧连续映射是闭映射.)</em> </p>
+<p>将单浸入改造为逆紧的单浸入, 就得到了经典的Whitney嵌入定理.</p>
+<p><strong>定理 1.6</strong> (Whitney嵌入定理). <em>$m$维光滑流形$M$可嵌入$\mathbb{R}^{2m+1},$ 可浸入$\mathbb{R}^{2m}.$</em> </p>
+<h2 id="其它结果"><a href="#其它结果" class="headerlink" title="其它结果"></a>其它结果</h2><p>应用Whitney trick, 可以证明如下定理:</p>
+<p><strong>定理 1.7</strong> (强Whitney嵌入定理). <em>任意$m\ge 2$维以上光滑流形可嵌入$\mathbb{R}^{2m}$中, 可浸入$\mathbb{R}^{2m-1}$中.</em> </p>
+<p>还有许多更细致的结果如下:</p>
+<ul>
+<li><p>$m$维光滑紧定向流形可嵌入$\mathbb{R}^{2m-1}$中.</p>
+</li>
+<li><p>$m\neq 2^k$时, $m$维光滑流形可嵌入$\mathbb{R}^{2m-1}$中. $m=2^k$时,
+$\mathbb{R}\mathrm{P}^m$不可嵌入$\mathbb{R}^{2m-1}$中.</p>
+</li>
+<li><p>$m$维光滑流形可浸入$\mathbb{R}^{2m-a(m)}$中,
+$a(m)$为$m$二进制表示中$1$的数目, $m\ge 2.$</p>
+</li>
+</ul>
+<p>最后一个结果出自The Immersion Conjecture for Differentiable Manifolds,
+Ralph L. Cohen. 方法源于E.H.Brown与F.P.Peterson的工作.
+事实上由障碍性理论(Smale-Hirsch theory),
+浸入的唯一阻碍是Stiefel-Whitney示性类,
+由此可以说明对$m=2^{i_1}+\cdots+2^{i_l},$
+取$M^m=\mathbb{R}\mathrm{P}^{2^{i_1} }\times\cdots\times \mathbb{R}\mathrm{P}^{2^{i_l} },$
+$M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳的.</p>
+<p>文章最后更新于 2021-11-01 17:27:27 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Compactly supported smooth function
----------------
-
-First consider how the Klein bottle is embedded in $\mathbb{R}^4$,
-This directly leads us to need the following tools.
-
-On $\mathbb{R}^n$, take $\varphi(x)=\begin{cases}
-            e^{\frac{1}{|x|^2-1} },&|x|<1\\
-0,&|x|\ge 1.
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="紧支撑光滑函数"><a href="#紧支撑光滑函数" class="headerlink" title="紧支撑光滑函数"></a>紧支撑光滑函数</h2><p>首先考虑克莱因瓶如何嵌入到$\mathbb{R}^4$里,
+这直接导致我们需要如下的工具.</p>
+<p>在$\mathbb{R}^n$上, 取$\varphi(x)=\begin{cases}
+            e^{\frac{1}{|x|^2-1} },&amp;|x|&lt;1\\
+            0,&amp;|x|\ge 1.
         \end{cases},$
-Let $\alpha(x)=\frac{1}{\int_{\mathbb{R}^n} \varphi dx}\varphi(x).$
-Then $\alpha(x)\in C_c^\infty(\mathbb{R}^n),$
-$\operatorname{supp}\alpha=B_1,$ satisfies $\int_{\mathbb{R}^n}\alpha dx=1.$
-Take $\alpha_\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$
-Then $\operatorname{supp}\alpha_\varepsilon=B_\varepsilon,$
-Also satisfies $\int_{\mathbb{R}^n}\alpha_\varepsilon dx=1.$
-
-Define the convolution operation $f\ast g:=\int_{\mathbb{R}^n}f(y)g(x-y)dy.$ Then for any open set $E,$
+令$\alpha(x)=\frac{1}{\int_{\mathbb{R}^n} \varphi dx}\varphi(x).$
+那么$\alpha(x)\in C_c^\infty(\mathbb{R}^n),$
+$\operatorname{supp}\alpha=B_1,$ 满足$\int_{\mathbb{R}^n}\alpha dx=1.$
+取$\alpha_\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$
+则$\operatorname{supp}\alpha_\varepsilon=B_\varepsilon,$
+也满足$\int_{\mathbb{R}^n}\alpha_\varepsilon dx=1.$</p>
+<p>定义卷积运算$f\ast g:=\int_{\mathbb{R}^n}f(y)g(x-y)dy.$ 那么对任意开集$E,$
 $f=1_E\ast \alpha_\varepsilon=\int_E \alpha_\varepsilon(x-y)dy,$
-Satisfy the following properties:
-
-1. $f\in [0,1];$
-
-2. $\,\forall\,x$ satisfies $d(x,E^c)< \varepsilon,$ $f(x)=1;$
-3. $\operatorname{supp}f=\overline{O_\varepsilon(E)};$
-
-4. $f\in C_c^\infty(\mathbb{R}^n).$
-
-Then on the manifold coordinate card $(U,\varphi),$ if there is an open set $V\Subset W\Subset U,$
-Then $\varphi(V)\Subset \varphi(W)\Subset \varphi(U).$
-Remember $\delta=\min(d(\overline{\varphi(V)},\varphi(W)^c),d(\overline{\varphi(W)},\varphi(U)^c))>0,$
-Then take $f=(1_{\varphi(W)}\ast \alpha_{\frac{\delta}{2} })\circ \varphi,$
-Satisfy $f\in [0,1],$ $f|_{V}=1,$ and $f\in C_c^\infty(U).$
-
-embedding of compact manifolds
-----------
-The basic idea is to embed the coordinate neighborhoods into their respective $\mathbb{R}^m$ for each coordinate card,
-Just leave one more dimension for identification.
-
-**Theorem 1.1**. *Suppose $M$ is an $m$-dimensional compact smooth manifold, then there are positive integers $n,$ and smooth maps $\varphi:M\rightarrow \mathbb{R}^n,$ such that $(M,\varphi)$ is a regular submanifold of $\mathbb{R}^n$.
-*
-
-**Certificate:** Take the coordinate atlas of $M$$\{(U_i,\varphi_i;u_i^j)\}_{i=1}^k,$
-Since it is a compact manifold, a finite coordinate atlas can be obtained.
-Take $M\setminus\bigcup_{j=2}^k U_j\subset V_1\Subset W_1\Subset U_1,$
-Inductively take $M\setminus(\bigcup_{j=1}^{i-1}V_j\cup\bigcup_{j=i+1}^k U_j)\subset V_i\Subset W_i\Subset U_i,$
-Obtain the detailed $\{V_i\}$ to cover $M,$ and for each $V_i$ according to the previous description,
-There exists $f_i\in C_c^\infty(U_i),$ $f_i|_{V_i}=1.$, and $f_i$ zero can be extended to $M$.
-
-Define $n=k(m+1)$ smooth functions on $M$: $$\begin{aligned}
-                x_i^0&=f_i\\
-                x_i^j&=f_i \cdot u_{i}^j\\
-            \end{aligned}$$ where $i=1,\cdots,k,$ $j=1,\cdots,m.$
-Although each function is only defined on $U_i$, it can also be extended to the entire $M$.
-This gives a smooth map $\Phi:M\rightarrow \mathbb{R}^n,$
-Assert that $(M,\Phi)$ is the regular submanifold of $\mathbb{R}^n$.
-
-First of all, it is indeed a submanifold: first verify the rank, since $\,\forall\,p\in M,$
-$\,\exists\,V_i\supset O_p\ni p,$ then $f_i|_{O_p}\equiv 1,$
-Thus $\det \frac{\partial(x^{1}_i,\cdots,x^m_i)}{\partial (u_i^1,\cdots,u_i^m)}=1,$
-$r(\Phi)=m.$ Therefore $(M,\Phi)$ is an immersed submanifold.
-Next if $\Phi(p)=\Phi(q),$ then if $V_i\supset p,$
-$f_i(p)=1=f_i(q)\Rightarrow q\in V_i.$ Thus $\varphi_i(p)=\varphi_i(q),$
-Since $\varphi_i$ is a homeomorphism, $p=q.$ therefore $\Phi$ is an injective, $(M,\Phi)$ is a submanifold.
-Since $M$ is compact, according to the theorem of the previous lesson, $(M,\Phi)$ is automatically an embedded submanifold,
-And another theorem shows that $(M,\Phi)$ is also a regular submanifold.
-
-Dimension theory
-------
-
-The embedding obtained in this way is obviously a bit violent and has too many redundant dimensions. Take $S^2$ as an example,
-At least two coordinate cards must be used to describe,
-At this time, according to the above method, it needs to be embedded into the $n=2\times(2+1)=6$ dimensional space.
-If you use standard six coordinate cards to describe it, it will even be embedded in an $18$ dimensional space.
-In fact, we can use dimension theory to reduce the dimension of the peripheral space. First we need to introduce Sard's theorem:
-
-**Theorem 1.2** (Sard's theorem). *Suppose the smooth mapping $f:M^m\rightarrow N^n,$ then the upper critical value of $N$ is all zero-measured.*
-
-The critical value is the image of the critical point on $M$, and the critical point refers to the point where $r(f)<n$,
-That is, $f$ is not submerged at the critical point.
-
-**Theorem 1.3**. *If the $m$-dimensional smooth manifold $M$ can be single-immersed in $\mathbb{R}^K$, $K>2m+1,$, then it can also be single-immersed in $\mathbb{R}^{K-1}$.*
-
-**Certificate:** The order immersion is $\Phi,$
-All hyperplanes $P$ in $\mathbb{R}^K$ passing through the origin are $\mathbb{R}\mathrm{P}^{K-1},$
-It is a $K-1$ dimensional smooth manifold.
-We show that $P$ such that $\pi_P\circ \Phi$ is not a single immersion is a zero test set on $\mathbb{R}\mathrm{P}^{K-1}$.
-
-If it is not an injective, then there are two points $p, q, $ on $M$
-Make $P$ determined by the normal line $[v]=[\Phi(p)-\Phi(q)]$ at the origin. Thus $[v]$ falls on
+满足如下性质:</p>
+<ol>
+<li><p>$f\in [0,1];$</p>
+</li>
+<li><p>$\,\forall\,x$满足$d(x,E^c)&lt; \varepsilon,$ $f(x)=1;$</p>
+</li>
+<li><p>$\operatorname{supp}f=\overline{O_\varepsilon(E)};$</p>
+</li>
+<li><p>$f\in C_c^\infty(\mathbb{R}^n).$</p>
+</li>
+</ol>
+<p>那么对流形上坐标卡$(U,\varphi),$ 倘若有开集$V\Subset W\Subset U,$
+则$\varphi(V)\Subset \varphi(W)\Subset \varphi(U).$
+记$\delta=\min(d(\overline{\varphi(V)},\varphi(W)^c),d(\overline{\varphi(W)},\varphi(U)^c))&gt;0,$
+那么取$f=(1_{\varphi(W)}\ast \alpha_{\frac{\delta}{2} })\circ \varphi,$
+满足$f\in [0,1],$ $f|_{V}=1,$ 且$f\in C_c^\infty(U).$</p>
+<h2 id="紧流形的嵌入"><a href="#紧流形的嵌入" class="headerlink" title="紧流形的嵌入"></a>紧流形的嵌入</h2><p>基本思路是对每个坐标卡, 把坐标邻域分别嵌入到各自的$\mathbb{R}^m$里,
+再留一维用来标识即可.</p>
+<p><strong>定理 1.1</strong>. <em>设$M$为$m$维紧致光滑流形, 则存在正整数$n,$ 以及光滑映射$\varphi:M\rightarrow \mathbb{R}^n,$ 使得$(M,\varphi)$是$\mathbb{R}^n$的正则子流形.</em> </p>
+<p><strong>证:</strong> 取$M$的坐标图册$\{(U_i,\varphi_i;u_i^j)\}_{i=1}^k,$
+由于是紧流形, 可取到有限坐标图册.
+取$M\setminus\bigcup_{j=2}^k U_j\subset V_1\Subset W_1\Subset U_1,$
+归纳地取$M\setminus(\bigcup_{j=1}^{i-1}V_j\cup\bigcup_{j=i+1}^k U_j)\subset V_i\Subset W_i\Subset U_i,$
+得到加细$\{V_i\}$覆盖$M,$ 且对每个$V_i$由前面的说明,
+存在$f_i\in C_c^\infty(U_i),$ $f_i|_{V_i}=1.$ 可以将$f_i$零延拓到$M$上.</p>
+<p>在$M$上定义$n=k(m+1)$个光滑函数: $$\begin{aligned}
+                x_i^0&amp;=f_i\\
+                x_i^j&amp;=f_i \cdot u_{i}^j\\
+            \end{aligned}$$ 其中$i=1,\cdots,k,$ $j=1,\cdots,m.$
+虽然每个函数只定义在$U_i$上, 但是同样可零延拓到整个$M$上.
+这给出了光滑映射$\Phi:M\rightarrow \mathbb{R}^n,$
+断言$(M,\Phi)$即为$\mathbb{R}^n$的正则子流形.</p>
+<p>首先它确实是子流形: 先验证秩, 由于$\,\forall\,p\in M,$
+$\,\exists\,V_i\supset O_p\ni p,$ 那么$f_i|_{O_p}\equiv 1,$
+从而$\det \frac{\partial(x^{1}_i,\cdots,x^m_i)}{\partial (u_i^1,\cdots,u_i^m)}=1,$
+$r(\Phi)=m.$ 因此$(M,\Phi)$是浸入子流形.</p>
+<p>接下来若$\Phi(p)=\Phi(q),$ 那么倘若$V_i\supset p,$
+$f_i(p)=1=f_i(q)\Rightarrow q\in V_i.$ 从而$\varphi_i(p)=\varphi_i(q),$
+由于$\varphi_i$为同胚, $p=q.$ 因此$\Phi$是单射, $(M,\Phi)$是子流形.</p>
+<p>由于$M$紧, 由上节课定理, $(M,\Phi)$自动是嵌入子流形,
+而由另一定理又说明$(M,\Phi)$也是正则子流形.</p>
+<h2 id="维数论"><a href="#维数论" class="headerlink" title="维数论"></a>维数论</h2><p>通过这种方式得到的嵌入显然有些暴力, 多余的维数太多了. 以$S^2$为例,
+至少要用两个坐标卡来描述,
+此时按照上面的方法里要嵌入到$n=2\times(2+1)=6$维空间里.
+倘若用标准的六个坐标卡来描述甚至要嵌到$18$维空间里.
+事实上我们可以用维数论的方法将外围空间维数降低. 首先需要介绍Sard定理:</p>
+<p><strong>定理 1.2</strong> (Sard定理). <em>设有光滑映照$f:M^m\rightarrow N^n,$ 则$N$上临界值全体零测.</em> </p>
+<p>临界值即为$M$上临界点的像, 临界点指使得$r(f)&lt;n$的点,
+即$f$在临界点非淹没.</p>
+<p><strong>定理 1.3</strong>. <em>若$m$维光滑流形$M$可单浸入$\mathbb{R}^K$中, $K&gt;2m+1,$ 那么它也可以单浸入$\mathbb{R}^{K-1}$中.</em> </p>
+<p><strong>证:</strong> 记单浸入为$\Phi,$
+$\mathbb{R}^K$中所有过原点的超平面$P$全体为$\mathbb{R}\mathrm{P}^{K-1},$
+它是一个$K-1$维光滑流形.
+我们说明使得$\pi_P\circ \Phi$不是单浸入的$P$在$\mathbb{R}\mathrm{P}^{K-1}$上是零测集.</p>
+<p>若其不是单射, 则$M$上有两点$p,q,$
+使得$P$在原点法线$[v]=[\Phi(p)-\Phi(q)]$决定. 从而$[v]$落在
 $$\alpha:M\times M\setminus \Delta_M\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,q)\mapsto[\Phi(p)-\Phi(q)]$$
-image set, where $\Delta_M=\{(p,p)|p\in M\}.$ then $\alpha$ is a smooth mapping,
-$M\times M\setminus \Delta_M$ is a $2m$-dimensional open submanifold, assuming $2m<K-1,$
-Therefore $\alpha$ is not submerged everywhere, thus it is like a set with zero measurement.
-
-If it is not immersed, then $\,\exists\,p\in M,$
-$0\neq X_p\in T_pM$ makes $(d\pi_P)_{\Phi(p)} (d\Phi)_p(X_p)\neq 0.$
-And $\pi_P$ itself is a linear mapping, $d\pi_P=\pi_P,$
-Therefore $[(d\Phi)_p(X_p)]=[v]\neq 0.$ and thus $[v]$ falls in
+的像集中, 其中$\Delta_M=\{(p,p)|p\in M\}.$ 那么$\alpha$是光滑映射,
+$M\times M\setminus \Delta_M$为$2m$维开子流形, 由假设$2m&lt;K-1,$
+因此$\alpha$处处非淹没, 从而像集零测.</p>
+<p>若其不是浸入, 则$\,\exists\,p\in M,$
+$0\neq X_p\in T_pM$使得$(d\pi_P)_{\Phi(p)} (d\Phi)_p(X_p)\neq 0.$
+而$\pi_P$本身是线性映照, $d\pi_P=\pi_P,$
+因此$[(d\Phi)_p(X_p)]=[v]\neq 0.$ 从而$[v]$落在
 $$\beta:TM\setminus\{(p,0)\,|\,p\in M\}\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,X_p)\mapsto[(d\Phi)_p(X_p)]$$
-The image concentration of . $\beta$ is a smooth mapping, and the left side is also a $2m$-dimensional open submanifold,
-In the same way as Sard's theorem, there is a zero measure of the image set.
-In summary, it is not the case that $P$ with single immersion is zero-measured on $\mathbb{R}\mathrm{P}^{K-1}$,
-So projection can be used almost everywhere to reduce the dimensionality.
-
-So we get that if $M$ can be immersed in $\mathbb{R}^K$ alone,
-Then it must be immersed in $\mathbb{R}^{2m+1}$. In fact, the proof that it is not immersed is,
-$TM$ can be replaced by a spherical bundle $SM=\{(p,X_p)\,|\,|X_p|=1\},$
-The tangent bundle metric is induced by the peripheral space. At this time, $SM$ is a $2m-1$ dimensional smooth manifold, and the dimension can be further reduced.
-Therefore, when $M$ can be embedded in $\mathbb{R}^{2m+1}$, $M$ can be immersed in $\mathbb{R}^{2m}.$
-In summary, any $m$-dimensional smooth compact manifold can be embedded in $\mathbb{R}^{2m+1}$,
-Can be immersed in $\mathbb{R}^{2m}$.
-
-Whitney embedding theorem
----------------
-
-For the non-compact case, we give the idea of proof.
-
-**Theorem 1.4**. *Any non-compact smooth manifold $M$ can be simply immersed in $\mathbb{R}^K$.*
-We divide $M$ into the union $M=\cup_{i}{M_i}$ that can list multiple compact submanifolds,
-Guarantee $M_i\cap M_j=\varnothing,$ if $|j-i|\ge 2.$
-In this way, suppose $M_i$ has an embedding $\varphi_i,$ to $\mathbb{R}^{2m+1}$
-Taking the unit decomposition $\rho_i$ of the small neighborhood $M_i$, then
+的像集中. $\beta$是光滑映射, 左侧同样为$2m$维开子流形,
+由Sard定理同理有像集零测.
+综上不是单浸入的$P$在$\mathbb{R}\mathrm{P}^{K-1}$上零测,
+于是几乎处处可以取到投影将维数降低.</p>
+<p>于是我们得到若$M$可单浸入$\mathbb{R}^K$中,
+则必可单浸入$\mathbb{R}^{2m+1}$中. 事实上对不是浸入的证明,
+可将$TM$更换为球面丛$SM=\{(p,X_p)\,|\,|X_p|=1\},$
+切丛度量由外围空间诱导. 此时$SM$是$2m-1$维光滑流形, 维数可以再降低.
+因此当$M$可嵌入$\mathbb{R}^{2m+1}$时, $M$可浸入$\mathbb{R}^{2m}.$</p>
+<p>综上, 任意$m$维光滑紧流形可嵌入$\mathbb{R}^{2m+1}$中,
+可浸入$\mathbb{R}^{2m}$中.</p>
+<h2 id="Whitney嵌入定理"><a href="#Whitney嵌入定理" class="headerlink" title="Whitney嵌入定理"></a>Whitney嵌入定理</h2><p>对于非紧情形, 我们给出证明的思路.</p>
+<p><strong>定理 1.4</strong>. <em>任意非紧光滑流形$M$可单浸入到$\mathbb{R}^K$中.</em> </p>
+<p>我们将$M$划分为可列多个紧子流形的并$M=\cup_{i}{M_i}$,
+保证$M_i\cap M_j=\varnothing,$ 若$|j-i|\ge 2.$
+这样设$M_i$上有到$\mathbb{R}^{2m+1}$的嵌入$\varphi_i,$
+取$M_i$小邻域的单位分解$\rho_i$, 则
 $$\left(\sum_{i-odd}\rho_i \varphi_i, \sum_{i-even}\rho_i \varphi_i, f\right)$$
-The desired single immersion is given, $f$ is the control function, and the division method of $M_i$ is provided.
+给出了想要的单浸入, $f$为控制函数, 提供了$M_i$的划分方法.</p>
+<p>这样$M^m$可单浸入到$\mathbb{R}^{2m+1}$中, 不过不见得是嵌入.
+不过可以改造单浸入成为嵌入, 利用如下命题,
+即Lee的光滑流形导论中的命题4.22(b):</p>
+<p><strong>命题 1.5</strong>. <em>逆紧的光滑单浸入是嵌入. (像空间是局部紧$T_2$的即可, 此时逆紧连续映射是闭映射.)</em> </p>
+<p>将单浸入改造为逆紧的单浸入, 就得到了经典的Whitney嵌入定理.</p>
+<p><strong>定理 1.6</strong> (Whitney嵌入定理). <em>$m$维光滑流形$M$可嵌入$\mathbb{R}^{2m+1},$ 可浸入$\mathbb{R}^{2m}.$</em> </p>
+<h2 id="其它结果"><a href="#其它结果" class="headerlink" title="其它结果"></a>其它结果</h2><p>应用Whitney trick, 可以证明如下定理:</p>
+<p><strong>定理 1.7</strong> (强Whitney嵌入定理). <em>任意$m\ge 2$维以上光滑流形可嵌入$\mathbb{R}^{2m}$中, 可浸入$\mathbb{R}^{2m-1}$中.</em> </p>
+<p>还有许多更细致的结果如下:</p>
+<ul>
+<li><p>$m$维光滑紧定向流形可嵌入$\mathbb{R}^{2m-1}$中.</p>
+</li>
+<li><p>$m\neq 2^k$时, $m$维光滑流形可嵌入$\mathbb{R}^{2m-1}$中. $m=2^k$时,
+$\mathbb{R}\mathrm{P}^m$不可嵌入$\mathbb{R}^{2m-1}$中.</p>
+</li>
+<li><p>$m$维光滑流形可浸入$\mathbb{R}^{2m-a(m)}$中,
+$a(m)$为$m$二进制表示中$1$的数目, $m\ge 2.$</p>
+</li>
+</ul>
+<p>最后一个结果出自The Immersion Conjecture for Differentiable Manifolds,
+Ralph L. Cohen. 方法源于E.H.Brown与F.P.Peterson的工作.
+事实上由障碍性理论(Smale-Hirsch theory),
+浸入的唯一阻碍是Stiefel-Whitney示性类,
+由此可以说明对$m=2^{i_1}+\cdots+2^{i_l},$
+取$M^m=\mathbb{R}\mathrm{P}^{2^{i_1} }\times\cdots\times \mathbb{R}\mathrm{P}^{2^{i_l} },$
+$M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳的.</p>
+<p>文章最后更新于 2021-11-01 17:27:27 </p>
 
-In this way $M^m$ can be immersed in $\mathbb{R}^{2m+1}$ alone, but it is not necessarily embedded.
-However, single immersion can be transformed into embedding, using the following proposition,
-That is Proposition 4.22(b) in Lee’s Introduction to Smooth Manifolds:
-
-**Proposition 1.5**. *The smooth single immersion of inverse compactness is embedding. (As long as the image space is locally compact $T_2$, the inverse compact continuous map is a closed map.)*
-
-By transforming single immersion into inverse compact single immersion, the classic Whitney embedding theorem is obtained.
-**Theorem 1.6** (Whitney Embedding Theorem). *$m$-dimensional smooth manifold $M$ can be embedded in $\mathbb{R}^{2m+1},$ can be immersed in $\mathbb{R}^{2m}.$*
-
-Other results
---------
-
-Applying the Whitney trick, the following theorem can be proved:
-**Theorem 1.7** (Strong Whitney Embedding Theorem). *Any smooth manifold with dimensions above $m\ge 2$ can be embedded in $\mathbb{R}^{2m}$, and can be immersed in $\mathbb{R}^{2m-1}$.*
-
-There are many more detailed results as follows:
-
-- $m$-dimensional smooth compact directed manifold can be embedded in $\mathbb{R}^{2m-1}$.
-- When $m\neq 2^k$, the $m$-dimensional smooth manifold can be embedded in $\mathbb{R}^{2m-1}$. When $m=2^k$,
-    $\mathbb{R}\mathrm{P}^m$ cannot be embedded in $\mathbb{R}^{2m-1}$.
-
-- $m$-dimensional smooth manifold can be immersed in $\mathbb{R}^{2m-a(m)}$,
-$a(m)$ is the number of $1$ in the binary representation of $m$, $m\ge 2.$
-
-The last result comes from The Immersion Conjecture for Differentiable Manifolds,
-Ralph L. Cohen. Method derived from the work of E.H. Brown and F.P. Peterson.
-In fact, according to the Smale-Hirsch theory,
-The only obstacle to immersion is the Stiefel-Whitney demonstrative class,
-This can explain that $m=2^{i_1}+\cdots+2^{i_l},$
-Take $M^m=\mathbb{R}\mathrm{P}^{2^{i_1} }\times\cdots\times \mathbb{R}\mathrm{P}^{2^{i_l} },$
-The minimum dimension of $M^m$ immersion is $\sum_j(2i_j-1)=2m-a(m).$ so this result is the best.
-
-The article was last updated on 2021-11-01 17:27:27
                 </div>
             
         </div>
@@ -403,7 +496,7 @@ The article was last updated on 2021-11-01 17:27:27
     <ul>
         <li>本文标题：《微分流形》讨论稿-紧流形嵌入定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-01 17:27:25</li>
+        <li>创建时间：2021-11-01 19:27:25</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/11/01/《微分流形》讨论稿-紧流形嵌入定理/
         </li>
@@ -435,7 +528,7 @@ The article was last updated on 2021-11-01 17:27:27
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第四章-分布</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 4-Distribution</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 4 - Distribution</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -457,7 +550,7 @@ The article was last updated on 2021-11-01 17:27:27
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(10)-Čech上同调</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (10)-Čech Cohomology</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (10) - Synchronicity on Čech</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -709,11 +802,11 @@ The article was last updated on 2021-11-01 17:27:27
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E6%94%AF%E6%92%91%E5%85%89%E6%BB%91%E5%87%BD%E6%95%B0"><span class="nav-text">紧支撑光滑函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E6%B5%81%E5%BD%A2%E7%9A%84%E5%B5%8C%E5%85%A5"><span class="nav-text">紧流形的嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%B4%E6%95%B0%E8%AE%BA"><span class="nav-text">维数论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Whitney%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86"><span class="nav-text">Whitney嵌入定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E7%BB%93%E6%9E%9C"><span class="nav-text">其它结果</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E6%94%AF%E6%92%91%E5%85%89%E6%BB%91%E5%87%BD%E6%95%B0"><span class="nav-text">紧支撑光滑函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A7%E6%B5%81%E5%BD%A2%E7%9A%84%E5%B5%8C%E5%85%A5"><span class="nav-text">紧流形的嵌入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%B4%E6%95%B0%E8%AE%BA"><span class="nav-text">维数论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Whitney%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86"><span class="nav-text">Whitney嵌入定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E7%BB%93%E6%9E%9C"><span class="nav-text">其它结果</span></a></li></ol>
         </div>
     
 </div>
@@ -764,6 +857,36 @@ The article was last updated on 2021-11-01 17:27:27
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -787,46 +910,6 @@ The article was last updated on 2021-11-01 17:27:27
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

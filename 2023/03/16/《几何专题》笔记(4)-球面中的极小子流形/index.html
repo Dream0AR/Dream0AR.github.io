@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《几何专题》笔记(4)-球面中的极小子流形 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《几何专题》笔记(4)-球面中的极小子流形</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Geometry Notes (4) - Minimal Submanifolds in Spheres</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2023-03-16 17:51:54
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98/">几何专题</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><p>记空间形式$R^{n+p}(c)$为$n+p$维黎曼流形, 具常截面曲率$c$. 我们知道,
+$$
+R^{n+p}(c)=\begin{cases}
+ E^{n+p},&amp;c=0\\
+ S^{n+p},&amp;c=1,\quad x_1^2+\cdots+x_{n+p+1}^2=1\\
+ H^{n+p},&amp;c=-1,\quad x_1^2+\cdots+x_{n+p}^2-x_{n+p+1}^2=-1
+ \end{cases}
+$$</p>
+<p>考虑$x:M^n\rightarrow S^{n+1}\hookrightarrow E^{n+p+1},$
+$\left&lt;{}x,x\right&gt;=1.$ 类似地考虑$\{e_i\},\{e_\alpha\}.$
+那么$\{e_i,e_\alpha,x\}$构成$E^{n+p+1}$中的正交标架. 我们有</p>
+<p>$$
+dx=\theta_ie_i,\quad de_i=\theta_{ij}e_j+\theta_{i\alpha}e_\alpha-\theta_ix.
+$$</p>
+<p>$$
+de_\alpha=\theta_{\alpha i}e_i+\theta_{\alpha\beta}e_\beta,\quad \theta_{i\alpha}=h_{i\alpha j}\theta_j.
+$$</p>
+<p>$x$项系数是通过内积得到的, 如</p>
+<p>$$
+\left&lt;{}de_i,x\right&gt;=-\left&lt;{}e_i,dx\right&gt;=-\theta_i.
+$$</p>
+<h2 id="极小子流形"><a href="#极小子流形" class="headerlink" title="极小子流形"></a>极小子流形</h2><p>设有浸入</p>
+<p>$$
+x:M\hookrightarrow S^{n+p}\hookrightarrow \mathbb{R}^{n+p+1},
+$$</p>
+<p>$\,\forall\,a\in \mathbb{R}^{n+p+1},$ 我们来计算</p>
+<p>$$
+\Delta\left&lt;{}x,a\right&gt;=n\left&lt;{}a,H\right&gt;-n\left&lt;{}x,a\right&gt;.
+$$</p>
+<p>记$f=\left&lt;{}x,a\right&gt;,$ 通过类似的计算,
+我们有$f_i=\left&lt;{}e_i,a\right&gt;,$</p>
+<p>$$
+f_{ij}\theta_j=df_i+f_j\theta_{ji}=\left&lt;{}de_i,a\right&gt;+\left&lt;{}e_j,a\right&gt;\theta_{ji}=\left&lt;{}\theta_{ij}e_j+h_{i\alpha j}\theta_je_\alpha-\theta_ix,a\right&gt;+\left&lt;{}e_j,a\right&gt;\theta_ji=\left&lt;{}h_{i\alpha j}\theta_je_\alpha-\theta_ix,a\right&gt;,
+$$</p>
+<p>$$
+\Delta\left&lt;{}x,a\right&gt;=f_{ii}=n\left&lt;{}a,H\right&gt;-n\left&lt;{}x,a\right&gt;.
+$$</p>
+<p>从而</p>
+<p><strong>定理 1</strong>. <em>$x:M\rightarrow S^{n+p}$极小当且仅当$\Delta\left&lt;{}x,a\right&gt;=-n\left&lt;{}x,a\right&gt;,$ 当且仅当$\Delta x=-nx.$</em> </p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="大圆"><a href="#大圆" class="headerlink" title="大圆"></a>大圆</h3><p>$n$-大圆都是全测地的. 取固定的$a\neq 0,$ 大圆可表示为</p>
+<p>$$
+M_0:=\{x\in S^{n+1}|\left&lt;{}x,a\right&gt;=0\},
+$$</p>
+<p>$$
+dx=\theta_i e_i,\quad de_i=\theta_{ij}e_j+h_{ij}e_je_{n+1}-\theta_ix,
+$$</p>
+<p>$$
+de_{n+1}=-h_{ij}\theta_je_i.
+$$</p>
+<p> 对$\left&lt;{}x,a\right&gt;=0$求导,
+我们有$\left&lt;{}dx,a\right&gt;=0,$ 因此$a\perp T_pM.$ 又由$a\perp x,$</p>
+<p>$$
+a=ke_{n+1}.
+$$</p>
+<p> 由$\left&lt;{}e_i,a\right&gt;=0,$ $\left&lt;{}de_i,a\right&gt;=0,$</p>
+<p>$$
+\left&lt;{}\theta_{ij}e_j+h_{ij}\theta_je_{n+1}-\theta_ix,a\right&gt;=0,\quad h_{ij}\theta_j=0,
+$$</p>
+<p>于是$h_{ij}=0.$</p>
+<p>对于$n$-小圆 </p>
+<p>$$
+M_c:=\{x\in S^{n+1}|\left&lt;{}x,a\right&gt;=c,0&lt;c&lt;1\},
+$$</p>
+<p>第二基本型特征值均为固定非零常数,
+即$\lambda_1=\cdots=\lambda_n=const\neq 0,$ 称为totally umbilical的.</p>
+<h3 id="Clifford-tori"><a href="#Clifford-tori" class="headerlink" title="Clifford tori"></a>Clifford tori</h3><p>考虑极小超曲面$x:S^r(a_1)\times S^{n-r}(a_2)\hookrightarrow S^{n+1}\hookrightarrow \mathbb{R}^{n+2},$
+$1\le r\le n-1.$ 我们通过</p>
+<p>$$
+x:S^r(a_1)\times S^{n-r}(a_2)\hookrightarrow E^{r+1}\times E^{n-r+1}=E^{n+2}
+$$</p>
+<p>来实现这样的嵌入,
+那么设$x=(a_1\xi_1,a_2\xi_2),$ $|\xi_1|=|\xi_2|=1,$ $\xi_1\in E^{r+1},$
+$\xi_2\in E^{n-r+1},$</p>
+<p>$$
+\left&lt;{}x,x\right&gt;=a_1^2\left&lt;{}\xi_1,\xi_1\right&gt;+a_2^2\left&lt;{}\xi_2,\xi_2\right&gt;=a_1^2+a_2^2=1.
+$$</p>
+<p>$$
+dx=(a_1d\xi_1,a_2d\xi_2),\quad \mathrm{I}=\left&lt;{}dx,dx\right&gt;=a_1^2\left&lt;{}d\xi_1,d\xi_1\right&gt;+a_2^2\left&lt;{}d\xi_2,d\xi_2\right&gt;.
+$$</p>
+<p>选取$e_{n+1}=(-a_2\xi_1,a_1\xi_2),$ 那么我们选取到了正交基. 第二基本型</p>
+<p>$$
+\mathrm{II}=-\left&lt;{}dx,de_{n+1}\right&gt;=-\left&lt;{}(a_1d\xi_1,a_2d\xi_2),(-a_2d\xi_1,a_1d\xi_2)\right&gt;=a_1a_2\left(\left&lt;{}d\xi_1,d\xi_1\right&gt;-\left&lt;{}d\xi_2,d\xi_2\right&gt;\right),
+$$</p>
+<p>主曲率$\lambda_1=\cdots=\lambda_r=\frac{a_2}{a_1},$
+$\lambda_{r+1}=\cdots=\lambda_n=-\frac{a_1}{a_2}.$ 于是</p>
+<p>$$
+n H=\lambda_1+\cdots+\lambda_n=r\frac{a_2}{a_1}-(n-r)\frac{a_1}{a_2}=0\Leftrightarrow r\frac{a_2}{a_1}=(n-r)\frac{a_1}{a_2},
+$$</p>
+<p>回忆$a_1^2+a_2^2=1,$ 从而这当且仅当$a_1=\sqrt{\frac{r}{n} },$
+$a_2=\sqrt{\frac{n-r}{n} },$ 称为Clifford tori, $1\le r\le n-1.$</p>
+<h3 id="Veronese曲面"><a href="#Veronese曲面" class="headerlink" title="Veronese曲面"></a>Veronese曲面</h3><p>考虑$S^2(\sqrt{3})\hookrightarrow S^4(1),$
+$(x,y,z)\mapsto (u_1,\cdots,u_5),$</p>
+<p>$$
+u_1=\frac{1}{\sqrt{3} }yz,\quad u_2=\frac{1}{\sqrt{3} }zx,\quad u_3=\frac{1}{\sqrt{3} }xy,
+$$</p>
+<p>$$
+u_4=\frac{1}{2\sqrt{3} }(x^2-y^2),\quad u_5=\frac{1}{6}(x^2+y^2-2z^2).
+$$</p>
+<p>希望它是极小曲面, 因此要有$\Delta u_i=-2u_i.$ 显然$\Delta_E u_i=0.$
+我们可以通过研究两者的联系证明, 也可以直接进行计算.</p>
+<p>该嵌入可以拉到$\mathbb{R}\mathrm{P}^2$上, 称为Veronese曲面.</p>
+<h2 id="Gauss映射"><a href="#Gauss映射" class="headerlink" title="Gauss映射"></a>Gauss映射</h2><p>设$x:M\rightarrow S^{n+1}$为极小曲面. 类似于第三章, 我们有</p>
+<p>$$
+\Delta \left&lt;{}a,e_{n+1}\right&gt;=-\sigma\left&lt;{}a,e_{n+1}\right&gt;,
+$$</p>
+<p>取$f=\left&lt;{}a,e_{n+1}\right&gt;,$ 那么</p>
+<p>$$
+df=-\left&lt;{}a,h_{ji}\theta_ie_j\right&gt;=f_i\theta_i,
+$$</p>
+<p>$$
+f_{ij}\theta_j=df_i+f_j\theta_{ji}=-d(h_{ij}\left&lt;{}a,e_j\right&gt;)-h_{jk}\left&lt;{}a,e_k\right&gt;\theta_{ji},
+$$</p>
+<p>$$
+f_{ij}=-h_{ikj}\left&lt;{}a,e_k\right&gt;-h_{ik}\left&lt;{}a,h_{kj}e_{n+1}-x\delta_{kj}\right&gt;,
+$$</p>
+<p>$$
+\Delta f=f_{ii}=-h_{ij}^2f,\quad \Delta\left&lt;{}a,e_{n+1}\right&gt;=-\sigma\left&lt;{}a,e_{n+1}\right&gt;.
+$$</p>
+<p>$M$定向时, 有良定义的$e_{n+1}:M\hookrightarrow S^{n+1}$给出了Gauss映射.</p>
+<p><strong>定理 2</strong>. <em>令$M^n\rightarrow S^{n+1}$为定向闭极小超曲面. 若Gauss映射像在某个开半球内, 则$M^n$全测地.</em> </p>
+<p>即存在$a,$ 使得$\left&lt;{}a,e_{n+1}\right&gt;&gt;0.$ 注意到</p>
+<p>$$
+0=\int_M\Delta \left&lt;{}a,e_{n+1}\right&gt;dA=-\int_M\sigma \left&lt;{}a,e_{n+1}\right&gt;dA.
+$$</p>
+<p>因此$\sigma=0,$ 即$M$全测地.</p>
+<p><strong>定理 3</strong>. <em>设$x:M^2\hookrightarrow S^3$为极小曲面, 那么$x(S^2)$为$S^3$上的大圆.</em> </p>
+<p>思路是, 首先构造一个全纯二次型$Q(dz)^2,$ 由$g(S^2)=0,$ 推出$Q\equiv 0$.
+这样就有$h_{ij}=0,$ $M=S^2(1).$</p>
+<p>存在等温坐标系</p>
+<p>$$
+ds^2=\lambda^2(dx^2+dy^2)=\lambda^2dzd\overline z,\quad z=x+iy,\quad \lambda\in C^\infty(M).
+$$</p>
+<p>记 </p>
+<p>$$
+\alpha=\theta_1+i\theta_2=\lambda dz, \quad h=h_{11}+ih_{12},
+$$</p>
+<p>$$
+\beta=\theta_{13}+i\theta_{23}=h_{11}\theta_1+h_{12}\theta_2+i(h_{12}\theta_1-h_{11}\theta_2)=h_{11}(\theta_1-i\theta_2) +ih_{12}(\theta_1-i\theta_2)=h\overline\alpha.
+$$</p>
+<p>那么</p>
+<p>$$
+d\alpha=\theta_{12}\wedge \theta_2+i\theta_{21}\wedge \theta_1=\theta_{12}\wedge (\theta_2-i\theta_1)=-i\theta_{12}\wedge\alpha,
+$$</p>
+<p>$$
+(d\lambda + i\lambda \theta_{12})\wedge dz=0, \quad d\lambda=-i\lambda \theta_{12}+\Lambda_1dz.
+$$</p>
+<p>$$
+d\beta=d\theta_{13}+id\theta_{23}=\theta_{12}\wedge\theta_{23}+i\theta_{21}\wedge\theta_{13}=-i\theta_{12}\wedge \beta.
+$$</p>
+<p>那么,</p>
+<p>$$
+dh\overline\alpha=dh\wedge\overline\alpha+hd\overline\alpha=dh\wedge\overline\alpha+h(i\theta_{12}\wedge \overline\alpha)=-hi\theta_{12}\wedge \overline\alpha,
+$$</p>
+<p>于是,</p>
+<p>$$
+\lambda(dh+2ih\theta_{12})\wedge\overline z=0,\quad d\overline h-2i\overline h\theta_{12}=\Lambda_2 d z.
+$$</p>
+<p>取$q=\lambda^2\overline h,$ 那么 
+$$
+\begin{aligned}
+ d(\lambda^2\overline h)=&amp;2\lambda d\lambda \overline h+\lambda^2 d\overline h\\
+ =&amp;2\lambda (-i\lambda \theta_{12}+\Lambda_1dz)\overline h+\lambda^2(2i\overline h\theta_{12}+\Lambda_2dz)\\
+ =&amp;\lambda (2\overline h\Lambda_1+\lambda\Lambda_2)dz.
+ \end{aligned}
+$$
+ 于是$q$是全纯形式,
+$\frac{\partial {} }{\partial {}\overline z}(\lambda^2\overline h)=0.$</p>
+<p>文章最后更新于 2023-03-16 15:51:56 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="记号"><a href="#记号" class="headerlink" title="记号"></a>记号</h2><p>记空间形式$R^{n+p}(c)$为$n+p$维黎曼流形, 具常截面曲率$c$. 我们知道,
+$$
+R^{n+p}(c)=\begin{cases}
+ E^{n+p},&amp;c=0\\
+ S^{n+p},&amp;c=1,\quad x_1^2+\cdots+x_{n+p+1}^2=1\\
+ H^{n+p},&amp;c=-1,\quad x_1^2+\cdots+x_{n+p}^2-x_{n+p+1}^2=-1
+ \end{cases}
+$$</p>
+<p>考虑$x:M^n\rightarrow S^{n+1}\hookrightarrow E^{n+p+1},$
+$\left&lt;{}x,x\right&gt;=1.$ 类似地考虑$\{e_i\},\{e_\alpha\}.$
+那么$\{e_i,e_\alpha,x\}$构成$E^{n+p+1}$中的正交标架. 我们有</p>
+<p>$$
+dx=\theta_ie_i,\quad de_i=\theta_{ij}e_j+\theta_{i\alpha}e_\alpha-\theta_ix.
+$$</p>
+<p>$$
+de_\alpha=\theta_{\alpha i}e_i+\theta_{\alpha\beta}e_\beta,\quad \theta_{i\alpha}=h_{i\alpha j}\theta_j.
+$$</p>
+<p>$x$项系数是通过内积得到的, 如</p>
+<p>$$
+\left&lt;{}de_i,x\right&gt;=-\left&lt;{}e_i,dx\right&gt;=-\theta_i.
+$$</p>
+<h2 id="极小子流形"><a href="#极小子流形" class="headerlink" title="极小子流形"></a>极小子流形</h2><p>设有浸入</p>
+<p>$$
+x:M\hookrightarrow S^{n+p}\hookrightarrow \mathbb{R}^{n+p+1},
+$$</p>
+<p>$\,\forall\,a\in \mathbb{R}^{n+p+1},$ 我们来计算</p>
+<p>$$
+\Delta\left&lt;{}x,a\right&gt;=n\left&lt;{}a,H\right&gt;-n\left&lt;{}x,a\right&gt;.
+$$</p>
+<p>记$f=\left&lt;{}x,a\right&gt;,$ 通过类似的计算,
+我们有$f_i=\left&lt;{}e_i,a\right&gt;,$</p>
+<p>$$
+f_{ij}\theta_j=df_i+f_j\theta_{ji}=\left&lt;{}de_i,a\right&gt;+\left&lt;{}e_j,a\right&gt;\theta_{ji}=\left&lt;{}\theta_{ij}e_j+h_{i\alpha j}\theta_je_\alpha-\theta_ix,a\right&gt;+\left&lt;{}e_j,a\right&gt;\theta_ji=\left&lt;{}h_{i\alpha j}\theta_je_\alpha-\theta_ix,a\right&gt;,
+$$</p>
+<p>$$
+\Delta\left&lt;{}x,a\right&gt;=f_{ii}=n\left&lt;{}a,H\right&gt;-n\left&lt;{}x,a\right&gt;.
+$$</p>
+<p>从而</p>
+<p><strong>定理 1</strong>. <em>$x:M\rightarrow S^{n+p}$极小当且仅当$\Delta\left&lt;{}x,a\right&gt;=-n\left&lt;{}x,a\right&gt;,$ 当且仅当$\Delta x=-nx.$</em> </p>
+<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><h3 id="大圆"><a href="#大圆" class="headerlink" title="大圆"></a>大圆</h3><p>$n$-大圆都是全测地的. 取固定的$a\neq 0,$ 大圆可表示为</p>
+<p>$$
+M_0:=\{x\in S^{n+1}|\left&lt;{}x,a\right&gt;=0\},
+$$</p>
+<p>$$
+dx=\theta_i e_i,\quad de_i=\theta_{ij}e_j+h_{ij}e_je_{n+1}-\theta_ix,
+$$</p>
+<p>$$
+de_{n+1}=-h_{ij}\theta_je_i.
+$$</p>
+<p> 对$\left&lt;{}x,a\right&gt;=0$求导,
+我们有$\left&lt;{}dx,a\right&gt;=0,$ 因此$a\perp T_pM.$ 又由$a\perp x,$</p>
+<p>$$
+a=ke_{n+1}.
+$$</p>
+<p> 由$\left&lt;{}e_i,a\right&gt;=0,$ $\left&lt;{}de_i,a\right&gt;=0,$</p>
+<p>$$
+\left&lt;{}\theta_{ij}e_j+h_{ij}\theta_je_{n+1}-\theta_ix,a\right&gt;=0,\quad h_{ij}\theta_j=0,
+$$</p>
+<p>于是$h_{ij}=0.$</p>
+<p>对于$n$-小圆 </p>
+<p>$$
+M_c:=\{x\in S^{n+1}|\left&lt;{}x,a\right&gt;=c,0&lt;c&lt;1\},
+$$</p>
+<p>第二基本型特征值均为固定非零常数,
+即$\lambda_1=\cdots=\lambda_n=const\neq 0,$ 称为totally umbilical的.</p>
+<h3 id="Clifford-tori"><a href="#Clifford-tori" class="headerlink" title="Clifford tori"></a>Clifford tori</h3><p>考虑极小超曲面$x:S^r(a_1)\times S^{n-r}(a_2)\hookrightarrow S^{n+1}\hookrightarrow \mathbb{R}^{n+2},$
+$1\le r\le n-1.$ 我们通过</p>
+<p>$$
+x:S^r(a_1)\times S^{n-r}(a_2)\hookrightarrow E^{r+1}\times E^{n-r+1}=E^{n+2}
+$$</p>
+<p>来实现这样的嵌入,
+那么设$x=(a_1\xi_1,a_2\xi_2),$ $|\xi_1|=|\xi_2|=1,$ $\xi_1\in E^{r+1},$
+$\xi_2\in E^{n-r+1},$</p>
+<p>$$
+\left&lt;{}x,x\right&gt;=a_1^2\left&lt;{}\xi_1,\xi_1\right&gt;+a_2^2\left&lt;{}\xi_2,\xi_2\right&gt;=a_1^2+a_2^2=1.
+$$</p>
+<p>$$
+dx=(a_1d\xi_1,a_2d\xi_2),\quad \mathrm{I}=\left&lt;{}dx,dx\right&gt;=a_1^2\left&lt;{}d\xi_1,d\xi_1\right&gt;+a_2^2\left&lt;{}d\xi_2,d\xi_2\right&gt;.
+$$</p>
+<p>选取$e_{n+1}=(-a_2\xi_1,a_1\xi_2),$ 那么我们选取到了正交基. 第二基本型</p>
+<p>$$
+\mathrm{II}=-\left&lt;{}dx,de_{n+1}\right&gt;=-\left&lt;{}(a_1d\xi_1,a_2d\xi_2),(-a_2d\xi_1,a_1d\xi_2)\right&gt;=a_1a_2\left(\left&lt;{}d\xi_1,d\xi_1\right&gt;-\left&lt;{}d\xi_2,d\xi_2\right&gt;\right),
+$$</p>
+<p>主曲率$\lambda_1=\cdots=\lambda_r=\frac{a_2}{a_1},$
+$\lambda_{r+1}=\cdots=\lambda_n=-\frac{a_1}{a_2}.$ 于是</p>
+<p>$$
+n H=\lambda_1+\cdots+\lambda_n=r\frac{a_2}{a_1}-(n-r)\frac{a_1}{a_2}=0\Leftrightarrow r\frac{a_2}{a_1}=(n-r)\frac{a_1}{a_2},
+$$</p>
+<p>回忆$a_1^2+a_2^2=1,$ 从而这当且仅当$a_1=\sqrt{\frac{r}{n} },$
+$a_2=\sqrt{\frac{n-r}{n} },$ 称为Clifford tori, $1\le r\le n-1.$</p>
+<h3 id="Veronese曲面"><a href="#Veronese曲面" class="headerlink" title="Veronese曲面"></a>Veronese曲面</h3><p>考虑$S^2(\sqrt{3})\hookrightarrow S^4(1),$
+$(x,y,z)\mapsto (u_1,\cdots,u_5),$</p>
+<p>$$
+u_1=\frac{1}{\sqrt{3} }yz,\quad u_2=\frac{1}{\sqrt{3} }zx,\quad u_3=\frac{1}{\sqrt{3} }xy,
+$$</p>
+<p>$$
+u_4=\frac{1}{2\sqrt{3} }(x^2-y^2),\quad u_5=\frac{1}{6}(x^2+y^2-2z^2).
+$$</p>
+<p>希望它是极小曲面, 因此要有$\Delta u_i=-2u_i.$ 显然$\Delta_E u_i=0.$
+我们可以通过研究两者的联系证明, 也可以直接进行计算.</p>
+<p>该嵌入可以拉到$\mathbb{R}\mathrm{P}^2$上, 称为Veronese曲面.</p>
+<h2 id="Gauss映射"><a href="#Gauss映射" class="headerlink" title="Gauss映射"></a>Gauss映射</h2><p>设$x:M\rightarrow S^{n+1}$为极小曲面. 类似于第三章, 我们有</p>
+<p>$$
+\Delta \left&lt;{}a,e_{n+1}\right&gt;=-\sigma\left&lt;{}a,e_{n+1}\right&gt;,
+$$</p>
+<p>取$f=\left&lt;{}a,e_{n+1}\right&gt;,$ 那么</p>
+<p>$$
+df=-\left&lt;{}a,h_{ji}\theta_ie_j\right&gt;=f_i\theta_i,
+$$</p>
+<p>$$
+f_{ij}\theta_j=df_i+f_j\theta_{ji}=-d(h_{ij}\left&lt;{}a,e_j\right&gt;)-h_{jk}\left&lt;{}a,e_k\right&gt;\theta_{ji},
+$$</p>
+<p>$$
+f_{ij}=-h_{ikj}\left&lt;{}a,e_k\right&gt;-h_{ik}\left&lt;{}a,h_{kj}e_{n+1}-x\delta_{kj}\right&gt;,
+$$</p>
+<p>$$
+\Delta f=f_{ii}=-h_{ij}^2f,\quad \Delta\left&lt;{}a,e_{n+1}\right&gt;=-\sigma\left&lt;{}a,e_{n+1}\right&gt;.
+$$</p>
+<p>$M$定向时, 有良定义的$e_{n+1}:M\hookrightarrow S^{n+1}$给出了Gauss映射.</p>
+<p><strong>定理 2</strong>. <em>令$M^n\rightarrow S^{n+1}$为定向闭极小超曲面. 若Gauss映射像在某个开半球内, 则$M^n$全测地.</em> </p>
+<p>即存在$a,$ 使得$\left&lt;{}a,e_{n+1}\right&gt;&gt;0.$ 注意到</p>
+<p>$$
+0=\int_M\Delta \left&lt;{}a,e_{n+1}\right&gt;dA=-\int_M\sigma \left&lt;{}a,e_{n+1}\right&gt;dA.
+$$</p>
+<p>因此$\sigma=0,$ 即$M$全测地.</p>
+<p><strong>定理 3</strong>. <em>设$x:M^2\hookrightarrow S^3$为极小曲面, 那么$x(S^2)$为$S^3$上的大圆.</em> </p>
+<p>思路是, 首先构造一个全纯二次型$Q(dz)^2,$ 由$g(S^2)=0,$ 推出$Q\equiv 0$.
+这样就有$h_{ij}=0,$ $M=S^2(1).$</p>
+<p>存在等温坐标系</p>
+<p>$$
+ds^2=\lambda^2(dx^2+dy^2)=\lambda^2dzd\overline z,\quad z=x+iy,\quad \lambda\in C^\infty(M).
+$$</p>
+<p>记 </p>
+<p>$$
+\alpha=\theta_1+i\theta_2=\lambda dz, \quad h=h_{11}+ih_{12},
+$$</p>
+<p>$$
+\beta=\theta_{13}+i\theta_{23}=h_{11}\theta_1+h_{12}\theta_2+i(h_{12}\theta_1-h_{11}\theta_2)=h_{11}(\theta_1-i\theta_2) +ih_{12}(\theta_1-i\theta_2)=h\overline\alpha.
+$$</p>
+<p>那么</p>
+<p>$$
+d\alpha=\theta_{12}\wedge \theta_2+i\theta_{21}\wedge \theta_1=\theta_{12}\wedge (\theta_2-i\theta_1)=-i\theta_{12}\wedge\alpha,
+$$</p>
+<p>$$
+(d\lambda + i\lambda \theta_{12})\wedge dz=0, \quad d\lambda=-i\lambda \theta_{12}+\Lambda_1dz.
+$$</p>
+<p>$$
+d\beta=d\theta_{13}+id\theta_{23}=\theta_{12}\wedge\theta_{23}+i\theta_{21}\wedge\theta_{13}=-i\theta_{12}\wedge \beta.
+$$</p>
+<p>那么,</p>
+<p>$$
+dh\overline\alpha=dh\wedge\overline\alpha+hd\overline\alpha=dh\wedge\overline\alpha+h(i\theta_{12}\wedge \overline\alpha)=-hi\theta_{12}\wedge \overline\alpha,
+$$</p>
+<p>于是,</p>
+<p>$$
+\lambda(dh+2ih\theta_{12})\wedge\overline z=0,\quad d\overline h-2i\overline h\theta_{12}=\Lambda_2 d z.
+$$</p>
+<p>取$q=\lambda^2\overline h,$ 那么 
+$$
+\begin{aligned}
+ d(\lambda^2\overline h)=&amp;2\lambda d\lambda \overline h+\lambda^2 d\overline h\\
+ =&amp;2\lambda (-i\lambda \theta_{12}+\Lambda_1dz)\overline h+\lambda^2(2i\overline h\theta_{12}+\Lambda_2dz)\\
+ =&amp;\lambda (2\overline h\Lambda_1+\lambda\Lambda_2)dz.
+ \end{aligned}
+$$
+ 于是$q$是全纯形式,
+$\frac{\partial {} }{\partial {}\overline z}(\lambda^2\overline h)=0.$</p>
+<p>文章最后更新于 2023-03-16 15:51:56 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《几何专题》笔记(4)-球面中的极小子流形</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2023-03-16 17:51:54</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2023/03/16/《几何专题》笔记(4)-球面中的极小子流形/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2023/03/16/%E3%80%8A%E5%87%A0%E4%BD%95%E4%B8%93%E9%A2%98%E3%80%8B%E7%AC%94%E8%AE%B0(5)-Chern-%E5%85%A8%E7%BA%AF%E5%BD%A2%E5%BC%8F/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《几何专题》笔记(5)-Chern-全纯形式</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Geometric Monograph Notes (5) -Chern-Full Pure Form</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/03/06/%E3%80%8A%E6%8A%9B%E7%89%A9%E6%96%B9%E7%A8%8B%E3%80%8B%E7%AC%94%E8%AE%B0(1)-%E6%9E%81%E5%80%BC%E5%8E%9F%E7%90%86/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《抛物方程》笔记(1)-极值原理</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Parabolic Equation Notes (1) - Extreme Value Principle</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%8F%B7"><span class="nav-text">记号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">极小子流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%9C%86"><span class="nav-text">大圆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clifford-tori"><span class="nav-text">Clifford tori</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Veronese%E6%9B%B2%E9%9D%A2"><span class="nav-text">Veronese曲面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss%E6%98%A0%E5%B0%84"><span class="nav-text">Gauss映射</span></a></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%8F%B7"><span class="nav-text">记号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%81%E5%B0%8F%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">极小子流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%A7%E5%9C%86"><span class="nav-text">大圆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clifford-tori"><span class="nav-text">Clifford tori</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Veronese%E6%9B%B2%E9%9D%A2"><span class="nav-text">Veronese曲面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gauss%E6%98%A0%E5%B0%84"><span class="nav-text">Gauss映射</span></a></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

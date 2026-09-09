@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(2)-流形上的微积分</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (2) - Calculus on Manifolds</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (2) - Calculus on Manifolds</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-09-19 19:06:22
+        <i class="fas fa-edit"></i>&nbsp;2021-09-19 22:06:22
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,165 +230,236 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>参考书: Warner《微分流形与李群基础》</p>
+<h2 id="流形上的微分形式"><a href="#流形上的微分形式" class="headerlink" title="流形上的微分形式"></a>流形上的微分形式</h2><h3 id="拉回映射"><a href="#拉回映射" class="headerlink" title="拉回映射"></a>拉回映射</h3><p>光滑函数$f:\mathbb{R}^n\rightarrow \mathbb{R}^m$可诱导拉回映射$f^\ast :\Omega^0(\mathbb{R}^m)\rightarrow\Omega^0(\mathbb{R}^n)$,
+$f^\ast (g)=g\circ f$;</p>
+<p>同时还可诱导$f^\ast :\Omega^1(\mathbb{R}^m)\rightarrow \Omega^1(\mathbb{R}^n)$,
+$f^\ast (dy_i)=df_i=d(y_i\circ f)$.</p>
+<p>容易延拓该定义得到$f^\ast :\Omega^\ast (\mathbb{R}^m)\rightarrow\Omega^\ast (\mathbb{R}^n)$,
+$f^\ast (g_Idy_{i_1}\wedge ...\wedge dy_{i_q})$ =
+$f^\ast (g_I)f^\ast (dy_{i_1}\wedge ...\wedge dy_{i_q})=(g_I\circ f)df_{i_1}\wedge ... \wedge df_{i_q}$.</p>
+<p>$0$维上的定义比较自然, $1$维为何要对基$dy_i$如此定义需要想一下.
+我们已知$d:\Omega^0\rightarrow \Omega^1$,
+发现$df^\ast (g)=d(g\circ f)=\sum_i\frac{\partial {}g\circ f}{\partial {}f_i}df_i$,
+$dg=\sum_i\frac{\partial {}g}{\partial {}y_i}dy_i$.
+注意$f^\ast (\frac{\partial {}g}{\partial {}y_i})=\frac{\partial {}g\circ f}{\partial {}f_i}$,
+所以我们定义$f^\ast (dy_i)=df_i$也是相当自然的.
+同时由上分析我们得到如下命题:</p>
+<p><strong>命题 1.1</strong> (可交换性). <em>$df^\ast =f^\ast d$.</em> </p>
+<p>也可以说我们的定义就是从希望满足可交换性出发的.</p>
+<h3 id="一阶微分不变性"><a href="#一阶微分不变性" class="headerlink" title="一阶微分不变性"></a>一阶微分不变性</h3><p>记$f:\mathbb{R}^n\rightarrow\mathbb{R}^n$为微分同胚,
+$f_i=x_i\circ f$为新坐标, 称为由微分同胚$f$定义的坐标.</p>
+<p>由链式法则,
+$dg=\sum_{i=1}^{n}\frac{\partial {}g}{\partial {}f_i} df_i=\sum_{i,j=1}^{n}\frac{\partial {}g}{\partial {}f_i}\frac{\partial {}f_i}{\partial {}x_j} dx_j=\sum_{j=1}^n \frac{\partial {}g}{\partial {}x_j}dx_j,$
+于是$dg$与坐标系无关, 这就是在说<strong>一阶微分不变性</strong>.</p>
+<p><strong>拉回映射与一阶微分不变性是流形上定义微分形式与微分算子$d$的基础.</strong></p>
+<h3 id="流形上微分形式"><a href="#流形上微分形式" class="headerlink" title="流形上微分形式"></a>流形上微分形式</h3><p>记$M$为光滑$n$维流形,
+$\{(U_\alpha, \phi_\alpha)\}_{\alpha\in\Lambda}$为坐标图册.</p>
+<p>$M$上的微分形式$\omega$为一个集类$\{\omega_\alpha\in \Omega^\ast (U_\alpha)\}$,
+该集类需要满足相容性条件：$\,\forall\,U_\alpha\cap U_\beta\neq \varnothing$,
+记$U_\alpha\cap U_\beta=U_{\alpha\beta}$,
+$\omega_\alpha|_{U_{\alpha\beta} }=\omega_\beta|_{U_{\alpha\beta} }$,
+这样才能使得局部给出的微分形式能够拼成一个整体,
+即集类$\{\omega_\alpha\in \Omega^\ast (U_\alpha)\}$拼成$\omega$.</p>
+<p>这里$\omega_\alpha=\sum_I {f_\alpha}_I d{\phi_\alpha}_I$,
+$\phi_\alpha:U_\alpha\approx \mathbb{R}^n$,
+即将曲面片上的微分形式拉到$\mathbb{R}^n$中考虑.
+$\omega_\alpha|_{U_{\alpha\beta} }$的定义是由嵌入$i:U_{\alpha\beta}\rightarrow U_\alpha$,
+从$\Omega^\ast (U_\alpha)$拉回到$\Omega^\ast (U_{\alpha\beta})$中的,
+即定义为$i^\ast \omega_\alpha$.</p>
+<p>记$M$上的微分形式全体为$\Omega^\ast (M)$，类似地可以定义微分算子$d$与外积$\wedge$.
+这里需注意由于流形上的微分形式有要求, 需要验证相容性条件.
+由$d$与$i^\ast$的可交换性，$\{d\omega_\alpha\}$确实满足相容性条件,
+可以拼成$d\omega$, 因此定义良好. $\wedge$同理.</p>
+<p>同样的在流形上也有$\Omega^q(M)$, 可以按型分解.
+$\{\Omega^\ast (M),d\}$称为流形$M$的de Rham复形.
+进一步可以定义$Z^q(M),B^q(M),H^q(M)$.</p>
+<p>现考虑流形间的光滑映射$f:M\rightarrow N$,
+这诱导了$f^\ast :\Omega^\ast (N)\rightarrow\Omega^\ast (M)$.
+由于$d,f^\ast$可交换, 这便诱导了
+$f^\ast : H^\ast (N)\rightarrow H^\ast (M)$,
+$f^\ast [\omega]=[f^\ast \omega]$. 特别地,
+考虑$i:U\rightarrow M$为开子集的包含映射,
+则有$i^\ast : H^\ast (M)\rightarrow H^\ast (U)$,
+$i^\ast [\omega]=[i^\ast \omega]=[\omega|_U]$.
+也把$i^\ast [\omega]$记作$[\omega]|_U$, 于是有$[\omega]|_U=[\omega|_U]$.</p>
+<h2 id="单位分解"><a href="#单位分解" class="headerlink" title="单位分解"></a>单位分解</h2><p><strong>单位分解的存在性是微分流形的最基本工具.</strong></p>
+<p>我们回忆流形是满足$T_2$分离性公理且仿紧的.</p>
+<p>$M$上的单位分解是非负光滑函数集族$\{\rho_\alpha\}_{\alpha\in\Lambda}$,
+满足$M$上每点有一邻域, 其上只有有限多个$\rho_\alpha$不为零.
+这样$\sum\rho_\alpha$有意义, 进一步要求和处处为$1$.</p>
+<p>由于流形是仿紧的, 其上总存在单位分解.
+对于给定的开覆盖$\{U_\alpha\}$(往往便取坐标图册中的开覆盖),
+存在从属于它的单位分解,
+即$\operatorname{supp} \rho_\alpha\subset U_\alpha$.</p>
+<h2 id="流形的定向"><a href="#流形的定向" class="headerlink" title="流形的定向"></a>流形的定向</h2><p>记微分同胚$T:\mathbb{R}^n\rightarrow \mathbb{R}^n$,
+$T(y)=x$，记$T_i=x_i\circ T$,
+$J(T)=\det (\frac{\partial {}T_i}{\partial {}y_j})$. 由于$T$是微分同胚,
+$J(T)$不为零, 所以要么恒正, 要么恒负. $J(T)&gt;0$时称$T$保定向,
+反之称为反定向.</p>
+<p>一般的, 若是开集间的微分同胚, 则要求在所有连通分支上都恒正,
+才称为保定向.</p>
+<p>设$M$是光滑流形, $\{(U_\alpha, \phi_\alpha)\}$是坐标图册,
+若$\,\forall\,U_{\alpha\beta}$非空时,
+微分同胚$\phi_\beta\circ \phi_\alpha^{-1}: \phi_\alpha(U_{\alpha\beta})\rightarrow\phi_\beta(U_{\alpha\beta})$保定向,
+则称坐标图册为定向坐标图册. 若$M$有一个定向坐标图册, 则称$M$可定向.</p>
+<p><strong>命题 1.2</strong>. <em>$n$维流形$M$可定向当且仅当它有整体定义的处处非零的光滑$n$形式.</em> </p>
+<p>注意任意两个处处非零的$n$-形式$\eta,\eta&#39;$,
+他们之间只相差一个处处非零的函数$f$: $\eta=f\eta&#39;$. 若$M$连通,
+则$f$恒正或恒负. $f$为正时称$\eta,\eta&#39;$等价.
+于是$M$上每个处处非零的光滑$n$-形式都落在两个等价类中,
+每个等价类称为$M$的一个定向, 记作$[M]$.</p>
+<h2 id="流形上的积分"><a href="#流形上的积分" class="headerlink" title="流形上的积分"></a>流形上的积分</h2><p>设$\omega$为$\mathbb{R}^n$中具有紧支集的光滑$n$-形式:
+$\omega=f(x)dx_1\wedge \cdots\wedge dx_n$,
+定义积分$\int_{\mathbb{R}^n}\omega=\int_{\mathbb{R}^n}fdx_1\cdots dx_n$.</p>
+<p>设$T:\mathbb{R}^n\rightarrow\mathbb{R}^n$, $T(y)=x$为微分同胚,
+则可以证明变量代换公式:</p>
+<p><strong>命题 1.3</strong> (变量代换). <em>$dT_1\wedge ...\wedge dT_n=J(T)dy_1\wedge  ...\wedge  dy_n$.</em> </p>
+<p>从而$T^\ast \omega=T^\ast fdT_1\wedge ... \wedge dT_n=(f\circ T)J(T)dy_1\wedge  ...\wedge  dy_n,$
+对上式积分得到
+$$\int_{\mathbb{R}^n}T^\ast \omega=\int_{\mathbb{R}^n}(f\circ T)J(T)dy_1\wedge  ...\wedge  dy_n,$$
+又由积分变换公式
+$$\int_{\mathbb{R}^n} \omega=\int_{\mathbb{R}^n}(f\circ T)|J(T)|dy_1\wedge  ...\wedge  dy_n,$$
+因此$\int_{\mathbb{R}^n}T^\ast \omega=\pm \int_{\mathbb{R}^n}\omega$,
+符号由$J(T)$正负决定.</p>
+<p>现给出$M$上的积分.
+选定定向$[M]$与相应的定向坐标图册$\{(U_\alpha,\phi_\alpha)\}$.
+设$\{\rho_\alpha\}$是从属于$\{U_\alpha\}$的单位分解,
+对$\tau\in H^n_{c}(M)$有分解$\tau=\sum_\alpha \rho_\alpha \tau$.</p>
+<p>我们希望有 $$\int_{[M]}\tau=\sum_\alpha \int_{[M]}\rho_\alpha\tau,$$
+进而研究右式又希望
+$$\int_{[M]}\rho_\alpha\tau=\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha},$$
+利用变量代换, 将积分拉回到$\mathbb{R}^n$进行
+$$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^{-1})^\ast (\rho_\alpha\tau)|_{U_\alpha},$$
+注意这里将被积形式零延拓到$\phi(U_\alpha)$外.</p>
+<p>于是我们将$\int_{[M]}\tau:=\sum_\alpha \int_{\mathbb{R}^n}(\phi_\alpha^{-1})^\ast (\rho_\alpha\tau)|_{U_\alpha}$,
+若方向明了则可改记$\int_{[M]}$为$\int_{M}$.</p>
+<p>需要验证的是这个定义与定向坐标图册与单位分解无关.
+关于这点我们可以基于两个不同的划分做更细的划分, 再将其做和,
+从而得到两种不同划分得到的积分式是相等的.</p>
+<h2 id="带边流形"><a href="#带边流形" class="headerlink" title="带边流形"></a>带边流形</h2><p>带边流形$M$的定向坐标图册诱导了边界处的定向坐标图册,
+先定义好上半平面是如何诱导的,
+再将任意$M$的边界处打到上半平面来决定诱导定向.</p>
+<p><strong>定理 1.1</strong> (Stokes定理). <em>$\int_Md\omega=\int_{\partial M}\omega|_{\partial M}$.</em> </p>
+<p>文章最后更新于 2021-09-19 19:06:22 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Reference book: Warner "Basics of Differential Manifolds and Lie Groups"
-
-Differential forms on manifolds
-----------------
-
-### Pull back mapping
-
-The smooth function $f:\mathbb{R}^n\rightarrow \mathbb{R}^m$ can induce the pullback mapping $f^\ast
-:\Omega^0(\mathbb{R}^m)\rightarrow\Omega^0(\mathbb{R}^n)$,
-$f^\ast (g)=g\circ f$;
-
-At the same time, it can also induce $f^\ast :\Omega^1(\mathbb{R}^m)\rightarrow \Omega^1(\mathbb{R}^n)$,
-$f^\ast (dy_i)=df_i=d(y_i\circ f)$.
-
-It is easy to extend this definition to get $f^\ast :\Omega^\ast (\mathbb{R}^m)\rightarrow\Omega^\ast (\mathbb{R}^n)$,
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>参考书: Warner《微分流形与李群基础》</p>
+<h2 id="流形上的微分形式"><a href="#流形上的微分形式" class="headerlink" title="流形上的微分形式"></a>流形上的微分形式</h2><h3 id="拉回映射"><a href="#拉回映射" class="headerlink" title="拉回映射"></a>拉回映射</h3><p>光滑函数$f:\mathbb{R}^n\rightarrow \mathbb{R}^m$可诱导拉回映射$f^\ast :\Omega^0(\mathbb{R}^m)\rightarrow\Omega^0(\mathbb{R}^n)$,
+$f^\ast (g)=g\circ f$;</p>
+<p>同时还可诱导$f^\ast :\Omega^1(\mathbb{R}^m)\rightarrow \Omega^1(\mathbb{R}^n)$,
+$f^\ast (dy_i)=df_i=d(y_i\circ f)$.</p>
+<p>容易延拓该定义得到$f^\ast :\Omega^\ast (\mathbb{R}^m)\rightarrow\Omega^\ast (\mathbb{R}^n)$,
 $f^\ast (g_Idy_{i_1}\wedge ...\wedge dy_{i_q})$ =
-$f^\ast (g_I)f^\ast (dy_{i_1}\wedge ...\wedge dy_{i_q})=(g_I\circ f)df_{i_1}\wedge ... \wedge df_{i_q}$.
-
-The definition on the $0$ dimension is more natural. Why does the $1$ dimension need to define the basis $dy_i$ in this way? You need to think about it.
-We know $d:\Omega^0\rightarrow \Omega^1$,
-Found $df^\ast (g)=d(g\circ f)=\sum_i\frac{\partial {}g\circ f}{\partial {}f_i}df_i$,
+$f^\ast (g_I)f^\ast (dy_{i_1}\wedge ...\wedge dy_{i_q})=(g_I\circ f)df_{i_1}\wedge ... \wedge df_{i_q}$.</p>
+<p>$0$维上的定义比较自然, $1$维为何要对基$dy_i$如此定义需要想一下.
+我们已知$d:\Omega^0\rightarrow \Omega^1$,
+发现$df^\ast (g)=d(g\circ f)=\sum_i\frac{\partial {}g\circ f}{\partial {}f_i}df_i$,
 $dg=\sum_i\frac{\partial {}g}{\partial {}y_i}dy_i$.
-Note that $f^\ast (\frac{\partial {}g}{\partial {}y_i})=\frac{\partial {}g\circ f}{\partial {}f_i}$,
-So it is quite natural for us to define $f^\ast (dy_i)=df_i$.
-At the same time, from the above analysis we get the following proposition:
-**Proposition 1.1** (Commutatability). *$df^\ast =f^\ast d$.*
-
-It can also be said that our definition is based on the hope of satisfying exchangeability.
-
-### First-order differential invariance
-
-Let $f:\mathbb{R}^n\rightarrow\mathbb{R}^n$ be a diffeomorphism,
-$f_i=x_i\circ f$ is the new coordinate, which is called the coordinate defined by diffeomorphism $f$.
-According to the chain rule,
-$dg=\sum_{i=1}^{n}\frac{\partial {}g}{\partial {}f_i} df_i=\sum_{i,
-j=1}^{n}\frac{\partial {}g}{\partial {}f_i}\frac{\partial {}f_i}{\partial {}x_j} dx_j=\sum_{j=1}^n \frac{\partial {}g}{\partial {}x_j}dx_j,$
-So $dg$ has nothing to do with the coordinate system, which is to say **first-order differential invariance**.
-**Pullback mapping and first-order differential invariance are the basis for defining differential forms and differential operators $d$ on manifolds.**
-
-### Differential form on manifold
-
-Let $M$ be a smooth $n$-dimensional manifold,
-$\{(U_\alpha, \phi_\alpha)\}_{\alpha\in\Lambda}$ is the coordinate atlas.
-The differential form $\omega$ on $M$ is a set class $\{\omega_\alpha\in \Omega^\ast (U_\alpha)\}$,
-This set class needs to satisfy the compatibility conditions: $\,\forall\,U_\alpha\cap U_\beta\neq \varnothing$,
-Remember $U_\alpha\cap U_\beta=U_{\alpha\beta}$,
+注意$f^\ast (\frac{\partial {}g}{\partial {}y_i})=\frac{\partial {}g\circ f}{\partial {}f_i}$,
+所以我们定义$f^\ast (dy_i)=df_i$也是相当自然的.
+同时由上分析我们得到如下命题:</p>
+<p><strong>命题 1.1</strong> (可交换性). <em>$df^\ast =f^\ast d$.</em> </p>
+<p>也可以说我们的定义就是从希望满足可交换性出发的.</p>
+<h3 id="一阶微分不变性"><a href="#一阶微分不变性" class="headerlink" title="一阶微分不变性"></a>一阶微分不变性</h3><p>记$f:\mathbb{R}^n\rightarrow\mathbb{R}^n$为微分同胚,
+$f_i=x_i\circ f$为新坐标, 称为由微分同胚$f$定义的坐标.</p>
+<p>由链式法则,
+$dg=\sum_{i=1}^{n}\frac{\partial {}g}{\partial {}f_i} df_i=\sum_{i,j=1}^{n}\frac{\partial {}g}{\partial {}f_i}\frac{\partial {}f_i}{\partial {}x_j} dx_j=\sum_{j=1}^n \frac{\partial {}g}{\partial {}x_j}dx_j,$
+于是$dg$与坐标系无关, 这就是在说<strong>一阶微分不变性</strong>.</p>
+<p><strong>拉回映射与一阶微分不变性是流形上定义微分形式与微分算子$d$的基础.</strong></p>
+<h3 id="流形上微分形式"><a href="#流形上微分形式" class="headerlink" title="流形上微分形式"></a>流形上微分形式</h3><p>记$M$为光滑$n$维流形,
+$\{(U_\alpha, \phi_\alpha)\}_{\alpha\in\Lambda}$为坐标图册.</p>
+<p>$M$上的微分形式$\omega$为一个集类$\{\omega_\alpha\in \Omega^\ast (U_\alpha)\}$,
+该集类需要满足相容性条件：$\,\forall\,U_\alpha\cap U_\beta\neq \varnothing$,
+记$U_\alpha\cap U_\beta=U_{\alpha\beta}$,
 $\omega_\alpha|_{U_{\alpha\beta} }=\omega_\beta|_{U_{\alpha\beta} }$,
-In this way, the differential forms given locally can be assembled into a whole,
-That is, the set class $\{\omega_\alpha\in \Omega^\ast (U_\alpha)\}$ is spelled into $\omega$.
-Here $\omega_\alpha=\sum_I {f_\alpha}_I d{\phi_\alpha}_I$,
+这样才能使得局部给出的微分形式能够拼成一个整体,
+即集类$\{\omega_\alpha\in \Omega^\ast (U_\alpha)\}$拼成$\omega$.</p>
+<p>这里$\omega_\alpha=\sum_I {f_\alpha}_I d{\phi_\alpha}_I$,
 $\phi_\alpha:U_\alpha\approx \mathbb{R}^n$,
-That is, the differential form on the surface patch is pulled into $\mathbb{R}^n$ for consideration.
-The definition of $\omega_\alpha|_{U_{\alpha\beta} }$ is by embedding $i:U_{\alpha\beta}\rightarrow U_\alpha$,
-Pulled from $\Omega^\ast (U_\alpha)$ back to $\Omega^\ast (U_{\alpha\beta})$,
-That is, it is defined as $i^\ast \omega_\alpha$.
-Let the differential form on $M$ be $\Omega^\ast (M)$. Similarly, the differential operator $d$ and the outer product $\wedge$ can be defined.
-It should be noted here that due to the requirements for the differential form on the manifold, the compatibility conditions need to be verified.
-Due to the commutability of $d$ and $i^\ast$, $\{d\omega_\alpha\}$ does satisfy the compatibility condition,
-It can be spelled as $d\omega$, so it is well defined. The same goes for $\wedge$.
-Similarly, there is $\Omega^q(M)$ on the manifold, which can be decomposed according to the shape.
-$\{\Omega^\ast (M),d\}$ is called the de Rham complex of the manifold $M$.
-Further, $Z^q(M), B^q(M), H^q(M)$ can be defined.
-
-Now consider the smooth mapping between manifolds $f:M\rightarrow N$,
-This induces $f^\ast :\Omega^\ast (N)\rightarrow\Omega^\ast (M)$.
-Since $d,f^\ast$ is commutative, this induces
+即将曲面片上的微分形式拉到$\mathbb{R}^n$中考虑.
+$\omega_\alpha|_{U_{\alpha\beta} }$的定义是由嵌入$i:U_{\alpha\beta}\rightarrow U_\alpha$,
+从$\Omega^\ast (U_\alpha)$拉回到$\Omega^\ast (U_{\alpha\beta})$中的,
+即定义为$i^\ast \omega_\alpha$.</p>
+<p>记$M$上的微分形式全体为$\Omega^\ast (M)$，类似地可以定义微分算子$d$与外积$\wedge$.
+这里需注意由于流形上的微分形式有要求, 需要验证相容性条件.
+由$d$与$i^\ast$的可交换性，$\{d\omega_\alpha\}$确实满足相容性条件,
+可以拼成$d\omega$, 因此定义良好. $\wedge$同理.</p>
+<p>同样的在流形上也有$\Omega^q(M)$, 可以按型分解.
+$\{\Omega^\ast (M),d\}$称为流形$M$的de Rham复形.
+进一步可以定义$Z^q(M),B^q(M),H^q(M)$.</p>
+<p>现考虑流形间的光滑映射$f:M\rightarrow N$,
+这诱导了$f^\ast :\Omega^\ast (N)\rightarrow\Omega^\ast (M)$.
+由于$d,f^\ast$可交换, 这便诱导了
 $f^\ast : H^\ast (N)\rightarrow H^\ast (M)$,
-$f^\ast [\omega]=[f^\ast \omega]$. In particular,
-Consider $i:U\rightarrow M$ to be the inclusion map of the open subset,
-Then there is $i^\ast : H^\ast (M)\rightarrow H^\ast (U)$,
+$f^\ast [\omega]=[f^\ast \omega]$. 特别地,
+考虑$i:U\rightarrow M$为开子集的包含映射,
+则有$i^\ast : H^\ast (M)\rightarrow H^\ast (U)$,
 $i^\ast [\omega]=[i^\ast \omega]=[\omega|_U]$.
-Also write $i^\ast [\omega]$ as $[\omega]|_U$, so we have $[\omega]|_U=[\omega|_U]$.
-
-unit decomposition
---------
-
-**The existence of unit decomposition is the most basic tool for differential manifolds.**
-
-We recall that the manifold satisfies the $T_2$ separability axiom and is pseudocompact.
-$M$上的单位分解是非负光滑函数集族$\{\rho_\alpha\}_{\alpha\in\Lambda}$,
-It satisfies that every point on $M$ has a neighborhood, and there are only a finite number of $\rho_\alpha$ on which are not zero.
-In this way $\sum\rho_\alpha$ is meaningful, and further requires that the sum is $1$ everywhere.
-
-Since the manifold is quasi-compact, there is always unit decomposition on it.
-For a given open coverage $\{U_\alpha\}$ (often the open coverage in the coordinate atlas is taken),
-Being is subject to the decomposition of its units,
-That is $\operatorname{supp} \rho_\alpha\subset U_\alpha$.
-
-Orientation of the manifold
-----------
-
-Remember diffeomorphism$T:\mathbb{R}^n\rightarrow \mathbb{R}^n$,
-$T(y)=x$, denote $T_i=x_i\circ T$,
-$J(T)=\det (\frac{\partial {}T_i}{\partial {}y_j})$. Since $T$ is a diffeomorphism,
-$J(T)$ is not zero, so it is either always positive or always negative. When $J(T)>0$, it is said that $T$ is oriented,
-The opposite is called reverse orientation.
-Generally, if it is a diffeomorphism between open sets, it is required to be constant positive on all connected branches.
-This is called Bao Zhi.
-
-Suppose $M$ is a smooth manifold, $\{(U_\alpha, \phi_\alpha)\}$ is a coordinate atlas,
-If $\,\forall\,U_{\alpha\beta}$ is not empty,
-Diffeomorphism$\phi_\beta\circ \phi_\alpha^{-1}: \phi_\alpha(U_{\alpha\beta})\rightarrow\phi_\beta(U_{\alpha\beta})$ maintains the orientation,
-Then the coordinate atlas is called an oriented coordinate atlas. If $M$ has an oriented coordinate atlas, it is said that $M$ can be oriented.
-**Proposition 1.2**. *A $n$-dimensional manifold $M$ is orientable if and only if it has a globally defined smooth $n$ form that is non-zero everywhere.*
-
-Note that any two everywhere non-zero $n$-forms $\eta,\eta'$,
-The only difference between them is a non-zero function $f$: $\eta=f\eta'$. If $M$ is connected,
-Then $f$ is always positive or always negative. When $f$ is positive, it is said that $\eta and \eta'$ are equivalent.
-So every everywhere non-zero smooth $n$-form on $M$ falls into two equivalence classes,
-Each equivalence class is called an orientation of $M$, denoted $[M]$.
-
-integrals on manifolds
-----------
-
-Let $\omega$ be a smooth $n$-form with compact support in $\mathbb{R}^n$:
+也把$i^\ast [\omega]$记作$[\omega]|_U$, 于是有$[\omega]|_U=[\omega|_U]$.</p>
+<h2 id="单位分解"><a href="#单位分解" class="headerlink" title="单位分解"></a>单位分解</h2><p><strong>单位分解的存在性是微分流形的最基本工具.</strong></p>
+<p>我们回忆流形是满足$T_2$分离性公理且仿紧的.</p>
+<p>$M$上的单位分解是非负光滑函数集族$\{\rho_\alpha\}_{\alpha\in\Lambda}$,
+满足$M$上每点有一邻域, 其上只有有限多个$\rho_\alpha$不为零.
+这样$\sum\rho_\alpha$有意义, 进一步要求和处处为$1$.</p>
+<p>由于流形是仿紧的, 其上总存在单位分解.
+对于给定的开覆盖$\{U_\alpha\}$(往往便取坐标图册中的开覆盖),
+存在从属于它的单位分解,
+即$\operatorname{supp} \rho_\alpha\subset U_\alpha$.</p>
+<h2 id="流形的定向"><a href="#流形的定向" class="headerlink" title="流形的定向"></a>流形的定向</h2><p>记微分同胚$T:\mathbb{R}^n\rightarrow \mathbb{R}^n$,
+$T(y)=x$，记$T_i=x_i\circ T$,
+$J(T)=\det (\frac{\partial {}T_i}{\partial {}y_j})$. 由于$T$是微分同胚,
+$J(T)$不为零, 所以要么恒正, 要么恒负. $J(T)&gt;0$时称$T$保定向,
+反之称为反定向.</p>
+<p>一般的, 若是开集间的微分同胚, 则要求在所有连通分支上都恒正,
+才称为保定向.</p>
+<p>设$M$是光滑流形, $\{(U_\alpha, \phi_\alpha)\}$是坐标图册,
+若$\,\forall\,U_{\alpha\beta}$非空时,
+微分同胚$\phi_\beta\circ \phi_\alpha^{-1}: \phi_\alpha(U_{\alpha\beta})\rightarrow\phi_\beta(U_{\alpha\beta})$保定向,
+则称坐标图册为定向坐标图册. 若$M$有一个定向坐标图册, 则称$M$可定向.</p>
+<p><strong>命题 1.2</strong>. <em>$n$维流形$M$可定向当且仅当它有整体定义的处处非零的光滑$n$形式.</em> </p>
+<p>注意任意两个处处非零的$n$-形式$\eta,\eta&#39;$,
+他们之间只相差一个处处非零的函数$f$: $\eta=f\eta&#39;$. 若$M$连通,
+则$f$恒正或恒负. $f$为正时称$\eta,\eta&#39;$等价.
+于是$M$上每个处处非零的光滑$n$-形式都落在两个等价类中,
+每个等价类称为$M$的一个定向, 记作$[M]$.</p>
+<h2 id="流形上的积分"><a href="#流形上的积分" class="headerlink" title="流形上的积分"></a>流形上的积分</h2><p>设$\omega$为$\mathbb{R}^n$中具有紧支集的光滑$n$-形式:
 $\omega=f(x)dx_1\wedge \cdots\wedge dx_n$,
-Define integral $\int_{\mathbb{R}^n}\omega=\int_{\mathbb{R}^n}fdx_1\cdots dx_n$.
-
-Let $T:\mathbb{R}^n\rightarrow\mathbb{R}^n$, $T(y)=x$ be a diffeomorphism,
-Then we can prove the variable substitution formula:
-**Proposition 1.3** (Variable substitution). *$dT_1\wedge ...\wedge dT_n=J(T)dy_1\wedge ...\wedge dy_n$.*
-Thus $T^\ast \omega=T^\ast fdT_1\wedge ... \wedge dT_n=(f\circ T)J(T)dy_1\wedge ...\wedge dy_n,$
-Integrate the above equation to get
+定义积分$\int_{\mathbb{R}^n}\omega=\int_{\mathbb{R}^n}fdx_1\cdots dx_n$.</p>
+<p>设$T:\mathbb{R}^n\rightarrow\mathbb{R}^n$, $T(y)=x$为微分同胚,
+则可以证明变量代换公式:</p>
+<p><strong>命题 1.3</strong> (变量代换). <em>$dT_1\wedge ...\wedge dT_n=J(T)dy_1\wedge  ...\wedge  dy_n$.</em> </p>
+<p>从而$T^\ast \omega=T^\ast fdT_1\wedge ... \wedge dT_n=(f\circ T)J(T)dy_1\wedge  ...\wedge  dy_n,$
+对上式积分得到
 $$\int_{\mathbb{R}^n}T^\ast \omega=\int_{\mathbb{R}^n}(f\circ T)J(T)dy_1\wedge  ...\wedge  dy_n,$$
-And by the integral transformation formula
+又由积分变换公式
 $$\int_{\mathbb{R}^n} \omega=\int_{\mathbb{R}^n}(f\circ T)|J(T)|dy_1\wedge  ...\wedge  dy_n,$$
-Therefore $\int_{\mathbb{R}^n}T^\ast \omega=\pm \int_{\mathbb{R}^n}\omega$,
-The sign is determined by the sign of $J(T)$.
-
-Now give the integral on $M$.
-Selected orientation $[M]$ and corresponding orientation coordinate atlas $\{(U_\alpha,\phi_\alpha)\}$.
-Let $\{\rho_\alpha\}$ be the unit decomposition subordinate to $\{U_\alpha\}$,
-There is a decomposition of $\tau\in H^n_{c}(M)$$\tau=\sum_\alpha \rho_\alpha \tau$.
-We would like to have $$\int_{[M]}\tau=\sum_\alpha \int_{[M]}\rho_\alpha\tau,$$
-Then study the right formula and hope that
+因此$\int_{\mathbb{R}^n}T^\ast \omega=\pm \int_{\mathbb{R}^n}\omega$,
+符号由$J(T)$正负决定.</p>
+<p>现给出$M$上的积分.
+选定定向$[M]$与相应的定向坐标图册$\{(U_\alpha,\phi_\alpha)\}$.
+设$\{\rho_\alpha\}$是从属于$\{U_\alpha\}$的单位分解,
+对$\tau\in H^n_{c}(M)$有分解$\tau=\sum_\alpha \rho_\alpha \tau$.</p>
+<p>我们希望有 $$\int_{[M]}\tau=\sum_\alpha \int_{[M]}\rho_\alpha\tau,$$
+进而研究右式又希望
 $$\int_{[M]}\rho_\alpha\tau=\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha},$$
-Use variable substitution to pull the integral back to $\mathbb{R}^n$.
+利用变量代换, 将积分拉回到$\mathbb{R}^n$进行
 $$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^{-1})^\ast (\rho_\alpha\tau)|_{U_\alpha},$$
-Note that the integrand form zero is extended outside $\phi(U_\alpha)$.
-So we will $\int_{[M]}\tau:=\sum_\alpha \int_{\mathbb{R}^n}(\phi_\alpha^{-1})^\ast (\rho_\alpha\tau)|_{U_\alpha}$,
-If the direction is clear, $\int_{[M]}$ can be rewritten as $\int_{M}$.
+注意这里将被积形式零延拓到$\phi(U_\alpha)$外.</p>
+<p>于是我们将$\int_{[M]}\tau:=\sum_\alpha \int_{\mathbb{R}^n}(\phi_\alpha^{-1})^\ast (\rho_\alpha\tau)|_{U_\alpha}$,
+若方向明了则可改记$\int_{[M]}$为$\int_{M}$.</p>
+<p>需要验证的是这个定义与定向坐标图册与单位分解无关.
+关于这点我们可以基于两个不同的划分做更细的划分, 再将其做和,
+从而得到两种不同划分得到的积分式是相等的.</p>
+<h2 id="带边流形"><a href="#带边流形" class="headerlink" title="带边流形"></a>带边流形</h2><p>带边流形$M$的定向坐标图册诱导了边界处的定向坐标图册,
+先定义好上半平面是如何诱导的,
+再将任意$M$的边界处打到上半平面来决定诱导定向.</p>
+<p><strong>定理 1.1</strong> (Stokes定理). <em>$\int_Md\omega=\int_{\partial M}\omega|_{\partial M}$.</em> </p>
+<p>文章最后更新于 2021-09-19 19:06:22 </p>
 
-What needs to be verified is that this definition has nothing to do with the directional coordinate atlas and unit decomposition.
-Regarding this point, we can make a more detailed division based on two different divisions, and then sum them up,
-It follows that the integral formulas obtained by the two different divisions are equal.
-
-manifold with edges
---------
-
-The oriented coordinate atlas of the edged manifold $M$ induces the oriented coordinate atlas at the boundary,
-First define how the upper half plane is induced,
-Then hit the boundary of any $M$ to the upper half plane to determine the induced orientation.
-**Theorem 1.1** (Stokes Theorem). *$\int_Md\omega=\int_{\partial M}\omega|_{\partial M}$.*
-
-The article was last updated on 2021-09-19 19:06:22
                 </div>
             
         </div>
@@ -399,7 +470,7 @@ The article was last updated on 2021-09-19 19:06:22
     <ul>
         <li>本文标题：《代数拓扑与微分形式》笔记(2)-流形上的微积分</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-19 19:06:22</li>
+        <li>创建时间：2021-09-19 22:06:22</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/09/19/《代数拓扑与微分形式》笔记(2)-流形上的微积分/
         </li>
@@ -431,7 +502,7 @@ The article was last updated on 2021-09-19 19:06:22
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(3)-MV序列</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (3)-MV Sequence</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (3) -MV Sequence</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -453,7 +524,7 @@ The article was last updated on 2021-09-19 19:06:22
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(1)-de Rham 复形</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (1)-de Rham Complex</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (1) - de Rham complex</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -705,11 +776,11 @@ The article was last updated on 2021-09-19 19:06:22
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">流形上的微分形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E5%9B%9E%E6%98%A0%E5%B0%84"><span class="nav-text">拉回映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="nav-text">一阶微分不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E4%B8%8A%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">流形上微分形式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E5%88%86%E8%A7%A3"><span class="nav-text">单位分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91"><span class="nav-text">流形的定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E7%A7%AF%E5%88%86"><span class="nav-text">流形上的积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E8%BE%B9%E6%B5%81%E5%BD%A2"><span class="nav-text">带边流形</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">流形上的微分形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E5%9B%9E%E6%98%A0%E5%B0%84"><span class="nav-text">拉回映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="nav-text">一阶微分不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E4%B8%8A%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">流形上微分形式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E5%88%86%E8%A7%A3"><span class="nav-text">单位分解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91"><span class="nav-text">流形的定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E4%B8%8A%E7%9A%84%E7%A7%AF%E5%88%86"><span class="nav-text">流形上的积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E8%BE%B9%E6%B5%81%E5%BD%A2"><span class="nav-text">带边流形</span></a></li></ol>
         </div>
     
 </div>
@@ -760,6 +831,36 @@ The article was last updated on 2021-09-19 19:06:22
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -783,46 +884,6 @@ The article was last updated on 2021-09-19 19:06:22
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

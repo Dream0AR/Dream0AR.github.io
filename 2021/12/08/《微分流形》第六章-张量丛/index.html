@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第六章-张量丛</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 6 - Tensor Bundle</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 6 - Tensor Plexus</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-08 15:50:08
+        <i class="fas fa-edit"></i>&nbsp;2021-12-08 17:50:08
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,145 +230,210 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p><strong>推论 1</strong>. <em>若$r&gt;n,$ 则$\Lambda^r(V^\ast )=\{0\}.$ 若$0\le r\le n,$ 则$\dim \Lambda^r(V^\ast )=\binom{n}{r},$ 以$\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1&lt;\cdots&lt;i_r\le n\}$为基.</em> </p>
+<p><strong>证:</strong>
+$\,\forall\,\Phi\in \Lambda^r(V^\ast )\subset V^\ast \otimes \cdots\otimes V^\ast =\mathcal{L}(V,\cdots,V,\mathbb{R}),$
+$\Phi=\Phi_{i_1\cdots i_r}\omega^{i_1}\otimes\cdots\otimes\omega^{i_r}.$
+那么</p>
+<p>$$\Phi=A(\Phi)=\frac{1}{r!}\Phi_{i_1\cdots i_r} \omega^{i_1}\wedge\cdots\wedge \omega^{i_n}=\sum_{1\le i_1&lt;\cdots&lt;i_r\le n}a_{i_1\cdots i_r}\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}.$$</p>
+<p>因此$r&gt;n$时, 求和集为空集, $\Phi\equiv 0.$ $0\le r\le n$时,
+只需证$\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1&lt;\cdots&lt;i_r\le n\}$线性无关.
+利用$\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}(e_{i_1},\cdots,e_{i_r})=\det(\omega^{i_\alpha}e_{i_\beta})=1,$
+其它作用为$0$即可.</p>
+<p><strong>推论 2</strong>. <em>设$\{\theta^i\},\{\omega^i\}$是$V^\ast $两组基, $\theta^i=a^i_j\omega^j.$ 则$\theta^1\wedge\cdots\wedge \theta^n=\det(a^i_j)\omega^1\wedge\cdots\wedge\omega^n.$</em> </p>
+<p><strong>证:</strong> 取$\{\omega^i\}$的对偶基$\{e_i\},$
+往等式两侧作用$(e_1,\cdots,e_n)$即可.</p>
+<p>$$\mathrm{LHS}=\det(\theta^ie_j)=\det(a^i_k\omega^ke_j)=\det(a^i_j)=\mathrm{RHS}.$$</p>
+<p><strong>引理 3</strong> (Cartan引理). <em>设$\omega^i,\theta^i\in V^\ast ,$ $1\le i\le r\le \dim V.$ 设$\{\omega^i\}$线性无关, 则:</em> </p>
+<p>$$\sum_{i=1}^r\omega^i\wedge \theta^i=0\,\Leftrightarrow\, \theta^i=\sum_{j=1}^ra_{ij}\omega^j,\quad a_{ij}=a_{ji}.$$</p>
+<p><strong>证:</strong> 将$\{\omega^i\}$扩充为一组基. 那么$\theta^i=a_{ij}\omega^j,$
+$\omega^i\wedge\theta^i=a_{ij}\omega^i\wedge\omega^j.$ 这样,</p>
+<p>$$\sum_{i=1}^r \omega^i\wedge\theta^i=\sum_{1\le i&lt;j\le r}(a_{ij}-a_{ji})\omega^i\wedge\omega^j+\sum_{1\le i\le r&lt;j}a_{ij}\omega^i\wedge\omega^j.$$</p>
+<p>注意右侧为用$\Lambda^2(V^\ast )$的基来表示. 由此证得等价性.</p>
+<p><strong>定理 4</strong>. <em>设$\omega^1,\cdots,\omega^r\in V^\ast $线性无关, $\Phi\in \Lambda^s(V^\ast ),$ 则$\,\exists\,\psi^1,\cdots,\psi^r\in \Lambda^{s-1}(V^\ast ),$ 使$\Phi=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r$ $\Leftrightarrow$ $\omega^1\wedge\cdots\wedge \omega^r\wedge \Phi=0.$</em> </p>
+<p><strong>证:</strong> 只需证明充分性.
+设有$\omega^1\wedge\cdots\wedge\omega^r\wedge \Phi=0,$ 将$\Phi$用基表示,</p>
+<p>$$\Phi=c_{i_1\cdots i_s}\omega^{i_1}\wedge\cdots\wedge\omega^{i_s}=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r+\sum_{r+1\le \alpha_1&lt;\cdots&lt;\alpha_s\le n}a_{\alpha_1\cdots\alpha_s}\omega^{\alpha_1}\wedge\cdots\wedge\omega^{\alpha_s}.$$</p>
+<p>当$r+s&gt;n$时, 后侧求和集为空集; 当$r+s\le n$时, 利用条件,
+与$\omega^1\wedge\cdots\wedge\omega^r$做外积.
+由线性无关性即有后面的系数全为零.</p>
+<p><strong>命题 5</strong>. <em>设$f\in \mathcal{L}(V;W),$ $f^\ast :\Lambda^r(W^\ast )\rightarrow\Lambda^r(V^\ast )$为拉回映照, 则$f^\ast (\Phi\wedge\Psi)=f^\ast \Phi\wedge f^\ast \Psi.$</em> </p>
+<p><strong>证:</strong> 利用$f^\ast $与$A,\otimes$的交换性即可: 
+$$\begin{aligned}
+                f^*(\Phi\wedge\Psi)(x_1,\cdots,x_{r+s})&amp;=(\Phi\wedge\Psi)(f(x_1),\cdots,f(x_{r+s}))\\
+                &amp;=\frac{(r+s)!}{r!s!}A(\Phi\otimes \Psi) (f(x_1),\cdots,f(x_{r+s}))\\
+                &amp;=\frac{(r+s)!}{r!s!}A(f^*(\Phi\otimes \Psi))(x_1,\cdots,x_{r+s})\\
+                &amp;=f^*\Phi \wedge f^*\Psi (x_1,\cdots,x_{r+s}).
+            \end{aligned}$$</p>
+<p>做形式直和$\Lambda(V^\ast )=\bigoplus_{r=0}^n \Lambda^r(V^\ast )=\{\omega_0+\cdots+\omega_n|\omega_r\in \Lambda^r(V^\ast )\}.$
+那么它成为$2^n$维向量空间, 并且以$\wedge$为满足分配律的乘法, 成为代数.
+称之为$V^\ast $上的<strong>外代数</strong>. 类似地,
+可以定义$\Lambda(V)=\bigoplus_{r=0}^n \Lambda^r(V),$
+称为$V$上<strong>外代数</strong>.</p>
+<h2 id="张量丛"><a href="#张量丛" class="headerlink" title="张量丛"></a>张量丛</h2><p>令$M^m$为$m$维$C^\infty$流形, $\,\forall\,p\in M,$ 有切空间$T_pM.$
+我们定义$(r,s)$-型张量空间$T_s^r(p)=T_pM\otimes\cdots\otimes T_pM\otimes T_p^\ast M\otimes\cdots\otimes T_p^\ast M.$
+$\dim T_s^r(p)=m^{r+s}.$ 定义丛空间$T_s^r(M)=\bigcup_{p\in M}T_s^r(p),$
+可赋予自然拓扑与微分结构, 使之成为$m+m^{r+s}$维$C^\infty$流形.</p>
+<p>$T_s^r(q)$有自然基$\{\frac{\partial {} }{\partial {}x^{i_1} }\otimes\cdots\otimes\frac{\partial {} }{\partial {}x^{i_r} }\otimes dx^{j_1}\otimes \cdots\otimes dx^{j_s}|1\le i_1,\cdots,i_r,j_1,\cdots,j_s\le n\}.$
+$\Phi\in T_s^r$有坐标$(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s}).$
+取$\pi:T_s^r(M)\rightarrow M$为自然投影,
+$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$将$\Phi$映至$(q,(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s})).$
+那么定义</p>
+<p>$$\widetilde{\Psi}=(\varphi\times \mathrm{id}_{\mathbb{R}^N})\circ \Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N\rightarrow \varphi(U)\times \mathbb{R}^N\subset \mathbb{R}^{m+N}.$$</p>
+<p>赋予$T_s^r(M)$的拓扑使$\pi^{-1}(U)$是$T_s^r(M)$的开子集且$\widetilde{\Psi}$为同胚.
+若$\{(U_\alpha,\varphi_\alpha)\}$为$M$的光滑坐标图册,
+则$\{(\pi^{-1}(U_\alpha),\widetilde{\Psi}_\alpha)\}$为$T_s^r(M)$的光滑坐标图册.</p>
+<p>它满足如下性质, $\pi:T_s^r(M)\rightarrow M$为$C^\infty$满射,
+$\pi^{-1}(q)=T_s^r(q)$为$m^{r+s}$维向量空间,
+$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$为$C^\infty$映照,
+$\pi_1\circ \Psi=\pi,$ 并且$\Psi|_q$为线性同构.
+这些要素使其成为<strong>向量丛</strong>, 称其为<strong>张量丛</strong>.</p>
+<h2 id="张量场"><a href="#张量场" class="headerlink" title="张量场"></a>张量场</h2><p>若有$\Phi:M\rightarrow T_s^r(M),$ 满足$\pi\circ\Phi=\mathrm{id}_M,$
+则称$\Phi$为$M$上$(r,s)$-型<strong>张量场</strong>. 当$\Phi$为光滑映照时,
+称其为光滑$(r,s)$-型<strong>张量场</strong>. 这当且仅当$\Phi$的每个分量为光滑函数.</p>
+<p>$\Phi\in T_s^r(p)=\mathcal{L}(T_p^\ast M,\cdots,T_p^\ast M,T_pM,\cdots,T_pM;\mathbb{R})$可视为$(r+s)$-重线性函数.
+考虑$(0,s)$-型张量场$\Phi.$ 任取$X_1,\cdots,X_s\in \mathfrak{X}(M),$
+定义张量场在向量场上的作用:</p>
+<p>$$[\Phi(X_1,\cdots,X_s)] (p):=\Phi(p)(X_1(p),\cdots,X_s(p)),$$</p>
+<p>那么$\Phi(X_1,\cdots,X_s)\in C^\infty(M).$ 因为各个分量为光滑函数,
+做线性组合或相乘后仍是光滑函数.</p>
+<p>由于张量是多重线性函数, 任取$f_1,\cdots,f_s\in C^\infty(M),$
+逐点考虑得到</p>
+<p>$$\Phi(f_1X_1,\cdots,f_sX_s)=f_1\cdots f_s\Phi(X_1,\cdots,X_s)\in C^\infty(M).$$</p>
+<p>反过来,
+若有映照$\Phi:\mathfrak{X}(M)\times \cdots\times \mathfrak{X}(M)\rightarrow C^\infty(M)$是$C^\infty(M)$线性的,
+则$\Phi$必是$(0,s)$-型$C^\infty$-张量场.</p>
+<p>一般地, 记$\Gamma(T_s^r(M))$表示$C^\infty$的$(r,s)$-型张量场全体,
+则它是无穷维向量空间, $f\Phi+g\Psi(p):=f(p)\Phi(p)+g(p)\Psi(p).$
+类似前面, 它作用在余切向量场与向量场的组合上,
+并且也是$C^\infty(M)$线性的. 反过来也对.</p>
+<h2 id="外微分形式"><a href="#外微分形式" class="headerlink" title="外微分形式"></a>外微分形式</h2><p>$M^m$为$C^\infty$-流形.
+令$\Lambda^r(T^\ast M)=\bigcup_{p\in M}\Lambda^r(T_p^\ast M),$ 类似地,
+赋予其自然拓扑结构与微分结构使其成为$m+\binom{m}{r}$维$C^\infty$流形,
+称为$M$上$r$-次<strong>外形式丛</strong>.</p>
+<p>若$\Phi:M\rightarrow \Lambda^rT^\ast M$是光滑映照,
+$\pi\circ\Phi=\mathrm{id}_M,$ 则称$\Phi$是$r$-次<strong>外微分形式</strong>.
+这当且仅当它的各个分量是光滑函数.
+令$\mathcal{A}^r(M)=\Gamma(\Lambda^rT^\ast M)$为$r$-次外微分形式全体,
+为无穷维向量空间. 类似地,
+也可以定义$f\omega_1+g\omega_2\in \mathcal{A}^r(M).$</p>
+<p>由于我们在$\Lambda^r T^\ast M$上有乘法$\wedge,$
+我们可以逐点定义$\wedge:\mathcal{A}^r(M)\times \mathcal{A}^s(M)\rightarrow \mathcal{A}^{r+s}(M).$
+即</p>
+<p>$$(\omega\wedge\sigma)(p)=\omega(p)\wedge \sigma(p)\in \Lambda^{r+s}(T_p^\ast M).$$</p>
+<p>它当然同样满足分配律, 反交换律与结合律.</p>
+<p>设$F:M\rightarrow N$为光滑映照,
+则${F_{\ast } }_p:T_pM\rightarrow T_{F(p)}N$为切映照,
+$F^\ast :T^\ast _{F(p)}N\rightarrow T_p^\ast (M)$为拉回映照,
+诱导到$\Lambda^r T_q^\ast N\rightarrow \Lambda^r T_p^\ast M$上,
+再诱导了$\mathcal{A}^r(N)\rightarrow \mathcal{A}^r(M)$上的拉回,
+满足$F^\ast (\omega\wedge\sigma)=F^\ast \omega\wedge F^\ast \sigma.$</p>
+<p>文章最后更新于 2021-12-08 15:50:09 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    external algebra
-------
-
-**Corollary 1**. *If $r>n,$ then $\Lambda^r(V^\ast )=\{0\}.$ If $0\le r\le n,$ then $\dim \Lambda^r(V^\ast )=\binom{n}{r},
-$ is based on $\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1<\cdots<i_r\le n\}$.*
-
-**Certificate:**
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="外代数"><a href="#外代数" class="headerlink" title="外代数"></a>外代数</h2><p><strong>推论 1</strong>. <em>若$r&gt;n,$ 则$\Lambda^r(V^\ast )=\{0\}.$ 若$0\le r\le n,$ 则$\dim \Lambda^r(V^\ast )=\binom{n}{r},$ 以$\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1&lt;\cdots&lt;i_r\le n\}$为基.</em> </p>
+<p><strong>证:</strong>
 $\,\forall\,\Phi\in \Lambda^r(V^\ast )\subset V^\ast \otimes \cdots\otimes V^\ast =\mathcal{L}(V,\cdots,V,\mathbb{R}),$
 $\Phi=\Phi_{i_1\cdots i_r}\omega^{i_1}\otimes\cdots\otimes\omega^{i_r}.$
-Then
-
-$$\Phi=A(\Phi)=\frac{1}{r!}\Phi_{i_1\cdots i_r} \omega^{i_1}\wedge\cdots\wedge \omega^{i_n}=\sum_{1\le i_1<\cdots<i_r\le n}a_{i_1\cdots i_r}\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}.$$
-Therefore, when $r>n$, the summation set is the empty set, $\Phi\equiv 0.$ $0\le r\le n$,
-Just prove that $\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1<\cdots<i_r\le n\}$ is linearly independent.
-Use $\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}(e_{i_1},\cdots,e_{i_r})=\det(\omega^{i_\alpha}e_{i_\beta})=1,$
-All other functions are $0$.
-**Corollary 2**. *Suppose $\{\theta^i\},\{\omega^i\}$ is $V^\ast $ two sets of bases, $\theta^i=a^i_j\omega^j.$ then $\theta^1\wedge\cdots\wedge \theta^n=\det(a^i_j)\omega^1\wedge\cdots\wedge\omega^n.$*
-**Proof:** Take the dual basis $\{e_i\},$ of $\{\omega^i\}$
-Just apply $(e_1,\cdots,e_n)$ to both sides of the equation.
-
-$$\mathrm{LHS}=\det(\theta^ie_j)=\det(a^i_k\omega^ke_j)=\det(a^i_j)=\mathrm{RHS}.$$
-**Lemma 3** (Cartan's Lemma). *Suppose $\omega^i,\theta^i\in V^\ast ,$ $1\le i\le r\le \dim V.$ Suppose $\{\omega^i\}$ is linearly independent, then:*
-
-
-$$\sum_{i=1}^r\omega^i\wedge \theta^i=0\,\Leftrightarrow\, \theta^i=\sum_{j=1}^ra_{ij}\omega^j,\quad a_{ij}=a_{ji}.$$
-**Proof:** Expand $\{\omega^i\}$ to a set of basis. Then $\theta^i=a_{ij}\omega^j,$
-$\omega^i\wedge\theta^i=a_{ij}\omega^i\wedge\omega^j.$ In this way,
-
-$$\sum_{i=1}^r \omega^i\wedge\theta^i=\sum_{1\le i<j\le r}(a_{ij}-a_{ji})\omega^i\wedge\omega^j+\sum_{1\le i\le r<j}a_{ij}\omega^i\wedge\omega^j.$$
-Note that the right side is represented by the basis of $\Lambda^2(V^\ast)$. This proves the equivalence.
-
-**Theorem 4**. *Suppose $\omega^1,\cdots,\omega^r\in V^\ast $ are linearly independent, $\Phi\in \Lambda^s(V^\ast ),$ then $\,\exists\,\psi^1,\cdots,
-\psi^r\in \Lambda^{s-1}(V^\ast ),$ makes $\Phi=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r$ $\Leftrightarrow$ $\omega^1\wedge\cdots\wedge \omega^r\wedge \Phi=0.$*
-**Certificate:** Just prove sufficiency.
-Let $\omega^1\wedge\cdots\wedge\omega^r\wedge \Phi=0,$ express $\Phi$ in base,
-
-$$\Phi=c_{i_1\cdots i_s}\omega^{i_1}\wedge\cdots\wedge\omega^{i_s}=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r+\sum_{r+1\le \alpha_1<\cdots<\alpha_s\le n}a_{\alpha_1\cdots\alpha_s}\omega^{\alpha_1}\wedge\cdots\wedge\omega^{\alpha_s}.$$
-When $r+s>n$, the backside summation set is the empty set; when $r+s\le n$, using the condition,
-Do the outer product with $\omega^1\wedge\cdots\wedge\omega^r$.
-Due to linear independence, the following coefficients are all zero.
-**Proposition 5**. *Suppose $f\in \mathcal{L}(V;W),$ $f^\ast :\Lambda^r(W^\ast )\rightarrow\Lambda^r(V^\ast )$ is the pullback mapping, then $f^\ast (\Phi\wedge\Psi)=f^\ast \Phi\wedge f^\ast \Psi.$*
-**Proof:** Just use the commutativity of $f^\ast $ and $A,\otimes$:
+那么</p>
+<p>$$\Phi=A(\Phi)=\frac{1}{r!}\Phi_{i_1\cdots i_r} \omega^{i_1}\wedge\cdots\wedge \omega^{i_n}=\sum_{1\le i_1&lt;\cdots&lt;i_r\le n}a_{i_1\cdots i_r}\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}.$$</p>
+<p>因此$r&gt;n$时, 求和集为空集, $\Phi\equiv 0.$ $0\le r\le n$时,
+只需证$\{\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}|1\le i_1&lt;\cdots&lt;i_r\le n\}$线性无关.
+利用$\omega^{i_1}\wedge\cdots\wedge \omega^{i_r}(e_{i_1},\cdots,e_{i_r})=\det(\omega^{i_\alpha}e_{i_\beta})=1,$
+其它作用为$0$即可.</p>
+<p><strong>推论 2</strong>. <em>设$\{\theta^i\},\{\omega^i\}$是$V^\ast $两组基, $\theta^i=a^i_j\omega^j.$ 则$\theta^1\wedge\cdots\wedge \theta^n=\det(a^i_j)\omega^1\wedge\cdots\wedge\omega^n.$</em> </p>
+<p><strong>证:</strong> 取$\{\omega^i\}$的对偶基$\{e_i\},$
+往等式两侧作用$(e_1,\cdots,e_n)$即可.</p>
+<p>$$\mathrm{LHS}=\det(\theta^ie_j)=\det(a^i_k\omega^ke_j)=\det(a^i_j)=\mathrm{RHS}.$$</p>
+<p><strong>引理 3</strong> (Cartan引理). <em>设$\omega^i,\theta^i\in V^\ast ,$ $1\le i\le r\le \dim V.$ 设$\{\omega^i\}$线性无关, 则:</em> </p>
+<p>$$\sum_{i=1}^r\omega^i\wedge \theta^i=0\,\Leftrightarrow\, \theta^i=\sum_{j=1}^ra_{ij}\omega^j,\quad a_{ij}=a_{ji}.$$</p>
+<p><strong>证:</strong> 将$\{\omega^i\}$扩充为一组基. 那么$\theta^i=a_{ij}\omega^j,$
+$\omega^i\wedge\theta^i=a_{ij}\omega^i\wedge\omega^j.$ 这样,</p>
+<p>$$\sum_{i=1}^r \omega^i\wedge\theta^i=\sum_{1\le i&lt;j\le r}(a_{ij}-a_{ji})\omega^i\wedge\omega^j+\sum_{1\le i\le r&lt;j}a_{ij}\omega^i\wedge\omega^j.$$</p>
+<p>注意右侧为用$\Lambda^2(V^\ast )$的基来表示. 由此证得等价性.</p>
+<p><strong>定理 4</strong>. <em>设$\omega^1,\cdots,\omega^r\in V^\ast $线性无关, $\Phi\in \Lambda^s(V^\ast ),$ 则$\,\exists\,\psi^1,\cdots,\psi^r\in \Lambda^{s-1}(V^\ast ),$ 使$\Phi=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r$ $\Leftrightarrow$ $\omega^1\wedge\cdots\wedge \omega^r\wedge \Phi=0.$</em> </p>
+<p><strong>证:</strong> 只需证明充分性.
+设有$\omega^1\wedge\cdots\wedge\omega^r\wedge \Phi=0,$ 将$\Phi$用基表示,</p>
+<p>$$\Phi=c_{i_1\cdots i_s}\omega^{i_1}\wedge\cdots\wedge\omega^{i_s}=\omega^1\wedge\psi^1+\cdots+\omega^r\wedge\psi^r+\sum_{r+1\le \alpha_1&lt;\cdots&lt;\alpha_s\le n}a_{\alpha_1\cdots\alpha_s}\omega^{\alpha_1}\wedge\cdots\wedge\omega^{\alpha_s}.$$</p>
+<p>当$r+s&gt;n$时, 后侧求和集为空集; 当$r+s\le n$时, 利用条件,
+与$\omega^1\wedge\cdots\wedge\omega^r$做外积.
+由线性无关性即有后面的系数全为零.</p>
+<p><strong>命题 5</strong>. <em>设$f\in \mathcal{L}(V;W),$ $f^\ast :\Lambda^r(W^\ast )\rightarrow\Lambda^r(V^\ast )$为拉回映照, 则$f^\ast (\Phi\wedge\Psi)=f^\ast \Phi\wedge f^\ast \Psi.$</em> </p>
+<p><strong>证:</strong> 利用$f^\ast $与$A,\otimes$的交换性即可: 
 $$\begin{aligned}
-                f^*(\Phi\wedge\Psi)(x_1,\cdots,x_{r+s})&=(\Phi\wedge\Psi)(f(x_1),\cdots,f(x_{r+s}))\\
-                &=\frac{(r+s)!}{r!s!}A(\Phi\otimes \Psi) (f(x_1),\cdots,f(x_{r+s}))\\
-                &=\frac{(r+s)!}{r!s!}A(f^*(\Phi\otimes \Psi))(x_1,\cdots,x_{r+s})\\
-                &=f^*\Phi \wedge f^*\Psi (x_1,\cdots,x_{r+s}).
-            \end{aligned}$$
-Do the direct sum of the form $\Lambda(V^\ast )=\bigoplus_{r=0}^n \Lambda^r(V^\ast )=\{\omega_0+\cdots+\omega_n|\omega_r\in \Lambda^r(V^\ast )\}.$
-Then it becomes a $2^n$-dimensional vector space, and with $\wedge$ as the multiplication that satisfies the distributive law, it becomes algebra.
-Call it the **external algebra** on $V^\ast $. Similarly,
-You can define $\Lambda(V)=\bigoplus_{r=0}^n \Lambda^r(V),$
-It is called **external algebra** on $V$.
+                f^*(\Phi\wedge\Psi)(x_1,\cdots,x_{r+s})&amp;=(\Phi\wedge\Psi)(f(x_1),\cdots,f(x_{r+s}))\\
+                &amp;=\frac{(r+s)!}{r!s!}A(\Phi\otimes \Psi) (f(x_1),\cdots,f(x_{r+s}))\\
+                &amp;=\frac{(r+s)!}{r!s!}A(f^*(\Phi\otimes \Psi))(x_1,\cdots,x_{r+s})\\
+                &amp;=f^*\Phi \wedge f^*\Psi (x_1,\cdots,x_{r+s}).
+            \end{aligned}$$</p>
+<p>做形式直和$\Lambda(V^\ast )=\bigoplus_{r=0}^n \Lambda^r(V^\ast )=\{\omega_0+\cdots+\omega_n|\omega_r\in \Lambda^r(V^\ast )\}.$
+那么它成为$2^n$维向量空间, 并且以$\wedge$为满足分配律的乘法, 成为代数.
+称之为$V^\ast $上的<strong>外代数</strong>. 类似地,
+可以定义$\Lambda(V)=\bigoplus_{r=0}^n \Lambda^r(V),$
+称为$V$上<strong>外代数</strong>.</p>
+<h2 id="张量丛"><a href="#张量丛" class="headerlink" title="张量丛"></a>张量丛</h2><p>令$M^m$为$m$维$C^\infty$流形, $\,\forall\,p\in M,$ 有切空间$T_pM.$
+我们定义$(r,s)$-型张量空间$T_s^r(p)=T_pM\otimes\cdots\otimes T_pM\otimes T_p^\ast M\otimes\cdots\otimes T_p^\ast M.$
+$\dim T_s^r(p)=m^{r+s}.$ 定义丛空间$T_s^r(M)=\bigcup_{p\in M}T_s^r(p),$
+可赋予自然拓扑与微分结构, 使之成为$m+m^{r+s}$维$C^\infty$流形.</p>
+<p>$T_s^r(q)$有自然基$\{\frac{\partial {} }{\partial {}x^{i_1} }\otimes\cdots\otimes\frac{\partial {} }{\partial {}x^{i_r} }\otimes dx^{j_1}\otimes \cdots\otimes dx^{j_s}|1\le i_1,\cdots,i_r,j_1,\cdots,j_s\le n\}.$
+$\Phi\in T_s^r$有坐标$(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s}).$
+取$\pi:T_s^r(M)\rightarrow M$为自然投影,
+$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$将$\Phi$映至$(q,(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s})).$
+那么定义</p>
+<p>$$\widetilde{\Psi}=(\varphi\times \mathrm{id}_{\mathbb{R}^N})\circ \Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N\rightarrow \varphi(U)\times \mathbb{R}^N\subset \mathbb{R}^{m+N}.$$</p>
+<p>赋予$T_s^r(M)$的拓扑使$\pi^{-1}(U)$是$T_s^r(M)$的开子集且$\widetilde{\Psi}$为同胚.
+若$\{(U_\alpha,\varphi_\alpha)\}$为$M$的光滑坐标图册,
+则$\{(\pi^{-1}(U_\alpha),\widetilde{\Psi}_\alpha)\}$为$T_s^r(M)$的光滑坐标图册.</p>
+<p>它满足如下性质, $\pi:T_s^r(M)\rightarrow M$为$C^\infty$满射,
+$\pi^{-1}(q)=T_s^r(q)$为$m^{r+s}$维向量空间,
+$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$为$C^\infty$映照,
+$\pi_1\circ \Psi=\pi,$ 并且$\Psi|_q$为线性同构.
+这些要素使其成为<strong>向量丛</strong>, 称其为<strong>张量丛</strong>.</p>
+<h2 id="张量场"><a href="#张量场" class="headerlink" title="张量场"></a>张量场</h2><p>若有$\Phi:M\rightarrow T_s^r(M),$ 满足$\pi\circ\Phi=\mathrm{id}_M,$
+则称$\Phi$为$M$上$(r,s)$-型<strong>张量场</strong>. 当$\Phi$为光滑映照时,
+称其为光滑$(r,s)$-型<strong>张量场</strong>. 这当且仅当$\Phi$的每个分量为光滑函数.</p>
+<p>$\Phi\in T_s^r(p)=\mathcal{L}(T_p^\ast M,\cdots,T_p^\ast M,T_pM,\cdots,T_pM;\mathbb{R})$可视为$(r+s)$-重线性函数.
+考虑$(0,s)$-型张量场$\Phi.$ 任取$X_1,\cdots,X_s\in \mathfrak{X}(M),$
+定义张量场在向量场上的作用:</p>
+<p>$$[\Phi(X_1,\cdots,X_s)] (p):=\Phi(p)(X_1(p),\cdots,X_s(p)),$$</p>
+<p>那么$\Phi(X_1,\cdots,X_s)\in C^\infty(M).$ 因为各个分量为光滑函数,
+做线性组合或相乘后仍是光滑函数.</p>
+<p>由于张量是多重线性函数, 任取$f_1,\cdots,f_s\in C^\infty(M),$
+逐点考虑得到</p>
+<p>$$\Phi(f_1X_1,\cdots,f_sX_s)=f_1\cdots f_s\Phi(X_1,\cdots,X_s)\in C^\infty(M).$$</p>
+<p>反过来,
+若有映照$\Phi:\mathfrak{X}(M)\times \cdots\times \mathfrak{X}(M)\rightarrow C^\infty(M)$是$C^\infty(M)$线性的,
+则$\Phi$必是$(0,s)$-型$C^\infty$-张量场.</p>
+<p>一般地, 记$\Gamma(T_s^r(M))$表示$C^\infty$的$(r,s)$-型张量场全体,
+则它是无穷维向量空间, $f\Phi+g\Psi(p):=f(p)\Phi(p)+g(p)\Psi(p).$
+类似前面, 它作用在余切向量场与向量场的组合上,
+并且也是$C^\infty(M)$线性的. 反过来也对.</p>
+<h2 id="外微分形式"><a href="#外微分形式" class="headerlink" title="外微分形式"></a>外微分形式</h2><p>$M^m$为$C^\infty$-流形.
+令$\Lambda^r(T^\ast M)=\bigcup_{p\in M}\Lambda^r(T_p^\ast M),$ 类似地,
+赋予其自然拓扑结构与微分结构使其成为$m+\binom{m}{r}$维$C^\infty$流形,
+称为$M$上$r$-次<strong>外形式丛</strong>.</p>
+<p>若$\Phi:M\rightarrow \Lambda^rT^\ast M$是光滑映照,
+$\pi\circ\Phi=\mathrm{id}_M,$ 则称$\Phi$是$r$-次<strong>外微分形式</strong>.
+这当且仅当它的各个分量是光滑函数.
+令$\mathcal{A}^r(M)=\Gamma(\Lambda^rT^\ast M)$为$r$-次外微分形式全体,
+为无穷维向量空间. 类似地,
+也可以定义$f\omega_1+g\omega_2\in \mathcal{A}^r(M).$</p>
+<p>由于我们在$\Lambda^r T^\ast M$上有乘法$\wedge,$
+我们可以逐点定义$\wedge:\mathcal{A}^r(M)\times \mathcal{A}^s(M)\rightarrow \mathcal{A}^{r+s}(M).$
+即</p>
+<p>$$(\omega\wedge\sigma)(p)=\omega(p)\wedge \sigma(p)\in \Lambda^{r+s}(T_p^\ast M).$$</p>
+<p>它当然同样满足分配律, 反交换律与结合律.</p>
+<p>设$F:M\rightarrow N$为光滑映照,
+则${F_{\ast } }_p:T_pM\rightarrow T_{F(p)}N$为切映照,
+$F^\ast :T^\ast _{F(p)}N\rightarrow T_p^\ast (M)$为拉回映照,
+诱导到$\Lambda^r T_q^\ast N\rightarrow \Lambda^r T_p^\ast M$上,
+再诱导了$\mathcal{A}^r(N)\rightarrow \mathcal{A}^r(M)$上的拉回,
+满足$F^\ast (\omega\wedge\sigma)=F^\ast \omega\wedge F^\ast \sigma.$</p>
+<p>文章最后更新于 2021-12-08 15:50:09 </p>
 
-tensor bundle
-------
-
-Let $M^m$ be an $m$-dimensional $C^\infty$ manifold, $\,\forall\,p\in M,$ has a tangent space $T_pM.$
-We define $(r,s)$-type tensor space $T_s^r(p)=T_pM\otimes\cdots\otimes T_pM\otimes T_p^\ast M\otimes\cdots\otimes T_p^\ast M.$
-$\dim T_s^r(p)=m^{r+s}.$ Define the bundle space $T_s^r(M)=\bigcup_{p\in M}T_s^r(p),$
-Natural topology and differential structure can be given to make it a $m+m^{r+s}$-dimensional $C^\infty$ manifold.
-
-$T_s^r(q)$ has natural basis $\{\frac{\partial {} }{\partial {}x^{i_1} }\otimes\cdots\otimes\frac{\partial {} }{\partial {}x^{i_r} }\otimes
-dx^{j_1}\otimes \cdots\otimes dx^{j_s}|1\le i_1,\cdots,i_r,j_1,\cdots,j_s\le n\}.$
-$\Phi\in T_s^r$ has coordinates $(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s}).$
-Take $\pi:T_s^r(M)\rightarrow M$ as the natural projection,
-$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$ maps $\Phi$ to $(q,(\Phi^{i_1\cdots i_r}_{j_1\cdots j_s})).$
-Then define
-$$\widetilde{\Psi}=(\varphi\times \mathrm{id}_{\mathbb{R}^N})\circ \Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N\rightarrow \varphi(U)\times \mathbb{R}^N\subset \mathbb{R}^{m+N}.$$
-
-The topology assigned to $T_s^r(M)$ is such that $\pi^{-1}(U)$ is an open subset of $T_s^r(M)$ and $\widetilde{\Psi}$ is homeomorphic.
-If $\{(U_\alpha,\varphi_\alpha)\}$ is the smooth coordinate atlas of $M$,
-Then $\{(\pi^{-1}(U_\alpha),\widetilde{\Psi}_\alpha)\}$ is the smooth coordinate atlas of $T_s^r(M)$.
-
-It satisfies the following properties, $\pi:T_s^r(M)\rightarrow M$ is surjective to $C^\infty$,
-$\pi^{-1}(q)=T_s^r(q)$ is $m^{r+s}$ dimensional vector space,
-$\Psi:\pi^{-1}(U)\rightarrow U\times \mathbb{R}^N$ is reflected by $C^\infty$,
-$\pi_1\circ \Psi=\pi,$ and $\Psi|_q$ are linear isomorphisms.
-These elements make it a **vector bundle**, which is called a **tensor bundle**.
-
-tensor field
-------
-If $\Phi:M\rightarrow T_s^r(M),$ satisfies $\pi\circ\Phi=\mathrm{id}_M,$
-Then $\Phi$ is said to be a $(r,s)$-type **tensor field** on $M$. When $\Phi$ is a smooth mapping,
-It is called a smooth $(r,s)$-type **tensor field**. This is if and only if each component of $\Phi$ is a smooth function.
-$\Phi\in T_s^r(p)=\mathcal{L}(T_p^\ast M,\cdots,T_p^\ast M,T_pM,\cdots,T_pM;\mathbb{R})$ can be regarded as $(r+s)$-heavy linear function.
-Consider $(0,s)$-type tensor field $\Phi.$ and take any $X_1,\cdots,X_s\in \mathfrak{X}(M),$
-Define the role of the tensor field on the vector field:
-
-$$[\Phi(X_1,\cdots,X_s)] (p):=\Phi(p)(X_1(p),\cdots,X_s(p)),$$
-
-Then $\Phi(X_1,\cdots,X_s)\in C^\infty(M).$ because each component is a smooth function,
-After linear combination or multiplication, it is still a smooth function.
-Since the tensor is a multilinear function, any $f_1,\cdots,f_s\in C^\infty(M),$
-Considered point by point
-
-$$\Phi(f_1X_1,\cdots,f_sX_s)=f_1\cdots f_s\Phi(X_1,\cdots,X_s)\in C^\infty(M).$$
-
-conversely,
-If there is a mapping $\Phi:\mathfrak{X}(M)\times \cdots\times \mathfrak{X}(M)\rightarrow C^\infty(M)$ is $C^\infty(M)$ linear,
-Then $\Phi$ must be a $(0,s)$-type $C^\infty$-tensor field.
-Generally, let $\Gamma(T_s^r(M))$ represent the entire $(r,s)$-type tensor field of $C^\infty$,
-Then it is an infinite-dimensional vector space, $f\Phi+g\Psi(p):=f(p)\Phi(p)+g(p)\Psi(p).$
-Similar to the previous one, it acts on the combination of cotangent vector field and vector field,
-And it is also $C^\infty(M)$ linear. The reverse is also true.
-
-external differential form
-----------
-
-$M^m$ is a $C^\infty$-manifold.
-Let $\Lambda^r(T^\ast M)=\bigcup_{p\in M}\Lambda^r(T_p^\ast M),$ Similarly,
-Give it natural topological structure and differential structure to make it a $m+\binom{m}{r}$-dimensional $C^\infty$ manifold,
-It is called the $r$-sub **external form bundle** on $M$.
-If $\Phi:M\rightarrow \Lambda^rT^\ast M$ is a smooth mapping,
-$\pi\circ\Phi=\mathrm{id}_M,$ then $\Phi$ is said to be $r$-time **external differential form**.
-This is if and only if its components are smooth functions.
-Let $\mathcal{A}^r(M)=\Gamma(\Lambda^rT^\ast M)$ be the totality of $r$-sub-external differential forms,
-is an infinite-dimensional vector space. Similarly,
-You can also define $f\omega_1+g\omega_2\in \mathcal{A}^r(M).$
-
-Since we have multiplication $\wedge,$ on $\Lambda^r T^\ast M$
-We can define $\wedge point by point:\mathcal{A}^r(M)\times \mathcal{A}^s(M)\rightarrow \mathcal{A}^{r+s}(M).$
-That is
-
-$$(\omega\wedge\sigma)(p)=\omega(p)\wedge \sigma(p)\in \Lambda^{r+s}(T_p^\ast M).$$
-
-Of course it also satisfies the distributive law, the anti-commutative law and the associative law.
-Let $F:M\rightarrow N$ be a smooth reflection,
-Then ${F_{\ast } }_p:T_pM\rightarrow T_{F(p)}N$ is the cut mapping,
-$F^\ast :T^\ast _{F(p)}N\rightarrow T_p^\ast (M)$ is the pull-back mapping,
-Induced to $\Lambda^r T_q^\ast N\rightarrow \Lambda^r T_p^\ast M$,
-Then the pullback on $\mathcal{A}^r(N)\rightarrow \mathcal{A}^r(M)$ is induced,
-Satisfy $F^\ast (\omega\wedge\sigma)=F^\ast \omega\wedge F^\ast \sigma.$
-
-The article was last updated on 2021-12-08 15:50:09
                 </div>
             
         </div>
@@ -379,7 +444,7 @@ The article was last updated on 2021-12-08 15:50:09
     <ul>
         <li>本文标题：《微分流形》第六章-张量丛</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-08 15:50:08</li>
+        <li>创建时间：2021-12-08 17:50:08</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/12/08/《微分流形》第六章-张量丛/
         </li>
@@ -411,7 +476,7 @@ The article was last updated on 2021-12-08 15:50:09
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (9)-Galerkin Method</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Modern PDE Basics Notes (9) - Galerkin Method</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -433,7 +498,7 @@ The article was last updated on 2021-12-08 15:50:09
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">闭值域定理</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">closed range theorem</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Closed-Value Domain Theorem</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -685,11 +750,11 @@ The article was last updated on 2021-12-08 15:50:09
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E4%BB%A3%E6%95%B0"><span class="nav-text">外代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E4%B8%9B"><span class="nav-text">张量丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E5%9C%BA"><span class="nav-text">张量场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">外微分形式</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E4%BB%A3%E6%95%B0"><span class="nav-text">外代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E4%B8%9B"><span class="nav-text">张量丛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%A0%E9%87%8F%E5%9C%BA"><span class="nav-text">张量场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">外微分形式</span></a></li></ol>
         </div>
     
 </div>
@@ -740,6 +805,36 @@ The article was last updated on 2021-12-08 15:50:09
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -763,46 +858,6 @@ The article was last updated on 2021-12-08 15:50:09
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

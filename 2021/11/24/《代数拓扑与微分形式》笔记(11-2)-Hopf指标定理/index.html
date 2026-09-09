@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (11-2) - Hopf Index Theorem</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2021-11-24 15:33:53
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="欧拉数与截面的孤立奇点"><a href="#欧拉数与截面的孤立奇点" class="headerlink" title="欧拉数与截面的孤立奇点"></a>欧拉数与截面的孤立奇点</h2><p>假定$M$是紧定向$n$维流形, $\pi:E\rightarrow M$为定向$S^{n-1}$丛,
+结构群可约化到$O(n)$. 即它是某个秩$n$向量丛的球面丛.</p>
+<p>$e(E)\in H^n(M)$, 与<strong>欧拉数</strong>$\int_M e(E)$等同.
+定义$M$的欧拉数为$\int_M e(TM)$. 欧拉数依赖于$E,M$的定向选取.</p>
+<p><strong>命题 1</strong>. <em>条件如前面所述, 则存在$\{x_1,...,x_q\}\in M$, $E$限制在$M-\{x_1,...,x_q\}$上有截面.</em> </p>
+<p><strong>证:</strong> 存在秩$n$向量丛$E&#39;$与度量$\left&lt;{},\right&gt;$, 使得$E=S(E&#39;)$.
+设$s&#39;:M\rightarrow E&#39;$为截面. 若$s&#39;(x)\neq 0$,
+则$s(x)=\frac{s&#39;(x)}{\Vert s&#39;(x)\Vert}\in E_x$.
+只需证明存在$s&#39;:M\rightarrow E&#39;$, 只有有限多个零点.</p>
+<p>我们需要如下定理:</p>
+<p><strong>定理 2</strong> (横截性定理). <em>设$X$紧, $Z$为$Y$的闭子流形, $f&#39;:X\rightarrow Y$为光滑映射, 则存在$f&#39;$的充分小扰动$f:X\rightarrow Y$, 使得$f$与$Z$横截.</em> </p>
+<p>设$s_0$为零截面, $S_0=s_0(M)\subset E&#39;$为闭子流形. 由横截性定理,
+存在充分小扰动$f:M\rightarrow E&#39;$, $f$与$S_0$横截.
+$g=\pi\circ f:M\approx M$(因为是恒等映射的充分小扰动),
+定义$s&#39;:M\rightarrow E&#39;$为$s&#39;(x)=f(g^{-1}(x))$,
+那么$\pi\circ s&#39;=\mathrm{id}$, $s&#39;$为截面.</p>
+<p>由于$f$横截于$S_0$, $s&#39;$横截于$S_0$(只跟像有关),
+$S=s&#39;(M)$与$S_0$横截相交. 由于$\dim S+\dim S_0=2n=\dim E&#39;$,
+因此$\dim (S\cap S_0)=0$. 又因为$S\cap S_0$紧, 交集为有限多个点.
+那么$s&#39;:M\rightarrow E&#39;$只有有限多个零点.</p>
+<p><strong>注 3</strong>. <em>事实上, 不需要能够约化到$O(n)$, 命题也成立.</em> </p>
+<p>设$s$为$E|_{M-\{x_1,...,x_q\} }$的一个截面, 取开覆盖$\mathcal{U}$,
+使得$U_\alpha$上有坐标图,平凡化且最多包含一个$x_i$. 由下面的引理,
+还可以要求每点$x_i$有邻域$W_i$, 只包含于一个$U_\alpha$.</p>
+<p><strong>引理 4</strong>. <em>存在$\mathcal{U}$的一个加细$\mathcal{V}$, 使得每点有一个邻域$W_i$, 只与某个$V_\alpha$相交.</em> </p>
+<p><strong>证:</strong> 对于每点$x$, 只需给定某个开邻域$W$包含于$U_\alpha$, 改造开覆盖,
+让其他的开集减去$\bar W$即可. 有限次对每个点这样做即可.</p>
+<p>承上, 设$x_i\in W_i\subset U_{\alpha_i}$为奇点,
+取充分小开邻域$D_i\subset W_i$,
+$\psi_i(D_i)\subset \mathbb{R}^n$为半径为$r_i$的开圆盘.
+$\partial D_i\approx S^{n-1}$. 有如下映射列:</p>
+<p>$$\partial D_i\xrightarrow{s|_{\partial D_i} }E|_{\partial D_i}\xrightarrow{i} E|_{D_i}\xrightarrow[\sim]{\phi_i} D_i\times S^{n-1}\xrightarrow{\operatorname{pr}_2}S^{n-1}.$$</p>
+<p>记$s_i$为前两个映射的复合, 后两个映射复合记为$\rho_i$.</p>
+<p>选取定向使得$E|_{D_i}\simeq D_i\times S^{n-1}$保定向(直和定向).
+选取$\sigma\in H^{n-1}(S^{n-1})$为正生成元.
+定义$s$在$x_i$的局部度数记为$l.d.(x_i):=\int_{\partial D_i} s^\ast _i\rho^\ast _i\sigma$.
+(l.d. means local degree)</p>
+<p><strong>定理 5</strong>. <em>条件继承上面所有讨论. 则$E$的欧拉数$\int_M e(E)=\sum_{i=1}^{q} l.d.(x_i)$.</em> </p>
+<p><strong>证:</strong> 由上节课内容,
+$\operatorname{supp}e\subset \cup U_{\alpha_0\cdots \alpha_{n-1} }$,
+$e$限制在每个开邻域$W_i$上取零. 因此由Stokes定理,</p>
+<p>$$\int_M e=\int_{M-\cup D_i} s^\ast \pi^\ast  e=-\int_{M-\cup D_i} s^\ast d\psi=\sum_{i=1}^q \int_{\partial D_i} s_i^\ast \psi.$$</p>
+<p>虽然整体角形式$\psi$不一定闭, 但限制后有</p>
+<p>$$d\psi|_{E|_{W_i} }=-(\pi^\ast  e)|_{E|_{W_i} }=-\pi^\ast (e|_{W_i})=0.$$</p>
+<p>因此$[\psi|_{E|_{W_i} }]\in H^{n-1}(E|_{W_i})$为生成元,
+因为它限制在每条纤维上是生成元.
+设$[\sigma]\in H^{n-1}(S^{n-1})$为生成元,
+则$[\psi|_{E|_{W_i} }]=[\tilde \rho_i^\ast  \sigma]$,
+$\tilde \rho_i:E|_{W_i}\rightarrow W_i\times S^{n-1}\rightarrow S^{n-1}$.
+因此$\psi|_{E|_{W_i} }=\tilde \rho_i^\ast \sigma +d\tau_i$,
+拉回到$\partial D_i$上, $s_i^\ast \psi=s_i^\ast \rho_i^\ast \sigma +s_i^\ast d\tau_i$.</p>
+<p>两边积分, 由Stokes定理, $\int_{\partial D_i} s_i^\ast \psi=l.d.(x_i)$.
+定理得证.</p>
+<p>上述定理可以叙述在向量丛上.
+设$\pi:E\rightarrow M$为紧定向$n$维流形上秩$n$定向向量丛,
+$s$为$E$的具有有限多零点的截面.
+$s$在零点$x$的<strong>重数</strong>定义为$E$的单位球面丛$S(E)$的奇异截面$s/\Vert s\Vert$在奇异点$x$的局部度数.
+定义与度量选取无关, 因为局部度数是同伦不变量.</p>
+<p>由于$e(E)$是$M$上$n$-形式, $\int_M c\cdot e(E)=cm=m\int_P c$,
+$m$为$E$的欧拉数, $P$是任意点. 因此$e(E)$ Poincaré对偶于$mP$.
+我们自然有如下定理:</p>
+<p><strong>定理 6</strong>. <em>设$\pi:E\rightarrow M$为紧定向$M^n$上秩$n$定向向量丛, $s$为$E$的具有限零点截面, 那么$E$的欧拉类Poincaré对偶于$s$的零点的形式线性组合, 组合系数为重数.</em> </p>
+<h2 id="欧拉示性数与Hopf指标定理"><a href="#欧拉示性数与Hopf指标定理" class="headerlink" title="欧拉示性数与Hopf指标定理"></a>欧拉示性数与Hopf指标定理</h2><p>我们希望证明, $M$的欧拉数就是欧拉示性数.</p>
+<p>设$\{\omega_i\}$为$H^\ast (M)$一组基, $\{\tau_i\}$为对偶基,
+即$\int_M\omega_i\wedge \tau_j=\delta_{ij}$.
+设$\pi,\rho:M\times M\rightarrow M$为两个投射. 由Künneth公式,
+$H^\ast (M\times M)=H^\ast (M)\otimes H^\ast (M)$,
+基为$\{\pi^\ast \omega_i\wedge\rho^\ast \tau_j\}$.
+称<strong>对角流形</strong>$\Delta =\{(x,x)\in M\times M|x\in M\}\subset M\times M$.</p>
+<p><strong>引理 7</strong>. <em>对角流形的Poincaré对偶$\eta_\Delta =\sum (-1)^{\deg \omega_i}\pi^\ast \omega_i\wedge \rho^\ast \tau_i$.</em> </p>
+<p><strong>证:</strong> 用两种方法计算$\int_\Delta \pi^\ast \tau_k\wedge\rho^\ast \omega_l$即可.
+$(-1)^{\deg \tau_k\cdot \deg \omega_l}\delta_{lk}=(-1)^{\deg \omega_k\cdot (\deg \omega_l+\deg \tau_k)}c_{kl}$,
+设$\eta_\Delta = \sum_{i,j}c_{ij}\pi^\ast \omega_i\wedge\rho^\ast \tau_j$.</p>
+<p><strong>引理 8</strong>. <em>$N_{\Delta /M\times M}\simeq T\Delta$.</em> </p>
+<p><strong>证:</strong> 只需注意到$M\approx \Delta$由$x\mapsto(x,x)$给出.
+从而$T\Delta \cong TM$, $T(M\times M)|_{\Delta}\cong TM\oplus TM$,
+于是$N_{\Delta/M\times M}\simeq TM\oplus TM/TM\simeq TM\simeq T\Delta$.</p>
+<p><strong>命题 9</strong>. <em>对紧定向流形$M$, $\int_M e(TM)=\chi (M)$.</em> </p>
+<p><strong>证:</strong> 一方面,
+$\int_\Delta i^\ast \eta_\Delta =\int_\Delta i^\ast \Phi(N_\Delta)=\int_\Delta e(N_\Delta)=\int_\Delta e(T\Delta)=\int_M e(TM)$.</p>
+<p>$\int_\Delta i^\ast \eta_\Delta =\int_{M\times M}\eta_\Delta \wedge \eta_\Delta$,
+回忆两个横截相交闭子流形的交的Poincaré对偶等于这两个子流形的Poincaré对偶的外积,
+因此该积分也称为$\Delta$在$M\times M$的自相交数.</p>
+<p>另一方面,
+$\int_\Delta i^\ast \eta_\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(M)=\chi(M)$.
+由此得证.</p>
+<p>自然得到:</p>
+<p><strong>定理 10</strong> (Hopf指标定理). <em>紧定向流形$M$上光滑向量场指标和(奇异点的局部度数之和)等于$M$的欧拉示性数.</em> </p>
+<p>文章最后更新于 2021-11-24 13:33:55 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="欧拉数与截面的孤立奇点"><a href="#欧拉数与截面的孤立奇点" class="headerlink" title="欧拉数与截面的孤立奇点"></a>欧拉数与截面的孤立奇点</h2><p>假定$M$是紧定向$n$维流形, $\pi:E\rightarrow M$为定向$S^{n-1}$丛,
+结构群可约化到$O(n)$. 即它是某个秩$n$向量丛的球面丛.</p>
+<p>$e(E)\in H^n(M)$, 与<strong>欧拉数</strong>$\int_M e(E)$等同.
+定义$M$的欧拉数为$\int_M e(TM)$. 欧拉数依赖于$E,M$的定向选取.</p>
+<p><strong>命题 1</strong>. <em>条件如前面所述, 则存在$\{x_1,...,x_q\}\in M$, $E$限制在$M-\{x_1,...,x_q\}$上有截面.</em> </p>
+<p><strong>证:</strong> 存在秩$n$向量丛$E&#39;$与度量$\left&lt;{},\right&gt;$, 使得$E=S(E&#39;)$.
+设$s&#39;:M\rightarrow E&#39;$为截面. 若$s&#39;(x)\neq 0$,
+则$s(x)=\frac{s&#39;(x)}{\Vert s&#39;(x)\Vert}\in E_x$.
+只需证明存在$s&#39;:M\rightarrow E&#39;$, 只有有限多个零点.</p>
+<p>我们需要如下定理:</p>
+<p><strong>定理 2</strong> (横截性定理). <em>设$X$紧, $Z$为$Y$的闭子流形, $f&#39;:X\rightarrow Y$为光滑映射, 则存在$f&#39;$的充分小扰动$f:X\rightarrow Y$, 使得$f$与$Z$横截.</em> </p>
+<p>设$s_0$为零截面, $S_0=s_0(M)\subset E&#39;$为闭子流形. 由横截性定理,
+存在充分小扰动$f:M\rightarrow E&#39;$, $f$与$S_0$横截.
+$g=\pi\circ f:M\approx M$(因为是恒等映射的充分小扰动),
+定义$s&#39;:M\rightarrow E&#39;$为$s&#39;(x)=f(g^{-1}(x))$,
+那么$\pi\circ s&#39;=\mathrm{id}$, $s&#39;$为截面.</p>
+<p>由于$f$横截于$S_0$, $s&#39;$横截于$S_0$(只跟像有关),
+$S=s&#39;(M)$与$S_0$横截相交. 由于$\dim S+\dim S_0=2n=\dim E&#39;$,
+因此$\dim (S\cap S_0)=0$. 又因为$S\cap S_0$紧, 交集为有限多个点.
+那么$s&#39;:M\rightarrow E&#39;$只有有限多个零点.</p>
+<p><strong>注 3</strong>. <em>事实上, 不需要能够约化到$O(n)$, 命题也成立.</em> </p>
+<p>设$s$为$E|_{M-\{x_1,...,x_q\} }$的一个截面, 取开覆盖$\mathcal{U}$,
+使得$U_\alpha$上有坐标图,平凡化且最多包含一个$x_i$. 由下面的引理,
+还可以要求每点$x_i$有邻域$W_i$, 只包含于一个$U_\alpha$.</p>
+<p><strong>引理 4</strong>. <em>存在$\mathcal{U}$的一个加细$\mathcal{V}$, 使得每点有一个邻域$W_i$, 只与某个$V_\alpha$相交.</em> </p>
+<p><strong>证:</strong> 对于每点$x$, 只需给定某个开邻域$W$包含于$U_\alpha$, 改造开覆盖,
+让其他的开集减去$\bar W$即可. 有限次对每个点这样做即可.</p>
+<p>承上, 设$x_i\in W_i\subset U_{\alpha_i}$为奇点,
+取充分小开邻域$D_i\subset W_i$,
+$\psi_i(D_i)\subset \mathbb{R}^n$为半径为$r_i$的开圆盘.
+$\partial D_i\approx S^{n-1}$. 有如下映射列:</p>
+<p>$$\partial D_i\xrightarrow{s|_{\partial D_i} }E|_{\partial D_i}\xrightarrow{i} E|_{D_i}\xrightarrow[\sim]{\phi_i} D_i\times S^{n-1}\xrightarrow{\operatorname{pr}_2}S^{n-1}.$$</p>
+<p>记$s_i$为前两个映射的复合, 后两个映射复合记为$\rho_i$.</p>
+<p>选取定向使得$E|_{D_i}\simeq D_i\times S^{n-1}$保定向(直和定向).
+选取$\sigma\in H^{n-1}(S^{n-1})$为正生成元.
+定义$s$在$x_i$的局部度数记为$l.d.(x_i):=\int_{\partial D_i} s^\ast _i\rho^\ast _i\sigma$.
+(l.d. means local degree)</p>
+<p><strong>定理 5</strong>. <em>条件继承上面所有讨论. 则$E$的欧拉数$\int_M e(E)=\sum_{i=1}^{q} l.d.(x_i)$.</em> </p>
+<p><strong>证:</strong> 由上节课内容,
+$\operatorname{supp}e\subset \cup U_{\alpha_0\cdots \alpha_{n-1} }$,
+$e$限制在每个开邻域$W_i$上取零. 因此由Stokes定理,</p>
+<p>$$\int_M e=\int_{M-\cup D_i} s^\ast \pi^\ast  e=-\int_{M-\cup D_i} s^\ast d\psi=\sum_{i=1}^q \int_{\partial D_i} s_i^\ast \psi.$$</p>
+<p>虽然整体角形式$\psi$不一定闭, 但限制后有</p>
+<p>$$d\psi|_{E|_{W_i} }=-(\pi^\ast  e)|_{E|_{W_i} }=-\pi^\ast (e|_{W_i})=0.$$</p>
+<p>因此$[\psi|_{E|_{W_i} }]\in H^{n-1}(E|_{W_i})$为生成元,
+因为它限制在每条纤维上是生成元.
+设$[\sigma]\in H^{n-1}(S^{n-1})$为生成元,
+则$[\psi|_{E|_{W_i} }]=[\tilde \rho_i^\ast  \sigma]$,
+$\tilde \rho_i:E|_{W_i}\rightarrow W_i\times S^{n-1}\rightarrow S^{n-1}$.
+因此$\psi|_{E|_{W_i} }=\tilde \rho_i^\ast \sigma +d\tau_i$,
+拉回到$\partial D_i$上, $s_i^\ast \psi=s_i^\ast \rho_i^\ast \sigma +s_i^\ast d\tau_i$.</p>
+<p>两边积分, 由Stokes定理, $\int_{\partial D_i} s_i^\ast \psi=l.d.(x_i)$.
+定理得证.</p>
+<p>上述定理可以叙述在向量丛上.
+设$\pi:E\rightarrow M$为紧定向$n$维流形上秩$n$定向向量丛,
+$s$为$E$的具有有限多零点的截面.
+$s$在零点$x$的<strong>重数</strong>定义为$E$的单位球面丛$S(E)$的奇异截面$s/\Vert s\Vert$在奇异点$x$的局部度数.
+定义与度量选取无关, 因为局部度数是同伦不变量.</p>
+<p>由于$e(E)$是$M$上$n$-形式, $\int_M c\cdot e(E)=cm=m\int_P c$,
+$m$为$E$的欧拉数, $P$是任意点. 因此$e(E)$ Poincaré对偶于$mP$.
+我们自然有如下定理:</p>
+<p><strong>定理 6</strong>. <em>设$\pi:E\rightarrow M$为紧定向$M^n$上秩$n$定向向量丛, $s$为$E$的具有限零点截面, 那么$E$的欧拉类Poincaré对偶于$s$的零点的形式线性组合, 组合系数为重数.</em> </p>
+<h2 id="欧拉示性数与Hopf指标定理"><a href="#欧拉示性数与Hopf指标定理" class="headerlink" title="欧拉示性数与Hopf指标定理"></a>欧拉示性数与Hopf指标定理</h2><p>我们希望证明, $M$的欧拉数就是欧拉示性数.</p>
+<p>设$\{\omega_i\}$为$H^\ast (M)$一组基, $\{\tau_i\}$为对偶基,
+即$\int_M\omega_i\wedge \tau_j=\delta_{ij}$.
+设$\pi,\rho:M\times M\rightarrow M$为两个投射. 由Künneth公式,
+$H^\ast (M\times M)=H^\ast (M)\otimes H^\ast (M)$,
+基为$\{\pi^\ast \omega_i\wedge\rho^\ast \tau_j\}$.
+称<strong>对角流形</strong>$\Delta =\{(x,x)\in M\times M|x\in M\}\subset M\times M$.</p>
+<p><strong>引理 7</strong>. <em>对角流形的Poincaré对偶$\eta_\Delta =\sum (-1)^{\deg \omega_i}\pi^\ast \omega_i\wedge \rho^\ast \tau_i$.</em> </p>
+<p><strong>证:</strong> 用两种方法计算$\int_\Delta \pi^\ast \tau_k\wedge\rho^\ast \omega_l$即可.
+$(-1)^{\deg \tau_k\cdot \deg \omega_l}\delta_{lk}=(-1)^{\deg \omega_k\cdot (\deg \omega_l+\deg \tau_k)}c_{kl}$,
+设$\eta_\Delta = \sum_{i,j}c_{ij}\pi^\ast \omega_i\wedge\rho^\ast \tau_j$.</p>
+<p><strong>引理 8</strong>. <em>$N_{\Delta /M\times M}\simeq T\Delta$.</em> </p>
+<p><strong>证:</strong> 只需注意到$M\approx \Delta$由$x\mapsto(x,x)$给出.
+从而$T\Delta \cong TM$, $T(M\times M)|_{\Delta}\cong TM\oplus TM$,
+于是$N_{\Delta/M\times M}\simeq TM\oplus TM/TM\simeq TM\simeq T\Delta$.</p>
+<p><strong>命题 9</strong>. <em>对紧定向流形$M$, $\int_M e(TM)=\chi (M)$.</em> </p>
+<p><strong>证:</strong> 一方面,
+$\int_\Delta i^\ast \eta_\Delta =\int_\Delta i^\ast \Phi(N_\Delta)=\int_\Delta e(N_\Delta)=\int_\Delta e(T\Delta)=\int_M e(TM)$.</p>
+<p>$\int_\Delta i^\ast \eta_\Delta =\int_{M\times M}\eta_\Delta \wedge \eta_\Delta$,
+回忆两个横截相交闭子流形的交的Poincaré对偶等于这两个子流形的Poincaré对偶的外积,
+因此该积分也称为$\Delta$在$M\times M$的自相交数.</p>
+<p>另一方面,
+$\int_\Delta i^\ast \eta_\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(M)=\chi(M)$.
+由此得证.</p>
+<p>自然得到:</p>
+<p><strong>定理 10</strong> (Hopf指标定理). <em>紧定向流形$M$上光滑向量场指标和(奇异点的局部度数之和)等于$M$的欧拉示性数.</em> </p>
+<p>文章最后更新于 2021-11-24 13:33:55 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2021-11-24 15:33:53</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2021/11/24/《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2021/11/24/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%AC%E4%BA%94%E7%AB%A0-%E5%BC%A0%E9%87%8F%E7%A7%AF/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第五章-张量积</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 5 - Tensor Product</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/11/24/%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0-Ollivier%20Ricci%E6%9B%B2%E7%8E%87/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">论文笔记-Ollivier Ricci曲率</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Paper Notes - Olivier Ricci Curvature</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E6%95%B0%E4%B8%8E%E6%88%AA%E9%9D%A2%E7%9A%84%E5%AD%A4%E7%AB%8B%E5%A5%87%E7%82%B9"><span class="nav-text">欧拉数与截面的孤立奇点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E7%A4%BA%E6%80%A7%E6%95%B0%E4%B8%8EHopf%E6%8C%87%E6%A0%87%E5%AE%9A%E7%90%86"><span class="nav-text">欧拉示性数与Hopf指标定理</span></a></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E6%95%B0%E4%B8%8E%E6%88%AA%E9%9D%A2%E7%9A%84%E5%AD%A4%E7%AB%8B%E5%A5%87%E7%82%B9"><span class="nav-text">欧拉数与截面的孤立奇点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AC%A7%E6%8B%89%E7%A4%BA%E6%80%A7%E6%95%B0%E4%B8%8EHopf%E6%8C%87%E6%A0%87%E5%AE%9A%E7%90%86"><span class="nav-text">欧拉示性数与Hopf指标定理</span></a></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

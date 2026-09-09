@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (9)-Galerkin Method</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Modern PDE Basics Notes (9) - Galerkin Method</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-12-12 18:12:10
+        <i class="fas fa-edit"></i>&nbsp;2021-12-12 20:12:10
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,305 +230,420 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="椭圆方程"><a href="#椭圆方程" class="headerlink" title="椭圆方程"></a>椭圆方程</h2><p>回忆上节说明了$Ax=b$的存在性等价于$A^\ast y=0$的唯一性.
+若$A$是$n\times n$矩阵, 那么$A^\ast y=0$的唯一性等价于$Ay=0$的唯一性.
+因此$Ax=b$的存在性等价于唯一性.</p>
+<p>对于椭圆型方程, 考虑齐次Dirichlet边界问题$Lu=f\in H^{-1}(\Omega).$
+我们有Garding不等式:</p>
+<p>$$
+\left&lt;{}-Lu,u\right&gt;_{L^2}\ge C_1\Vert u\Vert_1^2-C_2\Vert u\Vert^2.
+$$</p>
+<p>当$C_2\le 0$时, 我们可以说明问题的唯一性. 至于存在性,
+按原来的方法需要考虑对偶算子$L^\ast $对应的Garding不等式中是否有$C_2^\ast \le 0,$
+从而通过对偶问题的唯一性说明原问题存在性.
+但事实上通过$C_2\le 0$直接可以说明原问题解的存在性.</p>
+<p>考虑<strong>伽辽金(Galerkin)方法</strong>.
+对偶问题唯一性导出存在性的方法只说明了理论上的存在性,
+无法具体给出解的构造. 而该方法能够给出解的构造方法,
+是微分方程数值解中<strong>有限元方法</strong>的理论基础.</p>
+<p>回忆$H^{m,p}$为可分空间, 因为它能等距嵌入到$(L^p)^N$中,
+而后者是可分空间. 因此, $H_0^1(\Omega)$为可分Hilbert空间,
+有一组完备正交基$\{\phi_i\}.$ 理论上,
+可以取特征函数系$-\Delta \phi_j=\lambda_j\phi_j,$
+$\phi_j|_{\partial\Omega}=0.$ 算子自共轭时特征函数系当然正交.</p>
+<p>由于$C_c^\infty(\Omega)$在$H_0^1(\Omega)$中稠密,
+我们当然可以取$\{\phi_i\}\subset C_c^\infty(\Omega).$
+考虑$u_m=\sum_{i=1}^ma_i\phi_i,$ $f=\sum_{i=1}^\infty f_i\phi_i,$
+$f_m=\sum_{i=1}^m f_i\phi_i\rightharpoonup f.$ 为了解$Lu=f,$
+一种期待是通过解$Lu_m=f_m$得到$u_m$给出$u.$ 但这种期望往往是落空的,
+因为对于方程 </p>
+<p>$$
+Lu_m=\sum_{i=1}^m a_iL\phi_i=\sum_{i=1}^mf_i\phi_i=f_m,
+$$</p>
+<p>当$\{\phi_i\}$不取特征函数系时, 这将是一个无穷维方程,
+无法针对有限个未知量求解.</p>
+<p>Galerkin的方法是, 我们考虑如下问题:</p>
+<p>$$
+\left&lt;{}Lu_m,\phi_j\right&gt;=\left&lt;{}f_m,\phi_j\right&gt;,\quad j=1,\cdots,m.
+$$</p>
+<p>也就是$\sum_{i=1}^m a_i\left&lt;{}L\phi_i,\phi_j\right&gt;=\sum_{i=1}^mf_i\left&lt;{}\phi_i,\phi_j\right&gt;,$
+$j=1,\cdots,m.$ 这是矩阵方程$Ax=b$的形式. 由一开始所述,
+为了证明解的存在性, 只需说明解的唯一性. 为此采用椭圆估计即可.</p>
+<p>考虑$\left&lt;{}Lu_m-f_m,u_m\right&gt;=0,$ 由Garding不等式, 当$C_2\le 0$时,
+$$
+\begin{aligned}
+            C_1\Vert u_m\Vert^2_1&amp;\le \left&lt;{}-f_m,u_m\right&gt;\le \Vert f_m\Vert_{-1}\Vert u_m\Vert_1\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2+\frac{C_1}{2}\Vert u_m\Vert_1^2\\
+            \frac{C_1}{2}\Vert u_m\Vert^2_1&amp;\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2\\
+            \Vert u_m\Vert_1&amp;\le \frac{1}{C_1}\Vert f_m\Vert_{-1}\le \frac{1}{C_1}\Vert f\Vert_{H^{-1} }+M
+        \end{aligned}
+$$
+最后一个不等号是因为$f_m\rightharpoonup f$弱$\ast$收敛,
+推出$\Vert f_m-f\Vert_{H^{-1} }$有界(共鸣定理).
+代入$f_m=0$即得到方程解的唯一性, 从而解也是存在的, 矩阵$A$可逆,
+我们可以找到$u_m$为问题解.</p>
+<p>特别地, 根据最后一行, 我们可以看到$\{u_m\}\subset H_0^1(\Omega)$有界.
+它是Hilbert空间, 当然是某个空间(自身)的对偶空间(自反),
+从而$\{u_m\}$是弱紧的, 即其有子列弱收敛, 不妨设自身弱收敛到$u.$
+断言$u$即为弱解.</p>
+<p>$\,\forall\,v\in H_0^1(\Omega),$ 取$v_m=\sum_{i=1}^m\xi_i\phi_i,$
+那么$v_m\xrightarrow{H^1}v.$
+由于$\left&lt;{}Lu_m,\phi_j\right&gt;=\left&lt;{}f_m,\phi_j\right&gt;,$
+$j=1,\cdots,m.$ 我们有$\left&lt;{}Lu_m,v_m\right&gt;=\left&lt;{}f_m,v_m\right&gt;.$
+注意到$\left&lt;{}f_m,v_m\right&gt;=\left&lt;{}f_m,v_m-v\right&gt;+\left&lt;{}f_m,v\right&gt;\rightarrow \left&lt;{}f,v\right&gt;.$
+其中</p>
+<p>$$
+|\left&lt;{}f_m,v_m-v\right&gt;|\le \Vert f_m\Vert_{-1}\Vert v_m-v\Vert_1\le (\Vert f\Vert_{-1}+M)\Vert v_m-v\Vert_1\rightarrow 0.
+$$</p>
+<p>同时,</p>
+<p>$$
+\left&lt;{}Lu_m,v_m\right&gt;=-\sum_{i,j=1}^n\int_{\Omega}\partial_ju_m\partial_i(a_{ij}(x)v_m)dx-\sum_{i=1}^n \int_\Omega u_m\partial_i(b_i(x)v_m)dx+\int_\Omega c(x)u_mv_mdx.
+$$</p>
+<p>类似地,
+$\left&lt;{}Lu_m,v_m\right&gt;=\left&lt;{}Lu_m,v_m-v\right&gt;+\left&lt;{}Lu_m,v\right&gt;,$
+其中根据强收敛与分部积分,</p>
+<p>$$
+|\left&lt;{}Lu_m,v_m-v\right&gt;|\le \alpha\Vert u_m\Vert_1\Vert v_m-v\Vert_1\rightarrow 0;
+$$</p>
+<p>$$
+\left&lt;{}Lu_m,v\right&gt;=\left&lt;{}u_m,L^\ast v\right&gt;\rightarrow \left&lt;{}u,L^\ast v\right&gt;=\left&lt;{}Lu,v\right&gt;.
+$$</p>
+<p>因此$\left&lt;{}Lu_m,v_m\right&gt;\rightarrow \left&lt;{}Lu,v\right&gt;.$
+于是$\left&lt;{}Lu,v\right&gt;=\left&lt;{}f,v\right&gt;,$
+$\,\forall\,v\in H_0^1(\Omega).$ 这就说明了$u$为弱解,
+由此证明了原问题解的存在性, 同时给出了具体得到解的方法.</p>
+<h2 id="双曲型方程"><a href="#双曲型方程" class="headerlink" title="双曲型方程"></a>双曲型方程</h2><p>考虑双曲型方程</p>
+<p>$$
+Mu=\frac{\partial^2 u}{\partial t^2}-\left(\sum_{i,j=1}^n\frac{\partial}{\partial x_i}\left(a_{ij}(t,x)\frac{\partial u}{\partial x_j}\right)+\sum_{i=1}^nb_i(t,x)\frac{\partial u}{\partial x_i}+c(t,x)u\right)=f(t,x).
+$$</p>
+<p>其中设$a_{ij}$满足<strong>一致椭圆性条件</strong>: $\,\exists\,\alpha&gt;0,$ 使得</p>
+<p>$$
+\sum_{i,j=1}^n a_{ij}(t,x)\xi_i\xi_j\ge \alpha\sum_{i=1}^n \xi_i^2, \quad\,\forall\,\xi\in \mathbb{R}^n\setminus\{0\}.
+$$</p>
+<p>我们考虑Galerkin方法: 对Dirichlet齐次边界问题,
+取$H_0^1(\Omega)$的一组$C_c^\infty$完备正交基$\{\phi_i(x)\},$
+那么记$u_m(t,x)=\sum_{i=1}^m a_i(t)\phi_i(x),$ 给定初值解方程</p>
+<p>$$
+\left&lt;{}Mu_m,\phi_j\right&gt;=\left&lt;{}f,\phi_j\right&gt;, \quad j=1,\cdots,m,
+$$</p>
+<p>求系数$a_i(t).$ 这是$m$个二阶常微分方程构成的ODE方程组, 总是可解的.
+为了说明$\{u_m\}$有子列弱收敛于弱解, 我们只需讨论其有界性.
+可以考虑差分方法, 此处我们给出能量不等式, 采用能量方法来解决.</p>
+<p>利用分部积分, 由$u$具齐次边界推出$u_t$也是, 考虑</p>
+<p>$$
+\int_\Omega u_tMudx=\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx-\int_\Omega\sum_i u_tb_iu_idx-\int_\Omega u_tcudx=\int_\Omega u_tfdx.
+$$</p>
+<p>利用对称性, 可以得到</p>
+<p>$$
+\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx= \frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx.
+$$</p>
+<p>因此,</p>
+<p>$$
+\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx=\int_\Omega u_tfdx+\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx+\int_\Omega\sum_i u_tb_iu_idx+\int_\Omega u_tcudx.
+$$</p>
+<p>在$\overline{\Omega_T}=[0,T]\times \overline{\Omega}$上考虑,
+可以取到$C&gt;0,$ 使得</p>
+<p>$$
+\partial_t \int_\Omega u_t^2+\sum_{i,j=1}^n a_{ij}u_iu_j dx\le C(\Vert u\Vert_1^2+\Vert u_t\Vert^2+\Vert f\Vert^2)
+$$</p>
+<p>两边积分, 那么在$t$时刻, 记初值为$u=g,$ $u_t=h,$ 则</p>
+<p>$$
+\Vert u_t\Vert^2+\Vert u\Vert^2_1\le \Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^t\Vert u_t\Vert^2+\Vert u\Vert_1^2+\Vert f\Vert^2d\tau
+$$</p>
+<p>记$E(t)=\Vert u_t\Vert^2+\Vert u\Vert^2_1,$
+$E_0=\Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^T\Vert f\Vert^2d\tau,$ 则</p>
+<p>$$
+E(t)\le E_0+C\int_0^tE(\tau)d\tau.
+$$</p>
+<p> 总结上面的方法,
+我们通过取模的方式, 将PDE化为ODE, 得到了一个常微分不等式.
+那么利用Gronwall不等式即可得到能量不等式.</p>
+<p><strong>引理 1</strong> (Gronwall不等式). <em>设非负$E(t)\in C[0,T],$ 满足$E(t)\le E_0+C\int_0^tE(\tau)d\tau,$ $C,E_0&gt;0,$ 则</em> </p>
+<p>$$
+E(t)\le E_0e^{Ct}.
+$$</p>
+<p><strong>证:</strong> 记$I(t)=\int_0^tE(\tau)d\tau,$
+则原式等于$\partial_t I(t)\le E_0+CI(t).$ 因此,</p>
+<p>$$
+\partial_t(e^{-Ct}I(t))\le E_0e^{-Ct}\,\Rightarrow\, e^{-Ct}I(t)\le \frac{E_0}{C}(1-e^{-Ct})\,\Rightarrow\, I(t)\le \frac{E_0}{C}(e^{Ct}-1).
+$$</p>
+<p>代入上式, 即有 </p>
+<p>$$
+E(t)=\partial_t I(t)\le E_0e^{Ct}.
+$$</p>
+<p>特别地, 我们有$E(t)\le E_0e^{CT},$ $\,\forall\,t\in [0,T].$ 因此局部上,
+$u$是有界的, 进而是弱紧的. 进一步, 和椭圆方程类似地,</p>
+<p>$$
+\left&lt;{}f,v\right&gt;\leftarrow \left&lt;{}Mu_m,v\right&gt;=\left&lt;{}u_m,M^\ast v\right&gt;\rightarrow \left&lt;{}u,M\ast v\right&gt;=\left&lt;{}Mu,v\right&gt;
+$$</p>
+<p>从而$\{u_m\}$弱收敛到的$u$为弱解. 当然,
+也可以通过对偶问题的能量估计说明唯一性, 从而给出原问题解的存在性.
+但同样的, 这只能给出理论上的说明. 令$E_0=0$即可说明唯一性,
+对一般的$E_0,$ 能量方法给出了稳定性的说明.</p>
+<h2 id="抛物型方程"><a href="#抛物型方程" class="headerlink" title="抛物型方程"></a>抛物型方程</h2><p>抛物型方程与双曲型方程类似, 在此只做能量估计的推导.</p>
+<p>$$
+\left&lt;{}Mu,u\right&gt;=\frac{1}{2}\partial_t\int_\Omega u^2dx+\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\int_\Omega \sum_{i=1}^n b_iu_iudx-\int_\Omega cu^2dx=\int_\Omega fudx
+$$</p>
+<p>通过$ab\le \varepsilon{a^2}+\frac{b^2}{\varepsilon},$ 可以说明:</p>
+<p>$$
+\frac{1}{2}\partial_t\Vert u\Vert^2\le \frac{1}{2}\partial_t\Vert u\Vert^2+\frac{\lambda}{2} \Vert\nabla u\Vert^2\le C(\Vert u\Vert^2+\Vert f\Vert^2)
+$$</p>
+<p>因此, 设初值$u=g,$ 则</p>
+<p>$$
+\Vert u\Vert^2\le \Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau + C\int_0^t \Vert u\Vert^2d\tau.
+$$</p>
+<p>记$E(t)=\Vert u\Vert^2,$
+$E_0=\Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau,$
+则同样由Gronwall不等式, 我们有 </p>
+<p>$$
+E(t)\le E_0e^{Ct}.
+$$</p>
+<p>从而通过Galerkin方法能够得到弱解, 同时也讨论了解的唯一性与稳定性.</p>
+<h2 id="算子半群"><a href="#算子半群" class="headerlink" title="算子半群"></a>算子半群</h2><p>另一种非常实用的方法为算子半群方法. 如对抛物型问题,
+考虑解齐次Dirichlet边界初值问题: 
+$$
+\left\{\begin{aligned}
+            &amp;u_t=Au=\sum_{i,j=1}^n\partial_j(a_{ij}u_i)\\
+            &amp;u(0,x)=g(x)\\
+            &amp;u|_{\partial\Omega\times [0,T]}=0
+        \end{aligned}\right.
+$$
+ 那么形式上,
+$u(t,x)=e^{At}g(x)$即给出了问题解, 因为$u_t=Ae^{At}g(x)=Au,$
+且满足初值与边界条件. 这里$e^{At}:=\sum_n \frac{A^n}{n!}t^n.$
+为了给出严格说明, 对算子取模, 那么</p>
+<p>$$
+\Vert e^{At}\Vert\le \sum_n\frac{\Vert A^n\Vert}{n!}t^n\le \sum_n\frac{\Vert A\Vert^n}{n!}t^n
+$$</p>
+<p>这里利用了相容条件$\Vert AB\Vert\le \Vert A\Vert\Vert B\Vert.$
+从而倘若$\Vert A\Vert\le 1,$ 那么$\Vert e^{At}\Vert\le e^t,$
+算子是有意义的.</p>
+<p>然而一般地, 显然$\Vert A\Vert\le 1$不见得成立.
+回忆$(\lambda-A)^{-1}$对充分大的$\lambda$是有界线性算子,
+因此对其讨论是有希望的.
+模仿$a=\lim\limits_{\lambda\rightarrow\infty}\lambda a(\lambda-a)^{-1},$
+定义</p>
+<p>$$
+A_\lambda=\lambda A(\lambda-A)^{-1}=\lambda(A-\lambda+\lambda)(\lambda-A)^{-1}=-\lambda+\lambda^2(\lambda-A)^{-1}.
+$$</p>
+<p>我们可以期待如下极限成立:</p>
+<p>$$
+e^{At}=\lim\limits_{\lambda\rightarrow \infty}e^{A_\lambda t}=\lim\limits_{\lambda\rightarrow \infty}e^{-\lambda t}e^{\lambda^2(\lambda-A)^{-1}t}
+$$</p>
+<p>此时$\Vert e^{A_\lambda t}\Vert=e^{-\lambda t}\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert.$
+而$\Vert(\lambda-A)^{-1}\Vert\le \frac{1}{\lambda},$
+因此$\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert\le e^{\lambda t},$
+$\Vert e^{A_\lambda t}\Vert\le 1,$ 算子是有意义的.</p>
+<p>文章最后更新于 2021-12-13 11:11:02 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Elliptic equation
---------
-
-Recall from the previous section that the existence of $Ax=b$ is equivalent to the uniqueness of $A^\ast y=0$.
-If $A$ is an $n\times n$ matrix, then the uniqueness of $A^\ast y=0$ is equivalent to the uniqueness of $Ay=0$.
-Therefore, the existence of $Ax=b$ is equivalent to uniqueness.
-For elliptic equations, consider the homogeneous Dirichlet boundary problem $Lu=f\in H^{-1}(\Omega).$
-We have Garding's inequality:
-
-
-$$
-\left<{}-Lu,u\right>_{L^2}\ge C_1\Vert u\Vert_1^2-C_2\Vert u\Vert^2.
-$$
-
-
-When $C_2\le 0$, we can illustrate the uniqueness of the problem. As for the existence,
-According to the original method, it is necessary to consider whether there is $C_2^\ast \le 0,$ in the Garding inequality corresponding to the dual operator $L^\ast $
-Thus, the existence of the original problem is explained through the uniqueness of the dual problem.
-But in fact, $C_2\le 0$ can directly illustrate the existence of the solution to the original problem.
-
-Consider the **Galerkin method**.
-The method of deriving existence from the uniqueness of the dual problem only explains the theoretical existence.
-The construction of the solution cannot be given specifically. However, this method can give the construction method of the solution,
-It is the theoretical basis of the **finite element method** in the numerical solution of differential equations.
-
-Recall that $H^{m,p}$ is a separable space, because it can be equidistantly embedded in $(L^p)^N$,
-The latter is a separable space. Therefore, $H_0^1(\Omega)$ is a separable Hilbert space,
-There is a set of complete orthonormal bases $\{\phi_i\}.$ Theoretically,
-The characteristic function system can be taken $-\Delta \phi_j=\lambda_j\phi_j,$
-$\phi_j|_{\partial\Omega}=0.$ When the operator is self-conjugated, the characteristic function system is of course orthogonal.
-
-Since $C_c^\infty(\Omega)$ is dense in $H_0^1(\Omega)$,
-Of course we can take $\{\phi_i\}\subset C_c^\infty(\Omega).$
-Consider $u_m=\sum_{i=1}^ma_i\phi_i,$ $f=\sum_{i=1}^\infty f_i\phi_i,$
-$f_m=\sum_{i=1}^m f_i\phi_i\rightharpoonup f.$ To understand $Lu=f,$
-One expectation is to get $u_m$ and give $u.$ by solving $Lu_m=f_m$, but this expectation is often disappointed.
-Because for the equation
-
-$$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="椭圆方程"><a href="#椭圆方程" class="headerlink" title="椭圆方程"></a>椭圆方程</h2><p>回忆上节说明了$Ax=b$的存在性等价于$A^\ast y=0$的唯一性.
+若$A$是$n\times n$矩阵, 那么$A^\ast y=0$的唯一性等价于$Ay=0$的唯一性.
+因此$Ax=b$的存在性等价于唯一性.</p>
+<p>对于椭圆型方程, 考虑齐次Dirichlet边界问题$Lu=f\in H^{-1}(\Omega).$
+我们有Garding不等式:</p>
+<p>$$
+\left&lt;{}-Lu,u\right&gt;_{L^2}\ge C_1\Vert u\Vert_1^2-C_2\Vert u\Vert^2.
+$$</p>
+<p>当$C_2\le 0$时, 我们可以说明问题的唯一性. 至于存在性,
+按原来的方法需要考虑对偶算子$L^\ast $对应的Garding不等式中是否有$C_2^\ast \le 0,$
+从而通过对偶问题的唯一性说明原问题存在性.
+但事实上通过$C_2\le 0$直接可以说明原问题解的存在性.</p>
+<p>考虑<strong>伽辽金(Galerkin)方法</strong>.
+对偶问题唯一性导出存在性的方法只说明了理论上的存在性,
+无法具体给出解的构造. 而该方法能够给出解的构造方法,
+是微分方程数值解中<strong>有限元方法</strong>的理论基础.</p>
+<p>回忆$H^{m,p}$为可分空间, 因为它能等距嵌入到$(L^p)^N$中,
+而后者是可分空间. 因此, $H_0^1(\Omega)$为可分Hilbert空间,
+有一组完备正交基$\{\phi_i\}.$ 理论上,
+可以取特征函数系$-\Delta \phi_j=\lambda_j\phi_j,$
+$\phi_j|_{\partial\Omega}=0.$ 算子自共轭时特征函数系当然正交.</p>
+<p>由于$C_c^\infty(\Omega)$在$H_0^1(\Omega)$中稠密,
+我们当然可以取$\{\phi_i\}\subset C_c^\infty(\Omega).$
+考虑$u_m=\sum_{i=1}^ma_i\phi_i,$ $f=\sum_{i=1}^\infty f_i\phi_i,$
+$f_m=\sum_{i=1}^m f_i\phi_i\rightharpoonup f.$ 为了解$Lu=f,$
+一种期待是通过解$Lu_m=f_m$得到$u_m$给出$u.$ 但这种期望往往是落空的,
+因为对于方程 </p>
+<p>$$
 Lu_m=\sum_{i=1}^m a_iL\phi_i=\sum_{i=1}^mf_i\phi_i=f_m,
-$$
-
-
-When $\{\phi_i\}$ does not take the characteristic function system, this will be an infinite-dimensional equation,
-It cannot be solved for a finite number of unknown quantities.
-Galerkin's approach is that we consider the following questions:
-
-
-$$
-\left<{}Lu_m,\phi_j\right>=\left<{}f_m,\phi_j\right>,\quad j=1,\cdots,m.
-$$
-That is $\sum_{i=1}^m a_i\left<{}L\phi_i,\phi_j\right>=\sum_{i=1}^mf_i\left<{}\phi_i,\phi_j\right>,$
-$j=1,\cdots,m.$ This is the form of the matrix equation $Ax=b$. As stated at the beginning,
-In order to prove the existence of the solution, it is only necessary to explain the uniqueness of the solution. For this purpose, elliptic estimation can be used.
-Consider $\left<{}Lu_m-f_m,u_m\right>=0,$ by Garding inequality, when $C_2\le 0$,
+$$</p>
+<p>当$\{\phi_i\}$不取特征函数系时, 这将是一个无穷维方程,
+无法针对有限个未知量求解.</p>
+<p>Galerkin的方法是, 我们考虑如下问题:</p>
+<p>$$
+\left&lt;{}Lu_m,\phi_j\right&gt;=\left&lt;{}f_m,\phi_j\right&gt;,\quad j=1,\cdots,m.
+$$</p>
+<p>也就是$\sum_{i=1}^m a_i\left&lt;{}L\phi_i,\phi_j\right&gt;=\sum_{i=1}^mf_i\left&lt;{}\phi_i,\phi_j\right&gt;,$
+$j=1,\cdots,m.$ 这是矩阵方程$Ax=b$的形式. 由一开始所述,
+为了证明解的存在性, 只需说明解的唯一性. 为此采用椭圆估计即可.</p>
+<p>考虑$\left&lt;{}Lu_m-f_m,u_m\right&gt;=0,$ 由Garding不等式, 当$C_2\le 0$时,
 $$
 \begin{aligned}
-            C_1\Vert u_m\Vert^2_1&\le \left<{}-f_m,u_m\right>\le \Vert f_m\Vert_{-1}\Vert u_m\Vert_1\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2+\frac{C_1}{2}\Vert u_m\Vert_1^2\\
-            \frac{C_1}{2}\Vert u_m\Vert^2_1&\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2\\
-            \Vert u_m\Vert_1&\le \frac{1}{C_1}\Vert f_m\Vert_{-1}\le \frac{1}{C_1}\Vert f\Vert_{H^{-1} }+M
+            C_1\Vert u_m\Vert^2_1&amp;\le \left&lt;{}-f_m,u_m\right&gt;\le \Vert f_m\Vert_{-1}\Vert u_m\Vert_1\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2+\frac{C_1}{2}\Vert u_m\Vert_1^2\\
+            \frac{C_1}{2}\Vert u_m\Vert^2_1&amp;\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2\\
+            \Vert u_m\Vert_1&amp;\le \frac{1}{C_1}\Vert f_m\Vert_{-1}\le \frac{1}{C_1}\Vert f\Vert_{H^{-1} }+M
         \end{aligned}
 $$
-The last inequality sign is because $f_m\rightharpoonup f$ is weakly $\ast$ convergent,
-It is derived that $\Vert f_m-f\Vert_{H^{-1}}$ is bounded (resonance theorem).
-Substitute $f_m=0$ to get the uniqueness of the solution to the equation, so the solution also exists. The matrix $A$ is invertible,
-We can find $u_m$ as the solution to the problem.
-
-In particular, according to the last line, we can see that $\{u_m\}\subset H_0^1(\Omega)$ is bounded.
-It is a Hilbert space, which is of course the dual space (reflexive) of a certain space (self),
-Therefore $\{u_m\}$ is weakly compact, that is, it has sub-sequences that are weakly convergent. We might as well assume that it is weakly convergent to $u.$
-Assert that $u$ is a weak solution.
-
-$\,\forall\,v\in H_0^1(\Omega),$ take $v_m=\sum_{i=1}^m\xi_i\phi_i,$
-Then $v_m\xrightarrow{H^1}v.$
-Since $\left<{}Lu_m,\phi_j\right>=\left<{}f_m,\phi_j\right>,$
-$j=1,\cdots,m.$ We have $\left<{}Lu_m,v_m\right>=\left<{}f_m,v_m\right>.$
-Note that $\left<{}f_m,v_m\right>=\left<{}f_m,v_m-v\right>+\left<{}f_m,v\right>\rightarrow \left<{}f,v\right>.$
-Among them
-
-
-$$
-|\left<{}f_m,v_m-v\right>|\le \Vert f_m\Vert_{-1}\Vert v_m-v\Vert_1\le (\Vert f\Vert_{-1}+M)\Vert v_m-v\Vert_1\rightarrow 0.
-$$
-
-
-At the same time,
-$$
-\left<{}Lu_m,v_m\right>=-\sum_{i,j=1}^n\int_{\Omega}\partial_ju_m\partial_i(a_{ij}(x)v_m)dx-\sum_{i=1}^n \int_\Omega u_m\partial_i(b_i(x)v_m)dx+\int_\Omega c(x)u_mv_mdx.
-$$
-
-
-Similarly,
-$\left<{}Lu_m,v_m\right>=\left<{}Lu_m,v_m-v\right>+\left<{}Lu_m,v\right>,$
-Among them, according to strong convergence and integral by parts,
-$$
-|\left<{}Lu_m,v_m-v\right>|\le \alpha\Vert u_m\Vert_1\Vert v_m-v\Vert_1\rightarrow 0;
-$$
-
-
-
-
-$$
-\left<{}Lu_m,v\right>=\left<{}u_m,L^\ast v\right>\rightarrow \left<{}u,L^\ast v\right>=\left<{}Lu,v\right>.
-$$
-
-
-Therefore $\left<{}Lu_m,v_m\right>\rightarrow \left<{}Lu,v\right>.$
-So $\left<{}Lu,v\right>=\left<{}f,v\right>,$
-$\,\forall\,v\in H_0^1(\Omega).$ This shows that $u$ is a weak solution,
-This proves the existence of the solution to the original problem and provides a specific method to obtain the solution.
-
-hyperbolic equation
-----------
-
-Consider the hyperbolic equation
-$$
+最后一个不等号是因为$f_m\rightharpoonup f$弱$\ast$收敛,
+推出$\Vert f_m-f\Vert_{H^{-1} }$有界(共鸣定理).
+代入$f_m=0$即得到方程解的唯一性, 从而解也是存在的, 矩阵$A$可逆,
+我们可以找到$u_m$为问题解.</p>
+<p>特别地, 根据最后一行, 我们可以看到$\{u_m\}\subset H_0^1(\Omega)$有界.
+它是Hilbert空间, 当然是某个空间(自身)的对偶空间(自反),
+从而$\{u_m\}$是弱紧的, 即其有子列弱收敛, 不妨设自身弱收敛到$u.$
+断言$u$即为弱解.</p>
+<p>$\,\forall\,v\in H_0^1(\Omega),$ 取$v_m=\sum_{i=1}^m\xi_i\phi_i,$
+那么$v_m\xrightarrow{H^1}v.$
+由于$\left&lt;{}Lu_m,\phi_j\right&gt;=\left&lt;{}f_m,\phi_j\right&gt;,$
+$j=1,\cdots,m.$ 我们有$\left&lt;{}Lu_m,v_m\right&gt;=\left&lt;{}f_m,v_m\right&gt;.$
+注意到$\left&lt;{}f_m,v_m\right&gt;=\left&lt;{}f_m,v_m-v\right&gt;+\left&lt;{}f_m,v\right&gt;\rightarrow \left&lt;{}f,v\right&gt;.$
+其中</p>
+<p>$$
+|\left&lt;{}f_m,v_m-v\right&gt;|\le \Vert f_m\Vert_{-1}\Vert v_m-v\Vert_1\le (\Vert f\Vert_{-1}+M)\Vert v_m-v\Vert_1\rightarrow 0.
+$$</p>
+<p>同时,</p>
+<p>$$
+\left&lt;{}Lu_m,v_m\right&gt;=-\sum_{i,j=1}^n\int_{\Omega}\partial_ju_m\partial_i(a_{ij}(x)v_m)dx-\sum_{i=1}^n \int_\Omega u_m\partial_i(b_i(x)v_m)dx+\int_\Omega c(x)u_mv_mdx.
+$$</p>
+<p>类似地,
+$\left&lt;{}Lu_m,v_m\right&gt;=\left&lt;{}Lu_m,v_m-v\right&gt;+\left&lt;{}Lu_m,v\right&gt;,$
+其中根据强收敛与分部积分,</p>
+<p>$$
+|\left&lt;{}Lu_m,v_m-v\right&gt;|\le \alpha\Vert u_m\Vert_1\Vert v_m-v\Vert_1\rightarrow 0;
+$$</p>
+<p>$$
+\left&lt;{}Lu_m,v\right&gt;=\left&lt;{}u_m,L^\ast v\right&gt;\rightarrow \left&lt;{}u,L^\ast v\right&gt;=\left&lt;{}Lu,v\right&gt;.
+$$</p>
+<p>因此$\left&lt;{}Lu_m,v_m\right&gt;\rightarrow \left&lt;{}Lu,v\right&gt;.$
+于是$\left&lt;{}Lu,v\right&gt;=\left&lt;{}f,v\right&gt;,$
+$\,\forall\,v\in H_0^1(\Omega).$ 这就说明了$u$为弱解,
+由此证明了原问题解的存在性, 同时给出了具体得到解的方法.</p>
+<h2 id="双曲型方程"><a href="#双曲型方程" class="headerlink" title="双曲型方程"></a>双曲型方程</h2><p>考虑双曲型方程</p>
+<p>$$
 Mu=\frac{\partial^2 u}{\partial t^2}-\left(\sum_{i,j=1}^n\frac{\partial}{\partial x_i}\left(a_{ij}(t,x)\frac{\partial u}{\partial x_j}\right)+\sum_{i=1}^nb_i(t,x)\frac{\partial u}{\partial x_i}+c(t,x)u\right)=f(t,x).
-$$
-
-
-Among them, suppose $a_{ij}$ satisfies the **consistent ellipticity condition**: $\,\exists\,\alpha>0,$ such that
-
-
-$$
+$$</p>
+<p>其中设$a_{ij}$满足<strong>一致椭圆性条件</strong>: $\,\exists\,\alpha&gt;0,$ 使得</p>
+<p>$$
 \sum_{i,j=1}^n a_{ij}(t,x)\xi_i\xi_j\ge \alpha\sum_{i=1}^n \xi_i^2, \quad\,\forall\,\xi\in \mathbb{R}^n\setminus\{0\}.
-$$
-We consider the Galerkin method: For the Dirichlet homogeneous boundary problem,
-Take a set of $C_c^\infty$ complete orthonormal bases $\{\phi_i(x)\},$ of $H_0^1(\Omega)$
-Then write $u_m(t,x)=\sum_{i=1}^m a_i(t)\phi_i(x),$ and solve the equation given the initial value
-$$
-\left<{}Mu_m,\phi_j\right>=\left<{}f,\phi_j\right>, \quad j=1,\cdots,m,
-$$
-
-
-Find the coefficient $a_i(t).$ This is a system of ODE equations composed of $m$ second-order ordinary differential equations, which is always solvable.
-In order to illustrate that $\{u_m\}$ has subsequences that weakly converge to weak solutions, we only need to discuss its boundedness.
-The difference method can be considered. Here we give the energy inequality and use the energy method to solve it.
-Using integrals by parts, it can be deduced that $u_t$ also has a homogeneous boundary from $u$. Consider
-
-
-$$
+$$</p>
+<p>我们考虑Galerkin方法: 对Dirichlet齐次边界问题,
+取$H_0^1(\Omega)$的一组$C_c^\infty$完备正交基$\{\phi_i(x)\},$
+那么记$u_m(t,x)=\sum_{i=1}^m a_i(t)\phi_i(x),$ 给定初值解方程</p>
+<p>$$
+\left&lt;{}Mu_m,\phi_j\right&gt;=\left&lt;{}f,\phi_j\right&gt;, \quad j=1,\cdots,m,
+$$</p>
+<p>求系数$a_i(t).$ 这是$m$个二阶常微分方程构成的ODE方程组, 总是可解的.
+为了说明$\{u_m\}$有子列弱收敛于弱解, 我们只需讨论其有界性.
+可以考虑差分方法, 此处我们给出能量不等式, 采用能量方法来解决.</p>
+<p>利用分部积分, 由$u$具齐次边界推出$u_t$也是, 考虑</p>
+<p>$$
 \int_\Omega u_tMudx=\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx-\int_\Omega\sum_i u_tb_iu_idx-\int_\Omega u_tcudx=\int_\Omega u_tfdx.
-$$
-
-
-Using symmetry, we can get
-
-
-$$
+$$</p>
+<p>利用对称性, 可以得到</p>
+<p>$$
 \int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx= \frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx.
-$$
-
-
-Therefore,
-$$
+$$</p>
+<p>因此,</p>
+<p>$$
 \frac{1}{2}\partial_t \int_\Omega u_t^2dx+\frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx=\int_\Omega u_tfdx+\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx+\int_\Omega\sum_i u_tb_iu_idx+\int_\Omega u_tcudx.
-$$
-
-
-Consider on $\overline{\Omega_T}=[0,T]\times \overline{\Omega}$,
-It can be obtained that $C>0,$ makes
-$$
+$$</p>
+<p>在$\overline{\Omega_T}=[0,T]\times \overline{\Omega}$上考虑,
+可以取到$C&gt;0,$ 使得</p>
+<p>$$
 \partial_t \int_\Omega u_t^2+\sum_{i,j=1}^n a_{ij}u_iu_j dx\le C(\Vert u\Vert_1^2+\Vert u_t\Vert^2+\Vert f\Vert^2)
-$$
-
-
-Integrate both sides, then at time $t$, the initial value is recorded as $u=g,$ $u_t=h,$ then
-
-
-$$
+$$</p>
+<p>两边积分, 那么在$t$时刻, 记初值为$u=g,$ $u_t=h,$ 则</p>
+<p>$$
 \Vert u_t\Vert^2+\Vert u\Vert^2_1\le \Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^t\Vert u_t\Vert^2+\Vert u\Vert_1^2+\Vert f\Vert^2d\tau
-$$
-Remember $E(t)=\Vert u_t\Vert^2+\Vert u\Vert^2_1,$
-$E_0=\Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^T\Vert f\Vert^2d\tau,$ then
-
-
-$$
+$$</p>
+<p>记$E(t)=\Vert u_t\Vert^2+\Vert u\Vert^2_1,$
+$E_0=\Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^T\Vert f\Vert^2d\tau,$ 则</p>
+<p>$$
 E(t)\le E_0+C\int_0^tE(\tau)d\tau.
-$$
-To summarize the above methods,
-We transform PDE into ODE by taking modulo, and obtain an ordinary differential inequality.
-Then use Gronwall's inequality to get the energy inequality.
-
-**Lemma 1** (Gronwall inequality). *Suppose non-negative $E(t)\in C[0,T],$ satisfies $E(t)\le E_0+C\int_0^tE(\tau)d\tau,$ $C,E_0>0,$ then*
-$$
+$$</p>
+<p> 总结上面的方法,
+我们通过取模的方式, 将PDE化为ODE, 得到了一个常微分不等式.
+那么利用Gronwall不等式即可得到能量不等式.</p>
+<p><strong>引理 1</strong> (Gronwall不等式). <em>设非负$E(t)\in C[0,T],$ 满足$E(t)\le E_0+C\int_0^tE(\tau)d\tau,$ $C,E_0&gt;0,$ 则</em> </p>
+<p>$$
 E(t)\le E_0e^{Ct}.
-$$
-
-
-
-**Certificate:** Remember $I(t)=\int_0^tE(\tau)d\tau,$
-Then the original formula is equal to $\partial_t I(t)\le E_0+CI(t).$ Therefore,
-$$
+$$</p>
+<p><strong>证:</strong> 记$I(t)=\int_0^tE(\tau)d\tau,$
+则原式等于$\partial_t I(t)\le E_0+CI(t).$ 因此,</p>
+<p>$$
 \partial_t(e^{-Ct}I(t))\le E_0e^{-Ct}\,\Rightarrow\, e^{-Ct}I(t)\le \frac{E_0}{C}(1-e^{-Ct})\,\Rightarrow\, I(t)\le \frac{E_0}{C}(e^{Ct}-1).
-$$
-
-
-Substituting into the above formula, we have
-
-$$
+$$</p>
+<p>代入上式, 即有 </p>
+<p>$$
 E(t)=\partial_t I(t)\le E_0e^{Ct}.
-$$
-In particular, we have $E(t)\le E_0e^{CT},$ $\,\forall\,t\in [0,T].$ Therefore locally,
-$u$ is bounded and therefore weakly compact. Furthermore, similarly to the elliptic equation,
-
-
-$$
-\left<{}f,v\right>\leftarrow \left<{}Mu_m,v\right>=\left<{}u_m,M^\ast v\right>\rightarrow \left<{}u,M\ast v\right>=\left<{}Mu,v\right>
-$$
-Therefore, $u$ that $\{u_m\}$ weakly converges to is a weak solution. Of course,
-The uniqueness can also be explained through the energy estimation of the dual problem, thereby giving the existence of the solution to the original problem.
-But again, this can only give a theoretical explanation. Let $E_0=0$ to illustrate the uniqueness,
-A stability statement is given for the general $E_0,$ energy method.
-
-parabolic equation
-----------
-Parabolic equations are similar to hyperbolic equations, and only the derivation of energy estimates is done here.
-
-
-$$
-\left<{}Mu,u\right>=\frac{1}{2}\partial_t\int_\Omega u^2dx+\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\int_\Omega \sum_{i=1}^n b_iu_iudx-\int_\Omega cu^2dx=\int_\Omega fudx
-$$
-
-
-It can be explained by $ab\le \varepsilon{a^2}+\frac{b^2}{\varepsilon},$:
-$$
+$$</p>
+<p>特别地, 我们有$E(t)\le E_0e^{CT},$ $\,\forall\,t\in [0,T].$ 因此局部上,
+$u$是有界的, 进而是弱紧的. 进一步, 和椭圆方程类似地,</p>
+<p>$$
+\left&lt;{}f,v\right&gt;\leftarrow \left&lt;{}Mu_m,v\right&gt;=\left&lt;{}u_m,M^\ast v\right&gt;\rightarrow \left&lt;{}u,M\ast v\right&gt;=\left&lt;{}Mu,v\right&gt;
+$$</p>
+<p>从而$\{u_m\}$弱收敛到的$u$为弱解. 当然,
+也可以通过对偶问题的能量估计说明唯一性, 从而给出原问题解的存在性.
+但同样的, 这只能给出理论上的说明. 令$E_0=0$即可说明唯一性,
+对一般的$E_0,$ 能量方法给出了稳定性的说明.</p>
+<h2 id="抛物型方程"><a href="#抛物型方程" class="headerlink" title="抛物型方程"></a>抛物型方程</h2><p>抛物型方程与双曲型方程类似, 在此只做能量估计的推导.</p>
+<p>$$
+\left&lt;{}Mu,u\right&gt;=\frac{1}{2}\partial_t\int_\Omega u^2dx+\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\int_\Omega \sum_{i=1}^n b_iu_iudx-\int_\Omega cu^2dx=\int_\Omega fudx
+$$</p>
+<p>通过$ab\le \varepsilon{a^2}+\frac{b^2}{\varepsilon},$ 可以说明:</p>
+<p>$$
 \frac{1}{2}\partial_t\Vert u\Vert^2\le \frac{1}{2}\partial_t\Vert u\Vert^2+\frac{\lambda}{2} \Vert\nabla u\Vert^2\le C(\Vert u\Vert^2+\Vert f\Vert^2)
-$$
-
-
-Therefore, assuming the initial value $u=g,$ then
-
-
-$$
+$$</p>
+<p>因此, 设初值$u=g,$ 则</p>
+<p>$$
 \Vert u\Vert^2\le \Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau + C\int_0^t \Vert u\Vert^2d\tau.
-$$
-
-
-Remember $E(t)=\Vert u\Vert^2,$
+$$</p>
+<p>记$E(t)=\Vert u\Vert^2,$
 $E_0=\Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau,$
-Then similarly from Gronwall's inequality, we have
-
-$$
+则同样由Gronwall不等式, 我们有 </p>
+<p>$$
 E(t)\le E_0e^{Ct}.
-$$
-
-
-Therefore, the weak solution can be obtained through the Galerkin method, and the uniqueness and stability of the solution are also discussed.
-operator semigroup
---------
-
-Another very practical method is the operator semigroup method. For example, for parabolic problems,
-Consider solving the homogeneous Dirichlet boundary initial value problem:
+$$</p>
+<p>从而通过Galerkin方法能够得到弱解, 同时也讨论了解的唯一性与稳定性.</p>
+<h2 id="算子半群"><a href="#算子半群" class="headerlink" title="算子半群"></a>算子半群</h2><p>另一种非常实用的方法为算子半群方法. 如对抛物型问题,
+考虑解齐次Dirichlet边界初值问题: 
 $$
 \left\{\begin{aligned}
-            &u_t=Au=\sum_{i,j=1}^n\partial_j(a_{ij}u_i)\\
-            &u(0,x)=g(x)\\
-            &u|_{\partial\Omega\times [0,T]}=0
+            &amp;u_t=Au=\sum_{i,j=1}^n\partial_j(a_{ij}u_i)\\
+            &amp;u(0,x)=g(x)\\
+            &amp;u|_{\partial\Omega\times [0,T]}=0
         \end{aligned}\right.
 $$
- So formally,
-$u(t,x)=e^{At}g(x)$ gives the solution to the problem, because $u_t=Ae^{At}g(x)=Au,$
-And satisfy the initial value and boundary conditions. Here $e^{At}:=\sum_n \frac{A^n}{n!}t^n.$
-In order to give a strict explanation, take modulo the operator, then
-$$
+ 那么形式上,
+$u(t,x)=e^{At}g(x)$即给出了问题解, 因为$u_t=Ae^{At}g(x)=Au,$
+且满足初值与边界条件. 这里$e^{At}:=\sum_n \frac{A^n}{n!}t^n.$
+为了给出严格说明, 对算子取模, 那么</p>
+<p>$$
 \Vert e^{At}\Vert\le \sum_n\frac{\Vert A^n\Vert}{n!}t^n\le \sum_n\frac{\Vert A\Vert^n}{n!}t^n
-$$
-
-
-The compatibility condition $\Vert AB\Vert\le \Vert A\Vert\Vert B\Vert.$ is used here.
-Thus if $\Vert A\Vert\le 1,$ then $\Vert e^{At}\Vert\le e^t,$
-The operator is meaningful.
-However, in general, it is obvious that $\Vert A\Vert\le 1$ is not necessarily true.
-Recall that $(\lambda-A)^{-1}$ is a bounded linear operator for sufficiently large $\lambda$,
-Therefore, discussion on it is promising.
-Imitate $a=\lim\limits_{\lambda\rightarrow\infty}\lambda a(\lambda-a)^{-1},$
-definition
-$$
+$$</p>
+<p>这里利用了相容条件$\Vert AB\Vert\le \Vert A\Vert\Vert B\Vert.$
+从而倘若$\Vert A\Vert\le 1,$ 那么$\Vert e^{At}\Vert\le e^t,$
+算子是有意义的.</p>
+<p>然而一般地, 显然$\Vert A\Vert\le 1$不见得成立.
+回忆$(\lambda-A)^{-1}$对充分大的$\lambda$是有界线性算子,
+因此对其讨论是有希望的.
+模仿$a=\lim\limits_{\lambda\rightarrow\infty}\lambda a(\lambda-a)^{-1},$
+定义</p>
+<p>$$
 A_\lambda=\lambda A(\lambda-A)^{-1}=\lambda(A-\lambda+\lambda)(\lambda-A)^{-1}=-\lambda+\lambda^2(\lambda-A)^{-1}.
-$$
-
-
-
-We can expect the following limits to hold:
-
-
-$$
+$$</p>
+<p>我们可以期待如下极限成立:</p>
+<p>$$
 e^{At}=\lim\limits_{\lambda\rightarrow \infty}e^{A_\lambda t}=\lim\limits_{\lambda\rightarrow \infty}e^{-\lambda t}e^{\lambda^2(\lambda-A)^{-1}t}
-$$
-At this time $\Vert e^{A_\lambda t}\Vert=e^{-\lambda t}\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert.$
-And $\Vert(\lambda-A)^{-1}\Vert\le \frac{1}{\lambda},$
-Therefore $\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert\le e^{\lambda t},$
-$\Vert e^{A_\lambda t}\Vert\le 1,$ operator is meaningful.
+$$</p>
+<p>此时$\Vert e^{A_\lambda t}\Vert=e^{-\lambda t}\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert.$
+而$\Vert(\lambda-A)^{-1}\Vert\le \frac{1}{\lambda},$
+因此$\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert\le e^{\lambda t},$
+$\Vert e^{A_\lambda t}\Vert\le 1,$ 算子是有意义的.</p>
+<p>文章最后更新于 2021-12-13 11:11:02 </p>
 
-The article was last updated on 2021-12-13 11:11:02
                 </div>
             
         </div>
@@ -539,7 +654,7 @@ The article was last updated on 2021-12-13 11:11:02
     <ul>
         <li>本文标题：《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-12 18:12:10</li>
+        <li>创建时间：2021-12-12 20:12:10</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/12/12/《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法/
         </li>
@@ -571,7 +686,7 @@ The article was last updated on 2021-12-13 11:11:02
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第七章-微分形式</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Differential Forms</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Differential Forms</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -593,7 +708,7 @@ The article was last updated on 2021-12-13 11:11:02
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第六章-张量丛</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 6 - Tensor Bundle</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifolds Chapter 6 - Tensor Plexus</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -845,11 +960,11 @@ The article was last updated on 2021-12-13 11:11:02
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A4%AD%E5%9C%86%E6%96%B9%E7%A8%8B"><span class="nav-text">椭圆方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E6%9B%B2%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text">双曲型方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%9B%E7%89%A9%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text">抛物型方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E5%AD%90%E5%8D%8A%E7%BE%A4"><span class="nav-text">算子半群</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A4%AD%E5%9C%86%E6%96%B9%E7%A8%8B"><span class="nav-text">椭圆方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E6%9B%B2%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text">双曲型方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%9B%E7%89%A9%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text">抛物型方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E5%AD%90%E5%8D%8A%E7%BE%A4"><span class="nav-text">算子半群</span></a></li></ol>
         </div>
     
 </div>
@@ -900,6 +1015,36 @@ The article was last updated on 2021-12-13 11:11:02
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -923,46 +1068,6 @@ The article was last updated on 2021-12-13 11:11:02
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《微分拓扑》复习笔记(7)-定向与定向相交数 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《微分拓扑》复习笔记(7)-定向与定向相交数</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Derivative Topology Review Notes (7) - Directional and Directional Intersections</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2023-06-13 15:33:47
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91/">微分拓扑</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="定向"><a href="#定向" class="headerlink" title="定向"></a>定向</h2><p>向量空间的定向由有序基决定. 由此可定义矩阵的保(反)定向.
+称流形<strong>可定向</strong>, 若$\,\forall\,x\in X,$
+有坐标卡$(U,\phi)$使得$\,\forall\,y\in U,$
+$d\phi_y: T_yX\rightarrow \mathbb{R}^k$保定向.</p>
+<p><strong>命题 1</strong>. <em>连通可定向流形有且仅有两个定向.</em> </p>
+<p>$X\times Y$的乘积定向由$T_xX+T_yY$的直和定向决定. 具体的,
+决定定向的有序基为$\{(\alpha,0),(0,\beta)\},$
+$\alpha,\beta$分别为$T_xX$和$T_yY$的有序基.</p>
+<p>带边流形在边界处的定向可由流形诱导. 具体的,
+令边界处有序基$\beta$的符号由$\{n,\beta\}$决定, $n$为外法向量.</p>
+<p>设$f:X\rightarrow Y$为光滑映射, $f,\partial f\pitchfork Z.$
+$X,Y,Z$为定向流形, $Y,Z$无边. 记$S:=f^{-1}(Z)$为嵌入子流形,
+欲取定逆像定向.</p>
+<p>由$T_xS^\perp\oplus T_xS=T_xX,$ 可通过直和定向决定其定向.
+先取$T_xS^\perp$定向. 由横截性,</p>
+<p>$$
+df_x(T_xX)+T_zZ=T_zY,\quad df_x(T_xS^\perp) \oplus T_zZ=T_zY.
+$$</p>
+<p>设$df_x$保定向,
+即$T_xS^\perp$定向通过$df_x(T_xS^\perp)$由直和定向决定的定向诱导.</p>
+<p>此时$\partial S=\partial (f^{-1}(Z))=(\partial f)^{-1}(Z)$有两种定向方式.
+一种是逆像定向, 考虑</p>
+<p>$$
+T_x \partial S^\perp\oplus T_x\partial S=T_x\partial X,\quad d\partial f_x(T_x\partial S^\perp)\oplus T_zZ=T_zY.
+$$</p>
+<p>注意到$T_xS^\perp=T_x\partial S^\perp,$ 这两个定向是一致的.
+取其正定向有序基$\alpha,$ 那么</p>
+<p>$$
+\operatorname{sgn}(\beta)=\operatorname{sgn}(\alpha,\beta)=\operatorname{sgn}(n,\alpha,\beta).
+$$</p>
+<p>$n$为$\partial S$在$S$中的外法向量. 另一种是边界定向.
+取定$T_x\partial S$上的有序基$\beta,$ 那么
+$\operatorname{sgn}(\beta)=\operatorname{sgn}(n,\beta)$
+在$T_xS$中的符号决定, 即</p>
+<p>$$
+\operatorname{sgn}(\beta)=\operatorname{sgn}(n,\beta)=\operatorname{sgn}(\alpha,n,\beta).
+$$</p>
+<p>由于$\alpha$是$T_xS^\perp$的有序基,
+维数为$\operatorname{codim}_XS=\operatorname{codim}_YZ.$
+因此这两种定向也差了$(-1)^{\operatorname{codim}_YZ}.$</p>
+<h2 id="定向相交数"><a href="#定向相交数" class="headerlink" title="定向相交数"></a>定向相交数</h2><p>基本假设同模$2$相交数. 额外假设所有流形都是可定向的.
+$df_x(T_xX)$的定向由$X$赋予.
+若$df_x(T_xX)\oplus T_zZ=T_zY$两侧定向定向一致,
+则记$x$处的定向数为$\operatorname{sgn}_x(f,Z)=1,$ 不然为$-1.$
+称定向数的和为$f$与$Z$的定向相交数, 记为</p>
+<p>$$
+I(f,Z):=\sum_{x\in f^{-1}(Z)}\operatorname{sgn}_x(f,Z).
+$$</p>
+<p>由于任意紧致定向$1$维带边流形的边界点定向数之和为$0,$
+同模$2$相交数可证明定向相交数为同伦不变量.
+因此对一般的映射可通过横截同伦定理给出定义. 同理我们还有</p>
+<p><strong>命题 2</strong>. <em>若$X=\partial W,$ $W$紧致, $f:X\rightarrow Y$可延拓到$W,$ $Z\subset Y$为闭子流形, 则$I(f,Z)=0.$</em> </p>
+<p>若$\dim X=\dim Y,$ 则可定义$\deg f:=I(f,\{y\}),$ $y$在$Y$中任意选取.
+良定性由横截同伦定理与唱片引理得证. 此时若$y$为$f$的正则值,
+有$\deg f=\sum_{x\in f^{-1}(y)}\operatorname{sgn}_x(f,y),$
+$\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
+映射度也是同伦不变量, 且对于可从边界延拓到内部的函数, 映射度为零.</p>
+<p>用映射度就可以给出代数学基本定理的证明了, 和模$2$相交数一致.
+同时在紧区域边界处可用$\deg \frac{p}{|p|}$来数内部零点个数.</p>
+<p>接下来讨论映射间的定向相交数. 设$f:X\rightarrow Y,$ $g:Z\rightarrow Y.$
+若$f\pitchfork g,$ 可定义$I_{(x,z)}(f,g),$
+正负号由$df_x(T_xX)\oplus dg_z(T_zZ)=T_yY$左右两侧定向决定.</p>
+<p><strong>命题 3</strong>. <em>$f\pitchfork g$当且仅当$f\times g\pitchfork \Delta,$ 且$I(f,g)=(-1)^{\dim Z}I(f\times g,\Delta).$</em> </p>
+<p>这主要就是如下的引理</p>
+<p><strong>引理 4</strong>. <em>设$U,W$为$V$的定向子空间, 那么$U\oplus W=V$当且仅当$(U\times W)\oplus \Delta=(-1)^{\dim W}V\times V.$</em> </p>
+<p>这样就可以用横截同伦定理对一般的函数给出定义了.
+此时可说明$I(f,Z)=I(f,\iota_Z),$
+特别的$\deg f=I(f,\{y\})$与$y$选取无关可给出新的证明. 比较直和定向有:</p>
+<p><strong>命题 5</strong>. <em>$I(f,g)=(-1)^{\dim X\dim Z}I(g,f),$ $I(X,Z)=(-1)^{\dim X\dim Z}I(Z,X).$</em> </p>
+<p>特别的, 若$Z=X,$ 奇数维流形自相交数$I(X,X)=0.$ 若$X$为紧致定向流形,
+定义其欧拉示性数为$\chi(Y):=I(\Delta,\Delta).$ 因此它是同伦不变量.</p>
+<p><strong>推论 6</strong>. <em>奇数维紧致可定向流形欧拉示性数为$0.$</em> </p>
+<p>文章最后更新于 2023-06-13 12:33:48 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="定向"><a href="#定向" class="headerlink" title="定向"></a>定向</h2><p>向量空间的定向由有序基决定. 由此可定义矩阵的保(反)定向.
+称流形<strong>可定向</strong>, 若$\,\forall\,x\in X,$
+有坐标卡$(U,\phi)$使得$\,\forall\,y\in U,$
+$d\phi_y: T_yX\rightarrow \mathbb{R}^k$保定向.</p>
+<p><strong>命题 1</strong>. <em>连通可定向流形有且仅有两个定向.</em> </p>
+<p>$X\times Y$的乘积定向由$T_xX+T_yY$的直和定向决定. 具体的,
+决定定向的有序基为$\{(\alpha,0),(0,\beta)\},$
+$\alpha,\beta$分别为$T_xX$和$T_yY$的有序基.</p>
+<p>带边流形在边界处的定向可由流形诱导. 具体的,
+令边界处有序基$\beta$的符号由$\{n,\beta\}$决定, $n$为外法向量.</p>
+<p>设$f:X\rightarrow Y$为光滑映射, $f,\partial f\pitchfork Z.$
+$X,Y,Z$为定向流形, $Y,Z$无边. 记$S:=f^{-1}(Z)$为嵌入子流形,
+欲取定逆像定向.</p>
+<p>由$T_xS^\perp\oplus T_xS=T_xX,$ 可通过直和定向决定其定向.
+先取$T_xS^\perp$定向. 由横截性,</p>
+<p>$$
+df_x(T_xX)+T_zZ=T_zY,\quad df_x(T_xS^\perp) \oplus T_zZ=T_zY.
+$$</p>
+<p>设$df_x$保定向,
+即$T_xS^\perp$定向通过$df_x(T_xS^\perp)$由直和定向决定的定向诱导.</p>
+<p>此时$\partial S=\partial (f^{-1}(Z))=(\partial f)^{-1}(Z)$有两种定向方式.
+一种是逆像定向, 考虑</p>
+<p>$$
+T_x \partial S^\perp\oplus T_x\partial S=T_x\partial X,\quad d\partial f_x(T_x\partial S^\perp)\oplus T_zZ=T_zY.
+$$</p>
+<p>注意到$T_xS^\perp=T_x\partial S^\perp,$ 这两个定向是一致的.
+取其正定向有序基$\alpha,$ 那么</p>
+<p>$$
+\operatorname{sgn}(\beta)=\operatorname{sgn}(\alpha,\beta)=\operatorname{sgn}(n,\alpha,\beta).
+$$</p>
+<p>$n$为$\partial S$在$S$中的外法向量. 另一种是边界定向.
+取定$T_x\partial S$上的有序基$\beta,$ 那么
+$\operatorname{sgn}(\beta)=\operatorname{sgn}(n,\beta)$
+在$T_xS$中的符号决定, 即</p>
+<p>$$
+\operatorname{sgn}(\beta)=\operatorname{sgn}(n,\beta)=\operatorname{sgn}(\alpha,n,\beta).
+$$</p>
+<p>由于$\alpha$是$T_xS^\perp$的有序基,
+维数为$\operatorname{codim}_XS=\operatorname{codim}_YZ.$
+因此这两种定向也差了$(-1)^{\operatorname{codim}_YZ}.$</p>
+<h2 id="定向相交数"><a href="#定向相交数" class="headerlink" title="定向相交数"></a>定向相交数</h2><p>基本假设同模$2$相交数. 额外假设所有流形都是可定向的.
+$df_x(T_xX)$的定向由$X$赋予.
+若$df_x(T_xX)\oplus T_zZ=T_zY$两侧定向定向一致,
+则记$x$处的定向数为$\operatorname{sgn}_x(f,Z)=1,$ 不然为$-1.$
+称定向数的和为$f$与$Z$的定向相交数, 记为</p>
+<p>$$
+I(f,Z):=\sum_{x\in f^{-1}(Z)}\operatorname{sgn}_x(f,Z).
+$$</p>
+<p>由于任意紧致定向$1$维带边流形的边界点定向数之和为$0,$
+同模$2$相交数可证明定向相交数为同伦不变量.
+因此对一般的映射可通过横截同伦定理给出定义. 同理我们还有</p>
+<p><strong>命题 2</strong>. <em>若$X=\partial W,$ $W$紧致, $f:X\rightarrow Y$可延拓到$W,$ $Z\subset Y$为闭子流形, 则$I(f,Z)=0.$</em> </p>
+<p>若$\dim X=\dim Y,$ 则可定义$\deg f:=I(f,\{y\}),$ $y$在$Y$中任意选取.
+良定性由横截同伦定理与唱片引理得证. 此时若$y$为$f$的正则值,
+有$\deg f=\sum_{x\in f^{-1}(y)}\operatorname{sgn}_x(f,y),$
+$\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
+映射度也是同伦不变量, 且对于可从边界延拓到内部的函数, 映射度为零.</p>
+<p>用映射度就可以给出代数学基本定理的证明了, 和模$2$相交数一致.
+同时在紧区域边界处可用$\deg \frac{p}{|p|}$来数内部零点个数.</p>
+<p>接下来讨论映射间的定向相交数. 设$f:X\rightarrow Y,$ $g:Z\rightarrow Y.$
+若$f\pitchfork g,$ 可定义$I_{(x,z)}(f,g),$
+正负号由$df_x(T_xX)\oplus dg_z(T_zZ)=T_yY$左右两侧定向决定.</p>
+<p><strong>命题 3</strong>. <em>$f\pitchfork g$当且仅当$f\times g\pitchfork \Delta,$ 且$I(f,g)=(-1)^{\dim Z}I(f\times g,\Delta).$</em> </p>
+<p>这主要就是如下的引理</p>
+<p><strong>引理 4</strong>. <em>设$U,W$为$V$的定向子空间, 那么$U\oplus W=V$当且仅当$(U\times W)\oplus \Delta=(-1)^{\dim W}V\times V.$</em> </p>
+<p>这样就可以用横截同伦定理对一般的函数给出定义了.
+此时可说明$I(f,Z)=I(f,\iota_Z),$
+特别的$\deg f=I(f,\{y\})$与$y$选取无关可给出新的证明. 比较直和定向有:</p>
+<p><strong>命题 5</strong>. <em>$I(f,g)=(-1)^{\dim X\dim Z}I(g,f),$ $I(X,Z)=(-1)^{\dim X\dim Z}I(Z,X).$</em> </p>
+<p>特别的, 若$Z=X,$ 奇数维流形自相交数$I(X,X)=0.$ 若$X$为紧致定向流形,
+定义其欧拉示性数为$\chi(Y):=I(\Delta,\Delta).$ 因此它是同伦不变量.</p>
+<p><strong>推论 6</strong>. <em>奇数维紧致可定向流形欧拉示性数为$0.$</em> </p>
+<p>文章最后更新于 2023-06-13 12:33:48 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《微分拓扑》复习笔记(7)-定向与定向相交数</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2023-06-13 15:33:47</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2023/06/13/《微分拓扑》复习笔记(7)-定向与定向相交数/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2023/06/13/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(8)-%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0%E5%BA%94%E7%94%A8/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分拓扑》复习笔记(8)-定向相交数应用</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Topology Review Notes (8) - Directional Intersection Number Application</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2023/06/12/%E3%80%8A%E5%BE%AE%E5%88%86%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0%E7%AC%94%E8%AE%B0(6)-%E6%A8%A1$2$%E7%9B%B8%E4%BA%A4%E6%95%B0,%20%E6%98%A0%E5%B0%84%E5%BA%A6,%20%E7%8E%AF%E7%BB%95%E6%95%B0%E4%B8%8E%E5%BA%94%E7%94%A8/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Topology Review Notes (6) - Modules $2$ Intersections, Mappings, Surroundings and Applications</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91"><span class="nav-text">定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0"><span class="nav-text">定向相交数</span></a></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91"><span class="nav-text">定向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%90%91%E7%9B%B8%E4%BA%A4%E6%95%B0"><span class="nav-text">定向相交数</span></a></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

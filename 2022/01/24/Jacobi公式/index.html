@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-01-24 17:40:29
+        <i class="fas fa-edit"></i>&nbsp;2022-01-24 19:40:29
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,60 +230,78 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>在学习黎曼几何时遇到了一个计算上的问题, 查阅后才发现居然有这种公式,
+感觉很是神奇, 特此记录下来.</p>
+<p><strong>命题 1</strong>. <em>我们有如下等式成立:</em> </p>
+<p>$$
+\frac{d {}\det(A(t))}{d {}t}=\det(A(t))\operatorname{tr}\left(A(t)^{-1}A&#39;(t)\right),\quad A&#39;(t)=\frac{d {}A(t)}{d {}t}.
+$$</p>
+<p><strong>证:</strong> 首先需有公式:</p>
+<p>$$
+\det(1+\varepsilon A)=1+\varepsilon\operatorname{tr}(A)+O(\varepsilon^2).
+$$</p>
+<p>利用$\det A=\lambda_1\cdots\lambda_n$即可简单地得到. 接下来,
+自然得到另一公式:</p>
+<p>$$
+\det(A+\varepsilon B)=\det(A)(1+\varepsilon\operatorname{tr}(A^{-1}B)+O(\varepsilon^2)).
+$$</p>
+<p>现令$A=A(t),$ $B=A&#39;(t),$ 那么,</p>
+<p>$$
+\frac{d {} }{d {}\varepsilon}\left.\det\left(A(t)+\varepsilon A&#39;(t)\right)\right|_{\varepsilon=0}=\det(A(t))\operatorname{tr}\left(A(t)^{-1}A&#39;(t)\right).
+$$</p>
+<p>注意若$A(t)=[\alpha_1(t),\cdots,\alpha_n(t)],$ 则:</p>
+<p>$$
+\frac{d {}\det(A(t))}{d {}t}=\det[\alpha_1&#39;(t),\alpha_2(t),\cdots,\alpha_n(t)]+\cdots+\det[\alpha_1(t),\cdots,\alpha_{n-1}(t),\alpha_n&#39;(t)].
+$$</p>
+<p>而$A(t)+\varepsilon A&#39;(t)=[\alpha_1(t)+\varepsilon\alpha_1&#39;(t),\cdots,\alpha_n(t)+\varepsilon\alpha_n&#39;(t)],$
+将$\frac{d {} }{d {}\varepsilon}\left.\det\left(A(t)+\varepsilon A&#39;(t)\right)\right|_{\varepsilon=0}$按同样方式展开,
+得到与$\frac{d {}\det(A(t))}{d {}t}$相同的式子.</p>
+<p>从而, 我们有恒等式:</p>
+<p>$$
+\frac{d {}\det(A(t))}{d {}t}=\det(A(t))\operatorname{tr}\left(A(t)^{-1}A&#39;(t)\right).
+$$</p>
+<p>参考:
+<a class="link"   target="_blank" rel="noopener" href="https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/" >https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-01-24 17:40:31 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    When learning Riemannian geometry, I encountered a computational problem, and only after reviewing it did I find that this formula actually existed.
-It feels very magical, hereby recorded.
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>在学习黎曼几何时遇到了一个计算上的问题, 查阅后才发现居然有这种公式,
+感觉很是神奇, 特此记录下来.</p>
+<p><strong>命题 1</strong>. <em>我们有如下等式成立:</em> </p>
+<p>$$
+\frac{d {}\det(A(t))}{d {}t}=\det(A(t))\operatorname{tr}\left(A(t)^{-1}A&#39;(t)\right),\quad A&#39;(t)=\frac{d {}A(t)}{d {}t}.
+$$</p>
+<p><strong>证:</strong> 首先需有公式:</p>
+<p>$$
+\det(1+\varepsilon A)=1+\varepsilon\operatorname{tr}(A)+O(\varepsilon^2).
+$$</p>
+<p>利用$\det A=\lambda_1\cdots\lambda_n$即可简单地得到. 接下来,
+自然得到另一公式:</p>
+<p>$$
+\det(A+\varepsilon B)=\det(A)(1+\varepsilon\operatorname{tr}(A^{-1}B)+O(\varepsilon^2)).
+$$</p>
+<p>现令$A=A(t),$ $B=A&#39;(t),$ 那么,</p>
+<p>$$
+\frac{d {} }{d {}\varepsilon}\left.\det\left(A(t)+\varepsilon A&#39;(t)\right)\right|_{\varepsilon=0}=\det(A(t))\operatorname{tr}\left(A(t)^{-1}A&#39;(t)\right).
+$$</p>
+<p>注意若$A(t)=[\alpha_1(t),\cdots,\alpha_n(t)],$ 则:</p>
+<p>$$
+\frac{d {}\det(A(t))}{d {}t}=\det[\alpha_1&#39;(t),\alpha_2(t),\cdots,\alpha_n(t)]+\cdots+\det[\alpha_1(t),\cdots,\alpha_{n-1}(t),\alpha_n&#39;(t)].
+$$</p>
+<p>而$A(t)+\varepsilon A&#39;(t)=[\alpha_1(t)+\varepsilon\alpha_1&#39;(t),\cdots,\alpha_n(t)+\varepsilon\alpha_n&#39;(t)],$
+将$\frac{d {} }{d {}\varepsilon}\left.\det\left(A(t)+\varepsilon A&#39;(t)\right)\right|_{\varepsilon=0}$按同样方式展开,
+得到与$\frac{d {}\det(A(t))}{d {}t}$相同的式子.</p>
+<p>从而, 我们有恒等式:</p>
+<p>$$
+\frac{d {}\det(A(t))}{d {}t}=\det(A(t))\operatorname{tr}\left(A(t)^{-1}A&#39;(t)\right).
+$$</p>
+<p>参考:
+<a class="link"   target="_blank" rel="noopener" href="https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/" >https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/<i class="fas fa-external-link-alt"></i></a></p>
+<p>文章最后更新于 2022-01-24 17:40:31 </p>
 
-* * Proposition 1 * *. * We have the following equation: * 
-
-
-
-
-
-
-
-* * Proof: * * First there must be a formula:
-
-
-
-
-
-Simply use $\ det A =\ lambda_1\ cdots\ lambda_n $. Next,
-Naturally we get another formula:
-
-
-
-
-
-
-Order $ A = A (t), $ $ B = A '(t), $ So,
-
-
-
-Note that if $ A (t) = [\ alpha_1 (t),\ cdots,\ alpha_n (t)], $ then:
-
-
-
-
-
-And $ A (t) +\ varepsilon A '(t) = [\ alpha_1 (t) +\ varepsilon\ alpha_1' (t),\ cdots,\ alpha_n (t) +\ varepsilon\ alpha_n '(t)], $
-Expand $\ frac {d {}} {d {}\ varepsilon}\ left.\ det\ left (A (t) +\ varepsilon A '(t)\ right)\ right |_{\ varepsilon = 0} $ in the same way,
-Get the same formula as $\ frac {d {}\ det (A (t))} {d {} t} $.
-
-Thus, we have the identity:
-
-
-
-
-
-
-Reference:
-https://terrytao.wordpress.com/2013/01/13/matrix-identities-as-derivatives-of-determinant-identities/
-
-Article last updated on 2022-01-24 17:40:31
                 </div>
             
         </div>
@@ -294,7 +312,7 @@ Article last updated on 2022-01-24 17:40:31
     <ul>
         <li>本文标题：Jacobi公式</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-01-24 17:40:29</li>
+        <li>创建时间：2022-01-24 19:40:29</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/01/24/Jacobi公式/
         </li>
@@ -326,7 +344,7 @@ Article last updated on 2022-01-24 17:40:31
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(2)-协变微分与曲率张量</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (2) - Covariant differentials and curvature tensor</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Notes on Riemannian Geometry (2) - Covariant Differentiation and Curvature Tensor</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -348,7 +366,7 @@ Article last updated on 2022-01-24 17:40:31
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(1)-线性联络</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (1)-Linear Connection</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (1) - Linear Liaison</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -655,6 +673,36 @@ Article last updated on 2022-01-24 17:40:31
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -678,46 +726,6 @@ Article last updated on 2022-01-24 17:40:31
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

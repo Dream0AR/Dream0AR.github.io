@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续) |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (9) -Stiefel-Whitney Explanatory Class (cont &#39;d)</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-10-12 18:23:47
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于向量丛$\xi:$ $\mathbb{R}^n\rightarrow E\rightarrow B,$
+$\omega_i(\xi)\in H^i(B;\mathbb{Z}_2),$
+$\omega(\xi):=\sum_i \omega_i(\xi).$</p>
+<p>我们有例子$\omega(\tau_{S^n})=1,$ $\omega(\gamma_n^1)=1+a,$
+$\omega(\gamma^\perp)=\overline\omega(\gamma_n^1)=(1+a)^{-1}=1+a+\cdots+a^n.$</p>
+<p>对于$\omega(\tau_{\mathbb{R}\mathrm{P}^n}),$ 我们有引理:</p>
+<p><strong>引理 1</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}=\operatorname{Hom}(\gamma_n^1,\gamma^\perp)$</em> </p>
+<p><strong>命题 2</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}\oplus\varepsilon^1\cong \gamma_n^1\oplus\cdots\oplus \gamma_n^1$ $(n+1)$个.</em> </p>
+<p>$$
+\tau_{\mathbb{R}\mathrm{P}^n}\oplus\varepsilon^1=\operatorname{Hom}(\gamma_n^1,\gamma^\perp)\oplus \operatorname{Hom}(\gamma_n^1,\gamma_n^1)=\operatorname{Hom}(\gamma_n^1,\gamma^\perp\oplus \gamma_n^1=\varepsilon^{n+1})=\operatorname{Hom}(\gamma_n^1,\varepsilon^1)^{n+1}=(\gamma_n^1)^{n+1}
+$$</p>
+<p>这样我们得到,
+$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=\omega(\gamma_n^1)^{n+1}=(1+a)^{n+1}.$
+但注意$a^{n+1}=0.$</p>
+<p><strong>推论 3</strong> (Stiefel). <em>$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=1$ 当且仅当 $(n+1)=2^k.$</em> </p>
+<h2 id="可除代数"><a href="#可除代数" class="headerlink" title="可除代数"></a>可除代数</h2><p><strong>定理 4</strong> (Stiefel). <em>假设$\mathbb{R}^n$有一个双线性乘法$p:\mathbb{R}^n\times \mathbb{R}^n\rightarrow\mathbb{R}^n,$ 没有零因子, 那么$n$为$2$的幂次.</em> </p>
+<p>只需证明若$p$存在, 那么$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$是平凡的.
+$\,\forall\,z\neq 0,$
+$y\mapsto p(y,z)$给出了$\mathbb{R}^n$到$\mathbb{R}^n$的线性同构.
+取一组基$\{e_i\},$ 那么存在同构$v_i:\mathbb{R}^n\cong \mathbb{R}^n,$
+使得$v_i(p(y,e_1))=p(y,e_i).$</p>
+<p>对任意$L\subset \mathbb{R}^n,$ 定义$\overline v_i:L\rightarrow L^\perp,$
+$\overline v_i(x):=pv_i(x),$ $p$为$\mathbb{R}^n$到$L^\perp$的投影.
+这样$\overline v_i$给出了一个$\operatorname{Hom}(\gamma_{n-1}^1,\gamma^\perp)\cong \tau_{\mathbb{R}\mathrm{P}^{n-1} }$的一个截面.
+验证发现$\{\overline v_i\}_{i\neq 1}$给出了一组标架(线性无关),
+故$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$是平凡的. 有前面的推论立即得到结论.</p>
+<h2 id="SW示性类的其它应用"><a href="#SW示性类的其它应用" class="headerlink" title="SW示性类的其它应用"></a>SW示性类的其它应用</h2><h3 id="SW示性类阻碍浸入"><a href="#SW示性类阻碍浸入" class="headerlink" title="SW示性类阻碍浸入"></a>SW示性类阻碍浸入</h3><p><strong>命题 5</strong>. <em>若$M^n$可以浸入到$\mathbb{R}^{n+k}$中, 则$\overline\omega_i(\tau_M)=0,$ $\,\forall\,i&gt;k.$</em> </p>
+<p>设有一个浸入, 那么$\tau_M\oplus \nu_M=\varepsilon^{n+k},$
+$\omega(\nu)=\overline\omega(\tau).$ 然而$\dim\nu=k,$
+这就说明了$\overline\omega_i(\tau)=\omega_i(\nu)=0,$ $\,\forall\,i&gt;k.$</p>
+<p><strong>命题 6</strong>. <em>若$n=2^r,$ $\mathbb{R}\mathrm{P}^n$可浸入$\mathbb{R}^{n+k},$ 则$k\ge n-1.$</em> </p>
+<p>$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=(1+a)^{n+1}=(1+a)(1+a^n)=1+a+a^n.$
+那么$\overline\omega(\tau_{\mathbb{R}\mathrm{P}^n})=1+a+\cdots+a^{n-1}.$
+由命题, $\overline\omega_i(\tau_{\mathbb{R}\mathrm{P}^n})=0,$
+$\,\forall\,i&gt;k,$ 故$k\ge n-1.$</p>
+<h3 id="配边"><a href="#配边" class="headerlink" title="配边"></a>配边</h3><p>考虑底空间$B=M^n$为闭流形, $\omega_i(M):=\omega_i(\tau_M).$ 考虑单项式</p>
+<p>$$
+\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n}\in H^D(M,\mathbb{Z}_2),\quad D=\sum_{i=1}^n ir_i.
+$$</p>
+<p>若$D=n,$ 考虑$[M]\in H_n(M),$ 我们就得到了一个数字</p>
+<p>$$
+\left&lt;{}\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n},[M]\right&gt;\in \mathbb{Z}_2,
+$$</p>
+<p>称为Stiefel-Whitney数, 与单项$\omega_1^{r_1}\cdots \omega_n^{r_n}$相关.</p>
+<p><strong>定理 7</strong> (Pontrjagin). <em>若$M^n$是$(n+1)$维紧流形$V^{n+1}$的边界, 那么所有$M$的SW数都是零.</em> </p>
+<p>$M=\partial V,$
+有$H_{n+1}(V,\partial V)\xrightarrow{\partial} H_n(\partial V),$
+$\partial[V]=[M].$ 对偶地, 我们有</p>
+<p>$$
+\left&lt;{}\delta \alpha,[V]\right&gt;=\left&lt;{}\alpha,\partial[V]\right&gt;=\left&lt;{}\alpha,[M]\right&gt;.
+$$</p>
+<p>考虑$\tau_V|_M=i^\ast \tau_V,$ $i:M=\partial V\hookrightarrow V.$
+注意到$\nu_M^V$是平凡的, 那么$i^\ast \tau_V=\tau_M\oplus\nu_M,$
+$i^\ast \omega_k(\tau_V)=\omega_k(i^\ast \tau_V)=\omega_k(\tau_M)$</p>
+<p>考虑长正合列 </p>
+<p>$$
+H^n(V)\rightarrow H^n(M)\rightarrow H^{n+1}(V,M),
+$$</p>
+<p>$M$的SW数为:</p>
+<p>$$
+\left&lt;{}\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n},[M]\right&gt;=\left&lt;{}\delta(\bullet),[V]\right&gt;=\left&lt;{}\delta i^\ast (\omega_1(V)^{r_1}\cdots\omega_n(V)^{r_n}),[V]\right&gt;=0.
+$$</p>
+<p><strong>定理 8</strong> (Thom). <em>逆命题成立.</em> </p>
+<p>对于两个$n$维光滑闭流形$M_1,M_2,$ 称他们属于相同的<strong>配边类(cobordism
+class)</strong>, 若$M_1\sqcup M_2$是一个光滑紧$(n+1)$维流形的边界.</p>
+<p><strong>推论 9</strong>. <em>$M_1,M_2$属于相同的配边类当且仅当它们的SW数都相同.</em> </p>
+<p>文章最后更新于 2022-10-12 15:23:48 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于向量丛$\xi:$ $\mathbb{R}^n\rightarrow E\rightarrow B,$
+$\omega_i(\xi)\in H^i(B;\mathbb{Z}_2),$
+$\omega(\xi):=\sum_i \omega_i(\xi).$</p>
+<p>我们有例子$\omega(\tau_{S^n})=1,$ $\omega(\gamma_n^1)=1+a,$
+$\omega(\gamma^\perp)=\overline\omega(\gamma_n^1)=(1+a)^{-1}=1+a+\cdots+a^n.$</p>
+<p>对于$\omega(\tau_{\mathbb{R}\mathrm{P}^n}),$ 我们有引理:</p>
+<p><strong>引理 1</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}=\operatorname{Hom}(\gamma_n^1,\gamma^\perp)$</em> </p>
+<p><strong>命题 2</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}\oplus\varepsilon^1\cong \gamma_n^1\oplus\cdots\oplus \gamma_n^1$ $(n+1)$个.</em> </p>
+<p>$$
+\tau_{\mathbb{R}\mathrm{P}^n}\oplus\varepsilon^1=\operatorname{Hom}(\gamma_n^1,\gamma^\perp)\oplus \operatorname{Hom}(\gamma_n^1,\gamma_n^1)=\operatorname{Hom}(\gamma_n^1,\gamma^\perp\oplus \gamma_n^1=\varepsilon^{n+1})=\operatorname{Hom}(\gamma_n^1,\varepsilon^1)^{n+1}=(\gamma_n^1)^{n+1}
+$$</p>
+<p>这样我们得到,
+$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=\omega(\gamma_n^1)^{n+1}=(1+a)^{n+1}.$
+但注意$a^{n+1}=0.$</p>
+<p><strong>推论 3</strong> (Stiefel). <em>$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=1$ 当且仅当 $(n+1)=2^k.$</em> </p>
+<h2 id="可除代数"><a href="#可除代数" class="headerlink" title="可除代数"></a>可除代数</h2><p><strong>定理 4</strong> (Stiefel). <em>假设$\mathbb{R}^n$有一个双线性乘法$p:\mathbb{R}^n\times \mathbb{R}^n\rightarrow\mathbb{R}^n,$ 没有零因子, 那么$n$为$2$的幂次.</em> </p>
+<p>只需证明若$p$存在, 那么$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$是平凡的.
+$\,\forall\,z\neq 0,$
+$y\mapsto p(y,z)$给出了$\mathbb{R}^n$到$\mathbb{R}^n$的线性同构.
+取一组基$\{e_i\},$ 那么存在同构$v_i:\mathbb{R}^n\cong \mathbb{R}^n,$
+使得$v_i(p(y,e_1))=p(y,e_i).$</p>
+<p>对任意$L\subset \mathbb{R}^n,$ 定义$\overline v_i:L\rightarrow L^\perp,$
+$\overline v_i(x):=pv_i(x),$ $p$为$\mathbb{R}^n$到$L^\perp$的投影.
+这样$\overline v_i$给出了一个$\operatorname{Hom}(\gamma_{n-1}^1,\gamma^\perp)\cong \tau_{\mathbb{R}\mathrm{P}^{n-1} }$的一个截面.
+验证发现$\{\overline v_i\}_{i\neq 1}$给出了一组标架(线性无关),
+故$\tau_{\mathbb{R}\mathrm{P}^{n-1} }$是平凡的. 有前面的推论立即得到结论.</p>
+<h2 id="SW示性类的其它应用"><a href="#SW示性类的其它应用" class="headerlink" title="SW示性类的其它应用"></a>SW示性类的其它应用</h2><h3 id="SW示性类阻碍浸入"><a href="#SW示性类阻碍浸入" class="headerlink" title="SW示性类阻碍浸入"></a>SW示性类阻碍浸入</h3><p><strong>命题 5</strong>. <em>若$M^n$可以浸入到$\mathbb{R}^{n+k}$中, 则$\overline\omega_i(\tau_M)=0,$ $\,\forall\,i&gt;k.$</em> </p>
+<p>设有一个浸入, 那么$\tau_M\oplus \nu_M=\varepsilon^{n+k},$
+$\omega(\nu)=\overline\omega(\tau).$ 然而$\dim\nu=k,$
+这就说明了$\overline\omega_i(\tau)=\omega_i(\nu)=0,$ $\,\forall\,i&gt;k.$</p>
+<p><strong>命题 6</strong>. <em>若$n=2^r,$ $\mathbb{R}\mathrm{P}^n$可浸入$\mathbb{R}^{n+k},$ 则$k\ge n-1.$</em> </p>
+<p>$\omega(\tau_{\mathbb{R}\mathrm{P}^n})=(1+a)^{n+1}=(1+a)(1+a^n)=1+a+a^n.$
+那么$\overline\omega(\tau_{\mathbb{R}\mathrm{P}^n})=1+a+\cdots+a^{n-1}.$
+由命题, $\overline\omega_i(\tau_{\mathbb{R}\mathrm{P}^n})=0,$
+$\,\forall\,i&gt;k,$ 故$k\ge n-1.$</p>
+<h3 id="配边"><a href="#配边" class="headerlink" title="配边"></a>配边</h3><p>考虑底空间$B=M^n$为闭流形, $\omega_i(M):=\omega_i(\tau_M).$ 考虑单项式</p>
+<p>$$
+\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n}\in H^D(M,\mathbb{Z}_2),\quad D=\sum_{i=1}^n ir_i.
+$$</p>
+<p>若$D=n,$ 考虑$[M]\in H_n(M),$ 我们就得到了一个数字</p>
+<p>$$
+\left&lt;{}\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n},[M]\right&gt;\in \mathbb{Z}_2,
+$$</p>
+<p>称为Stiefel-Whitney数, 与单项$\omega_1^{r_1}\cdots \omega_n^{r_n}$相关.</p>
+<p><strong>定理 7</strong> (Pontrjagin). <em>若$M^n$是$(n+1)$维紧流形$V^{n+1}$的边界, 那么所有$M$的SW数都是零.</em> </p>
+<p>$M=\partial V,$
+有$H_{n+1}(V,\partial V)\xrightarrow{\partial} H_n(\partial V),$
+$\partial[V]=[M].$ 对偶地, 我们有</p>
+<p>$$
+\left&lt;{}\delta \alpha,[V]\right&gt;=\left&lt;{}\alpha,\partial[V]\right&gt;=\left&lt;{}\alpha,[M]\right&gt;.
+$$</p>
+<p>考虑$\tau_V|_M=i^\ast \tau_V,$ $i:M=\partial V\hookrightarrow V.$
+注意到$\nu_M^V$是平凡的, 那么$i^\ast \tau_V=\tau_M\oplus\nu_M,$
+$i^\ast \omega_k(\tau_V)=\omega_k(i^\ast \tau_V)=\omega_k(\tau_M)$</p>
+<p>考虑长正合列 </p>
+<p>$$
+H^n(V)\rightarrow H^n(M)\rightarrow H^{n+1}(V,M),
+$$</p>
+<p>$M$的SW数为:</p>
+<p>$$
+\left&lt;{}\omega_1(M)^{r_1}\cdots\omega_n(M)^{r_n},[M]\right&gt;=\left&lt;{}\delta(\bullet),[V]\right&gt;=\left&lt;{}\delta i^\ast (\omega_1(V)^{r_1}\cdots\omega_n(V)^{r_n}),[V]\right&gt;=0.
+$$</p>
+<p><strong>定理 8</strong> (Thom). <em>逆命题成立.</em> </p>
+<p>对于两个$n$维光滑闭流形$M_1,M_2,$ 称他们属于相同的<strong>配边类(cobordism
+class)</strong>, 若$M_1\sqcup M_2$是一个光滑紧$(n+1)$维流形的边界.</p>
+<p><strong>推论 9</strong>. <em>$M_1,M_2$属于相同的配边类当且仅当它们的SW数都相同.</em> </p>
+<p>文章最后更新于 2022-10-12 15:23:48 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-10-12 18:23:47</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/10/12/《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/10/14/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E4%B8%87%E6%9C%89%E4%B8%9B%E4%B8%8E%E7%A4%BA%E6%80%A7%E7%B1%BB/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑2》笔记(10)-万有丛与示性类</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (10) - Plexus and Indicative Classes</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/10/11/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E3%80%8B%E5%A4%8D%E4%B9%A0-%E5%90%8C%E4%BC%A6%E8%AE%BA/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑》复习-同伦论</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology Review - Homotopy</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%99%A4%E4%BB%A3%E6%95%B0"><span class="nav-text">可除代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SW%E7%A4%BA%E6%80%A7%E7%B1%BB%E7%9A%84%E5%85%B6%E5%AE%83%E5%BA%94%E7%94%A8"><span class="nav-text">SW示性类的其它应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SW%E7%A4%BA%E6%80%A7%E7%B1%BB%E9%98%BB%E7%A2%8D%E6%B5%B8%E5%85%A5"><span class="nav-text">SW示性类阻碍浸入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E8%BE%B9"><span class="nav-text">配边</span></a></li></ol></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE"><span class="nav-text">回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E9%99%A4%E4%BB%A3%E6%95%B0"><span class="nav-text">可除代数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SW%E7%A4%BA%E6%80%A7%E7%B1%BB%E7%9A%84%E5%85%B6%E5%AE%83%E5%BA%94%E7%94%A8"><span class="nav-text">SW示性类的其它应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SW%E7%A4%BA%E6%80%A7%E7%B1%BB%E9%98%BB%E7%A2%8D%E6%B5%B8%E5%85%A5"><span class="nav-text">SW示性类阻碍浸入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E8%BE%B9"><span class="nav-text">配边</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

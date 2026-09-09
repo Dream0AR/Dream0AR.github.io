@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数拓扑2》笔记(16)-复向量丛 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑2》笔记(16)-复向量丛</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (16) - Complex Vector Plex</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-11-09 19:19:15
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="与实向量丛的差异"><a href="#与实向量丛的差异" class="headerlink" title="与实向量丛的差异"></a>与实向量丛的差异</h2><h3 id="复共轭丛"><a href="#复共轭丛" class="headerlink" title="复共轭丛"></a>复共轭丛</h3><p>一个秩$2n$实向量丛的复结构指一个连续映射$J:E(\xi)\rightarrow E(\xi),$
+限制在每个纤维上为$\mathbb{R}$线性映射, 且$J(J(v))=-v.$
+可以将$J$理解为虚部.</p>
+<p><strong>注 1</strong>. <em>配备复结构的秩$2n$实向量丛等价于秩$n$复向量丛. 设$M^{2n}$为实流形, $\tau_M$的复结构称为$M$上的近复结构. 实流形$M^{2n}$配备近复结构且$J$满足一些微分方程(C-R方程?)当且仅当$M^n$为复流形.</em> </p>
+<p><strong>定义 2</strong>. <em>给定复向量丛$\omega,$ 它的复共轭为复向量丛$\overline\omega,$ 使得恒等映射$E(\omega)\xrightarrow{f=\mathrm{id} }E(\overline\omega)$是复共轭线性的, 即$f(\lambda e)=\overline\lambda e.$ 因此$J_{\overline\omega}=-J_{\omega}.$</em> </p>
+<p>假设$\omega$有一个Hermitian度量, 即</p>
+<p>$$
+\left&lt;{}\lambda v,w\right&gt;=\lambda\left&lt;{}v,w\right&gt;,\quad \left&lt;{}v,\lambda w\right&gt;=\overline\lambda\left&lt;{}v,w\right&gt;,\quad \left&lt;{}v,w\right&gt;=\overline{\left&lt;{}w,v\right&gt;}.
+$$</p>
+<p>那么有$\overline{\omega}\xrightarrow{\cong_\mathbb{C} } \operatorname{Hom}_{\mathbb{C} }(\omega,\varepsilon)=:\omega^V,$
+$v\mapsto(w\mapsto\left&lt;{}w,v\right&gt;).$</p>
+<p>一般地, 作为复向量丛, $\omega\not\cong \overline\omega.$
+这和实版本很不一样.
+一个例子是考虑$\gamma^1:\mathbb{C}\rightarrow E\rightarrow \mathbb{C}\mathrm{P}^\infty,$</p>
+<p>$$
+\gamma^1\otimes \overline{\gamma}^1\cong \gamma^1\otimes \operatorname{Hom}_\mathbb{C}(\gamma^1,\varepsilon)\cong \varepsilon.
+$$</p>
+<p>因此$c_1(\gamma^1)+c_1(\overline\gamma^1)=c_1(\varepsilon)=0,$
+从而$c_1(\overline\gamma^1)=-c_1(\gamma^1)=\tau\in H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}).$
+这就说明了$\overline\gamma^1\not\cong \gamma^1.$</p>
+<p><strong>注 3</strong>. <em>在代数几何中, 记$\gamma^1$为$O(-1),$ $\overline\gamma^1=O(1).$ $\mathbb{C}\cong \mathbb{R}^2$上的复共轭改变定向, $(\overline\gamma^1)_\mathbb{R}=\overline{(\gamma^1)}_\mathbb{R}.$</em> </p>
+<h3 id="SW类与Chern示性类"><a href="#SW类与Chern示性类" class="headerlink" title="SW类与Chern示性类"></a>SW类与Chern示性类</h3><p><strong>定理 4</strong>. <em>设$\xi$为复向量丛, 忘掉它的复结构, 那么$w_{2i+1}(\xi_{\mathbb{R} })=0,$ $w_{2i}(\xi_\mathbb{R})=c_i(\xi)\mod 2.$ 即$H^{2i}(B;\mathbb{Z})\rightarrow H^{2i}(B;\mathbb{Z}_2),$ $c_i(\xi)\mapsto w_{2i}(\xi_\mathbb{R}).$ 特别地, $w_{2n}(\xi_\mathbb{R})=c_n(\xi)=e(\xi_\mathbb{R})\mod 2.$</em> </p>
+<p>注意到, 我们有纤维丛</p>
+<p>$$
+\mathbb{R}\mathrm{P}^1\rightarrow \mathbb{R}\mathrm{P}^{2n-1}\rightarrow \mathbb{C}\mathrm{P}^{n-1}, \quad \ell\mapsto \ell\otimes_\mathbb{R}\mathbb{C}.
+$$</p>
+<p>考虑$\widehat f:E(\xi)\rightarrow \mathbb{C}^\infty,$
+是$\mathbb{C}$线性的且依纤维单射, 有</p>
+<p>$$
+\mathbb{C}^n\hookrightarrow E(\xi)\xrightarrow{\widehat f}\mathbb{C}^\infty.
+$$</p>
+<p>考虑实投影丛,</p>
+<p>$$
+\mathbb{R}\mathrm{P}^{2n-1}\rightarrow \mathbb{R}\mathrm{P}(E(\xi)_\mathbb{R})\rightarrow \mathbb{R}\mathrm{P}^\infty;
+$$</p>
+<p>考虑复投影丛,</p>
+<p>$$
+\mathbb{C}\mathrm{P}^{n-1}\rightarrow \mathbb{C}\mathrm{P}(E(\xi))\rightarrow \mathbb{C}\mathrm{P}^\infty.
+$$</p>
+<p>这两行中每一列又都是纤维为$\mathbb{R}\mathrm{P}^1$的纤维丛.</p>
+<p>这样我们可以得到$H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z})\rightarrow H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}_2)\rightarrow H^2(\mathbb{R}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$\beta\mapsto \overline\beta\mapsto \alpha^2,$ 可由Leray-Hirsch证明.</p>
+<p>对于右侧第一个方块,
+$H^2(\mathbb{R}\mathrm{P}(E);\mathbb{Z}_2)\leftarrow H^2(\mathbb{R}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$x^2(\xi_\mathbb{R})\leftarrow \alpha^2;$
+$H^2(\mathbb{C}\mathrm{P}(E);\mathbb{Z}_2)\leftarrow H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$\overline x_\mathbb{C}(\xi)\leftarrow \overline\beta.$
+那么模$2$的Chern类依定义,</p>
+<p>$$
+\overline x_\mathbb{C}(\xi)^n+\overline c_1(\xi)\overline x_\mathbb{C}(\xi)^{n-1}+\cdots+\overline c_n(\xi)=0\in H^{2n}(\mathbb{C}\mathrm{P}(\xi);\mathbb{Z}_2),
+$$</p>
+<p>打到了</p>
+<p>$$
+x(\xi_{\mathbb{R} })^{2n}+\overline c_1(\xi)[x(\xi_\mathbb{R})^2]^{n-1}+\cdots +\overline c_n(\xi)=0\in H^{2n}(\mathbb{R}\mathrm{P}(\xi_\mathbb{R});\mathbb{Z}_2).
+$$</p>
+<h2 id="示性类与阻碍性理论"><a href="#示性类与阻碍性理论" class="headerlink" title="示性类与阻碍性理论"></a>示性类与阻碍性理论</h2><h3 id="阻碍性理论"><a href="#阻碍性理论" class="headerlink" title="阻碍性理论"></a>阻碍性理论</h3><p>何时纤维丛$F\rightarrow E\rightarrow B$有一个截面?
+想法是若$B$为一个CW复形, 考虑$B^0\subset B^1\subset B^2\subset \cdots,$
+尝试按顺序定义骨架上的截面.</p>
+<p><strong>定理 5</strong>. <em>假设$F\rightarrow E\rightarrow B$为一个纤维丛, $B$为CW复形, $F$是$n$-simple的, 即$\pi_1(F,x_0)$作用在$\pi_n(F,x_0)$上是平凡的. 令$s$为$B^{n-1}$截面, 可被延拓为$B^n$上截面. 那么存在障碍类$ob(s)\in H^{n+1}(B;\pi_n(F))$(局部系数), 使得$ob(s)=0$当且仅当它可以被延拓到$B^{n+1}$上.</em> </p>
+<p><strong>注 6</strong>. <em>找到一个截面的同伦等于找到$F\rightarrow E\times I\rightarrow B\times I\hookleftarrow B\times\partial I$延拓两个截面$s,s&#39;.$ 阻碍在$H^{n+1}(B\times I,B\times\partial I;\pi_n(F))\cong \pi^n(B;\pi_n(F))$中.</em> </p>
+<p><strong>注 7</strong>. <em>假设$F$($n-1$)连通, 截面的障碍在$H^i(B;\pi_{i-1}(F))=0$中, $i\le n;$ 截面同伦的障碍在$H^i(B;\pi_i(F))=0$中, $i\le n-1.$ 因此存在$B^n$上的截面, 并且$s|_{B^{n-1} }$在同伦意义下唯一. $ob(s)\in H^{n+1}(B;\pi_n(F))$与截面选取无关. 这称为第一障碍类.</em> </p>
+<p>文章最后更新于 2022-11-09 17:19:15 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="与实向量丛的差异"><a href="#与实向量丛的差异" class="headerlink" title="与实向量丛的差异"></a>与实向量丛的差异</h2><h3 id="复共轭丛"><a href="#复共轭丛" class="headerlink" title="复共轭丛"></a>复共轭丛</h3><p>一个秩$2n$实向量丛的复结构指一个连续映射$J:E(\xi)\rightarrow E(\xi),$
+限制在每个纤维上为$\mathbb{R}$线性映射, 且$J(J(v))=-v.$
+可以将$J$理解为虚部.</p>
+<p><strong>注 1</strong>. <em>配备复结构的秩$2n$实向量丛等价于秩$n$复向量丛. 设$M^{2n}$为实流形, $\tau_M$的复结构称为$M$上的近复结构. 实流形$M^{2n}$配备近复结构且$J$满足一些微分方程(C-R方程?)当且仅当$M^n$为复流形.</em> </p>
+<p><strong>定义 2</strong>. <em>给定复向量丛$\omega,$ 它的复共轭为复向量丛$\overline\omega,$ 使得恒等映射$E(\omega)\xrightarrow{f=\mathrm{id} }E(\overline\omega)$是复共轭线性的, 即$f(\lambda e)=\overline\lambda e.$ 因此$J_{\overline\omega}=-J_{\omega}.$</em> </p>
+<p>假设$\omega$有一个Hermitian度量, 即</p>
+<p>$$
+\left&lt;{}\lambda v,w\right&gt;=\lambda\left&lt;{}v,w\right&gt;,\quad \left&lt;{}v,\lambda w\right&gt;=\overline\lambda\left&lt;{}v,w\right&gt;,\quad \left&lt;{}v,w\right&gt;=\overline{\left&lt;{}w,v\right&gt;}.
+$$</p>
+<p>那么有$\overline{\omega}\xrightarrow{\cong_\mathbb{C} } \operatorname{Hom}_{\mathbb{C} }(\omega,\varepsilon)=:\omega^V,$
+$v\mapsto(w\mapsto\left&lt;{}w,v\right&gt;).$</p>
+<p>一般地, 作为复向量丛, $\omega\not\cong \overline\omega.$
+这和实版本很不一样.
+一个例子是考虑$\gamma^1:\mathbb{C}\rightarrow E\rightarrow \mathbb{C}\mathrm{P}^\infty,$</p>
+<p>$$
+\gamma^1\otimes \overline{\gamma}^1\cong \gamma^1\otimes \operatorname{Hom}_\mathbb{C}(\gamma^1,\varepsilon)\cong \varepsilon.
+$$</p>
+<p>因此$c_1(\gamma^1)+c_1(\overline\gamma^1)=c_1(\varepsilon)=0,$
+从而$c_1(\overline\gamma^1)=-c_1(\gamma^1)=\tau\in H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}).$
+这就说明了$\overline\gamma^1\not\cong \gamma^1.$</p>
+<p><strong>注 3</strong>. <em>在代数几何中, 记$\gamma^1$为$O(-1),$ $\overline\gamma^1=O(1).$ $\mathbb{C}\cong \mathbb{R}^2$上的复共轭改变定向, $(\overline\gamma^1)_\mathbb{R}=\overline{(\gamma^1)}_\mathbb{R}.$</em> </p>
+<h3 id="SW类与Chern示性类"><a href="#SW类与Chern示性类" class="headerlink" title="SW类与Chern示性类"></a>SW类与Chern示性类</h3><p><strong>定理 4</strong>. <em>设$\xi$为复向量丛, 忘掉它的复结构, 那么$w_{2i+1}(\xi_{\mathbb{R} })=0,$ $w_{2i}(\xi_\mathbb{R})=c_i(\xi)\mod 2.$ 即$H^{2i}(B;\mathbb{Z})\rightarrow H^{2i}(B;\mathbb{Z}_2),$ $c_i(\xi)\mapsto w_{2i}(\xi_\mathbb{R}).$ 特别地, $w_{2n}(\xi_\mathbb{R})=c_n(\xi)=e(\xi_\mathbb{R})\mod 2.$</em> </p>
+<p>注意到, 我们有纤维丛</p>
+<p>$$
+\mathbb{R}\mathrm{P}^1\rightarrow \mathbb{R}\mathrm{P}^{2n-1}\rightarrow \mathbb{C}\mathrm{P}^{n-1}, \quad \ell\mapsto \ell\otimes_\mathbb{R}\mathbb{C}.
+$$</p>
+<p>考虑$\widehat f:E(\xi)\rightarrow \mathbb{C}^\infty,$
+是$\mathbb{C}$线性的且依纤维单射, 有</p>
+<p>$$
+\mathbb{C}^n\hookrightarrow E(\xi)\xrightarrow{\widehat f}\mathbb{C}^\infty.
+$$</p>
+<p>考虑实投影丛,</p>
+<p>$$
+\mathbb{R}\mathrm{P}^{2n-1}\rightarrow \mathbb{R}\mathrm{P}(E(\xi)_\mathbb{R})\rightarrow \mathbb{R}\mathrm{P}^\infty;
+$$</p>
+<p>考虑复投影丛,</p>
+<p>$$
+\mathbb{C}\mathrm{P}^{n-1}\rightarrow \mathbb{C}\mathrm{P}(E(\xi))\rightarrow \mathbb{C}\mathrm{P}^\infty.
+$$</p>
+<p>这两行中每一列又都是纤维为$\mathbb{R}\mathrm{P}^1$的纤维丛.</p>
+<p>这样我们可以得到$H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z})\rightarrow H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}_2)\rightarrow H^2(\mathbb{R}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$\beta\mapsto \overline\beta\mapsto \alpha^2,$ 可由Leray-Hirsch证明.</p>
+<p>对于右侧第一个方块,
+$H^2(\mathbb{R}\mathrm{P}(E);\mathbb{Z}_2)\leftarrow H^2(\mathbb{R}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$x^2(\xi_\mathbb{R})\leftarrow \alpha^2;$
+$H^2(\mathbb{C}\mathrm{P}(E);\mathbb{Z}_2)\leftarrow H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}_2),$
+$\overline x_\mathbb{C}(\xi)\leftarrow \overline\beta.$
+那么模$2$的Chern类依定义,</p>
+<p>$$
+\overline x_\mathbb{C}(\xi)^n+\overline c_1(\xi)\overline x_\mathbb{C}(\xi)^{n-1}+\cdots+\overline c_n(\xi)=0\in H^{2n}(\mathbb{C}\mathrm{P}(\xi);\mathbb{Z}_2),
+$$</p>
+<p>打到了</p>
+<p>$$
+x(\xi_{\mathbb{R} })^{2n}+\overline c_1(\xi)[x(\xi_\mathbb{R})^2]^{n-1}+\cdots +\overline c_n(\xi)=0\in H^{2n}(\mathbb{R}\mathrm{P}(\xi_\mathbb{R});\mathbb{Z}_2).
+$$</p>
+<h2 id="示性类与阻碍性理论"><a href="#示性类与阻碍性理论" class="headerlink" title="示性类与阻碍性理论"></a>示性类与阻碍性理论</h2><h3 id="阻碍性理论"><a href="#阻碍性理论" class="headerlink" title="阻碍性理论"></a>阻碍性理论</h3><p>何时纤维丛$F\rightarrow E\rightarrow B$有一个截面?
+想法是若$B$为一个CW复形, 考虑$B^0\subset B^1\subset B^2\subset \cdots,$
+尝试按顺序定义骨架上的截面.</p>
+<p><strong>定理 5</strong>. <em>假设$F\rightarrow E\rightarrow B$为一个纤维丛, $B$为CW复形, $F$是$n$-simple的, 即$\pi_1(F,x_0)$作用在$\pi_n(F,x_0)$上是平凡的. 令$s$为$B^{n-1}$截面, 可被延拓为$B^n$上截面. 那么存在障碍类$ob(s)\in H^{n+1}(B;\pi_n(F))$(局部系数), 使得$ob(s)=0$当且仅当它可以被延拓到$B^{n+1}$上.</em> </p>
+<p><strong>注 6</strong>. <em>找到一个截面的同伦等于找到$F\rightarrow E\times I\rightarrow B\times I\hookleftarrow B\times\partial I$延拓两个截面$s,s&#39;.$ 阻碍在$H^{n+1}(B\times I,B\times\partial I;\pi_n(F))\cong \pi^n(B;\pi_n(F))$中.</em> </p>
+<p><strong>注 7</strong>. <em>假设$F$($n-1$)连通, 截面的障碍在$H^i(B;\pi_{i-1}(F))=0$中, $i\le n;$ 截面同伦的障碍在$H^i(B;\pi_i(F))=0$中, $i\le n-1.$ 因此存在$B^n$上的截面, 并且$s|_{B^{n-1} }$在同伦意义下唯一. $ob(s)\in H^{n+1}(B;\pi_n(F))$与截面选取无关. 这称为第一障碍类.</em> </p>
+<p>文章最后更新于 2022-11-09 17:19:15 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数拓扑2》笔记(16)-复向量丛</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-11-09 19:19:15</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/11/09/《代数拓扑2》笔记(16)-复向量丛/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/11/14/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(17)-%E9%9A%9C%E7%A2%8D%E6%80%A7%E7%90%86%E8%AE%BA/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑2》笔记(17)-障碍性理论</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (17) - Obstacle Theory</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/11/07/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(15)-Chern%E7%A4%BA%E6%80%A7%E7%B1%BB/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑2》笔记(15)-Chern示性类</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology 2 notes (15) -Chern indicative class</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E5%AE%9E%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="nav-text">与实向量丛的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%85%B1%E8%BD%AD%E4%B8%9B"><span class="nav-text">复共轭丛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SW%E7%B1%BB%E4%B8%8EChern%E7%A4%BA%E6%80%A7%E7%B1%BB"><span class="nav-text">SW类与Chern示性类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E6%80%A7%E7%B1%BB%E4%B8%8E%E9%98%BB%E7%A2%8D%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">示性类与阻碍性理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%BB%E7%A2%8D%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">阻碍性理论</span></a></li></ol></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8E%E5%AE%9E%E5%90%91%E9%87%8F%E4%B8%9B%E7%9A%84%E5%B7%AE%E5%BC%82"><span class="nav-text">与实向量丛的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%8D%E5%85%B1%E8%BD%AD%E4%B8%9B"><span class="nav-text">复共轭丛</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SW%E7%B1%BB%E4%B8%8EChern%E7%A4%BA%E6%80%A7%E7%B1%BB"><span class="nav-text">SW类与Chern示性类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A4%BA%E6%80%A7%E7%B1%BB%E4%B8%8E%E9%98%BB%E7%A2%8D%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">示性类与阻碍性理论</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%BB%E7%A2%8D%E6%80%A7%E7%90%86%E8%AE%BA"><span class="nav-text">阻碍性理论</span></a></li></ol></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

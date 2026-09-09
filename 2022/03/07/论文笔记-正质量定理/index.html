@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">论文笔记-正质量定理</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Thesis Notes-Positive Mass Theorem</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Thesis Notes - Positive Mass Theorem</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-03-07 12:52:26
+        <i class="fas fa-edit"></i>&nbsp;2022-03-07 14:52:26
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,569 +230,834 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
-            </div>
-            
-                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    physical meaning
---------
-
-*The following is this non-physics student’s understanding of the physical meaning of the theorem after roughly reading the physics literature and consulting the website.
-It may be unprofessional, please forgive me.*
-
-We all know that there is universal gravitation, and objects in space will exert a force on surrounding objects.
-This force field is called **gravitational field**. The field itself should have energy, which is called **ADM mass**,
-Defined by three physicists and named after their initials.
-Intuitively, placing an object on a flat cloth will cause the entire cloth to distort (sink near the object,
-Slightly sinking at infinity, the effect shrinks with distance), this is an intuitive model of the gravitational field.
-Note that after twisting this cloth, it forms a two-dimensional non-trivial surface.
-We can discuss the geometric structure based on the induced metric, and the knowledge of Riemannian geometry is introduced.
-
-In order to explore the energy of an isolated system, assume that there is only this one object in the space,
-Then its gravitational field should have almost no effect at infinity, which is physically called **asymptotically flat spacetime**.
-Still taking the above cloth as an example, it is close to the plane at infinity,
-Therefore, it is mathematically consistent with the definition of space as **asymptotically flat**.
-
-The expression of the positive mass theorem in physics is: *If the material distribution of an isolated system satisfies the main energy condition,
-Then its ADM mass is non-negative.* Mathematically, the connection between physical quantities and geometric quantities can be established. Under certain circumstances,
-The principal energy condition can deduce the condition that the curvature of the space * quantity is non-negative *. Similar to Gauss's theorem,
-The energy within the sphere should be detectable on the sphere, defining the ADM mass:
-
-
-$$
+                <h2 id="物理意义"><a href="#物理意义" class="headerlink" title="物理意义"></a>物理意义</h2><p><em>以下为本非物理系学生粗略阅读物理文献, 查阅网站后对该定理物理意义的理解,
+可能具有不专业之处, 请见谅.</em></p>
+<p>我们熟知有万有引力, 空间中的物体会对周围的物体产生力的作用,
+这种力场称为<strong>引力场</strong>. 场本身理应具有能量, 称为<strong>ADM质量</strong>,
+由三位物理学家定义, 以其首字母取名.</p>
+<p>直观来看, 在一张平坦的布上放置一个物体, 会使得整张布扭曲(物体附近下沉,
+无穷远处轻微下沉, 效果随距离缩小), 这便是引力场的一个直观上的模型.
+注意这张布扭曲后便构成了一个二维非平凡曲面,
+我们可以根据其上诱导度量讨论几何结构, 黎曼几何知识由此引入.</p>
+<p>为了探讨一个孤立系统的能量, 假设空间中只有这一个物体,
+那么它的引力场理应在无穷远处几乎没有作用, 物理上称之为<strong>渐近平直时空</strong>.
+仍以上述的布为例, 它在无穷远处是和平面接近的,
+因此数学上也符合空间<strong>渐进平坦</strong>的定义.</p>
+<p>物理上正质量定理的表述为: <em>一个孤立体系若其物质分布满足主能量条件,
+则其ADM质量非负.</em> 数学上, 可以建立物理量与几何量间的联系. 在特定情形下,
+主能量条件可以推出空间<em>数量曲率非负</em>的条件. 类似于Gauss定理,
+球内的能量应可在球面上检测, 定义ADM质量:</p>
+<p>$$
 E=\frac{1}{4(n-1)\omega_{n-1} }\lim_{\sigma\rightarrow \infty}\int_{S_\sigma}\sum_{i,j}(g_{ij,i}\nu_j-g_{ii,j}\nu_j)d\xi(\sigma).
-$$
-
-
-Here $S_\sigma=\{|x|=\sigma\}.$ The comma represents the partial derivative,
-Such as $g_{ij,k}:=\partial_kg_{ij}.$
-$\nu=\sigma^{-1}x$ is the unit outer normal vector of $S_\sigma$.
-The integrability of this formula is guaranteed by the assumption of asymptotic flatness, from which the energy of the gravitational field is obtained.
-
-The positive mass theorem in mathematics is to prove that $E\ge 0.$ under the above assumptions. In particular,
-$E=0$ is only obtained in Euclidean space. In the physical sense, that is, if the gravitational field energy is zero, there will be no distortion of the space.
-According to the previous example, no object is placed on the cloth.
-
-This theorem is not as obvious as imagined in the physical sense, because for an isolated system,
-The gravitational binding energy between substances is negative. In Newton's gravity theory,
-The energy of the gravitational field generated by an isolated point mass is not only negative, but can also tend to negative infinity.
-The total energy of such an isolated system can also be negative.
-So not only is the physical aspect of the positive mass theorem not an obvious result,
-Or is it an important feature that distinguishes general relativity from Newton's gravity theory?
-
-On the other hand, it is also of great significance to deduce the space triviality from the special case $E=0$. For three-dimensional space,
-If the ADM mass is zero, it must be Euclidean space, and space-time itself must be Minkowski space-time.
-This shows that Minkowski spacetime is not only the lowest energy among all spacetimes,
-And it is the only space-time with the lowest energy value.
-This is of great significance to ensure the stability of Minkowski space-time.
-It also means that the ADM mass of all non-trivial asymptotically flat spacetimes is positive.
-This is the meaning of the word "positive" in the positive mass theorem.
-
-asymptotically flat manifold
-----------
-Take the Riemannian manifold $(M^n,g),$ and call it **asymptotically flat**, if there is a compact set $K\subset M,$
-Such that $\Phi:M\setminus K\approx \mathbb{R}^n\setminus \overline{B}_1$ is a diffeomorphism.
-At the same time, in the coordinate system determined by $\Phi$, $g_{ij}(x)=\delta_{ij}+O(|x|^{-p}),$
-$p>\frac{n-2}{2};$ $|R(g)|=O(|x|^{-q}),$ $q>n.$ In addition, we need to find:
-
-
-$$
+$$</p>
+<p>这里$S_\sigma=\{|x|=\sigma\}.$ 逗号表示偏导,
+如$g_{ij,k}:=\partial_kg_{ij}.$
+$\nu=\sigma^{-1}x$为$S_\sigma$单位外法向量.
+该式可积由渐进平坦的假设保证, 由此得到引力场的能量.</p>
+<p>数学上的正质量定理, 就是在如上假设下, 证明$E\ge 0.$ 特别地,
+$E=0$仅在欧氏空间取到, 物理意义上即若引力场能量为零, 则对空间不产生扭曲.
+按前文的例子, 没有物体放在布上.</p>
+<p>该定理在物理意义上并没有想象中的显然, 因为对于孤立体系,
+物质之间的引力结合能是负的. 在Newton引力理论中,
+一个孤立点质量产生的引力场的能量不仅是负的, 而且可以趋于负无穷,
+这样的孤立体系的总能量也完全可以是负的.
+因此正质量定理物理方面不仅不是显而易见的结果,
+还是广义相对论有别于Newton引力理论的一个重要特征.</p>
+<p>另一方面, 特殊情形$E=0$推出空间平凡也具有重大的意义. 对于三维空间,
+若ADM质量为零, 则必定是欧氏空间, 时空本身必定是Minkowski时空.
+这表明Minkowski时空不仅是所有时空中能量最低的,
+而且是具有最低能量值的唯一时空.
+这一点对于确保Minkowski时空稳定性有重要的意义,
+也意味着所有非平凡渐近平直时空的ADM质量都是正的.
+这是正质量定理中”正”字的含义所在.</p>
+<h2 id="渐进平坦流形"><a href="#渐进平坦流形" class="headerlink" title="渐进平坦流形"></a>渐进平坦流形</h2><p>取黎曼流形$(M^n,g),$ 称它是<strong>渐进平坦的</strong>, 若存在紧集$K\subset M,$
+使得有$\Phi:M\setminus K\approx \mathbb{R}^n\setminus \overline{B}_1$为微分同胚.
+同时, 在由$\Phi$决定的坐标系下, $g_{ij}(x)=\delta_{ij}+O(|x|^{-p}),$
+$p&gt;\frac{n-2}{2};$ $|R(g)|=O(|x|^{-q}),$ $q&gt;n.$ 此外还需要求:</p>
+<p>$$
 |x||g_{ij,k}(x)|+|x|^2|g_{ij,kl}(x)|=O(|x|^{-p}).
-$$
-Here the comma refers to the partial guide.
-This defines the total energy of $M$. Recall the quantity curvature expression:
+$$</p>
+<p> 这里逗号指偏导.
+这样便可以定义$M$的总能量. 回忆数量曲率表达式: 
 $$
 \begin{aligned}
- R(g)&=g^{ij}R_{ij}=g^{ij}g^{kl}R_{ikjl}\\
- &=g^{ij}g^{kl}\left<{}D_{\partial_k}D_{\partial_i}\partial_j-D_{\partial_i}D_{\partial_k}\partial_j,\partial_l\right>\\
- &=g^{ij}(\Gamma_{ij,k}^k-\Gamma_{kj,i}^k+\Gamma_{kl}^k\Gamma_{ij}^l-\Gamma_{il}^k\Gamma_{kj}^l)
+ R(g)&amp;=g^{ij}R_{ij}=g^{ij}g^{kl}R_{ikjl}\\
+ &amp;=g^{ij}g^{kl}\left&lt;{}D_{\partial_k}D_{\partial_i}\partial_j-D_{\partial_i}D_{\partial_k}\partial_j,\partial_l\right&gt;\\
+ &amp;=g^{ij}(\Gamma_{ij,k}^k-\Gamma_{kj,i}^k+\Gamma_{kl}^k\Gamma_{ij}^l-\Gamma_{il}^k\Gamma_{kj}^l)
  \end{aligned}
 $$
- Contact coefficient expression:
-
-
-$$
+ 联络系数表达式:</p>
+<p>$$
 \Gamma_{ij}^k=\frac{1}{2}g^{km}(g_{im,j}+g_{jm,i}-g_{ij,m})=O(|x|^{-p-1}),
-$$
-Note here that the estimate of the inverse matrix is also $g^{ij}(x)=\delta^{ij}+O(|x|^{-r}).$
-The derivation of the inverse matrix has the following formula:
-
-
-$$
+$$</p>
+<p>这里注意对逆阵的估计同样是$g^{ij}(x)=\delta^{ij}+O(|x|^{-r}).$
+对逆阵求导有如下公式:</p>
+<p>$$
 \partial_kg^{ij}=-g^{ir}g_{rs,k}g^{sl}=O(|x|^{-p-1}),
-$$
-
-
-When the terms containing $g^{ij}$ are summed over $i,j$, only $i=j$ accounts for the main part, so the following estimation is true:
+$$</p>
+<p>含$g^{ij}$的项在对$i,j$求和时, 只有$i=j$占主要部分, 因此有如下估计成立:
 $$
 \begin{aligned}
- g^{ij}(\Gamma_{ij,k}^k-\Gamma_{kj,i}^k)&=\frac{g^{ij}g^{km} }{2}(g_{im,jk}+g_{jm,ik}-g_{ij,mk}-g_{km,ji}-g_{jm,ki}+g_{kj,mi})+O(|x|^{-2p-2})\\
- &=\frac{1}{2}\sum_{i,k}(g_{ik,ik}-g_{ii,kk}-g_{kk,ii}+g_{ki,ki})+O(|x|^{-2p-2})\\
- &=\sum_{i,j}(g_{ij,ij}-g_{ii,jj})+O(|x|^{-2p-2}) 
+ g^{ij}(\Gamma_{ij,k}^k-\Gamma_{kj,i}^k)&amp;=\frac{g^{ij}g^{km} }{2}(g_{im,jk}+g_{jm,ik}-g_{ij,mk}-g_{km,ji}-g_{jm,ki}+g_{kj,mi})+O(|x|^{-2p-2})\\
+ &amp;=\frac{1}{2}\sum_{i,k}(g_{ik,ik}-g_{ii,kk}-g_{kk,ii}+g_{ki,ki})+O(|x|^{-2p-2})\\
+ &amp;=\sum_{i,j}(g_{ij,ij}-g_{ii,jj})+O(|x|^{-2p-2}) 
  \end{aligned}
 $$
-Combined with $\Gamma_{kl}^k\Gamma_{ij}^l-\Gamma_{il}^k\Gamma_{kj}^l=O(|x|^{-2p-2}),$
-We get $R(g)=\sum_{i,j}g_{ij,ij}-g_{ii,jj}+O(|x|^{-2p-2}).$
-Since $2p+2>n, $ the remainder is absolutely integrable at infinity. And $R(g)$ itself is integrable,
-Therefore $\sum_{i,j}g_{ij,ij}-g_{ii,jj}$ can be integrated. Therefore, by integrating by parts, the following limit exists:
-$$
+结合$\Gamma_{kl}^k\Gamma_{ij}^l-\Gamma_{il}^k\Gamma_{kj}^l=O(|x|^{-2p-2}),$
+我们得到$R(g)=\sum_{i,j}g_{ij,ij}-g_{ii,jj}+O(|x|^{-2p-2}).$
+由于$2p+2&gt;n,$ 余项在无穷远处绝对可积. 而$R(g)$本身是可积的,
+因此$\sum_{i,j}g_{ij,ij}-g_{ii,jj}$可积. 从而由分部积分, 如下极限存在:</p>
+<p>$$
 \lim_{\sigma\rightarrow \infty}\int_{S_\sigma}\sum_{i,j}(g_{ij,i}\nu_j-g_{ii,j}\nu_j)d\xi.
-$$
-
-
-Here $S_\sigma=\{|x|=\sigma\},$
-$\nu=\sigma^{-1}x$ is the external normal vector of $S_\sigma$ unit. The total energy is defined according to the following formula $E=E(M,g),$
-$$
+$$</p>
+<p>这里$S_\sigma=\{|x|=\sigma\},$
+$\nu=\sigma^{-1}x$为$S_\sigma$单位外法向量. 依下式定义总能量$E=E(M,g),$</p>
+<p>$$
 E=\frac{1}{4(n-1)\omega_{n-1} }\lim_{\sigma\rightarrow \infty}\int_{S_\sigma}\sum_{i,j}(g_{ij,i}\nu_j-g_{ii,j}\nu_j)d\xi.
-$$
-
-
-The basic content of the positive mass theorem is that if there is $R(g)\ge 0,$ everywhere, then $E\ge 0.$ At the same time,
-$E=0$ if and only if $(M,g)$ is isomorphic to Euclidean space.
-
-Yamabe problem
-----------
-
-### Conformal class
-Define its **conformal class** for the metric $g,$:
-
-$$
+$$</p>
+<p>正质量定理的基本内容即是, 若处处有$R(g)\ge 0,$ 则$E\ge 0.$ 同时,
+$E=0$当且仅当$(M,g)$同构于欧氏空间.</p>
+<h2 id="Yamabe问题"><a href="#Yamabe问题" class="headerlink" title="Yamabe问题"></a>Yamabe问题</h2><h3 id="共形类"><a href="#共形类" class="headerlink" title="共形类"></a>共形类</h3><p>对度量$g,$ 定义其<strong>共形类</strong>: </p>
+<p>$$
 [g]=\{e^ug,u\in C^\infty(M)\}.
-$$
-
- 1960,
-Yamabe claims to have proved the following proposition: Given a compact Riemannian manifold $(M,g),$ $n\ge 3,$
-There is a metric conformal to $g$, with constant curvature. However, a bigger problem arises in the proof,
-The proposition thus became a problem, called Yamabe's problem. Twenty-four years later, Schoen gave a proof.
-
-If $\widetilde{g}=e^ug,$ we calculate the change of the geometric quantity. First of all, it is easy to get:
-
-
-$$
+$$</p>
+<p> 1960年,
+Yamabe声称证明了如下命题: 给定紧黎曼流形$(M,g),$ $n\ge 3,$
+存在与$g$共形的度量, 具常数量曲率. 不过证明中出现了较大的问题,
+从而该命题成为了一个问题, 称为Yamabe问题. 在24年后, Schoen给出了证明.</p>
+<p>若$\widetilde{g}=e^ug,$ 我们来计算几何量的变化. 首先容易得到:</p>
+<p>$$
 \widetilde{\Gamma}_{ij}^m=\Gamma_{ij}^m+\frac{1}{2}(\delta_j^m \partial_i u+\delta_i^m\partial_ju-g^{mk}g_{ij}\partial_k u).
-$$
-
-
-Take the normal coordinate system at point $x$ under measure $g$, recall
-$$
+$$</p>
+<p>取度量$g$下$x$点处法坐标系, 回忆</p>
+<p>$$
 \widetilde{R}_{ijkl}=\widetilde{g}_{lm}(\partial_j \widetilde{\Gamma}_{ik}^m-\partial_i\widetilde{\Gamma}_{jk}^m+\widetilde{\Gamma}_{ik}^r\widetilde{\Gamma}_{jr}^m-\widetilde{\Gamma}_{jk}^r\widetilde{\Gamma}_{ir}^m).
-$$
-
-
-Since $\widetilde{g}(x)_{lm}=e^{u(x)}\delta_{lm},$
-$\partial_k g_{ij}(x)=0,$
+$$</p>
+<p>由于$\widetilde{g}(x)_{lm}=e^{u(x)}\delta_{lm},$
+$\partial_k g_{ij}(x)=0,$ 
 $$
 \begin{aligned}
- \delta_{lm}(\partial_j \widetilde{\Gamma}_{ik}^m(x)-\partial_i\widetilde{\Gamma}_{jk}^m(x))=&\delta_{lm}(\partial_j\Gamma_{ik}^m(x)-\partial_i\Gamma_{jk}^m(x))\\
- &+\frac{1}{2}(\delta_{il}\partial_{jk}u(x)+\delta_{jk}\partial_{il}u(x)-\delta_{jl}\partial_{ik}u(x)-\delta_{ik}\partial_{jl}u(x)) 
+ \delta_{lm}(\partial_j \widetilde{\Gamma}_{ik}^m(x)-\partial_i\widetilde{\Gamma}_{jk}^m(x))=&amp;\delta_{lm}(\partial_j\Gamma_{ik}^m(x)-\partial_i\Gamma_{jk}^m(x))\\
+ &amp;+\frac{1}{2}(\delta_{il}\partial_{jk}u(x)+\delta_{jk}\partial_{il}u(x)-\delta_{jl}\partial_{ik}u(x)-\delta_{ik}\partial_{jl}u(x)) 
  \end{aligned}
 
-$$
- 
-$$
+$$</p>
+<p>$$
 
 \begin{aligned}
- \delta_{lm}(\widetilde{\Gamma}_{ik}^r\widetilde{\Gamma}_{jr}^m-\widetilde{\Gamma}_{jk}^r\widetilde{\Gamma}_{ir}^m)=&\frac{\delta_{lm} }{4}\left\{(\delta_{i}^r\partial_k u+\delta_k^r\partial_iu-\delta^{rs}\delta_{ik}\partial_su)(\delta_{j}^m\partial_r u+\delta_r^m\partial_ju-\delta^{mt}\delta_{jr}\partial_tu)\right.\\
- &\left.-(\delta_{j}^r\partial_k u+\delta_k^r\partial_ju-\delta^{rs}\delta_{jk}\partial_su)(\delta_{i}^m\partial_r u+\delta_r^m\partial_iu-\delta^{mt}\delta_{ir}\partial_tu)\right\}\\
- =&\frac{1}{4}\left\{(\delta_{i}^r\partial_k u+\delta_k^r\partial_iu-\delta_{ik}\partial^ru)(\delta_{lj}\partial_r u+\delta_{lr}\partial_ju-\delta_{jr}\partial_lu)\right.\\
- &\left.-(\delta_{j}^r\partial_k u+\delta_k^r\partial_ju-\delta_{jk}\partial^ru)(\delta_{li}\partial_r u+\delta_{lr}\partial_iu-\delta_{ir}\partial_lu)\right\}\\
- =&\frac{1}{4}\left\{(\delta_{il}\delta_{jk}-\delta_{jl}\delta_{ik})\partial_ru\partial^ru+(\delta_{jl}\partial_ku\partial_iu+\delta_{ik}\partial_ju\partial_lu-\delta_{il}\partial_ku\partial_ju-\delta_{jk}\partial_iu\partial_lu)\right\}
+ \delta_{lm}(\widetilde{\Gamma}_{ik}^r\widetilde{\Gamma}_{jr}^m-\widetilde{\Gamma}_{jk}^r\widetilde{\Gamma}_{ir}^m)=&amp;\frac{\delta_{lm} }{4}\left\{(\delta_{i}^r\partial_k u+\delta_k^r\partial_iu-\delta^{rs}\delta_{ik}\partial_su)(\delta_{j}^m\partial_r u+\delta_r^m\partial_ju-\delta^{mt}\delta_{jr}\partial_tu)\right.\\
+ &amp;\left.-(\delta_{j}^r\partial_k u+\delta_k^r\partial_ju-\delta^{rs}\delta_{jk}\partial_su)(\delta_{i}^m\partial_r u+\delta_r^m\partial_iu-\delta^{mt}\delta_{ir}\partial_tu)\right\}\\
+ =&amp;\frac{1}{4}\left\{(\delta_{i}^r\partial_k u+\delta_k^r\partial_iu-\delta_{ik}\partial^ru)(\delta_{lj}\partial_r u+\delta_{lr}\partial_ju-\delta_{jr}\partial_lu)\right.\\
+ &amp;\left.-(\delta_{j}^r\partial_k u+\delta_k^r\partial_ju-\delta_{jk}\partial^ru)(\delta_{li}\partial_r u+\delta_{lr}\partial_iu-\delta_{ir}\partial_lu)\right\}\\
+ =&amp;\frac{1}{4}\left\{(\delta_{il}\delta_{jk}-\delta_{jl}\delta_{ik})\partial_ru\partial^ru+(\delta_{jl}\partial_ku\partial_iu+\delta_{ik}\partial_ju\partial_lu-\delta_{il}\partial_ku\partial_ju-\delta_{jk}\partial_iu\partial_lu)\right\}
  \end{aligned}
 $$
- Finally got
-
-
-$$
+ 最终得到</p>
+<p>$$
 \widetilde{R}=e^{-u}\left(R-(n-1)\Delta_gu-\frac{(n-1)(n-2)}{4}|\nabla u|_g^2\right).
-$$
-When $n=2$, the Yamabe problem is whether there exists $\lambda\in \mathbb{R},$
-$u\in C^\infty(M),$ such that
-
-$$
+$$</p>
+<p>$n=2$时, Yamabe问题即为是否存在$\lambda\in \mathbb{R},$
+$u\in C^\infty(M),$ 使得 </p>
+<p>$$
 -\Delta_gu+R=\lambda e^u.
-$$
-
-
-This equation is not particularly difficult. When $n\ge 3$,
-It is a good problem for nonlinear analysis on manifolds. Let $e^u=v^{\frac{4}{n-2} },$
-$v$ is a smooth positive function, then the equation becomes as follows:
-
-
-$$
+$$</p>
+<p>这个方程并不是特别困难. $n\ge 3$时,
+它是一个流形上非线性分析的很好的问题. 令$e^u=v^{\frac{4}{n-2} },$
+$v$为光滑正函数, 则等式化为如下形式:</p>
+<p>$$
 -\Delta_g v+\frac{n-2}{4(n-1)}Rv=\frac{n-2}{4(n-1)}\widetilde{R}v^{2^\ast -1}.
-$$
-
-
-Where $2^\ast =\frac{2n}{n-2}.$
-Yamabe's problem is reduced to whether there exists $\lambda\in \mathbb{R}$ and a smooth positive function $u,$ on $M$
-make
-
-$$
+$$</p>
+<p>其中$2^\ast =\frac{2n}{n-2}.$
+Yamabe问题即化为是否存在$\lambda\in \mathbb{R}$以及$M$上光滑正函数$u,$
+使得 </p>
+<p>$$
 -\Delta_g u+\frac{n-2}{4(n-1)}Ru=\lambda u^{2^\ast -1}.
-$$
-
-
-This turns a purely geometric problem into a purely analytical problem.
-
-### Conformal Laplace operator
-Inspired by the previous formula, we define the conformal Laplace operator:
-
-
-$$
+$$</p>
+<p>这样就将纯几何问题化为了纯分析问题.</p>
+<h3 id="共形Laplace算子"><a href="#共形Laplace算子" class="headerlink" title="共形Laplace算子"></a>共形Laplace算子</h3><p>由前面的式子启发, 我们定义<strong>共形Laplace算子</strong>:</p>
+<p>$$
 L:=-\Delta+c_nR,\quad c_n=\frac{n-2}{4(n-1)}.
-$$
-
-
-
-It is conformally invariant and can be expressed specifically as the following proposition:
-**Proposition 1**. *Suppose $(M,g)$ is a compact Riemannian manifold. Let $\varphi\in C^\infty(M),$ then $n\ge 3$, for $\widetilde{g}=e^{\varphi}g=\psi^{\frac{4}{n-2} }g,$*
-$$
+$$</p>
+<p>它是共形不变的, 具体表述为如下命题:</p>
+<p><strong>命题 1</strong>. <em>设$(M,g)$为紧黎曼流形. 令$\varphi\in C^\infty(M),$ 则$n\ge 3$时, 对于$\widetilde{g}=e^{\varphi}g=\psi^{\frac{4}{n-2} }g,$</em> </p>
+<p>$$
 L_{\widetilde{g} }u=\psi^{-(2^\ast -1)}L_g(u\psi).
-$$
-
-
-
-**Certificate:**
+$$</p>
+<p><strong>证:</strong> 
 $$
 \begin{aligned}
- \Delta_{\widetilde{g} }u&=\frac{e^{-\frac{n\varphi}{2} } }{\sqrt{g} }\partial_i(e^{\frac{n-2}{2}\varphi}g^{ij}\sqrt{g}\partial_ju)\\
- &=e^{-\varphi}\left(\Delta_gu+\frac{n-2}{2}\partial_i\varphi g^{ij}\partial_ju\right)
+ \Delta_{\widetilde{g} }u&amp;=\frac{e^{-\frac{n\varphi}{2} } }{\sqrt{g} }\partial_i(e^{\frac{n-2}{2}\varphi}g^{ij}\sqrt{g}\partial_ju)\\
+ &amp;=e^{-\varphi}\left(\Delta_gu+\frac{n-2}{2}\partial_i\varphi g^{ij}\partial_ju\right)
  \end{aligned}
 $$
-Among them $\partial_i\varphi g^{ij} \partial_j u=\left<{}D\varphi,Du\right>_g.$
-Thus,
+其中$\partial_i\varphi g^{ij} \partial_j u=\left&lt;{}D\varphi,Du\right&gt;_g.$
+从而,
 $$
-\Delta_{\widetilde{g} }u=\psi^{-\frac{4}{n-2} }\left(\Delta_gu+2\frac{\left<{}D\psi,Du\right>_g}{\psi}\right)=\psi^{-(2^*-1)}(\psi \Delta_g u+2\left<{}D\psi,Du\right>_g)
+\Delta_{\widetilde{g} }u=\psi^{-\frac{4}{n-2} }\left(\Delta_gu+2\frac{\left&lt;{}D\psi,Du\right&gt;_g}{\psi}\right)=\psi^{-(2^*-1)}(\psi \Delta_g u+2\left&lt;{}D\psi,Du\right&gt;_g)
  .
 
 $$
- Thus,
+ 从而, 
 $$
 
 \begin{aligned}
- L_{\widetilde{g} }u&=\psi^{-(2^*-1)}\left(-\psi\Delta_gu-2\left<{}D\psi,Du\right>_g+\frac{n-2}{4(n-1)}Ru\psi -u\Delta_g\psi\right)\\
- &=\psi^{-(2^*-1)}(-\Delta_g(u\psi)+c_nRu\psi)=\psi^{-(2^*-1)}L_g(u\psi).\\
+ L_{\widetilde{g} }u&amp;=\psi^{-(2^*-1)}\left(-\psi\Delta_gu-2\left&lt;{}D\psi,Du\right&gt;_g+\frac{n-2}{4(n-1)}Ru\psi -u\Delta_g\psi\right)\\
+ &amp;=\psi^{-(2^*-1)}(-\Delta_g(u\psi)+c_nRu\psi)=\psi^{-(2^*-1)}L_g(u\psi).\\
  \end{aligned}
-$$
-
-Next we define the concept of conformally flat. The Riemannian manifold $(M,g)$ is called **conformally flat**,
-If $\,\forall\,x\in M,$ exists an open neighborhood $V,$ of $x$ $u\in C^\infty(M),$
-Make $e^ug$ be flat on $V$.
-positive mass theorem
-----------
-
-### Measurement Transformation
-
-With these preparations in place, the proof of the positive mass theorem can begin.
-First we transform the measurement:
-**Proposition 2**. *Suppose $(M,g)$ is an asymptotically flat manifold, $p>\frac{n-2}{2},$ $q>n.$ Assume $R(g)\ge 0,$ then $\,\forall\,\varepsilon>0,$ $\,\exists\,\overline{g}$ makes $(M,\overline{g})$ still asymptotically flat at infinity, And it is conformally flat,
-At the same time $R(\overline{g})\equiv 0,$ $E(\overline{g})\le E(g)+\varepsilon.$*
-
-**Proof:** First, we can set $R(g)\equiv 0,$ and consider the conformal Laplace equation $Lu=0,$
-Find the solution $u=1+A|x|^{2-n}+O(|x|^{1-n}),$ $A\le 0.$ So at infinity,
-$u\in(0,1).$ At this time, the quantitative curvature of measure $u^{\frac{4}{n-2} }g$ is zero,
-And the total energy is given by $E(g)+A\le E(g)$. Therefore, this measure can be used instead of $g$.
-
-Next we turn $g$ into a Euclidean metric at infinity.
-Take the truncation function $\Psi_\sigma(x)$ to satisfy the following properties:
+$$</p>
+<p>接下来我们定义共形平坦的概念. 称黎曼流形$(M,g)$是<strong>共形平坦的</strong>,
+若$\,\forall\,x\in M,$ 存在$x$的开邻域$V,$ $u\in C^\infty(M),$
+使得$e^ug$在$V$上是平坦的.</p>
+<h2 id="正质量定理"><a href="#正质量定理" class="headerlink" title="正质量定理"></a>正质量定理</h2><h3 id="度量改造"><a href="#度量改造" class="headerlink" title="度量改造"></a>度量改造</h3><p>有了这些准备工作后, 便可以开始正质量定理的证明了.
+首先我们将度量进行改造:</p>
+<p><strong>命题 2</strong>. <em>设$(M,g)$是渐进平坦流形, $p&gt;\frac{n-2}{2},$ $q&gt;n.$ 假设$R(g)\ge 0,$ 则$\,\forall\,\varepsilon&gt;0,$ $\,\exists\,\overline{g}$使得无穷远处$(M,\overline{g})$仍是渐进平坦的, 且还是共形平坦的, 同时$R(\overline{g})\equiv 0,$ $E(\overline{g})\le E(g)+\varepsilon.$</em> </p>
+<p><strong>证:</strong> 首先可以设$R(g)\equiv 0,$ 考虑共形Laplace方程$Lu=0,$
+取解$u=1+A|x|^{2-n}+O(|x|^{1-n}),$ $A\le 0.$ 这样在无穷远处,
+$u\in(0,1).$ 此时度量$u^{\frac{4}{n-2} }g$的数量曲率为零,
+且总能量由$E(g)+A\le E(g)$给出. 因此用该度量替代$g$即可.</p>
+<p>接下来我们将$g$在无穷远处变为欧氏度量.
+取截断函数$\Psi_\sigma(x)$满足如下性质: 
 $$
 \left\{\begin{aligned}
- &\Psi_\sigma(x)=1,\quad |x|\le \sigma,\\
- &\text{单调递减, 且} \sigma |\Psi_\sigma'|+\sigma^2|\Psi''_\sigma|\le c,\\
- &\Psi_\sigma(x)=0,\quad |x|\ge 2\sigma. 
+ &amp;\Psi_\sigma(x)=1,\quad |x|\le \sigma,\\
+ &amp;\text{单调递减, 且} \sigma |\Psi_\sigma&#39;|+\sigma^2|\Psi&#39;&#39;_\sigma|\le c,\\
+ &amp;\Psi_\sigma(x)=0,\quad |x|\ge 2\sigma. 
  \end{aligned}\right.
 $$
-Consider the metric $^{(\sigma)}g:=\Psi_\sigma g+(1-\Psi_\sigma)\delta,$
-$\delta=\delta_{ij}dx^idx^j$ is the Euclidean metric. Note that when $\sigma$ is sufficiently large,
-Consistently for $\sigma$ we have ${}^{(\sigma)}g=\delta+O(|x|^{-p}),$
-And $R\left({}^{(\sigma)}g\right)=O(|x|^{-2-p}).$ In particular, we have:
-
-
-$$
+考虑度量$^{(\sigma)}g:=\Psi_\sigma g+(1-\Psi_\sigma)\delta,$
+$\delta=\delta_{ij}dx^idx^j$为欧氏度量. 注意到$\sigma$充分大时,
+对$\sigma$一致地有${}^{(\sigma)}g=\delta+O(|x|^{-p}),$
+且$R\left({}^{(\sigma)}g\right)=O(|x|^{-2-p}).$ 特别地, 我们有:</p>
+<p>$$
 \int_M \left|R\left({}^{(\sigma)}g\right)\right|^{\frac{n}{2} }d\omega_g=O(\sigma^{-\frac{np}{2} }).
-$$
-Therefore, for sufficiently large $\sigma,$, the equation $L_\sigma u_\sigma=0,$ $u_\sigma>0,$
-The unique solution of $u_\sigma\rightarrow 1$.
-Therefore, the metric ${}^{(\sigma)}\overline{g}=u_\sigma^{\frac{4}{n-2} }{}^{(\sigma)}g$ is quantitatively flat,
-And it is conformally flat at infinity.
-
-Finally, $\lim_{\sigma\rightarrow \infty}E({}^{(\sigma)}\overline{g})=E(g)$ is enough,
-In this way, a sufficiently large $\sigma$ can satisfy the proposition requirements.
-From the consistent attenuation estimate of $u_\sigma,{}^{(\sigma)}g$, given $\varepsilon>0,$
-There is $r_0$ that does not depend on $\sigma$ such that
-
-
-$$
+$$</p>
+<p>因此对充分大的$\sigma,$ 有关于方程$L_\sigma u_\sigma=0,$ $u_\sigma&gt;0,$
+$u_\sigma\rightarrow 1$的唯一解.
+从而度量${}^{(\sigma)}\overline{g}=u_\sigma^{\frac{4}{n-2} }{}^{(\sigma)}g$是数量平坦的,
+且在无穷远处共形平坦.</p>
+<p>最后说明$\lim_{\sigma\rightarrow \infty}E({}^{(\sigma)}\overline{g})=E(g)$即可,
+这样取足够大的$\sigma$即可满足命题要求.
+由对$u_\sigma,{}^{(\sigma)}g$的一致衰减估计, 给定$\varepsilon&gt;0,$
+有不依赖于$\sigma$的$r_0$使得</p>
+<p>$$
 \left|E\left({}^{(\sigma)}\overline{g}\right)-\frac{1}{4(n-1)\omega_{n-1} }\int_{S_{r_0} }\sum_{i,j}{}^{(\sigma)}\overline{g}_{ij,i}\nu_j-{}^{(\sigma)}\overline{g}_{ii,j}\nu_jd\xi\right|\le \frac{\varepsilon}{3}
-$$
-
-
-
-
-$$
+$$</p>
+<p>$$
 \left|E(g)-\frac{1}{4(n-1)\omega_{n-1} }\int_{S_{r_0} }\sum_{i,j}g_{ij,i}\nu_j-g_{ii,j}\nu_jd\xi\right|\le \frac{\varepsilon}{3}
-$$
-
-
-Since we have transformed $g$ into a metric with zero curvature, on the compact subset,
+$$</p>
+<p>由于我们已经将$g$改造为数量曲率为零的度量, 在紧子集上,
 $\lim_{\sigma\rightarrow\infty}u_\sigma=1.$
-Therefore, the integral terms in the above two equations are approximate. Therefore, for sufficiently large $\sigma,$
-$|E({}^{(\sigma)}\overline{g})-E(g)|<\varepsilon.$ This completes the proof of the proposition.
-
-If $(M,g)$ is asymptotically flat and conformally flat at infinity,
-Then $g_{ij}=h^{\frac{4}{n-2} }(x)\delta_{ij},$ $|x|$ is sufficiently large,
-And $h(x)\rightarrow 1.$ If $R(g)\equiv 0,$ Recall the definition of conformal Laplace,
-It is known that $h$ is a harmonic function when $|x|$ is sufficiently large,
-The specific form is $h=1+E|x|^{2-n}+O(|x|^{1-n}).$ Here we normalize the energy,
-Let $E$ be exactly the total energy of metric $h^{\frac{4}{n-2} }\delta$.
-From this we can always assume that the measure in the above proposition is of this form,
-It is no longer expressed in the form $g=\delta+O(|x|^{-p})$.
-
-### Minimal surface method
-**Theorem 3** (Positive mass theorem). *Suppose $(M,g)$ is asymptotically flat, $p>\frac{n-2}{2},$ $q>n,$ $R(g)\ge 0,$ then $E(g)\ge 0,$ and $E(g)=0$ if and only if $(M,g)$ is equidistant from $(\mathbb{R}^n,\delta).$*
-
-We give the proof when $n\le 7$. For the case of $n\ge 8$,
-The problem of minimal surface singularities can be overcome through additional techniques. The case of $E(g)=0$ will not be discussed for the time being.
-
-**Proof:** Contraproof, assuming $E(g)<0,$ then from the proposition in the previous section, we can assume $R(g)\equiv 0,$
+从而上面两式中的积分项是逼近的. 因此对充分大的$\sigma,$
+$|E({}^{(\sigma)}\overline{g})-E(g)|&lt;\varepsilon.$ 这就完成了命题的证明.</p>
+<p>若$(M,g)$是渐进平坦, 且无穷远处共形平坦的,
+则$g_{ij}=h^{\frac{4}{n-2} }(x)\delta_{ij},$ $|x|$充分大,
+且$h(x)\rightarrow 1.$ 若$R(g)\equiv 0,$ 回忆共形Laplace的定义,
+得知$h$为在$|x|$充分大时为调和函数,
+具体形式为$h=1+E|x|^{2-n}+O(|x|^{1-n}).$ 这里我们将能量标准化,
+使得$E$恰为度量$h^{\frac{4}{n-2} }\delta$的总能量.
+由此我们总可以假设上述命题中的度量为这种形式,
+不再用形如$g=\delta+O(|x|^{-p})$的方式表示.</p>
+<h3 id="极小曲面方法"><a href="#极小曲面方法" class="headerlink" title="极小曲面方法"></a>极小曲面方法</h3><p><strong>定理 3</strong> (正质量定理). <em>设$(M,g)$渐进平坦, $p&gt;\frac{n-2}{2},$ $q&gt;n,$ $R(g)\ge 0,$ 则$E(g)\ge 0,$ 且$E(g)=0$当且仅当$(M,g)$等距于$(\mathbb{R}^n,\delta).$</em> </p>
+<p>我们给出$n\le 7$时的证明. 对$n\ge 8$的情形,
+可通过额外的技术克服极小曲面奇点的问题. $E(g)=0$的情形暂时不做讨论.</p>
+<p><strong>证:</strong> 反证, 假设$E(g)&lt;0,$ 则由前小节命题, 可设$R(g)\equiv 0,$
 $g_{ij}=h^{\frac{4}{n-2} }\delta_{ij},$ $h(x)=1+E|x|^{2-n}+O(|x|^{1-n}).$
-Now it is more convenient to transform $R(g)>0$. We take the positive smooth function $v$ to be sufficiently small,
-And decays rapidly at infinity. Take the solution $Lu=v,$ $u=1+\delta|x|^{2-n}+O(|x|^{1-n}),$
-$\delta$ is sufficiently small. Just replace the metric with $u^{\frac{4}{n-2} }g$.
-This also ensures the negativity of energy.
-Let's calculate the divergence of the unit vector field $\eta=h^{-\frac{2}{n-2} }\partial_n$ with respect to $g$.
+现在改造$R(g)&gt;0$比较方便. 我们取正光滑函数$v$充分小,
+且在无穷远处快速衰减. 取解$Lu=v,$ $u=1+\delta|x|^{2-n}+O(|x|^{1-n}),$
+$\delta$充分小. 将度量替换为$u^{\frac{4}{n-2} }g$即可.
+这样还保证了能量的负性.</p>
+<p>我们来计算单位向量场$\eta=h^{-\frac{2}{n-2} }\partial_n$关于$g$的散度.
 $$
 \begin{aligned}
- \operatorname{div}_g(\eta)&=\frac{1}{\sqrt{g} }\partial_i\left(\sqrt{g}\eta^i\right)=h^{-\frac{2n}{n-2} }\partial_n\left(h^{\frac{2n}{n-2} }h^{-\frac{2}{n-2} }\right)\\
- &=\frac{2(n-1)}{n-2}E\partial_n\left(|x|^{2-n}\right)+O\left(|x|^{-n}\right)\\
- &=-2(n-1)E\frac{x^n}{|x|^n}+O\left(|x|^{-n}\right)
+ \operatorname{div}_g(\eta)&amp;=\frac{1}{\sqrt{g} }\partial_i\left(\sqrt{g}\eta^i\right)=h^{-\frac{2n}{n-2} }\partial_n\left(h^{\frac{2n}{n-2} }h^{-\frac{2}{n-2} }\right)\\
+ &amp;=\frac{2(n-1)}{n-2}E\partial_n\left(|x|^{2-n}\right)+O\left(|x|^{-n}\right)\\
+ &amp;=-2(n-1)E\frac{x^n}{|x|^n}+O\left(|x|^{-n}\right)
  \end{aligned}
-$$
-
-In particular, we see that $\,\exists\,a_0\in \mathbb{R},$
+$$</p>
+<p>特别地, 我们看到$\,\exists\,a_0\in \mathbb{R},$
 $\operatorname{div}_g(\eta)
-\begin{cases} >0,&x^n\ge a_0\\<0,&x^n\le -a_0
-\end{cases}.$
-Let $\sigma$ be sufficiently large,
-$\Gamma_{\sigma,a}$ represents the $n-2$ dimensional sphere
-$$
-\Gamma_{\sigma,a}:=\{x=(x',x^n):|x'|=\sigma,x^n=a\}.
-$$
-
-
-$C_\sigma$ represents the $n-1$ dimensional cylinder
-
-$$
-C_\sigma:=\{(x',x_n):|x'|=\sigma\}.
-$$
-Orient $\Gamma_{\sigma,a}$ as the boundary of the cylindrical part below it in $C_\sigma$.
-Let $\Sigma_{\sigma,a}$ be the $n-1$ dimensional minimal surface,
+\begin{cases} &gt;0,&amp;x^n\ge a_0\\&lt;0,&amp;x^n\le -a_0
+\end{cases}.$ 
+现令$\sigma$充分大,
+$\Gamma_{\sigma,a}$表示$n-2$维球面</p>
+<p>$$
+\Gamma_{\sigma,a}:=\{x=(x&#39;,x^n):|x&#39;|=\sigma,x^n=a\}.
+$$</p>
+<p>$C_\sigma$表示$n-1$维柱面 </p>
+<p>$$
+C_\sigma:=\{(x&#39;,x_n):|x&#39;|=\sigma\}.
+$$</p>
+<p>将$\Gamma_{\sigma,a}$作为$C_\sigma$中在它下方的圆柱部分的边界定向.
+取$\Sigma_{\sigma,a}$为$n-1$维极小曲面,
 $\partial{\Sigma_{\sigma,a} }=\Gamma_{\sigma,a}.$
-$C_\sigma$ frames the inner area $\Omega_\sigma,$
-$\Sigma_{\sigma,a}\subset \Omega_\sigma.$ $n\le 7$,
-There are no singular points on the minimal surface $\Sigma_{\sigma,a}$.
-
-$\,\forall\,\sigma,$ definition
-
-
-$$
+$C_\sigma$框住了内部区域$\Omega_\sigma,$
+$\Sigma_{\sigma,a}\subset \Omega_\sigma.$ $n\le 7$时,
+极小曲面$\Sigma_{\sigma,a}$上没有奇点.</p>
+<p>$\,\forall\,\sigma,$ 定义</p>
+<p>$$
 V(\sigma)=\min\{\operatorname{Vol}(\Sigma_{\sigma,a}):a\in [-a_0,a_0]\},
-$$
-Here $a\mapsto\operatorname{Vol}(\Sigma_{\sigma,a})$ is a continuous function.
-Assert that there exists $a=a(\sigma)\in (-a_0,a_0),$
+$$</p>
+<p>这里$a\mapsto\operatorname{Vol}(\Sigma_{\sigma,a})$为连续函数.
+断言存在$a=a(\sigma)\in (-a_0,a_0),$
 $\operatorname{Vol}(\Sigma_{\sigma,a})=V(\sigma).$
-In order to illustrate $a(\sigma)<a_0,$
-Write $\Sigma_{\sigma,a}$ in the form of $(\partial\Omega_{\sigma,a})\cap \Omega_\sigma$,
-$\Omega_{\sigma,a}$ is the part of $\Omega_\sigma$ below $\Sigma_{\sigma,a}$. Let
-$$
-U_{\sigma,a}=\{(x',x^n)\in\Omega_{\sigma,a}:x^n>a_0-\delta\},
-$$
-
-
-$\delta$ is sufficiently small such that $\operatorname{div}_g(\eta)>0,$
-$x^n>a_0-\sigma.$ Let us explain $U_{\sigma,a}=\varnothing.$
-If $U_{\sigma,a}\neq \varnothing,$ $a>a_0-\delta.$ According to the integral formula by parts,
-And since $\eta$ is longitudinally tangent to $C_\sigma$,
-
-
-$$
-\int_{U_{\sigma,a} }\operatorname{div}_g(\eta)d\mathcal{H}^n=\int_{\Sigma_{\sigma,a}\cap \{x^n\ge a_0-\delta\} }\left<{}\eta,\nu\right>_gd\mathcal{H}^{n-1}-\operatorname{Vol}(\Omega_{\sigma,a}\cap\{x^n=a_0-\delta\})>0,
-$$
-Where $\nu$ is the unit normal direction of $\Sigma_{\sigma,a}$. According to Schwartz inequality,
-
-
-$$
-\operatorname{Vol}(\Omega_{\sigma,a}\cap \{x^n=a_0-\delta\})<\operatorname{Vol}(\Sigma_{\sigma,a}\cap \{x^n\ge a_0-\delta\}).
-$$
-
-
-In this way,
-$\Sigma:=\partial(\Omega_{\sigma,a}\cap \{x^n<a_0-\delta\})\cap \Omega_\sigma$ has a smaller area,
+为了说明$a(\sigma)&lt;a_0,$
+将$\Sigma_{\sigma,a}$写成$(\partial\Omega_{\sigma,a})\cap \Omega_\sigma$的形式,
+$\Omega_{\sigma,a}$为$\Omega_\sigma$在$\Sigma_{\sigma,a}$下方的部分. 令</p>
+<p>$$
+U_{\sigma,a}=\{(x&#39;,x^n)\in\Omega_{\sigma,a}:x^n&gt;a_0-\delta\},
+$$</p>
+<p>$\delta$充分小, 使得仍有$\operatorname{div}_g(\eta)&gt;0,$
+$x^n&gt;a_0-\sigma.$ 我们来说明$U_{\sigma,a}=\varnothing.$
+若$U_{\sigma,a}\neq \varnothing,$ $a&gt;a_0-\delta.$ 由分部积分公式,
+且由于$\eta$与$C_\sigma$纵向相切,</p>
+<p>$$
+\int_{U_{\sigma,a} }\operatorname{div}_g(\eta)d\mathcal{H}^n=\int_{\Sigma_{\sigma,a}\cap \{x^n\ge a_0-\delta\} }\left&lt;{}\eta,\nu\right&gt;_gd\mathcal{H}^{n-1}-\operatorname{Vol}(\Omega_{\sigma,a}\cap\{x^n=a_0-\delta\})&gt;0,
+$$</p>
+<p>其中$\nu$为$\Sigma_{\sigma,a}$单位法向. 由Schwartz不等式,</p>
+<p>$$
+\operatorname{Vol}(\Omega_{\sigma,a}\cap \{x^n=a_0-\delta\})&lt;\operatorname{Vol}(\Sigma_{\sigma,a}\cap \{x^n\ge a_0-\delta\}).
+$$</p>
+<p>这样,
+$\Sigma:=\partial(\Omega_{\sigma,a}\cap \{x^n&lt;a_0-\delta\})\cap \Omega_\sigma$有更小的面积,
 $\partial\Sigma=\Gamma_{\sigma,a_0-\delta}.$
-This contradicts the minimality of $\Sigma_{\sigma,a}$, so $a(\sigma)\le a_0-\delta,$
-Similarly, $a(\sigma)\ge -a_0+\delta.$
-
-Take $\Sigma_{\sigma}=\Sigma_{\sigma,a(\sigma)},$ so that $V(\sigma)$ reaches minimum.
-Take $X_1$ as the vector field on $M$, which is identical to $\partial_n$ outside the compact set.
-Let $X_0$ be a vector field with compact support, $X=X_0+\alpha X_1,$ $\alpha\in \mathbb{R}.$
-Let $F_t$ be the single-parameter transformation group generated by $X$. If $\sigma$ is sufficiently large,
-The compact support set of $X_0$ is contained in $\Omega_\sigma$,
-Then $X$ gives the normal variation of $\Sigma_\sigma$:
+这与$\Sigma_{\sigma,a}$极小性矛盾, 因此$a(\sigma)\le a_0-\delta,$
+类似地, $a(\sigma)\ge -a_0+\delta.$</p>
+<p>取$\Sigma_{\sigma}=\Sigma_{\sigma,a(\sigma)},$ 使得$V(\sigma)$达到极小.
+取$X_1$为$M$上向量场, 在紧集外与$\partial_n$恒同.
+令$X_0$为具紧支撑的向量场, $X=X_0+\alpha X_1,$ $\alpha\in \mathbb{R}.$
+令$F_t$为由$X$生成的单参数变换群, 若$\sigma$充分大,
+$X_0$的紧支集包含在$\Omega_\sigma$内,
+则$X$给出了$\Sigma_\sigma$的正常变分:
 $$
 \left.\frac{d {} }{d {}t}\operatorname{Vol}(F_t(\Sigma_\sigma))\right|_{t=0}=0,\quad 
  \left.\frac{d {}^2}{d {}t^2}\operatorname{Vol}(F_t(\Sigma_\sigma))\right|_{t=0}\ge 0.
 $$
-The second change of its volume is the integral of $F_{X,\sigma}$,
-
-
-$$
+它的体积第二变分为$F_{X,\sigma}$的积分,</p>
+<p>$$
 F_{X,\sigma}(P)=\left.\frac{d {}^2}{d {}t^2}\left\Vert dF_t(T_P\Sigma_\sigma)\right\Vert_g\right|_{t=0}.
-$$
-For sufficiently large $|x|,$ consistently $F_{X,\sigma}(x)=O(|x|^{-n}).$ for $\sigma$
-Regularity theory shows that outside the compact set, $\Sigma_\sigma$ is the image of the function $f_{\sigma}(x')$,
-And its gradient is bounded. Select a series of $\sigma_i\rightarrow \infty,$
-$\{\Sigma_{\sigma_i}\}$ converges to $\Sigma\subset M.$
-Due to the uniform decay condition of $F_{X,\sigma_i}$,
-
-
-$$
+$$</p>
+<p>对充分大的$|x|,$ 对$\sigma$一致地有$F_{X,\sigma}(x)=O(|x|^{-n}).$
+正则性理论表明在紧集外, $\Sigma_\sigma$是函数$f_{\sigma}(x&#39;)$的图像,
+且其梯度有界. 选取一系列$\sigma_i\rightarrow \infty,$
+$\{\Sigma_{\sigma_i}\}$收敛到$\Sigma\subset M.$
+由于$F_{X,\sigma_i}$的一致衰减条件,</p>
+<p>$$
 \int_{\Sigma}F_Xd\mathcal{H}^{n-1}\ge 0,\quad F_X(P)=\frac{d {}^2}{d {}t^2}\Vert dF_t(T_P\Sigma)\Vert|_{t=0}.
-$$
-
-
-Outside the compact set, $\Sigma$ is also the image of $f(x')$, with bounded gradient. In fact,
-Since $|f(x')|\le a_0,$ by the regularity theory $|\partial f|(x)=O(|x'|^{-1}).$ In addition,
-$f$ satisfies the minimal surface equation:
-
-
-$$
+$$</p>
+<p>在紧集外, $\Sigma$也是$f(x&#39;)$的图像, 具有界梯度. 事实上,
+由于$|f(x&#39;)|\le a_0,$ 由正则性理论$|\partial f|(x)=O(|x&#39;|^{-1}).$ 另外,
+$f$满足极小曲面方程:</p>
+<p>$$
 \sum_{i,j}\left(\delta_{ij}-\frac{\partial_if\partial_jf}{1+|\nabla f|^2}\right)\partial_{ij}f+\sqrt{1+|\nabla f|^2}\frac{\partial {} }{\partial {}\nu_0}\log h=0,\quad \nu_0=\frac{(-\nabla f,1)}{\sqrt{1+|\nabla f|^2} }.
-$$
-From linear theory, $f(x')=a+O(|x'|^{3-n}),$ $n\ge 4,$
-And $f(x')=a+O(|x'|^{-1}),$ $n=3,$ $a\in \mathbb{R}.$
-$F_X$ can be represented by the geometry of $\Sigma$:
-
-
-$$
-F_X=-\sum_{i=1}^{n-1}\left<{}R_{Xe_i}X,e_i\right>+\operatorname{div}_M Z+(\operatorname{div}_MX)^2+\sum_{i=1}^{n-1}|(D_{e_i}X)^{\perp}|^2-\sum_{i,j=1}^{n-1}\left<{}e_i,D_{e_j}X\right>\left<{}e_j,D_{e_i}X\right>.
-$$
-Where $Z=D_{\partial_t}\frac{\partial {}F_t}{\partial {}t}$ is the changing acceleration vector field.
-Among them
-
-
-$$
-\operatorname{div}_MX=\sum_{i=1}^{n-1}\left<{}D_{e_i}X,e_i\right>,
-$$
-
-
-$\{e_i\}$ is the orthogonal basis of $\Sigma$ tangent space.
-Do orthogonal decomposition $X=\widetilde{X}+\varphi\nu,$ $Z=\widetilde{Z}+\psi\nu.$
-Since $\Sigma$ is extremely small, $\operatorname{div}_M \chi\nu=0,$
-For any function $\chi.$ we have:
-$$
+$$</p>
+<p>由线性理论, $f(x&#39;)=a+O(|x&#39;|^{3-n}),$ $n\ge 4,$
+并且$f(x&#39;)=a+O(|x&#39;|^{-1}),$ $n=3,$ $a\in \mathbb{R}.$
+$F_X$可由$\Sigma$的几何表示:</p>
+<p>$$
+F_X=-\sum_{i=1}^{n-1}\left&lt;{}R_{Xe_i}X,e_i\right&gt;+\operatorname{div}_M Z+(\operatorname{div}_MX)^2+\sum_{i=1}^{n-1}|(D_{e_i}X)^{\perp}|^2-\sum_{i,j=1}^{n-1}\left&lt;{}e_i,D_{e_j}X\right&gt;\left&lt;{}e_j,D_{e_i}X\right&gt;.
+$$</p>
+<p>其中$Z=D_{\partial_t}\frac{\partial {}F_t}{\partial {}t}$为变化的加速度向量场.
+其中</p>
+<p>$$
+\operatorname{div}_MX=\sum_{i=1}^{n-1}\left&lt;{}D_{e_i}X,e_i\right&gt;,
+$$</p>
+<p>$\{e_i\}$为$\Sigma$切空间的正交基.</p>
+<p>做正交分解$X=\widetilde{X}+\varphi\nu,$ $Z=\widetilde{Z}+\psi\nu.$
+由于$\Sigma$是极小的, $\operatorname{div}_M \chi\nu=0,$
+对于任意函数$\chi.$ 接下来有:</p>
+<p>$$
 F_X=-\varphi^2\operatorname{Ric}(\nu,\nu)-\varphi^2\Vert B\Vert^2+\Vert\nabla \varphi\Vert^2+G,
-$$
-
-
-$$
+$$</p>
+<p>$$
 \begin{aligned}
- G=&-2\sum_{i=1}^{n-1}\varphi\left<{}R(\widehat{X},e_i)\nu,e_i\right>-\sum_{i=1}^{n-1}\varphi\left<{}R(\widehat{X},e_i)\widehat{X},e_i\right>+\operatorname{div}_M\widehat{Z}+(\operatorname{div}_M\widehat{X})^2\\
- &-2B(\nabla \varphi,\widehat{X})+\sum_{i=1}^{n-1}B(e_i,\widehat{X})^2-2\varphi\sum_{i,j=1}^{n-1}b_{ij}\widehat{X}_{i;j}-\sum_{i,j=1}^{n-1}\widehat{X}_{i;j}\widehat{X}_{j;i}.
+ G=&amp;-2\sum_{i=1}^{n-1}\varphi\left&lt;{}R(\widehat{X},e_i)\nu,e_i\right&gt;-\sum_{i=1}^{n-1}\varphi\left&lt;{}R(\widehat{X},e_i)\widehat{X},e_i\right&gt;+\operatorname{div}_M\widehat{Z}+(\operatorname{div}_M\widehat{X})^2\\
+ &amp;-2B(\nabla \varphi,\widehat{X})+\sum_{i=1}^{n-1}B(e_i,\widehat{X})^2-2\varphi\sum_{i,j=1}^{n-1}b_{ij}\widehat{X}_{i;j}-\sum_{i,j=1}^{n-1}\widehat{X}_{i;j}\widehat{X}_{j;i}.
  \end{aligned}
 $$
- We discuss the above formulas under an orthogonal frame.
-Among them, $B(-,-)$ represents the second basic type, that is, $B(V,W)=\left<{}D_VW,\nu\right>.$
-The semicolon refers to finding covariant derivatives, and the metric is the induced metric.
-The quantities related to $Z,\widehat{X}$ need to be expressed as bounded quantities. If $D\subset \Sigma$ is a bounded area,
-$$
-\int_DGd\mathcal{H}^{n-1}=\int_{\partial D}\left\{(\operatorname{div}\widehat{X})\left<{}\widehat{X},\eta\right>-\sum_{i,j}\widehat{X}_{i;j}\widehat{X}_j\eta_i-2\varphi\sum_{i,j}b_{ij}\widehat{X}_i\eta_j+\left<{}\widehat{Z},\eta\right>\right\}d\mathcal{H}^{n-2}
-$$
-
-
-$\eta$ is the unit outer normal direction of $\partial D$ in $\Sigma$.
-The middle term disappears because of the Gauss-Codazzi equation and the Ricci formula. For $\sigma>0,$
-Let $D_\sigma=\Omega_\sigma\cap \Sigma.$ given the attenuation conditions of $f, h$,
-Each boundary term decays faster than $\sigma^{2-n}$, so the boundary term tends to zero,
-When $\sigma\rightarrow\infty$. Thus
-
-
-$$
+ 以上公式我们均在正交标架下讨论.
+其中$B(-,-)$表示第二基本型即 $B(V,W)=\left&lt;{}D_VW,\nu\right&gt;.$
+分号指求协变导数, 度量为诱导度量.
+与$Z,\widehat{X}$有关的量需用有界量表示. 若$D\subset \Sigma$为有界区域,</p>
+<p>$$
+\int_DGd\mathcal{H}^{n-1}=\int_{\partial D}\left\{(\operatorname{div}\widehat{X})\left&lt;{}\widehat{X},\eta\right&gt;-\sum_{i,j}\widehat{X}_{i;j}\widehat{X}_j\eta_i-2\varphi\sum_{i,j}b_{ij}\widehat{X}_i\eta_j+\left&lt;{}\widehat{Z},\eta\right&gt;\right\}d\mathcal{H}^{n-2}
+$$</p>
+<p>$\eta$为$\Sigma$内$\partial D$的单位外法向.
+中间项消失是因为Gauss-Codazzi方程与Ricci公式. 对$\sigma&gt;0,$
+令$D_\sigma=\Omega_\sigma\cap \Sigma.$ 由$f,h$的衰减条件,
+每个边界项衰减比$\sigma^{2-n}$要快, 因此边界项趋于零,
+当$\sigma\rightarrow\infty$时. 从而</p>
+<p>$$
 \int_\Sigma (\operatorname{Ric}(\nu,\nu)+\Vert B\Vert^2)\varphi^2d\mathcal{H}^{n-1}\le \int_\Sigma \Vert\nabla \varphi\Vert^2d\mathcal{H}^{n-1}.
-$$
-Here $\varphi=\left<{}X,\nu\right>.$ Since $X$ can be chosen arbitrarily in the compact set,
-$\varphi$ is fixed to
-
-
-$$
-\varphi=\alpha\left<{}\partial_n,\nu\right>=\alpha h^{\frac{2}{n-2} }(1+|\nabla f|^2)^{-\frac{1}{2} }.
-$$
-
-
-Since $\varphi-\alpha=O(|x'|^{2-n}),$ it has finite energy.
-Therefore, $\varphi$ can be chosen arbitrarily as long as $\varphi-\alpha$ has compact support or finite energy.
-From the Gauss equation,
-
-
-$$
+$$</p>
+<p>这里$\varphi=\left&lt;{}X,\nu\right&gt;.$ 由于$X$在紧集内可任意选取,
+$\varphi$只在紧集外固定为</p>
+<p>$$
+\varphi=\alpha\left&lt;{}\partial_n,\nu\right&gt;=\alpha h^{\frac{2}{n-2} }(1+|\nabla f|^2)^{-\frac{1}{2} }.
+$$</p>
+<p>由于$\varphi-\alpha=O(|x&#39;|^{2-n}),$ 它具有有限能量.
+因此可任意选取$\varphi$只要$\varphi-\alpha$具紧支集或有限能量.
+由Gauss方程,</p>
+<p>$$
 \operatorname{Ric}(\nu,\nu)+\Vert B\Vert^2=\frac{1}{2}R_M-\frac{1}{2}R_{\Sigma}+\frac{1}{2}\Vert B\Vert^2.
-$$
-
-
-$R_{\Sigma}$ is the quantitative curvature of $\Sigma$ under the induced metric.
-To complete the proof, first assume $n=3,$ $\varphi\equiv 1.$
-In this way $\frac{1}{2}\int_{\Sigma}R_{\Sigma}d\mathcal{H}^2>0.$
-Now $\frac{1}{2}R_{\Sigma}$ is the Gauss curvature of $\Sigma$,
-The attenuation estimates of $f,h$ indicate that the geodesic curvature of $\partial D_{\sigma}$ converges to $2\pi.$
-Apply the Gauss-Bonnet formula to $D_\sigma$, let $\sigma\rightarrow \infty,$
-
-
-$$
+$$</p>
+<p>$R_{\Sigma}$即诱导度量下$\Sigma$的数量曲率.</p>
+<p>为了完成证明, 首先假设$n=3,$ $\varphi\equiv 1.$
+这样$\frac{1}{2}\int_{\Sigma}R_{\Sigma}d\mathcal{H}^2&gt;0.$
+现$\frac{1}{2}R_{\Sigma}$为$\Sigma$的Gauss曲率,
+$f,h$的衰减估计说明$\partial D_{\sigma}$的测地曲率收敛到$2\pi.$
+对$D_\sigma$应用Gauss-Bonnet公式, 令$\sigma\rightarrow \infty,$</p>
+<p>$$
 \frac{1}{2}\int_{\Sigma}R_{\Sigma}d\mathcal{H}^2=2\pi \chi(\Sigma)-2\pi.
-$$
-Since $\Sigma$ is an open surface, the right-hand term of $\chi(\Sigma)\le 1,$ is not positive.
-This is contradictory to the aforementioned inequality, so the proposition $n=3$ holds.
-
-For the case of $n\ge 4$, since the induced metric $\overline{g}$ satisfies:
-
-
-$$
-\overline{g}_{ij}=h(x',f(x'))^{\frac{4}{n-2} }(\delta_{ij}+\partial_if\partial_jf)=\delta_{ij}+O(|x|^{2-n}),
-$$
-$(\Sigma,\overline{g})$ is asymptotically flat and has zero energy.
-From the previous inequality and Gauss equation, and $R_M\ge 0,$
-It shows that the minimum eigenvalue of $L_{\overline{g} }$ is positive in the compact region of $\Sigma$,
-Because $c(n)=\frac{n-2}{4(n-1)}<\frac{1}{2},$ $n\ge 3.$
-Linear theory allows us to solve $L_{\overline{g} }u=0,$ $u>0,$ on $\Sigma$
-At infinity $u\rightarrow 1.$ At the same time, $u$ has an expansion
-
-
-$$
-u(x')=1+E_0|x'|^{3-n}+O(|x'|^{2-n}).
-$$
-
- In particular,
-$u-1$ has finite energy on $\Sigma$, take $\varphi=u.$ by $R_M>0,$
-
-
-$$
--\int_{\Sigma}R_{\Sigma}u^2d\mathcal{H}^{n-1}<2\int_{\Sigma}|\nabla u|^2d\mathcal{H}^{n-1}\le c(n)^{-1}\int_\Sigma |\nabla u|^2d\mathcal{H}^{n-1}.
-$$
-
-
-
-Next,
+$$</p>
+<p>由于$\Sigma$为开曲面, $\chi(\Sigma)\le 1,$ 右项非正.
+这与前述的不等式矛盾, 因此$n=3$命题成立.</p>
+<p>对$n\ge 4$的情况, 由于诱导度量$\overline{g}$满足:</p>
+<p>$$
+\overline{g}_{ij}=h(x&#39;,f(x&#39;))^{\frac{4}{n-2} }(\delta_{ij}+\partial_if\partial_jf)=\delta_{ij}+O(|x|^{2-n}),
+$$</p>
+<p>$(\Sigma,\overline{g})$是渐进平坦的, 能量为零.
+由前面的不等式与Gauss方程, 以及$R_M\ge 0,$
+说明$L_{\overline{g} }$的最小特征值在$\Sigma$的紧区域上是正的,
+因为$c(n)=\frac{n-2}{4(n-1)}&lt;\frac{1}{2},$ $n\ge 3.$
+线性理论使我们可以在$\Sigma$上解$L_{\overline{g} }u=0,$ $u&gt;0,$
+无穷远处$u\rightarrow 1.$ 同时, $u$有展开式</p>
+<p>$$
+u(x&#39;)=1+E_0|x&#39;|^{3-n}+O(|x&#39;|^{2-n}).
+$$</p>
+<p> 特别地,
+$u-1$在$\Sigma$上具有限能量, 取$\varphi=u.$ 由$R_M&gt;0,$</p>
+<p>$$
+-\int_{\Sigma}R_{\Sigma}u^2d\mathcal{H}^{n-1}&lt;2\int_{\Sigma}|\nabla u|^2d\mathcal{H}^{n-1}\le c(n)^{-1}\int_\Sigma |\nabla u|^2d\mathcal{H}^{n-1}.
+$$</p>
+<p>接下来, 
 $$
 \begin{aligned}
- \int_\Sigma|\nabla u|^2d\mathcal{H}^{n-1}&=\lim_{\sigma\rightarrow\infty}\int_{D_\sigma}|\nabla u|^2d\mathcal{H}^{n-1}\\
- &=-c(n)\lim_{\sigma\rightarrow \infty} \int_{D_{\sigma} }R_{\Sigma}u^2d\mathcal{H}^{n-1}+\lim_{\sigma\rightarrow\infty}\int_{\partial D_{\sigma} }u\frac{\partial {}u}{\partial {}\eta}d\mathcal{H}^{n-1}
+ \int_\Sigma|\nabla u|^2d\mathcal{H}^{n-1}&amp;=\lim_{\sigma\rightarrow\infty}\int_{D_\sigma}|\nabla u|^2d\mathcal{H}^{n-1}\\
+ &amp;=-c(n)\lim_{\sigma\rightarrow \infty} \int_{D_{\sigma} }R_{\Sigma}u^2d\mathcal{H}^{n-1}+\lim_{\sigma\rightarrow\infty}\int_{\partial D_{\sigma} }u\frac{\partial {}u}{\partial {}\eta}d\mathcal{H}^{n-1}
+ \end{aligned}
+$$</p>
+<p>由$u$的展开式, $E_0&lt;0.$
+因此$(\Sigma,u^{\frac{4}{n-3} }\overline{g})$是渐进平坦, 具零数量曲率,
+以及具负能量的流形. 归纳地, 这在$n=3$时产生矛盾.
+因此我们完成了$E\ge 0$的证明.</p>
+<p>文章最后更新于 2022-03-07 12:52:49 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="物理意义"><a href="#物理意义" class="headerlink" title="物理意义"></a>物理意义</h2><p><em>以下为本非物理系学生粗略阅读物理文献, 查阅网站后对该定理物理意义的理解,
+可能具有不专业之处, 请见谅.</em></p>
+<p>我们熟知有万有引力, 空间中的物体会对周围的物体产生力的作用,
+这种力场称为<strong>引力场</strong>. 场本身理应具有能量, 称为<strong>ADM质量</strong>,
+由三位物理学家定义, 以其首字母取名.</p>
+<p>直观来看, 在一张平坦的布上放置一个物体, 会使得整张布扭曲(物体附近下沉,
+无穷远处轻微下沉, 效果随距离缩小), 这便是引力场的一个直观上的模型.
+注意这张布扭曲后便构成了一个二维非平凡曲面,
+我们可以根据其上诱导度量讨论几何结构, 黎曼几何知识由此引入.</p>
+<p>为了探讨一个孤立系统的能量, 假设空间中只有这一个物体,
+那么它的引力场理应在无穷远处几乎没有作用, 物理上称之为<strong>渐近平直时空</strong>.
+仍以上述的布为例, 它在无穷远处是和平面接近的,
+因此数学上也符合空间<strong>渐进平坦</strong>的定义.</p>
+<p>物理上正质量定理的表述为: <em>一个孤立体系若其物质分布满足主能量条件,
+则其ADM质量非负.</em> 数学上, 可以建立物理量与几何量间的联系. 在特定情形下,
+主能量条件可以推出空间<em>数量曲率非负</em>的条件. 类似于Gauss定理,
+球内的能量应可在球面上检测, 定义ADM质量:</p>
+<p>$$
+E=\frac{1}{4(n-1)\omega_{n-1} }\lim_{\sigma\rightarrow \infty}\int_{S_\sigma}\sum_{i,j}(g_{ij,i}\nu_j-g_{ii,j}\nu_j)d\xi(\sigma).
+$$</p>
+<p>这里$S_\sigma=\{|x|=\sigma\}.$ 逗号表示偏导,
+如$g_{ij,k}:=\partial_kg_{ij}.$
+$\nu=\sigma^{-1}x$为$S_\sigma$单位外法向量.
+该式可积由渐进平坦的假设保证, 由此得到引力场的能量.</p>
+<p>数学上的正质量定理, 就是在如上假设下, 证明$E\ge 0.$ 特别地,
+$E=0$仅在欧氏空间取到, 物理意义上即若引力场能量为零, 则对空间不产生扭曲.
+按前文的例子, 没有物体放在布上.</p>
+<p>该定理在物理意义上并没有想象中的显然, 因为对于孤立体系,
+物质之间的引力结合能是负的. 在Newton引力理论中,
+一个孤立点质量产生的引力场的能量不仅是负的, 而且可以趋于负无穷,
+这样的孤立体系的总能量也完全可以是负的.
+因此正质量定理物理方面不仅不是显而易见的结果,
+还是广义相对论有别于Newton引力理论的一个重要特征.</p>
+<p>另一方面, 特殊情形$E=0$推出空间平凡也具有重大的意义. 对于三维空间,
+若ADM质量为零, 则必定是欧氏空间, 时空本身必定是Minkowski时空.
+这表明Minkowski时空不仅是所有时空中能量最低的,
+而且是具有最低能量值的唯一时空.
+这一点对于确保Minkowski时空稳定性有重要的意义,
+也意味着所有非平凡渐近平直时空的ADM质量都是正的.
+这是正质量定理中”正”字的含义所在.</p>
+<h2 id="渐进平坦流形"><a href="#渐进平坦流形" class="headerlink" title="渐进平坦流形"></a>渐进平坦流形</h2><p>取黎曼流形$(M^n,g),$ 称它是<strong>渐进平坦的</strong>, 若存在紧集$K\subset M,$
+使得有$\Phi:M\setminus K\approx \mathbb{R}^n\setminus \overline{B}_1$为微分同胚.
+同时, 在由$\Phi$决定的坐标系下, $g_{ij}(x)=\delta_{ij}+O(|x|^{-p}),$
+$p&gt;\frac{n-2}{2};$ $|R(g)|=O(|x|^{-q}),$ $q&gt;n.$ 此外还需要求:</p>
+<p>$$
+|x||g_{ij,k}(x)|+|x|^2|g_{ij,kl}(x)|=O(|x|^{-p}).
+$$</p>
+<p> 这里逗号指偏导.
+这样便可以定义$M$的总能量. 回忆数量曲率表达式: 
+$$
+\begin{aligned}
+ R(g)&amp;=g^{ij}R_{ij}=g^{ij}g^{kl}R_{ikjl}\\
+ &amp;=g^{ij}g^{kl}\left&lt;{}D_{\partial_k}D_{\partial_i}\partial_j-D_{\partial_i}D_{\partial_k}\partial_j,\partial_l\right&gt;\\
+ &amp;=g^{ij}(\Gamma_{ij,k}^k-\Gamma_{kj,i}^k+\Gamma_{kl}^k\Gamma_{ij}^l-\Gamma_{il}^k\Gamma_{kj}^l)
  \end{aligned}
 $$
-From the expansion of $u$, $E_0<0.$
-Therefore $(\Sigma,u^{\frac{4}{n-3} }\overline{g})$ is asymptotically flat with zero amount of curvature,
-and manifolds with negative energy. Inductively, this creates a contradiction when $n=3$.
-Therefore we have completed the proof of $E\ge 0$.
+ 联络系数表达式:</p>
+<p>$$
+\Gamma_{ij}^k=\frac{1}{2}g^{km}(g_{im,j}+g_{jm,i}-g_{ij,m})=O(|x|^{-p-1}),
+$$</p>
+<p>这里注意对逆阵的估计同样是$g^{ij}(x)=\delta^{ij}+O(|x|^{-r}).$
+对逆阵求导有如下公式:</p>
+<p>$$
+\partial_kg^{ij}=-g^{ir}g_{rs,k}g^{sl}=O(|x|^{-p-1}),
+$$</p>
+<p>含$g^{ij}$的项在对$i,j$求和时, 只有$i=j$占主要部分, 因此有如下估计成立:
+$$
+\begin{aligned}
+ g^{ij}(\Gamma_{ij,k}^k-\Gamma_{kj,i}^k)&amp;=\frac{g^{ij}g^{km} }{2}(g_{im,jk}+g_{jm,ik}-g_{ij,mk}-g_{km,ji}-g_{jm,ki}+g_{kj,mi})+O(|x|^{-2p-2})\\
+ &amp;=\frac{1}{2}\sum_{i,k}(g_{ik,ik}-g_{ii,kk}-g_{kk,ii}+g_{ki,ki})+O(|x|^{-2p-2})\\
+ &amp;=\sum_{i,j}(g_{ij,ij}-g_{ii,jj})+O(|x|^{-2p-2}) 
+ \end{aligned}
+$$
+结合$\Gamma_{kl}^k\Gamma_{ij}^l-\Gamma_{il}^k\Gamma_{kj}^l=O(|x|^{-2p-2}),$
+我们得到$R(g)=\sum_{i,j}g_{ij,ij}-g_{ii,jj}+O(|x|^{-2p-2}).$
+由于$2p+2&gt;n,$ 余项在无穷远处绝对可积. 而$R(g)$本身是可积的,
+因此$\sum_{i,j}g_{ij,ij}-g_{ii,jj}$可积. 从而由分部积分, 如下极限存在:</p>
+<p>$$
+\lim_{\sigma\rightarrow \infty}\int_{S_\sigma}\sum_{i,j}(g_{ij,i}\nu_j-g_{ii,j}\nu_j)d\xi.
+$$</p>
+<p>这里$S_\sigma=\{|x|=\sigma\},$
+$\nu=\sigma^{-1}x$为$S_\sigma$单位外法向量. 依下式定义总能量$E=E(M,g),$</p>
+<p>$$
+E=\frac{1}{4(n-1)\omega_{n-1} }\lim_{\sigma\rightarrow \infty}\int_{S_\sigma}\sum_{i,j}(g_{ij,i}\nu_j-g_{ii,j}\nu_j)d\xi.
+$$</p>
+<p>正质量定理的基本内容即是, 若处处有$R(g)\ge 0,$ 则$E\ge 0.$ 同时,
+$E=0$当且仅当$(M,g)$同构于欧氏空间.</p>
+<h2 id="Yamabe问题"><a href="#Yamabe问题" class="headerlink" title="Yamabe问题"></a>Yamabe问题</h2><h3 id="共形类"><a href="#共形类" class="headerlink" title="共形类"></a>共形类</h3><p>对度量$g,$ 定义其<strong>共形类</strong>: </p>
+<p>$$
+[g]=\{e^ug,u\in C^\infty(M)\}.
+$$</p>
+<p> 1960年,
+Yamabe声称证明了如下命题: 给定紧黎曼流形$(M,g),$ $n\ge 3,$
+存在与$g$共形的度量, 具常数量曲率. 不过证明中出现了较大的问题,
+从而该命题成为了一个问题, 称为Yamabe问题. 在24年后, Schoen给出了证明.</p>
+<p>若$\widetilde{g}=e^ug,$ 我们来计算几何量的变化. 首先容易得到:</p>
+<p>$$
+\widetilde{\Gamma}_{ij}^m=\Gamma_{ij}^m+\frac{1}{2}(\delta_j^m \partial_i u+\delta_i^m\partial_ju-g^{mk}g_{ij}\partial_k u).
+$$</p>
+<p>取度量$g$下$x$点处法坐标系, 回忆</p>
+<p>$$
+\widetilde{R}_{ijkl}=\widetilde{g}_{lm}(\partial_j \widetilde{\Gamma}_{ik}^m-\partial_i\widetilde{\Gamma}_{jk}^m+\widetilde{\Gamma}_{ik}^r\widetilde{\Gamma}_{jr}^m-\widetilde{\Gamma}_{jk}^r\widetilde{\Gamma}_{ir}^m).
+$$</p>
+<p>由于$\widetilde{g}(x)_{lm}=e^{u(x)}\delta_{lm},$
+$\partial_k g_{ij}(x)=0,$ 
+$$
+\begin{aligned}
+ \delta_{lm}(\partial_j \widetilde{\Gamma}_{ik}^m(x)-\partial_i\widetilde{\Gamma}_{jk}^m(x))=&amp;\delta_{lm}(\partial_j\Gamma_{ik}^m(x)-\partial_i\Gamma_{jk}^m(x))\\
+ &amp;+\frac{1}{2}(\delta_{il}\partial_{jk}u(x)+\delta_{jk}\partial_{il}u(x)-\delta_{jl}\partial_{ik}u(x)-\delta_{ik}\partial_{jl}u(x)) 
+ \end{aligned}
 
-The article was last updated on 2022-03-07 12:52:49
+$$</p>
+<p>$$
+
+\begin{aligned}
+ \delta_{lm}(\widetilde{\Gamma}_{ik}^r\widetilde{\Gamma}_{jr}^m-\widetilde{\Gamma}_{jk}^r\widetilde{\Gamma}_{ir}^m)=&amp;\frac{\delta_{lm} }{4}\left\{(\delta_{i}^r\partial_k u+\delta_k^r\partial_iu-\delta^{rs}\delta_{ik}\partial_su)(\delta_{j}^m\partial_r u+\delta_r^m\partial_ju-\delta^{mt}\delta_{jr}\partial_tu)\right.\\
+ &amp;\left.-(\delta_{j}^r\partial_k u+\delta_k^r\partial_ju-\delta^{rs}\delta_{jk}\partial_su)(\delta_{i}^m\partial_r u+\delta_r^m\partial_iu-\delta^{mt}\delta_{ir}\partial_tu)\right\}\\
+ =&amp;\frac{1}{4}\left\{(\delta_{i}^r\partial_k u+\delta_k^r\partial_iu-\delta_{ik}\partial^ru)(\delta_{lj}\partial_r u+\delta_{lr}\partial_ju-\delta_{jr}\partial_lu)\right.\\
+ &amp;\left.-(\delta_{j}^r\partial_k u+\delta_k^r\partial_ju-\delta_{jk}\partial^ru)(\delta_{li}\partial_r u+\delta_{lr}\partial_iu-\delta_{ir}\partial_lu)\right\}\\
+ =&amp;\frac{1}{4}\left\{(\delta_{il}\delta_{jk}-\delta_{jl}\delta_{ik})\partial_ru\partial^ru+(\delta_{jl}\partial_ku\partial_iu+\delta_{ik}\partial_ju\partial_lu-\delta_{il}\partial_ku\partial_ju-\delta_{jk}\partial_iu\partial_lu)\right\}
+ \end{aligned}
+$$
+ 最终得到</p>
+<p>$$
+\widetilde{R}=e^{-u}\left(R-(n-1)\Delta_gu-\frac{(n-1)(n-2)}{4}|\nabla u|_g^2\right).
+$$</p>
+<p>$n=2$时, Yamabe问题即为是否存在$\lambda\in \mathbb{R},$
+$u\in C^\infty(M),$ 使得 </p>
+<p>$$
+-\Delta_gu+R=\lambda e^u.
+$$</p>
+<p>这个方程并不是特别困难. $n\ge 3$时,
+它是一个流形上非线性分析的很好的问题. 令$e^u=v^{\frac{4}{n-2} },$
+$v$为光滑正函数, 则等式化为如下形式:</p>
+<p>$$
+-\Delta_g v+\frac{n-2}{4(n-1)}Rv=\frac{n-2}{4(n-1)}\widetilde{R}v^{2^\ast -1}.
+$$</p>
+<p>其中$2^\ast =\frac{2n}{n-2}.$
+Yamabe问题即化为是否存在$\lambda\in \mathbb{R}$以及$M$上光滑正函数$u,$
+使得 </p>
+<p>$$
+-\Delta_g u+\frac{n-2}{4(n-1)}Ru=\lambda u^{2^\ast -1}.
+$$</p>
+<p>这样就将纯几何问题化为了纯分析问题.</p>
+<h3 id="共形Laplace算子"><a href="#共形Laplace算子" class="headerlink" title="共形Laplace算子"></a>共形Laplace算子</h3><p>由前面的式子启发, 我们定义<strong>共形Laplace算子</strong>:</p>
+<p>$$
+L:=-\Delta+c_nR,\quad c_n=\frac{n-2}{4(n-1)}.
+$$</p>
+<p>它是共形不变的, 具体表述为如下命题:</p>
+<p><strong>命题 1</strong>. <em>设$(M,g)$为紧黎曼流形. 令$\varphi\in C^\infty(M),$ 则$n\ge 3$时, 对于$\widetilde{g}=e^{\varphi}g=\psi^{\frac{4}{n-2} }g,$</em> </p>
+<p>$$
+L_{\widetilde{g} }u=\psi^{-(2^\ast -1)}L_g(u\psi).
+$$</p>
+<p><strong>证:</strong> 
+$$
+\begin{aligned}
+ \Delta_{\widetilde{g} }u&amp;=\frac{e^{-\frac{n\varphi}{2} } }{\sqrt{g} }\partial_i(e^{\frac{n-2}{2}\varphi}g^{ij}\sqrt{g}\partial_ju)\\
+ &amp;=e^{-\varphi}\left(\Delta_gu+\frac{n-2}{2}\partial_i\varphi g^{ij}\partial_ju\right)
+ \end{aligned}
+$$
+其中$\partial_i\varphi g^{ij} \partial_j u=\left&lt;{}D\varphi,Du\right&gt;_g.$
+从而,
+$$
+\Delta_{\widetilde{g} }u=\psi^{-\frac{4}{n-2} }\left(\Delta_gu+2\frac{\left&lt;{}D\psi,Du\right&gt;_g}{\psi}\right)=\psi^{-(2^*-1)}(\psi \Delta_g u+2\left&lt;{}D\psi,Du\right&gt;_g)
+ .
+
+$$
+ 从而, 
+$$
+
+\begin{aligned}
+ L_{\widetilde{g} }u&amp;=\psi^{-(2^*-1)}\left(-\psi\Delta_gu-2\left&lt;{}D\psi,Du\right&gt;_g+\frac{n-2}{4(n-1)}Ru\psi -u\Delta_g\psi\right)\\
+ &amp;=\psi^{-(2^*-1)}(-\Delta_g(u\psi)+c_nRu\psi)=\psi^{-(2^*-1)}L_g(u\psi).\\
+ \end{aligned}
+$$</p>
+<p>接下来我们定义共形平坦的概念. 称黎曼流形$(M,g)$是<strong>共形平坦的</strong>,
+若$\,\forall\,x\in M,$ 存在$x$的开邻域$V,$ $u\in C^\infty(M),$
+使得$e^ug$在$V$上是平坦的.</p>
+<h2 id="正质量定理"><a href="#正质量定理" class="headerlink" title="正质量定理"></a>正质量定理</h2><h3 id="度量改造"><a href="#度量改造" class="headerlink" title="度量改造"></a>度量改造</h3><p>有了这些准备工作后, 便可以开始正质量定理的证明了.
+首先我们将度量进行改造:</p>
+<p><strong>命题 2</strong>. <em>设$(M,g)$是渐进平坦流形, $p&gt;\frac{n-2}{2},$ $q&gt;n.$ 假设$R(g)\ge 0,$ 则$\,\forall\,\varepsilon&gt;0,$ $\,\exists\,\overline{g}$使得无穷远处$(M,\overline{g})$仍是渐进平坦的, 且还是共形平坦的, 同时$R(\overline{g})\equiv 0,$ $E(\overline{g})\le E(g)+\varepsilon.$</em> </p>
+<p><strong>证:</strong> 首先可以设$R(g)\equiv 0,$ 考虑共形Laplace方程$Lu=0,$
+取解$u=1+A|x|^{2-n}+O(|x|^{1-n}),$ $A\le 0.$ 这样在无穷远处,
+$u\in(0,1).$ 此时度量$u^{\frac{4}{n-2} }g$的数量曲率为零,
+且总能量由$E(g)+A\le E(g)$给出. 因此用该度量替代$g$即可.</p>
+<p>接下来我们将$g$在无穷远处变为欧氏度量.
+取截断函数$\Psi_\sigma(x)$满足如下性质: 
+$$
+\left\{\begin{aligned}
+ &amp;\Psi_\sigma(x)=1,\quad |x|\le \sigma,\\
+ &amp;\text{单调递减, 且} \sigma |\Psi_\sigma&#39;|+\sigma^2|\Psi&#39;&#39;_\sigma|\le c,\\
+ &amp;\Psi_\sigma(x)=0,\quad |x|\ge 2\sigma. 
+ \end{aligned}\right.
+$$
+考虑度量$^{(\sigma)}g:=\Psi_\sigma g+(1-\Psi_\sigma)\delta,$
+$\delta=\delta_{ij}dx^idx^j$为欧氏度量. 注意到$\sigma$充分大时,
+对$\sigma$一致地有${}^{(\sigma)}g=\delta+O(|x|^{-p}),$
+且$R\left({}^{(\sigma)}g\right)=O(|x|^{-2-p}).$ 特别地, 我们有:</p>
+<p>$$
+\int_M \left|R\left({}^{(\sigma)}g\right)\right|^{\frac{n}{2} }d\omega_g=O(\sigma^{-\frac{np}{2} }).
+$$</p>
+<p>因此对充分大的$\sigma,$ 有关于方程$L_\sigma u_\sigma=0,$ $u_\sigma&gt;0,$
+$u_\sigma\rightarrow 1$的唯一解.
+从而度量${}^{(\sigma)}\overline{g}=u_\sigma^{\frac{4}{n-2} }{}^{(\sigma)}g$是数量平坦的,
+且在无穷远处共形平坦.</p>
+<p>最后说明$\lim_{\sigma\rightarrow \infty}E({}^{(\sigma)}\overline{g})=E(g)$即可,
+这样取足够大的$\sigma$即可满足命题要求.
+由对$u_\sigma,{}^{(\sigma)}g$的一致衰减估计, 给定$\varepsilon&gt;0,$
+有不依赖于$\sigma$的$r_0$使得</p>
+<p>$$
+\left|E\left({}^{(\sigma)}\overline{g}\right)-\frac{1}{4(n-1)\omega_{n-1} }\int_{S_{r_0} }\sum_{i,j}{}^{(\sigma)}\overline{g}_{ij,i}\nu_j-{}^{(\sigma)}\overline{g}_{ii,j}\nu_jd\xi\right|\le \frac{\varepsilon}{3}
+$$</p>
+<p>$$
+\left|E(g)-\frac{1}{4(n-1)\omega_{n-1} }\int_{S_{r_0} }\sum_{i,j}g_{ij,i}\nu_j-g_{ii,j}\nu_jd\xi\right|\le \frac{\varepsilon}{3}
+$$</p>
+<p>由于我们已经将$g$改造为数量曲率为零的度量, 在紧子集上,
+$\lim_{\sigma\rightarrow\infty}u_\sigma=1.$
+从而上面两式中的积分项是逼近的. 因此对充分大的$\sigma,$
+$|E({}^{(\sigma)}\overline{g})-E(g)|&lt;\varepsilon.$ 这就完成了命题的证明.</p>
+<p>若$(M,g)$是渐进平坦, 且无穷远处共形平坦的,
+则$g_{ij}=h^{\frac{4}{n-2} }(x)\delta_{ij},$ $|x|$充分大,
+且$h(x)\rightarrow 1.$ 若$R(g)\equiv 0,$ 回忆共形Laplace的定义,
+得知$h$为在$|x|$充分大时为调和函数,
+具体形式为$h=1+E|x|^{2-n}+O(|x|^{1-n}).$ 这里我们将能量标准化,
+使得$E$恰为度量$h^{\frac{4}{n-2} }\delta$的总能量.
+由此我们总可以假设上述命题中的度量为这种形式,
+不再用形如$g=\delta+O(|x|^{-p})$的方式表示.</p>
+<h3 id="极小曲面方法"><a href="#极小曲面方法" class="headerlink" title="极小曲面方法"></a>极小曲面方法</h3><p><strong>定理 3</strong> (正质量定理). <em>设$(M,g)$渐进平坦, $p&gt;\frac{n-2}{2},$ $q&gt;n,$ $R(g)\ge 0,$ 则$E(g)\ge 0,$ 且$E(g)=0$当且仅当$(M,g)$等距于$(\mathbb{R}^n,\delta).$</em> </p>
+<p>我们给出$n\le 7$时的证明. 对$n\ge 8$的情形,
+可通过额外的技术克服极小曲面奇点的问题. $E(g)=0$的情形暂时不做讨论.</p>
+<p><strong>证:</strong> 反证, 假设$E(g)&lt;0,$ 则由前小节命题, 可设$R(g)\equiv 0,$
+$g_{ij}=h^{\frac{4}{n-2} }\delta_{ij},$ $h(x)=1+E|x|^{2-n}+O(|x|^{1-n}).$
+现在改造$R(g)&gt;0$比较方便. 我们取正光滑函数$v$充分小,
+且在无穷远处快速衰减. 取解$Lu=v,$ $u=1+\delta|x|^{2-n}+O(|x|^{1-n}),$
+$\delta$充分小. 将度量替换为$u^{\frac{4}{n-2} }g$即可.
+这样还保证了能量的负性.</p>
+<p>我们来计算单位向量场$\eta=h^{-\frac{2}{n-2} }\partial_n$关于$g$的散度.
+$$
+\begin{aligned}
+ \operatorname{div}_g(\eta)&amp;=\frac{1}{\sqrt{g} }\partial_i\left(\sqrt{g}\eta^i\right)=h^{-\frac{2n}{n-2} }\partial_n\left(h^{\frac{2n}{n-2} }h^{-\frac{2}{n-2} }\right)\\
+ &amp;=\frac{2(n-1)}{n-2}E\partial_n\left(|x|^{2-n}\right)+O\left(|x|^{-n}\right)\\
+ &amp;=-2(n-1)E\frac{x^n}{|x|^n}+O\left(|x|^{-n}\right)
+ \end{aligned}
+$$</p>
+<p>特别地, 我们看到$\,\exists\,a_0\in \mathbb{R},$
+$\operatorname{div}_g(\eta)
+\begin{cases} &gt;0,&amp;x^n\ge a_0\\&lt;0,&amp;x^n\le -a_0
+\end{cases}.$ 
+现令$\sigma$充分大,
+$\Gamma_{\sigma,a}$表示$n-2$维球面</p>
+<p>$$
+\Gamma_{\sigma,a}:=\{x=(x&#39;,x^n):|x&#39;|=\sigma,x^n=a\}.
+$$</p>
+<p>$C_\sigma$表示$n-1$维柱面 </p>
+<p>$$
+C_\sigma:=\{(x&#39;,x_n):|x&#39;|=\sigma\}.
+$$</p>
+<p>将$\Gamma_{\sigma,a}$作为$C_\sigma$中在它下方的圆柱部分的边界定向.
+取$\Sigma_{\sigma,a}$为$n-1$维极小曲面,
+$\partial{\Sigma_{\sigma,a} }=\Gamma_{\sigma,a}.$
+$C_\sigma$框住了内部区域$\Omega_\sigma,$
+$\Sigma_{\sigma,a}\subset \Omega_\sigma.$ $n\le 7$时,
+极小曲面$\Sigma_{\sigma,a}$上没有奇点.</p>
+<p>$\,\forall\,\sigma,$ 定义</p>
+<p>$$
+V(\sigma)=\min\{\operatorname{Vol}(\Sigma_{\sigma,a}):a\in [-a_0,a_0]\},
+$$</p>
+<p>这里$a\mapsto\operatorname{Vol}(\Sigma_{\sigma,a})$为连续函数.
+断言存在$a=a(\sigma)\in (-a_0,a_0),$
+$\operatorname{Vol}(\Sigma_{\sigma,a})=V(\sigma).$
+为了说明$a(\sigma)&lt;a_0,$
+将$\Sigma_{\sigma,a}$写成$(\partial\Omega_{\sigma,a})\cap \Omega_\sigma$的形式,
+$\Omega_{\sigma,a}$为$\Omega_\sigma$在$\Sigma_{\sigma,a}$下方的部分. 令</p>
+<p>$$
+U_{\sigma,a}=\{(x&#39;,x^n)\in\Omega_{\sigma,a}:x^n&gt;a_0-\delta\},
+$$</p>
+<p>$\delta$充分小, 使得仍有$\operatorname{div}_g(\eta)&gt;0,$
+$x^n&gt;a_0-\sigma.$ 我们来说明$U_{\sigma,a}=\varnothing.$
+若$U_{\sigma,a}\neq \varnothing,$ $a&gt;a_0-\delta.$ 由分部积分公式,
+且由于$\eta$与$C_\sigma$纵向相切,</p>
+<p>$$
+\int_{U_{\sigma,a} }\operatorname{div}_g(\eta)d\mathcal{H}^n=\int_{\Sigma_{\sigma,a}\cap \{x^n\ge a_0-\delta\} }\left&lt;{}\eta,\nu\right&gt;_gd\mathcal{H}^{n-1}-\operatorname{Vol}(\Omega_{\sigma,a}\cap\{x^n=a_0-\delta\})&gt;0,
+$$</p>
+<p>其中$\nu$为$\Sigma_{\sigma,a}$单位法向. 由Schwartz不等式,</p>
+<p>$$
+\operatorname{Vol}(\Omega_{\sigma,a}\cap \{x^n=a_0-\delta\})&lt;\operatorname{Vol}(\Sigma_{\sigma,a}\cap \{x^n\ge a_0-\delta\}).
+$$</p>
+<p>这样,
+$\Sigma:=\partial(\Omega_{\sigma,a}\cap \{x^n&lt;a_0-\delta\})\cap \Omega_\sigma$有更小的面积,
+$\partial\Sigma=\Gamma_{\sigma,a_0-\delta}.$
+这与$\Sigma_{\sigma,a}$极小性矛盾, 因此$a(\sigma)\le a_0-\delta,$
+类似地, $a(\sigma)\ge -a_0+\delta.$</p>
+<p>取$\Sigma_{\sigma}=\Sigma_{\sigma,a(\sigma)},$ 使得$V(\sigma)$达到极小.
+取$X_1$为$M$上向量场, 在紧集外与$\partial_n$恒同.
+令$X_0$为具紧支撑的向量场, $X=X_0+\alpha X_1,$ $\alpha\in \mathbb{R}.$
+令$F_t$为由$X$生成的单参数变换群, 若$\sigma$充分大,
+$X_0$的紧支集包含在$\Omega_\sigma$内,
+则$X$给出了$\Sigma_\sigma$的正常变分:
+$$
+\left.\frac{d {} }{d {}t}\operatorname{Vol}(F_t(\Sigma_\sigma))\right|_{t=0}=0,\quad 
+ \left.\frac{d {}^2}{d {}t^2}\operatorname{Vol}(F_t(\Sigma_\sigma))\right|_{t=0}\ge 0.
+$$
+它的体积第二变分为$F_{X,\sigma}$的积分,</p>
+<p>$$
+F_{X,\sigma}(P)=\left.\frac{d {}^2}{d {}t^2}\left\Vert dF_t(T_P\Sigma_\sigma)\right\Vert_g\right|_{t=0}.
+$$</p>
+<p>对充分大的$|x|,$ 对$\sigma$一致地有$F_{X,\sigma}(x)=O(|x|^{-n}).$
+正则性理论表明在紧集外, $\Sigma_\sigma$是函数$f_{\sigma}(x&#39;)$的图像,
+且其梯度有界. 选取一系列$\sigma_i\rightarrow \infty,$
+$\{\Sigma_{\sigma_i}\}$收敛到$\Sigma\subset M.$
+由于$F_{X,\sigma_i}$的一致衰减条件,</p>
+<p>$$
+\int_{\Sigma}F_Xd\mathcal{H}^{n-1}\ge 0,\quad F_X(P)=\frac{d {}^2}{d {}t^2}\Vert dF_t(T_P\Sigma)\Vert|_{t=0}.
+$$</p>
+<p>在紧集外, $\Sigma$也是$f(x&#39;)$的图像, 具有界梯度. 事实上,
+由于$|f(x&#39;)|\le a_0,$ 由正则性理论$|\partial f|(x)=O(|x&#39;|^{-1}).$ 另外,
+$f$满足极小曲面方程:</p>
+<p>$$
+\sum_{i,j}\left(\delta_{ij}-\frac{\partial_if\partial_jf}{1+|\nabla f|^2}\right)\partial_{ij}f+\sqrt{1+|\nabla f|^2}\frac{\partial {} }{\partial {}\nu_0}\log h=0,\quad \nu_0=\frac{(-\nabla f,1)}{\sqrt{1+|\nabla f|^2} }.
+$$</p>
+<p>由线性理论, $f(x&#39;)=a+O(|x&#39;|^{3-n}),$ $n\ge 4,$
+并且$f(x&#39;)=a+O(|x&#39;|^{-1}),$ $n=3,$ $a\in \mathbb{R}.$
+$F_X$可由$\Sigma$的几何表示:</p>
+<p>$$
+F_X=-\sum_{i=1}^{n-1}\left&lt;{}R_{Xe_i}X,e_i\right&gt;+\operatorname{div}_M Z+(\operatorname{div}_MX)^2+\sum_{i=1}^{n-1}|(D_{e_i}X)^{\perp}|^2-\sum_{i,j=1}^{n-1}\left&lt;{}e_i,D_{e_j}X\right&gt;\left&lt;{}e_j,D_{e_i}X\right&gt;.
+$$</p>
+<p>其中$Z=D_{\partial_t}\frac{\partial {}F_t}{\partial {}t}$为变化的加速度向量场.
+其中</p>
+<p>$$
+\operatorname{div}_MX=\sum_{i=1}^{n-1}\left&lt;{}D_{e_i}X,e_i\right&gt;,
+$$</p>
+<p>$\{e_i\}$为$\Sigma$切空间的正交基.</p>
+<p>做正交分解$X=\widetilde{X}+\varphi\nu,$ $Z=\widetilde{Z}+\psi\nu.$
+由于$\Sigma$是极小的, $\operatorname{div}_M \chi\nu=0,$
+对于任意函数$\chi.$ 接下来有:</p>
+<p>$$
+F_X=-\varphi^2\operatorname{Ric}(\nu,\nu)-\varphi^2\Vert B\Vert^2+\Vert\nabla \varphi\Vert^2+G,
+$$</p>
+<p>$$
+\begin{aligned}
+ G=&amp;-2\sum_{i=1}^{n-1}\varphi\left&lt;{}R(\widehat{X},e_i)\nu,e_i\right&gt;-\sum_{i=1}^{n-1}\varphi\left&lt;{}R(\widehat{X},e_i)\widehat{X},e_i\right&gt;+\operatorname{div}_M\widehat{Z}+(\operatorname{div}_M\widehat{X})^2\\
+ &amp;-2B(\nabla \varphi,\widehat{X})+\sum_{i=1}^{n-1}B(e_i,\widehat{X})^2-2\varphi\sum_{i,j=1}^{n-1}b_{ij}\widehat{X}_{i;j}-\sum_{i,j=1}^{n-1}\widehat{X}_{i;j}\widehat{X}_{j;i}.
+ \end{aligned}
+$$
+ 以上公式我们均在正交标架下讨论.
+其中$B(-,-)$表示第二基本型即 $B(V,W)=\left&lt;{}D_VW,\nu\right&gt;.$
+分号指求协变导数, 度量为诱导度量.
+与$Z,\widehat{X}$有关的量需用有界量表示. 若$D\subset \Sigma$为有界区域,</p>
+<p>$$
+\int_DGd\mathcal{H}^{n-1}=\int_{\partial D}\left\{(\operatorname{div}\widehat{X})\left&lt;{}\widehat{X},\eta\right&gt;-\sum_{i,j}\widehat{X}_{i;j}\widehat{X}_j\eta_i-2\varphi\sum_{i,j}b_{ij}\widehat{X}_i\eta_j+\left&lt;{}\widehat{Z},\eta\right&gt;\right\}d\mathcal{H}^{n-2}
+$$</p>
+<p>$\eta$为$\Sigma$内$\partial D$的单位外法向.
+中间项消失是因为Gauss-Codazzi方程与Ricci公式. 对$\sigma&gt;0,$
+令$D_\sigma=\Omega_\sigma\cap \Sigma.$ 由$f,h$的衰减条件,
+每个边界项衰减比$\sigma^{2-n}$要快, 因此边界项趋于零,
+当$\sigma\rightarrow\infty$时. 从而</p>
+<p>$$
+\int_\Sigma (\operatorname{Ric}(\nu,\nu)+\Vert B\Vert^2)\varphi^2d\mathcal{H}^{n-1}\le \int_\Sigma \Vert\nabla \varphi\Vert^2d\mathcal{H}^{n-1}.
+$$</p>
+<p>这里$\varphi=\left&lt;{}X,\nu\right&gt;.$ 由于$X$在紧集内可任意选取,
+$\varphi$只在紧集外固定为</p>
+<p>$$
+\varphi=\alpha\left&lt;{}\partial_n,\nu\right&gt;=\alpha h^{\frac{2}{n-2} }(1+|\nabla f|^2)^{-\frac{1}{2} }.
+$$</p>
+<p>由于$\varphi-\alpha=O(|x&#39;|^{2-n}),$ 它具有有限能量.
+因此可任意选取$\varphi$只要$\varphi-\alpha$具紧支集或有限能量.
+由Gauss方程,</p>
+<p>$$
+\operatorname{Ric}(\nu,\nu)+\Vert B\Vert^2=\frac{1}{2}R_M-\frac{1}{2}R_{\Sigma}+\frac{1}{2}\Vert B\Vert^2.
+$$</p>
+<p>$R_{\Sigma}$即诱导度量下$\Sigma$的数量曲率.</p>
+<p>为了完成证明, 首先假设$n=3,$ $\varphi\equiv 1.$
+这样$\frac{1}{2}\int_{\Sigma}R_{\Sigma}d\mathcal{H}^2&gt;0.$
+现$\frac{1}{2}R_{\Sigma}$为$\Sigma$的Gauss曲率,
+$f,h$的衰减估计说明$\partial D_{\sigma}$的测地曲率收敛到$2\pi.$
+对$D_\sigma$应用Gauss-Bonnet公式, 令$\sigma\rightarrow \infty,$</p>
+<p>$$
+\frac{1}{2}\int_{\Sigma}R_{\Sigma}d\mathcal{H}^2=2\pi \chi(\Sigma)-2\pi.
+$$</p>
+<p>由于$\Sigma$为开曲面, $\chi(\Sigma)\le 1,$ 右项非正.
+这与前述的不等式矛盾, 因此$n=3$命题成立.</p>
+<p>对$n\ge 4$的情况, 由于诱导度量$\overline{g}$满足:</p>
+<p>$$
+\overline{g}_{ij}=h(x&#39;,f(x&#39;))^{\frac{4}{n-2} }(\delta_{ij}+\partial_if\partial_jf)=\delta_{ij}+O(|x|^{2-n}),
+$$</p>
+<p>$(\Sigma,\overline{g})$是渐进平坦的, 能量为零.
+由前面的不等式与Gauss方程, 以及$R_M\ge 0,$
+说明$L_{\overline{g} }$的最小特征值在$\Sigma$的紧区域上是正的,
+因为$c(n)=\frac{n-2}{4(n-1)}&lt;\frac{1}{2},$ $n\ge 3.$
+线性理论使我们可以在$\Sigma$上解$L_{\overline{g} }u=0,$ $u&gt;0,$
+无穷远处$u\rightarrow 1.$ 同时, $u$有展开式</p>
+<p>$$
+u(x&#39;)=1+E_0|x&#39;|^{3-n}+O(|x&#39;|^{2-n}).
+$$</p>
+<p> 特别地,
+$u-1$在$\Sigma$上具有限能量, 取$\varphi=u.$ 由$R_M&gt;0,$</p>
+<p>$$
+-\int_{\Sigma}R_{\Sigma}u^2d\mathcal{H}^{n-1}&lt;2\int_{\Sigma}|\nabla u|^2d\mathcal{H}^{n-1}\le c(n)^{-1}\int_\Sigma |\nabla u|^2d\mathcal{H}^{n-1}.
+$$</p>
+<p>接下来, 
+$$
+\begin{aligned}
+ \int_\Sigma|\nabla u|^2d\mathcal{H}^{n-1}&amp;=\lim_{\sigma\rightarrow\infty}\int_{D_\sigma}|\nabla u|^2d\mathcal{H}^{n-1}\\
+ &amp;=-c(n)\lim_{\sigma\rightarrow \infty} \int_{D_{\sigma} }R_{\Sigma}u^2d\mathcal{H}^{n-1}+\lim_{\sigma\rightarrow\infty}\int_{\partial D_{\sigma} }u\frac{\partial {}u}{\partial {}\eta}d\mathcal{H}^{n-1}
+ \end{aligned}
+$$</p>
+<p>由$u$的展开式, $E_0&lt;0.$
+因此$(\Sigma,u^{\frac{4}{n-3} }\overline{g})$是渐进平坦, 具零数量曲率,
+以及具负能量的流形. 归纳地, 这在$n=3$时产生矛盾.
+因此我们完成了$E\ge 0$的证明.</p>
+<p>文章最后更新于 2022-03-07 12:52:49 </p>
+
                 </div>
             
         </div>
@@ -803,7 +1068,7 @@ The article was last updated on 2022-03-07 12:52:49
     <ul>
         <li>本文标题：论文笔记-正质量定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-03-07 12:52:26</li>
+        <li>创建时间：2022-03-07 14:52:26</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/03/07/论文笔记-正质量定理/
         </li>
@@ -835,7 +1100,7 @@ The article was last updated on 2022-03-07 12:52:49
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(3)-测地线</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (3) - Geodesics</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (3) - Geodesic</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -857,7 +1122,7 @@ The article was last updated on 2022-03-07 12:52:49
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(2)-协变微分与曲率张量</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (2) - Covariant differentials and curvature tensor</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Notes on Riemannian Geometry (2) - Covariant Differentiation and Curvature Tensor</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -1109,11 +1374,11 @@ The article was last updated on 2022-03-07 12:52:49
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%84%8F%E4%B9%89"><span class="nav-text">物理意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%90%E8%BF%9B%E5%B9%B3%E5%9D%A6%E6%B5%81%E5%BD%A2"><span class="nav-text">渐进平坦流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yamabe%E9%97%AE%E9%A2%98"><span class="nav-text">Yamabe问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E5%BD%A2%E7%B1%BB"><span class="nav-text">共形类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E5%BD%A2Laplace%E7%AE%97%E5%AD%90"><span class="nav-text">共形Laplace算子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E8%B4%A8%E9%87%8F%E5%AE%9A%E7%90%86"><span class="nav-text">正质量定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E6%94%B9%E9%80%A0"><span class="nav-text">度量改造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E6%96%B9%E6%B3%95"><span class="nav-text">极小曲面方法</span></a></li></ol></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%A9%E7%90%86%E6%84%8F%E4%B9%89"><span class="nav-text">物理意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B8%90%E8%BF%9B%E5%B9%B3%E5%9D%A6%E6%B5%81%E5%BD%A2"><span class="nav-text">渐进平坦流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yamabe%E9%97%AE%E9%A2%98"><span class="nav-text">Yamabe问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E5%BD%A2%E7%B1%BB"><span class="nav-text">共形类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B1%E5%BD%A2Laplace%E7%AE%97%E5%AD%90"><span class="nav-text">共形Laplace算子</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AD%A3%E8%B4%A8%E9%87%8F%E5%AE%9A%E7%90%86"><span class="nav-text">正质量定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%A6%E9%87%8F%E6%94%B9%E9%80%A0"><span class="nav-text">度量改造</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2%E6%96%B9%E6%B3%95"><span class="nav-text">极小曲面方法</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -1164,6 +1429,36 @@ The article was last updated on 2022-03-07 12:52:49
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -1187,46 +1482,6 @@ The article was last updated on 2022-03-07 12:52:49
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

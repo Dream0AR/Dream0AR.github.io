@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第二章-秩定理</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Chapter 2 of &#34;Differential Manifolds&#34;-Rank Theorem</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 2 - Rank theorem</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-20 16:22:49
+        <i class="fas fa-edit"></i>&nbsp;2021-10-20 19:22:49
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,65 +230,94 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="秩定理"><a href="#秩定理" class="headerlink" title="秩定理"></a>秩定理</h2><p><strong>定理 1.1</strong> (秩定理). <em>设光滑映照$F:M^m\rightarrow N^n$在$p$点邻域内秩为$k,$ 则$\,\exists\,$分别含$p,q=F(p)$的坐标系$(U,\varphi),(V,\psi),$ 使得$p,q$坐标为零且局部表示$\widehat{F}$为投影.</em> </p>
+<p><strong>证:</strong> 先取定一个坐标系使得$p,q$坐标为零, 记$\widetilde{U}=\varphi(U),$
+$\widetilde{V}=\varphi(V).$ 考虑$k=m\le n$的情形.
+取局部表示$\widehat{F}$的Jacobi矩阵$D\widehat{F},$
+不妨设其前$m$行在原点邻域是非退化的. 取
+$$I_\varepsilon=\{(x^{m+1},\cdots,x^n)| |x^\gamma|\le \varepsilon, m+1\le \gamma\le n\}\subset \mathbb{R}^{n-m},$$
+$$\widetilde{\psi}:\widetilde{U}\times I_\varepsilon\rightarrow \widetilde{V}$$</p>
+<p>$$\begin{aligned}
+                \widetilde{\psi}^i(t)&amp;=f^i(t^1,\cdots,t^m) &amp;  1\le i\le m;\\
+                \widetilde{\psi}^i(t)&amp;=t^i+f^i(t^1,\cdots,t^m) &amp;  m+1\le i\le n.
+            \end{aligned}$$</p>
+<p>那么容易说明$\widetilde{\psi}$的Jacobi矩阵非退化. 由反函数定理,
+不妨假设$\widetilde{\psi}$本身为微分同胚,
+那么当然$\widetilde{\psi}^{-1}$也是.</p>
+<p>考虑$\widetilde{\psi}^{-1}\circ\widehat{F},$
+它是$(U,\varphi),(V,\widetilde{\psi}\circ\psi)$的局部表示.
+它的Jacobi阵前$m$行为单位阵, 后$n-m$行为零. 结合其将原点映为原点的性质,
+该局部表示即为投影. 从$\widetilde{\psi}^{-1}$的原始定义出发同样可以说明.</p>
+<p>对$k=n$的情形, 构造合适的$\widetilde{\varphi}$即可. 对一般的情形,
+同时改造两侧的坐标系即可给出证明.</p>
+<p>特别地, 对该定理, 可以要求$\varphi(U)=C_\varepsilon^m(0),$
+$\psi(V)=C_\varepsilon^n(0).$
+$C_\varepsilon^r(0)$为$r$维$\varepsilon$边长的立方体.</p>
+<p>取$0\le k\le m,$ 对$a\in \varphi(U),$
+取$S=\{q\in U|x^i(q)=a^i, k+1\le i\le m\}.$ 赋予其诱导拓扑,
+使之成为$k$维拓扑流形.
+取$\widetilde{\varphi}=T\circ\varphi|_S:S\rightarrow T\circ\varphi(S)\subset \mathbb{R}^k$为同胚,
+$T$为投影. 那么其有坐标系$(S,\widetilde{\varphi}),$
+成为$k$维$C^\infty$流形, 称为$(U,\varphi)$的$k$维切片.</p>
+<p>因此秩定理说明, $F(U)$是$V$内的$k$维切片, 在$U,V$像取立方体时.</p>
+<h2 id="子流形"><a href="#子流形" class="headerlink" title="子流形"></a>子流形</h2><p>回忆曲线: $C:(a,b)\rightarrow \mathbb{R}^3,$ $C&#39;(t)\neq 0,$
+即$r(C(t))=1;$</p>
+<p>曲面: $F:\Omega\subset \mathbb{R}^2\rightarrow \mathbb{R}^3,$
+$(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
+<p>一般地, 设$F:M^m\rightarrow N^n$为$C^\infty$映照. 若$F$每点秩为$m,$
+则称$(M,F)$为$N$中的<strong>浸入子流形</strong>. 如果$F$又是单射, 则称之为<strong>子流形</strong>.
+浸入子流形在局部考虑都是子流形. 包含映射当然是秩$m$的,
+因此$M$中开子集都是开子流形.</p>
+<p>注意(浸入)子流形指$(M,F)$对, 而非像.
+事实上有一个子流形与非子流形的浸入子流形像一致.</p>
+<p>文章最后更新于 2021-10-20 16:23:00 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    rank theorem
-------
-
-**Theorem 1.1** (Rank theorem). *Suppose the smooth mapping $F:M^m\rightarrow N^n$ has rank $k,$ in the neighborhood of $p$ point, then $\,\exists\,$ contain coordinate systems $(U,\varphi), (V,\psi),$ containing $p, q=F(p)$ respectively, such that $p, q$ coordinates are zero and the local representation $\widehat{F}$ is a projection.*
-**Proof:** First determine a coordinate system such that $p, q$ coordinates are zero, denote $\widetilde{U}=\varphi(U),$
-$\widetilde{V}=\varphi(V).$ Consider the case $k=m\le n$.
-Take the Jacobi matrix $D\widehat{F},$ that represents $\widehat{F}$ locally.
-Let’s assume that the first $m$ rows are non-degenerate in the neighborhood of the origin. Take
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="秩定理"><a href="#秩定理" class="headerlink" title="秩定理"></a>秩定理</h2><p><strong>定理 1.1</strong> (秩定理). <em>设光滑映照$F:M^m\rightarrow N^n$在$p$点邻域内秩为$k,$ 则$\,\exists\,$分别含$p,q=F(p)$的坐标系$(U,\varphi),(V,\psi),$ 使得$p,q$坐标为零且局部表示$\widehat{F}$为投影.</em> </p>
+<p><strong>证:</strong> 先取定一个坐标系使得$p,q$坐标为零, 记$\widetilde{U}=\varphi(U),$
+$\widetilde{V}=\varphi(V).$ 考虑$k=m\le n$的情形.
+取局部表示$\widehat{F}$的Jacobi矩阵$D\widehat{F},$
+不妨设其前$m$行在原点邻域是非退化的. 取
 $$I_\varepsilon=\{(x^{m+1},\cdots,x^n)| |x^\gamma|\le \varepsilon, m+1\le \gamma\le n\}\subset \mathbb{R}^{n-m},$$
-$$\widetilde{\psi}:\widetilde{U}\times I_\varepsilon\rightarrow \widetilde{V}$$
-
-$$\begin{aligned}
-                \widetilde{\psi}^i(t)&=f^i(t^1,\cdots,t^m) &  1\le i\le m;\\
-                \widetilde{\psi}^i(t)&=t^i+f^i(t^1,\cdots,t^m) &  m+1\le i\le n.
-            \end{aligned}$$
-It is then easy to show that the Jacobi matrix of $\widetilde{\psi}$ is non-degenerate. According to the inverse function theorem,
-Let us assume that $\widetilde{\psi}$ itself is a diffeomorphism,
-Then of course $\widetilde{\psi}^{-1}$ is too.
-
-Consider $\widetilde{\psi}^{-1}\circ\widehat{F},$
-It is a local representation of $(U,\varphi),(V,\widetilde{\psi}\circ\psi)$.
-The first $m$ lines of its Jacobi matrix are unit matrices, and the last $n-m$ lines are zero. Combined with its property of mapping the origin to the origin,
-This local representation is the projection. It can also be explained starting from the original definition of $\widetilde{\psi}^{-1}$.
-For the case of $k=n$, just construct the appropriate $\widetilde{\varphi}$. For the general case,
-The proof can be given by transforming the coordinate systems on both sides at the same time.
-
-In particular, for this theorem, it can be required that $\varphi(U)=C_\varepsilon^m(0),$
+$$\widetilde{\psi}:\widetilde{U}\times I_\varepsilon\rightarrow \widetilde{V}$$</p>
+<p>$$\begin{aligned}
+                \widetilde{\psi}^i(t)&amp;=f^i(t^1,\cdots,t^m) &amp;  1\le i\le m;\\
+                \widetilde{\psi}^i(t)&amp;=t^i+f^i(t^1,\cdots,t^m) &amp;  m+1\le i\le n.
+            \end{aligned}$$</p>
+<p>那么容易说明$\widetilde{\psi}$的Jacobi矩阵非退化. 由反函数定理,
+不妨假设$\widetilde{\psi}$本身为微分同胚,
+那么当然$\widetilde{\psi}^{-1}$也是.</p>
+<p>考虑$\widetilde{\psi}^{-1}\circ\widehat{F},$
+它是$(U,\varphi),(V,\widetilde{\psi}\circ\psi)$的局部表示.
+它的Jacobi阵前$m$行为单位阵, 后$n-m$行为零. 结合其将原点映为原点的性质,
+该局部表示即为投影. 从$\widetilde{\psi}^{-1}$的原始定义出发同样可以说明.</p>
+<p>对$k=n$的情形, 构造合适的$\widetilde{\varphi}$即可. 对一般的情形,
+同时改造两侧的坐标系即可给出证明.</p>
+<p>特别地, 对该定理, 可以要求$\varphi(U)=C_\varepsilon^m(0),$
 $\psi(V)=C_\varepsilon^n(0).$
-$C_\varepsilon^r(0)$ is a cube with $r$ dimension and $\varepsilon$ side length.
+$C_\varepsilon^r(0)$为$r$维$\varepsilon$边长的立方体.</p>
+<p>取$0\le k\le m,$ 对$a\in \varphi(U),$
+取$S=\{q\in U|x^i(q)=a^i, k+1\le i\le m\}.$ 赋予其诱导拓扑,
+使之成为$k$维拓扑流形.
+取$\widetilde{\varphi}=T\circ\varphi|_S:S\rightarrow T\circ\varphi(S)\subset \mathbb{R}^k$为同胚,
+$T$为投影. 那么其有坐标系$(S,\widetilde{\varphi}),$
+成为$k$维$C^\infty$流形, 称为$(U,\varphi)$的$k$维切片.</p>
+<p>因此秩定理说明, $F(U)$是$V$内的$k$维切片, 在$U,V$像取立方体时.</p>
+<h2 id="子流形"><a href="#子流形" class="headerlink" title="子流形"></a>子流形</h2><p>回忆曲线: $C:(a,b)\rightarrow \mathbb{R}^3,$ $C&#39;(t)\neq 0,$
+即$r(C(t))=1;$</p>
+<p>曲面: $F:\Omega\subset \mathbb{R}^2\rightarrow \mathbb{R}^3,$
+$(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
+<p>一般地, 设$F:M^m\rightarrow N^n$为$C^\infty$映照. 若$F$每点秩为$m,$
+则称$(M,F)$为$N$中的<strong>浸入子流形</strong>. 如果$F$又是单射, 则称之为<strong>子流形</strong>.
+浸入子流形在局部考虑都是子流形. 包含映射当然是秩$m$的,
+因此$M$中开子集都是开子流形.</p>
+<p>注意(浸入)子流形指$(M,F)$对, 而非像.
+事实上有一个子流形与非子流形的浸入子流形像一致.</p>
+<p>文章最后更新于 2021-10-20 16:23:00 </p>
 
-Take $0\le k\le m,$ versus $a\in \varphi(U),$
-Take $S=\{q\in U|x^i(q)=a^i, k+1\le i\le m\}.$ and give it the induced topology,
-Make it a $k$-dimensional topological manifold.
-Take $\widetilde{\varphi}=T\circ\varphi|_S:S\rightarrow T\circ\varphi(S)\subset \mathbb{R}^k$ as a homeomorphism,
-$T$ is a projection. Then it has a coordinate system $(S,\widetilde{\varphi}),$
-Becomes a $k$-dimensional $C^\infty$ manifold, called a $k$-dimensional slice of $(U,\varphi)$.
-
-Therefore, the rank theorem states that $F(U)$ is a $k$-dimensional slice within $V$, when $U and V$ are like cubes.
-
-submanifold
-------
-
-Recall curve: $C:(a,b)\rightarrow \mathbb{R}^3,$ $C'(t)\neq 0,$
-That is $r(C(t))=1;$
-Surface: $F:\Omega\subset \mathbb{R}^2\rightarrow \mathbb{R}^3,$
-$(u,v)\mapsto F(u,v).$ $F_u,F_v$ is linearly independent, that is, $r(F)=2.$
-
-Generally, let $F:M^m\rightarrow N^n$ be the mapping of $C^\infty$. If the rank of each point of $F$ is $m,$
-Then $(M,F)$ is called **immersed submanifold** in $N$. If $F$ is injective again, it is called **submanifold**.
-Immersed submanifolds are all submanifolds when considered locally. Of course, the inclusion map is of rank $m$,
-Therefore, the open subsets in $M$ are all open submanifolds.
-
-Note that (immersed) submanifolds refer to $(M,F)$ pairs, not images.
-There is actually a submanifold that is consistent with the immersed submanifold image of the non-submanifold.
-The article was last updated on 2021-10-20 16:23:00
                 </div>
             
         </div>
@@ -299,7 +328,7 @@ The article was last updated on 2021-10-20 16:23:00
     <ul>
         <li>本文标题：《微分流形》第二章-秩定理</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-20 16:22:49</li>
+        <li>创建时间：2021-10-20 19:22:49</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/10/20/《微分流形》第二章-秩定理/
         </li>
@@ -331,7 +360,7 @@ The article was last updated on 2021-10-20 16:23:00
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">论文笔记-Forman曲率与Ollivier曲率</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Thesis Notes-Forman Curvature and Ollivier Curvature</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Paper Notes - Forman Curvature vs. Ollivier Curvature</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -353,7 +382,7 @@ The article was last updated on 2021-10-20 16:23:00
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(8)-推广的MV原理</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (8) - Generalized MV Principle</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Notes on Algebraic Topology and Differential Forms (8) - Generalized MV Principle</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -605,11 +634,11 @@ The article was last updated on 2021-10-20 16:23:00
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%A9%E5%AE%9A%E7%90%86"><span class="nav-text">秩定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">子流形</span></a></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%A9%E5%AE%9A%E7%90%86"><span class="nav-text">秩定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">子流形</span></a></li></ol>
         </div>
     
 </div>
@@ -660,6 +689,36 @@ The article was last updated on 2021-10-20 16:23:00
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -683,46 +742,6 @@ The article was last updated on 2021-10-20 16:23:00
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

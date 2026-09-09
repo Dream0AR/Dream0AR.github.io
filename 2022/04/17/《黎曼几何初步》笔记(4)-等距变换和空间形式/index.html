@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(4)-等距变换和空间形式</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (4)-Isometric Transformation and Space Form</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (4) - Equidistant Transformations and Spatial Forms</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-04-17 17:56:21
+        <i class="fas fa-edit"></i>&nbsp;2022-04-17 20:56:21
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,317 +230,440 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>现在开始我们对<strong>空间形式</strong>, 即<em>常截面曲率的完备黎曼流形</em>进行研究.
+我们有如下基本结果:</p>
+<p><strong>定理 1</strong>. <em>$\,\forall\,c\in \mathbb{R},$ $n\in \mathbb{Z}_+,$ $\,\exists\,$等距变换下唯一的常截面曲率$c$的单连通$n$维空间形式.</em> </p>
+<p>定理完整证明于下章给出, 本节我们注重于存在性部分. 设有黎曼度量$g,$
+截面曲率为$K,$ 那么对于正常数$A,$ 度量$Ag$的截面曲率为$\frac{1}{A}K.$
+因此我们只需考虑截面曲率为$0,\pm 1$的空间形式. 对于$c=0,$
+取$\mathbb{R}^n$即可; 对于$c=1,$ 取熟知的单位球面$S^n$即可; 对于$c=-1,$
+需要取配备<strong>双曲度量</strong>, 即</p>
+<p>$$
+g=\frac{4}{\left(1-\sum_i \left(x^i\right)^2\right)^2}\sum_i dx^i\otimes dx^i
+$$</p>
+<p>的单位球$B^n.$ 我们引入新的概念后来说明后两个结论.</p>
+<h2 id="全测地子流形"><a href="#全测地子流形" class="headerlink" title="全测地子流形"></a>全测地子流形</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>设$M$为黎曼流形$\overline{M}$的子流形, 配备诱导度量.
+若$\overline{M}$中任一与$M$相切的测地线全部位于$M$中,
+则称$M$是$\overline{M}$中的全测地子流形. 可以看出,
+全测地子流形是十分稀少的, 几乎所有黎曼流形都没有任何全测地子流形.
+不过由此可以引入一个新的几何量, 这是十分有意义的.</p>
+<p><strong>引理 2</strong>. <em>$M$是$\overline{M}$的全测地子流形的充要条件是, 对$M$中任何向量场$X,Y,$ $D_XY=\overline{D}_XY,$ 这里$D,\overline{D}$分别为$M,\overline{M}$上的Levi-Civita联络.</em> </p>
+<p><strong>证:</strong> 首先设$M$是$\overline{M}$的任一子流形. 对$M$中向量场$X,Y,$ 定义</p>
+<p>$$
+S(X,Y):=D_XY-\overline{D}_XY,
+$$</p>
+<p>$S(X,Y)$是$\overline{M}$中仅定义在$M$上的向量场. 此时,
+对$M$上任意函数$f,$ </p>
+<p>$$
+S(fX,Y)=fS(X,Y)=S(X,fY).
+$$</p>
+<p>因此可定义$S:M_x\otimes M_x\rightarrow \overline{M}_x,$</p>
+<p>$$
+S(v,w)=S(V,W),\quad \,\forall\,V(x)=v,W(x)=w\in M_x,
+$$</p>
+<p>$V,W$为$M$中任意满足上述条件的向量场. 由Levi-Civita联络的对称性可知,</p>
+<p>$$
+S(v,w)=S(w,v).
+$$</p>
+<p>现设$M$为$\overline{M}$的全测地子流形, 断言:</p>
+<p>$$
+S(v,v)=0,\quad \,\forall\,v\in M_x, x\in M.
+$$</p>
+<p>设$\gamma$为$\overline{M}$中以$v$为初始切向量的测地线,
+$\overline{D}_{\dot\gamma}\dot\gamma=0,$ 则$\gamma$也是$M$中测地线,
+$D_{\dot\gamma}\dot\gamma=0.$ 因此</p>
+<p>$$
+S(v,v)=D_{\dot\gamma(0)}\dot\gamma-\overline{D}_{\dot\gamma(0)}\dot\gamma=0.
+$$</p>
+<p>从而,</p>
+<p>$$
+S(v+w,v+w)=2S(v,w)=0\,\Rightarrow\, D_XY=\overline{D}_XY,\quad \,\forall\,X,Y\in \mathfrak{X}(M).
+$$</p>
+<p>反之, 设$S\equiv 0.$ 取$\overline{M}$中与$M$相切的测地线$\gamma,$
+欲说明$\gamma\subset M.$ 取$M$中测地线$\xi,$ 与$\gamma$初始切向量相同.
+此时, </p>
+<p>$$
+\overline{D}_{\dot\xi}\dot\xi=D_{\dot\xi}\dot\xi\equiv 0,
+$$</p>
+<p>因此$\xi$也是$\overline{M}$中测地线. 由唯一性即知$\xi=\gamma,$
+从而$\gamma$确实落在$M$中.</p>
+<p><strong>注 3</strong>. <em>上述$S$称为$M$在$\overline{M}$中的<strong>第二基本形式</strong>, 关于它的讨论将在后续章节提到.</em> </p>
+<p>由于曲率张量由Levi-Civita联络定义, 我们有如下推论:</p>
+<p><strong>引理 4</strong>. <em>设$M$是$\overline{M}$的一个全测地子流形, $K,\overline{K}$分别为$M,\overline{M}$的截面曲率函数, 则$\,\forall\,x\in M,$ 对于任意$2$-平面$\Pi\subset M_x,$ $K(\Pi)=\overline{K}(\Pi).$</em> </p>
+<h3 id="等距变换"><a href="#等距变换" class="headerlink" title="等距变换"></a>等距变换</h3><p>我们先看一个例子, 设$\gamma$为弧长参数曲线,
+且存在等距变换$\varphi$以$\gamma$为固定点集.
+那么断言$\gamma$为正规测地线. $\,\forall\,t,$
+取$\xi$为以$\dot{\gamma}(t)$为初始切向量的测地线,
+那么由于等距变换保持局部极短性质, $\varphi(\xi)$也是测地线,
+且以$d\varphi (\dot\gamma(t))=\dot\gamma(t)$为初始切向量.
+由唯一性知$\varphi(\xi)=\xi,$ $\xi$轨迹为固定点集,
+从而$\gamma$与$\xi$在公共定义域上相同, 为正规测地线. 更一般地,
+我们有如下结论:</p>
+<p><strong>引理 5</strong>. <em>一个等距变换的固定点集为全测地子流形(不一定连通).</em> </p>
+<p><strong>证:</strong>
+只需集中证明$\overline{M}$关于等距变换$\varphi$的固定点集$M$的确是一个子流形,
+其后的说明与前面的讨论一致. 定义</p>
+<p>$$
+\mathscr{F}:=\{v\in \overline{M}_x:d\varphi(v)=v\},
+$$</p>
+<p>只需说明$\exp_x(\mathscr{F}\cap B(\delta))=M\cap B_\delta,$
+其中$\delta$充分小使$\exp_x$在球上是微分同胚.
+这样就建立了$M$上的坐标邻域, 使之成为子流形. 关于这一点的证明,
+同样注意利用等距变换保持测地性, 以及测地线的唯一性即可.</p>
+<h2 id="空间形式"><a href="#空间形式" class="headerlink" title="空间形式"></a>空间形式</h2><h3 id="单位球面"><a href="#单位球面" class="headerlink" title="单位球面"></a>单位球面</h3><p><strong>引理 6</strong>. <em>单位球面$S^n$具常截面曲率$+1,$ $\,\forall\,n\ge 2.$</em> </p>
+<p><strong>证:</strong> $n=2$时, $S^2$截面曲率即高斯曲率, 熟知为$+1.$ 对$n\ge 3,$
+记$x\in \mathbb{R}^3,$ $y\in \mathbb{R}^{n-2},$
+$\mathbb{R}^{n+1}$上的等距变换$\widetilde\varphi:(x,y)=(x,-y)$诱导了$S^n$上的等距变换$\varphi,$
+以$\{(x,0)\}=S^2$为固定点集. 因此$S^2$是一个全测地子流形, 由引理,
+$S^n$中与该$S^2$相切平面的截面曲率与$S^2$截面曲率相同, 为$+1.$
+而对于$S^n,$ 任意两点处任意两个二维切平面间存在一个等距变换,
+因此它是以$+1$为常截面曲率的空间形式.</p>
+<h3 id="双曲度量"><a href="#双曲度量" class="headerlink" title="双曲度量"></a>双曲度量</h3><p><strong>引理 7</strong>. <em>配备双曲度量的单位球$B^n$是常截面曲率为$-1$的完备黎曼流形.</em> </p>
+<p><strong>证:</strong> 首先讨论完备性. 由Hopf-Rinow定理,
+我们可以证明从原点出发的测地线总可无限延伸,
+进而$\exp_O$定义在整个切空间上, 从而流形是完备的.
+考虑曲线$\xi(s)=\left(\frac{e^s-1}{e^s+1},0,\cdots,0\right).$
+计算得到$s$为弧长参数,
+且$\xi$为等距变换$(x^1,x^2,\cdots,x^n)\mapsto (x^1,-x^2,\cdots,-x^n)$的不动点集,
+故$\xi$是测地线. 进而由对称性, 沿各个方向出发的测地线均可无限延伸.</p>
+<p>接下来, 取$B^n$在$p$点的任一切平面$\Pi\subset \mathbb{R}^n,$
+取$E$为包含$\Pi,p$的任一$3$维子空间. 由对称性, 不妨假设$E=\mathbb{R}^3,$
+那么$E\cap B^n=B^3$是等距变换$(x^1,x^2,x^3,x^4,\cdots,x^n)\mapsto (x^1,x^2,x^3,-x^4,\cdots,-x^n)$的不动点集,
+为全测地子流形. 因此只需证明$B^3$在诱导双曲度量下具常截面曲率$-1$即可.
+为此采用球坐标计算即可. $n=2$的情形直接采用极坐标计算即可.</p>
+<p>后面我们将配备双曲度量的单位球记作$H^n.$</p>
+<h3 id="测地线性质"><a href="#测地线性质" class="headerlink" title="测地线性质"></a>测地线性质</h3><p>接下来我们在空间形式中考虑测地线的性质. 直观来看,
+考虑从一点出发的固定初始切向量夹角的两条测地线,
+若以$\mathbb{R}^n$为基准, $S^n$的相比之下要靠拢, 而$H^n$的要发散.
+这是截面曲率与测地线间的重要联系. 接下来我们取$n=2$来严格表述这一点.
+注意由于$n=2$的情形为各自一般情形的全测地子流形,
+对一般的$n$性质也是成立的.</p>
+<p>现设$M=\mathbb{R}^2,S^2,H^2,$ 选定参考点$O\in M,$
+定义半径为$r$的测地圆周: </p>
+<p>$$
+C(r)=\{x\in M,d(0,x)=r\}.
+$$</p>
+<p> 当$r$充分小时,
+$C(r)$即为$M_O$中半径为$r$的圆周在微分同胚$\exp_O$下的像.
+它的长度就衡量了$M$上从$O$点出发测地线的散开率.</p>
+<p>设$c_0(r),c_+(r),c_-(r)$分别是$\mathbb{R}^2,S^2,H^2$中$C(r)$的长度.
+显然$c_0(r)=2\pi r,$ $c_+(r)=2\pi \sin r.$
+最后计算可得$c_-(r)=2\pi \sinh r.$
+它们都是齐性空间($H^n$的齐性将在后面说明),
+因此参考点$O$选取不影响$C(r)$长度. 由图像立即可见负曲率将测地线推开,
+而正曲率将测地线汇拢.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/04/17/iVt4jSC8doG7u9A.png width='50%' height='50%'></p>
+<p>对任意完备二维黎曼流形$M,$ 选定参考点$O\in M,$
+我们也来考虑测地圆周$C(r)$的长度$c(r).$ 令$r$充分小, 则</p>
+<p>$$
+c(r)=\int_0^{2\pi}\left|d\exp_O\left(\frac{d {} }{d {}\theta}(r,\theta)\right)\right|d\theta.
+$$</p>
+<p>可以看出我们不需要特别考虑$d\exp$对径向方向的影响.
+我们先转而研究另一个对象, 之后再回来继续讨论这个问题.</p>
+<h3 id="Jacobi场"><a href="#Jacobi场" class="headerlink" title="Jacobi场"></a>Jacobi场</h3><p>所谓$C^\infty$<strong>矩阵映射</strong>,
+是指光滑映射$\gamma:[a,b]\times [c,d]\rightarrow M.$
+可由此定义两个<strong>沿</strong>$\gamma$<strong>的向量场</strong>$T,U:$</p>
+<p>$$
+T(\gamma(t,u)):=d\gamma\left(\frac{\partial {} }{\partial {}t}(t,u)\right),\quad U(\gamma(t,u)):=d\gamma\left(\frac{\partial {} }{\partial {}u}(t,u)\right).
+$$</p>
+<p>每一个$u\in[c,d]$确定了一条曲线$\gamma_u(t)=\gamma(t,u).$
+当$0\in[c,d]$时, 称$\gamma_0$为$C^\infty$矩形$\gamma$的基曲线.
+若再假设每一条$\gamma_u$是$M$的测地线,
+则称矩阵映射$\gamma$是<strong>单参数测地线族</strong>$\{\gamma_u\}.$ 于是我们有</p>
+<p>$$
+[T,U]=d\gamma\left(\left[\frac{\partial {} }{\partial {}t},\frac{\partial {} }{\partial {}u}\right]\right)=0,\quad D_TT=0.
+$$</p>
+<p>进而, </p>
+<p>$$
+D_TD_TU=D_TD_UT=D_TD_UT-D_UD_TT-D_{[T,U]}T=-R_{TU}T.
+$$</p>
+<p>限制在基曲线上, 我们就得到了:</p>
+<p>$$
+\ddot{U}+R_{\dot{\gamma}_0U}\dot{\gamma}_0=0.
+$$</p>
+<p>称上式为<strong>Jacobi方程</strong>, 称沿曲线$\gamma_0,$
+符合上式的向量场$U$为<strong>Jacobi场</strong>.
+称向量场$U$为$\{\gamma_u\}$的<strong>横截向量场</strong>, 于是得到:</p>
+<p><strong>引理 8</strong>. <em>单参数测地线族的横截向量场沿基曲线是一个Jacobi场.</em> </p>
+<p>反过来,
+后面我们将说明沿测地线的每个Jacobi场都是某个单参数测地线族的横截向量场.
+下面我们重新回到原来的讨论.
+我们说明$d\exp_O\left(\frac{d {} }{d {}\theta}\right)$是某个单参数测地线族的横截向量场,
+从而Jacobi方程就给出了曲率与$d\exp_O\left(\frac{d {} }{d {}\theta}\right)$之间决定性的联系,
+也就可以看出曲率和$c(r)$之间的重要关系.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/04/17/kSh9Tma3VMfrNe4.png width='50%' height='50%'></p>
+<p>设$p\in M_O,$ $X$为$M_O$中向量,
+那么$\Gamma(t,u):=\exp_O\frac{t}{r}(p+uX)$就定义了一个单参数测地线族,
+$r=|p|,$ 满足 </p>
+<p>$$
+U(0)=0,\quad \dot{U}(0)=\frac{1}{r}X.
+$$</p>
+<p>为证明第二个式子, 引入由$\exp_O:B(\delta)\approx B_\delta$决定的坐标系,
+称为<strong>法坐标系</strong>, 满足: 
+$$
+\left\{\begin{aligned}
+ &amp;\left&lt;{}\frac{\partial {} }{\partial {}x^i}(0),\frac{\partial {} }{\partial {}x^j}(0)\right&gt;=\delta_{ij},&amp;\,\forall\,i,j,\\
+ &amp;D_{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j}=0,&amp;\,\forall\,i,j.
+ \end{aligned}\right.
+$$</p>
+<p>一式显然. 对于二式, 定义$\beta:M_O\times M_O\rightarrow \mathbb{R},$
+$\beta(e_i,e_j)=D_{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j},$
+做线性延拓成为一个对称双线性型. 由于法坐标系下径向直线都是测地线,
+$\beta(v,v)=0,$ 从而$\beta\equiv 0,$ 这就得到了第二式, 因此在法坐标系下,
+$\Gamma_{ij}^k\equiv 0.$</p>
+<p>现在就可以回来说明$\dot{U}(0)=\frac{1}{r}X.$ 由于$X$为常向量,
+$\Gamma_{ij}^k\equiv 0,$</p>
+<p>$$
+D_{\dot{\gamma}_0(0)}U=\frac{1}{r}X+\frac{t}{r}D_{\dot{\gamma}_0(0)}X=\frac{1}{r}X.
+$$</p>
+<p>现取$X=\frac{d {} }{d {}\theta}(r,\theta)$就说明了$d\exp_O\left(\frac{d {} }{d {}\theta}\right)$确为某个单参数测地线族的横截向量场.
+设$\gamma$是基曲线$\Gamma_0,$ $W(t)$为沿$\gamma$的单位平行向量场,
+$W(t)\perp\dot{\gamma}(t).$ 对于横截向量场$U,$ 由Gauss引理,
+它也与$\dot{\gamma}(t)$正交. 因此$U(t)=f(t)W(t).$ 由Jacobi方程,</p>
+<p>$$
+\ddot{f}+Kf=0,\quad f(0)=0,\quad \dot{f}(0)=1. \tag*{(\ast )}
+$$</p>
+<p>这里$K(t)$为$\gamma(t)$处的Gauss曲率.</p>
+<p>应用到二维空间形式上, 我们就得到了: 
+$$
+f(r)=\left\{\begin{aligned}
+ &amp;r, &amp;&amp;K=0,\\
+ &amp;\sin r, &amp;&amp;K=+1,\\
+ &amp;\sinh r, &amp;&amp;K=-1. 
+ \end{aligned}\right.
+$$
+ 这就是先前所求的$c_0,c_+,c_-.$
+$(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始条件</strong>.</p>
+<p>由于曲率控制测地线的性质,
+可以预想到充分正曲率的流形应当是紧的(Bonnet-Myers定理),
+而负曲率流形让我们期望一点处的指数映射将是一个微分同胚(Cartan-Hadamard定理).</p>
+<p>最后给出一些评注. 假设$\dim M\ge 3,$ 称$M$是<strong>逐点常截面曲率</strong>的,
+若$M$上每点所有$2$-平面的截面曲率相同. 经典的<strong>Schur定理</strong>表示,
+<em>流形是逐点常截面曲率的当且仅当它是常截面曲率的</em>.
+证明利用了第二Bianchi恒等式.</p>
+<p>本节只讨论了单连通的空间形式. 其它的空间形式从几何, 群论,
+拓扑等观点考虑也都是很重要的. 它们的分类工作也是一个重要的课题.</p>
+<p>文章最后更新于 2022-04-19 14:01:46 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Introduction
-----
-
-Now we begin to study the **space form**, that is, the complete Riemannian manifold* with constant cross-section curvature.
-We have the following basic results:
-
-**Theorem 1**. *$\,\forall\,c\in \mathbb{R},$ $n\in \mathbb{Z}_+,$ $\,\exists\,$The only simply connected $n$-dimensional space form of constant cross-section curvature $c$ under isometric transformation.*
-The complete proof of the theorem is given in the next chapter. In this section we focus on the existence part. Let the Riemannian metric $g,$
-The cross-sectional curvature is $K,$. Then for the positive constant $A,$, the cross-sectional curvature of $Ag$ is $\frac{1}{A}K.$
-Therefore, we only need to consider the spatial form with cross-sectional curvature $0,\pm 1$. For $c=0,$
-Just take $\mathbb{R}^n$; for $c=1,$, just take the well-known unit sphere $S^n$; for $c=-1,$
-It is necessary to obtain the equipment **hyperbolic metric**, that is
-
-
-$$
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>现在开始我们对<strong>空间形式</strong>, 即<em>常截面曲率的完备黎曼流形</em>进行研究.
+我们有如下基本结果:</p>
+<p><strong>定理 1</strong>. <em>$\,\forall\,c\in \mathbb{R},$ $n\in \mathbb{Z}_+,$ $\,\exists\,$等距变换下唯一的常截面曲率$c$的单连通$n$维空间形式.</em> </p>
+<p>定理完整证明于下章给出, 本节我们注重于存在性部分. 设有黎曼度量$g,$
+截面曲率为$K,$ 那么对于正常数$A,$ 度量$Ag$的截面曲率为$\frac{1}{A}K.$
+因此我们只需考虑截面曲率为$0,\pm 1$的空间形式. 对于$c=0,$
+取$\mathbb{R}^n$即可; 对于$c=1,$ 取熟知的单位球面$S^n$即可; 对于$c=-1,$
+需要取配备<strong>双曲度量</strong>, 即</p>
+<p>$$
 g=\frac{4}{\left(1-\sum_i \left(x^i\right)^2\right)^2}\sum_i dx^i\otimes dx^i
-$$
-
-
-The unit ball $B^n.$ We introduce new concepts and later illustrate the last two conclusions.
-
-Full geodesic submanifold
-----------
-
-### Definition
-
-Let $M$ be a submanifold of the Riemannian manifold $\overline{M}$, equipped with an induced metric.
-If any geodesic tangent to $M$ in $\overline{M}$ is all located in $M$,
-Then $M$ is said to be a fully geodesic submanifold in $\overline{M}$. It can be seen that,
-Fully geodesic submanifolds are very rare, and almost all Riemannian manifolds do not have any fully geodesic submanifolds.
-However, a new geometric quantity can be introduced, which is very meaningful.
-
-**Lemma 2**. *The necessary and sufficient condition that $M$ is the total geodesic submanifold of $\overline{M}$ is that for any vector field $X,Y,$ in $M$ $D_XY=\overline{D}_XY,$ where $D,\overline{D}$ are the Levi-Civita connections on $M,\overline{M}$ respectively.*
-**Proof:** First, let $M$ be any submanifold of $\overline{M}$. Define the vector fields $X, Y, $ in $M$
-
-
-$$
+$$</p>
+<p>的单位球$B^n.$ 我们引入新的概念后来说明后两个结论.</p>
+<h2 id="全测地子流形"><a href="#全测地子流形" class="headerlink" title="全测地子流形"></a>全测地子流形</h2><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>设$M$为黎曼流形$\overline{M}$的子流形, 配备诱导度量.
+若$\overline{M}$中任一与$M$相切的测地线全部位于$M$中,
+则称$M$是$\overline{M}$中的全测地子流形. 可以看出,
+全测地子流形是十分稀少的, 几乎所有黎曼流形都没有任何全测地子流形.
+不过由此可以引入一个新的几何量, 这是十分有意义的.</p>
+<p><strong>引理 2</strong>. <em>$M$是$\overline{M}$的全测地子流形的充要条件是, 对$M$中任何向量场$X,Y,$ $D_XY=\overline{D}_XY,$ 这里$D,\overline{D}$分别为$M,\overline{M}$上的Levi-Civita联络.</em> </p>
+<p><strong>证:</strong> 首先设$M$是$\overline{M}$的任一子流形. 对$M$中向量场$X,Y,$ 定义</p>
+<p>$$
 S(X,Y):=D_XY-\overline{D}_XY,
-$$
-
-
-$S(X,Y)$ is the vector field in $\overline{M}$ that is only defined on $M$. At this time,
-For any function $f,$ on $M$
-$$
+$$</p>
+<p>$S(X,Y)$是$\overline{M}$中仅定义在$M$上的向量场. 此时,
+对$M$上任意函数$f,$ </p>
+<p>$$
 S(fX,Y)=fS(X,Y)=S(X,fY).
-$$
-
-
-Therefore, $S:M_x\otimes M_x\rightarrow \overline{M}_x,$ can be defined
-
-
-$$
+$$</p>
+<p>因此可定义$S:M_x\otimes M_x\rightarrow \overline{M}_x,$</p>
+<p>$$
 S(v,w)=S(V,W),\quad \,\forall\,V(x)=v,W(x)=w\in M_x,
-$$
-$V, W$ are any vector fields in $M$ that satisfy the above conditions. From the symmetry of the Levi-Civita connection, we can know that,
-
-
-$$
+$$</p>
+<p>$V,W$为$M$中任意满足上述条件的向量场. 由Levi-Civita联络的对称性可知,</p>
+<p>$$
 S(v,w)=S(w,v).
-$$
-
-
-
-Now suppose $M$ is the total geodesic submanifold of $\overline{M}$, assert:
-$$
+$$</p>
+<p>现设$M$为$\overline{M}$的全测地子流形, 断言:</p>
+<p>$$
 S(v,v)=0,\quad \,\forall\,v\in M_x, x\in M.
-$$
-
-
-
-Let $\gamma$ be the geodesic in $\overline{M}$ with $v$ as the initial tangent vector,
-$\overline{D}_{\dot\gamma}\dot\gamma=0,$ then $\gamma$ is also the geodesic in $M$,
-$D_{\dot\gamma}\dot\gamma=0.$ Therefore
-
-
-$$
+$$</p>
+<p>设$\gamma$为$\overline{M}$中以$v$为初始切向量的测地线,
+$\overline{D}_{\dot\gamma}\dot\gamma=0,$ 则$\gamma$也是$M$中测地线,
+$D_{\dot\gamma}\dot\gamma=0.$ 因此</p>
+<p>$$
 S(v,v)=D_{\dot\gamma(0)}\dot\gamma-\overline{D}_{\dot\gamma(0)}\dot\gamma=0.
-$$
-
-
-Thus,
-
-
-$$
+$$</p>
+<p>从而,</p>
+<p>$$
 S(v+w,v+w)=2S(v,w)=0\,\Rightarrow\, D_XY=\overline{D}_XY,\quad \,\forall\,X,Y\in \mathfrak{X}(M).
-$$
-On the contrary, let $S\equiv 0.$ take the geodesic $\gamma,$ in $\overline{M}$ that is tangent to $M$
-To illustrate $\gamma\subset M.$, take the geodesic $\xi,$ in $M$ to be the same as the initial tangent vector of $\gamma$.
-At this time,
-
-$$
+$$</p>
+<p>反之, 设$S\equiv 0.$ 取$\overline{M}$中与$M$相切的测地线$\gamma,$
+欲说明$\gamma\subset M.$ 取$M$中测地线$\xi,$ 与$\gamma$初始切向量相同.
+此时, </p>
+<p>$$
 \overline{D}_{\dot\xi}\dot\xi=D_{\dot\xi}\dot\xi\equiv 0,
-$$
-Therefore $\xi$ is also the geodesic in $\overline{M}$. From the uniqueness, we know that $\xi=\gamma,$
-Therefore $\gamma$ does fall in $M$.
-
-**Note 3**. *The above $S$ is called the **second basic form** of $M$ in $\overline{M}$, and its discussion will be mentioned in subsequent chapters.*
-
-Since the curvature tensor is defined by the Levi-Civita connection, we have the following inference:
-**Lemma 4**. *Suppose $M$ is a fully geodesic submanifold of $\overline{M}$, $K,\overline{K}$ are the cross-sectional curvature functions of $M,\overline{M}$ respectively, then $\,\forall\,x\in M,$ for any $2$-plane $\Pi\subset M_x,$ $K(\Pi)=\overline{K}(\Pi).$*
-
-### Isometric transformation
-Let’s look at an example first. Let $\gamma$ be the arc length parameter curve,
-And there is an isometric transformation $\varphi$ with $\gamma$ as the fixed point set.
-Then assert that $\gamma$ is a normal geodesic. $\,\forall\,t,$
-Let $\xi$ be the geodesic with $\dot{\gamma}(t)$ as the initial tangent vector,
-Then since the isometric transformation maintains the local minimal property, $\varphi(\xi)$ is also a geodesic,
-And take $d\varphi (\dot\gamma(t))=\dot\gamma(t)$ as the initial tangent vector.
-From the uniqueness, we know that $\varphi(\xi)=\xi, $ $\xi$ trajectory is a fixed point set,
-Therefore $\gamma$ and $\xi$ are the same in the common domain and are regular geodesics. More generally,
-We have the following conclusions:
-**Lemma 5**. *The fixed point set of an isometric transformation is a complete geodesic submanifold (not necessarily connected).*
-
-**Certificate:**
-We only need to focus on proving that the fixed point set $M$ of $\overline{M}$ with respect to the isometric transformation $\varphi$ is indeed a submanifold,
-The instructions that follow are consistent with the previous discussion. Definition
-
-
-$$
+$$</p>
+<p>因此$\xi$也是$\overline{M}$中测地线. 由唯一性即知$\xi=\gamma,$
+从而$\gamma$确实落在$M$中.</p>
+<p><strong>注 3</strong>. <em>上述$S$称为$M$在$\overline{M}$中的<strong>第二基本形式</strong>, 关于它的讨论将在后续章节提到.</em> </p>
+<p>由于曲率张量由Levi-Civita联络定义, 我们有如下推论:</p>
+<p><strong>引理 4</strong>. <em>设$M$是$\overline{M}$的一个全测地子流形, $K,\overline{K}$分别为$M,\overline{M}$的截面曲率函数, 则$\,\forall\,x\in M,$ 对于任意$2$-平面$\Pi\subset M_x,$ $K(\Pi)=\overline{K}(\Pi).$</em> </p>
+<h3 id="等距变换"><a href="#等距变换" class="headerlink" title="等距变换"></a>等距变换</h3><p>我们先看一个例子, 设$\gamma$为弧长参数曲线,
+且存在等距变换$\varphi$以$\gamma$为固定点集.
+那么断言$\gamma$为正规测地线. $\,\forall\,t,$
+取$\xi$为以$\dot{\gamma}(t)$为初始切向量的测地线,
+那么由于等距变换保持局部极短性质, $\varphi(\xi)$也是测地线,
+且以$d\varphi (\dot\gamma(t))=\dot\gamma(t)$为初始切向量.
+由唯一性知$\varphi(\xi)=\xi,$ $\xi$轨迹为固定点集,
+从而$\gamma$与$\xi$在公共定义域上相同, 为正规测地线. 更一般地,
+我们有如下结论:</p>
+<p><strong>引理 5</strong>. <em>一个等距变换的固定点集为全测地子流形(不一定连通).</em> </p>
+<p><strong>证:</strong>
+只需集中证明$\overline{M}$关于等距变换$\varphi$的固定点集$M$的确是一个子流形,
+其后的说明与前面的讨论一致. 定义</p>
+<p>$$
 \mathscr{F}:=\{v\in \overline{M}_x:d\varphi(v)=v\},
-$$
-Just state $\exp_x(\mathscr{F}\cap B(\delta))=M\cap B_\delta,$
-Among them, $\delta$ is a sufficient miniscule such that $\exp_x$ is diffeomorphism on the sphere.
-In this way, the coordinate neighborhood on $M$ is established, making it a submanifold. The proof of this point is,
-Also pay attention to using isometric transformation to maintain geodesics and the uniqueness of geodesics.
-
-spatial form
---------
-### Unit sphere
-
-**Lemma 6**. *The unit sphere $S^n$ has constant cross-sectional curvature $+1,$ $\,\forall\,n\ge 2.$*
-
-**Proof:** When $n=2$, the cross-section curvature of $S^2$ is Gaussian curvature, which is known as $+1.$ for $n\ge 3,$
-Remember $x\in \mathbb{R}^3,$ $y\in \mathbb{R}^{n-2},$
-The isometric transformation $\widetilde\varphi on $\mathbb{R}^{n+1}$:(x,y)=(x,-y)$ induces the isometric transformation $\varphi,$ on $S^n$
-Let $\{(x,0)\}=S^2$ be the fixed point set. Therefore $S^2$ is a fully geodesic submanifold. According to the lemma,
-The cross-sectional curvature of the plane tangent to $S^2$ in $S^n$ is the same as the cross-sectional curvature of $S^2$, which is $+1.$
-For $S^n,$ there is an isometric transformation between any two two-dimensional tangent planes at any two points,
-Therefore, it is the spatial form with $+1$ as the constant cross-section curvature.
-
-### Hyperbolic metric
-
-**Lemma 7**. *The unit ball $B^n$ equipped with a hyperbolic metric is a complete Riemannian manifold with constant cross-section curvature $-1$.*
-
-**Proof:** First discuss the completeness. According to the Hopf-Rinow theorem,
-We can prove that a geodesic starting from the origin can always extend infinitely,
-Furthermore, $\exp_O$ is defined on the entire tangent space, so the manifold is complete.
-Consider the curve $\xi(s)=\left(\frac{e^s-1}{e^s+1},0,\cdots,0\right).$
-The calculated $s$ is the arc length parameter,
-And $\xi$ is the fixed point set of the isometric transformation $(x^1,x^2,\cdots,x^n)\mapsto (x^1,-x^2,\cdots,-x^n)$,
-Therefore $\xi$ is a geodesic. Furthermore, due to symmetry, geodesics starting in all directions can be extended infinitely.
-
-Next, take any tangent plane $\Pi\subset \mathbb{R}^n,$ of $B^n$ at point $p$
-Let $E$ be any $3$-dimensional subspace containing $\Pi,p$. Due to symmetry, we might as well assume that $E=\mathbb{R}^3,$
-Then $E\cap B^n=B^3$ is the fixed point set of the isometric transformation $(x^1,x^2,x^3,x^4,\cdots,x^n)\mapsto (x^1,x^2,x^3,-x^4,\cdots,-x^n)$,
-is a fully geodesic submanifold. Therefore, it is only necessary to prove that $B^3$ has a constant cross-section curvature $-1$ under the induced hyperbolic metric.
-For this purpose, spherical coordinates can be used for calculation. In the case of $n=2$, polar coordinates can be used for calculation.
-We will later refer to the unit ball equipped with a hyperbolic metric as $H^n.$
-
-### Geodesic properties
-
-Next we consider the properties of geodesics in spatial form. Intuitively,
-Consider two geodesics starting from a point with a fixed initial tangent vector angle,
-If $\mathbb{R}^n$ is used as the benchmark, $S^n$ will be closer in comparison, while $H^n$ will diverge.
-This is an important connection between section curvature and geodesics. Next, we take $n=2$ to express this point strictly.
-Note that since the case $n=2$ is the total geodesic submanifold of the respective general case,
-This is also true for general $n$ properties.
-
-Now suppose $M=\mathbb{R}^2,S^2,H^2,$ and select the reference point $O\in M,$
-Define a geodesic circle with radius $r$:
-$$
+$$</p>
+<p>只需说明$\exp_x(\mathscr{F}\cap B(\delta))=M\cap B_\delta,$
+其中$\delta$充分小使$\exp_x$在球上是微分同胚.
+这样就建立了$M$上的坐标邻域, 使之成为子流形. 关于这一点的证明,
+同样注意利用等距变换保持测地性, 以及测地线的唯一性即可.</p>
+<h2 id="空间形式"><a href="#空间形式" class="headerlink" title="空间形式"></a>空间形式</h2><h3 id="单位球面"><a href="#单位球面" class="headerlink" title="单位球面"></a>单位球面</h3><p><strong>引理 6</strong>. <em>单位球面$S^n$具常截面曲率$+1,$ $\,\forall\,n\ge 2.$</em> </p>
+<p><strong>证:</strong> $n=2$时, $S^2$截面曲率即高斯曲率, 熟知为$+1.$ 对$n\ge 3,$
+记$x\in \mathbb{R}^3,$ $y\in \mathbb{R}^{n-2},$
+$\mathbb{R}^{n+1}$上的等距变换$\widetilde\varphi:(x,y)=(x,-y)$诱导了$S^n$上的等距变换$\varphi,$
+以$\{(x,0)\}=S^2$为固定点集. 因此$S^2$是一个全测地子流形, 由引理,
+$S^n$中与该$S^2$相切平面的截面曲率与$S^2$截面曲率相同, 为$+1.$
+而对于$S^n,$ 任意两点处任意两个二维切平面间存在一个等距变换,
+因此它是以$+1$为常截面曲率的空间形式.</p>
+<h3 id="双曲度量"><a href="#双曲度量" class="headerlink" title="双曲度量"></a>双曲度量</h3><p><strong>引理 7</strong>. <em>配备双曲度量的单位球$B^n$是常截面曲率为$-1$的完备黎曼流形.</em> </p>
+<p><strong>证:</strong> 首先讨论完备性. 由Hopf-Rinow定理,
+我们可以证明从原点出发的测地线总可无限延伸,
+进而$\exp_O$定义在整个切空间上, 从而流形是完备的.
+考虑曲线$\xi(s)=\left(\frac{e^s-1}{e^s+1},0,\cdots,0\right).$
+计算得到$s$为弧长参数,
+且$\xi$为等距变换$(x^1,x^2,\cdots,x^n)\mapsto (x^1,-x^2,\cdots,-x^n)$的不动点集,
+故$\xi$是测地线. 进而由对称性, 沿各个方向出发的测地线均可无限延伸.</p>
+<p>接下来, 取$B^n$在$p$点的任一切平面$\Pi\subset \mathbb{R}^n,$
+取$E$为包含$\Pi,p$的任一$3$维子空间. 由对称性, 不妨假设$E=\mathbb{R}^3,$
+那么$E\cap B^n=B^3$是等距变换$(x^1,x^2,x^3,x^4,\cdots,x^n)\mapsto (x^1,x^2,x^3,-x^4,\cdots,-x^n)$的不动点集,
+为全测地子流形. 因此只需证明$B^3$在诱导双曲度量下具常截面曲率$-1$即可.
+为此采用球坐标计算即可. $n=2$的情形直接采用极坐标计算即可.</p>
+<p>后面我们将配备双曲度量的单位球记作$H^n.$</p>
+<h3 id="测地线性质"><a href="#测地线性质" class="headerlink" title="测地线性质"></a>测地线性质</h3><p>接下来我们在空间形式中考虑测地线的性质. 直观来看,
+考虑从一点出发的固定初始切向量夹角的两条测地线,
+若以$\mathbb{R}^n$为基准, $S^n$的相比之下要靠拢, 而$H^n$的要发散.
+这是截面曲率与测地线间的重要联系. 接下来我们取$n=2$来严格表述这一点.
+注意由于$n=2$的情形为各自一般情形的全测地子流形,
+对一般的$n$性质也是成立的.</p>
+<p>现设$M=\mathbb{R}^2,S^2,H^2,$ 选定参考点$O\in M,$
+定义半径为$r$的测地圆周: </p>
+<p>$$
 C(r)=\{x\in M,d(0,x)=r\}.
-$$
-
- When $r$ is sufficiently small,
-$C(r)$ is the image of the circle with radius $r$ in $M_O$ under diffeomorphism $\exp_O$.
-Its length measures the divergence rate of the geodesics on $M$ starting from point $O$.
-Let $c_0(r), c_+(r), c_-(r)$ be the length of $C(r)$ in $\mathbb{R}^2, S^2, H^2$ respectively.
-Obviously $c_0(r)=2\pi r,$ $c_+(r)=2\pi \sin r.$
-The final calculation shows $c_-(r)=2\pi \sinh r.$
-They are all homogeneous spaces (the homogeneity of $H^n$ will be explained later),
-Therefore, the selection of reference point $O$ does not affect the length of $C(r)$. It can be immediately seen from the image that the negative curvature pushes the geodesic apart,
-And positive curvature brings geodesics together.
-
-<img style='margin: auto;' src=https://s2.loli.net/2022/04/17/iVt4jSC8doG7u9A.png width='50%' height='50%'>
-For any complete two-dimensional Riemannian manifold $M,$, select the reference point $O\in M,$
-Let us also consider the length $c(r).$ of the geodesic circle $C(r)$. Let $r$ be sufficiently small, then
-
-
-$$
+$$</p>
+<p> 当$r$充分小时,
+$C(r)$即为$M_O$中半径为$r$的圆周在微分同胚$\exp_O$下的像.
+它的长度就衡量了$M$上从$O$点出发测地线的散开率.</p>
+<p>设$c_0(r),c_+(r),c_-(r)$分别是$\mathbb{R}^2,S^2,H^2$中$C(r)$的长度.
+显然$c_0(r)=2\pi r,$ $c_+(r)=2\pi \sin r.$
+最后计算可得$c_-(r)=2\pi \sinh r.$
+它们都是齐性空间($H^n$的齐性将在后面说明),
+因此参考点$O$选取不影响$C(r)$长度. 由图像立即可见负曲率将测地线推开,
+而正曲率将测地线汇拢.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/04/17/iVt4jSC8doG7u9A.png width='50%' height='50%'></p>
+<p>对任意完备二维黎曼流形$M,$ 选定参考点$O\in M,$
+我们也来考虑测地圆周$C(r)$的长度$c(r).$ 令$r$充分小, 则</p>
+<p>$$
 c(r)=\int_0^{2\pi}\left|d\exp_O\left(\frac{d {} }{d {}\theta}(r,\theta)\right)\right|d\theta.
-$$
-
-
-It can be seen that we do not need to specifically consider the influence of $d\exp$ on the radial direction.
-Let's turn to another object first and come back to this issue later.
-
-### Jacobi Field
-
-The so-called $C^\infty$**matrix mapping**,
-Refers to the smooth mapping $\gamma:[a,b]\times [c,d]\rightarrow M.$
-From this we can define two vector fields **$T,U:$ along **$\gamma$**
-$$
+$$</p>
+<p>可以看出我们不需要特别考虑$d\exp$对径向方向的影响.
+我们先转而研究另一个对象, 之后再回来继续讨论这个问题.</p>
+<h3 id="Jacobi场"><a href="#Jacobi场" class="headerlink" title="Jacobi场"></a>Jacobi场</h3><p>所谓$C^\infty$<strong>矩阵映射</strong>,
+是指光滑映射$\gamma:[a,b]\times [c,d]\rightarrow M.$
+可由此定义两个<strong>沿</strong>$\gamma$<strong>的向量场</strong>$T,U:$</p>
+<p>$$
 T(\gamma(t,u)):=d\gamma\left(\frac{\partial {} }{\partial {}t}(t,u)\right),\quad U(\gamma(t,u)):=d\gamma\left(\frac{\partial {} }{\partial {}u}(t,u)\right).
-$$
-
-
-Each $u\in[c,d]$ determines a curve $\gamma_u(t)=\gamma(t,u).$
-When $0\in[c,d]$, $\gamma_0$ is called the base curve of $C^\infty$ rectangle $\gamma$.
-If we further assume that each $\gamma_u$ is a geodesic of $M$,
-Then the matrix mapping $\gamma$ is said to be a **single-parameter geodesic family**$\{\gamma_u\}.$ So we have
-
-
-$$
+$$</p>
+<p>每一个$u\in[c,d]$确定了一条曲线$\gamma_u(t)=\gamma(t,u).$
+当$0\in[c,d]$时, 称$\gamma_0$为$C^\infty$矩形$\gamma$的基曲线.
+若再假设每一条$\gamma_u$是$M$的测地线,
+则称矩阵映射$\gamma$是<strong>单参数测地线族</strong>$\{\gamma_u\}.$ 于是我们有</p>
+<p>$$
 [T,U]=d\gamma\left(\left[\frac{\partial {} }{\partial {}t},\frac{\partial {} }{\partial {}u}\right]\right)=0,\quad D_TT=0.
-$$
-
-
-Furthermore,
-$$
+$$</p>
+<p>进而, </p>
+<p>$$
 D_TD_TU=D_TD_UT=D_TD_UT-D_UD_TT-D_{[T,U]}T=-R_{TU}T.
-$$
-
-
-Restricted to the base curve, we get:
-
-
-$$
+$$</p>
+<p>限制在基曲线上, 我们就得到了:</p>
+<p>$$
 \ddot{U}+R_{\dot{\gamma}_0U}\dot{\gamma}_0=0.
-$$
-
-
-Call the above formula **Jacobi equation**, and call it along the curve $\gamma_0,$
-The vector field $U$ that conforms to the above formula is **Jacobi field**.
-The vector field $U$ is called the **transversal vector field** of $\{\gamma_u\}$, so we get:
-
-**Lemma 8**. *The transverse vector field of the single-parameter geodesic family along the base curve is a Jacobi field.*
-
-conversely,
-We will explain later that every Jacobi field along a geodesic is a transverse vector field of a certain single-parameter geodesic family.
-Below we return to the original discussion.
-We explain that $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$ is the transverse vector field of a certain single-parameter geodesic family,
-Therefore, the Jacobi equation gives the decisive connection between curvature and $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$,
-We can also see the important relationship between curvature and $c(r)$.
-<img style='margin: auto;' src=https://s2.loli.net/2022/04/17/kSh9Tma3VMfrNe4.png width='50%' height='50%'>
-
-Let $p\in M_O,$ $X$ be the vector in $M_O$,
-Then $\Gamma(t,u):=\exp_O\frac{t}{r}(p+uX)$ defines a single-parameter geodesic family,
-$r=|p|,$ satisfies
-
-$$
+$$</p>
+<p>称上式为<strong>Jacobi方程</strong>, 称沿曲线$\gamma_0,$
+符合上式的向量场$U$为<strong>Jacobi场</strong>.
+称向量场$U$为$\{\gamma_u\}$的<strong>横截向量场</strong>, 于是得到:</p>
+<p><strong>引理 8</strong>. <em>单参数测地线族的横截向量场沿基曲线是一个Jacobi场.</em> </p>
+<p>反过来,
+后面我们将说明沿测地线的每个Jacobi场都是某个单参数测地线族的横截向量场.
+下面我们重新回到原来的讨论.
+我们说明$d\exp_O\left(\frac{d {} }{d {}\theta}\right)$是某个单参数测地线族的横截向量场,
+从而Jacobi方程就给出了曲率与$d\exp_O\left(\frac{d {} }{d {}\theta}\right)$之间决定性的联系,
+也就可以看出曲率和$c(r)$之间的重要关系.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/04/17/kSh9Tma3VMfrNe4.png width='50%' height='50%'></p>
+<p>设$p\in M_O,$ $X$为$M_O$中向量,
+那么$\Gamma(t,u):=\exp_O\frac{t}{r}(p+uX)$就定义了一个单参数测地线族,
+$r=|p|,$ 满足 </p>
+<p>$$
 U(0)=0,\quad \dot{U}(0)=\frac{1}{r}X.
-$$
-To prove the second formula, the coordinate system determined by $\exp_O:B(\delta)\approx B_\delta$ is introduced,
-It is called **normal coordinate system** and satisfies:
+$$</p>
+<p>为证明第二个式子, 引入由$\exp_O:B(\delta)\approx B_\delta$决定的坐标系,
+称为<strong>法坐标系</strong>, 满足: 
 $$
 \left\{\begin{aligned}
- &\left<{}\frac{\partial {} }{\partial {}x^i}(0),\frac{\partial {} }{\partial {}x^j}(0)\right>=\delta_{ij},&\,\forall\,i,j,\\
- &D_{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j}=0,&\,\forall\,i,j.
+ &amp;\left&lt;{}\frac{\partial {} }{\partial {}x^i}(0),\frac{\partial {} }{\partial {}x^j}(0)\right&gt;=\delta_{ij},&amp;\,\forall\,i,j,\\
+ &amp;D_{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j}=0,&amp;\,\forall\,i,j.
  \end{aligned}\right.
-$$
-The first formula is obvious. For the second formula, define $\beta:M_O\times M_O\rightarrow \mathbb{R},$
+$$</p>
+<p>一式显然. 对于二式, 定义$\beta:M_O\times M_O\rightarrow \mathbb{R},$
 $\beta(e_i,e_j)=D_{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j},$
-The linear extension becomes a symmetric bilinear form. Since the radial straight lines in the normal coordinate system are all geodesics,
-$\beta(v,v)=0,$ So $\beta\equiv 0,$ This gives us the second formula, so in the normal coordinate system,
-$\Gamma_{ij}^k\equiv 0.$
-
-Now we can come back and explain that $\dot{U}(0)=\frac{1}{r}X.$ Since $X$ is a constant vector,
-$\Gamma_{ij}^k\equiv 0,$
-
-
-$$
+做线性延拓成为一个对称双线性型. 由于法坐标系下径向直线都是测地线,
+$\beta(v,v)=0,$ 从而$\beta\equiv 0,$ 这就得到了第二式, 因此在法坐标系下,
+$\Gamma_{ij}^k\equiv 0.$</p>
+<p>现在就可以回来说明$\dot{U}(0)=\frac{1}{r}X.$ 由于$X$为常向量,
+$\Gamma_{ij}^k\equiv 0,$</p>
+<p>$$
 D_{\dot{\gamma}_0(0)}U=\frac{1}{r}X+\frac{t}{r}D_{\dot{\gamma}_0(0)}X=\frac{1}{r}X.
-$$
-Now taking $X=\frac{d {} }{d {}\theta}(r,\theta)$ shows that $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$ is indeed the transverse vector field of a certain single-parameter geodesic family.
-Let $\gamma$ be the base curve $\Gamma_0, $ $W(t)$ be the unit parallel vector field along $\gamma$,
-$W(t)\perp\dot{\gamma}(t).$ For the transverse vector field $U,$ by Gauss's lemma,
-It is also orthogonal to $\dot{\gamma}(t)$. Therefore $U(t)=f(t)W(t).$ By Jacobi equation,
-
-
-$$
-\ddot{f}+Kf=0,\quad f(0)=0,\quad \dot{f}(0)=1. \eqno{(\ast )}
-$$
-Here $K(t)$ is the Gauss curvature at $\gamma(t)$.
-
-Applying it to the two-dimensional space form, we get:
+$$</p>
+<p>现取$X=\frac{d {} }{d {}\theta}(r,\theta)$就说明了$d\exp_O\left(\frac{d {} }{d {}\theta}\right)$确为某个单参数测地线族的横截向量场.
+设$\gamma$是基曲线$\Gamma_0,$ $W(t)$为沿$\gamma$的单位平行向量场,
+$W(t)\perp\dot{\gamma}(t).$ 对于横截向量场$U,$ 由Gauss引理,
+它也与$\dot{\gamma}(t)$正交. 因此$U(t)=f(t)W(t).$ 由Jacobi方程,</p>
+<p>$$
+\ddot{f}+Kf=0,\quad f(0)=0,\quad \dot{f}(0)=1. \tag*{(\ast )}
+$$</p>
+<p>这里$K(t)$为$\gamma(t)$处的Gauss曲率.</p>
+<p>应用到二维空间形式上, 我们就得到了: 
 $$
 f(r)=\left\{\begin{aligned}
- &r, &&K=0,\\
- &\sin r, &&K=+1,\\
- &\sinh r, &&K=-1. 
+ &amp;r, &amp;&amp;K=0,\\
+ &amp;\sin r, &amp;&amp;K=+1,\\
+ &amp;\sinh r, &amp;&amp;K=-1. 
  \end{aligned}\right.
 $$
- This is the $c_0,c_+,c_-.$ we asked for previously.
-The formula $(\ast )$ was discovered by Jacobi, and the initial conditions are called **standard initial conditions**.
-Due to the curvature-controlled properties of the geodesic,
-It can be expected that a manifold with sufficient positive curvature should be compact (Bonnet-Myers theorem),
-The negative curvature manifold makes us expect that the exponential map at a point will be a diffeomorphism (Cartan-Hadamard theorem).
+ 这就是先前所求的$c_0,c_+,c_-.$
+$(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始条件</strong>.</p>
+<p>由于曲率控制测地线的性质,
+可以预想到充分正曲率的流形应当是紧的(Bonnet-Myers定理),
+而负曲率流形让我们期望一点处的指数映射将是一个微分同胚(Cartan-Hadamard定理).</p>
+<p>最后给出一些评注. 假设$\dim M\ge 3,$ 称$M$是<strong>逐点常截面曲率</strong>的,
+若$M$上每点所有$2$-平面的截面曲率相同. 经典的<strong>Schur定理</strong>表示,
+<em>流形是逐点常截面曲率的当且仅当它是常截面曲率的</em>.
+证明利用了第二Bianchi恒等式.</p>
+<p>本节只讨论了单连通的空间形式. 其它的空间形式从几何, 群论,
+拓扑等观点考虑也都是很重要的. 它们的分类工作也是一个重要的课题.</p>
+<p>文章最后更新于 2022-04-19 14:01:46 </p>
 
-Finally, some comments are given. Suppose $\dim M\ge 3,$ say $M$ is **pointwise constant section curvature**,
-If the cross-sectional curvatures of all $2$-planes at each point on $M$ are the same. The classic **Schur's theorem** means,
-*A manifold is of point-wise constant cross-section curvature if and only if it is of constant cross-section curvature*.
-The proof makes use of the second Bianchi identity.
-
-This section only discusses the simply connected space form. Other space forms come from geometry, group theory,
-Topology and other viewpoints are also very important to consider. Their classification is also an important topic.
-The article was last updated on 2022-04-19 14:01:46
                 </div>
             
         </div>
@@ -551,7 +674,7 @@ The article was last updated on 2022-04-19 14:01:46
     <ul>
         <li>本文标题：《黎曼几何初步》笔记(4)-等距变换和空间形式</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-04-17 17:56:21</li>
+        <li>创建时间：2022-04-17 20:56:21</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/04/17/《黎曼几何初步》笔记(4)-等距变换和空间形式/
         </li>
@@ -583,7 +706,7 @@ The article was last updated on 2022-04-19 14:01:46
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(5)-Jacobi场和Cartan-Hadamard定理</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Notes on Riemannian Geometry (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -605,7 +728,7 @@ The article was last updated on 2022-04-19 14:01:46
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">论文笔记-渐进平坦流形上的椭圆型方程</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Thesis notes - Elliptic equations on asymptotically flat manifolds</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Paper Notes - Elliptic Equations on Progressively Flat Manifolds</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -857,11 +980,11 @@ The article was last updated on 2022-04-19 14:01:46
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E6%B5%8B%E5%9C%B0%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">全测地子流形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E8%B7%9D%E5%8F%98%E6%8D%A2"><span class="nav-text">等距变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%BD%A2%E5%BC%8F"><span class="nav-text">空间形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E7%90%83%E9%9D%A2"><span class="nav-text">单位球面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%9B%B2%E5%BA%A6%E9%87%8F"><span class="nav-text">双曲度量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E7%BA%BF%E6%80%A7%E8%B4%A8"><span class="nav-text">测地线性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jacobi%E5%9C%BA"><span class="nav-text">Jacobi场</span></a></li></ol></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E6%B5%8B%E5%9C%B0%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">全测地子流形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E8%B7%9D%E5%8F%98%E6%8D%A2"><span class="nav-text">等距变换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E5%BD%A2%E5%BC%8F"><span class="nav-text">空间形式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%95%E4%BD%8D%E7%90%83%E9%9D%A2"><span class="nav-text">单位球面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8C%E6%9B%B2%E5%BA%A6%E9%87%8F"><span class="nav-text">双曲度量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E5%9C%B0%E7%BA%BF%E6%80%A7%E8%B4%A8"><span class="nav-text">测地线性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jacobi%E5%9C%BA"><span class="nav-text">Jacobi场</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -912,6 +1035,36 @@ The article was last updated on 2022-04-19 14:01:46
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -935,46 +1088,6 @@ The article was last updated on 2022-04-19 14:01:46
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

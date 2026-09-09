@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="记录生活">
+    <meta name="author" content="DreamAR">
+    
+    <title>
+        
+            《代数拓扑》复习-泛系数定理 |
+        
+        梦之居
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"dream0ar.github.io","root":"/","language":"zh-CN","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"记录生活"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.3","language_switch":{"enable":true,"default_language":"zh-CN","languages":["zh-CN","en"],"storage_key":"KEEP-LANGUAGE-PREFERENCE"}};
+    KEEP.language_resources = {"zh-cn":{"search":"搜索...","first_screen_description":"记录生活","language_switch":"切换语言","language_toggle_to":"切换到 %s","prev":"上一页","next":"下一页","prev_posts":"上一篇","next_posts":"下一篇","page":"第 %d 页","valine_author":"博主","valine_placeholder":"欢迎交流讨论","recent_posts":"最新文章","share":"分享","powered_by":"由 %s 驱动","theme":"主题","rss_feed":"RSS Feed","category":"分类","categories":"分类","tag":"标签","tags":"标签","tagcloud":"标签云","comment":"评论","comments":"评论","home":"首页","archive":"归档","archives":"归档","about":"关于","site_uv":"访问人数","site_pv":"总访问量","language_names":{"zh-cn":"中文","en":"English"},"links":"友链","link":"友链","top":"顶置","read_more":"阅读全文","translation_unavailable":{"article_title":"标题英文版本未发布","home_post_title":"标题英文版本未发布","home_post_excerpt":"摘要英文版本未发布","archive_post_title":"文章标题英文版本未发布","page_title":"页面标题英文版本未发布","content":"正文英文版本未发布，请先发布对应英文文章后再切换。","toc":"目录英文版本未发布"},"wordcount":"字","min2read":"分钟","changelog":"更新日志","copyright":{"title":"本文标题","author":"本文作者","link":"本文链接","create_time":"创建时间","license_title":"版权声明","license_content":"本博客所有文章除特别声明外，均采用 %s 许可协议。转载请注明出处！"},"ago":{"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"}},"en":{"search":"Search...","first_screen_description":"Notes","language_switch":"Switch language","language_toggle_to":"Switch to %s","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","valine_author":"Author","valine_placeholder":"Leave your comment","recent_posts":"Recent Posts","share":"Share","powered_by":"Powered by %s","theme":"Theme","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","about":"About","site_uv":"Visitor Count","site_pv":"Totalview","language_names":{"zh-cn":"中文","en":"English"},"links":"Links","link":"Link","top":"TOP","translation_unavailable":{"article_title":"Title not translated yet","home_post_title":"Title not translated yet","home_post_excerpt":"Excerpt not translated yet","archive_post_title":"Title not translated yet","page_title":"Page title not translated yet","content":"English version of this content is not available yet.","toc":"Table of contents not translated yet"},"read_more":"Read more","wordcount":"Words","min2read":"Mins","changelog":"Changelog","copyright":{"author":"Post author","title":"Post title","link":"Post link","create_time":"Create time","license_title":"Copyright Notice","license_content":"All articles in this blog are licensed under %s unless stating additionally."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}}};
+    KEEP.language_default = "zh-cn";
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 月前","year":"%s 年前"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                梦之居
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >
+                            <span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/archives"
+                        >
+                            <span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/categories"
+                        >
+                            <span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a class=""
+                           href="/tags"
+                        >
+                            <span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span>
+                        </a>
+                    </li>
+                    
+                    <li class="menu-item lang-switch">
+                        <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                            <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                        </button>
+                    </li>
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                <div class="icon-item language-switch">
+                    <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                        <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                    </button>
+                </div>
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/"><span class="menu-text" data-i18n="home" data-i18n-case="upper">首页</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives"><span class="menu-text" data-i18n="archives" data-i18n-case="upper">归档</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories"><span class="menu-text" data-i18n="categories" data-i18n-case="upper">分类</span></a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags"><span class="menu-text" data-i18n="tags" data-i18n-case="upper">标签</span></a>
+                </li>
+            
+            <li class="drawer-menu-item flex-center lang-switch">
+                <button class="language-toggle" type="button" data-language-toggle aria-label="切换语言" data-i18n-aria-label="language_switch">
+                    <span class="language-toggle-text" data-language-toggle-text>EN</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+        
+
+        <div class="article-title">
+                <span class="title-hover-animation">
+                    <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑》复习-泛系数定理</span>
+                
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology Review - Universal Coefficient Theorem</span>
+                
+            </span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">DreamAR</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2022-10-17 01:28:26
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/Hatcher/">Hatcher</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <div data-lang-group="article-content-body" data-lang="zh-cn">
+                <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>对链复形</p>
+<p>$$
+\cdots\rightarrow C_{n+1}\xrightarrow{\partial} C_n\xrightarrow{\partial} C_{n-1}\rightarrow\cdots,
+$$</p>
+<p>我们作用$\operatorname{Hom}(-,G)$函子, 得到上链复形</p>
+<p>$$
+\cdots\leftarrow C_{n+1}^\ast \xleftarrow{\delta} C_n^\ast \xleftarrow{\delta} C_{n-1}^\ast \leftarrow \cdots
+$$</p>
+<p>诱导了<strong>上同调群</strong>.</p>
+<p>类似于同调, 我们有由如下短正合列诱导的相对上同调长正合列.</p>
+<p>$$
+0\leftarrow C^n(A,B;G)\xleftarrow{i^\ast } C^n(X,B;G)\xleftarrow{j^\ast } C^n(X,A;G)\leftarrow 0,
+$$</p>
+<p>用泛系数定理或对偶地推导, 也有挖去定理</p>
+<p>$$
+i^\ast :H^n(X,A;G)\cong H^n(X\setminus Z,A\setminus Z;G),\quad Z\Subset A\subset X.
+$$</p>
+<p>以及MV序列(以及相对版本)</p>
+<p>$$
+\cdots \leftarrow H^{n}(A\cap B;G)\leftarrow H^n(A;G)\oplus H^n(B;G)\leftarrow H^n(A\cup B;G)\leftarrow H^{n-1}(A\cap B;G)\leftarrow \cdots
+$$</p>
+<h2 id="上同调泛系数定理"><a href="#上同调泛系数定理" class="headerlink" title="上同调泛系数定理"></a>上同调泛系数定理</h2><p>考虑$h:H^n(C;G)\rightarrow \operatorname{Hom}(H_n(C),G).$
+$H^n(C;G)$中的元素为$\varphi\in \operatorname{Hom}(C_n,G),$
+满足$\delta \varphi=0,$ 即$\varphi\partial=0.$
+因此$\varphi$在$B_n=\operatorname{Im}\partial$上消失.
+这样限制$\varphi_0=\varphi|_{Z_n}$就诱导了$\overline\varphi_0:Z_n/B_n=H_n(C)\rightarrow G.$</p>
+<p>若$\varphi=\delta\psi=\psi\partial,$ 那么$\varphi_0=0.$
+于是这就定义好了$h:\varphi\mapsto \overline\varphi.$</p>
+<p>由于$B$是自由的, 下面的正合列分裂:</p>
+<p>$$
+0\rightarrow Z_n\rightarrow C_n\rightarrow B_{n-1}\rightarrow 0
+$$</p>
+<p>从而存在$p:C_n\rightarrow Z_n$为投影.
+那么任意选取$\varphi_0:Z_n\rightarrow G,$
+取$\varphi=\varphi_0p:C_n\rightarrow G,$ 就有$\varphi|_{Z_n}=\varphi_0.$
+若可以诱导映射$\overline\varphi_0:H_n(C)=Z_n/B_n\rightarrow G,$
+则$\varphi\partial=0=\delta \varphi,$ $\varphi\in \ker\delta.$
+从而$h$为满射:</p>
+<p>$$
+p^\ast :\operatorname{Hom}(H_n(C),G)\rightarrow \ker\delta\rightarrow H^n(C;G), \quad h\circ p^\ast =\mathrm{id},
+$$</p>
+<p>因此, 我们就得到了可裂短正合列:</p>
+<p>$$
+0\rightarrow\ker h\rightarrow H^n(C;G)\rightarrow \operatorname{Hom}(H_n(C),G)\rightarrow 0
+$$</p>
+<p>考虑可裂短正合列$0\rightarrow Z_n\rightarrow C_n\rightarrow B_{n-1}\rightarrow 0$的对偶短正合列,
+诱导长正合列:</p>
+<p>$$
+\cdots\leftarrow B_n^\ast \xleftarrow{i^\ast _n} Z_n^\ast \leftarrow H^n(C;G)\xleftarrow{\delta} B_{n-1}^\ast \xleftarrow{i^\ast _{n-1} } Z_{n-1}^\ast \leftarrow \cdots,
+$$</p>
+<p>可以拆为短正合列</p>
+<p>$$
+0\leftarrow \ker i^\ast _n\leftarrow H^n(C;G)\leftarrow \operatorname{coker}i^\ast _{n-1}\leftarrow 0
+$$</p>
+<p>可以看出$\ker i^\ast _n=\operatorname{Hom}(H_n(C),G),$
+因为$\,\forall\,\varphi_0\in \ker i^\ast _n,$
+$\varphi_0:Z_n\rightarrow C_n,$ $i^\ast _n\varphi_0=\varphi_0|_{B_n}=0.$
+$\varphi_0\mapsto \overline\varphi_0:H_n(C)\rightarrow G$给出了相等关系.
+因此我们可将原先的短正合列写成:</p>
+<p>$$
+0\rightarrow \operatorname{coker}i_{n-1}^\ast \rightarrow H^n(C;G)\rightarrow \operatorname{Hom}(H_n(C),G)\rightarrow 0
+$$</p>
+<p><strong>引理 1</strong>. <em>任给$F,F&#39;$分别为abel群$H,H&#39;$的自由分解, 那么$\alpha:H\rightarrow H&#39;$可以被诱导到$F_i\rightarrow F_i&#39;$上成为链映射. 进而相同的abel群的两个自由分解满足$H^n(F;G)\cong H^n(F&#39;;G).$</em> </p>
+<p>任意abel群$H$有自由分解</p>
+<p>$$
+0\rightarrow F_1\rightarrow F_0\rightarrow H\rightarrow 0,
+$$</p>
+<p>$F_0$由$H$生成元自由地生成, $F_1=\ker(F_0\rightarrow H).$
+那么唯一非平凡的上同调为$H^1(F;G),$ 仅由$H,G$唯一决定.
+记其为$\operatorname{Ext}(H,G).$ 即有正合列</p>
+<p>$$
+0\leftarrow \operatorname{Ext}(H,G)\leftarrow F_1^\ast \leftarrow F_0^\ast \leftarrow H^\ast \leftarrow 0.
+$$</p>
+<p>再来看自由分解</p>
+<p>$$
+0\rightarrow B_{n-1}\xrightarrow{i_{n-1} }Z_{n-1}\rightarrow H_{n-1}\rightarrow 0,
+$$</p>
+<p>对偶为</p>
+<p>$$
+0\leftarrow \operatorname{coker}i_{n-1}^\ast \leftarrow B_{n-1}^\ast \xleftarrow {i_{n-1}^\ast } Z_{n-1}^\ast \leftarrow \operatorname{Hom}(H_{n-1}(C),G)\leftarrow 0.
+$$</p>
+<p>于是由引理,
+$\operatorname{coker}i_{n-1}^\ast \cong \operatorname{Ext}(H_{n-1}(C),G).$
+这就给出了泛系数定理:</p>
+<p><strong>定理 2</strong> (上同调泛系数定理). <em>自由链复形$C$的上同调$H^n(C;G)$由下面的分裂正合列决定:</em> </p>
+<p>$$
+0\rightarrow \operatorname{Ext}(H_{n-1}(C),G)\rightarrow H^n(C;G)\xrightarrow{h}\operatorname{Hom}(H_n(C);G)\rightarrow 0.
+$$</p>
+<p>一些关于$\operatorname{Ext}$的性质有:</p>
+<ol>
+<li><p>$\operatorname{Ext}(H\oplus H&#39;,G)\cong \operatorname{Ext}(H,G)\oplus \operatorname{Ext}(H&#39;,G).$</p>
+</li>
+<li><p>$\operatorname{Ext}(H,G)=0,$ 若$H$自由.</p>
+</li>
+<li><p>$\operatorname{Ext}(\mathbb{Z}_n,G)\approx G/nG.$</p>
+</li>
+</ol>
+<p><strong>推论 3</strong>. <em>若$H_n,H_{n-1}$都是有限生成的, 挠子群为$T_n,T_{n-1},$ 那么 $H^n(C;\mathbb{Z})\cong (H_n/T_n)\oplus T_{n-1}.$</em> </p>
+<p>泛系数定理中的短正合列是自然的, 不过分裂本身并不是自然的. 由五引理,
+我们有:</p>
+<p><strong>推论 4</strong>. <em>若链映射诱导同调群的同构, 则它也诱导上同调群的同构.</em> </p>
+<h2 id="同调泛系数定理"><a href="#同调泛系数定理" class="headerlink" title="同调泛系数定理"></a>同调泛系数定理</h2><p>类似地,
+我们从可裂短正合列$0\rightarrow Z_n\rightarrow C_n\rightarrow B_{n-1}\rightarrow 0$出发,
+诱导张量积短正合列</p>
+<p>$$
+0\rightarrow Z_n\otimes G\rightarrow C_n\otimes G\rightarrow B_{n-1}\otimes G\rightarrow 0,
+$$</p>
+<p>给出长正合列:</p>
+<p>$$
+\cdots\rightarrow B_n\otimes G\xrightarrow{i_n\otimes 1} Z_n\otimes G\rightarrow H_n(C;G)\rightarrow B_{n-1}\otimes G\xrightarrow{i_{n-1}\otimes 1} Z_{n-1}\otimes G\rightarrow \cdots,
+$$</p>
+<p>拆分为可裂短正合列:</p>
+<p>$$
+0\rightarrow \operatorname{coker}(i_n\otimes 1)\rightarrow H_n(C;G)\rightarrow \ker(i_{n-1}\otimes 1)\rightarrow 0.
+$$</p>
+<p>对于自由分解</p>
+<p>$$
+0\rightarrow B_n\xrightarrow{i_n}Z_n\rightarrow H_n(C)\rightarrow 0,
+$$</p>
+<p>诱导正合列</p>
+<p>$$
+0\rightarrow\ker (i_n\otimes 1)\rightarrow B_n\otimes G\xrightarrow{i_n\otimes 1}Z_n\otimes G\rightarrow H_n(C)\otimes G\rightarrow 0.
+$$</p>
+<p>因此$\operatorname{coker}(i_n\otimes 1)\cong H_n(C)\otimes G.$
+类似上同调版本, 我们有引理:</p>
+<p><strong>引理 5</strong>. <em>相同abel群的两个自由分解满足$H_n(F\otimes G)\cong H_n(F&#39;\otimes G).$</em> </p>
+<p>对于自由分解$0\rightarrow F_1\rightarrow F_0\rightarrow H\rightarrow 0,$
+我们有正合列</p>
+<p>$$
+0\rightarrow \operatorname{Tor}(H,G)\rightarrow F_1\otimes G\rightarrow F_0\otimes G\rightarrow H\otimes G\rightarrow 0.
+$$</p>
+<p>$\operatorname{Tor}(H,G)$由$H,G$唯一决定. 比对两种自由分解,
+我们有$\ker(i_n\otimes 1)\cong \operatorname{Tor}(H,G).$ 这样,
+我们就得到了同调版本的泛系数定理:</p>
+<p><strong>定理 6</strong> (同调泛系数定理). <em>自由链复形的任意系数同调群$H_n(C;G)$由下面的分裂正合列决定:</em> </p>
+<p>$$
+0\rightarrow H_n(C)\otimes G\rightarrow H_n(C;G)\rightarrow \operatorname{Tor}(H_{n-1},G)\rightarrow 0.
+$$</p>
+<p>可以考虑相对同调的版本. 类似地, 短正合列是自然的, 但分裂不自然.
+$\operatorname{Tor}$函子满足的一些性质是:</p>
+<ol>
+<li><p>$\operatorname{Tor}(A,B)\cong \operatorname{Tor}(B,A).$</p>
+</li>
+<li><p>$\operatorname{Tor}(\bigoplus_iA_i,B)\cong \bigoplus_i\operatorname{Tor}(A_i,B).$</p>
+</li>
+<li><p>$\operatorname{Tor}(A,B)=0,$ 若$A,B$至少有一个是自由的,
+或更一般的无挠的.</p>
+</li>
+<li><p>$\operatorname{Tor}(A,B)=\operatorname{Tor}(T(A),B),$
+$T(A)$为$A$的挠子群.</p>
+</li>
+<li><p>$\operatorname{Tor}(\mathbb{Z}_n,A)\cong \ker(A\xrightarrow{n}A).$</p>
+</li>
+<li><p>短正合列$0\rightarrow B\rightarrow C\rightarrow D\rightarrow 0$自然地诱导正合列</p>
+</li>
+</ol>
+<p>$$
+0\rightarrow \operatorname{Tor}(A,B)\rightarrow \operatorname{Tor}(A,C)\rightarrow \operatorname{Tor}(A,D)\rightarrow A\otimes B\rightarrow A\otimes C\rightarrow A\otimes D\rightarrow 0.
+$$</p>
+<p>特别地,
+$\operatorname{Tor}(\mathbb{Z}_m,\mathbb{Z}_n)=\mathbb{Z}_{[m,n]}\cong \mathbb{Z}_m\otimes \mathbb{Z}_n.$
+由$\operatorname{Tor}$函子性质, 我们有:</p>
+<p><strong>推论 7</strong>. <em>若$H_n(X;\mathbb{Z})$有限生成, 则$H_n(X;\mathbb{Q})\cong H_n(X;\mathbb{Z})\otimes \mathbb{Q}.$ 若$H_{n-1}(X;\mathbb{Z})$也是有限生成的, 那么对于质数$p$, $H_n(X;\mathbb{Z}_p)$中有$H_n(X;\mathbb{Z})$中$\mathbb{Z},\mathbb{Z}_{p^k}$项的个数加上$H_{n-1}(X;\mathbb{Z})$中$\mathbb{Z}_{p^k}$项的个数和个$\mathbb{Z}_p.$</em> </p>
+<p><strong>推论 8</strong>. <em>$\widetilde H_\ast (X;\mathbb{Z})=0$当且仅当$\widetilde H_\ast (X;\mathbb{Q})=\widetilde H_\ast (X;\mathbb{Z}_p)=0,$ $\,\forall\,$质数$p.$ $f$诱导$\mathbb{Z}$系数同调群的同构当且仅当它也诱导$\mathbb{Q},\mathbb{Z}_p$系数同调群的同构, $\,\forall\,$质数$p$.</em> </p>
+<p>文章最后更新于 2022-10-16 22:28:28 </p>
+
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>对链复形</p>
+<p>$$
+\cdots\rightarrow C_{n+1}\xrightarrow{\partial} C_n\xrightarrow{\partial} C_{n-1}\rightarrow\cdots,
+$$</p>
+<p>我们作用$\operatorname{Hom}(-,G)$函子, 得到上链复形</p>
+<p>$$
+\cdots\leftarrow C_{n+1}^\ast \xleftarrow{\delta} C_n^\ast \xleftarrow{\delta} C_{n-1}^\ast \leftarrow \cdots
+$$</p>
+<p>诱导了<strong>上同调群</strong>.</p>
+<p>类似于同调, 我们有由如下短正合列诱导的相对上同调长正合列.</p>
+<p>$$
+0\leftarrow C^n(A,B;G)\xleftarrow{i^\ast } C^n(X,B;G)\xleftarrow{j^\ast } C^n(X,A;G)\leftarrow 0,
+$$</p>
+<p>用泛系数定理或对偶地推导, 也有挖去定理</p>
+<p>$$
+i^\ast :H^n(X,A;G)\cong H^n(X\setminus Z,A\setminus Z;G),\quad Z\Subset A\subset X.
+$$</p>
+<p>以及MV序列(以及相对版本)</p>
+<p>$$
+\cdots \leftarrow H^{n}(A\cap B;G)\leftarrow H^n(A;G)\oplus H^n(B;G)\leftarrow H^n(A\cup B;G)\leftarrow H^{n-1}(A\cap B;G)\leftarrow \cdots
+$$</p>
+<h2 id="上同调泛系数定理"><a href="#上同调泛系数定理" class="headerlink" title="上同调泛系数定理"></a>上同调泛系数定理</h2><p>考虑$h:H^n(C;G)\rightarrow \operatorname{Hom}(H_n(C),G).$
+$H^n(C;G)$中的元素为$\varphi\in \operatorname{Hom}(C_n,G),$
+满足$\delta \varphi=0,$ 即$\varphi\partial=0.$
+因此$\varphi$在$B_n=\operatorname{Im}\partial$上消失.
+这样限制$\varphi_0=\varphi|_{Z_n}$就诱导了$\overline\varphi_0:Z_n/B_n=H_n(C)\rightarrow G.$</p>
+<p>若$\varphi=\delta\psi=\psi\partial,$ 那么$\varphi_0=0.$
+于是这就定义好了$h:\varphi\mapsto \overline\varphi.$</p>
+<p>由于$B$是自由的, 下面的正合列分裂:</p>
+<p>$$
+0\rightarrow Z_n\rightarrow C_n\rightarrow B_{n-1}\rightarrow 0
+$$</p>
+<p>从而存在$p:C_n\rightarrow Z_n$为投影.
+那么任意选取$\varphi_0:Z_n\rightarrow G,$
+取$\varphi=\varphi_0p:C_n\rightarrow G,$ 就有$\varphi|_{Z_n}=\varphi_0.$
+若可以诱导映射$\overline\varphi_0:H_n(C)=Z_n/B_n\rightarrow G,$
+则$\varphi\partial=0=\delta \varphi,$ $\varphi\in \ker\delta.$
+从而$h$为满射:</p>
+<p>$$
+p^\ast :\operatorname{Hom}(H_n(C),G)\rightarrow \ker\delta\rightarrow H^n(C;G), \quad h\circ p^\ast =\mathrm{id},
+$$</p>
+<p>因此, 我们就得到了可裂短正合列:</p>
+<p>$$
+0\rightarrow\ker h\rightarrow H^n(C;G)\rightarrow \operatorname{Hom}(H_n(C),G)\rightarrow 0
+$$</p>
+<p>考虑可裂短正合列$0\rightarrow Z_n\rightarrow C_n\rightarrow B_{n-1}\rightarrow 0$的对偶短正合列,
+诱导长正合列:</p>
+<p>$$
+\cdots\leftarrow B_n^\ast \xleftarrow{i^\ast _n} Z_n^\ast \leftarrow H^n(C;G)\xleftarrow{\delta} B_{n-1}^\ast \xleftarrow{i^\ast _{n-1} } Z_{n-1}^\ast \leftarrow \cdots,
+$$</p>
+<p>可以拆为短正合列</p>
+<p>$$
+0\leftarrow \ker i^\ast _n\leftarrow H^n(C;G)\leftarrow \operatorname{coker}i^\ast _{n-1}\leftarrow 0
+$$</p>
+<p>可以看出$\ker i^\ast _n=\operatorname{Hom}(H_n(C),G),$
+因为$\,\forall\,\varphi_0\in \ker i^\ast _n,$
+$\varphi_0:Z_n\rightarrow C_n,$ $i^\ast _n\varphi_0=\varphi_0|_{B_n}=0.$
+$\varphi_0\mapsto \overline\varphi_0:H_n(C)\rightarrow G$给出了相等关系.
+因此我们可将原先的短正合列写成:</p>
+<p>$$
+0\rightarrow \operatorname{coker}i_{n-1}^\ast \rightarrow H^n(C;G)\rightarrow \operatorname{Hom}(H_n(C),G)\rightarrow 0
+$$</p>
+<p><strong>引理 1</strong>. <em>任给$F,F&#39;$分别为abel群$H,H&#39;$的自由分解, 那么$\alpha:H\rightarrow H&#39;$可以被诱导到$F_i\rightarrow F_i&#39;$上成为链映射. 进而相同的abel群的两个自由分解满足$H^n(F;G)\cong H^n(F&#39;;G).$</em> </p>
+<p>任意abel群$H$有自由分解</p>
+<p>$$
+0\rightarrow F_1\rightarrow F_0\rightarrow H\rightarrow 0,
+$$</p>
+<p>$F_0$由$H$生成元自由地生成, $F_1=\ker(F_0\rightarrow H).$
+那么唯一非平凡的上同调为$H^1(F;G),$ 仅由$H,G$唯一决定.
+记其为$\operatorname{Ext}(H,G).$ 即有正合列</p>
+<p>$$
+0\leftarrow \operatorname{Ext}(H,G)\leftarrow F_1^\ast \leftarrow F_0^\ast \leftarrow H^\ast \leftarrow 0.
+$$</p>
+<p>再来看自由分解</p>
+<p>$$
+0\rightarrow B_{n-1}\xrightarrow{i_{n-1} }Z_{n-1}\rightarrow H_{n-1}\rightarrow 0,
+$$</p>
+<p>对偶为</p>
+<p>$$
+0\leftarrow \operatorname{coker}i_{n-1}^\ast \leftarrow B_{n-1}^\ast \xleftarrow {i_{n-1}^\ast } Z_{n-1}^\ast \leftarrow \operatorname{Hom}(H_{n-1}(C),G)\leftarrow 0.
+$$</p>
+<p>于是由引理,
+$\operatorname{coker}i_{n-1}^\ast \cong \operatorname{Ext}(H_{n-1}(C),G).$
+这就给出了泛系数定理:</p>
+<p><strong>定理 2</strong> (上同调泛系数定理). <em>自由链复形$C$的上同调$H^n(C;G)$由下面的分裂正合列决定:</em> </p>
+<p>$$
+0\rightarrow \operatorname{Ext}(H_{n-1}(C),G)\rightarrow H^n(C;G)\xrightarrow{h}\operatorname{Hom}(H_n(C);G)\rightarrow 0.
+$$</p>
+<p>一些关于$\operatorname{Ext}$的性质有:</p>
+<ol>
+<li><p>$\operatorname{Ext}(H\oplus H&#39;,G)\cong \operatorname{Ext}(H,G)\oplus \operatorname{Ext}(H&#39;,G).$</p>
+</li>
+<li><p>$\operatorname{Ext}(H,G)=0,$ 若$H$自由.</p>
+</li>
+<li><p>$\operatorname{Ext}(\mathbb{Z}_n,G)\approx G/nG.$</p>
+</li>
+</ol>
+<p><strong>推论 3</strong>. <em>若$H_n,H_{n-1}$都是有限生成的, 挠子群为$T_n,T_{n-1},$ 那么 $H^n(C;\mathbb{Z})\cong (H_n/T_n)\oplus T_{n-1}.$</em> </p>
+<p>泛系数定理中的短正合列是自然的, 不过分裂本身并不是自然的. 由五引理,
+我们有:</p>
+<p><strong>推论 4</strong>. <em>若链映射诱导同调群的同构, 则它也诱导上同调群的同构.</em> </p>
+<h2 id="同调泛系数定理"><a href="#同调泛系数定理" class="headerlink" title="同调泛系数定理"></a>同调泛系数定理</h2><p>类似地,
+我们从可裂短正合列$0\rightarrow Z_n\rightarrow C_n\rightarrow B_{n-1}\rightarrow 0$出发,
+诱导张量积短正合列</p>
+<p>$$
+0\rightarrow Z_n\otimes G\rightarrow C_n\otimes G\rightarrow B_{n-1}\otimes G\rightarrow 0,
+$$</p>
+<p>给出长正合列:</p>
+<p>$$
+\cdots\rightarrow B_n\otimes G\xrightarrow{i_n\otimes 1} Z_n\otimes G\rightarrow H_n(C;G)\rightarrow B_{n-1}\otimes G\xrightarrow{i_{n-1}\otimes 1} Z_{n-1}\otimes G\rightarrow \cdots,
+$$</p>
+<p>拆分为可裂短正合列:</p>
+<p>$$
+0\rightarrow \operatorname{coker}(i_n\otimes 1)\rightarrow H_n(C;G)\rightarrow \ker(i_{n-1}\otimes 1)\rightarrow 0.
+$$</p>
+<p>对于自由分解</p>
+<p>$$
+0\rightarrow B_n\xrightarrow{i_n}Z_n\rightarrow H_n(C)\rightarrow 0,
+$$</p>
+<p>诱导正合列</p>
+<p>$$
+0\rightarrow\ker (i_n\otimes 1)\rightarrow B_n\otimes G\xrightarrow{i_n\otimes 1}Z_n\otimes G\rightarrow H_n(C)\otimes G\rightarrow 0.
+$$</p>
+<p>因此$\operatorname{coker}(i_n\otimes 1)\cong H_n(C)\otimes G.$
+类似上同调版本, 我们有引理:</p>
+<p><strong>引理 5</strong>. <em>相同abel群的两个自由分解满足$H_n(F\otimes G)\cong H_n(F&#39;\otimes G).$</em> </p>
+<p>对于自由分解$0\rightarrow F_1\rightarrow F_0\rightarrow H\rightarrow 0,$
+我们有正合列</p>
+<p>$$
+0\rightarrow \operatorname{Tor}(H,G)\rightarrow F_1\otimes G\rightarrow F_0\otimes G\rightarrow H\otimes G\rightarrow 0.
+$$</p>
+<p>$\operatorname{Tor}(H,G)$由$H,G$唯一决定. 比对两种自由分解,
+我们有$\ker(i_n\otimes 1)\cong \operatorname{Tor}(H,G).$ 这样,
+我们就得到了同调版本的泛系数定理:</p>
+<p><strong>定理 6</strong> (同调泛系数定理). <em>自由链复形的任意系数同调群$H_n(C;G)$由下面的分裂正合列决定:</em> </p>
+<p>$$
+0\rightarrow H_n(C)\otimes G\rightarrow H_n(C;G)\rightarrow \operatorname{Tor}(H_{n-1},G)\rightarrow 0.
+$$</p>
+<p>可以考虑相对同调的版本. 类似地, 短正合列是自然的, 但分裂不自然.
+$\operatorname{Tor}$函子满足的一些性质是:</p>
+<ol>
+<li><p>$\operatorname{Tor}(A,B)\cong \operatorname{Tor}(B,A).$</p>
+</li>
+<li><p>$\operatorname{Tor}(\bigoplus_iA_i,B)\cong \bigoplus_i\operatorname{Tor}(A_i,B).$</p>
+</li>
+<li><p>$\operatorname{Tor}(A,B)=0,$ 若$A,B$至少有一个是自由的,
+或更一般的无挠的.</p>
+</li>
+<li><p>$\operatorname{Tor}(A,B)=\operatorname{Tor}(T(A),B),$
+$T(A)$为$A$的挠子群.</p>
+</li>
+<li><p>$\operatorname{Tor}(\mathbb{Z}_n,A)\cong \ker(A\xrightarrow{n}A).$</p>
+</li>
+<li><p>短正合列$0\rightarrow B\rightarrow C\rightarrow D\rightarrow 0$自然地诱导正合列</p>
+</li>
+</ol>
+<p>$$
+0\rightarrow \operatorname{Tor}(A,B)\rightarrow \operatorname{Tor}(A,C)\rightarrow \operatorname{Tor}(A,D)\rightarrow A\otimes B\rightarrow A\otimes C\rightarrow A\otimes D\rightarrow 0.
+$$</p>
+<p>特别地,
+$\operatorname{Tor}(\mathbb{Z}_m,\mathbb{Z}_n)=\mathbb{Z}_{[m,n]}\cong \mathbb{Z}_m\otimes \mathbb{Z}_n.$
+由$\operatorname{Tor}$函子性质, 我们有:</p>
+<p><strong>推论 7</strong>. <em>若$H_n(X;\mathbb{Z})$有限生成, 则$H_n(X;\mathbb{Q})\cong H_n(X;\mathbb{Z})\otimes \mathbb{Q}.$ 若$H_{n-1}(X;\mathbb{Z})$也是有限生成的, 那么对于质数$p$, $H_n(X;\mathbb{Z}_p)$中有$H_n(X;\mathbb{Z})$中$\mathbb{Z},\mathbb{Z}_{p^k}$项的个数加上$H_{n-1}(X;\mathbb{Z})$中$\mathbb{Z}_{p^k}$项的个数和个$\mathbb{Z}_p.$</em> </p>
+<p><strong>推论 8</strong>. <em>$\widetilde H_\ast (X;\mathbb{Z})=0$当且仅当$\widetilde H_\ast (X;\mathbb{Q})=\widetilde H_\ast (X;\mathbb{Z}_p)=0,$ $\,\forall\,$质数$p.$ $f$诱导$\mathbb{Z}$系数同调群的同构当且仅当它也诱导$\mathbb{Q},\mathbb{Z}_p$系数同调群的同构, $\,\forall\,$质数$p$.</em> </p>
+<p>文章最后更新于 2022-10-16 22:28:28 </p>
+
+                </div>
+            
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>本文标题：《代数拓扑》复习-泛系数定理</li>
+        <li>本文作者：DreamAR</li>
+        <li>创建时间：2022-10-17 01:28:26</li>
+        <li>
+            本文链接：https://dream0ar.github.io/2022/10/16/《代数拓扑》复习-泛系数定理/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/10/18/%E3%80%8A%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2%E3%80%8B%E7%AC%94%E8%AE%B0-%E6%9D%8E%E4%BB%A3%E6%95%B0/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》笔记-李代数</span>
+                                        
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifold Notes - Li Algebra</span>
+                                        
+                                    </span>
+                                    <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
+                                </span>
+                            </a>
+                        </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/10/14/%E3%80%8A%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912%E3%80%8B%E7%AC%94%E8%AE%B0(10)-%E4%B8%87%E6%9C%89%E4%B8%9B%E4%B8%8E%E7%A4%BA%E6%80%A7%E7%B1%BB/"
+                        >
+                            <span class="title flex-center">
+                                    <span class="post-nav-title-item">
+                                        
+                                        
+                                        
+                                        
+                                        <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑2》笔记(10)-万有丛与示性类</span>
+                                    
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (10) - Plexus and Indicative Classes</span>
+                                    
+                                </span>
+                                <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+            <div class="comment-container">
+                <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        <i class="fas fa-comments">&nbsp;评论</i>
+    </div>
+    
+
+        
+            
+    <div class="valine-container">
+        <script 
+                src="//cdn.jsdelivr.net/npm/valine@latest/dist/Valine.min.js"></script>
+        <div id="vcomments"></div>
+        <script >
+            const normalizeLanguage = (language) => {
+                const target = String(language || '').trim().toLowerCase().replace('_', '-');
+                if (target === 'zh') return 'zh-cn';
+                if (target === 'en' || target.startsWith('en-')) return 'en';
+                if (target.startsWith('zh-')) return 'zh-cn';
+                return target;
+            };
+
+            const getLanguageDictionary = (language) => {
+                const normalized = normalizeLanguage(language);
+                const resources = KEEP.language_resources || {};
+                if (resources[normalized]) return resources[normalized];
+
+                const dictionaryKeys = Object.keys(resources || {});
+                for (const key of dictionaryKeys) {
+                    if (key && key.toLowerCase() === normalized) {
+                        return resources[key];
+                    }
+                }
+
+                return resources.en || resources['zh-cn'] || {};
+            };
+
+            const getLanguageText = (language, keyPath) => {
+                const dictionary = getLanguageDictionary(language);
+                if (!dictionary || !keyPath) return undefined;
+
+                let value = dictionary;
+                const keys = keyPath.split('.');
+                for (const key of keys) {
+                    if (!value || typeof value !== 'object' || !(key in value)) {
+                        return undefined;
+                    }
+                    value = value[key];
+                }
+
+                return typeof value === 'string' ? value : undefined;
+            };
+
+            const getCurrentCommentLanguage = () => {
+                const storageKey = KEEP.theme_config.language_switch.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
+                return localStorage.getItem(storageKey) || KEEP.hexo_config.language;
+            };
+
+            function loadValine() {
+                const currentLanguage = getCurrentCommentLanguage();
+
+                new Valine({
+                    el: '#vcomments',
+                    appId: '56D8XuBPhYU7FHTBxfIdzwej-gzGzoHsz',
+                    appKey: 'llErW21yrdS1MwbbpOjVkkLW',
+                    meta: ['nick', 'mail', 'link'],
+                    avatar: 'wavatar',
+                    enableQQ: true,
+                    placeholder: getLanguageText(currentLanguage, 'valine_placeholder') || '欢迎交流讨论',
+                    lang: normalizeLanguage(currentLanguage)
+                });
+
+                function getAuthor(language) {
+                    return getLanguageText(language, 'valine_author') || 'Author';
+                }
+
+                // Add "Author" identify
+                const getValineDomTimer = setInterval(() => {
+                    const vcards = document.querySelectorAll('#vcomments .vcards .vcard');
+                    if (vcards.length > 0) {
+                        let author = 'DreamAR';
+
+                        if (author) {
+                            for (let vcard of vcards) {
+                                const vnick_dom = vcard.querySelector('.vhead .vnick');
+                                const vnick = vnick_dom.innerHTML;
+                                if (vnick === author) {
+                                    vnick_dom.innerHTML = `${vnick} <span class="author">${getAuthor(KEEP.hexo_config.language)}</span>`
+                                }
+                            }
+                        }
+                        clearInterval(getValineDomTimer);
+                    } else {
+                        clearInterval(getValineDomTimer);
+                    }
+                }, 2000);
+            }
+
+            if ('false') {
+                const loadValineTimeout = setTimeout(() => {
+                    loadValine();
+                    clearTimeout(loadValineTimeout);
+                }, 1000);
+            } else {
+                window.addEventListener('DOMContentLoaded', loadValine);
+            }
+        </script>
+    </div>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>Wed Jul 14 2021 03:00:00 GMT+0300 (东欧夏令时间)</span>&nbsp;-&nbsp;
+            
+            2026&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">DreamAR</a>
+        </div>
+        
+            <script async  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+        </div>
+        
+        <div style="width:300px;margin:0 auto; padding:20px 0;">
+            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
+        </div>
+    
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fas fa-comment"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    
+    <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%90%8C%E8%B0%83%E6%B3%9B%E7%B3%BB%E6%95%B0%E5%AE%9A%E7%90%86"><span class="nav-text">上同调泛系数定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E8%B0%83%E6%B3%9B%E7%B3%BB%E6%95%B0%E5%AE%9A%E7%90%86"><span class="nav-text">同调泛系数定理</span></a></li></ol>
+    </div>
+    
+        <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8A%E5%90%8C%E8%B0%83%E6%B3%9B%E7%B3%BB%E6%95%B0%E5%AE%9A%E7%90%86"><span class="nav-text">上同调泛系数定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E8%B0%83%E6%B3%9B%E7%B3%BB%E6%95%B0%E5%AE%9A%E7%90%86"><span class="nav-text">同调泛系数定理</span></a></li></ol>
+        </div>
+    
+</div>
+
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="搜索..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
+
+<script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
+  });
+</script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/local-search.js"></script>
+
+
+
+
+
+
+<div class="post-scripts">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/toc.js"></script>
+    
+</div>
+
+
+
+</body>
+</html>

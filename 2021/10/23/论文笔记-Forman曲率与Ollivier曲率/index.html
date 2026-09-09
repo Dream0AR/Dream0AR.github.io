@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">论文笔记-Forman曲率与Ollivier曲率</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Thesis Notes-Forman Curvature and Ollivier Curvature</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Paper Notes - Forman Curvature vs. Ollivier Curvature</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2021-10-23 10:50:16
+        <i class="fas fa-edit"></i>&nbsp;2021-10-23 13:50:16
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,225 +230,326 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
-            </div>
-            
-                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    Characterizations of Forman curvature - Jürgen Jost, Florentin Münch
-
-basic definition
---------
-
-### Cell cavity complex and diagram
-
-Given the cell complex $X=\bigcup X_k.$
-Take $\delta:X_k\rightarrow X_{k+1}$ as the incident operator,
-$\delta v(z)=\pm 1$ or $0.$ requires the cell complex to satisfy the following properties:
-
-- $\dim(z)\ge 1\Rightarrow \,\exists\,x\prec z;$
-
-- $|\{w\in X_0:\delta w(x)=1\}|=|\{w\in X_0:\delta w(x)=-1\}|=1,$
-$\,\forall\,x\in X_1;$ (two vertices on each side)
-
-- $\dim(z)-\dim(v)=2,$ $\{x:v\prec x\prec z\}\neq \varnothing$
-
-    $\Rightarrow$ $|\{x:v\prec x\prec z\}|=2$ and
-$\pm 1\in \{\delta v(x)\delta x(z):x\in X\}.$ (diamond&
-    $\delta^2=0$)
-
-- (directional) connectivity;
-
-- $\{x:x\prec z\}=\{x:x\prec z'\},$ $\dim z\ge 1\Rightarrow z=z'.$
-    (simple picture)
-$\,\forall\,x,y\in X,$
-Let $x\sim y$ if $\,\exists\,v\prec x,y$ or $x,y\prec z.$ This induces distance:
+                <p>Characterizations of Forman curvature - Jürgen Jost, Florentin Münch</p>
+<h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><h3 id="胞腔复形与图"><a href="#胞腔复形与图" class="headerlink" title="胞腔复形与图"></a>胞腔复形与图</h3><p>给定胞腔复形$X=\bigcup X_k.$
+取$\delta:X_k\rightarrow X_{k+1}$为关联(incident)算子,
+$\delta v(z)=\pm 1$或$0.$ 要求胞腔复形满足如下性质:</p>
+<ul>
+<li><p>$\dim(z)\ge 1\Rightarrow \,\exists\,x\prec z;$</p>
+</li>
+<li><p>$|\{w\in X_0:\delta w(x)=1\}|=|\{w\in X_0:\delta w(x)=-1\}|=1,$
+$\,\forall\,x\in X_1;$ (每边两顶点)</p>
+</li>
+<li><p>$\dim(z)-\dim(v)=2,$ $\{x:v\prec x\prec z\}\neq \varnothing$</p>
+<p>$\Rightarrow$ $|\{x:v\prec x\prec z\}|=2$ 且
+$\pm 1\in \{\delta v(x)\delta x(z):x\in X\}.$ (diamond性&amp;
+$\delta^2=0$)</p>
+</li>
+<li><p>(定向)连通性;</p>
+</li>
+<li><p>$\{x:x\prec z\}=\{x:x\prec z&#39;\},$ $\dim z\ge 1\Rightarrow z=z&#39;.$
+(简单图)</p>
+</li>
+</ul>
+<p>$\,\forall\,x,y\in X,$
+记$x\sim y$若$\,\exists\,v\prec x,y$或$x,y\prec z.$ 这诱导了距离:
 $$d(x,y)=\inf\{n:x=x_0\sim\cdots\sim x_n=y\}.$$
-Note that this is not a general path distance on $X_0$. When the complex dimension is higher,
-Point to point can be transferred more quickly with the help of high-dimensional cells.
-
-Define weighted inner product $$\left<{}f,g\right>=\sum_x f(x)g(x)m(x).$$
-
-Treat $x$ as $1_x,$ linear expansion$\delta:C(X)\rightarrow C(X).$
-Define adjoint $\delta^\ast :C(X)\rightarrow C(X),$
-$$\delta^\ast  z(x)=\frac{1}{m(x)}\left<{}\delta^\ast  z,x\right>=\frac{1}{m(x)}\left<{}\delta x,z\right>=\frac{m(z)}{m(x)}\delta x(z).$$
-
-This is different from $\partial$ in Forman’s definition,
-$$\partial z(x)=\delta x(z)=\frac{m(x)}{m(z)}\delta^\ast  z(x).$$
-
-### Hodge Laplacian
-Definition Hodge Laplacian $$H=\delta \delta^\ast +\delta^\ast \delta.$$
-
-Calculate $Hy(x),$ respectively as follows:
-$$\delta\delta^\ast  y(x)=\frac{1}{m(x)}\left<{}\delta^\ast y,\delta^\ast  x\right>=\frac{1}{m(x)}\sum_{v\prec x,y}m(v)\frac{m(y)}{m(v)}\delta v(y)\frac{m(x)}{m(v)}\delta v(x)=\sum_{v\prec x,y}\frac{m(y)}{m(v)}\delta v(x)\delta v(y),$$
-The simpler ones are:
-$$\delta^\ast \delta y(x)=\sum_{x,y\prec z}\frac{m(z)}{m(x)}\delta x(z)\delta y(z).$$
-
-**Note that unlike Forman's definition, the weight of cells with smaller dimensions is always in the denominator.**
-
-When $X=X_0\cup X_1$ is a weighted directed graph, remember $m(x)=m(v,w)=m(w,v),$ $x\in X_1,$
-$v,w$ are two vertices. $H$ acts on $C(X_0)$ as:
-
-$$\begin{aligned}
-            Hf(v)=\delta^*\delta f(v)&=\sum_w\sum_{v,w\prec x}\frac{m(x)}{m(v)}\delta v(x)\delta w(x)f(w)\\
-            &=\sum_{v\prec x}\frac{m(x)}{m(v)}\sum_{w\prec x}\delta v(x)\delta w(x)f(w)\\
-            &=\sum_{w\neq v}\frac{m(v,w)}{m(v)}(f(v)-f(w))          
-        \end{aligned}$$
-
-That is, $H_0$ is the Laplacian of the weighted graph.
-
-### Forman Curvature
-
-For $x\neq y\in X_1,$ there is at most one non-zero item in the first sum,
-The signs of the non-zero terms in the second sum are the same. When non-zero terms appear in both sums,
-There is $\delta v(x)\delta v(y)=-\delta x(z)\delta y(z).$ Therefore
+注意在$X_0$上这并不是一般的路径距离. 在复形维数较高时,
+点到点可以凭借高维胞腔更快速地转移.</p>
+<p>定义带权内积 $$\left&lt;{}f,g\right&gt;=\sum_x f(x)g(x)m(x).$$</p>
+<p>将$x$视为$1_x,$ 线性扩张$\delta:C(X)\rightarrow C(X).$
+定义伴随$\delta^\ast :C(X)\rightarrow C(X),$
+$$\delta^\ast  z(x)=\frac{1}{m(x)}\left&lt;{}\delta^\ast  z,x\right&gt;=\frac{1}{m(x)}\left&lt;{}\delta x,z\right&gt;=\frac{m(z)}{m(x)}\delta x(z).$$</p>
+<p>这与Forman定义中的$\partial$有区别,
+$$\partial z(x)=\delta x(z)=\frac{m(x)}{m(z)}\delta^\ast  z(x).$$</p>
+<h3 id="Hodge-Laplacian"><a href="#Hodge-Laplacian" class="headerlink" title="Hodge Laplacian"></a>Hodge Laplacian</h3><p>定义Hodge Laplacian $$H=\delta \delta^\ast +\delta^\ast \delta.$$</p>
+<p>计算$Hy(x),$ 分别计算如下式子:
+$$\delta\delta^\ast  y(x)=\frac{1}{m(x)}\left&lt;{}\delta^\ast y,\delta^\ast  x\right&gt;=\frac{1}{m(x)}\sum_{v\prec x,y}m(v)\frac{m(y)}{m(v)}\delta v(y)\frac{m(x)}{m(v)}\delta v(x)=\sum_{v\prec x,y}\frac{m(y)}{m(v)}\delta v(x)\delta v(y),$$
+更简单的有:
+$$\delta^\ast \delta y(x)=\sum_{x,y\prec z}\frac{m(z)}{m(x)}\delta x(z)\delta y(z).$$</p>
+<p><strong>注意与Forman定义不同, 维数较小的胞腔权重总是在分母上.</strong></p>
+<p>当$X=X_0\cup X_1$为赋权定向图时, 记$m(x)=m(v,w)=m(w,v),$ $x\in X_1,$
+$v,w$为两顶点. $H$作用在$C(X_0)$上为:</p>
+<p>$$\begin{aligned}
+            Hf(v)=\delta^*\delta f(v)&amp;=\sum_w\sum_{v,w\prec x}\frac{m(x)}{m(v)}\delta v(x)\delta w(x)f(w)\\
+            &amp;=\sum_{v\prec x}\frac{m(x)}{m(v)}\sum_{w\prec x}\delta v(x)\delta w(x)f(w)\\
+            &amp;=\sum_{w\neq v}\frac{m(v,w)}{m(v)}(f(v)-f(w))          
+        \end{aligned}$$</p>
+<p>即$H_0$就是带权图的Laplacian.</p>
+<h3 id="Forman曲率"><a href="#Forman曲率" class="headerlink" title="Forman曲率"></a>Forman曲率</h3><p>对$x\neq y\in X_1,$ 第一个和中至多有一项非零,
+第二个和中非零项符号均一致. 当两个和中均出现非零项时,
+有$\delta v(x)\delta v(y)=-\delta x(z)\delta y(z).$ 因此
 $$|Hy(x)|=\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$
-easy to get
-$$Hx(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}.$$
-
-There is a decomposition of (arbitrary) self-adjoint operator $H,$ $$H=\Delta+D,$$ $\Delta$ is a minimal diagonal dominant operator,
-$D$ is a diagonal matrix. Obviously there is $$Dx(x)=Hx(x)-\sum_{y\neq x}|Hy(x)|.$$
-
-Decompose the Hodge Laplacian and call the resulting $D$ **Forman curvature**. For $x\in X_1,$
-$$F(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$
-
-If $m\equiv 1,$
+容易得到
+$$Hx(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}.$$</p>
+<p>对(任意)自伴算子$H,$ 有分解 $$H=\Delta+D,$$ $\Delta$为极小对角占优算子,
+$D$为对角阵. 显然有 $$Dx(x)=Hx(x)-\sum_{y\neq x}|Hy(x)|.$$</p>
+<p>对Hodge Laplacian做分解, 将得到的$D$称为<strong>Forman曲率</strong>. 对$x\in X_1,$
+$$F(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$</p>
+<p>若$m\equiv 1,$
 $$F(x)=\#\{v\in X_0:v\prec x\}+\#\{z\in X_2:x\prec z\}-\#\{\text{parallel neighbors of } x\},$$
-It is indeed the same as Forman curvature.
-But in fact, the process of obtaining $F$ is not completely consistent with Forman curvature, and they are not the same for general $m$.
-Before decomposing the Hodge Laplacian, Forman first symmetrized $H$, that is, it is a symmetric matrix under constant weights.
-
-However, depending on the steps, two different Forman curvatures can be converted.
-
-Duality
---------
-
-### Dual representation of Forman curvature
-For the complex $K=(X,\delta,m),$ $K'=(X',\delta,m'),$ denote $K'\le_k K,$
-If the following conditions are met:
-
-1. $X_j=X_j',$ $\,\forall\,j\le k;$
-
-2. $X_j'\subset X_j,$ $\,\forall\,j>k;$
-3. $m(x)=m'(x),$ $\,\forall\,\dim x\le k;$
-
-4. $\delta'v(x)=\delta v(x),$ $\,\forall\,x,v\in X'.$
-
-That is, $K'\subset K$ and their weighted orientation $k$-skeletons are the same.
-**Theorem 1.1**. *$K=(X,\delta,m),$ $x\in X_k,$ $k\in \mathbb{N}.$ Then we have*
-
-$$\max_{K'\le_k K}F'(x)=\min_{
+与Forman曲率确实是一样的.</p>
+<p>但事实上得到$F$的过程与Forman曲率并不完全一致, 对一般的$m$二者并不相同.
+Forman在分解Hodge Laplacian前, 先对$H$做了对称化, 即在常权重下是对称阵.</p>
+<p>不过根据步骤的不同, 可以转化两种不同的Forman曲率.</p>
+<h2 id="对偶关系"><a href="#对偶关系" class="headerlink" title="对偶关系"></a>对偶关系</h2><h3 id="Forman曲率的对偶表示"><a href="#Forman曲率的对偶表示" class="headerlink" title="Forman曲率的对偶表示"></a>Forman曲率的对偶表示</h3><p>对复形$K=(X,\delta,m),$ $K&#39;=(X&#39;,\delta,m&#39;),$ 记$K&#39;\le_k K,$
+若满足如下条件:</p>
+<ol>
+<li><p>$X_j=X_j&#39;,$ $\,\forall\,j\le k;$</p>
+</li>
+<li><p>$X_j&#39;\subset X_j,$ $\,\forall\,j&gt;k;$</p>
+</li>
+<li><p>$m(x)=m&#39;(x),$ $\,\forall\,\dim x\le k;$</p>
+</li>
+<li><p>$\delta&#39;v(x)=\delta v(x),$ $\,\forall\,x,v\in X&#39;.$</p>
+</li>
+</ol>
+<p>也就是$K&#39;\subset K$且它们的带权定向$k$-骨架相同.</p>
+<p><strong>定理 1.1</strong>. <em>$K=(X,\delta,m),$ $x\in X_k,$ $k\in \mathbb{N}.$ 那么有</em> </p>
+<p>$$\max_{K&#39;\le_k K}F&#39;(x)=\min_{
                 \begin{subarray}{c}
                     h(x)=1\\
                     |h|\le 1\\
                     \delta h\cdot \delta x\le 0
-            \end{subarray} }\delta\delta^*h(x)$$
-
-### Ollivier Curvature
-
-For $x\in X_1,$ its Ollivier curvature can be written as
-$$\kappa(x)=\inf_{\begin{subarray}{c}
+            \end{subarray} }\delta\delta^*h(x)$$</p>
+<h3 id="Ollivier曲率"><a href="#Ollivier曲率" class="headerlink" title="Ollivier曲率"></a>Ollivier曲率</h3><p>对$x\in X_1,$ 其Ollivier曲率可写为</p>
+<p>$$\kappa(x)=\inf_{\begin{subarray}{c}
                     \delta f(x)=1\\
                     |\delta f|\le 1
-            \end{subarray} }\delta\delta^*\delta f(x),$$
-
-In fact, we only need to consider $f\in C(X_0).$
-
-Obviously there are the following transformations:
-
-$$\kappa(x)=\inf_{\begin{subarray}{c}
+            \end{subarray} }\delta\delta^*\delta f(x),$$</p>
+<p>事实上只需考虑$f\in C(X_0).$</p>
+<p>显然有如下转化:</p>
+<p>$$\kappa(x)=\inf_{\begin{subarray}{c}
                     h(x)=1\\
                     |h|\le 1\\
                     h\in \delta(C(X_0))
-            \end{subarray} }\delta\delta^*h(x),$$
-**Theorem 1.2**. *$K=(X,\delta,m),$ $x\in
-
-$$\kappa(x)=\inf_{\begin{subarray}{c}
+            \end{subarray} }\delta\delta^*h(x),$$</p>
+<p><strong>定理 1.2</strong>. <em>$K=(X,\delta,m),$ $x\in X_k,$ $k\in \mathbb{N}.$ 若所有含$x$的长度不超过$5$的圈都是$2$-胞腔, 那么有:</em> </p>
+<p>$$\kappa(x)=\inf_{\begin{subarray}{c}
                     h(x)=1\\
                     |h|\le 1\\
                     \delta x\cdot\delta h\le 0
-            \end{subarray} }\delta\delta^*h(x),$$
-
-### Contact the two
-**Corollary 1.3**. *$G=(X,\delta,m)$ is the $1$ dimensional cavity complex, then $\,\forall\,x\in X_1,$*
-
-$$\kappa(x)=\max_{G\le_1 K}F_K(x),$$
-
-**Proof:** Let $G\le_1 X,$ $X$ include all possible $2$-cells,
-Naturally, all cycles whose length does not exceed $5$ are $2$-cells. Then:
+            \end{subarray} }\delta\delta^*h(x),$$</p>
+<h3 id="两者联系"><a href="#两者联系" class="headerlink" title="两者联系"></a>两者联系</h3><p><strong>推论 1.3</strong>. <em>$G=(X,\delta,m)$为$1$维胞腔复形, 那么$\,\forall\,x\in X_1,$</em> </p>
+<p>$$\kappa(x)=\max_{G\le_1 K}F_K(x),$$</p>
+<p><strong>证:</strong> 令$G\le_1 X,$ $X$包含所有可能的$2$-胞腔,
+自然全体长度不超过$5$的圈都是$2$-胞腔. 那么:
 $$\kappa(x)=\inf_{\begin{subarray}{c}
                             h(x)=1\\
                             |h|\le 1\\
                             \delta x\cdot\delta h\le 0
-                    \end{subarray} }\delta\delta^*h(x)=\max_{K\le_1 X} F_K(x)=\max_{X^{(1)}\le_1 K}F_K(x)=\max_{G\le_1 K}F_K(x).$$
-
-That is, you can paste the $2$-cell with appropriate weights,
-Make the Forman curvature of the new graph the same as the original Ollivier curvature.
-**Corollary 1.4**. *$K=(X,\delta,m),$ $x\in X,$ Then:*
-
-$$F(x)\le\kappa(x).$$
-
-**Certificate:**
-$$F(x)\le \max_{K^{(1)}\le_1 X}F_X(x)=\kappa_{K^{(1)} }(x)=\kappa(x).$$
-
-Adjust distance
---------
-
-### Basic properties
-
-You can choose other distances when defining Ollivier curvature. Give the graph another weight $\omega,$
-Define path distance $d_\omega:X_0\rightarrow [0,\infty),$
-$$d_\omega(v,w):=\inf\{\sum_{k=1}^n \omega(v_k,v_{k-1}):v=v_0\sim\cdots\sim v_n=w\}.$$
-It is always assumed that $\omega$ is non-degenerate, that is, an edge is always the shortest distance between vertices. Define with respect to $\omega,$
-Or called the Ollivier curvature about $d_\omega$:
+                    \end{subarray} }\delta\delta^*h(x)=\max_{K\le_1 X} F_K(x)=\max_{X^{(1)}\le_1 K}F_K(x)=\max_{G\le_1 K}F_K(x).$$</p>
+<p>也就是可以通过粘贴合适权重的$2$-胞腔,
+使得新图的Forman曲率与原有的Ollivier曲率相同.</p>
+<p><strong>推论 1.4</strong>. <em>$K=(X,\delta,m),$ $x\in X,$ 那么:</em> </p>
+<p>$$F(x)\le\kappa(x).$$</p>
+<p><strong>证:</strong>
+$$F(x)\le \max_{K^{(1)}\le_1 X}F_X(x)=\kappa_{K^{(1)} }(x)=\kappa(x).$$</p>
+<h2 id="调整距离"><a href="#调整距离" class="headerlink" title="调整距离"></a>调整距离</h2><h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><p>定义Ollivier曲率时可以选取其它的距离. 赋予图另一权重$\omega,$
+定义路径距离$d_\omega:X_0\rightarrow [0,\infty),$
+$$d_\omega(v,w):=\inf\{\sum_{k=1}^n \omega(v_k,v_{k-1}):v=v_0\sim\cdots\sim v_n=w\}.$$</p>
+<p>总是假设$\omega$是非退化的, 即边总是顶点间的最短距离. 定义关于$\omega,$
+或称关于$d_\omega$的Ollivier曲率:
 $$\omega(x)\kappa_\omega(x):=\inf_{\begin{subarray}{c}
         \delta f(x)=\omega(x)\\
         |\delta f|\le \omega\end{subarray} }\delta\delta^*\delta f.$$
-The non-degenerate requirement actually means that the Ollivier curvature on $X_1$ is finite.
-In order to make Forman curvature compatible with the new Ollivier curvature,
-Transform it into the Forman curvature about $\omega$:
+非退化的要求实际上意味着在$X_1$上Ollivier曲率是有限的.</p>
+<p>为了令Forman曲率与新的Ollivier曲率相容,
+改造其为关于$\omega$的Forman曲率:
 $$F_\omega:=Hx(x)-\sum_{y\neq x}\frac{\omega(y)}{\omega(x)}|Hy(x)|.$$
-When $x\in X_1$, that is
+$x\in X_1$时, 即为
 $$F_\omega(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\frac{\omega(y)}{\omega(x)}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$
-In fact, it can be made consistent with the previous process of obtaining Forman curvature:
-$$\omega F_\omega=D(\omega H)=\omega(x) Hx(x)-\sum_{y\neq x}|\omega(y)H_y(x)|.$$
-
-### Duality properties
-
-Similarly there are:
-**Theorem 1.5**. *$K=(X,\delta,m,\omega),$ $x\in X_k,$ $k\in \mathbb{N}.$ Then we have*
-
-$$\max_{K'\le_k K}\omega(x)F_\omega'(x)=\min_{
+事实上可以使它与之前得到Forman曲率的过程一致:
+$$\omega F_\omega=D(\omega H)=\omega(x) Hx(x)-\sum_{y\neq x}|\omega(y)H_y(x)|.$$</p>
+<h3 id="对偶性质"><a href="#对偶性质" class="headerlink" title="对偶性质"></a>对偶性质</h3><p>类似地有:</p>
+<p><strong>定理 1.5</strong>. <em>$K=(X,\delta,m,\omega),$ $x\in X_k,$ $k\in \mathbb{N}.$ 那么有</em> </p>
+<p>$$\max_{K&#39;\le_k K}\omega(x)F_\omega&#39;(x)=\min_{
             \begin{subarray}{c}
                 h(x)=\omega(x)\\
                 |h|\le \omega\\
                 \delta h\cdot \delta x\le 0
-        \end{subarray} }\delta\delta^*h(x)$$
-**Theorem 1.6**. *$K=(X,\delta,m,\omega),$ $x\in X_k,$ $k\in \mathbb{N}.$ If all minimal cycles containing $x$ are $2$-cells, then we have:*
-
-$$\omega(x)\kappa(x)=\inf_{\begin{subarray}{c}
+        \end{subarray} }\delta\delta^*h(x)$$</p>
+<p><strong>定理 1.6</strong>. <em>$K=(X,\delta,m,\omega),$ $x\in X_k,$ $k\in \mathbb{N}.$ 若所有含$x$的极小圈都是$2$-胞腔, 那么有:</em> </p>
+<p>$$\omega(x)\kappa(x)=\inf_{\begin{subarray}{c}
                 h(x)=\omega(x)\\
                 |h|\le \omega\\
                 \delta x\cdot\delta h\le 0
-        \end{subarray} }\delta\delta^*h(x),$$
-**Corollary 1.7**. *$G=(X,\delta,m,\omega)$ is the $1$ dimensional cell cavity complex, then $\,\forall\,x\in X_1,$*
-
-$$\kappa_\omega(x)=\max_{G\le_1 K}F_{K,\omega}(x),$$
-**Corollary 1.8**. *$K=(X,\delta,m,\omega),$ $x\in X,$ Then:*
-
-$$F_\omega(x)\le\kappa_\omega(x).$$
-
-### Original definition of Forman curvature
-
-The curvature of weight $w$ defined by Forman is:
+        \end{subarray} }\delta\delta^*h(x),$$</p>
+<p><strong>推论 1.7</strong>. <em>$G=(X,\delta,m,\omega)$为$1$维胞腔复形, 那么$\,\forall\,x\in X_1,$</em> </p>
+<p>$$\kappa_\omega(x)=\max_{G\le_1 K}F_{K,\omega}(x),$$</p>
+<p><strong>推论 1.8</strong>. <em>$K=(X,\delta,m,\omega),$ $x\in X,$ 那么:</em> </p>
+<p>$$F_\omega(x)\le\kappa_\omega(x).$$</p>
+<h3 id="Forman曲率原定义"><a href="#Forman曲率原定义" class="headerlink" title="Forman曲率原定义"></a>Forman曲率原定义</h3><p>Forman定义的关于权重$w$的曲率为:
 $$\frac{F_o(x)}{w(x)}:=\sum_{v\prec x} \frac{w(v)}{w(x)}+\sum_{x\prec z}\frac{w(x)}{w(z)}-\sum_{y\neq x}\left|\sum_{v\prec x,y}\frac{w(v)}{\sqrt{w(y)w(x)} }-\sum_{x,y\prec z}\frac{\sqrt{w(x)w(y)} }{w(z)}\right|,$$
-$x\in
-
-The text defines:
+$x\in X_1.$ 可以看出去掉极小对角占优算子前, 算子$H$是已经对称化过的.</p>
+<p>文中定义的是:
 $$F_\omega(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\frac{\omega(y)}{\omega(x)}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|,$$
-It is not difficult to find that when $m=\frac{1}{w},$ $\omega=\sqrt{w}$,
-There is $F_\omega(x)=\frac{F_o(x)}{w(x)}.$
+不难发现当$m=\frac{1}{w},$ $\omega=\sqrt{w}$时,
+有$F_\omega(x)=\frac{F_o(x)}{w(x)}.$</p>
+<p>文章最后更新于 2021-10-23 11:13:29 </p>
 
-The article was last updated on 2021-10-23 11:13:29
+            </div>
+            
+                <div data-lang-group="article-content-body" data-lang="en" style="display:none">
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>Characterizations of Forman curvature - Jürgen Jost, Florentin Münch</p>
+<h2 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h2><h3 id="胞腔复形与图"><a href="#胞腔复形与图" class="headerlink" title="胞腔复形与图"></a>胞腔复形与图</h3><p>给定胞腔复形$X=\bigcup X_k.$
+取$\delta:X_k\rightarrow X_{k+1}$为关联(incident)算子,
+$\delta v(z)=\pm 1$或$0.$ 要求胞腔复形满足如下性质:</p>
+<ul>
+<li><p>$\dim(z)\ge 1\Rightarrow \,\exists\,x\prec z;$</p>
+</li>
+<li><p>$|\{w\in X_0:\delta w(x)=1\}|=|\{w\in X_0:\delta w(x)=-1\}|=1,$
+$\,\forall\,x\in X_1;$ (每边两顶点)</p>
+</li>
+<li><p>$\dim(z)-\dim(v)=2,$ $\{x:v\prec x\prec z\}\neq \varnothing$</p>
+<p>$\Rightarrow$ $|\{x:v\prec x\prec z\}|=2$ 且
+$\pm 1\in \{\delta v(x)\delta x(z):x\in X\}.$ (diamond性&amp;
+$\delta^2=0$)</p>
+</li>
+<li><p>(定向)连通性;</p>
+</li>
+<li><p>$\{x:x\prec z\}=\{x:x\prec z&#39;\},$ $\dim z\ge 1\Rightarrow z=z&#39;.$
+(简单图)</p>
+</li>
+</ul>
+<p>$\,\forall\,x,y\in X,$
+记$x\sim y$若$\,\exists\,v\prec x,y$或$x,y\prec z.$ 这诱导了距离:
+$$d(x,y)=\inf\{n:x=x_0\sim\cdots\sim x_n=y\}.$$
+注意在$X_0$上这并不是一般的路径距离. 在复形维数较高时,
+点到点可以凭借高维胞腔更快速地转移.</p>
+<p>定义带权内积 $$\left&lt;{}f,g\right&gt;=\sum_x f(x)g(x)m(x).$$</p>
+<p>将$x$视为$1_x,$ 线性扩张$\delta:C(X)\rightarrow C(X).$
+定义伴随$\delta^\ast :C(X)\rightarrow C(X),$
+$$\delta^\ast  z(x)=\frac{1}{m(x)}\left&lt;{}\delta^\ast  z,x\right&gt;=\frac{1}{m(x)}\left&lt;{}\delta x,z\right&gt;=\frac{m(z)}{m(x)}\delta x(z).$$</p>
+<p>这与Forman定义中的$\partial$有区别,
+$$\partial z(x)=\delta x(z)=\frac{m(x)}{m(z)}\delta^\ast  z(x).$$</p>
+<h3 id="Hodge-Laplacian"><a href="#Hodge-Laplacian" class="headerlink" title="Hodge Laplacian"></a>Hodge Laplacian</h3><p>定义Hodge Laplacian $$H=\delta \delta^\ast +\delta^\ast \delta.$$</p>
+<p>计算$Hy(x),$ 分别计算如下式子:
+$$\delta\delta^\ast  y(x)=\frac{1}{m(x)}\left&lt;{}\delta^\ast y,\delta^\ast  x\right&gt;=\frac{1}{m(x)}\sum_{v\prec x,y}m(v)\frac{m(y)}{m(v)}\delta v(y)\frac{m(x)}{m(v)}\delta v(x)=\sum_{v\prec x,y}\frac{m(y)}{m(v)}\delta v(x)\delta v(y),$$
+更简单的有:
+$$\delta^\ast \delta y(x)=\sum_{x,y\prec z}\frac{m(z)}{m(x)}\delta x(z)\delta y(z).$$</p>
+<p><strong>注意与Forman定义不同, 维数较小的胞腔权重总是在分母上.</strong></p>
+<p>当$X=X_0\cup X_1$为赋权定向图时, 记$m(x)=m(v,w)=m(w,v),$ $x\in X_1,$
+$v,w$为两顶点. $H$作用在$C(X_0)$上为:</p>
+<p>$$\begin{aligned}
+            Hf(v)=\delta^*\delta f(v)&amp;=\sum_w\sum_{v,w\prec x}\frac{m(x)}{m(v)}\delta v(x)\delta w(x)f(w)\\
+            &amp;=\sum_{v\prec x}\frac{m(x)}{m(v)}\sum_{w\prec x}\delta v(x)\delta w(x)f(w)\\
+            &amp;=\sum_{w\neq v}\frac{m(v,w)}{m(v)}(f(v)-f(w))          
+        \end{aligned}$$</p>
+<p>即$H_0$就是带权图的Laplacian.</p>
+<h3 id="Forman曲率"><a href="#Forman曲率" class="headerlink" title="Forman曲率"></a>Forman曲率</h3><p>对$x\neq y\in X_1,$ 第一个和中至多有一项非零,
+第二个和中非零项符号均一致. 当两个和中均出现非零项时,
+有$\delta v(x)\delta v(y)=-\delta x(z)\delta y(z).$ 因此
+$$|Hy(x)|=\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$
+容易得到
+$$Hx(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}.$$</p>
+<p>对(任意)自伴算子$H,$ 有分解 $$H=\Delta+D,$$ $\Delta$为极小对角占优算子,
+$D$为对角阵. 显然有 $$Dx(x)=Hx(x)-\sum_{y\neq x}|Hy(x)|.$$</p>
+<p>对Hodge Laplacian做分解, 将得到的$D$称为<strong>Forman曲率</strong>. 对$x\in X_1,$
+$$F(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$</p>
+<p>若$m\equiv 1,$
+$$F(x)=\#\{v\in X_0:v\prec x\}+\#\{z\in X_2:x\prec z\}-\#\{\text{parallel neighbors of } x\},$$
+与Forman曲率确实是一样的.</p>
+<p>但事实上得到$F$的过程与Forman曲率并不完全一致, 对一般的$m$二者并不相同.
+Forman在分解Hodge Laplacian前, 先对$H$做了对称化, 即在常权重下是对称阵.</p>
+<p>不过根据步骤的不同, 可以转化两种不同的Forman曲率.</p>
+<h2 id="对偶关系"><a href="#对偶关系" class="headerlink" title="对偶关系"></a>对偶关系</h2><h3 id="Forman曲率的对偶表示"><a href="#Forman曲率的对偶表示" class="headerlink" title="Forman曲率的对偶表示"></a>Forman曲率的对偶表示</h3><p>对复形$K=(X,\delta,m),$ $K&#39;=(X&#39;,\delta,m&#39;),$ 记$K&#39;\le_k K,$
+若满足如下条件:</p>
+<ol>
+<li><p>$X_j=X_j&#39;,$ $\,\forall\,j\le k;$</p>
+</li>
+<li><p>$X_j&#39;\subset X_j,$ $\,\forall\,j&gt;k;$</p>
+</li>
+<li><p>$m(x)=m&#39;(x),$ $\,\forall\,\dim x\le k;$</p>
+</li>
+<li><p>$\delta&#39;v(x)=\delta v(x),$ $\,\forall\,x,v\in X&#39;.$</p>
+</li>
+</ol>
+<p>也就是$K&#39;\subset K$且它们的带权定向$k$-骨架相同.</p>
+<p><strong>定理 1.1</strong>. <em>$K=(X,\delta,m),$ $x\in X_k,$ $k\in \mathbb{N}.$ 那么有</em> </p>
+<p>$$\max_{K&#39;\le_k K}F&#39;(x)=\min_{
+                \begin{subarray}{c}
+                    h(x)=1\\
+                    |h|\le 1\\
+                    \delta h\cdot \delta x\le 0
+            \end{subarray} }\delta\delta^*h(x)$$</p>
+<h3 id="Ollivier曲率"><a href="#Ollivier曲率" class="headerlink" title="Ollivier曲率"></a>Ollivier曲率</h3><p>对$x\in X_1,$ 其Ollivier曲率可写为</p>
+<p>$$\kappa(x)=\inf_{\begin{subarray}{c}
+                    \delta f(x)=1\\
+                    |\delta f|\le 1
+            \end{subarray} }\delta\delta^*\delta f(x),$$</p>
+<p>事实上只需考虑$f\in C(X_0).$</p>
+<p>显然有如下转化:</p>
+<p>$$\kappa(x)=\inf_{\begin{subarray}{c}
+                    h(x)=1\\
+                    |h|\le 1\\
+                    h\in \delta(C(X_0))
+            \end{subarray} }\delta\delta^*h(x),$$</p>
+<p><strong>定理 1.2</strong>. <em>$K=(X,\delta,m),$ $x\in X_k,$ $k\in \mathbb{N}.$ 若所有含$x$的长度不超过$5$的圈都是$2$-胞腔, 那么有:</em> </p>
+<p>$$\kappa(x)=\inf_{\begin{subarray}{c}
+                    h(x)=1\\
+                    |h|\le 1\\
+                    \delta x\cdot\delta h\le 0
+            \end{subarray} }\delta\delta^*h(x),$$</p>
+<h3 id="两者联系"><a href="#两者联系" class="headerlink" title="两者联系"></a>两者联系</h3><p><strong>推论 1.3</strong>. <em>$G=(X,\delta,m)$为$1$维胞腔复形, 那么$\,\forall\,x\in X_1,$</em> </p>
+<p>$$\kappa(x)=\max_{G\le_1 K}F_K(x),$$</p>
+<p><strong>证:</strong> 令$G\le_1 X,$ $X$包含所有可能的$2$-胞腔,
+自然全体长度不超过$5$的圈都是$2$-胞腔. 那么:
+$$\kappa(x)=\inf_{\begin{subarray}{c}
+                            h(x)=1\\
+                            |h|\le 1\\
+                            \delta x\cdot\delta h\le 0
+                    \end{subarray} }\delta\delta^*h(x)=\max_{K\le_1 X} F_K(x)=\max_{X^{(1)}\le_1 K}F_K(x)=\max_{G\le_1 K}F_K(x).$$</p>
+<p>也就是可以通过粘贴合适权重的$2$-胞腔,
+使得新图的Forman曲率与原有的Ollivier曲率相同.</p>
+<p><strong>推论 1.4</strong>. <em>$K=(X,\delta,m),$ $x\in X,$ 那么:</em> </p>
+<p>$$F(x)\le\kappa(x).$$</p>
+<p><strong>证:</strong>
+$$F(x)\le \max_{K^{(1)}\le_1 X}F_X(x)=\kappa_{K^{(1)} }(x)=\kappa(x).$$</p>
+<h2 id="调整距离"><a href="#调整距离" class="headerlink" title="调整距离"></a>调整距离</h2><h3 id="基本性质"><a href="#基本性质" class="headerlink" title="基本性质"></a>基本性质</h3><p>定义Ollivier曲率时可以选取其它的距离. 赋予图另一权重$\omega,$
+定义路径距离$d_\omega:X_0\rightarrow [0,\infty),$
+$$d_\omega(v,w):=\inf\{\sum_{k=1}^n \omega(v_k,v_{k-1}):v=v_0\sim\cdots\sim v_n=w\}.$$</p>
+<p>总是假设$\omega$是非退化的, 即边总是顶点间的最短距离. 定义关于$\omega,$
+或称关于$d_\omega$的Ollivier曲率:
+$$\omega(x)\kappa_\omega(x):=\inf_{\begin{subarray}{c}
+        \delta f(x)=\omega(x)\\
+        |\delta f|\le \omega\end{subarray} }\delta\delta^*\delta f.$$
+非退化的要求实际上意味着在$X_1$上Ollivier曲率是有限的.</p>
+<p>为了令Forman曲率与新的Ollivier曲率相容,
+改造其为关于$\omega$的Forman曲率:
+$$F_\omega:=Hx(x)-\sum_{y\neq x}\frac{\omega(y)}{\omega(x)}|Hy(x)|.$$
+$x\in X_1$时, 即为
+$$F_\omega(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\frac{\omega(y)}{\omega(x)}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|.$$
+事实上可以使它与之前得到Forman曲率的过程一致:
+$$\omega F_\omega=D(\omega H)=\omega(x) Hx(x)-\sum_{y\neq x}|\omega(y)H_y(x)|.$$</p>
+<h3 id="对偶性质"><a href="#对偶性质" class="headerlink" title="对偶性质"></a>对偶性质</h3><p>类似地有:</p>
+<p><strong>定理 1.5</strong>. <em>$K=(X,\delta,m,\omega),$ $x\in X_k,$ $k\in \mathbb{N}.$ 那么有</em> </p>
+<p>$$\max_{K&#39;\le_k K}\omega(x)F_\omega&#39;(x)=\min_{
+            \begin{subarray}{c}
+                h(x)=\omega(x)\\
+                |h|\le \omega\\
+                \delta h\cdot \delta x\le 0
+        \end{subarray} }\delta\delta^*h(x)$$</p>
+<p><strong>定理 1.6</strong>. <em>$K=(X,\delta,m,\omega),$ $x\in X_k,$ $k\in \mathbb{N}.$ 若所有含$x$的极小圈都是$2$-胞腔, 那么有:</em> </p>
+<p>$$\omega(x)\kappa(x)=\inf_{\begin{subarray}{c}
+                h(x)=\omega(x)\\
+                |h|\le \omega\\
+                \delta x\cdot\delta h\le 0
+        \end{subarray} }\delta\delta^*h(x),$$</p>
+<p><strong>推论 1.7</strong>. <em>$G=(X,\delta,m,\omega)$为$1$维胞腔复形, 那么$\,\forall\,x\in X_1,$</em> </p>
+<p>$$\kappa_\omega(x)=\max_{G\le_1 K}F_{K,\omega}(x),$$</p>
+<p><strong>推论 1.8</strong>. <em>$K=(X,\delta,m,\omega),$ $x\in X,$ 那么:</em> </p>
+<p>$$F_\omega(x)\le\kappa_\omega(x).$$</p>
+<h3 id="Forman曲率原定义"><a href="#Forman曲率原定义" class="headerlink" title="Forman曲率原定义"></a>Forman曲率原定义</h3><p>Forman定义的关于权重$w$的曲率为:
+$$\frac{F_o(x)}{w(x)}:=\sum_{v\prec x} \frac{w(v)}{w(x)}+\sum_{x\prec z}\frac{w(x)}{w(z)}-\sum_{y\neq x}\left|\sum_{v\prec x,y}\frac{w(v)}{\sqrt{w(y)w(x)} }-\sum_{x,y\prec z}\frac{\sqrt{w(x)w(y)} }{w(z)}\right|,$$
+$x\in X_1.$ 可以看出去掉极小对角占优算子前, 算子$H$是已经对称化过的.</p>
+<p>文中定义的是:
+$$F_\omega(x)=\sum_{v\prec x}\frac{m(x)}{m(v)}+\sum_{x\prec z}\frac{m(z)}{m(x)}-\sum_{x\neq y}\frac{\omega(y)}{\omega(x)}\left|\sum_{v\prec x,y}\frac{m(y)}{m(v)}-\sum_{x,y\prec z}\frac{m(z)}{m(x)}\right|,$$
+不难发现当$m=\frac{1}{w},$ $\omega=\sqrt{w}$时,
+有$F_\omega(x)=\frac{F_o(x)}{w(x)}.$</p>
+<p>文章最后更新于 2021-10-23 11:13:29 </p>
+
                 </div>
             
         </div>
@@ -459,7 +560,7 @@ The article was last updated on 2021-10-23 11:13:29
     <ul>
         <li>本文标题：论文笔记-Forman曲率与Ollivier曲率</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-23 10:50:16</li>
+        <li>创建时间：2021-10-23 13:50:16</li>
         <li>
             本文链接：https://dream0ar.github.io/2021/10/23/论文笔记-Forman曲率与Ollivier曲率/
         </li>
@@ -491,7 +592,7 @@ The article was last updated on 2021-10-23 11:13:29
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《现代PDE基础》笔记(4)-Sobolev空间</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (4)-Sobolev Space</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Modern PDE Basics Notes (4) - Sobolev Space</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -513,7 +614,7 @@ The article was last updated on 2021-10-23 11:13:29
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第二章-秩定理</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Chapter 2 of &#34;Differential Manifolds&#34;-Rank Theorem</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 2 - Rank theorem</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -765,11 +866,11 @@ The article was last updated on 2021-10-23 11:13:29
             <div class="post-toc-wrap">
     
     <div class="post-toc" data-lang-group="post-toc" data-lang="zh-cn">
-        
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">基本定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%9E%E8%85%94%E5%A4%8D%E5%BD%A2%E4%B8%8E%E5%9B%BE"><span class="nav-text">胞腔复形与图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hodge-Laplacian"><span class="nav-text">Hodge Laplacian</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Forman%E6%9B%B2%E7%8E%87"><span class="nav-text">Forman曲率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E5%85%B3%E7%B3%BB"><span class="nav-text">对偶关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Forman%E6%9B%B2%E7%8E%87%E7%9A%84%E5%AF%B9%E5%81%B6%E8%A1%A8%E7%A4%BA"><span class="nav-text">Forman曲率的对偶表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ollivier%E6%9B%B2%E7%8E%87"><span class="nav-text">Ollivier曲率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E8%80%85%E8%81%94%E7%B3%BB"><span class="nav-text">两者联系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E8%B7%9D%E7%A6%BB"><span class="nav-text">调整距离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E6%80%A7%E8%B4%A8"><span class="nav-text">对偶性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Forman%E6%9B%B2%E7%8E%87%E5%8E%9F%E5%AE%9A%E4%B9%89"><span class="nav-text">Forman曲率原定义</span></a></li></ol></li></ol>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text">基本定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%83%9E%E8%85%94%E5%A4%8D%E5%BD%A2%E4%B8%8E%E5%9B%BE"><span class="nav-text">胞腔复形与图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hodge-Laplacian"><span class="nav-text">Hodge Laplacian</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Forman%E6%9B%B2%E7%8E%87"><span class="nav-text">Forman曲率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E5%85%B3%E7%B3%BB"><span class="nav-text">对偶关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Forman%E6%9B%B2%E7%8E%87%E7%9A%84%E5%AF%B9%E5%81%B6%E8%A1%A8%E7%A4%BA"><span class="nav-text">Forman曲率的对偶表示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ollivier%E6%9B%B2%E7%8E%87"><span class="nav-text">Ollivier曲率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E8%80%85%E8%81%94%E7%B3%BB"><span class="nav-text">两者联系</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B0%83%E6%95%B4%E8%B7%9D%E7%A6%BB"><span class="nav-text">调整距离</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="nav-text">基本性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E6%80%A7%E8%B4%A8"><span class="nav-text">对偶性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Forman%E6%9B%B2%E7%8E%87%E5%8E%9F%E5%AE%9A%E4%B9%89"><span class="nav-text">Forman曲率原定义</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -820,6 +921,36 @@ The article was last updated on 2021-10-23 11:13:29
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -843,46 +974,6 @@ The article was last updated on 2021-10-23 11:13:29
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>

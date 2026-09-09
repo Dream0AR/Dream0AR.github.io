@@ -35,6 +35,14 @@ KEEP.initLanguageToggle = () => {
   const languageResources = KEEP.language_resources || {};
   const fallbackLanguage = normalizeLanguage(KEEP.language_default || KEEP.hexo_config.language || 'zh-cn');
   const htmlLanguage = (language) => (language && language.startsWith('zh') ? 'zh-CN' : 'en');
+  const languageManualKey = `${storageKey}:manual`;
+  const hasManualSelection = (() => {
+    try {
+      return sessionStorage.getItem(languageManualKey) === '1';
+    } catch (err) {
+      return false;
+    }
+  })();
 
   const availableLanguages = [];
   if (configuredLanguages.length) {
@@ -105,7 +113,7 @@ KEEP.initLanguageToggle = () => {
   };
 
   let currentLanguage = normalizeLanguage(
-    localStorage.getItem(storageKey)
+    (hasManualSelection ? localStorage.getItem(storageKey) : null)
     || languageToggleConfig.default_language
     || KEEP.hexo_config.language
     || fallbackLanguage
@@ -203,11 +211,14 @@ KEEP.initLanguageToggle = () => {
       if (!nodes.length) return;
 
       const match = nodes.find((item) => item.language === currentLanguage);
-    const fallback = match;
+      const fallback = match
+        || nodes.find((item) => item.language === fallbackLanguage)
+        || nodes.find((item) => item.language === 'zh-cn')
+        || nodes[0];
 
-    nodes.forEach((item) => {
-      item.node.style.display = (item === fallback) ? '' : 'none';
-    });
+      nodes.forEach((item) => {
+        item.node.style.display = (item === fallback) ? '' : 'none';
+      });
     });
 
     requestMathJaxRerender(document.querySelectorAll(`[data-lang-group][data-lang="${currentLanguage}"]`));
@@ -222,6 +233,11 @@ KEEP.initLanguageToggle = () => {
 
     currentLanguage = normalizedNext;
     localStorage.setItem(storageKey, currentLanguage);
+    try {
+      sessionStorage.setItem(languageManualKey, '1');
+    } catch (err) {
+      // keep behavior if storage APIs are unavailable
+    }
     updateI18nDom();
   };
 

@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">调和函数的Taylor展开</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Taylor expansion of harmonic functions</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Taylor expansion of the harmonic function</span>
                 
             </span>
         </div>
@@ -189,7 +189,7 @@
                     <div class="meta-info">
                         <div class="article-meta-info">
     <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;2022-03-30 16:45:53
+        <i class="fas fa-edit"></i>&nbsp;2022-03-30 19:45:53
     </span>
     
         <span class="article-categories article-meta-item">
@@ -230,31 +230,48 @@
 
         <div class="article-content markdown-body">
             <div data-lang-group="article-content-body" data-lang="zh-cn">
-                
+                <p>看论文的时候用到了一个结论, 想了一会发现确实是对的.
+震撼于这么简单而有用的命题为什么之前没学过, 在此记录一下.</p>
+<p><strong>命题 1</strong>. <em>调和函数的任意$k$次Taylor展开为调和多项式.</em> </p>
+<p><strong>证:</strong> 取调和函数$u,$ 记其$k$次Taylor展开式为$h_k.$ $k=0,1$时平凡.
+$k=2$时, $x_ix_j$项不对调和项产生影响. 对于$x_i^2$项,
+求$\Delta$后为常数, 因此只需说明$\Delta h_k$后在一点处取零即可.
+我们在原点考察, 函数本身在原点有$\Delta u=0,$ 同时余项$u-h_k$为高阶项,
+求二阶导后在原点也取零, 这就迫使$\Delta h_k$在原点也取零, 进而处处为零.
+注意对余项的考察用到了调和函数的解析性.</p>
+<p>对于$k\ge 3,$ 归纳地, 假设$k-1$次展开式都是调和多项式.
+$\partial_iu$的$k-1$次Taylor展开式为$\partial_ih_k,$
+由于调和函数的导数仍是调和函数,
+$\partial_i\Delta h_k=\Delta \partial_ih_k=0.$
+这样多项式$\Delta h_k$各阶导数为零, $\Delta h_k$为常数.
+而$h_k-h_{k-1}$为$k$次齐次多项式,
+$\Delta (h_k-h_{k-1})=\Delta h_k$为$k-2$次齐次多项式, 又是常数,
+只能取零.</p>
+<p>文章最后更新于 2022-03-30 16:45:54 </p>
+
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    When I was reading the paper, I came up with a conclusion, and after thinking about it for a while, I found that it was indeed correct.
-I am shocked that I have never learned such a simple and useful proposition before, so I will record it here.
-
-**Proposition 1**. *Any $k$ degree Taylor expansion of a harmonic function is a harmonic polynomial.*
-
-**Proof:** Take the harmonic function $u,$ and record its $k$ degree Taylor expansion as $h_k.$ trivial when $k=0,1$.
-When $k=2$, the $x_ix_j$ term does not affect the harmonic term. For the $x_i^2$ term,
-After finding $\Delta$, it is a constant, so it only needs to be stated that $\Delta h_k$ then takes zero at a point.
-We examine at the origin, the function itself has $\Delta u=0,$ at the origin, and the remaining term $u-h_k$ is a higher-order term,
-After finding the second derivative, it also takes zero at the origin, which forces $\Delta h_k$ to also take zero at the origin, and then becomes zero everywhere.
-Note that the analysis of the remainder uses the analytic properties of the harmonic function.
-
-For $k\ge 3,$, inductively, assume that the expansions of degree $k-1$ are all harmonic polynomials.
-The $k-1$ degree Taylor expansion of $\partial_iu$ is $\partial_ih_k,$
-Since the derivative of the harmonic function is still a harmonic function,
+                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
+                    <p>看论文的时候用到了一个结论, 想了一会发现确实是对的.
+震撼于这么简单而有用的命题为什么之前没学过, 在此记录一下.</p>
+<p><strong>命题 1</strong>. <em>调和函数的任意$k$次Taylor展开为调和多项式.</em> </p>
+<p><strong>证:</strong> 取调和函数$u,$ 记其$k$次Taylor展开式为$h_k.$ $k=0,1$时平凡.
+$k=2$时, $x_ix_j$项不对调和项产生影响. 对于$x_i^2$项,
+求$\Delta$后为常数, 因此只需说明$\Delta h_k$后在一点处取零即可.
+我们在原点考察, 函数本身在原点有$\Delta u=0,$ 同时余项$u-h_k$为高阶项,
+求二阶导后在原点也取零, 这就迫使$\Delta h_k$在原点也取零, 进而处处为零.
+注意对余项的考察用到了调和函数的解析性.</p>
+<p>对于$k\ge 3,$ 归纳地, 假设$k-1$次展开式都是调和多项式.
+$\partial_iu$的$k-1$次Taylor展开式为$\partial_ih_k,$
+由于调和函数的导数仍是调和函数,
 $\partial_i\Delta h_k=\Delta \partial_ih_k=0.$
-In this way, the derivatives of each order of the polynomial $\Delta h_k$ are zero, and $\Delta h_k$ is a constant.
-And $h_k-h_{k-1}$ is a homogeneous polynomial of degree $k$,
-$\Delta (h_k-h_{k-1})=\Delta h_k$ is a homogeneous polynomial of degree $k-2$, and is a constant,
-It can only take zero.
-The article was last updated on 2022-03-30 16:45:54
+这样多项式$\Delta h_k$各阶导数为零, $\Delta h_k$为常数.
+而$h_k-h_{k-1}$为$k$次齐次多项式,
+$\Delta (h_k-h_{k-1})=\Delta h_k$为$k-2$次齐次多项式, 又是常数,
+只能取零.</p>
+<p>文章最后更新于 2022-03-30 16:45:54 </p>
+
                 </div>
             
         </div>
@@ -265,7 +282,7 @@ The article was last updated on 2022-03-30 16:45:54
     <ul>
         <li>本文标题：调和函数的Taylor展开</li>
         <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-03-30 16:45:53</li>
+        <li>创建时间：2022-03-30 19:45:53</li>
         <li>
             本文链接：https://dream0ar.github.io/2022/03/30/调和函数的Taylor展开/
         </li>
@@ -297,7 +314,7 @@ The article was last updated on 2022-03-30 16:45:54
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">论文笔记-渐进平坦流形上的椭圆型方程</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Thesis notes - Elliptic equations on asymptotically flat manifolds</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Paper Notes - Elliptic Equations on Progressively Flat Manifolds</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -319,7 +336,7 @@ The article was last updated on 2022-03-30 16:45:54
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">弱导数与连续性</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Weak derivatives and continuity</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Weak Derivatives and Continuity</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -626,6 +643,36 @@ The article was last updated on 2022-03-30 16:45:54
 <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.3/source/js/dark-light-toggle.js"></script>
 
 <script src="/js/lang-toggle.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  showProcessingMessages: false,
+  messageStyle: 'none',
+  tex2jax: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+});
+</script>
+<script>
+(function () {
+  var urls = [
+    'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML',
+    'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+  ];
+  function load(index) {
+    if (index >= urls.length) return;
+    var script = document.createElement('script');
+    script.src = urls[index];
+    script.async = true;
+    script.onerror = function () { load(index + 1); };
+    document.head.appendChild(script);
+  }
+  load(0);
+})();
+</script>
+
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     if (typeof KEEP !== 'undefined' && typeof KEEP.initLanguageToggle === 'function') {
@@ -649,46 +696,6 @@ The article was last updated on 2022-03-30 16:45:54
 </div>
 
 
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
-</script>
-<script>
-  (function () {
-    var primarySrc = 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    var fallbackSrc = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = primarySrc;
-    script.onload = function () {
-      window.__mathjaxLoaded = true;
-    };
-    script.onerror = function () {
-      if (window.__mathjaxLoaded) {
-        return;
-      }
-
-      var fallbackScript = document.createElement('script');
-      fallbackScript.type = 'text/javascript';
-      fallbackScript.src = fallbackSrc;
-      document.body.appendChild(fallbackScript);
-    };
-
-    document.body.appendChild(script);
-  })();
-</script>
 
 </body>
 </html>
