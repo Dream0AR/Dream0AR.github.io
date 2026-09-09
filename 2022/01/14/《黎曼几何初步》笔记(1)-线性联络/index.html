@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -381,7 +381,75 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="linear-connection">Linear connection</h2>
+<h3 id="definition">Definition</h3>
+<p>Recall that the Riemannian metric $g$ on $C^\infty$ manifold $M$ means specifying a vector inner product $g<em>x(-,-),$ for each $T_xM$<br>Also recorded as $\left&lt;{}-,-\right&gt;_x.$, it is called $C^\infty$,<br>If we take any coordinate system $(x^1,\cdots,x^n),$<br>$g</em>{ij}(x)=g_{x}(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j})$ are all $C^\infty$ functions,<br>$1\le i,j\le n.$</p>
+<p>In $\mathbb{R}^n$,<br>For vector field $X=\sum<em>i X^i\frac{\partial {} }{\partial {}x^i},$<br>Directional derivative $D_vX along $v$:=\sum_i D_vX^i\frac{\partial {} }{\partial {}x^i}.$<br>If $V$ is a vector field, then a new vector field $D_VX(x)=D</em>{V(x)}X,$ can be defined<br>It is called <strong>directional derivative</strong> and satisfies the following properties:</p>
+<ol>
+<li><p>$D_{fV+gW}X=fD_VX+gD_WX;$</p>
+</li>
+<li><p>$D_V(fX)=(D_Vf)X+fD_VX;$</p>
+</li>
+<li><p>$D_V(X+Y)=D_VX+D_VY.$</p>
+</li>
+</ol>
+<p><strong>Definition 1</strong>. <em>On the $C^\infty$ manifold $M$, <em>*Contact</em></em> means specifying a new $C^\infty$ vector field $D_VX,$ for each pair of $C^\infty$ vector fields $V,</p>
+<p>The directional derivatives in $\mathbb{R}^n$ are <strong>standard contacts</strong>.<br><em>Contacts the tangent space</em> of each point in <em>$M$</em>. Call $D_VX$ the <strong>covariant derivative</strong> of $X$ along $V$,<br>$D$ is sometimes called a covariant differential.<br>Since the first property shows that $D_VX$ is linear on $C^\infty$ function ring $\mathscr{F}(M)$ for $V$,<br>Sometimes it is emphasized that the connection defined at this time is <strong>linear connection</strong>, which is different from affine connection and projective connection.</p>
+<p>The linear connection satisfies the following properties. If $x\in M$ has $V(x)=W(x),$ then $D<em>VX(x)=D_WX(x).$<br>From this, $D_vX:=D_VX(x)\in T_xM,$ $V$ can be defined as any vector field that satisfies $V(x)=v$.<br>But for $X(x)=Y(x),$ $D_VX(x)$ is not necessarily equal to $D_VY(x).$ But if $V(x)=v,$<br>On a short arc $\gamma$ starting from $x$ with $v$ as the tangent direction, there is $X|</em>{\gamma}=Y|<em>{\gamma},$<br>Then it can be proved that $D_VX(x)=D_VY(x).$ Therefore it can be said that $D_vX$ is determined by $X|</em>{\gamma}$.</p>
+<p>By pulling back the standard connections, it is always possible to define linear connections locally. Decomposed by units,<br>The overall connection can also be given, because the entire connection on the manifold forms a convex set. It can be seen from this that,<br>There are many contacts. We hope to find interesting ones.</p>
+<h3 id="levi-civita-contact">Levi-Civita Contact</h3>
+<p><strong>Proposition 2</strong>. <em>For a given Riemannian metric $g,$ on $M$, there is a unique connection $D,$ on $M$ such that for any vector field $X, Y, Z,$, it satisfies the following two properties:</em></p>
+<ol>
+<li><p>$X\left&lt;{}Y,Z\right&gt;=\left&lt;{}D_XY,Z\right&gt;+\left&lt;{}Y,D_XZ\right&gt;;$</p>
+</li>
+<li><p>$D_XY-D_YX=[X,Y]=XY-YX.$</p>
+</li>
+</ol>
+<p><em>Such a connection is called a <strong>Levi-Civita connection</strong> of metric $g$ or a <strong>Riemannian connection</strong> of metric $g$.<br>It is equivalent to the property of &quot;parallel movement&quot; explained later.</em></p>
+<p>The first property gives the method of deriving the inner product, while the second property matches the definition of Lie brackets.</p>
+<p><strong>Proof:</strong> First prove the uniqueness. In the following way, the function $\Gamma^k_{ij}\in C^\infty:$ is given</p>
+<script type="math/tex; mode=display">
+D_{\frac{\partial {} }{\partial {}x^i} }\frac{\partial {} }{\partial {}x^j}=\sum_{k=1}^n \Gamma_{ij}^k \frac{\partial {} }{\partial {}x^k},\quad 1\le i,j\le n.</script><p>We only need to state that the <strong>contact coefficient</strong>$\Gamma_{ij}^k$ is uniquely determined by the metric $g$.<br>According to property (L1), the Einstein summation convention will be adopted by default in the future, we have</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}g_{jk} }{\partial {}x^i}=\frac{\partial {} }{\partial {}x^i}\left<{}\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k}\right>=
+ \left<{}\Gamma_{ij}^l\frac{\partial {} }{\partial {}x^l},\frac{\partial {} }{\partial {}x^k}\right>+\left<{}\frac{\partial {} }{\partial {}x^j},\Gamma_{ik}^l\frac{\partial {} }{\partial {}x^l}\right>=\Gamma_{ij}^l g_{lk}+\Gamma_{ik}^l g_{jl} \eqno(*)</script><p>From the property (L2),</p>
+<script type="math/tex; mode=display">
+(\Gamma_{ij}^k-\Gamma_{ji}^k)\frac{\partial {} }{\partial {}x^k}=\left[\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right]=0 \,\Rightarrow\, \Gamma_{ij}^k=\Gamma_{ji}^k.</script><p>Rotate $(\ast )$ formula$i,j,k$, and get</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}g_{jk} }{\partial {}x^i}+\frac{\partial {}g_{ik} }{\partial {}x^j}-\frac{\partial {}g_{ij} }{\partial {}x^k}=2\Gamma_{ij}^lg_{lk}\,\Rightarrow\, \Gamma_{ij}^k=\frac{g^{kl} }{2}\left(\frac{\partial {}g_{jl} }{\partial {}x^i}+\frac{\partial {}g_{il} }{\partial {}x^j}-\frac{\partial {}g_{ij} }{\partial {}x^l}\right).</script><p>Among them, $(g^{ij})$ is the inverse matrix of $(g<em>{ij})$, which satisfies $g^{ik}g</em>{kj}=\delta^i_j,$<br>$\,\forall\,i,j.$</p>
+<p>The above formula shows that $\Gamma<em>{ij}^k$ is determined by the metric $g$, which illustrates the uniqueness. As for existence,<br>Suffice it to say that $\Gamma</em>{ij}^k$ can also give a connection in turn.<br>For the vector field $X=f^i\frac{\partial {} }{\partial {}x_i},$<br>$Y=h^i\frac{\partial {} }{\partial {}x_i},$ is naturally defined by the contact property</p>
+<script type="math/tex; mode=display">
+D_XY=f^i\frac{\partial {}h^j}{\partial {}x_i}\frac{\partial {} }{\partial {}x_j}+f^ih^j \left(D_{\frac{\partial {} }{\partial {}x_i} }\frac{\partial {} }{\partial {}x_j}\right)=f^i\left(\frac{\partial {}h^j}{\partial {}x_j}+h^k \Gamma_{ik}^j\right)\frac{\partial {} }{\partial {}x_j}.</script><p>Verification shows that it has nothing to do with the selection of the coordinate system, so the vector field is well-defined. From the definition process,<br>It certainly satisfies the property of connection, so $D$ is what we want, and its existence is proved.</p>
+<p>The method of using metrics to express the connection coefficients in the proof was obtained by Christoffel,<br>Therefore, $\Gamma_{ij}^k$ of Levi-Civita connection is called Christoffel notation.</p>
+<p>Without the help of a coordinate system, the following expression can also be obtained through the properties of Levi-Civita connection:</p>
+<script type="math/tex; mode=display">
+\left<{}D_XY,Z\right>=\frac{1}{2}\left(X\left<{}Y,Z\right>+Y\left<{}Z,X\right>-Z\left<{}X,Y\right>+\left<{}Z,[X,Y]\right>+\left<{}Y,[Z,X]\right>-\left<{}X,[Y,Z]\right>\right).</script><p>This completely confirms the Levi-Civita connection. When $X, Y, Z$ satisfy good properties, such as being orthogonal to each other,<br>Then the expression of the above formula will be greatly simplified.</p>
+<h3 id="geometric-meaning">Geometric meaning</h3>
+<p>We know that the original Riemannian metric $g$ in the peripheral space $M$ can be inherited on the submanifold $N$,<br>A good fact to get the induced metric $\overline{g}.$ is that $\,\forall\,p\in N,$<br>Let $P:T_pM\rightarrow T_pN$ be the <strong>orthogonal projection</strong>,<br>Then $\,\forall\,X,Y\in \mathfrak{X}(N)\subset \mathfrak{X}(M),$<br>Define $\overline{D}_XY=P(D_XY),$<br>Then $\overline{D}$ is exactly the Levi-Civita connection of measure $\overline{g}$ on $N$.</p>
+<p>In particular, when the peripheral space $M=\mathbb{R}^n$, it has a natural <strong>flat metric</strong>$g,$<br>Natural basis orthonormal. It is easy to verify that the directional derivative mentioned at the beginning is its Levi-Civita connection.<br>Therefore, the above facts indicate the geometric significance of the Levi-Civita connection when $N\subset \mathbb{R}^n$:<br><em>It is the projection of the directional derivative of the vector field in the peripheral space</em>.</p>
+<p>It can be seen that property (L2) can also be discussed without giving the Riemannian metric.<br>It is equivalent to $\Gamma<em>{ij}^k=\Gamma</em>{ji}^k,$ $\,\forall\,1\le i,j,k\le n.$<br>Therefore, the connection satisfying (L2) is said to be <strong>symmetric</strong>, also called <strong>torsionless</strong>.</p>
+<p>We still need to understand the connection more intuitively. Let $\gamma:[a,b]\rightarrow M$ be an embedded curve,<br>The image falls in a certain coordinate neighborhood. Let $X$ be the vector field on $\gamma(t)$ (neighborhood).<br>We care about when $D_{\dot\gamma(t)}X=0,$ $\,\forall\,t\in [a,b].$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ D_{\dot\gamma(t)}X&=D_{\dot\gamma(t)}\left(X^j\frac{\partial {} }{\partial {}x^j}\right)\\
+ &=\frac{d {}X^j}{d {}t}\frac{\partial {} }{\partial {}x_j}+\dot\gamma^iX^jD_{\frac{\partial {} }{\partial {}x_i} }\frac{\partial {} }{\partial {}x^j}\\
+ &=\left(\frac{d {}X^k}{d {}t}+\dot\gamma^iX^j\Gamma_{ij}^k\right)\frac{\partial {} }{\partial {}x^k}
+ \end{aligned}</script><p>Therefore $D<em>{\dot\gamma(t)}X=0$ requires $\,\forall\,k,$<br>It is established that $\frac{d {}X^k}{d {}t}+\dot\gamma^iX^j\Gamma</em>{ij}^k=0$ is established.<br>This is a system of ODE equations, $\,\forall\,v\in T<em>{\gamma(a)}M,$ always exists $X_v(t),$<br>Satisfy $X_v(a)=v,$ $D</em>{\dot\gamma(t)}X_v=0.$</p>
+<p>A vector field $X$ along $\gamma$ is said to be <strong>parallel</strong> if $D<em>{\dot\gamma}X=0.$<br>Given $\gamma:[a,b]\rightarrow M,$<br>It is said that $w\in T</em>{\gamma(b)}M$ is obtained by moving $v\in T<em>{\gamma(a)}M$ in parallel along $\gamma$<strong>,<br>If there is a </strong>parallel vector field**$X,$ along $\gamma$ such that $X(a)=v,$ $X(b)=w.$<br>The above are the results of the discussion on a small section of embedded curve. For a general immersion curve, the interval needs to be divided,<br>Translate the vector piecewise.<br>From this we can define the isomorphism of the vector space $P^\gamma:M</em>{\gamma(a)}\rightarrow M_{\gamma(b)},$<br>Its inverse is exactly the parallel movement along the $\gamma$ reverse curve. This isomorphism is called <strong>Translational Isomorphism</strong>.<br>Note that translation isomorphism is closely related to the selection of curves. Therefore,<br>We can say that the connection is related to the tangent space at both ends of the curve. Of course, this connection is related to the curve itself.</p>
+<p>Now we can have a deeper understanding of the (L1) property: it is equivalent to preserving the inner product for all translational isomorphisms.<br>When (L1) holds, there is an arc length parameterized curve $\gamma:[0,1]\rightarrow M,$<br>$x,y$ is its endpoint. Take $T<em>xM$ standard orthonormal basis ${e_i},$<br>Let $e_i(t)=P^{\gamma|</em>{[0,t]} }(e<em>i),$ have $D</em>{\dot\gamma(t)}e_i(t)=0.$<br>Therefore,</p>
+<script type="math/tex; mode=display">
+\frac{d {} }{d {}t}\left<{}e_i(t),e_j(t)\right>=\dot\gamma(t)\left<{}e_i(t),e_j(t)\right>=\left<{}D _{\dot\gamma(t)}e_i(t),e_j(t)\right>+\left<{}e_i(t),D_{\dot\gamma(t)}e_j(t)\right>=0.</script><p>Thus, $\left&lt;{}e<em>i(t),e_j(t)\right&gt;\equiv \delta</em>{ij}.$ Therefore,<br>The translational isomorphism maps the orthonormal basis to the orthonormal basis, and is thus an isomorphism that preserves the inner product. In turn,<br>Assume that each translational isomorphism maintains the inner product, and takes the vector field $X,Y,Z.$ for any point $x,$<br>Take the arc length parameterized curve $\gamma:[0,1]\rightarrow M,$<br>Taking $x$ as the starting point and $\dot\gamma(0)=X(x).$<br>Similarly, take ${e<em>i(t)}$ as the orthonormal basis of $T</em>{\gamma(t)}M$, then let $Y=Y^ie_i,$<br>$Z=Z^ie_i,$ then:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ X(x)\left<{}Y,Z\right>&=\dot\gamma(0)\left<{}Y,Z\right>=\frac{d {} }{d {}t}\sum_i Y^iZ^i|_{t=0}\\
+ &=\sum_i \frac{d {}Y^i}{d {}t}(0)Z^i(0) + \sum_i Y^i(0)\frac{d {}Z^i}{d {}t}(0)\\
+ &=\left<{}D_{\dot{\gamma}(0)}Y,Z\right>+\left<{}Y,D_{\dot{\gamma}(0)}Z\right>\\
+ &=\left<{}D_{X(x)}Y,Z\right>+\left<{}Y,D_{X(x)}Z\right>
+ \end{aligned}</script><p>That is, if the translational isomorphism always maintains the inner product, then it must also satisfy the condition (L1). Therefore,<br>It can be said that the Levi-Civita connection is the only symmetric connection, making all translational isomorphisms isometric isomorphisms.</p>
+<p><strong>Note 3</strong>. <em>The connection $D$ determines the translational isomorphism, and in turn the translational isomorphism also determines the connection: It can be proved that if $v\in T<em>xM,$ vector field $X,$ and the curve $\gamma$ starts from $x$, $\dot{\gamma}(0)=v,$ then for the translational isomorphism $P_t:T_xM\rightarrow T</em>{\gamma(t)}M,$ has</em></p>
+<script type="math/tex; mode=display">
+D_vX=\frac{d {} }{d {}t}[P_t^{-1}(X\circ\gamma(t))]|_{t=0}.</script><p><strong>Note 4</strong>. <em>The concept of geodesic is introduced by the geodesic curvature being zero, that is, the curvature vector of the curve coincides with the normal, and the projection of the curve on the tangent plane has zero curvature everywhere, which is a generalization of the straight line. Another way of generalization is to consider the tangent vector field on the curve. If the tangent vector field is a parallel vector field along the curve, then the curve is called a connected <strong>geodesic</strong>, that is, $D_{\dot\gamma}\dot\gamma=0.$ The two definitions are then equivalent, and it is immediately obvious from the latter definition that the definition of geodesic is implicit.</em></p>
+<p>The article was last updated on 2022-01-14 12:22:00</p>
                 </div>
             
         </div>
@@ -390,14 +458,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《黎曼几何初步》笔记(1)-线性联络</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-01-14 14:21:56</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《黎曼几何初步》笔记(1)-线性联络</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-01-14 14:21:56</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/01/14/《黎曼几何初步》笔记(1)-线性联络/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/01/14/《黎曼几何初步》笔记(1)-线性联络/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -465,7 +533,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -603,24 +671,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -702,9 +767,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#linear-connection"><span class="nav-text">Linear connection</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#levi-civita-contact"><span class="nav-text">Levi-Civita Contact</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#geometric-meaning"><span class="nav-text">Geometric meaning</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -729,6 +792,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

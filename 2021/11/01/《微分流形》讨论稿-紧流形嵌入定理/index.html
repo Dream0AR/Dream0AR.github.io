@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -359,7 +359,69 @@ $M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳�
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="compactly-supported-smooth-function">Compactly supported smooth function</h2>
+<p>First consider how the Klein bottle is embedded in $\mathbb{R}^4$,<br>This directly leads us to need the following tools.</p>
+<p>On $\mathbb{R}^n$, take $\varphi(x)=\begin{cases}<br>            e^{\frac{1}{|x|^2-1} },&amp;|x|&lt;1\<br>            0,&amp;|x|\ge 1.<br>        \end{cases},$<br>Let $\alpha(x)=\frac{1}{\int<em>{\mathbb{R}^n} \varphi dx}\varphi(x).$<br>Then $\alpha(x)\in C_c^\infty(\mathbb{R}^n),$<br>$\operatorname{supp}\alpha=B_1,$ satisfies $\int</em>{\mathbb{R}^n}\alpha dx=1.$<br>Take $\alpha<em>\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$<br>Then $\operatorname{supp}\alpha</em>\varepsilon=B<em>\varepsilon,$<br>Also satisfies $\int</em>{\mathbb{R}^n}\alpha_\varepsilon dx=1.$</p>
+<p>Define the convolution operation $f\ast g:=\int<em>{\mathbb{R}^n}f(y)g(x-y)dy.$ Then for any open set $E,$<br>$f=1_E\ast \alpha</em>\varepsilon=\int<em>E \alpha</em>\varepsilon(x-y)dy,$<br>Satisfy the following properties:</p>
+<ol>
+<li><p>$f\in [0,1];$</p>
+</li>
+<li><p>$\,\forall\,x$ satisfies $d(x,E^c)&lt; \varepsilon,$ $f(x)=1;$</p>
+</li>
+<li><p>$\operatorname{supp}f=\overline{O_\varepsilon(E)};$</p>
+</li>
+<li><p>$f\in C_c^\infty(\mathbb{R}^n).$</p>
+</li>
+</ol>
+<p>Then on the manifold coordinate card $(U,\varphi),$ if there is an open set $V\Subset W\Subset U,$<br>Then $\varphi(V)\Subset \varphi(W)\Subset \varphi(U).$<br>Remember $\delta=\min(d(\overline{\varphi(V)},\varphi(W)^c),d(\overline{\varphi(W)},\varphi(U)^c))&gt;0,$<br>Then take $f=(1<em>{\varphi(W)}\ast \alpha</em>{\frac{\delta}{2} })\circ \varphi,$<br>Satisfy $f\in [0,1],$ $f|_{V}=1,$ and $f\in C_c^\infty(U).$</p>
+<h2 id="embedding-of-compact-manifolds">embedding of compact manifolds</h2>
+<p>The basic idea is to embed the coordinate neighborhoods into their respective $\mathbb{R}^m$ for each coordinate card,<br>Just leave one more dimension for identification.</p>
+<p><strong>Theorem 1.1</strong>. <em>Suppose $M$ is an $m$-dimensional compact smooth manifold, then there are positive integers $n,$ and smooth maps $\varphi:M\rightarrow \mathbb{R}^n,$ such that $(M,\varphi)$ is a regular submanifold of $\mathbb{R}^n$.</em></p>
+<p><strong>Certificate:</strong> Take the coordinate atlas of $M<script type="math/tex">\{(U_i,\varphi_i;u_i^j)\}_{i=1}^k,$
+Since it is a compact manifold, a finite coordinate atlas can be obtained.
+Take $M\setminus\bigcup_{j=2}^k U_j\subset V_1\Subset W_1\Subset U_1,$
+Inductively take $M\setminus(\bigcup_{j=1}^{i-1}V_j\cup\bigcup_{j=i+1}^k U_j)\subset V_i\Subset W_i\Subset U_i,$
+Obtain the detailed $\{V_i\}$ to cover $M,$ and for each $V_i$ according to the previous description,
+There exists $f_i\in C_c^\infty(U_i),$ $f_i|_{V_i}=1.$, and $f_i$ zero can be extended to $M$.
+Define $n=k(m+1)$ smooth functions on $M$:</script>\begin{aligned}<br>                x<em>i^0&amp;=f_i\<br>                x_i^j&amp;=f_i \cdot u</em>{i}^j\<br>            \end{aligned}$$ where $i=1,\cdots,k,$ $j=1,\cdots,m.$<br>Although each function is only defined on $U_i$, it can also be extended to the entire $M$.<br>This gives a smooth map $\Phi:M\rightarrow \mathbb{R}^n,$<br>Assert that $(M,\Phi)$ is the regular submanifold of $\mathbb{R}^n$.</p>
+<p>First of all, it is indeed a submanifold: first verify the rank, since $\,\forall\,p\in M,$<br>$\,\exists\,V<em>i\supset O_p\ni p,$ then $f_i|</em>{O_p}\equiv 1,$<br>Thus $\det \frac{\partial(x^{1}_i,\cdots,x^m_i)}{\partial (u_i^1,\cdots,u_i^m)}=1,$<br>$r(\Phi)=m.$ Therefore $(M,\Phi)$ is an immersed submanifold.</p>
+<p>Next if $\Phi(p)=\Phi(q),$ then if $V_i\supset p,$<br>$f_i(p)=1=f_i(q)\Rightarrow q\in V_i.$ Thus $\varphi_i(p)=\varphi_i(q),$<br>Since $\varphi_i$ is a homeomorphism, $p=q.$ therefore $\Phi$ is an injective, $(M,\Phi)$ is a submanifold.</p>
+<p>Since $M$ is compact, according to the theorem of the previous lesson, $(M,\Phi)$ is automatically an embedded submanifold,<br>And another theorem shows that $(M,\Phi)$ is also a regular submanifold.</p>
+<h2 id="dimension-theory">Dimension theory</h2>
+<p>The embedding obtained in this way is obviously a bit violent and has too many redundant dimensions. Take $S^2$ as an example,<br>At least two coordinate cards must be used to describe,<br>At this time, according to the above method, it needs to be embedded into the $n=2\times(2+1)=6$ dimensional space.<br>If you use standard six coordinate cards to describe it, it will even be embedded in an $18$ dimensional space.<br>In fact, we can use dimension theory to reduce the dimension of the peripheral space. First we need to introduce Sard&#39;s theorem:</p>
+<p><strong>Theorem 1.2</strong> (Sard&#39;s theorem). <em>Suppose the smooth mapping $f:M^m\rightarrow N^n,$ then the upper critical value of $N$ is all zero-measured.</em></p>
+<p>The critical value is the image of the critical point on $M$, and the critical point refers to the point where $r(f)&lt;n$,<br>That is, $f$ is not submerged at the critical point.</p>
+<p><strong>Theorem 1.3</strong>. <em>If the $m$-dimensional smooth manifold $M$ can be single-immersed in $\mathbb{R}^K$, $K&gt;2m+1,$, then it can also be single-immersed in $\mathbb{R}^{K-1}$.</em></p>
+<p><strong>Certificate:</strong> The order immersion is $\Phi,$<br>All hyperplanes $P$ in $\mathbb{R}^K$ passing through the origin are $\mathbb{R}\mathrm{P}^{K-1},$<br>It is a $K-1$ dimensional smooth manifold.<br>We show that $P$ such that $\pi_P\circ \Phi$ is not a single immersion is a zero test set on $\mathbb{R}\mathrm{P}^{K-1}$.</p>
+<p>If it is not an injective, then there are two points $p, q, $ on $M$<br>Make $P$ determined by the normal line $[v]=[\Phi(p)-\Phi(q)]$ at the origin. Thus $[v]$ falls on</p>
+<script type="math/tex; mode=display">\alpha:M\times M\setminus \Delta_M\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,q)\mapsto[\Phi(p)-\Phi(q)]</script><p>image set, where $\Delta_M={(p,p)|p\in M}.$ then $\alpha$ is a smooth mapping,<br>$M\times M\setminus \Delta_M$ is a $2m$-dimensional open submanifold, assuming $2m&lt;K-1,$<br>Therefore $\alpha$ is not submerged everywhere, thus it is like a set with zero measurement.</p>
+<p>If it is not immersed, then $\,\exists\,p\in M,$<br>$0\neq X<em>p\in T_pM$ makes $(d\pi_P)</em>{\Phi(p)} (d\Phi)_p(X_p)\neq 0.$<br>And $\pi_P$ itself is a linear mapping, $d\pi_P=\pi_P,$<br>Therefore $[(d\Phi)_p(X_p)]=[v]\neq 0.$ so $[v]$ falls in</p>
+<script type="math/tex; mode=display">\beta:TM\setminus\{(p,0)\,|\,p\in M\}\rightarrow \mathbb{R}\mathrm{P}^{K-1}, \quad(p,X_p)\mapsto[(d\Phi)_p(X_p)]</script><p>The image concentration of . $\beta$ is a smooth mapping, and the left side is also a $2m$-dimensional open submanifold,<br>In the same way as Sard&#39;s theorem, there is a zero measure of the image set.<br>In summary, it is not the case that $P$ with single immersion is zero tested on $\mathbb{R}\mathrm{P}^{K-1}$,<br>Therefore, projection can be used almost everywhere to reduce the dimensionality.</p>
+<p>So we get that if $M$ can be immersed in $\mathbb{R}^K$ alone,<br>Then it must be immersed in $\mathbb{R}^{2m+1}$. In fact, the proof that it is not immersed is,<br>$TM$ can be replaced by a spherical bundle $SM={(p,X_p)\,|\,|X_p|=1},$<br>The tangent bundle metric is induced by the peripheral space. At this time, $SM$ is a $2m-1$ dimensional smooth manifold, and the dimension can be further reduced.<br>Therefore, when $M$ can be embedded in $\mathbb{R}^{2m+1}$, $M$ can be immersed in $\mathbb{R}^{2m}.$</p>
+<p>In summary, any $m$-dimensional smooth compact manifold can be embedded in $\mathbb{R}^{2m+1}$,<br>Can be immersed in $\mathbb{R}^{2m}$.</p>
+<h2 id="whitney-embedding-theorem">Whitney embedding theorem</h2>
+<p>For the non-compact case, we give the idea of proof.</p>
+<p><strong>Theorem 1.4</strong>. <em>Any non-compact smooth manifold $M$ can be simply immersed in $\mathbb{R}^K$.</em></p>
+<p>We divide $M$ into the union $M=\cup_{i}{M_i}$ that can list multiple compact submanifolds,<br>Guarantee $M_i\cap M_j=\varnothing,$ if $|j-i|\ge 2.$<br>In this way, suppose $M_i$ has an embedding $\varphi_i,$ to $\mathbb{R}^{2m+1}$<br>Taking the unit decomposition $\rho_i$ of the small neighborhood $M_i$, then</p>
+<script type="math/tex; mode=display">\left(\sum_{i-odd}\rho_i \varphi_i, \sum_{i-even}\rho_i \varphi_i, f\right)</script><p>The desired single immersion is given, $f$ is the control function, and the division method of $M_i$ is provided.</p>
+<p>In this way $M^m$ can be immersed in $\mathbb{R}^{2m+1}$ alone, but it is not necessarily embedded.<br>However, single immersion can be transformed into embedding, using the following proposition,<br>That is Proposition 4.22(b) in Lee’s Introduction to Smooth Manifolds:</p>
+<p><strong>Proposition 1.5</strong>. <em>The smooth single immersion of inverse compactness is embedding. (As long as the image space is locally compact $T_2$, the inverse compact continuous map is a closed map.)</em></p>
+<p>By transforming single immersion into inverse compact single immersion, the classic Whitney embedding theorem is obtained.</p>
+<p><strong>Theorem 1.6</strong> (Whitney Embedding Theorem). <em>$m$-dimensional smooth manifold $M$ can be embedded in $\mathbb{R}^{2m+1},$ can be immersed in $\mathbb{R}^{2m}.$</em></p>
+<h2 id="other-results">Other results</h2>
+<p>Applying the Whitney trick, the following theorem can be proved:</p>
+<p><strong>Theorem 1.7</strong> (Strong Whitney Embedding Theorem). <em>Any smooth manifold with dimensions above $m\ge 2$ can be embedded in $\mathbb{R}^{2m}$, and can be immersed in $\mathbb{R}^{2m-1}$.</em></p>
+<p>There are many more detailed results as follows:</p>
+<ul>
+<li><p>$m$-dimensional smooth compact directed manifold can be embedded in $\mathbb{R}^{2m-1}$.</p>
+</li>
+<li><p>When $m\neq 2^k$, the $m$-dimensional smooth manifold can be embedded in $\mathbb{R}^{2m-1}$. When $m=2^k$,<br>  $\mathbb{R}\mathrm{P}^m$ cannot be embedded in $\mathbb{R}^{2m-1}$.</p>
+</li>
+<li><p>$m$-dimensional smooth manifold can be immersed in $\mathbb{R}^{2m-a(m)}$,<br>  $a(m)$ is the number of $1$ in the binary representation of $m$, $m\ge 2.$</p>
+</li>
+</ul>
+<p>The last result comes from The Immersion Conjecture for Differentiable Manifolds,<br>Ralph L. Cohen. Method derived from the work of E.H. Brown and F.P. Peterson.<br>In fact, according to the Smale-Hirsch theory,<br>The only obstacle to immersion is the Stiefel-Whitney demonstrative class,<br>This can explain that $m=2^{i_1}+\cdots+2^{i_l},$<br>Take $M^m=\mathbb{R}\mathrm{P}^{2^{i_1} }\times\cdots\times \mathbb{R}\mathrm{P}^{2^{i_l} },$<br>The minimum dimension of $M^m$ immersion is $\sum_j(2i_j-1)=2m-a(m).$ so this result is the best.</p>
+<p>The article was last updated on 2021-11-01 17:27:27</p>
                 </div>
             
         </div>
@@ -368,14 +430,14 @@ $M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》讨论稿-紧流形嵌入定理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-01 19:27:25</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》讨论稿-紧流形嵌入定理</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-11-01 19:27:25</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/01/《微分流形》讨论稿-紧流形嵌入定理/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/11/01/《微分流形》讨论稿-紧流形嵌入定理/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -443,7 +505,7 @@ $M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳�
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -581,24 +643,21 @@ $M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳�
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -680,9 +739,7 @@ $M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳�
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#compactly-supported-smooth-function"><span class="nav-text">Compactly supported smooth function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#embedding-of-compact-manifolds"><span class="nav-text">embedding of compact manifolds</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dimension-theory"><span class="nav-text">Dimension theory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#whitney-embedding-theorem"><span class="nav-text">Whitney embedding theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#other-results"><span class="nav-text">Other results</span></a></li></ol>
         </div>
     
 </div>
@@ -707,6 +764,7 @@ $M^m$浸入的最低维数为$\sum_j(2i_j-1)=2m-a(m).$ 因此该结果是最佳�
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

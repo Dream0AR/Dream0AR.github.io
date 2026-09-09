@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -393,7 +393,81 @@ $f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了�
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="immerse-submerge-embed">immerse, submerge, embed</h2>
+<p>Immersion and submersion have canonical representations. Local constant-rank maps also have similar canonical representations.<br>The proof method of the first two is to standardize $D\widehat f,$ and then complete the dimensions to construct a local differential homeomorphism.<br>Just use this diffeomorphism to transform the coordinate system.</p>
+<p>Immersion + homeomorphism = embedding, that is, the subspace topology of the embedded submanifold is consistent with the induced topology.<br>By the local representation of immersion (with the homeomorphism property), the submanifold has submanifold coordinate cards, which are slices.</p>
+<h2 id="regular-value">Regular value</h2>
+<p>For smooth mapping $f:M\rightarrow N,$ if it is submerged at $p\in M$, then $p$ is a <strong>regular point</strong>,<br>Otherwise it is <strong>critical point</strong>. The image of the critical point is called <strong>critical value</strong>.<br>Points on $N$ that are not critical values are called <strong>regular values</strong>. In other words,<br>The original image of the regular value must be a regular point (submerged), and an empty set is allowed.</p>
+<p><strong>Theorem 1</strong> (Canonical value original image theorem). <em>Suppose $f:M\rightarrow N$ is a smooth map, $q\in N$ is the regular value of $f$. Then $f^{-1}(q)$ is a $(\dim M-\dim N)$ dimensional embedded submanifold.</em></p>
+<p>$\,\forall\,p\in f^{-1}(q),$ is represented by the submerged local,<br>There is a coordinate neighborhood $(U,\varphi)\ni p,$ $(V,\psi)\ni q,$ such that<br>$\widehat f:\varphi(U)\rightarrow \psi(V)$ is the projection mapping, $\varphi(p)=0,$<br>$\psi(q)=0$. So</p>
+<script type="math/tex; mode=display">
+\widehat f^{-1}(0)=\{(0,y)|y\in \mathbb{R}^{\dim M-\dim N}\}=\varphi\circ f^{-1}(q).</script><p>This gives $f^{-1}(q)$ as the submanifold coordinate card $(U\cap f^{-1}(q),{\color{red}\pi_y}\circ \varphi)$ of the $(\dim M-\dim N)$ dimensional slice.</p>
+<p><strong>Theorem 2</strong> (Record Lemma). <em>Suppose $M, N$ are smooth manifolds with the same dimensions, $M$ is compact. Let $f:M\rightarrow N$ be a smooth map. If $q\in N$ is the regular value of $f$, then $f^{-1}(q)\subset M$ is the finite point set ${p<em>i}</em>{i=1}^k$, And there exists an open neighborhood $V,$ of $q$ in $N$ such that $f^{-1}(V)=\bigsqcup<em>{i=1}^k U_i,$ $p_i\in U_i,$ and $f|</em>{U_i}$ is a diffeomorphism.</em></p>
+<p>According to the canonical value original image theorem, $f^{-1}(q)={p_i}$ is a $0$ dimensional submanifold,<br>There are submanifold coordinate neighborhoods $W_i,$ that do not intersect each other. Since $M$ is compact,<br>If ${p_i}$ is an infinite point set, there will be a gathering point, but such coordinate neighborhood $W_i$ cannot be obtained at the gathering point.<br>Or $f^{-1}(q)$ is a closed set, so it is compact.</p>
+<p>Since $f$ is both immersed and submerged, it is a local diffeomorphism.<br>Let’s assume it is diffeomorphism on each $W_i$. Next, take</p>
+<script type="math/tex; mode=display">
+V=\bigcap_{i=1}^k f(W_i) \setminus f(M\setminus \bigcup_{i=1}^k W_i).</script><p>Among them, $M\setminus \bigcup<em>{i=1}^k W_i$ is a closed set, and the closed set in the compact set is compact.<br>Therefore $f(M\setminus \bigcup</em>{i=1}^k W<em>i)$ is a compact set, and thus a closed set.<br>So $V$ is indeed an open neighborhood, and $f^{-1}(V)\subset \bigcup</em>{i=1}^k W<em>i.$<br>Since $f|</em>{W<em>i}$ is a diffeomorphism,<br>$\,\exists\,U_i{\color{red}{(=f^{-1}(V)\cap W_i)} }\subset W_i,$<br>Let $f^{-1}(V)=\bigsqcup</em>{i=1}^k U<em>i,$ and $f|</em>{U_i}$ be a diffeomorphism.</p>
+<p><strong>Theorem 3</strong> (Sard&#39;s theorem). <em>The critical value set of smooth mapping $f:M\rightarrow N$ is the zero measure set, and it is a regular value (and thus dense) almost everywhere.</em></p>
+<h2 id="cross-section">Cross section</h2>
+<p>Let $f:M\rightarrow N$ be a smooth map, and $Z\subset N$ be an embedded submanifold.<br>If $\,\forall\,p\in f^{-1}(Z),$</p>
+<script type="math/tex; mode=display">
+df_p(T_pM)+T_{f(p)}Z=T_{f(p)}N,</script><p>Then $f$ is said to be transverse to $Z$, and is denoted as $f\pitchfork Z.$ When $Z$ is a single point set,<br>$Z$ is the regular value of $f$.</p>
+<p>In particular, if $M\subset N$ is an embedded submanifold, then it is called $M\pitchfork Z$,<br>If you put the mapping $\iota:M\rightarrow N$ and $Z$ transversely. At this time, we have</p>
+<script type="math/tex; mode=display">
+T_pM+T_pZ=T_pN,\quad \,\forall\,p\in M\cap Z.</script><p>Similarly, two mapping transversals can also be defined, in which case the mapping is not necessarily required to be embedded.</p>
+<p><strong>Theorem 4</strong> (Transverse Preimage Theorem). <em>Suppose $f:M\rightarrow N$ is a smooth map, $Z\subset N$ is an embedded submanifold. If $f\pitchfork Z,$ then $f^{-1}(Z)$ is an embedded submanifold in $M$, and $\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</em></p>
+<p>Since $Z$ is an embedded submanifold, $\,\forall\,q\in Z,$ has coordinate cards $(V,\psi),$ $q\in V,$<br>Let $\psi(Z\cap V)\subset \mathbb{R}^{\dim Z}$ be a slice.<br>Take the projection $\pi:\mathbb{R}^{n}\rightarrow \mathbb{R}^{\operatorname{codim}_N Z},$<br>Then $\psi (Z\cap V)=\pi^{-1}(0).$</p>
+<p>Assert $g:=\pi \circ \psi \circ f:f^{-1}(V)\rightarrow \mathbb{R}^{\operatorname{codim}_NZ}$ with $0$ as the regular value.<br>Just explain $\,\forall\,p\in f^{-1}(Z)\cap f^{-1}(V)=f^{-1}(Z\cap V),$<br>$dg_p$ is submerged. According to the transversality condition,</p>
+<script type="math/tex; mode=display">
+d\psi \circ df_p(T_pM)+ T_{\psi\circ f(p)}\psi(Z)=T_{\psi\circ f(p)}\psi(N)=\mathbb{R}^n,\quad T_{\psi\circ f(p)}\psi(Z)=\mathbb{R}^{\dim Z}.</script><p>Then apply $d\pi=\pi,$ to get</p>
+<script type="math/tex; mode=display">
+dg_p(T_pM)=d\pi\circ d\psi\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.</script><p>According to the canonical value original image theorem,<br>${\color{red}{g^{-1}(0)=f^{-1}(Z\cap V)=f^{-1}(Z)\cap f^{-1}(V)} }$ is the embedded submanifold,<br>and</p>
+<script type="math/tex; mode=display">
+\dim g^{-1}(0)=\dim M-\operatorname{codim}_NZ,\quad \operatorname{codim}_M (f^{-1}(Z)\cap f^{-1}(V))=\operatorname{codim}_NZ.</script><p>Due to the arbitrariness of $q\in V$, $f^{-1}(Z)$ is an embedded submanifold,<br>And $\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_NZ.$</p>
+<p>For the case where submanifolds intersect transversely, we use the transversal preimage theorem, that is, we have</p>
+<script type="math/tex; mode=display">
+\operatorname{codim}_M (M\cap Z)=\operatorname{codim}_N Z,\quad \operatorname{codim}_N (M\cap Z)=\operatorname{codim}_N M+\operatorname{codim}_N Z.</script><p>Using the transversal preimage theorem for the case where mapping transversals intersect, the fiber product can be obtained</p>
+<script type="math/tex; mode=display">
+M \times_N Z:=\{(a,b)\in M\times Z|f(a)=g(b)\}</script><p> is a smooth manifold.<br>Proof Consider the image $\Gamma_f,\Gamma_g$ and the diagonal manifold $\Delta\subset M\times N\times Z\times N,$<br>The conclusion is obtained by stating the projection of $(\Gamma_f\times \Gamma_g)\pitchfork \Delta,$.</p>
+<h2 id="stability">Stability</h2>
+<p>If a certain property of smooth mapping $f$ is maintained under any small perturbation smooth homotopy $f_t$ ($t&lt;\varepsilon$),<br>Then this property is said to be <strong>stable</strong> under perturbations.</p>
+<p><strong>Theorem 5</strong>. <em>Immersion/submergence $f:M\rightarrow N$ on a compact manifold $M$ is stable.</em></p>
+<p>If $f$ is immersion, then $\,\forall\,p\in M,$<br>There is a non-zero determinant of subformulas of order $m\times m$ in $df_p$. By continuity,<br>There exists neighborhood $U_p$ and $\varepsilon_p&gt;0,$ such that $U_p\times [0,\varepsilon_p]$ is on,<br>The determinant of the $m\times m$ order subformat at the same position in $d(f_t)_q$ is still non-zero.</p>
+<p>Take $\bigcup_{i=1}^k U_i$ to cover $M,$ and note $\varepsilon=\min_i{\varepsilon_i},$<br>Then $f_t$ is immersed on $M$, $\,\forall\,t\le \varepsilon.$<br>Therefore, immersion is stable, and so is submersion.</p>
+<p><strong>Theorem 6</strong>. <em>A subset $S$ of an n$-dimensional smooth manifold $M$ is an embedded submanifold with codimension $l$ in $M$, if and only if $\,\forall\,p\in S,$ $\,\exists\,$submerges $g:U\rightarrow \mathbb{R}^l,$ such that $p\in U,$ and $S\cap U=g^{-1}(0).$</em></p>
+<p>$\Rightarrow:$ Just take the submanifold coordinate card,<br>Just project to $\mathbb{R}^{\operatorname{codim}S}$.</p>
+<p>$\Leftarrow:$ is obtained immediately from the canonical value preimage theorem.</p>
+<p><strong>Corollary 7</strong>. <em>Suppose $M$ is a compact manifold. If the smooth mapping $f:M\rightarrow N$ and $N$ are transverse to the closed embedded submanifold $Z$, then the transversality is stable under the perturbation of $f$.</em></p>
+<p>Note $F(x,t)=F_t.$ Since $F^{-1}(N\setminus Z)$ is an open set,<br>$(M\setminus f^{-1}(Z))\times {0}\subset F^{-1}(N\setminus Z),$<br>$\,\forall\,p\in M\setminus f^{-1}(Z),$ $\,\exists\,U_p\subset M,$<br>$I_p=[0,\varepsilon_p),$ makes $F(U_p\times I_p)\cap Z=\varnothing.$<br>So $\,\forall\,t&lt;\varepsilon_p,$ is on $U_p$ $f_t\pitchfork Z.$</p>
+<p>From the above theorem, $\,\forall\,q\in Z,$<br>There is flooding $g:V\rightarrow \mathbb{R}^{\operatorname{codim}Z},$<br>Make $Z\cap V=g^{-1}(0).$ assert $\,\forall\,p\in f^{-1}(q),$<br>$g\circ f$ is also submerged. Just explain</p>
+<script type="math/tex; mode=display">
+dg_q\circ df_p(T_pM)=\mathbb{R}^{\operatorname{codim}Z}.</script><p>And this is because of the transversal and submerged nature,</p>
+<script type="math/tex; mode=display">
+df_p(T_pM)+T_qZ=T_qN,\quad dg_p(T_qN)=\mathbb{R}^{\operatorname{codim}Z},\quad dg_q(T_qZ)=0.</script><p>The final equation is because $g(Z\cap V)=0.$</p>
+<p>Furthermore, $g\circ f$ is submerged on $p$ point neighborhood $\overline U_p\subset f^{-1}(V)$.<br>Due to the stability of flooding, there is a sufficiently small $\varepsilon_p&gt;0,$<br>So that $g\circ f_t$ is still submerged on $U_p$, $\,\forall\,t&lt;\varepsilon_p$.<br>To prove that $U_p$ is on $f_t\pitchfork Z,$ requires transversality</p>
+<script type="math/tex; mode=display">
+d(f_t)_p(T_pM)+T_{f(p)}Z=T_{f(p)}N,\quad \,\forall\,p\in f^{-1}_t(Z)\cap U_p.</script><p>And we have</p>
+<script type="math/tex; mode=display">
+dg\circ d(f_t)_x(T_xM)=\mathbb{R}^{\operatorname{codim}Z},\quad \ker dg_q=T_qZ,\quad \,\forall\,x\in U_p,\quad q\in Z\cap V.</script><p>This gives transversality.</p>
+<p>From the compactness of $M$, we can get the open covering $M=\bigcup_{i=1}^k U_i,$<br>$\varepsilon=\min_i{\varepsilon_i}.$ So $\,\forall\,t&lt;\varepsilon,$<br>$f_t\pitchfork Z.$ This gives the transversal stability.</p>
+<p>We have the classic lemma in topology:</p>
+<p><strong>Lemma 8</strong>. <em>Let $f:M\rightarrow N$ be a simple smooth immersion. If $M$ is compact, then $f$ is a smooth immersion.</em></p>
+<p>Just use compactness and Hausdorff property. Next there is the following stability theorem:</p>
+<p><strong>Theorem 9</strong>. <em>Suppose $M$ is a compact manifold, $f:M^n\rightarrow N^n$ is a smooth embedding, then the embeddedness is stable under the perturbation of $f$.</em></p>
+<p>It is known that $f$ is still immersed under small perturbations. According to the lemma, we only need to prove that $\,\exists\,\varepsilon&gt;0,$<br>$\,\forall\,t&lt;\varepsilon,$ $f_t$ is an injective.</p>
+<p>Otherwise, there exists $t<em>i\rightarrow 0,$ $p_i\neq q_i\in M,$<br>$f</em>{t<em>i}(p_i)=f</em>{t_i}(q_i).$ By compactness, there exists $p_i\rightarrow p_0,$<br>$q_i\rightarrow q_0,$ $f(p_0)=f(q_0).$ From $f$ to embedding, $p_0=q_0=:p.$</p>
+<p>Remember $G(x,t)=(f_t(x),t),$ then</p>
+<script type="math/tex; mode=display">
+d_{(p,0)}G=\begin{bmatrix}
+ d_pf&*\\
+ 0&1
+ \end{bmatrix}</script><p> The column is of full rank, that is, $G$ is immersed at point $p$.<br>Therefore, $G$ is injective in the small neighborhood of point $p$. However,</p>
+<script type="math/tex; mode=display">
+G(p_i,t_i)=(f_t(p_i),t_i)=(f_t(q_i),t_i)=G(q_i,t_i),\quad p_i,q_i\rightarrow p,\quad t_i\rightarrow 0.</script><p>This is in conflict with small neighborhoods.</p>
+<p><strong>Theorem 10</strong>. <em>Suppose $M$ is a compact manifold, $f:M\rightarrow N$ is a differential homeomorphism, then the differential homeomorphism is stable under the perturbation of $f$.</em></p>
+<p>Diffeomorphism is embedding + surjection, so we only need to prove that surjection is stable under perturbation. Let $N$ be connected,<br>Otherwise, just follow the connected branch discussion.</p>
+<p>Since submersion is stable under disturbance, $\,\exists\,\varepsilon&gt;0,$<br>$\,\forall\,t&lt;\varepsilon,$ $f_t$ is submerged. Expressed by the paradigm of submersion,<br>$f_t$ is an open mapping. On the other hand, $f_t$ is mapped from the compact set to the Hausdorff space,<br>$f_t$ is also a closed map. Therefore, $f_t(M)$ is both open and closed, and is the whole space $N.$. This proves the conclusion.</p>
+<p>The article was last updated on 2023-06-11 14:37:16</p>
                 </div>
             
         </div>
@@ -402,14 +476,14 @@ $f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(1)-基础知识</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-07 12:15:40</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分拓扑》复习笔记(1)-基础知识</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-06-07 12:15:40</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/07/《微分拓扑》复习笔记(1)-基础知识/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/06/07/《微分拓扑》复习笔记(1)-基础知识/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -477,7 +551,7 @@ $f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了�
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -615,24 +689,21 @@ $f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了�
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -714,9 +785,7 @@ $f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了�
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#immerse-submerge-embed"><span class="nav-text">immerse, submerge, embed</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regular-value"><span class="nav-text">Regular value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cross-section"><span class="nav-text">Cross section</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stability"><span class="nav-text">Stability</span></a></li></ol>
         </div>
     
 </div>
@@ -741,6 +810,7 @@ $f_t$也是闭映射. 故$f_t(M)$既开又闭, 为全空间$N.$ 这就证明了�
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

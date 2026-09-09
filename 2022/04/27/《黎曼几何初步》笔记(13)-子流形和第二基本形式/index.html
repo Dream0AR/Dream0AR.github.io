@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -458,7 +458,114 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="second-basic-form">second basic form</h2>
+<p>Let $\widetilde{M}$ be the $\widetilde{n}$ dimensional Riemannian manifold, $M$ be the $n$-dimensional submanifold,<br>$n&lt;\widetilde{n}.$<br>Let $\mathscr{N}(M)$ be the entire <strong>normal vector field</strong> of $M$ in $\widetilde{M}$,<br>$\mathscr{T}(M)$ is the entire tangent vector field. In order to examine the appearance of the submanifold,<br>We take the normal vector field $N\in \mathscr{N}(M),$ and consider $\widetilde{D}_XN.$<br>This is equivalent to examining all $\left&lt;{}\widetilde D_XN,Y\right&gt;,$<br>$Y\in \mathscr{T}(M).$ This defines the <strong>Second Basic Form</strong>.<br>For the given $\nu\in \mathscr{N}(M),$ define:</p>
+<script type="math/tex; mode=display">
+\Pi_\nu(X,Y)=\left<{}\widetilde{D}_X\nu,Y\right>,\quad X,Y\in \mathscr{T}(M),</script><p>Call $M$ corresponding to the second fundamental form of $\nu$.</p>
+<p><strong>Lemma 1</strong>. <em>For each fixed $\nu,$ $\Pi_\nu$ is a quadratic symmetric covariant tensor field on $M$.</em></p>
+<p><strong>Certificate:</strong> Since $\left&lt;{}\nu,Y\right&gt;\equiv 0,$ $Y\in \mathscr{T}(M),$<br>For any $X,Y\in \mathscr{T}(M),$ we have:</p>
+<script type="math/tex; mode=display">
+0=X\left<{}\nu,Y\right>=\left<{}\widetilde{D}_X\nu,Y\right>+\left<{}\nu,\widetilde{D}_XY\right>,</script><p>Therefore we also have the <strong>Weingarten equation</strong>:</p>
+<script type="math/tex; mode=display">
+\Pi_\nu(X,Y)=-\left<{}\nu,\widetilde{D}_XY\right>.</script><p> Next,<br>Since $[X,Y]\in \mathscr{T}(M),$</p>
+<script type="math/tex; mode=display">
+\left<{}\nu,\widetilde{D}_XY\right>=\left<{}\nu,\widetilde{D}_YX\right>+\left<{}\nu,[X,Y]\right>=\left<{}\nu,\widetilde{D}_YX\right>,</script><p>Then from the Weingarten equation, $\Pi<em>\nu(X,Y)=\Pi</em>\nu(Y,X).$ In addition, it is easy to see</p>
+<script type="math/tex; mode=display">
+\Pi_\nu(fX,Y)=f\Pi_\nu(X,Y)=\Pi_\nu(X,fY),</script><p>Therefore $\Pi_\nu$ is indeed a tensor field on $M$. The lemma is proved.</p>
+<p>It can be seen that $\Pi_\nu(X,Y)(x)$ also only depends on $\nu(x),$<br>And it is $C^\infty$ linear with respect to $\nu$.<br>Note that $M_x^\perp$ is the orthogonal complement of $M_x$ in $\widetilde{M}_x$, and <strong>quadratic form</strong> can be defined</p>
+<script type="math/tex; mode=display">
+S:M_x\otimes M_x\rightarrow M_x^\perp,</script><p> make</p>
+<script type="math/tex; mode=display">
+\left<{}S(v,w),\nu\right>:=\Pi_\nu(v,w),\quad \,\forall\,\nu\in \mathscr{N}(M).</script><p>It is easy to see that $S(v,w)$ is the projection of $-\widetilde{D}_XY(x)$ on $M_x^\perp$,<br>The value of $X(x)=v,Y(x)=w,$ has nothing to do with the selection of vector field.</p>
+<p>The trace $\sum_{i=1}^nS(e_i,e_i)\in M_x^\perp,$ of $S$ is denoted as $\eta(x),$<br>${e_i}\subset M_x$ is a standard orthonormal basis. Then $\eta\in \mathscr{N}(M),$<br>It is called the <strong>average curvature normal vector field</strong> of $M$, and $|\eta|$ is called the <strong>average curvature</strong> of $M$.</p>
+<p>Sometimes the symmetric linear transformation $A_\nu:M_x\rightarrow M_x,$ is also defined such that</p>
+<script type="math/tex; mode=display">
+\left<{}A_\nu(v),w\right>=\Pi_\nu(v,w)=\left<{}v,A_\nu(w)\right>,</script><p>That is, $A<em>\nu(v)$ is the projection of $\widetilde{D}_v\nu$ on $M_x$,<br>We also call $A</em>\nu$ the <strong>second fundamental form</strong> corresponding to $\nu$. Its relationship with the average curvature is:</p>
+<script type="math/tex; mode=display">
+\left<{}\eta(x),\nu\right>=\sum_{i=1}^n\left<{}S(e_i,e_i),\nu\right>=\sum_{i=1}^n\Pi_\nu(e_i,e_i)=\sum_{i=1}^n\left<{}A_\nu(e_i),e_i\right>=\operatorname{tr}A_\nu.</script><p>When $\widetilde{n}=n+1$, $M$ is the <strong>hypersurface</strong> in $\widetilde{M}$,<br>At this time, the unit normal vector field $\nu,$ can be locally fixed, denoted as $A:=A_\nu.$<br>At this time $\widetilde{D}_v\nu\in M_x,$ $A(v)=\widetilde{D}_v\nu.$<br>The eigenvalues of $A$ are called principal curvatures. They are all real due to symmetry, and are denoted as $p_1,\cdots,p_n.$<br>$\det A$ is called the <strong>Gauss curvature</strong> of $M$. When $n=2$, it is consistent with the cross-sectional curvature,<br>This is Gauss&#39;s <strong>Egregium (brilliant) theorem</strong>.</p>
+<p>Suppose $\widetilde{M}=\mathbb{R}^{n+1},$ If the hypersurface $M$ is orientable,<br>Then there is an overall unit normal vector field $\nu,$ that can be defined $\Gamma:M\rightarrow S^n,$<br>$x\mapsto \nu(x),$ is called <strong>Gauss map</strong>. Then,</p>
+<script type="math/tex; mode=display">
+d\Gamma(X)=\widetilde{D}_X\nu=A(X),\quad \frac{\Gamma^\ast \Omega_0}{\Omega}=\det d\Gamma=\det A,</script><p>Where $\Omega_0,\Omega$ are the volume elements of $S^n,M$ respectively,<br>From this we can see the geometric meaning of Gauss curvature $\det A$.</p>
+<p>If $M$ is assumed to have positive Gauss curvature, then the Gauss map $\Gamma$ is an immersion.<br>Taking the standard Riemannian metric $g_0,$ on $S^n$ can give $M$ a new Riemannian metric $\Gamma^\ast g_0.$<br>When $M$ is compact, $\Gamma^\ast g_0$ is complete. Selected by the metric, $\Gamma$ is locally isosome,<br>Therefore, it is a covering map. And since $S^n$ is simply connected, $\Gamma$ is a diffeomorphism.<br>Thus we have the lemma:</p>
+<p><strong>Lemma 2</strong>. <em>Suppose $M$ is a compact hypersurface in $\mathbb{R}^{n+1}$ with positive Gauss curvature, then the Gauss map $\Gamma:M\rightarrow S^n$ is a diffeomorphism.</em></p>
+<p><strong>Corollary 3</strong>. <em>The compact hypersurface with positive curvature in $\mathbb{R}^{n+1}$ must be a convex surface, that is, it always falls on one side of its tangent plane.</em></p>
+<p>Now define two orthogonal projections:</p>
+<script type="math/tex; mode=display">
+\top:\widetilde{M}_x\rightarrow M_x,\quad \perp:\widetilde{M}_x\rightarrow M_x^\perp,</script><p>It is easy to verify that $\top(\widetilde{D}_XY)$ satisfies the properties of Levi-Civita connection on $M$,<br>Therefore $D_XY=\top(\widetilde{D}_XY).$<br>Recall that we explained earlier that $S(X,Y)$ is the projection of $-\widetilde{D}_XY(x)$ on $M_x^\perp$,<br>Therefore we have:</p>
+<script type="math/tex; mode=display">
+S(X,Y)=\perp(-\widetilde{D}_XY)=D_XY-\widetilde{D}_XY.</script><p>This is exactly the definition introduced when discussing fully geodesic submanifolds earlier.<br>Now we can say that $M$<em> is fully geodesic if and only if its second fundamental form is always zero.</em><br>The second fundamental form thus characterizes the difference from the full geodesic.</p>
+<h2 id="gauss-equation">Gauss equation</h2>
+<p>Recall that the cross-sectional curvature of any $2$ dimensional tangent plane of the full geodesic submanifold is the same as the original manifold,<br>For the general case we have the following equation:</p>
+<p><strong>Proposition 4</strong> (Gauss equation). <em>$\,\forall\,X,Y\in \mathscr{T}(M),$ We have:</em></p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}R_{XY}X,Y\right>-\left<{}S(X,X),S(Y,Y)\right>+|S(X,Y)|^2.</script><p><strong>Proof:</strong> The proof is a straightforward calculation:</p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}\widetilde{D}_{[X,Y]}X,Y\right>-\left<{}\widetilde{D}_X\widetilde{D}_YX,Y\right>+\left<{}\widetilde{D}_Y\widetilde{D}_XX,Y\right>,</script><p>Among them, since the image of $S$ falls in $M_x^\perp$,</p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{D}_{[X,Y]}X,Y\right>=\left<{}D_{[X,Y]}X,Y\right>-\left<{}S([X,Y],X),Y\right>=\left<{}D_{[X,Y]}X,Y\right>,</script><script type="math/tex; mode=display">
+\begin{aligned}
+ \left<{}\widetilde{D}_X\widetilde{D}_YX,Y\right>&=\left<{}\widetilde{D}_X(D_YX-S(X,Y)),Y\right>\\
+ &=\left<{}\widetilde{D}_XD_YX,Y\right>-\left<{}\widetilde{D}_XS(X,Y),Y\right>\\
+ &=\left<{}D_XD_YX,Y\right>-\left<{}S(X,D_YX),Y\right>-X\left<{}S(X,Y),Y\right>+\left<{}S(X,Y),\widetilde{D}_XY\right>\\
+ &=\left<{}D_XD_YX,Y\right>+\left<{}S(X,Y),D_XY-S(X,Y)\right>\\
+ &=\left<{}D_XD_YX,Y\right>-\left<{}S(X,Y),S(X,Y)\right>
+ \end{aligned}</script><p> Similarly,</p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{D}_Y\widetilde{D}_XX,Y\right>=\left<{}D_YD_XX,Y\right>-\left<{}S(X,X),S(Y,Y)\right>.</script><p>The conclusion can be obtained by integrating the above equations.</p>
+<p><strong>Note:</strong> The Gauss equation describes $\top\widetilde{R}<em>{XY}Z,$<br>And $\perp \widetilde{R}</em>{XY}Z$ will be given by the following <strong>Codazzi equation</strong>. In fact,<br>Using the same method used to prove the Gauss equation, we can prove that the following equation holds:</p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{R}_{XY}Z,W\right>=\left<{}R_{XY}Z,W\right>-\left<{}S(X,Z),S(Y,W)\right>+\left<{}S(X,W),S(Y,Z)\right>.</script><p><strong>Corollary 5</strong>. <em>Suppose $M$ is a hypersurface in $\widetilde{M}$, and $A$ is the second basic form about the unit normal vector field $\nu$. If $P$ is a $2$-plane in $M_x$, let $A|_P:P\rightarrow P$ be $A:P\rightarrow M_x$ and then composite the orthogonal projection $M_x\rightarrow P,$ then</em></p>
+<script type="math/tex; mode=display">
+\widetilde{K}(P)=K(P)-\det(A|_P).</script><p><strong>Certificate:</strong> When $M$ is a hypersurface,<br>Since $\left&lt;{}S(X,Y),\nu\right&gt;=\Pi_\nu(X,Y)=\left&lt;{}A(X),Y\right&gt;,$<br>$S(X,Y)=\left&lt;{}A(X),Y\right&gt;\nu.$ Therefore, take ${e_1,e_2}$ as the standard orthonormal basis of $P$,<br>rule</p>
+<script type="math/tex; mode=display">
+\left<{}S(e_1,e_1),S(e_2,e_2)\right>-|S(e_1,e_2)|^2=\left<{}A(e_1),e_1\right>\left<{}A(e_2),e_2\right>-\left<{}A(e_1),e_2\right>^2=\det(A|_P).</script><p>Since $\widetilde{K}(P)=\left&lt;{}\widetilde{R}<em>{e_1e_2}e_1,e_2\right&gt;,$<br>$K(P)=\left&lt;{}R</em>{e_1e_2}e_1,e_2\right&gt;,$ The conclusion is obtained immediately from the Gauss equation.</p>
+<p><strong>Corollary 6</strong> (Gauss&#39;s wonderful theorem). <em>Suppose $M$ is a surface in $\mathbb{R}^3$, then its cross-sectional curvature is equal to its Gauss curvature.</em></p>
+<p><strong>Corollary 7</strong>. <em>Suppose ${\nu<em>1,\cdots,\nu</em>{\widetilde{n}-n}}$ is the unitary basis of $M_x^\perp$, then $\,\forall\,X,Y\in M_x,$</em></p>
+<script type="math/tex; mode=display">
+\left<{}\widetilde{R}_{XY}X,Y\right>=\left<{}R_{XY}X,Y\right>-\sum_i \Pi_{\nu_i}(X,X)\Pi_{\nu_i}(Y,Y)+\sum_i \Pi_{\nu_i}(X,Y).</script><p><strong>Corollary 8</strong> (Synge Lemma). <em>Assume $M$ contains a geodesic $\widetilde{M}$$\gamma,$, then for any tangent plane $P$ satisfies $\dot\gamma\in P\subset M_x,$ we have $K(P)\le \widetilde{K}(P).$</em></p>
+<p><strong>Proof:</strong> Suppose $P$ is formed by $\dot\gamma,Y$. Since $\gamma$ is a geodesic,<br>$S(\dot\gamma,\dot\gamma)=0.$ Then let $X=\dot\gamma,$ in Gauss equation<br>Get to the conclusion immediately.</p>
+<p><strong>Corollary 9</strong>. The <strong>ruled surface</strong> (single parameter straight line family) in <em>$\mathbb{R}^3$ has non-positive Gauss curvature.</em></p>
+<p><strong>Corollary 10</strong>. <em>Suppose $M$ is a $2$-dimensional surface in $\widetilde{M}$, including a geodesic $\gamma,$ of $\widetilde{M}$, then $K(M<em>{\gamma(t)})\equiv \widetilde{K}(M</em>{\gamma(t)})$ if and only if $M_{\gamma(t)}$ is parallel to $\gamma$ in $\widetilde{M}$.</em></p>
+<p><strong>Proof:</strong> Suppose $\gamma$ is a regular geodesic, $X$ is the unit vector field in $M$, and is perpendicular to $\gamma$, then</p>
+<script type="math/tex; mode=display">
+\widetilde{K}(M_{\gamma(t)})=K(M_{\gamma(t)})+|S(\dot\gamma(t),X(t))|^2.</script><p>Therefore the equality holds if and only if $\widetilde{D}<em>{\dot\gamma}X\equiv D</em>{\dot\gamma}X.$</p>
+<p>$\dot\gamma$ is of course parallel to $\gamma$ in $M,\widetilde{M}$, and</p>
+<script type="math/tex; mode=display">
+\left<{}D_{\dot\gamma}X,\dot\gamma\right>=\dot\gamma\left<{}X,\dot\gamma\right>-\left<{}X,D_{\dot\gamma}\dot\gamma\right>=0, \quad \left<{}D_{\dot\gamma}X,X\right>=0\:\Rightarrow\: D_{\dot\gamma}X=0,</script><p>$X$ is parallel along $\gamma$ in $M$.<br>Therefore, the equation is always true if and only if $X$ is also parallel along $\gamma$ in $\widetilde{M}$,<br>That is, $M_{\gamma(t)}$ is parallel to $\gamma$ in $\widetilde{M}$.</p>
+<p><strong>Corollary 11</strong>. <em>Suppose $M$ is a Riemannian manifold, $x\in M.$ takes ${x^i}$ as the normal coordinate system of $x$, $P\subset M_x$ is formed by ${\frac{\partial {} }{\partial {}x^1},\frac{\partial {} }{\partial {}x^2}}$, $\mathscr{S}$ is the surface ${x^i=0:i\ge 3}.$, then the cross-sectional curvature of $P$ is equal to the Gauss curvature of $\mathscr{S}$ under the induced metric.</em></p>
+<p><strong>Proof:</strong> Just note that for the normal coordinate system, $S\equiv 0 at point $O$, $ the second fundamental form is zero,<br>Then it is obtained from the Gauss equation.</p>
+<h2 id="codazzi-equation">Codazzi equation</h2>
+<p>Codazzi equation is also called Codazzi-Mainardi equation,<br>By directly calculating, we can get the following results about $\widetilde{R}_{XY}Z$.</p>
+<p><strong>Proposition 12</strong> (Codazzi equation). <em>If $X,Y,Z\in \mathscr{T}(M),$ $R,\widetilde{R}$ is the curvature tensor of $M,\widetilde{M}$, then</em></p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \perp\widetilde{R}_{XY}Z=&\left(\perp \widetilde{D}_XS(Y,Z)-S(D_XY,Z)-S(Y,D_XZ)\right)\\
+ &-\left(\perp \widetilde{D}_YS(X,Z)-S(D_YX,Z)-S(X,D_YZ)\right)
+ \end{aligned}</script><p>The Codazzi equation and the Gauss equation are often collectively referred to as the <strong>Gauss-Codazzi equation</strong>.<br>The Codazzi equation is generally complex, but is simpler in special cases.</p>
+<p><strong>Proposition 13</strong>. <em>Suppose $\widetilde M$ is a constant curvature space, $M$ is the hypersurface therein, then $(D_X\Pi)(Y,Z)$ is symmetric about $X,Y,Z$, where $X,Y,Z\in \mathscr{T}(M).$</em></p>
+<p><strong>Proof:</strong> Since $\Pi(Y,Z)=\Pi(Z,Y),$ is obviously symmetric about $Y,Z$. So we only need to prove</p>
+<script type="math/tex; mode=display">
+(D_X\Pi)(Y,Z)=(D_Y\Pi)(X,Z).</script><p>Taking the unit normal vector field $\nu,$ then $S(X,Z)=\Pi(X,Z)\nu.$ Therefore</p>
+<script type="math/tex; mode=display">
+\perp\widetilde{D}_YS(X,Z)=\perp\left((Y\Pi(X,Z))\nu+\Pi(X,Z)\widetilde{D}_Y\nu\right)=(Y\Pi(X,Z))\nu.</script><p>When $\widetilde{M}$ has constant cross-section curvature $c$,</p>
+<script type="math/tex; mode=display">
+\widetilde{R}_{XY}Z=c(\left<{}X,Z\right>Y-\left<{}Y,Z\right>X).</script><p>This is because the right formula constitutes the curvature tensor on $\widetilde{M}$, and also has constant cross-section curvature $c.$<br>At this point you can find $\perp\widetilde{R}_{XY}Z=0.$</p>
+<p>Substituting into the Codazzi equation, we have:</p>
+<script type="math/tex; mode=display">
+Y\Pi(X,Z)-\Pi(D_YX,Z)-\Pi(X,D_YZ)=(D_Y\Pi)(X,Z)=(D_X\Pi)(Y,Z)=\cdots.</script><p>A fundamental application of the Gauss-Codazzi equation is to illustrate the existence and uniqueness of a hypersurface given its second fundamental form.<br>The core of the proof is to consider a system of overdetermined first-order partial differential equations determined by:</p>
+<script type="math/tex; mode=display">
+S(Y_i,Y_j)=\Pi(Y_i,Y_j)\nu=D_{Y_i}Y_j-\widetilde{D}_{Y_i}Y_j,\quad \widetilde{D}_{Y_i}\nu=A(Y_i).</script><p>Since the equation is overdetermined, it may not have a solution.<br>In fact, the necessary and sufficient condition for solvability is to satisfy the previous Gauss-Codazzi equation,<br>This is obtained by considering <strong>Frobenius theorem</strong>. Below we only describe the theorem of existence and uniqueness.</p>
+<p><strong>Theorem 14</strong> (Uniqueness). <em>Suppose $M,M&#39;$ are two hypersurfaces in $\mathbb{R}^{n+1}$, with unit normal vector fields $\nu,\nu&#39;.$ Let $\varphi:M\rightarrow M&#39;$ be isometry, such that $\Pi(X,Y)=\Pi&#39;(d\varphi(X),d\varphi(Y)),$ Then $M,M&#39;$ are <strong>contract</strong>, that is, there is an isometry isomorphism $\Phi:\mathbb{R}^{n+1}\rightarrow \mathbb{R}^{n+1},$ such that $\Phi_M=\varphi.$</em></p>
+<p><strong>Theorem 15</strong> (Existence). <em>Given that the $n$ Viriemannian manifold and the symmetric tensor $\Pi,$ satisfy the Gauss-Codazzi equation, then $M$ can be locally isometrically embedded in $\mathbb{R}^{n+1}$, so that its second basic form relative to a certain unit normal vector field is exactly $\Pi.$ Furthermore this embedding is unique in the sense of a phase-difference global isometric isomorphism $\overline{\varphi}:\mathbb{R}^{n+1}\rightarrow \mathbb{R}^{n+1}$.</em><br>We can generalize the theorem to $n+1$ Viriemannian manifolds $\widetilde{M},$<br>But the form of the Gauss-Codazzi equation will be more complex. In addition, it can also be extended to cases with higher codimension,<br>But at this time, additional integrability conditions <strong>Ricci equation</strong> need to be added,<br>It is obtained by considering the $\perp\widetilde{R}_{XY}\nu$ term.</p>
+<h2 id="ricci-equation">Ricci equation</h2>
+<p>Take ${\nu<em>i}$ as the standard orthonormal basis of $M_x^\perp$,<br>Definition <strong>Basic form</strong>$\beta</em>{r}^s(X<em>p)=\left&lt;{}\widetilde{D}</em>{X<em>p}\nu_r,\nu_s\right&gt;.$<br>Denote $\Pi_r:=\Pi</em>{\nu_r},$ take ${U_i}$ as the standard orthonormal basis of ${M_x}$,<br>Define the convolution between the second basic forms:</p>
+<script type="math/tex; mode=display">
+\Pi_r\ast \Pi_s(X,Y)=\sum_i \Pi_r(X,U_i)\Pi_s(U_i,Y),</script><p>It is easy to see that this equation can be defined reductively as a convolution between quadratic symmetric tensor fields.<br>The following <strong>Ricci equation</strong> is calculated:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \left<{}\widetilde{R}_{XY}\nu_r,\nu_s\right>=&\left(\Pi_r*\Pi_s(Y,X)+(D_Y\beta_r^s)(X)+\beta_w^s(Y)\beta_r^w(X)\right)\\
+ &-\left(\Pi_r*\Pi_s(X,Y)+(D_X\beta_r^s)(Y)+\beta_w^s(X)\beta_r^w(Y)\right)\\
+ \end{aligned}</script><p>The article was last updated on 2022-04-27 21:03:42</p>
                 </div>
             
         </div>
@@ -467,14 +574,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《黎曼几何初步》笔记(13)-子流形和第二基本形式</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-04-27 23:54:19</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《黎曼几何初步》笔记(13)-子流形和第二基本形式</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-04-27 23:54:19</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/04/27/《黎曼几何初步》笔记(13)-子流形和第二基本形式/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/04/27/《黎曼几何初步》笔记(13)-子流形和第二基本形式/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -542,7 +649,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -680,24 +787,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -779,9 +883,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#second-basic-form"><span class="nav-text">second basic form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gauss-equation"><span class="nav-text">Gauss equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#codazzi-equation"><span class="nav-text">Codazzi equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ricci-equation"><span class="nav-text">Ricci equation</span></a></li></ol>
         </div>
     
 </div>
@@ -806,6 +908,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

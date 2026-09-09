@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -298,7 +298,29 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="overall-angular-form">overall angular form</h2>
+<p>On an oriented manifold $M$, the highest-order form is <strong>positive</strong> if it is in the oriented class of $M$.<br>Take $\sigma\in H^{n-1}(S^{n-1})$ as the generator,<br>$p:\mathbb{R}^n-{0}\rightarrow S^{n-1}$ is deformation shrinkage,<br>It is stipulated that $\sigma$ is positive on $S^{n-1}$ if and only if $dr\wedge p^\ast \sigma$ is positive on $\mathbb{R}^n-{0}$.</p>
+<p>Suppose $\sigma$ is the upper positive form of $S^{k-1}$, and $\int_{S^{k-1} }\sigma=1$,<br>Then $\psi=p^\ast \sigma$ is called the <strong>angular form</strong> on $\mathbb{R}^k-0$.<br>$[\psi]\in H^{k-1}(\mathbb{R}^k-{0})$ is the generator.</p>
+<p>Let $\rho(r)\in C^\infty[0,+\infty)$, $\rho(r)=\begin{cases}<br>            -1&amp;r\le \delta_1\<br>            0&amp;r\ge \delta_2<br>        \end{cases}$, $\delta_1&lt;\delta_2$, the middle part is smoothly connected.<br>$d\rho=\rho&#39;(r)dr$ is a bump-1 form.</p>
+<p>At this time, $[d\rho\wedge \psi]\in H<em>c^k(\mathbb{R}^k)$, dig out $B</em>\varepsilon$,<br>Using $\rho$ properties and Stokes theorem, it can be proved that $\int_{\mathbb{R}^k}d\rho\wedge \psi=1$.<br>That is, $[d\rho\wedge \psi]$ is the generator.</p>
+<p>Consider the $k$ directed vector bundle $\pi of rank $M$:E\rightarrow M$, $E^0=E-s(E)$,<br>$s$ is the zero cross-section. Let $\left&lt;{},\right&gt;$ be the metric, for the vector $v$ on each fiber,<br>Define $r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$. Then $r$ is meaningful on $E$,<br>$\rho(r)$ can be regarded as a function defined on $E$.</p>
+<p>A $k-1$-form $\psi$ of $E^0$ is called <strong>global angular form</strong>,<br>If $\psi$ is limited to each fiber $E_x^0\simeq \mathbb{R}^k-{0}$, it is an angular form,<br>And $d\psi$ can be naturally extended into a $k$-form of $E$.</p>
+<p>If there is a global angular form $\psi$ on $E^0$,<br>Then the Thom class of $E$ is $\Phi=d\rho\wedge\psi+\rho d\psi$.<br>This is because the second term disappears on the fiber, and the first term integrates $1$.</p>
+<h2 id="explicit-representation-of-euler-classes-for-planar-bundles">Explicit representation of Euler classes for planar bundles</h2>
+<p>Assume that $E$ is an oriented planar bundle, that is, the rank is $2$. Taking the coordinate atlas and directional trivialization,<br>There are coordinates $(x<em>1^\alpha,...,x_n^\alpha)$ on $U</em>\alpha$.</p>
+<p>Using directional trivialization, define the polar coordinate $r<em>\alpha$ of $E^0|</em>{E<em>\alpha}$,<br>$\theta</em>\alpha$, thus there are coordinates $\pi^\ast x^\alpha, r<em>\alpha, \theta</em>\alpha$.<br>Assume that the upper metric of $E$ preserves the inner product, that is, the transfer function is reduced to $SO(2)$, then $r<em>\alpha=r</em>\beta$,<br>We define the overall $r$. In fact this is the previous $r(v)=\sqrt{\left&lt;{}v,v\right&gt;}$.</p>
+<p>But $\theta<em>\alpha,\theta</em>\beta$ differs by one rotation,<br>Can define $\varphi<em>{\alpha\beta}$,<br>Such that $\theta</em>\beta=\theta<em>\alpha+\pi^\ast \varphi</em>{\alpha\beta}$.<br>In the sense of $\mod 2\pi$,<br>$\varphi_{\alpha\beta}$ satisfies the cocycle condition and can be uniquely defined.</p>
+<p>Therefore, if de Rham cohomology is adopted, then ${d\varphi<em>{\alpha\beta}}$ satisfies the cocycle condition.<br>Definition $\xi</em>\alpha=\frac{1}{2\pi} \sum<em>\gamma \rho</em>\gamma d\varphi<em>{\gamma\alpha}$,<br>Then on $U</em>{\alpha\beta}$,<br>$\frac{1}{2\pi}d\varphi<em>{\alpha\beta}=\xi</em>\beta-\xi_\alpha$.</p>
+<p>Therefore, $d\xi<em>\alpha=d\xi</em>\beta$, can be put together to define the overall $2$-form $e$:<br>$e|<em>{U</em>\alpha}=d\xi<em>\alpha$. Obviously $de=0$.<br>Assert that $[e]\in H^2(M)$ has nothing to do with ${\xi</em>\alpha}$ selection,<br>Called the <strong>Eulerian class</strong> of the plane bundle $E$, also denoted $e(E)$.</p>
+<p>The selection is irrelevant because if there is another $\tilde \xi<em>\alpha$ that meets the requirements,<br>Then $\tilde \xi</em>\alpha-\xi<em>\alpha$ will satisfy the compatibility and can be defined as $\eta$ as a whole.<br>Then $d\eta=d\tilde\xi</em>\alpha-d\xi_\alpha$, so they are equal at the cohomology level.</p>
+<p>If $E$ is given a directional trivialization, assuming it is reduced to $SO(2)=SU(1)$,<br>Then $\varphi<em>{\alpha\beta}=-\frac{1}{i}\log g</em>{\alpha\beta}$, further<br>$e|<em>{U</em>\alpha}=d\xi<em>\alpha=-\frac{1}{2\pi i}\sum</em>\gamma d(\rho<em>\gamma \cdot d\log g</em>{\gamma\alpha})$,<br>It is called the explicit representation formula of the Euler class of plane bundles.</p>
+<p>When $E$ is a product bundle, the transfer function is a constant matrix, so the Euler class is zero.<br>It reflects the degree of distortion of the directed vector bundle $E$. From the expression formula, the functor property of the Euler class can be proved:</p>
+<p><strong>Proposition 1.1</strong>. <em>$f:N\rightarrow M$ is a smooth map, $\pi:E\rightarrow M$ is a rank-2 directed vector bundle, then $e(f^{-1}E)=f^\ast e(E)\in H^2(N)$.</em></p>
+<h2 id="display-representation-of-planar-bundle-thom-class">Display representation of planar bundle Thom class</h2>
+<p>$\frac{d\theta<em>\alpha}{2\pi}-\pi^\ast \xi</em>\alpha$ defines the $1$-form $\psi$ on $E^0$.<br>The $\psi$ limit on each fiber $E<em>x^0$ is $\frac{d\theta</em>\alpha}{2\pi}$,<br>It is the angular form of $E_x^0$; at the same time, $d\psi=-\pi^\ast e$ is defined on $E$, and $\psi$ is the overall angular form.</p>
+<p>Therefore, the Thom class of $E$ is $\Phi=d\rho(r)\wedge \psi-\rho(r)\pi^\ast e$.<br>If $s:M\rightarrow E$ is zero cross-section, then $s^\ast \Phi=e$.<br>That is, zero cross section pulls the Thom class back to the Euler class.</p>
+<p>Using explicit representations of Euler classes,<br>That is, $\Phi=d\rho(r)\wedge \frac{d\theta<em>\alpha}{2\pi}+\frac{1}{2\pi i}d(\rho(r)\pi^\ast \sum</em>\gamma\rho<em>\gamma d\log g</em>{\gamma\alpha})$.<br>The form of the former term is very intuitive, while the latter term is a correction term caused by the distortion of the vector bundle.</p>
+<p>The article was last updated on 2021-10-12 10:25:18</p>
                 </div>
             
         </div>
@@ -307,14 +329,14 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-12 13:25:16</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-12 13:25:16</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/12/《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/12/《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -382,7 +404,7 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -520,24 +542,21 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -619,9 +638,7 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#overall-angular-form"><span class="nav-text">overall angular form</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#explicit-representation-of-euler-classes-for-planar-bundles"><span class="nav-text">Explicit representation of Euler classes for planar bundles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display-representation-of-planar-bundle-thom-class"><span class="nav-text">Display representation of planar bundle Thom class</span></a></li></ol>
         </div>
     
 </div>
@@ -646,6 +663,7 @@ $\psi$限制在每条纤维上$E_x^0$上是$\frac{d\theta_\alpha}{2\pi}$,
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

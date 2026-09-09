@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -304,7 +304,35 @@ $(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="basic-concepts-and-examples-of-manifolds">Basic concepts and examples of manifolds</h2>
+<h3 id="topology">Topology</h3>
+<ul>
+<li><p>$M, N$ are two topological spaces, $\varphi:M\rightarrow N$ is a bijection,<br>  And $\varphi$ and $\varphi^{-1}$ are both continuous,<br>  Then $\varphi:M\rightarrow N$ is called <strong>homeomorphism</strong>. <em>The topological spaces of homeomorphism are regarded as the same.</em></p>
+</li>
+<li><p>If the topological space has a countable topological basis, then $M$ is said to satisfy the <strong>Second countable axiom</strong>.</p>
+</li>
+<li><p>Let $M$ be the topological space,<br>  If $\,\forall\,p,q\in M$ exists open neighborhoods $U$ and $V$ containing $p$ and $q$,<br>  Let $U\cap V=\varnothing$, then $M$ is said to be <strong>Hausdorff</strong> (satisfying the second separation axiom).</p>
+</li>
+</ul>
+<p>Euclidean space $\mathbb{R}^m$ is a vector space, on which there are additions and multiplications.<br>Generally, $l^2$ distance is used to define the distance $d,$ on $\mathbb{R}^m$<br>$(\mathbb{R}^m,d)$ becomes a metric space, and the topology (constituting the topological base) is defined by the ball $B(x,r)$ as a whole.</p>
+<p>Given an open set $U\subset\mathbb{R}^m,$ function $f:U\rightarrow \mathbb{R}.$<br>If $0\le r\le \infty,$ $f$ exists and is continuous until the partial derivative of order $r$, then write $f\in C^r(U).$<br>If $f$ can be expanded into a power series, it is called an <strong>analytic function</strong>, denoted as $f\in C^\omega(U).$</p>
+<p>Let $F:U\rightarrow V,$ $U\subset \mathbb{R}^m,$<br>$V\subset \mathbb{R}^n$ is an open subset,<br>$F(x)=(f^1(x^1,\cdots x^m),\cdots, f^n(x^1,\cdots, x^m)).$<br>If $f^i\in C^r(U),$ $1\le i\le n,$ then write $F\in C^r(U,V).$</p>
+<h3 id="example">Example</h3>
+<p>Curve- $F:(a,b)\rightarrow \mathbb{R}^3$</p>
+<p>Surface patch-homeomorphism$F:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$</p>
+<p>Any curve passing through point $p$ can be expressed as $C(t)=F(u(t),v(t)),$<br>Tangent vector $C&#39;(t_0)=F_uu&#39;(t_0)+F_vv&#39;(t_0).$ The default requirement is $F_u\times F_v\neq 0,$<br>It is said to satisfy <strong>regularity</strong>. The tangent vectors all span into a plane, which is called <strong>tangent plane</strong>.</p>
+<p>The spherical surface cannot be described by a single surface patch (compactness, homology group...) but can be described by several surface patches.</p>
+<h3 id="manifold">Manifold</h3>
+<p>Let $M$ be a topological space, satisfying $\,\forall\,p\in M,$ and there is a neighborhood $U_p$ containing $p$,<br>And the homeomorphism of the open set $D$ from $U_p$ to $m$-dimensional Euclidean space $\mathbb{R}^m$ $\varphi:U_p\rightarrow D.$<br>That is, it is <strong>locally Euclidean</strong>. If it also satisfies the second countability axiom and Hausdorff property,<br>Then $M$ is called $m$-dimensional <strong>topological manifold</strong>. The concept of manifold is a high-dimensional and implicit generalization of the concept of curve and surface,<br>It can be regarded as a topological space in which pieces of Euclidean space are pasted together.</p>
+<p>Let $M^m$ be the $m$-dimensional topological manifold, and call $(U,\varphi)$ the <strong>local coordinate system/graph/card</strong>,<br>$x^i(q)$ is called the $i$th coordinate ($1\le i\le m$) of $q$ in $(U,\varphi)$.<br>If $(U,\varphi),(V,\psi)$ are two coordinate systems, $U\cap V\neq \varnothing,$<br>Then $\psi\circ \varphi^{-1}$ is called <strong>coordinate transformation</strong>.<br>If $\varphi\circ \psi^{-1},\psi\circ \varphi^{-1}\in C^r,$<br>Then it is said that $(U,\varphi)$ and $(V,\psi)$ are $C^r$<strong> compatible</strong>.<br>They are certainly at least $C^0$ compatible.</p>
+<p>Let $\mathcal{F}={(U<em>\alpha,\varphi</em>\alpha)}<em>{\alpha}$ be a family of coordinate graphs of the topological manifold $M^m$.<br>If $\bigcup</em>{\alpha\in \Lambda} U<em>{\alpha}=M,$<br>Then it is said that ${(U</em>\alpha,\varphi<em>\alpha)}</em>{\alpha\in \Lambda}$ is the <strong>coordinate atlas</strong> of $M$.<br>Such as $\,\forall\,\alpha,\beta\in \Lambda,$<br>$(U<em>\alpha,\varphi</em>\alpha),(U<em>\beta,\varphi</em>\beta)$ are compatible with $C^r$,<br>Then record $\mathcal{F}\in C^r.$</p>
+<p>When analyzing the function $f:M\rightarrow \mathbb{R}$ on the manifold,<br>Just consider the points in $M$ on the local coordinate system,<br>Then $f\circ\varphi^{-1}$ is the function from Euclidean space to Euclidean space,<br>It is called a <strong>local representation</strong> of $f$ to analyze the properties of $f$.<br>It is easy to see that the two local representations can be transformed by coordinate transformation. If the coordinate transformation is smooth,<br>Then the differential properties of the local representation are maintained under transformation, that is, it does not depend on the coordinate system selection.<br>It can be seen that in order to study differential calculus on manifolds, a good coordinate atlas is necessary.</p>
+<p>Let $\mathcal{F}<em>1={(U</em>\alpha,\varphi<em>\alpha)},$<br>$\mathcal{F}_2={(V</em>\beta,\psi<em>\beta)}$ is the two $C^\infty$ coordinate atlases on $M$,<br>If $\,\forall\,\alpha,\beta,$<br>$(U</em>\alpha,\varphi<em>\alpha)$ and $(V</em>\beta,\psi_\beta)$ are $C^\infty$ compatible,<br>Then $\mathcal{F}_1$ and $\mathcal{F}_2$ are said to be $C^\infty$<strong> equivalent</strong>,<br>Denoted as $\mathcal{F}_1\sim \mathcal{F}_2.$<br>All $C^\infty$ coordinate atlases on $M$ can be divided into equivalent clusters,<br>Each $[\mathcal{F}]$ is called the previous $C^\infty$<strong>differential structure</strong> of $M$.</p>
+<p><strong>Definition 1.1</strong>. <em>$m$-dimensional $C^\infty$ manifold = $m$-dimensional topological manifold+$C^\infty$ structure[$\mathcal{F}$].</em></p>
+<p><strong>Note 1.2</strong>. <em>Similarly, you can introduce $C^r$ differential structure, $C^\omega$ differential structure, define $C^r$ differential manifold, $C^\omega$ differential manifold (analytical manifold).</em></p>
+<p><strong>Note 1.3</strong>. <em>Suppose $[\mathcal{F}]$ is the $C^\infty$ structure on $M^m$, $\mathcal{F}<em>1={(U</em>\alpha,\varphi<em>\alpha)}\in [\mathcal{F}].$ If $(V,\psi)$ is compatible with each coordinate diagram $C^\infty$, it can be added to the diagram, Get the expanded coordinate atlas $\mathcal{F}_1&#39;.$ which is also a $C^\infty$ coordinate atlas, and is still in the equivalence class $[\mathcal{F}]$. This results in a maximum $C^\infty$ coordinate atlas $\mathcal{F}</em>{\max}\in [\mathcal{F}],$ which is also called the $C^\infty$ structure.</em></p>
+<p>For $M=\mathbb{R}^m,$<br>Taking $\mathcal{F}={(\mathbb{R}^m,\mathrm{id})}$ is $C^\infty$<br>$(C^\omega)$ coordinate atlas,<br>Call $[\mathcal{F}]$ the standard $C^\infty$ structure on $\mathbb{R}^m$,<br>$(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$ is an $m$-dimensional $C^\infty$ manifold.</p>
+<p>The article was last updated on 2021-09-15 16:12:46</p>
                 </div>
             
         </div>
@@ -313,14 +341,14 @@ $(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第一章-微分流形(1)</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-15 19:10:47</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第一章-微分流形(1)</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-15 19:10:47</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/15/《微分流形》第一章-微分流形(1)/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/15/《微分流形》第一章-微分流形(1)/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -388,7 +416,7 @@ $(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -526,24 +554,21 @@ $(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -625,9 +650,7 @@ $(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concepts-and-examples-of-manifolds"><span class="nav-text">Basic concepts and examples of manifolds</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#topology"><span class="nav-text">Topology</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#manifold"><span class="nav-text">Manifold</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -652,6 +675,7 @@ $(\mathbb{R}^m,[\mathcal{F}]^{C^\infty})$为$m$维$C^\infty$流形.</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

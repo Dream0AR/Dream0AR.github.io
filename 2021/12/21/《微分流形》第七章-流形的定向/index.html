@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -286,7 +286,28 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="differential-formal-properties">Differential formal properties</h2>
+<p><strong>Theorem 1</strong>. <em>Suppose $f\in C^\infty(M,N),$ then $f^\ast \circ d=d\circ f^\ast .$</em></p>
+<p><strong>Certificate:</strong> $\,\forall\,\omega\in \mathcal{A}^r(N).$ When $r=0$,</p>
+<script type="math/tex; mode=display">
+(f^\ast du)(X)=(du)(f_\ast X)=(f_\ast X)u=X(u\circ f)=X(f^\ast u)=d(f^\ast u)(X).</script><p>When $r&gt;0$, do the induction. Let&#39;s set $\omega=udy^{i_1}\wedge\cdots\wedge dy^{i_r},$<br>Then $d\omega=du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}.$ we have:</p>
+<script type="math/tex; mode=display">
+f^\ast d\omega=f^\ast [du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}]=df^\ast u\wedge df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}=d[(f^\ast u) df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}]=df^\ast \omega.</script><h2 id="orientation-of-the-manifold">Orientation of the manifold</h2>
+<p><strong>Definition 2</strong>. <em>If there is a continuous unit normal vector $\vec{n},$ on $S$, then $S$ is said to be <strong>orientable</strong>.</em></p>
+<p>In general, given an abstract $C^\infty$-manifold $M,$ it is inconvenient to talk about normal vectors due to the lack of peripheral space.<br>But the tangent plane always exists. We determine the normal vector by selecting a basis. For any $m$ dimensional vector space,<br>The two sets of basis are said to be equivalent if the determinant of the transfer matrix is positive. At this time, they determine the same normal vector.<br>It is easy to see that all basis sets fall into two equivalence classes. Choosing an equivalence class gives $V$ an orientation.</p>
+<p>In order to discuss continuity, we randomly choose $0\neq \Omega\in \Lambda^m(V^\ast ).$<br>At this time, for two sets of equivalent bases, ${\widetilde{e_j}}={e_i}\det(a^i_j),$<br>$\Omega(\widetilde{e_1},\cdots,\widetilde{e_m})=\Omega(e_1,\cdots,e_m)\det(a^i_j).$<br>Therefore $\Omega$ acts on the equivalence basis with the same sign.<br>Then selecting $0\neq \Omega\in \Lambda^m(V^\ast )$ is equivalent to giving the orientation of $V$.</p>
+<p><strong>Definition 3</strong>. <em>Suppose $M^m$ is an $m$-dimensional $C^\infty$-manifold. If there is a continuous everywhere non-zero $m$ sub-external differential form $\Omega,$ on $M$, then $M$ is said to be <strong>orientable</strong>, and $(M,\Omega)$ is called an <strong>oriented manifold</strong>.</em></p>
+<p>$\Omega$ is the continuous reflection of $M\rightarrow \Lambda^m T^\ast M$.<br>Since $\dim \Lambda^m(T_p^\ast M)=1,$ $\Omega=fdx^1\wedge\cdots\wedge dx^m,$<br>$f\in C^0(U),$ $\,\forall\,(U,x^i)\subset M.$</p>
+<p>If $\Omega_1,\Omega_2$ are both orientations of $M$, then $\Omega_2=f\Omega_1,$<br>$f$ is non-zero and continuous everywhere. They have the same orientation if and only if $f&gt;0.$ Assume $M$ is connected,<br>Then $f$ is either positive everywhere, or negative everywhere. This gives two orientations of $M$.</p>
+<p>$dx^1\wedge\cdots\wedge dx^m\in \mathcal{A}^m(U)$ on the coordinate system $(U,x^i)$ gives the local orientation on $U$.<br>Assume $(M,\Omega)$ is a directional manifold, then $\Omega|<em>U=fdx^1\wedge\cdots\wedge dx^m,$<br>$f\in C^0(U).$ If $f&gt;0,$, then the orientation of $(U,x^i)$ is said to be consistent with $\Omega$.<br><strong>Theorem 4</strong>. *Suppose $M$ is an $m$-dimensional $C^\infty$ manifold, then it is an orientable $\Leftrightarrow$ and exists in the coordinate atlas ${(U</em>\alpha,\varphi<em>\alpha;x^i</em>{(\alpha)})},$ such that $\,\forall\,\alpha,\beta,$ is in $U<em>\alpha\cap There is $\det[D(\varphi</em>\alpha\circ\varphi<em>\beta^{-1})]&gt;0.$* on U</em>\beta$</p>
+<p><strong>Certificate:</strong> $\Rightarrow:$<br>Take any coordinate atlas ${(U<em>\alpha,\varphi</em>\alpha;x<em>{(\alpha)}^i)}.$<br>Then $\Omega|</em>{U<em>\alpha}=f</em>\alpha dx^1<em>{(\alpha)}\wedge\cdots\wedge dx</em>{(\alpha)}^m.$<br>If $f<em>\alpha&gt;0,$, the coordinate system does not move; if $f</em>\alpha&lt;0,$<br>Then the coordinate system can be adjusted to make $f<em>\alpha$ positive.<br>At this time $\,\forall\,p\in U</em>\alpha\cap U_\beta,$</p>
+<script type="math/tex; mode=display">
+\Omega|_{U_\alpha\cap U_\beta}=f_\alpha{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m}=f_\beta{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m}.</script><p>Therefore $\det[D(\varphi<em>\alpha\circ\varphi</em>\beta^{-1})]=\frac{f<em>\beta}{f</em>\alpha}&gt;0.$</p>
+<p>$\Leftarrow:$ refines the coordinate atlas so that it is locally finite and maintains the problem properties.<br>Take $f<em>i$ as the unit to decompose.<br>Then let $\omega=\sum_i f_i{}dx</em>{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}$.<br>At this time $\,\forall\,p\in M,$</p>
+<script type="math/tex; mode=display">
+\omega(p)=\sum_i f_i(p){}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}=\sum_i f_i(p)\det[D(\varphi_i\circ \varphi_{j_0}^{-1})]{}dx_{(j_0)}^{1}\wedge\cdots\wedge{}dx_{(j_0)}^{ {}m}.</script><p>From the unit decomposition and the properties of the question, there is $\omega\neq 0.$</p>
+<p>It can be seen from the process that the constructed $\omega\in \mathcal{A}^m(M).$<br>Therefore, the external differential form that is non-zero everywhere can be required to be smooth.</p>
+<p>The article was last updated on 2021-12-21 19:01:28</p>
                 </div>
             
         </div>
@@ -295,14 +316,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第七章-流形的定向</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-21 21:01:27</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第七章-流形的定向</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-12-21 21:01:27</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/21/《微分流形》第七章-流形的定向/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/12/21/《微分流形》第七章-流形的定向/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -370,7 +391,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -508,24 +529,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -607,9 +625,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#differential-formal-properties"><span class="nav-text">Differential formal properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orientation-of-the-manifold"><span class="nav-text">Orientation of the manifold</span></a></li></ol>
         </div>
     
 </div>
@@ -634,6 +650,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

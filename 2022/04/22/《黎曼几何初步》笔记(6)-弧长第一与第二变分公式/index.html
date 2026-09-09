@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -307,7 +307,40 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="first-variation-formula">first variation formula</h2>
+<p>Let&#39;s study the extremely short length of the $\gamma$ curve.<br>Take the single-parameter curve family ${\gamma<em>u}</em>{-\varepsilon\le u\le \varepsilon},$<br>Satisfies $\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b).$<br>Let $L(u):[-\varepsilon,\varepsilon]\rightarrow \mathbb{R}$ be the length of curve $\gamma_u$.<br>Then when $L&#39;(0)=0,$ $L&#39;&#39;(0)&gt;0$, there is a minimum value at $L(0)$;<br>If this holds true for all single-parameter curve families ${\gamma_u}$ that satisfy the conditions,<br>Then $\gamma$ locally obtains a very short length.</p>
+<p>Let’s first cancel the assumptions $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b)$,<br>Let $U$ be the transverse vector field of ${\gamma_u}$, $T$ is tangent to all curves $\gamma_u(t).$<br>Let $t$ be the arc length parameter of the base curve $\gamma$, $|\dot\gamma|=1.$ then,</p>
+<script type="math/tex; mode=display">
+L(u)=\int_a^b |\dot\gamma_u(t)|dt,\quad L'(u)=\int_a^b\frac{d {} }{d {}u}\sqrt{\left<{}\dot\gamma_u(t),\dot\gamma_u(t)\right>}dt,</script><p>The integral term can be written as:</p>
+<script type="math/tex; mode=display">
+U\sqrt{\left<{}T,T\right>}=\frac{1}{|T|}\left<{}T,D_UT\right>=\frac{1}{|T|}\left<{}T,D_TU\right>=\frac{1}{|T|}\left(T\left<{}T,U\right>-\left<{}D_TT,U\right>\right),</script><p>In this way we get the first variation formula of arc length:</p>
+<script type="math/tex; mode=display">
+L'(0)=\int_a^b\frac{d {} }{d {}t}\left<{}\dot\gamma,U\right>-\left<{}D_{\dot\gamma}\dot\gamma,U\right>dt=\left<{}\dot\gamma(t),U(t)\right>|_a^b-\int_a^b\left<{}\ddot\gamma(t),U(t)\right>.</script><p>Call ${\gamma_u}$ the <strong>normal variation</strong> of $\gamma$, if $\gamma_u(a)=\gamma(a),$<br>$\gamma_u(b)=\gamma(b),$ $\gamma_0=\gamma.$ For normal variation, $U(a)=U(b)=0,$<br>Therefore the first term in the first variation formula disappears. Now we can see another equivalent description of the geodesic:</p>
+<p><strong>Lemma 1</strong>. <em>The necessary and sufficient condition for curve $\gamma:[a,b]\rightarrow M$ to be a geodesic is that it is the critical point of the length function with respect to all normal variations.</em></p>
+<p>Let $N$ be a closed submanifold in $M$, $x\notin N,$<br>Then $\,\exists\,y\in N$ makes $d(x,y)=d(x,N).$<br>Take the shortest regular geodesic $\gamma:[a,b]\rightarrow M$ to connect $x,y.$</p>
+<p><strong>Lemma 2</strong>. <em>$\gamma\perp N,$ is $\dot\gamma(b)\perp N_y.$</em></p>
+<p><strong>Proof:</strong> Let $Y\in N_y,$ take $\xi:[-\varepsilon,\varepsilon]\rightarrow N,$<br>$\xi(0)=y,$ $\dot\xi(0)=Y.$ Then we can get the single-parameter curve family ${\gamma_u},$<br>$\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a)=x,$ $\gamma_u(b)=\xi(u).$<br>In this way, the transverse vector field $U$ satisfies $U(x)=0,$ $U(y)=Y,$ thus:</p>
+<script type="math/tex; mode=display">
+L'(0)=\left<{}\dot\gamma(b),U(b)\right>=\left<{}\dot\gamma(b),Y\right>=0 \quad \Rightarrow \quad \gamma\perp N.</script><h2 id="second-variation-formula">second variation formula</h2>
+<p>Generally, it is meaningful to calculate $L&#39;&#39;(0)$ when $L&#39;(0)=0$. Therefore, assuming $\gamma$ is a regular geodesic, then:</p>
+<script type="math/tex; mode=display">
+L''(u)=\int_a^b\frac{d {} }{d {}u}\left(\frac{1}{|T|}\left<{}T,D_TU\right>\right)dt,</script><p>The integral term can be written as:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ U\left(\frac{1}{|T|}\left<{}T,D_TU\right>\right)&=-\frac{1}{|T|^3}\left<{}T,D_TU\right>^2+\frac{1}{|T|}\left<{}D_TU,D_TU\right>+\frac{1}{|T|}\left<{}T,D_UD_TU\right>\\
+ &=-\frac{1}{|T|^3}\left(T\left<{}T,U\right>-\left<{}D_TT,U\right>\right)^2+\frac{1}{|T| }|D_TU|^2+\frac{1}{|T|}\left(-\left<{}T,R_{UT}U\right>+\left<{}D_TD_UU,T\right>\right).
+ \end{aligned}</script><p> When brought to $u=0$, note that $\gamma$ is a regular geodesic at this time,<br>Therefore:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ L''(0)&=\int_a^b -\left(\frac{d {} }{d {}t}\left<{}\dot\gamma,U\right>\right)^2+|\dot U(t)|^2-\left<{}\dot \gamma,R_{U\dot\gamma}U\right>+\frac{d {} }{d {}t}\left<{}D_UU,\dot\gamma\right>dt\\
+ &=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b\left(|\dot U(t)|^2-\left<{}R_{\dot\gamma U}\dot\gamma,U\right>-\left(\left<{}\dot\gamma,U\right>'\right)^2\right)dt.
+ \end{aligned}</script><p>This is the <strong>arc length second variation formula</strong>, the determining term is the curvature term,<br>Call $\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a$ as boundary term,<br>The boundary term disappears when ${\gamma_u}$ is a normal variation.</p>
+<p>Since the tangential component of $U(t)$ along $\dot\gamma$ does not change the length of $\gamma$,<br>We only need to consider the orthogonal components $U^\perp(t),$<br>That is, suppose $\left&lt;{}U^\perp,\dot\gamma\right&gt;=0,$ $U=U^\perp+f\dot\gamma.$ Then</p>
+<script type="math/tex; mode=display">
+|\dot U(t)|^2-\left(\left<{}\dot\gamma(t),U(t)\right>'\right)^2=|\dot U^\perp (t)|^2+f'(t)^2-f'(t)^2=|\dot U^\perp(t)|^2,</script><script type="math/tex; mode=display">
+\left<{}R_{\dot\gamma U}\dot\gamma,U\right>=\left<{}R_{\dot\gamma U^\perp}\dot\gamma, U^\perp\right>.</script><p>Therefore, the second variation formula of arc length can also be written as:</p>
+<script type="math/tex; mode=display">
+L''(0)=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\left<{}R_{\dot\gamma U^\perp}\dot\gamma,U^\perp\right>\right)dt.</script><p>Later applications will be added in the future.<br>The article was last updated on 2022-04-22 21:06:49</p>
                 </div>
             
         </div>
@@ -316,14 +349,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-04-23 00:06:47</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-04-23 00:06:47</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/04/22/《黎曼几何初步》笔记(6)-弧长第一与第二变分公式/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/04/22/《黎曼几何初步》笔记(6)-弧长第一与第二变分公式/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -391,7 +424,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -529,24 +562,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -628,9 +658,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#first-variation-formula"><span class="nav-text">first variation formula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#second-variation-formula"><span class="nav-text">second variation formula</span></a></li></ol>
         </div>
     
 </div>
@@ -655,6 +683,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

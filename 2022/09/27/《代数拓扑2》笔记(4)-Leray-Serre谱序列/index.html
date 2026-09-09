@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -329,7 +329,53 @@ $\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\left\{\pm 1\right\} }=\mathbb{R}\mat
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="review">Review</h2>
+<p>for fiber bundles</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi} B,\quad \pi_1B=0.</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(B;H_q(F))\Rightarrow E^\infty_{p,q}=G_pH_{p+q}(E).</script><p>Consider some examples. For fiber bundles</p>
+<script type="math/tex; mode=display">
+S^1\rightarrow S^\infty\rightarrow \mathbb{C}\mathrm{P}^\infty,</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(\mathbb{C}\mathrm{P}^\infty)\otimes H_q(S^1),</script><p>From the homology of $S^\infty$,<br>$\partial<em>2:E^2</em>{2k,0}\cong E^2<em>{2k-2,1}$ on $E^2</em>{p,q}$ must be isomorphic,<br>$k\ge 1.$</p>
+<p>For Hopf fibrosis</p>
+<script type="math/tex; mode=display">
+S^1\rightarrow S^3\rightarrow S^2=\mathbb{C}\mathrm{P}^1,</script><p>The structure of the spectral sequence can also be obtained through a similar method. Calculating $\partial_2$ is rarely calculated directly,<br>The first common calculation method is the backward calculation method above, and the other is to use the functor properties.</p>
+<p>Notice that the fiber bundle in the second example is a pullback of the first example,<br>By mapping $\mathbb{C}\mathrm{P}^1\rightarrow \mathbb{C}\mathrm{P}^\infty.$<br>Then, since the Leray-Serre spectral sequence has functor properties, chain mapping and differential are commutative.<br>In this way, the differential of one spectral sequence can be obtained by the differential of another spectral sequence.</p>
+<h2 id="local-coefficient">Local coefficient</h2>
+<p>For the topological space $B,$, record its universal coverage space as $\widetilde{B},$ $\pi=\pi_1(B),$<br>$M$ is a (left) $\mathbb{Z}[\pi]$ module ($\pi$ acts on $M$). Definition</p>
+<script type="math/tex; mode=display">
+C_n(B;M):=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]} M,</script><p>Then you can define $\pi$ as follows: $\widetilde{B}$,<br>Inducing the effect of $\pi$ on $C_n(\widetilde{B})$,<br>Thus $C_n(\widetilde{B})$ is a (left) $\mathbb{Z}[\pi]$ module.</p>
+<p>$\,\forall\,c\in C_n(\widetilde{B}),$ $m\in M,$ $r\in \pi,$</p>
+<script type="math/tex; mode=display">
+(r^{-1}c)\otimes m=c\otimes (rm), \text{or} (rc)\otimes (rm)=c\otimes m.</script><p>$-\bigotimes<em>{\mathbb{Z}</em>\pi}M$ is a functor, $C_n(B;M)$ is a chain complex.<br>Its homology $H_n(B,M)$ is the homology of $B$ with local coefficients in $M$.</p>
+<p>If $\pi_1B$ acts trivially on $M$, $B,\widetilde{B}$ is a CW complex. Then</p>
+<script type="math/tex; mode=display">
+C_n^{CW}(B;M)=C_n^{CW}(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}M=C_n^{CW}(B;\mathbb{Z})\bigotimes_{\mathbb{Z} }M,</script><p>$H_n(B;M)$ is the homology of the coefficient of $B$ in $M$.</p>
+<p>If $M=\mathbb{Z}[\pi],$</p>
+<script type="math/tex; mode=display">
+C_n(B;\mathbb{Z}[\pi])=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}\mathbb{Z}[\pi]=C_n(\widetilde{B}),</script><p>Therefore $H_n(B;\mathbb{Z}[\pi])=H_n(\widetilde{B}).$</p>
+<p>If $M:=\mathbb{Z}[\pi/\pi&#39;],$ $\pi&#39;\subset \pi.$ then</p>
+<script type="math/tex; mode=display">
+C_n(B;\mathbb{Z}[\pi/\pi'])=C_n(\widetilde{B})\bigotimes_{\mathbb{Z}[\pi]}\mathbb{Z}[\pi/\pi']=C_n(B'),\quad B'=\widetilde{B}/\pi'.</script><script type="math/tex; mode=display">
+H_n(B;\mathbb{Z}[\pi/\pi'])=H_n(B';\mathbb{Z}).</script><p>Similarly, define</p>
+<script type="math/tex; mode=display">
+C^n(B;M)=\operatorname{Hom}_{\mathbb{Z}[\pi]}(C_n(\widetilde{B}),M),</script><p>is a chain complex, and cohomology is denoted as $H^n(B;M).$</p>
+<p>If $B$ is a finite complex,</p>
+<script type="math/tex; mode=display">
+H^n(B;\mathbb{Z}[\pi])\cong H_c^n(\widetilde{B};\mathbb{Z})</script><p>For the Poincaré dual on a non-orientable manifold, let $N$ be a closed non-orientable $n$-dimensional manifold,<br>$\pi_1(N,x)\xrightarrow{\rho} {\pm 1}$ acts on $\mathbb{Z}\cong H(N,N\setminus {x})$.<br>Let $H_k(N;\mathbb{Z})$ be the integer coefficient homology,<br>$H_k(N;\widetilde{\mathbb{Z} })$ is homology with respect to the local coefficients in $\rho$.</p>
+<p><strong>Theorem 1</strong>. <em>For $n$-dimensional closed manifold $N,$ $H^k(N;\mathbb{Z})\cong H<em>{n-k}(N;\widetilde{\mathbb{Z} }),$ $H^k(N;\widetilde{\mathbb{Z} })\cong H</em>{n-k}(N;\mathbb{Z}).$ The isomorphism is given by the card product with the base class $[N]\in H_n(N;\widetilde{\mathbb{Z} })$.</em></p>
+<h2 id="return-to-spectral-sequence">Return to spectral sequence</h2>
+<p>Consider $\pi_1B$ not necessarily non-zero fibrosis</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\rightarrow B.</script><p>Recall that each $\gamma:[0,1]\rightarrow B$ gives the homotopy $L<em>\gamma:F</em>{\gamma(0)}\rightarrow F_{\gamma(1)}.$<br>If $B$ roads are connected,</p>
+<script type="math/tex; mode=display">
+\pi_1(B,b)\rightarrow h\operatorname{Aut}(F_b)/\sim \rightarrow \operatorname{Aut}(H_q(F)),</script><script type="math/tex; mode=display">
+\gamma\mapsto L_\gamma\mapsto L_{\gamma^\ast }.</script><p>$\pi_1(B,b)$ acts on $H_q(F_b)$, which is called the monodromy associated with fibrosis<br>action).</p>
+<p>for fiber bundles</p>
+<script type="math/tex; mode=display">
+S^1\rightarrow U(2)\rightarrow \mathbb{R}\mathrm{P}^3,</script><p>Constructed via $U(1)\hookrightarrow U(2),$<br>$\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\left{\pm 1\right} }=\mathbb{R}\mathrm{P}^3.$</p>
+<p>In fact, $\pi_1(\mathbb{R}\mathrm{P}^3)$ trivially acts on $H_i(S^1)$,<br>Because its function is a 180-degree rotation, this does not change the orientation of $S^1$ ($H_1(S^1)$ generator).</p>
+<p>The article was last updated on 2022-09-27 23:15:45</p>
                 </div>
             
         </div>
@@ -338,14 +384,14 @@ $\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\left\{\pm 1\right\} }=\mathbb{R}\mat
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(4)-Leray-Serre谱序列</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-09-28 02:15:43</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(4)-Leray-Serre谱序列</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-09-28 02:15:43</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/09/27/《代数拓扑2》笔记(4)-Leray-Serre谱序列/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/09/27/《代数拓扑2》笔记(4)-Leray-Serre谱序列/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -413,7 +459,7 @@ $\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\left\{\pm 1\right\} }=\mathbb{R}\mat
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -551,24 +597,21 @@ $\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\left\{\pm 1\right\} }=\mathbb{R}\mat
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -650,9 +693,7 @@ $\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\left\{\pm 1\right\} }=\mathbb{R}\mat
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#review"><span class="nav-text">Review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#local-coefficient"><span class="nav-text">Local coefficient</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#return-to-spectral-sequence"><span class="nav-text">Return to spectral sequence</span></a></li></ol>
         </div>
     
 </div>
@@ -677,6 +718,7 @@ $\frac{U(2)}{U(1)}=\frac{SU(2)\approx S^3}{\left\{\pm 1\right\} }=\mathbb{R}\mat
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

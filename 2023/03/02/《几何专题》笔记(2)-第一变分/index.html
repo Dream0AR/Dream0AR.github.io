@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -310,7 +310,39 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="submanifold">Submanifold</h2>
+<p>Let $M$ be an $n$-dimensional smooth manifold, and $f:M\rightarrow X$ be a immersion.<br>Then $f^\ast g$ can be taken as the induced metric on $M$. Let $p=N-n$ be the co-dimension.<br>We decompose $f^\ast (TX)$ into $TM\oplus(TM)^\perp,$ which are called tangent bundle and normal bundle respectively.<br>Take the standard field $e<em>A(m),$ along $M$ so that $e_i(m), e</em>\alpha(m)$ are the tangent vectors at $m$ respectively,<br>normal vector.</p>
+<p>Remember $\theta<em>A=f^\ast \omega_A,$ $\theta</em>{AB}=f^\ast \omega<em>{AB},$<br>Then $\theta</em>\alpha=0.$ This is because $\theta<em>\alpha(v)=\omega</em>\alpha(f<em>\ast v)=0.$<br>The dual basis action in the normal direction takes zero in the tangential direction. Since $\theta_A$ is pullback,<br>The equations that apply to $\omega_A,\omega</em>{BA}$ still satisfy $\theta<em>A,\theta</em>{BA}$.</p>
+<p>Memories$d\omega<em>A=\omega_B\wedge\omega</em>{BA},$<br>We further have $\theta<em>i\wedge\theta</em>{i\alpha}=0.$ By Cartan&#39;s lemma, we have</p>
+<script type="math/tex; mode=display">
+\theta_{i\alpha}=h_{i\alpha j}\theta_j,\quad h_{i\alpha j}=h_{j\alpha i}.</script><p>differential form</p>
+<script type="math/tex; mode=display">
+\Theta=\Theta_\alpha\otimes e_\alpha,\quad \Theta_\alpha=h_{i\alpha j}\theta_i\theta_j,</script><p>It is called the <strong>second basic form</strong> of $M$ in $X$.<br>It describes $M$ as the simplest metric information of the neutron manifold of $X$.</p>
+<p>Define <strong>average curvature vector</strong></p>
+<script type="math/tex; mode=display">
+H=\frac{1}{n}h_{i\alpha i}e_\alpha,</script><p>It is the normal vector on $M$. $M$ is called <strong>minimal submanifold</strong> if $H=0.$ It is <strong>fully geodesic</strong>,<br>If $\Theta=0.$ $1$-dimensional complete geodesic submanifold is a geodesic.</p>
+<h2 id="first-variation">First variation</h2>
+<p>Assume $M$ is compact, possibly with a boundary, and its total volume is given by</p>
+<script type="math/tex; mode=display">
+V=\int_M \theta_1\wedge \cdots\wedge \theta_n</script><p> Given. Consider variations.<br>Take $F:M\times (-\varepsilon,\varepsilon)\rightarrow X,$<br>Satisfying the $F$ restriction on $M\times {t}$ is immersion, $F|_{t=0}=f.$<br>Consider the frame field ${e_A} on $M\times I$, and the conditions are the same as before (tangential direction, normal direction). At this time, note</p>
+<script type="math/tex; mode=display">
+F^\ast \omega_i=\theta_i+a_idt,\quad F^\ast \omega_\alpha=a_\alpha dt,</script><script type="math/tex; mode=display">
+F^\ast \omega_{i\alpha}=\theta_{i\alpha}+a_{i\alpha} dt.</script><p>Constrained to ${t=0}$, which is the same as the original notation. $a_Ae_A$ is called the <strong>deformation vector</strong>.<br>On $M\times I$, decompose the external differential into</p>
+<script type="math/tex; mode=display">
+d=d_M+d_t\frac{\partial {} }{\partial {}t}.</script><p> On $X$, we have</p>
+<script type="math/tex; mode=display">
+d(\omega_1\wedge\cdots\wedge \omega_n)=\omega_\alpha\wedge\Omega_\alpha,</script><script type="math/tex; mode=display">
+\Omega_\alpha=-\sum_i \omega_1\wedge\cdots\wedge \omega_{i-1}\wedge\omega_{i\alpha}\wedge \omega_{i+1}\wedge\cdots\wedge \omega_n.</script><p>Pulling back onto $M$, we get</p>
+<script type="math/tex; mode=display">
+LHS=d\{(\theta_1\wedge\cdots\wedge \theta_n)+dt\wedge\sum_i (-1)^{i-1}a_i\theta_1\wedge\cdots\wedge \widehat\theta_i\wedge\cdots\wedge \theta_n\},</script><script type="math/tex; mode=display">
+RHS=-dt\wedge a_\alpha \widetilde\Theta_\alpha,</script><script type="math/tex; mode=display">
+\widetilde\Theta_\alpha=\sum_i\theta_1\wedge\cdots\wedge \theta_{i-1}\wedge \theta_{i\alpha}\wedge\theta_{i+1}\wedge\cdots\wedge \theta_{n}=h_{i\alpha i}\mathrm{vol}_M.</script><p>Equality the expressions with $dt$ terms, we get</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}\mathrm{vol}_M}{\partial {}t}=d_M\left(\sum_i (-1)^{i-1}a_i\theta_1\wedge\cdots\wedge \widehat\theta_i\wedge\cdots\wedge \theta_n\right)-a_\alpha\widetilde\Theta_\alpha</script><p>Points are given</p>
+<script type="math/tex; mode=display">
+V'(0)=\int_M -a_\alpha\widetilde\Theta_\alpha+\int_{\partial M}\sum_i (-1)^{i-1}a_i\theta_1\wedge\cdots\wedge \widehat\theta_i\wedge\cdots\wedge \theta_n.</script><p>When $a<em>i=0$, the second term on the right disappears, that is, the deformation vector is perpendicular to $\partial M.$<br>This is especially true when $\partial M$ is fixed.<br>For any ${a</em>\alpha}$, the leading term is zero if and only if $H=0,$ that is, $M$ is a minimal submanifold.<br>Therefore we have theorem</p>
+<p><strong>Theorem 1</strong>. <em>When the minimal submanifold of a Riemannian manifold has a fixed boundary, the volume change reaches a critical value.</em></p>
+<p>The article was last updated on 2023-03-02 19:47:46</p>
                 </div>
             
         </div>
@@ -319,14 +351,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《几何专题》笔记(2)-第一变分</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-03-02 21:47:45</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《几何专题》笔记(2)-第一变分</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-03-02 21:47:45</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/03/02/《几何专题》笔记(2)-第一变分/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/03/02/《几何专题》笔记(2)-第一变分/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -394,7 +426,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -532,24 +564,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -631,9 +660,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#submanifold"><span class="nav-text">Submanifold</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#first-variation"><span class="nav-text">First variation</span></a></li></ol>
         </div>
     
 </div>
@@ -658,6 +685,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

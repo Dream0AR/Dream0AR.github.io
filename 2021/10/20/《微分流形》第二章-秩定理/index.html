@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -275,7 +275,23 @@ $(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="rank-theorem">rank theorem</h2>
+<p><strong>Theorem 1.1</strong> (Rank theorem). <em>Suppose the smooth mapping $F:M^m\rightarrow N^n$ has rank $k,$ in the neighborhood of $p$ point, then $\,\exists\,$ respectively contain the coordinate system $(U,\varphi), (V,\psi),$ of $p, q=F(p)$ such that $p, q$ coordinates are zero and the local representation $\widehat{F}$ is a projection.</em></p>
+<p><strong>Proof:</strong> First determine a coordinate system such that $p, q$ coordinates are zero, denote $\widetilde{U}=\varphi(U),$<br>$\widetilde{V}=\varphi(V).$ Consider the case $k=m\le n$.<br>Take the Jacobi matrix $D\widehat{F},$ that represents $\widehat{F}$ locally.<br>Let&#39;s assume that the first $m$ rows are non-degenerate in the neighborhood of the origin. Take</p>
+<script type="math/tex; mode=display">I_\varepsilon=\{(x^{m+1},\cdots,x^n)| |x^\gamma|\le \varepsilon, m+1\le \gamma\le n\}\subset \mathbb{R}^{n-m},</script><script type="math/tex; mode=display">\widetilde{\psi}:\widetilde{U}\times I_\varepsilon\rightarrow \widetilde{V}</script><script type="math/tex; mode=display">\begin{aligned}
+                \widetilde{\psi}^i(t)&=f^i(t^1,\cdots,t^m) & 1\le i\le m;\\
+                \widetilde{\psi}^i(t)&=t^i+f^i(t^1,\cdots,t^m) & m+1\le i\le n.
+            \end{aligned}</script><p>It is then easy to show that the Jacobi matrix of $\widetilde{\psi}$ is non-degenerate. According to the inverse function theorem,<br>Let us assume that $\widetilde{\psi}$ itself is a diffeomorphism,<br>Then of course $\widetilde{\psi}^{-1}$ is too.</p>
+<p>Consider $\widetilde{\psi}^{-1}\circ\widehat{F},$<br>It is a local representation of $(U,\varphi),(V,\widetilde{\psi}\circ\psi)$.<br>The first $m$ lines of its Jacobi matrix are unit matrices, and the last $n-m$ lines are zero. Combined with its property of mapping the origin to the origin,<br>This local representation is the projection. It can also be explained starting from the original definition of $\widetilde{\psi}^{-1}$.</p>
+<p>For the case of $k=n$, just construct the appropriate $\widetilde{\varphi}$. For the general case,<br>The proof can be given by transforming the coordinate systems on both sides at the same time.</p>
+<p>In particular, for this theorem, it can be required that $\varphi(U)=C<em>\varepsilon^m(0),$<br>$\psi(V)=C</em>\varepsilon^n(0).$<br>$C_\varepsilon^r(0)$ is a cube with $r$ dimension and $\varepsilon$ side length.</p>
+<p>Take $0\le k\le m,$ versus $a\in \varphi(U),$<br>Take $S={q\in U|x^i(q)=a^i, k+1\le i\le m}.$ and give it the induced topology,<br>Make it a $k$-dimensional topological manifold.<br>Take $\widetilde{\varphi}=T\circ\varphi|_S:S\rightarrow T\circ\varphi(S)\subset \mathbb{R}^k$ as a homeomorphism,<br>$T$ is a projection. Then it has a coordinate system $(S,\widetilde{\varphi}),$<br>Becomes a $k$-dimensional $C^\infty$ manifold, called a $k$-dimensional slice of $(U,\varphi)$.</p>
+<p>Therefore, the rank theorem states that $F(U)$ is a $k$-dimensional slice within $V$, when $U and V$ are like cubes.</p>
+<h2 id="submanifold">submanifold</h2>
+<p>Recall curve: $C:(a,b)\rightarrow \mathbb{R}^3,$ $C&#39;(t)\neq 0,$<br>That is $r(C(t))=1;$</p>
+<p>Surface: $F:\Omega\subset \mathbb{R}^2\rightarrow \mathbb{R}^3,$<br>$(u,v)\mapsto F(u,v).$ $F_u,F_v$ is linearly independent, that is, $r(F)=2.$<br>Generally, let $F:M^m\rightarrow N^n$ be the mapping of $C^\infty$. If the rank of each point of $F$ is $m,$<br>Then $(M,F)$ is called <strong>immersed submanifold</strong> in $N$. If $F$ is injective again, it is called <strong>submanifold</strong>.<br>Immersed submanifolds are all submanifolds when considered locally. Of course, the inclusion map is of rank $m$,<br>Therefore, the open subsets in $M$ are all open submanifolds.</p>
+<p>Note that (immersed) submanifolds refer to $(M,F)$ pairs, not images.<br>There is actually a submanifold that is consistent with the immersed submanifold image of the non-submanifold.</p>
+<p>The article was last updated on 2021-10-20 16:23:00</p>
                 </div>
             
         </div>
@@ -284,14 +300,14 @@ $(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第二章-秩定理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-20 19:22:49</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第二章-秩定理</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-20 19:22:49</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/20/《微分流形》第二章-秩定理/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/20/《微分流形》第二章-秩定理/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -359,7 +375,7 @@ $(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -497,24 +513,21 @@ $(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -596,9 +609,7 @@ $(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rank-theorem"><span class="nav-text">rank theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#submanifold"><span class="nav-text">submanifold</span></a></li></ol>
         </div>
     
 </div>
@@ -623,6 +634,7 @@ $(u,v)\mapsto F(u,v).$ $F_u,F_v$线性无关, 即$r(F)=2.$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

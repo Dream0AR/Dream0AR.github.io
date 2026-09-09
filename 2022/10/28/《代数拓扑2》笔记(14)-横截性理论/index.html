@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -348,7 +348,72 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="review">Review</h2>
+<p>In the last lesson, we studied the directed real vector bundle $\xi^n,$<br>The Thom class $u(\xi)\in H^n(E,E_0;\mathbb{Z}).$ is defined<br>This gives the Euler class $e(\xi)\in H^n(B;\mathbb{Z}),$ when $B=M^n$ is smooth,</p>
+<script type="math/tex; mode=display">
+e(\tau_M)=\chi(M)\cdot PD([\ast ]).</script><p> general,<br>For the zero section $Z_s,$ where $\xi$ section $s$ intersects with $M$, we have</p>
+<script type="math/tex; mode=display">
+e(\xi)=PD(Z_s),\quad Z_s=\{s=0\}</script><h2 id="transversality-theory">Transversality Theory</h2>
+<p>Assume $X$ is a compactly directed $n$-dimensional manifold, then there is Poincaré duality:</p>
+<script type="math/tex; mode=display">
+PD_X:H_i(X)\rightarrow H^{n-i}(X), \alpha\cap [M]\leftarrow \alpha.</script><p>Consider the cross-sectional product:</p>
+<script type="math/tex; mode=display">
+H_i(X)\times H_j(X)\rightarrow H_{i+j-n}(X),\quad (a,b)\mapsto a\cdot b,</script><script type="math/tex; mode=display">
+PD_X(a\cdot b)=PD_X(b)\cup PD_X(a).</script><p><strong>Theorem 1</strong>. <em>Suppose $X$ is still smooth, $A, B$ are transversely intersecting closed smooth directed submanifolds. Then $[A]<em>X\cdot [B]_X=[A\cap B]_X,$ where $[A]_X=i</em>\ast [A].$</em></p>
+<p>Given $A\subset X,$ define $\tau_A^X:=PD([A]_X)\in H^{x-a}(X;\mathbb{Z}),$<br>Call $A$ the Thom class in $X$. Then</p>
+<script type="math/tex; mode=display">
+[A]_X=\tau_A^X\cap [X].</script><p>Let $\nu_A^X$ be the normal bundle of $A$ in $X$, we have the tubular neighborhood theorem:<br>There exists a tubular neighborhood $N$ of $A$ in $X$, satisfying:</p>
+<script type="math/tex; mode=display">
+E(\nu_A^X)\cong N.</script><p>In this way,</p>
+<script type="math/tex; mode=display">
+u(\nu_A^X)\in H^{x-a}(E(\nu_A^X),E_0(\nu_A^X))\cong H^{x-a}(N,N\setminus A)\cong H^{x-a}(X,X\setminus A)\rightarrow H^{x-a}(X)\ni \tau_A^X.</script><p>We will describe the Thom class of $\nu_A^X$ as the Thom class of $A$ in $X$, which is why the latter is named.</p>
+<p>We wish to explain,</p>
+<script type="math/tex; mode=display">
+\nu_{B\cap A}^A\cong \nu_B^X|_{B\cap A}.</script><p>We check by fiber: $\,\forall\,x\in A\cap B,$ $T_pA+T_pB=T_pX,$ Then</p>
+<script type="math/tex; mode=display">
+T(i_A^X):T_pA/T_p(B\cap A)\cong T_pX/T_pB.</script><p>Therefore, $\tau^A_{B\cap A}=(i_A^X)^\ast \tau_B^X.$ Now we can prove the theorem:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ [B\cap A]_X&=(i_A^X)_*(i^A_{B\cap A})_*[B\cap A]\\
+ &=(i_A^X)_*(\tau_{B\cap A}^A\cap [A])\\
+ &=(i_A^X)_*((i_A^X)^*\tau_B^X\cap [A])\\
+ &=\tau_B^X\cap ((i_A^X)_*[A])\\
+ &=\tau_B^X\cap (\tau_A^X\cap [X])\\
+ &=(\tau_B^X\cup\tau_A^X)\cap [X]\\
+ &=PD^{-1}(PD([B]_X)\cup PD([A]_X))\\
+ &=[B]_X\cdot [A]_X.
+ \end{aligned}</script><h2 id="euler-class">Euler class</h2>
+<p>Recall that for directed bundles $\xi,$ we give the Euler class:</p>
+<script type="math/tex; mode=display">
+H^n(E,E_0)\rightarrow H^n(E)\leftarrow H^n(B), \quad u(\xi)\mapsto u(\xi)|_E\leftarrow e(\xi).</script><p><strong>Theorem 2</strong>. <em>If $B$ is a closed directional smooth manifold, $e(\xi)=PD([Z_s]).$ $Z_s={b\in B|s(b)=0}, $ $s$ is the $\xi$ section, intersecting with the zero section cross section.</em></p>
+<p>Note $Z:=Z_s.$ Consider $\nu_Z^B\cong \xi|_Z.$ $E(\nu_Z^B)\cong N\subset B.$</p>
+<script type="math/tex; mode=display">
+H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B,B\setminus Z)\rightarrow H^n(B).</script><script type="math/tex; mode=display">
+u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B=PD([Z]).</script><script type="math/tex; mode=display">
+H^n(B)\rightarrow H^n(E)\leftarrow H^n(E,E_0)\rightarrow H^n(N,N\setminus Z)\rightarrow H^n(B),</script><script type="math/tex; mode=display">
+e(\xi)\mapsto u(\xi)\mapsto u(\nu_Z^B)\mapsto \tau_Z^B.</script><p> That&#39;s how you see it<br>$e(\xi)=\tau_Z^B.$</p>
+<p><strong>Theorem 3</strong>. <em>$B=M^n$ is a closed directional manifold, $\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$ This is equivalent to the Poincaré-Hopf theorem.</em></p>
+<p>Take any cross-sectional intersection section, then:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \left<{}e(\tau_M),[M]\right>=\left<{}PD_M[Z_s],[M]\right>=\left<{}PD_M[M],[Z_s]\right>=\sum_{p\in Z_s} \text{index of $s$ at $p$}=\chi(M)
+ \end{aligned}</script><p>The indicator is determined by the sign of $\det(\nabla s:T_pM\rightarrow T_pM)$.</p>
+<p>One application is, $\chi(S^n)=2,$ if $n$ is an even number. Thus $e(\tau<em>{S^n})=2,$<br>This corresponds to $w_n(\tau</em>{S^n})=0$. Then $\tau<em>{S^n}$ is non-trivial,<br>And $\tau</em>{S^n}$ does not contain any proper subbundle $\eta^m.$<br>This is because $e(\tau_{S^n})=e(\eta)\cup e(\eta^\perp).$</p>
+<h2 id="application-of-transversality-theory">Application of transversality theory</h2>
+<h3 id="cup-accumulation">Cup accumulation</h3>
+<p>Recall the cup product in $H^\ast (\mathbb{C}\mathrm{P}^n;\mathbb{Z})$. Take</p>
+<script type="math/tex; mode=display">
+\mathbb{C}\mathrm{P}^{n-1}\approx h_i=\{x_i=0\}\subset \mathbb{C}\mathrm{P}^n,</script><script type="math/tex; mode=display">
+[h_i]\in H_{2n-2}(\mathbb{C}\mathrm{P}^n).</script><p> According to the transversality theory,</p>
+<script type="math/tex; mode=display">
+[h_1]\cdots[h_n]=[h_1\cap\cdots\cap h_n]=[\ast ]\in H_0(\mathbb{C}\mathrm{P}^n).</script><p>Let $\tau_i:=PD[h_i]\in H^2(\mathbb{C}\mathrm{P}^n),$<br>$\tau_1\cup\cdots\cup \tau_n=PD[\ast ].$</p>
+<p>The assertion $\tau_1=\cdots=\tau_n=\tau,$ is called a super (projective) plane class.<br>In this way $H^\ast (\mathbb{C}\mathrm{P}^n)=\mathbb{Z}[\tau]/\tau^{n+1}=0.$</p>
+<h3 id="bezout-s-theorem">Bezout&#39;s Theorem</h3>
+<p>Assume $F_1(x,y,z),$ $F_2(x,y,z)$ are homogeneous polynomials, $\deg F_i=d_i.$</p>
+<script type="math/tex; mode=display">
+V_i:=\{[x:y:z]\in \mathbb{C}\mathrm{P}^2|F_i=0\}\subset \mathbb{C}\mathrm{P}^2,</script><p>In algebraic geometry, it is called the algebraic curve $\deg=d<em>i$.<br><strong>Theorem 4</strong>. *If $V_1, V_2$ intersect transversely, then $[V_1\cap V_2]</em>{\mathbb{C}\mathrm{P}^2}=d<em>1d_2[\ast ]</em>{\mathbb{C}\mathrm{P}^2}.$*</p>
+<p>To put it simply, it is because $PD[V_1]=d_1\cdot \tau,$ $PD[V_2]=d_2\cdot \tau.$</p>
+<p>The article was last updated on 2022-10-28 16:41:58</p>
                 </div>
             
         </div>
@@ -357,14 +422,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(14)-横截性理论</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-28 19:41:54</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(14)-横截性理论</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-28 19:41:54</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/28/《代数拓扑2》笔记(14)-横截性理论/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/28/《代数拓扑2》笔记(14)-横截性理论/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -432,7 +497,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -570,24 +635,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -669,9 +731,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#review"><span class="nav-text">Review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transversality-theory"><span class="nav-text">Transversality Theory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#euler-class"><span class="nav-text">Euler class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application-of-transversality-theory"><span class="nav-text">Application of transversality theory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cup-accumulation"><span class="nav-text">Cup accumulation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bezout-s-theorem"><span class="nav-text">Bezout&#39;s Theorem</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -696,6 +756,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

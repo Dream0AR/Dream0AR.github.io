@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -306,7 +306,28 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="cut-space">cut space</h2>
+<p>Recall that we can define $C^\infty$ curve $C:(a,b)\rightarrow M,$ $C(t<em>0)=p.$<br>$C_p^\infty$ represents the entire function of $M$ at $p$ point $C^\infty$,<br>That is, the elements are all smooth functions on a certain neighborhood of point $p$. The function on $C_p^\infty$ can perform operations,<br>But operations can only be performed on common neighborhoods.<br>The &quot;tangent vector&quot; of curve $C(t)$ at point $p$ points to the directional derivative operator $X:C_p^\infty\rightarrow \mathbb{R},$<br>$X(f)=\frac{df\circ c(t)}{dt}|</em>{t=t_0},$ satisfies:</p>
+<p>(1) $X(af+bg)=aX(f)+bX(g);$</p>
+<p>(2) $X(fg)=X(f)g(p)+f(p)X(g).$</p>
+<p>Let $T_pM:={X\text{be the tangent vector}} of the curve passing}p\text{,$<br>It is called the tangent space of $M$ at $p$.<br>$\widetilde{T}_pM:={\widetilde X:C_p^\infty\rightarrow \mathbb{R}\text{Satisfies (1), (2)}}.$<br>Then there are $T_pM\subset \widetilde{T}_pM.$ $\widetilde{T}_pM$ can introduce addition,<br>Multiplying numbers makes it a vector space.</p>
+<p>Recall that for the coordinate card $(U,\varphi), $ $\varphi$ is a smooth homeomorphism between manifolds.<br>For $\varphi^{-1},$ only let $x^i$ change,<br>That is, the smooth curve $\varphi^{-1}(\cdots,x^i,\cdots),$ is obtained, which is called $x^i$-curve.<br>There are $m$ coordinate curves passing through each point $q\in U$.</p>
+<p>Use $\left(\frac{\partial {} }{\partial {}x^i}\right)<em>p$ to represent $x_i$-the curve tangent vector $X_i,$ at $p$<br>$X_i(f)=\frac{d}{dx^i}[f\circ \varphi^{-1}(\cdots, x^i,\cdots)]</em>{\varphi(p)}=[\frac{\partial {} }{\partial {}x^i}(f\circ\varphi^{-1})]_{\varphi(p)}.$<br>$f\circ\varphi^{-1}:\varphi(U)\rightarrow \mathbb{R}.$<br>Thus $\left(\frac{\partial {} }{\partial {}x^i}\right)_p\in T_pM,$<br>$1\le i\le m.$</p>
+<p><strong>Proposition 1.1</strong>. <em>$T_pM$ is an $m$-dimensional vector space. ${X_i}$ constitutes a set of basis of $T_pM$.</em></p>
+<p><strong>Certificate:</strong> Take any $X\in T<em>pM,$ $C:(a,b)\rightarrow M,$ $C(t_0)=p.$<br>$C&#39;(t_0)=X.$ $\varphi\circ C(t)=(x^i(t))$ is called <strong>parametric equation</strong>. By definition,<br>$X(f)=\frac{d}{dt}[f\circ C(t)]|</em>{t=t<em>0}=\frac{d}{dt}[(f\circ\varphi^{-1})(\varphi\circ C(t))]|</em>{t<em>0}=\sum</em>{i=1}^m \frac{dx^i(t)}{dt}|<em>{t_0}\cdot [\frac{\partial {} }{\partial {}x^i}(f\circ \varphi^{-1})]</em>{\varphi(p)}.$<br>Remember $a^i=\frac{d x^i}{dt}|<em>{t_0},$ then $X(f)=\sum</em>{i=1}^m a^i X<em>i(f),$<br>Thus $X=\sum</em>{i=1}^m a^i X_i.$</p>
+<p>Let $\sum<em>{i=1}^m b^i X_i,$<br>To find the point where $C(t)$ passes $p$, make $\frac{dx^i(t)}{dt}|</em>{t_0}=b^i.$<br>Let $\varphi(p)=(d^i),$ take $x^i(t)=d^i+b^i(t-t_0),$<br>$C(t)=\varphi^{-1}(x^i(t))$ is enough. Then $C&#39;(t_0)=\sum_i b^iX_i.$<br>It can then be shown that $T_pM$ is a vector space.</p>
+<p>It only needs to be explained that ${X<em>i}$ is linearly independent. Suppose $\sum</em>{i=1}^m a^i X_i=0,$<br>Take $m$ pieces of $f=x^i:=\pi^i\circ \varphi$ that only grow in the direction of $x^i$ to test,<br>It can be explained that $a^i\equiv 0.$ and $T_pM$ is an $m$-dimensional vector space.</p>
+<p><strong>Note 1.2</strong>. <em>In fact, there is $T_pM=\widetilde{T}_pM.$</em></p>
+<p>As mentioned before, the zero element in $C_p^\infty$ is not unique, so it is not a vector space.<br>For this purpose, the equivalence relationship $f\sim g$ $\Leftrightarrow$ $\,\exists\,p$ point neighborhood $W,$ can be defined<br>$f|_W=g|_W.$ The quotient space $\mathcal{F}_p^\infty=C_p^\infty/\sim$ is a vector space,<br>It is called <strong>Function Bud Space</strong>.<br>There is an induced $X on it:\mathcal{F}_p^\infty\rightarrow \mathbb{R},$<br>That is, $X([f]):=X(f),$ $<a href="p">f</a>:=f(p).$ It also satisfies properties similar to (1) and (2).</p>
+<h2 id="cotangent-space">cotangent space</h2>
+<p>Let $V$ be an $m$ dimensional vector space,<br>$V^\ast ={\text{linear }\omega:V\rightarrow \mathbb{R}}$ is also an $m$-dimensional vector space,<br>Taking the dual basis as the basis. For the $m$-dimensional smooth manifold $M^m, $ $T_pM$ is the tangent space,<br>$T_p^\ast M$ represents its dual space, which is called the cotangent space of $M$ at $p$.</p>
+<p>$X\in T_pM,$ $f\in C_p^\infty$ has directional derivative $X(f).$ Consider fixing $f$ and let $X$ change,<br>Remember $\omega_f(X)=X(f),$<br>Then $\omega_f:T_pM\rightarrow \mathbb{R}$ is a linear function, in $T_p^\ast M$.<br>Let $\omega_f$ be $(df)_p, and $ is called the <strong>differential</strong> of $f$ at point $p$.<br>Take any coordinate system $(U,\varphi),$ containing $p$, then ${(dx^i)_p}\in T_p^\ast M,$<br>is the dual basis of ${X_i}$, so it constitutes the basis of $T_p^\ast M$, which is called <strong>natural basis</strong>.</p>
+<p>$\,\forall\,f\in C<em>p^\infty,$<br>$(df)_p=\sum</em>{i=1}^m a<em>i(dx^i)_p\in T_p^\ast M.$ Both sides act on $X_j,$<br>Obtain $X_j(f)=a_j.$ Therefore, there is $(df)_p=\sum</em>{i=1}^m X_i(f)(dx^i)_p.$<br>From this we can also see the reason why it is called differential.</p>
+<p><strong>Note 1.3</strong>. <em>If $f\sim g\in C_p^\infty,$ then $X(f)=X(g),$ and thus $(df)_p=(dg)_p.$ Then note $\tau:\mathcal{F}_p^\infty\rightarrow T_p^\ast M,$ $\tau([f])=(df)_g$ is linearly satisfied. $\widehat{\tau}:\mathcal{F}_p^\infty/\ker(\tau)\cong T_p^\ast M$ is a linear isomorphism, $\ker(\tau)={[f]\in \mathcal{F}_p^\infty|\tau([f])=(df)_p=0}.$ Therefore, another way to define the cotangent space is to create the quotient space of the function bud space, and then define the tangent space dually.</em></p>
+<h2 id="qie-cong">Qie Cong</h2>
+<p>Let $TM=\bigcup<em>{p\in M}T_pM,$ be called the tangent bundle of $M$. Introduce $\pi:TM\rightarrow M,$<br>$\pi(T_pM)\rightarrow p,$ is called <strong>natural projection</strong>.<br>Take any coordinate card $(U,\varphi; x^i),$ and examine $\pi^{-1}(U).$ $\,\forall\,q\in U,$<br>$T_qM$ has a natural basis, so $T_qM\cong \mathbb{R}^m.$<br>Thus $$\widehat{\Phi}:\pi^{-1}(U)\xrightarrow{\Phi}U\times \mathbb{R}^m\xrightarrow{ \varphi\times \mathrm{id}</em>{\mathbb{R}^m} }\varphi(U)\times \mathbb{R}^m,$$<br>Among them $\Phi(X)=(\pi(X),\xi),$ $X=\sum_{i=1}^m \xi^i X_i.$<br>Give $TM$ a natural topological structure such that $\pi^{-1}(U)$ is an open subset of $TM$,<br>And $\widehat\Phi:\pi^{-1}(U)\rightarrow \varphi(U)\times \mathbb{R}^m$ is a homeomorphism.<br>Let all open subsets of $\pi^{-1}(U_i)$ form the topological basis for generating $TM$.<br>Then $TM$ becomes a $2m$ dimensional topological manifold.</p>
+<p>At this time $\widehat{\mathcal{F} }=[{(\pi^{-1}(U<em>\alpha),\widehat{\Phi}</em>\alpha)}]$ is the $TM$ coordinate atlas,<br>The transfer function $\widehat{\Phi}<em>\beta\circ \widehat{\Phi}</em>\alpha^{-1}(x,\xi)=(\varphi<em>{\beta}\circ\varphi</em>{\alpha}^{-1}(x),J(\varphi<em>\beta\circ\varphi</em>\alpha^{-1})\xi)$ is a smooth function,<br>Therefore, the atlas is smooth, so the tangent bundle $TM$ is a $2m$-dimensional $C^\infty$ manifold.</p>
+<p>The article was last updated on 2021-10-09 12:26:27</p>
                 </div>
             
         </div>
@@ -315,14 +336,14 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第二章-切丛(1)</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-09 14:48:08</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第二章-切丛(1)</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-09 14:48:08</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/09/《微分流形》第二章-切丛(1)/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/09/《微分流形》第二章-切丛(1)/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -390,7 +411,7 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -528,24 +549,21 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -627,9 +645,7 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cut-space"><span class="nav-text">cut space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cotangent-space"><span class="nav-text">cotangent space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#qie-cong"><span class="nav-text">Qie Cong</span></a></li></ol>
         </div>
     
 </div>
@@ -654,6 +670,7 @@ $T_qM$有自然基, 于是$T_qM\cong \mathbb{R}^m.$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

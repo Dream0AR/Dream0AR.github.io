@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -279,7 +279,23 @@ $\dim V\otimes W=n\cdot m,$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="tensor-product">tensor product</h2>
+<p>Let $V$ be an $n$-dimensional vector space on the number field $\mathbb{F}=\mathbb{R}$,<br>$e<em>1,\cdots,e_n$ is the basis of $V$. $V\ni v=\sum</em>{i=1}^n a^ie_i.$<br>Then $V^\ast ={\text{linear} f:V\rightarrow \mathbb{R}}$ also constitutes an $n$-dimensional vector space,<br>It is called the dual space. $\,\forall\,f\in V^\ast ,$<br>$f$ is uniquely determined by the base values ${f(e_1),\cdots,f(e_n)}$.<br>The function that only takes $1$ on $e_i$ is denoted as $\omega^i$, that is, $\omega^i(e_j)=\delta^i_j.$<br>${\omega^i}$ constitutes a set of basis of $V^\ast $, which is called the <strong>dual basis</strong> of ${e_i}$.</p>
+<p>For a finite-dimensional vector space, it is obvious that we always have $(V^\ast )^\ast =V.$, let $(f,v)=f(v)$ be the pairing.</p>
+<p>Let $V_1,\cdots,V_r,Z$ be a vector space. If<br>$f:V_1\times\cdots\times V_r\rightarrow Z$ is linear with respect to each component,<br>Then $f$ is said to be an $r$-heavy linear mapping. When $Z=\mathbb{R}$, it is called an $r$-heavy linear function.<br>The inner product is a $2$-multiple linear function, called a bilinear function. The vector product (outer product) is a bilinear mapping.<br>Determinants can also be viewed as multilinear functions.</p>
+<p>Remember $\mathcal{L}(V<em>1,\cdots,V_r;Z)={\text{multi-linear} f:V_1\times\cdots\times V_r\rightarrow Z},$<br>It is easy to verify that it is also a vector space. Take a set of basis ${\eta</em>\alpha},$ of $Z$<br>Then any $f\in \mathcal{L}(V_1,\cdots,V_r;Z)$ can be decomposed into a basis function $f^\alpha.$</p>
+<p>For the case of $r=2$, let $V, W$ be vector spaces, $\dim V=n,$ $\dim W=m,$<br>Then $\,\forall\,f\in \mathcal{L}(V,W;\mathbb{R}),$ $\,\forall\,v\in V,$<br>$w\in W,$</p>
+<script type="math/tex; mode=display">f(\cdot,w)\in V^\ast ,\quad f(v,\cdot) \in W^\ast .</script><p>Take $v^\ast \in V^\ast ,$ $w^\ast \in W^\ast ,$ and introduce the following bilinear function:</p>
+<script type="math/tex; mode=display">(v^\ast \otimes w^\ast )(v,w):=v^\ast (v)w^\ast (w)\,\Rightarrow\, v^\ast \otimes w^\ast \in \mathcal{L}(V,W;\mathbb{R}).</script><p>Called the tensor product of $v^\ast $ and $w^\ast $.<br>$h=\otimes:V^\ast \times W^\ast \rightarrow \mathcal{L}(V,W;\mathbb{R}).$</p>
+<p>It is easy to verify that it is bilinear, that is, the tensor product $\otimes$ satisfies the distributive law.</p>
+<p>Define the tensor product between spaces $V^\ast ,W^\ast $:</p>
+<script type="math/tex; mode=display">V^\ast \otimes W^\ast =\operatorname{span}\{\operatorname{Im}h\}=\left\{\sum_{i=1}^{k}a_i (v_i^\ast \otimes w_i^\ast )\,|\, \,\forall\,a_i\in \mathbb{R}, v_i\in V^\ast , w_i\in W^\ast , k\in \mathbb{Z}_+\right\}.</script><p><strong>Proposition 1</strong>. <em>$V^\ast \otimes W^\ast =\mathcal{L}(V,W;\mathbb{R}).$</em></p>
+<p><strong>Proof:</strong> It only needs to be stated that if ${\omega^i}, {\sigma^\alpha}$ are the bases of $V^\ast and W^\ast $ respectively,<br>Then ${\omega^i\otimes \sigma^\alpha}$ is the basis of $\mathcal{L}(V,W;\mathbb{R})$.<br>In particular, it can be obtained that $\dim \mathcal{L}(V,W;\mathbb{R})=\dim V^\ast \otimes W^\ast =\dim V^\ast \cdot \dim W^\ast =\dim V\cdot \dim W.$</p>
+<p>Yi Jian$V^\ast \otimes W^\ast =\operatorname{span}{\omega^i\otimes \sigma^\alpha},$<br>Prove that it is linearly independent, and thus it is a set of basis. To do this, just use the dual basis ${e<em>i},$<br>${\xi</em>\alpha}$ Just discuss the coefficients.</p>
+<p>And $\,\forall\,f\in \mathcal{L}(V,W),$ $f$ is uniquely determined by $f(e<em>i,\xi</em>\alpha)$.<br>Therefore $\dim \mathcal{L}(V,W)=\dim V^\ast \otimes W^\ast .$<br>From $V^\ast \otimes W^\ast \subset \mathcal{L}(V,W)$, we know that $V^\ast \otimes W^\ast =\mathcal{L}(V,W).$</p>
+<p>Since $V,V^\ast ;$ $W,W^\ast $ are dual to each other, $v\in V,w\in W,$ can be defined similarly</p>
+<script type="math/tex; mode=display">(v\otimes w)(v^\ast ,w^\ast )=v(v^\ast )w(w^\ast )=v^\ast (v)w^\ast (w).</script><p>At this time $h=\otimes:V\times W\rightarrow \mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$ is bilinear,<br>Similar to defining the tensor product of $V$ and $W$ $V\otimes W=\operatorname{span}{\operatorname{Im}h}.$<br>In the same way, it is equivalent to the space $\mathcal{L}(V^\ast ,W^\ast ;\mathbb{R})$,<br>$\dim V\otimes W=n\cdot m,$<br>And ${e<em>i\otimes \xi</em>\alpha}$ is the basis of $V\otimes W$.</p>
+<p>The article was last updated on 2021-11-23 18:00:20</p>
                 </div>
             
         </div>
@@ -288,14 +304,14 @@ $\dim V\otimes W=n\cdot m,$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第五章-多重线性代数</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-23 20:00:16</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第五章-多重线性代数</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-11-23 20:00:16</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/23/《微分流形》第五章-多重线性代数/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/11/23/《微分流形》第五章-多重线性代数/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -363,7 +379,7 @@ $\dim V\otimes W=n\cdot m,$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -501,24 +517,21 @@ $\dim V\otimes W=n\cdot m,$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -600,9 +613,7 @@ $\dim V\otimes W=n\cdot m,$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tensor-product"><span class="nav-text">tensor product</span></a></li></ol>
         </div>
     
 </div>
@@ -627,6 +638,7 @@ $\dim V\otimes W=n\cdot m,$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

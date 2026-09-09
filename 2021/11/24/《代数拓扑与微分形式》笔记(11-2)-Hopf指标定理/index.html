@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -323,7 +323,43 @@ $\int_\Delta i^\ast \eta_\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="euler-numbers-and-isolated-singularities-of-sections">Euler Numbers and Isolated Singularities of Sections</h2>
+<p>Suppose $M$ is a compactly directed $n$-dimensional manifold, $\pi:E\rightarrow M$ is a directed $S^{n-1}$ bundle,<br>The structure group can be reduced to $O(n)$. That is, it is a spherical bundle of a certain rank $n$ vector bundle.</p>
+<p>$e(E)\in H^n(M)$, is equivalent to <strong>Euler&#39;s number</strong>$\int_M e(E)$.<br>Define the Euler number of $M$ as $\int_M e(TM)$. The Euler number depends on the directional selection of $E, M$.</p>
+<p><strong>Proposition 1</strong>. <em>Conditions are as mentioned above, then there exists ${x_1,...,x_q}\in M$, and $E$ is restricted to have a cross-section on $M-{x_1,...,x_q}$.</em></p>
+<p><strong>Proof:</strong> There exists a vector bundle $E&#39;$ of rank $n$ and a metric $\left&lt;{},\right&gt;$, such that $E=S(E&#39;)$.<br>Let $s&#39;:M\rightarrow E&#39;$ be the cross section. If $s&#39;(x)\neq 0$,<br>Then $s(x)=\frac{s&#39;(x)}{\Vert s&#39;(x)\Vert}\in E_x$.<br>Just prove that there exists $s&#39;:M\rightarrow E&#39;$, which has only a finite number of zeros.</p>
+<p>We need the following theorem:</p>
+<p><strong>Theorem 2</strong> (Transversality Theorem). <em>Assume $X$ is compact, $Z$ is a closed submanifold of $Y$, $f&#39;:X\rightarrow Y$ is a smooth map, then there is a sufficiently small perturbation $f:X\rightarrow Y$ of $f&#39;$, making $f$ and $Z$ transverse.</em></p>
+<p>Let $s_0$ be zero cross-section, $S_0=s_0(M)\subset E&#39;$ be a closed submanifold. According to the transversality theorem,<br>There is a sufficiently small perturbation $f:M\rightarrow E&#39;$, $f$ is transverse to $S_0$.<br>$g=\pi\circ f:M\approx M$ (because it is a sufficiently small perturbation of the identity map),<br>Define $s&#39;:M\rightarrow E&#39;$ as $s&#39;(x)=f(g^{-1}(x))$,<br>Then $\pi\circ s&#39;=\mathrm{id}$, $s&#39;$ is the cross section.</p>
+<p>Since $f$ is transverse to $S_0$, $s&#39;$ is transverse to $S_0$ (only related to images),<br>$S=s&#39;(M)$ intersects $S_0$ transversely. Since $\dim S+\dim S_0=2n=\dim E&#39;$,<br>Therefore $\dim (S\cap S_0)=0$. And because $S\cap S_0$ is compact, the intersection is a finite number of points.<br>Then $s&#39;:M\rightarrow E&#39;$ has only a finite number of zero points.</p>
+<p><strong>Note 3</strong>. <em>In fact, it does not need to be reduced to $O(n)$ for the proposition to be true.</em></p>
+<p>Let $s$ be a cross-section of $E|<em>{M-{x_1,...,x_q}}$, take the open covering $\mathcal{U}$,<br>Let there be a coordinate graph on $U</em>\alpha$, which is trivial and contains at most one $x<em>i$. According to the following lemma,<br>You can also require that each point $x_i$ has a neighborhood $W_i$, which is only contained in one $U</em>\alpha$.</p>
+<p><strong>Lemma 4</strong>. <em>There exists a thinning $\mathcal{V}$ of $\mathcal{U}$, such that each point has a neighborhood $W<em>i$ that only intersects a certain $V</em>\alpha$.</em></p>
+<p><strong>Proof:</strong> For each point $x$, you only need to give a certain open neighborhood $W$ contained in $U_\alpha$, and transform the open coverage,<br>Just let $\bar W$ be subtracted from other open sets. This can be done for each point a finite number of times.</p>
+<p>Following the above, let $x<em>i\in W_i\subset U</em>{\alpha_i}$ be a singular point,<br>Take a sufficiently small open neighborhood $D_i\subset W_i$,<br>$\psi_i(D_i)\subset \mathbb{R}^n$ is an open disk with radius $r_i$.<br>$\partial D_i\approx S^{n-1}$. There are the following mapping columns:</p>
+<script type="math/tex; mode=display">\partial D_i\xrightarrow{s|_{\partial D_i} }E|_{\partial D_i}\xrightarrow{i} E|_{D_i}\xrightarrow[\sim]{\phi_i} D_i\times S^{n-1}\xrightarrow{\operatorname{pr}_2}S^{n-1}.</script><p>Let $s_i$ be the composition of the first two mappings, and the composition of the last two mappings be $\rho_i$.</p>
+<p>Select the orientation so that $E|<em>{D_i}\simeq D_i\times S^{n-1}$ remains oriented (straight and oriented).<br>Select $\sigma\in H^{n-1}(S^{n-1})$ as the positive generator.<br>Define the local degree of $s$ at $x_i$ as $l.d.(x_i):=\int</em>{\partial D_i} s^\ast _i\rho^\ast _i\sigma$.<br>(l.d. means local degree)</p>
+<p><strong>Theorem 5</strong>. <em>The condition inherits all the above discussions. Then the Euler number of $E$$\int<em>M e(E)=\sum</em>{i=1}^{q} l.d.(x_i)$.</em></p>
+<p><strong>Certificate:</strong> Based on the content of the previous lesson,<br>$\operatorname{supp}e\subset \cup U<em>{\alpha_0\cdots \alpha</em>{n-1} }$,<br>$e$ is restricted to zero on each open neighborhood $W_i$. Therefore, by Stokes&#39; theorem,</p>
+<script type="math/tex; mode=display">\int_M e=\int_{M-\cup D_i} s^\ast \pi^\ast e=-\int_{M-\cup D_i} s^\ast d\psi=\sum_{i=1}^q \int_{\partial D_i} s_i^\ast \psi.</script><p>Although the global angular form $\psi$ is not necessarily closed, after restriction,</p>
+<script type="math/tex; mode=display">d\psi|_{E|_{W_i} }=-(\pi^\ast e)|_{E|_{W_i} }=-\pi^\ast (e|_{W_i})=0.</script><p>Therefore $[\psi|<em>{E|</em>{W<em>i} }]\in H^{n-1}(E|</em>{W<em>i})$ is a generator,<br>Because it is restricted to each fiber as a generator.<br>Let $[\sigma]\in H^{n-1}(S^{n-1})$ be the generator,<br>Then $[\psi|</em>{E|<em>{W_i} }]=[\tilde \rho_i^\ast \sigma]$,<br>$\tilde \rho_i:E|</em>{W<em>i}\rightarrow W_i\times S^{n-1}\rightarrow S^{n-1}$.<br>Therefore $\psi|</em>{E|_{W_i} }=\tilde \rho_i^\ast \sigma +d\tau_i$,<br>Pull back to $\partial D_i$, $s_i^\ast \psi=s_i^\ast \rho_i^\ast \sigma +s_i^\ast d\tau_i$.</p>
+<p>Integral on both sides, according to Stokes&#39; theorem, $\int_{\partial D_i} s_i^\ast \psi=l.d.(x_i)$.<br>The theorem is proved.</p>
+<p>The above theorem can be stated on the vector bundle.<br>Let $\pi:E\rightarrow M$ be a rank $n$ directed vector bundle on a compact $n$ dimensional manifold,<br>$s$ is the cross section of $E$ with finitely many zero points.<br>The <strong>multiplicity</strong> of $s$ at the zero point $x$ is defined as the local degree of the singular cross section $s/\Vert s\Vert$ at the singular point $x$ of the unit spherical bundle $S(E)$ of $E$.<br>The definition is independent of the choice of metric, since local degree is a homotopy invariant.</p>
+<p>Since $e(E)$ is in $n$-form on $M$, $\int_M c\cdot e(E)=cm=m\int_P c$,<br>$m$ is the Euler number of $E$, and $P$ is any point. Therefore, $e(E)$ Poincaré is dual to $mP$.<br>We naturally have the following theorem:</p>
+<p><strong>Theorem 6</strong>. <em>Suppose $\pi:E\rightarrow M$ is a compact directed vector bundle of rank $n$ on $M^n$, and $s$ is the zero-limited section of $E$, then the Euler-like Poincaré dual of $E$ is a linear combination of the zero points of $s$, and the combination coefficient is a multiplicity.</em></p>
+<h2 id="euler-s-characteristic-number-and-hopf-index-theorem">Euler&#39;s characteristic number and Hopf index theorem</h2>
+<p>We hope to prove that the Euler number of $M$ is the Euler characteristic number.</p>
+<p>Let ${\omega<em>i}$ be a set of basis $H^\ast (M)$, ${\tau_i}$ be a dual basis,<br>That is $\int_M\omega_i\wedge \tau_j=\delta</em>{ij}$.<br>Let $\pi,\rho:M\times M\rightarrow M$ be two projections. According to Künneth&#39;s formula,<br>$H^\ast (M\times M)=H^\ast (M)\otimes H^\ast (M)$,<br>The basis is ${\pi^\ast \omega<em>i\wedge\rho^\ast \tau_j}$.<br>Call <strong>diagonal manifold</strong>$\Delta ={(x,x)\in M\times M|x\in M}\subset M\times M$.<br><strong>Lemma 7</strong>. *Poincaré dual of diagonal manifold$\eta</em>\Delta =\sum (-1)^{\deg \omega_i}\pi^\ast \omega_i\wedge \rho^\ast \tau_i$.*</p>
+<p><strong>Certificate:</strong> Use two methods to calculate $\int<em>\Delta \pi^\ast \tau_k\wedge\rho^\ast \omega_l$.<br>$(-1)^{\deg \tau_k\cdot \deg \omega_l}\delta</em>{lk}=(-1)^{\deg \omega<em>k\cdot (\deg \omega_l+\deg \tau_k)}c</em>{kl}$,<br>Let $\eta<em>\Delta = \sum</em>{i,j}c_{ij}\pi^\ast \omega_i\wedge\rho^\ast \tau_j$.</p>
+<p><strong>Lemma 8</strong>. <em>$N_{\Delta /M\times M}\simeq T\Delta$.</em></p>
+<p><strong>Proof:</strong> Just note that $M\approx \Delta$ is given by $x\mapsto(x,x)$.<br>Thus $T\Delta \cong TM$, $T(M\times M)|<em>{\Delta}\cong TM\oplus TM$,<br>So $N</em>{\Delta/M\times M}\simeq TM\oplus TM/TM\simeq TM\simeq T\Delta$.</p>
+<p><strong>Proposition 9</strong>. <em>For compactly oriented manifold $M$, $\int_M e(TM)=\chi (M)$.</em></p>
+<p><strong>Certificate:</strong> On the one hand,<br>$\int<em>\Delta i^\ast \eta</em>\Delta =\int<em>\Delta i^\ast \Phi(N</em>\Delta)=\int<em>\Delta e(N</em>\Delta)=\int_\Delta e(T\Delta)=\int_M e(TM)$.</p>
+<p>$\int<em>\Delta i^\ast \eta</em>\Delta =\int<em>{M\times M}\eta</em>\Delta \wedge \eta_\Delta$,<br>Recall that the Poincaré duality of the intersection of two transversely intersecting closed submanifolds is equal to the outer product of the Poincaré duality of the two submanifolds,<br>Therefore, this integral is also called the self-intersecting number of $\Delta$ at $M\times M$.</p>
+<p>On the other hand,<br>$\int<em>\Delta i^\ast \eta</em>\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(M)=\chi(M)$.<br>This is proven.</p>
+<p>Naturally get:</p>
+<p><strong>Theorem 10</strong> (Hopf index theorem). <em>The index sum of the smooth vector field on the compactly oriented manifold $M$ (the sum of the local degrees of singular points) is equal to the Euler characteristic number of $M$.</em></p>
+<p>The article was last updated on 2021-11-24 13:33:55</p>
                 </div>
             
         </div>
@@ -332,14 +368,14 @@ $\int_\Delta i^\ast \eta_\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-24 15:33:53</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-11-24 15:33:53</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/24/《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/11/24/《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -407,7 +443,7 @@ $\int_\Delta i^\ast \eta_\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -545,24 +581,21 @@ $\int_\Delta i^\ast \eta_\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -644,9 +677,7 @@ $\int_\Delta i^\ast \eta_\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#euler-numbers-and-isolated-singularities-of-sections"><span class="nav-text">Euler Numbers and Isolated Singularities of Sections</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#euler-s-characteristic-number-and-hopf-index-theorem"><span class="nav-text">Euler&#39;s characteristic number and Hopf index theorem</span></a></li></ol>
         </div>
     
 </div>
@@ -671,6 +702,7 @@ $\int_\Delta i^\ast \eta_\Delta=\sum_i(-1)^{\deg \omega_i}=\sum_q(-1)^q\dim H^q(
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

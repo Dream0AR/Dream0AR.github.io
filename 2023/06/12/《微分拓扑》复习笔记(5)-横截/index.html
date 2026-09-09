@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -319,7 +319,49 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="-varepsilon-neighborhood-theorem">$\varepsilon$-neighborhood theorem</h2>
+<p>Let $Y^n\hookrightarrow \mathbb{R}^k$ be an $n$-dimensional smooth embedding submanifold.<br>$\,\forall\,y\in Y,$ $n$ dimensional subspace<br>$T_yY\subset T_y\mathbb{R}^k\cong \mathbb{R}^k$ determines an orthogonal complement space</p>
+<script type="math/tex; mode=display">
+N_y(Y):=\{v\in \mathbb{R}^k|v\perp T_yY\}.</script><p>Call $N(Y):={(y,v)\in Y\times \mathbb{R}^k|v\in N_yY}\subset T\mathbb{R}^k$ to be the <strong>method bundle</strong> of $Y$ in $\mathbb{R}^k$.</p>
+<p><strong>Proposition 1</strong>. <em>Suppose $Y^n\hookrightarrow \mathbb{R}^k$ is an embedded submanifold. The normal bundle $N(Y)$ is a $k$-dimensional manifold, and the projection $\sigma:N(Y)\rightarrow Y$ is submerged.</em></p>
+<p>$\,\forall\,y\in Y,$ exists in the open set $\widetilde U,$ in $\mathbb{R}^k$<br>Submerged$\phi:\widetilde U\rightarrow \mathbb{R}^l,$<br>Let $U=Y\cap \widetilde U=\phi^{-1}(0).$ have an open set in $N(Y)$</p>
+<script type="math/tex; mode=display">
+N(U):=\{(x,v)\in U\times \mathbb{R}^k|v\in N_xY\}.</script><p>From $d\phi_x$ being surjective, $\ker d\phi_x=T_xY,$<br>$(d\phi_x)^T:\mathbb{R}^l\rightarrow N_xY$ is a linear isomorphism<br>($N(A)^\perp=R(A^T)$). Take diffeomorphisms</p>
+<script type="math/tex; mode=display">
+\psi:U\times \mathbb{R}^l\rightarrow N(U),\quad (y,v)\mapsto (y,(d\phi_y)^T(v)).</script><p>This gives the local parameterization of $N(Y)$. $\sigma\circ \psi$ is the standard projection,<br>Therefore $\sigma$ is submerged.</p>
+<p><strong>Theorem 2</strong> ($\varepsilon$-neighborhood theorem). <em>$\mathbb{R}^k$ Any smoothly embedded edgeless submanifold $Y$ has a $\varepsilon$-neighbor $Y^\varepsilon:=h(V)\subset \mathbb{R}^k,$ where $V={(y,v)\in N(Y)\mid |v|&lt;\varepsilon(y)}\subset N(Y)$ is an open subset, $\varepsilon:Y\rightarrow \mathbb{R}^+$ is a positive continuous function, $h:(y,v)\mapsto y+v$ is a diffeomorphism, and the smooth map $\pi:Y^\varepsilon\rightarrow Y$ is both submerged and contracted. In particular, When $Y$ is compact, $\varepsilon$ can be taken as a constant.</em></p>
+<p>$dh_{(y,0)}$ is a linear isomorphism, so each point on $Y$ has a small neighborhood so that $h$ is a diffeomorphism on it.<br>If $Y$ is compact, the small neighborhood can be made small enough to form a $\varepsilon$-neighborhood with limited coverage.<br>$\pi=\sigma\circ h^{-1}$ is both submerged and contracted. If $Y$ is not compact, take a continuous function</p>
+<script type="math/tex; mode=display">
+\rho(y):=\sup\{\delta\le 1|h_{V_\delta(y)}\text{is a diffeomorphism}\},</script><p>Just use $\varepsilon=\frac{\rho}{2}$ to control the neighborhood.</p>
+<p><strong>Theorem 3</strong> (Whitney Approximation Theorem). *Suppose $X, Y$ are smooth manifolds, and $f:</p>
+<p>Just take a smooth approximation on $\mathbb{R}^k$ and use tubular neighborhood projection.</p>
+<p><strong>Corollary 4</strong> (Continuation Lemma of Smooth Mapping). <em>Suppose $X, Y$ are smooth manifolds, $A\subset<br><strong>Corollary 5</strong>. </em>If $X^m$ is an $m$-dimensional smooth manifold, $m&lt;n,$ then the continuous map $f:X^m\rightarrow S^n$ is homotopic to the constant map.*</p>
+<h2 id="parametric-transversality-theorem">Parametric transversality theorem</h2>
+<p><strong>Theorem 6</strong>. *Suppose $F:</p>
+<p>According to the transversal preimage theorem, $W:=F^{-1}(Z)$ is the embedded submanifold in $X\times S$, and</p>
+<script type="math/tex; mode=display">
+\partial W=F^{-1}(Z)\cap \partial (X\times S)=F^{-1}(Z)\cap (\partial X\times S).</script><p>Let $\pi:X\times S\rightarrow S$ be the projection mapping,<br>It only needs to be proved that when $s$ is a regular value of $\pi|_W,\partial (\pi|_W)$,<br>$f_s,\partial f_s\pitchfork Z.$ In this way, we get the conclusion from Sard&#39;s theorem.</p>
+<p>If $s$ is a regular value of $\pi|_W$,</p>
+<script type="math/tex; mode=display">
+d\pi_{(x,s)}(T_{(x,s)}W)=T_sS,\quad dF_{(x,s)}(T_{(x,s)}(X\times S))+T_zZ=T_zY.</script><p>Want to prove</p>
+<script type="math/tex; mode=display">
+df_s(T_xX)+T_zZ=T_zY.</script><p> noticed</p>
+<script type="math/tex; mode=display">
+T_{(x,s)}(X\times S)=T_xX\oplus T_sS,\quad dF_{(x,s)}|_{T_xX}=df_s.</script><p>Just state $\,\forall\,e\neq 0\in T<em>sS,$ $\,\exists\,w\in T_xX,$<br>To make $dF</em>{(x,s)}(w,e)\in T<em>zZ.$ just let $(w,e)\in T</em>{(x,s)}W$,<br>And this is guaranteed by regularity. The same goes for boundary mapping.</p>
+<p>Now let $f:X\rightarrow Y$ be a smooth mapping,<br>$Y\hookrightarrow \mathbb{R}^k$ has a $\varepsilon$ neighborhood.<br>Take the unit kickoff $S\subset \mathbb{R}^k,$ Definition</p>
+<script type="math/tex; mode=display">
+\widetilde F:X\times S\rightarrow \mathbb{R}^k,\quad (x,s)\mapsto f(x)+\varepsilon(f(x))s</script><p>For submersion, $\partial \widetilde F$ is also.<br>Further take $F:=\sigma \circ \widetilde F:X\times S\rightarrow Y$ to satisfy the same flooding condition.<br>In this way, for the edgeless embedded submanifold $Z,$ $F,\partial F\pitchfork Z.$ in $Y$<br>Thus for almost all $s\in S,$ there is $f_s,\partial f_s\pitchfork Z.$<br>Since $f_0=f,$ this gives the transverse homotopy theorem.</p>
+<p><strong>Theorem 7</strong> (Transverse Homotopy Theorem). *For any smooth map $f:</p>
+<h2 id="transversal-continuation-theorem">Transversal continuation theorem</h2>
+<p>Say $f:X\rightarrow Y$ is transverse to $Z\subset Y$ on $A$, if</p>
+<script type="math/tex; mode=display">
+df_x(T_xX)+T_{f(x)}Z=T_{f(x)}Y,\quad \,\forall\,x\in A\cap f^{-1}(Z).</script><p>Denoted as $f\pitchfork<em>A Z.$<br><strong>Theorem 8</strong> (Transversal continuation theorem). *Suppose $Z\subset Y$ is an edgeless closed submanifold of $Y$, and $A\subset X$ is a closed subset. Suppose $f:X\rightarrow Y$ is a smooth map, $f\pitchfork_A Z,$ $\partial f\pitchfork</em>{A\cap \partial X} Z.$ then there is a smooth map $g:X\rightarrow Y,$ Let $g\sim f,$ $g,\partial g\pitchfork Z,$ and on a neighborhood of $A$ $g=f.$*</p>
+<p>Just modify $g,$ in the transverse homotopy theorem so that they remain unchanged near $A$.<br>The method is to transform $\widetilde F:X\times S\rightarrow \mathbb{R}^k$ into</p>
+<script type="math/tex; mode=display">
+(x,s)\mapsto f(x)+\varepsilon(f(x))\rho^2(x)s.</script><p> $\rho(x)$ is the truncation function.<br>Its addition makes $F(x,\rho^2(x)s)=F(x,0)=f(x).$ in the small neighborhood of $A$</p>
+<p>Since $\partial X$ is a closed subset, we have</p>
+<p><strong>Corollary 9</strong>. *If $f:</p>
+<p>The article was last updated on 2023-06-12 18:39:59</p>
                 </div>
             
         </div>
@@ -328,14 +370,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(5)-横截</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-12 21:39:58</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分拓扑》复习笔记(5)-横截</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-06-12 21:39:58</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(5)-横截/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(5)-横截/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -403,7 +445,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -541,24 +583,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -640,9 +679,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#-varepsilon-neighborhood-theorem"><span class="nav-text">$\varepsilon$-neighborhood theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parametric-transversality-theorem"><span class="nav-text">Parametric transversality theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transversal-continuation-theorem"><span class="nav-text">Transversal continuation theorem</span></a></li></ol>
         </div>
     
 </div>
@@ -667,6 +704,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

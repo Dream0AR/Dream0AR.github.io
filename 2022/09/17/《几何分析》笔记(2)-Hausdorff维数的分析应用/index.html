@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -302,7 +302,42 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="preparation">Preparation</h2>
+<p>For complete manifold $(M,g),$ compact set $E,$ $\dim<em>\mathcal{H}E=p.$<br>Then $\,\forall\,p&#39;&gt;p,$ $\,\forall\,\varepsilon,\delta&gt;0,$<br>$\,\exists\,(x_i,r_i&lt;\delta),$<br>Finite Union$\bigcup \overline{B}</em>{r_i}(x_i)\supset E,$<br>Such that $\sum \omega(p&#39;)r_i^{p&#39;}&lt;\varepsilon.$<br>Let $\eta\in C^\infty(\mathbb{R}),$ such that</p>
+<script type="math/tex; mode=display">
+\eta=
+ \left\{\begin{aligned}
+ &1,&&t<1\\
+ &\in[0,1],&&t\in [1,2]\\
+ &0,&&t>2.
+ \end{aligned}\right.</script><p> We give the following definitions and properties:</p>
+<script type="math/tex; mode=display">
+\eta_i(x)=\eta\left(\frac{d(x,x_i)}{r_i}\right)\in \mathscr{D}(M),\quad \eta_i|_{B^g_{r_i}(x_i)}=1,\quad \eta_i|_{B^g_{2r_i}(x_i)^c}=0.</script><p>Calculation found that its gradient satisfies the following properties:</p>
+<script type="math/tex; mode=display">
+|\nabla_g\eta_i|=|\eta'|\left|\frac{\nabla_g d(x,x_i)}{r_i}\right|<\frac{C}{r_i}.</script><script type="math/tex; mode=display">
+\int_M |\nabla_g\eta_i|^{n-p'}dV_g\le \frac{C}{r_i^{n-p'} }\mathrm{vol}(B_{2r_i}^g(x_i))\le Cr_i^{p'}.</script><p>Next, define</p>
+<script type="math/tex; mode=display">
+\phi=\max\{\eta_i\}\in C^p(M)\cap W^{1,n-p'}(M),</script><p>Then from the previous conditions and conclusions,</p>
+<script type="math/tex; mode=display">
+\int_M|\nabla \phi|^{n-p'}\le C\varepsilon,</script><script type="math/tex; mode=display">
+\,\exists\,U\subset B_{2r_i}^g(E), \quad \phi|_U\equiv 1,\quad \phi|_{\left(B_{2r_i}^g(E)\right)^c}=0.</script><p>For simplicity, define $r=d(\partial U,E),$ then $\phi|_{B_r^g(E)}\equiv 1.$<br>Therefore as $\varepsilon,\delta$ changes,<br>We can show that $\,\exists\,\phi_k,\delta_k,r_k,$ such that:</p>
+<ol>
+<li><p>$r_k&lt;\delta_k\rightarrow 0,$</p>
+</li>
+<li><p>$\operatorname{supp}\phi<em>k\subset B</em>{\delta<em>k}^g(E),$<br>$\phi|</em>{B_{r_k}^g(E)}=1,$</p>
+</li>
+<li><p>$\phi_k\in C^0(M)\cap W^{1,n-p&#39;}(M),$<br>$\int_M|\nabla_g\phi_k|^{n-p&#39;}dV_g\rightarrow 0.$<br>From the approximation, we can set $\phi_k\in \mathscr{D}(M).$</p>
+</li>
+</ol>
+<h2 id="application">Application</h2>
+<p>Let $\Omega$ be a bounded region in $M$, $\partial\Omega=\Gamma_1\cup \Gamma_2,$<br>Among them, the dimension of $\Gamma_1$ is less than $n-1$ and is a compact set, and $\Gamma_2$ is of dimension $n-1$.<br>And $\mathcal{H}^{n-1}(\Gamma_2)&lt;+\infty.$<br>Let us prove that for the smooth vector field $X,$ on $M$</p>
+<script type="math/tex; mode=display">
+\int_\Omega \operatorname{div}X=\int_{\Gamma_2} X\cdot n.</script><p>Take $p&#39;\in (p,n-1),$ and let $E=\Gamma_1,$ $\,\exists\,\phi_k$ as mentioned above,<br>By digging out the bad pixels, we have:</p>
+<script type="math/tex; mode=display">
+\int_M\operatorname{div}(1-\phi_k)X=\int_{\Gamma_2}(1-\phi_k)X\cdot n.</script><p>And from the $\phi_k$ property and the Hausdorff dimension property, we know that,</p>
+<script type="math/tex; mode=display">
+\int_\Omega \nabla \phi_k \cdot X\rightarrow 0,\quad \int_\Omega \phi_k \operatorname{div}X\rightarrow 0,\quad \int_\Omega \phi_kX\cdot n\rightarrow 0.</script><p>This leads to the previous conclusion.</p>
+<p>The article was last updated on 2022-09-17 22:53:07</p>
                 </div>
             
         </div>
@@ -311,14 +346,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《几何分析》笔记(2)-Hausdorff维数的分析应用</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-09-18 01:53:03</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《几何分析》笔记(2)-Hausdorff维数的分析应用</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-09-18 01:53:03</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/09/17/《几何分析》笔记(2)-Hausdorff维数的分析应用/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/09/17/《几何分析》笔记(2)-Hausdorff维数的分析应用/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -386,7 +421,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -524,24 +559,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -623,9 +655,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#preparation"><span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application"><span class="nav-text">Application</span></a></li></ol>
         </div>
     
 </div>
@@ -650,6 +680,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

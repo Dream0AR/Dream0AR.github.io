@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -384,7 +384,86 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="preparation">Preparation</h2>
+<p>Let $M_k$ be an $n$-dimensional simply connected Riemannian manifold, and the cross-sectional curvature is always $k,$, which is the spatial form.<br>Let $V_k(r)$ be the volume of a sphere with radius $r$, and $S_k(r)$ be its spherical surface area. Let</p>
+<script type="math/tex; mode=display">
+g=dr^2+sn_k^2(r)g_{S_{n-1} }</script><script type="math/tex; mode=display">
+sn_k(r)=\left\{
+ \begin{aligned}
+ &\frac{\sin\sqrt{k}r}{\sqrt{k} },&&k>0\\
+ &r,&&k=0\\
+ &\frac{\sin\sqrt{-k}r}{\sqrt{-k} },&&k<0
+ \end{aligned}\right.</script><p> $sn_k(r)$ is the equation $f&#39;&#39;+kf=0,$ $f(0)=0,$<br>Solution of $f&#39;(0)=1$. Note $r(x)=d(x,p),$ then</p>
+<script type="math/tex; mode=display">
+\Delta r(x)=(n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><script type="math/tex; mode=display">
+dV_g=sn_k^{n-1}dr_ndS^{n-1}.</script><p>Let $M$ be the manifold of $\operatorname{Ric}\ge (n-1)K$, then for $r(x) on it, $</p>
+<script type="math/tex; mode=display">
+\Delta r_k\ge \Delta r,\quad sn_{k}^{n-1}(r)\ge \Theta(r,\theta).</script><p>Some conclusions are, $r(x)\in W_{loc}^{1,p}\cap C^0,$ $\,\forall\,p.$<br>This is Ricci&#39;s comparison theorem. The proof was given by Bishop on $S_p$.<br>Gromov extended it to the whole, collectively called the Bishop-Gromov theorem.<br>It plays an important role in proving the Gromov-Hausdorff theorem.</p>
+<p><strong>Lemma 1</strong>. <em>Let $\omega$ be the volume form, $r=d(x,p).$ Then,</em></p>
+<script type="math/tex; mode=display">
+L_{\partial r}\omega=\Delta r\omega,\quad \frac{\partial {}\Theta}{\partial {}r}=\Delta r\Theta,\quad x\in S_p.</script><p>Take the parallel standard orthonormal basis ${e_i},$ $\nabla_ie_j=0.$ ${\theta_i}$ as the dual basis. Then</p>
+<script type="math/tex; mode=display">
+\omega=\theta^1\wedge\cdots\wedge\theta^n.</script><script type="math/tex; mode=display">
+L_{\partial_r}\omega=(L_{\partial_r}\theta^1)\wedge\theta^2\wedge\cdots\wedge \theta^n+\cdots+\theta^1\wedge\cdots\wedge \theta^{n-1}\wedge (L_{\partial_r}\theta^n).</script><script type="math/tex; mode=display">
+\begin{aligned}
+ (L_{\partial_r}\theta^i)(X)=&\frac{\partial {}\theta^i(X)}{\partial {}r}-\theta^i(L_{\partial_r}X)\\
+ =&\frac{\partial {}\theta^i(X)}{\partial {}r}-\theta^i(\nabla_{\partial_r}X)+\theta^i(\nabla_X\partial_r)\\
+ =&(\nabla_{\partial_r}\theta^i)(X)+\theta^i(\nabla_X\partial_r)\\
+ =&\theta^i(\nabla_X\partial_r)
+ \end{aligned}</script><p>Thus,</p>
+<script type="math/tex; mode=display">
+L_{\partial_r}\theta^i=\theta^i(\nabla_{e_k}\partial_r)\theta^k.</script><script type="math/tex; mode=display">
+L_{\partial_r}\omega=\theta^k(\nabla_{e_k}\partial_r)\omega=\operatorname{tr}(Hess_r)\omega=\Delta r\omega.</script><script type="math/tex; mode=display">
+\begin{aligned}
+ Hess_f(X,Y)&=XY(f)-d_f(\nabla_XY)\\
+&=X\left<{}Y,\nabla_gf\right>-\left<{}\nabla_gf,\nabla_XY\right>\\
+ &=\left<{}Y,\nabla_X\nabla_gf\right>.
+ \end{aligned}</script><p> Then for the volume element,</p>
+<script type="math/tex; mode=display">
+\omega=\Theta dr\wedge dS^{n-1},\quad \Delta r\omega=L_{\partial r}\omega=\frac{\partial {}\Theta}{\partial {}r}dr\wedge dS^{n-1}=\frac{\partial {}\Theta}{\partial {}r}\frac{\omega}{\Theta}.</script><h2 id="comparison-theorem">Comparison theorem</h2>
+<p>For $r(x)=d(x,p)\in C^\infty(S_p\setminus{p}),$<br>$|\nabla_gr(x)|^2\equiv 1.$ $\Delta_g|\nabla_gr|^2=0.$ By Bochner formula,</p>
+<script type="math/tex; mode=display">
+2|Hess_f|^2+2\left<{}\nabla_g\Delta_g r,\nabla_g r\right>+2\operatorname{Ric}(\nabla_gr,\nabla_gr)=0,</script><script type="math/tex; mode=display">
+\frac{\partial {}\Delta r}{\partial {}r}+|Hess_r|^2=-\operatorname{Ric}(\partial_r,\partial_r),</script><p>due to</p>
+<script type="math/tex; mode=display">
+Hess_r(\partial_r,X)=\left<{}\nabla_{\partial_r}\partial_r,X\right>=0,\quad |Hess_r|^2\ge \frac{(\operatorname{tr}Hess_r)^2}{n-1}=\frac{(\Delta_gr)^2}{n-1}.</script><p>Combining $\operatorname{Ric}\ge (n-1)K,$ we have:</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}\Delta r}{\partial {}r}+\frac{(\Delta r)^2}{n-1}\le -(n-1)K.</script><p>Remember $f(r)=\Delta_gr,$ then</p>
+<script type="math/tex; mode=display">
+f'+\frac{f^2}{n-1}\le -(n-1)K.</script><p>Consider the asymptotic pattern near $r=0$. Let $r=|x|,$ locally we have:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Delta_gr&=g^{ij}\left(\frac{\partial^2 {}r}{\partial {}x_i\partial {}x_j}-\Gamma_{ij}^k\frac{\partial {}r}{\partial {}x_k}\right)\\
+ &=\delta^{ij}\frac{\partial^2 {}r}{\partial {}x_i\partial {}x_j}+(g^{ij}-\delta^{ij})\frac{\partial^2 {}r}{\partial {}x_i\partial {}x_j}-\Gamma_{ij}^k\frac{\partial {}r}{\partial {}x_k}=\frac{1}{r}+O(r).
+ \end{aligned}</script><p>Next we will discuss in categories:</p>
+<h3 id="-k-0">$K&gt;0$</h3>
+<script type="math/tex; mode=display">
+f'\le -((n-1)K+\frac{f^2}{n-1}),\quad \frac{f'}{(n-1)^2K+f^2}\le -\frac{1}{n-1}.</script><p>The integral on both sides can be obtained by using $\arctan$,</p>
+<script type="math/tex; mode=display">
+f\le (n-1)\frac{\cos\sqrt{k}r}{\sin\sqrt{k}r}</script><h3 id="-k-0">$K=0$</h3>
+<script type="math/tex; mode=display">
+f'+\frac{f^2}{n-1}\le 0,\quad f'\le 0.</script><p>Take $T=\min{t|f(t)=0}\in (0,+\infty].$</p>
+<script type="math/tex; mode=display">
+f|_{[T,+\infty)}\le 0\quad\Rightarrow\quad f|_{[T,+\infty)}\le \frac{n-1}{r}=(n-1)\frac{sn_0'(r)}{sn_0(r)}.</script><p>So we only need to analyze the situation on $(0,T)$.</p>
+<script type="math/tex; mode=display">
+\frac{f'}{f^2}+\frac{1}{n-1}\le 0,\quad \left(\frac{1}{f}\right)'\ge \frac{1}{n-1},\quad \frac{1}{f(r)}\ge \frac{r-r_0}{n-1}+\frac{1}{f({r_0})}.</script><h3 id="-k-0">$K&lt;0$</h3>
+<script type="math/tex; mode=display">
+f'\le -(n-1)K-\frac{f^2}{n-1},\quad T=\min\{t|-(n-1)K-\frac{f^2}{n-1}=0\}.</script><p>Then</p>
+<script type="math/tex; mode=display">
+-(n-1)K-\frac{f^2}{n-1}|_{(0,T)}< 0</script><p> remember</p>
+<script type="math/tex; mode=display">
+I=\{t|-(n-1)K-\frac{f^2}{n-1}< 0\}</script><p> Then on $I$,<br>Note $\varphi=(n-1)\frac{sn_k&#39;(r)}{sn_k(r)},$ so that:</p>
+<script type="math/tex; mode=display">
+\frac{f'}{-(n-1)K-\frac{f^2}{n-1} }\ge 1=\frac{\varphi'}{-(n-1)K-\frac{\varphi^2}{n-1} }.</script><p>Note $F&#39;(t)=\frac{1}{-(n-1)K-\frac{t^2}{n-1} },$ which takes the negative value on $I$.<br>Then $F$ decreases monotonically,</p>
+<script type="math/tex; mode=display">
+(F(f))'\ge (F(\varphi))',\quad \lim_{r\rightarrow 0}F(f)=\lim_{r\rightarrow 0}F(\varphi)\in (0,+\infty).</script><script type="math/tex; mode=display">
+F(f)\ge F(\varphi),\quad f\le \varphi,\quad in\,[0,T].</script><p>Remember $\alpha(r)=f(r)-\varphi(r).$ Let $\alpha(r_0)&gt;0.$<br>Define $r_1=\max{r| r&lt;r_0,\alpha(r)=0}.$ on $(r_1,r_0)$,</p>
+<script type="math/tex; mode=display">
+-(n-1)K<\frac{\varphi^2}{n-1}<\varphi<f.</script><p>Therefore $-(n-1)K-\frac{f^2}{n-1}&lt;0,$ $(r_1,r_0)\subset I.$<br>By the same method, it can be analyzed that there is a contradiction of $f(r)\le \varphi(r),$.<br>Thus $\alpha(r)\le 0,$ is $f\le \varphi.$</p>
+<p>In summary, we have proved the theorem:</p>
+<p><strong>Theorem 2</strong>. <em>For the complete Riemannian manifold $M,$ $\,\forall\,x\in S_p\setminus{p},$ for $\operatorname{Ric}\ge (n-1)K$ we have:</em></p>
+<script type="math/tex; mode=display">
+\Delta r(x)\le (n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><p>The article was last updated on 2022-09-26 19:08:06</p>
                 </div>
             
         </div>
@@ -393,14 +472,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《几何分析》笔记(5)-Ricci比较定理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-09-26 22:08:03</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《几何分析》笔记(5)-Ricci比较定理</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-09-26 22:08:03</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/09/26/《几何分析》笔记(5)-Ricci比较定理/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/09/26/《几何分析》笔记(5)-Ricci比较定理/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -468,7 +547,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -606,24 +685,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -705,9 +781,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#preparation"><span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comparison-theorem"><span class="nav-text">Comparison theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#-k-0"><span class="nav-text">$K&gt;0$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-k-0"><span class="nav-text">$K&#x3D;0$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#-k-0"><span class="nav-text">$K&lt;0$</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -732,6 +806,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

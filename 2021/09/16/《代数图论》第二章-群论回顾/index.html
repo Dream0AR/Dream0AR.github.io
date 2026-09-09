@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -422,7 +422,68 @@ $G$是非本原的.</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="permutation-group">permutation group</h2>
+<p>Recall that any subgroup of a symmetry group is called a permutation group,<br>The automorphism group of a graph is a permutation group. A permutation representation of the group $G$<br>representation)<strong> refers to the homomorphism of $G$ to a certain symmetry group $\operatorname{Sym}(V)$,<br>It is also called the </strong>action (action)** of the group $G$ on the set $V$.<br>A representation is faithful if it is injective, mapping identity elements only to identity permutations.</p>
+<p>The effect of group $G$ on set $V$ also induces other effects,<br>As it does on the set $V$ power set $2^V$, it gives the permutation between subsets.<br>Note that the effect preserves the size of the subset, so it can also be applied to all $k-$ subsets of $V$,<br>Or change the subset to an ordered tuple.</p>
+<p>A subset $S$ of a set $V$ is said to be $G-$<strong>invariant</strong> if $\,\forall\,s\in S, g\in G,$<br>$s^g\in S.$ At this time, any $g\in G$ gives the replacement of the elements in $S$,<br>It can be <strong>restricted</strong> to $S$, denoted as $g|_S.$, and the restricted substitution is denoted as $G|_S,$ or $G^S.$</p>
+<p>The effect of $G$ on $V$ is <strong>transitive</strong>, if $x,y\in V,$ is given arbitrarily<br>There exists $g\in G$ such that $x^g=y.$<br>The invariant subset $S$ of $G-$ is called an orbit if $G|_S$ is transportable on $S$.<br>$\,\forall\,x\in V,$ $x^G:={x^g:g\in G}$ is an orbit.</p>
+<p>The orbitals do not intersect each other, giving a partition of $V$. Each element falls in exactly one orbital.<br>Each $G-$ invariant subset is the union of a series of orbitals, so the orbits can also be called minimal $G-$ invariant subsets.</p>
+<h2 id="count">count</h2>
+<p>Let $G$ be the permutation group of $V$, $\,\forall\,x\in V,$<br><strong>Stabilizer</strong>$G<em>x$ is the total permutation such that $x^g=x$, forming a subgroup.<br>Given $S={x_1,\cdots,x_r}\subset V,$<br><strong>Pointwise Stabilizer</strong>$G</em>{x<em>1,\cdots,x_r}:=\bigcap</em>{i=1}^r G_{x_i},$<br><strong>Set Stabilizer</strong>$G_S$ is a global permutation that only requires $S^g=S$. It is easy to see that the former is a subgroup of the latter.</p>
+<p><strong>Lemma 1.1</strong>. <em>Suppose $G$ acts on $V$, and $S$ is the orbit of $G$. If $x,y\in S,$ then all the permutations from $x$ to $y$ will be mapped to a certain right coset of $G_x$. In turn, all the permutations in the right coset of $G_x$ will map $x$ to the same point in $S$.</em></p>
+<p>The proofs in this section are basically basic exercises in abstract algebra and will be skipped here.</p>
+<p><strong>Lemma 1.2</strong> (Orbital Stable Set Theorem). <em>$|G_x||x^G|=|G|.$</em></p>
+<p>Take $h\in G,$ and say that an element of the form $g^{-1}hg$ is conjugate to $h$<strong>,<br>The entire set of elements that are conjugated to $h$ is called the </strong>conjugate class** of $h$.<br>The mapping $\tau_g:h\rightarrow g^{-1}hg$ gives the permutation of $G$,<br>Therefore $G$ has a conjugate effect on itself, with the conjugate class as the orbit. If $H$ is a subgroup of $G$,<br>Then $g^{-1}Hg$ is also a subgroup, which is said to be conjugate with $H$.</p>
+<p><strong>Lemma 1.3</strong>. <em>Suppose $G$ has an effect on $V$, then $\,\forall\,x\in V, g\in G,$ $g^{-1}G<em>x g=G</em>{x^g}.$</em></p>
+<p>Let $\operatorname{fix}(g)$ represent the number of fixed points under permutation $g$. We are familiar with the following lemma:</p>
+<p><strong>Lemma 1.4</strong> (Burnside). <em>The number of orbits $G$ acts on $V$ is equal to the average number of fixed points of elements in $G$.</em></p>
+<h2 id="asymmetric-graph">asymmetric graph</h2>
+<p>A graph is <strong>asymmetric</strong> if its automorphism group is trivial.<br>In this section we prove that almost all graphs are asymmetric, that is, for graphs with $n$ points,<br>The proportion of asymmetric graphs approaches $1.$ when $n\rightarrow \infty$</p>
+<p>Suppose $V$ contains $n$ points, let $K_V$ be the complete graph of $n$ points.<br>All graphs containing $n$ points are obtained by $K_V$ by deleting edges, so there are a total of $2^{\binom{n}{2} }$ graphs,<br>One-to-one correspondence with $E(K_V)$ subset.</p>
+<p>Given a graph $<br>It can be seen that the isomorphism class is the orbit of the symmetry group $\operatorname{Sym}(V)$ acting on the power set $E(K_V)$.<br>According to the orbital stable set theorem, there is the following lemma:</p>
+<p><strong>Lemma 1.5</strong>. <em>The size of the isomorphic class containing $X$ is $\frac{n!}{|\operatorname{Aut}(X)|}.$</em></p>
+<p>By Burnside&#39;s lemma, we count isomorphic classes.<br>Set $g$ (the generated subgroup) to act on $E(K<em>V)$ and there are $r$ orbitals,<br>It is recorded as $\operatorname{orb}_2(g)=r.$ Then when $g$ acts on the power set of $E(K_V)$,<br>These orbits are all minimal $g-$ fixed points, and combined there are a total of $2^r$ fixed points.<br>Therefore, the number of isomorphism classes of the graph is $\frac{1}{n!}\sum</em>{g\in \operatorname{Sym}(V)}2^{\operatorname{orb}_2(g)}$.</p>
+<p>If all graphs are asymmetric, then each equivalence class contains $n!$ graphs,<br>Therefore, there are $\frac{2^{\binom{n}{2} } }{n!}$ equivalence classes.<br>Next we show that in fact when $n\rightarrow \infty$, the number of equivalence classes tends to this value,<br>It is further inferred that almost all graphs are asymmetric.</p>
+<p><strong>Lemma 1.6</strong>. <em>The number of isomorphism classes of a graph with $n$ vertices is at most $(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$.</em></p>
+<p><strong>Proof:</strong> It is said that all the points that cannot be fixed by a certain displacement are the <strong>support</strong> of the displacement,<br>That is, the effect of substitution is only reflected on the support. It is asserted that for all substitutions with support size $2r$,<br>The maximum value of $\operatorname{orb}_2$ is achieved by a permutation consisting of $r$ swaps.</p>
+<p>The non-permuted fixed point of edge $xy$ is if and only if $x and y$ are both in the support and not in the same permutation,<br>Or one is in the support and the other is not. The set exchange contains $k$ exchanges,<br>Then there are $\binom{n-2r}{2}+k$ immovable edges, and each edge is a separate orbit.</p>
+<p>For the moving edge, directly consider the number of orbits: one is in the support,<br>The number of orbitals contributed by the edge where the other is not present is at most $(n-2r)(k+2(r-k)/3)=(n-2r)(2r+k)/3$;<br>The number of orbits that are all in the support and not in the same swap is at most $2k\cdot 2(r-k)/3+k(k-1)+\binom{2(r-k)}{2}/3=4/3 \cdot k(r-k)+k(k-1)+(r-k)(2r-2k-1)/3=[2r^2+k^2-r-2k]/3.$<br>The total of the previous ones is at most $\binom{n-2r}{2}+[r(2n-2r-1)+k(k+n-2r+1)]/3$,<br>Reaching the maximum value at $k=r$$(n-2r)(n-2r-1)/2+nr-r^2=n^2/2-rn+r^2-n/2+r=\binom{n}{2}+r(r-n+1).$</p>
+<p>And for a permutation consisting of $k=r$ substitutions,<br>The previous number of orbits only performs a scaled estimate on the $r-k$ part (the non-swapping part), so when $k=r$,<br>The calculation is precise,<br>Therefore, the maximum value of $\operatorname{orb}_2$ is indeed realized by a permutation consisting of $r$ swaps,<br>And the specific value has been given.</p>
+<p>Note that the maximum estimate of the orbital number also holds for permutations with non-even support sizes,<br>That is, $2r$ is replaced by the support size $t\in[2,n]$ (the maximum estimate may not be realized at this time).<br>Then the maximum estimate of the orbital number $\varphi(t)=\binom{n}{2}+\frac{t}{2}(\frac{t}{2}-n+1)$ is a quadratic function,<br>Take $t=n-1$ as the axis of symmetry.</p>
+<p>Take $m\le n-2,$ and now divide $\operatorname{Sym}(V)$ into three categories: identity transformation,<br>Supports permutations and remaining permutations whose size does not exceed $m$.<br>Their sizes do not exceed $1,\binom{n}{m}m!&lt;n^m, n!&lt;n^n.$ respectively, estimated by the maximum number of orbits,<br>The number of permutation orbitals of each second type is at most $\binom{n}{2}-(n-2)$,<br>Each third type of permutation orbital number has at most $\binom{n}{2}-\frac{m}{2}(n-\frac{m}{2}-1)\le \binom{n}{2}-\frac{nm}{4}$.<br>Therefore, the number of isomorphic classes of the graph is at most $\frac{1}{n!}[2^{\binom{n}{2} }+n^m2^{\binom{n}{2}-(n-2)}+n^n2^{\binom{n}{2}-\frac{nm}{4} }]=\frac{2^{\binom{n}{2} } }{n!}(1+n^m2^{-(n-2)}+n^n2^{-\frac{nm}{4} }).$<br>Remember $n^m2^{-(n-2)}+n^n2^{-\frac{nm}{4} }=2^{m\log_2 n-(n-2)}+2^{n\log_2 n-\frac{nm}{4} },$<br>It is found that for sufficiently large $n,$, take $m=\lceil 8log_2 n\rceil$, that is, this term is an infinitesimal quantity.<br>Therefore, the number of isomorphic classes is at most $(1+o(1))\frac{2^{\binom{n}{2} } }{n!}$.</p>
+<p><strong>Corollary 1.7</strong>. <em>Almost all graphs are asymmetric.</em></p>
+<p><strong>Proof:</strong> Assume that among all isomorphic classes, the proportion of isomorphic classes of asymmetric graphs is $\mu.$<br>Each asymmetric graph contains $n!$ graphs in the isomorphism class,<br>The other isomorphism classes contain at most $\frac{n!}{2}$ pictures.<br>Therefore the average size of isomorphic classes is at most $\mu n!+(1-\mu) \frac{n!}{2}=(1+\mu) \frac{n!}{2}.$</p>
+<p>And of course every graph appears in a certain isomorphism class,<br>Therefore $(1+\mu)\frac{n!}{2}(1+o(1))\frac{2^{\binom{n}{2} } }{n!}\ge 2^{\binom{n}{2} },$<br>$(1+\mu)(1+o(1))\ge 2.$ Thus when $n\rightarrow\infty$,<br>$\mu\rightarrow 1.$</p>
+<p>Therefore, if all isomorphic graphs are regarded as the same graph, almost all graphs are asymmetric.<br>If each graph in the isomorphic class is regarded as a different graph, since the asymmetric graph contains the largest number of graphs in the isomorphic class,<br>We still get that almost all graphs are asymmetric.</p>
+<h2 id="the-right-track">the right track</h2>
+<p>Suppose $G$ has a transferable effect on $V$, it will naturally have an effect on $V\times V$,<br>We study the orbits on it. Since $G$ is transportable, ${(x,x):x\in V}$ is an orbital,<br>It is called <strong>diagonal orbit</strong>. Let $\Omega\subset V\times V,$<br>Remember its <strong>transpose</strong>$\Omega^T$ as ${(y,x):(x,y)\in \Omega}.$<br>It is easy to see that $\Omega^T$ is $G-$ invariant if and only if $\Omega$ is also $\Omega$. If $\Omega$ is an orbital,<br>Then $\Omega=\Omega^T$ or no intersection. When $\Omega=\Omega^T$ it is called a <strong>symmetric</strong> orbit.</p>
+<p><strong>Lemma 1.8</strong>. <em>Suppose $G$ has a transferable action on $V$, $x\in V,$ Then the orbit of $G$ on $V\times V$ corresponds one-to-one with the orbit of $G_x$ on $V$.</em></p>
+<p>The proof is an exercise in abstraction and will be skipped here.</p>
+<p>Therefore, the orbit $\Omega$ of $G$ on $V\times V$ is connected with the orbital $G_x$ of $V$.<br>The number of orbits of $G_x$ on $V$ is called the rank of $G$. If $\Omega$ is symmetric,<br>The corresponding orbit of $G_x$ on $V$ is said to be <strong>self-paired</strong>.<br>The orbit $\Omega$ on each $V\times V$ can be viewed as having $V$ as the vertex set,<br>$\Omega$ is a directed graph of arc sets, and when $\Omega$ is symmetric, it is an undirected graph.<br>Note that when $\Omega$ is asymmetric, there is only one arc between two points, which is called an oriented graph.<br>graph)**.</p>
+<p><strong>Lemma 1.9</strong>. <em>Let $G$ be the transferable permutation group on $V$, and $\Omega$ be the upper orbit of $V\times V$. Let $(x,y)\in \Omega,$ then $\Omega$ is symmetric if and only if $\,\exists\,g\in G,$ such that $(x^g,y^g)=(y,x).$</em></p>
+<p>If $g$ exchanges $x,y,$, then $(xy)$ is exchanged in $g$, then $g$ is of even order, and therefore $G$ is also of even order.<br>It is said that $G$ is <strong>generously transitive</strong> on $V$, if $x,y\in V,$ are given arbitrarily<br>There is a permutation that exchanges them. All orbitals on $V\times V$ are symmetric if and only if $G$ is generously transferable.</p>
+<p>Each orbit on $V\times V$ gives a graph, and the elements in $G$ are all automorphisms of the graph,<br>And the effect is transferable on both vertex sets and edge sets. For the union of several orbits,<br>The elements in $G$ are also automorphisms of the graph, but they only act on the vertex set and are transferable.<br>Note that $G$ is not necessarily the automorphism group of the graph. The book gives $G=S_7,$ which can generate $J(7,3,1),$<br>But the example of $S_8\subset \operatorname{Aut}(J(7,3,1))$ is skipped here.</p>
+<h2 id="originality">originality</h2>
+<p>Let $G$ be migrated to $V$, and the non-empty subset $S\subset V$ is called the <strong> non-original block of $G$ (block of<br>imprimitivity)</strong>, if $\,\forall\,g\in G,$<br>$S^g=S$ or $S^g\cap S=\varnothing.$ Since $G$ is removable,<br>All transformations of $S$ constitute partitions of $V$.<br>The set of these different transformations is called a non-primitive system of $G$.</p>
+<p>As shown in the figure below, the automorphism group of the cube $Q$ is transferable on the vertex set. It is easy to see that considering the distance,<br>The set of all points of the same color is a non-primitive block,<br>The four sets constitute a non-primitive system of automorphism groups.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/PlVHYLgGbunfSz2.png width='50%' height='50%'></p>
+<p>Except for the case where $S$ is a single point and a universal set, all other non-primitive systems are called non-trivial.<br>A group is said to be primitive if it has no non-trivial and non-primitive systems.<br>Otherwise it is non-primitive.</p>
+<p><strong>Lemma 1.10</strong>. <em>$G$ can be transferred to $V$, $x\in V.$ $G$ is a primitive if and only if $G_x$ is a maximal subgroup of $G$.</em></p>
+<p><strong>Proof:</strong> Let us prove that $G$ has a non-trivial non-primitive system if and only if $G_x$ is not a maximal subgroup of $G$.<br>Suppose $G$ has a non-trivial non-primitive system, let $x\in B,$ $B$ be a non-primitive block.<br>Prove below that $G_x\subsetneq G_B\subsetneq G.$ Since $\,\forall\,g\in G_x,$<br>$x\in B\cap B^g,$ Therefore $B=B^g,$ $g\in G_B.$ Take another element in $B$ $y\neq x.$<br>Due to portability, $h\in G$ exists such that $y=x^h.$ and thus $y\in B\cap B^h,$ $B=B^h,$<br>$h\in G_B.$ However, $h\notin G_x,$ therefore $G_x$ is really included in $G_B.$</p>
+<p>Let $G_x\subsetneq H\subsetneq G,$<br>We explain that the orbit of $H$ is the non-trivial non-primitive system of $G$. Let $B$ be the orbit of $H$ containing $x$,<br>Taking $g\in G,$ requires proving that either $B=B^g,$ or $B\cap B^g=\varnothing.$<br>Suppose $y\in B\cap B^g,$ Since $x,y$ are both in orbit $B$, $\,\exists\,h\in H,$<br>Make $y=x^h.$ and since $y\in B^g,$ has elements $x^{h&#39;},$ $x^{h&#39;g}=y.$ in $B$<br>Therefore $x^{h&#39;gh^{-1} }=x,$ $h&#39;gh^{-1}\in G_x\subsetneq H,$ and thus $g\in H.$<br>Since $B$ is the orbit of $H$, there is $B=B^g.$</p>
+<p>Since $G_x\subsetneq H,$ $B$ is not only composed of $x$. In order to illustrate that the orbit of $H$ is not the entire $V,$<br>Recall that $\,\forall\,y\in V,$ $G$ replaces all mappings from $x$ to $y$ to a certain right coset of $G_x$.<br>If $H$ is also transferable, then $G_x H\supset G.$ However, $G_x H=H$, therefore $H=G,$<br>It is inconsistent with $H$ being a real subgroup. Therefore $B\neq V$, that is, $B$ is a non-trivial non-primitive system.</p>
+<h2 id="originality-and-connectivity">Originality and connectivity</h2>
+<p>Another description of originality is reflected in the orbit of $G$ acting on $V\times V$.<br>Let&#39;s do some preparatory work first.<br>A path of a directed graph refers to a sequence composed of different vertices ${u<em>0,\cdots,u_r},$<br>$(u</em>{i-1},u<em>i)$ is an arc; the weak path of a directed graph (weak<br>path)** only requires $(u</em>{i-1},u<em>i)$ or $(u</em>{i},u_{i-1})$ to be an arc.<br>A directed graph is <strong>strongly connected</strong>, if any two points are connected by a path;<br>Calling it <strong>weakly connected</strong> means that any two points are connected by a weak path.<br>The weak connectivity of a directed graph is the connectivity of an undirected graph regardless of direction. The <strong>strongly connected branch</strong> of a directed graph,<br>Refers to a strongly connected maximal induced subgraph. According to the definition, a single point is strongly connected,<br>Therefore a strongly connected branch constitutes a partition of the graph.</p>
+<p>The <strong>in-valency</strong> of a vertex in a directed graph is the number of arcs ending at that point;<br><strong>Out-valency</strong> is the number of arcs starting from this point.</p>
+<p><strong>Lemma 1.11</strong>. <em>If $D$ is a directed graph with the same out-degree and in-degree of all points, then $D$ is strongly connected if and only if it is weakly connected.</em></p>
+<p><strong>Proof:</strong> Just prove that when $D$ is weakly connected, it is also strongly connected. Otherwise,<br>$D$ can be split into strongly connected branches $D_1,\cdots,D_r.$ If there is an arc starting from $D_i$ to $D_j,$<br>Then all arcs connecting $D_i, D_j$ must start from $D_i$,<br>Otherwise $D_i,D_j$ can be merged into strongly connected subgraphs.</p>
+<p>Construct a directed graph $D&#39;,$ with the strongly connected branches of $D$ as vertices.<br>There is a directed edge connecting $D_i$ to $D_j$ if and only if there is an arc in $D$ starting from $D_i$ to $D_j.$<br>Since $D$ is weakly connected, so is $D&#39;$. Cycles cannot appear in $D&#39;$,<br>Otherwise, the union of all strongly connected branches involved in the ring is strongly connected.<br>Therefore, it is easy to prove that at least one point in $D&#39;$ has an in-degree of zero, and we might as well assume that it corresponds to a strongly connected branch $D_1.$</p>
+<p>For all arcs involving $D_1$, if its end point is within $D_1$, the starting point must be within $D_1$,<br>Out-degree and in-degree cancel; but there is at least one edge starting from $D_1$ and ending outside $D_1$,<br>Because $D&#39;$ is weakly connected. Therefore, the sum of the out-degrees of all points in $D_1$ must be greater than the in-degree, which is inconsistent with the condition.</p>
+<p>Recall that when $G$ can be transferred to $V$, the orbit $\Omega$ on $V\times V$ can be regarded as a directed graph.<br>When $\Omega$ is asymmetric, the graph is a directed graph. Since $G$ is transferable, all points have the same out-degree.<br>The in-degrees are the same. And since the sum of out-degrees is equal to the sum of in-degrees (equal to the number of arcs), the out-degrees of all points are equal to the in-degrees.<br>Therefore, the strong connectivity of the directed graph corresponding to the orbit is equal to the weak connectivity, which is generally called the connectivity of the orbit.</p>
+<p><strong>Lemma 1.12</strong>. <em>$G$ is transferable on $V$. $G$ is primitive if and only if every non-diagonal orbit is connected.</em></p>
+<p><strong>Proof:</strong> Suppose $G$ is non-primitive, $B_1,\cdots, B_r$ are non-primitive systems.<br>Let $x\neq y\in B_1,$ $\Omega$ be the orbit containing $(x,y)$ on $V\times V$. For $g\in G,$<br>$x^g,y^g$ are in the same non-original block. Therefore, the starting and end points of each arc of $\Omega$ are in the same block,<br>Obviously not connected.</p>
+<p>On the contrary, suppose a certain orbit of $\Omega$ is not connected, and $B$ is all the vertices of a certain connected branch of $\Omega$.<br>At this time $\,\forall\,g\in G,$ $B^g$ is obviously connected,<br>Therefore $B^g=B$ or $B^g\cap B=\varnothing.$ Therefore $B$ is a non-original block,<br>$G$ is non-primitive.</p>
+<p>The article was last updated on 2021-09-16 14:51:49</p>
                 </div>
             
         </div>
@@ -431,14 +492,14 @@ $G$是非本原的.</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数图论》第二章-群论回顾</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-16 17:51:49</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数图论》第二章-群论回顾</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-16 17:51:49</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/16/《代数图论》第二章-群论回顾/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/16/《代数图论》第二章-群论回顾/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -506,7 +567,7 @@ $G$是非本原的.</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -644,24 +705,21 @@ $G$是非本原的.</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -743,9 +801,7 @@ $G$是非本原的.</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#permutation-group"><span class="nav-text">permutation group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#count"><span class="nav-text">count</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asymmetric-graph"><span class="nav-text">asymmetric graph</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-right-track"><span class="nav-text">the right track</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#originality"><span class="nav-text">originality</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#originality-and-connectivity"><span class="nav-text">Originality and connectivity</span></a></li></ol>
         </div>
     
 </div>
@@ -770,6 +826,7 @@ $G$是非本原的.</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

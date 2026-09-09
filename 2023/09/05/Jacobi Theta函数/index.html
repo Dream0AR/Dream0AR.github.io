@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -335,7 +335,51 @@ $k\in\mathbb{Z}_+.$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="poisson-summation-on-grid-points">Poisson summation on grid points</h2>
+<p>For sufficiently good functions, we have the Fourier transform</p>
+<script type="math/tex; mode=display">
+\widehat f(x)=\int_{-\infty}^{\infty} f(y)e^{-2\pi ixy}dy.</script><p><strong>Proposition 1</strong> (Parseval identity). <em>$\sum<em>{n=-\infty}^{\infty} f(n)=\sum</em>{n=-\infty}^{\infty}\widehat f(n).$</em></p>
+<p>Consider a periodic function</p>
+<script type="math/tex; mode=display">
+F(x)=\sum_{n=-\infty}^{\infty} f(x+n).</script><p>$F$ can be regarded as a function on $\mathbb{R}/\mathbb{Z}$, with Fourier expansion</p>
+<script type="math/tex; mode=display">
+F(x)=\sum_{m=-\infty}^{\infty} a_m e^{2\pi imx},</script><script type="math/tex; mode=display">
+a_m=\int_0^1 F(x) e^{-2\pi imx}dx=\int_0^1 \sum_{n=-\infty}^{\infty} f(x+n)e^{-2\pi im(x+n)}dx=\int_{-\infty}^\infty f(x)e^{-2\pi imx}dx=\widehat f(m).</script><p>Thus</p>
+<script type="math/tex; mode=display">
+\sum_{n=-\infty}^{\infty}f(n)=F(0)=\sum_{m=-\infty}^{\infty}a_m=\sum_{n=-\infty}^\infty \widehat f(n).</script><p>The proposition is proved.</p>
+<p>Generally, for any $n$-dimensional real vector space, equipped with a translation-invariant measure $\mu,$, there is a Fourier transform</p>
+<script type="math/tex; mode=display">
+\widehat f(x)=\int_V e^{-2\pi i\left<{}y,x\right>}f(y)\mu(y).</script><p>At this time $\widehat f$ is a sufficiently good function on $V^\ast $.</p>
+<p>Call $\Gamma$ the lattice point in $V$,<br>If $\Gamma$ takes a set of linearly independent vectors ${v_1,\cdots,v_n}$ in $V$ as the $\mathbb{Z}$-basis.<br>The dual lattice point $\Gamma&#39;$ in $V^\ast $ is defined as</p>
+<script type="math/tex; mode=display">
+\Gamma':=\{x\in V^\ast \mid \left<{}y,x\right>\in \mathbb{Z}, \,\forall\,y\in \Gamma\}.</script><p>At this time, remember $A=[v_1,\cdots,v_n],$<br>Then the column vector of $(A^{\ast })^{-1}$ is a set of $\mathbb{Z}$-basis of $\Gamma&#39;$,<br>Where ${}^\ast $ is the dual matrix. When $V=\mathbb{R}^n,$<br>When $\left&lt;{}-,-\right&gt;$ takes the standard inner product, ${}^\ast $ is the transpose.</p>
+<p><strong>Proposition 2</strong> (Poisson summation on the grid point). <em>The volume of the grid point $\Gamma$ in $V$ is denoted as $\mu(V/\Gamma).$ If the function $f$ has Fourier transformation, we have</em></p>
+<script type="math/tex; mode=display">
+\sum_{y\in\Gamma} f(y)=\frac{1}{\mu(V/\Gamma)}\sum_{x\in \Gamma'}\widehat f(x).</script><p>Perform scale transformation and maintain both sides of the equation (there are measurement terms in the Fourier transformation),<br>Therefore, we can always set $\mu(V/\Gamma)=1.$. Let the basis of $\Gamma$ be the matrix $A,$. Then</p>
+<script type="math/tex; mode=display">
+\sum_{y\in \Gamma}f(y)=\sum_{y\in \mathbb{Z}^n}f(Ay)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y),\quad \widetilde f(y)=:f(Ay).</script><script type="math/tex; mode=display">
+\widehat f(x)=\int_V e^{-2\pi i\left<{}y,x\right>}f(y)\mu(y)=\int_V e^{-2\pi i\left<{}Ay,x\right>}\widetilde f(y)\mu(y)=\int_V e^{-2\pi i\left<{}y,A^\ast x\right>}\widetilde f(y)\mu(y)=\mathcal{F}[\widetilde f] (A^\ast x).</script><script type="math/tex; mode=display">
+\sum_{x\in\Gamma'}\widehat f(x)=\sum_{x\in\mathbb{Z}^n}\widehat f((A^{\ast })^{-1}x)=\sum_{x\in \mathbb{Z}^n}\mathcal{F}[\widetilde f] (x)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y)=\sum_{y\in\Gamma}f(y).</script><p>The standard Poisson summation on the grid point $\mathbb{Z}^n\subset \mathbb{R}^n$ is used,<br>The proof is similar to the proof of the previous proposition.</p>
+<h2 id="theta-function">Theta function</h2>
+<p>Suppose there is a symmetric positive definite non-degenerate quadratic form $B(x,y)=x\cdot y$ on $V$ (compatible with the measure),<br>Then $V$ can be equated with $V^\ast $ at this time, and $\Gamma&#39;$ is also a grid point in $V$.<br>For any grid point $\Gamma,$ define</p>
+<script type="math/tex; mode=display">
+\Theta_\Gamma(t)=\sum_{x\in \Gamma} e^{-\pi tx\cdot x},\quad t>0,\quad t\in \mathbb{R}.</script><p><strong>Theorem 3</strong>. <em>$\Theta<em>\Gamma(t)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta</em>{\Gamma&#39;}(t^{-1}).$ In particular, if $\Gamma=\Gamma&#39;=\mathbb{Z}\subset \mathbb{R},$ Then $\Theta(t)=\frac{1}{\sqrt{t} }\Theta(\frac{1}{t}).$</em></p>
+<p>Use Poisson summation for the function $f(x)=e^{-\pi x\cdot x}$, then</p>
+<script type="math/tex; mode=display">
+\Theta_\Gamma(t)=\sum_{x\in \sqrt{t}\Gamma} f(x)=\frac{1}{\mu(V/\sqrt{t}\Gamma)}\sum_{x\in(\sqrt{t}\Gamma)'}\widehat f(x)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)} \sum_{x\in\Gamma'}\widehat f\left(\frac{1}{\sqrt{t} }x\right)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta_{\Gamma'}(t^{-1}).</script><p>The final equation is due to $f=\widehat f,$</p>
+<script type="math/tex; mode=display">
+\Theta_{\Gamma'(t^{-1})}=\sum_{x\in\Gamma'} e^{-\pi \frac{1}{t}x\cdot x}=\sum_{x\in\Gamma'}\widehat f\left(\frac{1}{\sqrt{t} }x\right).</script><p>Remember the quadratic gram matrix as $A=(a<em>{ij}),$ $a</em>{ij}=e<em>i\cdot e_j,$<br>Where ${e_i}$ is the base of $\Gamma$. Then the volume of $\Gamma$ is $\sqrt{\det(A)}.$<br>If $B$ is the inverse matrix of $A$, then $B=(b</em>{ij})$ is the gram matrix corresponding to the dual basis,<br>$\Gamma&#39;$ is composed of the dual basis $e<em>i&#39;=b</em>{ij}e_j$.<br>The volume of $\Gamma&#39;$ is $\det(A)^{-\frac{1}{2} }.$</p>
+<p>Let $r<em>\Gamma(m)$ be the number of $x\in\Gamma$ such that $x\cdot x=2m$, $m\ge 0$.<br>$r</em>\Gamma(m)$ is controlled by a polynomial with respect to $m$, and Serre gave a bound of $O(m^\frac{n}{2})$.<br>So the series $\sum<em>{m=0}^\infty r</em>\Gamma(m)q^m$ converges when $|q|&lt;1$.<br>Taking $q=e^{2\pi iz},$ then for $z\in\mathbb{H},$ we define a holomorphic function</p>
+<script type="math/tex; mode=display">
+\theta_\Gamma(z)=\sum_{m=0}^\infty r_\Gamma(m)q^m=\sum_{x\in\Gamma} e^{\pi iz(x\cdot x)}=\sum_{x\in\Gamma} q^{(x\cdot x)/2}.</script><p>Here we need to require $x\cdot x\equiv 0\mod 2,$ $\,\forall\,x\in \Gamma.$<br>This requires $A=(e_i\cdot e_j)$ to be even numbers on the diagonal.</p>
+<p>The previous Theta function was a real parameter $t,$. The small theta function at this time satisfies</p>
+<script type="math/tex; mode=display">
+\Theta_\Gamma(t)=\theta_\Gamma(it),\quad \Theta_\Gamma\left(\frac{1}{t}\right)=\theta_\Gamma\left(\frac{i}{t}\right)=\theta_\Gamma\left(-\frac{1}{it}\right).</script><p>Further assume that $\Gamma$ is self-dual, that is, $\Gamma&#39;=\Gamma.$<br>This requires $A=(e_i\cdot e_j)$ to be an integral coefficient, and the determinant is $1.$ Under this assumption,<br>From the previous Poisson sum formula, we have</p>
+<script type="math/tex; mode=display">
+\theta_\Gamma\left(-\frac{1}{it}\right)=t^{\frac{n}{2} }\theta_\Gamma(it).</script><p>Since $\theta<em>\Gamma(-\frac{1}{z}),$<br>$(-iz)^{\frac{n}{2} }\theta</em>\Gamma(z)$ are all analytical functions,<br>It is now proved that they are equal on the pure imaginary axis (positive semi-axis). By analytical continuity,<br>They are all equal in the upper half plane.</p>
+<p><strong>Proposition 4</strong>. <em>For the grid point $\Gamma,$ $\theta<em>\Gamma\left(-\frac{1}{z}\right)=(-iz)^{\frac{n}{2} }\theta</em>\Gamma(z),$ $\,\forall\,z\in\mathbb{H}.$</em></p>
+<p>In fact, it can be proved that it satisfies self-duality and $x\cdot x\equiv 0\mod 2,$<br>The grid point $\Gamma\subset V$ of $\,\forall\,x\in \Gamma$ must be $8k$ dimensional,<br>$k\in\mathbb{Z}_+.$</p>
+<p>The article was last updated on 2023-09-05 15:45:49</p>
                 </div>
             
         </div>
@@ -344,14 +388,14 @@ $k\in\mathbb{Z}_+.$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：Jacobi Theta函数</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-09-05 18:44:11</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：Jacobi Theta函数</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-09-05 18:44:11</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/09/05/Jacobi Theta函数/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/09/05/Jacobi Theta函数/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -419,7 +463,7 @@ $k\in\mathbb{Z}_+.$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -557,24 +601,21 @@ $k\in\mathbb{Z}_+.$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -656,9 +697,7 @@ $k\in\mathbb{Z}_+.$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#poisson-summation-on-grid-points"><span class="nav-text">Poisson summation on grid points</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#theta-function"><span class="nav-text">Theta function</span></a></li></ol>
         </div>
     
 </div>
@@ -683,6 +722,7 @@ $k\in\mathbb{Z}_+.$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

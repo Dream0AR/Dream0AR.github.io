@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -337,7 +337,72 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="basic-concepts">Basic concepts</h2>
+<p>For a real vector bundle of rank $n$</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^n\rightarrow E(\xi)\xrightarrow{\pi}B(\xi),</script><p>Define Stiefel-Whitney classes as:</p>
+<script type="math/tex; mode=display">
+\omega_i(\xi)\in H^i(B(\xi);\mathbb{Z}_2),\quad i=0,1,2,\cdots</script><p>Satisfy the following axioms:</p>
+<ol>
+<li><p>$\omega_0(\xi)=1\in H^0(B(\xi);\mathbb{Z}_2)$; $\omega_i(\xi)=0,$<br>$\,\forall\,i&gt;n.$</p>
+</li>
+<li><p>(Naturality) For $f:B(\xi)\rightarrow B(\eta)$ is covered by the bundle map ($\xi \cong f^\ast \eta$),<br>$\omega_i(\xi)=(\omega_i(f^\ast \eta)=)f^\ast \omega_i(\eta).$</p>
+</li>
+<li><p>(Whitney product formula) If $\xi,\eta$ are real vector bundles with the same base space,<br>Then $\omega<em>k(\xi\oplus\eta)=\sum_i \omega_i(\xi)\cup \omega</em>{k-i}(\eta).$</p>
+</li>
+<li><p>For the classical line bundle $\gamma_1^1,$ on $\mathbb{R}\mathrm{P}^1$<br>$\omega_1(\gamma_1^1)\neq 0.$</p>
+</li>
+</ol>
+<p>We will see later that such representative classes exist uniquely.</p>
+<h2 id="properties">Properties</h2>
+<p>Some simple properties without proof are as follows.</p>
+<ol>
+<li><p>If $\xi\cong \eta,$ then $\omega_i(\xi)=\omega_i(\eta).$</p>
+</li>
+<li><p>If the vector bundle $\varepsilon^n$ is trivial, then $\omega_i(\varepsilon)=0,$<br>$\,\forall\,i&gt;0.$</p>
+</li>
+<li><p>If the vector bundle $\varepsilon^n$ is trivial,<br>Then $\omega_i(\xi\oplus\varepsilon^n)=\omega_i(\xi).$</p>
+</li>
+</ol>
+<p><strong>Proposition 1</strong>. <em>If $\xi$ is a real vector bundle of Euclidean rank $n$ and has a vanishing section, then $\omega_n(\xi)=0.$</em></p>
+<p>If $\xi$ has a vanishing section, then $\xi$ contains a trivial rank $1$ subvector bundle $\varepsilon.$<br>From Euclidean properties, $\xi=\varepsilon\oplus \varepsilon^{\perp},$<br>Thus $\omega_n(\xi)=\omega_n(\varepsilon^\perp)=0.$<br>The last equal sign is because $\varepsilon^\perp$ is of rank $n-1$.</p>
+<p>Therefore we can regard Stiefel-Whitney classes as an obstacle. If the highest dimensional representation class is non-zero,<br>Then there must be no vanishing section on $\xi$. Similarly, we also have:</p>
+<p><strong>Proposition 2</strong>. <em>If $\xi$ is a real vector bundle of Euclidean rank $n$ and has $k$ everywhere linearly independent sections, then $\omega<em>n(\xi)=\cdots=\omega</em>{n-k+1}(\xi)=0.$</em></p>
+<h2 id="total-sw-indicator-class">Total SW indicator class</h2>
+<p>Define the total SW representative class $\xi$ as</p>
+<script type="math/tex; mode=display">
+\omega(\xi):=1+\omega_1(\xi)+\omega_2(\xi)+\cdots \in H^\ast (B(\xi);\mathbb{Z}_2)\subset H^\pi(B(\xi);\mathbb{Z}_2).</script><p>The last inclusion relation means that direct sums are included in direct products.</p>
+<p><strong>Lemma 3</strong>. <em>${\omega:\omega\text{The starting coefficient is $1$}}\subset H^\pi(B;\mathbb{Z}_2)$ forms a commutative subgroup that is invariant under the cup product.</em></p>
+<p>We only need to prove that there is an inverse for each $\omega$. Let $\omega=1+\omega_1+\cdots,$<br>$\overline\omega=1+\overline\omega_1+\cdots,$<br>In order for $\omega\overline\omega=1,$ we need $\,\forall\,k&gt;0,$</p>
+<script type="math/tex; mode=display">
+\sum_{i}\omega_i\overline\omega_{k-i}=0.</script><p> Therefore, just take the following elements as the inverse.</p>
+<script type="math/tex; mode=display">
+\overline\omega_k=\omega_1\overline\omega_{k-1}+\cdots+\omega_k.</script><p><strong>Proposition 4</strong>. <em>If $\xi,\eta$ are both vector bundles on $B$, making $\xi\oplus\eta$ trivial, then $\omega(\xi)=\overline\omega(\eta).$</em></p>
+<p>To prove, just recall:</p>
+<script type="math/tex; mode=display">
+\omega(\xi\oplus\eta)=\omega(\xi)\cup\omega(\eta)=1.</script><p><strong>Corollary 5</strong> (Whitney Dual). <em>If $M\subset \mathbb{R}^N$ is a smooth submanifold, $\tau$ is the tangent bundle, and $\nu$ is the normal bundle, then $\omega(\nu)=\overline\omega(\tau).$</em></p>
+<p>Just note:</p>
+<script type="math/tex; mode=display">
+\tau\oplus\nu\cong T\mathbb{R}^N|_M=\varepsilon.</script><h2 id="calculate-sw-class">Calculate SW class</h2>
+<p>For the standard sphere $S^n,$ the normal bundle is trivial, so the SW class of the tangent bundle is trivial.<br>It should be noted that the tangent bundle on an even-dimensional sphere is non-trivial,<br>Therefore, even if the highest dimension of the SW class is zero, it does not necessarily mean that there are non-zero sections everywhere.</p>
+<p>Considering $\gamma_n^1$ as the classical line bundle on $\mathbb{R}\mathrm{P}^n$, we have:</p>
+<script type="math/tex; mode=display">
+\omega(\gamma_n^1)=1+a,\quad a\neq 0\in H^1(\mathbb{R}\mathrm{P}^n;\mathbb{Z}_2).</script><p>Consider $\mathbb{R}^2\hookrightarrow \mathbb{R}^{n+1},$<br>Induced $\mathbb{R}\mathrm{P}^1\hookrightarrow \mathbb{R}\mathrm{P}^n,$<br>Covered by a bundle map. This leads to the conclusion.</p>
+<p>Let $\mathbb{R}^{n+1}$ have a standard metric,<br>$\gamma^\perp$ is the vector bundle on $\mathbb{R}\mathrm{P}^n$,<br>Each fiber is the orthogonal complement of a classical line bundle fiber.<br>Then $\gamma^\perp\oplus \gamma_n^1=\varepsilon,$ thus</p>
+<script type="math/tex; mode=display">
+\omega(\gamma^\perp)=\overline\omega(\gamma_n^1)=(1+a)^{-1}=1+a+\cdots+a^n.</script><p>In particular, $\omega_i(\gamma^\perp)=a^i\neq 0,$<br>$a^i\in H^i(\mathbb{R}\mathrm{P}^n).$</p>
+<h2 id="sw-class-application">SW class application</h2>
+<h3 id="divisible-algebra">Divisible algebra</h3>
+<p><strong>Theorem 6</strong> (Stiefel). <em>Suppose $\mathbb{R}^n$ has bilinear multiplication $p:\mathbb{R}^n\times\mathbb{R}^n\rightarrow \mathbb{R}^n,$ has no zero factors, then $n$ is a power of $2$.</em></p>
+<p>We divide it into two parts to prove:</p>
+<p>1. Assuming multiplication exists, then the tangent bundle $\tau_{\mathbb{R}\mathrm{P}^{n-1} }$ is trivial.</p>
+<p>2. If $\tau_{\mathbb{R}\mathrm{P}^{n-1} }$ is trivial, then $n$ is the power of $2$.</p>
+<p><strong>Lemma 7</strong>. <em>The tangent bundle on $\mathbb{R}\mathrm{P}^n$ has the isomorphism $\tau_{\mathbb{R}\mathrm{P}^n}\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp).$</em></p>
+<p>structure</p>
+<script type="math/tex; mode=display">
+E(\tau_{\mathbb{R}\mathrm{P}^n})=\{\pm(x,v)\in S^n\times \mathbb{R}^{n+1}||x|=1,x\cdot v=0.\}</script><p>Then each pair $(x,v)$ determines a function $f\in \operatorname{Hom}(L,L^\perp),$<br>$L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$<br>Verification shows that $(x,v)\mapsto f$ gives the isomorphism in the lemma.<br><strong>Proposition 8</strong>. <em>$\tau_{\mathbb{R}\mathrm{P}^n}\oplus \varepsilon^1\cong \gamma_n^1\oplus \cdots\oplus \gamma_n^1,$ $n+1$ pieces.</em></p>
+<p>$\tau\oplus \varepsilon^1\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp)\oplus \operatorname{Hom}(\gamma_n^1,\gamma_n^1)\cong \operatorname{Hom}(\gamma_n^1,\gamma^\perp\oplus \gamma_n^1)=\operatorname{Hom}(\gamma_n^1,\varepsilon)^{\oplus (n+1)}\cong (\gamma_n^1)^{\oplus(n+1)}$</p>
+<p>The article was last updated on 2022-10-11 15:12:27</p>
                 </div>
             
         </div>
@@ -346,14 +411,14 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(8)-Stiefel-Whitney示性类</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-11 18:12:26</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(8)-Stiefel-Whitney示性类</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-11 18:12:26</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/11/《代数拓扑2》笔记(8)-Stiefel-Whitney示性类/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/11/《代数拓扑2》笔记(8)-Stiefel-Whitney示性类/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -421,7 +486,7 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -559,24 +624,21 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -658,9 +720,7 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concepts"><span class="nav-text">Basic concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#properties"><span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#total-sw-indicator-class"><span class="nav-text">Total SW indicator class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculate-sw-class"><span class="nav-text">Calculate SW class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sw-class-application"><span class="nav-text">SW class application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#divisible-algebra"><span class="nav-text">Divisible algebra</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -685,6 +745,7 @@ $L:=[x]\cong \mathbb{R}^1,$ $f(\lambda x)=\lambda v.$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

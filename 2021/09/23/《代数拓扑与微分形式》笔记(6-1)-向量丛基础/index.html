@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -354,7 +354,44 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>Mainly to discuss tight vertical cohomology and Thom classes.</p>
+<h2 id="local-trivialization-of-vector-bundles">Local trivialization of vector bundles</h2>
+<p>Continuation of the previous section’s mark.</p>
+<p>$E<em>x=\pi^{-1}(x)$ is a vector space. If $\,\exists\,{U</em>\alpha}$ is the open cover of $M$,<br>There is a diffeomorphism $\phi<em>\alpha:E</em>{U<em>\alpha}=\pi^{-1}(U</em>\alpha)\rightarrow U<em>\alpha\times \mathbb{R}^n$,<br>Let $E_x\mapsto {x}\times \mathbb{R}^n$, and the map be the isomorphism of the vector space,<br>Then $\pi$ is called a smooth (real) <strong>vector bundle</strong> of rank $n$,<br>${(U</em>\alpha,\phi_\alpha)}$ is <strong>local trivialization</strong>,<br>$E$ and $M$ are called <strong>full space</strong> and <strong>base manifold</strong>.</p>
+<p>The vector bundle is the fiber $\mathbb{R}^n$,<br>The structure group is the <strong>fiber bundle</strong> of $\operatorname{GL}(n,\mathbb{R})$.<br>If $\mathbb{R}$ is replaced by $\mathbb{C}$, it is a complex vector bundle.<br>By default we discuss smooth real vector bundles.</p>
+<p>Smooth mapping $s:U\rightarrow E$ is called <strong>section</strong>, if $\pi\circ s=id$,<br>That is to say, $s(x)\in E_x$ is required. All sections of $E$ on $U$ are recorded as $\Gamma(U,E)$.<br><strong>Zero cross-section</strong> refers to $s: M\rightarrow E$, $s(x)=0_x\in E_x$.<br>The $n$ sections $s_1,...,s_n$ on $U$ are called <strong>frame</strong>, if for each point $x\in U$,<br>$s_1(x),...,s_n(x)$ is a set of basis of $E_x$.</p>
+<p>The natural frame on local trivialization is $\varepsilon<em>1^\alpha, ...,\varepsilon_n^\alpha$,<br>Defined by $\varepsilon_i^\alpha(x)=\phi</em>\alpha^{-1}(x,e_i)$.<br>Among them, $e_1,...,e_n$ is the standard unit base. In turn,<br>The frame $s_1,...,s_n$ also gives the trivialization of $E|_U$:<br>$\phi(\sum v_is_i(x))=(x,(v_1,...,v_n))$,<br>That is, the coordinates on $E|_x$ are directly mapped to the coordinates on $\mathbb{R}^n$.</p>
+<p><strong>The mutual transformation between the frame and local trivialization is the basic method for studying vector bundles.</strong></p>
+<p><strong>Essence of vector bundle: transfer function.</strong> $\,\forall\,x\in U<em>{\alpha\beta}$,<br>$\phi</em>{\alpha}\circ(\phi<em>\beta)^{-1}:{x}\times \mathbb{R}^n\rightarrow {x}\times \mathbb{R}^n$ is an automorphism.<br>There exists $g</em>{\alpha\beta}(x)\in \operatorname{GL}(n,\mathbb{R})$ such that,<br>$\,\forall\,v\in \mathbb{R}^n$,<br>$\phi<em>\alpha\phi</em>\beta^{-1}(x,v)=(x,g_{\alpha\beta}(x)v)$.</p>
+<p>It satisfies <strong>cocycle conditions</strong>:<br>$g<em>{\alpha\beta}=g</em>{\beta\alpha}^{-1}\:\:\text{on}\:\:U<em>{\alpha\beta};$<br>$g</em>{\alpha\beta}g<em>{\beta\gamma}=g</em>{\alpha\gamma} \:\:\text{on}\:\:U_{\alpha\beta\gamma}.$</p>
+<p><strong>Lemma 1.1</strong>. <em>If there is another trivialization ${(U<em>\alpha,\phi</em>\alpha&#39;)}$ inducing the transfer function $g<em>{\alpha\beta}&#39;$, then there is a smooth matrix mapping $\lambda</em>\alpha,\lambda<em>\beta$, Such that $g</em>{\alpha\beta}(x)=\lambda<em>\alpha(x)g&#39;</em>{\alpha\beta}(x)\lambda^{-1}_\beta(x)$.</em></p>
+<p><strong>Proof:</strong> Note that $\phi<em>\alpha\circ{\phi&#39;</em>\alpha}^{-1}$ is an automorphism,<br>Can define $\lambda<em>\alpha$,<br>Such that $\phi</em>\alpha{\phi&#39;<em>\alpha}^{-1}(x,v)=(x,\lambda</em>\alpha(x)v).$<br>Similarly, define $\lambda<em>\beta.$ Next,<br>Insert $\phi</em>\alpha&#39;,\phi<em>\beta&#39;$ appropriately into $\phi</em>\alpha\phi_\beta^{-1}$<br>That’s it.</p>
+<p>Defining the equivalence of two transfer functions means that there is such a smooth matrix mapping that makes them cancel out,<br>Note that the transfer function here is allowed to originate from two different vector bundles. So two different trivializations of the same vector bundle,<br>The corresponding transfer functions are equivalent.</p>
+<p>The smooth map $f:E\rightarrow E&#39;$ is called a bundle map, H if it maps each fiber to fiber,<br>And it is linear. It also becomes a homomorphism, and its totality is $\operatorname{Hom}(E,E&#39;).$<br>When the restriction is isomorphism on the fiber, $f$ is also called isomorphism, and $E$ and $E&#39;$ are isomorphisms.</p>
+<h2 id="reduction-of-structural-groups">Reduction of structural groups</h2>
+<p>If $\pi:E\rightarrow M$ has local trivialization,<br>The transfer function only takes the value of the subgroup $H$ of $GL(n,\mathbb{R})$,<br>Then the structural group of the vector bundle $E$ can be <strong>reduced</strong> to $H$.</p>
+<p>That is to say, for the general transfer function $g$, we hope to find the equivalent $g&#39;$ that only takes the value of the better $H$.<br>Generally, $H$ is a (special) orthogonal group and $GL^+(n,\mathbb{R}).$ whose determinant is positive.<br>If it can indeed be reduced to $GL^+(n,\mathbb{R})$, then the vector bundle $E$ is said to be orientable<strong>.<br>It is called local trivialization </strong>directional<strong>, if $\det g_{\alpha\beta}&gt;0$.<br>Two directional trivializations are said to be </strong>equivalent**, if<br>$\phi<em>\alpha{\phi</em>\alpha&#39;}^{-1}$Jacobian is positive.</p>
+<p>In this way, if $M$ is connected, all orientations of $E$ can be trivially divided into two equivalence classes, and each equivalence class is an orientation.<br>A directional vector bundle with a given orientation is called a directional vector bundle.</p>
+<p><strong>Proposition 1.1</strong>. <em>The structure group $E$ of a vector bundle of rank $n$ can always be reduced to $O(n)$. It can be reduced to $SO(n)$ if and only if $E$ can be oriented.</em></p>
+<p><strong>Certificate:</strong> The local inner product is induced through the natural frame, and then the unit decomposition is used to synthesize the global inner product.<br>Then do Gram-Schimit orthogonalization to define a new orthogonal unit frame and give it a local trivialization.</p>
+<h2 id="calculation-of-vector-bundles">Calculation of vector bundles</h2>
+<p>Let $E$ be a vector bundle of rank $n$, ${(U<em>\alpha,\phi</em>\alpha)}$ be a local trivialization,<br>Transfer function $g<em>{\alpha\beta}$; $E&#39;$ is a vector bundle of rank $m$,<br>${(U</em>\alpha,\phi&#39;<em>\alpha)}$ is the local trivialization, and the transfer function $g&#39;</em>{\alpha\beta}$.<br>It can be assumed that the two open covers are the same because ${(U<em>\alpha,\phi</em>\alpha)}$ and ${(U<em>{\alpha \beta},\phi</em>{\alpha})}$ are equivalent,<br>The open cover ${U<em>{\alpha \beta}}$ is intertwined with the open cover ${U</em>\alpha}$ and ${U_\beta}$.</p>
+<p><strong>Direct sum</strong>: $E\oplus E&#39;$ is a vector bundle of rank $n+m$,<br>The local trivialization is ${(U<em>\alpha, \phi</em>\alpha\oplus\phi<em>\alpha&#39;)}$,<br>The transfer function is $\begin{pmatrix}<br>                g</em>{\alpha\beta}&amp;0\<br>                0&amp;g_{\alpha\beta}&#39;<br>            \end{pmatrix}$</p>
+<p><strong>Tensor product</strong>: $E\otimes E&#39;$ is a vector bundle of rank $nm$,<br>The local trivialization is ${(U<em>\alpha,\phi</em>\alpha\otimes\phi<em>\alpha&#39;)}$,<br>The transfer function is $g</em>{\alpha}\otimes g_{\alpha}&#39;.$</p>
+<p>$\operatorname{Hom}(E,E&#39;)$ is the entire cluster mapping from $E$ to $E&#39;$,<br>Isomorphic to $E^\ast \otimes E&#39;.$</p>
+<p><strong>Dual Bundle</strong>: Recall that in functional analysis, $f:V\rightarrow W$ is a linear functional on a finite-dimensional space,<br>$f^\ast :W^\ast \rightarrow V^\ast$ is a linear functional on the dual space,<br>Its representation matrix is $f$, which represents the transpose of the matrix, so we also use $f^t$ to denote $f^\ast$.<br>$E^\ast$ is the dual space of $E$, which is called the dual bundle.<br>The local trivialization is ${(U<em>\alpha,{(\phi^t</em>\alpha)}^{-1})}$.<br>Transfer function $(g_{\alpha\beta}^t)^{-1}$.</p>
+<p><strong>Pullback bundle</strong>: Suppose $f:N\rightarrow M$ is a smooth map, then the vector bundle can be constructed:<br>$\pi:f^{-1}E\rightarrow N$, is called the pullback bundle of $E$ from $f$.</p>
+<p>$f^{-1}E={(y,e)|f(y)=\pi(e)}\subset N\times E.$ That is, for each point $y\in N$,<br>Transplanting the fiber $E|<em>{f(y)}$ of $f(y)\in M$ is called $f^{-1}E|</em>{y}$.<br>It is the only largest subset of $N\times E$,<br>Such that $\pi \circ (f\times \mathrm{id}) =f\circ \operatorname{pr}_1$.</p>
+<p>The pullback bundle of the product bundle is the product bundle, so $f^{-1}E$ can be locally trivialized,<br>The transfer function is $f^\ast g_{\alpha\beta}$.</p>
+<h2 id="homotopy-of-vector-bundles">Homotopy of vector bundles</h2>
+<p><strong>Theorem 1.1</strong> (Homotopy property of vector bundles). *Suppose $Y$ is a compact manifold, $f_0,f_1:Y\rightarrow</p>
+<p><strong>Certificate:</strong> Only need to prove $\,\forall\,t<em>0\in I$, $\,\exists\,\varepsilon&gt;0$,<br>$\,\forall\,t\in O(t_0,\varepsilon)$, $f</em>{t}^{-1}E\cong f_{t_0}^{-1}E$.<br>From the compactness of $I$, the conclusion holds.</p>
+<p>Among them, $f:Y\times I\rightarrow X$ is the homotopy mapping between $f<em>0, f_1$, $f_t(y)=f(y,t)$.<br>Take $\pi:Y\times I\rightarrow Y$ as the projection,<br>Then $f^{-1}E|</em>{Y\times {t<em>0} }\cong\pi^{-1} f</em>{t<em>0}^{-1}E|</em>{Y\times {t<em>0} },$<br>That is, $f(y,t_0)$ is divided into two steps: $f</em>{t_0}(\pi(y,t_0)).$</p>
+<p>Recall that $\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}<em>{t_0}E)$ is also a vector bundle,<br>Each fiber is the ensemble of all linear maps;<br>Take its subgroup $\operatorname{Iso}(f^{-1}E,\pi^{-1}f^{-1}</em>{t_0}E)$,<br>Each fiber is an isomorphic whole within it.<br>Therefore, we only need to give a cross section near $(Y,t_0)$.</p>
+<p>We take a local trivialization ${(U<em>\alpha,\phi</em>\alpha)}$ of $\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}<em>{t_0}E)$,<br>Since $Y,I$ are compact, by the tubular neighborhood lemma (topology),<br>$\,\exists\,Y\times O(t_0,\varepsilon)$ is contained by a finite number of $U</em>\alpha$,<br>Make each $(y,O(t<em>0,\varepsilon))$ within a certain $U</em>\alpha$.</p>
+<p>Take the coordinate neighborhood ${V<em>k}$ of $Y$ to cover $Y$,<br>Make $V_k\times O(t_0,\varepsilon)$ included in a certain $U</em>\alpha$.<br>The section $s(y,t<em>0)$ has been defined globally on $Y$. Within each local trivialization neighborhood,<br>Fiber on $V_k\times O(t_0,\varepsilon)$ of $\operatorname{Hom}(f^{-1}E,\pi^{-1}f^{-1}</em>{t_0}E)$,<br>can be regarded as a Euclidean space, and the cross section can be extended to the extension arbitrarily on it. That is, starting from $s(y,t_0)$,<br>The continuation is $s(y,t)$, $(y,t)\in V_k\times O(t_0,\varepsilon).$ Further,<br>Use the unit decomposition belonging to ${V_k}$ to merge the continuations on each $V_k$,<br>Forming an overall continuation on $Y\times O(t_0,\varepsilon)$,<br>The cross section is thus defined as a whole within the strip area.<br>When extending, please note that all non-isomorphic linear maps are closed sets, so we can extend them within open sets.<br>The cross section is given, so the isomorphism is established near $t_0$. Due to compactness, it is established on $I$, in particular,<br>$f_0^{-1}E\cong f_1^{-1}E.$</p>
+<p><strong>Corollary 1.1</strong>. <em>A vector bundle on a shrinkable space is a trivial bundle.</em></p>
+<p>The article was last updated on 2021-09-23 14:45:08</p>
                 </div>
             
         </div>
@@ -363,14 +400,14 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(6-1)-向量丛基础</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-23 17:45:05</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(6-1)-向量丛基础</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-23 17:45:05</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-1)-向量丛基础/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-1)-向量丛基础/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -438,7 +475,7 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -576,24 +613,21 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -675,9 +709,7 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#local-trivialization-of-vector-bundles"><span class="nav-text">Local trivialization of vector bundles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reduction-of-structural-groups"><span class="nav-text">Reduction of structural groups</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculation-of-vector-bundles"><span class="nav-text">Calculation of vector bundles</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homotopy-of-vector-bundles"><span class="nav-text">Homotopy of vector bundles</span></a></li></ol>
         </div>
     
 </div>
@@ -702,6 +734,7 @@ $f_0^{-1}E\cong f_1^{-1}E.$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

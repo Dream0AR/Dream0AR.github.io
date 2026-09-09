@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -329,7 +329,50 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="compact-embedding-theorem">compact embedding theorem</h2>
+<p>The following proves that embedding</p>
+<script type="math/tex; mode=display">\Vert f\Vert_{L^p(\Omega)}\le C\Vert f\Vert_{H^{m,q}(\Omega)},\quad \,\forall\,\frac{n}{p}\ge \frac{n}{q}-m,</script><p>When the inequality is strict, i.e. $\frac{n}{p}&gt;\frac{n}{q}-m,$ the embedding is compact,<br>Map bounded sets to compact sets.</p>
+<p>First, let us simplify the proof. Assume that $m=1$ has been proved, then $\,\forall\,m&gt;1,$<br>Take $q_1&gt;q,$ such that $\frac{n}{q_1}-1=\frac{n}{q}-m&lt;\frac{n}{p},$<br>Thus from Sobolev&#39;s inequality, we have</p>
+<script type="math/tex; mode=display">H^{m,q}\hookrightarrow H^{1,q_1}\stackrel{c}\hookrightarrow L^p</script><p>Therefore, embedding maps bounded sets to bounded sets and then to compact sets. Therefore, we only need to prove the situation when $m=1$.</p>
+<p>Assume that $p&gt;q$ has been proved, then when $p\le q$, $\,\exists\,p_1&gt;q\ge p,$<br>$\frac{n}{q}&gt;\frac{n}{p_1}&gt;\frac{n}{q}-1.$ has embedding</p>
+<script type="math/tex; mode=display">H^{1,q}\stackrel{c}\hookrightarrow L^{p_1}\hookrightarrow L^p.</script><p>This maps bounded sets to column compact sets and back to column compact sets, so we only need to prove the case $p&gt;q$.<br>At this time $\frac{n}{q}&gt;\frac{n}{p}&gt;\frac{n}{q}-1.$</p>
+<p>First we consider the following lemma:</p>
+<p><strong>Lemma 1</strong>. <em>$\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ $\frac{n}{p}=\theta+\frac{n}{q}-1,$ $\theta\in(0,1),$ We have the following inequality:</em></p>
+<script type="math/tex; mode=display">\Vert f(x+h)-f(x)\Vert_{L^p(\mathbb{R}^n)}\le C|h|^{\theta}\Vert f\Vert_{H^{1,q}(\mathbb{R}^n)}.</script><p><strong>Proof:</strong> In fact, the right side can take a homogeneous module.<br>Remember $\frac{n}{p}&gt;\frac{n}{q}-1=\frac{n}{p_1}.$ $q&lt;p&lt;p_1,$<br>Then $\frac{1}{p}=\frac{\theta}{q}+\frac{1-\theta}{p_1}.$ thus</p>
+<script type="math/tex; mode=display">\begin{aligned}
+                \Vert f(x+h)-f(x)\Vert_{L^p}&\le \Vert f(x+h)-f(x)\Vert_{L^q}^\theta \Vert f(x+h)-f(x)\Vert_{L^{p_1} }^{1-\theta}\\
+                &\le C\left\Vert\int_0^1 \nabla f(x+sh)\cdot hds\right\Vert_{L^{q} }^\theta\Vert f\Vert_{\dot{H}^{1,q} }^{1-\theta}\\
+                &\le C |h|^\theta \Vert f\Vert^{1-\theta}_{\dot{H}^{1,q} }
+            \end{aligned}</script><p><strong>Corollary 2</strong>. <em>$\Vert\alpha<em>\varepsilon\ast f-f\Vert</em>{L^p(\mathbb{R}^n)}\le C\varepsilon^{\theta}\Vert f\Vert_{H^{1,q}(\mathbb{R}^n)}$</em></p>
+<p>Therefore, let ${f<em>{\nu}}$ be $H^{1,q}(\mathbb{R}^n)$ bounded function sequence,<br>Then $\,\forall\,\varepsilon&gt;0,$<br>${\alpha</em>\varepsilon\ast f<em>\nu}$ is $H^{m,q}$ bounded function sequence,<br>$\,\forall\,m\ge 1.$<br>Because the derivation of $\alpha</em>\varepsilon\ast f<em>{\nu}$ can be attributed to $\alpha</em>\varepsilon$.<br>Suppose that $\frac{n}{q}-m&lt;-1,$ has $\frac{n}{q}-m&lt;-1,$ for a sufficiently large $m$. Then according to the Sobolev inequality in the negative exponential case,<br>${\alpha<em>\varepsilon\ast f</em>\nu}$ is $C<em>{loc}^1$ bounded.<br>Therefore, according to the Arzela-Ascoli lemma, there is a subsequence that $C^0$ converges on any compact set,<br>That is, $C</em>{loc}^{0}$ is compact. Naturally, a convergent sequence on a compact set also converges in the modular sense of $L^{p}$,<br>Therefore it is $L^{p}_{loc}$ compact.</p>
+<p>By inference,<br>Consistently for $\nu$ we have $\alpha<em>\varepsilon\ast f</em>{\nu} \xrightarrow{L^p} f<em>{\nu}.$<br>It can be proved by the diagonal method that ${f</em>{\nu}}$ has a subsequence that becomes a Cauchy sequence on any compact set,<br>Thus $L^p<em>{loc}$ is compact.<br>Therefore, the embedding from $H^{1,q}(\mathbb{R}^n)$ to $L^p</em>{loc}(\mathbb{R}^n)$ is tight.</p>
+<h2 id="introduction-to-pde">Introduction to PDE</h2>
+<p>Call $\sum<em>{|\alpha|\le m}a</em>\alpha(x)\partial^\alpha u=f(x)$ to be $m$ order linear PDE,<br>$a_\alpha,f\in C^\infty.$ If the solution $u\in C^m,$ is called <strong>classical solution</strong>;<br>If $u\in C^{m-1},$ has the first type discontinuity of order $m$ only along the normal direction on the surface ${\psi(x)=0}$,<br>For other $C^m,$, $u$ is called <strong>weak discontinuity solution</strong>. This surface is called <strong>weak discontinuity surface</strong>.</p>
+<p>If the surface $\psi(x)=x<em>1=0,$ then the normal derivative is $\frac{\partial {} }{\partial {}x_1}.$<br>For a weak discontinuous solution $u,$ if $\beta=(m,0,\cdots,0),$ is on the surface $\psi(x)=0$,<br>There is $a</em>\beta(x)\neq 0,$ then there is a small neighborhood near the point,<br>Such that <script type="math/tex">\partial_{x_1}^m u(x)=\sum\limits_{\begin{subarray}{c}
+                |\alpha|\le m\\
+                \alpha\neq \beta
+            \end{subarray} } \frac{a_\alpha(x)}{a_\beta(x)}\partial^\alpha u(x)\in C^0</script><br>It is inconsistent with $u$ being a weak discontinuity solution. Therefore $a_\beta(x)=0$ occurs along the weak discontinuity surface.</p>
+<p>For any surface $\psi(x)=0,$, through the flattening technique, let $y_1=\psi,$ $y_i=x_i,$ then</p>
+<script type="math/tex; mode=display">\left\{\begin{aligned}
+            \frac{\partial {}u}{\partial {}x_1}&=\frac{\partial {}u}{\partial {}y_1}\frac{\partial {}\psi}{\partial {}x_1}\\
+            \frac{\partial {}u}{\partial {}x_i}&=\frac{\partial {}u}{\partial {}y_1}\frac{\partial {}\psi}{\partial {}x_i}+\frac{\partial {}u}{\partial {}y_i}
+        \end{aligned}\right.</script><p>At this time, the weak discontinuity surface satisfies $\widetilde{a}<em>\beta(x)=\sum</em>{|\alpha|\le m}a_\alpha(x)(\nabla \psi)^\alpha=0.$</p>
+<p>Call $\psi(x)=0$ a <strong>characteristic surface</strong>,<br>If it satisfies $\sum<em>{|\alpha|\le m}a</em>\alpha(x)(\nabla \psi)^\alpha=0.$<br>Call its normal direction <strong>characteristic direction</strong>. Therefore, the weakest discontinuity surface must be a characteristic surface*.</p>
+<p>In PDE theory, a classic existence theorem is the Cauchy-Kovalevskaya theorem.<br>It shows that if the parameter functions are all real analytic, then given any analytic initial value,<br>Analytical solutions are always the only ones that exist. However, the technology used by this theorem is older,<br>We use a modern approach to illustrate.<br>We consider the solution $\frac{\partial {}u}{\partial {}t}=F(t,x,u,\nabla u),$<br>Transformed into an integral equation $u(t,x)=u_0(x)+\int_0^t F(\tau,x,u,\nabla u)d\tau.$<br>In ODE theory, since derivatives are no longer involved in $F$,<br>We can use Picard iteration method to get the unique solution.<br>If we can get the appropriate module $\Vert\cdot\Vert$ about $x$,<br>So that $\Vert\nabla u\Vert$ can be better controlled, then for</p>
+<script type="math/tex; mode=display">\Vert u(t,x)\Vert\le \Vert u_0\Vert+\int_0^t \Vert F(\tau,x,u,\nabla u)\Vert d\tau,</script><p>It can be analyzed and processed from the ODE perspective. In particular, a theoretical estimate of the solution can be given in this way.</p>
+<p>For general functions, it is obviously impossible to use $\Vert u\Vert$ to control $\Vert\nabla u\Vert.$<br>But for analytic functions, the derivative and the function value are integrated, so such a module can be obtained.</p>
+<p>For the analytic function $f(x)=\sum_\alpha \frac{\partial^\alpha f(0)}{\alpha!}x^\alpha,$<br>Let its convergence radius be $R.$ Then $\,\forall\,r\le R,$ is defined</p>
+<script type="math/tex; mode=display">\Vert f\Vert_r=\sum_\alpha \frac{|\partial^\alpha f(0)|}{\alpha!}r^{|\alpha|}<\infty.</script><p>Obviously it is a module, and satisfies $\Vert fg\Vert_r\le \Vert f\Vert_r\Vert g\Vert_r.$<br>In particular $\Vert f^n\Vert_r\le \Vert f\Vert_r^n.$<br>A function $f$ is analytic if and only if there exists $r$ such that $\Vert f\Vert_r&lt;\infty.$</p>
+<p>Since the derivative term only appears in the integral, we only need to control $\Vert\nabla u\Vert:$ in the integral sense</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \left\Vert\int_{0}^t \partial_{x_1} u(\tau,x)d\tau\right\Vert_{R-MT}&\le \int_0^t \sum_\alpha \frac{|\partial^\alpha \partial_{x_1}u(\tau,0)|}{\alpha! (\alpha_1+1)}(\alpha_1+1)(R-MT)^{|\alpha|}d\tau\\
+            &\le \int_0^t \sum_{\alpha} \frac{|\partial^\alpha u(\tau,0)|}{\alpha!}(R-M\tau)^{|\alpha|} \frac{\alpha_1}{R-MT}\left(\frac{R-MT}{R-M\tau}\right)^{|\alpha|}d\tau\\
+            &\le \sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau} \int_0^t\sum_k \frac{k}{R-MT}\left(\frac{R-MT}{R-M\tau}\right)^kd\tau\\
+            &=\sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau} \int_0^t \frac{R-M\tau}{(MT-M\tau)^2} d\tau\\
+            &=C(M,R,T,t)\sup_{\tau\in[0,t]}\Vert u(\tau,x)\Vert_{R-M\tau}
+        \end{aligned}</script><p>Note that the analytic radius of the solution is not necessarily fixed, and may decay over time $t$,<br>Therefore, the model taken during analysis cannot be examined on a fixed $r$.</p>
+<p>However, the C-K theorem only explains the existence and uniqueness of understanding.<br>Hadamard pointed out that the <strong>stability</strong> of the solution also needs to be considered. That is, we must pay attention to the dependence of the solution on the initial value.</p>
+<p>The article was last updated on 2021-11-18 20:12:53</p>
                 </div>
             
         </div>
@@ -338,14 +381,14 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《现代PDE基础》笔记(7)-紧嵌入定理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-18 22:12:52</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《现代PDE基础》笔记(7)-紧嵌入定理</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-11-18 22:12:52</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/18/《现代PDE基础》笔记(7)-紧嵌入定理/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/11/18/《现代PDE基础》笔记(7)-紧嵌入定理/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -413,7 +456,7 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -551,24 +594,21 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -650,9 +690,7 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#compact-embedding-theorem"><span class="nav-text">compact embedding theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction-to-pde"><span class="nav-text">Introduction to PDE</span></a></li></ol>
         </div>
     
 </div>
@@ -677,6 +715,7 @@ Hadamard指出解的<strong>稳定性</strong>也是需要考量的. 也就是�
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

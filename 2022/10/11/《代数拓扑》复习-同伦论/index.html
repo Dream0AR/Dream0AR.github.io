@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -291,7 +291,39 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="homotopy-group">Homotopy group</h2>
+<p>The $n$-dimensional homotopy group $\pi_n(X,x_0)$ is defined as the entire homotopy class of the mapping $f:(I^n,\partial I^n)\rightarrow (X,x_0)$.<br>Homotopy $f_t$ satisfies $f_t(\partial I^n)\equiv x_0.$<br>It can also be regarded as the entire homotopy class of $f:(S^n,s_0)\rightarrow (X,x_0)$.</p>
+<p>Consider $I^{n-1}\subset I^n,$ $J^{n-1}:=\partial I^n\setminus I^{n-1}.$<br>Then the relative homotopy group $\pi_n(X,A,x_0)$ is defined as the entire homotopy class of the mapping $(I^n,\partial I^n, J^{n-1})\rightarrow (X,A,x_0)$.<br>It can also be regarded as the entire homotopy class of $(D^n,S^{n-1},s_0)\rightarrow (X,A,x_0)$.<br>The relative homotopy group has a long exact sequence:</p>
+<script type="math/tex; mode=display">
+\cdots\rightarrow \pi_n(A,x_0)\xrightarrow{i_\ast }\pi_n(X,x_0)\xrightarrow{j_\ast }\pi_n(X,A,x_0)\xrightarrow{\partial} \pi_{n-1}(A,x_0)\rightarrow\cdots\rightarrow \pi_0(X,x_0)</script><p>Similar to the case of homology, we can also prove the case of the more general triplet $(X,A,B)$,<br>When $B=x_0$, it is the above formula.</p>
+<p>The road $\gamma$ in $X$ can also induce isomorphism $\beta_\gamma,$ between homotopy groups of different base points<br>Therefore, if the roads are connected, the base point $x_0.$ can be omitted. The space $X$ is said to be $n$ connected, if $\pi_i(X)=0,$<br>$\,\forall\,i\le n.$<br>$n$ is connected if and only if $S^i$ in all $X$ is shrinkable (from a mapping point of view),<br>$\,\forall\,i\le n.$ The situation with relative homotopy is similar.</p>
+<h2 id="cw-complex-homotopy-theory">CW complex homotopy theory</h2>
+<h3 id="cell-cavity-approximation">Cell cavity approximation</h3>
+<p><strong>Theorem 1</strong> (Whitehead). *If the mapping between CW complexes $f: </p>
+<p><strong>Theorem 2</strong> (Cell Approximation). *The mapping between each CW complex $f:</p>
+<p>For a given pair $(X,A), $ $A$ is a non-empty CW complex.<br>Its $n$ connected <strong>CW model</strong> refers to a $n$ connected CW pair $(Z,A),$<br>$f:Z\rightarrow X$ is an identity map on $A$,<br>And $f_\ast :\pi_i(Z)\rightarrow \pi_i(X)$ is isomorphic when $i&gt;n$, and is surjective for $i=n$.</p>
+<p><strong>Proposition 3</strong>. <em>For each such pair $(X,A)$, there exists an $n$ connected CW model $f:(Z,A)\rightarrow (X,A),$ $\,\forall\,n\ge 0.$ $Z$ is obtained by attaching $A$ to the cell with dimensions above $n$.</em></p>
+<p>When $n=0$, the situation is most special. Take $Z$ to include a connected branch of $A$,<br>That is, there is <strong>CW approximation</strong>$f:Z\rightarrow X,$ which induces the isomorphism of all homotopy groups,<br>is <strong>weak homotopy equivalence</strong>. In fact,<br>It can be proved that the $n$ connected CW model of $(X,A)$ is unique in the sense of relative homotopy equivalence with respect to $A$.<br>In particular, the CW approximation of space is unique in the sense of homotopy equivalence.</p>
+<p><strong>Proposition 4</strong>. <em>Weak homotopy equivalence $f:X\rightarrow Y$ induces the isomorphism of all homology/cohomology groups, with respect to any coefficient group $G.$</em></p>
+<h3 id="dig-out-the-theorem">Dig out the theorem</h3>
+<p>We also have a poaching theorem about homotopy, which is expressed by the following proposition:</p>
+<p><strong>Theorem 5</strong>. <em>For the CW complex $X,$ there is a subcomplex $A\cap B=C.$ If $(A,C)$ is $m$ connected, $(B,C)$ is $n$ connected, then $\pi_i(A,C)\rightarrow \pi_i(X,B)$ induced by embedding mapping is isomorphism, $\,\forall\,i&lt;m+n.$ For $i=m+n$ it is surjective.</em><br><strong>Corollary 6</strong> (Freudenthal). <em>$\pi<em>i (S^n)\rightarrow \pi</em>{i+1}(S^{n+1})$ is an isomorphism, $i&lt;2n-1.$ $i=2n-1$ is a surjection. More generally, this is also true for $\pi<em>i(X)\rightarrow\pi</em>{i+1}(SX)$, As long as $X$ is $n-1$ connected CW complex.</em></p>
+<p><strong>Proposition 7</strong>. <em>(Eilenberg-Maclane space) CW complex $K(G,n)$ is unique in the sense of homotopy and is determined only by $G,n$.</em></p>
+<h2 id="hurewicz-theorem">Hurewicz Theorem</h2>
+<p><strong>Theorem 8</strong>. <em>If the space $X$ is $(n-1)$ connected, then $\widetilde H_i(X)=0,$ $\,\forall\,i&lt;n;$ $\pi_n(X)\cong H_n(X).$ is similar to the relative homotopy.</em></p>
+<p>In other words, as long as $X$ is simply connected, then non-trivial homotopy groups and homology groups occur in the same dimension,<br>And they are isomorphic. Combined with Whitehead&#39;s theorem, we can prove the following conclusion. (Replace $Y$ with $M_f$.)</p>
+<p><strong>Corollary 9</strong>. <em>If $f<em>\ast :H</em>\ast (X)\cong H_\ast (Y),$ then the mapping between simply connected CW complexes $f:X\rightarrow Y$ is homotopy equivalent.</em></p>
+<h2 id="fiber-plexus">fiber plexus</h2>
+<p>Fiber bundle $F\rightarrow E\xrightarrow{p} B$ refers to $\,\forall\,b\in B,$<br>$p^{-1}(b)\approx F,$ and has local trivialization $p^{-1}(U)\approx U\times F.$<br>Fibrification also requires that $p$ satisfies the <strong>homopy-boosting property</strong> with respect to $X$:<br>$\,\forall\,g_t:X\rightarrow B$ satisfies $g_0$ and has an improvement $\widetilde g_0,$<br>Then the overall existence is improved $\widetilde{g}_t.$</p>
+<p><strong>Theorem 10</strong>. <em>If the fiber bundle $F\rightarrow E\rightarrow B$ is all fibrotic (called Serre fibrosis) about the disk, then there is the following long positive sequence:</em></p>
+<script type="math/tex; mode=display">
+\cdots \rightarrow \pi_n(F,x_0)\rightarrow \pi_n(E,x_0)\rightarrow \pi_n(B,b_0)\rightarrow \pi_{n-1}(F,x_0)\rightarrow \cdots\rightarrow \pi_0(E,x_0)\rightarrow 0.</script><p>Note that this is $\pi_n(E,F,x_0)\cong \pi_n(B,b_0).$ In fact, we have the following properties,<br>It shows that fibrous plexuses are almost all fibrosis:</p>
+<p><strong>Proposition 11</strong>. <em>The fiber bundle $p:E\rightarrow B$ has the homotopy promotion property for any CW complex pair $(X,A)$.</em></p>
+<h2 id="stable-homotopy-group">Stable homotopy group</h2>
+<p>For $n$ connected CW complex $X,$ we have $\pi<em>i(X)\cong \pi</em>{i+1}(SX),$ $i&lt;2n+1.$<br>In particular, it holds for $i\le n$, so $SX$ is $n+1$ connected. We have the following suspensions sequence</p>
+<script type="math/tex; mode=display">
+\pi_i(X)\rightarrow \pi_{i+1}(SX)\rightarrow \pi_{i+2}(S^2X)\rightarrow \cdots</script><p>When $i&lt;2n+1$, they are all isomorphisms. Let these groups be $\pi_i^s(X), and $ are called <strong>stable homotopy groups</strong>.</p>
+<p>The article was last updated on 2022-10-11 17:51:42</p>
                 </div>
             
         </div>
@@ -300,14 +332,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑》复习-同伦论</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-11 20:51:29</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑》复习-同伦论</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-11 20:51:29</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/11/《代数拓扑》复习-同伦论/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/11/《代数拓扑》复习-同伦论/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -375,7 +407,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -513,24 +545,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -612,9 +641,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#homotopy-group"><span class="nav-text">Homotopy group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cw-complex-homotopy-theory"><span class="nav-text">CW complex homotopy theory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cell-cavity-approximation"><span class="nav-text">Cell cavity approximation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dig-out-the-theorem"><span class="nav-text">Dig out the theorem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hurewicz-theorem"><span class="nav-text">Hurewicz Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fiber-plexus"><span class="nav-text">fiber plexus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stable-homotopy-group"><span class="nav-text">Stable homotopy group</span></a></li></ol>
         </div>
     
 </div>
@@ -639,6 +666,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

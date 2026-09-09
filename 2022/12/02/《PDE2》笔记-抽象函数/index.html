@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -276,7 +276,25 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>In order to study the development equation, we need to introduce new concepts. Take the heat equation as an example.<br>Suppose $\Omega\subset \mathbb{R}^n,$ and note $\Omega_T=\Omega\times (0,T].$</p>
+<script type="math/tex; mode=display">
+u\in L^p(\Omega_T)\Leftrightarrow \int_0^T\left(\int_\Omega |u(x,t)|^pdx\right)dt<+\infty \Leftrightarrow \int_0^T\Vert u_t\Vert_{L^p}^pdt<\infty.</script><p>Inspired by this, let $I\subset \mathbb{R},$ $X$ be a Banach space.<br>If $u(\cdot,t)\mapsto X$ is a Banach measurable function (that is, it can be approximated by &quot;simple function&quot; = &quot;base&quot;), and</p>
+<script type="math/tex; mode=display">
+\int_I\Vert u(\cdot,t)\Vert^p_Xdt<+\infty,</script><p> Then it is called $u\in L^p(I;X).$<br>Remember $\Vert u\Vert_{L^p(I;X)}=\left(\int_I\Vert u\Vert^p_Xdt\right)^{\frac{1}{p} }.$<br>definition</p>
+<script type="math/tex; mode=display">
+C(I;X)=\{u(\cdot,t):I\rightarrow</script><p>Denote $\Vert u\Vert<em>{C(I;X)}:=\sup</em>{t\in I}\Vert u<em>t\Vert</em>{X}.$ If $I$ is an interval,<br>The above notation can be abbreviated as $L^p(a,b;X)$, etc. However, the opening and closing properties cannot be ignored in the continuous case. It is easy to verify</p>
+<script type="math/tex; mode=display">
+L^p(\Omega_T)=L^p(0,T;L^p(\Omega)),\quad C(\overline\Omega_T)=C([0,T],C(\overline\Omega))\quad \text{If $\Omega$ is bounded}.</script><p>Similarly, a Sobolev space can be defined. If</p>
+<script type="math/tex; mode=display">
+u,v\in L_{loc}(I;X),\quad \int_I u\eta_tdt=-\int_I v\eta dt,\quad \,\forall\,\eta\in C_0^\infty(I),</script><p>Then record $v=u_t,$ as the weak derivative. In this way we define:</p>
+<script type="math/tex; mode=display">
+W^{1,p}(I;X):=\{u\in L^p, u_t\in L^p\},</script><script type="math/tex; mode=display">
+\Vert u\Vert_{W^{1,p} }=(\Vert u\Vert_{L^p}^p+\Vert u_t\Vert_{L^p}^p)^{\frac{1}{p} }.</script><p>For $p\in [1,+\infty],$ $I=[a,b],$ we have the embedding theorem:</p>
+<p><strong>Theorem 1</strong>. <em>$W^{1,p}(I;X)\hookrightarrow C(I;X).$</em></p>
+<p>Simply put, we have $u(t)=u(s)+\int_s^tu_tdt,$<br>Therefore $|u(t)-u(s)|\le \int_t^s\Vert u_t\Vert dt.$</p>
+<p><strong>Theorem 2</strong> (Lions). <em>$\Omega\subset \mathbb{R}^n$ is an open set. If $u\in L^2(0,T;H<em>0^1(\Omega)),$ $u_t\in L^2(0,T;H^{-1}(\Omega)),$ then $u\in C([0,T];L^2(\Omega)),$ and $\Vert u(\cdot,t)\Vert</em>{L^2(\Omega)}^2$ is still absolutely continuous.</em></p>
+<script type="math/tex; mode=display">
+\frac{d {} }{d {}t}\Vert u(\cdot,t)\Vert_{L^2}^2=2\left<{}u_t,u\right>,\quad a.e.\:t\in [0,T].</script><p><strong>Theorem 3</strong>. <em>$\Omega\subset \mathbb{R}^n$ is a bounded open set, $\partial\Omega\in C^m,$ if $u\in L^2(0,T;H^{m+2}(\Omega)),$ $u_t\in L^2(0,T;H^{m}(\Omega)),$ then $u\in C([0,T];H^{m+1}(\Omega)).$</em><br>The article was last updated on 2022-12-02 16:40:42</p>
                 </div>
             
         </div>
@@ -285,14 +303,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《PDE2》笔记-抽象函数</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-12-02 18:40:41</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《PDE2》笔记-抽象函数</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-12-02 18:40:41</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/12/02/《PDE2》笔记-抽象函数/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/12/02/《PDE2》笔记-抽象函数/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -360,7 +378,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -498,24 +516,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -597,9 +612,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            
         </div>
     
 </div>
@@ -624,6 +637,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

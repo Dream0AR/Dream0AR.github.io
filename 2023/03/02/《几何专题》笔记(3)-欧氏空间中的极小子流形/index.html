@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -422,7 +422,101 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="height-function">Height function</h2>
+<p>First consider the situation where the peripheral space $X$ is an $N$-dimensional Euclidean space $E^N$.<br>At this time, all tangent spaces can be equal to $E^N.$. Consider the immersed submanifold $x:M\rightarrow E^n.$ at this time.</p>
+<script type="math/tex; mode=display">
+dx=\theta_i e_i,\quad de_i=\theta_{ij}e_j+\theta_{i\alpha}e_\alpha=\theta_{ij}e_j+h_{i\alpha j}\theta_j e_\alpha.</script><p>Fix a vector $a\in E^N,$ then take the function $f=\left&lt;{}a,x\right&gt;,$ on $M$<br>represents the height function along $a$. Then,</p>
+<script type="math/tex; mode=display">
+f_i\theta_i=df=\left<{}a,dx\right>=\left<{}a,e_i\right>\theta_i,</script><script type="math/tex; mode=display">
+f_{ij}\theta_j=d f_i+f_j\theta_{ji}=\left<{}a,de_i\right>+\left<{}a,e_j\right>\theta_{ji}=\left<{}a,\theta_{ij}e_j+h_{i\alpha j}\theta_j e_\alpha+\theta_{ji}e_j\right>=\left<{}a,h_{i\alpha j}\theta_je_\alpha\right>.</script><p>This gives</p>
+<script type="math/tex; mode=display">
+\Delta f=f_{ii}=\left<{}a,h_{i\alpha i}e_\alpha\right>=n\left<{}a,H\right>.</script><p>This illustrates the following theorem when $n&gt;0$</p>
+<p><strong>Theorem 1</strong>. <em>An immersed submanifold in Euclidean space is minimal if and only if under the induced metric, all coordinate functions are harmonic functions. Furthermore, there is no compact boundless minimal submanifold in Euclidean space.</em></p>
+<p>This is because the harmonic functions on the compact infinite manifold are all constants.</p>
+<h2 id="curvature">Curvature</h2>
+<p>memories</p>
+<script type="math/tex; mode=display">
+d\omega_{AB}-\omega_{AC}\wedge\omega_{CB}=-\frac{1}{2}\widehat R_{ABCD}\omega_C\wedge\omega_D.</script><p>Note that the curvature in Euclidean space is zero. So pulling back we get</p>
+<script type="math/tex; mode=display">
+d\theta_{ij}-\theta_{ik}\wedge\theta_{kj}=-\theta_{i\alpha}\wedge\theta_{j\alpha}=-\frac{1}{2}(h_{i\alpha k}h_{j\alpha l}-h_{i\alpha l}h_{j\alpha k})\theta_k\wedge\theta_l.</script><p>Let $S_{ijkl}$ be the curvature tensor measured on $M$, then</p>
+<script type="math/tex; mode=display">
+S_{ijkl}=h_{i\alpha k}h_{j\alpha l}-h_{i\alpha l}h_{j\alpha k}.</script><p>In fact, this is Gauss&#39;s equation.</p>
+<p>If $M$ is extremely small, then its Ricci tensor is</p>
+<script type="math/tex; mode=display">
+S_{ik}=S_{ijkj}=-h_{i\alpha j}h_{k\alpha j},</script><p> It is negative semi-definite.<br>Further its quantitative curvature is</p>
+<script type="math/tex; mode=display">
+S=S_{ii}=-h_{i\alpha j}^2\le 0.</script><p>Therefore we have the following theorem</p>
+<p><strong>Theorem 2</strong>. <em>The Ricci tensor of a minimal submanifold $M$ is negative semi-definite. It is fully geodesic (a linear subspace) if and only if its quantitative curvature is zero.</em></p>
+<h2 id="minimal-hypersurface">Minimal hypersurface</h2>
+<p>At this time, the co-dimension is $1,$, abbreviated as $h<em>{i,n+1,j}=h</em>{ij}.$<br>Then $\theta<em>{i,n+1}=h</em>{ij}\theta_j.$ we have</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ 0&=d\theta_{i,n+1}-\theta_{iC}\theta_{C,n+1}\\
+ &=dh_{ij}\wedge\theta_j+h_{ij}\theta_k\wedge\theta_{kj}-h_{jk}\theta_{ij}\wedge\theta_k\\
+ &=(dh_{ik}+h_{ij}\theta_{jk}+h_{jk}\theta_{ji})\wedge\theta_k\\
+ &=h_{ik,j}\theta_j\wedge\theta_k
+ \end{aligned}</script><p>Then $h<em>{ik,j}=h</em>{ij,k}.$ This is the Codazzi equation.</p>
+<p>Since $\theta_{n+1}=0,$</p>
+<script type="math/tex; mode=display">
+0=d\theta_{n+1}=\theta_i\wedge\theta_{i,n+1}=h_{ij}\theta_i\wedge\theta_j.</script><p>Therefore $h<em>{ij}=h</em>{ji}.$ So the three variables $h_{ij,k}$ are all symmetrical.<br>Therefore, the sum of any two subscripts of the minimal hypersurface is zero.</p>
+<p>Remember $f=\left&lt;{}a,e_{n+1}\right&gt;,$ then</p>
+<script type="math/tex; mode=display">
+d e_{n+1}=\theta_{n+1,i}e_i=-h_{ij}\theta_je_i,</script><script type="math/tex; mode=display">
+f_i=-\left<{}a,e_j\right>h_{ji},</script><script type="math/tex; mode=display">
+f_{ij}\theta_j=-\left<{}a,\theta_{jk}e_k+h_{jk}\theta_ke_{n+1}\right>h_{ij}-\left<{}a,e_j\right>dh_{ij}-\left<{}a,e_k\right>h_{kj}\theta_{ji}.</script><p>by</p>
+<script type="math/tex; mode=display">
+dh_{ij}+h_{kj}\theta_{ki}+h_{ik}\theta_{kj}=h_{ij,k}\theta_k,</script><script type="math/tex; mode=display">
+f_{ij}\theta_j=-\left<{}a,e_{n+1}\right>h_{ij}h_{jk}\theta_k-\left<{}a,e_j\right>h_{ij,k}\theta_k,</script><script type="math/tex; mode=display">
+f_{ik}=-\left<{}a,e_{n+1}\right>h_{ij}h_{jk}-\left<{}a,e_j\right>h_{ij,k},</script><script type="math/tex; mode=display">
+\Delta f=f_{ii}=-\left<{}a,e_{n+1}\right>h_{ij}^2=\left<{}a,e_{n+1}\right>S.</script><p>Consider a minimal hypersurface of the shape $z=z(x_1,\cdots,x_n)$. Then the tangent vector is</p>
+<script type="math/tex; mode=display">
+\frac{\partial {}r}{\partial {}x_i}=(0,\cdots,1,\cdots,0,p_i),\quad p_i=\frac{\partial {}z}{\partial {}x_i}.</script><script type="math/tex; mode=display">
+g_{ij}=\delta_{ij}+p_ip_j.</script><script type="math/tex; mode=display">
+e_{n+1}=\frac{1}{W}(p_1,\cdots,p_n,-1),\quad W=\sqrt{1+p_k^2}.</script><p>This surface has a one-to-one mapping to a hyperplane. Bernstein&#39;s problem is whether minimal surfaces are always hyperplanes.<br>We hope to prove that $z=a<em>ix_i+a</em>{n+1}.$ but this has a counterexample when $n\ge 8$.<br>Now consider the case $n=2$.</p>
+<p>Hope to use $\Delta \left&lt;{}a,e<em>{n+1}\right&gt;=S\left&lt;{}a,e</em>{n+1}\right&gt;.$<br>Take $a=(0,\cdots,0,1),$ then $\left&lt;{}a,e_{n+1}\right&gt;=-\frac{1}{W}.$ Therefore,</p>
+<script type="math/tex; mode=display">
+\Delta(\frac{1}{W})=\frac{2K}{W}\le 0.</script><p>Then $\frac{1}{W}$ is a positive function of the upward summation and must be a constant. This illustrates the conclusion.</p>
+<p>Or we have Gauss&#39;s equation</p>
+<script type="math/tex; mode=display">
+S_{ijkl}=h_{ik}h_{jl}-h_{il}h_{jk},\quad S_{ik}=nHh_{ik}-h_{ij}h_{jk}.</script><p>When the surface is extremely small, there is</p>
+<script type="math/tex; mode=display">
+S_{ik}=K\delta_{ik}=-h_{il}h_{lk}.</script><p> due to</p>
+<script type="math/tex; mode=display">
+\Delta\log (1+\frac{1}{W})=\frac{1}{1+\frac{1}{W} }\Delta(\frac{1}{W})-\frac{1}{(1+\frac{1}{W})^2}|\nabla (\frac{1}{W})|^2.</script><p>Let $f=1+\frac{1}{W},$ then</p>
+<script type="math/tex; mode=display">
+\Delta \log f=\frac{\Delta f}{f}-\frac{f_k^2}{f^2}.</script><p> memories</p>
+<script type="math/tex; mode=display">
+\left<{}a,e_3\right>_i=-\left<{}a,e_j\right>h_{ij}.</script><p>Since $e_3=\frac{1}{W}(p_1,p_2,-1),$</p>
+<script type="math/tex; mode=display">
+|\nabla (\frac{1}{W})|^2=|\nabla\left<{}a,e_3\right>|^2=\left<{}a,e_3\right>_i^2=\left<{}a,e_j\right>h_{ij}\left<{}a,e_k\right>h_{ik}=-K\left<{}a,e_j\right>^2.</script><p>due to</p>
+<script type="math/tex; mode=display">
+(0,0,1)=a=\left<{}a,e_i\right>e_i+\left<{}a,e_3\right>e_3=\left<{}a,e_i\right>e_i-\frac{1}{W}e_3,</script><script type="math/tex; mode=display">
+1=\left<{}a,e_i\right>^2+(\frac{1}{W})^2.</script><p> Therefore</p>
+<script type="math/tex; mode=display">
+\Delta(\log (1+\frac{1}{W}))=\frac{1}{1+\frac{1}{W} }\frac{2K}{W}+\frac{1}{(1+\frac{1}{W})^2}(-K)(1-(\frac{1}{W})^2)=K.</script><p>Consider a new metric $d\sigma=(1+\frac{1}{W})ds, $ $ds$ induced by immersion.<br>$d\sigma\ge ds$ is complete. Assert that under $\sigma$, $\widetilde K\equiv 0,$<br>Then it is a developable surface. Then,</p>
+<script type="math/tex; mode=display">
+d\sigma^2=d\xi^2+d\eta^2.</script><script type="math/tex; mode=display">
+\Delta_{ds^2}=\Lambda(\frac{\partial {} }{\partial {}\xi^2}+\frac{\partial {} }{\partial {}\eta^2}),\quad \Lambda=(1+\frac{1}{W})>0.</script><p>It is known that $K\le 0.$ therefore</p>
+<script type="math/tex; mode=display">
+0\ge K=\Delta\log(1+\frac{1}{W})= \Lambda(\frac{\partial {} }{\partial {}\xi^2}+\frac{\partial {} }{\partial {}\eta^2})(\log (1+\frac{1}{W})),</script><script type="math/tex; mode=display">
+(\frac{\partial {} }{\partial {}\xi^2}+\frac{\partial {} }{\partial {}\eta^2})\log(1+\frac{1}{W})\le 0,</script><p>The upscaling and positive functions are constants, so $K\equiv 0.$ From the previous theorem, it is fully geodesic,<br>Then it is a hyperplane.</p>
+<p>For the previous assertion, let $d\sigma^2=e^{2\lambda}ds^2,$ then</p>
+<script type="math/tex; mode=display">
+e^{2\lambda}\widetilde K=K-\Delta \lambda,\quad e^{2\lambda}=(1+\frac{1}{W})^2,\quad \lambda=\log(1+\frac{1}{W}).</script><p>Then $\widetilde K=0$ if and only if $K=\Delta \log (1+\frac{1}{W}).$</p>
+<h2 id="minimal-surface-equation">Minimal surface equation</h2>
+<p>Review$ds^2=g<em>{ij}dx_idx_j,$ $g</em>{ij}=\delta<em>{ij}+p_ip_j.$<br>$g</em>{ik}g^{kj}=\delta<em>i^k,$ $g^{ij}=\delta</em>{ij}-\frac{1}{W^2}p_ip_j.$<br>Consider the second basic form</p>
+<script type="math/tex; mode=display">
+l_{ij}dx_idx_j=\Theta_{n+1}=-\left<{}dr,de_{n+1}\right>=-dx_i d(\frac{p_i}{W})+dzd(\frac{1}{W}).</script><script type="math/tex; mode=display">
+\Theta_{n+1}=\left<{}d^2r,e_{n+1}\right>=-\frac{1}{W}\frac{\partial^2 {}z}{\partial {}x_i\partial {}x_j}dx^idx^j.</script><p>Therefore</p>
+<script type="math/tex; mode=display">
+nH=g^{ij}l_{ij}=-\frac{1}{W}g^{ij}p_{ij}=0\Leftrightarrow g^{ij}p_{ij}=0.</script><p>This is if and only if</p>
+<script type="math/tex; mode=display">
+\frac{\partial {} }{\partial {}x_i}(\frac{p_i}{W})=0.</script><p>This is because</p>
+<script type="math/tex; mode=display">
+0=g^{ij}p_{ij}=(\delta_{ij}-\frac{p_ip_j}{W^2})p_{ij}=p_{ii}-\frac{1}{W^2}p_ip_jp_{ij}.</script><p>On the other hand,</p>
+<script type="math/tex; mode=display">
+\frac{\partial {} }{\partial {}x_i}(\frac{p_i}{W})=\frac{1}{W}p_{ii}-\frac{1}{W^2}p_i\frac{\partial {}W}{\partial {}x_i}=\frac{1}{W}p_{ii}-\frac{1}{W^3}p_ip_kp_{ki}=\frac{1}{W}(p_{ii}-\frac{1}{W^2}p_ip_kp_{ki}).</script><p>Therefore the two are equal. This gives us the equation of the minimal surface.</p>
+<p>The article was last updated on 2023-03-02 19:47:54</p>
                 </div>
             
         </div>
@@ -431,14 +525,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《几何专题》笔记(3)-欧氏空间中的极小子流形</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-03-02 21:47:53</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《几何专题》笔记(3)-欧氏空间中的极小子流形</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-03-02 21:47:53</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/03/02/《几何专题》笔记(3)-欧氏空间中的极小子流形/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/03/02/《几何专题》笔记(3)-欧氏空间中的极小子流形/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -506,7 +600,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -644,24 +738,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -743,9 +834,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#height-function"><span class="nav-text">Height function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curvature"><span class="nav-text">Curvature</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minimal-hypersurface"><span class="nav-text">Minimal hypersurface</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#minimal-surface-equation"><span class="nav-text">Minimal surface equation</span></a></li></ol>
         </div>
     
 </div>
@@ -770,6 +859,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -280,7 +280,41 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>Introduction to smooth manifolds by John M. Lee</p>
+<h2 id="definition">Definition</h2>
+<p>Given the role $\theta:G\times M\rightarrow M.$, define the equivalence relation $p\sim q$ on $M$<br>$\Leftrightarrow$ $\,\exists\,g\in G,$ $p=g\cdot q.$<br>Then the equivalence class is exactly the orbit of $G$ in $M$. Let $M/G$ be the quotient space, also called the orbital space.<br>We hope that orbital space can also be a differential manifold.</p>
+<p><strong>Lemma 1</strong>. <em>The quotient map $\pi:M\rightarrow G/M$ is an open map.</em></p>
+<p>The action is called <strong>inverse compact action</strong>, if $G\times M\rightarrow M\times M,$<br>$(g,p)\mapsto (g\cdot p,p)$ is inversely compact.<br>This condition is weaker than requiring that the action $\theta$ itself be inversely compact.</p>
+<p><strong>Proposition 2</strong>. <em>If the Lie group continuously and inversely compactly acts on the manifold, then the quotient space is $T_2$.</em></p>
+<p>Define the orbital relationship $\mathcal{O}\subset M\times M,$</p>
+<script type="math/tex; mode=display">
+\mathcal{O}=\{(g\cdot p,p)\in M\times M:p\in M,g\in G\}.</script><p>Then $(p,q)\in \mathcal{O}$ $\Leftrightarrow$ $p,q$ are in the same orbit.<br>Since a continuous inverse compact map onto a locally compact $T_2$ space is always a closed map,<br>$\mathcal{O}$ is a closed set in $M\times M$.<br>It is easy to prove that this is the sufficient condition for the quotient space to be $T_2$.</p>
+<p>However, it is not easy to directly judge the inverse compaction. However, we have the following three equivalent properties:</p>
+<ol>
+<li><p>The effect is inversely tight.</p>
+</li>
+<li><p>If ${p_i},$ ${g_i\cdot p_i}$ converges, then ${g_i}$ has a subcolumn that converges.</p>
+</li>
+<li><p>$\,\forall\,K\Subset M,$<br>$G_K={g\in G|( g\cdot K)\cap K\neq \varnothing}$ is a compact set.</p>
+</li>
+</ol>
+<p><strong>Corollary 3</strong>. <em>The continuous action of a compact Lie group on a manifold is inversely compact.</em></p>
+<p><strong>Proposition 4</strong>. <em>Suppose $\theta$ is an inverse compact action, then the orbit map $\theta^{(p)}:G\rightarrow M$ is an inverse compact map, and therefore the orbit is closed. If it is injective, then the orbit map is a smooth embedding, and the orbit is an inverse compact embedding submanifold.</em></p>
+<p><strong>Corollary 5</strong>. <em>If the Lie group acts inversely compactly on $M$, then each orbital is a closed set in $M$, and each stabilizer is compact.</em></p>
+<h2 id="business-space">Business Space</h2>
+<h3 id="quotient-manifold">Quotient manifold</h3>
+<p><strong>Theorem 6</strong>. <em>Suppose $G$ is smooth, free, and acts inversely on $M$, then the orbital space $M/G$ is a $\dim M-\dim G$ dimensional topological manifold, and there is a unique smooth structure such that $\pi:M\rightarrow M/G$ is smoothly submerged.</em></p>
+<h3 id="override-mapping">Override mapping</h3>
+<p><strong>Lemma 7</strong>. <em>Suppose the discrete Lie group $\Gamma$ is continuous and acts freely on the manifold $E$. Then the action is inversely compact if and only if the following conditions hold: $\,\forall\,p\in E,$ $\,\exists\,U$ is the neighborhood, $\,\forall\,g\in \Gamma,$ $(g\cdot U)\cap U\neq \varnothing,$ Unless $g=e.$ and if $p,p&#39;$ are not in the same orbit, then there are neighborhoods $V, V&#39;,$ $(g\cdot V)\cap V&#39;=\varnothing,$ $\,\forall\,g\in \Gamma.$</em></p>
+<p><strong>Proposition 8</strong>. <em>Suppose $\pi:E\rightarrow M$ is a covering map, then $\operatorname{Aut}_\pi(E)$ equipped with discrete topology is smooth, free, and inversely compact acting on $E$.</em></p>
+<p><strong>Theorem 9</strong>. <em>Suppose $E$ is a connected smooth manifold, $\Gamma$ is a discrete Lie group, and smooth free inverse compaction acts on $E$. Then the orbital space $E/\Gamma$ is a topological manifold with a unique smooth structure such that $\pi:E\rightarrow E/\Gamma$ is a smooth regular cover.</em></p>
+<h3 id="homogeneous-space">Homogeneous space</h3>
+<p>If the Lie group $G$ has a smooth transferable effect on the manifold $M$, then $M$ is called a homogeneous space.<br><strong>Theorem 10</strong>. <em>If $H$ is a closed subgroup of $G$, then the left coset space $G/H$ is a $\dim G-\dim H$ dimensional topological space, and there is a unique smooth structure such that $\pi:G\rightarrow G/H$ is a smooth submersion. The left action of $G$ on $G/H$ is $g_1\cdot (g_2H)=(g_1g_2)H,$ Turn $G/H$ into a homogeneous space.</em></p>
+<p><strong>Theorem 11</strong>. <em>Suppose $G$ is a Lie group, $M$ is a homogeneous space, $p\in M.$ then the stabilizer $G_p$ is the closed subgroup of $G$, $F:G/G_p\rightarrow M,$ $F(gG_p)=g\cdot p$ gives an equivariant diffeomorphism.</em></p>
+<p>There are some typical homogeneous spaces:</p>
+<script type="math/tex; mode=display">
+S^{n-1}\approx O(n)/O(n-1)\approx SO(n)/SO(n-1),</script><script type="math/tex; mode=display">
+S^{2n-1}\approx U(n)/U(n-1)\approx SU(n)/SU(n-1).</script><p>The article was last updated on 2022-10-18 22:50:20</p>
                 </div>
             
         </div>
@@ -289,14 +323,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》笔记-商流形</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-19 01:50:15</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》笔记-商流形</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-19 01:50:15</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/18/《微分流形》笔记-商流形/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/18/《微分流形》笔记-商流形/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -364,7 +398,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -502,24 +536,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -601,9 +632,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#business-space"><span class="nav-text">Business Space</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#quotient-manifold"><span class="nav-text">Quotient manifold</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#override-mapping"><span class="nav-text">Override mapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#homogeneous-space"><span class="nav-text">Homogeneous space</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -628,6 +657,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

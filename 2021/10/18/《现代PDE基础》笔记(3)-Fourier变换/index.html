@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -341,7 +341,66 @@ $$\left&lt;{}F[T],\varphi(x)\right&gt;=(2\pi)^n\left&lt;{}T,F^{-1}[\varphi(-x)]\
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="common-sense-fourier-transformation">Common sense Fourier transformation</h2>
+<h3 id="basic-properties">Basic properties</h3>
+<p>$\,\forall\,f\in \mathscr{S}(\mathbb{R}_x^n),$ defines its <strong>Fourier transformation</strong> as</p>
+<script type="math/tex; mode=display">F[f]=\int_{\mathbb{R}_x^n}f(x)e^{-ix\cdot \xi} dx;</script><p>For $g(\xi)\in\mathscr{S}(\mathbb{R}_\xi^n),$, define its <strong>Fourier inverse transform</strong> as</p>
+<script type="math/tex; mode=display">F^{-1}g=\int_{\mathbb{R}_\xi^n}g(\xi)e^{ix\cdot \xi}\bar{d}\xi.</script><p>Among them, $\bar{d}\xi=(2\pi)^{-n}d\xi.$ is also recorded as $F[f]=\widehat{f}.$</p>
+<p>$F$ satisfies the following properties:</p>
+<ol>
+<li><p>$F[f(x+h)]=\widehat{f}(\xi)e^{ih\cdot\xi};$</p>
+</li>
+<li><p>$F[f(x)e^{-ix\cdot h}]=\widehat{f}(\xi+h);$</p>
+</li>
+<li><p>$F[f(\delta x)]=\delta^{-n}\widehat{f}(\delta^{-1}\xi);$</p>
+</li>
+<li><p>$F[D_jf(x)]=\xi_j\widehat{f}(\xi);$</p>
+</li>
+<li><p>$F[x_jf(x)]=-D_j\widehat{f}(\xi).$</p>
+</li>
+</ol>
+<p>Among them $D<em>j=\frac{1}{i}\partial x_j.$ The first three propositions are easy,<br>The fourth proposition is the integral by parts. The difficulty of the last proposition is to show that $\widehat{f}$ is differentiable.<br>Do a derivative of $\widehat{f}$. Note that the left equation has given us the limit of our expectations,<br>Therefore, it is enough to prove that their difference tends to zero. A simple proof can be given using Euler&#39;s formula and the differential mean value theorem.<br>This property tells us that $\widehat{f}\in C^\infty(\mathbb{R}</em>\xi^n).$ further has:</p>
+<p><strong>Theorem 1.1</strong>. <em>$f\in \mathscr{S}(\mathbb{R}^n)$ $\Rightarrow$ $\widehat f\in \mathscr{S}(\mathbb{R}^n).$</em></p>
+<p><strong>Proof:</strong> Note that $\widehat{f}=F[f]$ is bounded. Then from the previous properties,<br>$(-1)^{|\beta|}\xi^\alpha D^\beta\widehat{f}(\xi)=F[D^\beta(x^\alpha f(x))]$ is also bounded.<br>Therefore $\widehat f\in \mathscr{S}(\mathbb{R}^n).$</p>
+<p>Next, we show that $F^{-1}$ is indeed the inverse of $F$. First, based on Fubini&#39;s theorem, we have the following proposition:</p>
+<p><strong>Proposition 1.2</strong>. When <em>$f,g\in \mathscr{S}(\mathbb{R}^n)$, there is <script type="math/tex">\int_{\mathbb{R}^n}f\widehat gdx=\int_{\mathbb{R}^n}\widehat fgdx.</script></em></p>
+<p>Recall that in probability theory the mean is zero,<br>The normal distribution density function with standard deviation $\sigma I$ is $K<em>\sigma(x)={(\sqrt{2\pi}\sigma)^{-n} }e^{-\frac{|x|^2}{2\sigma^2} }.$<br>Remember $G</em>\sigma(x)=(2\pi)^{-n}e^{-\frac{\sigma^2 |x|^2}{2} },$<br>Then the calculation is $F[G<em>\sigma]=K</em>\sigma.$ We use this to prove the following theorem:</p>
+<p><strong>Theorem 1.3</strong> (Fourier inverse transformation). <em>$f\in \mathscr{S}(\mathbb{R}^n),$ $f=F^{-1}\circ F[f].$</em></p>
+<p><strong>Proof:</strong> From the previous proposition,<br>$\int<em>{\mathbb{R}^n}f K</em>\sigma dx=\int<em>{\mathbb{R}^n}\widehat{f} G</em>\sigma d\xi.$<br>When $\sigma\rightarrow 0$,<br>The left side converges to $f(0)$ (i.e. $K<em>\sigma\rightarrow \delta$),<br>The right side converges to $\int</em>{\mathbb{R}^n} \widehat{f}\bar{d}\xi$ (i.e. $G<em>\sigma\rightarrow (2\pi)^{-n}$).<br>Therefore, $f(0)=\int</em>{\mathbb{R}^n} \widehat{f}\bar{d}\xi=F^{-1}\widehat{f}(0).$</p>
+<p>Next $\,\forall\,x\in \mathbb{R},$ takes the function $g(y)=f(y+x),$ then</p>
+<script type="math/tex; mode=display">f(x)=g(0)=\int_{\mathbb{R}^n}\widehat{g}(\xi)\bar{d}\xi=\int_{\mathbb{R}^n}\widehat{f}(\xi)e^{ix\cdot \xi}\bar{d}\xi=F^{-1}\widehat{f}(x).</script><p>Therefore $f=F^{-1}\circ F[f].$</p>
+<p>According to the definition, $F[f] (\xi)=(2\pi)^nF^{-1}[f] (-\xi),$<br>$F^{\pm 1}[f(x)] (\xi)=F^{\pm 1}[f(-x)] (-\xi),$ Therefore</p>
+<script type="math/tex; mode=display">F[F^{-1}[f] (\xi)] (x)=(2\pi)^{-n}F[F[f] (-\xi)] (x)=F^{-1}[F[f] (-\xi)] (-x)=F^{-1}[F[f] (\xi)] (x)=f(x),</script><p>That is, on $\mathscr{S}(\mathbb{R}^n)$,<br>$F^{-1}\circ F=F^{-1}\circ F=\mathrm{id},$<br>Therefore, the linear continuous mapping $F$ establishes an isomorphic correspondence, and the inverse mapping is also continuous.</p>
+<h3 id="convolution">Convolution</h3>
+<p>The convolution operation also has good properties under Fourier transform.</p>
+<p><strong>Proposition 1.4</strong>. <em>$\,\forall\,f,g\in \mathscr{S}(\mathbb{R}^n),$ $f\ast g\in \mathscr{S}(\mathbb{R}^n),$ and $F[f\ast g]=F[f]F[g].$</em></p>
+<p><strong>Certificate:</strong> $\,\forall\,l\ge 0,$<br>$\,\exists\,M_l&gt;0$ makes $\sup_x |x|^l|g(x)|\le M_l.$ therefore:</p>
+<script type="math/tex; mode=display">|x||g(x-y)|^{1/l}\le M_l^{1/l}\frac{|x|}{|x-y|}\le 2M_l^{1/l},\quad |x|\ge 2|y|;</script><script type="math/tex; mode=display">\frac{|x|}{|y|}|g(x-y)|^{1/l}\le 2|g(x-y)|\le 2M_0^{1/l},\quad |x|<2|y|.</script><p>Remember $A_l=2^l(M_0+M_l),$ then $|x|^l|g(x-y)|\le A_l(1+|y|)^l.$ Thus</p>
+<script type="math/tex; mode=display">\sup_x|x|^l|(f\ast g)(x)|\le A_l\int_{\mathbb{R}^n}f(y)(1+|y|)^ldy<\infty.</script><p>$\,\forall\,\alpha\in \mathbb{N}^n,$<br>Since $\partial^\alpha(f\ast g)=f\ast (\partial^\alpha g),$<br>$\partial^\alpha g\in \mathscr{S}(\mathbb{R}^n),$<br>Therefore $\sup_x |x|^l |\partial^\alpha (f\ast g)(x)|&lt;\infty,$<br>$f\ast g\in \mathscr{S}(\mathbb{R}^n).$</p>
+<p>Remember $F(x,y)=f(y)g(x-y)e^{-ix\cdot \xi}.$ $|F|$ is obviously integrable,<br>Therefore, according to Fubini’s theorem,</p>
+<script type="math/tex; mode=display">\widehat{f\ast g}(\xi)=\int_{\mathbb{R}^n\times \mathbb{R}^n}F(x,y)dydx=\int_{\mathbb{R}^n\times \mathbb{R}^n}F(x,y)d(x-y)dy=\widehat{f}(\xi)\widehat{g}(\xi).</script><p>That is $F[f\ast g]=F[f]F[g].$</p>
+<p>Using the conversion relationship between $F$ and $F^{-1}$, we can immediately get:<br><strong>Corollary 1.5</strong>. <em>$F[fg]=(2\pi)^{-n}F[f]\ast F[g]$</em></p>
+<p>For the Parseval identity of the Fourier series, we have a similar Fourier transform version:</p>
+<p><strong>Theorem 1.6</strong> (Plancherel). <em>$f\in \mathscr{S}(\mathbb{R}^n)\Rightarrow (2\pi)^{-n}\parallel\widehat{f}\parallel<em>{L^2(\mathbb{R}^n)}=\parallel f\parallel</em>{L^2(\mathbb{R}^n)}$</em></p>
+<p><strong>Proof:</strong> Take $f^\ast (x)=\overline{f(-x)},$ then</p>
+<script type="math/tex; mode=display">Ff^\ast (\xi)=\int_{\mathbb{R}^n}\overline{f(-x)}e^{-ix\cdot \xi}dx=\overline{\int_{\mathbb{R}^n}f(-x)e^{ix\cdot \xi}dx}=\overline{\widehat{f}(\xi)}.</script><p>Take $h=f\ast f^\ast ,$<br>Then on the one hand $h(0)=\int<em>{\mathbb{R}^n}f(y)\overline{f(y)}dy=\parallel f\parallel^2</em>{L^2(\mathbb{R}^n)}.$<br>On the other hand,<br>From $\widehat{h}=\widehat{f}\overline{\widehat{f} }=|\widehat{f}|^2,$<br>$h(0)=\int<em>{\mathbb{R}^n}\widehat{h}(\xi)\bar{d}\xi=(2\pi)^{-n}\parallel\widehat{f}\parallel^2</em>{L^2(\mathbb{R}^n)}.$<br>From this we get $(2\pi)^{-n}\parallel\widehat{f}\parallel<em>{L^2(\mathbb{R}^n)}=\parallel f\parallel</em>{L^2(\mathbb{R}^n)}.$</p>
+<p>Of course, we can first prove more generally that $\int<em>{\mathbb{R}^n}\widehat{f}\overline{\widehat{g} }\bar{d}\xi=\int</em>{\mathbb{R}^n}f\overline{g}d x,$<br>Just take $h=f\ast g^\ast $.</p>
+<h2 id="generalized-fourier-transform">Generalized Fourier Transform</h2>
+<h3 id="basic-definition">Basic definition</h3>
+<p>We can define the generalized Fourier transformation $F[T]\in \mathscr{S}&#39;(\mathbb{R}^n):$ on $\mathscr{S}&#39;(\mathbb{R}^n)$</p>
+<script type="math/tex; mode=display">\left<{}F[T],\varphi\right>:=\left<{}T,F[\varphi]\right></script><p>When $T\in \mathscr{S}(\mathbb{R}^n)$ or is just a normal integrable function with Fourier transformation,<br>From the previous proposition (proven by Fubini’s theorem), the equation holds in the sense of the normal Fourier transformation,<br>Therefore the definition is a generalization of the common sense.</p>
+<p>Similarly, the generalized Fourier transform also satisfies the following properties: $F[D^\alpha T]=\xi^\alpha F[T],$<br>$F[x^\alpha T]=(-1)^{|\alpha|}D^\alpha F[T].$</p>
+<p>Define the generalized Fourier inverse transform as:</p>
+<script type="math/tex; mode=display">\left<{}F^{-1}[T],\varphi\right>:=\left<{}T,F^{-1}[\varphi]\right>.</script><p>From the usual Fourier transformation $F:\mathscr{S}(\mathbb{R}^n)\cong \mathscr{S}(\mathbb{R}^n),$<br>The generalized Fourier transform is also a continuous isomorphic correspondence on the generalized function space $\mathscr{S}&#39;(\mathbb{R}^n)$,<br>The inverse mapping $F^{-1}$ is also a linear continuous mapping.</p>
+<p>Recall that we defined convolution of generalized functions, but for general generalized functions, convolution may not exist.<br>For $\varphi\in \mathscr{S}(\mathbb{R}^n),$<br>$T\in \mathscr{S}&#39;(\mathbb{R}^n),$<br>We have $\varphi\ast T\in \mathscr{S}&#39;(\mathbb{R}^n),$<br>And $F[\varphi\ast T]=F[\varphi]F[T].$<br>$\varphi$ can also be replaced by a generalized function with compact support $\mathscr{E}&#39;(\mathbb{R}^n).$</p>
+<p>For generalized functions, $F,F^{-1}$ also have the following transformation relationship:</p>
+<script type="math/tex; mode=display">\left<{}F[T],\varphi(x)\right>=(2\pi)^n\left<{}T,F^{-1}[\varphi(-x)]\right>=(2\pi)^n\left<{}F^{-1}[T],\varphi(-x)\right>,</script><p>We have $F[\varphi\cdot T]=(2\pi)^{-n}F[\varphi]\ast F[T].$</p>
+<h3 id="example">Example</h3>
+<p>$F[\delta(x-a)]=e^{-ia\cdot \xi},$ In particular, $F[\delta]=1.$</p>
+<p>The generalized function with compact support is of course in $\mathscr{S}&#39;(\mathbb{R}^n)$. In particular,<br>It satisfies the following theorem:</p>
+<p><strong>Theorem 1.7</strong>. <em>If $T\in \mathscr{E}&#39;(\mathbb{R}<em>x^n),$ then $F[T] (\xi)=\left&lt;{}T_x,e^{-ix\cdot \xi}\right&gt;\in \mathscr{S}&#39;(\mathbb{R}</em>\xi^n)$ is a normal function about $\xi$.</em></p>
+<p>The proof can be given using regularization of generalized functions.</p>
+<p>The article was last updated on 2021-10-23 13:03:45</p>
                 </div>
             
         </div>
@@ -350,14 +409,14 @@ $$\left&lt;{}F[T],\varphi(x)\right&gt;=(2\pi)^n\left&lt;{}T,F^{-1}[\varphi(-x)]\
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《现代PDE基础》笔记(3)-Fourier变换</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-18 18:14:30</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《现代PDE基础》笔记(3)-Fourier变换</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-18 18:14:30</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/18/《现代PDE基础》笔记(3)-Fourier变换/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/18/《现代PDE基础》笔记(3)-Fourier变换/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -425,7 +484,7 @@ $$\left&lt;{}F[T],\varphi(x)\right&gt;=(2\pi)^n\left&lt;{}T,F^{-1}[\varphi(-x)]\
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -563,24 +622,21 @@ $$\left&lt;{}F[T],\varphi(x)\right&gt;=(2\pi)^n\left&lt;{}T,F^{-1}[\varphi(-x)]\
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -662,9 +718,7 @@ $$\left&lt;{}F[T],\varphi(x)\right&gt;=(2\pi)^n\left&lt;{}T,F^{-1}[\varphi(-x)]\
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#common-sense-fourier-transformation"><span class="nav-text">Common sense Fourier transformation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-properties"><span class="nav-text">Basic properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#convolution"><span class="nav-text">Convolution</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generalized-fourier-transform"><span class="nav-text">Generalized Fourier Transform</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-definition"><span class="nav-text">Basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-text">Example</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -689,6 +743,7 @@ $$\left&lt;{}F[T],\varphi(x)\right&gt;=(2\pi)^n\left&lt;{}T,F^{-1}[\varphi(-x)]\
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

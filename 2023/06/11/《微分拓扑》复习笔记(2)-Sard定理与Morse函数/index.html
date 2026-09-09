@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -273,7 +273,36 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="sard%E2%80%99s-theorem">Sard’s Theorem</h2>
+<p><strong>Theorem 1</strong>. <em>The critical value set of smooth mapping $f:M\rightarrow N$ is the zero test set in $N$.</em></p>
+<p><strong>Note 2</strong>. <em>Sard’s theorem holds for $C^k$ mapping $f:M^m\rightarrow N^n$, $k\ge \max{1,m-n+1}.$ Note that the critical point set may not necessarily have zero test.</em></p>
+<p><strong>Corollary 3</strong>. <em>The regular values of the smooth map $f:M\rightarrow N$ are dense in $N$. And at the same time, the points for which the regular values of the smooth map can be listed are also dense.</em></p>
+<p>The proof consists of the following steps:</p>
+<p><strong>Lemma 4</strong>. <em>$f:I^m\rightarrow \mathbb{R}^n$ is a $C^1$ mapping. If $m=n,$ $A\subset I^m$ has zero test, then $f(A)\subset \mathbb{R}^n$ is a zero test set. If $m&lt;n,$ $f(I^m)\subset \mathbb{R}^n$ is a zero test set.</em></p>
+<p>The measure is controlled by the Lipschitz constant, thus proving the first part of the conclusion.</p>
+<p><strong>Corollary 5</strong> (Mini Sard). <em>Suppose $f:M\rightarrow N$ is a $C^1$ mapping, $\dim M=\dim N,$, then the image $f(A)$ of the zero test set $A\subset M$ in $M$ is the zero test set in $N$. If $\dim M&lt;\dim N,$ then $f(M)$ is the zero test set in $N$. ($M$ are all critical points.)</em></p>
+<p><strong>Theorem 6</strong> (Sard&#39;s theorem of equal dimensions). <em>Suppose $f:M\rightarrow N$ is the $C^1$ mapping between $n$-dimensional manifolds, and $C\subset M$ is the critical point set. Then $f(C)$ is the zero measurement set.</em></p>
+<p>According to Taylor&#39;s theorem, near the critical value, the image set can be controlled by a small neighborhood on the hyperplane.<br>Just do the segmentation to make the neighborhood small enough.</p>
+<p><strong>Lemma 7</strong>. <em>Suppose $I<em>1,\cdots,I_n$ is the cover of the closed interval $[a,b]$, then there is a refined cover $I_1&#39;,\cdots,I_N&#39;,$ such that $I_j&#39;\subset I_i,$ $\sum</em>{j=1}^N |I_j&#39;|\le 2(b-a).$</em></p>
+<p><strong>Theorem 8</strong> (Fubini&#39;s theorem for zero-measurement sets). <em>Suppose $A\subset \mathbb{R}^n$ is a compact set. If $\,\forall\,c\in \mathbb{R},$ $A\cap ({c}\times \mathbb{R}^{n-1})$ is ${c}\times If the zero test set in \mathbb{R}^{n-1}$ is zero, then $A$ is the zero test set in $\mathbb{R}^n$.</em></p>
+<p>From this we can prove Sard’s theorem. Just use induction,<br>Just discuss $f:U^m\rightarrow \mathbb{R}^n$. Discuss according to the order of derivatives.<br>For the situation with the highest degree, use Taylor&#39;s formula to estimate it.</p>
+<h2 id="morse-function">Morse function</h2>
+<p>Let $f:M\rightarrow \mathbb{R}$ be a smooth function. If $df_p=0,$, then $p$ is called a critical point.<br>If $M$ is compact, there are at least two critical points: the maximum point and the minimum point. If the second-order derivative at the critical point is non-degenerate,<br>Then the critical point is called <strong>non-degenerate critical point</strong>. This definition has nothing to do with the selection of the coordinate card.</p>
+<p><strong>Proposition 9</strong>. <em>There are no other critical points near the non-degenerate critical point.</em></p>
+<p><strong>Lemma 10</strong> (Morse Lemma). <em>Suppose $c$ is the non-degenerate critical point of function $f:M\rightarrow \mathbb{R}$, then there is a Morse coordinate card $(U,\phi) of $c$, $ Morse index $i,$ such that</em></p>
+<script type="math/tex; mode=display">
+f\circ \phi^{-1}(x_1,\cdots,x_n)=f(c)-\sum_{j=1}^i x_j^2+\sum_{j=i+1}^n x_j^2.</script><p>The proof is carried out using Taylor expansion and induction on the dimensions.</p>
+<p><strong>Corollary 11</strong>. <em>The non-degenerate critical point of a function is isolated. In particular, the Morse function on a compact manifold has a finite number of critical points.</em></p>
+<p>If all critical points of function $f$ are non-degenerate, then $f$ is called Morse function.</p>
+<p><strong>Proposition 12</strong>. <em>Suppose $M^m\subset \mathbb{R}^n$ is an embedded submanifold. For almost all $a\in \mathbb{R}^n,$ there is a Morse function</em></p>
+<script type="math/tex; mode=display">
+f_a:M\rightarrow \mathbb{R},\quad f(x)=\Vert x-a\Vert^2.</script><p>The proof only needs to consider that the non-degenerate critical point occurs if and only if</p>
+<script type="math/tex; mode=display">
+x-a\perp T_xM,\quad \left|\frac{\partial^2 {}f}{\partial {}u_i\partial {}u_j}\right|\neq 0,</script><p>It means that $a$ that does not meet this condition is the critical value of smooth mapping $T^\perp M\ni w\mapsto x+w$.</p>
+<p><strong>Proposition 13</strong>. <em>Suppose $M$ is a smooth manifold, $f:M\rightarrow \mathbb{R}$ is a smooth function, $k\in \mathbb{Z}_+.$ then on any compact subset, $f$ and its derivatives up to $k$ are uniformly approximated by the Morse function.</em></p>
+<p>Consider using $f_a$ to approximate the coordinate components.</p>
+<p><strong>Theorem 14</strong>. <em>Suppose $M$ is a compact manifold, then the set of Morse functions on $M$ is a dense open set of $C^\infty(M,\mathbb{R})$.</em></p>
+<p>The article was last updated on 2023-06-11 14:37:26</p>
                 </div>
             
         </div>
@@ -282,14 +311,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(2)-Sard定理与Morse函数</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-11 17:37:24</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分拓扑》复习笔记(2)-Sard定理与Morse函数</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-06-11 17:37:24</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/11/《微分拓扑》复习笔记(2)-Sard定理与Morse函数/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/06/11/《微分拓扑》复习笔记(2)-Sard定理与Morse函数/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -357,7 +386,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -495,24 +524,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -594,9 +620,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sard%E2%80%99s-theorem"><span class="nav-text">Sard’s Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#morse-function"><span class="nav-text">Morse function</span></a></li></ol>
         </div>
     
 </div>
@@ -621,6 +645,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

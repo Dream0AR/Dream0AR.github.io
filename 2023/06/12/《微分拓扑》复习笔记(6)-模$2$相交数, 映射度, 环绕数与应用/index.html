@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -306,7 +306,45 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="modulo-2-intersection-number">Modulo $2$ intersection number</h2>
+<p>Assume that the two submanifolds $X, Z\subset Y$ of $Y$ have complementary dimensions, that is, $\dim X+\dim Z=\dim Y.$<br>At this time, according to the transverse original image theorem,</p>
+<script type="math/tex; mode=display">
+\operatorname{codim}(X\cap Z)=\operatorname{codim}X+\operatorname{codim}Z=\dim Z+\dim X=\dim Y,</script><p>Therefore $X\cap Z$ is a zero-dimensional embedded submanifold, which is a finite point set in a compact manifold.</p>
+<p>Let $X$ be compact, $f:X\rightarrow Y$ be a smooth mapping, $f\pitchfork Z,$<br>$Z\subset Y$ is a closed submanifold with dimensions complementary to $X$.<br>Then $f^{-1}(Z)$ is the zero-dimensional closed submanifold of $X$, which is a finite point set.<br>Define the intersection number of $f$ and $Z$ modulo $2$ as</p>
+<script type="math/tex; mode=display">
+I_2(f,Z):=\# f^{-1}(Z)\mod 2.</script><p>For general smooth mapping $g:X\rightarrow Y,$ it can be defined by the transverse homotopy theorem.<br>Rationality is guaranteed by the following theorem.</p>
+<p><strong>Theorem 1</strong>. <em>Assumed above, if $f_0\sim f_1$ and $f_0,f_1\pitchfork Z,$ then $I_2(f_0,Z)=I_2(f_1,Z).$</em></p>
+<p>Take smooth homotopy $F:X\times I\rightarrow Y.$ then $\partial F\pitchfork Z.$<br>According to the transversal continuation theorem, there exists $G:X\times I\rightarrow Y,$ $G\pitchfork Z$ and<br>$\partial G=\partial F.$ At this time, $G^{-1}(Z)$ is a $1$-dimensional compact submanifold with edges,<br>$\partial G^{-1}(Z)=f_0^{-1}(Z)\cup f_1^{-1}(Z)$ contains an even number of points, so<br>$#_2 f_0^{-1}(Z)=#_2f_1^{-1}(Z).$</p>
+<p><strong>Corollary 2</strong>. <em>The intersection number modulo $2$ is a homotopy invariant.</em></p>
+<p><strong>Theorem 3</strong> (Boundary Theorem). <em>Suppose $W$ is a compact manifold, $X=\partial W,$ $g:X\rightarrow Y$ is a smooth map. If $g$ can be extended to $W,$, then $I_2(g,Z)=0,$ $\,\forall\,Z\subset Y$ is a closed submanifold complementary to $X$ in dimension.</em></p>
+<p>Let $G$ be a continuation of $g$. There exists $F\sim G,$ such that $F,\partial F\pitchfork Z.$<br>$F^{-1}(Z)$ is a one-dimensional compact submanifold with edges, $\partial F^{-1}(Z)$ contains an even number of points, so</p>
+<script type="math/tex; mode=display">
+I_2(g,Z)=I_2(\partial F,Z)=0.</script><h2 id="modulo-2-mapping-degree">Modulo $2$ mapping degree</h2>
+<p>Let $f:X\rightarrow Y$ be a smooth mapping from compact manifold to connected manifold, $\dim X=\dim Y,$<br>Then take $y\in Y,$ and define the mapping degree modulo $2$ as</p>
+<script type="math/tex; mode=display">
+\deg_2f:=I_2(f,\{y\}).</script><p>It has nothing to do with the selection of $y$. Because for any regular value $y$ on $Y$, according to the record lemma,<br>There exists $\bigsqcup_{i=1}^n U_i= f^{-1}(V), $ $f:U_i\rightarrow V$ is a diffeomorphism,<br>Therefore for points around $y$,</p>
+<script type="math/tex; mode=display">
+I_2(f,\{z\})\equiv n\mod 2,\quad \,\forall\,z\in V.</script><p>That is, the modulus $2$ mapping degree is a local constant. Good properties are obtained from connectivity.</p>
+<p>The degree of mapping modulo $2$ is naturally a homotopy invariant, and if $X=\partial W,$<br>$f:X\rightarrow Y$ can be extended to $W$, then $\deg_2 f=0.$ In particular,<br>$\deg_2f\neq 0$ gives the non-extendible obstacle, and there is a singularity inside.<br>This can be used to prove that complex polynomials of odd degree must have roots.</p>
+<h2 id="modulo-2-wraparound-number">Modulo $2$ wraparound number</h2>
+<p>Let $X^{n-1}$ be an $n-1$ dimensional compact connected manifold, $f:X\rightarrow \mathbb{R}^n$<br>is a smooth mapping. $\,\forall\,z\notin f(X),$ defines the mapping $u:X\rightarrow S^{n-1}$<br>Define the module $2$ of $f$ around $z$ for the unit vector $u(x)=\frac{f(x)-z}{|f(x)-z|}.$<br>The number of surrounds is</p>
+<script type="math/tex; mode=display">
+W_2(f,z):=\deg_2 u.</script><p><strong>Theorem 4</strong>. <em>Let $D^n$ be a compact edge manifold, $X=\partial D^n$ be a compact connected manifold, $f:X^{n-1}\rightarrow \mathbb{R}^n$ be a smooth map. Let $F:D^n\rightarrow \mathbb{R}^n$ be the smooth continuation of $f$. If $z\notin \operatorname{Im}f$ is the regular value of $F$, then $F^{-1}(z)$ is a finite point set, and $W_2(f,z)=# F^{-1}(z)\mod 2.$</em></p>
+<p>Since $z$ is the regular value of $F$, $F^{-1}(z)$ is a zero-dimensional embedded submanifold, which is a finite point set.<br>If $z\notin \operatorname{Im}F,$ $u$ can be extended, it is proved immediately;<br>If $z\in \operatorname{Im}F,$ is proved by the record lemma.</p>
+<h2 id="jordan-brouwer-separation-theorem">Jordan-Brouwer separation theorem</h2>
+<p><strong>Theorem 5</strong>. <em>Suppose $X\subset \mathbb{R}^n$ is a compact and smooth connected embedded hypersurface in $\mathbb{R}^n$, then $\mathbb{R}^n\setminus D_1=X.$</em></p>
+<p>First prove that $\mathbb{R}^n\setminus X$ has at most two connected branches, and then use rays to illustrate</p>
+<script type="math/tex; mode=display">
+D_i:=\{z\mid W_2(\iota_X,z)=i\},\quad i=0,1</script><p>Just determine the exterior and interior respectively. In particular,<br>Constructing rays makes it easy to see whether a point is inside or outside a region.</p>
+<h2 id="borsuk-ulam-theorem">Borsuk-Ulam Theorem</h2>
+<p><strong>Theorem 6</strong>. <em>Suppose $f:S^k\rightarrow \mathbb{R}^{k+1}\setminus{0}$ is a smooth mapping, and $f(-x)=-f(x),$ $\,\forall\,x\in S^k.$ then $W_2(f,0)=1.$</em></p>
+<p>This theorem can lead to Brouwer&#39;s fixed point theorem.<br>Proof equates the number of orbits on the sphere with the number of orbits on the equator, obtained by induction.<br>The method is to restrict the mapping to the upper hemisphere and then project it into the image space (to use the inductive hypothesis).</p>
+<p><strong>Corollary 7</strong>. <em>If $f:S^k\rightarrow \mathbb{R}^{k+1}\setminus{0}$ is symmetric about the origin, then $f$ intersects any straight line passing through the origin at least once.</em></p>
+<p><strong>Theorem 8</strong>. <em>Suppose $f_1,\cdots,f_k$ are $k$ smooth functions on $S^k$ that are symmetric about the origin. They must have common zeros.</em></p>
+<p>Consider $f(x)=(f_1(x),\cdots,f_k(x),0),$ and just apply the inference,</p>
+<p><strong>Theorem 9</strong>. <em>For any $k$ smooth functions $g_1,\cdots,g_k,$ on $S^k$, there must exist $p\in S^k,$ such that $g_i(p)=g_i(-p).$</em></p>
+<p>Artificially constructed symmetric function $f_i(x)=g_i(x)-g_i(-x).$</p>
+<p>The article was last updated on 2023-06-13 12:34:42</p>
                 </div>
             
         </div>
@@ -315,14 +353,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-12 23:43:52</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-06-12 23:43:52</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/06/12/《微分拓扑》复习笔记(6)-模$2$相交数, 映射度, 环绕数与应用/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -390,7 +428,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -528,24 +566,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -627,9 +662,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#modulo-2-intersection-number"><span class="nav-text">Modulo $2$ intersection number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#modulo-2-mapping-degree"><span class="nav-text">Modulo $2$ mapping degree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#modulo-2-wraparound-number"><span class="nav-text">Modulo $2$ wraparound number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jordan-brouwer-separation-theorem"><span class="nav-text">Jordan-Brouwer separation theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#borsuk-ulam-theorem"><span class="nav-text">Borsuk-Ulam Theorem</span></a></li></ol>
         </div>
     
 </div>
@@ -654,6 +687,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -331,7 +331,52 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>Consider the self-conjugate operator $S:H_0^1(\Omega)\rightarrow H^{-1}(\Omega),$</p>
+<script type="math/tex; mode=display">
+Su:=-(a^{ij}u_i+b^ju)_j+b^ju_j+cu.</script><p> The coefficients are all in $L^\infty(\Omega)$,<br>$a^{ij}\xi_i\xi_j\ge \mu|\xi|^2.$ We have bilinear bounded functional:</p>
+<script type="math/tex; mode=display">
+B_S[u,v]=\int_\Omega a^{ij}u_iv_j+b^i(uv_j+vu_j)+cuv=\left<{}Su,v\right>=\left<{}u,Sv\right>=B_S[v,u].</script><p>Satisfies the energy estimate:</p>
+<script type="math/tex; mode=display">
+B_S[u,u]\ge \frac{\mu}{2}\Vert Du\Vert_{L^2}^2-C(\mu,S)\Vert u\Vert_{L^2}^2.</script><p>If $(u,\lambda),$ exists, then there is $Su=\lambda u,$ in $H^{-1}(\Omega)$<br>It is called a characteristic pair, $\lambda$ is the eigenvalue, and $u$ is the eigenfunction.<br>A natural question is how to find all $\lambda.$</p>
+<p>If $\,\exists\,$ feature pair $(u,\lambda),$ then $\,\forall\,v\in H_0^1(\Omega),$</p>
+<script type="math/tex; mode=display">
+B_S[u,v]=\left<{}\lambda u,v\right>=\lambda\int_\Omega uvdx.</script><p> At this time,</p>
+<script type="math/tex; mode=display">
+\lambda=\frac{B_S[u,u]}{\int_\Omega u^2dx}\ge -C(\mu,S).</script><p>Inspired by this, we define</p>
+<script type="math/tex; mode=display">
+\lambda_1:=\inf_{u\in H_0^1(\Omega)\setminus \{0\} }\frac{B_S[u,u]}{\Vert u\Vert_{L^2}^2}</script><p>Let&#39;s prove that $\lambda_1$ is the first eigenvalue. First prove that it is achievable.</p>
+<p><strong>Proposition 1</strong>. <em>$\,\exists\,w\in H<em>0^1(\Omega),$ $B_S[w,w]=\lambda</em>$</em></p>
+<p>$\,\exists\,w<em>k,$ satisfies $\Vert w_k\Vert</em>{L^2}=1,$ such that</p>
+<script type="math/tex; mode=display">
+\lambda_1\le B_S[w_k,w_k]\le \lambda_1+\frac{1}{k}.</script><p> From the following inequality sign,<br>Yes</p>
+<script type="math/tex; mode=display">
+\frac{\mu}{2}\Vert Dw_k\Vert_{L^2}^2\le \lambda_1+1+C(\mu,S).</script><p>Therefore ${w_k}$ is a bounded column in $H_0^1$, there is a subcolumn that converges in $L^2$, and $H_0^1$ converges weakly.<br>Let’s assume that the subcolumn is itself, that is $w_k\xrightarrow{L^2}w,$<br>$w_k\rightharpoonup w\in H_0^1.$<br>Hope to prove $B_S[w_k,w_k]\rightarrow B_S[w,w].$ Consider this item by item.</p>
+<script type="math/tex; mode=display">
+|\left<{}w_k,w_k\right>-\left<{}w,w\right>|\le |\left<{}w_k,w_k-w\right>|+|\left<{}w_k-w,w\right>|\le 2\Vert w_k-w\Vert_{L^2}\rightarrow 0</script><script type="math/tex; mode=display">
+|\left<{}\partial_iw_{k},w_k\right>-\left<{}\partial_i w,w\right>|\le |\left<{}\partial_iw_{k},w_k-w\right>|+|\left<{}\partial_i (w_k-w),w\right>|\le (\Vert Dw_k\Vert_{L^2}+\Vert Dw\Vert_{L^2})\Vert w_k-w\Vert_{L^2}</script><p>However, the terms $\left&lt;{}\partial_iw_k,\partial_iw_k\right&gt;$ are not easy to prove convergence.<br>Let us turn to proving</p>
+<script type="math/tex; mode=display">
+\varliminf_{k\rightarrow 0}\int a^{ij}\partial_iw_k\partial_jw_k\ge \int a^{ij}w_iw_j.</script><p>In this way, combined with the previous convergence, we have,</p>
+<script type="math/tex; mode=display">
+\lambda_1\le B_S[w,w]\le \varliminf_{k\rightarrow 0}B_S[w_k,w_k]=\lambda_1\quad\Rightarrow\quad B_S[w,w]=\lambda_1.</script><p>Since $a^{ij}$ is a consistent ellipse,<br>$\int<em>\Omega a^{ij}u_iv_j$ defines the inner product $B_a[u,v],$ on $H_0^1(\Omega)$<br>The norm $\Vert\cdot\Vert</em>{a}.$ was induced. At this time, it was discovered that the equation wanted to prove was exactly</p>
+<script type="math/tex; mode=display">
+\varliminf_{k\rightarrow 0} \Vert w_k\Vert_a\ge \Vert w\Vert_a</script><p>Then based on weak Sharp continuity, we get the conclusion.</p>
+<p><strong>Proposition 2</strong>. <em>$Sw=\lambda_1 w\in H^{-1}(\Omega).$</em></p>
+<p>definition</p>
+<script type="math/tex; mode=display">
+f(t)=B_S[w+t\eta,w+t\eta]-\lambda_1\Vert w+t\eta\Vert_{L^2}^2,\quad \,\forall\,\eta\in C_0^\infty(\Omega).</script><p>Then $f(t)\ge 0,$ $f(0)=0,$ reaches minimum at $t=0$, so $f&#39;(t)=0,$</p>
+<script type="math/tex; mode=display">
+f'(t)=B_S[w,\eta]-\lambda_1\left<{}w,\eta\right>=0,\quad \left<{}Sw,\eta\right>=\left<{}\lambda_1w,\eta\right>.</script><p>By density, this proves the proposition.</p>
+<p>Inductively define the characteristic subspace $(\lambda_m,V_m):$</p>
+<script type="math/tex; mode=display">
+V_1:=\{w\in H_0^1(\Omega)|Sw=\lambda_1w\},</script><script type="math/tex; mode=display">
+\lambda_2=\inf_{\substack{u\in H_0^1\setminus\{0\}\\u\perp_{L^2} V_1} }\frac{B[u,u]}{\Vert u\Vert_{L^2}^2},\quad V_2:=\{\cdots\}</script><p><strong>Theorem 3</strong>. <em>$\Omega\subset \mathbb{R}^n$ is a bounded open set, and the $S$ coefficient satisfies the aforementioned conditions, then $S$ has infinite eigenvalues, tending to $+\infty.$ The eigenvectors ${w_k}$ corresponding to different eigenvalues are orthogonal in $L^2$, forming a standard orthonormal basis. If $B_S$ meets the mandatory conditions, Then ${\frac{w_k}{\sqrt{\lambda_k} }}\in H_0^1$ also forms an orthonormal basis under the inner product $B_S[u,v]$. At this time, $u=\sum d_kw_k\in L^2(\Omega),$ also forms in $H_0^1$.</em></p>
+<p>Due to the symmetry of $S$, the first two properties of the spectral theory are correct. When $B_S$ satisfies the mandatory conditions,<br>Just verify if $B_S[u,\frac{w_k}{\sqrt{w_k} }]=0,$<br>$\,\forall\,k\ge 1$ leads to $u=0.$<br>And this can be obtained based on ${w_k}$ being the standard orthonormal basis under $L^2$. The latter conclusion is obvious.</p>
+<p>Taking $S=-\Delta,$, the characteristic problem becomes</p>
+<script type="math/tex; mode=display">
+-\Delta w_k-\lambda w_k=0.</script><p>At this time, based on the theory of Chapter 4, it can be required</p>
+<script type="math/tex; mode=display">
+\{w_k\}\subset C^\infty(\Omega)\cap H^2(\Omega)\cap H_0^1(\Omega)\subset H^{m+2}(\Omega).</script><p>The last inclusion relation requires $\partial\Omega\in C^m.$</p>
+<p>The article was last updated on 2022-12-02 16:40:24</p>
                 </div>
             
         </div>
@@ -340,14 +385,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《PDE2》笔记-特征值问题</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-12-02 18:40:22</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《PDE2》笔记-特征值问题</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-12-02 18:40:22</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/12/02/《PDE2》笔记-特征值问题/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/12/02/《PDE2》笔记-特征值问题/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -415,7 +460,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -553,24 +598,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -652,9 +694,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            
         </div>
     
 </div>
@@ -679,6 +719,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

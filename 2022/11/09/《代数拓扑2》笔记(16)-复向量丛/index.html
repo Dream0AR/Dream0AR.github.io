@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -296,7 +296,39 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="difference-from-real-vector-bundle">Difference from real vector bundle</h2>
+<h3 id="complex-conjugate-bundle">Complex conjugate bundle</h3>
+<p>The complex structure of a real vector bundle of rank $2n$ refers to a continuous map $J:E(\xi)\rightarrow E(\xi),$<br>Restricted to $\mathbb{R}$ linear mapping on each fiber, and $J(J(v))=-v.$<br>$J$ can be understood as the imaginary part.</p>
+<p><strong>Note 1</strong>. <em>A real vector bundle of rank $2n$ equipped with a complex structure is equivalent to a complex vector bundle of rank $n$. Assume $M^{2n}$ is a real manifold, and the complex structure of $\tau_M$ is called a near-complex structure on $M$. The real manifold $M^{2n}$ is equipped with a near-complex structure and $J$ satisfies some differential equations (C-R equations?) if and only if $M^n$ is a complex manifold.</em></p>
+<p><strong>Definition 2</strong>. <em>Given a complex vector bundle $\omega,$, its complex conjugate is a complex vector bundle $\overline\omega,$ such that the identity map $E(\omega)\xrightarrow{f=\mathrm{id} }E(\overline\omega)$ is a complex conjugate linear, that is, $f(\lambda e)=\overline\lambda e.$ Therefore $J<em>{\overline\omega}=-J</em>{\omega}.$</em></p>
+<p>Suppose $\omega$ has a Hermitian metric, that is</p>
+<script type="math/tex; mode=display">
+\left<{}\lambda v,w\right>=\lambda\left<{}v,w\right>,\quad \left<{}v,\lambda w\right>=\overline\lambda\left<{}v,w\right>,\quad \left<{}v,w\right>=\overline{\left<{}w,v\right>}.</script><p>Then there are $\overline{\omega}\xrightarrow{\cong<em>\mathbb{C} } \operatorname{Hom}</em>{\mathbb{C} }(\omega,\varepsilon)=:\omega^V,$<br>$v\mapsto(w\mapsto\left&lt;{}w,v\right&gt;).$</p>
+<p>In general, as a complex vector bundle, $\omega\not\cong \overline\omega.$<br>This is very different from the real version.<br>An example is to consider $\gamma^1:\mathbb{C}\rightarrow E\rightarrow \mathbb{C}\mathrm{P}^\infty,$</p>
+<script type="math/tex; mode=display">
+\gamma^1\otimes \overline{\gamma}^1\cong \gamma^1\otimes \operatorname{Hom}_\mathbb{C}(\gamma^1,\varepsilon)\cong \varepsilon.</script><p>Therefore $c_1(\gamma^1)+c_1(\overline\gamma^1)=c_1(\varepsilon)=0,$<br>Thus $c_1(\overline\gamma^1)=-c_1(\gamma^1)=\tau\in H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}).$<br>This shows that $\overline\gamma^1\not\cong \gamma^1.$</p>
+<p><strong>Note 3</strong>. <em>In algebraic geometry, denote $\gamma^1$ as $O(-1), $ $\overline\gamma^1=O(1).$ The complex conjugate on $\mathbb{C}\cong \mathbb{R}^2$ changes orientation, $(\overline\gamma^1)<em>\mathbb{R}=\overline{(\gamma^1)}</em>\mathbb{R}.$</em></p>
+<h3 id="sw-class-and-chern-sexual-class">SW class and Chern sexual class</h3>
+<p><strong>Theorem 4</strong>. <em>Suppose $\xi$ is a complex vector bundle, forget its complex structure, then $w<em>{2i+1}(\xi</em>{\mathbb{R} })=0,$ $w<em>{2i}(\xi</em>\mathbb{R})=c<em>i(\xi)\mod 2.$ That is, $H^{2i}(B;\mathbb{Z})\rightarrow H^{2i}(B;\mathbb{Z}_2),$ $c_i(\xi)\mapsto w</em>{2i}(\xi<em>\mathbb{R}).$ In particular, $w</em>{2n}(\xi<em>\mathbb{R})=c_n(\xi)=e(\xi</em>\mathbb{R})\mod 2.$</em><br>Notice that we have fibrous plexuses</p>
+<script type="math/tex; mode=display">
+\mathbb{R}\mathrm{P}^1\rightarrow \mathbb{R}\mathrm{P}^{2n-1}\rightarrow \mathbb{C}\mathrm{P}^{n-1}, \quad \ell\mapsto \ell\otimes_\mathbb{R}\mathbb{C}.</script><p>Consider $\widehat f:E(\xi)\rightarrow \mathbb{C}^\infty,$<br>is $\mathbb{C}$ linear and injective according to fibers, we have</p>
+<script type="math/tex; mode=display">
+\mathbb{C}^n\hookrightarrow E(\xi)\xrightarrow{\widehat f}\mathbb{C}^\infty.</script><p>Consider the real projection bundle,</p>
+<script type="math/tex; mode=display">
+\mathbb{R}\mathrm{P}^{2n-1}\rightarrow \mathbb{R}\mathrm{P}(E(\xi)_\mathbb{R})\rightarrow \mathbb{R}\mathrm{P}^\infty;</script><p>Consider the complex projection bundle,</p>
+<script type="math/tex; mode=display">
+\mathbb{C}\mathrm{P}^{n-1}\rightarrow \mathbb{C}\mathrm{P}(E(\xi))\rightarrow \mathbb{C}\mathrm{P}^\infty.</script><p>Each column in these two rows is a fiber bundle with fiber $\mathbb{R}\mathrm{P}^1$.</p>
+<p>In this way we can get $H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z})\rightarrow H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}_2)\rightarrow H^2(\mathbb{R}\mathrm{P}^\infty;\mathbb{Z}_2),$<br>$\beta\mapsto \overline\beta\mapsto \alpha^2,$ can be proved by Leray-Hirsch.</p>
+<p>For the first square on the right,<br>$H^2(\mathbb{R}\mathrm{P}(E);\mathbb{Z}<em>2)\leftarrow H^2(\mathbb{R}\mathrm{P}^\infty;\mathbb{Z}_2),$<br>$x^2(\xi</em>\mathbb{R})\leftarrow \alpha^2;$<br>$H^2(\mathbb{C}\mathrm{P}(E);\mathbb{Z}<em>2)\leftarrow H^2(\mathbb{C}\mathrm{P}^\infty;\mathbb{Z}_2),$<br>$\overline x</em>\mathbb{C}(\xi)\leftarrow \overline\beta.$<br>Then the Chern class modulo $2$ is defined as,</p>
+<script type="math/tex; mode=display">
+\overline x_\mathbb{C}(\xi)^n+\overline c_1(\xi)\overline x_\mathbb{C}(\xi)^{n-1}+\cdots+\overline c_n(\xi)=0\in H^{2n}(\mathbb{C}\mathrm{P}(\xi);\mathbb{Z}_2),</script><p>Hit</p>
+<script type="math/tex; mode=display">
+x(\xi_{\mathbb{R} })^{2n}+\overline c_1(\xi)[x(\xi_\mathbb{R})^2]^{n-1}+\cdots +\overline c_n(\xi)=0\in H^{2n}(\mathbb{R}\mathrm{P}(\xi_\mathbb{R});\mathbb{Z}_2).</script><h2 id="demonstrative-classes-and-obstructive-theory">Demonstrative classes and obstructive theory</h2>
+<h3 id="obstructive-theory">Obstructive Theory</h3>
+<p>When does a fiber bundle $F\rightarrow E\rightarrow B$ have a cross-section?<br>The idea is that if $B$ is a CW complex, consider $B^0\subset B^1\subset B^2\subset \cdots,$<br>Try to define the sections on the skeleton sequentially.<br><strong>Theorem 5</strong>. <em>Assume that $F\rightarrow E\rightarrow B$ is a fiber bundle, $B$ is a CW complex, and $F$ is $n$-simple, that is, the action of $\pi_1(F,x_0)$ on $\pi_n(F,x_0)$ is trivial. Let $s$ be the $B^{n-1}$ section, which can be extended to the upper section of $B^n$. Then there is an obstacle class $ob(s)\in H^{n+1}(B;\pi_n(F))$ (local coefficient), such that $ob(s)=0$ if and only if it can be extended to $B^{n+1}$.</em></p>
+<p><strong>Note 6</strong>. <em>Finding the homotopy of a cross-section is equivalent to finding $F\rightarrow E\times I\rightarrow B\times I\hookleftarrow B\times\partial I$ extending two cross-sections $s,s&#39;.$. The obstacle is $H^{n+1}(B\times I,B\times\partial I;\pi_n(F))\cong \pi^n(B;\pi_n(F))$中.</em></p>
+<p><strong>Note 7</strong>. <em>Assume $F$($n-1$) is connected, the obstacle of the section is in $H^i(B;\pi<em>{i-1}(F))=0$, $i\le n;$ The obstacle of the homotopy of the section is in $H^i(B;\pi_i(F))=0$, $i\le n-1.$ therefore there is a section on $B^n$, And $s|</em>{B^{n-1}}$ is unique in the homotopy sense. $ob(s)\in H^{n+1}(B;\pi_n(F))$ has nothing to do with section selection. This is called the first obstacle type.</em></p>
+<p>The article was last updated on 2022-11-09 17:19:15</p>
                 </div>
             
         </div>
@@ -305,14 +337,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(16)-复向量丛</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-11-09 19:19:15</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(16)-复向量丛</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-11-09 19:19:15</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/11/09/《代数拓扑2》笔记(16)-复向量丛/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/11/09/《代数拓扑2》笔记(16)-复向量丛/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -380,7 +412,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -518,24 +550,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -617,9 +646,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#difference-from-real-vector-bundle"><span class="nav-text">Difference from real vector bundle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#complex-conjugate-bundle"><span class="nav-text">Complex conjugate bundle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sw-class-and-chern-sexual-class"><span class="nav-text">SW class and Chern sexual class</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#demonstrative-classes-and-obstructive-theory"><span class="nav-text">Demonstrative classes and obstructive theory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#obstructive-theory"><span class="nav-text">Obstructive Theory</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -644,6 +671,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

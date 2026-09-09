@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -343,7 +343,62 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="cohomological-leray-serre-spectral-sequence">Cohomological Leray-Serre spectral sequence</h2>
+<p>Some specific construction processes without explanation are as follows:</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi}B,</script><script type="math/tex; mode=display">
+\cdots \subset B^p\subset B^{p+1}\subset \cdots,</script><script type="math/tex; mode=display">
+E^p:=\pi^{-1}(B^p),</script><script type="math/tex; mode=display">
+\cdots\subset E^p \subset E^{p+1}\subset\cdots,</script><script type="math/tex; mode=display">
+F_pC_\ast (E):=C_\ast (E^p),\quad F_pC^\ast (E):=\operatorname{Ann}(F_{p-1}C_\ast )=\{f:f|_{F_{p-1}C_\ast }=0\}\subset \operatorname{Hom}(C_\ast ;R).</script><p>$F_pC^\ast (E)$ is a descending filter sequence on $C^\ast (E)$. Thus a spectral sequence is constructed.</p>
+<h2 id="edge-homomorphism">Edge homomorphism</h2>
+<p>In the first quadrant, we have the natural mapping columns:</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}\hookrightarrow\cdots\hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}</script><script type="math/tex; mode=display">
+E_2^{p,0}\twoheadrightarrow{E_3^{p,0} }\twoheadrightarrow\cdots \twoheadrightarrow E_\infty^{p,0}</script><p>Then,</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}=G_0H^q,\quad H^q\twoheadrightarrow{E_\infty^{0,q} }</script><script type="math/tex; mode=display">
+E_\infty^{p,0}=G_pH^p,\quad E_\infty^{p,0}\hookrightarrow H^p.</script><p>Define edge homomorphisms using the composition of the mapping above:</p>
+<script type="math/tex; mode=display">
+H^q\twoheadrightarrow E_\infty^{0,q} \hookrightarrow E_2^{0,q},</script><script type="math/tex; mode=display">
+E_2^{p,0}\twoheadrightarrow E_\infty^{p,0}\hookrightarrow H^p</script><p>Consider the spectral sequence</p>
+<script type="math/tex; mode=display">
+F\xrightarrow{\iota}E\xrightarrow{\pi}B,</script><p> $F$ connected,<br>$B$ is simply connected. Then the edges are homomorphic</p>
+<script type="math/tex; mode=display">
+H^q(E;R)\twoheadrightarrow E_\infty^{0,q}\hookrightarrow E_2^{0,q}= H^0(B;H^q(F;R))=H^q(F;R).</script><p>It is $\iota^\ast =H^q(\iota).$ If $\iota^\ast $ is surjective, then the uplink embedding is also surjective,<br>Therefore, it is isomorphism, and the information of the spectral sequence is obtained.</p>
+<script type="math/tex; mode=display">
+H^p(B;R)=H^p(B;H^0(F,R))=E_2^{p,0}\twoheadrightarrow E_\infty^{p,0} \hookrightarrow H^p(E;R)</script><p>It is $\pi^\ast =H^p(\pi).$ If $\pi^\ast $ is an injective, then the upward surjection is isomorphism.</p>
+<h2 id="leray-hirsch-theorem">Leray-Hirsch Theorem</h2>
+<p><strong>Theorem 1</strong>. <em>For fibrosis $F\xrightarrow{\iota}E\xrightarrow{\pi}B,$ $B$ roads are connected. If $\iota^\ast :H^q(E)\rightarrow H^q(F)$ is surjective, $\,\forall\,q,$ and $H^\ast (F)$ is a finitely generated free Abelian group, then $H^\ast (E)\cong H^\ast (B)\otimes H^\ast (F)$ is modularly isomorphic as $H^\ast (B)$.</em></p>
+<p>Proof idea: The surjection condition gives that the effect of $\pi_1(B)$ on $H^\ast (F)$ is trivial.<br>The conditions for finitely generated free Abel illustrate</p>
+<script type="math/tex; mode=display">
+E_2^{p,q}=H^p(B;H^q(F))\cong H^p(B)\otimes H^q(F).</script><p>Since the differentials on the edges are all zero, due to the derivative properties of differentials, the differentials everywhere are zero.<br>This immediately leads to the conclusion that the spectrum sequence will not change from the second page, thus converging.</p>
+<p>If we can find the section corresponding to $\iota,\pi$,<br>Then immediately $\iota^\ast ,\pi^\ast $ is surjective/injective.</p>
+<h2 id="hurewicz%E2%80%99s-theorem-and-its-extension">Hurewicz’s theorem and its extension</h2>
+<p><strong>Theorem 2</strong> (Hurewicz). <em>Suppose $X$ is simply connected, then $\pi_i(X)=0,$ $\,\forall\,i&lt;n$ if and only if $\widetilde{H}_i(X)=0,$ $\,\forall\,i&lt;n.$ If the conditions are met, then $\pi_n(X)\cong H_n(X).$</em></p>
+<p>Generalize $n$ and consider road fibrosis:</p>
+<script type="math/tex; mode=display">
+\Omega X\rightarrow PX\rightarrow X</script><p>Among them, $\Omega X$ is the ring space, $PX$ is the road space, which is shrinkable. $\,\forall\,q&lt;n-1,$<br>By the inductive hypothesis,</p>
+<script type="math/tex; mode=display">
+0=\pi_{q+1}(X)\cong \pi_q(\Omega X)\cong H_q(\Omega X).</script><script type="math/tex; mode=display">
+\pi_n(X)\cong \pi_{n-1}(\Omega X)\cong H_{n-1}(\Omega X).</script><p>Our goal is to associate $H<em>\ast (\Omega X),$ $H</em>\ast (X).$</p>
+<p>From the Leray-Serre spectrum sequence, $E^2<em>{p,q}=H_p(X;H_q(\Omega X)),$ but since $PX$ is shrinkable,<br>$E^\infty</em>{p,q}=0$ except $E^\infty<em>{0,0}.$<br>That is, all elements on $E^2</em>{p,q}$ will be eliminated (except $(0,0)$).<br>Then the conclusion can be drawn immediately from the following spectral sequence.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/10/03/lpOkQ58q4Xc1uWz.png width='50%' height='50%'></p>
+<h2 id="serre-class">Serre class</h2>
+<p>The Serre class $\mathscr{C}$ is a non-empty set consisting of Abelian groups such that for any short exact sequence</p>
+<script type="math/tex; mode=display">
+0\rightarrow A\rightarrow B \rightarrow C\rightarrow 0,</script><p>$B\in \mathscr{C}$ if and only if $A,C\in \mathscr{C}.$<br>We say $\mathscr{C}$ is &quot;good&quot; if</p>
+<script type="math/tex; mode=display">
+\,\forall\,A,B\in \mathscr{C},\quad A\otimes B,\operatorname{Tor}(A,B)\in \mathscr{C}.</script><p>A few examples are: ${0}$,{Abelian group (each element is of finite order)}, {Finite Abelian group}.<br>{Finitely generated Abel group}, {$p$ group (each element is of order $p^n$)}.</p>
+<p>We define $f:A\rightarrow B$ to be $\mathscr{C}$ injective if $\ker f\in \mathscr{C};$<br>Call it a $\mathscr{C}$ surjection, if $\operatorname{coker}f\in \mathscr{C}.$<br>It is called $\mathscr{C}$ isomorphism if it satisfies the above two conditions.</p>
+<p><strong>Theorem 3</strong> (Generalized Hurewicz). <em>Let $X$ be simply connected, $\mathscr{C}$ be a good Serre class. Then $\pi_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n$ if and only if $\widetilde{H}_i(X)\in \mathscr{C},$ $\,\forall\,i&lt;n.$ If the condition is true, $\pi_n(X)\rightarrow H_n(X)$ is an isomorphism of $\mathscr{C}$.</em></p>
+<p>Proof idea: induction on $n$.</p>
+<script type="math/tex; mode=display">
+\,\forall\,q<n-1, \quad \mathscr{C}\ni \pi_{q+1}(X)\cong_\mathscr{C}H_q(\Omega X),\qquad \pi_n(X)\cong_\mathscr{C}H_{n-1}(\Omega X).</script><script type="math/tex; mode=display">
+E^2_{p,q}=H_p(X;H_q(\Omega X)),\quad H_{\ast }(PX)=H_{\ast }(\ast )</script><p>Thus $H<em>q(\Omega X)\in \mathscr{C},$ $E^2</em>{p,q}\in \mathscr{C}.$<br>The conclusion is drawn again from the spectral sequence.</p>
+<p><strong>Corollary 4</strong>. <em>If $X$ is a simply connected finite CW complex, then $\pi_i(X)$ is finitely generated, $\,\forall\,i.$</em></p>
+<p><strong>Note 5</strong>. <em>$\pi_2(S^1\vee S^2)$ is not finitely generated.</em></p>
+<p>The article was last updated on 2022-10-03 17:32:02</p>
                 </div>
             
         </div>
@@ -352,14 +407,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(6)-边同态</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-03 20:31:59</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(6)-边同态</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-03 20:31:59</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/03/《代数拓扑2》笔记(6)-边同态/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/03/《代数拓扑2》笔记(6)-边同态/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -427,7 +482,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -565,24 +620,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -664,9 +716,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cohomological-leray-serre-spectral-sequence"><span class="nav-text">Cohomological Leray-Serre spectral sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#edge-homomorphism"><span class="nav-text">Edge homomorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leray-hirsch-theorem"><span class="nav-text">Leray-Hirsch Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hurewicz%E2%80%99s-theorem-and-its-extension"><span class="nav-text">Hurewicz’s theorem and its extension</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#serre-class"><span class="nav-text">Serre class</span></a></li></ol>
         </div>
     
 </div>
@@ -691,6 +741,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

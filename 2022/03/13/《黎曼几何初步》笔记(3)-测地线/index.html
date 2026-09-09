@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -386,7 +386,68 @@ $\gamma(s)\sim x_{\delta&#39;}$的两段测地线拼接起来刚好弧长为$s+\
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="exponential-mapping">exponential mapping</h2>
+<h3 id="geodesic">Geodesic</h3>
+<p>Recall that $\gamma:[0,1]\rightarrow The necessary and sufficient condition for M$ to be a <strong>geodesic</strong> is $D_{\dot\gamma}\dot\gamma=0.$<br>Therefore, if $\gamma$ is a geodesic, taking the derivative of the inner product shows that $|\dot\gamma|$ is a constant.<br>Therefore, through parameter transformation, we may always assume that it has a unit tangent vector and is parameterized by arc length.<br>Call it a <strong>regular</strong> geodesic.</p>
+<h3 id="definition">Definition</h3>
+<p>Next we introduce the concept of <strong>exponential mapping</strong>. Roughly speaking,<br>The exponential mapping $\exp:M_x\rightarrow M$ at $x\in M$ is defined as follows: Given $v\in M_x,$<br>Starting from $x$, walk along the geodesic $\gamma_v$ with $v$ as the initial tangent vector to $y,$<br>So that the arc length from $x$ to $y$ is exactly $|v|.$ then the exponential mapping is defined by $\exp_xv=y$. Intuitively,<br>$M_x$ can be defined in the neighborhood of the origin, but it may not be defined as a whole.<br>It will be shown later that the overall definition of exponential mapping is equivalent to requiring that the Riemannian manifold $M$ is <strong>complete</strong>.</p>
+<p>The geometric proof of the above intuition is quite clumsy, and it is simpler to explain it in the form of differential equations.<br>Recall that geodesics are determined by a system of ordinary differential equations:</p>
+<script type="math/tex; mode=display">
+\frac{d {}^2\gamma^i}{d {}t^2}+\Gamma^i_{jk}\frac{d {}\gamma^j}{d {}t}\frac{d {}\gamma^k}{d {}t}=0,\quad \,\forall\,i=1,\cdots,n.</script><p>According to the basic theorem of ODE, $\,\forall\,x\in M,$ $\varepsilon&gt;0,$<br>Neighborhood $\mathscr{U}\subset M$ of $\,\exists\,x$ and $\delta&gt;0,$<br>Such that $\,\forall\,y\in \mathscr{U},$ $v\in B_y(\delta)\subset M_y,$<br>There is a geodesic $\gamma_v,$ with initial tangent vector $v$, and its domain includes $[0,\varepsilon].$</p>
+<p>Note that the geodesic after linear transformation of parameters is still a geodesic, so the following proposition is obtained:</p>
+<p>$\,\forall\,x\in M,$ $\,\exists\,neighborhood of x$$\mathscr{U}\subset M,$<br>$\omega&gt;0,$ $\,\forall\,y\in \mathscr{U},$<br>$v\in B_y(\omega)\subset M_y,$ There is a geodesic $\gamma_v,$ with $v$ as the initial tangent vector<br>The domain includes $I=[0,1].$</p>
+<p>At this time, $\exp_x:B_x(\omega)\rightarrow M$ defined by $\exp_x v=\gamma_v(1)$ is the exponential mapping that satisfies the aforementioned definition.<br>At the same time, it can be defined on the open set $U:=\mathscr{U}\times B(\omega)$ in the tangent bundle $TM$,<br>Given by $\exp(y,v):=\exp_y v$$\exp:U\rightarrow M.$<br>It can be seen from the dependence of the solution on the parameters that the exponential map $\exp$ is smooth.</p>
+<h3 id="properties">Properties</h3>
+<p>Below we explain that in small neighborhoods, the exponential map $\exp_x$ is a diffeomorphism.<br>Since $M_x\cong \mathbb{R}^n,$ the tangent space on it is naturally equal to $M_x$ itself.<br>Consider $(d\exp_x)_O:M_x\rightarrow M_x,$ and it is easy to verify that it is an identity mapping.<br>In this way, it is non-singular, so $\exp_x$ is indeed diffeomorphism in the neighborhood of the origin.<br>It is easy to prove its statement on a large scale:</p>
+<p><strong>Lemma 1</strong>. <em>$\,\forall\,K\Subset M,$ $\,\exists\,\varepsilon&gt;0,$ $\,\forall\,x\in K,$ $\exp_x$ is a diffeomorphism on $B_x(\varepsilon)$.</em></p>
+<p>Next, we discuss the local shortest property of the geodesic. In the following, $x is fixed by default, and the subscript of $x$ is omitted.<br>Let $\exp$ be a diffeomorphism on $B(\delta)$. Let $B<em>\delta:=\exp B(\delta).$<br>$\,\forall\,v\in B(\delta),$<br>Call the image of <strong>radial line segment</strong>$c(t):=tv:[0,1]\rightarrow B</em>\delta$ under exponential mapping $\exp$ to be the <strong>radial geodesic in $B_\delta$.</strong><br>We will prove the following theorem:<br><strong>Theorem 2</strong>. <em>Suppose the piecewise $C^\infty$ curve $\sigma$ connects $x,y\in B_\delta.$ If $\xi$ is a radial geodesic connecting $x,y$, then $L(\sigma)\ge L(\xi),$ is equal if and only if $\sigma$ is a monotonic reparameterization of $\xi$.</em></p>
+<p>We note that this is obvious in Euclidean space,<br>It is proved that it is only necessary to decompose the tangent vector of the curve into a radial component and a spherical tangential component.<br>Obviously it is the shortest when there is no spherical tangent, and the radial component needs to be kept positive.<br>In order to move the proof to a manifold, we need to consider how to take the sphere and decompose it.</p>
+<p>Define the vector field $\mathscr{R}:$ in $M_x\setminus{0}$</p>
+<script type="math/tex; mode=display">
+\mathscr{R}(v)=\frac{v}{|v|},\quad v\in M_x\setminus\{0\}.</script><p><strong>Lemma 3</strong>. <em>$|d\exp(\mathscr{R})|\equiv 1$</em></p>
+<p><strong>Certificate:</strong> $\,\forall\,v\in M_x\setminus{0},$<br>Take $\gamma$ as the normal geodesic in $M$, and $\frac{v}{|v|}$ as the initial tangent vector.<br>Then $\exp(v)=\gamma(|v|),$</p>
+<script type="math/tex; mode=display">
+|d\exp(\mathscr{R}(v))|=|\dot{\gamma}(|v|)|=|\dot{\gamma}(0)|=1.</script><p><strong>Lemma 4</strong> (Gauss&#39; lemma). <em>$\,\forall\,t&lt;\delta,$ Let $S<em>t:=\exp(S(t))$ be the geodesic surface with radius $t$ in $B</em>\delta$, then the radial geodesic is orthogonal to each $S_t.$, that is, $d\exp(\mathscr{R})$ is perpendicular to the tangent space of $S_t$.</em></p>
+<p><strong>Proof:</strong> Since $\exp$ is a diffeomorphism, the following diffeomorphism can be obtained:</p>
+<script type="math/tex; mode=display">
+F:S^{n-1}\times(0,\delta)\rightarrow B_\delta\setminus\{x\},</script><p>Where $S^{n-1}=S(1)$ is the unit sphere in $M_x$. $F(p,t):=\exp(tp).$<br>For each fixed $t, $ $F$ diffeomorphically maps $S^{n-1}\times{t}$ to $S_t.$<br>Taking $S^{n-1}$ local coordinate system ${y^i}, $ $r$ is the natural parameter on $(0,\delta)$,<br>Remember $R=dF\left(\frac{\partial {} }{\partial {}r}\right),$<br>$Y_i=dF\left(\frac{\partial {} }{\partial {}r}\right),$<br>Then we only need to prove that $\left&lt;{}Y_i,R\right&gt;=0.$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ R\left<{}Y_i,R\right>&=\left<{}D_RY_i,R\right>+\left<{}Y_i,D_RR\right>\\
+ &=\left<{}D_{Y_i}R,R\right>&D_RY_i-D_{Y_i}R=[R,Y_i]=dF\left[\frac{\partial {} }{\partial {}r},\frac{\partial {} }{\partial {}y_i}\right], D_RR=0\\
+ &=\frac{1}{2}Y_i\left<{}R,R\right>=0&|R|\equiv 1
+ \end{aligned}</script><p>Therefore $\left&lt;{}Y_i,R\right&gt;$ is constant along the radial geodesic. Since when $z\rightarrow x$,<br>$Y_i(z)\rightarrow 0,$ $\left&lt;{}Y_i,R\right&gt;\rightarrow 0.$ Therefore<br>$\left&lt;{}Y_i,R\right&gt;\equiv 0.$</p>
+<p>With these two lemmas, we can imitate the Euclidean space and transfer the proof of the theorem to the manifold.<br>Just decompose the tangent vector of the curve into components on the tangent space of $d\exp(\mathscr{R})$ and $S_t$,<br>Find the length and show that when it only has the upper component of $d\exp(\mathscr{R})$ and remains positive, the curve will be the shortest.<br>In particular, the curve at this time is a monotonic reparameterization of the radial geodesic.</p>
+<p>It can be seen from this theorem that the shortest line must be a geodesic.<br>Otherwise, the local geodesic can be used to transform the curve into a shorter one. But the converse may not necessarily be true.<br>The geodesic is not necessarily the shortest, for example, consider the geodesics on the sphere and cylinder.</p>
+<h2 id="metric-completeness">Metric completeness</h2>
+<p>In fact, there may not necessarily be a shortest line on the manifold, such as a disk digging out the center point.<br>This involves the discussion of <strong>completeness</strong> of manifolds. We now introduce <strong>distance space structure</strong> on $M$,<br>Usually also called <strong>metric space structure</strong>.</p>
+<p>Definition$d(x,y)=\inf<em>{\gamma}L(\gamma),$<br>$\gamma$ is the $C^\infty$ curve connecting $x, y$. Assert that $d$ is the distance on $M$.<br>Just prove that when $x\neq y$, $d(x,y)\neq 0.$ This is not obvious,<br>Because the definition involves an indefinite bound. However, based on the local shortest property of the geodesic,<br>The indefinite bound is locally achievable. Therefore, we only need to explain $y\not\in B</em>\delta,$<br>$d(x,y)\ge \delta&gt;0$ is enough, and this is easy to explain.</p>
+<p>Since the metric $g<em>{ij}$ is continuously transformed, its minimum and maximum eigenvalues are also,<br>Therefore, there is $\varepsilon|v|^2\le g</em>{ij}v^iv^j\le \alpha|v|^2.$ on the compact set<br>This can show that the distance space $(M,d)$ is consistent with the topology on the original manifold.<br>The Riemannian manifold $M$ is said to be complete if $(M,d)$ is a complete distance space.</p>
+<p><strong>Theorem 5</strong> (Hopf-Rinow theorem). <em>In a Riemannian manifold, the following conditions are equivalent:</em></p>
+<ol>
+<li><p>$M$<em> is complete.</em></p>
+</li>
+<li><p>$\,\forall\,x\in M,$ $\exp_x$<em> is defined on the entire </em>$M_x$<em>.</em></p>
+</li>
+<li><p>$\,\exists\,x\in M,$ $\exp_x$<em> is defined on the entire </em>$M_x$<em>.</em></p>
+</li>
+<li><p>Every bounded closed set in $M$<em> is compact.</em></p>
+</li>
+</ol>
+<p><strong>Certificate:</strong><br>Let us prove that $(1)\Rightarrow(2)\Rightarrow (3)\Rightarrow (4)\Rightarrow (1),$<br>But only $(1)\Rightarrow (2), $ $(3)\Rightarrow (4)$ are not so trivial.</p>
+<p>For $(1)\Rightarrow (2),$ only needs to show that each regular geodesic can extend infinitely.<br>If the geodesic can only extend to $(a,b),$ then by completeness,<br>$x=\lim\limits_{t\rightarrow b}\gamma(t)\in M.$<br>Then the geodesic can be extended near point $x$.</p>
+<p>$(3)\Rightarrow (4)$ is more difficult.<br>First consider the existing $\exp_x:M_x\rightarrow M.$<br>Note $\overline{B}_r:=\exp_x\overline{B(r)},$ then the continuous image of the compact set is also compact.<br>For any bounded closed set $K,$ we only need to show that $\,\exists\,\overline{B}_r\supset K,$<br>In this way, the closed set of compact sets is also compact. For this reason, we prove the following proposition: $\,\forall\,y\in M,$<br><em>There is a shortest geodesic connection</em>$x,y.$ so that the bounded set can always be contained by a certain geodesic.</p>
+<p>$\,\forall\,y\in M,$ Let $d(x,y)=r.$<br>Take $\delta&gt;0$ so that the exponential map on $\overline{B}<em>{\delta}$ is a diffeomorphism.<br>Take $x</em>\delta\in S<em>\delta=\partial B</em>\delta,$ so that $d(x<em>\delta,y)$ reaches the minimum.<br>Then $x</em>\delta=\exp{\delta v},$ $|v|=1.$<br>Assert that the geodesic $\gamma(t)=\exp(tv)$ drawn by $v$ satisfies $\gamma(r)=y.$<br>In this way, the geodesic $\gamma$ is the shortest curve connecting $x, y$, and the proposition is proved.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/03/13/fQeKRanWMDhJ45V.png width='50%' height='50%'></p>
+<p>We use the continuity method to prove. Denote $A:={s\in[0,r]:d(\gamma(s),y)=r-s}.$<br>First, $0\in A,$ $A$ is non-empty. Secondly, $A$ is of course closed due to continuity. Just prove that $A$ is open,<br>That is, $A=[0,r].$, so it can be deduced that $\gamma(r)=y.$<br>$\,\forall\,s\in A,$ Consider $\overline{B}<em>{\delta&#39;},$ at $\gamma(s)$<br>Make the exponential map on it a diffeomorphism.<br>Take $x</em>{\delta&#39;}\in S<em>{\delta&#39;}$ so that $d(x</em>{\delta&#39;},y)$ reaches the minimum.<br>We want to prove that $d(\gamma(s+\delta&#39;),y)=r-s-\delta&#39;.$ is known</p>
+<script type="math/tex; mode=display">
+d(\gamma(s),x_{\delta'})=\delta', \quad d(\gamma(s),y)=r-s=\delta'+\min_{x'\in S_{\delta'} }d(x',y),</script><p>Therefore $d(x<em>{\delta&#39;},y)=r-s-\delta&#39;,$<br>Just say $\gamma(s+\delta&#39;)=x</em>{\delta&#39;}.$ Note</p>
+<script type="math/tex; mode=display">
+d(x,x_{\delta'})\ge d(x,y)-d(x_{\delta'},y)=s+\delta',</script><p>And connect $x\sim\gamma(s),$<br>The two geodesics of $\gamma(s)\sim x<em>{\delta&#39;}$ are spliced together to have an arc length of $s+\delta&#39;.$<br>Recall that the shortest line must be a geodesic, so this piecewise curve is a geodesic. According to the analytical properties of geodesics,<br>The curve is actually not segmented as a whole.<br>Therefore, the part connecting $\gamma(s)\sim x</em>{\delta&#39;}$ is the extension of the geodesic at $\gamma(s)$,<br>Thus $\gamma(s+\delta&#39;)=x_{\delta&#39;}.$ This completes the argument.</p>
+<p>During the proof, we saw the following inference:</p>
+<p><strong>Corollary 6</strong>. <em>In a complete Riemannian manifold, any two points can be connected by a shortest geodesic.</em></p>
+<p><strong>Corollary 7</strong>. <em>In a complete Riemannian manifold $M$, $\exp_x:M_x\rightarrow M$ is full, $\,\forall\,x\in M.$</em></p>
+<p>The article was last updated on 2022-03-13 18:52:14</p>
                 </div>
             
         </div>
@@ -395,14 +456,14 @@ $\gamma(s)\sim x_{\delta&#39;}$的两段测地线拼接起来刚好弧长为$s+\
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《黎曼几何初步》笔记(3)-测地线</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-03-13 20:52:06</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《黎曼几何初步》笔记(3)-测地线</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-03-13 20:52:06</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/03/13/《黎曼几何初步》笔记(3)-测地线/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/03/13/《黎曼几何初步》笔记(3)-测地线/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -470,7 +531,7 @@ $\gamma(s)\sim x_{\delta&#39;}$的两段测地线拼接起来刚好弧长为$s+\
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -608,24 +669,21 @@ $\gamma(s)\sim x_{\delta&#39;}$的两段测地线拼接起来刚好弧长为$s+\
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -707,9 +765,7 @@ $\gamma(s)\sim x_{\delta&#39;}$的两段测地线拼接起来刚好弧长为$s+\
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#exponential-mapping"><span class="nav-text">exponential mapping</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#geodesic"><span class="nav-text">Geodesic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#properties"><span class="nav-text">Properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric-completeness"><span class="nav-text">Metric completeness</span></a></li></ol>
         </div>
     
 </div>
@@ -734,6 +790,7 @@ $\gamma(s)\sim x_{\delta&#39;}$的两段测地线拼接起来刚好弧长为$s+\
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

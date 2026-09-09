@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -311,7 +311,40 @@ $\Phi$的分量$\Phi^{k_1\cdots k_r}_{l_1\cdots l_s}=\Phi(\omega^{k_1},\cdots,\o
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="the-reflective-nature-of-everything">The reflective nature of everything</h2>
+<p>Let $V, W, U$ be vector spaces, $\psi:V\times W\rightarrow U$ be bilinear mapping.<br>If $\,\forall\,$ vector space $Z,$ bilinear mapping $f:V\times W\rightarrow Z,$<br>There exists a unique linear mapping $g:U\rightarrow Z,$ such that $f=g\circ\psi,$ is said to be<br>$(U,\psi)$ has the <strong>universal mapping property</strong>.</p>
+<p><strong>Lemma 1</strong>. <em>$(U,\psi)$ is unique in the following sense: if $(\widetilde{U},\widetilde{\psi})$ has the universal mapping property, then $\,\exists\,g:U\cong \widetilde{U}$ is a linear isomorphism, and $\widetilde{\psi}=g\circ\psi.$</em></p>
+<p><strong>Proof:</strong> Just state $\,\exists\,g,\widetilde{g},$ such that</p>
+<script type="math/tex; mode=display">\widetilde\psi=g\circ\psi=(g\circ \widetilde{g})\circ\widetilde\psi=\mathrm{id}\circ\widetilde\psi;</script><script type="math/tex; mode=display">\psi=\widetilde{g}\circ\widetilde\psi=(\widetilde g\circ g)\circ\psi=\mathrm{id}\circ\psi.</script><p>It can be explained by using the uniqueness of the universal mapping property that $g\circ\widetilde{g}=\mathrm{id}<em>{\widetilde U},$<br>$\widetilde{g}\circ g=\mathrm{id}</em>{U}.$</p>
+<p><strong>Proposition 2</strong>. <em>Suppose $V, W$ are vector spaces, then $(V\otimes W,h=\otimes)$ has the universal mapping property.</em></p>
+<p><strong>Proof:</strong> For any bilinear $f:V\times W\rightarrow Z,$<br>$f$ is determined by the value $f(e<em>i,\sigma</em>\alpha)$ on the basis. It only needs to be stated that such</p>
+<script type="math/tex; mode=display">f(e_i,\sigma_\alpha)=g\circ h(e_i,\sigma_\alpha)=g(e_i\otimes \sigma_\alpha)\eqno{(\ast )}</script><p>The linear mapping $g$ of exists uniquely.<br>Note that $e<em>i\otimes \sigma</em>\alpha$ is the basis of $V\otimes W$,<br>Therefore, the formula $(\ast )$ determines $g$, which illustrates the uniqueness.</p>
+<p>As for existence, just define $g$ according to $(\ast )$ formula, because the condition is satisfied on the basis,<br>The mapping is linear, so it naturally satisfies $f=g\circ h.$ on all elements.</p>
+<p><strong>Note 3</strong>. <em>Due to uniqueness, $(\widetilde{U},\widetilde{\psi})\cong (V\otimes W,h),$ therefore the tensor product can always be used to express the universal mapping property.</em></p>
+<p><strong>Corollary 4</strong>. <em>$\mathcal{L}(V,W;Z)\cong \mathcal{L}(V\otimes W;Z),$ is connected by $f\mapsto g$ in the property. In particular, $\mathcal{L}(V,W;\mathbb{R})=V^\ast \otimes W^\ast \cong (V\otimes W)^\ast .$</em></p>
+<h2 id="tensor-product">tensor product</h2>
+<p>Generalized, let $\varphi\in \mathcal{L}(V_1,\cdots,V_r;\mathbb{R}),$<br>$\psi\in \mathcal{L}(W_1,\cdots,W_s;\mathbb{R}),$ Definition</p>
+<script type="math/tex; mode=display">(\varphi\otimes \psi)(v_1,\cdots,v_r,w_1,\cdots,w_s):=\varphi(v_1,\cdots,v_r)\cdot\psi(w_1,\cdots,w_s).</script><p>Then</p>
+<script type="math/tex; mode=display">h=\otimes:\mathcal{L}(V_1,\cdots,V_r;\mathbb{R})\times \mathcal{L}(W_1,\cdots,W_s;\mathbb{R})\rightarrow \mathcal{L}(V_1,\cdots,V_r,W_1,\cdots,W_s;\mathbb{R}),</script><p>It satisfies bilinearity, that is, the tensor product satisfies the distributive law. It is easy to verify that it also satisfies the associative law. But generally,<br>The tensor product does not satisfy the commutative law.</p>
+<p>Furthermore, $\varphi_i\in V_i^\ast =\mathcal{L}(V_i;\mathbb{R}),$<br>Define the tensor product $\varphi_1\otimes \cdots\otimes \varphi_r\in \mathcal{L}(V_1,\cdots,V_r;\mathbb{R}).$<br>specific,</p>
+<script type="math/tex; mode=display">(\varphi_1\otimes\cdots\otimes \varphi_r)(v_1,\cdots,v_r)=\varphi_1(v_1)\cdots\varphi_r(v_r),</script><p>i.e. we get</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            \otimes^r:V_1^*\times\cdots\times V_r^*&\rightarrow\mathcal{L}(V_1,\cdots,V_r;\mathbb{R}),\\ (\varphi_1,\cdots,\varphi_r)&\mapsto \varphi_1\otimes\cdots\otimes \varphi_r,
+        \end{aligned}</script><p> is an $r$-heavy linear function, $\otimes$ satisfies the distributive law.<br>And let $\omega<em>{(i)}^{j</em>{i} }$ be the basis of $V<em>i^\ast $,<br>Then ${\omega</em>{(1)}^{j<em>1}\otimes\cdots\otimes \omega</em>{(r)}^{j_r}}$ forms the basis of $V_1^\ast \otimes \cdots\otimes V_r^\ast =\operatorname{span}{\operatorname{Im}\otimes^r}$.<br>Therefore $\dim V_1^\ast \otimes \cdots\otimes V_r^\ast =\dim V_1\cdots\dim V_r.$<br>Inductively, the same argument can be proved</p>
+<script type="math/tex; mode=display">V_1^\ast \otimes \cdots\otimes V_r^\ast =\mathcal{L}(V_1,\cdots,V_r;\mathbb{R}).</script><p>Due to mutual duality, we can also define $v<em>1\otimes\cdots\otimes v_r,$ $v_i\in V_i,$<br>And $V_1\otimes\cdots\otimes V_r=\mathcal{L}(V_1^\ast ,\cdots,V_r^\ast ;\mathbb{R}).$<br>If ${e^{(i)}</em>{j<em>i}}$ is the basis of $V_i$,<br>Then ${e^{(1)}</em>{j<em>1}\otimes\cdots\otimes e^{(r)}</em>{j_r}}$ is the basis of $V_1\otimes\cdots\otimes V_r$,<br>$\dim V_1\otimes \cdots\otimes V_r=\dim V_1\cdots \dim V_r.$</p>
+<p>For the universal mapping property, there are also multiple forms of generalization: that is, let $V_1,\cdots,V_r,U$ be a vector space,<br>$h:V_1\times \cdots \times V_r\rightarrow U$ is a $r$-heavy linear mapping.<br>If $\,\forall\,r$-heavy linear mapping $f:V_1\times \cdots\times V_r\rightarrow Z,$<br>There exists a unique $g:U\rightarrow Z,$ such that $f=g\circ h.$<br>Then it is said that $(U,h)$ has the <strong>universal mapping property</strong>.</p>
+<p>Similarly, such $(U,h)$ is unique in the sense of linear isomorphism,<br>And $(V_1\otimes \cdots\otimes V_r,h)$ has the property of universal mapping.<br>From this it follows that $(V_1\otimes \cdots\otimes V_r)^\ast \cong V_1^\ast \otimes \cdots\otimes V_r^\ast .$<br>For the general $r$-heavy linear mapping, we have</p>
+<script type="math/tex; mode=display">\mathcal{L}(V_1,\cdots,V_r;Z)=V_1^\ast \otimes \cdots\otimes V_r^\ast \otimes Z.</script><p>Define $(r+1)$-heavy linear mapping</p>
+<script type="math/tex; mode=display">\begin{aligned}
+            f:V_1^*\times\cdots\times V_r^*\times Z&\rightarrow \mathcal{L}(V_1,\cdots,V_r;Z),\\ (v_1^*,\cdots,v_r^*,z)&\mapsto v_1^*\otimes \cdots\otimes v_r^*\cdot z,
+        \end{aligned}</script><p> Just use the universal mapping property to show that $g$ is isomorphic.</p>
+<h2 id="tensor">Tensor</h2>
+<p>Suppose $V$ is an $n$-dimensional vector space on $\mathbb{R}$, let</p>
+<script type="math/tex; mode=display">V^r_s=(V\otimes \cdots\otimes V)^r\otimes (V^\ast \otimes\cdots\otimes V^\ast )_s=\mathcal{L}(V^\ast ,\cdots,V^\ast ,V,\cdots,V;\mathbb{R}),</script><p>It is called $(r,s)$-type tensor space, where the elements are called $(r,s)$-type <strong>tensors</strong>. For example, $V_0^1=V,$<br>$V_1^0=V^\ast ,$ $V_0^0=\mathbb{R}.$</p>
+<p>Let ${e<em>i}$ be the basis of $V$, ${\omega^i}$ be the dual basis,<br>Then ${e</em>{i<em>1}\otimes\cdots\otimes e</em>{i_r}\otimes \omega^{j_1}\otimes\cdots\otimes \omega^{j_s}}$ constitutes the basis of $V^r_s$,<br>$\dim V_s^r=n^{r+s}.$</p>
+<p>$\,\forall\,\Phi\in V^r<em>s,$<br>Components of $\Phi$$\Phi^{k_1\cdots k_r}</em>{l<em>1\cdots l_s}=\Phi(\omega^{k_1},\cdots,\omega^{k_2},e</em>{l<em>1},\cdots,e</em>{l_s}).$<br>If we take another basis ${\widetilde{e}_i}$ and a dual basis ${\widetilde{\omega}^i},$<br>Then we have $\widetilde{e}_i= a_i^je_j,$ $\widetilde{\omega}^i=b_j^i\omega^j,$<br>Among them $a_i^jb_j^k=\delta_i^k.$ Then after transformation, the change in the components is:</p>
+<script type="math/tex; mode=display">\widetilde{\Phi}^{i_1\cdots i_r}_{j_1\cdots j_s}=b_{k_1}^{i_1}\cdots b_{k_r}^{i_r} a_{j_1}^{l_1}\cdots a_{j_s}^{l_s} \Phi_{l_1\cdots l_s}^{k_1\cdots k_r}.</script><p>It is called $r$-order contravariant and $s$-order covariant.</p>
+<p>The article was last updated on 2021-11-24 16:14:25</p>
                 </div>
             
         </div>
@@ -320,14 +353,14 @@ $\Phi$的分量$\Phi^{k_1\cdots k_r}_{l_1\cdots l_s}=\Phi(\omega^{k_1},\cdots,\o
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第五章-张量积</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-24 18:14:18</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第五章-张量积</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-11-24 18:14:18</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/24/《微分流形》第五章-张量积/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/11/24/《微分流形》第五章-张量积/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -395,7 +428,7 @@ $\Phi$的分量$\Phi^{k_1\cdots k_r}_{l_1\cdots l_s}=\Phi(\omega^{k_1},\cdots,\o
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -533,24 +566,21 @@ $\Phi$的分量$\Phi^{k_1\cdots k_r}_{l_1\cdots l_s}=\Phi(\omega^{k_1},\cdots,\o
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -632,9 +662,7 @@ $\Phi$的分量$\Phi^{k_1\cdots k_r}_{l_1\cdots l_s}=\Phi(\omega^{k_1},\cdots,\o
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#the-reflective-nature-of-everything"><span class="nav-text">The reflective nature of everything</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensor-product"><span class="nav-text">tensor product</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tensor"><span class="nav-text">Tensor</span></a></li></ol>
         </div>
     
 </div>
@@ -659,6 +687,7 @@ $\Phi$的分量$\Phi^{k_1\cdots k_r}_{l_1\cdots l_s}=\Phi(\omega^{k_1},\cdots,\o
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

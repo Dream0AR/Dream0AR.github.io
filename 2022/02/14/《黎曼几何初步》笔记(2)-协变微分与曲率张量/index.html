@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -478,7 +478,132 @@ $s(x):=\sum_{i,j}R(e_i,e_j,e_i,e_j),$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="covariant-differential">covariant differential</h2>
+<h3 id="tensor">Tensor</h3>
+<p>Memories$T^r<em>s(V):=\underbrace{V\otimes \cdots\otimes V}</em>{r}\otimes \underbrace{V^\ast \otimes \cdots\otimes V^\ast }<em>{s},$<br>$T^\ast (V):=\bigoplus\limits</em>{r,s} T^r_s(V).$<br>If there is an isomorphism $\varphi:V\rightarrow W,$<br>We have the adjoint isomorphism $\varphi^\ast :W^\ast \rightarrow V^\ast ,$<br>Induced$\widetilde{\varphi}:T^r_s(V)\rightarrow T^r_s(W),$</p>
+<script type="math/tex; mode=display">
+\widetilde{\varphi}(v_1\otimes\cdots\otimes v_r\otimes \alpha^1\otimes \cdots\otimes \alpha^s)=\varphi(v_1)\otimes\cdots\otimes \varphi(v_r)\otimes (\varphi^\ast )^{-1}(\alpha^1)\otimes\cdots\otimes (\varphi^\ast )^{-1}(\alpha^s),</script><p>Obviously using linearity,<br>$\widetilde\varphi$ can be generalized and defined to $T^\ast (V)\rightarrow T^\ast (W)$.</p>
+<h3 id="covariant-derivatives">Covariant derivatives</h3>
+<p>In the previous section we had translational isomorphism $P<em>t:T</em>{\gamma(0)}M\rightarrow T<em>{\gamma(t)}M.$<br>Let $T_xM$ be $M_x,$<br>I can take $\widetilde{P_t}:T^\ast (M</em>{\gamma(0)})\rightarrow T^\ast (M<em>{\gamma(t)})$ as induced isomorphism.<br>From the notes in the previous section,<br>Definition $D_vK:=\frac{d {} }{d {}t}[\widetilde{P_t}^{-1}(K(\gamma(t)))]</em>{t=0},$<br>It is called the <strong>covariant derivative</strong> of the tensor field $K$ with respect to $v$. It can be proved that it has nothing to do with the selection of $\gamma$.</p>
+<p><em>After taking a set of parallel bases of the tensor field, the covariant derivatives will be converted into ordinary derivatives.</em><br>Therefore we have the following properties:</p>
+<ol>
+<li><p>If $K$ is of type $(r,s)$, then $D_vK$ is also of type $(r,s)$;</p>
+</li>
+<li><p>$D_v$ is a derivative acting on the tensor field algebra,<br>That is $D_v(K_1\otimes K_2)=(D_vK_1)\otimes K_2+K_1\otimes (D_vK_2).$</p>
+</li>
+<li><p>$D_v$ and condensation are interchangeable. Here condensation $\mathscr{C}$ refers to the partial cancellation of covariation and contravariance,<br>Reduce the tensor by two orders,<br>For example, $\mathscr{C}(X\otimes \alpha\otimes \omega)=\omega(X)\alpha,$<br>$X\in V,$ $\alpha,\omega\in V^\ast .$ The commutativity is expressed as:<br>$D_v (\mathscr{C}K)=\mathscr{C}(D_vK).$</p>
+</li>
+<li><p>$D_vK$ only depends on $K,$ and has nothing to do with the selection of curve $\gamma$.</p>
+</li>
+</ol>
+<p>The proof of the last property only needs to show that $D<em>v\eta$ has nothing to do with the selection of $\gamma$,<br>$\eta$ is of $1$-form. This point uses the properties $2,3,$<br>Combined with the fact that $D_vX$ is indeed irrelevant to the selection of $\gamma$. From the properties $4,$<br>We can define a new tensor field $D_XK:$ for each tensor field $K,$ and vector field $X,$<br>$D_XK(x)=D</em>{X(x)}K.$</p>
+<h3 id="covariant-differential">Covariant differential</h3>
+<p>$D_XK$ is $\mathscr{F}$ linear with respect to $X$, so the $(r,s+1)$ tensor field $DK:$ can be defined</p>
+<script type="math/tex; mode=display">
+(\omega^1,\cdots,\omega^r,X_1,\cdots,X_s,X)\mapsto (D_XK)(\omega^1,\cdots,\omega^r,X_1,\cdots,X_s).</script><p>$DK$ is called the <strong>covariant differential</strong> of $K$. It is easy to see that for functions $f,$, $Df=df,$<br>It is a generalization of differential. Generally, write $D^nK=D(D^{n-1}K),$ but it should be noted that<br>Generally speaking, it is not necessarily true that $D^2K(\cdots,X,Y)=D_YD_XK(\cdots),$ can be calculated to get the function $f,$</p>
+<script type="math/tex; mode=display">
+D^2f(X,Y)=(D_Y(df))(X)=YXf-(D_YX)f.</script><p> In particular, one can see:</p>
+<script type="math/tex; mode=display">
+D^2f(X,Y)-D^2f(Y,X)=((D_XY-D_YX)-[X,Y])f=T(X,Y)f.</script><p>So if $D$ is a symmetric connection, then $T(X,Y)\equiv 0,$ $D^2f(X,Y)=D^2f(Y,X),$<br>$D^2f$ is a symmetric second-order covariant tensor field, called the Hessian of $f$.</p>
+<h3 id="laplace-operator">Laplace operator</h3>
+<p>For any second-order covariant symmetric tensor field $S$,<br>Take $\operatorname{tr}S(x)=\sum_i S(e_i,e_i),$<br>This has nothing to do with the selection of the standard orthonormal basis ${e_i}$. Define $\Delta f=\operatorname{tr}D^2 f,$<br>It is called the <strong>Laplace operator</strong> acting on the function. Specifically expanded, it has the following form:</p>
+<script type="math/tex; mode=display">
+\Delta f= g^{ij}D^2f\left(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right)=\frac{1}{\sqrt{G} }\frac{\partial {} }{\partial {}x^k}\left(g^{ik}\sqrt{G}\frac{\partial {}f}{\partial {}x^i}\right).</script><h3 id="practice">Practice</h3>
+<p><strong>Exercise 1</strong>. <em>On the manifold $M$ with connection $D$, the tensor field $K$ is said to be <strong>parallel</strong>. If $DK\equiv 0.$ proves that the metric $g$ is parallel as a second-order covariant symmetric tensor.</em></p>
+<p><strong>Proof:</strong> That is $\,\forall\,v,X,Y,$ $(D_vg)(X,Y)=0.$ By derivation and sum contraction commutative properties,<br>We have:</p>
+<script type="math/tex; mode=display">
+D_v(g\otimes X\otimes Y)=D_vg \otimes X\otimes Y+g\otimes D_vX\otimes Y+g\otimes X\otimes D_vY.</script><script type="math/tex; mode=display">
+vg(X,Y)=(D_vg)(X,Y)+g(D_vX,Y)+g(X,D_vY).</script><p> Recall the nature of contact (L1),<br>$vg(X,Y)=g(D_vX,Y)+g(X,D_vY),$ Therefore there is indeed $(D_vg)(X,Y)=0,$<br>Thus the metric $g$ is a parallel tensor field.</p>
+<p><strong>Exercise 2</strong>. <em>Write the expansion process of the Laplace operator.</em></p>
+<p><strong>Proof:</strong> Suppose $A^{ij}\frac{\partial {} }{\partial {}x^j}=e_i,$<br>Then when $A^{ij}=\sqrt{g}^{ij}$, ${e_i}$ forms a standard orthonormal basis.</p>
+<script type="math/tex; mode=display">
+\Delta f=\sum_i D^2f\left(\sqrt{g}^{ij}\frac{\partial {} }{\partial {}x^j},\sqrt{g}^{ik}\frac{\partial {} }{\partial {}x^k}\right)=g^{jk}D^2f\left(\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k}\right)</script><script type="math/tex; mode=display">
+D^2f\left(\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k}\right)=\frac{\partial^2 {}f}{\partial {}x^j\partial {}x^k}-\left(D_{\frac{\partial {} }{\partial {}x^k} }\frac{\partial {} }{\partial {}x^j}\right)f</script><script type="math/tex; mode=display">
+D_{\frac{\partial {} }{\partial {}x^k} }\frac{\partial {} }{\partial {}x^j}=\Gamma_{jk}^i\frac{\partial {} }{\partial {}x^i}=\frac{g^{li} }{2}\left(\frac{\partial {}g_{jl} }{\partial {}x^k}+\frac{\partial {}g_{kl} }{\partial {}x^j}-\frac{\partial {}g_{jk} }{\partial {}x^l}\right)\frac{\partial {} }{\partial {}x^i}</script><p>So, we have:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Delta f&=g^{jk}\frac{\partial^2 {}f}{\partial {}x^j\partial {}x^k}-\frac{g^{jk}g^{li} }{2}\left(\frac{\partial {}g_{jl} }{\partial {}x^k}+\frac{\partial {}g_{kl} }{\partial {}x^j}-\frac{\partial {}g_{jk} }{\partial {}x^l}\right)\frac{\partial {}f}{\partial {}x^i}\\
+ &=g^{ik}\frac{\partial^2 {}f}{\partial {}x^i\partial {}x^k}-g^{il}\frac{\partial {}g_{lj} }{\partial {}x^k}g^{jk}\frac{\partial {}f}{\partial {}x^i}+\frac{g^{jk}g^{li} }{2}\frac{\partial {}g_{jk} }{\partial {}x^l}\frac{\partial {}f}{\partial {}x^i}\\
+ &=g^{ik}\frac{\partial^2 {}f}{\partial {}x^i\partial {}x^k}+\frac{\partial {}g^{ik} }{\partial {}x^k}\frac{\partial {}f}{\partial {}x^i}+g^{ik}\frac{g^{lj} }{2}\frac{\partial {}g_{jl} }{\partial {}x^k}\frac{\partial {}f}{\partial {}x^i}\\
+ &=\frac{1}{\sqrt{G} }\frac{\partial {} }{\partial {}x^k}\left(g^{ik}\sqrt{G}\frac{\partial {}f}{\partial {}x^i}\right).
+ \end{aligned}</script><p> The following identity for matrix derivation is used:</p>
+<script type="math/tex; mode=display">
+\frac{d {}A^{-1}(t)}{d {}t}=-A^{-1}(t)A'(t)A^{-1}(t),</script><script type="math/tex; mode=display">
+\frac{d {}\det A(t)}{d {}t}=\det(A(t))\operatorname{tr}(A^{-1}(t)A'(t)).</script><h2 id="curvature-tensor">curvature tensor</h2>
+<h3 id="curvature-operator">Curvature operator</h3>
+<p>Let $\mathscr{T}^\ast $ be the module formed by all tensor fields on $M$ corresponding to the $C^\infty$ algebra.<br>Then for any given vector field $X, $ the covariant derivative $D_X$ is a derivative of $\mathscr{T}^\ast $.<br>Now define the mapping for the given vector fields $X,Y,$:</p>
+<script type="math/tex; mode=display">
+R_{XY}=D_{[X,Y]}-(D_XD_Y-D_YD_X)=D_{[X,Y]}-[D_X,D_Y].</script><p>Call $R_{XY}$ the <strong>curvature operator</strong> defined by $X,Y$, which has the following properties:</p>
+<p>(1) $R_{XY}$ is a derivative of $\mathscr{T}^\ast $;</p>
+<p>(2) $R_{XY}$ maintains the type of tensor field;</p>
+<p>(3) $\,\forall\,$function$f,$ tensor field$K,$<br>There is $R<em>{(fX)Y}K=R</em>{X(fY)}K=R<em>{XY}fK=fR</em>{XY}K;$</p>
+<p>(4) $\,\forall\,$ function $f,$ has $R_{XY}f=0.$</p>
+<p>According to the conclusion in algebra, if $D_1,D_2$ is a derivative, then the Lie bracket $[D_1,D_2]$ is also a derivative.<br>This illustrates property (1). Property (2) is obtained from the basic properties of covariant derivatives. Property (3) is obtained by conventional calculations.<br>Property (4) is obtained from the basic properties of contact.</p>
+<h3 id="curvature-tensor">Curvature tensor</h3>
+<p>From (2) and (3), we know that for vector fields $X, Y, Z, $ $R_{XY}Z$ is also a vector field,<br>And is $\mathscr{F}$ linear with respect to each variable. Thus it determines a $(1,3)$ type tensor field:</p>
+<script type="math/tex; mode=display">
+(\omega,X,Y,Z)\mapsto \omega(R_{XY}Z),</script><p> Equivalently,<br>It can also be regarded as a $(0,4)$ type tensor field:</p>
+<script type="math/tex; mode=display">
+R(X,Y,Z,W):=\left<{}R_{XY}Z,W\right>.</script><p>Call $R_{XY}Z$ or $R(X,Y,Z,W)$ the <strong>curvature tensor</strong> of the Riemannian metric.<br>It describes the &quot;space curvature&quot; nature of the manifold.</p>
+<h3 id="properties">Properties</h3>
+<p>The curvature tensor is a second-order invariant of the metric, that is, it contains the second-order derivative of the metric tensor $g$.<br>Remember $g<em>{ij}=g\left(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}\right),$<br>$R</em>{ijkl}=R\left(\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j},\frac{\partial {} }{\partial {}x^k},\frac{\partial {} }{\partial {}x^l}\right),$<br>Calculated</p>
+<script type="math/tex; mode=display">
+R_{ijkl}=\frac{1}{2}\left(\frac{\partial^2 {}g_{il} }{\partial {}x^j\partial {}x^k}+\frac{\partial^2 {}g_{jk} }{\partial {}x^i\partial {}x^l}-\frac{\partial^2 {}g_{ik} }{\partial {}x^j\partial {}x^l}-\frac{\partial^2 {}g_{jl} }{\partial {}x^i\partial {}x^k}\right)+g_{rs}\left(\Gamma_{jk}^r\Gamma_{il}^s-\Gamma_{jl}^r\Gamma_{ik}^s\right).</script><p>This means, <em>The curvature tensor is a nonlinear function of the metric tensor.</em><br>This will be the main obstacle to our understanding of the curvature tensor.</p>
+<p><strong>Lemma 1</strong>. <em>For vector fields $X,Y,Z,W,$ we have:</em></p>
+<p>(1) $R<em>{XY}=-R</em>{YX};$</p>
+<p>(2) $R<em>{XY}Z+R</em>{YZ}X+R_{ZX}Y=0$<em>(first Bianchi identity)</em>;</p>
+<p>(3) $R(X,Y,Z,W)=-R(X,Y,W,Z);$</p>
+<p>(4) $R(X,Y,Z,W)=R(Z,W,X,Y).$</p>
+<p><strong>Proof:</strong> Since the curvature operator $R$ is $C^\infty$ multilinear with respect to the vector field,<br>Just consider whether $R<em>{ijkl}$ satisfies the property. Property (1) is obtained immediately. For the coordinate vector field,<br>Lie brackets $[\frac{\partial {} }{\partial {}x^i},\frac{\partial {} }{\partial {}x^j}]\equiv 0,$<br>$R</em>{\frac{\partial {} }{\partial {}x^i}\frac{\partial {} }{\partial {}x^j} }=-[D<em>{\frac{\partial {} }{\partial {}x^i} },D</em>{\frac{\partial {} }{\partial {}x^j} }].$<br>Contacted by Levi-Civita,<br>$D<em>{\frac{\partial {} }{\partial {}x^i} }\frac{\partial {} }{\partial {}x^j}=D</em>{\frac{\partial {} }{\partial {}x^j} }\frac{\partial {} }{\partial {}x^i},$<br>Combined with the previous formula, we have property (2).</p>
+<p>Property (3) is obtained from the previous $R<em>{ijkl}$ expression, which is also equivalent to $R</em>{ijkk}=0.$<br>Property (4) is the algebraic corollary of properties (1)-(3), and of course it can also be obtained by the $R_{ijkl}$ expression.</p>
+<p>Now consider $R_{XY}:M_x\rightarrow M_x$ to be a linear transformation. According to property (3),<br>It is antisymmetric relative to the inner product on $M_x$. Furthermore,<br>Consider a function defined on $M_x\oplus M_x$</p>
+<script type="math/tex; mode=display">
+Q(X,Y):=R(X,Y,X,Y),</script><p>Call $Q$ the <strong>matching quadratic form of $R$.</strong></p>
+<p><strong>Lemma 2</strong>. <em>$Q$ completely determines the curvature tensor. For two tensor fields that satisfy the conditions of Lemma $1$, if their matching quadratic forms are the same, then they themselves are also the same.</em></p>
+<p><strong>Proof:</strong> Just prove that if $Q=0,$ determined by tensor field $R$, then $R=0.$ Firstly, by definition and property (4),</p>
+<script type="math/tex; mode=display">
+Q(X,Y),Q(X,W),Q(X,Y+W)=0\Rightarrow R(X,Y,X,W)+R(X,W,X,Y)=2R(X,Y,X,W)=0.</script><p>Since it holds for any vector field $W$, $R_{XY}X=0.$ Similarly, we can get</p>
+<script type="math/tex; mode=display">
+R_{(X+Z)Y}(X+Z)=R_{XY}Z+R_{ZY}X=0.</script><p> From the first Bianchi identity,<br>$R<em>{XY}Z+R</em>{YZ}X+R<em>{ZX}Y=0,$ Combined with the antisymmetry of the curvature operator, $2R</em>{ZY}X=R<em>{ZX}Y.$<br>In the same way, we have $R</em>{YZ}X+R<em>{XZ}Y=0,$ and substitute it to get $3R</em>{YZ}X=0.$<br>Select arbitrary by vector field, $R=0.$</p>
+<p><strong>Lemma 3</strong> (Second Bianchi identity). <em>$(D<em>XR)</em>{YZ}+(D<em>YR)</em>{ZX}+(D<em>ZR)</em>{XY}=0.$</em></p>
+<p><strong>Proof:</strong> Just discuss the coordinate vector field. At this time $D<em>XY=D_YX,$<br>$R</em>{XY}=-D_XD_Y+D_YD_X.$ $R$ is the tensor field, we have:</p>
+<script type="math/tex; mode=display">
+D_X(R_{YZ}W)=(D_XR)_{YZ}W+R_{D_XY,Z}W+R_{Y,D_XZ}W+R_{YZ}(D_XW).</script><p>Rotate $X, Y, Z$ to get the conclusion.</p>
+<p><strong>Lemma 4</strong> (Ricci identity). <em>If $T$ is a tensor field, then</em></p>
+<script type="math/tex; mode=display">
+D^2T(\cdots,X,Y)-D^2T(\cdots,Y,X)=(R_{XY}T)(\cdots).</script><p><strong>Certificate:</strong></p>
+<script type="math/tex; mode=display">
+D^2T(\cdots,X,Y)=(D_Y(DT))(\cdots,X)=D_YD_XT(\cdots)-D_{D_YX}T(\cdots).</script><p>After exchanging $X,Y$ and doing the difference, we find that we get exactly the equation.</p>
+<p>In particular, when $T$ is a function, the previous symmetric conclusion of $D^2f$ is obtained. This equation is a more general generalization.</p>
+<h3 id="practice">Practice</h3>
+<p><strong>Exercise 3</strong>. <em>The isometric transformation preserves the Levi-Civita connection, which in turn preserves the curvature tensor.</em></p>
+<p><strong>Proof:</strong> Let $\varphi:M\rightarrow N$ be an isometric transformation,<br>Define contact $\widetilde{D}<em>XY=(d\varphi)^{-1}D&#39;</em>{d\varphi(X)}d\varphi(Y),$ on $M$<br>Obviously it is indeed a contact. Just prove that it satisfies the properties of Levi-Civita contact,<br>From the uniqueness, we get $D<em>XY=\widetilde{D}_XY=D&#39;</em>{d\varphi(X)}d\varphi(Y).$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ X\left<{}Y,Z\right>&=d\varphi(X)\left<{}d\varphi(Y),d\varphi(Z)\right>\\
+ &=\left<{}D'_{d\varphi(X)}d\varphi(Y),d\varphi(Z)\right>+\left<{}d\varphi(Y),D'_{d\varphi(X)}d\varphi(Z)\right>\\
+&=\left<{}\widetilde{D}_XY,Z\right>+\left<{}Y,\widetilde{D}_XZ\right>
+ \end{aligned}</script><script type="math/tex; mode=display">
+\begin{aligned}
+ \widetilde{D}_XY-\widetilde{D}_YX=&(d\varphi)^{-1}(D'_{d\varphi(X)}d\varphi(Y)-D'{D\varphi(Y)}d\varphi(X))\\
+ =&(d\varphi)^{-1}[d\varphi(X),d\varphi(Y)]\\
+ =&[X,Y]=XY-YX
+ \end{aligned}</script><p>Therefore, this connection does satisfy the properties of Levi-Civita connection. Since the connection determines the curvature tensor,<br>Isometric transformation also keeps the curvature tensor unchanged.</p>
+<h2 id="curvature">curvature</h2>
+<h3 id="section-curvature">Section curvature</h3>
+<p>Generally, we normalize $Q$. Let $\Pi$ be a two-dimensional subspace of $M_x$,<br>${v_1,v_2}$ is any set of bases, then the <strong>section curvature</strong> of $\Pi$ is defined as</p>
+<script type="math/tex; mode=display">
+K(\Pi):=\frac{R(v_1,v_2,v_1,v_2)}{|v_1\wedge v_2|^2},</script><p> easy to see,<br>$K$ has nothing to do with the basis selection of the two-dimensional subspace. In particular, if a set of standard orthonormal basis ${e_1,e_2},$ is selected<br>$K(\Pi)=R(e_1,e_2,e_1,e_2).$ From the previous lemma,<br>If<em> we know the cross-sectional curvature of all two-dimensional subspaces, it is equivalent to knowing the curvature tensor</em>.<br>Naturally, the cross-section curvature, like the curvature tensor, is a metric invariant and is maintained under isometric transformation.</p>
+<p>For the two-dimensional Riemannian manifold $M,$ we know that there is Gaussian curvature $K.$<br>At this time, the Gaussian curvature is consistent with the above-mentioned cross-sectional curvature.<br>Therefore, it can be said that section curvature is a generalization of Gaussian curvature. In particular, note that Gaussian curvature is also intrinsic.<br>This is <strong>Gauss&#39;s brilliant theorem</strong>.</p>
+<p>The usual metric on $\mathbb{R}^n$ is said to be <strong>flat</strong>. At this time $\,\forall\,X,Y,Z,$<br>$R_{XY}Z=0,$ The curvature tensor is always zero. On the contrary,<br>We will prove later that if the curvature tensor of the Riemannian manifold $M$ is zero,<br>It must be locally isometric to $\mathbb{R}^n.$ equipped with a flat metric. Such a manifold is said to be <strong>flat</strong>.</p>
+<p>For $n$-dimensional sphere $S^n,$ Since there is an isometric transformation between any two two-dimensional tangent planes at any two points,<br>It can be proved that it has constant cross-sectional curvature.</p>
+<h3 id="ricci-tensor">Ricci tensor</h3>
+<p><strong>Ricci tensor</strong> is a second-order covariant tensor field, defined as:</p>
+<script type="math/tex; mode=display">
+\operatorname{Ric}(X,Y):=\sum_i R(e_i,X,e_i,Y),</script><p>${e_i}$ is any set of standard orthonormal bases of $M_x$. Due to the multilinearity of $R$, it has nothing to do with the selection of the basis.<br>And by its properties, the Ricci tensor is symmetric,<br>That is $\operatorname{Ric}(X,Y)=\operatorname{Ric}(Y,X).$</p>
+<p>On the tangent unit sphere of $M$, define the function $X\mapsto \operatorname{Ric}(X,X),$<br>It is called the <strong>Ricci curvature</strong> under the vector $X$. If $X=e<em>1$ is in the selected basis,<br>Then $\operatorname{Ric}(X,X)=\sum</em>{i=2}^n R(e_i,e_1,e_i,e_1),$<br>It is the sum of $n-1$ section curvatures.</p>
+<p><strong>Quantitative curvature</strong>$s$ is defined as the trace of $\operatorname{Ric}$,<br>$s(x):=\sum_{i,j}R(e_i,e_j,e_i,e_j),$<br>is the sum of various possible two-dimensional plane section curvatures spanned by $n$ vectors in the unitary basis.</p>
+<p>The article was last updated on 2022-02-14 15:31:56</p>
                 </div>
             
         </div>
@@ -487,14 +612,14 @@ $s(x):=\sum_{i,j}R(e_i,e_j,e_i,e_j),$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《黎曼几何初步》笔记(2)-协变微分与曲率张量</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-02-14 17:31:54</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《黎曼几何初步》笔记(2)-协变微分与曲率张量</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-02-14 17:31:54</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/02/14/《黎曼几何初步》笔记(2)-协变微分与曲率张量/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/02/14/《黎曼几何初步》笔记(2)-协变微分与曲率张量/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -562,7 +687,7 @@ $s(x):=\sum_{i,j}R(e_i,e_j,e_i,e_j),$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -700,24 +825,21 @@ $s(x):=\sum_{i,j}R(e_i,e_j,e_i,e_j),$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -799,9 +921,7 @@ $s(x):=\sum_{i,j}R(e_i,e_j,e_i,e_j),$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#covariant-differential"><span class="nav-text">covariant differential</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tensor"><span class="nav-text">Tensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#covariant-derivatives"><span class="nav-text">Covariant derivatives</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#covariant-differential"><span class="nav-text">Covariant differential</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#laplace-operator"><span class="nav-text">Laplace operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#practice"><span class="nav-text">Practice</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curvature-tensor"><span class="nav-text">curvature tensor</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#curvature-operator"><span class="nav-text">Curvature operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curvature-tensor"><span class="nav-text">Curvature tensor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#properties"><span class="nav-text">Properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#practice"><span class="nav-text">Practice</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curvature"><span class="nav-text">curvature</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#section-curvature"><span class="nav-text">Section curvature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ricci-tensor"><span class="nav-text">Ricci tensor</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -826,6 +946,7 @@ $s(x):=\sum_{i,j}R(e_i,e_j,e_i,e_j),$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

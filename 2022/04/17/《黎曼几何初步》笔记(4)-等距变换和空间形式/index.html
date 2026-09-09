@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -448,7 +448,98 @@ $(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始�
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="introduction">Introduction</h2>
+<p>Now we begin to study the <strong>space form</strong>, that is, the complete Riemannian manifold* with constant cross-section curvature.<br>We have the following basic results:</p>
+<p><strong>Theorem 1</strong>. <em>$\,\forall\,c\in \mathbb{R},$ $n\in \mathbb{Z}_+,$ $\,\exists\,$The only simply connected $n$-dimensional space form of constant cross-section curvature $c$ under isometric transformation.</em></p>
+<p>The complete proof of the theorem is given in the next chapter. In this section we focus on the existence part. Let the Riemannian metric $g,$<br>The cross-sectional curvature is $K,$. Then for the positive constant $A,$, the cross-sectional curvature of $Ag$ is $\frac{1}{A}K.$<br>Therefore, we only need to consider the spatial form with cross-sectional curvature $0,\pm 1$. For $c=0,$<br>Just take $\mathbb{R}^n$; for $c=1,$, just take the well-known unit sphere $S^n$; for $c=-1,$<br>Need to be equipped with <strong>hyperbolic metric</strong>, that is</p>
+<script type="math/tex; mode=display">
+g=\frac{4}{\left(1-\sum_i \left(x^i\right)^2\right)^2}\sum_i dx^i\otimes dx^i</script><p>The unit ball $B^n.$ We introduce new concepts and later illustrate the last two conclusions.</p>
+<h2 id="full-geodesic-submanifold">Full geodesic submanifold</h2>
+<h3 id="definition">Definition</h3>
+<p>Let $M$ be a submanifold of the Riemannian manifold $\overline{M}$, equipped with an induced metric.<br>If any geodesic tangent to $M$ in $\overline{M}$ is all located in $M$,<br>Then $M$ is said to be a fully geodesic submanifold in $\overline{M}$. It can be seen that,<br>Fully geodesic submanifolds are very rare, and almost all Riemannian manifolds do not have any fully geodesic submanifolds.<br>However, a new geometric quantity can be introduced, which is very meaningful.</p>
+<p><strong>Lemma 2</strong>. <em>The necessary and sufficient condition that $M$ is the total geodesic submanifold of $\overline{M}$ is that for any vector field $X,Y,$ in $M$ $D_XY=\overline{D}_XY,$ where $D,\overline{D}$ are the Levi-Civita connections on $M,\overline{M}$ respectively.</em></p>
+<p><strong>Proof:</strong> First, let $M$ be any submanifold of $\overline{M}$. Define the vector fields $X, Y, $ in $M$</p>
+<script type="math/tex; mode=display">
+S(X,Y):=D_XY-\overline{D}_XY,</script><p>$S(X,Y)$ is the vector field in $\overline{M}$ that is only defined on $M$. At this time,<br>For any function $f,$ on $M$</p>
+<script type="math/tex; mode=display">
+S(fX,Y)=fS(X,Y)=S(X,fY).</script><p>Therefore, $S:M_x\otimes M_x\rightarrow \overline{M}_x,$ can be defined</p>
+<script type="math/tex; mode=display">
+S(v,w)=S(V,W),\quad \,\forall\,V(x)=v,W(x)=w\in M_x,</script><p>$V, W$ are any vector fields in $M$ that satisfy the above conditions. From the symmetry of the Levi-Civita connection, we can know that,</p>
+<script type="math/tex; mode=display">
+S(v,w)=S(w,v).</script><p>Now suppose $M$ is the total geodesic submanifold of $\overline{M}$, assert:</p>
+<script type="math/tex; mode=display">
+S(v,v)=0,\quad \,\forall\,v\in M_x, x\in M.</script><p>Let $\gamma$ be the geodesic in $\overline{M}$ with $v$ as the initial tangent vector,<br>$\overline{D}<em>{\dot\gamma}\dot\gamma=0,$ then $\gamma$ is also the geodesic in $M$,<br>$D</em>{\dot\gamma}\dot\gamma=0.$ Therefore</p>
+<script type="math/tex; mode=display">
+S(v,v)=D_{\dot\gamma(0)}\dot\gamma-\overline{D}_{\dot\gamma(0)}\dot\gamma=0.</script><p>Thus,</p>
+<script type="math/tex; mode=display">
+S(v+w,v+w)=2S(v,w)=0\,\Rightarrow\, D_XY=\overline{D}_XY,\quad \,\forall\,X,Y\in \mathfrak{X}(M).</script><p>On the contrary, let $S\equiv 0.$ take the geodesic $\gamma,$ in $\overline{M}$ that is tangent to $M$<br>To illustrate $\gamma\subset M.$, take the geodesic $\xi,$ in $M$ to be the same as the initial tangent vector of $\gamma$.<br>At this time,</p>
+<script type="math/tex; mode=display">
+\overline{D}_{\dot\xi}\dot\xi=D_{\dot\xi}\dot\xi\equiv 0,</script><p>Therefore $\xi$ is also the geodesic in $\overline{M}$. From the uniqueness, we know that $\xi=\gamma,$<br>Therefore $\gamma$ does fall in $M$.</p>
+<p><strong>Note 3</strong>. <em>The above $S$ is called the <strong>second basic form</strong> of $M$ in $\overline{M}$, and its discussion will be mentioned in subsequent chapters.</em></p>
+<p>Since the curvature tensor is defined by the Levi-Civita connection, we have the following inference:</p>
+<p><strong>Lemma 4</strong>. <em>Suppose $M$ is a fully geodesic submanifold of $\overline{M}$, $K,\overline{K}$ are the cross-sectional curvature functions of $M,\overline{M}$ respectively, then $\,\forall\,x\in M,$ for any $2$-plane $\Pi\subset M_x,$ $K(\Pi)=\overline{K}(\Pi).$</em></p>
+<h3 id="isometric-transformation">Isometric transformation</h3>
+<p>Let’s look at an example first. Let $\gamma$ be the arc length parameter curve,<br>And there is an isometric transformation $\varphi$ with $\gamma$ as the fixed point set.<br>Then assert that $\gamma$ is a normal geodesic. $\,\forall\,t,$<br>Let $\xi$ be the geodesic with $\dot{\gamma}(t)$ as the initial tangent vector,<br>Then since the isometric transformation maintains the local minimal property, $\varphi(\xi)$ is also a geodesic,<br>And take $d\varphi (\dot\gamma(t))=\dot\gamma(t)$ as the initial tangent vector.<br>From the uniqueness, we know that $\varphi(\xi)=\xi, $ $\xi$ trajectory is a fixed point set,<br>Therefore $\gamma$ and $\xi$ are the same in the common domain and are regular geodesics. More generally,<br>We have the following conclusions:</p>
+<p><strong>Lemma 5</strong>. <em>The fixed point set of an isometric transformation is a complete geodesic submanifold (not necessarily connected).</em></p>
+<p><strong>Certificate:</strong><br>We only need to focus on proving that the fixed point set $M$ of $\overline{M}$ with respect to the isometric transformation $\varphi$ is indeed a submanifold,<br>The instructions that follow are consistent with the previous discussion. Definition</p>
+<script type="math/tex; mode=display">
+\mathscr{F}:=\{v\in \overline{M}_x:d\varphi(v)=v\},</script><p>Just say $\exp<em>x(\mathscr{F}\cap B(\delta))=M\cap B</em>\delta,$<br>Among them, $\delta$ is a sufficient miniscule such that $\exp_x$ is diffeomorphism on the sphere.<br>In this way, the coordinate neighborhood on $M$ is established, making it a submanifold. The proof of this point is,<br>Also pay attention to using isometric transformation to maintain geodesics and the uniqueness of geodesics.</p>
+<h2 id="spatial-form">spatial form</h2>
+<h3 id="unit-sphere">Unit sphere</h3>
+<p><strong>Lemma 6</strong>. <em>The unit sphere $S^n$ has constant cross-sectional curvature $+1,$ $\,\forall\,n\ge 2.$</em></p>
+<p><strong>Proof:</strong> When $n=2$, the cross-section curvature of $S^2$ is Gaussian curvature, which is known as $+1.$ for $n\ge 3,$<br>Remember $x\in \mathbb{R}^3,$ $y\in \mathbb{R}^{n-2},$<br>The isometric transformation $\widetilde\varphi on $\mathbb{R}^{n+1}$:(x,y)=(x,-y)$ induces the isometric transformation $\varphi,$ on $S^n$<br>Let ${(x,0)}=S^2$ be the fixed point set. Therefore $S^2$ is a fully geodesic submanifold. According to the lemma,<br>The cross-sectional curvature of the plane tangent to $S^2$ in $S^n$ is the same as the cross-sectional curvature of $S^2$, which is $+1.$<br>For $S^n,$ there is an isometric transformation between any two two-dimensional tangent planes at any two points,<br>Therefore, it is the spatial form with $+1$ as the constant cross-section curvature.</p>
+<h3 id="hyperbolic-metric">Hyperbolic metric</h3>
+<p><strong>Lemma 7</strong>. <em>The unit ball $B^n$ equipped with a hyperbolic metric is a complete Riemannian manifold with constant cross-section curvature $-1$.</em></p>
+<p><strong>Proof:</strong> First discuss the completeness. According to the Hopf-Rinow theorem,<br>We can prove that a geodesic starting from the origin can always extend infinitely,<br>Furthermore, $\exp_O$ is defined on the entire tangent space, so the manifold is complete.<br>Consider the curve $\xi(s)=\left(\frac{e^s-1}{e^s+1},0,\cdots,0\right).$<br>The calculated $s$ is the arc length parameter,<br>And $\xi$ is the fixed point set of the isometric transformation $(x^1,x^2,\cdots,x^n)\mapsto (x^1,-x^2,\cdots,-x^n)$,<br>Therefore $\xi$ is a geodesic. Furthermore, due to symmetry, geodesics starting in all directions can be extended infinitely.</p>
+<p>Next, take any tangent plane $\Pi\subset \mathbb{R}^n,$ of $B^n$ at point $p$<br>Let $E$ be any $3$-dimensional subspace containing $\Pi,p$. Due to symmetry, we might as well assume that $E=\mathbb{R}^3,$<br>Then $E\cap B^n=B^3$ is the fixed point set of the isometric transformation $(x^1,x^2,x^3,x^4,\cdots,x^n)\mapsto (x^1,x^2,x^3,-x^4,\cdots,-x^n)$,<br>is a fully geodesic submanifold. Therefore, it is only necessary to prove that $B^3$ has a constant cross-section curvature $-1$ under the induced hyperbolic metric.<br>For this purpose, spherical coordinates can be used for calculation. In the case of $n=2$, polar coordinates can be used for calculation.</p>
+<p>We will later refer to the unit ball equipped with a hyperbolic metric as $H^n.$</p>
+<h3 id="geodesic-properties">Geodesic properties</h3>
+<p>Next we consider the properties of geodesics in spatial form. Intuitively,<br>Consider two geodesics starting from a point with a fixed initial tangent vector angle,<br>If $\mathbb{R}^n$ is used as the benchmark, $S^n$ will be closer in comparison, while $H^n$ will diverge.<br>This is an important connection between section curvature and geodesics. Next, we take $n=2$ to express this point strictly.<br>Note that since the case $n=2$ is the total geodesic submanifold of the respective general case,<br>This is also true for general $n$ properties.</p>
+<p>Now suppose $M=\mathbb{R}^2,S^2,H^2,$ and select the reference point $O\in M,$<br>Define a geodesic circle with radius $r$:</p>
+<script type="math/tex; mode=display">
+C(r)=\{x\in M,d(0,x)=r\}.</script><p> When $r$ is sufficiently small,<br>$C(r)$ is the image of the circle with radius $r$ in $M_O$ under diffeomorphism $\exp_O$.<br>Its length measures the divergence rate of the geodesics on $M$ starting from point $O$.</p>
+<p>Let $c<em>0(r), c</em>+(r), c<em>-(r)$ be the length of $C(r)$ in $\mathbb{R}^2, S^2, H^2$ respectively.<br>Obviously $c_0(r)=2\pi r,$ $c</em>+(r)=2\pi \sin r.$<br>The final calculation shows $c_-(r)=2\pi \sinh r.$<br>They are all homogeneous spaces (the homogeneity of $H^n$ will be explained later),<br>Therefore, the selection of reference point $O$ does not affect the length of $C(r)$. It can be immediately seen from the image that the negative curvature pushes the geodesic apart,<br>And positive curvature brings geodesics together.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/04/17/iVt4jSC8doG7u9A.png width='50%' height='50%'></p>
+<p>For any complete two-dimensional Riemannian manifold $M,$, select the reference point $O\in M,$<br>Let us also consider the length $c(r).$ of the geodesic circle $C(r)$. Let $r$ be sufficiently small, then</p>
+<script type="math/tex; mode=display">
+c(r)=\int_0^{2\pi}\left|d\exp_O\left(\frac{d {} }{d {}\theta}(r,\theta)\right)\right|d\theta.</script><p>It can be seen that we do not need to specifically consider the influence of $d\exp$ on the radial direction.<br>Let&#39;s turn to another object first and come back to this issue later.</p>
+<h3 id="jacobi-field">Jacobi Field</h3>
+<p>The so-called $C^\infty$<strong>matrix mapping</strong>,<br>Refers to the smooth mapping $\gamma:[a,b]\times [c,d]\rightarrow M.$<br>From this we can define two vector fields <strong>$T,U:$ along </strong>$\gamma$**</p>
+<script type="math/tex; mode=display">
+T(\gamma(t,u)):=d\gamma\left(\frac{\partial {} }{\partial {}t}(t,u)\right),\quad U(\gamma(t,u)):=d\gamma\left(\frac{\partial {} }{\partial {}u}(t,u)\right).</script><p>Each $u\in[c,d]$ determines a curve $\gamma_u(t)=\gamma(t,u).$<br>When $0\in[c,d]$, $\gamma_0$ is called the base curve of $C^\infty$ rectangle $\gamma$.<br>If we further assume that each $\gamma_u$ is a geodesic of $M$,<br>Then the matrix mapping $\gamma$ is said to be a <strong>single-parameter geodesic family</strong>${\gamma_u}.$ So we have</p>
+<script type="math/tex; mode=display">
+[T,U]=d\gamma\left(\left[\frac{\partial {} }{\partial {}t},\frac{\partial {} }{\partial {}u}\right]\right)=0,\quad D_TT=0.</script><p>Furthermore,</p>
+<script type="math/tex; mode=display">
+D_TD_TU=D_TD_UT=D_TD_UT-D_UD_TT-D_{[T,U]}T=-R_{TU}T.</script><p>Restricted to the base curve, we get:</p>
+<script type="math/tex; mode=display">
+\ddot{U}+R_{\dot{\gamma}_0U}\dot{\gamma}_0=0.</script><p>Call the above formula <strong>Jacobi equation</strong>, and call it along the curve $\gamma_0,$<br>The vector field $U$ that conforms to the above formula is <strong>Jacobi field</strong>.<br>The vector field $U$ is called the <strong>transversal vector field</strong> of ${\gamma_u}$, so we get:</p>
+<p><strong>Lemma 8</strong>. <em>The transverse vector field of the single-parameter geodesic family along the base curve is a Jacobi field.</em></p>
+<p>conversely,<br>We will explain later that every Jacobi field along a geodesic is a transverse vector field of a certain single-parameter geodesic family.<br>Below we return to the original discussion.<br>We explain that $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$ is the transverse vector field of a certain single-parameter geodesic family,<br>Therefore, the Jacobi equation gives the decisive connection between curvature and $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$,<br>We can also see the important relationship between curvature and $c(r)$.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/04/17/kSh9Tma3VMfrNe4.png width='50%' height='50%'></p>
+<p>Let $p\in M_O,$ $X$ be the vector in $M_O$,<br>Then $\Gamma(t,u):=\exp_O\frac{t}{r}(p+uX)$ defines a single-parameter geodesic family,<br>$r=|p|,$ satisfies</p>
+<script type="math/tex; mode=display">
+U(0)=0,\quad \dot{U}(0)=\frac{1}{r}X.</script><p>To prove the second formula, the coordinate system determined by $\exp<em>O:B(\delta)\approx B</em>\delta$ is introduced,<br>It is called <strong>normal coordinate system</strong> and satisfies:</p>
+<script type="math/tex; mode=display">
+\left\{\begin{aligned}
+ &\left<{}\frac{\partial {} }{\partial {}x^i}(0),\frac{\partial {} }{\partial {}x^j}(0)\right>=\delta_{ij},&\,\forall\,i,j,\\
+ &D_{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j}=0,&\,\forall\,i,j.
+ \end{aligned}\right.</script><p>The first formula is obvious. For the second formula, define $\beta:M<em>O\times M_O\rightarrow \mathbb{R},$<br>$\beta(e_i,e_j)=D</em>{\frac{\partial {} }{\partial {}x^i}(0)}\frac{\partial {} }{\partial {}x^j},$<br>The linear extension becomes a symmetric bilinear form. Since the radial straight lines in the normal coordinate system are all geodesics,<br>$\beta(v,v)=0,$ So $\beta\equiv 0,$ This gives us the second formula, so in the normal coordinate system,<br>$\Gamma_{ij}^k\equiv 0.$</p>
+<p>Now we can come back and explain that $\dot{U}(0)=\frac{1}{r}X.$ Since $X$ is a constant vector,<br>$\Gamma_{ij}^k\equiv 0,$</p>
+<script type="math/tex; mode=display">
+D_{\dot{\gamma}_0(0)}U=\frac{1}{r}X+\frac{t}{r}D_{\dot{\gamma}_0(0)}X=\frac{1}{r}X.</script><p>Now taking $X=\frac{d {} }{d {}\theta}(r,\theta)$ shows that $d\exp_O\left(\frac{d {} }{d {}\theta}\right)$ is indeed the transverse vector field of a certain single-parameter geodesic family.<br>Let $\gamma$ be the base curve $\Gamma_0, $ $W(t)$ be the unit parallel vector field along $\gamma$,<br>$W(t)\perp\dot{\gamma}(t).$ For the transverse vector field $U,$ by Gauss&#39;s lemma,<br>It is also orthogonal to $\dot{\gamma}(t)$. Therefore $U(t)=f(t)W(t).$ By Jacobi equation,</p>
+<script type="math/tex; mode=display">
+\ddot{f}+Kf=0,\quad f(0)=0,\quad \dot{f}(0)=1. \eqno{(\ast )}</script><p>Here $K(t)$ is the Gauss curvature at $\gamma(t)$.</p>
+<p>Applying it to the two-dimensional space form, we get:</p>
+<script type="math/tex; mode=display">
+f(r)=\left\{\begin{aligned}
+ &r, &&K=0,\\
+ &\sin r, &&K=+1,\\
+ &\sinh r, &&K=-1.
+ \end{aligned}\right.</script><p> This is the $c<em>0,c</em>+,c_-.$ we asked for previously.<br>The formula $(\ast )$ was discovered by Jacobi, and the initial conditions are called <strong>standard initial conditions</strong>.</p>
+<p>Due to the curvature-controlled properties of the geodesic,<br>It can be expected that a manifold with sufficient positive curvature should be compact (Bonnet-Myers theorem),<br>The negative curvature manifold makes us expect that the exponential map at a point will be a diffeomorphism (Cartan-Hadamard theorem).</p>
+<p>Finally, some comments are given. Suppose $\dim M\ge 3,$ say $M$ is <strong>pointwise constant section curvature</strong>,<br>If the cross-sectional curvatures of all $2$-planes at each point on $M$ are the same. The classic <strong>Schur&#39;s theorem</strong> means,<br><em>A manifold is of point-wise constant cross-section curvature if and only if it is of constant cross-section curvature</em>.<br>The proof makes use of the second Bianchi identity.</p>
+<p>This section only discusses the simply connected space form. Other space forms come from geometry, group theory,<br>Topology and other viewpoints are also very important to consider. Their classification is also an important topic.</p>
+<p>The article was last updated on 2022-04-19 14:01:46</p>
                 </div>
             
         </div>
@@ -457,14 +548,14 @@ $(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《黎曼几何初步》笔记(4)-等距变换和空间形式</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-04-17 20:56:21</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《黎曼几何初步》笔记(4)-等距变换和空间形式</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-04-17 20:56:21</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/04/17/《黎曼几何初步》笔记(4)-等距变换和空间形式/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/04/17/《黎曼几何初步》笔记(4)-等距变换和空间形式/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -532,7 +623,7 @@ $(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始�
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -670,24 +761,21 @@ $(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始�
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -769,9 +857,7 @@ $(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始�
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#full-geodesic-submanifold"><span class="nav-text">Full geodesic submanifold</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isometric-transformation"><span class="nav-text">Isometric transformation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spatial-form"><span class="nav-text">spatial form</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#unit-sphere"><span class="nav-text">Unit sphere</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hyperbolic-metric"><span class="nav-text">Hyperbolic metric</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#geodesic-properties"><span class="nav-text">Geodesic properties</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jacobi-field"><span class="nav-text">Jacobi Field</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -796,6 +882,7 @@ $(\ast )$式由Jacobi发现, 称其中的初始条件为<strong>标准的初始�
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

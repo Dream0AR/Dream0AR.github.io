@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -308,7 +308,48 @@ $(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\al
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>This lesson will generalize the MV sequence from two open sets to countably multiple open sets. The main idea comes from Weil.</p>
+<h2 id="promotion-of-countable-multiple-open-sets">Promotion of countable multiple open sets</h2>
+<p>${U_\alpha}$ is an open covering for $M$, and $I$ is a countably ordered set. There are the following inclusive sequences:</p>
+<script type="math/tex; mode=display">M\leftarrow \bigsqcup_{\alpha_0} U_{\alpha_0}\begin{matrix}
+            \xleftarrow{\partial_0}\\\xleftarrow{\partial_1}
+        \end{matrix} \bigsqcup_{\alpha_0<\alpha_1} U_{\alpha_0\alpha_1}\begin{matrix}
+            \xleftarrow{\partial_0}\\\xleftarrow{\partial_1}\\\xleftarrow{\partial_2}
+        \end{matrix}\cdots</script><p>Here $\partial_i$ means ignoring the $i$th open set.<br>Then such an inclusion map $\partial_i$ induces a restriction map $\delta_i$.<br>Then there are the following restriction sequences:</p>
+<script type="math/tex; mode=display">\Omega^*(M)\rightarrow \prod_{\alpha_0} \Omega^*(U_{\alpha_0})\begin{matrix}
+            \xrightarrow{\delta_0}\\\xrightarrow{\delta_1}
+        \end{matrix} \prod_{\alpha_0<\alpha_1} \Omega^*(U_{\alpha_0\alpha_1})\begin{matrix}
+            \xrightarrow{\delta_0}\\\xrightarrow{\delta_1}\\\xrightarrow{\delta_2}
+        \end{matrix}\cdots</script><p>Define the difference operator</p>
+<script type="math/tex; mode=display">\delta: \prod_{\alpha_0<\cdots<\alpha_p} \Omega^\ast (U_{\alpha_0\cdots\alpha_p})\rightarrow \prod_{\alpha_0<\cdots<\alpha_{p+1} } \Omega^\ast (U_{\alpha_0\cdots\alpha_{p+1} }),</script><p>$\delta=\sum<em>{i=0}^{p+1}(-1)^i\delta_i$.<br>The component of $\delta\omega$ on $\Omega^\ast (U</em>{\alpha<em>0\cdots\alpha</em>{p+1} })$ is $\sum<em>{i=0}^{p+1}(-i)^i \omega</em>{\alpha<em>0,...,\hat\alpha_i,...,\alpha</em>{p+1} }$.</p>
+<p>It is easy to prove that $\delta^2=0$. In fact,<br>So far, the subscript of $\omega<em>{\alpha_0...\alpha_p}$ requires $\alpha_0&lt;...&lt;\alpha_p$,<br>But you can add a definition to remove this requirement. For any $\omega</em>{\alpha<em>0...\alpha_p}$,<br>Use $\tau$ to replace the subscripts,<br>Define it as $\operatorname{sgn}(\tau)\omega</em>{\alpha_\tau}$.<br>It is easy to verify that this does not conflict with the previous system.</p>
+<p><strong>Proposition 1.1</strong> (Generalized MV sequence). <em>We have the exact sequence: $0\rightarrow \Omega^\ast (M)\xrightarrow{r}\prod \Omega^\ast (U<em>{\alpha_0})\xrightarrow{\delta}\prod\Omega^\ast (U</em>{\alpha_0\alpha_1})\rightarrow\cdots$</em></p>
+<p><strong>Proof:</strong> Obviously the restriction map $r$ is injective,<br>It only needs to be proved that it is exact at $\prod \Omega^\ast (U_{\alpha_0...\alpha_p})$.</p>
+<p>$\,\forall\,\alpha<em>0,\alpha_1$,<br>$(\delta</em>\omega)<em>{\alpha_0\alpha_1}=\omega</em>{\alpha<em>1}-\omega</em>{\alpha<em>0}=0$ if and only if $\omega</em>{\alpha<em>1}$,<br>$\omega</em>{\alpha<em>0}$ is compatible on $U</em>{\alpha<em>0\alpha_1}$,<br>If and only if $\omega</em>{\alpha}$ can be defined as $\eta$ as a whole, thus $r(\eta)=\omega$.</p>
+<p>For the following complex shape, since $\delta^2=0$,<br>Just verify $\ker\delta\subset \operatorname{Im}\delta$.<br>Take $\tau<em>{\alpha_0\cdots\alpha</em>{p-1} }=\sum<em>{\alpha}\rho</em>\alpha\omega<em>{\alpha\alpha_0\cdots\alpha</em>{p-1} }$.<br>Next $(\delta\omega)<em>{\alpha \alpha_0...\alpha_p}=\omega</em>{\alpha<em>0\cdots\alpha_p}+\sum</em>{i=0}^p(-1)^{i+1}\omega<em>{\alpha\alpha_0\cdots\hat\alpha_i\cdots\alpha_p}=0$,<br>From this we can infer that $\delta{\tau}=\omega</em>{\alpha_0\cdots\alpha_p}$.</p>
+<p>In fact $\tau$ gives a homotopy operator $K$ on the complex,<br>$(K\omega)<em>{\alpha_0\cdots\alpha</em>{p-1} }=\sum<em>\alpha\rho</em>\alpha\omega<em>{\alpha\alpha_0\cdots\alpha</em>{p-1} }$.<br>It satisfies $\delta K+K\delta=\mathrm{id}$. For the upper closed chain, $K$ is said to be the right inverse of $\delta$.</p>
+<h2 id="double-complex">double complex</h2>
+<p>Remember $K^{p,q}=C^p(\mathcal{U},\Omega^q)=\prod \Omega^q(U_{\alpha_0\cdots\alpha_p})$.<br>The elements above it are called $p$-upper chains of $q$-form values.</p>
+<p>Treat $(p,q)$ as coordinates on $\mathbb{Z}^2$, then there is a commutative graph,<br>The operations on the right side of the row are differential operators, and the operations on the column direction are differential operators.<br>The exchange is because first limiting and then external differentiation is equal to first external differentiation and then limiting, and external differentiation has linearity.</p>
+<p>Let $K^n=\oplus_{p+q=n}K^{p,q}$, $D=D&#39;+D&#39;&#39;$, $D&#39;=\delta$, $D&#39;&#39;=(-1)^pd$.<br>Then $D&#39;,D&#39;&#39;$ are now exchanged with signs, so $D^2=0$, ${K^\ast ,D}$ becomes a complex.</p>
+<p>$C^\ast (\mathcal{U},\Omega^\ast )$ is called <strong>Čech-de Rham complex</strong>,<br>The element above is abbreviated as $D$-uplink, and the cohomology is recorded as $H^\ast _D{C^\ast (\mathcal{U},\Omega^\ast )}$.</p>
+<p>Augment the chain complex, add $\Omega^p(M)$ at the $(-1,q)$ position, and limit the mapping $r$ to the right,<br>The upward direction is the differential operator. Then add $0$ on the left to map to the right, then according to the previous proposition, all rows are consistent.</p>
+<p><strong>Proposition 1.2</strong> (Generalized MV principle). <em>$r^\ast :H^\ast _{dR}(M)\approx H_D{C^\ast (\mathcal{U},\Omega^\ast )}$.</em></p>
+<p>First of all, $r$ is a chain mapping, so $r^\ast $ is reasonably defined, $r^\ast [\omega]_d=[r\omega]_D$.</p>
+<p>Next, it is enough to prove that $r^\ast $ is both full and single. Just use the consistency of the rows to perform basic graph tracking.<br>Go diagonally and cut off the excess components step by step.</p>
+<h2 id="application">Application</h2>
+<p>It can be seen that if each row of the augmented bicomplex is exact,<br>Then its $D$-cohomology is isomorphic to the cohomology of the initial sequence, that is, the augmented sequence.</p>
+<p>Take $C^p(\mathcal{U},\mathbb{R})=\prod{U_{\alpha_0\cdots\alpha_p}\text{upper local constant function}}$,<br>Then there is a mapping $i:C^p(\mathcal{U},\mathbb{R})\rightarrow C^p(\mathcal{U},\Omega^0)$,<br>And $\operatorname{Im}i=\ker d$.</p>
+<p>There is a complex $0\rightarrow C^0(\mathcal{U},\mathbb{R})\xrightarrow{\delta}C^1(\mathcal{U},\mathbb{R})\rightarrow\cdots$,<br>The cohomology is said to be the <strong>Čech cohomology</strong> of the open covering $\mathcal{U}$, which is a pure combinatorial object.</p>
+<p>Similar to the previous proof, if each column is exact, add augmenting rows,<br>Then its cohomology is also isomorphic to the $D$-cohomology of the double complex.</p>
+<p>We take the complex constructed above as an augmented row. According to Poincaré’s lemma,<br>If $\mathcal{U}$ is a good cover, then each column is indeed exact. Thus:</p>
+<p><strong>Theorem 1.3</strong>. <em>$H^\ast (M)\cong H^\ast (\mathcal{U},\mathbb{R})$.</em></p>
+<p>So we have an inference that is not trivial a priori:</p>
+<p><strong>Corollary 1.4</strong>. <em>Čech cohomology $H^\ast (\mathcal{U},\mathbb{R})$ has nothing to do with the selection of good cover $\mathcal{U}$.</em></p>
+<p>On the other hand, if the manifold has finite good coverage, $H^\ast (\mathcal{U},\mathbb{R})$ has finite dimensions.<br>Thus:</p>
+<p><strong>Corollary 1.5</strong>. <em>The de Rham cohomology $H_{dR}^\ast (M)$ of a finite manifold $M$ is finite-dimensional.</em></p>
+<p>In particular, compact manifolds always have finite good coverage, so de Rham cohomology is finite-dimensional.</p>
+<p>The article was last updated on 2021-10-19 21:45:05</p>
                 </div>
             
         </div>
@@ -317,14 +358,14 @@ $(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\al
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(8)-推广的MV原理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-20 00:45:03</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(8)-推广的MV原理</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-20 00:45:03</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/19/《代数拓扑与微分形式》笔记(8)-推广的MV原理/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/19/《代数拓扑与微分形式》笔记(8)-推广的MV原理/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -392,7 +433,7 @@ $(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\al
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -530,24 +571,21 @@ $(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\al
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -629,9 +667,7 @@ $(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\al
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#promotion-of-countable-multiple-open-sets"><span class="nav-text">Promotion of countable multiple open sets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#double-complex"><span class="nav-text">double complex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application"><span class="nav-text">Application</span></a></li></ol>
         </div>
     
 </div>
@@ -656,6 +692,7 @@ $(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\al
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

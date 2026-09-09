@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -348,7 +348,66 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="review">Review</h2>
+<p>Transverse intersection and cup product are related by Poincaré duality, $PD([S\cap T])=PD([S])\cup PD([T]).$<br>One application is to consider $H^\ast (\mathbb{C}\mathrm{P}^n;\mathbb{Z})=\mathbb{Z}[\tau]/\tau^{n+1},$<br>Then $\tau=PD[H],$<br>$H$ is the hyperplane $\mathbb{C}\mathrm{P}^{n-1}\hookrightarrow \mathbb{C}\mathrm{P}^n.$ in $\mathbb{C}\mathrm{P}^n$</p>
+<p>Another application is Bezout&#39;s theorem. Let $F_i(x,y,z)$ be a homogeneous polynomial, $\deg=d_i,$<br>$i=1,2.$<br>Then $V_i:={[x:y:z]|F_i=0}\subset \mathbb{C}\mathrm{P}^2$ is called the algebraic curve of $\deg d_i$.<br>$V_i$ is the $1$-dimensional submanifold in $\mathbb{C}\mathrm{P}^2$.</p>
+<p>$[V_1]\in H_2(\mathbb{C}\mathrm{P}^2)\cong \mathbb{Z}.$<br>Let $\tau_1:=PD[V_1]\in H^2(\mathbb{C}\mathrm{P}^2)=\mathbb{Z}{\tau}.$<br>Assert that $\tau_1=d_1\tau.$ takes $H\subset \mathbb{C}\mathrm{P}^2,$<br>$H\cap V_1=d_i$ points. Then $PD(H)\cup PD(V_1)=PD(d_i[\ast ]),$<br>$\tau\cup \tau_1=d_1\tau^2.$ This infers that $\tau_1=d_1\tau.$</p>
+<p>Thus $\tau_1\cup \tau_2=d_1d_2\tau^2,$ $[V_1\cap V_2]=d_1d_2$ points,<br>If $V_1, V_2$ intersect transversely.</p>
+<h2 id="complex-vector-bundle">Complex vector bundle</h2>
+<p>Consider $\pi:E\rightarrow B,$ fibers as $\mathbb{C}$-linear spaces.<br>For example, we have the canonical polylinear bundle $\gamma_n^1.$ on $\mathbb{C}\mathrm{P}^n$</p>
+<p>If $\omega$ is an $n$-dimensional complex vector bundle, then it is also a $2n$-dimensional real vector bundle.<br>At this time it is always an orientable real vector bundle. For vector spaces,<br>$\operatorname{Iso}<em>\mathbb{R}(\mathbb{R}^{2n},V</em>\mathbb{R})\cong GL<em>{2n}(\mathbb{R}),$<br>$\operatorname{Iso}</em>\mathbb{C}(\mathbb{C}^n,V)\cong GL<em>n(\mathbb{C}).$<br>Then $\operatorname{Iso}</em>\mathbb{C}(\mathbb{C}^n,V)\subset \operatorname{Iso}<em>\mathbb{R}(\mathbb{R}^{2n},V</em>\mathbb{R})$ induces $GL<em>n(\mathbb{C})\subset GL</em>{2n}(\mathbb{R}).$<br>This forces the inclusion to fall only in a certain connected branch of $GL_{2n}(\mathbb{R})$,<br>An orientation is given.</p>
+<p>Definition $(\gamma<em>1^1)^V:=\operatorname{Hom}</em>\mathbb{C}(\gamma<em>1^1,\varepsilon),$<br>At this time $\varepsilon$ is a trivial polylinear bundle.<br>This is an upper line bundle of $\mathbb{C}\mathrm{P}^1$ with $\dim</em>\mathbb{C}=1$.<br>Assert $e((\gamma<em>1^1)^V</em>\mathbb{R})=\tau=PD([\ast ])\in H^2(\mathbb{C}\mathrm{P}^1;\mathbb{Z}),$<br>Or $\left&lt;{}e,[\mathbb{C}\mathrm{P}^1]\right&gt;=1.$</p>
+<p>Fixed a vector $v\in \mathbb{C}^2\setminus{0},$<br>We have the cross-section $L\mapsto (u\mapsto \left&lt;{}u,v\right&gt;).$ of $(\gamma_1^1)^V$<br>At this time</p>
+<script type="math/tex; mode=display">
+Z_s=\{L:s(L)=0\}=\{\left<{}v\right>^\perp\},</script><p>is a point in $\mathbb{C}\mathrm{P}^1$. In this way, we have</p>
+<script type="math/tex; mode=display">
+e((\gamma_1^1)^V_\mathbb{R})=PD([Z_s])=PD([\ast ])=\tau.</script><p>Generally,<br>$e((\gamma<em>n^1)^V</em>\mathbb{R})=\tau\in H^2(\mathbb{C}\mathrm{P}^n;\mathbb{Z}).$</p>
+<h2 id="chern-class">Chern class</h2>
+<p>Let $\omega$ be a complex vector bundle $\mathbb{C}^n\rightarrow E\rightarrow B,$<br>$B$ is a CW complex. Take the projection bundle</p>
+<script type="math/tex; mode=display">
+\mathbb{C}\mathrm{P}^{n-1}\xrightarrow{\iota} P(E)\rightarrow B.</script><p>Memories by Leray-Hirsch,<br>$H^\ast (\mathbb{C}\mathrm{P}^{n-1};\mathbb{Z})=\mathbb{Z}[b]/b^n.$<br>In fact, $b=-\tau,$ is selected because $b=e((\tau^1<em>{n-1})</em>\mathbb{R}).$</p>
+<p>Then $H^\ast (P(E))=H^\ast (B){1,x,\cdots,x^{n-1}},$<br>$H^\ast (P(E))\xrightarrow{\iota^\ast }H^\ast (\mathbb{C}\mathrm{P}^{n-1}),$<br>$x\mapsto b.$ Define the Chern class as $c_i=c_i(\omega)\in H^{2i}(B;\mathbb{Z}),$<br>Make $H^\ast (P(E);\mathbb{Z})$ have $x^n-c_1x^{n-1}+c_2x^{n-2}-\cdots (-1)^nc_n=0.$</p>
+<p>The Chern class satisfies the following properties:</p>
+<ol>
+<li><p>$c<em>0=1,$ $c_i=0,$ $\,\forall\,i&gt;n=\dim</em>\mathbb{C}(\omega);$</p>
+</li>
+<li><p>$c_i(f^\ast \omega)=f^\ast c_i(\omega);$</p>
+</li>
+<li><p>$c(\omega\oplus\eta)=c(\omega)\cup c(\eta),$<br>$c(\omega):=\sum_{i=0}^\infty c_i(\omega);$</p>
+</li>
+<li><p>$c_1(\gamma_1^1)=b=-\tau\in H^2(\mathbb{C}\mathrm{P}^1;\mathbb{Z}),$<br>$\left&lt;{}c_1(\gamma_1^1),[\mathbb{C}\mathrm{P}^1]\right&gt;=-1.$</p>
+</li>
+</ol>
+<p>Why choose $b=-\tau$?<br>We select $c<em>1(\gamma_n^1)=e((\gamma_n^1)</em>\mathbb{R})=-\tau.$<br>We want $c<em>1=e,$ so we have to choose the opposite sign.<br>But the advantage of this is that we have $c_n(\omega)=e(\omega</em>\mathbb{R}),$<br>$\,\forall\,$rank$n$ complex vector bundle$\omega.$</p>
+<p>We have the splitting principle, which is now a complex version with coefficient $\mathbb{Z}$. We can use it to give a proof.</p>
+<p>With these properties, we have the following conclusions:</p>
+<ol>
+<li><p>$c(\varepsilon^n)=1,$</p>
+</li>
+<li><p>$c_i(\omega\oplus \varepsilon^n)=c_i(\omega),$</p>
+</li>
+<li><p>$\omega^n$ has $k$ independent sections, $\omega^n=\varepsilon^k\oplus\eta^{n-k},$<br>$c_i(\omega^n)=c_i(\eta^{n-k})=0,$ $\,\forall\,i&gt;n-k.$</p>
+</li>
+<li><p>Every $\omega$ on the pseudo-compact bottom space can be equipped with a Hermitian metric.</p>
+</li>
+<li><p>If $\omega\cong \eta,$ then $c_i(\omega)=c_i(\eta).$</p>
+</li>
+<li><p>$c_1(\gamma_n^1)=b=-\tau\in H^2(\mathbb{C}\mathrm{P}^n;\mathbb{Z}).$</p>
+</li>
+</ol>
+<h2 id="complex-grassmannian-manifold">Complex Grassmannian manifold</h2>
+<p>$G<em>n(\mathbb{C}^{n+k}):={X|X\subset \mathbb{C}^{n+k},\dim</em>\mathbb{C}X=n}.$<br>Similarly, it is a compact smooth manifold, which is $U_{n+k}/U_n\times U_k.$ and the real dimension is $2nk.$<br>We have the canonical bundle $\gamma^n.$ on $G_n(\mathbb{C}^{n+k})$</p>
+<p><strong>Theorem 1</strong>. <em>Every rank $n$ complex vector bundle on a pseudocompact space has a bundle mapping to $\gamma^n$ on $G_n(\mathbb{C}^\infty)$.</em></p>
+<p><strong>Theorem 2</strong>. <em>$H^\ast (G_n(\mathbb{C}^\infty);\mathbb{Z})=\mathbb{Z}[c_1,\cdots,c_n].$</em></p>
+<p>The proof can be similar to the real version, and another way is spectral sequence.<br>Definition $V_n(\mathbb{C}^{n+k}):={(v_1,\cdots,v_n)|v_i\in \mathbb{C}^{n+k}, \perp}.$<br>We have a fiber bundle:</p>
+<script type="math/tex; mode=display">
+U_n\rightarrow V_n(\mathbb{C}^{n+k})\rightarrow G_n(\mathbb{C}^{n+k}),</script><p>To see it more clearly:</p>
+<script type="math/tex; mode=display">
+U_n\rightarrow U_{n+k}/U_k\rightarrow U_{n+k}/U_n\times U_k</script><p>It can be verified that $V<em>n(\mathbb{C}^{n+k})$ is $2k$-connected,<br>$U_k\hookrightarrow U</em>{n+k}$ induces the isomorphism of $\pi_{\le 2k}$.<br>Therefore $V_n(\mathbb{C}^\infty)\cong \ast ,$ has fibrosis</p>
+<script type="math/tex; mode=display">
+U_n\rightarrow V_n(\mathbb{C}^\infty)\rightarrow
+ G_n(C^\infty).</script><p>Then from LSSS, $E<em>2^{p,q}=H^p(G_n)\otimes H^q(U_n)\Rightarrow H^\ast (\ast ).$<br>Recall $H^\ast (U_n)=\Lambda^\ast (x_1,x_3,\cdots,x</em>{2n-1}).$<br>By analyzing the spectrum sequence, we can get $H^\ast (G_n)=\mathbb{Z}[c_1,\cdots,c_n].$</p>
+<p>The article was last updated on 2022-11-07 18:41:05</p>
                 </div>
             
         </div>
@@ -357,14 +416,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(15)-Chern示性类</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-11-07 20:41:04</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(15)-Chern示性类</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-11-07 20:41:04</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/11/07/《代数拓扑2》笔记(15)-Chern示性类/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/11/07/《代数拓扑2》笔记(15)-Chern示性类/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -432,7 +491,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -570,24 +629,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -669,9 +725,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#review"><span class="nav-text">Review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex-vector-bundle"><span class="nav-text">Complex vector bundle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chern-class"><span class="nav-text">Chern class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex-grassmannian-manifold"><span class="nav-text">Complex Grassmannian manifold</span></a></li></ol>
         </div>
     
 </div>
@@ -696,6 +750,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

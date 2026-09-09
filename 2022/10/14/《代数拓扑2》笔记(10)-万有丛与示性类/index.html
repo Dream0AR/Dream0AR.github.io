@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -330,7 +330,56 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="wanyoucong">Wanyoucong</h2>
+<p>A rank $n$ real vector bundle $\gamma^n$ is called a <strong>universal bundle</strong>, if it satisfies the following properties:<br>$\,\forall\,$ imitation tight bottom space $B,$</p>
+<ol>
+<li><p>Any vector bundle of rank $n$ with $B$ as the base space $\xi,$<br>There is a bundle map $\xi\rightarrow \gamma^n.$</p>
+</li>
+<li><p>$\,\forall\,f,g:\xi\rightarrow\gamma^n$ is a bundle map,<br>They are homotopic in the sense of bundle mapping.</p>
+</li>
+</ol>
+<p>Therefore, any vector bundle $\xi$ of rank $n$ is a pullback of $\gamma^n$.<br>The universal bundle is unique in the sense of bundle homotopy equivalence.<br>There is a one-to-one correspondence between the isomorphism class of vector bundles of rank $n$ on $B$ and the homotopy class of continuous maps $f:B\rightarrow B(\gamma^n)$.</p>
+<h2 id="the-structure-of-wanyou-cong">The structure of Wanyou Cong</h2>
+<p>$\,\forall\,n,k\in \mathbb{N},$ defines Grassman manifold</p>
+<script type="math/tex; mode=display">
+G_n(\mathbb{R}^{n+k}):=\{H|\text{$H$ is the $n$-dimensional subspace in $\mathbb{R}^{n+k}$}\}</script><p>$GL<em>{n+k}(\mathbb{R})$ can be removable on $G_n(\mathbb{R}^{n+k}),$<br>Therefore $G_n(\mathbb{R}^{n+k})\cong GL</em>{n+k}(\mathbb{R})/\operatorname{Stab}_H.$<br>Suppose $H={e_1,\cdots,e_n},$ then</p>
+<script type="math/tex; mode=display">
+\operatorname{Stab}_H=\begin{bmatrix}
+ *&*\\
+ 0&*
+ \end{bmatrix}\subset GL_{n+k},</script><p> is the closed subgroup of $GL_{n+k}$.<br>Therefore $G_n(\mathbb{R}^{n+k})$ is a smooth manifold of $nk$ dimension.</p>
+<p>In fact, it&#39;s still tight.<br>This is because $O<em>{n+k}\subset GL</em>{n+k}$ can be removable on $G_n(\mathbb{R}^{n+k})$.</p>
+<p>Obviously it can be seen that $G_n(\mathbb{R}^{n+k})\cong G_k(\mathbb{R}^{n+k}),$<br>$H\maps to H^\perp,$ and $G_1(\mathbb{R}^{1+k})=\mathbb{R}\mathrm{P}^k.$</p>
+<p>Define the canonical bundle $\gamma_k^n$ on $G_n(\mathbb{R}^{n+k})$ as</p>
+<script type="math/tex; mode=display">
+E(\gamma_k^n):=\{(H,v)|H\in G_n(\mathbb{R}^{n+k}),v\in H\},</script><p>Constructing $\mathbb{R}^\infty,$ then we have</p>
+<script type="math/tex; mode=display">
+G_n(\mathbb{R}^n)\subset G_n(\mathbb{R}^{n+1})\subset\cdots\subset G_n(\mathbb{R}^\infty)=\bigcup_i G_n(\mathbb{R}^{n+i}).</script><p>Define $\gamma^n$ as the canonical bundle on $G_n(\mathbb{R}^\infty)$.<br>So in fact it is the universal plexus that meets the above requirements.</p>
+<p><strong>Theorem 1</strong>. <em>The canonical model on $G_n(\mathbb{R}^\infty)$ is a universal bundle of rank $n$ from $\gamma^n$.</em></p>
+<p><strong>Lemma 2</strong>. <em>Suppose a rank $n$ bundle $\xi,$ on a pseudocompact set $B$ has a linear map $\widehat f:E(\xi)\rightarrow \mathbb{R}^\infty,$ that is injective on each fiber.</em></p>
+<p>Take the local trivialization ${U<em>i}$ to cover $B.$ By paracompactness,<br>We can construct countable covers that are locally finite.<br>Take the unit decomposition ${\lambda_i},$ belonging to ${U_i}$<br>Make $W_i\Subset V_i\Subset U_i,$ $\lambda_i\in C_0^\infty(V_i),$<br>$\lambda_i|</em>{W_i}=1.$ $\sum \lambda_i(x)=1.$</p>
+<p>Since $\xi|<em>{U_i}$ is trivial, take $h_i:\pi^{-1}U_i\cong \mathbb{R}^n.$<br>Define continuous mapping $h_i&#39;:E(\xi)\rightarrow \mathbb{R}^n,$<br>$h_i&#39;(e)=\lambda_i(\pi(e))h_i(e).$<br>Definition$\widehat f:E(\xi)\rightarrow \mathbb{R}^\infty,$<br>$\widehat f(e):=(h_i&#39;(e))^\infty</em>{i=0}\in \mathbb{R}^\infty.$<br>This is the mapping that meets the requirements.</p>
+<p>Let&#39;s go back to the proof of the theorem: Consider the mapping $f:E(\xi)\rightarrow E(\gamma^n),$</p>
+<script type="math/tex; mode=display">
+e\mapsto (\widehat f(F_{\pi(e)}(\xi)),\widehat f(e)),</script><p>This is a bundle map. Next, for any two bundle maps $f,g:\xi\rightarrow \gamma^n,$<br>Each gives $\widehat{f},\widehat g:E(\xi)\rightarrow \mathbb{R}^\infty.$<br>Define homotopy$\widehat h_t(e)=(1-t)\widehat f(e)+t\widehat g(e),$<br>$\widehat h_t$ is injective, if $\widehat f(e),\widehat{g} (e)$ is linearly independent.</p>
+<p>Define $d<em>{2}:e_i\mapsto e</em>{2i},$ $d<em>{1}:e_i\mapsto e</em>{2i+1},$ then</p>
+<script type="math/tex; mode=display">
+f\simeq d_1\circ f\simeq d_2\circ g\simeq g.</script><h2 id="indicative-class">Indicative class</h2>
+<p>The representative class on a vector bundle of rank $n$ is naturally assigned to $\xi$ $c(\xi)\in H^\ast (B(\xi);R),$<br>So that $c(f^\ast \xi)=f^\ast c(\xi).$ So we only need to consider the representative class on the universal bundle.</p>
+<p>Consider calculating $H^\ast (G_n(\mathbb{R}^\infty);R).$ and taking $R=\mathbb{Z}_2.$<br>Assert that it is isomorphic to $\mathbb{Z}_2[w_1,w_2,\cdots,w_n].$</p>
+<p>Consider the CW structure on $G_n(\mathbb{R}^\infty)$. Fixed</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^0\subset \mathbb{R}^1\subset \cdots \subset \mathbb{R}^m.</script><p>Any $X\in G_n(\mathbb{R}^m)$ gives a sequence:</p>
+<script type="math/tex; mode=display">
+0\le \dim (X\cap \mathbb{R}^1)\le\cdots\le \dim(X\cap \mathbb{R}^m)=n.</script><p>Define the Schubert symbol $\sigma=(\sigma_1,\cdots,\sigma_n)$ to record the jump part in the sequence,<br>$1\le \sigma_1&lt;\cdots&lt;\sigma_n\le m.$</p>
+<script type="math/tex; mode=display">
+e(\sigma):=\{X\in G_n(\mathbb{R}^m)|\dim (X\cap \mathbb{R}^{\sigma_i})=i,\:\dim(X\cap \mathbb{R}^{\sigma_i-1})=i-1\}.</script><p>Assert that ${e(\sigma)}$ forms the CW structure of $G_n(\mathbb{R}^m)$.<br>Let $H^k\subset \mathbb{R}^k$ be the upper half plane of $x_k&gt;0$,</p>
+<p><strong>Lemma 3</strong>. <em>Each $X\in e(\sigma)$ has a unique orthonormal basis $(x_1,\cdots,x_n)\in H^{\sigma_1}\times\cdots\times H^{\sigma_n}.$</em></p>
+<p>Just note the following sequence, which is obtained from the basic knowledge of linear spaces.</p>
+<script type="math/tex; mode=display">
+\dim(X\cap \mathbb{R}^\sigma_1)=1,\quad \dim(X\cap \mathbb{R}^\sigma_2)=2,\quad \cdots.</script><script type="math/tex; mode=display">
+e'(\sigma):=\{(x_1,\cdots,x_n)|\{x_i\}\text{Orthogonal, }x_i\in H^{\sigma_i}\}.</script><p>By induction on $n$, we can get $\overline e&#39;(\sigma)\cong$ closed ball.</p>
+<p>The article was last updated on 2022-10-14 16:39:02</p>
                 </div>
             
         </div>
@@ -339,14 +388,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(10)-万有丛与示性类</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-14 19:39:00</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(10)-万有丛与示性类</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-14 19:39:00</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/14/《代数拓扑2》笔记(10)-万有丛与示性类/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/14/《代数拓扑2》笔记(10)-万有丛与示性类/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -414,7 +463,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -552,24 +601,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -651,9 +697,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#wanyoucong"><span class="nav-text">Wanyoucong</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-structure-of-wanyou-cong"><span class="nav-text">The structure of Wanyou Cong</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#indicative-class"><span class="nav-text">Indicative class</span></a></li></ol>
         </div>
     
 </div>
@@ -678,6 +722,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

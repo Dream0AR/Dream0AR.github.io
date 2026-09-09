@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -292,7 +292,26 @@ staircase, 尽管其几乎处处可微. 不过我们已经有了$u$的确连续�
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="strictly-prove">Strictly prove</h2>
+<p>If a generalized function has weak derivatives, is it itself equal to a continuous function almost everywhere?<br>Note that this does not mean that it is continuous almost everywhere. For example, $1<em>{[0,+\infty)}$ is continuous almost everywhere.<br>But it is not almost everywhere equal to a continuous function;<br>In turn $1</em>{\mathbb{Q} }$ is almost everywhere equal to the continuous function $0,$ but almost everywhere it is discontinuous.</p>
+<p>Assume $u\in H^{1,p}(\Omega),$ then according to the (negative exponential) Sobolev inequality, when $p&gt;n$,<br>$\frac{n}{p}-1&lt;0,$ Therefore $H^{1,p}(\Omega)$ can be embedded in $C^{\alpha}(\Omega)$,<br>The function is Hölder continuous.</p>
+<p>So is it still OK when $p\le n$? At this time, additional conditions need to be added.<br>A classic condition is to assume that the weak derivatives are continuous. Then any $O\Subset \Omega,$<br>$\overline{O}$ is a compact set, so the weak derivatives are all in $L^\infty(O)$,<br>Of course, among all $L^p(O)$, $\,\forall\,p\ge 1.$</p>
+<p>According to Sobolev&#39;s inequality, $H^{1,p}(O)$ can be embedded in $L^{q}(O)$,<br>$0\le \frac{n}{p}-1\le \frac{n}{q}.$ Since the weak derivative is also in $L^{q}(O)$,<br>In fact $u$ is also in $H^{1,q}(O)$. Inductively, we can get $u\in H^{1,q}(O),$<br>$q$ satisfies $0\le \frac{n}{p}-k\le \frac{n}{q},$ $k\in \mathbb{Z}_+.$<br>Let $k$ be large enough so that $\frac{n}{p}-k<1,$ means $q>n,$ and turn the problem into the situation in the previous paragraph.<br>The conclusion is drawn from the arbitrariness of $O$.</p>
+<p>The previous condition is called classical because it can then lead to the conclusion that $u\in C^1(\Omega)$.<br>Taking ground photons $\phi<em>\varepsilon,$ then for sufficiently small $\varepsilon,$<br>$u</em>\varepsilon:=u\ast \phi<em>\varepsilon$ is defined on $\Omega&#39;\Subset \Omega$,<br>Satisfy $u</em>\varepsilon\rightarrow u,$<br>$Du<em>\varepsilon=Du \ast \phi</em>\varepsilon\rightarrow Du$ converges uniformly.<br>Therefore $u<em>{\frac{1}{n} }\in C^\infty(\Omega&#39;)$ is the Cauchy sequence in module $C^1(\Omega&#39;)$,<br>Thus converging to a certain function $v\in C^1(\Omega&#39;).$<br>And $u</em>\varepsilon\rightarrow u$ means $v=u\in C^1(\Omega&#39;).$<br>Select arbitrarily from $\Omega&#39;$ to know $u\in C^1(\Omega).$</p>
+<h2 id="visual-explanation">Visual explanation</h2>
+<p>Intuitively, you can also try to directly give the expression of $u$ to prove. For example, for the case of $1$ dimension,<br>definition</p>
+<script type="math/tex; mode=display">
+v(x)=\int_{0}^x\partial u(y)dy,</script><p> Then $v$ is continuously differentiable,<br>Its weak derivative is of course the same as its derivative in the classical sense. Next, we will prove that $u, v$ differ by a constant.<br>It only needs to be proved that the weak derivative is zero to deduce that the function is a constant.</p>
+<p>Let the weak derivative of $u$ be zero. Since we always examine functions in a distributional sense,<br>Just prove that $\int u\varphi=c\int\varphi,$ $\,\forall\,\varphi\in C_c^\infty.$<br>In particular, we only need to prove the function for all $\int \varphi=1$. When $\int \phi=0$,<br>$\,\exists\,\psi\in C_c^\infty,$ $\phi=\partial\psi.$<br>Therefore, for such $\phi,$ $\int u\phi=-\int \partial u\psi=0.$<br>Now take $\psi$ to satisfy $\int \psi=1,$ then for all functions of $\int \varphi=1$,<br>$\int (\varphi-\psi)=0.$ Therefore</p>
+<script type="math/tex; mode=display">
+\int u(\varphi-\psi)=0, \int u\varphi=\int u\psi,\quad \,\forall\,\int \varphi=1.</script><p>This illustrates the conclusion. At this time, $\int u\varphi$ is the constant $c.$</p>
+<p>For high-dimensional cases, the intuitive explanation becomes complicated.<br>We expect to give the expression of $u$ through path integral,<br>But it cannot be judged a priori that the integral has nothing to do with path selection. We have the conclusion that the partial derivative is continuous,<br>If we can find the first-order partial derivative, we can give the proof through Green&#39;s formula (integration by parts).<br>But unfortunately, continuous functions do not necessarily have weak derivatives, not even bounded variograms, such as devil&#39;s<br>staircase, although it is differentiable almost everywhere. But we have already reached the conclusion that $u$ is indeed continuously differentiable,<br>So a posteriori we know that indeed integration has nothing to do with path selection.</p>
+<p>The argument for zero weak derivatives is similar for the high-dimensional case,<br>Just show that the original function is constant along all straight lines.</p>
+<h2 id="references">References</h2>
+<p><a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/3550108/the-recovery-of-w1-p-omega-to-c1-omega?noredirect=1">https://math.stackexchange.com/questions/3550108/the-recovery-of-w1-p-omega-to-c1-omega?noredirect=1</a></p>
+<p><a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/2780348/do-continuous-weak-derivatives-imply-continuity">https://math.stackexchange.com/questions/2780348/do-continuous-weak-derivatives-imply-continuity</a></p>
+<p><a target="_blank" rel="noopener" href="https://math.stackexchange.com/questions/497708/is-a-continuous-function-with-continuous-weak-derivatives-of-class-c1">https://math.stackexchange.com/questions/497708/is-a-continuous-function-with-continuous-weak-derivatives-of-class-c1</a></p>
+<p>The article was last updated on 2022-03-30 13:22:20</p>
                 </div>
             
         </div>
@@ -301,14 +320,14 @@ staircase, 尽管其几乎处处可微. 不过我们已经有了$u$的确连续�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：弱导数与连续性</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-03-30 16:22:05</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：弱导数与连续性</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-03-30 16:22:05</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/03/30/弱导数与连续性/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/03/30/弱导数与连续性/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -376,7 +395,7 @@ staircase, 尽管其几乎处处可微. 不过我们已经有了$u$的确连续�
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -514,24 +533,21 @@ staircase, 尽管其几乎处处可微. 不过我们已经有了$u$的确连续�
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -613,9 +629,7 @@ staircase, 尽管其几乎处处可微. 不过我们已经有了$u$的确连续�
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#strictly-prove"><span class="nav-text">Strictly prove</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-explanation"><span class="nav-text">Visual explanation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#references"><span class="nav-text">References</span></a></li></ol>
         </div>
     
 </div>
@@ -640,6 +654,7 @@ staircase, 尽管其几乎处处可微. 不过我们已经有了$u$的确连续�
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

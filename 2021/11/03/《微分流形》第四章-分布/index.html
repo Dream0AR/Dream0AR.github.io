@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -284,7 +284,28 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="integral-curve">integral curve</h2>
+<p><strong>Theorem 1.1</strong> (Flow box). <em>Suppose $X\in\chi(M),$ If $X_p\neq 0,$ then there is a coordinate system $(U,\varphi;x^i)$ containing $p$ such that $X|_U=\frac{\partial {} }{\partial {}x^1},$ That is, the $x^1$-curve is the integral curve of $X$ in $U$.</em></p>
+<p><strong>Certificate:</strong> Take any coordinate system $(U,\varphi;u^i),$ $\varphi(p)=0.$<br>$X|<em>U=\sum_i\xi^i(u)\frac{\partial {} }{\partial {}u^i}.$<br>Let&#39;s assume $\xi^1(p)\neq 0,$ and further assume that it is non-zero everywhere.<br>Suppose $u$ can be written as a function of $v$ (coordinate transformation),<br>Such that $X|_U=\xi^1(v) \frac{\partial {} }{\partial {}v^1}.$<br>The two-sided effect $u^\alpha,$ has <script type="math/tex">\left\{
+                \begin{aligned}
+                    &\frac{\partial {}u^\alpha}{\partial {}v^1}=\frac{\xi^\alpha(u^1,\cdots,u^m)}{\xi^1(u^1,\cdots,u^m)},\quad \alpha=1,\cdots,m.\\
+                    &u^\alpha(0,v^2,\cdots,v^m)=v^\alpha
+                \end{aligned}
+                \right.</script> From ODE theory,<br>$\,\exists\,\delta&gt;0$ makes $C</em>\delta^m={|u^i|&lt;\delta}\subset U,$<br>$\,\forall\,$Given the initial value $(0,v^2,\cdots,v^m)\in C<em>\delta^m,$<br>There is a unique solution $u^\alpha(v).$ in $v^1\in (-\widetilde{\delta},\widetilde{\delta})$<br>Remember $\widehat{\delta}=\min{\delta,\widetilde{\delta}},$<br>Then for $u^\alpha:C</em>{\widehat{\delta} }^m\rightarrow \varphi(U),$<br>$\det(Du^\alpha)|_0=1,$ is locally diffeomorphism.<br>We might as well assume that it is a diffeomorphism (otherwise $\widetilde{\delta}$ can be reduced), denoted as $G.$</p>
+<p>At this time, under the coordinate system $(\widetilde{U},G^{-1}\circ\varphi;v^i)$,<br>$X|<em>{\widetilde{U} }=\xi^1(v)\frac{\partial {} }{\partial {}v^1}.$<br>Finally, do the transformation <script type="math/tex">\left\{
+                \begin{aligned}
+                    &w^1=\int_0^{v_1} \frac{dt}{\xi^1(t,v^2,\cdots,v^n)}\\
+                    &w^\alpha=v^\alpha,\quad \alpha=2,\cdots,m
+                \end{aligned}
+                \right.</script><br>That is, $X|</em>{\widetilde{U} }=\frac{\partial {} }{\partial {}w^1},$<br>The $w^1$-curve is the integrated curve of $X$ in $\widetilde{U}$.</p>
+<h2 id="distribution">Distribution</h2>
+<p><strong>Definition 1.2</strong>. <em>$M^m$ is a $C^\infty$ manifold. If $\,\forall\,p\in M,$ specifies the $k$-dimensional subspace $D_p,$ in $T_pM$, then $\mathcal{D}:p\rightarrow D_p$ is said to be the $k$-dimensional <strong>distribution</strong> on $M$.</em></p>
+<p>If $\,\forall\,p\in M,$ $\,\exists\,U\ni p,$<br>$X_1,\cdots, X_k\in \chi(U),$<br>Make $\mathcal{D}_q=\operatorname{span}{X_1(q),\cdots,X_k(q)},$<br>$\,\forall\,q\in U,$ then $\mathcal{D}$ is said to be a $C^\infty$ distribution on $M$,<br>${X_1,\cdots,X_k}$ is called the <strong>local frame field</strong> of $\mathcal{D}$. When $k\in(0,m)$,<br>$\mathcal{D}$ can be regarded as a non-trivial rank $k$ subbundle of $TM$.</p>
+<p><strong>Definition 1.3</strong>. <em>Suppose $\mathcal{D}$ is a $k$-dimensional $C^\infty$-distribution on $M$, $F:W\hookrightarrow M$ is a submanifold, satisfying ${F<em>{\ast } }_p(T_pW)=D</em>{F(p)},$ $\,\forall\,p\in W.$ Then $(W,F)$ is called the <strong>integral manifold</strong> of $\mathcal{D}$.</em></p>
+<p>The natural question is, given $M^m$ the last $k$ dimension $C^\infty$-distribution $\mathcal{D},$<br>$\,\forall\,p\in M,$ Is there an integrator manifold of $\mathcal{D}$ passing through $p$ point?<br>The answer is no. In fact, the integrator manifold should have a network of integral curves,<br>Then if we take $X=\frac{\partial {} }{\partial {}x}+y\frac{\partial {} }{\partial {}z},$ on $\mathbb{R}^3$<br>$Y=\frac{\partial {} }{\partial {}y},$<br>$\mathcal{D}=\operatorname{span}{X,Y}.$ Then if there is an integrator manifold crossing zero points,<br>It should contain a small part of the $xoy$ plane. But the manifold outside the $x$ axis is not an integrator manifold, which is a contradiction.</p>
+<p><strong>Definition 1.4</strong>. <em>Suppose $\mathcal{D}$ is a $k$-dimensional $C^\infty$-distribution on $M$. If there is an integral submanifold of $\mathcal{D}$ through every point $p\in M$, then we say $\mathcal{D}$ is <strong>integrable</strong>. Otherwise, it is called <strong>non-integrable</strong>.</em></p>
+<p>When $k=0, m$ is trivial. When $k=1$, according to the existence theorem of integral curves, the $1$-dimensional distribution is always integrable,<br>The integrator manifold is the integral curve. But the integral curve is not always the integrator manifold of a certain distribution.<br>Because the smooth vector field corresponding to the integral curve allows singular points,<br>However, a smooth vector field with singular points cannot be used as a frame span distribution.</p>
+<p>The article was last updated on 2021-11-03 16:49:42</p>
                 </div>
             
         </div>
@@ -293,14 +314,14 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第四章-分布</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-03 18:49:41</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第四章-分布</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-11-03 18:49:41</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/03/《微分流形》第四章-分布/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/11/03/《微分流形》第四章-分布/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -368,7 +389,7 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -506,24 +527,21 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -605,9 +623,7 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#integral-curve"><span class="nav-text">integral curve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#distribution"><span class="nav-text">Distribution</span></a></li></ol>
         </div>
     
 </div>
@@ -632,6 +648,7 @@ $\mathcal{D}=\operatorname{span}\{X,Y\}.$ 那么若有过零点的积分子流�
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

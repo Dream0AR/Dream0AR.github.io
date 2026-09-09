@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -283,7 +283,25 @@ $$\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cd
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="submanifold">submanifold</h2>
+<p>Let $F:M^m\hookrightarrow N^n$ be a submanifold. If $\,\forall\,p\in M,$<br>There exists a coordinate system $(V,\psi,y^\alpha),$ in $N$ containing $q=F(p)$<br>If $F(M)\cap V$ is a slice in $V$, then $(M,F)$ is said to be a <strong>regular submanifold</strong> in $N$.</p>
+<p>In addition, $F(M)$ is a subset of $N$, and the subspace topology can be induced from $N$,<br>You can also move the topology on $M$ to $F(M)$ through $F$. If the two induced topologies are consistent,<br>Then $(M,F)$ is called <strong>embedded submanifold</strong>.</p>
+<p><strong>Theorem 1.1</strong>. <em>Suppose $F:M\rightarrow N$ is a submanifold, then $(M,F)$ is a regular submanifold if and only if it is an embedded submanifold.</em></p>
+<p>For proof, please refer to &quot;Preliminary Riemannian Geometry&quot; by Bai and Shen.</p>
+<p><strong>Theorem 1.2</strong>. <em>Suppose $F:M\rightarrow N$ is a submanifold. If $M$ is compact, then $(M,F)$ must be an embedded submanifold.</em></p>
+<p><strong>Proof:</strong> Assign $F(M)$ as the topology $\mathcal{T},$ induced by the subset of $N$<br>Just explain that $F:M\rightarrow F(M)$ is a homeomorphism. First, explain that $F$ is continuous.<br>For any open set $U\subset F(M),$ there exists an open set $\widetilde{U}\subset N,$<br>Such that $U=\widetilde{U}\cap F(M).$<br>Then $F^{-1}(U)=F^{-1}(\widetilde{U})$ is an open set in $M$. Next, $F$ is a closed map.<br>The continuous mapping from compact space to $T_2$ space is a closed mapping, which is proved.</p>
+<p><strong>Theorem 1.3</strong>. <em>Suppose $F:M^m\rightarrow N^n$ is a smooth mapping. Take $q\in N,$ and define $P:=F^{-1}(q).$ if $\,\forall\,p\in P,$ $r({F_{\ast } }_p)=n,$ Then $P$ has a unique $C^\infty$-manifold structure such that $(P,i)$ is a regular submanifold of $M$, $\dim P=m-n.$</em></p>
+<p><strong>Proof:</strong> According to the rank theorem, a suitable box coordinate system can be obtained so that $\widehat{F}$ is a projection.<br>Therefore $\widehat{F}^{-1}(0)={(0,\cdots,0,x^{n+1},\cdots,x^m)||x^\gamma|&lt;\delta},$<br>That is, $\widehat{F}^{-1}(0)=F^{-1}(q)\cap U$ is an $n$-dimensional slice in $U$.<br>Assign $P$ subspace topology, take coordinate atlas ${(P\cap U,\pi\circ\varphi)},$<br>It is easy to see that $P$ becomes an $m-n$ dimensional topological manifold. At the same time, it is easy to see that the atlas satisfies $C^\infty$ compatibility,<br>Therefore $P$ has a $C^\infty$-manifold structure. Obviously injective $i\in C^\infty(P,M)$ with rank $m-n,$<br>Therefore it is a submanifold. From the previous explanation, it is also a slice locally, so $(P,i)$ is a regular submanifold.</p>
+<p><strong>Corollary 1.4</strong>. <em>If the surjection $F:M\rightarrow N$ is submerged, then $\,\forall\,q\in N,$ $F^{-1}(q)$ is an $m-n$ dimensional regular submanifold in $M$.</em></p>
+<p>One problem is that given $C^\infty$ manifold $M^m,$<br>Does $F:M\rightarrow \mathbb{R}^N,$ exist?<br>Let $(M,F)$ be the $\mathbb{R}^N$ neutron manifold. H.Whitney pointed out,<br>There exists $F:M^m\hookrightarrow \mathbb{R}^{2m+1}$ as a regular submanifold.</p>
+<h2 id="integral-curve-of-vector-field">Integral curve of vector field</h2>
+<p>Let $X\in \chi(M),$ $\gamma:(a,b)\rightarrow M$ be $C^\infty$-curve,<br>If $\gamma&#39;(t)=X_{\gamma(t)},$ $\,\forall\,t\in (a,b).$<br>Then $\gamma$ is said to be the <strong>integral curve</strong> of $X$. If $0\in(a,b),$<br>$p=\gamma(0)$ is called the <strong>initial point</strong> of $\gamma$.</p>
+<p>Given $X\in\chi(M),$ $p\in M.$, take any coordinate system $(U,\varphi;x^i),$<br>${X<em>i}</em>{i=1}^m$ is a natural basis. Then $X|_U=\sum \xi^iX_i,$<br>$\xi^i\in C^\infty(U).$ and $\gamma&#39;(t)=\sum_i \frac{dx^i(t)}{dt}X_i,$<br>Therefore, to find the integral curve $\gamma$ is to solve the system of ordinary differential equations after given the initial value:</p>
+<script type="math/tex; mode=display">\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cdots,m.</script><p>Where $\widehat{\xi}^i=\xi^i\circ\varphi^{-1}\in C^\infty(\varphi(U)).$<br>According to the fundamental theorem of ordinary differential equations, we have the following proposition:</p>
+<p><strong>Proposition 1.5</strong>. <em>Suppose $X\in\chi(M),$ then $\,\forall\,p\in M,$ $\,\exists\,\varepsilon&gt;0,$ $\gamma:(-\varepsilon,\varepsilon)\rightarrow M,$ such that $\gamma(0)=p$ and $\gamma$ is the integral curve of $X$.</em></p>
+<p>Suppose $X\in\chi(M),$ If $X_p=0,$ then $p$ is called the <strong>singularity</strong> of $X$. A classic proposition is,<br>A smooth vector field on a sphere must have singular points. A typical proof is to apply the index theorem,<br>The Euler characteristic number of the sphere is non-zero.</p>
+<p>Recall that the tangent bundle $TM$ is a $2m$ dimensional $C^\infty$ manifold, for $U\subset M,$<br>There is a local trivialization $\widetilde{\Phi}:TU=\pi^{-1}(U)\cong U\times \mathbb{R}^m$ which is a diffeomorphism,<br>And $\widetilde{\Phi}|<em>{T</em>{p}M}:T_pM\rightarrow {p}\times \mathbb{R}^m$ is line isomorphism (fiber preserving).<br>Then the above proposition explains, $TS^2\not\cong S^2\times \mathbb{R}^2,$<br>That is, the spherical tangent bundle is a non-trivial bundle.</p>
+<p>The article was last updated on 2021-10-27 21:07:04</p>
                 </div>
             
         </div>
@@ -292,14 +310,14 @@ $$\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cd
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第三章-子流形</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-28 00:07:03</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第三章-子流形</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-28 00:07:03</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/27/《微分流形》第三章-子流形/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/27/《微分流形》第三章-子流形/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -367,7 +385,7 @@ $$\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cd
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -505,24 +523,21 @@ $$\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cd
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -604,9 +619,7 @@ $$\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cd
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#submanifold"><span class="nav-text">submanifold</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#integral-curve-of-vector-field"><span class="nav-text">Integral curve of vector field</span></a></li></ol>
         </div>
     
 </div>
@@ -631,6 +644,7 @@ $$\frac{dx^i}{dt}=\xi^i(\gamma(t))=\widehat{\xi}^i(x^1,\cdots,x^m),\quad i=1,\cd
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

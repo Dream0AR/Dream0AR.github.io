@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -280,7 +280,25 @@ $$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="k%C3%BCnneth-formula">Künneth formula</h2>
+<p>Suppose $M$ and $F$ are manifolds, and the dimension of de Rham cohomology of $M$ is finite, then</p>
+<script type="math/tex; mode=display">H^n(M\times F)=\sum_{p+q=n} H^p(M)\otimes_\mathbb{R}H^q(F).</script><p><strong>Proof:</strong> Assume $M$ has finite good coverage. Taking $M\times F$ to $F$, the projection of $M$ is $\rho,\pi$,<br>Then it induces $\psi:\Omega^{\ast }(M)\otimes \Omega^\ast (F)\rightarrow \Omega^\ast (M\times F)$,<br>$\psi(\omega\otimes \phi)=\pi^\ast \omega\wedge \rho^\ast \phi.$<br>Since $\pi^\ast$, $\rho^\ast$ and $d$ are commutative, $\psi$ can be reduced to the mapping between cohomologies.</p>
+<p>If $M\approx \mathbb{R}^m$ (the good covering is only an open set), then according to Poincaré&#39;s lemma,<br>$H^n(\mathbb{R}^m\times F)=H^n(\mathbb{R}^{m-1}\times F)=\cdots=H^n(F)=H^0(\mathbb{R}^m)\otimes H^n(F)= \sum_p H^{p}(\mathbb{R}^m)\otimes H^{n-p}(F).$</p>
+<p>Let $U, V$ be the open set of $M$, fix $n$, and make a cohomological MV sequence.<br>Do the tensor product of each item with $H^{n-p}(F)$, and then do the direct sum of each item with respect to $p$ to get a new MV sequence.<br>The MV sequence can be hit to the MV sequence corresponding to $M\times F$ through chain mapping $\psi$.<br>This graph is commutative by the zig-zag lemma.</p>
+<p>The exchange diagram is a bit big... I won’t fight it for now.</p>
+<p>Therefore, with the help of the MV sequence, if Künneth&#39;s formula holds for $U, V, U\cap V$, it also holds for $U\cup V$.<br>Using the MV method, it is enough to summarize the number of open sets covered.</p>
+<h2 id="leray-hirsch-theorem">Leray-Hirsch theorem</h2>
+<p>$M\times F$ can be regarded as an ordinary fiber bundle on $M$ with $F$ as the fiber.<br>Therefore, Künneth&#39;s formula can be extended to a more general situation, which is the <strong>Leray-Hirsch theorem</strong>.<br>Let’s first introduce some concepts of fiber bundles.</p>
+<p>Let $G$ be a topological group, $F$ be a topological space, let $G$ have a <strong>left action</strong> on $F$,<br>That is, $\,\forall\,g\in G$ defines a continuous homeomorphism $g:F\rightarrow F$, satisfying<br>$g_1(g_2(v))=(g_1g_2)(v)$, $\,\forall\,g_1,g_2\in G$, $v\in F.$<br>An action is called an <strong>effective action</strong>, if $g(y)=y$,<br>$\,\forall\,y\in F\Rightarrow g=1\in G.$</p>
+<p>On this basis, $E and B$ are added as topological spaces, and $\pi:E\rightarrow B$ is a continuous surjection.<br>Assume that $B$ has an open covering ${U<em>\alpha}</em>{\alpha\in I}$ that satisfies:</p>
+<p>(i) For each $\alpha\in I$, there is a fiber-guaranteed homeomorphism:<br>    $\phi<em>\alpha:E</em>{U<em>\alpha}:=\pi^{-1}(U</em>\alpha)\rightarrow U<em>\alpha\times F$,<br>    That is, $\phi</em>\alpha$ is homeomorphic and $\operatorname{pr}<em>1\circ\phi</em>\alpha=\pi.$</p>
+<p>(ii) $\phi<em>\alpha,\phi</em>\beta$ induces $g<em>{\alpha\beta}:U</em>{\alpha\beta}\rightarrow G$,<br>     $(\phi<em>\alpha\circ \phi</em>\beta^{-1})(x,v)=(x,g_{\alpha\beta}(x)(v)).$</p>
+<p>Then it is said that $\pi:E\rightarrow B$ is a <strong>fiber bundle</strong> with $F$ as the fiber, and the <strong>structural group</strong> is $G$,<br><strong>Bottom space</strong> is $B$, <strong>Full space</strong> is $E$.<br>${(U<em>\alpha,\phi</em>\alpha)}_{\alpha\in I}$ is a <strong>local trivialization</strong> of the fiber bundle.<br>For $x\in B$, $\pi^{-1}(x)$ is called the fiber of point $x$, denoted as $E_x$.<br>When studying cohomology, assume that $E, B, and F$ are smooth manifolds,<br>$G$ is the diffeomorphism group $\operatorname{Diff}(F)$ of $F$ unless otherwise specified.</p>
+<p>Let $\pi:E\rightarrow M$ be a smooth fiber bundle with $F$ as the fiber.<br>Assume that there are cohomology classes $e_1,...,e_r$ on $E$,<br>Restricting each fiber $E_x$ to form a set of basis $H^\ast (E_x)$, then it can be defined</p>
+<script type="math/tex; mode=display">\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).</script><p><strong>Theorem 1.1</strong> (Leray-Hirsch theorem). <em>Under the above assumption, if $M$ has finite good coverage, then $\psi$ is isomorphic, and there is $H^\ast (E)\cong H^\ast (M)\otimes \mathbb{R}{e_1,...,e_r} \cong H^\ast (M)\otimes H^\ast (F).$</em></p>
+<p><strong>Proof:</strong> Since $U<em>\alpha\approx \mathbb{R}^n$ in finite good coverage is a shrinkable space,<br>The fibers on it are ordinary,<br>The Leray-Hirsch theorem for $E|</em>{U<em>\alpha}$ degenerates into the Künneth formula of $U</em>\alpha\times F$.</p>
+<p>The MV method can be used to summarize this conclusion on $M$ with the help of good coverage.</p>
+<p>The article was last updated on 2021-09-22 18:30:43</p>
                 </div>
             
         </div>
@@ -289,14 +307,14 @@ $$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(5-2)-Künneth公式</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-22 21:30:38</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(5-2)-Künneth公式</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-22 21:30:38</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/22/《代数拓扑与微分形式》笔记(5-2)-Künneth公式/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/22/《代数拓扑与微分形式》笔记(5-2)-Künneth公式/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -364,7 +382,7 @@ $$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -502,24 +520,21 @@ $$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -601,9 +616,7 @@ $$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#k%C3%BCnneth-formula"><span class="nav-text">Künneth formula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leray-hirsch-theorem"><span class="nav-text">Leray-Hirsch theorem</span></a></li></ol>
         </div>
     
 </div>
@@ -628,6 +641,7 @@ $$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

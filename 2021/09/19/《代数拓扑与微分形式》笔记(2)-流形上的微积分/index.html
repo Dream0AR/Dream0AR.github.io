@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -346,7 +346,51 @@ $$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>Reference book: Warner &quot;Basics of Differential Manifolds and Lie Groups&quot;</p>
+<h2 id="differential-forms-on-manifolds">Differential forms on manifolds</h2>
+<h3 id="pull-back-mapping">Pull back mapping</h3>
+<p>The smooth function $f:\mathbb{R}^n\rightarrow \mathbb{R}^m$ can induce the pullback mapping $f^\ast :\Omega^0(\mathbb{R}^m)\rightarrow\Omega^0(\mathbb{R}^n)$,<br>$f^\ast (g)=g\circ f$;</p>
+<p>At the same time, it can also induce $f^\ast :\Omega^1(\mathbb{R}^m)\rightarrow \Omega^1(\mathbb{R}^n)$,<br>$f^\ast (dy_i)=df_i=d(y_i\circ f)$.</p>
+<p>It is easy to extend this definition to get $f^\ast :\Omega^\ast (\mathbb{R}^m)\rightarrow\Omega^\ast (\mathbb{R}^n)$,<br>$f^\ast (g<em>Idy</em>{i<em>1}\wedge ...\wedge dy</em>{i<em>q})$ =<br>$f^\ast (g_I)f^\ast (dy</em>{i<em>1}\wedge ...\wedge dy</em>{i<em>q})=(g_I\circ f)df</em>{i<em>1}\wedge ... \wedge df</em>{i_q}$.</p>
+<p>The definition on the $0$ dimension is more natural. Why the $1$ dimension needs to define the base $dy_i$ in this way requires some thought.<br>We know $d:\Omega^0\rightarrow \Omega^1$,<br>Found $df^\ast (g)=d(g\circ f)=\sum_i\frac{\partial {}g\circ f}{\partial {}f_i}df_i$,<br>$dg=\sum_i\frac{\partial {}g}{\partial {}y_i}dy_i$.<br>Note that $f^\ast (\frac{\partial {}g}{\partial {}y_i})=\frac{\partial {}g\circ f}{\partial {}f_i}$,<br>So it is quite natural for us to define $f^\ast (dy_i)=df_i$.<br>At the same time, from the above analysis we get the following proposition:</p>
+<p><strong>Proposition 1.1</strong> (Commutatability). <em>$df^\ast =f^\ast d$.</em></p>
+<p>It can also be said that our definition is based on the hope of satisfying exchangeability.</p>
+<h3 id="first-order-differential-invariance">First-order differential invariance</h3>
+<p>Let $f:\mathbb{R}^n\rightarrow\mathbb{R}^n$ be a diffeomorphism,<br>$f_i=x_i\circ f$ is the new coordinate, which is called the coordinate defined by diffeomorphism $f$.</p>
+<p>According to the chain rule,<br>$dg=\sum<em>{i=1}^{n}\frac{\partial {}g}{\partial {}f_i} df_i=\sum</em>{i,j=1}^{n}\frac{\partial {}g}{\partial {}f<em>i}\frac{\partial {}f_i}{\partial {}x_j} dx_j=\sum</em>{j=1}^n \frac{\partial {}g}{\partial {}x_j}dx_j,$<br>So $dg$ has nothing to do with the coordinate system, which is to say <strong>first-order differential invariance</strong>.</p>
+<p><strong>Pullback mapping and first-order differential invariance are the basis for defining differential forms and differential operators $d$ on manifolds.</strong></p>
+<h3 id="differential-form-on-manifold">Differential form on manifold</h3>
+<p>Let $M$ be a smooth $n$-dimensional manifold,<br>${(U<em>\alpha, \phi</em>\alpha)}_{\alpha\in\Lambda}$ is the coordinate atlas.</p>
+<p>The differential form $\omega$ on $M$ is a set class ${\omega<em>\alpha\in \Omega^\ast (U</em>\alpha)}$,<br>This set class needs to satisfy the compatibility conditions: $\,\forall\,U<em>\alpha\cap U</em>\beta\neq \varnothing$,<br>Note $U<em>\alpha\cap U</em>\beta=U<em>{\alpha\beta}$,<br>$\omega</em>\alpha|<em>{U</em>{\alpha\beta} }=\omega<em>\beta|</em>{U<em>{\alpha\beta} }$,<br>In this way, the differential forms given locally can be assembled into a whole,<br>That is, the set class ${\omega</em>\alpha\in \Omega^\ast (U<em>\alpha)}$ is spelled into $\omega$.<br>Here $\omega</em>\alpha=\sum<em>I {f</em>\alpha}<em>I d{\phi</em>\alpha}<em>I$,<br>$\phi</em>\alpha:U<em>\alpha\approx \mathbb{R}^n$,<br>That is, the differential form on the surface patch is pulled into $\mathbb{R}^n$ for consideration.<br>The definition of $\omega</em>\alpha|<em>{U</em>{\alpha\beta} }$ is by embedding $i:U<em>{\alpha\beta}\rightarrow U</em>\alpha$,<br>Pulled from $\Omega^\ast (U<em>\alpha)$ back to $\Omega^\ast (U</em>{\alpha\beta})$,<br>That is, it is defined as $i^\ast \omega_\alpha$.</p>
+<p>Let the differential form on $M$ be $\Omega^\ast (M)$. Similarly, the differential operator $d$ and the outer product $\wedge$ can be defined.<br>It should be noted here that due to the requirements for the differential form on the manifold, the compatibility conditions need to be verified.<br>Due to the commutability of $d$ and $i^\ast$, ${d\omega_\alpha}$ does satisfy the compatibility condition,<br>It can be spelled as $d\omega$, so it is well defined. The same goes for $\wedge$.</p>
+<p>Similarly, there is $\Omega^q(M)$ on the manifold, which can be decomposed according to the shape.<br>${\Omega^\ast (M),d}$ is called the de Rham complex of the manifold $M$.<br>Further, $Z^q(M), B^q(M), H^q(M)$ can be defined.</p>
+<p>Now consider the smooth mapping between manifolds $f:M\rightarrow N$,<br>This induces $f^\ast :\Omega^\ast (N)\rightarrow\Omega^\ast (M)$.<br>Since $d,f^\ast$ is commutative, this induces<br>$f^\ast : H^\ast (N)\rightarrow H^\ast (M)$,<br>$f^\ast [\omega]=[f^\ast \omega]$. In particular,<br>Consider $i:U\rightarrow M$ to be the inclusion map of the open subset,<br>Then there is $i^\ast : H^\ast (M)\rightarrow H^\ast (U)$,<br>$i^\ast [\omega]=[i^\ast \omega]=[\omega|_U]$.<br>Also write $i^\ast [\omega]$ as $[\omega]|_U$, so we have $[\omega]|_U=[\omega|_U]$.</p>
+<h2 id="unit-decomposition">unit decomposition</h2>
+<p><strong>The existence of unit decomposition is the most basic tool for differential manifolds.</strong></p>
+<p>We recall that the manifold satisfies the $T_2$ separability axiom and is pseudocompact.</p>
+<p>The unit decomposition on $M$ is a family of nonnegative smooth functions ${\rho<em>\alpha}</em>{\alpha\in\Lambda}$,<br>It satisfies that every point on $M$ has a neighborhood, and there are only a finite number of $\rho<em>\alpha$ on which are not zero.<br>In this way $\sum\rho</em>\alpha$ is meaningful, and further requires that the sum is $1$ everywhere.</p>
+<p>Since the manifold is quasi-compact, there is always unit decomposition on it.<br>For a given open coverage ${U<em>\alpha}$ (often the open coverage in the coordinate atlas is taken),<br>Being is subject to the decomposition of its units,<br>That is $\operatorname{supp} \rho</em>\alpha\subset U_\alpha$.</p>
+<h2 id="orientation-of-the-manifold">Orientation of the manifold</h2>
+<p>Remember diffeomorphism$T:\mathbb{R}^n\rightarrow \mathbb{R}^n$,<br>$T(y)=x$, denote $T_i=x_i\circ T$,<br>$J(T)=\det (\frac{\partial {}T_i}{\partial {}y_j})$. Since $T$ is a diffeomorphism,<br>$J(T)$ is not zero, so it is either always positive or always negative. When $J(T)&gt;0$, it is said that $T$ is oriented,<br>The opposite is called reverse orientation.</p>
+<p>Generally, if it is a diffeomorphism between open sets, it is required to be constant positive on all connected branches.<br>That&#39;s called Bao Zhi.</p>
+<p>Suppose $M$ is a smooth manifold, ${(U<em>\alpha, \phi</em>\alpha)}$ is a coordinate atlas,<br>If $\,\forall\,U<em>{\alpha\beta}$ is not empty,<br>Diffeomorphism$\phi</em>\beta\circ \phi<em>\alpha^{-1}: \phi</em>\alpha(U<em>{\alpha\beta})\rightarrow\phi</em>\beta(U_{\alpha\beta})$ maintains the orientation,<br>Then the coordinate atlas is called an oriented coordinate atlas. If $M$ has an oriented coordinate atlas, it is said that $M$ can be oriented.<br><strong>Proposition 1.2</strong>. <em>A $n$-dimensional manifold $M$ is orientable if and only if it has a globally defined smooth $n$ form that is non-zero everywhere.</em></p>
+<p>Note that any two everywhere non-zero $n$-forms $\eta,\eta&#39;$,<br>The only difference between them is a non-zero function $f$: $\eta=f\eta&#39;$. If $M$ is connected,<br>Then $f$ is always positive or always negative. When $f$ is positive, it is said that $\eta and \eta&#39;$ are equivalent.<br>So every everywhere non-zero smooth $n$-form on $M$ falls into two equivalence classes,<br>Each equivalence class is called an orientation of $M$, denoted $[M]$.</p>
+<h2 id="integrals-on-manifolds">integrals on manifolds</h2>
+<p>Let $\omega$ be a smooth $n$-form with compact support in $\mathbb{R}^n$:<br>$\omega=f(x)dx<em>1\wedge \cdots\wedge dx_n$,<br>Define integral $\int</em>{\mathbb{R}^n}\omega=\int_{\mathbb{R}^n}fdx_1\cdots dx_n$.</p>
+<p>Let $T:\mathbb{R}^n\rightarrow\mathbb{R}^n$, $T(y)=x$ be a diffeomorphism,<br>Then we can prove the variable substitution formula:</p>
+<p><strong>Proposition 1.3</strong> (Variable substitution). <em>$dT_1\wedge ...\wedge dT_n=J(T)dy_1\wedge ...\wedge dy_n$.</em></p>
+<p>Thus $T^\ast \omega=T^\ast fdT_1\wedge ... \wedge dT_n=(f\circ T)J(T)dy_1\wedge ...\wedge dy_n,$<br>Integrate the above equation to get</p>
+<script type="math/tex; mode=display">\int_{\mathbb{R}^n}T^\ast \omega=\int_{\mathbb{R}^n}(f\circ T)J(T)dy_1\wedge ...\wedge dy_n,</script><p>And by the integral transformation formula</p>
+<script type="math/tex; mode=display">\int_{\mathbb{R}^n} \omega=\int_{\mathbb{R}^n}(f\circ T)|J(T)|dy_1\wedge ...\wedge dy_n,</script><p>Therefore $\int<em>{\mathbb{R}^n}T^\ast \omega=\pm \int</em>{\mathbb{R}^n}\omega$,<br>The sign is determined by the sign of $J(T)$.</p>
+<p>Now give the integral on $M$.<br>Select the orientation $[M]$ and the corresponding orientation coordinate atlas ${(U<em>\alpha,\phi</em>\alpha)}$.<br>Let ${\rho<em>\alpha}$ be the unit decomposition subordinate to ${U</em>\alpha}$,<br>There is a decomposition of $\tau\in H^n<em>{c}(M)$ $\tau=\sum</em>\alpha \rho_\alpha \tau$.</p>
+<p>We hope to have <script type="math/tex">\int_{[M]}\tau=\sum_\alpha \int_{[M]}\rho_\alpha\tau,</script><br>Then study the right formula and hope that</p>
+<script type="math/tex; mode=display">\int_{[M]}\rho_\alpha\tau=\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha},</script><p>Use variable substitution to pull the integral back to $\mathbb{R}^n$.</p>
+<script type="math/tex; mode=display">\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^{-1})^\ast (\rho_\alpha\tau)|_{U_\alpha},</script><p>Note that the integrand form zero is extended outside $\phi(U_\alpha)$.</p>
+<p>So we will $\int<em>{[M]}\tau:=\sum</em>\alpha \int<em>{\mathbb{R}^n}(\phi</em>\alpha^{-1})^\ast (\rho<em>\alpha\tau)|</em>{U<em>\alpha}$,<br>If the direction is clear, $\int</em>{[M]}$ can be rewritten as $\int_{M}$.</p>
+<p>What needs to be verified is that this definition has nothing to do with the directional coordinate atlas and unit decomposition.<br>Regarding this point, we can make a more detailed division based on two different divisions, and then sum them up,<br>It follows that the integral formulas obtained by the two different divisions are equal.</p>
+<h2 id="manifold-with-edges">manifold with edges</h2>
+<p>The oriented coordinate atlas of the edged manifold $M$ induces the oriented coordinate atlas at the boundary,<br>First define how the upper half plane is induced,<br>Then hit the boundary of any $M$ to the upper half plane to determine the induced orientation.<br><strong>Theorem 1.1</strong> (Stokes Theorem). <em>$\int<em>Md\omega=\int</em>{\partial M}\omega|_{\partial M}$.</em></p>
+<p>The article was last updated on 2021-09-19 19:06:22</p>
                 </div>
             
         </div>
@@ -355,14 +399,14 @@ $$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(2)-流形上的微积分</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-19 22:06:22</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(2)-流形上的微积分</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-19 22:06:22</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/19/《代数拓扑与微分形式》笔记(2)-流形上的微积分/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/19/《代数拓扑与微分形式》笔记(2)-流形上的微积分/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -430,7 +474,7 @@ $$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -568,24 +612,21 @@ $$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -667,9 +708,7 @@ $$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#differential-forms-on-manifolds"><span class="nav-text">Differential forms on manifolds</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pull-back-mapping"><span class="nav-text">Pull back mapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#first-order-differential-invariance"><span class="nav-text">First-order differential invariance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#differential-form-on-manifold"><span class="nav-text">Differential form on manifold</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unit-decomposition"><span class="nav-text">unit decomposition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orientation-of-the-manifold"><span class="nav-text">Orientation of the manifold</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#integrals-on-manifolds"><span class="nav-text">integrals on manifolds</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#manifold-with-edges"><span class="nav-text">manifold with edges</span></a></li></ol>
         </div>
     
 </div>
@@ -694,6 +733,7 @@ $$\int_{U_\alpha} (\rho_\alpha\tau)|_{U_\alpha}=\int_{\mathbb{R}^n}(\phi_\alpha^
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

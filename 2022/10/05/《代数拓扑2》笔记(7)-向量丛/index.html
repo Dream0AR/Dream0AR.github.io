@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -307,7 +307,44 @@ CW复形, 度量空间, $\mathbb{R}^N$中流形上都可以给定欧氏度量.</
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="basic-concepts">Basic concepts</h2>
+<p>for fiber bundles</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\rightarrow B,</script><p> If $F$ is an $n$-dimensional (real) vector space,<br>And the local trivialization still maintains the vector space structure, then it is called a rank $n$ (real) vector bundle. Tangent bundle, normal bundle,<br>Trivial vector bundles are all typical vector bundles.</p>
+<p>There is a typical vector bundle on $\mathbb{R}\mathrm{P}^n$, which is a line bundle. It is defined as:</p>
+<script type="math/tex; mode=display">
+E(\gamma_n^1):=\{(l,v)\in \mathbb{R}\mathrm{P}^n\times \mathbb{R}^{n+1}|v\in l\}.</script><p>Let $\xi$ be the vector bundle $F\rightarrow E\xrightarrow{\pi}B.$<br>Define the <strong>section</strong> on $\xi$ as the mapping $s:B\rightarrow E,$<br>Make $B\xrightarrow{s}E\xrightarrow{\pi}B$ an identity mapping.<br>The vector bundle $\xi\cong \eta$ on the same base space $B$ is called <strong>isomorphism</strong>,<br>If $\,\exists\,$ is homeomorphic $f:E(\xi)\rightarrow E(\eta),$<br>Such that $\,\forall\,b\in B,$<br>$f|_{F_b(\xi)}:F_b(\xi)\cong F_b(\eta)$ is the isomorphism between vector spaces.</p>
+<p><strong>Proposition 1</strong>. <em>$\,\forall\,n\ge 1,$ $\gamma_n^1$ has no non-trivial cross section that does not disappear everywhere. Therefore $\gamma_n^1$ is isomorphic to the trivial bundle.</em></p>
+<p>Let $s:\mathbb{R}\mathrm{P}^n\rightarrow E(\gamma_n^1)$ be a cross-section, consider</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^{n+1}\setminus\{0\}\rightarrow \mathbb{R}\mathrm{P}^n\xrightarrow{s} E(\gamma_n^1),</script><script type="math/tex; mode=display">
+v\mapsto ([v],t(v)v).</script><p> However, $v,-v$ generate the same section, so $t(-v)=-t(v).$<br>Suppose $t(v)&gt;0,$ then $t(-v)&lt;0,$<br>Then from the connectivity of $\mathbb{R}^{n+1}\setminus {0}$, there must be a point $w$ such that $t(w)=0,$<br>Therefore, the cross section disappears at $[w]$. (Intermediate value theorem)</p>
+<p><strong>Proposition 2</strong>. <em>A vector bundle of rank $n$ $\xi$ is trivial if and only if there are $n$ sections on $\xi$ and is linearly independent everywhere.</em></p>
+<p>Find the trivial section of a trivial bundle. Suppose there are $n$ such sections,<br>Define mapping $B\times \mathbb{R}^n\xrightarrow{f} E(\xi),$</p>
+<script type="math/tex; mode=display">
+\left(b,\sum t_ie_i\right)\mapsto \sum t_is_i(b)</script><p>This is an isomorphism between vector bundles.</p>
+<h2 id="construction-of-vector-bundle">Construction of vector bundle</h2>
+<h3 id="induction-bush-pull-back-bush">Induction bush (pull back bush)</h3>
+<p>Given a vector bundle $\xi,$ that continuously maps $B_1\rightarrow B,$ then</p>
+<script type="math/tex; mode=display">
+f^\ast E:=\{(b,e)\in B_1\times E|f(b)=\pi(e)\}.</script><p> That is, for $b,$<br>Pull back the fiber at $f(b)$ on $E$.</p>
+<p>Define the bundle mapping between $\eta,\xi$ as the continuous mapping $E(\eta)\xrightarrow{g}E(\xi),$<br>So that it maintains the fiber and is linearly isomorphic on the fiber.</p>
+<p><strong>Lemma 3</strong>. <em>Given the bundle map as above, we have $\eta\cong (g|_{B(\eta)})^\ast \xi.$</em></p>
+<p>Just verify $h:E(\eta)\rightarrow E((g|_{B(\eta)})^\ast \xi),$<br>$e\mapsto (\pi(e),g(e))$ is isomorphism.</p>
+<h3 id="cartesian-product">Cartesian product</h3>
+<p>Given the vector bundle $\xi_1,\xi_2,$, define $\xi_1\times \xi_2$ as</p>
+<script type="math/tex; mode=display">
+\pi_1\times\pi_2:E_1\times E_2\rightarrow B_1\times B_2,</script><p> The fiber is</p>
+<script type="math/tex; mode=display">
+(\pi_1\times\pi_2)^{-1}(b_1,b_2)=F_{b_1}(\xi_1)\times F_{b_2}(\xi_2).</script><h3 id="whitney-and">Whitney and</h3>
+<p>For the same base space $B,$, the vector bundle $\xi_1,\xi_2,$ is given<br>Diagonal mapping $d:B\rightarrow B\times B.$<br>Define the vector bundle $\xi_1\oplus \xi_2:=d^\ast (\xi_1\times \xi_2),$ on which the fibers are</p>
+<script type="math/tex; mode=display">
+F_b(d^\ast (\xi_1\times\xi_2))=F_b(\xi_1)\times F_b(\xi_2)\cong F_b(\xi_1)\oplus F_b(\xi_2).</script><p>Generally, operations on vector space provide operations on vector bundles, which can be done based on fiber operations.<br>For example, you can also define tensor products on vector bundles, inverse/symmetrization, duality, etc.</p>
+<h2 id="euclidean-vector-bundle">Euclidean vector bundle</h2>
+<p>Euclidean vector space is a vector space,<br>Equipped with a positive definite quadratic form $\mu:V\rightarrow \mathbb{R},$<br>That is, $\mu(\lambda v)=\lambda^2\mu(v),$ $\mu(v)&gt;0,$ $\,\forall\,v\neq 0.$<br>Then $\mu$ defines the inner product on $V$.</p>
+<p>A Euclidean vector bundle is a vector bundle, and each fiber is a Euclidean vector space. If $\xi$ is Euclidean,<br>Then for the sub-cluster $\eta,$ $\eta^\perp\oplus\eta=\xi.$</p>
+<p>It is a fact that for every Hausdorff, vector bundle on the pretensioned base space can be given a Euclidean metric.<br>Euclidean metrics can be given on CW complexes, metric spaces, and manifolds in $\mathbb{R}^N$.</p>
+<p>The article was last updated on 2022-10-05 15:51:36</p>
                 </div>
             
         </div>
@@ -316,14 +353,14 @@ CW复形, 度量空间, $\mathbb{R}^N$中流形上都可以给定欧氏度量.</
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(7)-向量丛</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-05 18:51:34</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(7)-向量丛</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-05 18:51:34</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/05/《代数拓扑2》笔记(7)-向量丛/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/05/《代数拓扑2》笔记(7)-向量丛/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -391,7 +428,7 @@ CW复形, 度量空间, $\mathbb{R}^N$中流形上都可以给定欧氏度量.</
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -529,24 +566,21 @@ CW复形, 度量空间, $\mathbb{R}^N$中流形上都可以给定欧氏度量.</
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -628,9 +662,7 @@ CW复形, 度量空间, $\mathbb{R}^N$中流形上都可以给定欧氏度量.</
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concepts"><span class="nav-text">Basic concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#construction-of-vector-bundle"><span class="nav-text">Construction of vector bundle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#induction-bush-pull-back-bush"><span class="nav-text">Induction bush (pull back bush)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cartesian-product"><span class="nav-text">Cartesian product</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#whitney-and"><span class="nav-text">Whitney and</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#euclidean-vector-bundle"><span class="nav-text">Euclidean vector bundle</span></a></li></ol>
         </div>
     
 </div>
@@ -655,6 +687,7 @@ CW复形, 度量空间, $\mathbb{R}^N$中流形上都可以给定欧氏度量.</
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

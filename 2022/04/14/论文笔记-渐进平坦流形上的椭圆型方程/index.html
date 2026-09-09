@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -632,7 +632,190 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>The Mass of an Asymptotically Flat Manifold - Robert Bartnik</p>
+<h2 id="powered-sobolev-space">Powered Sobolev Space</h2>
+<p>We first discuss in $\mathbb{R}^n,$ $n\ge 3$. Note $r=|x|,$<br>$\sigma=\sqrt{1+r^2},$ respectively in $L<em>{\mathrm{loc} }^p(\mathbb{R}^n),$<br>The weighted Lebesgue space is defined in $L</em>{\mathrm{loc} }^p(\mathbb{R}^n\setminus{0})$:</p>
+<script type="math/tex; mode=display">
+L_\delta^p:\quad \Vert u\Vert_{p,\delta}=
+ \left\{
+ \begin{aligned}
+ &\left(\int_{\mathbb{R}^n}|u|^p\sigma^{-\delta p-n}dx\right)^{\frac{1}{p} },&p<\infty,\\
+ &\operatorname{ess}\operatorname{sup}_{\mathbb{R}^n}(\sigma^{-\delta}|u|), &p=\infty,
+ \end{aligned}
+ \right.</script><script type="math/tex; mode=display">
+{L'}_\delta^p:\quad \Vert u\Vert'_{p,\delta}=
+ \left\{
+ \begin{aligned}
+ &\left(\int_{\mathbb{R}^n\setminus\{0\} }|u|^pr^{-\delta p-n}dx\right)^{\frac{1}{p} },&p<\infty,\\
+ &\operatorname{ess}\operatorname{sup}_{\mathbb{R}^n\setminus\{0\} }(r^{-\delta}|u|), &p=\infty,
+ \end{aligned}
+ \right.</script><p>Next, define the weighted Sobolev space:</p>
+<script type="math/tex; mode=display">
+W_\delta^{k,p}:\quad \Vert u\Vert_{k,p,\delta}=\sum_{j=0}^k\Vert D^ju\Vert_{p,\delta-j},</script><script type="math/tex; mode=display">
+{W'}_\delta^{k,p}:\quad \Vert u\Vert'_{k,p,\delta}=\sum_{j=0}^k\Vert D^ju\Vert'_{p,\delta-j},</script><p>Note that the difference in weight here makes the dimensions of the addition terms basically the same. When $p\in [1,\infty)$,<br>$C_c^\infty(\mathbb{R}^n),$<br>$C_c^\infty(\mathbb{R}^n\setminus{0})$ is dense among them respectively.<br>The weights are selected such that for the function $u_R(x)=u(Rx),$</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert'_{k,p,\delta}=R^{-\delta}\Vert u_R\Vert'_{k,p,\delta},</script><script type="math/tex; mode=display">
+\Vert u\Vert_{k,p,\delta;A_R}\approx R^{-\delta}\Vert u_R\Vert_{k,p,\delta;A_1}, \quad R\ge 1.</script><p>Here $A<em>R:=B</em>{2R}\setminus B_R,$ $B_R$ is a closed sphere with radius $R$ at the origin.<br>&quot;$\approx$&quot; means that the two can be controlled by a constant multiple independent of $R$, just consider controlling $\sigma$.<br>Next we enumerate the following properties without proof:</p>
+<p><strong>Theorem 1</strong>. <em>For $1\le p\le q\le \infty,$ $\delta<em>2&lt;\delta_1,$ $u\in L</em>{\delta<em>2}^q,$ there is $\Vert u\Vert</em>{p,\delta<em>1}\le c\Vert u\Vert</em>{q,\delta<em>2},$ therefore $L</em>{\delta<em>2}^q\subset L</em>{\delta<em>1}^p.$ That is, the higher $p$ is, the smaller $\delta$ is, the better the properties of $L</em>\delta^p$ are, and the higher the function requirements are.</em><br><strong>Theorem 2</strong> (Hölder&#39;s inequality). <em>$u\in L<em>{\delta_1}^q,$ $v\in L</em>{\delta_2}^r,$ $\delta=\delta_1+\delta_2,$ $1\le p,q,r\le \infty,$ $\frac{1}{p}=\frac{1}{q}+\frac{1}{r},$ then</em></p>
+<script type="math/tex; mode=display">
+\Vert uv\Vert_{p,\delta}\le \Vert u\Vert_{q,\delta_1}\Vert v\Vert_{r,\delta_2}.</script><p><strong>Theorem 3</strong> (Interpolation inequality). <em>$\,\forall\,\varepsilon&gt;0,$ $\,\exists\,C(\varepsilon)&gt;0,$ $\,\forall\,u\in W_{\delta}^{2,p},$ $p\in [1,\infty],$</em></p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{1,p,\delta}\le \varepsilon\Vert u\Vert_{2,p,\delta}+C(\varepsilon)\Vert u\Vert_{0,p,\delta}.</script><p><strong>Theorem 4</strong> (Sobolev’s inequality). <em>If $u\in W_{\delta}^{k,p},$ then</em></p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{q,\delta}\le C\Vert u\Vert_{k,p,\delta},\quad 0<\frac{n}{p}-k\le \frac{n}{q}\le \frac{n}{p};</script><script type="math/tex; mode=display">
+\Vert u\Vert_{\infty,\delta}\le C\Vert u\Vert_{k,p,\delta},\quad \frac{n}{p}-k<0,\quad \text{and} |u(x)|=o(r^{\delta}).</script><p>Define the weighted Hölder module:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{C_\delta^{0,\alpha} }:=\sup_{x\in \mathbb{R}^n}\left(\sigma^{-\delta+\alpha}(x)\sup_{4|x-y|\le \sigma(x)}\frac{|u(x)-u(y)|}{|x-y|^{\alpha} }\right)+\sup_{x\in\mathbb{R}^n}\sigma^{-\delta}(x)|u(x)|.</script><p><strong>Theorem 5</strong> (Negative exponential Sobolev inequality). <em>If $u\in W_{\delta}^{k,p},$ $0&lt;\alpha\le k-\frac{n}{p}\le 1,$ then</em></p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{C_{\delta}^{0,\alpha} }\le C\Vert u\Vert_{k,p,\delta},\quad \Vert u\Vert_{C_{\delta}^{0,\alpha}(A_R)}=o(1).</script><p><strong>Theorem 6</strong> (Poincaré inequality). <em>$\,\forall\,u\in {W&#39;}_{\delta}^{1,p},$ $1\le p&lt;\infty,$ $\delta\neq 0,$</em></p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{p,\delta}'\le |\delta|^{-1}\Vert u_r\Vert'_{p,\delta-1}\le |\delta|^{-1}\Vert Du\Vert'_{p,\delta-1},\quad u_r=\partial_ru=r^{-1}x\cdot Du.</script><script type="math/tex; mode=display">
+\Vert u\Vert_{p,\delta}\le C\Vert u_r\Vert_{p,\delta-1},\quad \delta<0,\quad u\in W_{\delta}^{1,p}.</script><p><strong>Lemma 7</strong>. <em>$k&gt;j,$ $\delta&lt;\varepsilon,$ $1\le p&lt;\infty,$ $W<em>\delta^{k,p}\Subset W</em>{\varepsilon}^{j,p}$ is a tight embedding.</em></p>
+<h2 id="asymptotic-elliptic-operator">Asymptotic elliptic operator</h2>
+<h3 id="inequality-estimation">Inequality estimation</h3>
+<p><strong>Definition 8</strong>. <em>Operator $Pu:=a^{ij}(x)\partial_{ij}^2u+b^i(x)\partial_iu+c(x)u$ is called (asymptotic)** to $\Delta$ (at rate $\tau$), if $\,\exists\,n&lt;q&lt;\infty,$ $\tau\ge 0,$ $C_1,\lambda,$ makes</em></p>
+<script type="math/tex; mode=display">
+\lambda |\xi|^2\le a^{ij}(x)\xi_i\xi_j\le \lambda^{-1}|\xi|^2,\quad \,\forall\,x,\xi\in \mathbb{R}^n;</script><script type="math/tex; mode=display">
+\Vert a^{ij}-\delta_{ij}\Vert_{1,q,-\tau}+\Vert b^i\Vert_{0,q-1,-1-\tau}+\Vert c\Vert_{0,\frac{q}{2},-2-\tau}\le C_1.</script><p>According to the previous theorem, $a^{ij}$ is Hölder continuous,<br>And $|a^{ij}-\delta<em>{ij}|=o(r^{-\tau}).$ for $1\le p\le q,$<br>$\delta\in \mathbb{R},$<br>$P:W</em>{\delta}^{2,p}\rightarrow W_{\delta-2}^{0,p}$ is a bounded operator.<br>In fact, the following estimates are true:</p>
+<p><strong>Proposition 9</strong>. <em>Suppose $P$ is asymptotic to $\Delta,$ $1&lt;p\le q,$ $\delta\in \mathbb{R},$ then there is a constant $C=C(n,p,q,\delta,C<em>1,\lambda),$ such that if $u\in L</em>\delta^{0,p},$ $Pu\in L<em>{\delta-2}^{0,p},$ then $u\in W</em>{\delta}^{2,p},$</em></p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta}).</script><p>To prove this proposition, just do the usual $L^p$ estimation in the second-order elliptic equation.<br>Note that this estimate also holds for ${W&#39;}_{\delta}^{k,p}$ modules.</p>
+<p>Next, let’s discuss the Fredholm property of operator $P$, that is, consider whether its image is closed,<br>And the finiteness of the kernel and co-kernel dimensions. The above proposition is not enough to explain that it has this property.<br>We need to strengthen the estimation so that the right-hand error term is compact with respect to $W_\delta^{2,p}$.</p>
+<p>The weight parameter $\delta$ is called <strong>nonexceptional</strong>,<br>If $\delta\in \mathbb{R}\setminus{k\in \mathbb{Z},k\neq -1,-2,\cdots,3-n}.$<br><strong>Exceptional value (exceptional<br>value)</strong>${k\in \mathbb{Z}, k\neq -1,-2,\cdots,3-n}$ corresponds to the growth order of the up-regulation sum function of $\mathbb{R}^n\setminus B_1$.<br>definition</p>
+<script type="math/tex; mode=display">
+k^-(\delta)=\max\{k \text{ exceptional},k<\delta\}.</script><p><strong>Theorem 10</strong>. <em>Suppose $\delta$ is not an exception, $p\in (1,\infty),$ $s$ is a non-negative integer. Then there is an isomorphism</em></p>
+<script type="math/tex; mode=display">
+\Delta:{W'}_\delta^{s+2,p}\rightarrow {W'}_{\delta-2}^{s,p},</script><p><em>And there is a constant</em>$C=C(n,p,\delta,s),$</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert'_{s+2,p,\delta}\le C\Vert\Delta u\Vert'_{s,p,\delta-2}.</script><p><strong>Proof:</strong> We only need to prove the case $s=0$.<br>First, we explain that the distribution inverse of $\Delta$ has a convolution kernel $K(x,y):$</p>
+<script type="math/tex; mode=display">
+c_nK(x,y)=
+ \left\{\begin{aligned}
+ &|x-y|^{2-n} &2-n<\delta<0,\\
+&|x-y|^{2-n}-|y|^{2-n}\sum_{j=0}^k P_j^\lambda(\mu)\left(\frac{|x|}{|y|}\right)^j &k\ge 0,\\
+ &|x-y|^{2-n}-|x|^{2-n}\sum_{j=0}^k P_j^\lambda(\mu)\left(\frac{|y|}{|x|}\right)^j &k<2-n.
+ \end{aligned}\right.</script><p>Here $k=k^-(\delta),$ $\mu=\frac{\left&lt;{}x,y\right&gt;}{|x||y|},$<br>$P_j^\lambda$ is an ultraspherical function, which appears in the Taylor expansion:</p>
+<script type="math/tex; mode=display">
+|x-y|^{2-n}=|x|^{2-n}\sum_0^\infty P_j^\lambda(\mu)\left(\frac{|y|}{|x|}\right)^j,\quad |y|<|x|.</script><p>First, let&#39;s verify that the convolution kernel $K$ indeed defines the bounded operator of ${W&#39;}<em>{\delta-2}^{0,p}\rightarrow {W&#39;}</em>{\delta}^{0,p}$.<br>Taking the case of $k\ge 0$ as an example, we have an estimate</p>
+<script type="math/tex; mode=display">
+|K(x,y)|\le c(n,k)|x-y|^{2-n}
+ \left\{\begin{aligned}
+ &\left(\frac{|x|}{|y|}\right)^{k+1} &\frac{|x|}{|y|}<\frac{1}{2},\\
+ &\left(\frac{|x|}{|y|}\right)^{n+k-2} & \frac{|x|}{|y|}\ge \frac{1}{2}.
+ \end{aligned}\right.</script><p>We have the following lemma:</p>
+<p><strong>Lemma 11</strong>. *Fix $p\in (1,\infty),$ $\frac{1}{p}+\frac{1}{p&#39;}=1,$ $a,b\in \mathbb{R}$ and $a+b&gt;0.$ There is a kernel</p>
+<script type="math/tex; mode=display">
+K'(x,y)=|x|^{-a}|x-y|^{2-n}|y|^{-b},\quad x\neq y.</script><ul>
+<li><em>For $u\in L^p(\mathbb{R}^n),$ define $K&#39;u(x)=\int K&#39;(x,y)u(y)dy,$ then $K&#39;:L^p\rightarrow L^p$ is a bounded operator if and only if $a&lt;\frac{n}{p},$ $b&lt;\frac{n}{p&#39;}.$</em></li>
+</ul>
+<p>Let $K_1,K_2$ be the accounting operators $|x-y|^{2-n}\left(\frac{|x|}{|y|}\right)^\alpha,$<br>Corresponding to $\alpha=k+1,$ $\alpha=n+k-2$ respectively.<br>The above lemma shows that when $3-n+k&lt;\delta&lt;k+1$, the kernel</p>
+<script type="math/tex; mode=display">
+K_1'(x,y)=|x|^{-\delta-\frac{n}{p} }K_1(x,y)|y|^{\delta-2+\frac{n}{p} }</script><p>Defines the bounded operator of $L^p\rightarrow L^p$. Then</p>
+<script type="math/tex; mode=display">
+\Vert K_1u\Vert_{p,\delta}'\le c\Vert r^{2-\delta-\frac{n}{p} }u\Vert_{L^p}\le c\Vert u\Vert'_{p,\delta-2},</script><p>That is, $K<em>1:{W&#39;}</em>{\delta-2}^{0,p}\rightarrow {W&#39;}_{\delta}^{0,p}$ is a bounded operator.</p>
+<p>Similarly, when $k&lt;\delta&lt;n+k-2$, $K_2&#39;$ is a bounded operator on $L^p\rightarrow L^p$,<br>Furthermore, $K_2$ is also a bounded operator. These two estimates illustrate that when $k&lt;\delta&lt;k+1$,<br>$K$ is also a bounded operator, and $k=k^-(\delta),$ conditions are automatically satisfied.<br>The other two cases in the definition of $K$ are handled similarly.</p>
+<p>We have the distribution identity:</p>
+<script type="math/tex; mode=display">
+\Delta_x K(x,y)=\Delta_y K(x,y)=\delta(x-y),</script><p>Therefore $K(\Delta u)=u,$<br>$\,\forall\,u\in C_c^\infty(\mathbb{R}^n\setminus {0}).$<br>So it is given by the boundedness of $K$ and the density of $C_c^\infty$</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{0,p,\delta}'=\Vert K(\Delta u)\Vert_{0,p,\delta}'\le C\Vert\Delta u\Vert'_{0,p,\delta-2},\quad \,\forall\,u\in {W'}_\delta^{k,p}.</script><p>Combined with the previous $L^p$ estimate, the proof of the inequality stated in the theorem is given ($s=0$).<br>Since $\Delta:{W&#39;}<em>{\delta}^{2,p}\rightarrow {W&#39;}</em>{\delta-2}^{0,p}$ is a bounded operator,<br>This inequality immediately shows that it seems to be closed.</p>
+<p>From the distribution identity, we see that,</p>
+<script type="math/tex; mode=display">
+\Delta(Kf)(x)=f(x),\quad f\in C_c^\infty(\mathbb{R}^n\setminus \{0\}),\quad Kf\in {W'}_{\delta}^{0,p}.</script><p>So $\Delta$ is isomorphism, and the theorem is proved.</p>
+<p>The theorem gives the following well-known Liouville theorem:</p>
+<p><strong>Corollary 12</strong>. <em>Suppose $\Delta u=0,$ $u\in L_\delta^p,$ $1&lt;p&lt;\infty.$ Let $k=k^-(\delta).$ If $k&lt;0,$ then $u\equiv 0;$ If $k\ge 0,$ then $u$ is a harmonic polynomial of order $k$ and below.</em></p>
+<p><strong>Certificate:</strong> Since $0\in {W&#39;}<em>\delta^{s,p},$ $\,\forall\,s\ge 0,$<br>Derive $u\in {W&#39;}</em>\delta^{s+2,p}.$ from Sobolev&#39;s inequality,<br>$u\in C^\infty(\mathbb{R}^n).$ Let $h_k(x)$ be the $k$ degree Taylor expansion of $u(x)$,<br>That is</p>
+<script type="math/tex; mode=display">
+u(x)=h_k(x)+O(|x|^{k+1}).</script><p>Since $u$ is harmonic, we know that $h<em>k$ is a harmonic polynomial.<br>At this time $u-h_k\in {L&#39;}</em>\delta^p,$ From the previous propositions and theorem,<br>$u-h<em>k\in {W&#39;}</em>\delta^{2,p},$<br>And there is an estimate $\Vert u-h<em>k\Vert&#39;</em>{2,p,\delta}\le C\Vert\Delta(u-h<em>k)\Vert</em>{0,p,\delta-2}&#39;=0,$<br>Thus $u=h_k.$</p>
+<p>Next, we give an estimate similar to the previous proposition. At first glance, the dimensions of the inequality are a bit confusing,<br>Hence the name scale-broken estimation (I guess).</p>
+<p><strong>Theorem 13</strong>. <em>Suppose $P$ is asymptotic to $\Delta, $ $\delta\in \mathbb{R}$ is no exception, and $q\ge p&gt;1.$ in the asymptotic condition, then the kernel of operator $P:W<em>\delta^{2,p}\rightarrow W</em>{\delta-2}^{0,p}$ is finite-dimensional, has a closed range, and for any $u\in W_{\delta}^{2,p},$ has constants $C, R$ controlled by $P,\delta,n,p,q$, such that</em></p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{L^p(B_R)}).</script><p><strong>Proof:</strong> Take the operator module</p>
+<script type="math/tex; mode=display">
+\Vert P-\Delta\Vert_{op}:=\sup\{\Vert(P-\Delta)u\Vert_{0,p,\delta-2}:u\in W_{\delta}^{2,p},\Vert u\Vert_{2,p,\delta}=1\}.</script><p>Similarly define $\Vert\cdot\Vert_{op,R},$<br>The selected function $u$ is required to have a support set in $E_R=\mathbb{R}^n\setminus B_R$,<br>That is, zero is taken in $B_R$. Then if $\operatorname{supp}(u)\subset E_R,$ is given by $q&gt;n,$</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Vert(P-\Delta)u\Vert_{0,p,\delta-2}\le& \sup_{|x|>R}\{|a^{ij}(x)-\delta_{ij}|\}\Vert D^2u\Vert_{0,p,\delta-2}\\
+&+C\Vert b\Vert_{0,q,-1;E_R}\Vert Du\Vert_{1,p,\delta-1}+C\Vert c\Vert_{0,\frac{q}{2},-2;E_R}\Vert u\Vert_{2,p,\delta}
+ \end{aligned}</script><p>Since $P$ is asymptotic to $\Delta,$</p>
+<script type="math/tex; mode=display">
+\Vert P-\Delta\Vert_{op,R}=o(1),\quad R\rightarrow \infty.</script><p>Take $\chi\in C<em>c^\infty(B_2),$ $\chi\in [0,1],$ $\chi|</em>{B<em>1}=1.$<br>Take the undetermined constant $R,$ and let $\chi_R(x)=\chi(\frac{x}{R}),$ $u_0=\chi_Ru,$<br>$u</em>\infty=(1-\chi<em>R)u,$ $u=u_0+u</em>\infty.$ From the previous theorem, we have:</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Vert u_\infty\Vert_{2,p,\delta}&\le C\Vert\Delta u_{\infty}\Vert_{0,p,\delta-2}=C\Vert(\Delta-P+P) u_{\infty}\Vert_{0,p,\delta-2}\\
+ &\le C(\Vert Pu_{\infty}\Vert_{0,p,\delta-2}+\Vert P-\Delta\Vert_{op,R}\Vert u_{\infty}\Vert_{2,p,\delta})
+ \end{aligned}</script><p>Since $\Vert P-\Delta\Vert_{op,R}=o(1),$ has for sufficiently large $R,$</p>
+<script type="math/tex; mode=display">
+\Vert u_{\infty}\Vert_{2,p,\delta}\le C\Vert Pu_\infty\Vert_{0,p,\delta-2}.</script><p>To further estimate, there are</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ \Vert Pu_\infty\Vert_{0,p,\delta-2}&\le \Vert Pu\Vert_{0,p,\delta-2}+\Vert 2a^{ij}u_i\partial_j\chi_R+(a^{ij}\partial^2_{ij}\chi_R+b^i\partial_i \chi_R)u\Vert_{0,p,\delta-2;A_R}\\
+ &\le \Vert Pu\Vert_{0,p,\delta-2}+C\Vert u\Vert_{1,p,\delta;A_R}
+ \end{aligned}</script><p>Then use the interpolation inequality to further transform the $\Vert\cdot\Vert_{1,p,\delta}$ term,<br>And $L^p$ estimate, that is, we have</p>
+<script type="math/tex; mode=display">
+\Vert u_\infty\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta;A_R}).</script><p>At the same time, it is estimated by $L^p$, for $u_0$</p>
+<script type="math/tex; mode=display">
+\Vert u_0\Vert_{2,p,\delta}\le C(\Vert Pu_0\Vert_{0,p,\delta-2}+\Vert u_0\Vert_{0,p,\delta})\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert Pu_{\infty}\Vert_{0,p,\delta-2}+\Vert u\Vert_{0,p,\delta;{B_{2R} } }).</script><p>Using the previous estimates about $Pu_\infty$ again, we get the inequalities required by the theorem:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{2,p,\delta}\le \Vert u_0\Vert_{2,p,\delta}+\Vert u_\infty\Vert_{2,p,\delta}\le C(\Vert Pu\Vert_{0,p,\delta-2}+\Vert u\Vert_{L^p(B_R)}).</script><p>Next, we discuss the finiteness of the kernel dimension. Let ${u<em>k}$ be the function sequence in $\ker P$,<br>Satisfies $\Vert u_k\Vert</em>{2,p,\delta}=1.$ By the compact embedding theorem,<br>It may be assumed that ${u<em>k}$ itself converges strongly in $L^p(B_R)$. At this time, since $Pu_k\equiv 0,$<br>The inequality just proved shows that ${u_k}$ is the Cauchy column in $W</em>\delta^{2,p}$.<br>Therefore, the unit sphere in $\ker P$ is compact, so its dimension is limited.</p>
+<p>Since the dimension of $\ker P$ is limited, there is a decomposition of $W_\delta^{2,p}=\ker P\oplus Z, and $ $Z$ is a closed set.<br>Assert that there exists a constant $C$ such that</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{2,p,\delta}\le C\Vert Pu\Vert_{0,p,\delta-2},\quad \,\forall\,u\in Z.</script><p>Otherwise, there exists ${u<em>k},$ $\Vert u_k\Vert</em>{2,p,\delta}\equiv 1,$<br>And $\Vert Pu<em>k\Vert</em>{0,p,\delta-2}\rightarrow 0.$ At this time, according to the compact embedding theorem,<br>Using the inequality in the theorem, we once again obtain that ${u<em>k}$ is the Cauchy column in $W</em>{\delta}^{2,p}$.<br>Due to the closure of $Z$, it converges to $u<em>0\in Z.$ However, due to the continuity of $P$, $Pu_0=0,$<br>$u_0\in \ker P.$ thus $u_0=0,$<br>But this is contradictory to $\Vert u_k\Vert</em>{2,p,\delta}\equiv 1$,<br>Because $u_k\rightarrow u_0.$ then the assertion is true, immediately indicating that $P$ has a closed range.</p>
+<h3 id="semi-fredholm-nature">Semi-Fredholm nature</h3>
+<p>Next, we further consider the dimension of the kernel of $P$. Note</p>
+<script type="math/tex; mode=display">
+N(P,\delta)=\dim\ker (P:W_\delta^{2,p}\rightarrow W_{\delta-2}^{0,p}), \quad 1<p\le q.</script><p>From $L^p$ estimation and Sobolev&#39;s inequality, it can be shown that $N(P,\delta)$ has nothing to do with the selection of $p$.<br>In order to simplify the notation below, we write $X=W<em>\delta^{2,p},$ $Y=W</em>{\delta-2}^{0,p},$<br>$\delta$ is not an exception, $1&lt;p\le q.$ Then according to the theorem just now,<br>We know that $P:X\rightarrow Y$ is <strong>semi-Fredholm</strong>, that is, the kernel is finite-dimensional,<br>And has a closed range.</p>
+<p><strong>Proposition 14</strong>. <em>Suppose $P:X\rightarrow Y$ is the semi-Fredholm operator between Banach spaces, then there exists a constant $C&gt;0, $ has an estimate</em></p>
+<script type="math/tex; mode=display">
+\Vert u-\ker P\Vert_{X}=\Vert u\Vert_{X/\ker P}\le C\Vert Pu\Vert_Y.</script><p><em>At the same time, there</em>$\varepsilon&gt;0,$</p>
+<ul>
+<li>Such that for any other semi-Fredholm operator <em>$P&#39;,$ that satisfies </em>$\Vert P-P&#39;\Vert_{op}&lt;\varepsilon$*</li>
+</ul>
+<script type="math/tex; mode=display">
+\dim \ker P'\le \dim \ker P.</script><p><strong>Proof:</strong> It is known that $\operatorname{Im}P$ is closed, then it is a Banach space,<br>Therefore the first estimate is obtained immediately from the inverse operator theorem. Now let $\varepsilon=\frac{1}{2C},$<br>Assuming that the kernel dimension inequality does not hold, then there exists $u\in \ker P&#39;,$ $\Vert u\Vert_X=1,$<br>$\Vert u-\ker P\Vert_X&gt;\frac{1}{2}.$ at this time</p>
+<script type="math/tex; mode=display">
+\frac{1}{2}<\Vert u-\ker P\Vert_{X}\le C\Vert Pu\Vert_{Y}\le C\Vert P-P'\Vert_{op}\Vert u\Vert_X<C\varepsilon,</script><p>produce conflicts.</p>
+<p>It can be seen that $\frac{1}{C}$ measures the distance between $P$ and other semi-Fredholm operators with larger kernels.<br>The following proposition in the opposite direction makes this point even more profound:<br><strong>Proposition 15</strong>. <em>Same as above for $\,\exists\,\varepsilon,C&gt;0,$ such that</em></p>
+<script type="math/tex; mode=display">
+\Vert u-\ker P'\Vert_{X}\le C\Vert P'u\Vert_Y,\quad \,\forall\,u\in X,P'\in \mathcal{U}, \Vert P-P'\Vert_{op}\le \varepsilon.</script><p><strong>Proof:</strong> Otherwise, there exists the sequence $P<em>k\rightarrow P\in \mathcal{U},$<br>${u_k}\subset X,$ satisfies $\Vert u_k\Vert_X=1,$<br>$\Vert u_k-\ker P_k\Vert</em>{X}&gt;\frac{1}{2},$ and</p>
+<script type="math/tex; mode=display">
+\Vert u_k-\ker P_k\Vert_{X}\ge k\Vert P_ku_k\Vert_Y.</script><p>This shows that $P_ku_k\rightarrow 0.$<br>At this time, we can continue to use the tight embedding method in the previous theorem to obtain the subsequence $u_k\rightarrow u,$<br>Satisfy $Pu=0,$ $\Vert u\Vert_X=1,$<br>And for sufficiently large $k$, we have $\Vert u-\ker P_k\Vert\ge \frac{1}{4}.$</p>
+<p>Similarly, any $v_k\in \ker P_k,$ $\Vert v_k\Vert_X=1,$<br>In the same way, it also has sub-columns that converge to $v\in \ker P.$<br>This shows that the $N$-dimensional $\ker P_k$ converges to the $N$-dimensional subspace in $\ker P$.<br>However, according to the estimation in the previous paragraph, $u$ is not in such a subspace, but $u\in \ker P.$<br>This shows that $\dim \ker P\ge N+1,$ is contradictory.</p>
+<p>Finally, we give the following theorem, which shows that the set of semi-Fredholm operators with larger kernels is smaller.</p>
+<p><strong>Theorem 16</strong>. <em>Suppose $P: So that for $|\lambda|&lt;\lambda_0, $ $P+\lambda A$ is always semi-Fredholm, and $\dim \ker (P+\lambda A)$ is a constant when $0&lt;\lambda&lt;\lambda_0$ (note that $\lambda=0$ is not among them).</em></p>
+<h3 id="fredholm-indicator">Fredholm Indicator</h3>
+<p>We have the adjoint operator $P^\ast :W^{0,p&#39;}<em>{2-n-\delta}\rightarrow W^{-2,p&#39;}</em>{-n-\delta},$<br>$\frac{1}{p&#39;}+\frac{1}{p}=1.$ If it is also asymptotic,<br>Then we can get more information through <strong>Fredholm indicator</strong>. From the previous proposition,<br>When $1&lt;p&#39;\le \widetilde{q}$, $\ker P^\ast \subset W^{2,p&#39;}_{2-n-\delta}.$<br>When $\delta$ is not exceptional, the adjoint is also a semi-Fredholm operator, thus:</p>
+<script type="math/tex; mode=display">
+\dim \operatorname{coker}P=\dim \ker P^\ast =N(P^\ast ,2-n-\delta).</script><p>Therefore $P$ becomes the <strong>Fredholm operator</strong>, with the <strong>Fredholm indicator</strong>:</p>
+<script type="math/tex; mode=display">
+\iota(P,\delta)=N(P,\delta)-N(P^\ast ,2-n-\delta).</script><p>Since the index is locally constant on the Fredholm operator space, we have</p>
+<script type="math/tex; mode=display">
+\iota(P,\delta)=\iota(\Delta,\delta)=:\iota_0(\delta).</script><p>And $\iota_0(\delta)$ can be calculated.<br>Let $H_k$ be the total number of homogeneous harmonic polynomials of degree $k$ in $\mathbb{R}^n$,<br>We have $n_k=\dim H_k=\frac{(n-2+2k)(n-3+k)!}{k!(n-2)!}.$<br>Next define $N_0(\delta):=N(\Delta,\delta),$ we have:</p>
+<script type="math/tex; mode=display">
+N_0(\delta)=n_0+\cdots+n_k=\frac{(n-1+2k)(n-2+k)!}{k!(n-1)!},\quad k=k^-(\delta)>0.</script><p>Therefore, $\iota_0(\delta)=\begin{cases}<br> N_0(\delta),&amp;\delta&gt;0;\<br> -N_0(2-n-\delta),&amp;\delta&lt;0.<br> \end{cases}$ The above derivation gives the following proposition:</p>
+<p><strong>Proposition 17</strong>. <em>Suppose $P, P^\ast $ are asymptotic to $\Delta$, $\delta$ is no exception, when $1&lt;p\le q$, $P:W^{2,p}<em>\delta\rightarrow W^{0,p}</em>{\delta-2}$ is the Fredholm operator, $N(P,\delta)=\dim\ker P$ has nothing to do with the selection of $p$. If $k^-(\delta)&lt;\delta&#39;\le \delta,$ then $N(P,\delta)=N(P,\delta&#39;),$ and if $u\in W<em>\delta^{2,p},$ $Pu\in W</em>{\delta&#39;}^{0,p},$ then $u\in W_{\delta&#39;}^{2,p}.$</em></p>
+<p><strong>Proof:</strong> Since $k^-(\delta)=k^-(\delta&#39;),$<br>$\iota(P,\delta)-\iota(P,\delta&#39;)=\iota_0(\delta)-\iota_0(\delta&#39;)=0.$<br>Expand it</p>
+<script type="math/tex; mode=display">
+N(P,\delta)-N(P,\delta')=N(P^\ast ,2-n-\delta)-N(P^\ast ,2-n-\delta').</script><p>Since $L^p<em>{\delta&#39;}\subset L^p</em>{\delta},$ the left side is non-negative and the right side is non-positive,<br>Therefore both sides are zero, $N(P,\delta)=N(P,\delta&#39;).$<br>This shows that $\ker(P,\delta)=\ker(P,\delta&#39;).$ Now if $Pu\in W<em>{\delta&#39;}^{0,p},$<br>Then $\left&lt;{}Pu,v\right&gt;=\left&lt;{}u,P^\ast v\right&gt;=0,$<br>$\,\forall\,v\in \ker(P^\ast ,2-n-\delta&#39;).$ has a closed range from $P$,<br>$Pu\in \operatorname{Im}(P,\delta&#39;).$<br>Therefore $\,\exists\,w\in W</em>{\delta&#39;}^{2,p}\subset W<em>\delta^{2,p},$<br>So that $Pu=Pw.$<br>That is, $w-u\in\ker(P,\delta)=\ker (P,\delta&#39;)\subset W</em>{\delta&#39;}^{2,p}.$<br>Then $u\in W_{\delta&#39;}^{2,p}.$</p>
+<p>When $P=\Delta_g$, $P^\ast =P.$<br>Note that the adjoint is determined by the pairing $(u,v)=\int uvd\mathcal{H}^n=\int uv\sqrt{g}dx$.</p>
+<p><strong>Proposition 18</strong>. <em>Suppose $g<em>{ij}(x)$ is a uniform ellipse on $\mathbb{R}^n$, $(g</em>{ij}-\delta<em>{ij})\in W_0^{1,q},$ $n&lt;q&lt;\infty.$ If $\delta$ is not an exception, $1&lt;p\le q,$ Then $\Delta_g:W</em>{\delta}^{2,p}\rightarrow W_{\delta-2}^{0,p}$ is Fredholm’s, $N(\Delta_g,\delta)=N_0(\delta).$</em></p>
+<p><strong>Proof:</strong> According to the regularity condition, $\Delta_g$ is asymptotic to the standard Laplace operator,</p>
+<script type="math/tex; mode=display">
+\Delta_g=g^{ij}\partial^2_{ij}+\frac{\partial {}g^{ij} }{\partial {}x^j}\partial_i+\frac{g^{ik}g^{lj} }{2}\frac{\partial {}g_{jl} }{\partial {}x^l}\partial_i.</script><p>From the self-adjoint property of $\Delta<em>g$, we can see that $\Delta_g$ can inherit the above discussion and is the Fredholm operator.<br>From the index invariance, it only needs to be proved that when $\delta&lt;0$, $N(\Delta_g,\delta)=0.$<br>When $\Delta_gu=0,$ $\delta&lt;0$, starting from $u\in W</em>{\delta}^{2,p}$,<br>By repeatedly using the previous proposition and combining it with Sobolev&#39;s inequality, we get that $u$ tends to zero at infinity.<br>In this way, conclusions can be drawn using the extreme value principle.</p>
+<p>From the previous proposition, we automatically have:</p>
+<p><strong>Corollary 19</strong>. <em>Let $\delta$ be non-exceptional, $n&lt;q&lt;\infty,$ $1&lt;p\le q.$ Then there exists a positive constant $C,\varepsilon,$ such that for any measure $g<em>{ij},$ satisfies $\Vert g</em>{ij}-\delta<em>{ij}\Vert</em>{1,q,0}\le \varepsilon,$</em></p>
+<script type="math/tex; mode=display">
+\Vert u-\ker \Delta_g\Vert_{2,p,\delta}\le C\Vert\Delta_g u\Vert_{0,p,\delta-2},\quad \,\forall\,u\in W_{\delta}^{2,p}.</script><p>Finally, let’s look at the most important conclusion drawn in this section:</p>
+<p><strong>Theorem 20</strong>. <em>Suppose $P$ is asymptotic to $\Delta, the rate is $\tau&gt;0,$ $u\in W_{\delta}^{2,q},$ $\delta$ is not exceptional, on $E_R$ $Pu=0.$ then there is an exception value $k\le k^-(\delta),$ $k$ homogeneous harmonic function $h_k\in C^\infty(\mathbb{R}^n),$ makes</em></p>
+<script type="math/tex; mode=display">
+u-h_k=o(r^{k-\tau}),\quad r\rightarrow \infty.</script><p><strong>Certificate:</strong> Record $Pu=f,$ in $\mathbb{R}^n$<br>Then $\Delta u=F\in W^{0,q}_{\delta-2-\tau}.$ is on $E_R$,</p>
+<script type="math/tex; mode=display">
+F=(\delta_{ij}-a^{ij})\partial^2_{ij}u-b^i\partial_iu-cu.</script><p>Since $\Delta:{W&#39;}<em>{\delta-\tau}^{2,q}\rightarrow {W&#39;}</em>{\delta-\tau-2}^{0,q}$ is isomorphic,<br>$\,\exists\,v\in W_{\delta-\tau}^{2,q},$ such that</p>
+<script type="math/tex; mode=display">
+\Delta(u-v)=0,\quad |x|>R.</script><p> From the classic harmonic function expansion, we have:</p>
+<script type="math/tex; mode=display">
+u-v=h_k+O(r^{k-1}),</script><p> $k\le k^-(\delta),$ $h<em>k$ as above.<br>Now $u-h_k=v+O(r^{k-1})\in W</em>{\delta-\tau}^{2,q},$<br>Corresponds to $F\in W<em>{\delta-2-2\tau}^{0,q},$<br>Continue to explain $v\in W</em>{\delta-2\tau}^{2,q}.$<br>Repeat until we get $u-h<em>k\in W</em>{k-\tau}^{2,q}$.</p>
+<p>The article was last updated on 2022-04-14 16:45:33</p>
                 </div>
             
         </div>
@@ -641,14 +824,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：论文笔记-渐进平坦流形上的椭圆型方程</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-04-14 18:00:19</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：论文笔记-渐进平坦流形上的椭圆型方程</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-04-14 18:00:19</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/04/14/论文笔记-渐进平坦流形上的椭圆型方程/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/04/14/论文笔记-渐进平坦流形上的椭圆型方程/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -716,7 +899,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -854,24 +1037,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -953,9 +1133,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#powered-sobolev-space"><span class="nav-text">Powered Sobolev Space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asymptotic-elliptic-operator"><span class="nav-text">Asymptotic elliptic operator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inequality-estimation"><span class="nav-text">Inequality estimation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#semi-fredholm-nature"><span class="nav-text">Semi-Fredholm nature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fredholm-indicator"><span class="nav-text">Fredholm Indicator</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -980,6 +1158,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

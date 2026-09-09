@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -332,7 +332,61 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="basic-concepts">Basic concepts</h2>
+<p>Cohomology spectrum sequences are similar to cohomology spectrum sequences, except that the arrows are reversed. In general, we have:</p>
+<ul>
+<li><p>$R$ modulo $E_r^{p,q},$</p>
+</li>
+<li><p>Differential$\delta_r:E_r^{p,q}\rightarrow E_r^{p+r,q-r+1},$</p>
+</li>
+</ul>
+<p>The inclusion relationship of the filter columns on the chain complex will be reversed, that is</p>
+<script type="math/tex; mode=display">
+F_pC^\ast \supset F_{p+1}C^\ast .</script><p>This gives the spectral sequence $(E<em>r^{p,q},\delta_r),$ $E_1^{p,q}=H^{p+q}(G_pC^\ast ).$<br>The spectral sequence converges to $E</em>\infty^{p,q}=G_pH^{p+q}(C^\ast )$ if the filter column is bounded for each $C^i$.</p>
+<h2 id="multiplication-structure">Multiplication structure</h2>
+<p>Suppose $(C^\ast ,\delta)$ has a multiplication structure (itself satisfies the operation law such as associative law, etc.),</p>
+<script type="math/tex; mode=display">
+\cup:C^i\otimes C^j\rightarrow C^{i+j},</script><p> We want it to be compatible with differential and filter columns,<br>This way it can be placed on the spectral sequence.</p>
+<p>Compatibility with differentials requires that it be a derivative:</p>
+<script type="math/tex; mode=display">
+\delta(\alpha\cup \beta)=(\delta\alpha)\cup \beta+(-1)^i\alpha\cup(\delta\beta),\quad \alpha\in C^i.</script><p>Compatibility requirements with filter columns:</p>
+<script type="math/tex; mode=display">
+\cup:F_pC^\ast \otimes F_{p'}C^\ast \rightarrow F_{p+p'}C^\ast .</script><p>Thus $\cup$ induces (inductively) a well-defined multiplication on the spectral sequence:</p>
+<script type="math/tex; mode=display">
+\cup_r:E_r^{p,q}\otimes E_r^{p',q'}\rightarrow E_r^{p+p',q+q'}.</script><p><strong>Proposition 1</strong>. <em>$\delta_r$ is a derivative on $E_r^{p,q}$, that is:</em></p>
+<script type="math/tex; mode=display">
+\delta_r(\alpha\cup_r \beta)=(\delta_r\alpha)\cup_r\beta+(-1)^{|\alpha|}\alpha\cup_r(\delta_r\beta),\quad |\alpha|:=p+q,\quad \alpha\in E_r^{p,q}.</script><p><strong>Proposition 2</strong>. <em>If the filter column is bounded for each $C^i$, then the multiplicative structure on $E_\infty^{p,q}$ is consistent with the natural multiplicative structure on $G_pH^{p+q}(C^\ast )$.</em></p>
+<p>We say that $E_r$ is an algebraic spectral sequence if it has a multiplicative structure.</p>
+<h2 id="leray-serre-cohomology-spectrum-sequence">Leray-Serre cohomology spectrum sequence</h2>
+<p>For Serre fibrosis, $B$ road connectivity,</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\xrightarrow{\pi} B</script><p>For a commutative ring $R, $ $H^\ast (F;R)$ is a (graded commutative) $R$ algebra,<br>$E<em>2^{p,q}=H^p(B;H^q(F;R))$ is an $R$ algebra, $E_r$ is an algebraic spectrum sequence,<br>$E</em>\infty^{p,q}=G_pH^{p+q}(E;R).$</p>
+<p><strong>Note 3</strong>. <em>If $\cup$ represents the standard multiplication structure on $H^\ast (B;H^\ast (F;R))$, $\cup_2$ is the multiplication structure on $E_2^{p,q}$, then</em></p>
+<script type="math/tex; mode=display">
+\alpha\cup_2\alpha'=(-1)^{qp'}\alpha\cup\alpha',\quad \alpha\in E_2^{p,q},\alpha'\in E_2^{p',q'}.</script><p>Our goal is to make $(E_r,\delta_r,\cup_r)$ a differential graded algebra, such that</p>
+<script type="math/tex; mode=display">
+\alpha\beta=(-1)^{|\alpha||\beta|}\beta\alpha,</script><script type="math/tex; mode=display">
+\delta(\alpha\beta)=(\delta \alpha)\beta+(-1)^{|\alpha|}\alpha(\delta\beta).</script><p><strong>Theorem 4</strong>. <em>$H^\ast (SU(n))\cong \Lambda^\ast (a<em>3,a_5,\cdots,a</em>{2k-1})$ is an algebraic isomorphism (the latter is an external algebra).</em><br>Use induction. $n=1$ is trivial. Consider $n\ge 2,$</p>
+<script type="math/tex; mode=display">
+SU(n-1)\rightarrow SU(n)\rightarrow S^{2n-1},</script><p> Consider its construction.<br>$SU(n)$ can be moved to $S^{2n-1}\subset \mathbb{C}^n$,<br>The stabilizer of $(1,0,\cdots,0)$ is $SU(n-1).$<br>Thus $S^{2n-1}\cong \frac{SU(n)}{SU(n-1)}.$</p>
+<p>Consider the Leray-Serre spectral sequence,</p>
+<script type="math/tex; mode=display">
+E_2=H^\ast (S^{2n-1};H^\ast (SU(n-1)))\cong H(S^{2n-1})\otimes H^\ast (SU(n-1)).</script><p>The spectrum sequence is shown in the figure below,<br>The only possible non-zero $\delta_{2n-1}$ is also zero by derivation property (by decomposition).<br>Thus the spectral sequence stops starting from $E_2$.</p>
+<script type="math/tex; mode=display">
+E_\infty=E_2=H^\ast (S^{2n-1})\otimes \Lambda^\ast (a_3,\cdots,a_{2n-3})=\Lambda^\ast (a_3,\cdots,a_{2n-1}).</script><p>The newly added generator corresponds to the generator of $H^{2n-1}(S^{2n-1})$.</p>
+<p><img style='margin: auto;' src=https://s2.loli.net/2022/09/29/5Gl2EeTHFSdACcg.png width='50%' height='50%'></p>
+<p>Note that $\Lambda^\ast (a<em>3,\cdots,a</em>{2n-1})$ is a free algebra, and the extension problem is trivial,<br>Thus</p>
+<script type="math/tex; mode=display">
+\bigoplus_i H^i(SU(n))\cong \bigoplus_i\bigoplus_pG_pH^i(SU(n))=\bigoplus_i\bigoplus_p E_{\infty}^{p,i-p}.</script><p><strong>Theorem 5</strong>. <em>If $E<em>\infty$ is a free graded commutative bigraded algebra, then $H^\ast \cong E</em>\infty$ is an algebraic isomorphism.</em></p>
+<h2 id="edge-homomorphism">Edge homomorphism</h2>
+<p>Suppose $E_2\Rightarrow H^\ast $ is the first quadrant, then</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}\hookrightarrow \cdots \hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}</script><script type="math/tex; mode=display">
+E_2^{p,0}\twoheadrightarrow E_3^{p,0}\twoheadrightarrow \cdots\twoheadrightarrow E_\infty^{p,0}</script><p>further,</p>
+<script type="math/tex; mode=display">
+E_\infty^{0,q}=G_0H^q=\frac{F_0H^q}{F_1H^q},\quad H^q\twoheadrightarrow E_\infty^{0,q};</script><script type="math/tex; mode=display">
+E_\infty^{p,0}=G_pH^p=\frac{F_pH^p}{F_{p+1}H^p=0}, \quad E_\infty^{p,0}\hookrightarrow H^p.</script><p>Edge homomorphism can be defined to study the relationship between the two.</p>
+<p>The article was last updated on 2022-09-29 16:15:30</p>
                 </div>
             
         </div>
@@ -341,14 +395,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(5)-上同调谱序列</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-09-29 19:03:54</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(5)-上同调谱序列</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-09-29 19:03:54</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/09/29/《代数拓扑2》笔记(5)-上同调谱序列/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/09/29/《代数拓扑2》笔记(5)-上同调谱序列/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -416,7 +470,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -554,24 +608,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -653,9 +704,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concepts"><span class="nav-text">Basic concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multiplication-structure"><span class="nav-text">Multiplication structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leray-serre-cohomology-spectrum-sequence"><span class="nav-text">Leray-Serre cohomology spectrum sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#edge-homomorphism"><span class="nav-text">Edge homomorphism</span></a></li></ol>
         </div>
     
 </div>
@@ -680,6 +729,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

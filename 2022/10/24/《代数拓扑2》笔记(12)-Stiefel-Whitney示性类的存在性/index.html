@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -341,7 +341,56 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="proof">Proof</h2>
+<p><strong>Theorem 1</strong>. <em>SW representative class exists.</em></p>
+<p>Just consider the representative class of vector bundles on the CW complex $B$. Otherwise, consider the CW approximation $B&#39;\rightarrow B,$<br>Just consider pulling back into the cluster.<br>Given vector bundle $\xi:\mathbb{R}^n\rightarrow E\xrightarrow{\pi} B,$<br>Consider the projection space bundle $P(\xi):P(\mathbb{R}^n)=\mathbb{R}\mathrm{P}^{n-1}\rightarrow P(E)\xrightarrow{p(\pi)}B,$</p>
+<script type="math/tex; mode=display">
+P(E)=\{(b,l)|b\in B,l\subset F_b(\xi)\text{ is a straight line}\}.</script><p>$P(\xi)$ is a fiber bundle. We hope to apply the Leray-Hirsch theorem to this bundle.</p>
+<p><strong>Theorem 2</strong> (Leray-Hirsch). <em>Suppose $F\xrightarrow{i} E\xrightarrow{p} B$ is a fiber bundle. Let a certain commutative ring $R,$ be determined. If $H^n(F;R)$ is a free finitely generated $R$ module, there exists $c_j\in H^\ast (E;R)$ such that ${i^\ast c_j}$ forms $H^\ast (F;R)\cong R{c_j}_j$ is a set of $R$-basis. Then there is the following $H^\ast (B;R)$ modular isomorphism:</em></p>
+<script type="math/tex; mode=display">
+H^\ast (B;R)\bigotimes H^\ast (F;R)\cong H^\ast (E;R), \quad \sum_{i,j}b_i\otimes i^\ast (c_j)\mapsto \sum_{i,j}p^\ast (b_i)\cup c_j.</script><p>We verify the conditions,<br>$H^i(\mathbb{R}\mathrm{P}^{n-1},\mathbb{Z}_2)=\left&lt;{}a^i\right&gt;$ is indeed free and finitely generated,<br>$a\in H^1,$ $i\le n-1.$ We wish to show that $i^\ast $surjection.<br>Memories$\,\exists\,\widehat f:E(\xi) \rightarrow \mathbb{R}^\infty,$<br>Let $\widehat f$ be linear injective on the fiber. Then consider</p>
+<script type="math/tex; mode=display">
+\mathbb{R}^n\hookrightarrow E\xrightarrow{\widehat f}\mathbb{R}^\infty,</script><p>projection induction</p>
+<script type="math/tex; mode=display">
+P(\mathbb{R}^n)\cong \mathbb{R}\mathrm{P}^{n-1}\xrightarrow{i}P(E)\xrightarrow{P(\widehat{f})}\mathbb{R}\mathrm{P}^\infty.</script><p>Get the pull back mapping,</p>
+<script type="math/tex; mode=display">
+H^\ast (\mathbb{R}\mathrm{P}^{n-1})\xleftarrow{i^\ast } H^\ast (P(E))\leftarrow H^\ast (\mathbb{R}\mathrm{P}^\infty).</script><p>Composition is isomorphic in low dimensions, so $i^\ast $ is full.</p>
+<p>So the conditions are met, and there is $H^\ast (B)$ modular isomorphism</p>
+<script type="math/tex; mode=display">
+H^\ast (P(E))\cong H^\ast (B)\otimes H^\ast (\mathbb{R}\mathrm{P}^{n-1})=H^\ast (B)\{1,x,\cdots,x^{n-1}\}.</script><p>There is a unique set of $w<em>1,w_2,\cdots,w_n\in H^\ast (B),$<br>Such that $x^n=\sum</em>{i=1}^n w_ix^{n-i}.$ This is called the projective bundle formula.<br>Define the representative class $w_i(\xi):=w_i,$ $i=1,\cdots,n.$ Let’s verify that it satisfies the SW class axiom.</p>
+<p>$w_0(\xi)=1$ ok, for naturalness, consider</p>
+<script type="math/tex; mode=display">
+E'\rightarrow E\xrightarrow{\widehat f} \mathbb{R}\mathrm{P}^\infty,</script><p>This pulls back</p>
+<script type="math/tex; mode=display">
+H^\ast (\mathbb{R}\mathrm{P}^{n-1})\leftarrow H^\ast (P(E'))\leftarrow H^\ast (P(E))\leftarrow H^\ast (\mathbb{R}\mathrm{P}^\infty).</script><p>This leads to the conclusion. For the Whitney product formula, define $E_1=E(\xi),$ $E_2=E(\eta),$<br>$E_1\oplus E_2=E(\xi\oplus \eta),$ $\dim(\xi)=m,$ $\dim(\eta)=n.$ Consider</p>
+<script type="math/tex; mode=display">
+E_i\hookrightarrow E_1\oplus E_2\rightarrow \mathbb{R}^\infty,</script><p>Pulled back</p>
+<script type="math/tex; mode=display">
+H^\ast (P(E_i))\leftarrow H^\ast (P(E_1\oplus E_2))\leftarrow H^\ast (\mathbb{R}\mathrm{P}^\infty).</script><p>Definition $u:=\sum_j w_j(\xi)x^{m-j},$ $v:=\sum_j w_j(\eta)x^{n-j}.$<br>Assert $uv=0.$ so that we have</p>
+<script type="math/tex; mode=display">
+w_j(\xi\oplus\eta)=\sum_{r+s=j}w_r(\xi)w_s(\eta).</script><p>As for assertions, consider $P(E_1),P(E_2)\subset P(E_1\oplus E_2),$<br>$P(E_1)\cap P(E_2)=\varnothing.$ $U_i=P(E_1\oplus E_2)\setminus P(E_j),$<br>$U_i$ deforms and shrinks to $P(E_j).$</p>
+<script type="math/tex; mode=display">
+H^m(P(E_1\oplus E_2),U_2)\cong H^m(P(E_1\oplus E_2),P(E_1))\rightarrow H^m(P(E_1\oplus E_2))\rightarrow H^m(P(E_1)),</script><p>Then $\,\exists\,\widetilde u\mapsto u\mapsto 0.$<br>Similarly take $\widetilde{v}.$<br>We have $\widetilde u\cup \widetilde v=0\in H^{m+n}(X,U_1\cup U_2)=0.$<br>By nature, $uv=0.$</p>
+<p>Finally, just verify $w_1(\gamma_1^1)=0\in H^1(\mathbb{R}\mathrm{P}^1).$<br>$\gamma_1^1:\mathbb{R}^1\rightarrow E\rightarrow \mathbb{R}\mathrm{P}^1$The projection induces $\mathbb{R}\mathrm{P}^0=\ast \rightarrow P(E)\rightarrow \mathbb{R}\mathrm{P}^1.$<br>Definition$\widehat f:E\rightarrow \mathbb{R}^\infty,$ $(l,v)\mapsto v.$<br>$P(\widehat f):P(E)\cong \mathbb{R}\mathrm{P}^1\rightarrow \mathbb{R}\mathrm{P}^\infty,$<br>Pull back $H^1(\mathbb{R}\mathrm{P}^1)\leftarrow H^1(\mathbb{R}\mathrm{P}^\infty),$<br>$\alpha\mapsto x\neq 0.$ Then $x^1=w_1x^0,$ $x=w_1(\gamma_1^1)\neq 0.$</p>
+<h2 id="split-theorem">Split theorem</h2>
+<p><strong>Theorem 3</strong>. <em>For a plane bundle of rank $n$$\xi,$, the base space is a pseudocompact set $B.$ There exists a $F(E),$ $f:F(E)\rightarrow B,$ such that: $f^\ast \xi$ is the sum of the upper line bundles of $F(E)$, and $f^\ast :H^\ast (B;\mathbb{Z}_2)\rightarrow H^\ast (F(E);\mathbb{Z}_2)$ is an injective.</em></p>
+<p>To generalize $n$, just find $f:F(E)\rightarrow B,$<br>Let $f^\ast \xi=\eta\oplus \eta^\perp,$ and $f^\ast $ be injective.</p>
+<p>Take $F(E)=P(E)\rightarrow B,$ $f=p(\pi).$<br>Then $f^\ast :H^\ast (B)\hookrightarrow H^\ast (P(E))\cong H^\ast (B){1,\cdots,x^{n-1}}$ is an injective.</p>
+<p>Consider the whole space</p>
+<script type="math/tex; mode=display">
+E(f^\ast \xi)=\{(b,l,v)|b\in B, l\subset F_b(\xi),v\in F_b(\xi)\}.</script><p>Consider a subbundle of rank $1$</p>
+<script type="math/tex; mode=display">
+E(\eta):=\{(b,l,v)|b\in B,l\subset F_b(\xi),v\in l\}.</script><p>Then $\eta$ is the line bundle we want to find.</p>
+<p><strong>Note 4</strong>. *Repeatedly find $n$ subline bundles, then $F(E)={(b,l_1,\cdots,l_n)|l_1+\cdots+l_n=F_b\xi}.$ then there is a frame bundle</p>
+<script type="math/tex; mode=display">
+GL_n(\mathbb{R})/(\mathbb{R}^\ast )^n\cong \{frames\}\rightarrow F(E)\rightarrow B,</script><p>*</p>
+<h2 id="application">Application</h2>
+<p>Calculate $w(\xi\otimes \xi&#39;).$ The first step is to assume that they are the sum of line bundles, then</p>
+<script type="math/tex; mode=display">
+w(\xi\otimes \xi')=w\left(\bigoplus_{i,j} L_i\otimes L_j'\right)=\prod_{i,j} w(L_i\otimes L_j').</script><p>Then use the splitting theorem, let $f^\ast \xi,f^\ast \xi&#39;$ split (it can be processed in steps,<br>$f=f_1\circ f_2$), then</p>
+<script type="math/tex; mode=display">
+f^\ast (w(\xi\otimes \xi'))=w(f^\ast (\xi)\otimes f^\ast (\xi'))=F(w(f^\ast (\xi)),w(f^\ast (\eta)))=f^\ast F(w(\xi),w(\eta)).</script><p>In this way, the calculation method on line bundles can be applied to general bundles. This is also one of the main uses of the splitting theorem.</p>
+<p>The article was last updated on 2022-10-24 19:04:00</p>
                 </div>
             
         </div>
@@ -350,14 +399,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(12)-Stiefel-Whitney示性类的存在性</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-24 22:03:57</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(12)-Stiefel-Whitney示性类的存在性</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-24 22:03:57</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/24/《代数拓扑2》笔记(12)-Stiefel-Whitney示性类的存在性/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/24/《代数拓扑2》笔记(12)-Stiefel-Whitney示性类的存在性/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -425,7 +474,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -563,24 +612,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -662,9 +708,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#proof"><span class="nav-text">Proof</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#split-theorem"><span class="nav-text">Split theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application"><span class="nav-text">Application</span></a></li></ol>
         </div>
     
 </div>
@@ -689,6 +733,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

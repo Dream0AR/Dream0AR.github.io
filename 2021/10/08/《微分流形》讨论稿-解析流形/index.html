@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -364,7 +364,50 @@ $$f(z)=\frac{1}{(2\pi i)^n}\int\cdots\int_{\partial D(z,r)}\frac{f(\xi)}{(\xi_1-
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="analytic-manifold">Analytic manifold</h2>
+<h3 id="differential-calculus">Differential Calculus</h3>
+<p>Recall that the $C^\omega$ structure $[\mathcal{F}]$ means that all the coordinate cards $(U,\varphi)$ in the coordinate atlas $\mathcal{F}$ are $C^\omega$ compatible with each other,<br>That is, each coordinate transformation $\psi\circ\varphi^{-1}\in C^\omega,$ is analytical.</p>
+<p><strong>Definition 1.1</strong>. <em>$m$-dimensional $C^\omega$ manifold=$m$-dimensional topological manifold+$C^\omega$ structure[$\mathcal{F}$].</em></p>
+<p>Call the $C^\omega$ manifold <strong>analytical manifold</strong>.<br>Differential calculus that can be studied on smooth manifolds can also be studied on analytic manifolds. In addition,<br>The analyticity of functions on analytic manifolds can be studied, which is guaranteed by the fact that the composition of analytic functions is still an analytic function.<br>Just take a suitable kickoff and let the value domain of the inner function fall on the convergence domain of the outer function.</p>
+<h3 id="example">Example</h3>
+<h4 id="unanalytical-smooth-manifold">Unanalytical smooth manifold</h4>
+<p>Remember $f(x)=\operatorname{sgn}(x)e^{-\frac{1}{x^2} }\in C^\infty(\mathbb{R}),$<br>Let its image be a $1$-dimensional topological manifold $M.$<br>Take $[{(M,\operatorname{pr}_x),(M,\operatorname{pr}_y)}]$ as the coordinate atlas,<br>Then this album is from $C^\infty$ instead of $C^\omega$. Because on $\mathbb{R}$,<br>$\operatorname{pr}_y\circ \operatorname{pr}_x^{-1}$ is $f,$<br>is a smooth and non-analytic function. Therefore, the transfer function is smooth and non-analytic, and the atlas is only $C^\infty$,<br>$M$ becomes a smooth manifold under this atlas, rather than an analytic manifold.</p>
+<p>Note that in fact $M\approx \mathbb{R},$ overall Euclidean does not need a transfer function at all,<br>Therefore, it can be any $\ast $-atlas, $\ast $ is the requirement for the transfer function.<br>For example, project $M$ onto the $x$ axis or $y$ axis.<br>But now when the two albums are put together, they can only be $C^\infty$.<br>Because these two albums are not analytically compatible.</p>
+<p>Therefore $M$ is the $C^\infty$ manifold under this album,<br>Of course it can be other differential manifolds in other atlases, but the differential structure we give it is this.<br>We can choose to give the manifold a different differential structure.</p>
+<h4 id="-n-dimensional-sphere">$n$ dimensional sphere</h4>
+<p>The most typical $S^n$ can of course be an analytic manifold. For $j=1,\cdots,n+1,$<br>Definition <script type="math/tex">U_{2j-1}=\{x\in S^n:x_j>0\}, \quad U_{2j}=\{x\in S^n:x_j<0\}.</script></p>
+<p>For $i=1,\cdots,2n+2,$<br>Definition <script type="math/tex">\varphi_i:U_i\rightarrow \mathbb{R}^n, \quad \varphi_i(x)=(x_1,\cdots,\hat x_j,\cdots, x_{n+1}), \quad i=2j-1 \text{or} 2j.</script></p>
+<p>Then for $r&lt;s,$<br>$\varphi_r^{-1}(x)=(x_1,\cdots,\pm \sqrt{1-|x|^2},\cdots, x_n),$<br>The added item appears at position $\lceil \frac{r}{2} \rceil$.<br>$\varphi_s\varphi_r^{-1}(x)=(x_1,\cdots,\pm \sqrt{1-|x|^2},\cdots,\hat x_k,\cdots, x_n),$<br>$s=2k-1$ or $2k.$ Obviously the coordinate transformation is analytic, so $S^n\in C^\omega.$</p>
+<h4 id="projective-space">Projective space</h4>
+<p>Recall the open set $U<em>i={[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0},$<br>$\varphi_i([x])=\frac{1}{x_i}(x^1,\cdots, \widehat{x^{i} },\cdots, x^{m+1}).$<br>Remember $\xi</em>{(i)}^k=\frac{x^k}{x^i}.$ and choose $1\le i&lt;j\le m+1,$<br>Then the effect of the coordinate transformation $\varphi<em>j\circ\varphi_i^{-1}$ on the components of $U_i\cap U_j$ is $\xi</em>{(i)}^j\mapsto \xi<em>{(j)}^i=\frac{1}{\xi</em>{(i)}^j},$<br>$\xi<em>{(i)}^l\mapsto \xi</em>{(j)}^l=\frac{\xi^l<em>{(i)} }{\xi</em>{(i)}^j},$<br>$l\neq i,j,$ is the analytical mapping on $\mathbb{R}^m$, so the coordinate atlas is $C^\omega$,<br>The real projective space is an analytic manifold.</p>
+<p>Similarly, for the complex projective space, replace $x$ with $z, $ $\xi$ with $w, $<br>Then the coordinate transfer function $\varphi<em>j\circ\varphi_i^{-1}:$<br>$w</em>{(i)}^j\mapsto w<em>{(j)}^i=\frac{1}{w</em>{(i)}^j},$<br>$w<em>{(i)}^l\mapsto w</em>{(j)}^l=\frac{w<em>{(i)}^l}{w</em>{(i)}^j},$ $l\neq i,j,$<br>is a complex analytic mapping, so the complex projective space $\mathbb{C}P^n$ is an $n$-dimensional complex manifold.</p>
+<h4 id="grassmann-manifold">Grassmann Manifold</h4>
+<p>In class we came into contact with the definition of Grassmann manifold,<br>Next we give it an analytic structure to make it an analytic manifold.</p>
+<p>Take $k$ dimensional subspace $P\subset V.$ and take $n-k$ dimensional complementary subspace $Q$ such that $V=P\oplus Q.$<br>Then the image $\Gamma(X)={v+Xv:v\in P}$ of any linear mapping $X:P\rightarrow Q$ is a $k$-dimensional subspace.<br>It is easy to see that the image and $Q$ trivially intersect.<br>Conversely, if any $k$-dimensional subspace $S\subset V$ trivially intersects $Q$,<br>$S$ can always be expressed as the image of a certain linear mapping $X$, just consider the basis of $S$.</p>
+<p>Let the linear mapping from $P$ to $Q$ be $L(P,Q).$<br>The entire subspace in $G_k(V)$ that trivially intersects with $Q$ is $U_Q.$<br>(Note the analogy with $\mathbb{R}\mathrm{P}^n$.)<br>The image $\Gamma$ can be viewed as a bijection of $L(P,Q)\rightarrow U_Q$.<br>Since $L(P,Q)$ can be regarded as $M((n-k)\times k,\mathbb{R}),$<br>It can also be regarded as $\mathbb{R}^{k(n-k)}.$ Take $\varphi=\Gamma^{-1},$<br>Then $(U_Q,\varphi)$ can become a coordinate card.</p>
+<p>It is necessary to pay attention to the description of $\varphi$ homeomorphism. Intuitively,<br>The continuity on $U_Q$ is the continuity of the discussed subspace. Due to the quotient topology on $U_Q$,<br>It can be attributed to the continuity of a specific basis. The basis shape of the subspace can be taken as $f_i=e_i+g_i,$<br>${e_i}$ constitutes the standard basis of $P$, $g_i\in Q,$ $i=1,\cdots,k.$<br>And $[g_1,\cdots,g_k]\in M((n-k)\times k,\mathbb{R})$ exactly gives $\varphi,$<br>Therefore $\varphi$ is homeomorphic.</p>
+<p>Next, it is explained that the coordinate transformation is analytical. First, we need to have a clearer understanding of $G_k(V)$.<br>It is the quotient space of all rank $k$ matrices in $M(n\times k,\mathbb{R})$,<br>Each column describes a basis of the subspace. Rank $k$ means that the $k$ basis cannot be linearly related.<br>The equivalent relationship of the quotient space is given by $A\sim AP,$ $A\in M(n\times k,\mathbb{R}),$<br>$P\in GL(k)$ is given. Because the commutative basis, the multiplication basis,<br>The same subspace is formed after linear combination of the bases.</p>
+<p>In $U_Q\cap U_Q&#39;$, they are all subspaces that trivially intersect with $Q, Q&#39;$. For any element $K,$<br>$\varphi(K)$ beat it to $k$ vectors with $P\oplus Q$ as the standard basis,<br>$\varphi&#39;(K)$ is hit into $P&#39;\oplus Q&#39;$. Note that the first $k$ rows of these $k$ vectors are trivial,<br>Therefore, what is actually taken out is the $n-k$ dimensional vector composed of the last $n-k$ rows.<br>It can be seen that the coordinate transformation $\varphi&#39;\circ\varphi^{-1}$ is just a coordinate transformation in linear space.<br>Denote the transition matrix from $P&#39;\oplus Q&#39;$ to $P\oplus Q$ as $A,$<br>Then given the coordinate $X,$ under $\varphi$, it is restored to the complete $\widetilde{X}=\begin{bmatrix}<br>                    I\X<br>                \end{bmatrix},$ Multiply $A$ on the left to get the new representation $A\widetilde{X}.$<br>Since it trivially intersects $Q&#39;$, taking $P&#39;\oplus Q&#39;$ standard basis, the matrix composed of the first $k$ rows must be of full rank.<br>Taking its inverse matrix $B,$, then the coordinates under $\varphi&#39;$ are the last $n-k$ rows of $A\widetilde{X}B$,<br>The first $k$ rows of $A\widetilde{X}B$ are unit matrices.</p>
+<p>In fact, the multiplication and inversion operations in Lie groups are also analytical, so the coordinate transformation is analytical.<br>Thus $[{(U_Q,\varphi)}]\in C^\omega,$ manifold has an analytic structure.</p>
+<p>Hausdorff property and second countability are guaranteed by topological quotient topology.<br>It can also be explained separately that two $k$-dimensional subspaces can fall on the same coordinate neighborhood,<br>$G_k(V)$ can be covered by listable (factually limited) $U_Q$.</p>
+<p><strong>Note 1.2</strong>. <em>For a more strict explanation of homeomorphism, consider that the space $\pi^{-1}U_Q,$ is some $n\times k$ matrix of rank $k$. Assume that the first $k$ rows represent $P$ (that is, left multiplied by a certain permutation matrix), then the original image of each element in $U_Q$ can take a representative element $\begin{bmatrix} I\A \end{bmatrix},$ Therefore, the first $k$ rows of all matrices in the inverse image are of full rank, and right multiplication by an inverse matrix can give the standard form. The following $n-k$ row matrix is proposed, which gives the correspondence in $M((n-k)\times k,\mathbb{R})$. The $k$ columns give the description of the image in $U_Q$, that is, the $k$ basis is pointed out.</em> <em>Since $GL(k)$ is a Lie group, multiplication, The inversion operations are all continuous, so the above mapping $M(n\times k,\mathbb{R})\rightarrow M((n-k)\times k,\mathbb{R})$ is also continuous, so $\varphi$ is continuous. The next mapping is also an open mapping, because for small perturbations of $M(n\times k,\mathbb{R})$, A small perturbation of the $n-k$ lines below the original image can be reflected. From the topological properties, it can be judged that $\varphi$ is a homeomorphism.</em></p>
+<h3 id="research-significance">Research significance</h3>
+<p>Facing smooth manifolds, we may have such problems:<br>Why is it usually enough for us to only study smooth manifolds? The following conclusion gives the answer:</p>
+<p><strong>Proposition 1.3</strong>. <em>Every $C^r$ manifold is $C^r$ diffeomorphic to a $C^\omega$ manifold, and is unique in the sense of $C^\omega$ diffeomorphism. $1\le r\le \infty.$</em></p>
+<p>Here $C^r$ diffeomorphism $f:M\rightarrow N$, refers to (at least) the $C^r$ mapping between $C^r$ manifolds,<br>is homeomorphism, and the inverse mapping is also $C^r$. Of course it is correct to replace the analyticity in the proposition with smoothness,<br>And the proof of the smooth case is much easier, and it is &quot;left as an exercise&quot; level of difficulty.</p>
+<p>So, if we want to study the problem of $C^s$ differential calculus on a $C^r$ manifold,<br>$1\le r&lt;s\le \infty$ or $s=\omega,$<br>Just convert to the analytic manifold diffeomorphic with it $C^r$ to study.<br>During the conversion process, it can be ensured that the differential properties of $C^k(1\le k\le r)$ remain unchanged.</p>
+<p>In addition, every $C^r$ function can be approximated by the $C^\omega$ function, therefore,<br>We can always assume that both functions and manifolds have excellent regularity.</p>
+<h3 id="gap">Gap</h3>
+<p>It should be noted that the above proposition is only true for $r\ge 1$,<br>There is an insurmountable gap between $C^0$ and $C^1$. Whitehead proved that,<br>All smooth manifolds have a triangulation (all are smooth homeomorphic to an affine manifold,<br>While affine manifolds have triangulation), there are 4-dimensional topological manifolds that cannot be triangulated (Micheal W.<br>Davis, Tadeusz Januszkiewicz). Triangulation is a homeomorphism from a simple complex to a manifold.<br>Since the $C^r$ manifolds of $r\ge 1$ are homeomorphic to a certain smooth manifold, they all have induced triangulation.<br>Therefore, there exists a $C^0$ manifold that is not embryonic to any $C^r$ manifold, $1\le r\le \infty.$</p>
+<p>The minimum dimension of a topological manifold that cannot be triangulated is $4,$ This type of barrier that cannot be triangulated is called<br>Kirby-Siebenmann smoothness disorder.</p>
+<h2 id="complex-manifold">complex manifold</h2>
+<p>We know that all manifolds are at least $C^0$, and more specifically, they can be $C^r$ manifolds.<br>The better one is the $C^{\infty}$ manifold, and the better one is the $C^\omega$ manifold. Is there anything better?<br>If the analytic manifold is $2m$ dimensional, then $\mathbb{R}^{2m}\approx \mathbb{C}^m,$<br>The coordinate function $\varphi:\mathbb{C}^m\rightarrow \mathbb{C}^m$ can be made complex analytic.<br>Since the real and imaginary parts of each of its components are analytic, the complex analytic manifold is an analytic manifold,<br>It&#39;s a little better than that, called <strong>complex manifold</strong> for short.</p>
+<p>Recall the <strong>Cauchy integral formula</strong> for holomorphic functions in single complex functions:</p>
+<script type="math/tex; mode=display">f(z)=\frac{1}{2\pi i}\int_{\partial\Omega}\frac{f(\xi)}{\xi-z}d\xi,\quad z\in\Omega,</script><p>The higher-order derivative formula can be derived: <script type="math/tex">f^{(n)}(z)=\frac{n!}{2\pi i}\int_{\partial |\xi-c|=r}\frac{f(\xi)}{(\xi-z)^{n+1} }d\xi, \quad \,\forall\,z\in U(c,r)\subset\subset \Omega,</script><br>Then we use the maximum modulus control derivative of the function to deduce that <em>holomorphic functions are all analytical</em>.</p>
+<p>For a holomorphic function in a multi-variable function, it is required that the real and imaginary parts of each component are differentiable,<br>Add $m$ to the <em>Cauchy-Riemann equation</em>.<br>Remember <strong>open multi-disc</strong>$D(z,r):=\prod_{j=1}^{n}U(z_j,r_j)$, there is Osgood’s lemma:</p>
+<script type="math/tex; mode=display">f(z)=\frac{1}{(2\pi i)^n}\int\cdots\int_{\partial D(z,r)}\frac{f(\xi)}{(\xi_1-z_1)\cdots(\xi_n-z_n)}d\xi_1\cdots d\xi_n, \,\forall\,D(z,r)\subset\subset \Omega,</script><p>Similarly, there are versions of higher-order derivative formulas, so that in functions of multiple complex variables, holomorphic functions are also analytic.</p>
+<p>The complex analytic function requires that the partial derivative for all $\bar z_i$ is zero, which is the C-R equation,<br>Therefore, <em>complex analysis and holomorphism are equivalent</em>. Since a sufficient condition for differentiability is $C^1,$<br>Therefore, it is only necessary to add coordinate transformation to the even-dimensional $C^1$ manifold to meet the requirements of the C-R equation.<br>That is, the $C^1$ manifold is a complex manifold.<br>It can also be seen that the distance from $C^1$ to better regularity is indeed not far.<br>But there are indeed huge obstacles between $C^0$ and $C^1$.</p>
+<p>The article was last updated on 2021-10-08 11:31:36</p>
                 </div>
             
         </div>
@@ -373,14 +416,14 @@ $$f(z)=\frac{1}{(2\pi i)^n}\int\cdots\int_{\partial D(z,r)}\frac{f(\xi)}{(\xi_1-
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》讨论稿-解析流形</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-08 14:31:34</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》讨论稿-解析流形</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-08 14:31:34</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/08/《微分流形》讨论稿-解析流形/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/08/《微分流形》讨论稿-解析流形/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -448,7 +491,7 @@ $$f(z)=\frac{1}{(2\pi i)^n}\int\cdots\int_{\partial D(z,r)}\frac{f(\xi)}{(\xi_1-
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -586,24 +629,21 @@ $$f(z)=\frac{1}{(2\pi i)^n}\int\cdots\int_{\partial D(z,r)}\frac{f(\xi)}{(\xi_1-
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -685,9 +725,7 @@ $$f(z)=\frac{1}{(2\pi i)^n}\int\cdots\int_{\partial D(z,r)}\frac{f(\xi)}{(\xi_1-
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#analytic-manifold"><span class="nav-text">Analytic manifold</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#differential-calculus"><span class="nav-text">Differential Calculus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#example"><span class="nav-text">Example</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#unanalytical-smooth-manifold"><span class="nav-text">Unanalytical smooth manifold</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#-n-dimensional-sphere"><span class="nav-text">$n$ dimensional sphere</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#projective-space"><span class="nav-text">Projective space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grassmann-manifold"><span class="nav-text">Grassmann Manifold</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#research-significance"><span class="nav-text">Research significance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gap"><span class="nav-text">Gap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#complex-manifold"><span class="nav-text">complex manifold</span></a></li></ol>
         </div>
     
 </div>
@@ -712,6 +750,7 @@ $$f(z)=\frac{1}{(2\pi i)^n}\int\cdots\int_{\partial D(z,r)}\frac{f(\xi)}{(\xi_1-
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

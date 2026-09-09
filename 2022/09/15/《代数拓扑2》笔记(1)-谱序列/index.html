@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -342,7 +342,68 @@ $[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="overview">Overview</h2>
+<p>Bibliography:</p>
+<ol>
+<li><p>Hutchings, Introduction to spectral sequences;</p>
+</li>
+<li><p>Hatcher, AT Chapter 5;</p>
+</li>
+<li><p>Ramos, Spectral sequences via examples.</p>
+</li>
+</ol>
+<h3 id="motivation">Motivation</h3>
+<p>Given fiber bundle</p>
+<script type="math/tex; mode=display">
+F\rightarrow E\rightarrow B,</script><p>We hope to use the spectral sequence to calculate $H<em>\ast (E), $ using the information of $H</em>\ast (F)$ and $H_\ast (B)$.<br>Recall that for the CW complex pair $(X,A)$, we have</p>
+<script type="math/tex; mode=display">
+A\rightarrow X\rightarrow X/A,</script><p>It is also called cofibration (Shang Fiber, Shang Cong?).<br>On top of it, we have the zig-zag lemma to get the long exact sequence to calculate the homology group, but for the basic group,<br>There aren&#39;t many obvious tools.</p>
+<p>For fiber bundles, we can calculate the basic group through long exact columns,<br>The calculation of homology groups relies on spectral sequences.</p>
+<h3 id="spectral-sequence">Spectral sequence</h3>
+<p>For the chain complex $(C<em>\ast ,\partial),$ takes $F_0C</em>\ast \subset C_\ast $ as the subcomplex,<br>We have short exact columns:</p>
+<script type="math/tex; mode=display">
+0\rightarrow F_0C_\ast \rightarrow C_\ast \rightarrow C_\ast /F_0C^\ast \rightarrow 0.</script><p>This induces a long positive column</p>
+<script type="math/tex; mode=display">
+\cdots\rightarrow H_i(F_0C^\ast )\rightarrow H_i(C_\ast )\rightarrow H_i(C_\ast /F_{0}C^\ast )\xrightarrow{\delta_i}H_{i-1}(F_0C_\ast )\rightarrow\cdots.</script><p>Recall that $\delta$ is defined as $\alpha\mapsto [\partial x],$ $[x]=\alpha.$</p>
+<p>Suppose we wish to calculate $H<em>\ast (C</em>\ast ),$ from $H<em>\ast (F_0C</em>\ast ),H<em>\ast (C</em>\ast /F<em>0C</em>\ast )$<br>We split the long exact sequence into short exact sequences,</p>
+<script type="math/tex; mode=display">
+0\rightarrow \operatorname{coker}(\delta_{i+1})\rightarrow H_i(C_\ast )\rightarrow \ker(\delta_i)\rightarrow 0.</script><p>To summarize, in order to calculate $H<em>i(C</em>\ast ),$ we need:</p>
+<ol>
+<li><p>Calculate $H<em>i(F_0C</em>\ast ),H<em>i(C</em>\ast /F<em>0C</em>\ast );$</p>
+</li>
+<li><p>Consider the complex $H<em>{i}(C</em>\ast /F<em>0C</em>\ast )\xrightarrow{\delta<em>i}H</em>{i-1}(F<em>0C</em>\ast ),$ with only two terms<br>Its homology is:</p>
+</li>
+</ol>
+<script type="math/tex; mode=display">
+G_0H_\ast =\operatorname{coker}\delta,\quad G_1H_\ast =\ker\delta.</script><ol>
+<li>We get the short exact sequence:</li>
+</ol>
+<script type="math/tex; mode=display">
+0\rightarrow G_0H_\ast \rightarrow H_\ast (C_\ast )\rightarrow G_1H_\ast \rightarrow 0.</script><p>Note that the short exact sequence is not necessarily divisible, so to describe it in algebraic terms, we say $H<em>\ast (C</em>\ast )$ is<br>Determined by extension (\&quot;up to extensions\&quot;).</p>
+<h2 id="filter-column">Filter column</h2>
+<p>A filter list $R$ modulo is an $R$ modulo $A,$ with a column of increasing submodules</p>
+<script type="math/tex; mode=display">
+\cdots \subset F_p A\subset F_{p+1}A\subset \cdots,\quad p\in \mathbb{Z},</script><p>Make $\bigcup_p F_pA=A,$ $\bigcap_pF_pA=0.$ This is called <strong>filter column</strong>.</p>
+<p>A filter list is said to be <strong>bounded</strong>, if the non-trivial filter is finite, that is</p>
+<script type="math/tex; mode=display">
+\cdots =0=F_p A\subset \cdots \subset F_{q} A=A=\cdots.</script><p>Then define its contact classification model as</p>
+<script type="math/tex; mode=display">
+G_pA:=F_pA/F_{p-1}A.</script><p>We believe that ${F_p A},$ ${G_pA}$ inductively <em>extensively</em> determines $A.$</p>
+<script type="math/tex; mode=display">
+0\rightarrow F_{p-1}A\rightarrow F_pA\rightarrow G_pA\rightarrow 0.</script><p>Note that the extension is trivial if $R$ is a domain.</p>
+<p>A <strong>filter chain complex</strong> is a chain complex $(C<em>\ast ,\partial),$<br>And the filter column ${F_pC_i},$ about $C_i$<br>Make $\partial(F_pC_i)\subset F_pC</em>{i-1}.$ verifiable, $\,\forall\,p,$<br>$(G<em>pC</em>\ast ,\partial)$ is a chain complex, on which the homology $H<em>i(G_pC</em>\ast )$ can be considered.</p>
+<p>A filter column on $C<em>\ast $ induces a filter column on $H</em>\ast (C_\ast )$:</p>
+<script type="math/tex; mode=display">
+F_pH_i(C_\ast ):=\{\alpha\in H_i(C_\ast )|\,\exists\,x\in F_pC_\ast , [x]=\alpha\}.</script><p>Next we have $G<em>pH_i(C</em>\ast ).$ A natural question is how is it related to $H<em>i(G_pC</em>\ast )$?</p>
+<p>Memories were there before</p>
+<script type="math/tex; mode=display">
+0\subset F_0C_\ast \subset F_1C_\ast =C_\ast ,</script><p>Then $G<em>pH</em>\ast (C<em>\ast )$ is the homology of $H</em>\ast (G<em>1C</em>\ast )\xrightarrow{\delta} H<em>{\ast -1}(G_0C</em>\ast )$.<br>At this time $H<em>i(G_pC</em>\ast )$ basically determines $G<em>pH_i(C</em>\ast ).$</p>
+<p>When the filter column has more non-trivial items, in order to consider the relationship between them,<br>We hope to consider some continuous approximations $E^1,E^2,\cdots$ to converge to the desired result,<br>Similar to Taylor expansion. This is called <strong>spectral sequence</strong>.</p>
+<p>Suppose $(F<em>pC</em>\ast ,\partial)$ is a filter complex, defined:</p>
+<script type="math/tex; mode=display">
+E^0_{p,q}:=G_pC_{p+q}=F_pC_{p+q}/F_{p-1}C_{p+q},</script><p> Then $E$ is double graded,<br>$p$ is called <strong>filtration degree</strong>, $p+q$ is <strong>homology degree</strong>,<br>$q$ is called <strong>complementary degree</strong>.<br>Then $(E<em>0,\partial_0)$ is a chain complex,<br>$\partial_0:E</em>{p,q}^0\rightarrow E^0_{p,q-1}.$</p>
+<p>Define $E^1<em>{p,q}:=H</em>{p+q}(G<em>pC</em>\ast ),$ which is the first-order approximation of $H<em>\ast (C</em>\ast )$.<br>Define as follows $\partial<em>1:E^1</em>{p,q}\rightarrow E^1<em>{p-1,q}:$<br>$\,\forall\,\alpha\in E^1</em>{p,q}=H<em>{p+q}(G_pC</em>\ast ),$ Take $x\in F<em>pC</em>{p+q},$<br>$[x]=\alpha,$ $\partial x\in F<em>{p-1}C</em>{p+q-1}.$<br>Remember $\partial_1\alpha=[\partial x].$</p>
+<p>The article was last updated on 2022-09-15 10:54:54</p>
                 </div>
             
         </div>
@@ -351,14 +412,14 @@ $[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(1)-谱序列</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-09-15 13:54:10</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(1)-谱序列</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-09-15 13:54:10</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/09/15/《代数拓扑2》笔记(1)-谱序列/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/09/15/《代数拓扑2》笔记(1)-谱序列/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -426,7 +487,7 @@ $[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -564,24 +625,21 @@ $[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -663,9 +721,7 @@ $[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#overview"><span class="nav-text">Overview</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#motivation"><span class="nav-text">Motivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spectral-sequence"><span class="nav-text">Spectral sequence</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#filter-column"><span class="nav-text">Filter column</span></a></li></ol>
         </div>
     
 </div>
@@ -690,6 +746,7 @@ $[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

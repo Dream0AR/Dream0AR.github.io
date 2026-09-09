@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -269,7 +269,27 @@ $\alpha_i\in C^i(\mathcal{U},\Omega^{n-i})$. 对每个$\alpha_i$,
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="good-covering-combination-calculation-de-rham-cohomology">Good covering combination calculation de Rham cohomology</h2>
+<p>Suppose $\mathcal{U}={U<em>\alpha}$ is the open covering of $M$, then the nerve of $\mathcal{U}$<br>$N(\mathcal{U})$ is a simplicial complex: assign a vertex $\alpha$ to each $U</em>\alpha$,<br>If $U_{\alpha\beta...\gamma}$ is not empty, add $[\alpha,\beta,...,\gamma]$ simplex.</p>
+<p>$\delta :C^\ast (\mathcal{U},\mathbb{R})\rightarrow C^{\ast +1}(\mathcal{U},\mathbb{R})$ is actually cohomology at the complex level.<br>So this provides another way to find cohomology:<br>That is, consider finding $H^\ast (\mathcal{U},\mathbb{R})\cong H^\ast (M)$.</p>
+<h2 id="explicit-isomorphism-example">Explicit isomorphism example</h2>
+<p>$H^2(M)\cong H^2(\mathcal{U},\mathbb{R})$ is an important example in geometry.<br>This isomorphism is given concretely, just run along the diagonal $(K^2)$ along the double complex,<br>The elements on the diagonal $(K^1)$ of the next row need to be added appropriately.<br>That is, $[\omega]<em>d=[\omega]_D=[c]_D=[c]</em>\delta$, where there is $\eta\in K^1$,<br>$D\eta=c-\omega$.</p>
+<p>To run in reverse, you need to use the homotopy operator $K$ in the previous lesson.<br>$(Kc)<em>{\beta\alpha}=\sum \rho</em>\gamma c<em>{\gamma\beta\alpha}$. Thus explicitly,<br>We have $((D&#39;&#39;K)^2c)</em>\alpha=\sum d\rho<em>\gamma\wedge d\rho</em>\beta \cdot c<em>{\gamma\beta\alpha}\in \Omega^2(U</em>\alpha)$ corresponding to $c$,<br>It is defined overall on $M$.</p>
+<h2 id="explicit-isomorphism">explicit isomorphism</h2>
+<p><strong>Lemma 1.1</strong>. <em>$\delta(D&#39;&#39; K)^i=(D&#39;&#39;K)^i\delta-(D&#39;&#39;K)^{i-1}D&#39;&#39;$</em></p>
+<p>Just calculate. From this we get:</p>
+<p><strong>Proposition 1.2</strong>. <em>$\eta\in C^n(\mathcal{U},\mathbb{R})$, $\delta \eta=0$, then its corresponding closed $n$ form $\omega=(-1)^n(D&#39;&#39;K)^n\eta$.</em></p>
+<p>Since $\Omega^\ast (M)$ and $C^\ast (\mathcal{U},\Omega^\ast )$ are cohomologically isomorphic,<br>There should be a chain mapping $f$, and $r$ and $r$ are inverse mappings to each other in the sense of cohomology.</p>
+<p>Let’s define $f$ first. Let $\alpha=\sum<em>{i=0}^n\alpha_i$,<br>$\alpha_i\in C^i(\mathcal{U},\Omega^{n-i})$. For each $\alpha_i$,<br>Define $f(\alpha_i)=(1-K\delta)(-D&#39;&#39;K)^i\alpha_i$,<br>Then $\delta f(\alpha_i)=0$, $f(\alpha)=\sum</em>{i=0}^n f(\alpha_i)$ is defined overall.</p>
+<p><strong>Lemma 1.3</strong>. <em>$D\alpha=\beta=\sum<em>{i=0}^{n+1}\beta_i$, $f(\alpha)=\sum</em>{i=0}^n(-D&#39;&#39;K)^i\alpha<em>i-\sum</em>{i=1}^{n+1}K(-D&#39;&#39;K)^{i-1}\beta_i$.</em></p>
+<p>Just use the previous lemma. Next we have:</p>
+<p><strong>Lemma 1.4</strong>. <em>$f$ is a chain map, $f\circ r=\mathrm{id}$.</em></p>
+<p>For the previous item, just use the previous formula to verify $df=fD$,<br>Note that $r\alpha$ only has $\alpha_0$ terms and is defined as a whole in the latter term.</p>
+<p>There is another proposition that needs to be proved:</p>
+<p><strong>Lemma 1.5</strong>. <em>$1-r\circ f=DL+LD$, homotopy operator $L\alpha=\sum<em>{p=0}^{n-1}(L\alpha)_p$, $(L\alpha)_p=\sum</em>{i=p+1}^nK(-D&#39;&#39;K)^{i-(p+1)}\alpha_i$.</em></p>
+<p>In fact, this homotopy operator is easy to think of, that is, for each $n-1$-on-chain component,<br>Just move up every component of the $n$-winding chain that can reach the position. Thus, we have:</p>
+<p><strong>Proposition 1.6</strong> (Collating formula). <em>$f:C^\ast (\mathcal{U},\Omega^\ast )\cong \Omega^\ast (M)$ is isomorphism, and the inverse mapping is $r$.</em></p>
+<p>The article was last updated on 2021-10-25 14:18:02</p>
                 </div>
             
         </div>
@@ -278,14 +298,14 @@ $\alpha_i\in C^i(\mathcal{U},\Omega^{n-i})$. 对每个$\alpha_i$,
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(9)-显式同构</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-25 17:17:59</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(9)-显式同构</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-25 17:17:59</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/25/《代数拓扑与微分形式》笔记(9)-显式同构/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/25/《代数拓扑与微分形式》笔记(9)-显式同构/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -353,7 +373,7 @@ $\alpha_i\in C^i(\mathcal{U},\Omega^{n-i})$. 对每个$\alpha_i$,
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -491,24 +511,21 @@ $\alpha_i\in C^i(\mathcal{U},\Omega^{n-i})$. 对每个$\alpha_i$,
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -590,9 +607,7 @@ $\alpha_i\in C^i(\mathcal{U},\Omega^{n-i})$. 对每个$\alpha_i$,
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#good-covering-combination-calculation-de-rham-cohomology"><span class="nav-text">Good covering combination calculation de Rham cohomology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#explicit-isomorphism-example"><span class="nav-text">Explicit isomorphism example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#explicit-isomorphism"><span class="nav-text">explicit isomorphism</span></a></li></ol>
         </div>
     
 </div>
@@ -617,6 +632,7 @@ $\alpha_i\in C^i(\mathcal{U},\Omega^{n-i})$. 对每个$\alpha_i$,
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

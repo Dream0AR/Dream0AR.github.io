@@ -85,25 +85,6 @@ KEEP.initLanguageToggle = () => {
     return fallback !== undefined ? fallback : null;
   };
 
-  const requestMathJaxRerender = (containers) => {
-    if (!containers || !containers.length || typeof MathJax === 'undefined') {
-      return;
-    }
-
-    const nodes = Array.from(containers);
-
-    if (typeof MathJax.typesetPromise === 'function') {
-      MathJax.typesetPromise(nodes).catch(() => {});
-      return;
-    }
-
-    if (MathJax.Hub && typeof MathJax.Hub.Queue === 'function') {
-      nodes.forEach((node) => {
-        MathJax.Hub.Queue(['Typeset', MathJax.Hub, node]);
-      });
-    }
-  };
-
   const applyTextTransform = (value, mode) => {
     if (!value) return value;
     if (mode === 'upper') return value.toUpperCase();
@@ -214,11 +195,9 @@ KEEP.initLanguageToggle = () => {
       const fallback = match;
 
       nodes.forEach((item) => {
-        item.node.style.display = (item === fallback) ? '' : 'none';
+        item.node.style.display = item === fallback ? '' : 'none';
       });
     });
-
-    requestMathJaxRerender(document.querySelectorAll(`[data-lang-group][data-lang="${currentLanguage}"]`));
 
     document.documentElement.lang = htmlLanguage(currentLanguage);
     document.body.dataset.lang = currentLanguage;

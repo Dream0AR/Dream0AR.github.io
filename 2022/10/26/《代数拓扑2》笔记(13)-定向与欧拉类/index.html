@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -282,7 +282,31 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="orientation-and-thom-classes">Orientation and Thom classes</h2>
+<p>Recall that $V$ is a real vector space of rank $n$, and the orientation on $V$ is<br>$\operatorname{Iso}(\mathbb{R}^n,V)\cong GL_n(\mathbb{R})$<br>Selection of upper connected branches (linear algebra). Also equivalent to $H^n(V|0;\mathbb{Z})$<br>Selection of generators (algebraic topology). Also equivalent to</p>
+<script type="math/tex; mode=display">
+\Lambda^n V\setminus\{0\}\cong \Lambda^n\mathbb{R}^n\setminus\{0\}\xrightarrow{\det}\mathbb{R}\setminus\{0\}</script><p>Selection of connected branches (differential manifold).</p>
+<p>For a real vector bundle of rank $n$,<br>Define the orientation of $\xi$ by considering the external algebraic bundle $\Lambda^n F\rightarrow E(\Lambda^n \xi)\rightarrow B,$<br>$\Lambda^n\xi$The previous section does not disappear everywhere.</p>
+<p>Of course we also have other equivalent definitions.<br>An orientation of $\xi$ gives an orientation of $H^\ast (F|0;\mathbb{Z})$ for each fiber $F$,<br>Meet local compatibility.</p>
+<p><strong>Theorem 1</strong>. <em>If $\xi$ is a directed real vector bundle of rank $n$, then there is a unique generator of class $u\in H^n(E|B;\mathbb{Z}), $ which is restricted to give $H^n(F|0;\mathbb{Z})$ on each fiber.</em></p>
+<p>Proof idea: We use the MV method to deal with it. First prove the case of trivial bundle $\xi$,<br>Next, consider the case of $B=U_1\cup U_2$, which can give a tight proof of $B$.<br>Finally, consider the exhaustive sequence of $B$.</p>
+<p>Such a class $u=u(\xi)$ is called the Thom class. If the $\mathbb{Z}_2$ coefficient is considered,<br>Then there is no need to give the orientation of $\xi$ in advance.</p>
+<p><strong>Theorem 2</strong> (Thom isomorphism theorem). <em>If $\xi$ is a rank $n$ directed vector bundle and has Thom class $u.$ then $H^i(B;\mathbb{Z})\cong H^{n+i}(E|B;\mathbb{Z}),$ $\alpha\mapsto \pi^\ast \alpha \cup u.$</em></p>
+<p>Apply the Leray-Hirsch theorem to</p>
+<script type="math/tex; mode=display">
+(F,F_0)\rightarrow (E,E_0)\rightarrow B.</script><p>Then first $H^n(F|0)=\mathbb{Z}$ is generated freely, and secondly, according to the previous theorem, $i^\ast $ is surjective.<br>In this way $H^\ast (E|0)\cong H^\ast (B){u}$ gives the conclusion.</p>
+<h2 id="euler-class">Euler class</h2>
+<p>Define the Euler class for the directed bundle $\xi$: $e(\xi)\in H^n(B;\mathbb{Z}),$ such that</p>
+<script type="math/tex; mode=display">
+H^n(B;\mathbb{Z})\xrightarrow{\pi^\ast :\cong} H^n(E;\mathbb{Z})\leftarrow H^n(E|B;\mathbb{Z})</script><p>Match $e(\xi)$ and $u(\xi)$ to the same element.</p>
+<p>It satisfies the following properties: If $B\rightarrow B&#39;$ is covered by a directed bundle map,<br>Then $e(\xi)(=e(f^\ast \xi&#39;))=f^\ast e(\xi&#39;),$ satisfies the naturalness; if the orientation of $\xi$ changes,<br>Then the Euler class changes sign;</p>
+<script type="math/tex; mode=display">
+e(\xi\oplus\eta)=e(\xi)\cup e(\eta),\quad e(\xi\times \eta)=e(\xi)\times e(\eta).</script><p>If $\xi$ has a vanishing section, then $e(\xi)=0.$<br>Because this will give $\xi=\varepsilon^1\oplus\varepsilon^\perp,$<br>$e(\xi)=e(\varepsilon^1)\cup e(\varepsilon^\perp)=0.$</p>
+<p><strong>Theorem 3</strong>. <em>For a smoothly oriented compactly connected manifold $M^n,$ $e(\tau_M)=\chi(M)\cdot PD([\ast ]),$ or $\left&lt;{}e(\tau_M),[M]\right&gt;=\chi(M).$</em></p>
+<p>From this we can derive the Poincaré-Hopf theorem: $\chi(M)\neq 0$ then there is no vector field that disappears nowhere.<br><strong>Theorem 4</strong>. <em>If $\xi$ is a smooth oriented vector bundle on $M$ as assumed above, then $e(\xi)=PD([Z_s]), $ $Z_s$ is the zero section of $s$, and needs to intersect with $M$ (default zero section).</em></p>
+<p>Taking $\xi=\tau_M$, we can derive the previous theorem.</p>
+<p>If $\xi$ is a rank $n$ directed vector bundle on $B$,<br>The natural mapping of $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$ is $e(\xi)\mapsto w_n(\xi).$</p>
+<p>The article was last updated on 2022-10-26 21:15:00</p>
                 </div>
             
         </div>
@@ -291,14 +315,14 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑2》笔记(13)-定向与欧拉类</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-27 00:14:58</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑2》笔记(13)-定向与欧拉类</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-27 00:14:58</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/26/《代数拓扑2》笔记(13)-定向与欧拉类/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/26/《代数拓扑2》笔记(13)-定向与欧拉类/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -366,7 +390,7 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -504,24 +528,21 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -603,9 +624,7 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#orientation-and-thom-classes"><span class="nav-text">Orientation and Thom classes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#euler-class"><span class="nav-text">Euler class</span></a></li></ol>
         </div>
     
 </div>
@@ -630,6 +649,7 @@ $H^n(B;\mathbb{Z})\rightarrow H^n(B;\mathbb{Z}_2)$的自然映射就是$e(\xi)\m
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

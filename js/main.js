@@ -42,6 +42,9 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   KEEP.refresh = () => {
+    if (typeof KEEP.initLanguageToggle === 'function') {
+      KEEP.initLanguageToggle();
+    }
     KEEP.initUtils();
     KEEP.initHeaderShrink();
     KEEP.initModeToggle();

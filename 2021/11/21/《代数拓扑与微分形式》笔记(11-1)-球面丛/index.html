@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -347,7 +347,50 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="definition">definition</h2>
+<p>For $\pi:E\rightarrow M$ vector bundle of rank $n+1$, given metric $\left&lt;{}-,-\right&gt;$,<br>It can be defined that $r^2(v)=\left&lt;{}v,v\right&gt;$.<br>Set $S(E)<em>x={v\in E_x|r(v)=1}\simeq S^n$, $x\in M$;<br>$S(E)=\prod</em>{x\in M}S(E)_x$, then $S(E)$ is a fiber bundle with $S^n$ on $M$.<br>Its structural group is $O(n+1)$.</p>
+<p>The fiber bundle whose fibers are spherical $S^n$ is called $n$-dimensional spherical bundle or $S^n$ bundle.<br>The structural group is the diffeomorphism group $\operatorname{Diff}(S^n)$.<br>It generally does not necessarily reduce to $O(n+1)$.<br>In fact, it can be reduced to $O(n+1)$ if and only if the spherical bundle is constructed from a vector bundle (previous paragraph).</p>
+<p>Let $\pi:E\rightarrow M$ be an $n$-dimensional vector bundle, according to the Leray-Hirsch theorem,<br>If there is a closed global $n$-form on $E$, its restriction to each fiber generates fiber cohomology,<br>Then the cohomology of $E$ is $H^\ast (E)=H^\ast (M)\otimes H^\ast (S^n)$.</p>
+<p>If the structural group is $SO(2)$, then there are global angular forms $\psi$ and Euler classes $d\psi=-\pi^\ast e$.<br>If the Euler class is zero, then the overall angular form is closed and satisfies the above conditions.</p>
+<p>Generally, consider the spherical bundle whose structural group is $\operatorname{Diff}(S^n)$ or $O(n+1)$.<br>We study orientability and Euler classes.</p>
+<h2 id="orientability">Orientability</h2>
+<p>Assume $M$ is connected and has good coverage ${U<em>\alpha}$.<br>Let $\pi:E\rightarrow M$ be an $n$-dimensional spherical bundle,<br>$E|</em>{U<em>\alpha}\approx U</em>\alpha\times S^n$,<br>$H^n(E|<em>{U</em>\alpha})=\mathbb{R}$. Let $[\sigma<em>\alpha]$ be the generator. A priori,<br>$[\sigma</em>\alpha]<em>{E|</em>{U<em>{\alpha\beta} } }=\pm[\sigma</em>\beta]<em>{E|</em>{U_{\alpha\beta} } }$.</p>
+<p>If there is directed trivialization,<br>Such that $[\sigma<em>\alpha]</em>{E|<em>{U</em>{\alpha\beta} } }=[\sigma<em>\beta]</em>{E|<em>{U</em>{\alpha\beta} } }$,<br>Then $E$ is said to be orientable. It is equivalent to for each fiber $E<em>x$,<br>Select $H^n(E_x)$ generator $[\sigma_x]$ to satisfy the local compatibility condition:<br>Each point on $M$ has a neighborhood $U$, and $H^n(E|_U)$ generator $[\sigma_U]$,<br>Such that $\,\forall\,x\in U$, $[\sigma_U]|</em>{E_x}=[\sigma_x]$.</p>
+<p>The compatibility condition is equivalent to $\sigma<em>\beta-\sigma</em>\alpha=d\sigma_{\alpha\beta}$.<br>This is the starting point for discussing Euler classes.</p>
+<p>For a directed spherical bundle, there are two sets of compatible generators, and each set of generators is called an orientation of the spherical bundle.<br>A spherical bundle with a given orientation is called an oriented spherical bundle. The $S^0$ bundle on the manifold $M$ is a double cover of $M$.<br>If $M$ is connected, the bundle is directional if and only if it has two connected branches.</p>
+<p>Fix an orientation and take $[\sigma]\in H^n(S^n)$ as the generator. If $g\in SO(n+1)$,<br>Then $g(S^n)=S^n$ and the orientation is the same.<br>$g^\ast [\sigma]=\sigma$ if and only if the determinant of the orthogonal transformation $g$ is positive.</p>
+<p>Now we study the orientability of vector bundle $E$ and $S(E)$.</p>
+<p><strong>Proposition 1</strong>. <em>The vector bundle $E$ is orientable if and only if the spherical bundle $S(E)$ is orientable.</em></p>
+<p><strong>Proof:</strong> Given the upper metric of $E$,<br>The local trivialization of the given inner product ${(U<em>\alpha,\phi</em>\alpha)}$.<br>$g<em>{\alpha\beta}$ is reduced to $O(n+1)$ selection,<br>Induces the local trivialization ${(U</em>\alpha,\varphi_\alpha)}$ of $S(E)$.<br>The structure group of $S(E)$ is also $O(n+1)$.</p>
+<p>Take the projection $\rho<em>\alpha:U</em>\alpha\times S^n\rightarrow S^n$,<br>Use $\rho<em>\alpha^\ast ,\varphi</em>\alpha^\ast $ to pull back $H^n(S^n)$ generator $[\sigma]$,<br>Give $H^n(S(E)|<em>{U</em>\alpha})$ generator $[\sigma_\alpha]_x$.</p>
+<p>can be found,<br>$[\sigma<em>\alpha]_x=[\sigma</em>\beta]<em>x\Leftrightarrow [\sigma]=g</em>{\alpha\beta}(x)^\ast [\sigma]$.<br>Thus the proposition is proved.</p>
+<p><strong>Note 2</strong>. <em>$SO(1)={1}$, so the line bundle $\pi:L\rightarrow M$ on the connected manifold $M$ can be oriented if and only if it is trivial. At this time, the spherical bundle $S(L)$ has two connected branches. ($S^0={\pm 1}$)</em></p>
+<p>If ${g<em>{\alpha\beta}}$ is the transfer function of $E$,<br>Then ${\det g</em>{\alpha\beta}}$ is the transfer function of the determinant bundle. Therefore, there is:</p>
+<p><strong>Proposition 3</strong>. <em>The vector bundle $E$ is orientable if and only if the determinant bundle $\det E$ is orientable.</em></p>
+<p>Since the $0$-spherical bundle $S(\det E)$ is a double cover of $M$,<br>$E$ is directional if and only if $S(\det E)$ is not connected.<br>Since a simply connected manifold cannot have a connected covering space with a multiplicity greater than $1$, we have:</p>
+<p><strong>Proposition 4</strong>. <em>Every vector bundle on a simply connected manifold can be oriented.</em></p>
+<p>and:</p>
+<p><strong>Corollary 5</strong>. <em>Simply connected manifolds can be oriented.</em></p>
+<h2 id="euler-class">Euler class</h2>
+<p>$\sigma<em>\beta-\sigma</em>\alpha=d\sigma<em>{\alpha\beta}$,<br>Defined $0$-on-chain $\sigma^{0,n}=(\sigma</em>\alpha,\sigma<em>\beta,...)$,<br>With $1$-on-chain $\sigma^{1,n-1}=(\sigma</em>{\alpha\beta},\sigma<em>{\alpha\gamma},...)$.<br>Using ${U</em>\alpha}$ for good coverage and Künneth&#39;s formula, you can continue to go diagonally to the lower right,<br>Obtain the Euler class $[\varepsilon]\in H^{n+1}(\mathcal{U},\mathbb{R})$,<br>This corresponds to $[e]\in H^{n+1}(M)$.</p>
+<p>If $E$ is a directed vector bundle, the zero-section complement $E^0$ has the same topology as the directed spherical bundle.<br>The Euler class $E$ is defined as the Euler class $E^0$. The Euler class $E$ can also become the Euler class of $S(E)$ through metric.</p>
+<p><strong>Proposition 6</strong>. <em>Given the orientation, the Euler class has nothing to do with the selection of $\sigma^{j,n-j}$.</em></p>
+<p>Just rely on the elements of the next row, find $\tau\in K^{n-1}$, $D\tau=\bar\sigma-\sigma$,<br>This will lead to $\delta \tau=\bar\varepsilon-\varepsilon$,<br>Here $\tau$ ran to $C^n(\pi^{-1}\mathcal{U},\mathbb{R})$.<br>$[\bar\varepsilon]=[\varepsilon]\in H^{n+1}(M)$.</p>
+<p><strong>Proposition 7</strong>. <em>The Euler class $e(E)$ has nothing to do with good coverage selection.</em></p>
+<p>Let $\mathcal{W}$ be the public plus fine coverage of $\mathcal{U},\mathcal{V}$,<br>Then Čech is isomorphic,<br>$[\varepsilon<em>\mathcal{U}]=[\varepsilon</em>\mathcal{W}]=[\varepsilon_\mathcal{V}]$.</p>
+<p>If the Euler class $e(E)\in H^{n+1}(M)$ is zero, then $\varepsilon=\delta \tau$ is the upper edge,<br>Then $\delta (\sigma^{n,0}+i\tau)=-i\varepsilon+i\varepsilon=0$,<br>Therefore, $\sigma^{n,0}+i\tau$ can be used instead of $\sigma^{n,0}$,<br>In this way $\delta \sigma^{n,0}=0$, $D\sigma=0$. According to Collating formula,<br>This corresponds to the global closed $n$-form $\eta$ on $E$,<br>Such that $[\eta|<em>{E{|</em>{U<em>\alpha} } }]=[\sigma</em>\alpha]$,<br>Restricted to generators on each fiber.</p>
+<p>To summarize, we can orientate from the spherical bundle $E$ and give the Euler class. When the Euler class is zero,<br>The overall definition of $\eta$ is derived. Conversely, if there is a closed form of the overall definition of $\eta$,<br>Restrict each fiber to be a generator, then take $[\sigma]<em>x=[\eta|_x]$,<br>$E$ is of course orientable. At this time $\sigma</em>\alpha=\sigma<em>\beta=\sigma_x$,<br>$d\sigma</em>{\alpha\beta}=0$, which infers that the Euler class is zero.</p>
+<p>To sum up,<br>The spherical bundle $E$ is orientable and the Euler class is zero if and only if there is a limit on $E$ that is the global closed form of the generator on each fiber.</p>
+<p>The Euler class is used to measure the degree of distortion of the directed vector bundle:</p>
+<p><strong>Proposition 8</strong>. <em>If the directed spherical bundle $E$ has a cross section, then its Euler class is zero.</em></p>
+<p><strong>Proof:</strong> If $E$ has cross-section $s$, note that $-\pi^\ast \varepsilon=D\sigma$,<br>The action $s^\ast $ has $-\varepsilon=Ds^\ast \sigma$, so the Euler class is zero ($D$-upper edge,<br>$[-\varepsilon]_\delta=[Ds^\ast \sigma]_D=0=[e]_d$).</p>
+<p><strong>Note 9</strong>. <em>There was also $-i\varepsilon=D\sigma$ before, why may the Euler class be non-zero? Because $\pi^{-1}\mathcal{U}$ is not a good cover, there is no $H^\ast (\pi^{-1}\mathcal{U},\mathbb{R})\cong H^\ast (K)=H^\ast (\pi^{-1}\mathcal{U},\Omega^\ast )$. But after $s^\ast $ is pulled back, the double complex where $s^\ast \sigma$ is located is based on good coverage.</em> <em>So the content of this part can be regarded as a two-layer double complex, which is connected by the inverse mapping of $\pi^\ast $ and $\pi^\ast $ (not necessarily $s^\ast $). The upper layer is the double complex of $\pi^{-1}\mathcal{U}$, which is the fiber layer; the lower layer is the double complex of $\mathcal{U}$, which is the manifold layer. Starting from the orientation class at the upper left of the fiber layer, run to $[\pi^\ast \varepsilon]$ at the lower right. Because of the good use of the covering properties, $\pi^\ast $ is isomorphic in Čech cohomology (the vector bundles on the shrinkable space are all trivial bundles, and then use connectivity to explain). This corresponds to $[\varepsilon]$, which falls on the lower level. Then run to $[e]$ to the upper left, which is the Euler class.</em></p>
+<h2 id="overall-angular-form">overall angular form</h2>
+<p>Let $\pi:E\rightarrow M$ be the directed $S^n$ bundle, and ask whether there is $\psi\in \Omega^n(E)$,<br>Let $[\psi|_{E_x}]\in H^n(E_x)$ be the generator, $d\psi=-\pi^\ast e$.</p>
+<p>From the Collating formula, $e=(-1)^{n+1}(D&#39;&#39;K)^{n+1}\varepsilon$.<br>$D\sigma=-\pi^\ast \varepsilon$,<br>Then $\psi=f(\sigma)=\sum_{i=0}^n(-1)^i(D&#39;&#39;K)^i\sigma^{i,n-i}+(-1)^nK(D&#39;&#39;K)^n(-\pi^\ast \varepsilon)$.<br>Here, because ${\pi^\ast \rho}$ is the unit decomposition on $\pi^{-1}\mathcal{U}$,<br>The homotopy operator on the manifold layer can be copied to the fiber layer.</p>
+<p>It can be seen that $d\psi=(-1)^n dK(D&#39;&#39;K)^n (\pi^\ast \varepsilon)=-\pi^\ast e$.<br>At the same time, since the unit in the homotopy operator $K$ is decomposed into $\pi^\ast $ and pulled back, it is limited to $E<em>x$,<br>Therefore, all single terms of $\psi$ preceded by $K$ are restricted to zero on the fiber. Thus, on the fiber,<br>$[\psi|</em>{E<em>x}]=[\sigma^{0,n}|</em>{E<em>x}]\in H^n(E_x)$.<br>Therefore $\psi$ is exactly the global angular form.<br><strong>Note 10</strong>. *Suppose ${U</em>\alpha}$ is an open covering for $M$, and locally trivializes the $n$-dimensional spherical bundle $E$. Then the above $e,\psi$ satisfies $\operatorname{supp}d\psi\subset \pi^{-1}(U<em>{\alpha_0\cdots\alpha_n})$, $\operatorname{supp}e\subset \cup U</em>{\alpha_0\cdots \alpha_n}$.*</p>
+<p>This is naturally because $\varepsilon$ is only locally constant on $\cup U<em>{\alpha_0\cdots\alpha</em>{n+1} }$,<br>After each pass through $K$, ensure that the support set falls within a $U<em>\alpha$. According to the Collating formula,<br>After $n+1$ times $K$, the Euler class $e$ support falls on $\cup U</em>{\alpha_0\cdots\alpha_n}$.<br>Another result is obtained from $d\psi=-\pi^\ast e$.</p>
+<p>The article was last updated on 2021-11-21 15:56:09</p>
                 </div>
             
         </div>
@@ -356,14 +399,14 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(11-1)-球面丛</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-21 17:55:20</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(11-1)-球面丛</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-11-21 17:55:20</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/21/《代数拓扑与微分形式》笔记(11-1)-球面丛/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/11/21/《代数拓扑与微分形式》笔记(11-1)-球面丛/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -431,7 +474,7 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -569,24 +612,21 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -668,9 +708,7 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#definition"><span class="nav-text">definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#orientability"><span class="nav-text">Orientability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#euler-class"><span class="nav-text">Euler class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overall-angular-form"><span class="nav-text">overall angular form</span></a></li></ol>
         </div>
     
 </div>
@@ -695,6 +733,7 @@ $[\psi|_{E_x}]=[\sigma^{0,n}|_{E_x}]\in H^n(E_x)$.
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

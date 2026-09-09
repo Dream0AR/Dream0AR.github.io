@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -311,7 +311,44 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="preparation">Preparation</h2>
+<p>$r(x)=d(p,x)$ is the Lipschitz function on $M$, and further it is in $W^{1,p}_{loc}(M)$.<br>We hope to deduce:</p>
+<script type="math/tex; mode=display">
+-\int_M\nabla_g r\nabla_g \varphi\le \int_M (n-1)\frac{sn_k'(r)}{sn_k(r)}\varphi dV_g,\quad \,\forall\,\varphi\ge 0,\varphi\in \mathscr{D}(M).</script><p>For the cut $\operatorname{Cut}=N_p\cup A_p,$ $\,\forall\,p&gt;n-2,$<br>$\,\exists\,r_k,r_k&#39;\rightarrow 0,$<br>$\,\exists\,\phi_k\in W^{1,n-p}\cap C^0,$ satisfies</p>
+<script type="math/tex; mode=display">
+\phi_k|_{B_{r_k}^g(A_p)^c}\equiv 0,\quad \phi_k|_{B_{r_k}^g(A_p)}\equiv 1,</script><p>And $\int |\nabla \phi_k|^{n-p}\rightarrow 0.$</p>
+<h2 id="division-points">Division points</h2>
+<p>First consider writing the left-hand side of the inequality in a more convenient form.</p>
+<script type="math/tex; mode=display">
+-\int_M\nabla_g r\nabla_g\varphi dV_g=\lim_{k\rightarrow +\infty} -\int_M \nabla_g r\nabla_g(1-\varphi_k)\varphi dV_g.</script><p>Record the following integral as $I,$ then</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ I&= -\int_{\widehat{C}_p\cap \widehat{S}_p} \nabla_{\widehat g}r\nabla_{\widehat g}(1-\phi_k)\varphi dV_{\widehat{g} }\\
+ &=\int_{\widehat{S}_p}\Delta_{\widehat g}r(1-\phi_k)\varphi-\int_{ {\widehat N}_p}\frac{\partial {}r}{\partial {}n}(1-\phi_k)\varphi\\
+ &=\int_M(\Delta_g r)(1-\phi_k)\varphi-\int_{N_p}J(x)(1-\phi_k)\varphi\\
+ &\rightarrow \int_{S_p}(\Delta_g r)\varphi dV_g-\int_{N_p }J(x)\varphi.
+ \end{aligned}</script><script type="math/tex; mode=display">
+J(x):=n_1\cdot \gamma_1'+n_2\cdot\gamma_2'\ge 0.</script><p>Then $\,\forall\,\varphi\in \mathscr{D}(M\setminus{p}),$</p>
+<script type="math/tex; mode=display">
+-\int_M\nabla_gr\nabla_g\varphi dV_g=\int_{S_p}\Delta_gr\varphi dV_g-\int_{N_p} J(x)\varphi(x)d\mathcal{H}^{n-1}.</script><p>In fact, we can take $\varphi\in \mathscr{D}(M).$ Consider $\eta=\begin{cases}<br> 1, &amp;t&gt;2\<br> \in[0,1], &amp;1\le t\le 2\<br> 0, &amp;t&lt;1<br> \end{cases},$<br>$\eta_\varepsilon=\eta(d(x,p)\varepsilon^{-1}),$<br>$\varepsilon&lt;\operatorname{Inj}(p).$</p>
+<script type="math/tex; mode=display">
+|\nabla_g\eta_\varepsilon|=|\eta'| \frac{|\nabla_g r|}{\varepsilon}\le \frac{\Vert\eta'\Vert_{C_0} }{\varepsilon},\quad \eta_\varepsilon\varphi\in \mathscr{D}(M\setminus\{p\}).</script><p>Then substitute $\eta_\varepsilon\varphi,$<br>Let $\varepsilon\rightarrow 0$ to get the conclusion.<br>That is, $\varphi$ can be selected from $\mathscr{D}(M)$.</p>
+<h2 id="weak-meaning">Weak meaning</h2>
+<p>From the formula proved above,</p>
+<script type="math/tex; mode=display">
+\Delta_g r=(\Delta_g r)\chi_{S_p}-\mu,</script><p>$\mu$ is a Radon measure, which can be written as $\mu=J(x)\mathcal{H}^{n-1}|_{N_p},$ that is</p>
+<script type="math/tex; mode=display">
+\int_M\varphi d\mu=\int_{N_p}\varphi Jd\mathcal{H}^{n-1}</script><p> By $J\ge 0,$<br>We immediately obtain the Laplace comparison theorem in the previous weak sense (on the function space $\mathscr{D}_+(M)$).</p>
+<h2 id="gate-function">Gate function</h2>
+<p>There is also a corresponding Laplace comparison theorem in the sense of gate functions.</p>
+<p>Recall that for the bounded open set $\Omega,$ $p\in \Omega,$ $f\in C^2(\Omega).$<br>If $f(p)=\min<em>\Omega f,$ then $\Delta_g f(p)\ge 0.$<br>Then if $\,\exists\,\varphi\in C^2(\Omega),$ $\varphi\ge f,$<br>$\varphi(p)=f(p),$ then $\varphi(p)-f(p)=\min</em>\Omega(\varphi-f),$<br>Thus $\Delta \varphi(p)\ge \Delta f(p).$</p>
+<p><strong>Definition 1</strong>. <em>Suppose $f$ is continuous near point $p$. We say $\varphi$ is the upper gate function of $f$ at $p$. If $\varphi\ge f,$ $\varphi=f(p).$ $\Delta f(p)\le C$ in the sense of defining the gate function means $\,\forall\,\varepsilon&gt;0,$ $\,\exists\,$The upper gate function $\varphi,$ makes $\Delta \varphi\le C+\varepsilon.$</em></p>
+<p>Similarly, the lower gate function can be defined. If the upper and lower gate functions exist at the same time for the same constant $C$,<br>Then we can define $\Delta f(p)=C.$ Next, we prove that in the sense of gate function,</p>
+<script type="math/tex; mode=display">
+\Delta r\le (n-1)\frac{sn_k'(r)}{sn_k(r)}.</script><p>For $x\in M\setminus{p},$, let $\gamma$ be the line segment connecting $p$ to $x$.<br>Take $x<em>\varepsilon=\gamma(\varepsilon).$<br>Definition$r</em>\varepsilon(x):=d(x,x<em>\varepsilon)+\varepsilon\ge d(x,p).$<br>It is easy to prove that $x\in S</em>{x<em>\varepsilon},$ therefore $r(x)=r</em>\varepsilon(x).$<br>And under the condition of $\operatorname{Ric}\ge (n-1)K$,</p>
+<script type="math/tex; mode=display">
+\Delta_g r_\varepsilon=\Delta_g d(x,x_\varepsilon)\le (n-1)\frac{sn_k'}{sn_k}(d(x,x_\varepsilon)),</script><p>This shows that in the gate sense, $\Delta_gr\le (n-1)\frac{sn_k&#39;}{sn_k}(r).$</p>
+<p>The article was last updated on 2022-10-03 23:21:28</p>
                 </div>
             
         </div>
@@ -320,14 +357,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《几何分析》笔记(7)-Laplace比较定理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-10-04 01:26:26</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《几何分析》笔记(7)-Laplace比较定理</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-10-04 01:26:26</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/10/03/《几何分析》笔记(7)-Laplace比较定理/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/10/03/《几何分析》笔记(7)-Laplace比较定理/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -395,7 +432,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -533,24 +570,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -632,9 +666,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#preparation"><span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#division-points"><span class="nav-text">Division points</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#weak-meaning"><span class="nav-text">Weak meaning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gate-function"><span class="nav-text">Gate function</span></a></li></ol>
         </div>
     
 </div>
@@ -659,6 +691,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

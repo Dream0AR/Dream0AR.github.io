@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -314,7 +314,36 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="compatibility">Compatibility</h2>
+<p><strong>Proposition 1.1</strong>. <em>Suppose $\mathcal{D}$ is a smooth distribution on $M$. If $\mathcal{D}$ is integrable, then $\,\forall\,X,Y\in \chi(\mathcal{D}),$ is $\,\forall\,p\in M,$ $X_p,Y_p\in \mathcal{D}_p,$ Then $[X,Y]\in \chi(\mathcal{D}).$</em></p>
+<p><strong>Proof:</strong> Take any coordinate system $(U,\varphi;x^i),$ containing $p$<br>To prove $[X,Y]_p\in \mathcal{D}_p.$<br>According to the integrability, there exists an integrator manifold $i:N^k\hookrightarrow M,$ through the $p$ point. From a local perspective, according to the rank theorem,<br>It can be regarded as a slice. Therefore, $X,Y$ only has smooth components on the first $k$ natural bases. Calculated,<br>$[X,Y]$ also only has smooth components on the first $k$ natural bases,<br>Therefore $[X,Y]\in \chi(\mathcal{D}).$</p>
+<p><strong>Note 1.2</strong>. <em>It can be proved that if $X<em>1,X_2$ and $Y_1,Y_2$ are $F$ related, that is, $F</em>\ast $[X|<em>N,Y|_N]$ and $[X,Y]$ are related to $i$, that is, $i</em>\ast [X|_N,Y|_N]=[X,Y],$ thus $[X|_N,Y|_N]=[X,Y]|_N.$</em></p>
+<p><strong>Definition 1.3</strong>. <em>Suppose $\mathcal{D}$ is a smooth distribution on $M$. If $\,\forall\,X,Y\in \chi(\mathcal{D}),$ $[X,Y]\in \chi(D),$, then $\mathcal{D}$ is said to be <strong>involution</strong>.</em></p>
+<p>From the previous proposition, integrability $\Rightarrow$ involution. In fact, to prove the involution,<br>Just explain the local frame field $X_1,\cdots,X_k,$ of $\,\forall\,\mathcal{D}$<br>$[X_i,X_j]\in \chi(\mathcal{D}),$ $\,\forall\,1\le i,j\le k.$<br>The original condition for satisfying involutivity can be explained by using the frame property. Therefore, these two conditions are equivalent.</p>
+<h2 id="frobenius-theorem">Frobenius theorem</h2>
+<p><strong>Theorem 1.4</strong> (Frobenius). <em>Suppose $\mathcal{D}$ is a $k$-dimensional distribution on $M^m$. If $\mathcal{D}$ is involutive, then $\,\forall\,p\in M,$ $\,\exists\,$ contains $p$ coordinate system $(U,\varphi;x^i)$ such that $k$-dimensional slices are all integrator manifolds of $\mathcal{D}$.</em></p>
+<p><strong>Proof:</strong> When $k=1$, according to the Flow box theorem, each point has a local coordinate system,<br>Let any $x^1$-curve be the integral curve of $X$,<br>That is, $1$-dimensional slices are all $1$-dimensional integral molecule manifolds of $\mathcal{D}$.</p>
+<p>Inductively, if the proposition holds for $k-1$ dimensional distribution,<br>Then let $\mathcal{D}$ be the $k$-dimensional distribution involuted on $M$,<br>Take the local standard field $X_1,\cdots, X_k,$ then according to the involution property,</p>
+<script type="math/tex; mode=display">[X_i,X_j]\equiv 0 \mod \{X_1,\cdots,X_k\}.</script><p>According to the Flow box theorem,<br>The coordinate system can be obtained such that $X<em>k=\frac{\partial {} }{\partial {}y_k},$<br>Then for $1\le \lambda,\mu,\nu\le k-1,$<br>Let $X</em>\lambda&#39;=X<em>\lambda-X</em>\lambda(y^k)X<em>k,$ then $X</em>{\lambda}&#39;(y<em>k)=0,$<br>$X_k(y_k)=1,$<br>Thus $\mathcal{D}=\operatorname{span}{X_1&#39;,\cdots,X</em>{k-1}&#39;,X_k},$<br>It is still a local benchmark field.</p>
+<p>Calculated,<br>The $k-1$ dimensional distribution $\mathcal{D}&#39;:=\operatorname{span}{X<em>1&#39;,\cdots,X</em>{k-1}&#39;}$ alone satisfies the involution property.<br>At this time, according to the inductive assumption, $\mathcal{D}&#39;$ is an integrable distribution,<br>There is a coordinate system $(V,\psi;z^i)$ such that $k-1$ dimensional slices are all integrator manifolds of $\mathcal{D}&#39;$.<br>At this time $\frac{\partial {}y^k}{\partial {}z^\lambda}=0,$<br>$\,\forall\,1\le \lambda\le k-1.$<br>$\mathcal{D}=\operatorname{span}{\frac{\partial {} }{\partial {}z^1},\cdots,\frac{\partial {} }{\partial {}z^{k-1} },X_k}.$</p>
+<p>Effect$y^k,$<br>Calculate $[\frac{\partial {} }{\partial {}z^\lambda},X<em>k]\equiv 0\mod {\frac{\partial {} }{\partial {}z^1}\cdots\frac{\partial {} }{\partial {}z^{k-1} }}.$<br>Express $X_k$ as $\sum</em>{A=1}^m \xi^A \frac{\partial {} }{\partial {}z^A},$<br>Then from the previous formula,<br>$\sum<em>{A=k}^m\frac{\partial {}\xi^A}{\partial {}z^\lambda}\frac{\partial {} }{\partial {}z^A}=0,$<br>This shows that $\xi^A=\xi^A(z^k,\cdots,z^m),$ $\,\forall\,A\ge k.$<br>Let $X_k&#39;=X_k-\sum</em>{\lambda=1}^{k-1}\xi^\lambda\frac{\partial {} }{\partial {}z^\lambda},$<br>Only the following components are retained. According to the Flowbox theorem,<br>The new coordinate system can be obtained such that $X&#39;_{k}=\frac{\partial {} }{\partial {}x^k},$<br>It satisfies $x^\lambda=z^\lambda,$ $1\le \lambda\le k-1.$, that is, the first $k-1$ coordinates remain unchanged.<br>Then at this time, we have $\mathcal{D}=\operatorname{span}{\frac{\partial {} }{\partial {}x^1},\cdots,\frac{\partial {} }{\partial {}x^{k} }},$<br>$k$-dimensional slices are all integral manifolds.</p>
+<h2 id="unit-decomposition">unit decomposition</h2>
+<p><strong>Theorem 1.5</strong>. <em>Suppose there is a compact set $\overline{V}\subset U,$ on the smooth manifold $M^m$, then there exists $f\in C<em>c^\infty(M),$ such that $f\in[0,1],$ $f|_V\equiv 1,$ $f|</em>{M\setminus U}\equiv 0.$</em></p>
+<ul>
+<li><p>Suppose $M$ is a topological space, and ${A<em>\alpha}$ is a family of subsets of $M$.<br>  Such as $\bigcup</em>{\alpha}A<em>\alpha=M,$<br>  Then ${A</em>\alpha}$ is said to be a <strong>cover</strong> of $M$.</p>
+</li>
+<li><p>Let ${A<em>\alpha}$ be the cover of $M$, if $\,\forall\,p\in M,$<br>  There exists $U\ni p$ such that $U$ intersects only a limited number of $A</em>\alpha$,<br>  Then ${A_\alpha}$ is said to be a <strong>locally finite</strong> coverage of $M$.</p>
+</li>
+<li><p>Let ${U<em>\alpha},$ ${V</em>\beta}$ be two covers of $M$.<br>  If $\,\forall\,\beta,$<br>  $\,\exists\,\alpha$ makes $V<em>\beta\subset U</em>\alpha,$<br>  Then ${V<em>\beta}$ is said to be the <strong>refined</strong> of ${U</em>\alpha}$.</p>
+</li>
+</ul>
+<p><strong>Definition 1.6</strong>. <em>$M$ is a topological space. If any open covering ${U_\alpha}$ of $M$ has local finite thinning, then $M$ is said to be <strong>quasi-compact</strong>.</em></p>
+<p>Now suppose $M$ is the $m$-dimensional $C^\infty$ manifold, and ${A<em>\alpha}$ is the open cover of $M$.<br>According to the second countable axiom, ${A</em>\alpha}$ exists countably plus thin ${U<em>j},$<br>And each open set is a coordinate graph $(U_j,\varphi_j).$ The coordinate graph can be further transformed into a locally finite one,<br>And $\varphi_j(U_j)=B_1^m(0),$<br>${V_j=\varphi_j^{-1}(B</em>{1/2}^m(0))}$ is also an open covering of $M$.</p>
+<p><strong>Definition 1.7</strong>. <em>Suppose $M$ is a smooth manifold. If ${f_i}\in C^\infty(M)$ satisfies $f_i\in [0,1],$ $\sum_i f_i\equiv 1,$ and ${\operatorname{supp}f_i}$ is a local finite cover of $M$, Then ${f_i}$ is called the <strong>unit decomposition</strong> of $M$.</em></p>
+<p><strong>Theorem 1.8</strong> (Unit decomposition). <em>Assume $M^m$ is a smooth manifold, then there is unit decomposition ${f_i}.$</em></p>
+<p><strong>Proof:</strong> $\,\forall\,\bigcup<em>\alpha A</em>\alpha\supset M,$ From the above lemma,<br>There exists local finite addition ${(U<em>i,\varphi_i)},$ $\varphi_i(U_i)=B_1^m(0).$ and then<br>$\,\exists\,{\widetilde{f}_i}\in C_c^\infty(U_i),$<br>$\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|</em>{V_i}\equiv 1.$<br>Finally, take $f_i=\frac{\widetilde{f}_i}{\sum_i \widetilde{f}_i}$.</p>
+<p>In fact there is $\operatorname{supp}f<em>i\subset U_i\subset A</em>\alpha,$<br>It is said that ${f<em>i}$ is <strong>subordinate</strong> to the unit decomposition of ${A</em>\alpha}$.<br>Therefore any open covering has a unit decomposition subordinate to it.</p>
+<p>The article was last updated on 2021-11-10 16:15:52</p>
                 </div>
             
         </div>
@@ -323,14 +352,14 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第四章-Frobenius定理</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-11-10 18:15:52</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第四章-Frobenius定理</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-11-10 18:15:52</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/11/10/《微分流形》第四章-Frobenius定理/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/11/10/《微分流形》第四章-Frobenius定理/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -398,7 +427,7 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -536,24 +565,21 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -635,9 +661,7 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#compatibility"><span class="nav-text">Compatibility</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#frobenius-theorem"><span class="nav-text">Frobenius theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unit-decomposition"><span class="nav-text">unit decomposition</span></a></li></ol>
         </div>
     
 </div>
@@ -662,6 +686,7 @@ $\widetilde{f}_i\in[0,1],$ $\widetilde{f}_i|_{V_i}\equiv 1.$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

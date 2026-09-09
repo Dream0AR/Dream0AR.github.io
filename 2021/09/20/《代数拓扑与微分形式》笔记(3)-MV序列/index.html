@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -329,7 +329,46 @@ $B^1(S^1)=\ker \int_{S^1}.$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>The Mayer-Vietoris sequence is a classic conclusion in algebraic topology and is of great help in calculating homology groups.<br>It certainly exists in de Rham complexes as well.</p>
+<h2 id="cohomological-mv-sequence">Cohomological MV sequence</h2>
+<h3 id="short-exact-sequence-of-complex">Short exact sequence of complex</h3>
+<p>In algebraic topology we know that if there is a short exact sequence of complex</p>
+<script type="math/tex; mode=display">0\rightarrow A\rightarrow B\rightarrow C\rightarrow 0,</script><p>Then according to the zig-zag lemma (graph tracking), a long exact sequence can be constructed</p>
+<script type="math/tex; mode=display">...\rightarrow H^p(A)\rightarrow H^p(B)\rightarrow H^p(C)\rightarrow H^{p+\varepsilon}(A)\rightarrow ...</script><p>where $\varepsilon=\pm 1$, depends on whether cohomology or hypohomology is considered. Therefore, in order to obtain the MV sequence,<br>We only need to construct the short exact sequence of the complex.</p>
+<p>Let $U, V$ be the open subset of the manifold $M$, $M=U\cup V$, $U\cap V$ is open, and there is $U$ on it,<br>Inclusion mapping of $V$:</p>
+<script type="math/tex; mode=display">\partial_0:U\cap V\rightarrow V, \quad \partial_1:U\cap V\rightarrow U,</script><p>The number in the subscript refers to the forgotten position, which is used to consider more general MV sequences later (multiple open sets can be listed).</p>
+<p>Let $U\sqcup V$ be the intersection-free union of the two, also called the topological sum (because when viewed in the same space,<br>Of course they intersect). Note that it is not a Cartesian product.<br>So there is a map $U\sqcup V\rightarrow M$ induced by the containing map $U,V\rightarrow M$,<br>Thus we have mapped columns</p>
+<script type="math/tex; mode=display">M=U\cup V\leftarrow U\sqcup V\mathop{\leftleftarrows}\limits_{\partial_1}^{\partial_0} U\cap V,</script><p>The double arrow here points to selecting one of the mappings, that is, in fact we have two mapping columns.<br>Apply the inverse functor $\Omega^\ast$ and do pullback mapping to get</p>
+<script type="math/tex; mode=display">\Omega^\ast (M)\rightarrow \Omega^\ast (U)\oplus \Omega^\ast (V)\mathop{\rightrightarrows}\limits_{\partial_1^\ast }^{\partial_0^\ast }\Omega^\ast (U\cap V),</script><p>Each pullback above is equivalent to a restriction on the differential form. To get the exact series,<br>We need to appropriately transform the mapping column:</p>
+<script type="math/tex; mode=display">0\rightarrow\Omega^\ast (M)\xrightarrow{r}\Omega^\ast (U)\oplus\Omega^\ast (V)\xrightarrow{\delta}\Omega^\ast (U\cap V)\rightarrow 0,</script><p>Where $r(\omega)=(\omega|<em>U, \omega|_V)$,<br>$\delta=\partial_0^\ast -\partial_1^\ast$,<br>That is, $\delta(\omega,\tau)=\tau|</em>{U\cap V}-\omega|_{U\cap V}$. Generally,<br>If the definition domain is clear, it can also be abbreviated as $\tau-\omega$ for convenience.</p>
+<p>We need to verify that the above complex columns are exact.</p>
+<p><strong>Proof</strong> $r$ is to limit the differential form to $U$ and $V$ respectively, so naturally it is an injective;<br>From the special construction of $\delta$, it is easy to see that the middle term is also exact, and we only need to prove that $\delta$ is satisfied.</p>
+<p>$\,\forall\,\omega\in \Omega^q(U\cap V)$,<br>Take the unit decomposition ${\rho_U,\rho_V}$ belonging to ${U,V}$, defined on $U$</p>
+<script type="math/tex; mode=display">\rho_V\omega=
+            \begin{cases}
+                \rho_V|_{U\cap V}\cdot\omega, \quad & \text{on}\quad U\cap V\\
+                0, &\text{on} \quad U-U\cap V
+            \end{cases},</script><p>Here the domain of $\rho_V$ is $V$, which naturally extends from zero to 0 on $U$.<br>The domain of $\omega$ is $U\cap V$,<br>Therefore, at this time, $\rho_V\omega$ can also be defined when expanded to $U$, and it is smooth.</p>
+<p>Similarly define $\rho_U\omega$ on $V$. Take $\xi=(-\rho_V\omega, \rho_U\omega)$,<br>Then $\delta\xi=\omega$. Therefore, the complex sequence is exact.</p>
+<h3 id="mayer-vietoris-sequence">Mayer-Vietoris sequence</h3>
+<p>According to the zig-zag lemma, the short exact sequence induces the long exact sequence</p>
+<script type="math/tex; mode=display">\cdots\rightarrow H^q(M)\xrightarrow{r}H^q(U)\oplus H^q(V)\xrightarrow{\delta}H^q(U\cap V)\xrightarrow{d^\ast }H^{q+1}(M)\rightarrow \cdots</script><p>The definition of connection homomorphism $d^\ast$ here is given by the zig-zag lemma process: using graph tracking,<br>$\omega\Rightarrow \xi=(-\rho_V\omega,\rho_U\omega)$,<br>Then derive $r\eta=d\xi$. $r$ is the restriction mapping, so $\eta=<br>        \begin{cases}<br>            d(-\rho_V\omega) &amp;\quad\text{on}\quad U\<br>            d(\rho_U\omega) &amp;\quad\text{on}\quad V<br>        \end{cases}$.</p>
+<p>At $U\cap V$, from $\rho_U+\rho_V=1$, and $d\omega=0$, the definition is legal.<br>So $d^\ast [\omega]=[\eta]$.</p>
+<p>Note that $\rho_U \omega, \rho_V\omega$ are not defined as a whole on $M$,<br>There may not necessarily be $\eta=d\tau$, $\tau\in\Omega^\ast (M)$,<br>Therefore $\eta$ is not necessarily appropriate.</p>
+<h2 id="compactly-supported-mv-sequence">Compactly supported MV sequence</h2>
+<p>Let $f:N\rightarrow M$ be a smooth mapping,<br>But $f^\ast :\Omega^\ast _c(M)\rightarrow \Omega^\ast _c(N)$ is generally not true,<br>There is no guarantee that the differential form of the tight support will still be pulled back to the differential form of the tight support,<br>For example, take $f$ as the projection $(x_1,x_2)\mapsto x_1$. However, a smooth inverse compact mapping is enough,<br>Because its definition is a mapping that satisfies &quot;the inverse image of a compact set is still a compact set&quot;.</p>
+<p>Generally, what we consider more is the inclusion mapping: if there is $j: U\rightarrow M$,<br>Definition $j<em>\ast : \Omega^\ast _c(U)\rightarrow \Omega^\ast _c(M)$,<br>$j</em>\ast \omega$ is the zero extension of $\omega$** to $M-U$.<br>Note that the mapped asterisk is marked below.</p>
+<p>If only the inclusion mapping between open sets is considered, $\Omega^\ast <em>c$ becomes a covariant functor. Similarly,<br>There is also a MV sequence for this functor,<br>Induced by the containing mapping column $U\cap V\mathop \rightrightarrows \limits</em>{j_U}^{j_V} U\sqcup V\rightarrow M$.<br>Here the double arrows point to $U, V$ respectively. From this, the short exact sequence of the complex is constructed:</p>
+<script type="math/tex; mode=display">0\rightarrow \Omega^\ast _c(U\cap V)\xrightarrow{\delta} \Omega^\ast _c(U)\oplus \Omega^\ast _c(V)\xrightarrow{s} \Omega^\ast _c(M)\rightarrow 0,</script><p>Among them $\delta\omega=(-j<em>\ast \omega,j</em>\ast \omega)$,<br>$s(\omega,\tau)=j<em>\ast \omega+j</em>\ast \tau$.</p>
+<p>In order to prove the legitimacy, we only need to prove that $s$ is full,<br>Similarly, take ${\rho_U,\rho_V}$ as unit decomposition,<br>Just construct the differential forms of $\rho_U\omega and \rho_V\omega$ on $U$ and $V$ respectively.<br>Since $\omega$ has a compact support on $M$, the support of $\rho_U$ is in $U$,<br>It can be proved that $\rho_U\omega$ has tight support on $U$, and the same is true for $\rho_V\omega$.</p>
+<p>Then the long exact sequence is derived from the zig-zag lemma:</p>
+<script type="math/tex; mode=display">\cdots\rightarrow H^q_c(U\cap V)\xrightarrow{\delta} H^q_c(U)\oplus H^q_c(V)\xrightarrow{s} H^q_c(M) \xrightarrow{d_\ast }H^{q+1}_c(U\cap V)\rightarrow \cdots</script><p>In the same way, connection homomorphism can be judged.<br>Graph tracking found $\eta=d(\rho<em>V\omega)|</em>{U\cap V}=-d(\rho<em>U\omega)|</em>{U\cap V}$,<br>$d_\ast [\omega]=[\eta]$.</p>
+<p>Similarly, in compact cohomology, $\eta$ is not necessarily appropriate.<br>Because whether it is $\rho_U\omega$ or $\rho_V\omega$, although there is an overall definition at this time,<br>But the restriction does not necessarily have compact support in $U\cap V$.</p>
+<h2 id="-h-1-s-1-simeq-mathbb-r">$H^1(S^1)\simeq \mathbb{R}$</h2>
+<p>Let’s look at a simple example. Since $S^1$ is compact, $H_c^\ast (S^1)=H^\ast (S^1)$.<br>At this time, this proposition can be easily proved using cohomology and compact cohomology MV sequences.<br>Just cut $S^1$ in half.</p>
+<p>Or use local coordinates $\theta$, $d\theta$ to be in the $1$-form on $S^1$.<br>$1$-When the form $\omega$ is appropriate,<br>$\omega=dF=ad\theta \Leftrightarrow \int<em>{S^1}\omega=0.$ Therefore<br>$B^1(S^1)=\ker \int</em>{S^1}.$<br>Note that $\int_{S^1}:\Omega^1(S^1)\rightarrow \mathbb{R}.$</p>
+<p>Thus $H^1(S^1)=Z^1(S^1)/B^1(S^1)=\Omega^1(S^1)/\ker \int_{S^1}\cong \mathbb{R}$.</p>
+<p>The article was last updated on 2021-10-09 12:32:30</p>
                 </div>
             
         </div>
@@ -338,14 +377,14 @@ $B^1(S^1)=\ker \int_{S^1}.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(3)-MV序列</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-20 18:04:13</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(3)-MV序列</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-20 18:04:13</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/20/《代数拓扑与微分形式》笔记(3)-MV序列/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/20/《代数拓扑与微分形式》笔记(3)-MV序列/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -413,7 +452,7 @@ $B^1(S^1)=\ker \int_{S^1}.$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -551,24 +590,21 @@ $B^1(S^1)=\ker \int_{S^1}.$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -650,9 +686,7 @@ $B^1(S^1)=\ker \int_{S^1}.$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cohomological-mv-sequence"><span class="nav-text">Cohomological MV sequence</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#short-exact-sequence-of-complex"><span class="nav-text">Short exact sequence of complex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mayer-vietoris-sequence"><span class="nav-text">Mayer-Vietoris sequence</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compactly-supported-mv-sequence"><span class="nav-text">Compactly supported MV sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#-h-1-s-1-simeq-mathbb-r"><span class="nav-text">$H^1(S^1)\simeq \mathbb{R}$</span></a></li></ol>
         </div>
     
 </div>
@@ -677,6 +711,7 @@ $B^1(S^1)=\ker \int_{S^1}.$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

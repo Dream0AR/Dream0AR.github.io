@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -300,7 +300,40 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi&#39;$,
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>Invariants on vector bundles: tight vertical cohomology, given by integrating along the fiber.</p>
+<h2 id="compact-cohomology-of-vector-bundles-whole-space">Compact cohomology of vector bundles (whole space)</h2>
+<p>If $s:M\rightarrow E$ is zero cross-section, then it embeds $M$ into $E$. $s(M)$ is the deformation shrinkage of $E$,<br>So $H^\ast (E)\cong H^\ast (M)$. Then inspired by Poincaré&#39;s lemma, for compact cohomology,<br>Is there $H_c^\ast (E)\cong H_c^{\ast -n}(M)$? But this is not true for the Möbius band.</p>
+<p>Now we call manifolds with finite good coverage <strong>finite manifolds</strong>.</p>
+<p><strong>Lemma 1.1</strong>. <em>$\pi:E\rightarrow M$ is a vector bundle of rank $n$. If $E, M$ are orientable finite manifolds, the formula holds.</em></p>
+<p>The Poincaré duality is transformed into a cohomological duality space, and then it is obtained by homotopy invariance.</p>
+<p>If $M$ is a finite manifold, then so is $E$. In fact, if $M$ is orientable, $\pi$ is an orientable vector bundle,<br>Then $E$ is also orientable. Just use the coordinate function $\psi<em>\alpha$ on $M$,<br>And the directional trivialization $\phi</em>\alpha$ of $E$ can naturally construct the coordinate function on $E$.<br>That is, the coordinate atlas of $E$ is<br>${(E|<em>{U</em>\alpha},(\psi<em>\alpha\times \mathrm{id})\circ\phi</em>\alpha)}$.<br>It is easy to verify that it is directional, which is called local product directional.</p>
+<p>This leads to the following proposition:</p>
+<p><strong>Proposition 1.1</strong>. <em>If $M$ is an orientable finite manifold, $\pi:E\rightarrow M$ is a rank $n$ orientable vector bundle, then $H_c^\ast (E)\cong H_c^{\ast -n}(M).$</em></p>
+<p>In fact, following the Thom isomorphism proof and MV method described later, the orientability assumption of $M$ can be removed.</p>
+<h2 id="tight-vertical-cohomology-and-integration-along-fibers">Tight vertical cohomology and integration along fibers</h2>
+<p>Let $\Omega^\ast <em>{cv}(E)$ be the differential form complex with compact support in the vertical direction,<br>That is, $\omega\in\Omega</em>{cv}^\ast (E)$ if and only if for any compact set $K\subset M$,<br>$\operatorname{supp}\omega\cap \pi^{-1}(K)$ tight.<br>This differential form is said to have compact support in the vertical direction. $H_{cv}^\ast (E)$ is said to be compact vertical cohomology**.<br>For such a form, the constraint has compact support on $E_x$, so it can be integrated along the fiber.</p>
+<p>Note the integral along the fiber $\pi<em>\ast :\Omega</em>{cv}^\ast (E)\rightarrow \Omega^{\ast -n}(M)$.<br>Let $E$ be a trivial bundle.<br>Decompose $\omega\in \Omega<em>{cv}^\ast (E)$ into linear combinations of terms containing $dt_1\wedge \cdots\wedge dt_n$ and other terms.<br>Let $\pi</em>\ast :\pi^\ast \phi\wedge f(x,t)dt<em>1\wedge \cdots\wedge dt_n\mapsto \phi\int</em>{\mathbb{R}^n}f(x,t)dt_1\cdots dt_n$,<br>Other forms are mapped to $0$. In fact, this is a high-dimensional generalization of the previous notation.</p>
+<p>For any directed vector bundle, just do $\pi<em>\ast \omega$ in each local trivial neighborhood.<br>But what needs to be verified is to take two pieces of $U</em>\alpha, U<em>\beta$ and their coordinate functions and trivialization,<br>It needs to be verified that $\pi</em>\ast \omega<em>\alpha, \pi</em>\ast \omega_\beta$ can be put together.<br>In fact, this is the integral transformation formula of heavy integral.</p>
+<p>Of course, it can also be processed directly at the operational level,<br>Use unit decomposition to divide $\omega$ into the sum of $\omega<em>\alpha$ supported on each $U</em>\alpha$,<br>Then just integrate $\pi_\ast$ along the fiber. Next we have:</p>
+<p><strong>Proposition 1.2</strong>. <em>$\pi_\ast$ is a chain map, thus inducing a mapping between tight vertical cohomologies.</em></p>
+<p>Just verify the product bundle $E=M\times \mathbb{R}^n$, and use the definition to expand,<br>It is almost the same as proving chain homotopy before.<br><strong>Proposition 1.3</strong> (Projection formula). <em>$\,\forall\,\tau\in\Omega^\ast (M)$, $\omega\in \Omega<em>{cv}^\ast (E)$, then $\pi</em>\ast (\pi^\ast \tau\wedge \omega)=\tau\wedge \pi<em>\ast \omega$. If $M$ is an $m$-dimensional oriented manifold, let $\omega\in\Omega^{q}</em>{cv}(E)$, $\tau \in \Omega<em>c^{m+n-q}(M)$, $E$ take the local product orientation, then $\int_E\pi^\ast \tau\wedge\omega=\int_M\tau\wedge\pi</em>\ast \omega.$</em></p>
+<p>Just do a simple verification, which is similar to the previous proof. Divide the form into two parts and verify them separately.</p>
+<p>The second half of the proposition can be decomposed into units of $M$. The proof requires the use of Fubini&#39;s theorem.<br>That is, integrating on $E|<em>{U</em>\alpha}$ is the same as integrating along the fiber first and then integrating on $U_\alpha$.</p>
+<h2 id="thom-isomorphism">Thom isomorphism</h2>
+<p>Next, copy the proof of Poincaré’s lemma on compact supports to get:</p>
+<p><strong>Proposition 1.4</strong> (Poincaré&#39;s lemma for compact vertical supports). <em>$\pi<em>\ast :H</em>{cv}^\ast (M\times \mathbb{R}^n)\cong H^{\ast -n}(M).$</em></p>
+<p>Next we prove the general case:</p>
+<p><strong>Theorem 1.1</strong> (Thom isomorphism). <em>If $\pi:E\rightarrow M$ is a rank $n$ orientable vector bundle on finite manifold $M$, then $H_{cv}^\ast (E)\cong H^{\ast -n}(M).$</em></p>
+<p>The proof uses the MV sequence on $U\cup V$ and the MV sequence of the fiber $E|<em>{U\cup V}$ on it.<br>They are connected by chain mapping $\pi</em>\ast$. According to the five lemmas,<br>Thom isomorphism holds for $E|<em>U,E|_V,E|</em>{U\cap V}$, then it also holds for $E|_{U\cup V}$.<br>Thus, the number of covered open sets can be summarized, which can be obtained by the MV method.</p>
+<p>Let $\mathcal{T}:H^\ast (M)\rightarrow H<em>{cv}^{\ast +n}(E)$ be the inverse of $\pi</em>\ast$,<br>Call it Thom isomorphism. For $1\in H^0(M)$,<br>$\Phi=\mathcal{T}(1)\in H_{cv}^n(E)$ is called the Thom class of $E$.</p>
+<p>$\mathcal{T}(\omega)=\mathcal{T}\pi<em>\ast (\pi^\ast \omega\wedge \Phi)=\pi^\ast \omega\wedge \Phi.$<br>Because $\mathcal{T}\pi</em>\ast =\mathrm{id}$, $\pi_\ast \mathcal{T}(1)=1.$</p>
+<p><strong>Proposition 1.5</strong>. <em>$\Phi$ is the only cohomology class of $H_{cv}^n(E)$, restricted to $H_c^n(E_x)$ generators on every $E_x$.</em></p>
+<p><strong>Certificate:</strong> $\pi<em>\ast \Phi=1$, $\pi</em>\ast \Phi(x)=\int<em>{E_x}\Phi(x,t)dt=1$,<br>Thus $\Phi|</em>{E_x}\in H_c^n(E_x)$ is a generator.</p>
+<p>If $\Phi&#39;$ also satisfies this property, then $\pi<em>\ast \Phi&#39;=1$.<br>$\pi</em>\ast (\pi^\ast \omega\wedge\Phi&#39;)=\omega$,<br>$\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi&#39;$,<br>Thus $\Phi&#39;=\mathcal{T}(1)=\Phi.$</p>
+<p><strong>Proposition 1.6</strong>. <em>Suppose $\pi_1:E\rightarrow M$, $\pi_2:E&#39;\rightarrow M$ are two directed vector bundles, then $\Phi(E\oplus E&#39;)=\operatorname{pr}_1^\ast \Phi(E)\wedge \operatorname{pr}_2^\ast \Phi(E&#39;)$.</em></p>
+<p><strong>Proof:</strong> Take the right expression as $\Phi&#39;$, and integrate it on $E_x\oplus E&#39;_x$ to find $1$,<br>It is obtained from the uniqueness of the previous proposition.</p>
+<p>In fact, $\Phi$ also has functor properties, that is, $f:N\rightarrow M$ is a smooth mapping,<br>Then $\Phi(f^{-1}E)=f^\ast \Phi(E)$, the proof is left as an exercise. (It is indeed our exercise)</p>
+<p>The article was last updated on 2021-09-23 15:07:12</p>
                 </div>
             
         </div>
@@ -309,14 +342,14 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi&#39;$,
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(6-2)-Thom同构</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-23 18:06:41</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(6-2)-Thom同构</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-23 18:06:41</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-2)-Thom同构/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/23/《代数拓扑与微分形式》笔记(6-2)-Thom同构/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -384,7 +417,7 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi&#39;$,
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -522,24 +555,21 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi&#39;$,
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -621,9 +651,7 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi&#39;$,
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#compact-cohomology-of-vector-bundles-whole-space"><span class="nav-text">Compact cohomology of vector bundles (whole space)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tight-vertical-cohomology-and-integration-along-fibers"><span class="nav-text">Tight vertical cohomology and integration along fibers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#thom-isomorphism"><span class="nav-text">Thom isomorphism</span></a></li></ol>
         </div>
     
 </div>
@@ -648,6 +676,7 @@ $\mathcal{T}(\omega)=\pi^\ast \omega\wedge\Phi&#39;$,
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

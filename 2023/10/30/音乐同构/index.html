@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -286,7 +286,34 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="definition">Definition</h2>
+<p><strong>Musical isomorphism</strong> (musical isomorphism), also known as canonical isomorphism,<br>Refers to the isomorphism between the tangent bundle and the cotangent bundle of a Riemannian manifold, given by the Riemannian metric.</p>
+<p>The Riemann metric $g=g_{ij}dx^i\otimes dx^j$ is a positive definite second-order tensor field, and each point has a mapping</p>
+<script type="math/tex; mode=display">
+\widehat g_x:T_xM\rightarrow T_x^\ast M,</script><p> make</p>
+<script type="math/tex; mode=display">
+\widehat g_x(X)(Y)=\left<{}X,Y\right>.</script><p>This gives diffeomorphism$\widehat g:TM\rightarrow T^\ast M.$</p>
+<p>If $X=X^i\partial_i,$ then the calculation is</p>
+<script type="math/tex; mode=display">
+\widehat g(X)=g_{ij}X^j\partial_i.</script><p>By positive definiteness, it is an isomorphism. The above isomorphism is called <strong>flat music isomorphism</strong> (flat),<br>Denoted as $\widehat g(X)=X^\flat,$, it means that the indicator $X^i$ decreases to the subscript $g_{ij}X^j.$<br>The inverse operation is naturally called <strong>sharp musical isomorphism</strong> (sharp),<br>Recorded as $\widehat g^{-1}(\omega)=\omega^\sharp,$<br>Raise indicator $\omega_i$ to superscript $g^{ij}\omega_j.$</p>
+<h2 id="application">Application</h2>
+<p>Some formulas can be expressed more concisely using musical isomorphisms, such as for the general vector bundle $(E,\nabla,h)$,<br>Calculate the expression of the connection $\nabla:\Gamma(M,E)\rightarrow\Gamma(M,E\otimes T^\ast M)$ with respect to $L^2$ inner product dual $\nabla^\ast $.</p>
+<p>For tightly supported $f\in\Gamma(M,E),$ $\omega\in \Gamma(M,E\otimes T^\ast M),$<br>Let $\nabla f=f_i\otimes dx^i,$ then</p>
+<script type="math/tex; mode=display">
+\left<{}\nabla f,\omega\right>=\int_M g\otimes h (\nabla f,\omega) d\mathrm{vol}_g=\int_M g^{ij}h(f_i,\omega_j)d\mathrm{vol}_g,\quad \omega=\omega_j \otimes dx^j,</script><p>Hope to get the form of $\left&lt;{}f,\nabla^\ast \omega\right&gt;=\int_M h(f,\nabla^\ast \omega)d\mathrm{vol}_g$,<br>Therefore, we must take advantage of the compatibility of contact and measurement,</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+ LHS&=\int_M g^{ij} \partial_i h(f,\omega_j) - g^{ij}h(f,\nabla_{\partial_i}\omega_j)d\mathrm{vol}_g\\
+ &=\int_M (dx^j)^\sharp h(f,\omega_j)-h(f,\nabla_{(dx^j)^\sharp}\omega_j)d\mathrm{vol}_g\\
+ &=\int_M \operatorname{div}(h(f,\omega_j)(dx^j)^\sharp)-h(f,(\operatorname{div}(dx^j)^\sharp+\nabla_{(dx^j)^\sharp})\omega_j)d\mathrm{vol}_g\\
+ &=\int_M h(f,\nabla^*\omega)d\mathrm{vol}_g=\left<{}f,\nabla^*\omega\right>.
+ \end{aligned}</script><p> Since the equation holds for all $f$ pairs,<br>This gives the expression of $\nabla^\ast $ using musical isomorphism. Expressed with a flat sign,<br>That is, for $\omega=u\otimes X^\flat,$</p>
+<script type="math/tex; mode=display">
+\nabla^\ast \omega=-\operatorname{div}(X)\omega-\nabla_X\omega.</script><p>The divergence $\operatorname{div}:T_xM\rightarrow \mathbb{R}$ used in the process refers to</p>
+<script type="math/tex; mode=display">
+\operatorname{div}X=\left<{}\nabla_{\partial_i}X,\partial_i\right>=\partial_iX^i+\Gamma_{ij}^iX^j,</script><p>satisfy</p>
+<script type="math/tex; mode=display">
+\operatorname{div}(fX)=Xf+f\operatorname{div}X.</script><p>The article was last updated on 2023-10-30 20:56:03</p>
                 </div>
             
         </div>
@@ -295,14 +322,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：音乐同构</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-10-30 22:56:01</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：音乐同构</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-10-30 22:56:01</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/10/30/音乐同构/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/10/30/音乐同构/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -370,7 +397,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -508,24 +535,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -607,9 +631,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application"><span class="nav-text">Application</span></a></li></ol>
         </div>
     
 </div>
@@ -634,6 +656,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

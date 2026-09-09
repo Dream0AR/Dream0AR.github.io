@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -380,7 +380,81 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="generalized-function">generalized function</h2>
+<h3 id="basic-definition">Basic definition</h3>
+<p>$C_c^\infty\subset \mathscr{S}\subset C^\infty,$<br>Recorded as $\mathscr{D}\subset \mathscr{S}\subset \mathscr{E},$<br>Then $\mathscr{D}&#39;\supset \mathscr{S}&#39;\supset \mathscr{E}&#39;.$<br>Note that the basic space used here is that the former is dense in the latter.</p>
+<p>The continuity of a generalized function is equivalent to boundedness. Note that boundedness is more special here,<br>Because the basic space is not normed. But a sequence of norms can be obtained.</p>
+<p>From this property, we can get an important dual property: $(\mathscr{D}&#39;)_c=\mathscr{E}&#39;.$</p>
+<h3 id="polished">Polished</h3>
+<p>$\alpha<em>\varepsilon(x)=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon}).$<br>The convolution $J</em>\varepsilon f:=f<em>\varepsilon=\alpha</em>\varepsilon\ast f$ is called the polish of $f$.<br>Since $\alpha_\varepsilon$ is a radial function, we have:</p>
+<script type="math/tex; mode=display">
+\left<{}\alpha_\varepsilon\ast T,\varphi\right>=\left<{}T_x,\left<{}\alpha_\varepsilon(y),\varphi(x+y)\right>\right>=\left<{}T,\alpha_\varepsilon\ast \varphi\right>.</script><p>When $T\in \mathscr{D}&#39;$, $\alpha_\varepsilon\ast T\in C^\infty.$</p>
+<p>From Minkowski inequality,<br>$\Vert\alpha<em>\varepsilon\ast f\Vert</em>{L^p}\le \Vert f\Vert<em>{L^p}.$<br>Minkowski&#39;s inequality can be derived from discrete cases or proven by functional analysis methods.<br>When $\varepsilon\rightarrow 0$,<br>We have $f</em>\varepsilon\xrightarrow{L^p} f.$</p>
+<h3 id="seeking-derivation">Seeking derivation</h3>
+<p>A generalized function can &quot;almost&quot; always be written as a derivative of a normal function. Here the derivative is a generalized derivative, such as:</p>
+<script type="math/tex; mode=display">
+\left<{}T,\varphi\right>=\left<{}D^\alpha f,\varphi\right>=(-1)^{|\alpha|}\left<{}f,D^\alpha \varphi\right>.</script><p>The definition of derivation comes from integration by parts, derived from the Gauss-Green formula.</p>
+<script type="math/tex; mode=display">
+\int_\Omega \partial f\cdot g+f\cdot \partial g=\int_{\Omega} \partial(fg)=\int_{\partial \Omega} fg\cdot \gamma,</script><p>When one of $f, g$ takes zero on the boundary, the right end gets zero, and the equation about the left end is established.</p>
+<h3 id="fourier-transform">Fourier Transform</h3>
+<p>For the rapid descending function, there is Fourier transformation:</p>
+<script type="math/tex; mode=display">
+F[f] (\xi)=\widehat{f}(\xi):=\int_{\mathbb{R}^n} f(x)e^{-ix\cdot \xi}dx,</script><p>There is an inverse Fourier transformation:</p>
+<script type="math/tex; mode=display">
+f(x)=F^{-1}[\widehat{f}] (x):=(2\pi)^{-n}\int_{\mathbb{R}^n}\widehat{f}(\xi)e^{ix\cdot \xi}d\xi,</script><p>Meet:</p>
+<script type="math/tex; mode=display">
+\widehat{D^\alpha f}(\xi)=\xi^\alpha \widehat{f}(\xi),\quad D^\alpha=\frac{1}{i^{|\alpha|} }\partial^\alpha,</script><script type="math/tex; mode=display">
+\widehat{fg}=(2\pi)^{-n}\widehat{f}\ast \widehat{g}.</script><p>We have the classic proposition: $F:\mathscr{S}\cong \mathscr{S}$ is a continuous isomorphism.<br>This directly induces $F:\mathscr{S}&#39;\cong \mathscr{S}&#39;,$<br>$\left&lt;{}F[T],\varphi\right&gt;:=\left&lt;{}T,F[\varphi]\right&gt;.$<br>This is guaranteed by Fubini&#39;s theorem. We also have the Plancherel formula:</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}^n}\widehat{f}\overline{\widehat{g} }\bar{d}\xi=\int_{\mathbb{R}^n} f \overline{g}dx,\quad \bar{d}\xi=(2\pi)^{-n}d\xi.</script><p>Taking $g=f,$, we get the Parseval identity for the continuous case.</p>
+<h2 id="sobolev-space">Sobolev space</h2>
+<h3 id="sobolev%E2%80%99s-inequality">Sobolev’s inequality</h3>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{L^q}\le C|u|_{\dot{H}^{m,p} },\quad \frac{n}{q}=\frac{n}{p}-m;</script><script type="math/tex; mode=display">
+|u|_{C^\alpha}\le C|u|_{\dot{H}^{m,p} },\quad -\alpha=\frac{n}{p}-m,\,\alpha\in (0,1);</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{m,p} },\quad 0>\frac{n}{p}-m;</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{s} },\quad 0>\frac{n}{2}-s;</script><script type="math/tex; mode=display">
+\Vert u\Vert_{L^q}\le C\Vert u\Vert_{H^{m,p} },\quad \frac{n}{p}-m=0,\, q\ge p.</script><p>Regarding the last inequality, the left-hand dimension is $\frac{n}{q},$<br>The right-hand side dimension is $[\frac{n}{p}-m,\frac{n}{p}]=[0,m].$ In order to make the inequality true,<br>The left-hand dimension must fall within this interval.<br>Therefore, the condition $\frac{n}{q}\le \frac{n}{p}=m\,\Rightarrow\,q\ge p$ is necessary.</p>
+<p>We also have Poincaré’s inequality:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{L^p}\le d\Vert\nabla u\Vert_{L^p}=d|u|_{\dot{H}^{1,p} },\quad \,\forall\,u\in H_0^{1,p}(\Omega).</script><h3 id="theorem">Theorem</h3>
+<p><strong>Equivalent modular theorem</strong>: extended by <strong>Lions</strong>,<br>Functions in $H^{m,p}(\Omega)$ can always be extended to functions in $H^{m,p}(\mathbb{R}^n)$.<br>definition</p>
+<script type="math/tex; mode=display">
+\Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_\Omega =f}\Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)},</script><p>Then with $\widetilde{f},$ obtained by extension of Lions, we have:</p>
+<script type="math/tex; mode=display">
+\Vert f\Vert_{H^{m,p}(\Omega)}\le \Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}\le \Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)}\le C\Vert f\Vert_{H^{m,p}(\Omega)},</script><p><strong>Compact embedding theorem</strong>: When the conditions in Sobolev&#39;s inequality are strict,<br>That is $\frac{n}{q}&gt;\frac{n}{p}-m,$<br>At this time, the embedding of $H^{m,p}(\Omega)\hookrightarrow L^{q}(\Omega)$ is tight,<br>That is to map bounded sets into compact sets.</p>
+<p><strong>Trace Theorem</strong>:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{H^{s-\frac{1}{2} }(\partial\Omega)}\le C\Vert u\Vert_{H^s(\Omega)},\quad s>\frac{1}{2}</script><p>A simple corollary that is most commonly applied is:</p>
+<script type="math/tex; mode=display">
+\Vert u\Vert_{L^2(\partial \Omega)}\le C\Vert u\Vert_{H^1(\Omega)}.</script><p>Regarding the dual space: It should be noted that $H^{-1}(\Omega):=(H_0^1(\Omega))^\ast ,$<br>It is not the dual space of $H^1(\Omega)$. Only when $\Omega=\mathbb{R}^n$,<br>$H_0^1(\mathbb{R}^n)=H^1(\mathbb{R}^n).$ At the same time, the theorem expressed by Riesz,<br>$H^{-1}(\Omega)\cong H_0^1(\Omega),$ are not equal.<br>Because the former is regarded as the subspace of $\mathscr{D}&#39;(\Omega)$, and $L^2(\Omega)$ is the subspace,<br>The functional is taken as $L^2$ inner product; while the latter uses $H^1$ inner product as the functional, which leads to a difference in the dual space,<br>But after all, they are isomorphic correspondences.</p>
+<h2 id="pde">PDE</h2>
+<h3 id="basic-definition">Basic definition</h3>
+<p>Second-order elliptic equation:</p>
+<script type="math/tex; mode=display">
+Lu=\sum \partial_i(a_{ij}u_j)+\sum b_i u_i+cu.</script><p>Second-order hyperbolic equation:</p>
+<script type="math/tex; mode=display">
+Mu=u_{tt}-\sum \partial_i (a_{ij}u_j)-\sum b_{0j}u_{ti}+\sum b_iu_i+b_0 u_t+cu.</script><p>It can be recorded as $Mu=u_{tt}-M_1u_t+M_2u.$</p>
+<p>Second order parabolic equation:</p>
+<script type="math/tex; mode=display">
+Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.</script><p>It can be recorded as $Nu=u_t-N_1u.$</p>
+<p>The coefficient $a<em>{ij}$ is symmetric and satisfies the ellipticity condition:<br>$\sum a</em>{ij}\xi_i\xi_j\ge \alpha|\xi|^2.$ The conditions are consistent when time terms are involved.</p>
+<h3 id="energy-method">Energy Method</h3>
+<p>For elliptic equations, $\left&lt;{}u,Lu\right&gt;$ gives Garding&#39;s inequality;</p>
+<p>$\left&lt;{}u_t,Mu\right&gt;,$ of hyperbolic equation<br>The $\left&lt;{}u,Nu\right&gt;$ of the parabolic equation gives an energy estimate.</p>
+<h3 id="galerkin-method">Galerkin method</h3>
+<p>Take a set of bases of the basic space ${\varphi_i},$ Consider $u_m=\sum a_i\varphi_i,$ Solution</p>
+<script type="math/tex; mode=display">
+\left<{}Lu_m-f,\varphi_i\right>=0,\quad i=1,\cdots,m.</script><p>This is reduced to the form of a linear equation system $Ax=b$, and just solve for the coefficients.<br>The solvability here is guaranteed by Garding&#39;s inequality. $\frac{A+A^T}{2}$ is positive definite, and $A$ is reversible.<br>The quadratic form in the formula can be written in the form of $x^T\frac{A+A^T}{2}x=\left&lt;{}-Lu,u\right&gt;$,<br>When $C_2\le 0$, the positive definiteness is inferred.</p>
+<p>For the Galerkin method involving time terms, it is necessary to consider $u_m=\sum a_i(t)\varphi_i.$ at this time</p>
+<script type="math/tex; mode=display">
+\left<{}Mu_m,\varphi_i\right>=\left<{}f,\varphi_i\right>,\quad i=1,\cdots,m</script><p>is $m$ ODEs, which are always solvable. Specifically,</p>
+<script type="math/tex; mode=display">
+\sum \left<{}\varphi_j,\varphi_i\right>a_j''-\left<{}M_1\varphi_j,\varphi_i\right>a_j'+\left<{}M_2\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><p>Similarly, for parabolic equations, the question is:</p>
+<script type="math/tex; mode=display">
+\left<{}Nu_m,\varphi_i\right>=\sum \left<{}\varphi_j,\varphi_i\right>a_j'-\left<{}N_1\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><h3 id="operator-semigroup">Operator semigroup</h3>
+<p>Consider the problem $u<em>t=N_1u,$ Formally, $e^{N_1t}u_0$ gives the solution. Specifically,<br>Consider $N</em>\lambda:=\lambda N<em>1(\lambda-N_1)^{-1},$<br>Define $e^{N_1t}:=\lim\limits</em>{\lambda\rightarrow+\infty}e^{N_\lambda t}$ to make the representation strict.</p>
+<p>The article was last updated on 2021-12-26 16:23:44</p>
                 </div>
             
         </div>
@@ -389,14 +463,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《现代PDE基础》笔记(10)-复习</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-26 18:23:42</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《现代PDE基础》笔记(10)-复习</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-12-26 18:23:42</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/26/《现代PDE基础》笔记(10)-复习/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/12/26/《现代PDE基础》笔记(10)-复习/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -464,7 +538,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -602,24 +676,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -701,9 +772,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#generalized-function"><span class="nav-text">generalized function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-definition"><span class="nav-text">Basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#polished"><span class="nav-text">Polished</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seeking-derivation"><span class="nav-text">Seeking derivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fourier-transform"><span class="nav-text">Fourier Transform</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-space"><span class="nav-text">Sobolev space</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sobolev%E2%80%99s-inequality"><span class="nav-text">Sobolev’s inequality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theorem"><span class="nav-text">Theorem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pde"><span class="nav-text">PDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-definition"><span class="nav-text">Basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#energy-method"><span class="nav-text">Energy Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#galerkin-method"><span class="nav-text">Galerkin method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operator-semigroup"><span class="nav-text">Operator semigroup</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -728,6 +797,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

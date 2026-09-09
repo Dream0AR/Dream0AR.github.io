@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -305,7 +305,35 @@ $\,\forall\,p\in M,$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="topological-manifold">topological manifold</h2>
+<ul>
+<li><p>Local road connectivity (coordinate neighborhood);</p>
+</li>
+<li><p>Connected $\Leftrightarrow$ road connected (local road connected);</p>
+</li>
+<li><p>Connected branches are countable (second countability);</p>
+</li>
+<li><p>Locally compact (locally Euclidean).</p>
+</li>
+</ul>
+<p>Second countability + local compactness $\Rightarrow$ <strong>Pseudocompactness</strong> (Any opening covers any opening,<br>Limited local detailing).</p>
+<p>Locally finite: The coverage ${A<em>\alpha}$ is said to be <strong>locally finite</strong>, if $\,\forall\,p\in M,$<br>$\,\exists\,$Neighborhood $U\ni p$ makes $U$ intersect only a limited number of $A</em>\alpha$.</p>
+<h2 id="differential-manifold-example">Differential manifold example</h2>
+<p>Studying calculus on differential manifolds requires $C^\infty$ differential structures $[\mathcal{F}={(U<em>\alpha,\varphi</em>\alpha)}].$<br>$C^\infty$ manifold = topological manifold + $C^\infty$ structure.</p>
+<p>$M$ is the $C^\infty$ manifold, $[\mathcal{F}]=[{(U<em>\alpha,\varphi</em>\alpha)}],$<br>$U\subset M$ is an open subset. Then $U$ is also a topological manifold,<br>At the same time, there is an induced $C^\infty$ coordinate atlas $[\mathcal{F}<em>U]=[{U</em>\alpha\cap U,\varphi<em>\alpha|</em>{U\cap U_\alpha}}]$,<br>Therefore $U$ is also a $C^\infty$ manifold, which is called an <strong>open submanifold</strong>.</p>
+<p>All square matrices of order $m$$M<em>m={(a</em>{ij})<em>{m\times m}|a</em>{ij}\in \mathbb{R}}\leftrightarrow \mathbb{R}^{m^2},$<br>is the isomorphism of the vector space. Therefore, it can also be regarded as a $C^\infty$ manifold.</p>
+<p>$GL(m,\mathbb{R}):={A\in M_{m}|\det A\neq 0}\subset M_m=\mathbb{R}^{m^2}.$<br>$\det:M_m\rightarrow \mathbb{R}$ is a continuous function.<br>Since $GL(m,\mathbb{R})=(\det)^{-1}(\mathbb{R}\setminus {0})$ is an open subset of $M_m$,<br>It is an open submanifold. Therefore $GL(m,\mathbb{R})$ is also an $m^2$ dimensional $C^\infty$ manifold,<br>It is called ($\mathbb{R}$ on)<strong>general linear group</strong>, and matrix multiplication is used as the upper operation on the group.</p>
+<p>It will be explained later that matrix multiplication and inversion operations are $C^\infty$ mappings between $C^\infty$ manifolds.<br>The relationship between the above two structures ($C^\infty$ manifold structure and group structure) is given.<br>Such a group is called a Lie Group.</p>
+<p>Let $(M^m,[\mathcal{F}={(U<em>{\alpha},\varphi</em>\alpha)}]),$<br>$(N^n,[\widetilde {\mathcal{F} }={(V<em>\beta,\psi</em>\beta)}])$ is a $C^\infty$ manifold.<br>Given $M^m\times N^n$ product topology,<br>That is, $U\times V$ is an open subset if and only if both are open subsets of their respective spaces.<br>It is easy to verify that $M^m\times N^n$ is an $m+n$ dimensional topological manifold,<br>Taking $[\mathcal{F}\times \widetilde {\mathcal{F} }:={(U<em>{\alpha}\times V</em>{\beta},\varphi<em>\alpha\times \psi</em>\beta)}]$ as the $C^\infty$ coordinate atlas,<br>Becomes a $C^\infty$ differential manifold. Call $M\times N$ the <strong>product manifold</strong> of $M, N$.<br>It can be defined inductively $M_1\times\cdots\times M_k.$</p>
+<p>$\mathbb{R}^{m+1}\setminus {0}$ introduces the equivalence relationship $\sim,$<br>$x\sim y\Leftrightarrow x=\lambda y.$<br>Quotient space $M=\mathbb{R}^{m+1}\setminus{0}/_\sim,$ gives <strong>quotient topology</strong>,<br>That is, $U\subset M$ is an open subset $\Leftrightarrow$ $\pi^{-1}(U)$ is an open subset of the original space,<br>Among them, $\pi:x\mapsto [x]$ is the <strong>natural projection</strong>. $[x]$ can be regarded as a straight line passing through the origin,<br>Or two points on the sphere are pasted. It can be said that the <em> quotient topology is Hausdorff, the second countable </em>.</p>
+<p>Let the open set $U<em>i={[x=(x^1,\cdots,x^{m+1})]\in M|x^i\neq 0},$<br>$(x^1,\cdots,x^{m+1})$ is called the <strong>homogeneous coordinate</strong> of $[x]$.<br>$M=\bigcup</em>{i=1}^{m+1} U_i.$<br>Define homeomorphism$\varphi_i:U_i\rightarrow \mathbb{R}^m,$<br>$[x]\mapsto\frac{1}{x_i}(x^1,\cdots, \widehat{x^{i} },\cdots, x^{m+1}).$<br>$(U_i,\varphi_i)$ is a coordinate atlas of $M$. The corresponding coordinates are called <strong>non-homogeneous coordinates</strong>.</p>
+<p>Remember $\xi<em>{(i)}^k=\frac{x^k}{x^i}.$ and choose $1\le i&lt;j\le m+1,$<br>The upper coordinate transformation of $U_i\cap U_j$ is $\xi</em>{(i)}^j\mapsto \xi<em>{(j)}^i=\frac{1}{\xi</em>{(i)}^j},$<br>$\xi<em>{(i)}^l\mapsto \xi</em>{(j)}^l=\frac{\xi^l<em>{(i)} }{\xi</em>{(i)}^j},$<br>$l\neq i,j,$ is the $C^\infty$ mapping on $\mathbb{R}^m$,<br>Therefore, the coordinate atlas is $C^\infty$.<br>Thus $(M,[{(U_i,\varphi_i)}])$ becomes an $m$-dimensional $C^\infty$ manifold,<br>Denoted as <strong>real projective space</strong>$\mathbb{R}\mathrm{P}^m.$</p>
+<p>Let $\mathbb{R}^N$ be an $N$-dimensional Euclidean space,<br>Let $G<em>{k,N}={\text{$P$ be the $k$-dimensional subspace of $\mathbb{R}^N$}}.$<br>Endow the topology and $C^\infty$ structure to make it a $C^\infty$ manifold, called a Grassman manifold.<br>It is easy to see $G</em>{1,N}=\mathbb{R}\mathrm{P}^{N-1}.$</p>
+<h2 id="mapping-between-manifolds">Mapping between manifolds</h2>
+<p>Suppose $(M^m,[\mathcal{F}])$ is a $C^\infty$ manifold, $f:M\rightarrow \mathbb{R}.$<br>$\,\forall\,p\in M,$<br>If there is an <strong>allowed coordinate system</strong>$(U,\varphi)$ containing $p$, let $f\circ \varphi^{-1}\in C^\infty(\varphi(U)),$<br>Then $f$ is said to be $C^\infty$ at point $p$.<br>Call $(f\circ \varphi^{-1})(x^1,\cdots,x^m)$ a <strong>local representation</strong>.<br>Here the <strong>allowed coordinate system</strong> refers to the coordinate card contained in the $[\mathcal{F}]$ maximum coordinate atlas.<br>If $f$ points to $C^\infty,$, it is called $f\in C^\infty(M).$</p>
+<p><strong>Note 1.1</strong>. <em>The above concepts have nothing to do with the selection of the coordinate system. Note that $f$ at $p$ point $C^\infty$ is equivalent to $f\circ \varphi^{-1}$ in a small neighborhood $C^\infty.$</em> of $\varphi(p)$</p>
+<p><strong>Note 1.2</strong>. <em>Similarly, it can be given that $f$ is $C^r$ at point $p$, and the definition of $f\in C^r(M)$.</em></p>
+<p>The article was last updated on 2021-09-25 16:22:50</p>
                 </div>
             
         </div>
@@ -314,14 +342,14 @@ $\,\forall\,p\in M,$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第一章-微分流形(2)</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-25 16:12:19</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第一章-微分流形(2)</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-25 16:12:19</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/25/《微分流形》第一章-微分流形(2)/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/25/《微分流形》第一章-微分流形(2)/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -389,7 +417,7 @@ $\,\forall\,p\in M,$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -527,24 +555,21 @@ $\,\forall\,p\in M,$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -626,9 +651,7 @@ $\,\forall\,p\in M,$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#topological-manifold"><span class="nav-text">topological manifold</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differential-manifold-example"><span class="nav-text">Differential manifold example</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapping-between-manifolds"><span class="nav-text">Mapping between manifolds</span></a></li></ol>
         </div>
     
 </div>
@@ -653,6 +676,7 @@ $\,\forall\,p\in M,$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

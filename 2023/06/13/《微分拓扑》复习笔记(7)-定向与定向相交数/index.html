@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -307,7 +307,37 @@ $\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="orientation">Orientation</h2>
+<p>The orientation of the vector space is determined by the ordered basis. From this, the preserving (inverse) orientation of the matrix can be defined.<br>A manifold is said to be orientable**, if $\,\forall\,x\in X,$<br>There is a coordinate card $(U,\phi)$ such that $\,\forall\,y\in U,$<br>$d\phi_y: T_yX\rightarrow \mathbb{R}^k$ is oriented.</p>
+<p><strong>Proposition 1</strong>. <em>A connected orientable manifold has and has only two orientations.</em></p>
+<p>The product orientation of $X\times Y$ is determined by the direct sum orientation of $T_xX+T_yY$. Specifically,<br>The ordered basis that determines the orientation is ${(\alpha,0),(0,\beta)},$<br>$\alpha,\beta$ are the ordered bases of $T_xX$ and $T_yY$ respectively.</p>
+<p>The orientation of a manifold with edges at the boundary can be induced by the manifold. Specifically,<br>Let the sign of the ordered basis $\beta$ at the boundary be determined by ${n,\beta}$, and $n$ is the external normal vector.</p>
+<p>Let $f:X\rightarrow Y$ be a smooth mapping, $f,\partial f\pitchfork Z.$<br>$X,Y,Z$ are directional manifolds, $Y,Z$ are edgeless. Let $S:=f^{-1}(Z)$ be the embedded submanifold,<br>Want to get the reverse image orientation.</p>
+<p>From $T_xS^\perp\oplus T_xS=T_xX,$ its orientation can be determined by direct sum orientation.<br>First take the $T_xS^\perp$ orientation. From the transversality,</p>
+<script type="math/tex; mode=display">
+df_x(T_xX)+T_zZ=T_zY,\quad df_x(T_xS^\perp) \oplus T_zZ=T_zY.</script><p>Assume $df_x$ is oriented,<br>That is, $T_xS^\perp$ orientation is induced by $df_x(T_xS^\perp)$ determined by the direct sum orientation.</p>
+<p>At this time $\partial S=\partial (f^{-1}(Z))=(\partial f)^{-1}(Z)$ has two orientation methods.<br>One is inverse image orientation, considering</p>
+<script type="math/tex; mode=display">
+T_x \partial S^\perp\oplus T_x\partial S=T_x\partial X,\quad d\partial f_x(T_x\partial S^\perp)\oplus T_zZ=T_zY.</script><p>Note that $T_xS^\perp=T_x\partial S^\perp,$ these two orientations are consistent.<br>Take its positive directed ordered basis $\alpha,$ then</p>
+<script type="math/tex; mode=display">
+\operatorname{sgn}(\beta)=\operatorname{sgn}(\alpha,\beta)=\operatorname{sgn}(n,\alpha,\beta).</script><p>$n$ is the external normal vector of $\partial S$ in $S$. The other is boundary orientation.<br>Determine the ordered basis $\beta,$ on $T_x\partial S$, then<br>$\operatorname{sgn}(\beta)=\operatorname{sgn}(n,\beta)$<br>The sign in $T_xS$ is determined, that is</p>
+<script type="math/tex; mode=display">
+\operatorname{sgn}(\beta)=\operatorname{sgn}(n,\beta)=\operatorname{sgn}(\alpha,n,\beta).</script><p>Since $\alpha$ is the ordered basis of $T_xS^\perp$,<br>The dimension is $\operatorname{codim}_XS=\operatorname{codim}_YZ.$<br>Therefore, the two orientations are also different $(-1)^{\operatorname{codim}_YZ}.$</p>
+<h2 id="number-of-directional-intersections">Number of directional intersections</h2>
+<p>The basic assumption is that the intersection number is the same module $2$. The additional assumption is that all manifolds are orientable.<br>The orientation of $df_x(T_xX)$ is given by $X$.<br>If $df_x(T_xX)\oplus T_zZ=T_zY$ has the same orientation on both sides,<br>Then record the orientation number at $x$ as $\operatorname{sgn}_x(f,Z)=1,$ otherwise $-1.$<br>The sum of the orientation numbers is called the orientation intersection number of $f$ and $Z$, which is written as</p>
+<script type="math/tex; mode=display">
+I(f,Z):=\sum_{x\in f^{-1}(Z)}\operatorname{sgn}_x(f,Z).</script><p>Since the sum of the boundary point orientation numbers of any compactly oriented $1$-dimensional manifold with edges is $0,$<br>The intersection number of the same module $2$ can prove that the directional intersection number is a homotopy invariant.<br>Therefore, the general mapping can be defined by the transverse homotopy theorem. In the same way, we also have<br><strong>Proposition 2</strong>. <em>If $X=\partial W,$ $W$ is compact, $f:X\rightarrow Y$ can be extended to $W,$ $Z\subset Y$ is a closed submanifold, then $I(f,Z)=0.$</em></p>
+<p>If $\dim<br>Wellness is proved by the transverse homotopy theorem and the record lemma. At this time, if $y$ is the regular value of $f$,<br>There is $\deg f=\sum_{x\in f^{-1}(y)}\operatorname{sgn}_x(f,y),$<br>$\operatorname{sgn}_x(f,y)=1,$ if $df_x$ is oriented. Otherwise $-1.$<br>The mapping degree is also a homotopy invariant and is zero for functions that extend from the boundary to the interior.</p>
+<p>The proof of the basic theorem of algebra can be given using the mapping degree, which is consistent with the intersection number modulo $2$.<br>At the same time, $\deg \frac{p}{|p|}$ can be used to count the number of internal zeros at the boundary of the tight region.</p>
+<p>Next, we discuss the directional intersection number between mappings. Let $f:X\rightarrow Y,$ $g:Z\rightarrow Y.$<br>If $f\pitchfork g,$ can define $I_{(x,z)}(f,g),$<br>The positive and negative signs are determined by the orientation of the left and right sides of $df_x(T_xX)\oplus dg_z(T_zZ)=T_yY$.</p>
+<p><strong>Proposition 3</strong>. <em>$f\pitchfork g$ if and only if $f\times g\pitchfork \Delta,$ and $I(f,g)=(-1)^{\dim Z}I(f\times g,\Delta).$</em></p>
+<p>This is mainly the following lemma</p>
+<p><strong>Lemma 4</strong>. <em>Suppose $U, W$ are directed subspaces of $V$, then $U\oplus W=V$ if and only if $(U\times W)\oplus \Delta=(-1)^{\dim W}V\times V.$</em></p>
+<p>In this way, general functions can be defined using the transverse homotopy theorem.<br>At this time, it can be explained that $I(f,Z)=I(f,\iota_Z),$<br>The special $\deg f=I(f,{y})$ has nothing to do with the selection of $y$, which can give a new proof. Comparing straightness and orientation are:</p>
+<p><strong>Proposition 5</strong>. <em>$I(f,g)=(-1)^{\dim X\dim Z}I(g,f),$ $I(X,Z)=(-1)^{\dim X\dim Z}I(Z,X).$</em></p>
+<p>In particular, if $Z=X,$ the self-intersection number of odd-dimensional manifold $I(X,X)=0.$ If $X$ is a compact directional manifold,<br>Define its Euler characteristic number as $\chi(Y):=I(\Delta,\Delta).$ so it is a homotopy invariant.</p>
+<p><strong>Corollary 6</strong>. <em>The Euler characteristic number of an odd-dimensional compact orientable manifold is $0.$</em></p>
+<p>The article was last updated on 2023-06-13 12:33:48</p>
                 </div>
             
         </div>
@@ -316,14 +346,14 @@ $\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(7)-定向与定向相交数</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-13 15:33:47</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分拓扑》复习笔记(7)-定向与定向相交数</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-06-13 15:33:47</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/13/《微分拓扑》复习笔记(7)-定向与定向相交数/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/06/13/《微分拓扑》复习笔记(7)-定向与定向相交数/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -391,7 +421,7 @@ $\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -529,24 +559,21 @@ $\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -628,9 +655,7 @@ $\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#orientation"><span class="nav-text">Orientation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#number-of-directional-intersections"><span class="nav-text">Number of directional intersections</span></a></li></ol>
         </div>
     
 </div>
@@ -655,6 +680,7 @@ $\operatorname{sgn}_x(f,y)=1,$ 若$df_x$保定向. 反之为$-1.$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

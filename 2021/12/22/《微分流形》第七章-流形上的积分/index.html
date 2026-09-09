@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -333,7 +333,52 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="integral-in-external-differential-form">Integral in external differential form</h2>
+<h3 id="definition">Definition</h3>
+<p>We are familiar with the <strong>integral variable substitution formula</strong>: Let $f\in C_c(\mathbb{R}^m),$<br>$h:\mathbb{R}^m\approx \mathbb{R}^m$ is a diffeomorphism, then</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m=\int_{\mathbb{R}^m}(f\circ h)(y)|\det Dh|dy^1\cdots dy^m.</script><p>If $h:\mathbb{R}^m\rightarrow \mathbb{R}^m$ satisfies $\det Dh(y)&gt;0,$<br>Then there is $\det Dh&gt;0.$ everywhere, which is called a <strong>direction-preserving diffeomorphism</strong>.</p>
+<p>From the content of the previous lesson,<br>$\Omega={}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}\in \mathcal{A}^m(\mathbb{R}^m)$ gives $\mathbb{R}^m$ a natural orientation.<br>Now $(\mathbb{R}^m,\mathrm{id};x), (\mathbb{R}^m,h^{-1};y)$ are two different coordinate systems,<br>Let $\omega=f(x)dx^1\wedge\cdots\wedge dx^m$ be the continuous $m$ times external differential form with compact support,<br>Then due to</p>
+<script type="math/tex; mode=display">
+dx^1\wedge\cdots\wedge dx^m=\det(Dh)(y){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m},</script><p>We know that $\omega=f\circ h(y)\det(Dh){}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}$ is another representation.<br>Tips for the above formula:</p>
+<script type="math/tex; mode=display">
+\int_{\mathbb{R}^m}\omega:=\int_{\mathbb{R}^m}f(x)dx^1\cdots dx^m.</script><p>Let $(M^m,\Omega)$ be the oriented $C^\infty$-manifold,<br>$\omega$ is the external differential form of $m$ with compact support on $M$,<br>That is $\operatorname{supp}\omega=\overline{\left{q\mid\omega(q)\neq 0\right}} \Subset M.$<br>Let&#39;s define the integral of $\omega$ on $M$.</p>
+<p>When $\operatorname{supp}\omega\subset (U,\varphi;x^i),$<br>When the coordinate system is consistent with the orientation $\Omega$, $\omega=f dx^1\wedge\cdots\wedge dx^m,$<br>$f\in C_c(U).$ is defined by the previous description</p>
+<script type="math/tex; mode=display">
+\int_M \omega:=\int_U \omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.</script><p>Generally speaking, take ${(U_i,\varphi_i)}$ as the coordinate atlas consistent with the orientation,<br>And the unit decomposition subordinate to it. Then $\omega=\sum_i f_i\omega,$<br>$\operatorname{supp}(f_i\omega)\subset U_i.$ has a compact support set by $\omega$,<br>${\operatorname{supp}f_i}$ is locally finite, and the sum is always meaningful. So we define</p>
+<script type="math/tex; mode=display">
+\int_M \omega:=\sum_i \int_M f_i\omega,</script><p>Where $\int_M f_i\omega$ is defined.</p>
+<h3 id="good-quality">Good quality</h3>
+<p>We need to verify the soundness of this definition: Is it independent of the coordinate system/atlas and unit decomposition selection?</p>
+<p>If $\operatorname{supp}\omega \subset (U,\varphi;x)\cap (V,\psi;y),$<br>$f{}dx^{1}\wedge\cdots\wedge{}dx^{ {}m}=\omega=g{}dy^{1}\wedge\cdots\wedge{}dy^{ {}m}.$<br>Need to verify:</p>
+<script type="math/tex; mode=display">
+\int_{\psi(U)}(g\circ\psi^{-1})(y)dy^1\cdots dy^m=\int_M\omega=\int_{\varphi(U)}(f\circ\varphi^{-1})(x)dx^1\cdots dx^m.</script><p>Let $h=\varphi\circ\psi^{-1},$ $h(y)=x.$ Then substitute the formula by the integral variable,<br>And $g=f\det(Dh),$ the combined coordinate system is consistent with the orientation $\Omega$, that is, the equation is established.</p>
+<p>There are two unit decompositions ${f_i},{g_j},$<br>Then ${f_ig_j=g_jf_i}$ is also a unit decomposition. Therefore</p>
+<script type="math/tex; mode=display">
+\sum_j\int_M g_j\omega=\sum_{i,j}\int_M f_ig_j\omega=\sum_i\int_M f_i\omega.</script><h3 id="other-properties">Other properties</h3>
+<p>It is easy to see, $\int<em>{(M,\Omega)}\omega=-\int</em>{(M,-\Omega)}\omega.$</p>
+<p>Define $\mathcal{K}$ as the continuous $m$ form of all compact supported sets, forming a vector space,<br>And $\int_M:\mathcal{K}\rightarrow \mathbb{R}$ is a linear functional.</p>
+<p>Let $\varphi:N^k\rightarrow M$ be a $k$-dimensional submanifold.<br>If $\varphi^\ast \omega$ has compact support in $N$, then</p>
+<script type="math/tex; mode=display">
+\int_N \varphi^\ast \omega:=\int_{\varphi(N)} \omega.</script><h2 id="stokes-formula">Stokes formula</h2>
+<p>Recalling the multivariable calculus on $\mathbb{R}^m$, we can convert the fundamental theorem of calculus, Green&#39;s formula,<br>Gauss formula and Stokes formula are unified as:</p>
+<script type="math/tex; mode=display">
+\int_D d\omega=\int_{\partial D}\omega,\quad D\subset \mathbb{R}^m.</script><p>Let $M^m$ be the $m$-dimensional $C^\infty$ manifold. If the subset $D$ in $M$ consists of the following two types of points:</p>
+<ol>
+<li><p>Interior points: $p\in D,$ $\,\exists\,V\ni p$ is an open neighborhood, $V\subset D.$</p>
+</li>
+<li><p>Boundary point: $p\in D,$ $\,\exists\,(U,\varphi;x^i)$ makes $\varphi(p)=0,$<br>$\varphi(U\cap D)={q\in D|x^m(q)\ge 0}.$<br>Such a coordinate system is called an adaptive coordinate system.</p>
+</li>
+</ol>
+<p>Then $D$ is called the <strong>edge region</strong> in $M$. Use $\partial D$ to represent the entire boundary.</p>
+<p>It is easy to see that all interior points $D^\circ$ are open subsets of $M$,<br>$U\cap \partial D={x^m(q)=0}$ is a $(m-1)$ dimensional slice.<br>Thus $\partial D$ is a regular hypersurface in $M$.</p>
+<p>The overall adaptive coordinate system constitutes a cover of $\partial D$,<br>It constitutes the coordinate atlas of $\partial D$. It determines the $C^\infty$ structure of $\partial D$.<br>Now $M$ is an oriented manifold, then each adaptive coordinate system of $\partial D$ can be required to be consistent with the orientation $\Omega$.</p>
+<p>On each $(U<em>\alpha\cap \partial D;x</em>{\alpha}^1,\cdots,x<em>{\alpha}^{m-1})$,<br>Local definition $(-1)^m{}dx</em>{(\alpha)}^{1}\wedge\cdots\wedge{}dx<em>{(\alpha)}^{ {}m-1}.$<br>The following proves that it is consistent with the $(-1)^m{}dx</em>{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m-1}$ orientation,<br>Therefore there is an induced orientation on $\partial D$.</p>
+<p><strong>Theorem 1</strong>. <em>Suppose $D$ is an edge region in $C^\infty$-manifold $M$. If $(M,\Omega)$ is orientable, then $\partial D$ is also orientable.</em></p>
+<p><strong>Proof:</strong> Take $(U,\varphi;x^i),(V,\psi;y^j)$ as the adaptive coordinate system of $\partial D$,<br>Consistent with orientation $\Omega$,<br>The sign of $\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}$ needs to be considered.<br>It is known that $\det D(\psi\circ \varphi^{-1})&gt;0.$<br>Since $\frac{\partial {}y^m}{\partial {}x^{i} }=0,$ $\,\forall\,i\neq m;$<br>$\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$<br>Immediately push $\det\frac{D(y^1,\cdots,y^{m-1})}{D(x^1,\cdots,x^{m-1})}&gt;0.$<br>Therefore $\partial D$ is orientable.</p>
+<p>In particular,<br>We select $(-1)^m {}dx<em>{(\alpha)}^{1}\wedge\cdots\wedge{}dx</em>{(\alpha)}^{ {}m-1}$ consistent with the $\partial D$ orientation,<br>Make Stokes formula hold.</p>
+<p><strong>Theorem 2</strong> (Stokes formula). <em>Suppose $(M^m,\Omega)$ is an oriented $C^\infty$ manifold, $D$ is an edge region in $M$, and the orientation is naturally induced from $M$. $\omega$ is a $(m-1)$ second-order differential form of $M$ with a compact support set $C^1$, then $\int<em>D d\omega=\int</em>{\partial D}\omega.$ If $\partial D=\varnothing,$ then the right end is zero.</em></p>
+<p>The article was last updated on 2021-12-22 18:57:10</p>
                 </div>
             
         </div>
@@ -342,14 +387,14 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第七章-流形上的积分</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-12-22 20:49:33</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第七章-流形上的积分</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-12-22 20:49:33</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/12/22/《微分流形》第七章-流形上的积分/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/12/22/《微分流形》第七章-流形上的积分/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -417,7 +462,7 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -555,24 +600,21 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -654,9 +696,7 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#integral-in-external-differential-form"><span class="nav-text">Integral in external differential form</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#good-quality"><span class="nav-text">Good quality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#other-properties"><span class="nav-text">Other properties</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stokes-formula"><span class="nav-text">Stokes formula</span></a></li></ol>
         </div>
     
 </div>
@@ -681,6 +721,7 @@ $\frac{\partial {}y^m}{\partial {}x^m}\ge 0,$
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

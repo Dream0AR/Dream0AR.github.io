@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -304,7 +304,54 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="lefschetz-fixed-point-theory">Lefschetz fixed point theory</h2>
+<p>In order to count fixed points $x=f(x),$ just count the number of intersections of $\Delta\cap G(f)$.<br>This defines the overall Lefschetz number of $f$ as $L(f):=I(\Delta,G(f)).$ which is a homotopy invariant.</p>
+<p><strong>Theorem 1</strong>. <em>Let $f$ be the smooth self-mapping of the compact directional manifold $X$. If $L(f)\neq 0,$ then $f$ has a fixed point.</em></p>
+<p><strong>Corollary 2</strong>. <em>If the mapping is homotopic to the constant value mapping, then $L(f)=\pm $</em></p>
+<p>From this we can derive Brouwer&#39;s fixed point theorem.</p>
+<p>The smooth map $f:X\rightarrow X$ is called a Lefschetz map, if $\Delta\pitchfork G(f).$<br>Since $G(\mathrm{id})=\Delta,$ $L(\mathrm{id})=\chi(X).$<br>If $\mathrm{id}$ is homotopic to a map without fixed points, then $\chi(X)=0.$<br>In particular, for manifolds with non-zero Euler characteristics, fixed-point-free maps must be inconsistent with identity maps.</p>
+<p><strong>Proposition 3</strong>. <em>Any smooth map $f$ is homotopic to a Lefschetz map.</em></p>
+<p>Just repeat the proof of the transverse homotopy theorem. It cannot be used directly because the transverse section of the image needs to be obtained.</p>
+<p>From the perspective of the transversality condition, $f$ is a Lefschetz map if and only if $df<em>x$ does not have $1$ as an eigenvalue.<br>Definable local Lefschetz number $L_x(f)=1,$<br>If $T</em>{(x,x)}\Delta+T<em>{(x,x)}G(f)=T</em>{x,x}(X\times X).$ the orientation mismatch is $-1.$<br>At this time $L(f)=\sum_{f(x)=x}L_x(f).$</p>
+<p><strong>Proposition 4</strong>. <em>$L_x(f)=\operatorname{sgn}\det(df_x-I).$</em></p>
+<p>From this, the Euler characteristic number can be calculated by constructing a Lefschetz map that is homotopic to an identity map.</p>
+<p>For non-Lefschetz mappings, we have</p>
+<p><strong>Proposition 5</strong> (Split Proposition). <em>Suppose $U$ is the neighborhood of the fixed point $x$ of the mapping $f$, and $U$ does not contain other fixed points. Then there is a homotopy mapping $f_t$ such that $f_1$ only contains Lefschetz fixed points in $U$, and the homotopy remains unchanged outside a certain compact set of $U$.</em></p>
+<p>Just take the local small perturbation $f_t(x)=f(x)-t\rho(x) a$. In particular, let the perturbation $a$ be<br>The regular value of $f(x)-x$ is $\det df_x-I\neq 0.$</p>
+<p>Let $x$ be the isolated fixed point of $f$. If $B$ is a small closed sphere with $x$ as its center and does not contain other fixed points, then</p>
+<script type="math/tex; mode=display">
+F:\partial B\rightarrow S^{k-1},\quad z\mapsto \frac{f(z)-z}{|f(z)-z|}</script><p>It is a smooth mapping. Call $\deg F$ the local Lefschetz number of $f$ at $x$, denoted as $L_x(f).$<br>The definition has nothing to do with $B$ selection.</p>
+<p><strong>Proposition 6</strong>. <em>At the Lefschetz fixed point, the definitions of local Lefschetz numbers about the Lefschetz fixed point and the isolated fixed point are consistent.</em></p>
+<p>Just use the linear homotrace lemma and let $F\sim F_0$ be the standard orientation-preserving/anti-orientation function.</p>
+<p><strong>Proposition 7</strong>. <em>Suppose $f:\mathbb{R}^k\rightarrow \mathbb{R}^k$ has an isolated fixed point $x$, and let $B$ be a closed sphere with $x$ as the center without other fixed points of $f$. Select the function $f<em>1\sim f,$ that satisfies the split proposition, then $L_x(f)=\sum</em>{f_1(z)=z}L_z(f_1),$ $z\in B.$</em></p>
+<p>The foregoing explanations are all performed on Euclidean space, and can easily be transferred to manifolds for explanation.<br>The definition has nothing to do with coordinate card selection.</p>
+<p><strong>Theorem 8</strong> (Local calculation of Lefschetz numbers). *Suppose $f:X\rightarrow</p>
+<script type="math/tex; mode=display">
+L(f)=\sum_{f(x)=x}L_x(f)</script><h2 id="poincar%C3%A9-hopf-theorem">Poincaré-Hopf Theorem</h2>
+<p>For the vector field $v,$ in $\mathbb{R}^k$, there is an isolated zero point at $x=0$.<br>Take a sufficiently small kick $B_\varepsilon$ that does not include other zero points, and define the indicator</p>
+<script type="math/tex; mode=display">
+\operatorname{Ind}_0(v):=\deg \left(\partial B_\varepsilon\rightarrow S^{k-1},x\mapsto \frac{v(x)}{|v(x)|}\right)=W(v,0)</script><p><strong>Theorem 9</strong> (Poincaré-Hopf theorem). <em>$\sum_{v(x)=0} \operatorname{Ind}_x(v)=\chi(X).$</em></p>
+<p>Just use the tubular neighborhood to construct the integral curve of the vector field and define the mapping $f_t\sim \mathrm{id},$<br>Description</p>
+<script type="math/tex; mode=display">
+\chi(X)=L(\mathrm{id})=L(f_t)=\sum_{f_t(z)=z} L_{z}f_t=\sum_{v(x)=0} \operatorname{Ind}_x(v).</script><p>due to</p>
+<script type="math/tex; mode=display">
+L_z(f_t)=\deg \frac{f_t(z)-z}{|f_t(z)-z|},</script><p>Perform Taylor expansion on $f_t(z)$, and obtain the conclusion through linear approximation.</p>
+<h2 id="hopf-mapping-degree-theorem">Hopf mapping degree theorem</h2>
+<p><strong>Theorem 10</strong>. <em>$f_0,f_1:X^k\rightarrow S^k$ is homotopy if and only if $\deg f_0=\deg f_1.$</em></p>
+<p>Let $f:X^k\rightarrow \mathbb{R}^{k+1},$ define the wrap number</p>
+<script type="math/tex; mode=display">
+W(f,z):=\deg (u:X^k\rightarrow S^k,x\mapsto \frac{f(x)-z}{|f(x)-z|}),\quad z\notin \operatorname{Im}f.</script><p><strong>Proposition 11</strong>. <em>Suppose $x$ is a regular point, $f(x)=z.$ Let $B$ be a sufficiently small closed ball with $x$ as its center. Denote $\partial f=f|_{\partial B}:\partial B\rightarrow \mathbb{R}^k,$ then $W(\partial f,z)=1,$ if $df_x$ maintains the orientation. Otherwise $-1.$</em></p>
+<p>The proof is similar to the Lefschetz fixed point.</p>
+<p><strong>Proposition 12</strong>. <em>Suppose $f:B\rightarrow \mathbb{R}^k$ is a smooth mapping on a closed sphere, $z$ is a regular value, $f^{-1}(z)\cap \partial B=\varnothing.$ Then according to the directional count, $# f^{-1}(z)=W(\partial f,z).$</em></p>
+<p>The proof can be proved by using the record lemma.</p>
+<p><strong>Proposition 13</strong>. <em>Suppose $B$ is a closed ball in $\mathbb{R}^k$, $f:\mathbb{R}^k\setminus \operatorname{Int}B\rightarrow Y$ is a smooth map. If $\partial f:\partial B\rightarrow Y$ is homotopic to a constant value map, then $f$ can be extended to a smooth map $\mathbb{R}^k\rightarrow Y.$</em></p>
+<p>Prove using Whitney&#39;s approximation theorem.</p>
+<p>For Hopf&#39;s mapping degree theorem, first prove the case where the mapping degree is zero. Prove it inductively on the dimensions.</p>
+<p><strong>Theorem 14</strong> (Extended Theorem). <em>Suppose $W$ is a $k+1$-dimensional compact connected directed manifold with edges, $f:\partial W\rightarrow S^k$ is a smooth map, then $f$ can be extended to $F:W\rightarrow S^k$ if and only if $\deg f=0.$</em></p>
+<p><strong>Proposition 15</strong>. <em>Suppose $W$ is any compact manifold with edges, $f:\partial W\rightarrow \mathbb{R}^{k+1}$ is any smooth map, then $f$ can be extended to the entire $W$.</em></p>
+<p>Now for any $f_0, f_1,$ with the same mapping degree, define it on $X^k\times I$,<br>Continuation gives homotopy.</p>
+<p><strong>Theorem 16</strong>. <em>There is a vector field that is non-zero everywhere on the compact connected directional manifold $X$ if and only if $\chi(X)=0.$</em></p>
+<p>The article was last updated on 2023-06-13 12:33:59</p>
                 </div>
             
         </div>
@@ -313,14 +360,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分拓扑》复习笔记(8)-定向相交数应用</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2023-06-13 15:33:59</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分拓扑》复习笔记(8)-定向相交数应用</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2023-06-13 15:33:59</li>
         <li>
-            本文链接：https://dream0ar.github.io/2023/06/13/《微分拓扑》复习笔记(8)-定向相交数应用/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2023/06/13/《微分拓扑》复习笔记(8)-定向相交数应用/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -388,7 +435,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -526,24 +573,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -625,9 +669,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lefschetz-fixed-point-theory"><span class="nav-text">Lefschetz fixed point theory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#poincar%C3%A9-hopf-theorem"><span class="nav-text">Poincaré-Hopf Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hopf-mapping-degree-theorem"><span class="nav-text">Hopf mapping degree theorem</span></a></li></ol>
         </div>
     
 </div>
@@ -652,6 +694,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

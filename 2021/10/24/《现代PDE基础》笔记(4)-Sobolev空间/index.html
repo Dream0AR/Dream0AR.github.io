@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -356,7 +356,51 @@ $H_0^{m,q}(\mathbb{R}^n)$就是$H^{m,q}(\mathbb{R}^n).$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="basic-definition">basic definition</h2>
+<p>By default $\Omega\subset \mathbb{R}^n$ is the bounded area or outer area (the complement of the bounded area closure),<br>The boundary is $C^\infty$ submanifold or $C^m$ submanifold. The smoothness requirement of the boundary is determined by the implicit function theorem,<br>Equivalent to requiring $\,\forall\,x\in \partial \Omega,$ $\,\exists\,$neighborhood $U\ni x,$<br>$U\cap \partial\Omega$ can be represented by $x_j=\varphi(\widehat{x}_j)\in C^\infty/C^m$,<br>$1\le j\le n.$</p>
+<p>For $m\in \mathbb{N},$ $1\le p\le \infty,$<br>Define Sobolev space $H^{m,p}(\Omega)$ to satisfy the condition $D^\alpha u\in L^p(\Omega),$<br>$\quad |\alpha|\le m$ generalized function $u$ ensemble. Equipped with norm</p>
+<script type="math/tex; mode=display">\parallel u\parallel_{H^{m,p}(\Omega)}=\left(\sum_{|\alpha|\le m}\parallel D^\alpha u\parallel_{L^p(\Omega)}^p\right)^{\frac{1}{p} },\quad 1\le p<\infty,</script><script type="math/tex; mode=display">\parallel u\parallel_{H^{m,\infty}(\Omega)}=\max_{|\alpha|\le m}\parallel D^\alpha u\parallel_{L^\infty(\Omega)}.</script><p>Since $L^p(\Omega)$ is a Banach space, it is easy to prove that $H^{m,p}(\Omega)$ is also a Banach space.<br>Recall that $C^\infty$ is dense in $L^p$,<br>Through a similar method, it can be proved that $C^\infty(\overline{\Omega})$ is dense in $H^{m,p}(\Omega)$ (of course $C^m(\overline{\Omega})$ is also dense in $H^{m,p}(\Omega)$).<br>Therefore $H^{m,p}(\Omega)$ can be regarded as the complete space of $C^\infty(\overline{\Omega})$ equipped with $\parallel\cdot\parallel_{H^{m,p}(\Omega)}$ module.</p>
+<h2 id="equivalent-modular-theorem">Equivalent modular theorem</h2>
+<p>For $f\in H^{m,p}(\Omega),$ define the model based on $H^{m,p}(\mathbb{R}^n)$</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_{\Omega}=f}\parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)},</script><p>$\widetilde{f}$ is the continuation of $f$ on $\mathbb{R}^n$.<br>Obviously for any continuation $\widetilde{f},$<br>$\parallel f\parallel<em>{H^{m,p}(\Omega)}\le \parallel\widetilde{f}\parallel</em>{H^{m,p}(\mathbb{R}^n)},$<br>Therefore $\parallel f\parallel<em>{H^{m,p}(\Omega)}\le \parallel f\parallel</em>{\widetilde{H}^{m,p}(\mathbb{R}^n)}.$<br>Next we prove that we can find constants that make the converse inequality true, so we have the following theorem:</p>
+<p><strong>Theorem 1.1</strong>. <em>$H^{m,p},\widetilde{H}^{m,p}$ are equivalent modules.</em></p>
+<p><strong>Proof:</strong> Just construct a continuation $\widetilde{f},$<br>Such that $\parallel\widetilde{f}\parallel<em>{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel</em>{H^{m,p}(\Omega)},$<br>$C=C(m,p,\Omega)$ has nothing to do with $f$. In this way, we have</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{H^{m,p}(\Omega)}\le\parallel f\parallel_{\widetilde{H}^{m,p}(\Omega)}\le \parallel\widetilde{f}\parallel_{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\Omega)},</script><p>The theorem is proved. Since $C^m(\overline\Omega)$ is dense in $H^{m,p}(\Omega)$,<br>Let us first discuss the case of $f\in C^m(\overline{\Omega})$.</p>
+<p>We use the Lions continuation method. $\,\forall\,x\in \overline{\Omega},$<br>If $x\in \Omega,$ take $O<em>\delta(x)\subset \Omega;$ if $x\in \partial\Omega,$<br>Take $O</em>\delta(x)$ so that $O<em>\delta(x)\cap \partial\Omega$ can be represented by the $C^m$ function.<br>Then ${O</em>\delta(x)}$ constitutes the open coverage of $\overline{\Omega}$,<br>There is a finite subcover ${O_{\delta_i}(x_i)}.$<br>Take the unit decomposition that belongs to ${\varphi_i}.$ Then since $f=\sum_i \varphi_if,$<br>Just do an extension $F_i.$ for each $\varphi_i f$. Since $\varphi_i$ is only related to $\Omega$,<br>$\,\exists\,C&gt;0$ such that</p>
+<script type="math/tex; mode=display">\parallel\varphi_i f\parallel_{H^{m,p}(\Omega)}\le C\parallel f\parallel_{H^{m,p}(\Omega)}.</script><p>Just let the continuation $F_i$ satisfy</p>
+<script type="math/tex; mode=display">\parallel F_i\parallel_{H^{m,p}(\mathbb{R}^n)}\le C_i\parallel\varphi_i f\parallel_{H^{m,p}(\Omega)},</script><p>In this way, just take $\widetilde{f}=\sum_i F_i$.</p>
+<p>If $x<em>i\in \Omega,$ then take $F_i$ as the zero continuation of $\varphi_i f$;<br>If $x_i\in \partial \Omega,$<br>Flatten $\partial \Omega\cap O</em>{\delta<em>i}(x_i)$,<br>Let $\Omega\cap O</em>{\delta<em>i}(x_i)$ be contained in the upper half-plane $\mathbb{H}$,<br>During the process, $H^{m,p}$ remains unchanged. When determining $O</em>{\delta}(x)$, additional conditions may be required:<br>After $\Omega^c\cap O<em>{\delta}(x)$ is flattened, the lower half plane contains the mirror symmetry of $\Omega\cap O</em>{\delta}(x)$.<br>Otherwise, the part of $O<em>{\delta}(x)$ in $\Omega$ can be reduced,<br>Although $O</em>{\delta}(x)$ is no longer a spherical neighborhood.</p>
+<p>Still use the same symbols to record the flattened elements. Let’s assume that the flattening is about $x<em>1$,<br>Remember $y=(x_2,\cdots,x_n),$<br>Then define the continuation supported on $O</em>{\delta_i}(x_i)$ (zero continuation can be done)</p>
+<script type="math/tex; mode=display">F_i(x_1,y)=\begin{cases}
+                \varphi_i f(x_1,y)&x_1\ge 0\\
+                 \sum_{j=0}^m C_j\varphi_if(-\lambda_j x_1,y)&x_1<0
+            \end{cases}.</script><p>It is $C^m$ in the upper and lower half-planes respectively, and only needs to verify the regularity in the $x<em>1$ direction when $x_1=0$.<br>Note that you only need to ensure that $\sum</em>{j=0}^m (-\lambda<em>j)^kC_j=1,$<br>$\,\forall\,0\le k\le m,$<br>That is, there is $F_i\in C^m(\mathbb{R}^n)\subset H^{m,p}(\mathbb{R}^n).$<br>And since $\det(-\lambda_j)^k$ is the Vandermond determinant,<br>As long as $\lambda_j&gt;0$ are mutually different, there is a solution ${C_j}.$<br>Therefore, the continuation $F_i\in C^m(\mathbb{R}^n)$ is achievable.<br>Pull it back to the initial $O</em>{\delta_i}(x_i), $ just do zero extension.</p>
+<p>This way $f\in C^m(\Omega),$<br>We found a suitable continuation $\widetilde{f}\in C^m(\mathbb{R}^n),$<br>Satisfies $\parallel\widetilde{f}\parallel<em>{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel</em>{H^{m,p}(\Omega)}.$<br>Generally, for $f\in H^{m,p}(\Omega),$ there is $f<em>i\xrightarrow{H^{m,p} } f.$<br>At this time, follow the same method to construct the continuation,<br>It is not difficult to prove that $\widetilde{f_i}\xrightarrow{H^{m,p} } \widetilde{f}.$<br>Therefore there is still $\parallel\widetilde{f}\parallel</em>{H^{m,p}(\mathbb{R}^n)}\le C\parallel f\parallel_{H^{m,p}(\mathbb{R}^n)}.$<br>The proposition is proved.</p>
+<p>In fact, in the proof, just let $j$ start counting from $1$. In this way, although the continuation is $C^{m-1}$,<br>But since there are $C^m$ on both sides of $x_1=0$, the continuation $F_i$ is still generalized differentiable of order $m$,<br>And the derivative falls in $L^p$ space.</p>
+<h2 id="sobolev-s-inequality">Sobolev&#39;s inequality</h2>
+<p>Also known as <strong>embedding theorem</strong>. Define homogeneous Sobolev modules</p>
+<script type="math/tex; mode=display">|f|_{\dot{H}^{m,p}(\Omega)}=\left(\sum_{|\alpha|=m}\parallel\partial^\alpha f\parallel_{L^p(\Omega)}^p\right)^{\frac{1}{p} }.</script><p>Do dimensional analysis on $x$: Replace $x$ with $kx,$ and there will be an extra constant $k^{\frac{n}{p}-m}.$<br>The dimensions of the elements matching this formula with respect to $x$ should also be $\frac{n}{p}-m.$</p>
+<p><strong>Theorem 1.2</strong> (Sobolev’s inequality (embedded theorem)). <em>When $\frac{n}{p}=\frac{n}{q}-m$, there is</em></p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p(\Omega)}\le C|f|_{\dot{H}^{m,q}(\Omega)},\quad \,\forall\,f\in C_c^\infty(\Omega)</script><p><strong>Proof:</strong> First make basic observations to make the conclusion of the proof as simple as possible. Assume $m\ge 2,$<br>For all inequalities below $m-1$, then</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^{p}(\Omega)}\le C_{m-1}|f|_{\dot{H}^{m-1,q_1}(\Omega)}.</script><p>Remember $g_\alpha=\partial^\alpha f,$ then</p>
+<script type="math/tex; mode=display">\parallel g_\alpha\parallel_{L^{q_1}(\Omega)}\le C_1|g_\alpha|_{\dot{H}^{1,q_2}(\Omega)}.</script><p>thus getting</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p(\Omega)}\le C_1C_{m-1}\sum_{\alpha}|g_\alpha|_{\dot{H}^{1,q_2}(\Omega)}\le C_m|f|_{\dot{H}^{m,q_2}(\Omega)},</script><p>$C<em>m$ can be taken as $nC_1 C</em>{m-1}.$ due to $\begin{cases}<br>                \frac{n}{p}=\frac{n}{q_1}-m+1,\<br>                \frac{n}{q_1}=\frac{n}{q_2}-1.<br>            \end{cases},$ found that $q_2=q,$ satisfies $\frac{n}{p}=\frac{n}{q}-m.$<br>Therefore, it only needs to be proved for the case $m=1$.</p>
+<p>Next, assume that $q=1,$ $p=\frac{n}{n-1}$ has been proved. Then for general $p,q,$<br>Taking $g=|f|^{\frac{p(n-1)}{n} },$ we have:</p>
+<script type="math/tex; mode=display">\parallel f\parallel_{L^p}^{\frac{p(n-1)}{n} }=\parallel g\parallel_{L^{\frac{n}{n-1} } }\le C|g|_{\dot{H}^{1,1} }=\widetilde{C}\sum_{j=1}^n\parallel|f|^{\frac{p(n-1)}{n}-1}\partial_jf\parallel_{L^1}\le \widetilde{\widetilde{C} }|f|_{\dot{H}^{1,q} }\parallel|f|^{\frac{p(n-1)}{n}-1}\parallel_{L^{q^\ast } }.</script><p>Among them, $q^\ast $ satisfies $\frac{1}{q}+\frac{1}{q^\ast }=1.$<br>Combining $\frac{n}{p}=\frac{n}{q}-1,$ we have $q^\ast [\frac{p(n-1)}{n}-1]=p.$ Therefore</p>
+<script type="math/tex; mode=display">\parallel|f|^{\frac{p(n-1)}{n}-1}\parallel_{L^{q^\ast } }=\parallel f\parallel_{L^{p} }^{\frac{p(n-1)}{n}-1},</script><p>By moving this term to the left side of the inequality, the proof in the general case is given. So we only need to consider $q=1,$<br>The case of $p=\frac{n}{n-1}$.</p>
+<p>When $n=1$, $p=\infty,$<br>Certificate required$\parallel f\parallel<em>{L^\infty}\le C|f|</em>{\dot{H}^{1,1} }.$<br>Since the function $f\in C_c^\infty(\Omega),$ on $\mathbb{R}^1$, the conclusion is obvious,<br>Just take $C=1$ or even $\frac{1}{2}$. For general $n,$ assuming $n-1$ is correct,<br>Remember $y=(x_2,\cdots,x_n),$ then we have:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+                \parallel f\parallel_{L^{\frac{n}{n-1} } }&=\left(\int_{\mathbb{R} }\int_{\mathbb{R}^{n-1} }|f(x_1,y)|^{\frac{n}{n-1} }dx_1dy\right)^{\frac{n-1}{n} }\\
+                &\le\left(\int_{\mathbb{R}^{n-1} }\int_{\mathbb{R} }|f(x_1,y)|dx_1\left(\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right)^{\frac{1}{n-1} }\right)^{\frac{n-1}{n} }\\
+                &\le \left|\left|\left(\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right)^{\frac{1}{n-1} }\right|\right|_{L^p(\mathbb{R}^{n-1}_y)}^{\frac{n-1}{n} }\left|\left|\int_{\mathbb{R} }|f(y_1,y)|dy_1\right|\right|_{L^q(\mathbb{R}^{n-1}_y)}^{\frac{n-1}{n} }
+            \end{aligned}</script><p>Taking $q=\frac{n-1}{n-2},$ then $p=n-1.$ Applying the assumption, we have:</p>
+<script type="math/tex; mode=display">\begin{aligned}
+\parallel f\parallel_{L^{\frac{n}{n-1} } }&\le C\left|\left|\int_{\mathbb{R} }|\partial_1 f(y_1,y)|dy_1\right|\right|_{L^1(\mathbb{R}^{n-1}_y)}^{\frac{1}{n} }\left(\sum_{j=2}^m\left|\left|\partial_j\int_{\mathbb{R} }|f(y_1,y)|dy_1\right|\right|_{L^1(\mathbb{R}^{n-1}_y)}\right)^{\frac{n-1}{n} }\\
+                &\le C\parallel\partial_1 f\parallel_{L^1(\mathbb{R}^n)}^{\frac{1}{n} }\left(\sum_{j=2}^m\parallel\partial_j f\parallel_{L^1(\mathbb{R}^n)}\right)^\frac{n-1}{n}\\
+                &\le \widetilde{C}\sum_{j=1}^m \parallel\partial_j f\parallel_{L^1(\mathbb{R}^n)}=\widetilde{C}|f|_{\dot{H}^{1,1} }
+            \end{aligned}</script><p>The inequality sign in the last line is obtained from Young&#39;s inequality. This gives the final proof.</p>
+<p>Let $C_c^\infty(\Omega)$ be completed by $H^{m,q}$ norm and the space obtained is $H_0^{m,q}(\Omega),$<br>Then the inequality is also true for the functions in $H_0^{m,q}(\Omega)\cap L^p(\Omega)$. In particular,<br>When $\Omega=\mathbb{R}^n$,<br>$H_0^{m,q}(\mathbb{R}^n)$ is $H^{m,q}(\mathbb{R}^n).$</p>
+<p>The article was last updated on 2021-10-25 18:35:52</p>
                 </div>
             
         </div>
@@ -365,14 +409,14 @@ $H_0^{m,q}(\mathbb{R}^n)$就是$H^{m,q}(\mathbb{R}^n).$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《现代PDE基础》笔记(4)-Sobolev空间</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-24 22:48:18</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《现代PDE基础》笔记(4)-Sobolev空间</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-24 22:48:18</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/24/《现代PDE基础》笔记(4)-Sobolev空间/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/24/《现代PDE基础》笔记(4)-Sobolev空间/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -440,7 +484,7 @@ $H_0^{m,q}(\mathbb{R}^n)$就是$H^{m,q}(\mathbb{R}^n).$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -578,24 +622,21 @@ $H_0^{m,q}(\mathbb{R}^n)$就是$H^{m,q}(\mathbb{R}^n).$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -677,9 +718,7 @@ $H_0^{m,q}(\mathbb{R}^n)$就是$H^{m,q}(\mathbb{R}^n).$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-definition"><span class="nav-text">basic definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equivalent-modular-theorem"><span class="nav-text">Equivalent modular theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-s-inequality"><span class="nav-text">Sobolev&#39;s inequality</span></a></li></ol>
         </div>
     
 </div>
@@ -704,6 +743,7 @@ $H_0^{m,q}(\mathbb{R}^n)$就是$H^{m,q}(\mathbb{R}^n).$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

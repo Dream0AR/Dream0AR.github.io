@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -304,7 +304,41 @@ $X$可以诱导其上的映射,
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="differential-calculus-of-maps">Differential Calculus of Maps</h2>
+<h3 id="mapping">Mapping</h3>
+<p>$M^m$ is a $C^\infty$ manifold, $f:M\rightarrow \mathbb{R},$ $p\in M.$<br>If $\,\exists\,$ contains $p$ points, the allowed coordinate system $(U,\varphi)$ (that is, $\in [\mathcal{F}]$) makes $f\circ \varphi^{-1}$ be $C^\infty$ in a certain neighborhood of $\varphi(p)$,<br>Then $f$ is said to be $C^\infty.$ at point $p$. If $f$ is smooth at every point, it is said to be $f\in C^\infty(M).$</p>
+<p>Allowing coordinate systems to be restricted to smaller open subsets is obviously still allowing coordinate systems,<br>Therefore, the above definition is equivalent to the existence of a certain allowed coordinate system such that $f\circ \varphi^{-1}$ is $C^\infty$ over the entire $\varphi(U)$.</p>
+<p>Since coordinate transformations are smooth, the above concepts are irrelevant to allowing coordinate system selection. Similarly,<br>You can define $f$ to be $C^r$ at point $p$, or $f\in C^r(M).$</p>
+<h3 id="reflection">Reflection</h3>
+<p>Suppose $M^m,N^n$ is a smooth manifold, $F:M\rightarrow N,$ $p\in M.$<br>If there is an allowed coordinate system $(U,\varphi),(V,\psi),$ $F(U)\subset V,$ containing $p,q=F(p)$<br>Make <strong>local representation</strong>$\widehat{F}:=\psi\circ F\circ\varphi^{-1}$ be $C^\infty$ in a certain neighborhood of $\varphi(p)$,<br>Then $F$ is said to be $C^\infty$ at point $p$. If $F$ is $C^\infty,$<br>Then $F$ is said to be <strong>smooth mapping</strong>, recorded as $F\in C^\infty(M,N).$</p>
+<p><strong>Note 1.1</strong>. <em>If $F(U)\not\subset V,$, then $\widetilde{U}=F^{-1}(V)\cap U.$</em></p>
+<p>In the same way, the above concepts have nothing to do with the selection of allowed coordinate systems.</p>
+<h3 id="diffeomorphism">Diffeomorphism</h3>
+<p>If $(U,\varphi)$ is the allowed coordinate system of $M$,<br>Then $\varphi:U\rightarrow \varphi(U)$ and $\varphi^{-1}:\varphi(U)\rightarrow U$ are obviously smooth by definition,<br>Then take the same allowed coordinate system $(U,\varphi)$ for explanation. Note that $U$ induces a smooth structure from $M$,<br>is an open submanifold, rather than a submanifold embedded in the peripheral space (the differential structure is different),<br>For example, $\widetilde{\varphi}:U\rightarrow \varphi(U)\hookrightarrow \mathbb{R}^k$ is not necessarily smooth.</p>
+<p>It is easy to see that the composite of smooth reflections is still smooth reflections.</p>
+<p>Let $F:M\rightarrow N$ be a bijection between smooth manifolds. If $F,F^{-1}$ are smooth,<br>Then $F:M\rightarrow N$ is said to be $C^\infty$ diffeomorphism.<br>Two diffeomorphic smooth manifolds are considered to be the same.</p>
+<p>For example, spherical projection $F:S^2\setminus{p}\rightarrow\mathbb{R}^2$, scaling<br>$B^n(1)\rightarrow \mathbb{R}^n$ are all smooth homeomorphisms.</p>
+<h3 id="differential-structure-problem">Differential structure problem</h3>
+<p>A basic question is, given a topological manifold $M^m,$, is there definitely a $C^\infty$ structure on it?<br>If it exists, is it unique (in the sense of $C^\infty$ homeomorphism)? If $M$ has two differential structures,<br>Ask whether there is a smooth homeomorphism$(M,\mathcal{F}_1)\approx (M,\mathcal{F}_2).$<br>Note that the selection of homeomorphisms does not necessarily require the identity mapping $\mathrm{id},$<br>Therefore, we cannot simply verify whether $\mathcal{F}_1,\mathcal{F}_2$ is compatible with $C^\infty$.</p>
+<p>Known results:</p>
+<ul>
+<li><p>There is a unique $C^\infty$ structure on $\mathbb{R}^m,$ $m\neq 4$;</p>
+</li>
+<li><p>There are infinitely many $C^\infty$ structures that are not equivalent to each other on $\mathbb{R}^4$;</p>
+</li>
+<li><p>There are 28 non-equivalent $C^\infty$ structures on $S^7$-Milnor&#39;s strange ball;</p>
+</li>
+<li><p>There is a unique $C^\infty$ structure on the topological manifold with dimension $m\le 3$;</p>
+</li>
+<li><p>$\,\forall\,m&gt;3,$ all have $m$-dimensional topological manifolds, and there is no $C^\infty$ structure on them.<br>It is assumed below that the topological manifold is given a $C^\infty$ structure.</p>
+</li>
+</ul>
+<h2 id="cut-space">cut space</h2>
+<p>Given a smooth manifold $M^m,$ we try to <em>implicitly</em> generalize the concepts of tangent vectors and tangent planes.<br>Treat curve $C:(a,b)\rightarrow M^m$ as the mapping between smooth manifolds,<br>We can define the concept of smooth curve. Let $C(t<em>0)=p,$<br>Use $C_p^\infty(M)$ to represent the entire function on $M$ that is smooth at $p$,<br>We call mapping (<em>directional derivative operator</em>)$X:C_p^\infty(M)\rightarrow \mathbb{R},$<br>$f\mapsto \frac{d}{dt}[f(c(t))]|</em>{t=t_0}$ is the <strong>tangent vector</strong> of $C(t)$ at $p$,<br>That is, the operation process of finding the directional derivative contains the direction itself.</p>
+<p>The above &quot;tangent vector&quot; $X$ satisfies $X(af+bg)=aX(f)+bX(g),$<br>$X(f\cdot g)=X(f)g(p)+f(p)X(g).$<br>Take $\widetilde{T}_pM={\widetilde{X}:C_p^\infty\rightarrow \mathbb{R}\text{satisfy (1), (2)}}.$<br>$(\widetilde{X}_1+\widetilde{X}_2)f:=\widetilde{X}_1(f)+\widetilde{X}_2(f),$<br>$(x\widetilde{X})(f):=a\widetilde{X}(f).$<br>Easy to verify $\widetilde{X}_1+\widetilde{X}_2,$<br>$a\widetilde{X}$ satisfies $(1), (2),$ that is, $\widetilde{T}_pM$ is a vector space.</p>
+<p>$C_p^\infty(M)$ is different from $C^\infty(M)$. The latter is a vector space, but the former is not.<br>Because <em>zero elements are not unique</em>. The reason is that the addition of the former only adds to the common smooth neighborhood.<br>Therefore $X$ is not a linear mapping for the time being.</p>
+<p>We introduce the equivalence relationship to change this situation:<br>Let $f\sim g\Leftrightarrow \,\exists\,p$ point the small neighborhood $W,$ so that $f|<em>W=g|_W.$<br>Call $[f]$ $C^\infty$<strong>function bud</strong>,<br>$C_p^\infty(M)/</em>\sim$ is $C^\infty$<strong>function bud space</strong>$\mathcal{F}_p^\infty.$<br>$X$ can induce the mapping on it,<br>Still recorded as $X:\mathcal{F}_p^\infty\rightarrow \mathbb{R},$ $[f]\mapsto Xf.$<br>It also satisfies properties similar to $(1) and (2)$ above.<br>At this time $\mathcal{F}_p^\infty$ is indeed a vector space, so $X$ becomes a linear mapping.</p>
+<p>The article was last updated on 2021-09-26 16:39:45</p>
                 </div>
             
         </div>
@@ -313,14 +347,14 @@ $X$可以诱导其上的映射,
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《微分流形》第一章-流形间的映射</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-09-26 19:39:38</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《微分流形》第一章-流形间的映射</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-09-26 19:39:38</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/09/26/《微分流形》第一章-流形间的映射/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/09/26/《微分流形》第一章-流形间的映射/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -388,7 +422,7 @@ $X$可以诱导其上的映射,
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -526,24 +560,21 @@ $X$可以诱导其上的映射,
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -625,9 +656,7 @@ $X$可以诱导其上的映射,
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#differential-calculus-of-maps"><span class="nav-text">Differential Calculus of Maps</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mapping"><span class="nav-text">Mapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reflection"><span class="nav-text">Reflection</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#diffeomorphism"><span class="nav-text">Diffeomorphism</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#differential-structure-problem"><span class="nav-text">Differential structure problem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut-space"><span class="nav-text">cut space</span></a></li></ol>
         </div>
     
 </div>
@@ -652,6 +681,7 @@ $X$可以诱导其上的映射,
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

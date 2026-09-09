@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -296,7 +296,39 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <h2 id="introduction">Introduction</h2>
+<p>Geometric analysis is a discipline that uses analytical methods to discuss geometric problems.<br>For example, we will discuss analysis problems similar to the following on manifolds:<br>For $\varphi\in C^\infty(M,g),$ consider</p>
+<script type="math/tex; mode=display">
+\left\{
+ \begin{aligned}
+ &-\Delta_gu=0\\
+ &u|_{\partial B_R(p)}=\varphi
+ \end{aligned}
+ \right.</script><p> Whether there is a unique solution. The answer is generally no,<br>Such analysis problems will also reflect the geometric properties of the manifold $M$. Similar problems include,<br>For the smooth vector field $X,$, does the following formula have a good form?</p>
+<script type="math/tex; mode=display">
+\int_{B_R(p)}\operatorname{div}X</script><h2 id="measure-the-earth">Measure the Earth</h2>
+<p>For the complete (default complete from now on) Riemannian manifold $(M,g),$ $p\in M,$<br>We have exponential mapping $\exp_p:T_pM\rightarrow M$ which is a smooth mapping,<br>$\exp_ptv$ changes as a geodesic with $t$. We give the following notation:</p>
+<script type="math/tex; mode=display">
+\widehat{C}_p=\{v\in T_pM|d\exp_p \text{Non-degenerate along $tv|_{t\in[0,1]}$}\},\quad C_p=\exp_p\widehat{C}_p;</script><script type="math/tex; mode=display">
+\widehat{S}_p=\{v\in T_pM|\,\exists\,\varepsilon, \exp_ptv|_{[0,1+\varepsilon]} \text{is a line segment (shortest geodesic)}\},\quad S_p=\exp_p\widehat{S}_p.</script><p>Call $S_p$ a segment domain, and the place where $d\exp_p$ degenerates is called a <strong>conjugate point</strong>.<br>$\exp_p:\widehat{S}_p\approx S_p$ is a diffeomorphism. (Do you want to remove the zero test set?)</p>
+<p>Some facts are:</p>
+<p>(i) $\widehat{S}_p\subset \widehat{C}_p$;</p>
+<p>(ii) $\widehat{S}_p$ is a star-shaped area;</p>
+<p>(iii) $\operatorname{Cut}_p:=M\setminus S_p$ is called <strong>cut</strong>,<br> There is $\operatorname{Vol}(\operatorname{Cut}_p)=0.$</p>
+<p>Give a new definition:</p>
+<script type="math/tex; mode=display">
+\operatorname{Inj}(p):=\inf \{r|B_r^n(0)\subset \widehat{S}_p\},</script><p>is called the <strong>injective radius</strong> of point $p$, where $B_r^n(0)\subset T_pM\cong \mathbb{R}^n.$<br>When $r&lt;\operatorname{Inj}(p)$, $B_r^g(p)\approx B_r^n(0)$ is a diffeomorphism,<br>But $r\ge \operatorname{Inj}(p)$ is definitely not the case.</p>
+<p>Consider bending a French stick into two halves with unequal lengths, and let the protruding bending point be $p,$<br>Then there is a radius $r$ such that $\partial B<em>r^g(p)$ is a ring $S^1$ and a vertex $q$.<br>So assuming that the starting problem has a solution $u\in C^2(B_r^g(p)),$ then it is a bounded harmonic function,<br>Therefore $q$ can remove singular points, and $u$ is smooth. Let $\Omega:=B_r^g(p)\cup {q},$<br>Then $\partial \Omega=S^1,$ $u\in C^\infty(\Omega).$<br>Therefore, if $\varphi|</em>{S^1}\equiv 1,$ then there is $u\equiv 1.$ on $\Omega$<br>Therefore, if the initial boundary conditions are $\varphi(q)=0,$, then the problem has no solution.</p>
+<h2 id="cut-traces">Cut traces</h2>
+<p>We can divide the boundary of the Earth into two parts:</p>
+<script type="math/tex; mode=display">
+(\partial B_r^g(p)\cap S_p)\cup (\partial B_r^g(p)\cap \operatorname{Cut}_p).</script><p>Since $\exp_p$ on $\widehat{S}_p$ is a diffeomorphism, the first half is an $n-1$ dimensional submanifold,<br>The bad parts are mainly concentrated on the cutting traces. Since the cutting traces are zero-measured, there are not too many bad parts.</p>
+<p>In fact, we have further decomposition of the cut trace:</p>
+<script type="math/tex; mode=display">
+\operatorname{Cut}_p=\{\exp_p v|r(d\exp_{p,v})\le n-1\}\cup \{x| \text{There are more than two line segments connecting $p,x$}\}</script><p>Mark the first half as $Q_p, $, the following part with exactly two items as $N_p, $, and the rest as $L_p.$<br>Then we have the following theorem:</p>
+<p><strong>Theorem 1</strong>. <em>$N_p$ is a smooth $n-1$ dimensional submanifold, and $\dim(L_p\cup Q_p)\le n-2.$</em></p>
+<p>Note that the above theorem is only true for smooth flows.</p>
+<p>The article was last updated on 2022-09-15 21:20:34</p>
                 </div>
             
         </div>
@@ -305,14 +337,14 @@ $$</p>
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《几何分析》笔记(1)-测地球</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2022-09-15 20:58:05</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《几何分析》笔记(1)-测地球</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2022-09-15 20:58:05</li>
         <li>
-            本文链接：https://dream0ar.github.io/2022/09/15/《几何分析》笔记(1)-测地球/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2022/09/15/《几何分析》笔记(1)-测地球/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -380,7 +412,7 @@ $$</p>
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -518,24 +550,21 @@ $$</p>
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -617,9 +646,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#introduction"><span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#measure-the-earth"><span class="nav-text">Measure the Earth</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cut-traces"><span class="nav-text">Cut traces</span></a></li></ol>
         </div>
     
 </div>
@@ -644,6 +671,7 @@ $$</p>
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"

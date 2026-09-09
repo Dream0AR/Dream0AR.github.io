@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-lang="zh-CN">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -313,7 +313,43 @@ $f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    <p>This section explains how to relate the Poincaré duality of a submanifold to the Thom class of vector bundles on the submanifold.</p>
+<h2 id="shang-cong">Shang Cong</h2>
+<p>Say $F$ is a rank$k$<strong>subbundle</strong> of a rank$n$ vector bundle$E$, if $\,\forall\,x\in M$,<br>$F_x$ is $E_x$ subspace.</p>
+<p>From this we can define the <strong>quotient cluster</strong>$Q=E/F$,<br>It is a vector bundle such that $0\rightarrow F\rightarrow E\rightarrow Q\rightarrow 0$ is exactly consistent.<br>That is, $\,\forall\,x\in M$, $Q_x=E_x/F_x$ is the quotient space.</p>
+<p>First, take the natural frame in $F$, and then expand it to a set of frames in $E$,<br>In this way, their local trivializations are compatible. Let the local trivialization transfer function of $E$ be $g<em>{\alpha\beta},$<br>$F$ is $h</em>{\alpha\beta}.$, then for the point on $F$, only $h<em>{\alpha\beta}$ works,<br>Thus $g</em>{\alpha\beta}=\begin{pmatrix}<br>            h<em>{\alpha\beta} &amp; *\<br>            0 &amp; q</em>{\alpha\beta}<br>        \end{pmatrix}$. Then $q_{\alpha\beta}$ is the transfer function of $Q$.<br>It is easy to see that if $E, F$ can be oriented, $Q$ can also be oriented, it is said that the orientation of $Q$ makes the orientation of $E$ be straight and oriented.</p>
+<p>Because we have an inner product, there is an orthogonal complementary space $F_x^\perp\subset E_x$ on the fiber.<br>Then $F^\perp=\bigsqcup F_x^\perp$ is a subbundle of $E$ and $E=F\oplus F^\perp$,<br>There is also an inner product inherited from $E$. Obviously $Q\cong F^\perp$,<br>Therefore, there is also an induced inner product on $Q/E$. There is also an orientation on $F^\perp$ such that the orientation of $E$ is straight and directed.</p>
+<h2 id="submanifold-normal-bundle-and-tubular-neighborhood-lemma">Submanifold normal bundle and tubular neighborhood lemma</h2>
+<p>$k$ dimensional submanifold $S\subset M$, there are tangent bundles $TS$ and $i^{-1}TM=TM|_S$ on $S$,<br>$i$ is an inclusion mapping.</p>
+<p>Obviously $TS\subset TM|<em>S$. Define $N</em>{S/M}=TM|_S/TS$, abbreviated as $N$. If $M, S$ can be oriented,<br>Then the tangent bundle can be oriented, so $N$ can be oriented.</p>
+<p>$\,\forall\,x\in S$, there is $x$ point coordinate card $(U,\phi)$,<br>Let $\phi|<em>{S\cap U}$ be the coordinate card of $x$ in $S$, and only the first $k$ coordinates have values.<br>This induces a frame on the tangent bundle. Restricted to $U</em>\alpha$ or $U<em>\alpha\cap S$,<br>Let $TM$ frame be ${\frac{\partial {} }{\partial {}x_A^\alpha}}</em>{1\le A\le n}$,<br>The $TS$ frame is ${\frac{\partial {} }{\partial {}x<em>i^\alpha}}</em>{1\le i\le k}$,<br>The $N$ frame is ${\frac{\partial {} }{\partial {}x<em>a^\alpha}}</em>{k+1\le a\le n}$.</p>
+<p>On $S\cap U<em>{\alpha\beta}$,<br>$\frac{\partial {}x_a^\alpha}{\partial {}x_i^\beta}=0$,<br>Therefore, the $TS$ transfer function is $h</em>{\alpha\beta}=(\frac{\partial {}x<em>j^\alpha}{\partial {}x_i^\beta})</em>{k\times k}$.</p>
+<p>However,<br>$\frac{\partial {}x<em>j^\alpha}{\partial {}x_a^\beta}$ is obviously not necessarily $0$,<br>But we modeled out this part when we were doing the business cluster.<br>Therefore, the transfer function of $N$ is $q</em>{\alpha\beta}=(\frac{\partial {}x<em>b^\alpha}{\partial {}x_a^\beta})</em>{(n-k)\times (n-k)}$.<br>The transfer function of $TM|<em>S$ is $g</em>{\alpha\beta}=\begin{pmatrix}<br>            h<em>{\alpha\beta} &amp; *\<br>            0 &amp; q</em>{\alpha\beta}<br>\end{pmatrix}=(\frac{\partial {}x<em>A^\alpha}{\partial {}x_B^\beta})</em>{n\times n}$.</p>
+<p>We have the following important theorem. For proof, please refer to other differential manifold textbooks.</p>
+<p><strong>Theorem 1.1</strong> (Tubular Neighborhood Theorem). <em>There is $j$ that embeds $N$ into $M$, and $j\circ s=i$, that is, the zero section is mapped to $S$.</em></p>
+<p>The open set $j(N)\subset M$ is called a tubular neighborhood, denoted as $T$.</p>
+<h2 id="poincar%C3%A9-duality-and-thom-class">Poincaré duality and Thom class</h2>
+<p>Let $\Phi$ be the Thom class of the $S$ method bundle $N$, then it is isomorphic to Thom,<br>$H^\ast (S)\cong H<em>{cv}^{\ast +n-k}(N)\cong H</em>{cv}^{\ast +n-k}(T)\rightarrow H^{\ast +n-k}(M)$,<br>The last mapping is zero continuation.</p>
+<p><strong>Lemma 1.1</strong>. <em>Closed Poincaré duality of $S$$[\eta<em>S]=j</em>\ast \Phi\in H^{n-k}(M)$,</em></p>
+<p><strong>Proof:</strong> We only need to prove that $j_\ast \Phi$ satisfies the duality property. Let $l:S\rightarrow T$ be included,<br>It is $\pi:T\rightarrow S$ with zero cross section. They are mutually inverse at the level of cohomology,<br>Thus $\omega|_T=\pi^\ast l^\ast (\omega|_T)+d\tau$, $\tau\in \Omega^{k-1}(T)$</p>
+<script type="math/tex; mode=display">\begin{aligned}
+                \int_M\omega\wedge j_*\Phi&=\int_T\omega|_T\wedge \Phi & j_*\text{Extension to zero}\\
+                &=\int_T \pi^*l^*(\omega|_T)\wedge \Phi+\int_T d\tau \wedge \Phi&\\
+                &=\int_S l^*(\omega|_T)\wedge \pi_*\Phi&\text{Stokes theorem+projection formula}\\
+                &=\int_S i^*\omega.&\pi_*\Phi=1\quad+\quad{\omega|_T}|_S=\omega|_S
+            \end{aligned}</script><p>And because the tubular neighborhood of submanifold $S$ in $M$ can be sufficiently small, we get:</p>
+<p><strong>Proposition 1.1</strong> (Localization principle). <em>The support of the Poincaré dual of a closed submanifold $S$ can be reduced to any given tubular neighborhood of $S$.</em></p>
+<h2 id="application">Application</h2>
+<h3 id="poincar%C3%A9-duality-of-transversal-intersecting-submanifolds">Poincaré duality of transversal intersecting submanifolds</h3>
+<p>Two submanifolds $R, S$ in $M$ are said to intersect transversely, if $\,\forall\,x\in R\cap S$,<br>$T_xR+T_xS=T_xM$.</p>
+<p>Let $R, S$ be the closed submanifolds that intersect transversely in the manifold $M$,<br>Then $R\cap S$ is also a closed submanifold and $\dim R\cap S=\dim R+\dim S-\dim M$.<br>Further$\operatorname{codim}_M R\cap S=\operatorname{codim}_M R+\operatorname{codim}_M S$.</p>
+<p>$R\cap S$ is in $M$ with the French bundle $N<em>{(R\cap S)/M}=(N</em>{R/M}\oplus N<em>{S/M}) |</em>{R\cap S}$.<br>Embedding the normal bundle into $M$ is a tubular neighborhood,<br>Then $\Phi(N<em>{(R\cap S)/M})=\Phi(N</em>{R/M})\wedge \Phi(N<em>{S/M})$,<br>Thus $\eta</em>{R\cap S}=\eta_R\wedge \eta_S$.</p>
+<p><strong>Proposition 1.2</strong>. <em>The Poincaré duality of the intersection of two transversely intersecting closed submanifolds is equal to the outer product of the Poincaré duality of the two submanifolds.</em></p>
+<h3 id="pullback-of-poincar%C3%A9-duality">Pullback of Poincaré duality</h3>
+<p>Let $f:M&#39;\rightarrow M$ be a smooth map, and $S$ be the closed submanifold of $M$.<br>If $\,\forall\,x\in f^{-1}(S)$, $f<em>\ast (T_x M&#39;)+T</em>{f(x)}S=T<em>{f(x)}M$,<br>Then the map $f$ is said to be transverse to the submanifold $S$.<br>That is, $f(M&#39;)$ is either disjoint with the submanifold $S$ ($f^{-1}(S)=\varnothing$ is automatically established),<br>Either crosswise intersection ($f</em>\ast (T<em>x M&#39;)=T</em>{f(x)}f(M&#39;)$).</p>
+<p>At this time, $f^{-1}(S)$ is a smooth submanifold of $M&#39;$, and any tubular neighborhood $T$ of $S$ in $M$,<br>$f^{-1}T$ is the tubular neighborhood of $f^{-1}(S)$ in $M&#39;$. According to the functor property of Thom class,<br>$f^\ast $ can be replaced with $\mathcal{T}$, $j<em>\ast $.<br>At this time we have $f^\ast \eta_S=f^\ast j</em>\ast \Phi(T)=j<em>\ast \mathcal{T}f^\ast (1)=j</em>\ast \Phi(f^{-1}T)=\eta_{f^{-1}(S)}$.<br>That is:</p>
+<p><strong>Proposition 1.3</strong>. <em>Suppose $f:M&#39;\rightarrow M$ is a smooth map, a closed submanifold $S$ transverse to $M$. If $[\eta_S]$ is the Poincaré dual of $S$ in $M$, then $f^\ast [\eta_S]$ is the Poincaré dual of $f^{-1}(S)$ in $M&#39;$.</em></p>
+<p>The article was last updated on 2021-10-10 21:10:53</p>
                 </div>
             
         </div>
@@ -322,14 +358,14 @@ $f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
             <div class="post-copyright-info">
                 <div class="article-copyright-info-container">
     <ul>
-        <li>本文标题：《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</li>
-        <li>本文作者：DreamAR</li>
-        <li>创建时间：2021-10-11 00:10:51</li>
+        <li><span class="i18n-text" data-i18n="copyright.title">本文标题</span>：《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类</li>
+        <li><span class="i18n-text" data-i18n="copyright.author">本文作者</span>：DreamAR</li>
+        <li><span class="i18n-text" data-i18n="copyright.create_time">创建时间</span>：2021-10-11 00:10:51</li>
         <li>
-            本文链接：https://dream0ar.github.io/2021/10/10/《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类/
+            <span class="i18n-text" data-i18n="copyright.link">本文链接</span>：https://dream0ar.github.io/2021/10/10/《代数拓扑与微分形式》笔记(6-3)-Poincaré对偶与Thom类/
         </li>
         <li>
-            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+            <span class="i18n-text" data-i18n="copyright.license_title">版权声明</span>：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
         </li>
     </ul>
 </div>
@@ -397,7 +433,7 @@ $f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
                 <div class="comments-container">
     <div id="comment-anchor"></div>
     <div class="comment-area-title">
-        <i class="fas fa-comments">&nbsp;评论</i>
+        <i class="fas fa-comments">&nbsp;<span class="i18n-text" data-i18n="comments">评论</span></i>
     </div>
     
 
@@ -535,24 +571,21 @@ $f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
             <div class="website-count info-item">
                 
                     <span id="busuanzi_container_site_uv">
-                        访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                        <span class="i18n-text" data-i18n="site_uv">访问人数</span>&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
                     </span>
                 
                 
                     <span id="busuanzi_container_site_pv">
-                        总访问量&nbsp;<span id="busuanzi_value_site_pv"></span>
+                        <span class="i18n-text" data-i18n="site_pv">总访问量</span>&nbsp;<span id="busuanzi_value_site_pv"></span>
                     </span>
                 
             </div>
         
         <div class="theme-info info-item">
-            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;<span class="i18n-text" data-i18n="theme">主题</span>&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.3</a>
         </div>
         
-        <div style="width:300px;margin:0 auto; padding:20px 0;">
-            <a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010802039835" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;"><img src="http://www.beian.gov.cn/portal/download" style="float:left;"/><p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">京公网安备 11010802039835号</p></a>
-        </div>
-    
+            
     </div>
 </footer>
 
@@ -634,9 +667,7 @@ $f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#shang-cong"><span class="nav-text">Shang Cong</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#submanifold-normal-bundle-and-tubular-neighborhood-lemma"><span class="nav-text">Submanifold normal bundle and tubular neighborhood lemma</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#poincar%C3%A9-duality-and-thom-class"><span class="nav-text">Poincaré duality and Thom class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application"><span class="nav-text">Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#poincar%C3%A9-duality-of-transversal-intersecting-submanifolds"><span class="nav-text">Poincaré duality of transversal intersecting submanifolds</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pullback-of-poincar%C3%A9-duality"><span class="nav-text">Pullback of Poincaré duality</span></a></li></ol></li></ol>
         </div>
     
 </div>
@@ -661,6 +692,7 @@ $f^\ast $与$\mathcal{T}$, $j_\ast $均可换.
                        autocorrect="off"
                        autocapitalize="off"
                        placeholder="搜索..."
+                       data-i18n-placeholder="search"
                        spellcheck="false"
                        type="search"
                        class="search-input"
