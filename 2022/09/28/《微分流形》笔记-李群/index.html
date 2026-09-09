@@ -349,123 +349,7 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <p>Introduction to smooth manifolds by John M. Lee</p>
-<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p><strong>李群</strong>就是指能够成为光滑流形的群, 且乘法和求逆都是光滑映射.
-它们往往具有非常好的对称结构. 回忆对于群结构的封闭性,
-只需验证$ab^{-1}$的封闭性即可. 类似地,
-我们只需说明$(a,b)\mapsto ab^{-1}$的光滑性,
-来代替乘法和求逆光滑性的说明.</p>
-<p>我们定义<strong>左平移</strong>, <strong>右平移</strong>算子$L_g,R_g:G\rightarrow G,$</p>
-<p>$$
-L_g(h)=gh,\quad R_g(h)=hg.
-$$</p>
-<p> 它们都是光滑映射, 且为微分同胚.</p>
-<h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><p>下面列举一些常见李群.</p>
-<p>$GL(n,\mathbb{R})$称为<strong>一般线性群</strong>,
-是矩阵空间$M(n,\mathbb{R})$中的开子流形, 为全体可逆矩阵.
-它在矩阵乘法的意义下成为群, 容易验证它是一个李群.
-记$GL^+(n,\mathbb{R})$为其中行列式取正的全体矩阵, 它也是一个李群.
-一般的, 任意李群的开子群(是开流形的子群)都还是一个李群.
-复一般线性群$GL(n,\mathbb{C}),$
-实/复线性空间$V\rightarrow V$的全体可逆线性映射$GL(V)$也都是李群.</p>
-<p>一些更为常见的空间,
-如$\mathbb{R}^n,\mathbb{C}^n,\mathbb{R}^\ast ,\mathbb{R}^+,\mathbb{C}^\ast ,S_1,T^n$等都是李群.
-李群的直积还是李群. 离散群也可以是李群.</p>
-<h2 id="李群间的同态"><a href="#李群间的同态" class="headerlink" title="李群间的同态"></a>李群间的同态</h2><p>李群$G,H$间的<strong>同态</strong>指一个光滑映射$F:G\rightarrow H,$ 满足群同态的要求.
-它是李群间的<strong>同构</strong>, 若其是一个微分同胚.</p>
-<p>举一些李群同态的例子, 一些包含映射是显然的同态,
-$\exp:\mathbb{R}\rightarrow \mathbb{R}^+$与其逆映射$\log,$
-$\det:GL(n,\mathbb{R})\rightarrow \mathbb{R}^\ast $都是李群同态.
-特别地共轭算子$C_g:h\mapsto ghg^{-1}$是李群$G\rightarrow G$上的同构.</p>
-<p><strong>定理 1</strong>. <em>每个李群间的同态秩为常数.</em> </p>
-<p>我们首先说明对于同态$F,$ 它和平移算子可交换:</p>
-<p>$$
-F(L_{g}(h))=F(gh)=F(g)F(h)=L_{F(g)}(F(h)).
-$$</p>
-<p> 因此在$e$点考虑微分,
-$dF_{g}d(L_g)_e=d(L_{F(g)})_{\widetilde{e} }dF_e.$
-由于平移算子是微分同胚, 切映射满秩. 因此$r(dF_g)=r(dF_e).$
-这就说明了同态秩恒为常数.</p>
-<p>结合秩定理, 我们立即得到:</p>
-<p><strong>推论 2</strong>. <em>李群同态是李群间的同构当且仅当它是双射.</em> </p>
-<h2 id="万有覆盖群"><a href="#万有覆盖群" class="headerlink" title="万有覆盖群"></a>万有覆盖群</h2><p>考虑$G$的万有覆盖空间, 我们可以在其上定义群结构, 从而有如下定理成立.</p>
-<p><strong>定理 3</strong>. <em>令$G$为连通李群, 存在单连通李群$\widetilde{G}$与光滑覆盖映射$\pi:\widetilde{G}\rightarrow G,$ 且为群同态. 称$\widetilde{G}$为$G$的万有覆盖群. 它也在群同构的意义下是唯一的, 保持覆盖映射.</em> </p>
-<h2 id="李子群"><a href="#李子群" class="headerlink" title="李子群"></a>李子群</h2><p>李子群即是赋予了拓扑与光滑结构的子群, 它是一个子流形.
-容易说明子群作为嵌入子流形自动是李子群.</p>
-<p><strong>引理 4</strong>. <em>设$H\subset G$为开子群, 那么$H$是嵌入李子群, 它也是闭的, 为$G$中的若干连通分支之并.</em> </p>
-<p>开流形自动是嵌入子流形. 注意到陪集$gH$总是开的,
-因为它是微分同胚$L_g$下开集的像. 从而$G\setminus H$是若干开陪集的并,
-故$H$也是闭的, 进而得到结论.</p>
-<p><strong>命题 5</strong>. <em>设$G$是李群, $W\subset G$为幺元处邻域, 则$W$生成了$G$中的开子群. 当$W$连通时, 生成子群也连通; 当$G$连通时, $W$生成了$G.$</em> </p>
-<p>记$W$生成了$H,$ 那么$\,\forall\,h \in H,$ $hW\subset H,$
-因此$h$周围包含了平移过来的幺元处的邻域, 从而$H$是开的. 当$W$连通时,
-只需证$\,\forall\,h\in H,$ $e,h$道路连通即可.
-事实上$h$为$W$中元素及其逆的有限乘, 我们只需证明$h$与$hg$道路连通即可,
-$\,\forall\,h\in H,$ $g\in W.$ 这样归纳地即可得出结论.</p>
-<p>然而$h,hg\in hW,$ $hW$是$L_h$下连通集的像, 也连通, 命题得证.
-最后若$G$连通, 由前面引理, $H$也是闭的, 因此$H$就是全空间$G.$</p>
-<p>可见李群$G$中含幺元的连通分支$G_0$很关键,
-我们也称它为<strong>幺元分支(identity component)</strong>.
-可以证明它是$G$中的正则子群, 且是唯一一个连通开子群.
-每个$G$的连通分支都与$G_0$微分同胚.</p>
-<p>由前面关于同态秩为常数的结论, 以及秩定理, 我们有:</p>
-<p><strong>命题 6</strong>. <em>令$F:G\rightarrow H$为李群间的同态, 那么$\ker F$是逆紧嵌入的李子群, 余维数恰为$r(F).$</em> </p>
-<p><strong>命题 7</strong>. <em>若$F:G\rightarrow H$为李群单同态, 那么$F$的像具唯一光滑结构, 使得$F(G)$为李子群, 且$F:G\approx F(G)$为李群同构.</em> </p>
-<p>$SL(n,\mathbb{R})$为行列式为$1$的$n$阶实矩阵全体,
-称为$n$阶<strong>特殊线性群</strong>.
-它是$\det GL(n,\mathbb{R})\rightarrow \mathbb{R}^\ast $下的核,
-因此是逆紧嵌入的李子群. 由于$\det$为满射,
-分析秩得到$SL(n,\mathbb{R})$为$n^2-1$维子流形. 同理,
-也有复特殊线性群与类似的结论.</p>
-<p>我们知道对于光滑子流形, 闭性与嵌入性并没有什么显然的联系,
-然而对李子群是有的. 利用拓扑语言分析有:</p>
-<p><strong>定理 8</strong>. <em>设$G$为李群, $H\subset G$为李子群, 那么$H$在$G$中是闭的当且仅当它是嵌入的.</em> </p>
-<p>由该定理, 每个嵌入李子群也自动是逆紧嵌入的.
-因为嵌入子流形逆紧当且仅当其闭.</p>
-<h2 id="群作用与等变映射"><a href="#群作用与等变映射" class="headerlink" title="群作用与等变映射"></a>群作用与等变映射</h2><h3 id="群作用"><a href="#群作用" class="headerlink" title="群作用"></a>群作用</h3><p>李群在$M$上的群作用是李群最关键的应用之一.
-李群$G$在黎曼流形$M$上的<strong>左作用</strong>指映射$G\times M\rightarrow M,$ 满足:</p>
-<p>$$
-g_1(g_2p)=(g_1g_2)p,\quad ep=p.
-$$</p>
-<p> <strong>右作用</strong>类似定义. 当映射光滑时,
-称作用为<strong>光滑作用</strong>. 一般的, 我们会将作用如左作用记为$\theta_g(p)L=gp,$
-从而条件变为:</p>
-<p>$$
-\theta_{g_1}\theta_{g_2}=\theta_{g_1g_2},\quad \theta_e=\mathrm{id}_M.
-$$</p>
-<p>右作用类似. 对于光滑作用, $\theta_g:M\approx M$为微分同胚,
-以$\theta_{g^{-1} }$为逆.</p>
-<p>参考经典群论, 我们有<strong>轨道</strong>与<strong>稳定子</strong>的概念,
-以及作用的<strong>可迁</strong>与<strong>自由</strong>性.</p>
-<p>一些经典的群作用的例子是矩阵群在$\mathbb{R}^n$上的自然作用,
-李群在自己本身上的左作用, 共轭作用等, 以及作用在覆盖空间上的deck变化.</p>
-<p><strong>命题 9</strong>. <em>对于覆盖映射$\pi:E\rightarrow M,$ 取离散拓扑的自同构群$\operatorname{Aut}_\pi(E)$为零维李群, 光滑自由地作用在$E$上.</em> </p>
-<h3 id="等变映射"><a href="#等变映射" class="headerlink" title="等变映射"></a>等变映射</h3><p>称映射$F:M\rightarrow N$关于给定$G$-群作用是<strong>等变</strong>的, 若对于左作用有</p>
-<p>$$
-F(gp)=gF(p)
-$$</p>
-<p> 右作用类似.</p>
-<p><strong>定理 10</strong>. <em>有光滑流形$M,N$与李群$G.$ 若$F:M\rightarrow N$为光滑映射, 关于$M$上可迁光滑群作用与$N$上光滑群作用是等变的, 那么$F$秩为常数.</em> </p>
-<p>对$\varphi_gF=F\theta_g$做微分求切映射, 说明$\,\forall\,p,q\in M,$
-$r(dF_p)=r(dF_q)$即可.</p>
-<p>等变秩定理有一个重要的应用. 对左作用$\theta,$
-定义$\theta^{(p)}:G\rightarrow M,$ </p>
-<p>$$
-\theta^{(p)}(g)=\theta_g(p).
-$$</p>
-<p>称为<strong>轨道映射</strong>, 它的像是轨道$Gp.$</p>
-<p><strong>命题 11</strong>. <em>轨道映射$\theta^{(p)}:G\rightarrow M$光滑且秩为常数, 故稳定子群$G_p$是逆紧嵌入的李子群. 若作用自由, 轨道$Gp$是$M$中的子流形.</em> </p>
-<p>轨道映射是光滑的, 因为有如下分解:</p>
-<p>$$
-G\approx G\times\{p\}\hookrightarrow G\times M\xrightarrow{\theta}M
-$$</p>
-<p>事实上它是一个等变映射, $\theta^{(p)}(gh)=g\theta^{p}(h).$
-因此由上一命题即可得到结论. 若作用自由, $\theta^{(p)}$是单射,
-由整体秩定理它是浸入, 从而轨道都是子流形.</p>
-<p>我们可以构造等变映射来计算李群的维数.</p>
-<p>文章最后更新于 2022-09-28 22:31:58 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -786,7 +670,9 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%8B%E5%AD%90"><span class="nav-text">例子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%8E%E7%BE%A4%E9%97%B4%E7%9A%84%E5%90%8C%E6%80%81"><span class="nav-text">李群间的同态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%87%E6%9C%89%E8%A6%86%E7%9B%96%E7%BE%A4"><span class="nav-text">万有覆盖群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9D%8E%E5%AD%90%E7%BE%A4"><span class="nav-text">李子群</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%A4%E4%BD%9C%E7%94%A8%E4%B8%8E%E7%AD%89%E5%8F%98%E6%98%A0%E5%B0%84"><span class="nav-text">群作用与等变映射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BE%A4%E4%BD%9C%E7%94%A8"><span class="nav-text">群作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E5%8F%98%E6%98%A0%E5%B0%84"><span class="nav-text">等变映射</span></a></li></ol></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

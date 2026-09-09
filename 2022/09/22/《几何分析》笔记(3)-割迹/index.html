@@ -329,103 +329,7 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <p>The dimension of a cut locus on a smooth Riemannian manifold - Jin-Ichi
-Itoh and Minoru Tanaka.</p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>我们来对第一次课中给出的定理进行证明. 首先给出推广的Sard定理:</p>
-<p><strong>定理 1</strong> (Morse-Sard-Federer). <em>令$f:B_1^n(0)\rightarrow \mathbb{R}^m$为$C^1$映射, $E=\{x\in B_1^n(0)|r(df_x)\le k\}.$ 那么$\dim f(E)\le k.$</em> </p>
-<p>回忆对$M$为完备黎曼流形, $p\in M,$ 那么</p>
-<p>$$
-\operatorname{Cut}_p=Q_p\cup N_p\cup L_p, \quad Q_{p}:=\{x\in \operatorname{Cut}_p|\,x,p\text{共轭}\},
-$$</p>
-<p>还有$N_p$为其中恰有两条线段连接的部分,
-$L_p$为其中有三条以上线段连接的部分.</p>
-<p>给出下面几个定义:</p>
-<p>$$
-\lambda(v)=\inf \{t&gt;0|r(d\exp_{p,tv})\le n-1\}\in (0,+\infty],
-$$</p>
-<p>$$
-U_pM=\{v\in T_pM\,|\,|v|=1,\lambda(v)&lt;+\infty\},
-$$</p>
-<p>$$
-\phi(v):=\exp_p\lambda(v)v: U_pM\rightarrow M.
-$$</p>
-<p>我们给出如下的事实: 对$v\in U_pM,$
-若$\nu(v):=n-r(d\exp_{p,\lambda(v)v})=1,$ 由Morse指标定理,
-有$v$处邻域使得$\nu(v)\equiv 1.$ 由Jacobi场性质与隐函数定理,
-$\lambda,\phi$在$v$附近是光滑的,
-且$\,\exists\,\gamma:(-\varepsilon,\varepsilon)\rightarrow U_pM,$ 使得</p>
-<p>$$
-\gamma(0)=v,\quad \gamma&#39;(t)\in \ker(d\exp_{p,\lambda(\gamma(t))\gamma(t)}).
-$$</p>
-<p><strong>引理 2</strong>. <em>在前述事实基础上, 若$\phi(v)\in \operatorname{Cut}_p,$ 则$\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|_{t=0}=0.$</em> </p>
-<p>记$\widehat{\gamma}=\phi(\gamma(t)),$ 首先由定义,</p>
-<p>$$
-\frac{d {} }{d {}t}\widehat{\gamma}(t)=(\exp_{p,\lambda(v)v})_\ast \left(\frac{d {}\lambda(\gamma(t))}{d {}t}\gamma(t)+\lambda(\gamma(t))\frac{d {}\gamma(t)}{d {}t}\right)=\frac{d {}\lambda(\gamma(t))}{d {}t}(\exp_{p,\lambda(v)v})_\ast \gamma(t).
-$$</p>
-<p>两边套模长积分,
-假设$\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}&lt;0,$
-那么存在小区间$[0,a],$ 使得</p>
-<p>$$
-l(\widehat{\gamma})+\lambda(\gamma(a))=\lambda(\gamma(0)).
-$$</p>
-<p>注意到$\lambda(\gamma(a))\ge d(p,\phi(\gamma(a))),$
-而由于$\phi(v)\in \operatorname{Cut}_p,$
-$\lambda(\gamma(0))=d(p,\phi(v)).$ 因此,</p>
-<p>$$
-d(p,\phi(v))\le l(\widehat{\gamma})+d(p,\phi(\gamma(a)))\le d(p,\phi(v)).
-$$</p>
-<p>因此式子只能取等,
-这说明$\phi(\gamma(a))$落在连接$p,\phi(v)$的最短测地线上,
-这与$\lambda(\gamma(a))$的定义矛盾,
-因此$\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}=0,$
-从而$\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|_{t=0}=0.$</p>
-<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><p><strong>引理 3</strong>. <em>$\dim Q_p\le n-2.$</em> </p>
-<p>我们将$Q_p$中的点分解为两部分来处理. 
-$$
-\begin{aligned}
- Q_p&amp;=\{\exp_pv\in Q_p|r(d\exp_{p,v})\le n-1\}\\
- &amp;=\{\exp_pv\in Q_p|r(d\exp_{p,v})=n-1\}\cup \{\exp_pv\in Q_p|r(d\exp_{p,v})=n-2\}
- \end{aligned}
-$$
- 这两部分维数都是小于等于$n-2$的.
-后一部分直接由推广的Sard定理得到, 前一部分间接由其得到:
-它是$\{v\in U_pM|\phi(v)\in \operatorname{Cut}_p,\nu(v)=1\}$在$\phi$下的像,
-且$r(d\phi)\le n-2.$</p>
-<p><strong>引理 4</strong>. <em>$N_p$为$n-1$维嵌入子流形.</em> </p>
-<p>取$x\in N_p,$ 有两条从$p$引出的测地线, 记在$T_pM$上终点分别是$x_1,x_2.$
-取它们的邻域$U_1,U_2,$ 使得$\exp_p|_{U_i}$为微分同胚且像一致.</p>
-<p>令$\phi=\exp_p|_{U_2}^{-1}\circ \exp_p|_{U_1}:U_1\approx U_2.$
-考虑$f(v)=|v|-|\phi(v)|\in C^\infty(U_1).$ 不妨设$f$非退化,
-那么存在$(n-1)$维嵌入子流形$\Sigma_1,$ 其上有$|v|=|\phi(v)|.$
-令$\Sigma_2=\phi(\Sigma_1),$ $\Sigma=\exp_p\Sigma_1=\exp_p\Sigma_2.$
-分析可以得到$\Sigma=N_p\cap \exp_{p}|_{U_1},$
-从而$N_p$是$n-1$维嵌入子流形.</p>
-<p>类似地, 可以证明:</p>
-<p><strong>引理 5</strong>. <em>$\dim L_p\le n-2$</em> </p>
-<p>所以我们可以看出, $\partial B_R^g(p)\cap N_p$中坏的部分主要集中$N_p$上.</p>
-<p>$$
-\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup (\partial B_R^g(p)\cap N_p)\cup (\partial B_R^g(p)\cap (L_p\cup Q_p)).
-$$</p>
-<p>在$\widehat{C}_p\subset T_pM$上, 取法坐标系$\widehat{g}=\exp_p^\ast (g),$
-$(\widehat{C}_p,\widehat{g})\cong (C_p,g).$ $r(v)=|v|$是光滑函数.
-考虑$\widehat{N}_p=\exp_p^{-1}(N_p)$为$\widehat{C}_p$的$n-1$维子流形,
-那么一个事实是:</p>
-<p><strong>命题 6</strong>. <em>$\widehat{N}_p$有可数个连通分支, 是星型的.</em> </p>
-<p>由Sard定理, $\,\exists\,A\subset \mathbb{R}_+,$ $L^1(A)=0,$
-$R\notin A$是$\widehat{N}_p$上$r(v)$的正则值. $\,\forall\,a.e. R,$</p>
-<p>$$
-\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup \{\text{零测集}\}
-$$</p>
-<p>对不是正则值的$R,$ $\partial B_R^g(p)\cap N_p$是一个$n-1$维varifold,
-为$\exp_p(\partial B_R^n(0)\cap \widehat{N}_p).$
-$\widehat{N}_p$与$\partial B_R^n(0)$在坏点交集处的切空间是一致的,
-有后面将会讨论的体积公式:</p>
-<p>$$
-\mathcal{H}^{n-1}(\partial B_R^g(p)\cap N_p)=\int \Theta d\mathcal{H}^{n-1}
-$$</p>
-<p>文章最后更新于 2022-09-22 22:35:04 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -746,7 +650,9 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%81%E6%98%8E"><span class="nav-text">证明</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

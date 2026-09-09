@@ -286,60 +286,7 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="微分形式性质"><a href="#微分形式性质" class="headerlink" title="微分形式性质"></a>微分形式性质</h2><p><strong>定理 1</strong>. <em>设$f\in C^\infty(M,N),$ 则$f^\ast \circ d=d\circ f^\ast .$</em> </p>
-<p><strong>证:</strong> $\,\forall\,\omega\in \mathcal{A}^r(N).$ 当$r=0$时,</p>
-<p>$$
-(f^\ast du)(X)=(du)(f_\ast X)=(f_\ast X)u=X(u\circ f)=X(f^\ast u)=d(f^\ast u)(X).
-$$</p>
-<p>当$r&gt;0$时, 做归纳. 不妨设$\omega=udy^{i_1}\wedge\cdots\wedge dy^{i_r},$
-那么$d\omega=du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}.$ 我们有:</p>
-<p>$$
-f^\ast d\omega=f^\ast [du\wedge dy^{i_1}\wedge\cdots\wedge dy^{i_r}]=df^\ast u\wedge df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}=d[(f^\ast u) df^\ast y^{i_1}\wedge\cdots\wedge df^\ast y^{i_r}]=df^\ast \omega.
-$$</p>
-<h2 id="流形的定向"><a href="#流形的定向" class="headerlink" title="流形的定向"></a>流形的定向</h2><p><strong>定义 2</strong>. <em>若$S$上存在连续单位法向量$\vec{n},$ 则称$S$是<strong>可定向的</strong>.</em> </p>
-<p>一般地, 给定抽象$C^\infty$-流形$M,$ 由于缺少外围空间, 不便谈论法向量.
-但切平面总是存在的. 我们通过选取基来确定法向量. 对任意$m$维向量空间,
-称两组基是等价的, 若转移矩阵行列式为正. 此时它们确定了同一个法向量.
-易见全体基组落在两个等价类中. 选定一个等价类便给定了$V$一个定向.</p>
-<p>为了讨论连续性, 我们任取$0\neq \Omega\in \Lambda^m(V^\ast ).$
-此时对两组等价基, $\{\widetilde{e_j}\}=\{e_i\}\det(a^i_j),$
-$\Omega(\widetilde{e_1},\cdots,\widetilde{e_m})=\Omega(e_1,\cdots,e_m)\det(a^i_j).$
-因此$\Omega$作用在等价基上是同号的.
-那么选定$0\neq \Omega\in \Lambda^m(V^\ast )$就相当于给定了$V$的定向.</p>
-<p><strong>定义 3</strong>. <em>设$M^m$为$m$维$C^\infty$-流形, 如果$M$上存在连续的处处非零的$m$次外微分形式$\Omega,$ 则称$M$是<strong>可定向的</strong>, $(M,\Omega)$称为<strong>定向流形</strong>.</em> </p>
-<p>$\Omega$是$M\rightarrow \Lambda^m T^\ast M$的连续映照.
-由于$\dim \Lambda^m(T_p^\ast M)=1,$ $\Omega=fdx^1\wedge\cdots\wedge dx^m,$
-$f\in C^0(U),$ $\,\forall\,(U,x^i)\subset M.$</p>
-<p>若$\Omega_1,\Omega_2$都是$M$的定向, 则$\Omega_2=f\Omega_1,$
-$f$处处非零连续. 它们定向相同当且仅当$f&gt;0.$ 假设$M$是连通的,
-那么$f$要么处处为正, 或处处为负. 这给出了$M$的两种定向.</p>
-<p>坐标系$(U,x^i)$上的$dx^1\wedge\cdots\wedge dx^m\in \mathcal{A}^m(U)$给出了$U$上的局部定向.
-设$(M,\Omega)$为定向流形, 那么$\Omega|_U=fdx^1\wedge\cdots\wedge dx^m,$
-$f\in C^0(U).$ 若$f&gt;0,$ 则称$(U,x^i)$的定向与$\Omega$是一致的.</p>
-<p><strong>定理 4</strong>. <em>设$M$是$m$维$C^\infty$流形, 则它是可定向的$\Leftrightarrow$存在坐标图册$\{(U_\alpha,\varphi_\alpha;x^i_{(\alpha)})\},$ 使得$\,\forall\,\alpha,\beta,$ 在$U_\alpha\cap U_\beta$上有$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]&gt;0.$</em> </p>
-<p><strong>证:</strong> $\Rightarrow:$
-任取坐标图册$\{(U_\alpha,\varphi_\alpha;x_{(\alpha)}^i)\}.$
-那么$\Omega|_{U_\alpha}=f_\alpha dx^1_{(\alpha)}\wedge\cdots\wedge dx_{(\alpha)}^m.$
-若$f_\alpha&gt;0,$ 则坐标系不动; 若$f_\alpha&lt;0,$
-则可以调整坐标系使得$f_\alpha$取正.
-此时$\,\forall\,p\in U_\alpha\cap U_\beta,$</p>
-<p>$$
-\Omega|_{U_\alpha\cap U_\beta}=f_\alpha{}dx_{(\alpha)}^{1}\wedge\cdots\wedge{}dx_{(\alpha)}^{ {}m}=f_\beta{}dx_{(\beta)}^{1}\wedge\cdots\wedge{}dx_{(\beta)}^{ {}m}.
-$$</p>
-<p>因此$\det[D(\varphi_\alpha\circ\varphi_\beta^{-1})]=\frac{f_\beta}{f_\alpha}&gt;0.$</p>
-<p>$\Leftarrow:$ 将坐标图册加细使得它是局部有限的, 且保持题设性质.
-取$f_i$为单位分解.
-那么令$\omega=\sum_i f_i{}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}$即可.
-此时$\,\forall\,p\in M,$</p>
-<p>$$
-\omega(p)=\sum_i f_i(p){}dx_{(i)}^{1}\wedge\cdots\wedge{}dx_{(i)}^{ {}m}=\sum_i f_i(p)\det[D(\varphi_i\circ \varphi_{j_0}^{-1})]{}dx_{(j_0)}^{1}\wedge\cdots\wedge{}dx_{(j_0)}^{ {}m}.
-$$</p>
-<p>由单位分解与题设性质, 即有$\omega\neq 0.$</p>
-<p>由过程可见, 构造的$\omega\in \mathcal{A}^m(M).$
-因此处处非零的外微分形式可要求为光滑的.</p>
-<p>文章最后更新于 2021-12-21 19:01:28 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -660,7 +607,9 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E6%80%A7%E8%B4%A8"><span class="nav-text">微分形式性质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E5%BD%A2%E7%9A%84%E5%AE%9A%E5%90%91"><span class="nav-text">流形的定向</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

@@ -302,76 +302,7 @@ $\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="微分形式"><a href="#微分形式" class="headerlink" title="微分形式"></a>微分形式</h2><p>回忆$\,\forall\,f\in C^\infty(M),$ $(df)_p\in T_p^\ast M,$
-称为$f$在$p$处的微分. 局部上我们有</p>
-<p>$$
-df|_U=\sum_i \frac{\partial {} }{\partial {}x^i} fdx^i,\quad \frac{\partial {} }{\partial {}x^i}f\in C^\infty(U)\,\Rightarrow\,df\in \mathcal{A}^1(M).
-$$</p>
-<p>$\omega\in\Gamma(\Lambda^rT^\ast M)=\mathcal{A}^r(M),$ 称为$r$次外微分形式.
-令$\mathcal{A}(M):=\bigoplus_{r=0}^m \mathcal{A}^r(M),$
-称为<strong>微分形式空间</strong>. 它以外积$\wedge$为乘法结构, 是一个<strong>分层代数</strong>.</p>
-<p>若$f\in C^\infty(M,N),$
-则它诱导了拉回映照$f^\ast :\Gamma(T_r^0(N))\rightarrow \Gamma(T_r^0(M)),$</p>
-<p>$$
-f^\ast (\Phi)(v_1,\cdots,v_r):=\Phi(f_\ast (v_1),\cdots,f_\ast (v_r)).
-$$</p>
-<p> 考察系数:</p>
-<p>$$
-(f^\ast \Phi)_{i_1\cdots i_r}=\Phi\left(f_\ast \frac{\partial {} }{\partial {}x_{i_1} },\cdots,f_\ast \frac{\partial {} }{\partial {}x_{i_r} }\right)=\frac{\partial {}y^{\alpha_1}\circ f}{\partial {}x^{i_1} }\cdots\frac{\partial {}y^{\alpha_r}\circ f}{\partial {}x^{i_r} }\cdot \Phi_{\alpha_1\cdots\alpha_r}\circ f.
-$$</p>
-<p>确实是光滑的, 因此$f^\ast \Phi\in \Gamma(T_r^0(M)).$</p>
-<p>于是$f^\ast :\mathcal{A}(N)\rightarrow \mathcal{A}(M),$
-$f^\ast \sigma=\sum_{r=0}^n f^\ast \sigma_r,$
-且$f^\ast (\omega\wedge\sigma)=f^\ast \omega\wedge f^\ast \sigma,$
-$\,\forall\,\omega,\sigma\in \mathcal{A}(N).$ 它是一个代数同态.</p>
-<h2 id="外微分"><a href="#外微分" class="headerlink" title="外微分"></a>外微分</h2><p>设$d:\mathcal{A}(M)\rightarrow \mathcal{A}(M)$为线性映照, 满足:</p>
-<ol>
-<li><p>$d:\mathcal{A}^r(M)\rightarrow\mathcal{A}^{r+1}(M);$</p>
-</li>
-<li><p>$\omega\in \mathcal{A}^r(M),$ $\sigma\in \mathcal{A}(M),$
-$d(\omega\wedge\sigma)=d\omega\wedge\sigma+(-1)^r\omega\wedge d\sigma.$</p>
-</li>
-<li><p>$f\in \mathcal{A}^0(M)=C^\infty(M)$时, $df$为普通微分, 且$d^2f=0.$</p>
-</li>
-</ol>
-<p>则称$d$为$M$上<strong>外微分算子</strong>, 或简称<strong>外微分</strong>.</p>
-<p><strong>引理 1</strong>. <em>外微分算子为局部算子, 即若$\omega_1|_U=\omega_2|_U,$ 则$(d\omega_1)|_U=(d\omega_2)|_U.$</em> </p>
-<p><strong>证:</strong> 只需说明$\omega|_U=0\Rightarrow (d\omega)|_U=0.$
-取截断函数$f|_V\equiv 1,$ $\operatorname{supp}f\subset U$即可.
-这样$f\omega=0.$ 从而$0=d(f\omega)=df\wedge \omega+f(d\omega),$
-在$V$上有$df=0,$ 从而$(d\omega)|_V=0.$
-由$V$的任意性即有$(d\omega)|_U=0.$</p>
-<p><strong>定理 2</strong>. <em>$C^\infty$-流形$M$上外微分算子是存在唯一的.</em> </p>
-<p><strong>证:</strong> 先证唯一性. 由截断函数, $d$可以诱导$U$上的外微分算子.
-取引理中的$f,$ 对$\omega\in \mathcal{A}(U),$
-局部定义$(d\omega)|_V:=(d(f\omega))|_V.$ 现证$d$在坐标系里是唯一的:</p>
-<p>取$(U,\varphi;x^i)\subset M,$ $\omega\in \mathcal{A}^r(M),$
-$\omega|_U=adx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ 由外微分算子性质,
-$d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}.$ 由局部性,
-$(d\omega)|_U=d(\omega|_U)=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r},$
-$d\omega$在$U$内有确切表达式, 因此$d$在坐标系中唯一. 从而,
-$d$在整体上也唯一.</p>
-<p>接下来说明$d$的存在性. 首先由上段,
-局部定义$d\omega:=da\wedge dx^{i_1}\wedge\cdots\wedge dx^{i_r}$即可,
-$\omega=adx^{i_1}\wedge\cdots\wedge dx^{i_r}\in \mathcal{A}^r(U).$
-这样它自然延拓为外微分算子. 由于它处处有局部定义, 整体上也有定义,
-且由局部唯一性, 它与坐标系选取无关.</p>
-<p>由$d$的局部定义, 我们自然得到如下引理:</p>
-<p><strong>引理 3</strong> (Poincaré引理). <em>$d^2=0.$ 即$\,\forall\,\omega\in \mathcal{A}(M),$ $d(d\omega)=0.$</em> </p>
-<p>设$\omega=Adx+Bdy+Cdz\in \mathcal{A}^1(\mathbb{R}^3)$与$X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$相应,
-当$\omega=df$时$X$即为$\nabla f.$ 那么$d\omega$与$\nabla\times X$相应.</p>
-<p>设$\omega=Ady\wedge dz+Bdz\wedge dx+Cdx\wedge dy,$
-与$X=(A,B,C)\in \mathfrak{X}(\mathbb{R}^3)$相应.
-那么$d\omega=(\nabla\cdot X)dx\wedge dy\wedge dz.$</p>
-<p>因此$\nabla\times (\nabla f)=0$由$d(df)=0$保证,
-$\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
-<p><strong>定理 4</strong>. <em>设$\omega\in \mathcal{A}^1(M),$ $X,Y\in \mathfrak{X}(M),$ 则$d\omega(X,Y)=X(\omega(Y))-Y(\omega(X))-\omega([X,Y]).$</em> </p>
-<p><strong>证:</strong> 设$\omega=fdg,$ 则$d\omega=df\wedge dg.$
-此时$df\wedge dg(X,Y)=X(f)Y(g)-Y(f)X(g).$ 计算右侧得到相同的结果,
-定理得证.</p>
-<p>文章最后更新于 2021-12-19 11:27:06 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -692,7 +623,9 @@ $\nabla\cdot(\nabla\times X)$由$d(d\omega)=0$保证.</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text">微分形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86"><span class="nav-text">外微分</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

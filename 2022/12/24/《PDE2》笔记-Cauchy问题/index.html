@@ -381,155 +381,7 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="非散度型方程"><a href="#非散度型方程" class="headerlink" title="非散度型方程"></a>非散度型方程</h2><p>记$\Omega_T=\Omega\times(0,T],$
-抛物边界$\partial_p\Omega=\overline\Omega_T\setminus \Omega_T.$
-考虑方程$u_t+Lu=f,$ $Lu=-a^{ij}u_{ij}+b^iu_i+cu.$
-要求$[a^{ij}]$在$\Omega_T$内半正定.</p>
-<p>设$u\in C^{2,1}(\Omega_T):=\{u(x,t)\in C^2_x(\Omega),C^1_t\in (0,T]\}.$</p>
-<p><strong>定理 1</strong> (弱极值原理). <em>设$\Omega$为有界开集, $a^{ij},b^i,c\in \Omega_T$满足适当光滑性条件, $u\in C^{2,1}(\Omega_T)\cap C(\overline\Omega_T),$ $c\ge 0,$ 则$u_t+Lu\le 0$可以推出$\max_{\overline\Omega_T}u\le \sup_{\partial_p\Omega_T}u^+.$ 取负可以得到最小值的控制.</em> </p>
-<p>反证法, 假设有</p>
-<p>$$
-\max_{\overline\Omega_T}=u(x_0,t_0)&gt;\sup_{\partial_p\Omega_T}u^+\ge 0.
-$$</p>
-<p>取$v_\varepsilon=u-\varepsilon t,$ 只要$\varepsilon$充分小,
-那么$v_\varepsilon$仍在内部取到非负最大值.</p>
-<p>因此在最大值点$(x_\varepsilon,t_\varepsilon),$ $Dv_{\varepsilon}=0,$
-$D^2v_\varepsilon\le 0,$ $v_{\varepsilon}&#39;\ge 0.$
-将$L$展开即可得到$v_{\varepsilon}&#39;+Lv_\varepsilon\ge 0.$
-(利用$c,v_\varepsilon\ge 0.$)</p>
-<p>另一方面,</p>
-<p>$$
-0\le v_\epsilon&#39;+Lv_\varepsilon=u_t+Lu-\varepsilon-c\varepsilon t\le -\varepsilon.
-$$</p>
-<p>矛盾, 因此$u$非负最大值在抛物边界上取到.</p>
-<p>当$c\equiv 0$时, 可忽略正部的要求; 当$c\ge \mu$为常数时,
-可取$v=e^{\mu t}u,$ 那么 </p>
-<p>$$
-v_t+(L-\mu)v=e^{\mu t}(u_t+Lu).
-$$</p>
-<p> 因此,</p>
-<p>$$
-u_t+Lu\le 0\Rightarrow v_t+\widehat Lv\le 0\Rightarrow \max_{\overline\Omega_T}e^{\mu t}u\le \sup_{\partial_p\Omega_T}(e^{\mu t}u)^{+}.
-$$</p>
-<p><strong>定理 2</strong>. <em>设$\Omega\subset \mathbb{R}^n$为有界开集, $[a^{ij}]\ge 0,$ $c\ge \mu,$ 那么热方程初边值问题在$C(\overline\Omega_T)\cap C^{2,1}(\Omega_T)$上有唯一解.</em> </p>
-<h2 id="最大模估计"><a href="#最大模估计" class="headerlink" title="最大模估计"></a>最大模估计</h2><p>考虑Cauchy问题: 
-$$
-\begin{cases}
- u_t+Lu=f&amp;in\:Q_T:=\mathbb{R}^n\times (0,T]\\
- u|_{t=0}=\psi&amp;in\:\mathbb{R}^n
- \end{cases}
-$$
- 设系数满足: $\,\exists\,\alpha_1\in [0,2),$
-$\alpha_2\in [0,1),$ $\mu_0\in \mathbb{R},$ $\mu_1\ge 0,$ 使得</p>
-<p>$$
-c\ge \mu_0,\quad\sum_{i,j=1}^n |a^{ij}|\le \mu_1(|x|^{\alpha_1}+1),\quad \sum_{i=1}^n |b^i|\le \mu_1(|x|^{\alpha_2}+1).
-$$</p>
-<p><strong>定理 3</strong>. <em>设$u\in C(\overline Q_T)\cap C^{2,1}(Q_T)$为Cauchy问题解, $\lim\limits_{r\rightarrow\infty} \frac{M(r)}{r^2}=0,$ $M(r):=\sup\limits_{\begin{subarray}{c}  |x|=r\\  0&lt;t&lt;T  \end{subarray} }|u(t)|,$ 则</em> </p>
-<p>$$
-\sup_{Q_T}|u|\le e^{(-\mu_0)^+T}[T\Vert f\Vert_{L^\infty(Q_T)}+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].
-$$</p>
-<h3 id="mu-0-0"><a href="#mu-0-0" class="headerlink" title="$\mu_0&gt;0$"></a>$\mu_0&gt;0$</h3><p>先来讨论$\mu_0&gt;0$的情形, 此时只需证明 </p>
-<p>$$
-\pm u+At+B\ge 0.
-$$</p>
-<p>取$v_r(x,t)=\frac{M(r)}{r^2}[|x|^2+mt],$ $m\ge 0$待定,
-$w=\pm u+At+B+v_r.$ 我们希望通过证明$w\ge 0,$
-令$r\rightarrow\infty$给出原不等式. 我们利用弱极值原理给出证明,
-因此考虑$w_t+Lw\ge 0.$</p>
-<p>$$
-w_t+Lw=\pm f+A+c(At+B)+\frac{M(r)}{r^2}[m-2a^{ij}\delta_{ij}+2b^ix_i+c|x|^2+cmt]
-$$</p>
-<p>注意到$|x|^{\alpha_1}\le \varepsilon|x|^2+\frac{1}{4\varepsilon},$
-那么由系数条件, 可以令$\varepsilon$充分小,
-使得$a^{ij}$项被$c|x|^2,m$控制. $b^i$项同理.
-因此当$m=C(\mu_0,\alpha_1,\alpha_2,\mu_1)&gt;&gt;1$时, $Q_T$上有$w_t+Lw\ge 0.$</p>
-<p>由于$w|_{\partial B_r\times (0,t]}\ge (M(r)\pm u)|_{\partial B_r\times (0,t]}\ge 0,$
-$w|_{t=0}\ge B\pm \psi\ge 0,$ 由弱极值原理我们有$w\ge 0,$
-在$\overline B_r(0)\times [0,t]$上, 即 </p>
-<p>$$
-|u(x,t)|\le At+B+v_r(x,t).
-$$</p>
-<p>那么任意固定一个$(x_0,t_0)\in Q_T,$ $\,\forall\,r&gt;|x_0|,$ 有</p>
-<p>$$
-|u(x_0,t_0)|\le AT+B+v_r(x_0,t_0)\rightarrow AT+B.
-$$</p>
-<p> 这样就给出了结论.</p>
-<h3 id="mu-0-le-0"><a href="#mu-0-le-0" class="headerlink" title="$\mu_0\le 0$"></a>$\mu_0\le 0$</h3><p>作$v(x,t)=u(x,t)e^{(\mu_0-\delta)t},$ $\delta&gt;0.$
-那么定义$\widehat L=L-(\mu_0-\delta),$ $\widehat c\ge \delta&gt;0.$
-我们有热方程 </p>
-<p>$$
-v_t+\widehat Lv=\widehat f:=fe^{(\mu_0-\delta)t}.
-$$</p>
-<p>此时对$v$就可以应用得到的结果, 给出</p>
-<p>$$
-|v|\le \widehat AT+B,\quad |u|\le e^{-(\mu_0-\delta)t}[T\Vert e^{(\mu_0-\delta)t}f\Vert_{L^\infty(Q_T)}+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].
-$$</p>
-<p>令$\delta\rightarrow 0+$就给出了结论. 定理证毕.</p>
-<p>一般的, 可以要求$M(r)=o(r^\alpha),$ 同时调整$\alpha_1,\alpha_2$的范围.</p>
-<p>对于有界区域问题, 我们有</p>
-<p><strong>定理 4</strong>. <em>设$\Omega$为有界开集, $u\in C^{2,1}(\Omega_T)\cap C(\overline\Omega_T)$为热方程初边值问题的解, 若$[a^{ij}]$对称半正定, 则</em> </p>
-<p>$$
-\sup_{\Omega_T}|u|\le e^{(-\mu_0)^+T}[T\Vert f\Vert_{L^\infty(\Omega_T)}+\Vert g\Vert_{L^\infty(\partial_p\Omega_T)}].
-$$</p>
-<p>由此立即得到热方程初边值问题解的唯一性.</p>
-<h2 id="Cauchy问题唯一性"><a href="#Cauchy问题唯一性" class="headerlink" title="Cauchy问题唯一性"></a>Cauchy问题唯一性</h2><p>Cauchy问题的唯一性要做很多要求, 如通过前面的估计, 我们有:</p>
-<p><strong>定理 5</strong>. <em>在最大模估计条件基础上, Cauchy方程至多只有一个由$r^\alpha$控制(多项式增长)的$C^{2,1}(\Omega_T)\cap C(\overline\Omega_T)$中的解.</em> </p>
-<p>接下来, 我们讨论在一种超指数增长控制下的解的唯一性. 设系数满足</p>
-<p>$$
-\sum|a^{ij}|+\sum |b^i|+|c|\le m,\quad \,\forall\,(x,t)\in Q_T,
-$$</p>
-<p>$$
-E(Q_T):=\{u\in C(\overline Q_T):\,\exists\,k&gt;1,\text{\,s.t.\,}|u|\le ke^{k|x|^2},\:\,\forall\,(x,t)\in Q_T\}.
-$$</p>
-<p><strong>定理 6</strong>. <em>在$[a_{ij}]$半正定且系数满足如上条件下, Cauchy问题在$C^{2,1}(Q_T)\cap E(Q_T)$中的解唯一.</em> </p>
-<p>只需讨论$f=0,\psi=0$的情况. 我们希望构造$w_t+Lw\ge 0,$
-然后令$v=\varepsilon w\pm u.$ 证明$v_t+Lv\ge 0$推出$v\ge 0.$
-这样$|u|\le \varepsilon w,$ 令$\varepsilon\rightarrow 0$即可.
-采用分层法解决. 断言存在$T_0=C(m,n,T)&gt;0,$ 问题在$Q_{T_0}$内解唯一.</p>
-<p>记$\widehat k=k+1.$
-$w(x,t):=(\widehat k^2\mu t+\widehat k)e^{(\widehat k^2\mu t+\widehat k)|x|^2}.$
-$\mu&gt;0$待定. 计算:</p>
-<p>$$
-w_t=(\widehat k^2\mu+\widehat k^2\mu|x|^2 (\widehat k^2\mu t+\widehat k))e^{(\widehat k^2\mu t+\widehat k)|x|^2}
-$$</p>
-<p>$$
-Lw=(\widehat k^2\mu t+\widehat k)e^{(\widehat k^2\mu t+\widehat k)|x|^2}(-2a_{ij}(\delta^{ij}(\widehat k^2\mu t+\widehat k)+x_ix_j(\widehat k^2\mu t+\widehat k)^2)+2b^ix_i(\widehat k^2\mu t+\widehat k)+c)
-$$</p>
-<p>取$T_0\le \min\{T,\frac{1}{\mu \widehat k}\},$
-则$\,\forall\,t\in [0,T_0],$</p>
-<p>$$
-w_t\ge e^{(\widehat k^2\mu t+\widehat k)|x|^2}(\widehat k^2\mu +\widehat k^3\mu |x|^2),
-$$</p>
-<p>$$
-|Lw|\le C(n,m)e^{(\widehat k^2\mu t+\widehat k)|x|^2}(\widehat k^2+\widehat k^3|x|^2).
-$$</p>
-<p>令$\mu\ge 2C$即有$w_t+Lw&gt;0.$</p>
-<p>令$v=\varepsilon w\pm u,$ 取$r$使得$\varepsilon e^{r^2}=1.$
-当$\varepsilon\rightarrow 0$时,
-$r_\varepsilon=\sqrt{|\log \varepsilon|}\rightarrow\infty.$ 记</p>
-<p>$$
-Q_{r,T_0}=\{|x|&lt;r,0&lt;t\le T_0\}.
-$$</p>
-<p> 当$|x|=r$时,</p>
-<p>$$
-\varepsilon w\ge \varepsilon\widehat k e^{\widehat k r^2}\ge ke^{kr^2}\ge \pm u.
-$$</p>
-<p>因此由极值原理, $Q_{r,T_0}$上恒有$v\ge 0,$ 即$|u|\le \varepsilon w.$
-$\,\forall\,(x_0,t_0)\in Q_{T_0},$ 总有充分小的$\varepsilon_0,$
-使得$\,\forall\,\varepsilon\in (0,\varepsilon_0),$
-$|x_0|&lt;r_\varepsilon,$
-因此$|u(x_0,t_0)|\le \varepsilon w(x_0,t_0)\rightarrow 0,$
-由$(x_0,t_0)$任意性, $u\equiv 0.$</p>
-<p>我们只证明了$Q_{T_0}$上的唯一性. 但从$t=T_0$平面出发,
-我们可得到$Q_{2T_0}$上的唯一性. 逐层归纳,
-我们便得到了$Q_T$上问题的唯一性.</p>
-<p><strong>定理 7</strong>. <em>在上述定理基础上, 有最大模估计</em> </p>
-<p>$$
-\Vert u\Vert_{L^\infty(Q_T)}\le C(T,n,m,k)[\Vert f\Vert_{L^\infty(Q_T)}T+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].
-$$</p>
-<p>文章最后更新于 2022-12-24 09:06:43 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -850,7 +702,9 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%9E%E6%95%A3%E5%BA%A6%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text">非散度型方程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E6%A8%A1%E4%BC%B0%E8%AE%A1"><span class="nav-text">最大模估计</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#mu-0-0"><span class="nav-text">$\mu_0&gt;0$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mu-0-le-0"><span class="nav-text">$\mu_0\le 0$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cauchy%E9%97%AE%E9%A2%98%E5%94%AF%E4%B8%80%E6%80%A7"><span class="nav-text">Cauchy问题唯一性</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

@@ -295,69 +295,7 @@ $\partial f$已有说明. 只需讨论$p\in \partial M$为$f$的临界点的情�
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="带边流形"><a href="#带边流形" class="headerlink" title="带边流形"></a>带边流形</h2><p>$n$维拓扑带边流形是满足第二可数公理的Hausdorff空间,
-且每点有一个邻域同胚于$H^n$的一个开集.</p>
-<p><strong>定理 1</strong> (边界的拓扑不变性). <em>$M$是带边拓扑流形, 则$M$上的点不能既是边界点又是内点. 于是$\partial M\cap \operatorname{Int}M=\varnothing,$ $\partial M\cup \operatorname{Int}M=M.$</em> </p>
-<p><strong>定理 2</strong> (Brouwer区域不变性定理). <em>设$U\subset \mathbb{R}^n$为$\mathbb{R}^n$中开集, $f:U\rightarrow \mathbb{R}^n$为单的连续映射, 则$f(U)$是$\mathbb{R}^n$中开集.</em> </p>
-<p><strong>定理 3</strong> (边界的微分不变性). <em>设$M$为光滑带边流形, $p\in M.$ 若存在$M$的光滑坐标卡$(U,\phi)$使$\phi(U)\subset H^n,$ $\phi(p)\in \partial H^n,$ 则任意含$p$的坐标卡都如此.</em> </p>
-<p>光滑情形利用逆映射定理即可.</p>
-<p><strong>命题 4</strong>. <em>若$M$为$n$维带边流形, 则$\operatorname{Int}M$是$n$维流形, $\partial M$是$(n-1)$维无边流形.</em> </p>
-<p><strong>命题 5</strong>. <em>无边流形$M$和带边流形$N$的乘积是带边流形. 并且, $\partial(M\times N)=M\times \partial N,$ $\dim (M\times N)=\dim M+\dim N.$</em> </p>
-<p><strong>引理 6</strong>. <em>设 $M$ 是 $m$ 维光滑无边流形, 设 $0$ 是光滑函数 $f:M\rightarrow \mathbb{R}$ 的正则值. 则 $M_0:=\{p\in M|f(p)\ge 0\}$ 是 $m$ 维带边流形, 且 $\partial M_0=f^{-1}(0).$</em> </p>
-<p>$\{p\in M|f(p)&gt;0\}$为开集, 因此是$m$维开子流形, 只需确定边界.
-由正则原像定理, $f^{-1}(0)$为$m-1$维嵌入子流形,
-有坐标卡$(U,\phi)$使得$U\cap f^{-1}(0)$为切片.</p>
-<p>由$f$为淹没, $\frac{\partial {}f}{\partial {}x_m}(p)\neq 0,$
-$\,\forall\,p\in f^{-1}(0).$ 不妨设其为正, 那么$\,\forall\,q\in U_p,$
-$q\in M_0$当且仅当$x_m(q)\ge 0.$ 于是$U_0:=U\cap M_0$为边界坐标卡.</p>
-<h2 id="带边版本定理"><a href="#带边版本定理" class="headerlink" title="带边版本定理"></a>带边版本定理</h2><p><strong>定理 7</strong> (正则原像定理带边版本). <em>设$M$是$m$维光滑带边流形, $N$是$n$维光滑无边流形. 设$f:M\rightarrow N$是光滑映射. 若$q\in N$为$f,\partial f:=f|_{\partial M}$的正则值, 那么$S:=f^{-1}(q)$是$M$的$(m-n)$维子流形, $\partial S=S\cap \partial M.$</em> </p>
-<p>只需给出边界处的坐标系, 考虑$M=H^m,$ $N=\mathbb{R}^n,$ $q=0.$
-设$p\in f^{-1}(0)\cap \partial H^m.$ 由$f$光滑,
-存在$p$处邻域$U\subset \mathbb{R}^m,$
-$F:U\rightarrow \mathbb{R}^n$使得$F|_{U\cap H^m}=f|_{U\cap H^m}.$</p>
-<p>由$0$为$\partial f$的正则值,
-$d(\partial f)_p=dF_p|_{T_x\partial M}$为满射.
-设$dF_p|_{\operatorname{span}\{\frac{\partial {} }{\partial {}x_1},\cdots,\frac{\partial {} }{\partial {}x_n}\} }$为同构.
-现取$U$上的坐标映射(类似淹没典范映射证明.
-不能直接用典范表示的原因是确保边界$\{x_m=0\}$不动).</p>
-<p>$$
-\Phi:U\rightarrow \mathbb{R}^m,\quad \Phi(x)=(F(x),x_{n+1},\cdots,x_m).
-$$</p>
-<p>此时 
-$$
-d\Phi_p=\begin{bmatrix}
- dF_p|_{\operatorname{span}\{\frac{\partial {} }{\partial {}x_1},\cdots,\frac{\partial {} }{\partial {}x_n}\} }&amp;0\\
- *&amp;I
- \end{bmatrix},
-$$
- 为同构, 因此由反函数定理,
-$\Phi$为局部微分同胚, 不妨设$\Phi:U\rightarrow V$为微分同胚.</p>
-<p>此时$\Phi:U\cap S\mapsto V\cap (\{0\}\times H^{m-n}).$
-这就给出了$p$处的子流形边界坐标卡.</p>
-<p><strong>定理 8</strong> (横截原像定理的带边版本). <em>设$M$为光滑带边流形, $N$为光滑无边流形. $f:M\rightarrow N$为光滑映射. 设$Z\subset N$为$N$中的无边子流形, 且$f\pitchfork Z,$ $\partial f\pitchfork Z,$ 则$S:=f^{-1}(Z)$为$M$中的带边子流形, 且$\partial (f^{-1}(Z))=f^{-1}(Z)\cap \partial M,$ $\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</em> </p>
-<p>只需考虑边界处的坐标卡. 考虑$M=H^m,$ $N=\mathbb{R}^n,$
-$Z=\mathbb{R}^{\dim Z}.$ 设$p\in f^{-1}(Z)\cap \partial H^m.$
-同上题取光滑映射$F.$</p>
-<p>取投影$\pi:\mathbb{R}^n\rightarrow \mathbb{R}^{\operatorname{codim}Z},$
-$Z=\pi^{-1}(0).$ 断言$0$为$\pi\circ F$的正则值. 只需证</p>
-<p>$$
-d\pi\circ dF_p T_xM=\mathbb{R}^{\operatorname{codim}Z}.
-$$</p>
-<p> 而这是因为</p>
-<p>$$
-dF_p T_xM+T_{F(x)}Z=\mathbb{R}^n,\quad d\pi (T_{F(x)}Z)=0.
-$$</p>
-<p>同理$0$为$\pi\circ \partial f$的正则值. 从而由正则原像定理带边版本,
-$f^{-1}\circ \pi^{-1}(0)=f^{-1}(Z)=S$为$M$的$(m-\operatorname{codim}Z)$维子流形,
-$\partial S=S\cap \partial M,$
-$\operatorname{codim}_M f^{-1}(Z)=\operatorname{codim}_N Z.$</p>
-<p><strong>定理 9</strong> (带边流形的Sard定理). <em>设$f:M\rightarrow N$为带边流形$M$到无边流形$N$的光滑映射. $f,\partial f$的公共正则值集在$N$中稠密.</em> </p>
-<p>只需说明$f,\partial f$的临界值集零测. $f|_{\operatorname{Int}M},$
-$\partial f$已有说明. 只需讨论$p\in \partial M$为$f$的临界点的情形.
-然而此时它必是$\partial f$的临界点, 已有讨论. 这就给出了结论.</p>
-<p>文章最后更新于 2023-06-11 15:06:16 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -678,7 +616,9 @@ $\partial f$已有说明. 只需讨论$p\in \partial M$为$f$的临界点的情�
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E8%BE%B9%E6%B5%81%E5%BD%A2"><span class="nav-text">带边流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E8%BE%B9%E7%89%88%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-text">带边版本定理</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

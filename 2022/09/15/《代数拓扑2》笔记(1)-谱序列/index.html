@@ -342,116 +342,7 @@ $[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>参考书目:</p>
-<ol>
-<li><p>Hutchings, Introduction to spectral sequences;</p>
-</li>
-<li><p>Hatcher, AT Chapter 5;</p>
-</li>
-<li><p>Ramos, Spectral sequences via examples.</p>
-</li>
-</ol>
-<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h3><p>给定纤维丛 </p>
-<p>$$
-F\rightarrow E\rightarrow B,
-$$</p>
-<p>我们希望能够利用谱序列计算$H_\ast (E),$ 利用$H_\ast (F)$与$H_\ast (B)$的信息.
-回忆对于CW复形对$(X,A)$, 有 </p>
-<p>$$
-A\rightarrow X\rightarrow X/A,
-$$</p>
-<p>它也称为<strong>余纤维</strong>(cofibration)(商纤维, 商丛?).
-其上我们有zig-zag引理得到长正合列来计算同调群, 但对于基本群,
-没有太多明显的工具.</p>
-<p>而对于纤维丛, 我们可以通过长正合列来计算基本群,
-而同调群的计算则仰仗于谱序列.</p>
-<h3 id="谱序列"><a href="#谱序列" class="headerlink" title="谱序列"></a>谱序列</h3><p>对于链复形$(C_\ast ,\partial),$ 取$F_0C_\ast \subset C_\ast $为子复形,
-我们有短正合列:</p>
-<p>$$
-0\rightarrow F_0C_\ast \rightarrow C_\ast \rightarrow C_\ast /F_0C^\ast \rightarrow 0.
-$$</p>
-<p>这诱导了长正合列</p>
-<p>$$
-\cdots\rightarrow H_i(F_0C^\ast )\rightarrow H_i(C_\ast )\rightarrow H_i(C_\ast /F_{0}C^\ast )\xrightarrow{\delta_i}H_{i-1}(F_0C_\ast )\rightarrow\cdots.
-$$</p>
-<p>回忆$\delta$的定义为$\alpha\mapsto [\partial x],$ $[x]=\alpha.$</p>
-<p>假设我们希望从$H_\ast (F_0C_\ast ),H_\ast (C_\ast /F_0C_\ast )$计算$H_\ast (C_\ast ),$
-我们将长正合列拆为短正合列,</p>
-<p>$$
-0\rightarrow \operatorname{coker}(\delta_{i+1})\rightarrow H_i(C_\ast )\rightarrow \ker(\delta_i)\rightarrow 0.
-$$</p>
-<p>总结一下, 我们为了计算$H_i(C_\ast ),$ 我们需要:</p>
-<ol>
-<li><p>计算$H_i(F_0C_\ast ),H_i(C_\ast /F_0C_\ast );$</p>
-</li>
-<li><p>考虑仅有两项的复形$H_{i}(C_\ast /F_0C_\ast )\xrightarrow{\delta_i}H_{i-1}(F_0C_\ast ),$
-它的同调是:</p>
-</li>
-</ol>
-<p>$$
-G_0H_\ast =\operatorname{coker}\delta,\quad G_1H_\ast =\ker\delta.
-$$</p>
-<ol>
-<li>我们得到了短正合列:</li>
-</ol>
-<p>$$
-0\rightarrow G_0H_\ast \rightarrow H_\ast (C_\ast )\rightarrow G_1H_\ast \rightarrow 0.
-$$</p>
-<p>注意短正合列不一定可分裂, 因此用代数术语来描述, 我们说$H_\ast (C_\ast )$是
-延展地(\”up to extensions\”) 决定的.</p>
-<h2 id="滤列"><a href="#滤列" class="headerlink" title="滤列"></a>滤列</h2><p>一个滤列$R$模是一个$R$模$A,$ 有一列递增子模</p>
-<p>$$
-\cdots \subset F_p A\subset F_{p+1}A\subset \cdots,\quad p\in \mathbb{Z},
-$$</p>
-<p>使得$\bigcup_p F_pA=A,$ $\bigcap_pF_pA=0.$ 这被称为<strong>滤列</strong>.</p>
-<p>称滤列是<strong>有界</strong>的, 若非平凡滤子有限, 即</p>
-<p>$$
-\cdots =0=F_p A\subset \cdots \subset F_{q} A=A=\cdots.
-$$</p>
-<p>那么定义它的<strong>联系分级模</strong>为 </p>
-<p>$$
-G_pA:=F_pA/F_{p-1}A.
-$$</p>
-<p>我们认为$\{F_p A\},$ $\{G_pA\}$归纳地<em>延展地</em>决定$A.$</p>
-<p>$$
-0\rightarrow F_{p-1}A\rightarrow F_pA\rightarrow G_pA\rightarrow 0.
-$$</p>
-<p>注意延展是平凡的, 若$R$是一个域.</p>
-<p>一个<strong>滤列链复形</strong>是一个链复形$(C_\ast ,\partial),$
-以及关于$C_i$的滤列$\{F_pC_i\},$
-使得$\partial(F_pC_i)\subset F_pC_{i-1}.$ 可以验证, $\,\forall\,p,$
-$(G_pC_\ast ,\partial)$是一个链复形, 可以考虑其上的同调$H_i(G_pC_\ast )$.</p>
-<p>一个$C_\ast $上的滤列诱导了$H_\ast (C_\ast )$上的滤列:</p>
-<p>$$
-F_pH_i(C_\ast ):=\{\alpha\in H_i(C_\ast )|\,\exists\,x\in F_pC_\ast , [x]=\alpha\}.
-$$</p>
-<p>接下来我们有$G_pH_i(C_\ast ).$ 一个自然的问题是它与$H_i(G_pC_\ast )$有什么联系?</p>
-<p>回忆前面有 </p>
-<p>$$
-0\subset F_0C_\ast \subset F_1C_\ast =C_\ast ,
-$$</p>
-<p>则$G_pH_\ast (C_\ast )$是$H_\ast (G_1C_\ast )\xrightarrow{\delta} H_{\ast -1}(G_0C_\ast )$的同调.
-此时$H_i(G_pC_\ast )$基本决定了$G_pH_i(C_\ast ).$</p>
-<p>当滤列有更多非平凡项时, 为了考虑它们之间的关系,
-我们希望能考虑一些连续的逼近$E^1,E^2,\cdots$收敛到想要的结果,
-类似于Taylor展开. 这就称为<strong>谱序列</strong>.</p>
-<p>假设$(F_pC_\ast ,\partial)$是一个滤列复形, 定义:</p>
-<p>$$
-E^0_{p,q}:=G_pC_{p+q}=F_pC_{p+q}/F_{p-1}C_{p+q},
-$$</p>
-<p> 那么$E$是双分级的,
-$p$称为<strong>滤度(filtration degree)</strong>, $p+q$是<strong>同调度(homology degree)</strong>,
-$q$称为<strong>补度(complementary degree)</strong>.
-那么$(E_0,\partial_0)$是一个链复形,
-$\partial_0:E_{p,q}^0\rightarrow E^0_{p,q-1}.$</p>
-<p>定义$E^1_{p,q}:=H_{p+q}(G_pC_\ast ),$ 它是$H_\ast (C_\ast )$的一阶逼近.
-如下定义$\partial_1:E^1_{p,q}\rightarrow E^1_{p-1,q}:$
-$\,\forall\,\alpha\in E^1_{p,q}=H_{p+q}(G_pC_\ast ),$ 取$x\in F_pC_{p+q},$
-$[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
-记$\partial_1\alpha=[\partial x].$</p>
-<p>文章最后更新于 2022-09-15 10:54:54 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -772,7 +663,9 @@ $[x]=\alpha,$ $\partial x\in F_{p-1}C_{p+q-1}.$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A8%E6%9C%BA"><span class="nav-text">动机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text">谱序列</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%A4%E5%88%97"><span class="nav-text">滤列</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

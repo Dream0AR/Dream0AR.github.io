@@ -358,132 +358,7 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="局部黎曼几何基本定理"><a href="#局部黎曼几何基本定理" class="headerlink" title="局部黎曼几何基本定理"></a>局部黎曼几何基本定理</h2><p><strong>命题 1</strong>. <em>令$\omega_A$为$U\subset X$中的余标架场. 存在唯一一组$1$-形式$\omega_{AB}$满足:</em> </p>
-<p>$$
-\omega_{AB}+\omega_{BA}=0,\quad d\omega_A=\omega_B\wedge\omega_{BA}=\omega_{AB}\wedge\omega_B.
-$$</p>
-<p>唯一性容易证明. 设有两组满足条件的$\omega_{AB},$
-令$\varphi_{AB}=\omega&#39;_{AB}-\omega_{AB},$
-那么由于$\{\omega_C\}$为一组基, $\varphi_{BA}=a_{BAC}\omega_C.$ 由条件,
-$a_{BAC}+a_{ABC}=0$显然, 我们还有$a_{BAC}=a_{CAB}.$ 这是因为</p>
-<p>$$
-0=d\omega_A-d\omega_A=\omega_B \wedge \varphi_{BA}=a_{BAC}\omega_B\wedge\omega_C=\sum_{B&lt;C}(a_{BAC}-a_{CAB})\omega_B\wedge\omega_C.
-$$</p>
-<p>此时立即得到$\varphi_{BA}=0.$ 这是因为</p>
-<p>$$
-a_{ABC}=-a_{BAC}=-a_{CAB}=a_{ACB}=a_{BCA}=-a_{CBA}=-a_{ABC}.
-$$</p>
-<p>存在性直接给出计算即可. 设$\omega_{BA}=b_{BAC}\omega_C,$ 那么</p>
-<p>$$
-d\omega_A=b_{BAC}\omega_B\wedge\omega_C, \quad d\omega_A(e_B,e_C)=b_{BAC}-b_{CAB}.
-$$</p>
-<p>轮换$A,B,C,$ 由反称性, 我们有: 
-$$
-\begin{aligned}
- &amp;d\omega_A(e_B,e_C)+d\omega_C(e_B,e_A)-d\omega_{B}(e_A,e_C)\\
- =&amp;(b_{BAC}-b_{CAB})+(b_{BCA}-b_{ACB})-(b_{ABC}-b_{CBA})\\
- =&amp;2b_{BAC}
- \end{aligned}
-$$</p>
-<p>这就给出了$\omega_{BA}$的具体表示. 特别的, 系数可进一步写为
-$$
-\begin{aligned}
- b_{BAC}&amp;=\frac{1}{2}(d\omega_A(e_B,e_C)+d\omega_C(e_B,e_A)-d\omega_{B}(e_A,e_C))\\
- &amp;=\frac{1}{2}(\omega_B([e_A,e_C])+\omega_A([e_C,e_B])-\omega_C([e_B,e_A]))
- \end{aligned}
-$$</p>
-<h2 id="协变微分"><a href="#协变微分" class="headerlink" title="协变微分"></a>协变微分</h2><p>$\omega_{AB}$称为<strong>联络形式</strong>, 可用于定义<strong>协变微分</strong>.
-对于标架场$\{e_A\},$ 向量场$\xi=\xi_Ae_A,$ 定义</p>
-<p>$$
-D\xi=D\xi_A\otimes e_A,\quad D\xi_A=d\xi_A+\xi_B\omega_{BA}.
-$$</p>
-<p>我们验证它就是Levi-Civita联络. 只需验证两个性质. 在正交标架下,</p>
-<p>$$
-\left&lt;{}D_\eta\xi,\gamma\right&gt;=D\xi_A(\eta)\left&lt;{}e_A,\gamma\right&gt;=(\eta(\xi_A)+\xi_B\omega_{BA}(\eta))\gamma_A,
-$$</p>
-<p>这样由反称性,</p>
-<p>$$
-\eta\left&lt;{}\xi,\gamma\right&gt;=\eta(\xi_A\gamma_A)=\eta(\xi_A)\gamma_A+\xi_A\eta(\gamma_A)=\left&lt;{}D_\eta\xi,\gamma\right&gt;+\left&lt;{}\xi,D_{\eta}\gamma\right&gt;.
-$$</p>
-<p>另外,</p>
-<p>$$
-D_{\xi}\eta-D_{\eta}\xi=(D\eta_A(\xi)-D\xi_A(\eta))e_A=(\xi(\eta_A)-\eta(\xi_A)+\eta_B\omega_{BA}(\xi)-\xi_B\omega_{BA}(\eta))e_A.
-$$</p>
-<p>而由对称性,</p>
-<p>$$
-\eta_B\omega_{BA}(\xi_Ce_C)-\xi_B\omega_{BA}(\eta_Ce_C)=(\eta_B\xi_C-\xi_B\eta_C)b_{BAC}=0,
-$$</p>
-<p>因此, </p>
-<p>$$
-[\xi,\eta]=(\xi(\eta_A)-\eta(\xi_A))e_A=D_\xi\eta-D_\eta\xi.
-$$</p>
-<p>于是该定义与原先的定义是一致的. 特别的, 我们有</p>
-<p>$$
-De_A=\omega_{AB}\otimes e_B.
-$$</p>
-<p> 这样定义的好处就是形式简单, 如</p>
-<p>$$
-D\xi=D(\xi_Ae_A)=d\xi_A \otimes e_A+\xi_A De_A.
-$$</p>
-<p>对于高阶张量也可以定义协变导数. 设$T=T_{ABC}e_Ae_Be_C,$ 那么,
-$DT:=DT_{ABC}e_Ae_Be_C,$</p>
-<p>$$
-DT_{ABC}=dT_{ABC}+T_{EBC}\omega_{EA}+T_{AEC}\omega_{EB}+T_{ABE}\omega_{EC}=T_{ABC,E}\omega_E.
-$$</p>
-<h2 id="曲率"><a href="#曲率" class="headerlink" title="曲率"></a>曲率</h2><p>对命题1中的等式做外微分, 我们有</p>
-<p>$$
-0=d(d\omega_A)=d\omega_B\wedge\omega_{BA}-\omega_B\wedge d\omega_{BA}=\omega_C\wedge\omega_{CB}\wedge\omega_{BA}-\omega_C\wedge d\omega_{CA}.
-$$</p>
-<p>记$\Omega_{BA}=d\omega_{BA}-\omega_{BC}\wedge\omega_{CA},$
-那么我们即有$\omega_B\wedge\Omega_{BA}=0.$ 由于$\Omega_{BA}$为$2$-形式,
-其有展开 $\Omega_{BA}=-\frac{1}{2}R_{BACE}\omega_C\wedge\omega_E.$
-这就引出了曲率项. 显然其满足性质 </p>
-<p>$$
-R_{ABCE}=-R_{BACE}=-R_{ABEC}.
-$$</p>
-<p>我们还有第一Bianchi恒等式 </p>
-<p>$$
-R_{ABCE}+R_{ACEB}+R_{AEBC}=0.
-$$</p>
-<p> 这是因为
-$$
-\begin{aligned} 
- 0&amp;=\omega_{B}\wedge\Omega_{BA}=\frac{1}{2}R_{ABCE}\omega_B\wedge\omega_C\wedge\omega_E\\
- &amp;=\frac{1}{2}\sum_{B&lt;C&lt;E}(R_{ABCE}-R_{ABEC}-R_{ACBE}+R_{ACEB}+R_{AEBC}-R_{AECB})\omega_B\wedge\omega_C\wedge\omega_E\\
- &amp;=\sum_{B&lt;C&lt;E}(R_{ABCE}+R_{ACEB}+R_{AEBC})\omega_B\wedge\omega_C\wedge\omega_E
- \end{aligned}
-$$</p>
-<p>结合前面的性质, 我们有$R_{ABCE}=R_{CEAB}.$ 这称为<strong>黎曼张量</strong>,
-给出了黎曼度量的全部局部信息. 黎曼张量, 数量曲率的定义如下:</p>
-<p>$$
-R_{AB}=R_{BA}=R_{ACBC},\quad R=R_{AA}.
-$$</p>
-<h2 id="Laplacian"><a href="#Laplacian" class="headerlink" title="Laplacian"></a>Laplacian</h2><p>对前面曾举例的$T,$ 我们定义它的同阶Laplacian为</p>
-<p>$$
-(\Delta T)_{ABC}=T_{ABC,E,E}.
-$$</p>
-<p> 特别的, 若$u$是一个函数, 那么</p>
-<p>$$
-du=u_A \omega_A,\quad Du_A=du_A+u_B\omega_{BA}=u_{A,B}\omega_B,\quad \Delta u=u_{A,A}.
-$$</p>
-<p>我们还定义 </p>
-<p>$$
-|\operatorname{grad}u|^2=u_A^2.
-$$</p>
-<p>若$\varphi(u)$为关于$u$的光滑函数, 那么</p>
-<p>$$
-\Delta\varphi(u)=\varphi&#39;(u)\Delta u+\varphi&#39;&#39;(u)|\operatorname{grad}u|^2.
-$$</p>
-<p>这是因为$\varphi(u)_A=\varphi&#39;(u)u_A,$
-$\varphi(u)_B\omega_{BA}=\varphi&#39;(u)u_B\omega_{BA},$
-$d(\varphi(u)_A)=\varphi&#39;&#39;(u)u_Au_B\omega_B+\varphi&#39;(u)du_{A},$</p>
-<p>$$
-D\varphi(u)_A=\varphi&#39;&#39;(u)u_Au_B\omega_B+\varphi&#39;(u)(du_A+u_B\omega_{BA})=\varphi&#39;&#39;(u)u_Au_B\omega_B+\varphi&#39;(u)Du_A.
-$$</p>
-<p>这就给出了$\Delta\varphi(u).$</p>
-<p>文章最后更新于 2023-03-02 19:47:28 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -804,7 +679,9 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="nav-text">局部黎曼几何基本定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E5%8F%98%E5%BE%AE%E5%88%86"><span class="nav-text">协变微分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B2%E7%8E%87"><span class="nav-text">曲率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Laplacian"><span class="nav-text">Laplacian</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

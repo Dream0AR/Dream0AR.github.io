@@ -273,47 +273,7 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="Sard定理"><a href="#Sard定理" class="headerlink" title="Sard定理"></a>Sard定理</h2><p><strong>定理 1</strong>. <em>光滑映射$f:M\rightarrow N$的临界值集合为$N$中的零测集.</em> </p>
-<p><strong>注 2</strong>. <em>Sard定理对$C^k$映射$f:M^m\rightarrow N^n$成立, $k\ge \max\{1,m-n+1\}.$ 注意临界点集未必零测.</em> </p>
-<p><strong>推论 3</strong>. <em>光滑映射$f:M\rightarrow N$的正则值在$N$中稠密. 且同时为可列个光滑映射正则值的点也稠密.</em> </p>
-<p>证明由如下步骤组成:</p>
-<p><strong>引理 4</strong>. <em>$f:I^m\rightarrow \mathbb{R}^n$为$C^1$映射. 若$m=n,$ $A\subset I^m$零测, 则$f(A)\subset \mathbb{R}^n$为零测集. 若$m&lt;n,$ $f(I^m)\subset \mathbb{R}^n$是零测集.</em> </p>
-<p>测度由Lipschitz常数控制, 由此证明第一部分结论即可.</p>
-<p><strong>推论 5</strong> (Mini Sard). <em>设$f:M\rightarrow N$为$C^1$映射, $\dim M=\dim N,$ 则$M$中零测集$A\subset M$的像$f(A)$为$N$中零测集. 若$\dim M&lt;\dim N,$ 则$f(M)$为$N$中的零测集. ($M$上都是临界点.)</em> </p>
-<p><strong>定理 6</strong> (等维数Sard定理). <em>设$f:M\rightarrow N$为$n$维流形间的$C^1$映射, $C\subset M$为临界点集. 则$f(C)$为零测集.</em> </p>
-<p>由Taylor定理, 在临界值附近, 像集可以用超平面处小邻域控制.
-做分割让邻域充分小即可.</p>
-<p><strong>引理 7</strong>. <em>设$I_1,\cdots,I_n$为闭区间$[a,b]$的覆盖, 则存在加细覆盖$I_1&#39;,\cdots,I_N&#39;,$ 使得$I_j&#39;\subset I_i,$ $\sum_{j=1}^N |I_j&#39;|\le 2(b-a).$</em> </p>
-<p><strong>定理 8</strong> (零测集Fubini定理). <em>设$A\subset \mathbb{R}^n$为紧致集. 若$\,\forall\,c\in \mathbb{R},$ $A\cap (\{c\}\times \mathbb{R}^{n-1})$为$\{c\}\times \mathbb{R}^{n-1}$中零测集, 则$A$为$\mathbb{R}^n$中零测集.</em> </p>
-<p>由此可证明Sard定理. 只需利用归纳法,
-讨论$f:U^m\rightarrow \mathbb{R}^n$即可. 按导数次数讨论.
-对于次数最高的情形用Taylor公式估计即可.</p>
-<h2 id="Morse函数"><a href="#Morse函数" class="headerlink" title="Morse函数"></a>Morse函数</h2><p>设$f:M\rightarrow \mathbb{R}$为光滑函数, 若$df_p=0,$ 则称$p$为临界点.
-若$M$紧致, 至少有两个临界点: 最大值点与最小值点. 若临界点处二阶导非退化,
-则称临界点为<strong>非退化临界点</strong>. 该定义与坐标卡选取无关.</p>
-<p><strong>命题 9</strong>. <em>非退化临界点附近没有其它临界点.</em> </p>
-<p><strong>引理 10</strong> (Morse引理). <em>设$c$为函数$f:M\rightarrow \mathbb{R}$的非退化临界点, 则存在$c$的Morse坐标卡$(U,\phi),$ Morse指标$i,$ 使得</em> </p>
-<p>$$
-f\circ \phi^{-1}(x_1,\cdots,x_n)=f(c)-\sum_{j=1}^i x_j^2+\sum_{j=i+1}^n x_j^2.
-$$</p>
-<p>证明利用Taylor展开进行, 对维数进行归纳.</p>
-<p><strong>推论 11</strong>. <em>函数的非退化临界点是孤立的. 特别的, 紧流形上Morse函数有有限个临界点.</em> </p>
-<p>若函数$f$所有临界点都是非退化的, 那么称$f$为Morse函数.</p>
-<p><strong>命题 12</strong>. <em>设$M^m\subset \mathbb{R}^n$为嵌入子流形. 对几乎所有的$a\in \mathbb{R}^n,$ 有Morse函数</em> </p>
-<p>$$
-f_a:M\rightarrow \mathbb{R},\quad f(x)=\Vert x-a\Vert^2.
-$$</p>
-<p>证明只需考虑非退化临界点发生当且仅当</p>
-<p>$$
-x-a\perp T_xM,\quad \left|\frac{\partial^2 {}f}{\partial {}u_i\partial {}u_j}\right|\neq 0,
-$$</p>
-<p>说明不满足该条件的$a$为光滑映射$T^\perp M\ni w\mapsto x+w$的临界值即可.</p>
-<p><strong>命题 13</strong>. <em>设$M$为光滑流形, $f:M\rightarrow \mathbb{R}$为光滑函数, $k\in \mathbb{Z}_+.$ 则在任意紧子集上, $f$及其直到$k$阶导数被Morse函数一致逼近.</em> </p>
-<p>考虑用$f_a$对坐标分量进行逼近即可.</p>
-<p><strong>定理 14</strong>. <em>设$M$为紧致流形, 则$M$上Morse函数的集合为$C^\infty(M,\mathbb{R})$的稠密开集.</em> </p>
-<p>文章最后更新于 2023-06-11 14:37:26 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -634,7 +594,9 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sard%E5%AE%9A%E7%90%86"><span class="nav-text">Sard定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Morse%E5%87%BD%E6%95%B0"><span class="nav-text">Morse函数</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

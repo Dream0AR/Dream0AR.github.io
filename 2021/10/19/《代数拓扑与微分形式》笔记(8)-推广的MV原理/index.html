@@ -308,82 +308,7 @@ $(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\al
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <p>这节课要把MV序列从两个开集推广到可数多个开集. 主要想法来自Weil.</p>
-<h2 id="可数多个开集的推广"><a href="#可数多个开集的推广" class="headerlink" title="可数多个开集的推广"></a>可数多个开集的推广</h2><p>$\{U_\alpha\}$为$M$开覆盖, $I$为可数全序集. 有如下包含序列:</p>
-<p>$$M\leftarrow \bigsqcup_{\alpha_0} U_{\alpha_0}\begin{matrix}
-            \xleftarrow{\partial_0}\\\xleftarrow{\partial_1}
-        \end{matrix} \bigsqcup_{\alpha_0&lt;\alpha_1} U_{\alpha_0\alpha_1}\begin{matrix}
-            \xleftarrow{\partial_0}\\\xleftarrow{\partial_1}\\\xleftarrow{\partial_2}
-        \end{matrix}\cdots$$</p>
-<p>此处$\partial_i$指忽略第$i$个开集.
-那么这样的包含映射$\partial_i$诱导限制映射$\delta_i$.
-进而有如下限制序列:</p>
-<p>$$\Omega^*(M)\rightarrow \prod_{\alpha_0} \Omega^*(U_{\alpha_0})\begin{matrix}
-            \xrightarrow{\delta_0}\\\xrightarrow{\delta_1}
-        \end{matrix} \prod_{\alpha_0&lt;\alpha_1} \Omega^*(U_{\alpha_0\alpha_1})\begin{matrix}
-            \xrightarrow{\delta_0}\\\xrightarrow{\delta_1}\\\xrightarrow{\delta_2}
-        \end{matrix}\cdots$$</p>
-<p>定义差分算子
-$$\delta: \prod_{\alpha_0&lt;\cdots&lt;\alpha_p} \Omega^\ast (U_{\alpha_0\cdots\alpha_p})\rightarrow \prod_{\alpha_0&lt;\cdots&lt;\alpha_{p+1} } \Omega^\ast (U_{\alpha_0\cdots\alpha_{p+1} }),$$</p>
-<p>$\delta=\sum_{i=0}^{p+1}(-1)^i\delta_i$.
-$\delta\omega$在$\Omega^\ast (U_{\alpha_0\cdots\alpha_{p+1} })$上的分量即为$\sum_{i=0}^{p+1}(-i)^i \omega_{\alpha_0,...,\hat\alpha_i,...,\alpha_{p+1} }$.</p>
-<p>容易证明, $\delta^2=0$. 事实上,
-目前为止$\omega_{\alpha_0...\alpha_p}$的下标要求$\alpha_0&lt;...&lt;\alpha_p$,
-但可以补充定义去掉该要求, 对任意的$\omega_{\alpha_0...\alpha_p}$,
-用$\tau$对下标做置换,
-定义它为$\operatorname{sgn}(\tau)\omega_{\alpha_\tau}$.
-容易验证这样与之前的系统不矛盾.</p>
-<p><strong>命题 1.1</strong> (推广的MV序列). <em>我们有正合列: $0\rightarrow \Omega^\ast (M)\xrightarrow{r}\prod \Omega^\ast (U_{\alpha_0})\xrightarrow{\delta}\prod\Omega^\ast (U_{\alpha_0\alpha_1})\rightarrow\cdots$</em> </p>
-<p><strong>证:</strong> 显然限制映射$r$是单射,
-只需要证明在$\prod \Omega^\ast (U_{\alpha_0...\alpha_p})$处正合.</p>
-<p>$\,\forall\,\alpha_0,\alpha_1$,
-$(\delta_\omega)_{\alpha_0\alpha_1}=\omega_{\alpha_1}-\omega_{\alpha_0}=0$当且仅当$\omega_{\alpha_1}$,
-$\omega_{\alpha_0}$在$U_{\alpha_0\alpha_1}$上相容,
-当且仅当$\omega_{\alpha}$可以整体定义为$\eta$, 从而$r(\eta)=\omega$.</p>
-<p>对于后面的复形, 由于$\delta^2=0$,
-只需验证$\ker\delta\subset \operatorname{Im}\delta$.
-取$\tau_{\alpha_0\cdots\alpha_{p-1} }=\sum_{\alpha}\rho_\alpha\omega_{\alpha\alpha_0\cdots\alpha_{p-1} }$.
-接下来$(\delta\omega)_{\alpha \alpha_0...\alpha_p}=\omega_{\alpha_0\cdots\alpha_p}+\sum_{i=0}^p(-1)^{i+1}\omega_{\alpha\alpha_0\cdots\hat\alpha_i\cdots\alpha_p}=0$,
-由此推知$\delta{\tau}=\omega_{\alpha_0\cdots\alpha_p}$.</p>
-<p>事实上$\tau$给出了复形上的一个同伦算子$K$,
-$(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\alpha_0\cdots\alpha_{p-1} }$.
-满足有$\delta K+K\delta=\mathrm{id}$. 对上闭链, 称$K$是$\delta$的右逆.</p>
-<h2 id="双复形"><a href="#双复形" class="headerlink" title="双复形"></a>双复形</h2><p>记$K^{p,q}=C^p(\mathcal{U},\Omega^q)=\prod \Omega^q(U_{\alpha_0\cdots\alpha_p})$.
-其上的元素称为$q$-形式值的$p$-上链.</p>
-<p>将$(p,q)$视为$\mathbb{Z}^2$上的坐标, 则有一张交换图,
-行向右的运算为差分算子, 列向上的运算为微分算子.
-交换是因为先限制再外微分等于先外微分再限制, 且外微分有线性性.</p>
-<p>令$K^n=\oplus_{p+q=n}K^{p,q}$, $D=D&#39;+D&#39;&#39;$, $D&#39;=\delta$, $D&#39;&#39;=(-1)^pd$.
-则现在$D&#39;,D&#39;&#39;$带符号交换, 因此$D^2=0$, $\{K^\ast ,D\}$成为一个复形.</p>
-<p>$C^\ast (\mathcal{U},\Omega^\ast )$称为<strong>Čech-de Rham复形</strong>,
-其上的元简称$D$-上链, 上同调记为$H^\ast _D\{C^\ast (\mathcal{U},\Omega^\ast )\}$.</p>
-<p>对链复形进行增广, 在$(-1,q)$位置, 增加$\Omega^p(M)$, 向右有限制映射$r$,
-向上是微分算子. 再在左侧再加上$0$向右映射, 则由先前的命题, 所有行正合.</p>
-<p><strong>命题 1.2</strong> (推广的MV原理). <em>$r^\ast :H^\ast _{dR}(M)\approx H_D\{C^\ast (\mathcal{U},\Omega^\ast )\}$.</em> </p>
-<p>首先$r$是链映射, 所以$r^\ast $定义合理, $r^\ast [\omega]_d=[r\omega]_D$.</p>
-<p>接下来证$r^\ast $既满又单即可. 利用行的正合性, 进行基本的图追踪即可.
-沿对角线走, 一步步将多余的分量截掉.</p>
-<h2 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h2><p>可以看出, 若增广双复形每行都是正合的,
-那么它的$D$-上同调同构于初始列即增广列的上同调.</p>
-<p>取$C^p(\mathcal{U},\mathbb{R})=\prod\{U_{\alpha_0\cdots\alpha_p}\text{上局部常值函数}\}$,
-则有包含映射$i:C^p(\mathcal{U},\mathbb{R})\rightarrow C^p(\mathcal{U},\Omega^0)$,
-且$\operatorname{Im}i=\ker d$.</p>
-<p>有复形$0\rightarrow C^0(\mathcal{U},\mathbb{R})\xrightarrow{\delta}C^1(\mathcal{U},\mathbb{R})\rightarrow\cdots$,
-称其上同调为开覆盖$\mathcal{U}$的<strong>Čech上同调</strong>, 是一个纯组合对象.</p>
-<p>与先前证明类似地, 若每列正合, 添加增广行,
-则它的上同调也同构于双复形的$D$-上同调.</p>
-<p>我们将上面构造的复形作为增广行. 由Poincaré引理,
-若$\mathcal{U}$是一个好覆盖, 那么每列确实正合. 从而:</p>
-<p><strong>定理 1.3</strong>. <em>$H^\ast (M)\cong H^\ast (\mathcal{U},\mathbb{R})$.</em> </p>
-<p>所以我们有一个先验来看并不平凡的推论:</p>
-<p><strong>推论 1.4</strong>. <em>Čech上同调$H^\ast (\mathcal{U},\mathbb{R})$和好覆盖$\mathcal{U}$选取无关.</em> </p>
-<p>另一方面, 若流形具有有限好覆盖, $H^\ast (\mathcal{U},\mathbb{R})$有限维.
-从而:</p>
-<p><strong>推论 1.5</strong>. <em>有限型流形$M$的de Rham上同调$H_{dR}^\ast (M)$是有限维的.</em> </p>
-<p>特别地, 紧流形总具有有限好覆盖, 从而de Rham上同调是有限维的.</p>
-<p>文章最后更新于 2021-10-19 21:45:05 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -704,7 +629,9 @@ $(K\omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_\alpha\rho_\alpha\omega_{\alpha\al
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E6%95%B0%E5%A4%9A%E4%B8%AA%E5%BC%80%E9%9B%86%E7%9A%84%E6%8E%A8%E5%B9%BF"><span class="nav-text">可数多个开集的推广</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E5%A4%8D%E5%BD%A2"><span class="nav-text">双复形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-text">应用</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

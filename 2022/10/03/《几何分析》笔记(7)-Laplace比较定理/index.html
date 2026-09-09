@@ -311,85 +311,7 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>$r(x)=d(p,x)$是$M$上的Lipschitz函数, 进一步它在$W^{1,p}_{loc}(M)$中.
-我们希望推导得到:</p>
-<p>$$
--\int_M\nabla_g r\nabla_g \varphi\le \int_M (n-1)\frac{sn_k&#39;(r)}{sn_k(r)}\varphi dV_g,\quad \,\forall\,\varphi\ge 0,\varphi\in \mathscr{D}(M).
-$$</p>
-<p>对于割迹$\operatorname{Cut}=N_p\cup A_p,$ $\,\forall\,p&gt;n-2,$
-$\,\exists\,r_k,r_k&#39;\rightarrow 0,$
-$\,\exists\,\phi_k\in W^{1,n-p}\cap C^0,$ 满足</p>
-<p>$$
-\phi_k|_{B_{r_k}^g(A_p)^c}\equiv 0,\quad \phi_k|_{B_{r_k}^g(A_p)}\equiv 1,
-$$</p>
-<p>且$\int |\nabla \phi_k|^{n-p}\rightarrow 0.$</p>
-<h2 id="分部积分"><a href="#分部积分" class="headerlink" title="分部积分"></a>分部积分</h2><p>首先考虑将不等式左侧写成更方便的形式.</p>
-<p>$$
--\int_M\nabla_g r\nabla_g\varphi dV_g=\lim_{k\rightarrow +\infty} -\int_M \nabla_g r\nabla_g(1-\varphi_k)\varphi dV_g.
-$$</p>
-<p>记后面的积分为$I,$ 则 
-$$
-\begin{aligned}
- I&amp;= -\int_{\widehat{C}_p\cap \widehat{S}_p} \nabla_{\widehat g}r\nabla_{\widehat g}(1-\phi_k)\varphi dV_{\widehat{g} }\\
- &amp;=\int_{\widehat{S}_p}\Delta_{\widehat g}r(1-\phi_k)\varphi-\int_{ {\widehat N}_p}\frac{\partial {}r}{\partial {}n}(1-\phi_k)\varphi\\
- &amp;=\int_M(\Delta_g r)(1-\phi_k)\varphi-\int_{N_p}J(x)(1-\phi_k)\varphi\\
- &amp;\rightarrow \int_{S_p}(\Delta_g r)\varphi dV_g-\int_{N_p }J(x)\varphi.
- \end{aligned}
-$$</p>
-<p>$$
-J(x):=n_1\cdot \gamma_1&#39;+n_2\cdot\gamma_2&#39;\ge 0.
-$$</p>
-<p>那么$\,\forall\,\varphi\in \mathscr{D}(M\setminus\{p\}),$</p>
-<p>$$
--\int_M\nabla_gr\nabla_g\varphi dV_g=\int_{S_p}\Delta_gr\varphi dV_g-\int_{N_p} J(x)\varphi(x)d\mathcal{H}^{n-1}.
-$$</p>
-<p>事实上可以取$\varphi\in \mathscr{D}(M).$ 考虑$\eta=\begin{cases}
- 1, &amp;t&gt;2\\
- \in[0,1], &amp;1\le t\le 2\\
- 0, &amp;t&lt;1
- \end{cases},$
-$\eta_\varepsilon=\eta(d(x,p)\varepsilon^{-1}),$
-$\varepsilon&lt;\operatorname{Inj}(p).$</p>
-<p>$$
-|\nabla_g\eta_\varepsilon|=|\eta&#39;| \frac{|\nabla_g r|}{\varepsilon}\le \frac{\Vert\eta&#39;\Vert_{C_0} }{\varepsilon},\quad \eta_\varepsilon\varphi\in \mathscr{D}(M\setminus\{p\}).
-$$</p>
-<p>那么代入$\eta_\varepsilon\varphi,$
-令$\varepsilon\rightarrow 0$即可得到结论.
-也就是$\varphi$可以在$\mathscr{D}(M)$中选取.</p>
-<h2 id="弱意义"><a href="#弱意义" class="headerlink" title="弱意义"></a>弱意义</h2><p>由上面证得的公式, </p>
-<p>$$
-\Delta_g r=(\Delta_g r)\chi_{S_p}-\mu,
-$$</p>
-<p>$\mu$为一个Radon测度, 可写为$\mu=J(x)\mathcal{H}^{n-1}|_{N_p},$ 即</p>
-<p>$$
-\int_M\varphi d\mu=\int_{N_p}\varphi Jd\mathcal{H}^{n-1}
-$$</p>
-<p> 由$J\ge 0,$
-我们就立即得到了前面的弱意义下(在函数空间$\mathscr{D}_+(M)$上)的Laplace比较定理.</p>
-<h2 id="闸函数"><a href="#闸函数" class="headerlink" title="闸函数"></a>闸函数</h2><p>在闸函数意义下也有相应的Laplace比较定理.</p>
-<p>回忆对于有界开集$\Omega,$ $p\in \Omega,$ $f\in C^2(\Omega).$
-若$f(p)=\min_\Omega f,$ 则$\Delta_g f(p)\ge 0.$
-那么若$\,\exists\,\varphi\in C^2(\Omega),$ $\varphi\ge f,$
-$\varphi(p)=f(p),$ 则$\varphi(p)-f(p)=\min_\Omega(\varphi-f),$
-从而$\Delta \varphi(p)\ge \Delta f(p).$</p>
-<p><strong>定义 1</strong>. <em>设$f$在$p$点附近连续. 称$\varphi$是$f$在$p$处的上闸函数, 若$\varphi\ge f,$ $\varphi=f(p).$ 定义闸函数意义下$\Delta f(p)\le C$指$\,\forall\,\varepsilon&gt;0,$ $\,\exists\,$上闸函数$\varphi,$ 使得$\Delta \varphi\le C+\varepsilon.$</em> </p>
-<p>类似地, 可以定义下闸函数. 若上下闸函数对同一常数$C$同时存在,
-则可定义$\Delta f(p)=C.$ 接下来, 我们证明在闸函数意义下,</p>
-<p>$$
-\Delta r\le (n-1)\frac{sn_k&#39;(r)}{sn_k(r)}.
-$$</p>
-<p>对$x\in M\setminus\{p\},$ 取$\gamma$为连接$p$到$x$的线段.
-取$x_\varepsilon=\gamma(\varepsilon).$
-定义$r_\varepsilon(x):=d(x,x_\varepsilon)+\varepsilon\ge d(x,p).$
-容易证明$x\in S_{x_\varepsilon},$ 因此$r(x)=r_\varepsilon(x).$
-而在$\operatorname{Ric}\ge (n-1)K$的条件下,</p>
-<p>$$
-\Delta_g r_\varepsilon=\Delta_g d(x,x_\varepsilon)\le (n-1)\frac{sn_k&#39;}{sn_k}(d(x,x_\varepsilon)),
-$$</p>
-<p>这就说明了在闸意义下, $\Delta_gr\le (n-1)\frac{sn_k&#39;}{sn_k}(r).$</p>
-<p>文章最后更新于 2022-10-03 23:21:28 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -710,7 +632,9 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E9%83%A8%E7%A7%AF%E5%88%86"><span class="nav-text">分部积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%B1%E6%84%8F%E4%B9%89"><span class="nav-text">弱意义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%B8%E5%87%BD%E6%95%B0"><span class="nav-text">闸函数</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

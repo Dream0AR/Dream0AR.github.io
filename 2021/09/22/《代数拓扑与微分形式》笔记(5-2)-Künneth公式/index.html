@@ -280,54 +280,7 @@ $$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="Kunneth公式"><a href="#Kunneth公式" class="headerlink" title="Künneth公式"></a>Künneth公式</h2><p>设$M$, $F$是流形, 且$M$的de Rham上同调的维数是有限的, 则
-$$H^n(M\times F)=\sum_{p+q=n} H^p(M)\otimes_\mathbb{R}H^q(F).$$</p>
-<p><strong>证:</strong> 假定$M$有有限好覆盖. 取$M\times F$到$F$, $M$的投射为$\rho,\pi$,
-则其诱导$\psi:\Omega^{\ast }(M)\otimes \Omega^\ast (F)\rightarrow \Omega^\ast (M\times F)$,
-$\psi(\omega\otimes \phi)=\pi^\ast \omega\wedge \rho^\ast \phi.$
-由于$\pi^\ast$, $\rho^\ast$与$d$可交换, $\psi$可约化到上同调间的映射.</p>
-<p>若$M\approx \mathbb{R}^m$(好覆盖仅为一个开集), 则由Poincaré引理,
-$H^n(\mathbb{R}^m\times F)=H^n(\mathbb{R}^{m-1}\times F)=\cdots=H^n(F)=H^0(\mathbb{R}^m)\otimes H^n(F)= \sum_p H^{p}(\mathbb{R}^m)\otimes H^{n-p}(F).$</p>
-<p>设$U,V$为$M$的开集, 固定$n$, 做上同调的MV序列.
-将每项与$H^{n-p}(F)$做张量积, 再把每项关于$p$做直和, 得到新的MV序列.
-该MV序列又可通过链映射$\psi$打到$M\times F$对应的MV序列上,
-由zig-zag引理该图可交换.</p>
-<p>交换图有点大...不打了先.</p>
-<p>从而借助MV序列, 若Künneth公式对$U,V,U\cap V$成立, 其对$U\cup V$也成立.
-由MV方法, 归纳好覆盖开集个数即可.</p>
-<h2 id="Leray-Hirsch定理"><a href="#Leray-Hirsch定理" class="headerlink" title="Leray-Hirsch定理"></a>Leray-Hirsch定理</h2><p>$M\times F$可看作$M$上以$F$为纤维的平凡纤维丛,
-因此Künneth公式可以推广到更一般的情形, 这就是<strong>Leray-Hirsch定理</strong>.
-先介绍一些纤维丛的概念.</p>
-<p>设$G$是拓扑群, $F$是拓扑空间, 设$G$对$F$有一个<strong>左作用</strong>,
-即$\,\forall\,g\in G$定义了一个连续同胚$g:F\rightarrow F$, 满足
-$g_1(g_2(v))=(g_1g_2)(v)$, $\,\forall\,g_1,g_2\in G$, $v\in F.$
-称作用是<strong>有效作用</strong>, 若$g(y)=y$,
-$\,\forall\,y\in F\Rightarrow g=1\in G.$</p>
-<p>在此基础上, 再加入$E,B$为拓扑空间, $\pi:E\rightarrow B$是连续满射.
-设$B$有开覆盖$\{U_\alpha\}_{\alpha\in I}$满足:</p>
-<p>(i) 对每个$\alpha\in I$, 有保纤维的同胚:
-    $\phi_\alpha:E_{U_\alpha}:=\pi^{-1}(U_\alpha)\rightarrow U_\alpha\times F$,
-    即$\phi_\alpha$是同胚且$\operatorname{pr}_1\circ\phi_\alpha=\pi.$</p>
-<p>(ii) $\phi_\alpha,\phi_\beta$诱导了$g_{\alpha\beta}:U_{\alpha\beta}\rightarrow G$,
-     $(\phi_\alpha\circ \phi_\beta^{-1})(x,v)=(x,g_{\alpha\beta}(x)(v)).$</p>
-<p>则称$\pi:E\rightarrow B$是以$F$为纤维的<strong>纤维丛</strong>, <strong>结构群</strong>为$G$,
-<strong>底空间</strong>为$B$, <strong>全空间</strong>为$E$.
-$\{(U_\alpha,\phi_\alpha)\}_{\alpha\in I}$为纤维丛的一个<strong>局部平凡化</strong>.
-对$x\in B$, $\pi^{-1}(x)$即称为点$x$的纤维, 记作$E_x$.</p>
-<p>在研究上同调时, 假定$E,B,F$是光滑流形,
-$G$无特殊说明为$F$的微分同胚群$\operatorname{Diff}(F)$.</p>
-<p>设$\pi:E\rightarrow M$是以$F$为纤维的光滑纤维丛.
-假定$E$上有上同调类$e_1,...,e_r$,
-限制在每条纤维$E_x$上形成了$H^\ast (E_x)$的一组基, 则可定义
-$$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
-<p><strong>定理 1.1</strong> (Leray-Hirsch 定理). <em>在上述假定下, 若$M$有有限好覆盖, 则$\psi$是同构, 有$H^\ast (E)\cong H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\} \cong H^\ast (M)\otimes H^\ast (F).$</em> </p>
-<p><strong>证:</strong> 由于有限好覆盖中的$U_\alpha\approx \mathbb{R}^n$为可缩空间,
-其上纤维丛平凡,
-对$E|_{U_\alpha}$的Leray-Hirsch定理退化为$U_\alpha\times F$的Künneth公式.</p>
-<p>用MV方法即可借助好覆盖, 将该论断归纳到$M$上.</p>
-<p>文章最后更新于 2021-09-22 18:30:43 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -648,7 +601,9 @@ $$\psi:H^\ast (M)\otimes \mathbb{R}\{e_1,...,e_r\}\rightarrow H^\ast (E).$$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kunneth%E5%85%AC%E5%BC%8F"><span class="nav-text">Künneth公式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Leray-Hirsch%E5%AE%9A%E7%90%86"><span class="nav-text">Leray-Hirsch定理</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>

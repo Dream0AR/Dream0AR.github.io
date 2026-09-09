@@ -211,10 +211,7 @@ KEEP.initLanguageToggle = () => {
       if (!nodes.length) return;
 
       const match = nodes.find((item) => item.language === currentLanguage);
-      const fallback = match
-        || nodes.find((item) => item.language === fallbackLanguage)
-        || nodes.find((item) => item.language === 'zh-cn')
-        || nodes[0];
+      const fallback = match;
 
       nodes.forEach((item) => {
         item.node.style.display = (item === fallback) ? '' : 'none';

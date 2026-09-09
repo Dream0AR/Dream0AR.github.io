@@ -310,84 +310,7 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice">The English translation is unavailable. The complete Chinese original is shown below.</p>
-                    <h2 id="子流形"><a href="#子流形" class="headerlink" title="子流形"></a>子流形</h2><p>令$M$为$n$维光滑流形, $f:M\rightarrow X$为浸入.
-那么可以取$f^\ast g$为$M$上的诱导度量. 记$p=N-n$为余维数.
-我们将$f^\ast (TX)$分解为$TM\oplus(TM)^\perp,$ 分别称为切丛和法丛.
-沿$M$取标架场$e_A(m),$ 使得$e_i(m),e_\alpha(m)$分别是$m$处的切向量,
-法向量.</p>
-<p>记$\theta_A=f^\ast \omega_A,$ $\theta_{AB}=f^\ast \omega_{AB},$
-那么$\theta_\alpha=0.$ 这是因为$\theta_\alpha(v)=\omega_\alpha(f_\ast v)=0.$
-法向的对偶基作用在切向上取零. 由于$\theta_A$为拉回,
-适用于$\omega_A,\omega_{BA}$的方程对$\theta_A,\theta_{BA}$仍满足.</p>
-<p>回忆$d\omega_A=\omega_B\wedge\omega_{BA},$
-我们进一步有$\theta_i\wedge\theta_{i\alpha}=0.$ 由Cartan引理, 我们有</p>
-<p>$$
-\theta_{i\alpha}=h_{i\alpha j}\theta_j,\quad h_{i\alpha j}=h_{j\alpha i}.
-$$</p>
-<p>微分形式</p>
-<p>$$
-\Theta=\Theta_\alpha\otimes e_\alpha,\quad \Theta_\alpha=h_{i\alpha j}\theta_i\theta_j,
-$$</p>
-<p>称为$M$在$X$中的<strong>第二基本型</strong>.
-它描述了$M$作为$X$中子流形的最简单的度量信息.</p>
-<p>定义<strong>平均曲率向量</strong> </p>
-<p>$$
-H=\frac{1}{n}h_{i\alpha i}e_\alpha,
-$$</p>
-<p>它是$M$上的法向量. $M$称为<strong>极小子流形</strong>若$H=0.$ 它是<strong>全测地的</strong>,
-若$\Theta=0.$ $1$维全测地子流形就是测地线.</p>
-<h2 id="第一变分"><a href="#第一变分" class="headerlink" title="第一变分"></a>第一变分</h2><p>设$M$紧致, 可能带边界, 它的总体积由</p>
-<p>$$
-V=\int_M \theta_1\wedge \cdots\wedge \theta_n
-$$</p>
-<p> 给出. 考虑变分.
-取$F:M\times (-\varepsilon,\varepsilon)\rightarrow X,$
-满足$F$限制在$M\times \{t\}$上为浸入, $F|_{t=0}=f.$
-考虑$M\times I$上的标架场$\{e_A\},$ 条件同前(切向, 法向). 此时记</p>
-<p>$$
-F^\ast \omega_i=\theta_i+a_idt,\quad F^\ast \omega_\alpha=a_\alpha dt,
-$$</p>
-<p>$$
-F^\ast \omega_{i\alpha}=\theta_{i\alpha}+a_{i\alpha} dt.
-$$</p>
-<p>限制在$\{t=0\}$上, 这与原先记号相同. $a_Ae_A$称为<strong>形变向量</strong>.
-在$M\times I$上, 将外微分分解为</p>
-<p>$$
-d=d_M+d_t\frac{\partial {} }{\partial {}t}.
-$$</p>
-<p> 在$X$上, 我们有</p>
-<p>$$
-d(\omega_1\wedge\cdots\wedge \omega_n)=\omega_\alpha\wedge\Omega_\alpha,
-$$</p>
-<p>$$
-\Omega_\alpha=-\sum_i \omega_1\wedge\cdots\wedge \omega_{i-1}\wedge\omega_{i\alpha}\wedge \omega_{i+1}\wedge\cdots\wedge \omega_n.
-$$</p>
-<p>拉回到$M$上, 我们得到</p>
-<p>$$
-LHS=d\{(\theta_1\wedge\cdots\wedge \theta_n)+dt\wedge\sum_i (-1)^{i-1}a_i\theta_1\wedge\cdots\wedge \widehat\theta_i\wedge\cdots\wedge \theta_n\},
-$$</p>
-<p>$$
-RHS=-dt\wedge a_\alpha \widetilde\Theta_\alpha,
-$$</p>
-<p>$$
-\widetilde\Theta_\alpha=\sum_i\theta_1\wedge\cdots\wedge \theta_{i-1}\wedge \theta_{i\alpha}\wedge\theta_{i+1}\wedge\cdots\wedge \theta_{n}=h_{i\alpha i}\mathrm{vol}_M.
-$$</p>
-<p>将带$dt$项的式子取等, 我们得到</p>
-<p>$$
-\frac{\partial {}\mathrm{vol}_M}{\partial {}t}=d_M\left(\sum_i (-1)^{i-1}a_i\theta_1\wedge\cdots\wedge \widehat\theta_i\wedge\cdots\wedge \theta_n\right)-a_\alpha\widetilde\Theta_\alpha
-$$</p>
-<p>积分就给出了</p>
-<p>$$
-V&#39;(0)=\int_M -a_\alpha\widetilde\Theta_\alpha+\int_{\partial M}\sum_i (-1)^{i-1}a_i\theta_1\wedge\cdots\wedge \widehat\theta_i\wedge\cdots\wedge \theta_n.
-$$</p>
-<p>当$a_i=0$时, 右端第二项消失, 即形变向量垂直于$\partial M.$
-这更是在$\partial M$固定时成立.
-而对任意$\{a_\alpha\}$首项为零当且仅当$H=0,$ 即$M$为极小子流形.
-故我们有定理</p>
-<p><strong>定理 1</strong>. <em>黎曼流形的极小子流形固定边界时体积变分为临界值.</em> </p>
-<p>文章最后更新于 2023-03-02 19:47:46 </p>
-
+                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
                 </div>
             
         </div>
@@ -708,7 +631,9 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%90%E6%B5%81%E5%BD%A2"><span class="nav-text">子流形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%8F%98%E5%88%86"><span class="nav-text">第一变分</span></a></li></ol>
+            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
+                目录英文版本未发布
+            </div>
         </div>
     
 </div>
