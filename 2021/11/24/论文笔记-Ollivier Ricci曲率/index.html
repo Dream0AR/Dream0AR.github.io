@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">论文笔记-Ollivier Ricci曲率</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Paper Notes - Olivier Ricci Curvature</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Thesis Notes - Ollivier Ricci Curvature</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-320" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-320" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/">科研</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/"><span data-lang-group="note-label-321" data-lang="zh-cn">科研</span><span data-lang-group="note-label-321" data-lang="en" style="display:none">Research</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/%E5%9B%BE%E4%B8%8A%E6%9B%B2%E7%8E%87/">图上曲率</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/%E5%9B%BE%E4%B8%8A%E6%9B%B2%E7%8E%87/"><span data-lang-group="note-label-322" data-lang="zh-cn">图上曲率</span><span data-lang-group="note-label-322" data-lang="en" style="display:none">Curvature on Graphs</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <p>Ollivier Ricci Curvature For General Graph Laplacians: Heat Equation,
 Laplacian Comparison, Non-explosion And Diameter Bounds - Florentin
@@ -637,7 +640,412 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    
+                <p>Ollivier Ricci Curvature For General Graph Laplacians: Heat Equation,
+Laplacian Comparison, Non-explosion And Diameter Bounds - Florentin
+Münch, RadosŁaw K. Wojciechowski</p>
+<p>Discuss the local finite connected graph $G(V,w,m),$ and the basic definition will not be introduced.</p>
+<h2 id="en-Ollivier曲率"><a href="#en-Ollivier曲率" class="headerlink" title="Ollivier曲率"></a> Ollivier curvature</h2><h3 id="en-Wasserstein距离"><a href="#en-Wasserstein距离" class="headerlink" title="Wasserstein距离"></a> Wasserstein distance</h3><p>Remember $f\in \operatorname{Lip}(1),$ if $|f(x)-f(y)|\le d(x,y),$
+$\,\forall\,x,y\in V.$ For a given probability measure $\mu,\nu,$ on two $V$
+Define Wasserstein distance:</p>
+<p>$$
+W(\mu,\nu):=\sup_{f\in \operatorname{Lip}(1)\cap \ell_\infty(V)}\int f d\mu-\int f d\nu=\sup_{f\in \operatorname{Lip}(1)\cap \ell_\infty(V)}\sum_{x\in V}f(x)(\mu(x)-\nu(x)).
+$$</p>
+<p>Note that the $f$ phase difference constant does not change the value. It has an equivalent expression:</p>
+<p>$$
+W(\mu,\nu):=\inf_\rho \sum_{x,y\in V}\rho(x,y)d(x,y),
+$$</p>
+<p>Among them $\rho:V^2\rightarrow[0,1],$ satisfies $\sum_{y}\rho(x,y)=\mu(x),$
+$\sum_{x}\rho(x,y)=\nu(y),$ That is, $\rho(x,y)$ is a joint distribution of $\mu$ and $\nu$,
+It is called the pairing of $\mu$ and $\nu$.</p>
+<p>Define $\varepsilon&gt;0,$
+$$
+m_x^\varepsilon(y):=1_y(x)+\varepsilon\Delta 1_y(x)=
+ \left\{
+ \begin{aligned}
+ &amp;1-\varepsilon\deg(x),&amp;&amp;y=x\\
+ &amp;\varepsilon\frac{w(x,y)}{m(x)},&amp;&amp;y\neq x.
+ \end{aligned}
+ \right.
+$$
+ Then when $\varepsilon$ is sufficiently small,
+It is easy to see that it is a (non-negative) probability measure with finite support. In particular, we have:</p>
+<p>$$
+\int f dm_x^\varepsilon=\sum_y f(y)m_x^\varepsilon(y)=(f+\varepsilon\Delta f)(x).
+$$</p>
+<p>For the standard Laplace operator, the definition of $m_x^\varepsilon$ is consistent with the definition in Lin-Lu-Yau curvature,
+Let $\varepsilon=1-\alpha.$ similarly define</p>
+<p>$$
+\kappa_\varepsilon(x,y):=1-\frac{W(m_x^\varepsilon,m_y^\varepsilon)}{d(x,y)}, \quad \kappa(x,y):=\lim\limits_{\varepsilon\rightarrow 0+}\frac{\kappa_\varepsilon(x,y)}{\varepsilon}.
+$$</p>
+<p>The introduction of $\varepsilon$ is a method of reducing the neighborhood on the imitation manifold.
+In this way, when $\varepsilon\rightarrow 0$ is reached, the point is more likely to stay at $x$.
+Somewhat similar to blast analysis.</p>
+<h3 id="en-免极限表示"><a href="#en-免极限表示" class="headerlink" title="免极限表示"></a> Free limit expression</h3><p>Define gradient</p>
+<p>$$
+\nabla_{xy}f:=\frac{f(x)-f(y)}{d(x,y)},\quad \,\forall\,x\neq y\in V.
+$$</p>
+<p>definition</p>
+<p>$$
+\Vert\nabla f\Vert_{\infty}:=\sup_{x\neq y}|\nabla_{xy} f|=\sup_{x\sim y}|\nabla_{xy} f|\in [0,\infty].
+$$</p>
+<p>Right $K\ge 0,$
+Order$\operatorname{Lip}(K)=\{f\in C(V):\Vert\nabla f\Vert_{\infty}\le K\}.$
+The elements are functions with Lipschitz constant $K$.</p>
+<p><strong> Theorem 1 </strong>. <em> For $x\neq y,$ we have a limit-free Laplacian representation of Ollivier curvature: </em> </p>
+<p>$$
+\kappa(x,y)=\inf\limits_{\begin{subarray}{c}
+ f\in \operatorname{Lip}(1)\cap C_c(V)\\
+ \nabla_{yx}f=1
+ \end{subarray} }\nabla_{xy}\Delta f.
+$$</p>
+<p><strong> Certificate: </strong> By definition, since the measure is finitely supported, the requirement of $\ell^\infty$ can be removed, then:
+$$
+\begin{aligned}
+ W(m_x^\varepsilon,m_y^\varepsilon)&amp;=\sup_{f\in \operatorname{Lip}(1)}\sum_z f(z)(m_y^\varepsilon(z)-m_x^\varepsilon(z))\\
+ &amp;=d(x,y)\sup_{f\in \operatorname{Lip}(1)}\nabla_{yx}(f+\varepsilon\Delta f). 
+ \end{aligned}
+$$</p>
+<p>Therefore
+$$
+\begin{aligned}
+ \frac{\kappa_\varepsilon(x,y)}{\varepsilon}&amp;=\frac{1}{\varepsilon}(1-\sup_{f\in \operatorname{Lip}(1)}\nabla_{yx}(f+\varepsilon\Delta f))\\
+ &amp;=\inf_{f\in \operatorname{Lip}(1)} \nabla_{xy}\Delta f+\frac{1}{\varepsilon}(1-\nabla_{yx}f)\\
+ &amp;\le \inf\limits_{\begin{subarray}{c}
+ f\in \operatorname{Lip}(1)\cap C_c(V)\\
+ \nabla_{yx}f=1
+ \end{subarray} }\nabla_{xy}\Delta f.
+ \end{aligned}
+$$</p>
+<p>conversely,
+Need to find $f_\varepsilon\in \operatorname{Lip}(1).$ that makes $\nabla_{xy}\Delta f+\frac{1}{\varepsilon}(1-\nabla_{yx}f)$ extremely small
+Since the desire to obtain the smallest formula is only related to $B_1(x)\cup B_1(y)$,
+You can always transform $f$ into a function supported on $B_{2d(x,y)+2}(x)$ and add or subtract constants to make $f(x)=0,$
+without affecting the value.
+At this time $\operatorname{Lip}(1)\cap C_c(V)\cap \{f(x)=0\}$ is a compact set,
+Minimizer $f_\varepsilon$ exists, and $f_\varepsilon\in C_c(V),$
+$f_\varepsilon(x)=0.$</p>
+<p>At this time $\{f_\varepsilon\}$ has a sub-column $\{f_{\varepsilon_n}\}$ that converges to $f_0,$
+$\varepsilon_n\rightarrow 0+,$ $n\rightarrow \infty.$ Due to</p>
+<p>$$
+\frac{\kappa_{\varepsilon_n}(x,y)}{\varepsilon_n}=\nabla_{xy}\Delta f_{\varepsilon_n}+\frac{1}{\varepsilon_n}(1-\nabla_{yx}f_{\varepsilon_n})\rightarrow \kappa(x,y)&lt;\infty,
+$$</p>
+<p>Must have $\nabla_{yx}f_{\varepsilon_n}\rightarrow 1=\nabla_{yx}f_0.$
+Simultaneously $f_{\varepsilon_n}\in \operatorname{Lip}(1)$ $\Rightarrow$
+$f_0\in \operatorname{Lip}(1).$</p>
+<p>So,
+$$
+\begin{aligned}
+ \kappa(x,y)&amp;=\lim_{n\rightarrow \infty} \nabla_{xy}\Delta f_{\varepsilon_n}+\frac{1}{\varepsilon_n}(1-\nabla_{yx}f_{\varepsilon_n})\\
+ &amp;\ge \nabla_{xy}\Delta f_0 \ge \inf\limits_{\begin{subarray}{c}
+ f\in \operatorname{Lip}(1)\cap C_c(V)\\
+ \nabla_{yx}f=1
+ \end{subarray} }\nabla_{xy}\Delta f.
+ \end{aligned}
+$$</p>
+<p>In summary, the proposition is proved.</p>
+<p><strong> Note 2 </strong>. <em> In fact, when removing the bounds, one can only consider the integer-valued Lipschitz function. In particular, on a combination diagram, the Ollivier curvature $\kappa(x,y)$ is always integer-valued, $\,\forall\,x\sim y.$ </em> </p>
+<p><strong> Theorem 3 </strong>. <em> For $x_0\neq y_0,$ we have a limit-free transportation cost representation for Ollivier curvature: </em> </p>
+<p>$$
+\kappa(x_0,y_0)=\sup_{\rho}\sum_{\begin{subarray}{c}
+ x\in B_1(x_0)\\ y\in B_1(y_0)
+ \end{subarray} }\rho(x,y)\left[1-\frac{d(x,y)}{d(x_0,y_0)}\right]
+$$
+<em> where pairing $\rho:B_1(x_0)\times B_1(y_0)\rightarrow[0,\infty)$ satisfies </em></p>
+<p>$$
+\sum_y \rho(x,y)=\frac{w(x_0,x)}{m(x_0)}, \quad \,\forall\,x\in S_1(x_0);
+$$</p>
+<p>$$
+\sum_x \rho(x,y)=\frac{w(y_0,y)}{m(y_0)}, \quad \,\forall\,y\in S_1(y_0).
+$$</p>
+<p><strong> Certificate: </strong>
+Remember$F(\rho)=\sum_{x,y}\rho(x,y)\left[1-\frac{d(x,y)}{d(x_0,y_0)}\right],$
+Need explanation$\kappa(x_0,y_0)=\sup_\rho F(\rho).$</p>
+<p>First by definition,</p>
+<p>$$
+\frac{\kappa_\varepsilon(x_0,y_0)}{\varepsilon}=\frac{1}{\varepsilon}\left(1-\frac{W(m_{x_0}^\varepsilon,m_{y_0}^\varepsilon)}{d(x_0,y_0)}\right)=\sup_{\widetilde{\rho} } F(\widetilde{\rho}),
+$$</p>
+<p>Pairing $\widetilde{\rho}$ satisfies</p>
+<p>$$
+\sum_y \widetilde\rho(x,y)=\frac{1}{\varepsilon}m_{x_0}^\varepsilon(x)=\frac{1}{\varepsilon}1_x(x_0)+\Delta 1_x(x_0), \quad \,\forall\,x\in B_1(x_0);
+$$</p>
+<p>$$
+\sum_x \widetilde\rho(x,y)=\frac{1}{\varepsilon}m_{y_0}^\varepsilon(y)=\frac{1}{\varepsilon}1_y(y_0)+\Delta 1_y(y_0), \quad \,\forall\,y\in B_1(y_0).
+$$</p>
+<p>Note that for any $\widetilde\rho,$ that satisfies the condition, it also satisfies the condition of $\rho$.
+Therefore $\kappa(x_0,y_0)\le \sup_{\rho} F(\rho);$</p>
+<p>Conversely, given any $\rho,$ we construct:</p>
+<p>$$
+\widetilde{\rho}_\varepsilon(x_0,y)=\rho(x,y)+1_x(x_0)1_y(y_0)\left(\frac{1}{\varepsilon}-\sum_{u,v}\rho(u,v)\right).
+$$</p>
+<p>Then,</p>
+<p>$$
+\sum_y \widetilde{\rho}_\varepsilon(x,y)=\sum_y \rho(x_0,y)+\frac{1}{\varepsilon}-\sum_{u,y}\rho(u,y)=\frac{1}{\varepsilon}+\Delta 1_{x_0}(x_0),
+$$</p>
+<p>Similarly, the summation of $x$ also satisfies the property.
+Notice$F(\rho)=F(\widetilde{\rho}_\varepsilon),$
+Because they only differ at $(x_0,y_0)$, but this point does not contribute to $F$.
+This explains $\kappa(x_0,y_0)\ge \sup_\rho F(\rho).$</p>
+<h2 id="en-梯度估计"><a href="#en-梯度估计" class="headerlink" title="梯度估计"></a> Gradient estimation</h2><h3 id="en-永久截断方法"><a href="#en-永久截断方法" class="headerlink" title="永久截断方法"></a> permanent truncation method</h3><p>Perpetual cutoff method.</p>
+<p>There are two different ways. Perpetual cutoff method and discrete Ricci curvature
+Consider Bakry-Emery curvature in bounds with exceptions, truncate in space:</p>
+<p>$$
+P_t^Wf:=\sup_{t_1+\cdots+t_n=t}Q_{t_1}^W\cdots Q_{t_n}^Wf,\quad Q_t^Wf:=S^WP_tf,\quad S^Wf:=f\vee \sup_{\overline W}f.
+$$</p>
+<p>This article considers time truncation: taking the non-negative function $\phi\in C_c(V),$ $f\in [0,\phi],$ definition:</p>
+<p>$$
+Q_t^\phi f:=P_tf\wedge \phi,\quad P_t^\phi f:=\inf_{t_1+\cdots+t_n=t}Q_{t_1}^\phi\cdots Q_{t_n}^\phi f.
+$$</p>
+<p>In this way, we let $\phi\rightarrow 1$.
+Once $P_t^\phi f\rightarrow P_t f$ is indeed established,
+Then the properties of $P_tf$ can be derived from the properties of $P_t^\phi f$.
+And $P_t^\phi f(x)$ has a compact support about $x$, and many properties are easy to obtain.</p>
+<p><strong> Theorem 4 </strong>. <em> $\{P_t^\phi\}$ forms a nonlinear contraction semigroup, about the $L^p$ module. For $f,g\in [0,\phi],$ $s,t\ge 0,$ we have the following properties: </em> </p>
+<p>(i) $P_t^\phi P_s^\phi=P_{t+s}^\phi,$</p>
+<p>(ii) $\Vert P_t^\phi f-P_t^\phi g\Vert_p\le \Vert f-g\Vert_p,$</p>
+<p>(iii) $P_0^\phi f=f,$</p>
+<p>(iv) $P_t^\phi f\ge P_t^\psi g,$ if $\phi\ge \psi \ge f\ge g.$</p>
+<p>(v) $e^{-t\deg}f\le P_t^\phi f\le P_t f,$</p>
+<p>(vi) $P_t^\phi f$ is the Lipschitz function about $t$,</p>
+<p>(vii) $\overline{\partial^{\pm}_t}P_t^\phi f\le \Delta P_t^\phi f,$</p>
+<p>(viii) $\partial_t P_t^\phi f(x)=\Delta P_t^\phi f(x),$
+ If$P_t^\phi f(x)&lt;\phi(x),$</p>
+<p>(ix) $P_t^{1_W} f=e^{t\Delta_W}f,$ $W$ is limited,
+ $\Delta_W f=1_W\Delta(1_W f).$</p>
+<p><strong> Certificate: </strong></p>
+<p>(i) From the definition, it naturally follows
+$$
+P_t^\phi P_s^\phi f\le \inf_{\begin{subarray}{c}
+ t_1+\cdots+t_n=t\\
+ s_1+\cdots+s_m=s
+ \end{subarray} }Q_{t_1}^\phi\cdots Q_{s_m}^\phi f \ge P_{s+t}^\phi f.
+$$
+ The reverse of the first inequality, use $\,\forall\,\phi\ge g\ge f\ge 0,$
+ Just have $Q_t^\phi g\ge Q_t^\phi f$; the reverse of the second inequality,
+ Just use $Q_t^\phi Q_s^\phi f\le Q_{t+s}^\phi f$.</p>
+<p>(ii) Just use</p>
+<p>$$
+\Vert Q_t^\phi f-Q_t^\phi g\Vert_p\le \Vert P_tf-P_tg\Vert_p\le \Vert f-g\Vert_p,
+$$</p>
+<p> Using the triangle inequality, we have $\Vert P_t^\phi f-P_t^\phi g\Vert_p\le \Vert f-g\Vert_p.$</p>
+<p>(iii) $P_0f=f,$ $f\wedge \phi=f.$</p>
+<p>(iv) $a\ge c$ and $b\ge d$ $\Rightarrow$ $a\wedge b\ge c\wedge d.$</p>
+<p>(v) Just note</p>
+<p>$$
+P_tf(x)\ge p_t(x,x)f(x)=e^{t\Delta}1_x(x)f(x)\ge e^{-t\deg(x)} f(x),
+$$</p>
+<p> This is because </p>
+<p>$$
+e^{t(\Delta+\deg(x))}1_x(x)\ge 1.
+$$</p>
+<p> thereby</p>
+<p>$$
+e^{-t\deg} f\le P_t f\wedge \phi=Q_t^\phi f\le P_t f\,\Rightarrow\, e^{-t\deg} f\le P_t^\phi f\le P_tf.
+$$</p>
+<p>(vi) Using $\phi\in C_c(V),$ and the above estimation, we have:</p>
+<p>$$
+-C_\phi t\le 1_{\operatorname{supp}\phi}(e^{-t\deg}-1) f\le P_t^\phi f-f\le 1_{\operatorname{supp}\phi}(P_t-1)f\le C_\phi t,\quad \,\forall\,f\in [0,\phi], t\ge 0.
+$$</p>
+<p> From the semigroup properties, we immediately obtain $P_t^\phi f$ and $C_\phi$ as the Lipschitz constant.</p>
+<p>(vii) By doing one more first-order expansion, we have</p>
+<p>$$
+\frac{1}{t}(P_t^\phi f-f)\le \frac{1}{t}1_{\operatorname{supp}\phi}(P_tf-f)\le \Delta f+C_\phi&#39;t.
+$$</p>
+<p> Note that we used $1_{\operatorname{supp}\phi}\Delta f\le \Delta f,$
+ $f\in[0,\phi].$ Therefore, we calculate:</p>
+<p>$$
+\overline{\partial_t^+}P_t^\phi f=\varlimsup_{\varepsilon\rightarrow 0+} \frac{1}{\varepsilon}(P_\varepsilon^\phi P_t^\phi f-P_t^\phi f)\le \Delta P_t^\phi f.
+$$</p>
+<p>$$
+\overline{\partial_t^-}P_t^\phi f=\varlimsup_{\varepsilon\rightarrow 0-} \frac{1}{-\varepsilon}(P_{-\varepsilon}^\phi P_{t+\varepsilon}^\phi f-P_{t+\varepsilon}^\phi f)\le \varlimsup_{\varepsilon\rightarrow 0-} \Delta P_{t+\varepsilon}^\phi f-C_\phi&#39;\varepsilon\le \Delta P_t^\phi f.
+$$</p>
+<p> To sum up, $\overline{\partial_t^\pm}P_t^\phi f\le \Delta P_t^\phi f.$</p>
+<p>(viii) We need to make some preparations. Definition $\Delta^x:C(V)\rightarrow C(V),$</p>
+<p>$$
+\Delta^x f(y):=\left\{
+ \begin{aligned}
+ &amp;\Delta f(x)&amp; y=x\\
+ &amp;-\deg(y)f(y)&amp; y\neq x
+ \end{aligned}\right.
+$$
+ Let $P_t^x:=e^{t\Delta^x},$ then it is also sign-preserving,
+ Because $P_t^xf(y)=e^{-t\deg(y)}f(y),$
+ $P_t^xf(x)=e^{t\Delta}f(x)=P_tf(x).$</p>
+<p> <strong> Lemma 5 </strong>. <em> $t&gt;0,$ $f\in[0,\phi].$ If $P_sf(x)\le \phi(x),$ $\,\forall\,s\in[0,t],$ Then $P_t^xf\le P_t^\phi f.$ </em> </p>
+<p> <strong> Certificate: </strong> Obviously $P_s^xf\le P_sf.$ and $P_s^xf(y)\le f(y)\le \phi(y),$
+ $P_s^xf(x)\le P_sf(x)\le \phi(x),$ Therefore $P_t^xf\le Q_t^\phi f.$
+ In summary, for $s_1+\cdots+s_n=t,$ we have</p>
+<p>$$
+P_t^xf=P_{s_1+\cdots+s_n}^x f=P_{s_1}^x\cdots P_{s_n}^x f\le Q_{s_1}^\phi\cdots Q_{s_n}^\phi f.
+$$</p>
+<p> Take off the bounds to explain $P_t^xf\le P_t^\phi f.$</p>
+<p> Returning to the proposition, we only need to prove that when $P_t^\phi f(x)&lt;\phi(x)$,
+ $\underline{\partial_t}P_t^\phi f(x)\ge \Delta P_t^\phi f(x).$
+ For any $g\in[0,\phi],$ $\varepsilon&gt;0,$
+ $\,\exists\,\delta\in [0,\varepsilon],$ makes</p>
+<p>$$
+\frac{1}{\varepsilon}(P_\varepsilon^xg-g)(x)=\Delta^xg(x)+\frac{\varepsilon}{2}\partial_s^2P_s^xg(x)|_{s=\delta}\ge \Delta g(x)-C_\phi&#39;&#39;\varepsilon.
+$$</p>
+<p> Take $g=P_t^\phi f,$ then $g(x)&lt;\phi(x),$
+ And $\,\exists\,\varepsilon&gt;0$ makes $P_sg(x)\le \phi(x),$
+ $\,\forall\,s\in [0,\varepsilon].$ From the previous lemma,
+ $P_\varepsilon^\phi g\ge P_\varepsilon^xg,$ Therefore</p>
+<p>$$
+\underline{\partial_t^+}P_t^\phi f(x)\ge \varliminf_{\varepsilon\rightarrow 0+}\frac{1}{\varepsilon}(P_\varepsilon^xg-g)(x)\ge \Delta g(x)=\Delta P_t^\phi f(x).
+$$</p>
+<p> Similarly, there exists $-\varepsilon&gt;0$ such that $P_{t-s}^\phi f(x)\le \phi(x),$
+ $\,\forall\,s\in [0,-\varepsilon].$</p>
+<p>$$
+\underline{\partial_t^-}P_t^\phi f(x)\ge \varliminf_{\varepsilon\rightarrow 0-}\frac{1}{-\varepsilon}(P_{-\varepsilon}^xP_{t+\varepsilon}^\phi f(x)-P_{t+\varepsilon}^\phi f(x))\ge \Delta P_t^\phi f(x).
+$$</p>
+<p> To sum up, $\partial_t P_t^\phi f(x)=\Delta P_t^\phi f(x).$</p>
+<p>(ix) Let $\phi=1_W.$ if $W\neq V,$ then $P_t^\phi f|_W&lt;1,$ $\,\forall\,t&gt;0.$
+ From the previous property, we immediately get $P_t^\phi f=e^{t\Delta_W}f,$
+ It is the only solution to the Dirichlet problem on $W$.</p>
+<h3 id="en-截断半群与Ricci曲率"><a href="#en-截断半群与Ricci曲率" class="headerlink" title="截断半群与Ricci曲率"></a> Truncated semigroups and Ricci curvature</h3><p>For general $f\in C(V),$ define $P_t^\phi f:=P_t^\phi(f\wedge \phi),$ in particular,
+$P_0^\phi f=f\wedge \phi.$</p>
+<p><strong> Lemma 6 </strong>. <em> Assume that the graph $G=(V,m,w)$ satisfies $\kappa\ge K,$ $f:V\rightarrow [0,1]$ as non-constants, $T&gt;0,$ $\phi:V\rightarrow [0,1]$ as compact support, and $\Vert\nabla\phi\Vert_\infty&lt;\Vert\nabla f\Vert_\infty(1\wedge e^{-KT}).$ then $\,\forall\,t\in [0,T],$ </em> </p>
+<p>$$
+\Vert\nabla P_t^\phi f\Vert_\infty\le e^{-Kt}\Vert\nabla f\Vert_\infty.
+$$</p>
+<p><strong> Certificate: </strong> We only need to discuss the case of $\kappa&gt;K$ and consider taking the limit for $\kappa\ge K$. Definition</p>
+<p>$$
+F(t,x,y):=e^{Kt}\nabla_{yx}P_t^\phi f,
+$$</p>
+<p>It is only necessary to prove $F\le \Vert\nabla f\Vert_\infty.$ by disproof, by compact support,
+Assumption$F(t_0,x_0,y_0)=F_{\max}&gt;\Vert\nabla f\Vert_\infty.$</p>
+<p>$$
+F(0,x_0,y_0)=\nabla_{y_0x_0}(f\wedge \phi)\le \Vert\nabla f\Vert_\infty \vee\Vert\nabla \phi\Vert_\infty=\Vert\nabla f\Vert_\infty&lt;F(t_0,x_0,y_0),
+$$</p>
+<p>Therefore $t_0&gt;0.$ notices $P_{t_0}^\phi f(x_0)&lt;\phi(x_0),$ otherwise</p>
+<p>$$
+\nabla_{y_0x_0}P_{t_0}^\phi f\le \nabla_{y_0x_0}\phi&lt;\Vert\nabla f\Vert_\infty(1\wedge e^{-KT})\le \Vert\nabla f\Vert_\infty e^{-Kt_0}\,\Rightarrow\, F(t_0,x_0,y_0)&lt;\Vert\nabla f\Vert_\infty.
+$$</p>
+<p>Therefore, by the property ( <em>viii</em> ),
+$\partial_t P_t^\phi f(x_0)|_{t=t_0}=\Delta P_{t_0}^\phi f(x_0),$
+And by the nature ( <em>vii</em> ),
+$\overline{\partial_t^-}P_t^\phi f(y_0)|_{t=t_0}\le \Delta P_{t_0}^\phi f(y_0).$
+Therefore, the difference is $\underline{\partial_t^-} \nabla_{x_0y_0} P_t^\phi f|_{t=t_0}\ge \nabla_{x_0y_0}\Delta P_{t_0}^\phi f.$</p>
+<p>Notice$\Vert\nabla P_{t_0}^\phi f\Vert_\infty\le F_{\max}e^{-Kt_0},$
+And $\nabla_{y_0x_0}P_{t_0}^\phi f=F_{\max} e^{-Kt_0},$
+Defined by Ollivier curvature,</p>
+<p>$$
+F_{\max} e^{-Kt_0}K&lt;F_{\max} e^{-Kt_0}\kappa(x_0,y_0)\le \nabla_{x_0y_0}\Delta P_{t_0}^\phi f\le \underline{\partial_t^-} \nabla_{x_0y_0}P_t^\phi f|_{t=t_0}.
+$$</p>
+<p>Thus,</p>
+<p>$$
+\overline{\partial_t^-}F(t_0,x_0,y_0)=KF_{\max}-e^{Kt_0}\underline{\partial_t^-} \nabla_{x_0y_0} P_t^\phi f|_{t=t_0}&lt;KF_{\max}-KF_{\max}=0.
+$$</p>
+<p>This contradicts $F(t_0,x_0,y_0)=F_{\max},$ $t_0&gt;0$. Therefore,
+$F\le \Vert\nabla f\Vert_{\infty},$ The proposition is proved.</p>
+<p><strong> Lemma 7 </strong>. <em> Assume that the graph $G=(V,m,w)$ satisfies $\kappa\ge K,$ $f:V\rightarrow [0,1]$ as non-constant. Then $\,\forall\,t&gt;0,$ </em> </p>
+<p>$$
+\Vert\nabla P_t f\Vert_\infty\le e^{-Kt}\Vert\nabla f\Vert_\infty.
+$$</p>
+<p><strong> Certificate: </strong> Just choose $T&gt;0,$ to prove the conclusion for $t\in[0,T]$.
+Let $\{W_n\}$ be the exhaustive sequence of $V$, $\phi_n:V\rightarrow [0,1]$ has compact support,
+Satisfied$\phi_n|_{W_n}\equiv 1,$
+$\Vert\nabla \phi_n\Vert_\infty&lt;\Vert\nabla f\Vert_{\infty}(1\wedge e^{-KT}).$
+Then $\,\forall\,x\neq y\in V,$ from the above lemma,</p>
+<p>$$
+\nabla_{xy}P_t^{\phi_n}f\le e^{-Kt}\Vert\nabla f\Vert_\infty.
+$$</p>
+<p>By the property of truncated semigroups ( <em>ix</em> ),
+$e^{t\Delta_{W_n} }=P_t^{1_{W_n} }$ is on $[0,1_{W_n}]$.
+Due to the $1_{W_n}\le \phi_n,$ property ( <em>iv</em> ) means:</p>
+<p>$$
+e^{t\Delta_{W_n} }f=P_{t}^{1_{W_n} }f\le P_t^{\phi_n}f\le P_tf.
+$$</p>
+<p>Recall the hot semigroup definition, $e^{t\Delta_{W_n} }f\rightarrow P_tf,$
+$n\rightarrow \infty,$ We have:</p>
+<p>$$
+\nabla_{xy}P_tf=\lim\limits_{n\rightarrow \infty}\nabla_{xy}P_t^{\phi_n}f\le e^{-Kt}\Vert\nabla f\Vert_{\infty}.
+$$</p>
+<p><strong> Lemma 8 </strong>. <em> Assuming that graph $G=(V,m,w)$ satisfies $\kappa\ge K,$, then graph $G$ is statistically complete. </em> </p>
+<p><strong> Certificate: </strong> Take $\eta_i\rightarrow 1,$
+$\Vert\nabla \eta_i\Vert_\infty\rightarrow 0,$
+Then $\,\forall\,x\neq y\in V,$ $t&gt;0,$</p>
+<p>$$
+\nabla_{xy}P_t1=\lim\limits_{i\rightarrow \infty}\nabla_{xy}P_t\eta_i\le \lim\limits_{i\rightarrow \infty}e^{-Kt}\Vert\nabla\eta_i\Vert_\infty=0.
+$$</p>
+<p>Thus $\Vert\nabla P_t 1\Vert_\infty=0,$
+$\partial_t P_t1=\Delta P_t1=0\Rightarrow$ $P_t1\equiv P_01=1.$</p>
+<h3 id="en-半群特征"><a href="#en-半群特征" class="headerlink" title="半群特征"></a> semigroup characteristics</h3><p><strong> Theorem 9 </strong> (Gradient estimation). <em> Taking the picture $G=(V,m,w),$ $K\in \mathbb{R},$, the following statements are equivalent: </em> </p>
+<p>(1) $\kappa\ge K;$</p>
+<p>(2) $\,\forall\,f\in C_c(V),$ $t&gt;0,$
+ $\Vert\nabla P_tf\Vert_\infty\le e^{-Kt}\Vert\nabla f\Vert_\infty;$</p>
+<p>(3) $\,\forall\,f\in \ell_\infty(V),$ $t&gt;0,$
+ $\Vert\nabla P_tf\Vert_\infty\le e^{-Kt}\Vert\nabla f\Vert_\infty;$</p>
+<p>(4) $G$<em> is statistically complete, and </em>$\,\forall\,x,y\in V,$ $t&gt;0,$
+ $W(p_t^x,p_t^y)\le e^{-Kt}d(x,y),$
+ $p_t^x:=\frac{m}{m(x)}P_t1_x$<em> is a thermonuclear core. </em></p>
+<p><strong> Certificate: </strong> $(3)\Leftrightarrow (4):$ Just note that,
+$\,\forall\,f\in \operatorname{Lip}(1)\cap \ell^\infty(V),$</p>
+<p>$$
+\int fdp_t^x-\int fdp_t^y=\sum_{z}f(z)(p_t^x(z)-p_t^y(z))=P_tf(x)-P_tf(y).
+$$</p>
+<p>$(1)\Rightarrow (3):$ The lemma we proved. $(3)\Rightarrow (2):$ Trivial.
+$(2)\Rightarrow (1):$ Just prove $\,\forall\,x\sim y,$</p>
+<p>$$
+\inf_{\begin{subarray}{c}f\in \operatorname{Lip}(1)\cap C_c(V)\\\nabla_{yx}f=1\end{subarray} }\nabla_{xy}\Delta f\ge K.
+$$</p>
+<p>Take any $f\in \operatorname{Lip}(1)\cap C_c(V)$ and $\nabla_{yx}f=1,$ from $(2),$
+Taking the derivative of $\nabla_{yx}P_tf\le e^{-Kt}.$ at $t=0$, we have:</p>
+<p>$$
+\nabla_{xy}\Delta f=-\partial_t^+\nabla_{yx}P_tf|_{t=0}=\lim\limits_{t\rightarrow 0+}\frac{1}{t}(\nabla_{yx}f-\nabla_{yx}P_tf)\ge \lim_{t\rightarrow 0+}\frac{1}{t}(1-e^{-Kt})=K.
+$$</p>
+<h2 id="en-Laplacian比较原理"><a href="#en-Laplacian比较原理" class="headerlink" title="Laplacian比较原理"></a> Laplacian comparison principle</h2><h3 id="en-基本概念"><a href="#en-基本概念" class="headerlink" title="基本概念"></a> Basic concepts</h3><p>On the Riemannian manifold $M$ whose Ricci curvature is lower bounded by $K$,
+Taking the model space $H,$ with Ricci curvature constant $K$, we have <strong> Laplacian comparison principle </strong>:</p>
+<p>$$
+\Delta^Md(x_0^M,\cdot)\le \Delta^Hd(x_0^H,\cdot).
+$$</p>
+<p> In the discrete case,
+take <strong> Birth-Death Chain </strong> As a model space for discrete analogy.</p>
+<p><strong> Theorem 10 </strong> (Laplacian comparison principle). <em> Take the picture $G=(V,w,m),$, take $x_0\in V,$ and set $\kappa(x_0,\cdot)\ge K,$ then </em> </p>
+<p>$$
+\Delta d(x_0,\cdot)\le \deg(x_0)-Kd(x_0,\cdot).
+$$</p>
+<p> <strong> Certificate: </strong>
+$\,\forall\,y\neq x_0\in V,$ takes $f:=d(x_0,\cdot).$
+Then $f\in \operatorname{Lip}(1)$ and $\nabla_{yx_0}f=1.$ therefore,
+Expressed by Ollivier curvature equivalent,</p>
+<p>$$
+K\le \kappa(x_0,y)\le \nabla_{x_0y}\Delta f=\frac{\Delta f(x_0)-\Delta f(y)}{d(x_0,y)}=\frac{\deg(x_0)-\Delta f(y)}{d(x_0,y)}.
+$$</p>
+<p>For the chain of birth and death, that is, the graph $G=(\mathbb{N}_0,w,m)$ satisfies $w(m,n)=0,$
+$\,\forall\,|m-n|\neq 1.$ Take $f(r):=d(0,r)=r,$ to calculate the curvature calculation method:</p>
+<p>$$
+\kappa(r,R)=\nabla_{rR}\Delta f=\frac{\Delta f(r)-\Delta f(R)}{R-r}.
+$$</p>
+<p>For the birth-death chain with constant curvature, take $r=0,$ and we have</p>
+<p>$$
+K=\frac{\Delta f(0)-\Delta f(R)}{R}\,\Rightarrow\,\deg(0)-Kd(0,R)=\Delta f(R),
+$$</p>
+<p>Therefore, this theorem is a discrete generalization of the Laplacian comparison principle.</p>
+<h3 id="en-直径估计"><a href="#en-直径估计" class="headerlink" title="直径估计"></a> diameter estimate</h3><p><strong> Proposition 11 </strong>. <em> Get the picture $G=(V,w,m),$ Get $x\neq y\in V.$ If $\kappa(x,y)&gt;0,$ Then </em> </p>
+<p>$$
+d(x,y)\le \frac{\deg(x)+\deg(y)}{\kappa(x,y)}
+$$</p>
+<p><strong> Certificate: </strong> to sufficiently small $\varepsilon,$
+There is $W(1_x,m_x^\varepsilon)=\varepsilon\deg(x).$ therefore,</p>
+<p>$$
+W(m_x^\varepsilon,m_x^\varepsilon)\ge W(1_x,1_y)-W(1_x,m_x^\varepsilon)-W(1_y,m_y^\varepsilon)=d(x,y)-\varepsilon(\deg(x)+\deg(y))
+$$</p>
+<p>So,</p>
+<p>$$
+\kappa_\varepsilon(x,y)=1-\frac{W(m_x^\varepsilon,m_y^\varepsilon)}{d(x,y)}\le \varepsilon\frac{\deg(x)+\deg(y)}{d(x,y)}.
+$$</p>
+<p>Due to $\kappa(x,y)=\lim\limits_{\varepsilon\rightarrow 0+}\frac{\kappa_\varepsilon(x,y)}{\varepsilon},$
+Take the limit and sort it out to get the conclusion.</p>
+<p><strong> Corollary 12 </strong>. <em> Get the picture $G=(V,w,m),$ if $\kappa\ge K&gt;0,$ then </em> </p>
+<p>$$
+\operatorname{diam}(G)\le \frac{2\deg_{\max} }{K}.
+$$</p>
+<p>Applying the Laplacian comparison principle, a better diameter estimate can be demonstrated by giving a new definition,
+And the attenuation related properties are given.</p>
+<p>The article was last updated on 2021-12-13 11:20:18 </p>
+
+            
                 </div>
             
         </div>
@@ -680,7 +1088,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(11-2)-Hopf指标定理</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (11-2) - Hopf Index Theorem</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (11-2)-Hopf Index Theorem</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -702,7 +1110,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第五章-多重线性代数</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifolds Chapter 5 - Multilinear Algebra</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 5-Multiple Linear Algebra</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -955,9 +1363,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Ollivier%E6%9B%B2%E7%8E%87"><span class="nav-text"> Ollivier curvature</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Wasserstein%E8%B7%9D%E7%A6%BB"><span class="nav-text"> Wasserstein distance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%85%8D%E6%9E%81%E9%99%90%E8%A1%A8%E7%A4%BA"><span class="nav-text"> Free limit expression</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%A2%AF%E5%BA%A6%E4%BC%B0%E8%AE%A1"><span class="nav-text"> Gradient estimation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%B0%B8%E4%B9%85%E6%88%AA%E6%96%AD%E6%96%B9%E6%B3%95"><span class="nav-text"> permanent truncation method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%88%AA%E6%96%AD%E5%8D%8A%E7%BE%A4%E4%B8%8ERicci%E6%9B%B2%E7%8E%87"><span class="nav-text"> Truncated semigroups and Ricci curvature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%8D%8A%E7%BE%A4%E7%89%B9%E5%BE%81"><span class="nav-text"> semigroup characteristics</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Laplacian%E6%AF%94%E8%BE%83%E5%8E%9F%E7%90%86"><span class="nav-text"> Laplacian comparison principle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text"> Basic concepts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E7%9B%B4%E5%BE%84%E4%BC%B0%E8%AE%A1"><span class="nav-text"> diameter estimate</span></a></li></ol></li></ol>
         </div>
     
 </div>

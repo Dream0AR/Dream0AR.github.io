@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(1)-广义函数</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Modern PDE Basics Notes (1) - Generalized Functions</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (1) - Generalized Function</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-380" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-380" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -205,7 +205,7 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/"><span data-lang-group="note-label-381" data-lang="zh-cn">现代PDE基础</span><span data-lang-group="note-label-381" data-lang="en" style="display:none">Foundations of Modern PDE</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><h3 id="多重指标"><a href="#多重指标" class="headerlink" title="多重指标"></a>多重指标</h3><p>$\alpha\in \mathbb{N}^n,$ $|\alpha|=\sum \alpha_i,$
 $\alpha!=\prod \alpha_i !.$ 作为上标, $x^\alpha=\prod x_i^{\alpha_i}$
@@ -443,58 +446,218 @@ $T$改造为$\mathscr{E}$上线性泛函后也是连续的,
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="basic-concepts">Basic concepts</h2>
-<h3 id="multiple-indicators">Multiple indicators</h3>
-<p>$\alpha\in \mathbb{N}^n,$ $|\alpha|=\sum \alpha<em>i,$<br>$\alpha!=\prod \alpha_i !.$ as superscript, $x^\alpha=\prod x_i^{\alpha_i}$<br>$\partial^\alpha=\frac{\partial^{|\alpha|} }{\partial x_1^{\alpha_1}\cdots\partial x_n^{\alpha_n} },$<br>$f^{(\alpha)}(x)=\partial^\alpha f(x).$<br>The Taylor expansion of $f(x)$ is $\sum</em>\alpha \frac{f^{(\alpha)}(0)}{\alpha!}x^\alpha.$</p>
-<p>$\partial^\alpha(fg)=\sum<em>{\beta+\gamma=\alpha}\binom{\alpha}{\beta \:\gamma}\partial^\beta f\partial^\gamma g.$<br>When $f,g$ satisfies appropriate conditions, an interesting proof is to consider the Fourier transform,<br>Use binomial expansion to first prove that $\xi^\alpha (\widehat{f}\ast \widehat{g})=\sum</em>{\beta+\gamma=\alpha}\binom{\alpha}{\beta \:\gamma}(\xi^\beta \widehat{f})\ast (\xi^\gamma \widehat{g}),$<br>Then do the inverse Fourier transformation.</p>
-<h3 id="basic-space">Basic space</h3>
-<p>Take the smooth function space $\mathscr{E}(\mathbb{R}^n)=C^\infty(\mathbb{R}^n),$<br>The topology is defined as,<br>If the sequence ${\varphi<em>v}\in C^\infty(\mathbb{R}^n)$ satisfies $\,\forall\,K\Subset \mathbb{R}^n, \alpha \in \mathbb{N}^n,$<br>$\sup</em>{x\in K}|\partial^\alpha \varphi_v|\rightarrow 0,$<br>Then it is called $\varphi_v\rightarrow 0(C^\infty(\mathbb{R}^n)).$<br>Such a space is a topological linear space, which can be regarded as having multiple (half) modules.<br>Elements tending to zero require that all (can be listed as multiple) modules tend to zero. Since it is difficult to find a unified module,<br>Therefore it is different from Banach space.</p>
-<p>Take the compact supported smooth function space $\mathscr{D}(\mathbb{R}^n)=C<em>c^\infty(\mathbb{R}^n),$<br>The topology is defined as,<br>If the sequence ${\varphi_v}\in C_c^\infty(\mathbb{R}^n)$ supports the set $K$,<br>And $\,\forall\,\alpha\in \mathbb{N}^n,$<br>$\sup</em>{x\in K}|\partial^\alpha \varphi_v|\rightarrow 0,$<br>Then it is called $\varphi_v\rightarrow 0(C_c^\infty(\mathbb{R}^n)).$</p>
-<p>Take the speed drop function space $\mathscr{S}(\mathbb{R}^n),$<br>To satisfy $\lim\limits<em>{|x|\rightarrow \infty}x^\alpha\partial^p\varphi(x)=0,$<br>The whole set of smooth functions of $\,\forall\,\alpha,p\in \mathbb{N}^n$. The topology is defined as,<br>If the sequence ${\varphi_v}\in \mathscr{S}(\mathbb{R}^n)$ satisfies $\,\forall\,\alpha,p\in \mathbb{N}^n,$<br>$\sup</em>{x\in \mathbb{R}^n}|x^\alpha\partial^p \varphi_v(x)|\rightarrow 0,$<br>Then it is called $\varphi_v\rightarrow 0(\mathscr{S}(\mathbb{R}^n)).$</p>
-<p>The condition of the rapid descent function can also be equivalently changed to bounded, or $x^\alpha$ can be replaced by $(1+|x|^2)^k,$<br>In order to facilitate processing. The topology of the rapid descent function space is also similar. Like the first two spaces,<br>The space of rapid descending functions is also closed with respect to convolutions.</p>
-<p>Take $\varphi(x)=\begin{cases}<br>                e^{\frac{1}{|x|^2-1} },&amp;|x|&lt;1\<br>                0,&amp;|x|\ge 1.<br>            \end{cases},$<br>$\alpha(x)=\frac{1}{\int<em>{\mathbb{R}^n} \varphi dx}\varphi(x).$<br>Let $\beta_R=1</em>{B<em>R}\ast \alpha,$<br>Then $\operatorname{supp}\beta_R\subset B</em>{R+1},$<br>And $\beta<em>R|</em>{B<em>{R-1} }\equiv 1.$<br>Thus $\,\forall\,\varphi\in C^\infty(\mathbb{R}^n),$<br>Take $\varphi</em>\nu=\beta<em>\nu\varphi\in C_c^\infty(\mathbb{R}^n),$<br>Satisfies $\varphi</em>\nu\rightarrow \varphi(C^\infty(\mathbb{R}^n)).$<br>Therefore $C_c^\infty(\mathbb{R}^n)$ is dense in $C^\infty(\mathbb{R}^n)$. Similarly,<br>It is also dense in $\mathscr{S}(\mathbb{R}^n)$.</p>
-<p>For $\mathscr{D}(\mathbb{R}^n)\subset \mathscr{S}(\mathbb{R}^n)\subset \mathscr{E}(\mathbb{R}^n),$<br>The front space is denser than the back space, and the front topology is stronger than the back topology.</p>
-<h3 id="regularization">Regularization</h3>
-<p>For the function $u(x),$ on $\Omega$, it is called <strong>locally integrable</strong>,<br>If it is Lebesgue integrable on any compact set $K\Subset \Omega$.<br>Take $\alpha<em>\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$<br>Let $u</em>\varepsilon=u\ast \alpha<em>\varepsilon.$<br>If $u$ is locally integrable, then $u</em>\varepsilon$ is defined by, satisfying the following theorem:</p>
-<p><strong>Theorem 1.1</strong>. <em>If $u\in L<em>{loc}^1(\mathbb{R}^n),$ then $u</em>\varepsilon\in C^\infty(\mathbb{R}^n).$ When $\varepsilon\rightarrow 0$, if $u\in C^0(\mathbb{R}^n),$ then $u<em>\varepsilon\rightarrow u(C^0(\mathbb{R}^n));$ If $u\in L^p(\mathbb{R}^n),$ then $u</em>\varepsilon\rightarrow u(L^p(\mathbb{R}^n)).$</em></p>
-<p>The first two properties are easy to prove. For the case of $u\in L^p(\mathbb{R}^n)$, using Lusin’s theorem,<br>Just find $v\in C<em>c(\mathbb{R}^n)$ so that $\parallel u-v\parallel</em>{L^p}$ is sufficiently small.<br>The following lemma is used in the process:</p>
-<p><strong>Lemma 1.2</strong> (Minkowski integral inequality). <em>$\parallel\parallel f(x,y)\parallel<em>{L_x^1}\parallel</em>{L<em>y^p}\le \parallel\parallel f(x,y)\parallel</em>{L<em>y^p}\parallel</em>{L_x^1}.$</em></p>
-<p><strong>Certificate:</strong><br>Just prove (possibly restricted to a subspace) that the linear operator $\mathrm{id}:L_x^1L_y^p\rightarrow L_y^pL_x^1$ is bounded,<br>And $\parallel\mathrm{id}\parallel\le 1.$ is based on functional analysis knowledge,<br>The linear operator $A:X\rightarrow Y$ between normed linear spaces is bounded if and only if $A^\ast :Y^\ast \rightarrow X^\ast $ is bounded,<br>And there is $\parallel A\parallel=\parallel A^\ast \parallel.$ It is a classic proposition to push left to right,<br>To push the right to the left, just use $A^{\ast \ast }$, which is the extension of $A$ on $X^{\ast \ast }$.</p>
-<p>Therefore consider the linear operator $\mathrm{id}^\ast :L<em>y^qL_x^\infty\rightarrow L_x^\infty L_y^q,$<br>Instructions $\parallel\mathrm{id}^\ast \parallel\le 1$ is enough,<br>That is $\operatorname{ess}\operatorname{sup}_x\parallel f(x,y)\parallel</em>{L<em>y^q}\le \parallel\operatorname{ess}\operatorname{sup}_x|f(x,y)|\parallel</em>{L_y^q},$<br>However this is obvious.</p>
-<p>If $\parallel\parallel f(x,y)\parallel<em>{L_x^1}\parallel</em>{L<em>y^p}=\infty,$<br>Consider using $g_n=(|f|\wedge n)\cdot 1</em>{B_n}$ to approximate,<br>Just use Levi&#39;s monotonic convergence lemma to illustrate.</p>
-<p><strong>Corollary 1.3</strong>. <em>$\parallel f\ast g\parallel<em>{L^p}\le \parallel f\parallel</em>{L^p}\parallel g\parallel_{L^1}.$</em></p>
-<p><strong>Certificate:</strong><br>$\parallel f\ast g\parallel<em>{L^p} \le \parallel\parallel f(x-y)g(y)\parallel</em>{L^1<em>y}\parallel</em>{L^p<em>x}\le \parallel\parallel f(x-y)g(y)\parallel</em>{L^p<em>x}\parallel</em>{L^1<em>y}=\parallel f\parallel</em>{L^p}\parallel g\parallel_{L^1}.$</p>
-<p>From this inference,<br>$\parallel u<em>\varepsilon-v</em>\varepsilon\parallel\le \parallel u-v\parallel$ is also sufficiently small,<br>And $\parallel v-v_\varepsilon\parallel$ can also be sufficiently small by taking advantage of existing properties.<br>The theorem is proved.</p>
-<p>Call the linear operator $J<em>\varepsilon:L</em>{loc}^1(\mathbb{R}^n)\rightarrow C^\infty(\mathbb{R}^n),$<br>$u\mapsto u<em>\varepsilon$ is the <strong>polishing operator</strong>,<br>The process of obtaining $u</em>\varepsilon$ is called <strong>regularization</strong>.<br>Theorem shows that $C^\infty(\mathbb{R}^n)$ is <em>dense</em> in $C^0(\mathbb{R}^n), L^p(\mathbb{R}^n)$,<br>Therefore $C_c^\infty(\mathbb{R}^n), \mathscr{S}(\mathbb{R}^n)$ are also dense among them.</p>
-<p>Some simple corollaries are,<br>$J<em>\varepsilon\in \mathfrak{B}(L^p(\mathbb{R}^n)\rightarrow L^p(\mathbb{R}^n));$<br>When $u\in \mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)$,<br>$u</em>\varepsilon\rightarrow u(\mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)).$</p>
-<p>A basic application of the polishing operator is for the open set $\Omega,$ $\,\forall\,K\Subset \Omega,$<br>$\,\exists\,\varphi\in C<em>c^\infty(\mathbb{R}^n),$<br>$\operatorname{supp}\varphi\subset \Omega,$ $\varphi \in [0,1],$<br>And $\varphi|_K\equiv 1.$ takes $\varepsilon=d(K,\Omega^c)&gt;0,$<br>Just take $J</em>{\frac{\varepsilon}{4} } (1_{d(x,K)\le \frac{\varepsilon}{2} })$.</p>
-<h2 id="generalized-function">generalized function</h2>
-<h3 id="definition">Definition</h3>
-<p>The <em>linear continuous functional</em> on $\mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)$ is called the generalized function of $\mathscr{D}&#39;/\mathscr{S}&#39;/\mathscr{E}&#39;(\mathbb{R}^n)$.<br>We have the relationship $\mathscr{D}&#39;\supset \mathscr{S}&#39;\supset \mathscr{E}&#39;,$<br>This includes viewing via embedding.<br>For example, $\mathrm{id}:\mathscr{S}&#39;\rightarrow \mathscr{D}&#39;$ is not only meaningful,<br>And it&#39;s a solo shot.<br>It makes sense because in $\mathscr{D}\subset \mathscr{S}\subset \mathscr{E}$,<br>The former is topologically stronger than the latter; injectivity through the front space is guaranteed to be dense in the back space.</p>
-<p>Similarly, generalized functions $\mathscr{D}&#39;,\mathscr{E}&#39;$ can be defined on the open set $\Omega$,<br>But $\mathscr{S}&#39;$ generalized functions are only discussed on $\mathbb{R}^n$.<br>Easy to explain$L_{loc}^1\subset \mathscr{D}&#39;,$<br>And the Dirac function $\delta\in \mathscr{E}&#39;.$</p>
-<p>We know that on normed linear spaces, linear functionals are bounded $\Leftrightarrow$ continuous,<br>But in topological linear spaces, there is no unified module, so there is no concept of &quot;bounded&quot;.<br>However, similar propositions still hold true and can be controlled by &quot;some modules&quot;.</p>
-<p><strong>Theorem 1.4</strong>. <em>If $T\in \mathscr{D}&#39;(\Omega),$ then $\,\forall\,K\Subset \Omega,$ $\,\exists\,C(K)&gt;0,$ $m(K)\in \mathbb{N},$ such that <script type="math/tex">|\left<{}T,\varphi\right>|\le C(K)\sup_{x\in \Omega,|\alpha|\le m}|\partial^\alpha \varphi(x)|, \,\forall\,\varphi\in C_c^\infty(K)\subset C_c^\infty(\Omega).</script></em> <em>On the other hand, if $T$ is a linear functional that satisfies the above conditions, then it is continuous, $T\in \mathscr{D}&#39;(\Omega).$</em></p>
-<p><strong>Certificate:</strong><br>Definition $|\varphi|<em>\nu=\sup\limits</em>{x\in \Omega,|\alpha|\le \nu} |\partial^\alpha \varphi(x)|,$<br>Satisfies $|\varphi|<em>\nu\le |\varphi|</em>\mu,$ $\,\forall\,\nu\le \mu.$<br>If $T\in \mathscr{D}&#39;(\Omega)$ does not satisfy propositional properties,<br>Then $\,\exists\,K\Subset \Omega,$ ${\varphi<em>\nu}\in C_c^\infty(K),$<br>Such that $|\left&lt;{}T,\varphi</em>\nu \right&gt;|&gt;\nu|\varphi<em>\nu|</em>\nu.$<br>Multiply $\varphi<em>\nu$ so that $|\left&lt;{}T,\varphi</em>\nu\right&gt;|=1,$<br>Then $|\varphi<em>\nu|</em>\nu&lt;\frac{1}{\nu}.$<br>It is easy to see that $\varphi<em>\nu\xrightarrow{\mathscr{D} } 0,$<br>But $|\left&lt;{}T,\varphi</em>\nu\right&gt;|\equiv 1,$<br>$\left&lt;{}T,\varphi_\nu\right&gt;\not\rightarrow 0,$ Contradiction.</p>
-<p>On the contrary, if $T$ is a linear functional that satisfies the conditions,<br>$\,\forall\,\varphi<em>\nu\xrightarrow{\mathscr{D} } 0,$<br>$\,\exists\,K$ makes ${\varphi</em>\nu}\in C<em>c^\infty(K).$<br>According to the conditions, there are corresponding $C(K),m(K),$<br>Such that $|\left&lt;{}T,\varphi</em>\nu\right&gt;|\le C|\varphi<em>\nu|_m\rightarrow 0.$<br>Therefore $\left&lt;{}T,\varphi</em>\nu\right&gt;\rightarrow 0,$<br>$T\in \mathscr{D}&#39;(\Omega).$</p>
-<p><strong>Theorem 1.5</strong>. <em>If $T\in \mathscr{E}&#39;(\Omega),$ then $\,\exists\,K\Subset \Omega,$ $C&gt;0,$ $m\in \mathbb{N},$ such that <script type="math/tex">|\left<{}T,\varphi\right>|\le C\sup_{x\in K,|\alpha|\le m}|\partial^\alpha \varphi(x)|, \,\forall\,\varphi\in C^\infty(\Omega).</script></em> <em>On the other hand, if $T$ is a linear functional that satisfies the above conditions, then it is continuous, $T\in \mathscr{E}&#39;(\Omega).$</em></p>
-<p><strong>Proof:</strong> Take the compact set $K<em>\nu=B</em>\nu\cap {x:d(x,\Omega^c)\ge \frac{1}{\nu}},$<br>Then $K<em>\nu$ increases and $\bigcup K</em>\nu=\Omega.$ $\,\forall\,K\Subset \Omega,$<br>$\,\exists\,N&gt;0,$ $\,\forall\,\nu&gt;N,$ $K\subset K_\nu.$</p>
-<p>Definition $|\varphi|<em>\nu=\sup\limits</em>{x\in K<em>\nu,|\alpha|\le \nu} |\partial^\alpha \varphi(x)|,$<br>Satisfies $|\varphi|</em>\nu\le |\varphi|_\mu,$ $\,\forall\,\nu\le \mu.$<br>The same theorem as above can prove that $T\in \mathscr{E}&#39;(\Omega)$ satisfies propositional properties.</p>
-<p>On the contrary, if $T$ is a linear functional that satisfies the conditions,<br>$\,\forall\,\varphi<em>\nu\xrightarrow{\mathscr{E} } 0,$ Take $K,$ which makes the property true<br>Then $\sup</em>{x\in K}|\partial^\alpha\varphi(x)|\rightarrow 0,$<br>$\,\forall\,\alpha\in \mathbb{N}^n.$<br>Therefore $|\left&lt;{}T,\varphi<em>\nu\right&gt;|\le C\sup\limits</em>{x\in K,|\alpha|\le m}|\partial^\alpha\varphi<em>\nu(x)|\rightarrow 0.$<br>Therefore $\left&lt;{}T,\varphi</em>\nu\right&gt;\rightarrow 0,$<br>$T\in \mathscr{E}&#39;(\Omega).$</p>
-<p>It can be seen that $\mathscr{D}&#39;,\mathscr{E}&#39;$ satisfy a certain duality relationship:<br>In $\mathscr{D}$, the function has a compact support set, and convergence requires a common compact set,<br>Therefore, the continuity condition of the linear functional on it is appropriately relaxed,<br>Compact support functions on different compact sets only need to satisfy a certain boundedness; and in $\mathscr{E}$,<br>The function has no compact support, and convergence requires that any compact set must meet certain conditions.<br>This causes the continuity condition of the linear functional on it to become strict, and the boundedness needs to be controlled by a compact set.<br>And it is required that all smooth functions consistently satisfy boundedness.<br>This is $\mathscr{D}\subset \mathscr{E}\rightarrow \mathscr{D}&#39;\supset \mathscr{E}&#39;.$<br>This dual relationship will be stronger in the next section.</p>
-<h3 id="support">Support</h3>
-<p>For a generalized function, the meaning of its value at a specific point is not clear, but we can talk about its value on an open set.<br>For $T\in \mathscr{D}&#39;(\Omega),$ give an open set $\Omega&#39;\subset \Omega,$<br>If $\,\forall\,\varphi\in C_c^\infty(\Omega&#39;),$<br>$\left&lt;{}T,\varphi\right&gt;=0,$ then $T$ is said to take zero value on $\Omega&#39;$.<br>It is further said that $T_1, T_2$ have the same value on $\Omega&#39;$, if $T_1-T_2$ takes zero value on $\Omega&#39;$.<br>Therefore, if a generalized function and a normal function (induced linear continuous functional) have the same value on an open set,<br>Then it can be said that the generalized function is equal to this normal function on the open set.</p>
-<p>If the normal function takes zero at every point, the whole is zero. Similarly, if the generalized function takes zero at a small neighborhood,<br>Then the whole is zero. For proof, just use the <em>Unit Decomposition Theorem</em>.<br>For $\varphi\in C_c^\infty(\Omega),$<br>Take the unit decomposition ${\varphi_i}$ which belongs to the open cover ${O_i}$ consisting of a finite number of small neighbors covering $\operatorname{supp}\varphi$.<br>Then $\varphi_i \varphi\in C_c^\infty(O_i),$<br>And on the entire $\Omega$$\sum_i \varphi_i\varphi=\varphi.$<br>Then the generalized function acting on $\varphi$ can be decomposed into ${O_i}$,<br>Then linear combination can be used to take the value. The sum of zero values is still zero, so the generalized function takes zero value in the whole space.</p>
-<p>Due to this property, the generalized function still takes zero value on the union of all open sets that takes zero value.<br>The sum of all open sets is still an open set, so we can define the largest open set in which the generalized function takes zero value.<br>Then the complement of the maximum open set is called the <strong>support</strong> of the generalized function,<br>Denoted as $\operatorname{supp}T.$ for the continuous function $f(x),$<br>It is easy to see that its support as a generalized function is the same as the support originally defined.<br>Therefore, the definition of generalized function supports is an extension of the definition of continuous function supports.</p>
-<p><strong>Theorem 1.6</strong>. <em>Any $T\in \mathscr{E}&#39;(\Omega)$ has compact support; conversely, any compactly supported set $T\in \mathscr{D}&#39;(\Omega),$ $T$ is also in $\mathscr{E}&#39;(\Omega)$.</em></p>
-<p><strong>Proof:</strong> From the theorem of the previous section, $\,\forall\,T\in \mathscr{E}&#39;(\Omega),$<br>$\,\exists\,K\Subset \Omega,$ $C&gt;0,$ $m\in \mathbb{N},$ such that</p>
-<script type="math/tex; mode=display">|\left<{}T,\varphi\right>|\le C\sup\limits_{x\in K,|\alpha|\le m}|\partial^\alpha\varphi(x)|,\,\forall\,\varphi\in C^\infty(\Omega),</script><p>We show that $K$ contains the support of $T$, so that the support is compact. This is easy,<br>Because as long as $\operatorname{supp}\varphi\subset \Omega\setminus K,$<br>The right-hand side of the inequality is zero, thus forcing $T$ to take zero value on $\Omega\setminus K$, and the support is within $K$.</p>
-<p>On the contrary, if $T\in \mathscr{D}&#39;(\Omega)$,<br>We hope to extend its domain from $\mathscr{D}(\Omega)$ to $\mathscr{E}(\Omega),$<br>To this end, we need to find a way to transform the smooth function into a compact support without changing the value of the functional.<br>Naturally, we can think of using its support. Note $\operatorname{supp}T=K\Subset \Omega$,<br>Then take $K\Subset \Omega<em>1\Subset \Omega,$<br>Make $\zeta\in C_c^\infty(\overline{\Omega}_1),$<br>$\zeta\in[0,1]$ and $\zeta|</em>{\overline{O}_\delta(K)}\equiv 1.$</p>
-<p>For $\varphi\in C^\infty(\Omega),$<br>Definition$\left&lt;{}T,\varphi\right&gt;=\left&lt;{}T,\zeta\varphi\right&gt;,$<br>$\zeta\varphi\in C<em>c^\infty(\overline{\Omega}_1).$ needs to verify the rationality of the definition:<br>If there is $\eta\in C_c^\infty(\overline{\Omega}_2),$<br>$\eta\in [0,1]$ and $\eta|</em>{\overline{O}_{\varepsilon}(K)}\equiv 1,$<br>Then $\zeta-\eta\in C_c^\infty(\Omega \setminus K),$<br>The support lies outside the support of the generalized function,<br>Thus $\left&lt;{}T,\zeta\varphi\right&gt;-\left&lt;{}T,\eta\varphi\right&gt;=\left&lt;{}T,(\zeta-\eta)\varphi\right&gt;=0.$</p>
-<p>In this way, the functional can act on $\varphi$, and according to the theorem about $\mathscr{D}&#39;$ in the previous section,</p>
-<script type="math/tex; mode=display">|\left<{}T,\varphi\right>|\le C|\zeta\varphi|_m\le C'\sup_{x\in \Omega_1,|\alpha|\le m}|\partial^\alpha\varphi|,</script><p>Then from the theorem about $\mathscr{E}&#39;$,<br>$T$ is also continuous after being transformed into a linear functional on $\mathscr{E}$,<br>That is $T\in \mathscr{E}&#39;(\Omega).$</p>
-<p>It can be seen that $\mathscr{D}&#39;<em>c=\mathscr{E}&#39;,$<br>This forms a duality with $\mathscr{D}=\mathscr{E}_c$, which is very pleasing to the eye.<br>It can be seen as making $\left&lt;{}T,\varphi\right&gt;$ reasonable. When the conditions on one side are weak,<br>The conditions on the other side must be stronger. The second half of the proof says,<br>In order to allow $T\in \mathscr{D}&#39;_c$ to act on $\varphi$ in $\mathscr{E}$,<br>Just consider the effect on the $\varphi|</em>{\operatorname{supp}T}$ part,<br>Because the remaining parts fall outside the support set. As far as specific operations are concerned, they cannot be directly restricted.<br>It needs to be transformed into a compactly supported set function using the method in the proof.</p>
-<p>In fact, for the auxiliary function $\zeta,$ (used to transform $\varphi$)<br>The requirement can be replaced by $\zeta|<em>K=1.$<br>This is because $\delta$ of $\overline{O}</em>\delta(K)$ can be arbitrarily small,<br>You can get $\zeta_\delta\xrightarrow{\mathscr{D} }\zeta,$<br>Just use the continuity of the linear functional ($T\in \mathscr{D}&#39;$).</p>
-<p>The article was last updated on 2021-10-13 12:46:51</p>
+                    
+                <h2 id="en-基本概念"><a href="#en-基本概念" class="headerlink" title="基本概念"></a> Basic concepts</h2><h3 id="en-多重指标"><a href="#en-多重指标" class="headerlink" title="多重指标"></a> Multiple indicators</h3><p>$\alpha\in \mathbb{N}^n,$ $|\alpha|=\sum \alpha_i,$
+$\alpha!=\prod \alpha_i !.$ as superscript, $x^\alpha=\prod x_i^{\alpha_i}$
+$\partial^\alpha=\frac{\partial^{|\alpha|} }{\partial x_1^{\alpha_1}\cdots\partial x_n^{\alpha_n} },$
+$f^{(\alpha)}(x)=\partial^\alpha f(x).$
+The Taylor expansion of $f(x)$ is $\sum_\alpha \frac{f^{(\alpha)}(0)}{\alpha!}x^\alpha.$</p>
+<p>$\partial^\alpha(fg)=\sum_{\beta+\gamma=\alpha}\binom{\alpha}{\beta \:\gamma}\partial^\beta f\partial^\gamma g.$
+When $f,g$ satisfies appropriate conditions, an interesting proof is to consider the Fourier transform,
+Use binomial expansion to prove $\xi^\alpha (\widehat{f}\ast \widehat{g})=\sum_{\beta+\gamma=\alpha}\binom{\alpha}{\beta \:\gamma}(\xi^\beta \widehat{f})\ast (\xi^\gamma \widehat{g}),$
+Then do the inverse Fourier transformation.</p>
+<h3 id="en-基本空间"><a href="#en-基本空间" class="headerlink" title="基本空间"></a> basic space</h3><p>Get the smooth function space $\mathscr{E}(\mathbb{R}^n)=C^\infty(\mathbb{R}^n),$
+The topology is defined as,
+If the sequence $\{\varphi_v\}\in C^\infty(\mathbb{R}^n)$ satisfies $\,\forall\,K\Subset \mathbb{R}^n, \alpha \in \mathbb{N}^n,$
+$\sup_{x\in K}|\partial^\alpha \varphi_v|\rightarrow 0,$
+It is called $\varphi_v\rightarrow 0(C^\infty(\mathbb{R}^n)).$
+Such a space is a topological linear space, which can be regarded as having multiple (half) modules.
+Elements tending to zero require that all (can be listed as multiple) modules tend to zero. Since it is difficult to find a unified module,
+Therefore it is different from Banach space.</p>
+<p>Take the compactly supported smooth function space $\mathscr{D}(\mathbb{R}^n)=C_c^\infty(\mathbb{R}^n),$
+The topology is defined as,
+If the support set of sequence $\{\varphi_v\}\in C_c^\infty(\mathbb{R}^n)$ falls within the common compact set $K$,
+And $\,\forall\,\alpha\in \mathbb{N}^n,$
+$\sup_{x\in K}|\partial^\alpha \varphi_v|\rightarrow 0,$
+It is called $\varphi_v\rightarrow 0(C_c^\infty(\mathbb{R}^n)).$</p>
+<p>Get the speed-drop function space $\mathscr{S}(\mathbb{R}^n),$
+To satisfy $\lim\limits_{|x|\rightarrow \infty}x^\alpha\partial^p\varphi(x)=0,$
+The whole set of smooth functions of $\,\forall\,\alpha,p\in \mathbb{N}^n$. The topology is defined as,
+If the sequence $\{\varphi_v\}\in \mathscr{S}(\mathbb{R}^n)$ satisfies $\,\forall\,\alpha,p\in \mathbb{N}^n,$
+$\sup_{x\in \mathbb{R}^n}|x^\alpha\partial^p \varphi_v(x)|\rightarrow 0,$
+It is called $\varphi_v\rightarrow 0(\mathscr{S}(\mathbb{R}^n)).$</p>
+<p>The condition of the rapid descent function can also be equivalently changed to bounded, or $x^\alpha$ can be replaced by $(1+|x|^2)^k,$
+In order to facilitate processing. The topology of the rapid descent function space is also similar. Like the first two spaces,
+The space of rapid descending functions is also closed with respect to convolutions.</p>
+<p>Take $\varphi(x)=\begin{cases}
+                e^{\frac{1}{|x|^2-1} },&amp;|x|&lt;1\\
+                0,&amp;|x|\ge 1.
+            \end{cases},$
+$\alpha(x)=\frac{1}{\int_{\mathbb{R}^n} \varphi dx}\varphi(x).$
+Order$\beta_R=1_{B_R}\ast \alpha,$
+Then $\operatorname{supp}\beta_R\subset B_{R+1},$
+And $\beta_R|_{B_{R-1} }\equiv 1.$
+Thus $\,\forall\,\varphi\in C^\infty(\mathbb{R}^n),$
+Take $\varphi_\nu=\beta_\nu\varphi\in C_c^\infty(\mathbb{R}^n),$
+Satisfied$\varphi_\nu\rightarrow \varphi(C^\infty(\mathbb{R}^n)).$
+Therefore $C_c^\infty(\mathbb{R}^n)$ is dense in $C^\infty(\mathbb{R}^n)$. Similarly,
+It is also dense in $\mathscr{S}(\mathbb{R}^n)$.</p>
+<p>For $\mathscr{D}(\mathbb{R}^n)\subset \mathscr{S}(\mathbb{R}^n)\subset \mathscr{E}(\mathbb{R}^n),$
+The front space is denser than the back space, and the front topology is stronger than the back topology.</p>
+<h3 id="en-正则化"><a href="#en-正则化" class="headerlink" title="正则化"></a> regularization</h3><p>Call the function $u(x),$ on $\Omega$ <strong> Locally integrable </strong> ,
+If it is Lebesgue integrable on any compact set $K\Subset \Omega$.
+Take $\alpha_\varepsilon=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon})\in C_c^\infty(\mathbb{R}^n),$
+Order$u_\varepsilon=u\ast \alpha_\varepsilon.$
+If $u$ is locally integrable, then $u_\varepsilon$ is defined by and satisfies the following theorem:</p>
+<p><strong> Theorem 1.1 </strong>. <em> If $u\in L_{loc}^1(\mathbb{R}^n),$ then $u_\varepsilon\in C^\infty(\mathbb{R}^n).$ when $\varepsilon\rightarrow 0$, if $u\in C^0(\mathbb{R}^n),$ then $u_\varepsilon\rightarrow u(C^0(\mathbb{R}^n));$ if $u\in L^p(\mathbb{R}^n),$ then $u_\varepsilon\rightarrow u(L^p(\mathbb{R}^n)).$ </em> </p>
+<p>The first two properties are easy to prove. For the case of $u\in L^p(\mathbb{R}^n)$, using Lusin’s theorem,
+Just find $v\in C_c(\mathbb{R}^n)$ to make $\parallel u-v\parallel_{L^p}$ sufficiently small.
+The following lemma is used in the process:</p>
+<p><strong> Lemma 1.2 </strong> (Minkowski integral inequality). <em>$\parallel\parallel f(x,y)\parallel_{L_x^1}\parallel_{L_y^p}\le \parallel\parallel f(x,y)\parallel_{L_y^p}\parallel_{L_x^1}.$</em> </p>
+<p><strong> Certificate: </strong>
+Just prove (possibly restricted to a subspace) that the linear operator $\mathrm{id}:L_x^1L_y^p\rightarrow L_y^pL_x^1$ is bounded,
+And $\parallel\mathrm{id}\parallel\le 1.$ is based on functional analysis knowledge,
+The linear operator $A:X\rightarrow Y$ between normed linear spaces is bounded if and only if $A^\ast :Y^\ast \rightarrow X^\ast $ is bounded,
+And there is $\parallel A\parallel=\parallel A^\ast \parallel.$ pushing left to right is a classic proposition,
+To push right to left, just use $A^{\ast \ast }$, which is an extension of $A$ on $X^{\ast \ast }$.</p>
+<p>So consider the linear operator $\mathrm{id}^\ast :L_y^qL_x^\infty\rightarrow L_x^\infty L_y^q,$
+Just indicate $\parallel\mathrm{id}^\ast \parallel\le 1$,
+That is $\operatorname{ess}\operatorname{sup}_x\parallel f(x,y)\parallel_{L_y^q}\le \parallel\operatorname{ess}\operatorname{sup}_x|f(x,y)|\parallel_{L_y^q},$
+However this is obvious.</p>
+<p>If $\parallel\parallel f(x,y)\parallel_{L_x^1}\parallel_{L_y^p}=\infty,$
+Consider using $g_n=(|f|\wedge n)\cdot 1_{B_n}$ to approximate,
+Just use Levi&#39;s monotonic convergence lemma to illustrate.</p>
+<p><strong> Corollary 1.3 </strong>. <em>$\parallel f\ast g\parallel_{L^p}\le \parallel f\parallel_{L^p}\parallel g\parallel_{L^1}.$</em> </p>
+<p><strong> Certificate: </strong>
+$\parallel f\ast g\parallel_{L^p} \le \parallel\parallel f(x-y)g(y)\parallel_{L^1_y}\parallel_{L^p_x}\le \parallel\parallel f(x-y)g(y)\parallel_{L^p_x}\parallel_{L^1_y}=\parallel f\parallel_{L^p}\parallel g\parallel_{L^1}.$</p>
+<p>From this inference,
+$\parallel u_\varepsilon-v_\varepsilon\parallel\le \parallel u-v\parallel$ is also small enough,
+And $\parallel v-v_\varepsilon\parallel$ can be sufficiently small by using existing properties,
+The theorem is proved.</p>
+<p>Called linear operator $J_\varepsilon:L_{loc}^1(\mathbb{R}^n)\rightarrow C^\infty(\mathbb{R}^n),$
+$u\mapsto u_\varepsilon$ is <strong> Polishing operator </strong> ,
+The process of obtaining $u_\varepsilon$ is called <strong> regularization </strong> .
+Theorem states that $C^\infty(\mathbb{R}^n)$ is in $C^0(\mathbb{R}^n),L^p(\mathbb{R}^n)$ <em> Dense </em> ,
+Therefore $C_c^\infty(\mathbb{R}^n), \mathscr{S}(\mathbb{R}^n)$ is also dense in it.</p>
+<p>Some simple corollaries are,
+$J_\varepsilon\in \mathfrak{B}(L^p(\mathbb{R}^n)\rightarrow L^p(\mathbb{R}^n));$
+When $u\in \mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)$,
+$u_\varepsilon\rightarrow u(\mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)).$</p>
+<p>A basic application of the polishing operator is the open set $\Omega,$ $\,\forall\,K\Subset \Omega,$
+$\,\exists\,\varphi\in C_c^\infty(\mathbb{R}^n),$
+$\operatorname{supp}\varphi\subset \Omega,$ $\varphi \in [0,1],$
+And $\varphi|_K\equiv 1.$ takes $\varepsilon=d(K,\Omega^c)&gt;0,$
+Just take $J_{\frac{\varepsilon}{4} } (1_{d(x,K)\le \frac{\varepsilon}{2} })$.</p>
+<h2 id="en-广义函数"><a href="#en-广义函数" class="headerlink" title="广义函数"></a> generalized function</h2><h3 id="en-定义"><a href="#en-定义" class="headerlink" title="定义"></a> definition</h3><p>On the scale $\mathscr{D}/\mathscr{S}/\mathscr{E}(\mathbb{R}^n)$ <em> linear continuous functional </em> is $\mathscr{D}&#39;/\mathscr{S}&#39;/\mathscr{E}&#39;(\mathbb{R}^n)$ generalized function.
+We have the relation $\mathscr{D}&#39;\supset \mathscr{S}&#39;\supset \mathscr{E}&#39;,$
+This includes viewing via embedding.
+For example, $\mathrm{id}:\mathscr{S}&#39;\rightarrow \mathscr{D}&#39;$ is not only meaningful,
+And it&#39;s a solo shot.
+It makes sense because in $\mathscr{D}\subset \mathscr{S}\subset \mathscr{E}$,
+The former is topologically stronger than the latter; injectivity through the front space is guaranteed to be dense in the back space.</p>
+<p>Similarly, the $\mathscr{D}&#39;,\mathscr{E}&#39;$ generalized function can be defined on the open set $\Omega$,
+But the $\mathscr{S}&#39;$ generalized function is only discussed on $\mathbb{R}^n$.
+Easy to explain$L_{loc}^1\subset \mathscr{D}&#39;,$
+And the Dirac function $\delta\in \mathscr{E}&#39;.$</p>
+<p>We know that on normed linear spaces, linear functionals are bounded $\Leftrightarrow$ continuous,
+But in topological linear space, there is no unified module, so there is no concept of &quot;bounded&quot;.
+However, similar propositions still hold and can be controlled by &quot;some modules&quot;.</p>
+<p><strong> Theorem 1.4 </strong>. <em> If $T\in \mathscr{D}&#39;(\Omega),$ then $\,\forall\,K\Subset \Omega,$ $\,\exists\,C(K)&gt;0,$ $m(K)\in \mathbb{N},$ such that $$|\left&lt;{}T,\varphi\right&gt;|\le C(K)\sup_{x\in \Omega,|\alpha|\le m}|\partial^\alpha \varphi(x)|, \,\forall\,\varphi\in C_c^\infty(K)\subset C_c^\infty(\Omega).$$ </em>  <em> On the other hand, if $T$ is a linear functional that satisfies the above conditions, then it is continuous, $T\in \mathscr{D}&#39;(\Omega).$ </em> </p>
+<p><strong> Certificate: </strong>
+Definition$|\varphi|_\nu=\sup\limits_{x\in \Omega,|\alpha|\le \nu} |\partial^\alpha \varphi(x)|,$
+Meet $|\varphi|_\nu\le |\varphi|_\mu,$ $\,\forall\,\nu\le \mu.$
+If $T\in \mathscr{D}&#39;(\Omega)$ does not satisfy propositional properties,
+Then $\,\exists\,K\Subset \Omega,$ $\{\varphi_\nu\}\in C_c^\infty(K),$
+Make$|\left&lt;{}T,\varphi_\nu \right&gt;|&gt;\nu|\varphi_\nu|_\nu.$
+Make a multiplier on $\varphi_\nu$ to make $|\left&lt;{}T,\varphi_\nu\right&gt;|=1,$
+Then $|\varphi_\nu|_\nu&lt;\frac{1}{\nu}.$
+It is easy to see that $\varphi_\nu\xrightarrow{\mathscr{D} } 0,$
+But$|\left&lt;{}T,\varphi_\nu\right&gt;|\equiv 1,$
+$\left&lt;{}T,\varphi_\nu\right&gt;\not\rightarrow 0,$ Contradiction.</p>
+<p>On the contrary, if $T$ is a linear functional that satisfies the conditions,
+$\,\forall\,\varphi_\nu\xrightarrow{\mathscr{D} } 0,$
+$\,\exists\,K$ makes $\{\varphi_\nu\}\in C_c^\infty(K).$
+$C(K),m(K),$ corresponding to the conditions
+Make$|\left&lt;{}T,\varphi_\nu\right&gt;|\le C|\varphi_\nu|_m\rightarrow 0.$
+Therefore $\left&lt;{}T,\varphi_\nu\right&gt;\rightarrow 0,$
+$T\in \mathscr{D}&#39;(\Omega).$</p>
+<p><strong> Theorem 1.5 </strong>. <em> If $T\in \mathscr{E}&#39;(\Omega),$ then $\,\exists\,K\Subset \Omega,$ $C&gt;0,$ $m\in \mathbb{N},$ such that $$|\left&lt;{}T,\varphi\right&gt;|\le C\sup_{x\in K,|\alpha|\le m}|\partial^\alpha \varphi(x)|, \,\forall\,\varphi\in C^\infty(\Omega).$$ </em>  <em> On the other hand, if $T$ is a linear functional that satisfies the above conditions, then it is continuous, $T\in \mathscr{E}&#39;(\Omega).$ </em> </p>
+<p><strong> Certificate: </strong> Take compact set $K_\nu=B_\nu\cap \{x:d(x,\Omega^c)\ge \frac{1}{\nu}\},$
+Then $K_\nu$ increases and $\bigcup K_\nu=\Omega.$ $\,\forall\,K\Subset \Omega,$
+$\,\exists\,N&gt;0,$ $\,\forall\,\nu&gt;N,$ $K\subset K_\nu.$</p>
+<p>Definition$|\varphi|_\nu=\sup\limits_{x\in K_\nu,|\alpha|\le \nu} |\partial^\alpha \varphi(x)|,$
+Meet $|\varphi|_\nu\le |\varphi|_\mu,$ $\,\forall\,\nu\le \mu.$
+The same theorem as above can prove that $T\in \mathscr{E}&#39;(\Omega)$ satisfies the propositional property.</p>
+<p>On the contrary, if $T$ is a linear functional that satisfies the conditions,
+$\,\forall\,\varphi_\nu\xrightarrow{\mathscr{E} } 0,$ Take $K,$ which makes the property established
+Then $\sup_{x\in K}|\partial^\alpha\varphi(x)|\rightarrow 0,$
+$\,\forall\,\alpha\in \mathbb{N}^n.$
+Therefore $|\left&lt;{}T,\varphi_\nu\right&gt;|\le C\sup\limits_{x\in K,|\alpha|\le m}|\partial^\alpha\varphi_\nu(x)|\rightarrow 0.$
+Therefore $\left&lt;{}T,\varphi_\nu\right&gt;\rightarrow 0,$
+$T\in \mathscr{E}&#39;(\Omega).$</p>
+<p>It can be seen that $\mathscr{D}&#39;,\mathscr{E}&#39;$ satisfies a certain duality relationship:
+In $\mathscr{D}$, the function has compact supports, and convergence requires a common compact set.
+Therefore, the continuity condition of the linear functional on it is appropriately relaxed,
+Compact support functions on different compact sets only need to satisfy a certain boundedness; and in $\mathscr{E}$,
+The function has no compact support, and convergence requires that any compact set must meet certain conditions.
+This causes the continuity condition of the linear functional on it to become strict, and the boundedness needs to be controlled by a compact set.
+And it is required that all smooth functions consistently satisfy boundedness.
+This is $\mathscr{D}\subset \mathscr{E}\rightarrow \mathscr{D}&#39;\supset \mathscr{E}&#39;.$
+This dual relationship will be stronger in the next section.</p>
+<h3 id="en-支集"><a href="#en-支集" class="headerlink" title="支集"></a> support</h3><p>For a generalized function, the meaning of its value at a specific point is not clear, but we can talk about its value on an open set.
+For $T\in \mathscr{D}&#39;(\Omega),$, give an open set $\Omega&#39;\subset \Omega,$
+If $\,\forall\,\varphi\in C_c^\infty(\Omega&#39;),$
+$\left&lt;{}T,\varphi\right&gt;=0,$ then $T$ is said to take zero value on $\Omega&#39;$.
+It is further said that $T_1,T_2$ takes the same value on $\Omega&#39;$, if $T_1-T_2$ takes zero value on $\Omega&#39;$.
+Therefore, if a generalized function and a normal function (induced linear continuous functional) have the same value on an open set,
+Then it can be said that the generalized function is equal to this normal function on the open set.</p>
+<p>If the normal function takes zero at every point, the whole is zero. Similarly, if the generalized function takes zero at a small neighborhood,
+Then the whole is zero. To prove, just use <em> partition of unity theorem </em> .
+Right $\varphi\in C_c^\infty(\Omega),$
+Take the partition of unity $\{\varphi_i\}$ as an open cover $\{O_i\}$ composed of a limited number of small neighbors belonging to the cover $\operatorname{supp}\varphi$.
+Then $\varphi_i \varphi\in C_c^\infty(O_i),$
+And on the whole $\Omega$ $\sum_i \varphi_i\varphi=\varphi.$
+Then the generalized function acting on $\varphi$ can be decomposed into $\{O_i\}$,
+Then linear combination can be used to take the value. The sum of zero values is still zero, so the generalized function takes zero value in the whole space.</p>
+<p>Due to this property, the generalized function still takes zero value on the union of all open sets that takes zero value.
+The sum of all open sets is still an open set, so we can define the largest open set in which the generalized function takes zero value.
+Then the complement of the maximum open set is called the generalized function <strong> support </strong> ,
+Denote it as $\operatorname{supp}T.$ for the continuous function $f(x),$
+It is easy to see that its support as a generalized function is the same as the support originally defined.
+Therefore, the definition of generalized function supports is an extension of the definition of continuous function supports.</p>
+<p><strong> Theorem 1.6 </strong>. <em> Any $T\in \mathscr{E}&#39;(\Omega)$ has a compact support; conversely, any set $T\in \mathscr{D}&#39;(\Omega),$ $T$ with a compact support is also in $\mathscr{E}&#39;(\Omega)$. </em> </p>
+<p><strong> Certificate: </strong> From the theorem of the previous section, $\,\forall\,T\in \mathscr{E}&#39;(\Omega),$
+$\,\exists\,K\Subset \Omega,$ $C&gt;0,$ $m\in \mathbb{N},$ such that
+$$|\left&lt;{}T,\varphi\right&gt;|\le C\sup\limits_{x\in K,|\alpha|\le m}|\partial^\alpha\varphi(x)|,\,\forall\,\varphi\in C^\infty(\Omega),$$
+We show that $K$ contains the support of $T$, so that the support is compact. This is easy,
+Because as long as $\operatorname{supp}\varphi\subset \Omega\setminus K,$
+The right-hand side of the inequality is zero, thus forcing $T$ to take zero value on $\Omega\setminus K$, and the support is within $K$.</p>
+<p>On the contrary, if $T\in \mathscr{D}&#39;(\Omega)$,
+We hope to extend its domain from $\mathscr{D}(\Omega)$ to $\mathscr{E}(\Omega),$
+To this end, we need to find a way to transform the smooth function into a compact support without changing the value of the functional.
+Naturally, I can think of using its support. Note $\operatorname{supp}T=K\Subset \Omega$,
+Then take $K\Subset \Omega_1\Subset \Omega,$
+Make$\zeta\in C_c^\infty(\overline{\Omega}_1),$
+$\zeta\in[0,1]$ and $\zeta|_{\overline{O}_\delta(K)}\equiv 1.$</p>
+<p>Right $\varphi\in C^\infty(\Omega),$
+Definition$\left&lt;{}T,\varphi\right&gt;=\left&lt;{}T,\zeta\varphi\right&gt;,$
+$\zeta\varphi\in C_c^\infty(\overline{\Omega}_1).$ The rationality of the definition needs to be verified:
+If there is still $\eta\in C_c^\infty(\overline{\Omega}_2),$
+$\eta\in [0,1]$ and $\eta|_{\overline{O}_{\varepsilon}(K)}\equiv 1,$
+Then $\zeta-\eta\in C_c^\infty(\Omega \setminus K),$
+The support lies outside the support of the generalized function,
+Thus $\left&lt;{}T,\zeta\varphi\right&gt;-\left&lt;{}T,\eta\varphi\right&gt;=\left&lt;{}T,(\zeta-\eta)\varphi\right&gt;=0.$</p>
+<p>In this way, the functional can act on $\varphi$, and according to the theorem about $\mathscr{D}&#39;$ in the previous section,
+$$|\left&lt;{}T,\varphi\right&gt;|\le C|\zeta\varphi|_m\le C&#39;\sup_{x\in \Omega_1,|\alpha|\le m}|\partial^\alpha\varphi|,$$
+Then from the theorem about $\mathscr{E}&#39;$,
+$T$ is also continuous after being transformed into a linear functional on $\mathscr{E}$,
+That is $T\in \mathscr{E}&#39;(\Omega).$</p>
+<p>It can be seen that $\mathscr{D}&#39;_c=\mathscr{E}&#39;,$
+This forms a duality with $\mathscr{D}=\mathscr{E}_c$, which is very pleasing to the eye.
+It can be seen that in order to make $\left&lt;{}T,\varphi\right&gt;$ reasonable, when the conditions on one side are weak,
+The conditions on the other side must be stronger. The second half of the proof says,
+In order to allow $T\in \mathscr{D}&#39;_c$ to act on $\varphi$ in $\mathscr{E}$,
+Just consider the effect on the $\varphi|_{\operatorname{supp}T}$ part,
+Because the remaining parts fall outside the support set. As far as specific operations are concerned, they cannot be directly restricted.
+It needs to be transformed into a compactly supported set function using the method in the proof.</p>
+<p>In fact, for the auxiliary function $\zeta,$ (used to transform $\varphi$)
+Requirements can be replaced with $\zeta|_K=1.$
+This is because $\delta$ of $\overline{O}_\delta(K)$ can be arbitrarily small,
+Can get $\zeta_\delta\xrightarrow{\mathscr{D} }\zeta,$
+Just use the continuity of linear functionals ($T\in \mathscr{D}&#39;$).</p>
+<p>The article was last updated on 2021-10-13 12:46:51 </p>
+
+            
                 </div>
             
         </div>
@@ -537,7 +700,7 @@ $T$改造为$\mathscr{E}$上线性泛函后也是连续的,
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第二章-切丛(2)</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifold Chapter 2 - Tangent Plexus (2)</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 2-Tangential Cluster (2)</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -559,7 +722,7 @@ $T$改造为$\mathscr{E}$上线性泛函后也是连续的,
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(6-4)-平面丛的Thom类的显式表示</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (6-4) - Explicit Representation of Thom Class of Planar Plexus</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (6-4) - Explicit representation of Thom class of plane bundles</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -812,7 +975,7 @@ $T$改造为$\mathscr{E}$上线性泛函后也是连续的,
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concepts"><span class="nav-text">Basic concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#multiple-indicators"><span class="nav-text">Multiple indicators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-space"><span class="nav-text">Basic space</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#regularization"><span class="nav-text">Regularization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#generalized-function"><span class="nav-text">generalized function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#support"><span class="nav-text">Support</span></a></li></ol></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text"> Basic concepts</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%A4%9A%E9%87%8D%E6%8C%87%E6%A0%87"><span class="nav-text"> Multiple indicators</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E7%A9%BA%E9%97%B4"><span class="nav-text"> basic space</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%AD%A3%E5%88%99%E5%8C%96"><span class="nav-text"> regularization</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-text"> generalized function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%AE%9A%E4%B9%89"><span class="nav-text"> definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%94%AF%E9%9B%86"><span class="nav-text"> support</span></a></li></ol></li></ol>
         </div>
     
 </div>

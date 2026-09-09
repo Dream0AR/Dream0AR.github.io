@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(6)-实指数Sobolev模</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Modern PDE Basics Notes (6) - Real Exponential Sobolev Module</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (6)-Real Exponential Sobolev Module</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-334" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-334" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -205,7 +205,7 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/"><span data-lang-group="note-label-335" data-lang="zh-cn">现代PDE基础</span><span data-lang-group="note-label-335" data-lang="en" style="display:none">Foundations of Modern PDE</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="实指数Sobolev空间"><a href="#实指数Sobolev空间" class="headerlink" title="实指数Sobolev空间"></a>实指数Sobolev空间</h2><p>下面希望对$H^{m,p}(\mathbb{R}^n)$将$m$为实数的情形给出定义.
 考虑$p=2$的情形, 记$H^{m,2}$为$H^m.$
@@ -353,60 +356,128 @@ $\{\alpha_\varepsilon\ast f_\nu\}$为$C^m$有界函数列, $\,\forall\,m&gt;t+1.
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="real-exponential-sobolev-space">Real exponential Sobolev space</h2>
-<p>Below I hope to give a definition for $H^{m,p}(\mathbb{R}^n)$ when $m$ is a real number.<br>Consider the case of $p=2$, let $H^{m,2}$ be $H^m.$<br>Since $H^m(\mathbb{R}^n)\subset L^2(\mathbb{R}^n)\subset \mathscr{S}&#39;(\mathbb{R}^n),$<br>Fourier transformation can be performed on it. From the transformation properties, we have:</p>
-<script type="math/tex; mode=display">\begin{aligned}
-            \parallel f\parallel_{H^m}&=(2\pi)^{-n}\left(\sum_{|\alpha|\le m}\parallel\xi^\alpha \widehat{f}(\xi)\parallel_{L^2}^2\right)^\frac{1}{2}\\
-            &\sim \parallel(1+|\xi|^2)^{\frac{m}{2} }\widehat{f}(\xi)\parallel_{L^2}.
-        \end{aligned}</script><p>So for $s\in \mathbb{R}^n,$<br>The real exponential Sobolev space can be defined $H^s(\mathbb{R}^n)\subset \mathscr{S}&#39;(\mathbb{R}^n),$<br>Equipped with model</p>
-<script type="math/tex; mode=display">\parallel f\parallel_{H^s}=\parallel(1+|\xi|^2)^{\frac{s}{2} }\widehat{f}(\xi)\parallel_{L^2}.</script><p>When $s$ is a non-negative integer, the above derivation process is consistent with the original definition of $H^{s,2}$.<br>It can be proved that it is also the complete space of $C_c^\infty(\mathbb{R}^n)$,<br>Equipped with an inner product compatible with the norm. Similarly, one can define a homogeneous module</p>
-<script type="math/tex; mode=display">|f|_{\dot{H}^s}=||\xi|^s\widehat{f}(\xi)|_{L^2}.</script><p>For real exponential Sobolev spaces, we have the following Sobolev inequality:</p>
-<p><strong>Theorem 1.1</strong>. <em>$\,\forall\,s&gt;\frac{n}{2},$ We have the following inequality:</em></p>
-<script type="math/tex; mode=display">\parallel f\parallel_{L^\infty}\le C\parallel f\parallel_{H^s}, \quad\,\forall\,f\in C_c^\infty(\mathbb{R}^n).</script><p><strong>Proof:</strong> By Fourier inverse transformation,<br>$f(x)=(2\pi)^{-n}\int_{\mathbb{R}^n} e^{ix\cdot \xi}\widehat{f}(\xi)d\xi,$<br>So</p>
-<script type="math/tex; mode=display">\parallel f\parallel_{L^\infty}\le (2\pi)^{-n}\parallel\widehat{f}\parallel_{L^1}\le \parallel(1+|\xi|^2)^{\frac{s}{2} }\widehat{f}(\xi)\parallel_{L^2}\parallel(1+|\xi|^2)^{-\frac{s}{2} }\parallel_{L^2}=C\parallel f\parallel_{H^s}.</script><p>It is easy to see that we also have the following facts:</p>
-<p><strong>Theorem 1.2</strong>. <em>$(H^s(\mathbb{R}^n))^\ast =H^{-s}(\mathbb{R}^n).$</em></p>
-<p><strong>Certificate:</strong> $\,\forall\,f\in H^s(\mathbb{R}^n),$<br>$g\in H^{-s}(\mathbb{R}^n),$ we have</p>
-<script type="math/tex; mode=display">\int_{\mathbb{R}^n} f\overline{g}dx=(2\pi)^{-n}\int_{\mathbb{R}^n} (1+|\xi|^2)^s\widehat{f}(\xi)(1+|\xi|^2)^{-s}\overline{\widehat{g} }(\xi)dx\le (2\pi)^{-n}\parallel f\parallel_{H^s}\parallel g\parallel_{H^{-s} }.</script><p>So $H^{-s}(\mathbb{R}^n)\subset (H^s(\mathbb{R}^n))^\ast .$<br>On the other hand, if $g\in (H^s)^\ast ,$ $g\in \mathscr{S}&#39;(\mathbb{R}^n).$ by the same formula,</p>
-<script type="math/tex; mode=display">\left<{}f,g\right>=(2\pi)^{-n}\left<{}(1+|\xi|^2)^s \widehat{f},(1+|\xi|^2)^{-s}\widehat{g}\right>\le C\parallel f\parallel_{H^s}=C\parallel(1+|\xi|^2)^s\widehat{f}(\xi)\parallel_{L^2}.</script><p>Since $(1+|\xi|^2)^s \widehat{f}(\xi)$ is dense in $L^2$ (including $C<em>c^\infty$),<br>$(1+|\xi|^2)^{-s}\widehat{g}\in (L^2)^\ast =L^2,$<br>Thus $\parallel g\parallel</em>{H^{-s} }=\parallel(1+|\xi|^2)^{-s}\widehat{g}\parallel_{L^2}&lt;\infty,$<br>$g\in H^{-s}(\mathbb{R}^n).$<br>Thus $(H^s(\mathbb{R}^n))^\ast =H^{-s}(\mathbb{R}^n).$</p>
-<h2 id="negative-integral-exponential-sobolev-space">Negative Integral Exponential Sobolev Space</h2>
-<p>For general $H^{m,p},$ define $H^{-m,p&#39;}:=(H_0^{m,p})^\ast \subset \mathscr{D}&#39;,$<br>$\frac{1}{p}+\frac{1}{p&#39;}=1,$ equipped with operator norm.<br>At this time $C_c^\infty$ is also dense in it. According to the previous theorem,<br>It can be known that the compatibility of $H^s$ and $H^{s,2}$ is also correct when $s$ is a negative integer exponent.</p>
-<h2 id="trace-theorem">trace theorem</h2>
-<p><strong>Theorem 1.3</strong> (Trace theorem). <em>$\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ Let $x&#39;=(x_2,\cdots,x_n),$ $\pi f(x&#39;)=f(0,x&#39;).$ We have the following inequality:</em></p>
-<script type="math/tex; mode=display">\parallel\pi f\parallel_{H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})}\le C\parallel f\parallel_{H^s(\mathbb{R}^n)},\quad \,\forall\,s>\frac{1}{2}.</script><p><strong>Proof:</strong> Let $F_{n-1}f(x_1,\xi&#39;)=g(x_1,\xi&#39;)$ do $n-1$ Fourier transformations for $f$.<br>Then</p>
-<script type="math/tex; mode=display">\widehat{f}(\xi)=\int_{\mathbb{R} }e^{-ix_1\xi_1}g(x_1,\xi')dx_1,\quad g(x_1,\xi')=\frac{1}{2\pi}\int_{\mathbb{R} }e^{ix_1\xi_1}\widehat{f}(\xi)d\xi_1.</script><p>Note that $\widehat{\pi f}(\xi&#39;)=g(0,\xi&#39;)=\frac{1}{2\pi}\int_{\mathbb{R} }\widehat{f}(\xi)d\xi_1,$<br>And</p>
-<script type="math/tex; mode=display">\begin{aligned}
-                \int_{\mathbb{R}^n}|\widehat{f}|d\xi_1&\le \left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{-\frac{s}{2} }\right|^2d\xi_1\right)^\frac{1}{2}\\
-&\le C\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\left(\int_{\mathbb{R} }\left(1+|\xi_1|+|\xi'|\right)^{-2s}d\xi_1\right)^\frac{1}{2}\\
-                &\le C\left(1+|\xi'|^2\right)^{\frac{-s+\frac{1}{2} }{2} }\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }
-            \end{aligned}</script><p>So,</p>
-<script type="math/tex; mode=display">\begin{aligned}
-                \parallel\pi f\parallel_{H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})}&\le\frac{1}{2\pi} \parallel(1+|\xi'|^2)^{\frac{s-\frac{1}{2} }{2} }\int_{\mathbb{R} }|\widehat{f}(\xi)|d\xi_1\parallel_{L^2(\mathbb{R}^{n-1})}\\
-                &\le C\parallel\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\parallel_{L^2(\mathbb{R}^{n-1})}=C\parallel f\parallel_{H^s(\mathbb{R}^n)}
-            \end{aligned}</script><p>The proposition is proved.</p>
-<p>$\,\forall\,f\in H^s(\mathbb{R}^n),$ It does not make sense to change the value of $f$ on the zero test set,<br>Therefore, just taking $f(0,x&#39;)$ has no practical significance and cannot reflect the properties of $f$. However, according to the trace theorem,<br>We know that when ${f<em>\nu}\in C_c^\infty(\mathbb{R}^n),$<br>When $f</em>\nu\xrightarrow{H^s}f$,<br>${\pi f_{\nu}}$ constitutes $H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})$Cauchy column.<br>Note that its convergence to $\pi f,$ is called the <strong>trace</strong> of $f$. The trace defines the value of the function at the boundary,<br>Reflect its boundary properties.</p>
-<p>By flattening technique and unit decomposition, for $f\in H^s(\Omega),$<br>We can also define its trace on the boundary $\pi f\in H^{s-\frac{1}{2} }(\partial \Omega).$<br>The commonly used case is $s=1$,<br>In particular, there are $\parallel\pi f\parallel<em>{L^2(\partial\Omega)}\le C\parallel f\parallel</em>{H^1(\Omega)}.$<br>The memory space $H_0^1(\Omega)$ is the complete space of $C_c^\infty(\Omega)$ in module $H^1$.<br>After giving the definition of trace, in fact we can prove</p>
-<script type="math/tex; mode=display">H_0^1(\Omega)=\{f\in H^1(\Omega),\pi f=0\}.</script><p>This gives another equivalent characterization of $H_0^1(\Omega)$.</p>
-<h2 id="poincar%C3%A9-inequality">Poincaré inequality</h2>
-<p><strong>Theorem 1.4</strong> (Poincaré inequality). <em>For the bounded region $\Omega,$ $f\in H_{0}^{1,p}(\Omega),$ $p\in[1,\infty),$ we have the following inequality:</em></p>
-<script type="math/tex; mode=display">\parallel f\parallel_{L^p}\le C(\Omega)\parallel\nabla f\parallel_{L^p}</script><p><strong>Certificate:</strong></p>
-<p>Just give the proof for $f\in C<em>c^\infty(\Omega)$.<br>$\,\exists\,L&gt;0$ makes $\Omega\subset [-L,L]^n.$<br>Then $f(x)=\int</em>{-L}^{x_1}\partial_1f(y_1,x&#39;)dy_1.$ So</p>
-<script type="math/tex; mode=display">\begin{aligned}
-                |f(x)|&\le \int_{-L}^L |f_1(y_1,x')|dy_1\\
-                &\le (\int_{-L}^L|f_1|^pdy_1)^{\frac{1}{p} }(2L)^{\frac{1}{q} }\\
-                \parallel f\parallel_{L^p}&\le 2L\parallel f_1\parallel_{L^p}\le 2L\parallel\nabla f\parallel_{L^p}
-            \end{aligned}</script><h2 id="compact-embedding-theorem">compact embedding theorem</h2>
-<p>For the bounded region $\Omega,$ by Sobolev&#39;s inequality and basic analysis,</p>
-<script type="math/tex; mode=display">\parallel f\parallel_{L^p(\Omega)}\le C\parallel f\parallel_{H^{m,q}(\Omega)},\quad \,\forall\,\frac{n}{p}\ge \frac{n}{q}-m.</script><p>Therefore there is embedding $H^{m,q}(\Omega)\hookrightarrow L^p(\Omega).$ When the inequality is strict,<br>That is $\frac{n}{p}&gt;\frac{n}{q}-m,$ We can prove that the embedding is compact,<br>That is to map bounded sets to compact sets.</p>
-<p>Obtaining the strict inequality sign can indicate that the embedding is compact, roughly because derivatives can be used at this time,<br>Proved through the Ascoli-Arzela lemma. That is, assuming $\frac{n}{p}=\frac{n}{q}-s,$ then roughly</p>
-<script type="math/tex; mode=display">H^{m,q}\stackrel{c}\hookrightarrow H^{s,q}\hookrightarrow L^p</script><p>Since embeddings are continuous, to map convergence columns to convergence columns, it is only necessary to indicate that the first embedding is compact.<br>However, $H^{s,q},$ has not been defined for general $q$, so the above explanation is only formal.<br>The specific proof will be given directly without the help of $H^{s,q},$.</p>
-<p>We can give a proof for the defined case when $p=2$. We show that for $s&gt;t&gt;0,$ there is a compact embedding</p>
-<script type="math/tex; mode=display">H^s(\mathbb{R}^n)\stackrel{c}\hookrightarrow H^t_{loc}(\mathbb{R}^n).</script><p>Here $f\in H^t_{loc}(\mathbb{R}^n)$ satisfies $\,\forall\,\varphi\in C_c^\infty(\mathbb{R}^n),$<br>The function of $\varphi f\in H^t(\mathbb{R}^n)$.</p>
-<p><strong>Lemma 1.5</strong>. <em>$\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ $s&gt;t&gt;0,$ We have the following inequality:</em></p>
-<script type="math/tex; mode=display">|f(x+h)-f(x)|_{\dot{H}^t(\mathbb{R}^n)}\le C|h|^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}.</script><p><strong>Proof:</strong> We might as well set $s-t\in (0,1).$ and just add points between $(s,t)$ for the general case.<br>$F[f(x+h)-f(x)]=(e^{-ih\cdot \xi}-1)\widehat{f}(\xi).$<br>Note that $|e^{-ih\cdot\xi}-1|\le 2$ or $C|h\cdot\xi|,$<br>Therefore $|e^{-ih\cdot \xi}-1|\le C|h|^{s-t}|\xi|^{s-t}.$ thus</p>
-<script type="math/tex; mode=display">|f(x+h)-f(x)|_{\dot{H}^t(\mathbb{R}^n)}\le C|h|^{s-t}\parallel|\xi|^{s}\widehat{f}(\xi)\parallel_{L^2(\mathbb{R}^n)}=C|h|^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}</script><p><strong>Corollary 1.6</strong>. <em>$|\alpha<em>\varepsilon\ast f-f|</em>{\dot{H}^t(\mathbb{R}^n)}\le C\varepsilon^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}$</em></p>
-<p>Therefore, let ${f<em>{\nu}}$ be $\dot{H}^s(\mathbb{R}^n)$ bounded function sequence,<br>Then $\,\forall\,\varepsilon&gt;0,$<br>${\alpha</em>\varepsilon\ast f<em>\nu}$ is $C^m$ bounded function sequence, $\,\forall\,m&gt;t+1.$<br>Therefore, according to the Arzela-Ascoli lemma, there is a subsequence that converges on any compact set $C^{m-1}$,<br>That is, $C</em>{loc}^{m-1}$ is compact. Naturally, the convergent sequence also converges in the modular sense of $H^{m-1}$,<br>Therefore, $H^{m-1}<em>{loc}$ is compact. And $H^{m-1}\hookrightarrow H^t$ is a continuous embedding,<br>Therefore ${\alpha</em>\varepsilon\ast f<em>\nu}$ is $H^t</em>{loc}$ compact.</p>
-<p>By inference,<br>Consistently for $\nu$ we have $\alpha<em>\varepsilon\ast f</em>{\nu} \xrightarrow{\dot{H}^t} f<em>{\nu},$<br>It can be proved by the diagonal method that ${f</em>{\nu}}$ has a Cauchy subsequence, so $H^t<em>{loc}$ is compact.<br>Therefore, the embedding of $H^s(\mathbb{R}^n)$ to $H^t</em>{loc}(\mathbb{R}^n)$ is tight.</p>
-<p>The article was last updated on 2021-11-13 18:16:30</p>
+                    
+                <h2 id="en-实指数Sobolev空间"><a href="#en-实指数Sobolev空间" class="headerlink" title="实指数Sobolev空间"></a> Real exponential Sobolev space</h2><p>Below I hope to give a definition for the situation where $H^{m,p}(\mathbb{R}^n)$ and $m$ are real numbers.
+Consider the situation of $p=2$, write $H^{m,2}$ as $H^m.$
+Due to $H^m(\mathbb{R}^n)\subset L^2(\mathbb{R}^n)\subset \mathscr{S}&#39;(\mathbb{R}^n),$
+Fourier transformation can be performed on it. From the transformation properties, we have:</p>
+<p>$$\begin{aligned}
+            \parallel f\parallel_{H^m}&amp;=(2\pi)^{-n}\left(\sum_{|\alpha|\le m}\parallel\xi^\alpha \widehat{f}(\xi)\parallel_{L^2}^2\right)^\frac{1}{2}\\
+            &amp;\sim \parallel(1+|\xi|^2)^{\frac{m}{2} }\widehat{f}(\xi)\parallel_{L^2}.
+        \end{aligned}$$</p>
+<p>So for $s\in \mathbb{R}^n,$
+It is possible to define a real exponential Sobolev space $H^s(\mathbb{R}^n)\subset \mathscr{S}&#39;(\mathbb{R}^n),$
+Equipped with model
+$$\parallel f\parallel_{H^s}=\parallel(1+|\xi|^2)^{\frac{s}{2} }\widehat{f}(\xi)\parallel_{L^2}.$$
+When $s$ is a non-negative integer, the above derivation process is consistent with the original definition of $H^{s,2}$.
+It can be proved that it is also the complete space of $C_c^\infty(\mathbb{R}^n)$,
+Equipped with an inner product compatible with the norm. Similarly, one can define a homogeneous module
+$$|f|_{\dot{H}^s}=||\xi|^s\widehat{f}(\xi)|_{L^2}.$$</p>
+<p>For real exponential Sobolev spaces, we have the following Sobolev inequality:</p>
+<p><strong> Theorem 1.1 </strong>. <em> $\,\forall\,s&gt;\frac{n}{2},$ We have the following inequality: </em> </p>
+<p>$$\parallel f\parallel_{L^\infty}\le C\parallel f\parallel_{H^s}, \quad\,\forall\,f\in C_c^\infty(\mathbb{R}^n).$$</p>
+<p><strong> Certificate: </strong> By Fourier inverse transformation,
+$f(x)=(2\pi)^{-n}\int_{\mathbb{R}^n} e^{ix\cdot \xi}\widehat{f}(\xi)d\xi,$
+So
+$$\parallel f\parallel_{L^\infty}\le (2\pi)^{-n}\parallel\widehat{f}\parallel_{L^1}\le \parallel(1+|\xi|^2)^{\frac{s}{2} }\widehat{f}(\xi)\parallel_{L^2}\parallel(1+|\xi|^2)^{-\frac{s}{2} }\parallel_{L^2}=C\parallel f\parallel_{H^s}.$$</p>
+<p>It is easy to see that we also have the following facts:</p>
+<p><strong> Theorem 1.2 </strong>. <em>$(H^s(\mathbb{R}^n))^\ast =H^{-s}(\mathbb{R}^n).$</em> </p>
+<p><strong> Certificate: </strong> $\,\forall\,f\in H^s(\mathbb{R}^n),$
+$g\in H^{-s}(\mathbb{R}^n),$ We have
+$$\int_{\mathbb{R}^n} f\overline{g}dx=(2\pi)^{-n}\int_{\mathbb{R}^n} (1+|\xi|^2)^s\widehat{f}(\xi)(1+|\xi|^2)^{-s}\overline{\widehat{g} }(\xi)dx\le (2\pi)^{-n}\parallel f\parallel_{H^s}\parallel g\parallel_{H^{-s} }.$$
+So$H^{-s}(\mathbb{R}^n)\subset (H^s(\mathbb{R}^n))^\ast .$
+On the other hand, if $g\in (H^s)^\ast ,$ $g\in \mathscr{S}&#39;(\mathbb{R}^n).$ has the same formula,
+$$\left&lt;{}f,g\right&gt;=(2\pi)^{-n}\left&lt;{}(1+|\xi|^2)^s \widehat{f},(1+|\xi|^2)^{-s}\widehat{g}\right&gt;\le C\parallel f\parallel_{H^s}=C\parallel(1+|\xi|^2)^s\widehat{f}(\xi)\parallel_{L^2}.$$</p>
+<p>Since $(1+|\xi|^2)^s \widehat{f}(\xi)$ is dense in $L^2$ (including $C_c^\infty$),
+$(1+|\xi|^2)^{-s}\widehat{g}\in (L^2)^\ast =L^2,$
+Thus $\parallel g\parallel_{H^{-s} }=\parallel(1+|\xi|^2)^{-s}\widehat{g}\parallel_{L^2}&lt;\infty,$
+$g\in H^{-s}(\mathbb{R}^n).$
+Thus $(H^s(\mathbb{R}^n))^\ast =H^{-s}(\mathbb{R}^n).$</p>
+<h2 id="en-负整指数Sobolev空间"><a href="#en-负整指数Sobolev空间" class="headerlink" title="负整指数Sobolev空间"></a> Negative Integral Exponential Sobolev Space</h2><p>Define $H^{-m,p&#39;}:=(H_0^{m,p})^\ast \subset \mathscr{D}&#39;,$ for general $H^{m,p},$
+$\frac{1}{p}+\frac{1}{p&#39;}=1,$ Equipped with operator norm.
+At this time $C_c^\infty$ is also dense in it. According to the previous theorem,
+It can be known that the compatibility of $H^s$ and $H^{s,2}$ is also correct when $s$ is a negative integer exponent.</p>
+<h2 id="en-迹定理"><a href="#en-迹定理" class="headerlink" title="迹定理"></a> trace theorem</h2><p><strong> Theorem 1.3 </strong> (Trace theorem). <em> $\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ Note $x&#39;=(x_2,\cdots,x_n),$ $\pi f(x&#39;)=f(0,x&#39;).$ We have the following inequality: </em> </p>
+<p>$$\parallel\pi f\parallel_{H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})}\le C\parallel f\parallel_{H^s(\mathbb{R}^n)},\quad \,\forall\,s&gt;\frac{1}{2}.$$</p>
+<p><strong> Certificate: </strong> Denote $F_{n-1}f(x_1,\xi&#39;)=g(x_1,\xi&#39;)$ as $f$ and perform $n-1$ times of Fourier transformation.
+Then
+$$\widehat{f}(\xi)=\int_{\mathbb{R} }e^{-ix_1\xi_1}g(x_1,\xi&#39;)dx_1,\quad g(x_1,\xi&#39;)=\frac{1}{2\pi}\int_{\mathbb{R} }e^{ix_1\xi_1}\widehat{f}(\xi)d\xi_1.$$</p>
+<p>Notice$\widehat{\pi f}(\xi&#39;)=g(0,\xi&#39;)=\frac{1}{2\pi}\int_{\mathbb{R} }\widehat{f}(\xi)d\xi_1,$
+And</p>
+<p>$$\begin{aligned}
+                \int_{\mathbb{R}^n}|\widehat{f}|d\xi_1&amp;\le \left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{-\frac{s}{2} }\right|^2d\xi_1\right)^\frac{1}{2}\\
+                &amp;\le C\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\left(\int_{\mathbb{R} }\left(1+|\xi_1|+|\xi&#39;|\right)^{-2s}d\xi_1\right)^\frac{1}{2}\\
+                &amp;\le C\left(1+|\xi&#39;|^2\right)^{\frac{-s+\frac{1}{2} }{2} }\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }
+            \end{aligned}$$</p>
+<p>So,</p>
+<p>$$\begin{aligned}
+                \parallel\pi f\parallel_{H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})}&amp;\le\frac{1}{2\pi} \parallel(1+|\xi&#39;|^2)^{\frac{s-\frac{1}{2} }{2} }\int_{\mathbb{R} }|\widehat{f}(\xi)|d\xi_1\parallel_{L^2(\mathbb{R}^{n-1})}\\
+                &amp;\le C\parallel\left(\int_{\mathbb{R} }\left|\left(1+|\xi|^2\right)^{\frac{s}{2} }\widehat{f}\right|^2d\xi_1\right)^{\frac{1}{2} }\parallel_{L^2(\mathbb{R}^{n-1})}=C\parallel f\parallel_{H^s(\mathbb{R}^n)}
+            \end{aligned}$$</p>
+<p>The proposition is proved.</p>
+<p>$\,\forall\,f\in H^s(\mathbb{R}^n),$ Changing the value of $f$ on the zero test set does not make sense.
+Therefore, just taking $f(0,x&#39;)$ has no practical significance and cannot reflect the properties of $f$. However, according to the trace theorem,
+We know when $\{f_\nu\}\in C_c^\infty(\mathbb{R}^n),$
+When $f_\nu\xrightarrow{H^s}f$,
+$\{\pi f_{\nu}\}$ constitutes the $H^{s-\frac{1}{2} }(\mathbb{R}^{n-1})$ Cauchy column.
+Note that it converges to $\pi f,$ and is called $f$ <strong> trace </strong> . The trace defines the value of the function at the boundary,
+Reflect its boundary properties.</p>
+<p>By flattening technique and partition of unity, for $f\in H^s(\Omega),$
+We can also define its trace on the boundary $\pi f\in H^{s-\frac{1}{2} }(\partial \Omega).$
+Commonly used $s=1$ situations,
+Especially $\parallel\pi f\parallel_{L^2(\partial\Omega)}\le C\parallel f\parallel_{H^1(\Omega)}.$
+The memory space $H_0^1(\Omega)$ is the complete space of $C_c^\infty(\Omega)$ under the module $H^1$.
+After giving the definition of trace, in fact we can prove
+$$H_0^1(\Omega)=\{f\in H^1(\Omega),\pi f=0\}.$$
+This gives another equivalent characterization of $H_0^1(\Omega)$.</p>
+<h2 id="en-Poincare不等式"><a href="#en-Poincare不等式" class="headerlink" title="Poincaré不等式"></a> Poincaré inequality</h2><p><strong> Theorem 1.4 </strong> (Poincaré inequality). <em> For the bounded region $\Omega,$ $f\in H_{0}^{1,p}(\Omega),$ $p\in[1,\infty),$ we have the following inequality: </em> </p>
+<p>$$\parallel f\parallel_{L^p}\le C(\Omega)\parallel\nabla f\parallel_{L^p}$$</p>
+<p><strong> Certificate: </strong></p>
+<p>Just give the proof for $f\in C_c^\infty(\Omega)$.
+$\,\exists\,L&gt;0$ makes $\Omega\subset [-L,L]^n.$
+Then $f(x)=\int_{-L}^{x_1}\partial_1f(y_1,x&#39;)dy_1.$ So</p>
+<p>$$\begin{aligned}
+                |f(x)|&amp;\le \int_{-L}^L |f_1(y_1,x&#39;)|dy_1\\
+                &amp;\le (\int_{-L}^L|f_1|^pdy_1)^{\frac{1}{p} }(2L)^{\frac{1}{q} }\\
+                \parallel f\parallel_{L^p}&amp;\le 2L\parallel f_1\parallel_{L^p}\le 2L\parallel\nabla f\parallel_{L^p}                 
+            \end{aligned}$$</p>
+<h2 id="en-紧嵌入定理"><a href="#en-紧嵌入定理" class="headerlink" title="紧嵌入定理"></a> compact embedding theorem</h2><p>For the bounded region $\Omega,$ by Sobolev&#39;s inequality and basic analysis,</p>
+<p>$$\parallel f\parallel_{L^p(\Omega)}\le C\parallel f\parallel_{H^{m,q}(\Omega)},\quad \,\forall\,\frac{n}{p}\ge \frac{n}{q}-m.$$</p>
+<p>Therefore there is embedding $H^{m,q}(\Omega)\hookrightarrow L^p(\Omega).$ when the inequality is strict,
+That is, $\frac{n}{p}&gt;\frac{n}{q}-m,$ we can prove that the embedding is compact,
+That is to map bounded sets to compact sets.</p>
+<p>Obtaining the strict inequality sign can indicate that the embedding is compact, roughly because derivatives can be used at this time,
+Proved through the Ascoli-Arzela lemma. Assuming $\frac{n}{p}=\frac{n}{q}-s,$, then roughly
+$$H^{m,q}\stackrel{c}\hookrightarrow H^{s,q}\hookrightarrow L^p$$
+Since embeddings are continuous, to map convergence columns to convergence columns, it is only necessary to indicate that the first embedding is compact.
+However, the general $q$ has not yet been defined $H^{s,q},$, so the above explanation is only formal.
+The specific proof will be given directly without the help of $H^{s,q},$.</p>
+<p>We can give a proof for the case defined for $p=2$. We show that for $s&gt;t&gt;0,$ there is a compact embedding
+$$H^s(\mathbb{R}^n)\stackrel{c}\hookrightarrow H^t_{loc}(\mathbb{R}^n).$$
+Here $f\in H^t_{loc}(\mathbb{R}^n)$ satisfies $\,\forall\,\varphi\in C_c^\infty(\mathbb{R}^n),$
+Function of $\varphi f\in H^t(\mathbb{R}^n)$.</p>
+<p><strong> Lemma 1.5 </strong>. <em> $\,\forall\,f\in C_c^\infty(\mathbb{R}^n),$ $s&gt;t&gt;0,$ We have the following inequality: </em> </p>
+<p>$$|f(x+h)-f(x)|_{\dot{H}^t(\mathbb{R}^n)}\le C|h|^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}.$$</p>
+<p><strong> Certificate: </strong> You might as well set $s-t\in (0,1).$ and add points between $(s,t)$ for general situations.
+$F[f(x+h)-f(x)]=(e^{-ih\cdot \xi}-1)\widehat{f}(\xi).$
+Note $|e^{-ih\cdot\xi}-1|\le 2$ or $C|h\cdot\xi|,$
+Therefore $|e^{-ih\cdot \xi}-1|\le C|h|^{s-t}|\xi|^{s-t}.$ thus
+$$|f(x+h)-f(x)|_{\dot{H}^t(\mathbb{R}^n)}\le C|h|^{s-t}\parallel|\xi|^{s}\widehat{f}(\xi)\parallel_{L^2(\mathbb{R}^n)}=C|h|^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}$$</p>
+<p><strong> Corollary 1.6 </strong>. <em>$|\alpha_\varepsilon\ast f-f|_{\dot{H}^t(\mathbb{R}^n)}\le C\varepsilon^{s-t}|f|_{\dot{H}^s(\mathbb{R}^n)}$</em> </p>
+<p>Therefore, let $\{f_{\nu}\}$ be $\dot{H}^s(\mathbb{R}^n)$ a bounded function sequence,
+Then $\,\forall\,\varepsilon&gt;0,$
+$\{\alpha_\varepsilon\ast f_\nu\}$ is $C^m$ bounded function sequence, $\,\forall\,m&gt;t+1.$
+Therefore, according to the Arzela-Ascoli lemma, which has a subsequence that converges on any compact set $C^{m-1}$,
+That is, $C_{loc}^{m-1}$ is compact. Naturally, the convergent sequence also converges in the $H^{m-1}$ modular sense,
+Therefore, $H^{m-1}_{loc}$ is compact. And $H^{m-1}\hookrightarrow H^t$ is continuous embedding,
+Therefore $\{\alpha_\varepsilon\ast f_\nu\}$ is tight to $H^t_{loc}$.</p>
+<p>By inference,
+Consistently have $\alpha_\varepsilon\ast f_{\nu} \xrightarrow{\dot{H}^t} f_{\nu},$ for $\nu$
+It can be proved by the diagonal method that $\{f_{\nu}\}$ has a Cauchy subsequence, so $H^t_{loc}$ is compact.
+Therefore the embedding from $H^s(\mathbb{R}^n)$ to $H^t_{loc}(\mathbb{R}^n)$ is tight.</p>
+<p>The article was last updated on 2021-11-13 18:16:30 </p>
+
+            
                 </div>
             
         </div>
@@ -449,7 +520,7 @@ $\{\alpha_\varepsilon\ast f_\nu\}$为$C^m$有界函数列, $\,\forall\,m&gt;t+1.
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">论文笔记-图上大范围Ricci曲率</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Paper Notes - Large Ricci Curvature on Graph</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Paper Notes-Large-scale Ricci curvature on the graph</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -471,7 +542,7 @@ $\{\alpha_\varepsilon\ast f_\nu\}$为$C^m$有界函数列, $\,\forall\,m&gt;t+1.
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第四章-Frobenius定理</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifolds Chapter 4 - Frobenius Theorem</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 4-Frobenius Theorem</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -724,7 +795,7 @@ $\{\alpha_\varepsilon\ast f_\nu\}$为$C^m$有界函数列, $\,\forall\,m&gt;t+1.
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#real-exponential-sobolev-space"><span class="nav-text">Real exponential Sobolev space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#negative-integral-exponential-sobolev-space"><span class="nav-text">Negative Integral Exponential Sobolev Space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trace-theorem"><span class="nav-text">trace theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#poincar%C3%A9-inequality"><span class="nav-text">Poincaré inequality</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compact-embedding-theorem"><span class="nav-text">compact embedding theorem</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%AE%9E%E6%8C%87%E6%95%B0Sobolev%E7%A9%BA%E9%97%B4"><span class="nav-text"> Real exponential Sobolev space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%B4%9F%E6%95%B4%E6%8C%87%E6%95%B0Sobolev%E7%A9%BA%E9%97%B4"><span class="nav-text"> Negative Integral Exponential Sobolev Space</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%BF%B9%E5%AE%9A%E7%90%86"><span class="nav-text"> trace theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Poincare%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-text"> Poincaré inequality</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E7%B4%A7%E5%B5%8C%E5%85%A5%E5%AE%9A%E7%90%86"><span class="nav-text"> compact embedding theorem</span></a></li></ol>
         </div>
     
 </div>

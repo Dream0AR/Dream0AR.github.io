@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑2》笔记(2)-谱序列的收敛</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (2) - Convergence of Spectral Sequences</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology 2&#34; Notes (2) - Convergence of Spectral Sequences</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-225" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-225" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/"><span data-lang-group="note-label-226" data-lang="zh-cn">代数拓扑</span><span data-lang-group="note-label-226" data-lang="en" style="display:none">Algebraic Topology</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/"><span data-lang-group="note-label-227" data-lang="zh-cn">代数拓扑2</span><span data-lang-group="note-label-227" data-lang="en" style="display:none">Algebraic Topology II</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="回顾"><a href="#回顾" class="headerlink" title="回顾"></a>回顾</h2><p>对于$R$模$A,$ 具有滤列$\{F_pA\},$ 我们有分级模$G_pA=F_pA/F_{p-1}A.$
 我们认为$\{F_pA\},\{G_pA\}$延展地决定了$A.$ 若滤列是有界的,
@@ -302,50 +305,77 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="review">Review</h2>
-<p>For $R$ modulo $A,$ with filter columns ${F<em>pA},$ we have hierarchical modulus $G_pA=F_pA/F</em>{p-1}A.$<br>We believe that ${F_pA},{G_pA}$ extendively determines $A.$ If the filter list is bounded,<br>Then only ${G_pA}$ can be extended to recover ${F_pA},$ and then determine $A.$</p>
+                    
+                <h2 id="en-回顾"><a href="#en-回顾" class="headerlink" title="回顾"></a> review</h2><p>For $R$ module $A,$ with filtration $\{F_pA\},$ we have hierarchical module $G_pA=F_pA/F_{p-1}A.$
+We believe that $\{F_pA\},\{G_pA\}$ extendsly determines $A.$ if the filter list is bounded,
+Then only $\{G_pA\}$ can be extended to recover $\{F_pA\},$ and then decide $A.$</p>
 <p>Suppose $(C_\ast ,\partial)$ is a filter chain complex, we define</p>
-<script type="math/tex; mode=display">
-E^0_{p,q}:=G_pC_{p+q}=F_pC_{p+q}/F_{p-1}C_{p+q},</script><p>There are $\partial<em>0,$ naturally induced by $\partial$<br>$(E^0,\partial_0)$ is a chain complex. It can be understood as $E^0=\oplus</em>{p,q}E_{p,q}^0,$<br>to reduce double classification to single classification.</p>
-<p>Next $E<em>{p+q}^1:=H</em>{p+q}(E^0_{p,q}),$ $(E^1,\partial_1)$ is the chain complex.<br>$\partial_1$ is obtained by tracing $\partial_0$ through the graph.</p>
-<h2 id="spectral-sequence">Spectral sequence</h2>
-<p>Recursively, we define $E^r<em>{p,q}:=H</em>{p+q}(E^r<em>{p,q}),$<br>$\partial_r$ is obtained by tracing the $\partial</em>{r-1}$ graph,</p>
-<script type="math/tex; mode=display">
-\partial_r:E^r_{p,q}\rightarrow E^{r}_{p-r,q+r-1},\quad E^r_{p,q}:=\frac{\left\{x\in F_pC_{p+q}\mid \partial x\in F_{p-r}C_{p+q-1}\right\}}{F_{p-1}C_{p+q}+\partial (F_{p+r-1}C_{p+q+1})}.</script><p>Call $r$ the <strong>page number</strong> of the spectral sequence, and call $E^r$ the $r$-order approximation of $H<em>\ast (C</em>\ast)$.<br>From this recursive definition we can get:</p>
-<p><strong>Lemma 1</strong>. <em>Let $(F<em>pC</em>\ast ,\partial)$ be the filter complex, with the spectral sequence $E^r<em>{p,q}.$ Then, $\partial_r$ is well-determined, and $\partial_r^2=0.$ $E^{r+1}$ is the homology of $(E^r,\partial_r)$, $E^1</em>{p,q}=H<em>{p+q}(G_pC</em>\ast ).$ If the filter column on $C<em>i$ is bounded for each $i$, then $\,\forall\,p,q,$ When $r$ is large enough, $E^r</em>{p,q}=G<em>pH</em>{p+q}(C_\ast ).$</em></p>
-<p><strong>Definition 2</strong>. <em>A spectral sequence consists of the following elements: $R$ modulo $E^r<em>{p,q},$ differential $\partial_r:E</em>{p,q}^r\rightarrow E^r_{p-r,q+r-1},$ such that $E^{r+1}$ is the homology of $E^r$.</em></p>
-<p><strong>Definition 3</strong>. <em>A spectral sequence is said to be <strong>convergent</strong>, if $\,\forall\,p,q,$ when $r$ is sufficiently large, $\partial_r=0,$ thus,</em></p>
-<script type="math/tex; mode=display">
-E^\infty_{p,q}:=E^r_{p,q}=E^{r+1}_{p,q}=\cdots</script><p>By the lemma, we have the proposition:</p>
-<p><strong>Proposition 4</strong>. <em>If $(F<em>pC</em>\ast ,\partial)$ is a filter sequence complex, then there is a spectral sequence $(E^r<em>{p,q},\partial_r),$ such that $E^1</em>{p,q}=H<em>{p+q}(G_pC</em>\ast ).$ If the filter sequence is bounded on $C_i$, then the spectral sequence converges,</em></p>
-<script type="math/tex; mode=display">
-E^\infty_{p,q}=G_pH_{p+q}(C_\ast ).</script><h2 id="example">Example</h2>
-<p>For the CW complex $X,$, define $F<em>pC</em>\ast (X)=C<em>\ast (X^p),$ as the filter column on $C</em>\ast (X)$.</p>
-<p><strong>Proposition 5</strong>. <em>The spectral sequence generated by the CW complex, $E^r$ does not change after the second page, has:</em></p>
-<script type="math/tex; mode=display">
-E^0_{p,q}=C_\ast (X^p,X^{p-1}),</script><script type="math/tex; mode=display">
+<p>$$
+E^0_{p,q}:=G_pC_{p+q}=F_pC_{p+q}/F_{p-1}C_{p+q},
+$$</p>
+<p>There is $\partial_0,$ naturally induced by $\partial$ on it
+$(E^0,\partial_0)$ is a chain complex. It can be understood as $E^0=\oplus_{p,q}E_{p,q}^0,$
+to reduce double classification to single classification.</p>
+<p>Next $E_{p+q}^1:=H_{p+q}(E^0_{p,q}),$ $(E^1,\partial_1)$ is the chain complex.
+$\partial_1$ is obtained from $\partial_0$ through graph tracing.</p>
+<h2 id="en-谱序列"><a href="#en-谱序列" class="headerlink" title="谱序列"></a> spectral sequence</h2><p>Recursively, we define $E^r_{p,q}:=H_{p+q}(E^r_{p,q}),$
+$\partial_r$ is obtained by tracking the $\partial_{r-1}$ graph,</p>
+<p>$$
+\partial_r:E^r_{p,q}\rightarrow E^{r}_{p-r,q+r-1},\quad E^r_{p,q}:=\frac{\left\{x\in F_pC_{p+q}\mid \partial x\in F_{p-r}C_{p+q-1}\right\}}{F_{p-1}C_{p+q}+\partial (F_{p+r-1}C_{p+q+1})}.
+$$</p>
+<p>Call $r$ a spectral sequence <strong> Number of pages </strong> , call $E^r$ the $r$-order approximation of $H_\ast (C_\ast )$.
+From this recursive definition we can get:</p>
+<p><strong> Lemma 1 </strong>. <em> Let $(F_pC_\ast ,\partial)$ be the filter sequence complex, and the spectral sequence $E^r_{p,q}.$ then $\partial_r$ is well-determined, and $\partial_r^2=0.$ $E^{r+1}$ is the homology of $(E^r,\partial_r)$, $E^1_{p,q}=H_{p+q}(G_pC_\ast ).$ If the filter sequence on $C_i$ is bounded for each $i$, then $\,\forall\,p,q,$ When $r$ is sufficiently large, $E^r_{p,q}=G_pH_{p+q}(C_\ast ).$ </em> </p>
+<p><strong> Definition 2 </strong>. <em> A spectral sequence consists of the following elements: $R$ modulo $E^r_{p,q},$ differential $\partial_r:E_{p,q}^r\rightarrow E^r_{p-r,q+r-1},$ such that $E^{r+1}$ is the homology of $E^r$. </em> </p>
+<p><strong> Definition 3 </strong>. <em> The spectrum sequence is said to be <strong> convergent </strong> , if $\,\forall\,p,q,$ when $r$ is sufficiently large, $\partial_r=0,$ thus, </em> </p>
+<p>$$
+E^\infty_{p,q}:=E^r_{p,q}=E^{r+1}_{p,q}=\cdots
+$$</p>
+<p>By the lemma, we have the proposition:</p>
+<p><strong> Proposition 4 </strong>. <em> If $(F_pC_\ast ,\partial)$ is a filter sequence complex, then there is a spectral sequence $(E^r_{p,q},\partial_r),$ such that $E^1_{p,q}=H_{p+q}(G_pC_\ast ).$ If the filter sequence is bounded on $C_i$, then the spectral sequence converges, </em> </p>
+<p>$$
+E^\infty_{p,q}=G_pH_{p+q}(C_\ast ).
+$$</p>
+<h2 id="en-例子"><a href="#en-例子" class="headerlink" title="例子"></a> Example</h2><p>For the CW complex $X,$, define $F_pC_\ast (X)=C_\ast (X^p),$ as the filtration on $C_\ast (X)$.</p>
+<p><strong> Proposition 5 </strong>. <em> The spectral sequence generated by the CW complex, $E^r$ does not change after the second page, is: </em> </p>
+<p>$$
+E^0_{p,q}=C_\ast (X^p,X^{p-1}),
+$$</p>
+<p>$$
 E^1_{p,q}=H_{p+q}(X^p,X^{p-1})=
  \left\{
  \begin{aligned}
- &C_p^{\operatorname{cell} }(X), && q=0\\
- &0 &&q\neq 0
-\end{aligned}\right.</script><script type="math/tex; mode=display">
+ &amp;C_p^{\operatorname{cell} }(X), &amp;&amp; q=0\\
+ &amp;0 &amp;&amp;q\neq 0
+ \end{aligned}\right.
+
+$$</p>
+<p>$$
 
 E^\infty_{p,q}=E^2_{p,q}=
  \left\{
  \begin{aligned}
- &H_p(X), &&q=0\\
- &0, &&q\neq 0
- \end{aligned}\right.</script><p>Assuming that $X$ is finite-dimensional, then the filter column is bounded,<br>Therefore the proposition states that $E^\infty<em>{p,q}=G_pH</em>{p+q}(C<em>\ast (X))=E^2</em>{p,q}.$</p>
-<p>Remember $p+q=i,$ then</p>
-<script type="math/tex; mode=display">
+ &amp;H_p(X), &amp;&amp;q=0\\
+ &amp;0, &amp;&amp;q\neq 0
+ \end{aligned}\right.
+$$</p>
+<p>Assuming that $X$ is finite-dimensional, then the filtration is bounded,
+Therefore the proposition states $E^\infty_{p,q}=G_pH_{p+q}(C_\ast (X))=E^2_{p,q}.$</p>
+<p>Note $p+q=i,$ then
+$$
 G_pH_i(X)=\left\{
  \begin{aligned}
- &H_i^{\operatorname{cell} }(X), &&p=i\\
- &0, &&p\neq i
- \end{aligned}\right.</script><script type="math/tex; mode=display">
-H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).</script><p>This illustrates the isomorphic relationship between singular homology and cellular complex homology.</p>
-<p>The article was last updated on 2022-09-20 17:39:06</p>
+ &amp;H_i^{\operatorname{cell} }(X), &amp;&amp;p=i\\
+ &amp;0, &amp;&amp;p\neq i
+ \end{aligned}\right.
+$$</p>
+<p>$$
+H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).
+$$</p>
+<p>This illustrates the isomorphic relationship between singular homology and cellular complex homology.</p>
+<p>The article was last updated on 2022-09-20 17:39:06 </p>
+
+            
                 </div>
             
         </div>
@@ -388,7 +418,7 @@ H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).</script><p>This illustrates the 
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑2》笔记(3)-谱序列的应用</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (3) - Application of Spectral Sequences</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology 2&#34; Notes (3) - Application of Spectral Sequences</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -410,7 +440,7 @@ H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).</script><p>This illustrates the 
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《超图及其应用》笔记(1)-基本概念</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Hypergraphics and Applications Notes (1) - Basic Concepts</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Notes on &#34;Hypergraph and Its Application&#34; (1)-Basic Concepts</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -663,7 +693,7 @@ H_i(X)=G_iH_i(X)=H_i^{\operatorname{cell} }(X).</script><p>This illustrates the 
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#review"><span class="nav-text">Review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spectral-sequence"><span class="nav-text">Spectral sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example"><span class="nav-text">Example</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%9B%9E%E9%A1%BE"><span class="nav-text"> review</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text"> spectral sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E4%BE%8B%E5%AD%90"><span class="nav-text"> Example</span></a></li></ol>
         </div>
     
 </div>

@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《PDE2》笔记-Cauchy问题</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">PDE2 Notes - Cauchy Questions</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Cauchy Question</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-120" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-120" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="非散度型方程"><a href="#非散度型方程" class="headerlink" title="非散度型方程"></a>非散度型方程</h2><p>记$\Omega_T=\Omega\times(0,T],$
 抛物边界$\partial_p\Omega=\overline\Omega_T\setminus \Omega_T.$
@@ -381,7 +384,156 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    
+                <h2 id="en-非散度型方程"><a href="#en-非散度型方程" class="headerlink" title="非散度型方程"></a> non-divergent equation</h2><p>Remember$\Omega_T=\Omega\times(0,T],$
+Parabolic Boundary$\partial_p\Omega=\overline\Omega_T\setminus \Omega_T.$
+Consider the equation $u_t+Lu=f,$ $Lu=-a^{ij}u_{ij}+b^iu_i+cu.$
+It is required that $[a^{ij}]$ is positive semi-definite within $\Omega_T$.</p>
+<p>Let $u\in C^{2,1}(\Omega_T):=\{u(x,t)\in C^2_x(\Omega),C^1_t\in (0,T]\}.$</p>
+<p><strong> Theorem 1 </strong> (Weak extreme value principle). <em> Assume $\Omega$ is a bounded open set, $a^{ij},b^i,c\in \Omega_T$ satisfies appropriate smoothness conditions, $u\in C^{2,1}(\Omega_T)\cap C(\overline\Omega_T),$ $c\ge 0,$, then $u_t+Lu\le 0$ can be deduced, and $\max_{\overline\Omega_T}u\le \sup_{\partial_p\Omega_T}u^+.$ can be negative to obtain the control of the minimum value. </em> </p>
+<p>Proof by contradiction, assuming that there is</p>
+<p>$$
+\max_{\overline\Omega_T}=u(x_0,t_0)&gt;\sup_{\partial_p\Omega_T}u^+\ge 0.
+$$</p>
+<p>Take $v_\varepsilon=u-\varepsilon t,$ as long as $\varepsilon$ is sufficiently small,
+Then $v_\varepsilon$ still takes the non-negative maximum value internally.</p>
+<p>Therefore at the maximum value point $(x_\varepsilon,t_\varepsilon),$ $Dv_{\varepsilon}=0,$
+$D^2v_\varepsilon\le 0,$ $v_{\varepsilon}&#39;\ge 0.$
+Expand $L$ to get $v_{\varepsilon}&#39;+Lv_\varepsilon\ge 0.$
+(Use $c,v_\varepsilon\ge 0.$)</p>
+<p>on the other hand,</p>
+<p>$$
+0\le v_\epsilon&#39;+Lv_\varepsilon=u_t+Lu-\varepsilon-c\varepsilon t\le -\varepsilon.
+$$</p>
+<p>A contradiction, so the non-negative maximum value of $u$ is taken on the parabolic boundary.</p>
+<p>When $c\equiv 0$, the requirement for the positive part can be ignored; when $c\ge \mu$ is a constant,
+Desirable $v=e^{\mu t}u,$ Then </p>
+<p>$$
+v_t+(L-\mu)v=e^{\mu t}(u_t+Lu).
+$$</p>
+<p> Therefore,</p>
+<p>$$
+u_t+Lu\le 0\Rightarrow v_t+\widehat Lv\le 0\Rightarrow \max_{\overline\Omega_T}e^{\mu t}u\le \sup_{\partial_p\Omega_T}(e^{\mu t}u)^{+}.
+$$</p>
+<p><strong> Theorem 2 </strong>. <em> Assume $\Omega\subset \mathbb{R}^n$ is a bounded open set, $[a^{ij}]\ge 0,$ $c\ge \mu,$, then the initial boundary value problem of the heat equation has a unique solution on $C(\overline\Omega_T)\cap C^{2,1}(\Omega_T)$. </em> </p>
+<h2 id="en-最大模估计"><a href="#en-最大模估计" class="headerlink" title="最大模估计"></a> maximum mode estimate</h2><p>Consider the Cauchy problem:
+$$
+\begin{cases}
+ u_t+Lu=f&amp;in\:Q_T:=\mathbb{R}^n\times (0,T]\\
+ u|_{t=0}=\psi&amp;in\:\mathbb{R}^n
+ \end{cases}
+$$
+ Assume that the coefficient satisfies: $\,\exists\,\alpha_1\in [0,2),$
+$\alpha_2\in [0,1),$ $\mu_0\in \mathbb{R},$ $\mu_1\ge 0,$ makes</p>
+<p>$$
+c\ge \mu_0,\quad\sum_{i,j=1}^n |a^{ij}|\le \mu_1(|x|^{\alpha_1}+1),\quad \sum_{i=1}^n |b^i|\le \mu_1(|x|^{\alpha_2}+1).
+$$</p>
+<p><strong> Theorem 3 </strong>. <em> Let $u\in C(\overline Q_T)\cap C^{2,1}(Q_T)$ be the solution of Cauchy problem, $\lim\limits_{r\rightarrow\infty} \frac{M(r)}{r^2}=0,$ $M(r):=\sup\limits_{\begin{subarray}{c}  |x|=r\\  0&lt;t&lt;T  \end{subarray} }|u(t)|,$ then </em> </p>
+<p>$$
+\sup_{Q_T}|u|\le e^{(-\mu_0)^+T}[T\Vert f\Vert_{L^\infty(Q_T)}+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].
+$$</p>
+<h3 id="en-mu-0-0"><a href="#en-mu-0-0" class="headerlink" title="$\mu_0&gt;0$"></a>$\mu_0&gt;0$</h3><p>Let’s discuss the case $\mu_0&gt;0$ first. At this time we only need to prove </p>
+<p>$$
+\pm u+At+B\ge 0.
+$$</p>
+<p>Take $v_r(x,t)=\frac{M(r)}{r^2}[|x|^2+mt],$ $m\ge 0$ to be determined,
+$w=\pm u+At+B+v_r.$ We hope to prove $w\ge 0,$
+Let $r\rightarrow\infty$ give the original inequality. We use the weak extreme value principle to give the proof,
+Therefore consider $w_t+Lw\ge 0.$</p>
+<p>$$
+w_t+Lw=\pm f+A+c(At+B)+\frac{M(r)}{r^2}[m-2a^{ij}\delta_{ij}+2b^ix_i+c|x|^2+cmt]
+$$</p>
+<p>Notice$|x|^{\alpha_1}\le \varepsilon|x|^2+\frac{1}{4\varepsilon},$
+Then according to the coefficient condition, $\varepsilon$ can be made sufficiently small,
+Make the $a^{ij}$ item controlled by $c|x|^2,m$. The same goes for the $b^i$ item.
+So when $m=C(\mu_0,\alpha_1,\alpha_2,\mu_1)&gt;&gt;1$, there is $w_t+Lw\ge 0.$ on $Q_T$</p>
+<p>Due to $w|_{\partial B_r\times (0,t]}\ge (M(r)\pm u)|_{\partial B_r\times (0,t]}\ge 0,$
+$w|_{t=0}\ge B\pm \psi\ge 0,$ From the weak extreme value principle we have $w\ge 0,$
+On $\overline B_r(0)\times [0,t]$, that is </p>
+<p>$$
+|u(x,t)|\le At+B+v_r(x,t).
+$$</p>
+<p>Then arbitrarily fixing a $(x_0,t_0)\in Q_T,$ $\,\forall\,r&gt;|x_0|,$ has</p>
+<p>$$
+|u(x_0,t_0)|\le AT+B+v_r(x_0,t_0)\rightarrow AT+B.
+$$</p>
+<p> This gives the conclusion.</p>
+<h3 id="en-mu-0-le-0"><a href="#en-mu-0-le-0" class="headerlink" title="$\mu_0\le 0$"></a>$\mu_0\le 0$</h3><p>Make $v(x,t)=u(x,t)e^{(\mu_0-\delta)t},$ $\delta&gt;0.$
+Then define $\widehat L=L-(\mu_0-\delta),$ $\widehat c\ge \delta&gt;0.$
+We have the heat equation </p>
+<p>$$
+v_t+\widehat Lv=\widehat f:=fe^{(\mu_0-\delta)t}.
+$$</p>
+<p>At this time, the obtained results can be applied to $v$, giving</p>
+<p>$$
+|v|\le \widehat AT+B,\quad |u|\le e^{-(\mu_0-\delta)t}[T\Vert e^{(\mu_0-\delta)t}f\Vert_{L^\infty(Q_T)}+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].
+$$</p>
+<p>Let $\delta\rightarrow 0+$ give the conclusion. The theorem is proved.</p>
+<p>Generally, you can ask $M(r)=o(r^\alpha),$ to adjust the range of $\alpha_1,\alpha_2$ at the same time.</p>
+<p>For bounded region problems, we have</p>
+<p><strong> Theorem 4 </strong>. <em> Assume $\Omega$ is a bounded open set, $u\in C^{2,1}(\Omega_T)\cap C(\overline\Omega_T)$ is the solution to the initial boundary value problem of the heat equation, if $[a^{ij}]$ is symmetric and positive semi-definite, then </em> </p>
+<p>$$
+\sup_{\Omega_T}|u|\le e^{(-\mu_0)^+T}[T\Vert f\Vert_{L^\infty(\Omega_T)}+\Vert g\Vert_{L^\infty(\partial_p\Omega_T)}].
+$$</p>
+<p>From this, the uniqueness of the solution to the initial boundary value problem of the heat equation is immediately obtained.</p>
+<h2 id="en-Cauchy问题唯一性"><a href="#en-Cauchy问题唯一性" class="headerlink" title="Cauchy问题唯一性"></a> Cauchy problem uniqueness</h2><p>The uniqueness of the Cauchy problem requires many requirements. For example, through the previous estimation, we have:</p>
+<p><strong> Theorem 5 </strong>. <em> Based on the maximum modular estimation condition, the Cauchy equation has at most one solution in $C^{2,1}(\Omega_T)\cap C(\overline\Omega_T)$ controlled by $r^\alpha$ (polynomial growth). </em> </p>
+<p>Next, we discuss the uniqueness of the solution under a super-exponential growth control. Suppose the coefficient satisfies</p>
+<p>$$
+\sum|a^{ij}|+\sum |b^i|+|c|\le m,\quad \,\forall\,(x,t)\in Q_T,
+$$</p>
+<p>$$
+E(Q_T):=\{u\in C(\overline Q_T):\,\exists\,k&gt;1,\text{\,s.t.\,}|u|\le ke^{k|x|^2},\:\,\forall\,(x,t)\in Q_T\}.
+$$</p>
+<p><strong> Theorem 6 </strong>. <em> When $[a_{ij}]$ is positive semi-definite and the coefficients meet the above conditions, the solution of the Cauchy problem in $C^{2,1}(Q_T)\cap E(Q_T)$ is unique. </em> </p>
+<p>Just discuss the case of $f=0,\psi=0$. We wish to construct $w_t+Lw\ge 0,$
+Then let $v=\varepsilon w\pm u.$ prove $v_t+Lv\ge 0$ and deduce $v\ge 0.$
+In this way, $|u|\le \varepsilon w,$ can be replaced by $\varepsilon\rightarrow 0$.
+Use the hierarchical method to solve it. It is asserted that there is a problem in $T_0=C(m,n,T)&gt;0,$ and the solution is unique in $Q_{T_0}$.</p>
+<p>Remember$\widehat k=k+1.$
+$w(x,t):=(\widehat k^2\mu t+\widehat k)e^{(\widehat k^2\mu t+\widehat k)|x|^2}.$
+$\mu&gt;0$ To be determined. Calculation:</p>
+<p>$$
+w_t=(\widehat k^2\mu+\widehat k^2\mu|x|^2 (\widehat k^2\mu t+\widehat k))e^{(\widehat k^2\mu t+\widehat k)|x|^2}
+$$</p>
+<p>$$
+Lw=(\widehat k^2\mu t+\widehat k)e^{(\widehat k^2\mu t+\widehat k)|x|^2}(-2a_{ij}(\delta^{ij}(\widehat k^2\mu t+\widehat k)+x_ix_j(\widehat k^2\mu t+\widehat k)^2)+2b^ix_i(\widehat k^2\mu t+\widehat k)+c)
+$$</p>
+<p>Take $T_0\le \min\{T,\frac{1}{\mu \widehat k}\},$
+Then $\,\forall\,t\in [0,T_0],$</p>
+<p>$$
+w_t\ge e^{(\widehat k^2\mu t+\widehat k)|x|^2}(\widehat k^2\mu +\widehat k^3\mu |x|^2),
+$$</p>
+<p>$$
+|Lw|\le C(n,m)e^{(\widehat k^2\mu t+\widehat k)|x|^2}(\widehat k^2+\widehat k^3|x|^2).
+$$</p>
+<p>Let $\mu\ge 2C$ equal $w_t+Lw&gt;0.$</p>
+<p>Let $v=\varepsilon w\pm u,$ take $r$ so that $\varepsilon e^{r^2}=1.$
+When $\varepsilon\rightarrow 0$,
+$r_\varepsilon=\sqrt{|\log \varepsilon|}\rightarrow\infty.$ Note</p>
+<p>$$
+Q_{r,T_0}=\{|x|&lt;r,0&lt;t\le T_0\}.
+$$</p>
+<p> When $|x|=r$,</p>
+<p>$$
+\varepsilon w\ge \varepsilon\widehat k e^{\widehat k r^2}\ge ke^{kr^2}\ge \pm u.
+$$</p>
+<p>Therefore, according to the extreme value principle, there is always $v\ge 0,$ on $Q_{r,T_0}$, that is, $|u|\le \varepsilon w.$
+$\,\forall\,(x_0,t_0)\in Q_{T_0},$ There is always enough small $\varepsilon_0,$
+Make$\,\forall\,\varepsilon\in (0,\varepsilon_0),$
+$|x_0|&lt;r_\varepsilon,$
+Therefore $|u(x_0,t_0)|\le \varepsilon w(x_0,t_0)\rightarrow 0,$
+By $(x_0,t_0)$ arbitrariness, $u\equiv 0.$</p>
+<p>We only proved the uniqueness on $Q_{T_0}$. But starting from the $t=T_0$ plane,
+We can get the uniqueness on $Q_{2T_0}$. By induction layer by layer,
+We then obtain the uniqueness of the problem on $Q_T$.</p>
+<p><strong> Theorem 7 </strong>. <em> Based on the above theorem, there is a maximum modular estimate </em> </p>
+<p>$$
+\Vert u\Vert_{L^\infty(Q_T)}\le C(T,n,m,k)[\Vert f\Vert_{L^\infty(Q_T)}T+\Vert\psi\Vert_{L^\infty(\mathbb{R}^n)}].
+$$</p>
+<p>The article was last updated on 2022-12-24 09:06:43 </p>
+
+            
                 </div>
             
         </div>
@@ -424,7 +576,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《PDE2》笔记-双曲方程弱解</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">PDE2 Notes - Weak Solution to Hyperbolic Equation</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Weak Solution of Hyperbolic Equation</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -446,7 +598,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《PDE2》笔记-热方程正则性</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">PDE2 Notes - Thermal Equation Regularity</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Heat Equation Regularity</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -699,9 +851,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E9%9D%9E%E6%95%A3%E5%BA%A6%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text"> non-divergent equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%9C%80%E5%A4%A7%E6%A8%A1%E4%BC%B0%E8%AE%A1"><span class="nav-text"> maximum mode estimate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-mu-0-0"><span class="nav-text">$\mu_0&gt;0$</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-mu-0-le-0"><span class="nav-text">$\mu_0\le 0$</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Cauchy%E9%97%AE%E9%A2%98%E5%94%AF%E4%B8%80%E6%80%A7"><span class="nav-text"> Cauchy problem uniqueness</span></a></li></ol>
         </div>
     
 </div>

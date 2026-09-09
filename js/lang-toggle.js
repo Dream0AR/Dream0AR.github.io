@@ -7,6 +7,12 @@ KEEP.initLanguageToggle = () => {
     return;
   }
 
+  // KEEP.refresh and PJAX may initialize the same page more than once.
+  if (KEEP.languageToggleController) {
+    KEEP.languageToggleController.refresh();
+    return;
+  }
+
   const storageKey = languageToggleConfig.storage_key || 'KEEP-LANGUAGE-PREFERENCE';
   const configuredLanguages = Array.isArray(languageToggleConfig.languages)
     ? languageToggleConfig.languages
@@ -32,17 +38,27 @@ KEEP.initLanguageToggle = () => {
     return resources.en || resources['zh-cn'] || {};
   };
 
-  const languageResources = KEEP.language_resources || {};
   const fallbackLanguage = normalizeLanguage(KEEP.language_default || KEEP.hexo_config.language || 'zh-cn');
   const htmlLanguage = (language) => (language && language.startsWith('zh') ? 'zh-CN' : 'en');
   const languageManualKey = `${storageKey}:manual`;
-  const hasManualSelection = (() => {
+  const readStorage = (storageName, key) => {
     try {
-      return sessionStorage.getItem(languageManualKey) === '1';
+      return window[storageName].getItem(key);
     } catch (err) {
-      return false;
+      return null;
     }
-  })();
+  };
+  const writeStorage = (storageName, key, value) => {
+    try {
+      window[storageName].setItem(key, value);
+    } catch (err) {
+      // A blocked or full store must not prevent switching in this page.
+    }
+  };
+  const savedLanguage = ['localStorage', 'sessionStorage'].reduce((saved, storageName) => (
+    saved || (readStorage(storageName, languageManualKey) === '1'
+      ? (readStorage(storageName, storageKey) || readStorage('localStorage', storageKey)) : null)
+  ), null);
 
   const availableLanguages = [];
   if (configuredLanguages.length) {
@@ -93,12 +109,8 @@ KEEP.initLanguageToggle = () => {
     return value;
   };
 
-  let currentLanguage = normalizeLanguage(
-    (hasManualSelection ? localStorage.getItem(storageKey) : null)
-    || languageToggleConfig.default_language
-    || KEEP.hexo_config.language
-    || fallbackLanguage
-  );
+  // New visitors see the unchanged Chinese original; only a click saves a choice.
+  let currentLanguage = normalizeLanguage(savedLanguage || 'zh-cn');
 
   if (!isLanguageAvailable(currentLanguage)) {
     currentLanguage = availableLanguages[0];
@@ -128,6 +140,124 @@ KEEP.initLanguageToggle = () => {
     document.body.dataset.lang = currentLanguage;
     return;
   }
+
+  const isVisible = (node) => node.isConnected && node.getClientRects().length > 0;
+  const visibleLanguageContainers = () => {
+    const nodes = Array.from(document.querySelectorAll('[data-lang-group][data-lang]'))
+      .filter(isVisible);
+    return nodes.filter((node) => !nodes.some((parent) => parent !== node && parent.contains(node)));
+  };
+
+  const getTOCTarget = (link) => {
+    const href = link.getAttribute('href') || '';
+    if (!href.startsWith('#')) return null;
+    let id;
+    try {
+      id = decodeURIComponent(href.slice(1));
+    } catch (err) {
+      return null;
+    }
+    // Both translations can contain the same heading id. Resolve it in the
+    // visible article first, rather than scrolling to a hidden Chinese heading.
+    const content = Array.from(document.querySelectorAll('[data-lang-group="article-content-body"]'))
+      .find(isVisible);
+    if (content) {
+      const localTarget = Array.from(content.querySelectorAll('[id]')).find((node) => node.id === id);
+      if (localTarget) return localTarget;
+    }
+    const target = document.getElementById(id);
+    return target && isVisible(target) ? target : null;
+  };
+
+  const updateActiveTOC = () => {
+    const entries = Array.from(document.querySelectorAll('.post-toc a.nav-link'))
+      .filter(isVisible).map((link) => ({link, target: getTOCTarget(link)}))
+      .filter((entry) => entry.target);
+    document.querySelectorAll('.post-toc .active, .post-toc .active-current').forEach((node) => {
+      node.classList.remove('active', 'active-current');
+    });
+    if (KEEP.utils) {
+      KEEP.utils.sections = entries.map((entry) => entry.target);
+    }
+    if (!entries.length) return;
+    let index = entries.findIndex((entry) => entry.target.getBoundingClientRect().top > 20);
+    if (index === -1) index = entries.length - 1;
+    else if (index > 0) index--;
+    const link = entries[index].link;
+    link.classList.add('active', 'active-current');
+    for (let parent = link.parentElement; parent && !parent.matches('.post-toc'); parent = parent.parentElement) {
+      if (parent.matches('li')) parent.classList.add('active');
+    }
+  };
+
+  const refreshTOC = () => {
+    if (KEEP.utils) {
+      KEEP.utils.findActiveIndexByTOC = updateActiveTOC;
+    }
+    updateActiveTOC();
+  };
+
+  let mathRevision = 0;
+  let mathTimer = null;
+  let mathRunning = false;
+  let mathWaits = 0;
+
+  const runMath = () => {
+    mathTimer = null;
+    if (mathRunning || !visibleLanguageContainers().length) return;
+    const mathJax = window.MathJax;
+    const hub = mathJax && mathJax.Hub;
+    const hasV2 = hub && typeof hub.Queue === 'function';
+    const hasV3 = mathJax && typeof mathJax.typesetPromise === 'function';
+    if (!hasV2 && !hasV3) {
+      // The CDN script loads asynchronously. Its load event also retries after
+      // this bounded polling window, including when the fallback CDN is used.
+      if (mathWaits++ < 80) mathTimer = window.setTimeout(runMath, 250);
+      return;
+    }
+    const revision = mathRevision;
+    mathRunning = true;
+    const finish = () => {
+      mathRunning = false;
+      refreshTOC();
+      if (revision !== mathRevision) mathTimer = window.setTimeout(runMath, 0);
+    };
+    const currentNodes = () => revision === mathRevision ? visibleLanguageContainers() : [];
+    if (hasV2) {
+      try {
+        hub.Queue(
+          () => {
+            const nodes = currentNodes();
+            if (nodes.length) return hub.Typeset(nodes);
+          },
+          () => {
+            const nodes = currentNodes();
+            // Typeset leaves existing output unchanged. Rerender recalculates
+            // widths for formulas that MathJax first processed while hidden.
+            if (nodes.length) return hub.Rerender(nodes);
+          },
+          finish
+        );
+      } catch (err) {
+        finish();
+      }
+    } else {
+      Promise.resolve(mathJax.startup && mathJax.startup.promise)
+        .then(() => {
+          const nodes = currentNodes();
+          if (nodes.length) return mathJax.typesetPromise(nodes);
+        })
+        .then(finish, finish);
+    }
+  };
+
+  const requestMathRender = () => {
+    mathRevision++;
+    mathWaits = 0;
+    window.clearTimeout(mathTimer);
+    // Let the newly visible translation acquire its normal layout first.
+    mathTimer = window.setTimeout(runMath, 0);
+  };
 
   const updateI18nDom = () => {
     document.querySelectorAll('[data-i18n-placeholder]').forEach((item) => {
@@ -177,7 +307,7 @@ KEEP.initLanguageToggle = () => {
       button.setAttribute('title', languageTooltip);
     });
 
-    const groupedSwitchNodes = {};
+    const groupedSwitchNodes = Object.create(null);
     document.querySelectorAll('[data-lang-group][data-lang]').forEach((item) => {
       const group = item.dataset.langGroup;
       const language = normalizeLanguage(item.dataset.lang);
@@ -196,11 +326,16 @@ KEEP.initLanguageToggle = () => {
 
       nodes.forEach((item) => {
         item.node.style.display = item === fallback ? '' : 'none';
+        item.node.setAttribute('aria-hidden', item === fallback ? 'false' : 'true');
+        item.node.setAttribute('lang', htmlLanguage(item.language));
       });
     });
 
     document.documentElement.lang = htmlLanguage(currentLanguage);
     document.body.dataset.lang = currentLanguage;
+    requestMathRender();
+    // main.js initializes KEEP.utils after this controller on the first load.
+    window.setTimeout(refreshTOC, 0);
   };
 
   const setCurrentLanguage = (nextLanguage) => {
@@ -208,21 +343,46 @@ KEEP.initLanguageToggle = () => {
     if (!isLanguageAvailable(normalizedNext)) return;
 
     currentLanguage = normalizedNext;
-    localStorage.setItem(storageKey, currentLanguage);
-    try {
-      sessionStorage.setItem(languageManualKey, '1');
-    } catch (err) {
-      // keep behavior if storage APIs are unavailable
-    }
+    ['localStorage', 'sessionStorage'].forEach((storageName) => {
+      writeStorage(storageName, storageKey, currentLanguage);
+      writeStorage(storageName, languageManualKey, '1');
+    });
     updateI18nDom();
   };
 
-  document.querySelectorAll('[data-language-toggle]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const nextLanguage = getNextLanguage();
-      setCurrentLanguage(nextLanguage);
-    });
-  });
+  KEEP.languageToggleController = {refresh: updateI18nDom};
+
+  // Delegation handles replaced PJAX buttons without adding a second listener.
+  document.addEventListener('click', (event) => {
+    const target = event.target.nodeType === 1 ? event.target : event.target.parentElement;
+    if (!target) return;
+    const button = target.closest('[data-language-toggle]');
+    if (button) {
+      event.preventDefault();
+      setCurrentLanguage(getNextLanguage());
+      return;
+    }
+    const link = target.closest('.post-toc a.nav-link');
+    if (!link || !isVisible(link)) return;
+    const heading = getTOCTarget(link);
+    if (!heading) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    const top = heading.getBoundingClientRect().top + window.scrollY - 10;
+    if (typeof window.anime === 'function') {
+      window.anime({targets: document.scrollingElement, duration: 500, easing: 'linear', scrollTop: top});
+    } else {
+      window.scrollTo({top, behavior: 'smooth'});
+    }
+  }, true);
+
+  window.addEventListener('scroll', refreshTOC, {capture: true, passive: true});
+  window.addEventListener('load', requestMathRender);
+  document.addEventListener('load', (event) => {
+    if (event.target.tagName === 'SCRIPT' && /MathJax\.js(?:\?|$)/i.test(event.target.src || '')) {
+      requestMathRender();
+    }
+  }, true);
 
   if (KEEP.theme_config.pjax && KEEP.theme_config.pjax.enable === true) {
     window.addEventListener('pjax:success', () => {
@@ -230,5 +390,5 @@ KEEP.initLanguageToggle = () => {
     });
   }
 
-  setCurrentLanguage(currentLanguage);
+  updateI18nDom();
 };

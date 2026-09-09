@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(10)-Čech上同调</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (10) - Synchronicity on Čech</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (10)-Čech Cohomology</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-345" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-345" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/"><span data-lang-group="note-label-346" data-lang="zh-cn">代数拓扑</span><span data-lang-group="note-label-346" data-lang="en" style="display:none">Algebraic Topology</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/"><span data-lang-group="note-label-347" data-lang="zh-cn">GTM82-代数拓扑与微分形式</span><span data-lang-group="note-label-347" data-lang="en" style="display:none">GTM 82 - Differential Forms in Algebraic Topology</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="预层"><a href="#预层" class="headerlink" title="预层"></a>预层</h2><p>$X$上预层$\mathcal{F}$指, 对$X$的每个开集赋予一个abel群$\mathcal{F}(U)$,
 赋予每个开集的包含$V\subset U$群同态$\rho^U_V:\mathcal{F}(U)\rightarrow\mathcal{F}(V)$,
@@ -345,52 +348,120 @@ $H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="pre-layer">pre-layer</h2>
-<p>The pre-layer $\mathcal{F}$ on $X$ means, assigning an abel group $\mathcal{F}(U)$ to each open set of $X$,<br>Give each open set a containing $V\subset U$ group homomorphism $\rho^U_V:\mathcal{F}(U)\rightarrow\mathcal{F}(V)$,<br>is called a restriction. Meets the requirements of category theory: $\rho^U_U=\mathrm{id}$,<br>And there is transitivity $\rho^V_W\circ\rho^U_V=\rho^U_W$.</p>
-<p>For example, a continuous function pre-layer on $X$, $C^0(U)$ is a continuous function on $U$,<br>$\rho^U_V$ is the limit of the usual function. $\Omega^\ast $ is also a pre-layer.<br>Especially for $0\le q\le \dim M$, $\Omega^q$ is also a pre-layer.</p>
-<p>If $\mathcal{F},\mathcal{G}$ is the upper pre-layer of $X$,<br>For every open set $U$ there is a homomorphism $f_U:\mathcal{F}(U)\rightarrow\mathcal{G}(U)$,<br>If $\rho^U_Vf_U=f_V\rho^U_V$, then ${f_U}$ is called a homomorphism on the pre-layer;<br>If every isomorphism is an isomorphism, then ${f_U}$ is the isomorphism of the pre-layer,<br>$\mathcal{F}\cong \mathcal{G}$.</p>
-<p>Looking at it in the language of category theory,<br>The homomorphism $f$ of the two prelayers is the natural transformation on the two functors $\mathcal{F},\mathcal{G}$.</p>
-<p>Call $\mathcal{F}$ a constant pre-layer whose value is in abel group $G$,<br>If $\mathcal{F}(U)$ is the set of local constant functions on $U$ that take value in $G$,<br>And $\rho^U_V$ is the limit of ordinary functions.</p>
-<p>So if $U$ is connected, then $\mathcal{F}(U)\cong G$,<br>And if $V\cap U$ is the inclusion of two connected open sets, then $\rho^U_V=\mathrm{id}_G$.<br>It is customary to record this constant value pre-layer as $G$.</p>
-<p>If there is a fiber bundle $\pi:E\rightarrow M$, then the pre-layer $\mathcal{H}^q$ can be defined on $M$,<br>$\mathcal{H}^q(U)=H^q(\pi^{-1}(U))$, limiting $\rho^U_V$ induced by $i^\ast $,<br>Contains the mapping $i:\pi^{-1}(V)\rightarrow \pi^{-1}(U)$.<br>(Supercohomology can be constructed on the prelayer $\mathcal{H}^q$.)</p>
-<p>When $U$ is contractible, $\pi^{-1}(U)\cong U\times F$, according to Künneth&#39;s formula,<br>$\mathcal{H}^q(U)\cong H^q(F)$. If $V$ is the inclusion of a shrinkable open set,<br>Then $\rho^U_V$ is isomorphism.</p>
-<p>The pre-layer $\mathcal{H}^q$ is an example of covering a local constant pre-layer,<br>It has fundamental importance in the fibrosis spectrum sequence.</p>
-<h2 id="open-covered-%C4%8Dech-cohomology">Open Covered Čech Cohomology</h2>
-<p>Let $\mathcal{F}$ be the pre-layer on the topological space $X$, $\mathcal{U}={U<em>\alpha}$ be the open cover,<br>Define $C^0(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U</em>\alpha)$.<br>Let $\omega\in C^0(\mathcal{U},\mathcal{F})$,<br>Specify $\omega<em>\alpha\in \mathcal{F}(U</em>\alpha)$ for each $U_\alpha$.<br>$\omega$ is called a $0$-on-chain on $\mathcal{U}$ whose value is equal to $\mathcal{F}$.</p>
-<p>Definition$C^1(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U<em>{\alpha\beta})$,<br>Additionally, specify $\omega</em>{\alpha\beta}=-\omega_{\beta\alpha}$.<br>Called $1$-on-chain.</p>
-<p>Similarly, we can define $p$-on-chain $\omega\in C^p(\mathcal{U},\mathcal{F})$,<br>Specify $\omega_{\alpha_0\cdots\alpha_p}$ for any $p+1$ open sets with non-empty intersection,<br>It is required to invert the sign after exchanging subscripts.</p>
-<p>For simplicity, let us note the restriction $\rho^U<em>V(\omega_U)=\omega_U|_V$,<br>$|_V$ can also be omitted when it is clear, because the restriction is transitive.<br>Next define the difference operator $\delta:C^p(\mathcal{U},\mathcal{F})\rightarrow C^{p+1}(\mathcal{U},\mathcal{F})$,<br>The components of $\delta\omega$$(\delta\omega)</em>{\alpha<em>0\cdots\alpha</em>{p+1} }=\sum<em>{i=0}^{p+1}(-1)^i\omega</em>{\alpha<em>0\cdots\hat\alpha_i\cdots\alpha</em>{p+1} }$.</p>
-<p>By restricted transitivity, $\delta^2=0$.<br>The cohomology $H^\ast (\mathcal{U},\mathcal{F})$ of the complex ${C^\ast (\mathcal{U},\mathcal{F}),\delta}$ is said to be the Čech cohomology covering $\mathcal{U}$ whose value is in the pre-layer $\mathcal{F}$.</p>
-<p>If $\mathcal{F}$ is covariant,<br>Then we have $\partial:C<em>p(\mathcal{U},\mathcal{F})\rightarrow C</em>{p-1}(\mathcal{U},\mathcal{F})$,<br>$(\partial \omega)<em>{\alpha_0\cdots\alpha</em>{p-1} }=\sum<em>{\alpha}\omega</em>{\alpha\alpha<em>0\cdots\alpha</em>{p-1} }$.</p>
-<p>Returning to the discussion of Čech cohomology on $\mathcal{F}$,<br>If $\mathcal{V}$ is a subdivision of $\mathcal{U}$,<br>That is, $\,\exists\,\phi:J\rightarrow I$ is the mapping of the indicator set,<br>$V<em>\beta\subset U</em>{\phi\beta}$, $\,\forall\,\beta\in J$.<br>$\phi$ is called thinning mapping.</p>
-<p>$\phi$ induced $\phi^\sharp:C^q(\mathcal{U},\mathcal{F})\rightarrow C^q(\mathcal{V},\mathcal{F})$,<br>$(\phi^\sharp\omega)<em>{\beta_0\cdots\beta_q}=\omega</em>{\phi(\beta_0)\cdots\phi(\beta_q)}$.<br>It is easy to verify that $\phi^\sharp$ is a chain map.</p>
-<p>If there is another thinning mapping $\psi:J\rightarrow I$,<br>Then $\phi^\sharp\simeq\psi^\sharp$ chain homotopy. In fact,<br>Take the homotopy operator $K:C^q(\mathcal{U},\mathcal{F})\rightarrow C^{q-1}(\mathcal{V},\mathcal{F})$,<br>$(K\omega)<em>{\beta_0\cdots\beta</em>{q-1} }=\sum<em>{i=0}^{q-1}(-1)^i\omega</em>{\phi(\beta<em>0)\cdots\phi(\beta_i)\psi(\beta_i)\cdots\psi(\beta</em>{q-1})}$.</p>
-<p>Thus,<br>There is an induced mapping $\phi^\sharp:H^q(\mathcal{U},\mathcal{F})\rightarrow H^q(\mathcal{V},\mathcal{F})$,<br>And it has nothing to do with the selection of $\phi$.</p>
-<h2 id="directed-limit">directed limit</h2>
-<p>Let there be a partially ordered set $(I,\le)$, if it also satisfies $\,\forall\,a,b\in I, \,\exists\,c\in I$,<br>$a,b\le c$, then $I$ is called a directed set.</p>
-<p>Define the directed system of the group as the set class ${G_\alpha}$ of the group, taking the directed set as the index set,<br>Such that $\,\forall\,a\le b$, exists group homomorphism $f^a_b:G_a\rightarrow G_b$,<br>$f^a_a=\mathrm{id}$, $f^a_c=f^b_c\circ f^a_b$, if $a\le b\le c$.</p>
-<p>Define the equivalence relation $\sim$, $g<em>{a}\sim g_b$ if $\,\exists\,c$, $a,b\le c$,<br>$f^a_c(g_a)=f^b_c(g_b)$.<br>Define the directed limit of the directed system ${G_a}$ of the group as $\lim</em>{a\in I}G<em>a=(\prod</em>{a\in I}G_a)/\sim$,<br>Addition is naturally defined as $[g_a]+[g_b]=[f^a_c(g_a)+f^b_c(g_b)]$, $a,b\le c$.<br>Well-determined and directed limits become groups.</p>
-<h2 id="%C4%8Dech-cohomology-of-topological-spaces">Čech cohomology of topological spaces</h2>
-<p>Apply the above theory to $H^\ast (\mathcal{U},\mathcal{F})$, that is:</p>
+                    
+                <h2 id="en-预层"><a href="#en-预层" class="headerlink" title="预层"></a> presheaf</h2><p>The presheaf $\mathcal{F}$ on $X$ means that each open set of $X$ is assigned an abel group $\mathcal{F}(U)$,
+Assign the inclusion $V\subset U$ group homomorphism $\rho^U_V:\mathcal{F}(U)\rightarrow\mathcal{F}(V)$ to each open set,
+Called a restriction. Meet the requirements of category theory: $\rho^U_U=\mathrm{id}$,
+And it is transitive$\rho^V_W\circ\rho^U_V=\rho^U_W$.</p>
+<p>For example, the continuous function presheaf on $X$, $C^0(U)$ is the continuous function on $U$,
+$\rho^U_V$ is the limit of the usual function. $\Omega^\ast $ is also a presheaf.
+Especially $0\le q\le \dim M$, $\Omega^q$ are also presheaves.</p>
+<p>Let $\mathcal{F},\mathcal{G}$ be presheaves on $X$.
+If for every open set $U$ there is a homomorphism $f_U:\mathcal{F}(U)\rightarrow\mathcal{G}(U)$
+satisfying $\rho^U_Vf_U=f_V\rho^U_V$, then $\{f_U\}$ is called a morphism of presheaves.
+If each of these homomorphisms is an isomorphism, then $\{f_U\}$ is an isomorphism of presheaves,
+$\mathcal{F}\cong \mathcal{G}$.</p>
+<p>Looking at it in the language of category theory,
+The homomorphism $f$ of two presheaves is the natural transformation on the two functors $\mathcal{F},\mathcal{G}$.</p>
+<p>Call $\mathcal{F}$ a constant presheaf whose value is in abel group $G$,
+If $\mathcal{F}(U)$ is the total set of local constant functions on $U$ whose value is in $G$,
+And $\rho^U_V$ is the limit of ordinary functions.</p>
+<p>So if $U$ is connected, then $\mathcal{F}(U)\cong G$,
+And if $V\cap U$ is the inclusion of two connected open sets, then $\rho^U_V=\mathrm{id}_G$.
+It is customary to record this constant value presheaf as $G$.</p>
+<p>If there is a fiber cluster $\pi:E\rightarrow M$, the presheaf $\mathcal{H}^q$ can be defined on $M$,
+$\mathcal{H}^q(U)=H^q(\pi^{-1}(U))$, limiting $\rho^U_V$ induced by $i^\ast $,
+Contains mapping $i:\pi^{-1}(V)\rightarrow \pi^{-1}(U)$.
+(Supercohomology can be constructed on the presheaf $\mathcal{H}^q$.)</p>
+<p>When $U$ is shrinkable, $\pi^{-1}(U)\cong U\times F$, according to Künneth&#39;s formula,
+$\mathcal{H}^q(U)\cong H^q(F)$. If $V$ is the inclusion of a shrinkable open set,
+Then $\rho^U_V$ is isomorphism.</p>
+<p>Presheaf $\mathcal{H}^q$ is an example of overlaying a local constant presheaf,
+It has fundamental importance in the fibrosis spectrum sequence.</p>
+<h2 id="en-开覆盖的Cech上同调"><a href="#en-开覆盖的Cech上同调" class="headerlink" title="开覆盖的Čech上同调"></a> Open Covered Čech Cohomology</h2><p>Let $\mathcal{F}$ be the presheaf on the topological space $X$, $\mathcal{U}=\{U_\alpha\}$ be the open cover,
+Definition$C^0(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U_\alpha)$.
+Assume $\omega\in C^0(\mathcal{U},\mathcal{F})$,
+Specify $\omega_\alpha\in \mathcal{F}(U_\alpha)$ for each $U_\alpha$.
+$\omega$ is called a $0$-on-chain of $\mathcal{U}$ whose value is higher than $\mathcal{F}$.</p>
+<p>Definition$C^1(\mathcal{U},\mathcal{F})=\prod\mathcal{F}(U_{\alpha\beta})$,
+Additionally, $\omega_{\alpha\beta}=-\omega_{\beta\alpha}$ needs to be specified.
+Called $1$-winding.</p>
+<p>Similarly, we can define $p$-cochain $\omega\in C^p(\mathcal{U},\mathcal{F})$,
+Specify $\omega_{\alpha_0\cdots\alpha_p}$ for any $p+1$ open sets with non-empty intersection,
+It is required to invert the sign after exchanging subscripts.</p>
+<p>For simplicity, let’s note the limit $\rho^U_V(\omega_U)=\omega_U|_V$,
+$|_V$ can also be omitted when it is clear, because the restriction is transitive.</p>
+<p>Next define the difference operator $\delta:C^p(\mathcal{U},\mathcal{F})\rightarrow C^{p+1}(\mathcal{U},\mathcal{F})$,
+Component $(\delta\omega)_{\alpha_0\cdots\alpha_{p+1} }=\sum_{i=0}^{p+1}(-1)^i\omega_{\alpha_0\cdots\hat\alpha_i\cdots\alpha_{p+1} }$ of $\delta\omega$.</p>
+<p>Transitivity by restriction, $\delta^2=0$.
+The cohomology $H^\ast (\mathcal{U},\mathcal{F})$ of the complex $\{C^\ast (\mathcal{U},\mathcal{F}),\delta\}$ is called the Čech cohomology covering $\mathcal{U}$ whose value is the presheaf $\mathcal{F}$.</p>
+<p>If $\mathcal{F}$ covaries,
+Then there is $\partial:C_p(\mathcal{U},\mathcal{F})\rightarrow C_{p-1}(\mathcal{U},\mathcal{F})$,
+$(\partial \omega)_{\alpha_0\cdots\alpha_{p-1} }=\sum_{\alpha}\omega_{\alpha\alpha_0\cdots\alpha_{p-1} }$.</p>
+<p>Returning to the discussion of Čech cohomology on $\mathcal{F}$,
+If $\mathcal{V}$ is an increment of $\mathcal{U}$,
+That is, $\,\exists\,\phi:J\rightarrow I$ is the mapping of the indicator set,
+$V_\beta\subset U_{\phi\beta}$, $\,\forall\,\beta\in J$.
+$\phi$ is called thinning mapping.</p>
+<p>$\phi$ induced $\phi^\sharp:C^q(\mathcal{U},\mathcal{F})\rightarrow C^q(\mathcal{V},\mathcal{F})$,
+$(\phi^\sharp\omega)_{\beta_0\cdots\beta_q}=\omega_{\phi(\beta_0)\cdots\phi(\beta_q)}$.
+It is easy to verify that $\phi^\sharp$ is a chain mapping.</p>
+<p>If there is another thinning map $\psi:J\rightarrow I$,
+Then the $\phi^\sharp\simeq\psi^\sharp$ chain is homotopy. In fact,
+Take the homotopy operator $K:C^q(\mathcal{U},\mathcal{F})\rightarrow C^{q-1}(\mathcal{V},\mathcal{F})$,
+$(K\omega)_{\beta_0\cdots\beta_{q-1} }=\sum_{i=0}^{q-1}(-1)^i\omega_{\phi(\beta_0)\cdots\phi(\beta_i)\psi(\beta_i)\cdots\psi(\beta_{q-1})}$ is enough.</p>
+<p>Thus,
+There is induced mapping $\phi^\sharp:H^q(\mathcal{U},\mathcal{F})\rightarrow H^q(\mathcal{V},\mathcal{F})$,
+And it has nothing to do with $\phi$ selection.</p>
+<h2 id="en-有向极限"><a href="#en-有向极限" class="headerlink" title="有向极限"></a> directed limit</h2><p>Given a partially ordered set $(I,\le)$, if it also satisfies $\,\forall\,a,b\in I, \,\exists\,c\in I$,
+$a,b\le c$, then $I$ is called a directed set.</p>
+<p>Define the directed system of the group as the set class $\{G_\alpha\}$ of the group, take the directed set as the index set,
+So that $\,\forall\,a\le b$, there exists a group homomorphism $f^a_b:G_a\rightarrow G_b$,
+$f^a_a=\mathrm{id}$, $f^a_c=f^b_c\circ f^a_b$, if $a\le b\le c$.</p>
+<p>Define the equivalence relationship $\sim$, $g_{a}\sim g_b$ if $\,\exists\,c$, $a,b\le c$,
+$f^a_c(g_a)=f^b_c(g_b)$.
+Define the directed limit of the directed system $\{G_a\}$ of the group to be $\lim_{a\in I}G_a=(\prod_{a\in I}G_a)/\sim$,
+Addition is naturally defined as $[g_a]+[g_b]=[f^a_c(g_a)+f^b_c(g_b)]$, $a,b\le c$.
+Well-determined and directed limits become groups.</p>
+<h2 id="en-拓扑空间的Cech上同调"><a href="#en-拓扑空间的Cech上同调" class="headerlink" title="拓扑空间的Čech上同调"></a> Čech cohomology of topological spaces</h2><p>Apply the above theory to $H^\ast (\mathcal{U},\mathcal{F})$, that is, take:</p>
 <ol>
-<li><p>The directed set is an open covering set of $X$, $I={\mathcal{U},\mathcal{V},\cdots}$</p>
+<li><p>The directed set is the open covering set of $X$, $I=\{\mathcal{U},\mathcal{V},\cdots\}$</p>
 </li>
-<li><p>The partial order is to add finer $\mathcal{U}&gt;\mathcal{V}$</p>
+<li><p>The partial order is increasing $\mathcal{U}&gt;\mathcal{V}$</p>
 </li>
-<li><p>Take the abel group $G_\mathcal{U}=H^\ast (\mathcal{U},\mathcal{F})$</p>
+<li><p>abel group take$G_\mathcal{U}=H^\ast (\mathcal{U},\mathcal{F})$</p>
 </li>
-<li><p>$\phi:\mathcal{V}\rightarrow \mathcal{U}$ is the thinning mapping,<br> Restrict $\phi^\sharp:G<em>\mathcal{U}\rightarrow G</em>\mathcal{V}$ to be homomorphic</p>
+<li><p>$\phi:\mathcal{V}\rightarrow \mathcal{U}$ is the thinning mapping,
+Restrict $\phi^\sharp:G_\mathcal{U}\rightarrow G_\mathcal{V}$ to be homomorphic</p>
 </li>
-<li><p>If $\varphi=\phi\circ\psi$,<br> Then $\varphi^\sharp=\psi^\sharp\circ\phi^\sharp$</p>
+<li><p>If $\varphi=\phi\circ\psi$,
+Then $\varphi^\sharp=\psi^\sharp\circ\phi^\sharp$</p>
 </li>
 </ol>
-<p>In this way ${H^\ast (\mathcal{U},\mathcal{F})}<em>{\mathcal{U}\in I}$ becomes the directed system of the group,<br>Its directed limit $\lim</em>\mathcal{U}H^\ast (\mathcal{U},\mathcal{F})$ is called the topological space $X$ whose value is Čech cohomology of the pre-layer $\mathcal{F}$,<br>Denoted as $H^\ast (X,\mathcal{F})$.</p>
-<p><strong>Proposition 1.1</strong>. <em>$H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</em></p>
-<p><strong>Proof:</strong> For any open covering $\mathcal{U}$,<br>We can actually get a finer good covering $\mathcal{V}$,<br>Because it is enough to consider each point as a geodesic convex neighborhood. In particular, the manifold satisfies the $C_2$ countability axiom,<br>Therefore it is still countable.</p>
-<p>$\,\forall\,a,b\in H^\ast (\mathcal{U},\mathcal{F})$, if $[a]\neq[b]$,<br>Then for each such $\mathcal{V}$, $a,b$ has different restrictions on it. If $[a]=[b]$,<br>Then there exists $\mathcal{W}$, on which $a and b$ have the same restrictions. Then by transitivity,<br>Take the addition of $\mathcal{W}$ to cover $\mathcal{V}$, and $a, b$ are restricted to be equal on it.</p>
-<p>Therefore, we only need to examine $H^\ast (\mathcal{V},\mathcal{F})$,<br>$\mathcal{V}$ is a countable good covering,<br>That is, $H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$,<br>c.g.c=countable good covers.</p>
-<p>Then, we know that for countably good covering $\mathcal{V}$,<br>$H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast <em>{dR}(M)$. Since the restriction mapping is a chain mapping,<br>and $\delta$ are commutative. It can be seen on the double complex network that the restricted mapping between countable good covers will induce isomorphism.<br>Therefore, each term in $H^\ast (M,\mathbb{R})=\lim\limits</em>{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$ is $H^\ast <em>{dR}(M)$,<br>Thus $H^\ast (M,\mathbb{R})\cong H^\ast </em>{dR}(M)$.</p>
-<p>The article was last updated on 2021-10-31 20:55:18</p>
+<p>In this way $\{H^\ast (\mathcal{U},\mathcal{F})\}_{\mathcal{U}\in I}$ becomes a directed system of the group,
+Its directed limit $\lim_\mathcal{U}H^\ast (\mathcal{U},\mathcal{F})$ is called the topological space $X$ whose value is the Čech cohomology of the presheaf $\mathcal{F}$,
+Marked as $H^\ast (X,\mathcal{F})$.</p>
+<p><strong> Proposition 1.1 </strong>. <em>$H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</em> </p>
+<p><strong> Certificate: </strong> For any open covering $\mathcal{U}$,
+We can actually get a finer coverage $\mathcal{V}$,
+Because it is enough to consider each point as a geodesic convex neighborhood. In particular, the manifold satisfies the $C_2$ countability axiom,
+Therefore it is still countable.</p>
+<p>$\,\forall\,a,b\in H^\ast (\mathcal{U},\mathcal{F})$, if $[a]\neq[b]$,
+Then for each such $\mathcal{V}$, $a,b$ has different restrictions. If $[a]=[b]$,
+Then there are $\mathcal{W}$ and $a,b$ with the same restrictions. Then by transitivity,
+The thinning of $\mathcal{W}$ covers $\mathcal{V}$, and the $a,b$ limit is also equal on it.</p>
+<p>Therefore, we only need to examine $H^\ast (\mathcal{V},\mathcal{F})$,
+$\mathcal{V}$ is a countable good coverage,
+That is $H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$,
+c.g.c=countable good covers.</p>
+<p>Then, we know that for countably good cover $\mathcal{V}$,
+$H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. Since the restriction mapping is a chain mapping,
+and $\delta$ are commutable. It can be seen on the double complex network that the restricted mapping between countable good covers will induce isomorphism.
+Therefore, every item in $H^\ast (M,\mathbb{R})=\lim\limits_{c.g.c-\mathcal{V} }H^\ast (\mathcal{V},\mathbb{R})$ is $H^\ast _{dR}(M)$,
+Thus $H^\ast (M,\mathbb{R})\cong H^\ast _{dR}(M)$.</p>
+<p>The article was last updated on 2021-10-31 20:55:18 </p>
+
+            
                 </div>
             
         </div>
@@ -433,7 +504,7 @@ $H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》讨论稿-紧流形嵌入定理</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Discussion Paper &#34;Differential Manifolds&#34; - Tight Manifold Embedding Theorem</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Paper - Compact Manifold Embedding Theorem</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -455,7 +526,7 @@ $H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《现代PDE基础》笔记(5)-Sobolev不等式</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Modern PDE Basics Notes (5) -Sobolev Inequality</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (5)-Sobolev&#39;s Inequality</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -708,7 +779,7 @@ $H^\ast (\mathcal{V},\mathbb{R})\cong H^\ast _{dR}(M)$. 由于限制映射是链
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#pre-layer"><span class="nav-text">pre-layer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#open-covered-%C4%8Dech-cohomology"><span class="nav-text">Open Covered Čech Cohomology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#directed-limit"><span class="nav-text">directed limit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%C4%8Dech-cohomology-of-topological-spaces"><span class="nav-text">Čech cohomology of topological spaces</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E9%A2%84%E5%B1%82"><span class="nav-text"> presheaf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%BC%80%E8%A6%86%E7%9B%96%E7%9A%84Cech%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text"> Open Covered Čech Cohomology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%9C%89%E5%90%91%E6%9E%81%E9%99%90"><span class="nav-text"> directed limit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%8B%93%E6%89%91%E7%A9%BA%E9%97%B4%E7%9A%84Cech%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text"> Čech cohomology of topological spaces</span></a></li></ol>
         </div>
     
 </div>

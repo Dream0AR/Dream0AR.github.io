@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《PDE2》笔记-热方程正则性</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">PDE2 Notes - Thermal Equation Regularity</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Heat Equation Regularity</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-121" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-121" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="时间一阶正则性"><a href="#时间一阶正则性" class="headerlink" title="时间一阶正则性"></a>时间一阶正则性</h2><p>和椭圆型方程类似地, 由于 </p>
 <p>$$
@@ -384,7 +387,159 @@ $$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    
+                <h2 id="en-时间一阶正则性"><a href="#en-时间一阶正则性" class="headerlink" title="时间一阶正则性"></a> Temporal first-order regularity</h2><p>Similar to the elliptic equation, since </p>
+<p>$$
+Lu=f-u_t\quad in\:\Omega,
+$$</p>
+<p>When $\partial\Omega\in C^{m+2},$ $a^{i,j}\in C^{m+1},$ $b^i,c\in C^m,$
+$f\in H^m$, we hope to have</p>
+<p>$$
+\Vert u\Vert_{H^{m+2} }\le C\left(\Vert f\Vert_{H^m}+\Vert u_t\Vert_{H^m}\right).
+$$</p>
+<p>Estimated by the regularity of elliptic equation, when $\partial\Omega\in C^2,$ $a^{ij}\in C^1$,
+we have</p>
+<p>$$
+\Vert u\Vert_{H^2}\le C\left(\Vert f\Vert_{L^2}+\Vert u_t\Vert_{L^2}+\Vert u\Vert_{L^2}\right),\quad a.e.\:t.
+$$</p>
+<p><strong> Theorem 1 </strong>. <em> $\Omega\subset \mathbb{R}^n$ is a bounded open set, $\partial \Omega\in C^2$. When the coefficients satisfy the basic conditions such that $u$ is a weak solution to the heat equation, if $\varphi\in H_0^1(\Omega),$ $a^{ij}\in L^\infty(0,T;C^1(\overline\Omega))\cap C^1([0,T];L^\infty(\Omega)),$ then $u\in L^2(0,T;H^2(\Omega))\cap L^\infty(0,T;H_0^1(\Omega)),$ $u_t\in L^2(\Omega_T),$ has a regularity estimate </em> </p>
+<p>$$
+\Vert u\Vert_{L^\infty(0,T;H_0^1(\Omega))}+\Vert u_t\Vert_{L^2(\Omega_T)}+\Vert u\Vert_{L^2(0,T;H^2(\Omega))}\le C(L,n,\Omega)\left(\Vert\varphi\Vert_{H^1(\Omega)}+\Vert f\Vert_{L^2(\Omega_T)}\right)
+$$</p>
+<p>From the elliptical estimation, the $H^2$ module of $u$ has been estimated, and only the other two items need to be controlled.</p>
+<p>In the weak solution of the heat equation, take $v=u_m&#39;(t),$</p>
+<p>$$
+\Vert u_m&#39;(t)\Vert_{L^2}^2+B[u_m,u_m&#39;;t]=(f,u_m&#39;)\le \frac{1}{2}\left(\Vert f\Vert_{L^2}^2+\Vert u_m&#39;(t)\Vert_{L^2}^2\right).
+$$</p>
+<p>Analyzing it piece by piece, we have</p>
+<p>$$
+-B[u_m,u_m&#39;;t]\le -\frac{1}{2}\frac{d {} }{d {}t}\int_\Omega a^{ij}{u_{m} }_i{u_m}_j+\frac{1}{4}\Vert u_m&#39;\Vert_{L^2}^2+C\Vert u_m\Vert_{H^1}^2.
+$$</p>
+<p>Therefore,</p>
+<p>$$
+\Vert u_m&#39;(t)\Vert_{L^2}^2+\frac{1}{2}\frac{d {} }{d {}t}\int_\Omega a^{ij}{u_m}_i{u_m}_j\le C\left(\Vert f\Vert_{L^2}^2+\Vert u_m\Vert_{H^1}^2\right).
+$$</p>
+<p>Integrating the time term and applying the energy estimate gives</p>
+<p>$$
+\Vert u_m&#39;\Vert_{L^2(\Omega_t)}^2+\int_\Omega a^{ij}{u_m}_i{u_m}_j-\int_\Omega a^{ij}(0){\varphi_m}_i{\varphi_m}_j\le C(L,\Omega)\left(\Vert f\Vert_{L^2(\Omega_T)}^2+\Vert\varphi_m\Vert^2_{L^2(\Omega)}\right).
+$$</p>
+<p>sorted out</p>
+<p>$$
+\Vert u_m&#39;\Vert_{L^2(\Omega_T)}+\operatorname{ess}\operatorname{sup}_{t}\Vert u_m\Vert_{H^1}\le C(L,\Omega)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert\varphi_m\Vert_{H^1(\Omega)}\right).
+$$</p>
+<p>Let $m\rightarrow\infty$ get the conclusion.</p>
+<h2 id="en-时间二阶正则性"><a href="#en-时间二阶正则性" class="headerlink" title="时间二阶正则性"></a> Temporal second-order regularity</h2><p><strong> Theorem 2 </strong>. <em> Based on the conditions of the previous theorem, if $a^{ij}\in C^1(\overline\Omega_T),$ $b^i,c\in C^1([0,T];L^\infty(\Omega)),$ $\varphi\in H_0^1(\Omega)\cap H^2(\Omega),$ $f\in H^1(0,T;L^2(\Omega))\hookrightarrow C([0,T];L^2(\Omega)),$ then $u\in L^\infty(0,T;H^2(\Omega)),$ $u_t\in C([0,T];L^2(\Omega))\cap L^2(0,T;H_0^1(\Omega)),$ $u_{tt}\in L^2(0,T;H^{-1}(\Omega)),$ and </em> </p>
+<p>$$
+\begin{aligned}
+ \Vert u\Vert_{L^\infty(0,T;H^2(\Omega))}+\Vert u_t\Vert_{C([0,T];L^2(\Omega))}+&amp;\Vert u_t\Vert_{L^2(0,T;H_0^1(\Omega))}+\Vert u_{tt}\Vert_{L^2(0,T;H^{-1}(\Omega))}\\
+ &amp;\le C(L,\Omega,T)\left(\Vert f\Vert_{H^1(0,T;L^2(\Omega))}+\Vert\varphi\Vert_{H^2(\Omega)}\right)
+ \end{aligned}
+$$</p>
+<p>We give the proof step by step.</p>
+<h3 id="en-问题约化"><a href="#en-问题约化" class="headerlink" title="问题约化"></a> problem reduction</h3><p>First estimated by elliptic regularity,</p>
+<p>$$
+\Vert u\Vert_{H^2}\le C\left(\Vert f\Vert_{L^2}+\Vert u_t\Vert_{L^2}+\Vert u\Vert_{L^2}\right),
+$$</p>
+<p>Taking the $L^\infty$ module with respect to time means that the first term of the original formula is controlled by the following terms.
+Applying Lions’ theorem to $u_t$, it can be seen that after giving the last two estimates,
+Just consider $\Vert u_t\Vert_{L^\infty(0,T;L^2)}$.
+Therefore, we first give the control of the last two items.</p>
+<h3 id="en-方程求导"><a href="#en-方程求导" class="headerlink" title="方程求导"></a> Derivatives of Equations</h3><p>Due to ${C_m^k}&#39;&#39;=f_k&#39;-(C_m^le_l^k)&#39;,$
+We know that $u_m&#39;&#39;\in H_0^1(\Omega)$ exists almost everywhere.
+Reducing it to the equation about $u_m$, we have:</p>
+<p>$$
+\left&lt;{}u_m&#39;&#39;,v\right&gt;+B[u_m&#39;,v;t]=(f&#39;,v)-B_{(1)}[u_m,v;t],
+$$</p>
+<p>$$
+B_{(k)}[u,v;t]:=\int_\Omega \frac{d {}^ka^{ij} }{d {}t^k} u_iv_j+\frac{d {}^kb^i}{d {}t^k} u_iv+\frac{d {}^kc}{d {}t^k}uv dx
+$$</p>
+<p>Taking $v=u_m&#39;(t),$, then according to Young&#39;s inequality, it can be given</p>
+<p>$$
+\frac{d {} }{d {}t}\frac{1}{2}\Vert u_m&#39;\Vert_{L^2}^2+B[u_m&#39;,u_m&#39;;t]\le C(\Vert f&#39;\Vert_{L^2}+\Vert u_m&#39;\Vert_{L^2}^2+\Vert u_m\Vert_{H^1}^2)+\frac{\lambda}{4} \Vert Du_m&#39;\Vert_{L^2}^2
+$$</p>
+<p>Estimated from the elliptic equation energy,</p>
+<p>$$
+B[u_m&#39;,u_m&#39;;t]\ge \frac{\lambda}{2}\Vert Du_m&#39;\Vert_{L^2}^2-C_1\Vert u_m&#39;\Vert_{L^2(\Omega)}^2
+$$</p>
+<p>Therefore, the combined pair $\Vert u_m\Vert_{H^1},$
+Existing estimates of $\Vert u_m&#39;\Vert_{L^2(\Omega_T)}$, applying Gronwall inequality,
+points gained</p>
+<p>$$
+\operatorname{ess}\operatorname{sup}_{t}\Vert u_m&#39;\Vert_{L^2}^2+\Vert u_m&#39;\Vert_{L^2(0,T;H^1)}^2\le C\left(\Vert f\Vert_{H^1(0,T;L^2)}^2+\Vert\varphi_m\Vert_{H_0^1}^2+\Vert u_m&#39;(0)\Vert_{L^2}^2\right).
+$$</p>
+<p>Considering the heat equation of $u_m&#39;$ at $t=0$, it can be further given</p>
+<p>$$
+\operatorname{ess}\operatorname{sup}_{t}\Vert u_m&#39;\Vert_{L^2}^2+\Vert u_m&#39;\Vert_{L^2(0,T;H^1)}^2\le C\left(\Vert f\Vert_{H^1(0,T;L^2)}^2+\Vert\varphi_m\Vert_{H^2}^2\right)
+$$</p>
+<h3 id="en-初值-H-2-模控制"><a href="#en-初值-H-2-模控制" class="headerlink" title="初值$H^2$模控制"></a> Initial value $H^2$ module control</h3><p>We hope to directly give estimates of the middle two terms through $m\rightarrow\infty$. However,
+$\{w_k\}$ is an orthonormal basis in $L^2,H_0^1$, but not in $H^2$,
+Therefore the last term cannot be directly used for convergence. Let us prove</p>
+<p>$$
+\Vert\varphi_m\Vert_{H^2(\Omega)}\le C\Vert\varphi\Vert_{H^2(\Omega)}.
+$$</p>
+<p>$\varphi_m=\sum_{k=1}^m (\varphi,w_k)w_k,$
+Take $h_m:=L\varphi_m=\sum_{k=1}^m \lambda_k(\varphi,w_k)w_k.$
+Taking $L=-\Delta$ as an example, then since $T(L\varphi_m)=0,$ is given by Poincaré inequality,</p>
+<p>$$
+\Vert\varphi_m\Vert_{H^2}\le C\Vert L\varphi_m\Vert_{L^2}=C\Vert h_m\Vert_{L^2}
+$$</p>
+<p>$$
+\Vert h_m\Vert_{L^2}^2=\sum_{k=1}^m (\lambda_kw_k,\varphi)^2=\sum_{k=1}^m(\Delta w_k,\varphi)^2=\sum_{k=1}^m(w_k,\Delta \varphi)^2\le \Vert\Delta \varphi\Vert_{L^2}^2\le \Vert\varphi\Vert_{H^2}^2.
+$$</p>
+<p>This leads to the conclusion.</p>
+<p>In this way we prove that the control of the middle two terms in the original proposition</p>
+<h3 id="en-时间二阶项估计"><a href="#en-时间二阶项估计" class="headerlink" title="时间二阶项估计"></a> Time second-order term estimation</h3><p>hope to prove</p>
+<p>$$
+\Vert{u_m}_{tt}\Vert_{L^2(0,T;H^{-1}(\Omega))}\le C[\Vert f\Vert_{H^1(0,T;L^2(\Omega))+\Vert\varphi\Vert_{H^2} }].
+$$</p>
+<p>In this way $\{ {u_m}_{tt}\}$ has a weakly convergent subsequence. By the same method proved before, it is $u_{tt},$
+And have the same controls.</p>
+<p>$\,\forall\,\psi\in H_0^1(\Omega),$ $\psi_m:=\sum_{k=1}^m(\psi,w_k)w_k.$
+$$
+\begin{aligned}
+ |\left&lt;{}{u_m}_{tt},\psi\right&gt;|=|({u_m}_{tt},\psi_m)|&amp;\le |(f_t,\psi_m)|+|B[u_m&#39;,\psi_m,t]|+|B_{(1)}[u_m,\psi_m;t]|\\
+ &amp;\le \Vert f&#39;\Vert_{L^2}\Vert\psi_m\Vert_{L^2}+C\Vert u_m&#39;\Vert_{H^1}\Vert\psi_m\Vert_{H^1}\\
+ &amp;\le C(\Vert f&#39;\Vert_{L^2}+\Vert u_m&#39;\Vert_{H^1})\Vert\psi\Vert_{H^1} 
+ \end{aligned}
+$$</p>
+<p>From this we get an estimate of the $H^{-1}$ module. Take the $L^2$ integral over time,
+The conclusion can be drawn from the existing estimates of $u_m&#39;$.</p>
+<h2 id="en-高阶正则性"><a href="#en-高阶正则性" class="headerlink" title="高阶正则性"></a> higher order regularity</h2><p>Find the $n$ derivative of the equation, denote it as $u_n=\frac{d {}^nu}{d {}t^n},$:
+$$
+\begin{cases}
+ u_{n}&#39;=\frac{d {}^n}{d {}t^n}f-\frac{d {}^n}{d {}t^n}(Lu)\\
+ u_n|_{t=0}=\frac{d {}^{n-1} }{d {}t^{n-1} }f(0)-\frac{d {}^{n-1} }{d {}t^{n-1} }(Lu)|_{t=0}=:\varphi_n
+ \end{cases}
+$$
+ Recall that $\varphi\in H_0^1,$ is required to solve the equation
+In this way, the orthogonal basis $\{w_k\}$ can be used to give convergence.
+But the general $\varphi_n$ may not have this property. Therefore we need to impose compatibility conditions:</p>
+<p>Inductively, for $\varphi_0:=\varphi,$</p>
+<p>$$
+\varphi_j:=\frac{d {}^{j-1} }{d {}t^{j-1} }f(0)-\sum_{k=0}^{j-1}\binom{j-1}{k}L^k\varphi_{j-1-k},
+$$</p>
+<p>Request all $\varphi_j\in H_0^1(\Omega),$ $j=0,\cdots,n.$</p>
+<p><strong> Theorem 3 </strong>. <em> Let $\Omega\subset \mathbb{R}^n$ be a bounded open set, integers $m\ge 0.$ $\partial\Omega\in C^{2(m+1)}.$ $a^{ij},b^i,c\in C^{2m+1}(\overline\Omega_T),$ $\varphi\in H^{2m+1}(\Omega),$ $\frac{d {}^kf}{d {}t^k}\in L^2(0,T;H^{2m-2k}(\Omega)),$ $k\le m.$. If the equation satisfies the $m$ order compatibility condition, there is a weak solution $u,$ that satisfies $\frac{d {}^ku}{d {}t^k}\in L^2(0,T;H^{2(m+1)-2k}),$ $k\le m+1,$ and </em> </p>
+<p>$$
+\sum_{k=0}^{m+1}\left\Vert\frac{d {}^ku}{d {}t^k}\right\Vert_{L^2(0,T;H^{2(m+1)-2k}(\Omega))}\le C(\Omega,m,n,L,T)\left(\Vert\varphi\Vert_{H^{2m+1}(\Omega)}+\sum_{k=0}^m \left\Vert\frac{d {}^kf}{d {}t^k}\right\Vert_{L^2(0,T;H^{2m-2k}(\Omega))}\right)
+$$</p>
+<p>Use the induction method. The conclusion has been reached when $m=0$. Consider the situation when proving $m+1$.
+Note $\widetilde u=u_t,$ $\widetilde f=f_t=L^{(1)}u,$
+$\widetilde\varphi=\varphi_1=f(0)-L\varphi_0.$ Then consider
+$$
+\begin{cases}
+ \widetilde{u}_t+L\widetilde u=\widetilde f\\
+ \widetilde u|_{t=0}=\widetilde\varphi
+ \end{cases}
+$$
+ This gives the regularity estimate of $\widetilde u=u_t$.
+Just estimate $\Vert u\Vert_{L^1(0,T;H^{2(m+2)})}$ again, but this is determined by $Lu=f-u_t,$
+It is obtained immediately by estimating the elliptic equation.</p>
+<p><strong> Corollary 4 </strong>. <em> Assume $\Omega$ is a bounded smooth region, $a^{ij},b^i,c,f\in C^\infty(\overline\Omega_T),$ $\varphi\in C^\infty(\overline\Omega),$ satisfies the infinite order compatibility condition, then $u\in C^\infty(\overline\Omega_T)$ is a smooth solution. </em> </p>
+<p>From the Lions theorem and Sobolev embedding theorem, we can obtain the smoothness in time and space respectively.</p>
+<p>The article was last updated on 2022-12-24 09:06:18 </p>
+
+            
                 </div>
             
         </div>
@@ -427,7 +582,7 @@ $$
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《PDE2》笔记-Cauchy问题</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">PDE2 Notes - Cauchy Questions</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Cauchy Question</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -449,7 +604,7 @@ $$
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《PDE2》笔记-Galerkin逼近</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">PDE2 Notes - Galerkin Approach</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Galerkin Approach</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -702,9 +857,7 @@ $$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%97%B6%E9%97%B4%E4%B8%80%E9%98%B6%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text"> Temporal first-order regularity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%97%B6%E9%97%B4%E4%BA%8C%E9%98%B6%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text"> Temporal second-order regularity</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E9%97%AE%E9%A2%98%E7%BA%A6%E5%8C%96"><span class="nav-text"> problem reduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%96%B9%E7%A8%8B%E6%B1%82%E5%AF%BC"><span class="nav-text"> Derivatives of Equations</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%88%9D%E5%80%BC-H-2-%E6%A8%A1%E6%8E%A7%E5%88%B6"><span class="nav-text"> Initial value $H^2$ module control</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%97%B6%E9%97%B4%E4%BA%8C%E9%98%B6%E9%A1%B9%E4%BC%B0%E8%AE%A1"><span class="nav-text"> Time second-order term estimation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E9%AB%98%E9%98%B6%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text"> higher order regularity</span></a></li></ol>
         </div>
     
 </div>

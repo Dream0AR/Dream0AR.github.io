@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑》复习-同伦论</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology Review - Homotopy</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Review of &#34;Algebraic Topology&#34;-Homotopy Theory</span>
                 
             </span>
         </div>
@@ -197,11 +197,11 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-178" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-178" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/"><span data-lang-group="note-label-179" data-lang="zh-cn">代数拓扑</span><span data-lang-group="note-label-179" data-lang="en" style="display:none">Algebraic Topology</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="同伦群"><a href="#同伦群" class="headerlink" title="同伦群"></a>同伦群</h2><p>$n$维同伦群$\pi_n(X,x_0)$定义为映射$f:(I^n,\partial I^n)\rightarrow (X,x_0)$的同伦类全体.
 同伦$f_t$满足$f_t(\partial I^n)\equiv x_0.$
@@ -291,39 +294,66 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="homotopy-group">Homotopy group</h2>
-<p>The $n$-dimensional homotopy group $\pi_n(X,x_0)$ is defined as the entire homotopy class of the mapping $f:(I^n,\partial I^n)\rightarrow (X,x_0)$.<br>Homotopy $f_t$ satisfies $f_t(\partial I^n)\equiv x_0.$<br>It can also be regarded as the entire homotopy class of $f:(S^n,s_0)\rightarrow (X,x_0)$.</p>
-<p>Consider $I^{n-1}\subset I^n,$ $J^{n-1}:=\partial I^n\setminus I^{n-1}.$<br>Then the relative homotopy group $\pi_n(X,A,x_0)$ is defined as the entire homotopy class of the mapping $(I^n,\partial I^n, J^{n-1})\rightarrow (X,A,x_0)$.<br>It can also be regarded as the entire homotopy class of $(D^n,S^{n-1},s_0)\rightarrow (X,A,x_0)$.<br>The relative homotopy group has a long exact sequence:</p>
-<script type="math/tex; mode=display">
-\cdots\rightarrow \pi_n(A,x_0)\xrightarrow{i_\ast }\pi_n(X,x_0)\xrightarrow{j_\ast }\pi_n(X,A,x_0)\xrightarrow{\partial} \pi_{n-1}(A,x_0)\rightarrow\cdots\rightarrow \pi_0(X,x_0)</script><p>Similar to the case of homology, we can also prove the case of the more general triplet $(X,A,B)$,<br>When $B=x_0$, it is the above formula.</p>
-<p>The road $\gamma$ in $X$ can also induce isomorphism $\beta_\gamma,$ between homotopy groups of different base points<br>Therefore, if the roads are connected, the base point $x_0.$ can be omitted. The space $X$ is said to be $n$ connected, if $\pi_i(X)=0,$<br>$\,\forall\,i\le n.$<br>$n$ is connected if and only if $S^i$ in all $X$ is shrinkable (from a mapping point of view),<br>$\,\forall\,i\le n.$ The situation with relative homotopy is similar.</p>
-<h2 id="cw-complex-homotopy-theory">CW complex homotopy theory</h2>
-<h3 id="cell-cavity-approximation">Cell cavity approximation</h3>
-<p><strong>Theorem 1</strong> (Whitehead). *If the mapping between CW complexes $f: </p>
-<p><strong>Theorem 2</strong> (Cell Approximation). *The mapping between each CW complex $f:</p>
-<p>For a given pair $(X,A), $ $A$ is a non-empty CW complex.<br>Its $n$ connected <strong>CW model</strong> refers to a $n$ connected CW pair $(Z,A),$<br>$f:Z\rightarrow X$ is an identity map on $A$,<br>And $f_\ast :\pi_i(Z)\rightarrow \pi_i(X)$ is isomorphic when $i&gt;n$, and is surjective for $i=n$.</p>
-<p><strong>Proposition 3</strong>. <em>For each such pair $(X,A)$, there exists an $n$ connected CW model $f:(Z,A)\rightarrow (X,A),$ $\,\forall\,n\ge 0.$ $Z$ is obtained by attaching $A$ to the cell with dimensions above $n$.</em></p>
-<p>When $n=0$, the situation is most special. Take $Z$ to include a connected branch of $A$,<br>That is, there is <strong>CW approximation</strong>$f:Z\rightarrow X,$ which induces the isomorphism of all homotopy groups,<br>is <strong>weak homotopy equivalence</strong>. In fact,<br>It can be proved that the $n$ connected CW model of $(X,A)$ is unique in the sense of relative homotopy equivalence with respect to $A$.<br>In particular, the CW approximation of space is unique in the sense of homotopy equivalence.</p>
-<p><strong>Proposition 4</strong>. <em>Weak homotopy equivalence $f:X\rightarrow Y$ induces the isomorphism of all homology/cohomology groups, with respect to any coefficient group $G.$</em></p>
-<h3 id="dig-out-the-theorem">Dig out the theorem</h3>
-<p>We also have a poaching theorem about homotopy, which is expressed by the following proposition:</p>
-<p><strong>Theorem 5</strong>. <em>For the CW complex $X,$ there is a subcomplex $A\cap B=C.$ If $(A,C)$ is $m$ connected, $(B,C)$ is $n$ connected, then $\pi_i(A,C)\rightarrow \pi_i(X,B)$ induced by embedding mapping is isomorphism, $\,\forall\,i&lt;m+n.$ For $i=m+n$ it is surjective.</em><br><strong>Corollary 6</strong> (Freudenthal). <em>$\pi<em>i (S^n)\rightarrow \pi</em>{i+1}(S^{n+1})$ is an isomorphism, $i&lt;2n-1.$ $i=2n-1$ is a surjection. More generally, this is also true for $\pi<em>i(X)\rightarrow\pi</em>{i+1}(SX)$, As long as $X$ is $n-1$ connected CW complex.</em></p>
-<p><strong>Proposition 7</strong>. <em>(Eilenberg-Maclane space) CW complex $K(G,n)$ is unique in the sense of homotopy and is determined only by $G,n$.</em></p>
-<h2 id="hurewicz-theorem">Hurewicz Theorem</h2>
-<p><strong>Theorem 8</strong>. <em>If the space $X$ is $(n-1)$ connected, then $\widetilde H_i(X)=0,$ $\,\forall\,i&lt;n;$ $\pi_n(X)\cong H_n(X).$ is similar to the relative homotopy.</em></p>
-<p>In other words, as long as $X$ is simply connected, then non-trivial homotopy groups and homology groups occur in the same dimension,<br>And they are isomorphic. Combined with Whitehead&#39;s theorem, we can prove the following conclusion. (Replace $Y$ with $M_f$.)</p>
-<p><strong>Corollary 9</strong>. <em>If $f<em>\ast :H</em>\ast (X)\cong H_\ast (Y),$ then the mapping between simply connected CW complexes $f:X\rightarrow Y$ is homotopy equivalent.</em></p>
-<h2 id="fiber-plexus">fiber plexus</h2>
-<p>Fiber bundle $F\rightarrow E\xrightarrow{p} B$ refers to $\,\forall\,b\in B,$<br>$p^{-1}(b)\approx F,$ and has local trivialization $p^{-1}(U)\approx U\times F.$<br>Fibrification also requires that $p$ satisfies the <strong>homopy-boosting property</strong> with respect to $X$:<br>$\,\forall\,g_t:X\rightarrow B$ satisfies $g_0$ and has an improvement $\widetilde g_0,$<br>Then the overall existence is improved $\widetilde{g}_t.$</p>
-<p><strong>Theorem 10</strong>. <em>If the fiber bundle $F\rightarrow E\rightarrow B$ is all fibrotic (called Serre fibrosis) about the disk, then there is the following long positive sequence:</em></p>
-<script type="math/tex; mode=display">
-\cdots \rightarrow \pi_n(F,x_0)\rightarrow \pi_n(E,x_0)\rightarrow \pi_n(B,b_0)\rightarrow \pi_{n-1}(F,x_0)\rightarrow \cdots\rightarrow \pi_0(E,x_0)\rightarrow 0.</script><p>Note that this is $\pi_n(E,F,x_0)\cong \pi_n(B,b_0).$ In fact, we have the following properties,<br>It shows that fibrous plexuses are almost all fibrosis:</p>
-<p><strong>Proposition 11</strong>. <em>The fiber bundle $p:E\rightarrow B$ has the homotopy promotion property for any CW complex pair $(X,A)$.</em></p>
-<h2 id="stable-homotopy-group">Stable homotopy group</h2>
-<p>For $n$ connected CW complex $X,$ we have $\pi<em>i(X)\cong \pi</em>{i+1}(SX),$ $i&lt;2n+1.$<br>In particular, it holds for $i\le n$, so $SX$ is $n+1$ connected. We have the following suspensions sequence</p>
-<script type="math/tex; mode=display">
-\pi_i(X)\rightarrow \pi_{i+1}(SX)\rightarrow \pi_{i+2}(S^2X)\rightarrow \cdots</script><p>When $i&lt;2n+1$, they are all isomorphisms. Let these groups be $\pi_i^s(X), and $ are called <strong>stable homotopy groups</strong>.</p>
-<p>The article was last updated on 2022-10-11 17:51:42</p>
+                    
+                <h2 id="en-同伦群"><a href="#en-同伦群" class="headerlink" title="同伦群"></a> homotopy group</h2><p>The $n$-dimensional homotopy group $\pi_n(X,x_0)$ is defined as the entire homotopy class of the mapping $f:(I^n,\partial I^n)\rightarrow (X,x_0)$.
+Homotopy $f_t$ satisfies $f_t(\partial I^n)\equiv x_0.$
+It can also be regarded as the entire homotopy class of $f:(S^n,s_0)\rightarrow (X,x_0)$.</p>
+<p>Consider$I^{n-1}\subset I^n,$ $J^{n-1}:=\partial I^n\setminus I^{n-1}.$
+Then the relative homotopy group $\pi_n(X,A,x_0)$ is defined as the entire homotopy class of the mapping $(I^n,\partial I^n, J^{n-1})\rightarrow (X,A,x_0)$.
+It can also be regarded as the entire homotopy class of $(D^n,S^{n-1},s_0)\rightarrow (X,A,x_0)$.
+The relative homotopy group has a long exact sequence:</p>
+<p>$$
+\cdots\rightarrow \pi_n(A,x_0)\xrightarrow{i_\ast }\pi_n(X,x_0)\xrightarrow{j_\ast }\pi_n(X,A,x_0)\xrightarrow{\partial} \pi_{n-1}(A,x_0)\rightarrow\cdots\rightarrow \pi_0(X,x_0)
+$$</p>
+<p>Similar to the homology case, we can also prove the more general triplet $(X,A,B)$ case,
+When $B=x_0$, it is the above formula.</p>
+<p>The road $\gamma$ in $X$ can also induce isomorphism $\beta_\gamma,$ between homotopy groups at different base points.
+Therefore, if the roads are connected, the base point $x_0.$ can be omitted, and the space $X$ is said to be $n$ connected, if $\pi_i(X)=0,$
+$\,\forall\,i\le n.$
+$n$ is connected if and only if $S^i$ in all $X$ are shrinkable (from a mapping point of view),
+$\,\forall\,i\le n.$ The situation with relative homotopy is similar.</p>
+<h2 id="en-CW复形同伦论"><a href="#en-CW复形同伦论" class="headerlink" title="CW复形同伦论"></a> CW complex homotopy theory</h2><h3 id="en-胞腔逼近"><a href="#en-胞腔逼近" class="headerlink" title="胞腔逼近"></a> Cellular Approximation</h3><p><strong> Theorem 1 </strong> (Whitehead). <em> If the mapping between CW complexes $f:X\rightarrow Y$ induces the isomorphism $f_\ast :\pi_\ast (X)\cong \pi_\ast (Y),$ on the homotopy group, then $f$ is a homotopy equivalent. If $f$ still contains $X\hookrightarrow Y,$, the conclusion is stronger: $X$ is the strong deformation contraction kernel of $Y$. </em> </p>
+<p><strong> Theorem 2 </strong> (Cellular approximation). <em> The mapping $f:X\rightarrow Y$ between each CW complex is homotopic to a cell mapping, that is, mapping the cell to a cell (with a lower dimension than its own). </em> </p>
+<p>For the given pair $(X,A),$ $A$ is a non-empty CW complex.
+One of its $n$ connected <strong> CW model </strong> Refers to a $n$ connected CW pair $(Z,A),$
+$f:Z\rightarrow X$ is an identity mapping on $A$,
+And $f_\ast :\pi_i(Z)\rightarrow \pi_i(X)$ is isomorphic to $i&gt;n$ and surjective to $i=n$.</p>
+<p><strong> Proposition 3 </strong>. <em> For each such pair $(X,A)$, there is a $n$ connected CW model $f:(Z,A)\rightarrow (X,A),$ $\,\forall\,n\ge 0.$ $Z$, which is obtained by attaching $A$ to the cell with dimensions above $n$. </em> </p>
+<p>When $n=0$, the situation is most special. Take a connected component of $Z$ including $A$,
+There is <strong> CW approach </strong> $f:Z\rightarrow X,$ induces the isomorphism of all homotopy groups,
+Yes <strong> weak homotopy equivalence </strong> .In fact,
+It can be proved that the $n$ connected CW model of $(X,A)$ is unique in the sense of relative homotopy equivalence with respect to $A$.
+In particular, the CW approximation of space is unique in the sense of homotopy equivalence.</p>
+<p><strong> Proposition 4 </strong>. <em> Weak homotopy equivalence $f:X\rightarrow Y$ induces the isomorphism of all homology/cohomology groups, with respect to any coefficient group $G.$ </em> </p>
+<h3 id="en-挖去定理"><a href="#en-挖去定理" class="headerlink" title="挖去定理"></a> dig out theorem</h3><p>We also have a poaching theorem about homotopy, which is expressed by the following proposition:</p>
+<p><strong> Theorem 5 </strong>. <em> For the CW complex $X,$, there is a subcomplex $A\cap B=C.$. If $(A,C)$ is connected to $m$ and $(B,C)$ is connected to $n$, then $\pi_i(A,C)\rightarrow \pi_i(X,B)$ induced by embedding mapping is isomorphism, and $\,\forall\,i&lt;m+n.$ is surjective for $i=m+n$. </em> </p>
+<p><strong> Corollary 6 </strong> (Freudenthal). <em> $\pi_i (S^n)\rightarrow \pi_{i+1}(S^{n+1})$ is an isomorphism, $i&lt;2n-1.$ $i=2n-1$ is a surjection. More generally, this is also true for $\pi_i(X)\rightarrow\pi_{i+1}(SX)$, as long as $X$ is a connected CW complex of $n-1$. </em> </p>
+<p><strong> Proposition 7 </strong>. <em> (Eilenberg-Maclane space) CW complex $K(G,n)$ is unique in the homotopy sense and is determined only by $G,n$. </em> </p>
+<h2 id="en-Hurewicz定理"><a href="#en-Hurewicz定理" class="headerlink" title="Hurewicz定理"></a> Hurewicz theorem</h2><p><strong> Theorem 8 </strong>. <em> If the space $X$ is connected to $(n-1)$, then $\widetilde H_i(X)=0,$ $\,\forall\,i&lt;n;$ $\pi_n(X)\cong H_n(X).$ are relatively homotopic and similar. </em> </p>
+<p>In other words, as long as $X$ is simply connected, then non-trivial homotopy groups and homology groups occur in the same dimension,
+And they are isomorphic. Combined with Whitehead&#39;s theorem, we can prove the following conclusion. (Replace $Y$ with $M_f$.)</p>
+<p><strong> Corollary 9 </strong>. <em> If $f_\ast :H_\ast (X)\cong H_\ast (Y),$, then the mapping $f:X\rightarrow Y$ between simply connected CW complexes is homotopy equivalent. </em> </p>
+<h2 id="en-纤维丛"><a href="#en-纤维丛" class="headerlink" title="纤维丛"></a> fiber plexus</h2><p>Fiber plexus $F\rightarrow E\xrightarrow{p} B$ refers to $\,\forall\,b\in B,$
+$p^{-1}(b)\approx F,$ and has local trivialization $p^{-1}(U)\approx U\times F.$
+Fibrosis also requires that $p$ regarding $X$ be satisfied <strong> homotopy boosting properties </strong> :
+$\,\forall\,g_t:X\rightarrow B$ Satisfy $g_0$ and improve $\widetilde g_0,$
+Then the overall existence is improved $\widetilde{g}_t.$</p>
+<p><strong> Theorem 10 </strong>. <em> If the fiber bundle $F\rightarrow E\rightarrow B$ is all fibrotic about the disk (called Serre fibrosis), then there is the following long exact sequence: </em> </p>
+<p>$$
+\cdots \rightarrow \pi_n(F,x_0)\rightarrow \pi_n(E,x_0)\rightarrow \pi_n(B,b_0)\rightarrow \pi_{n-1}(F,x_0)\rightarrow \cdots\rightarrow \pi_0(E,x_0)\rightarrow 0.
+$$</p>
+<p>Notice that this is $\pi_n(E,F,x_0)\cong \pi_n(B,b_0).$. In fact, we have the following properties,
+It shows that fibrous plexuses are almost all fibrosis:</p>
+<p><strong> Proposition 11 </strong>. <em> The fiber bundle $p:E\rightarrow B$ has the homotopy lifting property for any CW complex pair $(X,A)$. </em> </p>
+<h2 id="en-稳定同伦群"><a href="#en-稳定同伦群" class="headerlink" title="稳定同伦群"></a> stable homotopy group</h2><p>For $n$ connected CW complex $X,$ we have $\pi_i(X)\cong \pi_{i+1}(SX),$ $i&lt;2n+1.$
+This holds especially for $i\le n$, so $SX$ is connected to $n+1$. We have the following sequence of suspensions</p>
+<p>$$
+\pi_i(X)\rightarrow \pi_{i+1}(SX)\rightarrow \pi_{i+2}(S^2X)\rightarrow \cdots
+$$</p>
+<p>When $i&lt;2n+1$, they are all isomorphisms. Let these groups be $\pi_i^s(X),$ and they are called <strong> stable homotopy group </strong>.</p>
+<p>The article was last updated on 2022-10-11 17:51:42 </p>
+
+            
                 </div>
             
         </div>
@@ -366,7 +396,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑2》笔记(9)-Stiefel-Whitney示性类(续)</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (9) -Stiefel-Whitney Explanatory Class (cont &#39;d)</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology 2&#34; Notes (9)-Stiefel-Whitney characteristic classes (continued)</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -388,7 +418,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑2》笔记(8)-Stiefel-Whitney示性类</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology 2 notes (8) -Stiefel-Whitney indicative class</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology 2&#34; Notes (8)-Stiefel-Whitney characteristic class</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -641,7 +671,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#homotopy-group"><span class="nav-text">Homotopy group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cw-complex-homotopy-theory"><span class="nav-text">CW complex homotopy theory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cell-cavity-approximation"><span class="nav-text">Cell cavity approximation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dig-out-the-theorem"><span class="nav-text">Dig out the theorem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hurewicz-theorem"><span class="nav-text">Hurewicz Theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fiber-plexus"><span class="nav-text">fiber plexus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stable-homotopy-group"><span class="nav-text">Stable homotopy group</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%90%8C%E4%BC%A6%E7%BE%A4"><span class="nav-text"> homotopy group</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-CW%E5%A4%8D%E5%BD%A2%E5%90%8C%E4%BC%A6%E8%AE%BA"><span class="nav-text"> CW complex homotopy theory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E8%83%9E%E8%85%94%E9%80%BC%E8%BF%91"><span class="nav-text"> Cellular Approximation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%8C%96%E5%8E%BB%E5%AE%9A%E7%90%86"><span class="nav-text"> dig out theorem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Hurewicz%E5%AE%9A%E7%90%86"><span class="nav-text"> Hurewicz theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E7%BA%A4%E7%BB%B4%E4%B8%9B"><span class="nav-text"> fiber plexus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E7%A8%B3%E5%AE%9A%E5%90%8C%E4%BC%A6%E7%BE%A4"><span class="nav-text"> stable homotopy group</span></a></li></ol>
         </div>
     
 </div>

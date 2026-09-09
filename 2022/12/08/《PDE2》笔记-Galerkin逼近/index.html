@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《PDE2》笔记-Galerkin逼近</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">PDE2 Notes - Galerkin Approach</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Galerkin Approach</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-122" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-122" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>考虑问题 
 $$
@@ -405,7 +408,180 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    
+                <h2 id="en-动机"><a href="#en-动机" class="headerlink" title="动机"></a> motivation</h2><p>Consider the problem
+$$
+\left\{\begin{aligned}
+ u_t-\Delta u=0&amp;\quad in\:\Omega_T\\
+ u=0&amp;\quad on\:\partial\Omega\\
+ u|_{t=0}=h&amp;\quad in\:\Omega 
+ \end{aligned}\right.
+$$</p>
+<p>A very classic processing method is the separation of variables method. If there is $u(x,t)=w(x)H(t),$ then</p>
+<p>$$
+H_tw-\Delta wH=0,\quad w|_{\partial\Omega}=0.
+$$</p>
+<p> Furthermore,</p>
+<p>$$
+\frac{\Delta w}{w}=\frac{H_t}{H}=-\lambda,
+$$</p>
+<p>At this time $w$ is the characteristic function of $\Delta$.
+Take $\lambda_1\le \lambda_2\le\cdots\rightarrow \infty,$
+Then $\{w_k\}_{k=1}^\infty$ forms a set of orthogonal basis.
+We hope to give a weak solution through $u_m=\sum_{k=1}^m C_m^k(t) w_k\rightarrow u$.</p>
+<h2 id="en-Galerkin逼近"><a href="#en-Galerkin逼近" class="headerlink" title="Galerkin逼近"></a> Galerkin approaches</h2><p>Can get $\{w_k\}\subset C^\infty(\Omega)\cap H_0^1(\Omega)\cap H^2(\Omega),$
+Let $\{w_k\}$ be $L^2(\Omega)$ orthonormal basis and $H_0^1(\Omega)$ orthonormal basis.</p>
+<p>Consider conditions</p>
+<p>$$
+a^{ij},b^i,c\in L^\infty(\Omega_T),\quad f\in L^2(\Omega_T),\quad h\in L^2(\Omega).
+$$</p>
+<p>$\,\forall\,m\ge 1,$ takes $u_m=\sum_{k=1}^m C_m^k(t)w_k(x),$
+Make$\,\forall\,v\in L(w_1,\cdots,w_m),$
+$$
+\begin{cases}
+ \left&lt;{}u_m&#39;(t),v\right&gt;+B_L[u_m,v,t]=(f,v),&amp;a.e.\,t\in (0,T)\\
+ u_m|_{t=0}=h_m:=\sum_{k=1}^m (h,w_k)w_k(x)
+ \end{cases}
+$$
+ $h_m\rightarrow h=\sum_{k=1}^\infty (h,w_k)w_k.$
+Expand $u_m$ and write it as $e_l^k=B[w_l,w_k;t],$. We only need to solve the ODE equations
+$$
+\begin{cases}
+ {C_m^k}&#39;(t)+C_m^le_l^k=(f,w_k)\\
+ C_m^k(0)=(h,w_k)
+ \end{cases}
+$$
+Notice$(f,w_k)(t)=\int_\Omega f(x,t)w_k(x)dx\in L^2(0,T),$
+$e_l^k(t)\in L^\infty(0,T),$ From ODE theory, we have the following lemma:</p>
+<p><strong> Lemma 1 </strong>. <em> The above ODE system of equations has a unique solution $\{C_m^k\}$ in $W^{1,2}(0,T)$. Therefore, the original equation has a solution $u_m.$ in $W^{1,2}(0,T;H_0^1(\Omega))$ </em> </p>
+<p>When $f$ is bounded with respect to time $L^\infty$, the equation also has a solution in $W^{1,\infty}(0,\infty)$,
+At this time $u_m$ can also be taken from $W^{1,\infty}(0,T;H_0^1(\Omega))$.</p>
+<h2 id="en-能量估计"><a href="#en-能量估计" class="headerlink" title="能量估计"></a> energy estimate</h2><h3 id="en-零阶项估计"><a href="#en-零阶项估计" class="headerlink" title="零阶项估计"></a> Zero-order term estimate</h3><p>In order to illustrate the convergence, we need to give the boundedness of the energy. Taking $v=u_m,$ in the system of equations then</p>
+<p>$$
+\frac{1}{2}\frac{d {} }{d {}t}\Vert u_m(t)\Vert_{L^2(\Omega)}^2+B[u_m,u_m,t]=(f,u_m)\le \frac{\Vert f(t)\Vert_{L^2(\Omega)}^2+\Vert u_m(t)\Vert_{L^2(\Omega)}^2}{2}.
+$$</p>
+<p>Estimated from the elliptic equation energy,</p>
+<p>$$
+B[u_m,u_m;t]\ge \frac{\lambda}{2}\Vert Du_m\Vert_{L^2}^2-\mu(L,\Omega)\Vert u_m\Vert_{L^2}^2.
+$$</p>
+<p>Therefore,</p>
+<p>$$
+\frac{d {} }{d {}t}\Vert u_m\Vert_{L^2}^2+\lambda\Vert u_m\Vert_{H^1}^2\le C(\Vert f\Vert_{L^2}^2+\Vert u_m\Vert_{L^2}^2).
+$$</p>
+<p>for</p>
+<p>$$
+\frac{d {}F}{d {}t}\le CF(t)+g(t),\quad \frac{d {} }{d {}t}(e^{-Ct}F(t))\le e^{-Ct}g(t),
+$$</p>
+<p>$$
+e^{-Ct}F(t)\le F(0)+\int_0^te^{-cs}g(s)ds,\quad F(t)\le e^{Ct}F(0)+\int_0^te^{C(t-s)}g(s)ds.
+$$</p>
+<p>In this way we get Gronwall&#39;s inequality. Further we have</p>
+<p>$$
+F(t)\le C(T)\left(F(0)+\int_0^Tg(s)ds\right).
+$$</p>
+<p> If $g$ is non-negative and non-decreasing,
+We can also give more precise estimates.</p>
+<p>So from the original inequality, we get</p>
+<p>$$
+\Vert u_m(t)\Vert_{L^2(\Omega)}^2\le C(T)\left(\Vert\varphi_m\Vert_{L^2(\Omega)}^2+\Vert f\Vert_{L^2(\Omega_T)}^2\right).
+$$</p>
+<p>There are further</p>
+<p>$$
+\Vert u_m(t)\Vert_{L^2(\Omega)}^2+\int_0^t\Vert u_m(s)\Vert_{H^1}^2ds\le C(T)\left(\Vert\varphi_m\Vert_{L^2(\Omega)}^2+\Vert f\Vert_{L^2(\Omega_T)}^2\right).
+$$</p>
+<p>So$u_m\in L^2(0,T;H_0^1(\Omega)),$
+In fact it&#39;s also in $L^\infty(0,T;H_0^1(\Omega))$.
+What needs to be explained next is $u_m&#39;\in L^2(0,T;H^{-1}(\Omega)).$</p>
+<h3 id="en-导数项估计"><a href="#en-导数项估计" class="headerlink" title="导数项估计"></a> Derivative term estimation</h3><p>$\,\forall\,v\in H_0^1(\Omega),$ takes $v_m=\sum_{k=1}^m (v,w_k)w_k.$
+Yes for $t\in (0,T),$ almost everywhere
+$$
+\begin{aligned}
+ |\left&lt;{}u_m&#39;,v\right&gt;|&amp;=|(u_m&#39;,v_m)|=|(f,v_m)-B[u_m,v_m;t]|\\
+ &amp;\le \Vert f\Vert_{L^2}\Vert v_m\Vert_{L^2}+C\Vert u_m\Vert_{H^1}\Vert v_m\Vert_{H^1}\le (\Vert f\Vert_{L^2}+C\Vert u_m\Vert_{H^1})\Vert v\Vert_{H^1}
+ \end{aligned}
+$$
+ Therefore,</p>
+<p>$$
+\Vert u_m&#39;(t)\Vert_{H^{-1}(\Omega)}\le \Vert f\Vert_{L^2}+C\Vert u_m\Vert_{H^1}
+$$</p>
+<p><strong> Theorem 2 </strong>. <em> Under appropriate coefficient conditions, the approximate solution $u_m\in C([0,T];L^2(\Omega))$ satisfies </em> </p>
+<p>$$
+\max_{[0,T]}\Vert u_m\Vert_{L^2}+\Vert u_m\Vert_{L^2(0,T;H_0^1)}+\Vert u_m&#39;\Vert_{L^2(0,T;H^{-1})}\le C(T,L,\Omega,n)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert\varphi_m\Vert_{L^2(\Omega)}\right).
+$$</p>
+<p>Of course, $\varphi_m$ can be replaced by $\varphi$ to give a consistent upper bound.</p>
+<h2 id="en-弱解存在性"><a href="#en-弱解存在性" class="headerlink" title="弱解存在性"></a> existence of weak solution</h2><p>It is divided into three steps:</p>
+<h3 id="en-弱收敛"><a href="#en-弱收敛" class="headerlink" title="弱收敛"></a> weak convergence</h3><p>Due to $\Vert u_m\Vert_{L^2(0,T;H_0^1)},$
+$\Vert u_m&#39;\Vert_{L^2(0,T;H^{-1})}$ is uniformly bounded, and we can obtain weakly convergent subsequences,
+Weakly converge to $u,v.$ in their respective spaces and prove $u&#39;=v\in H^{-1},$ $a.e.$
+$t\in [0,T].$</p>
+<p>The conclusion is equivalent to</p>
+<p>$$
+\frac{d {} }{d {}t}\left&lt;{}u(t),\varphi\right&gt;=\left&lt;{}u&#39;(t),\varphi\right&gt;=\left&lt;{}v,\varphi\right&gt;,\quad \,\forall\,\varphi\in H_0^1(\Omega),\quad a.e.\:t\in [0,T].
+$$</p>
+<p>Defined by weak derivatives with respect to time, this is equivalent to $\,\forall\,\eta\in C_0^\infty(0,T),$</p>
+<p>$$
+-\int_0^T\left&lt;{}u(t),\varphi\right&gt;\eta&#39;=\int_0^T\left&lt;{}v,\varphi\right&gt;\eta.
+$$</p>
+<p>And $\,\forall\,\varphi\in H_0^1(\Omega),$</p>
+<p>$$
+\int_0^T\left&lt;{}v,\varphi\right&gt;\eta dt=\lim_{m\rightarrow\infty}\int_0^T(u_m&#39;,\varphi)\eta dt=-\lim_{m\rightarrow\infty}\int_0^T(u_m,\varphi)\eta&#39; dt=-\int_0^T(u,\varphi)\eta&#39;dt.
+$$</p>
+<p>This gives $u&#39;=v$.</p>
+<h3 id="en-热方程弱解"><a href="#en-热方程弱解" class="headerlink" title="热方程弱解"></a> Weak solution to the heat equation</h3><p>Next, verify that $u$ is indeed a weak solution to the heat equation. Take $v_N:=\sum_{k=1}^N(v,w_k)w_k.$
+If $m&gt;N,$ then there is</p>
+<p>$$
+\int_0^T(u_m&#39;,v_N)\eta dt=\int_0^T\left((f,v_N)-B[u_m,v_N;t]\right)\eta dt.
+$$</p>
+<p>Let $m\rightarrow\infty,$ and then $N\rightarrow\infty,$ then we have</p>
+<p>$$
+\int_0^T(u&#39;,v)\eta dt=\int_0^T\left((f,v)-B[u,v;t]\right)\eta dt,\quad \,\forall\,\eta\in C[0,T].
+$$</p>
+<p>This shows that $u$ is a weak solution to the heat equation.</p>
+<h3 id="en-初值条件"><a href="#en-初值条件" class="headerlink" title="初值条件"></a> initial value condition</h3><p>Finally, it is necessary to verify that the initial value condition is met. Since the initial value condition is taken into account when taking $u_m$,
+Taking $\eta\in C^1[0,T],$ $\eta(T)=0,$ $\eta(0)=1.$ for $m&gt;N,$ we have</p>
+<p>$$
+\int_0^T(u_m&#39;,v_N)\eta dt=(u_m,v_N)\eta|^{T}_{t=0}-\int_0^T(u_m,v_N)\eta&#39;dt=-(\varphi_m,v_N)-\int_0^T(u_m,v_N)\eta&#39;dt.
+$$</p>
+<p>Let $m\rightarrow\infty,$ and then $N\rightarrow\infty,$ we have:</p>
+<p>$$
+\int_0^T(u&#39;,v)\eta dt=-(\varphi,v)-\int_0^T(u,v)\eta&#39;dt.
+$$</p>
+<p>On the other hand, according to Lions’ theorem, $u\in C([0,T],L^2),$
+In the sense of $L^2$, $u(0)=\lim_{t\rightarrow 0+}u(t).$ therefore has the same as before</p>
+<p>$$
+\int_0^T(u&#39;,v)\eta dt=(u,v)\eta|^{T}_{t=0}-\int_0^T(u,v)\eta&#39;dt=-(u(0),v)-\int_0^T(u,v)\eta&#39;dt
+$$</p>
+<p>So $u$ also satisfies the initial value condition. From the weak sharp continuity of the norm, we have:</p>
+<p><strong> Theorem 3 </strong>. <em> When the coefficients of the heat equation meet appropriate conditions, there is a weak solution to the heat equation and the energy estimation is satisfied: </em> </p>
+<p>$$
+\max_{[0,T]}\Vert u\Vert_{L^2}+\Vert u\Vert_{L^2(0,T;H_0^1)}+\Vert u&#39;\Vert_{L^2(0,T;H^{-1})}\le C(T,L,\Omega,n)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert\varphi\Vert_{L^2(\Omega)}\right).
+$$</p>
+<h2 id="en-弱解唯一性"><a href="#en-弱解唯一性" class="headerlink" title="弱解唯一性"></a> Weak solution uniqueness</h2><p>The previous energy estimation can only show that the weak solution obtained by the Galerkin method is unique,
+But not all weak solutions are obtained through the Galerkin method, so we still need to find another method.
+In addition, after proving the uniqueness,
+We have shown that the only weak solution can be approximated by the Galerkin method.
+In this way, any weak solution can be applied to the energy estimate obtained previously.</p>
+<p>Just consider the case $f\equiv 0,$ $\varphi\equiv 0$. $u(t)\in H_0^1(\Omega),$
+$a.e.$ $t.$ Just consider whether the following equation has zero solution.</p>
+<p>$$
+\left&lt;{}u_t,u\right&gt;+B[u,u;t]=0.
+$$</p>
+<p> As before, we have</p>
+<p>$$
+\frac{d {} }{d {}t}\Vert u(t)\Vert^2_{L^2}=\left&lt;{}u_t,u\right&gt;,\quad B[u,u;t]\ge \frac{\lambda}{2}\Vert Du\Vert_{L^2}^2-\mu\Vert u\Vert_{L^2}^2.
+$$</p>
+<p>Therefore</p>
+<p>$$
+\frac{d {} }{d {}t}\Vert u(t)\Vert_{L^2}^2=-B\le \mu\Vert u\Vert_{L^2}^2.
+$$</p>
+<p>In this way, based on basic ODE knowledge, we have</p>
+<p>$$
+\Vert u(0)\Vert_{L^2}^2=0\quad\Rightarrow\quad \Vert u(t)\Vert_{L^2}^2\equiv 0\quad\Rightarrow\quad u\equiv 0\quad in\:\Omega_T.
+$$</p>
+<p>In this way, we have proved the uniqueness of the weak solution and also proved that the weak solution can always be obtained by Galerkin approximation.</p>
+<p>The article was last updated on 2022-12-08 10:24:09 </p>
+
+            
                 </div>
             
         </div>
@@ -448,7 +624,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《PDE2》笔记-热方程正则性</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">PDE2 Notes - Thermal Equation Regularity</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Heat Equation Regularity</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -470,7 +646,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑2》笔记(23)-$S_I$示性类</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology 2 notes (23) - $ S_I $ indicative class</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology 2&#34; Notes (23)-$S_I$ Symbolic Class</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -723,9 +899,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%8A%A8%E6%9C%BA"><span class="nav-text"> motivation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Galerkin%E9%80%BC%E8%BF%91"><span class="nav-text"> Galerkin approaches</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%83%BD%E9%87%8F%E4%BC%B0%E8%AE%A1"><span class="nav-text"> energy estimate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E9%9B%B6%E9%98%B6%E9%A1%B9%E4%BC%B0%E8%AE%A1"><span class="nav-text"> Zero-order term estimate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%AF%BC%E6%95%B0%E9%A1%B9%E4%BC%B0%E8%AE%A1"><span class="nav-text"> Derivative term estimation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%BC%B1%E8%A7%A3%E5%AD%98%E5%9C%A8%E6%80%A7"><span class="nav-text"> existence of weak solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%BC%B1%E6%94%B6%E6%95%9B"><span class="nav-text"> weak convergence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E7%83%AD%E6%96%B9%E7%A8%8B%E5%BC%B1%E8%A7%A3"><span class="nav-text"> Weak solution to the heat equation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%88%9D%E5%80%BC%E6%9D%A1%E4%BB%B6"><span class="nav-text"> initial value condition</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%BC%B1%E8%A7%A3%E5%94%AF%E4%B8%80%E6%80%A7"><span class="nav-text"> Weak solution uniqueness</span></a></li></ol>
         </div>
     
 </div>

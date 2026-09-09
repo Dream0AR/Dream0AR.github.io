@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《PDE2》笔记-双曲方程弱解</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">PDE2 Notes - Weak Solution to Hyperbolic Equation</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Weak Solution of Hyperbolic Equation</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-119" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-119" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>$a^{ij},b^i,c$为在$\Omega_T$上的函数, 记</p>
 <p>$$
@@ -451,7 +454,226 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    
+                <h2 id="en-定义"><a href="#en-定义" class="headerlink" title="定义"></a> definition</h2><p>$a^{ij},b^i,c$ is the function on $\Omega_T$, denoted</p>
+<p>$$
+Lu:=-(a^{ij}u_j)_i+b^iu_i+cu.
+$$</p>
+<p> If $a^{ij}$ is symmetrical and satisfies the consistent condition,
+Then $\partial_t^2+L$ is called a second-order linear divergence consistent hyperbolic operator on $\Omega_T$.</p>
+<p>Consider the initial boundary value problem
+$$
+\begin{cases}
+ u_{tt}+Lu=f&amp;in\:\Omega_T\\
+ u=0&amp;on\:\partial\Omega\times (0,T]\\
+ u|_{t=0}=g,u_t|_{t=0}=h&amp;in\:\Omega
+ \end{cases}
+$$</p>
+<p>On a consistent basis, consider conditions</p>
+<p>$$
+a^{ij}\in C^1(\overline\Omega_T),\quad b^i,c\in C(\overline\Omega_T).
+$$</p>
+<p>$$
+f\in L^2(\Omega_T),\quad g\in H_0^1(\Omega),\quad h\in L^2(\Omega).
+$$</p>
+<p>The weak solution of the hyperbolic equation needs to satisfy $u\in L^2(0,T;H_0^1(\Omega)),$
+$u_{tt}\in L^2(0,T;H^{-1}(\Omega)),$ $\,\forall\,v\in H_0^1(\Omega),$
+a.e. $t\in (0,T],$</p>
+<p>$$
+\left&lt;{}u_{tt},v\right&gt;+B[u,v;t]=\left&lt;{}f(\cdot,t),v\right&gt;
+$$</p>
+<p>In order to satisfy the initial conditions, $u,u_t\in C([0,T];\ast ),$ is needed
+Therefore, $u_t\in L^2(0,T;L^2(\Omega))=L^2(\Omega_T),$ needs to be like this</p>
+<p>$$
+u\in W^{1,2}(0,T;L^2(\Omega))\hookrightarrow C([0,T];L^2(\Omega)),
+$$</p>
+<p>$$
+u_t\in W^{1,2}(0,T;H^{-1}(\Omega))\hookrightarrow C([0,T];H^{-1}(\Omega)).
+$$</p>
+<p>The initial value condition refers to the approximation according to the corresponding module, which is not necessarily the space where $g,h$ originally resides.</p>
+<h2 id="en-Galerkin逼近"><a href="#en-Galerkin逼近" class="headerlink" title="Galerkin逼近"></a> Galerkin approaches</h2><p>Similarly, consider $u_m=\sum_{k=1}^md_m^kw_k,$ and let $v=w_k,$
+by$f_k=\left&lt;{}w_k,f\right&gt;\in L^2(0,T),$
+$e_l^k=B[w_l,w_k;t]\in C([0,T]),$ We have the following theorem:</p>
+<p><strong> Theorem 1 </strong>. <em> $u_m\in H^2(0,T;H_0^1(\Omega))$ There is a unique solution, $d_m^k\in H^2(0,T),$ $k=1,\cdots,m.$ </em> </p>
+<p>Next, do the energy estimation. First consider $u,u_m&#39;.$ and substitute $v=u_m&#39;,$ to have</p>
+<p>$$
+(u_m&#39;&#39;,u_m&#39;)+B[u_m,u_m&#39;;t]=(f,u_m&#39;)\le \frac{1}{2}\left(\Vert f\Vert_{L^2(\Omega)}^2+\Vert u_m&#39;\Vert_{L^2}^2\right)
+$$</p>
+<p>$$
+B[u_m,u_m&#39;;t]:=A(t)+B(t),\quad |B(t)|\le C(L,n)\left(\Vert u_m\Vert^2_{H^1(\Omega)}+\Vert u_m&#39;\Vert_{L^2(\Omega)}\right)
+$$</p>
+<p>$$
+A(t)=\frac{1}{2}\frac{d {} }{d {}t}\int_\Omega a^{ij}{u_m}_i{u_m}_j-\frac{1}{2}\int_\Omega \frac{d {}a^{ij} }{d {}t}{u_m}_i{u_m}_j:=\frac{1}{2}\frac{d {} }{d {}t}A[u_m;t]-\frac{1}{2}A_1[u_m;t],
+$$</p>
+<p>$$
+|A_1|\le C_1(L,n)\Vert u_m\Vert_{H_0^1(\Omega)}^2,\quad \Vert u_m\Vert_{H_0^1(\Omega)}^2\le C(n)\Vert Du_m\Vert_{L^2(\Omega)}^2\le C(\lambda,n)A[u_m;t].
+$$</p>
+<p>Therefore, sorting out</p>
+<p>$$
+\frac{d {} }{d {}t}\left(\Vert u_m&#39;\Vert_{L^2(\Omega)}^2+A[u_m;t]\right)\le C(L,n)\left(\Vert f(t)\Vert_{L^2(\Omega)}^2+A[u_m;t]+\Vert u_m&#39;\Vert_{L^2(\Omega)}^2\right).
+$$</p>
+<p>Remember$\eta(t)=\Vert u_m&#39;(t)\Vert_{L^2(\Omega)}^2+A[u_m,t],$
+By Gronwall&#39;s inequality, we have</p>
+<p>$$
+\eta(t)\le C(T,L,n)(\eta(0)+\Vert f\Vert_{L^2(\Omega_T)}^2),\quad a.e. t\in [0,T].
+$$</p>
+<p>$$
+\eta(t)\ge \Vert u_m&#39;\Vert_{L^2(\Omega)}^2+C(\lambda,n)\Vert u_m\Vert_{H_0^1(\Omega)}^2,\quad \eta(0)\le \Vert h\Vert_{L^2(\Omega)}^2+C(L)\Vert g\Vert_{H_0^1(\Omega)}^2
+$$</p>
+<p>Thus we are given</p>
+<p>$$
+\sup_{0\le t\le T}\left(\Vert u_m(t)\Vert_{H_0^1(\Omega)}^2+\Vert u_m&#39;(t)\Vert_{L^2(\Omega)}^2\right)\le C(L,n,T)\left(\Vert f\Vert_{L^2(\Omega_T)}^2+\Vert g\Vert_{H_0^1(\Omega)}^2+\Vert h\Vert_{L^2(\Omega)}^2\right)
+$$</p>
+<p>Then estimate $u_m&#39;&#39;.$ similarly, write $v_m=\sum_{k=1}^m(v,w_k)w_k,$ then</p>
+<p>$$
+\left&lt;{}u_m&#39;&#39;,v\right&gt;=(u_m&#39;&#39;,v)=(u_m&#39;&#39;,v_m)=(f,v_m)-B[u_m,v_m;t],
+$$</p>
+<p>$$
+|\left&lt;{}u_m&#39;&#39;,v\right&gt;|\le \Vert f\Vert_{L^2}\Vert v_m\Vert_{L^2}+C(n,L)\Vert u_m\Vert_{H_0^1}\Vert v_m\Vert_{H_0^1}\le C(n,L)\left(\Vert f\Vert_{L^2}+\Vert u_m\Vert_{H_0^1}\right)\Vert v\Vert_{H_0^1}.
+$$</p>
+<p>This gives an estimate of $\Vert u_m&#39;&#39;(t)\Vert_{H^{-1}(\Omega)}$.</p>
+<p><strong> Theorem 2 </strong>. <em> When the coefficient conditions are met, the approximate solution $u_m$ satisfies </em> </p>
+<p>$$
+\sup_{0\le t\le T}\left(\Vert u_m\Vert_{H_0^1}+\Vert u_m&#39;\Vert_{L^2}\right)+\Vert u_m&#39;&#39;\Vert_{L^2(0,T;H^{-1}(\Omega))}\le C(\Omega,L,T)\left(\Vert f\Vert_{L^2(\Omega_T)}+\Vert g\Vert_{H_0^1}+\Vert h\Vert_{L^2}\right)
+$$</p>
+<p>After this, there is a weakly convergent subsequence $\{u_m\},$ and the time derivative also converges, giving $u,$
+and satisfy the same energy estimate. (Operationally, in order to obtain $L^\infty$ control,
+Need to give $L^p$ control, $p\rightarrow\infty.$)</p>
+<p>Next, verify that $u$ is a weak solution. The method is the same.
+Consider$\eta(t)v_N\xrightarrow{L^2(0,T;H_0^1(\Omega))} \eta(t)v,$
+Substitute into the equation corresponding to the approximate solution $u_m$. Shilling $m\rightarrow\infty,$
+Then set $N\rightarrow\infty$. The same is true for the initial value condition, just pick the appropriate $\eta$.</p>
+<p><strong> Theorem 3 </strong>. <em> Under the coefficient conditions, the hyperbolic equation has a weak solution $u,$ which is the limit of the Galerkin approximation solution and satisfies the energy estimation. </em> </p>
+<h2 id="en-弱解唯一性"><a href="#en-弱解唯一性" class="headerlink" title="弱解唯一性"></a> Weak solution uniqueness</h2><p><strong> Theorem 4 </strong>. <em> Based on the previous coefficient conditions, if $b^i\in C^1([0,T],L^\infty(\Omega)),$, the solution to the hyperbolic equation is unique. </em> </p>
+<p>Just consider the homogeneous problem. Take the weak solution $u\in L^2(0,T;H_0^1(\Omega)),$
+$u_t\in L^2(\Omega_T),$ $u_{tt}\in L^2(0,T;H^{-1}(\Omega)).$
+If $u_t\in L^2(0,T;H_0^1(\Omega)),$, then take $v=u_t$ and substitute it into the equation.
+But this condition does not exist at this time. Note that,</p>
+<p>$$
+(u&#39;&#39;,w)=\frac{d {} }{d {}t}\left&lt;{}u&#39;,w\right&gt;-\left&lt;{}u&#39;,w&#39;\right&gt;,
+$$</p>
+<p>Taking $w$ so that $w&#39;=\pm u,$ $w(T)=0$ can be further deduced. For this reason,
+$\,\forall\,s\in [0,T],$ Order
+$$
+w(t)=\begin{cases}
+ 0&amp;s\le t\le T\\
+ \int_t^s u(\tau)d\tau &amp; 0\le t&lt;s
+ \end{cases},
+$$
+ Then $w$ satisfies the condition. Substituting, we have:</p>
+<p>$$
+\int_0^s \left&lt;{}u&#39;&#39;,w\right&gt;+B[u,w;t]dt=0,\quad \int_0^s \left&lt;{}u&#39;&#39;,w\right&gt;ds=\int_0^s \left&lt;{}u&#39;,u\right&gt;dt=\frac{1}{2}\Vert u(s)\Vert_{L^2(\Omega)}^2,
+$$</p>
+<p>$$
+\begin{aligned}
+ \int_0^s B[u,w;t]dt=&amp;-\int_0^sB[w&#39;,w;t]dt\\
+ =&amp;-\int_0^s \frac{d {} }{d {}t}\int_\Omega \frac{1}{2} a^{ij}w_iw_j+b^iw_iw dxdt\\
+ &amp;+\int_0^s\int_\Omega \frac{1}{2}{a^{ij} }&#39;w_iw_j+{b^i}&#39;w_iw+b^iw_iw&#39;-cw&#39;wdxdt\\
+ =&amp;\int_\Omega \frac{1}{2}a^{ij}w_iw_j+b^iw_iwdx|_{t=0}+I(w)\\
+ \ge &amp;\frac{\lambda}{4}\Vert Dw(0)\Vert^2-C(n,L)\left(\Vert w(0)\Vert_{L^2(\Omega)}+\int_0^s \Vert w(t)\Vert_{H^1(\Omega)}^2+\Vert u(t)\Vert_{L^2(\Omega)}^2dt\right)
+ \end{aligned}
+$$
+ sorted out</p>
+<p>$$
+\Vert u(s)\Vert^2_{L^2(\Omega)}+\Vert w(0)\Vert_{H_0^1(\Omega)}^2\le C(n,\Omega,L,T)\left(\Vert w(0)\Vert_{L^2(\Omega)}^2+\int_0^s \Vert w(t)\Vert_{H^1(\Omega)}^2+\Vert u(t)\Vert^2_{L^2(\Omega)}dt\right)
+$$</p>
+<p>Next we want to convert this into the common Gronwall inequality.
+Let $v(t)=\int_0^t u(\tau)d\tau,$ then $w(0)=v(s),$ $w(t)=v(s)-v(t),$
+$\,\forall\,t\le s.$</p>
+<p>$$
+\Vert v(s)\Vert_{L^2(\omega)}^2=\int_\Omega \left(\int_0^s u(\tau)d\tau\right)^2dx\le T\int_0^s \Vert u(t)\Vert^2_{L^2(\Omega)}dt,
+$$</p>
+<p>$$
+\int_0^s \Vert w(t)\Vert^2_{H^1}=\int_0^s\Vert v(s)-v(t)\Vert^2_{H^1}\le 2\int_0^s \Vert v(s)\Vert_{H^1}^2+\Vert v(t)\Vert_{H^1}^2\le 2\int_0^s\Vert v(t)\Vert^2_{H^1}dt+2s\Vert v(s)\Vert^2_{H^1}
+$$</p>
+<p>Substituting the inequality, we have $\,\forall\,s\in [0,T],$</p>
+<p>$$
+\Vert u(s)\Vert^2_{L^2(\Omega)}+(1-2sc)\Vert v(s)\Vert_{H_0^1(\Omega)}^2\le C(n,\Omega,L,T)\left(\int_0^s \Vert u(t)\Vert_{L^2(\Omega)}^2+\Vert v(t)\Vert^2_{H^1(\Omega)}dt\right).
+$$</p>
+<p>Let $T_0=\min\{\frac{1}{4C},T\},$ then when $s\in [0,T_0]$,
+Note$F(t)=\int_0^t\Vert u(\tau)\Vert^2_{L^2(\Omega)}+\frac{1}{4}\Vert v(\tau)\Vert^2_{H^1(\Omega)}d\tau,$
+rule</p>
+<p>$$
+\frac{d {}F(s)}{d {}ds}\le C(\Omega,L,n,T)F(s),\quad \,\forall\,s\in [0,T_0].
+$$</p>
+<p>Since $F(0)=0,$ is determined by Gronwanll&#39;s inequality, $F(s)=0,$ $\,\forall\,s\in [0,T_0],$
+Therefore, $u\equiv 0.$, we know from the layered method that it is also true on $\Omega_T$.</p>
+<p>For linear equations,
+The energy/maximum mode/Schauder estimate of the uniqueness solution gives an understanding of the stability of the known data (but further judgment is required regarding the coefficients of the equation).</p>
+<h2 id="en-解的正则性"><a href="#en-解的正则性" class="headerlink" title="解的正则性"></a> regularity of solution</h2><p>For simplicity, let the coefficients of the equation be independent of time.</p>
+<h3 id="en-二阶正则性"><a href="#en-二阶正则性" class="headerlink" title="二阶正则性"></a> second-order regularity</h3><p>If $f\in H^1(0,T;L^2(\Omega)),$
+Then $f_k(t)=\left&lt;{}f,w_k\right&gt;\in H^1(0,T).$
+At this time $e_l^k=B[w_l,w_k;t]$ is a constant, $u_m=d_m^kw_k,$ ${d_m^k}&#39;&#39;\in H^1(0,T),$
+Therefore $u_m&#39;&#39;&#39;\in L^2(0,T;H_0^1(\Omega)).$ is written as $v_m=u_m&#39;,$. Derivative of both sides of the equation, we have</p>
+<p>$$
+\left&lt;{}v_m&#39;&#39;,v_m&#39;\right&gt;+B[v_m,v_m&#39;;t]=(f&#39;,v_m&#39;)\le \frac{1}{2}\left(\Vert f&#39;\Vert_{L^2(\Omega)}^2+\Vert v_m&#39;\Vert_{L^2(\Omega)}^2\right)
+$$</p>
+<p>$$
+\begin{aligned}
+ B[v_m,v_m&#39;;t]&amp;\ge\frac{d {} }{d {}t}A[v_m,v_m;t]-C(L)\left(\Vert v_m\Vert^2_{H_0^1}+\Vert v_m&#39;\Vert_{L^2(\Omega)}\right)\\
+ &amp;\ge\frac{d {} }{d {}t}A[v_m,v_m;t]-C(L,n)\left(A(v_m,v_m;t)+\Vert v_m&#39;\Vert_{L^2(\Omega)}\right)
+ \end{aligned}
+$$
+Note$F(t)=\frac{1}{2}\Vert v_m&#39;\Vert_{L^2(\Omega)}^2+A(v_m,v_m;t),$
+we have</p>
+<p>$$
+F&#39;(t)\le C \left(F(t)+\Vert f&#39;\Vert_{L^2(\Omega)}^2\right),\quad F(t)\le C(L,T,n)\left(\Vert f\Vert^2_{H^1(0,T;L^2(\Omega))}+F(0)\right),\quad a.e.\:t\in [0,T]
+$$</p>
+<p>Next calculate $F(0).$
+$$
+\begin{aligned}
+ \Vert v_m&#39;(0)\Vert^2_{L^2(\Omega)}&amp;=(f(0),u_m&#39;&#39;(0))-B[u_m(0),u_m&#39;&#39;(0);0]\\
+ &amp;\le \varepsilon\Vert u_m&#39;&#39;(0)\Vert_{L^2}^2+\frac{1}{4\varepsilon}\Vert f(0)\Vert^2_{L^2(\Omega)}-2A(u_m(0),u_m&#39;&#39;(0);0)-\cdots\\
+ &amp;\le 3\varepsilon\Vert u_m&#39;&#39;(0)\Vert_{L^2(\Omega)}^2-2A(u_m(0),u_m&#39;&#39;(0);0)+C(L,\varepsilon)\left(\Vert u_m(0)\Vert_{H_0^1(\Omega)}^2+\Vert f\Vert_{H^1(0,T;L^2(\Omega))}\right)
+ \end{aligned}
+$$</p>
+<p>$$
+|A(u_m(0),u_m&#39;&#39;(0);0)|\le \varepsilon\Vert u_m&#39;&#39;(0)\Vert^2_{L^2(\Omega)}+C(L,\varepsilon)\Vert u_m(0)\Vert_{H^2},\quad \Vert u_m(0)\Vert^2_{H^2(\Omega)}\le C\Vert g\Vert^2_{H^2(\Omega)}
+$$</p>
+<p>Let $\varepsilon\le \frac{1}{16},$ then have</p>
+<p>$$
+\Vert v_m&#39;(0)\Vert^2_{L^2(\Omega)}\le C(L,n)\left(\Vert f\Vert^2_{H^1(0,T;L^2(\Omega))}+\Vert g\Vert^2_{H^2(\Omega)}\right)
+$$</p>
+<p>There is one more item in $F(0)$ that needs to be dealt with:</p>
+<p>$$
+A(v_m(0),v_m(0);0)=A(h_m,h_m;0)\le C(L)\Vert h\Vert^2_{H_0^1(\Omega)}
+$$</p>
+<p>$$
+F(0)\le C(L,n)\left(\Vert f\Vert^2_{H^1(0,T;L^2(\Omega))}+\Vert g\Vert^2_{H^2(\Omega)}+\Vert h\Vert^2_{H_0^1(\Omega)}\right)
+$$</p>
+<p>Let $m\rightarrow\infty,$ give</p>
+<p>$$
+\sup_{0\le t\le T}\left(\Vert u&#39;&#39;(t)\Vert_{L^2(\Omega)}+\Vert u&#39;(t)\Vert_{H_0^1(\Omega)}\right)\le C(L,n,T)\left(\Vert f\Vert_{H^1(0,T;L^2(\Omega))}+\Vert g\Vert_{H^2(\Omega)}+\Vert h\Vert_{H_0^1(\Omega)}\right)
+$$</p>
+<p>From $Lu=f-u_{tt},$ to the regularity of elliptic equations, if $\partial\Omega\in C^2,$
+$a^{ij}\in C^1(\overline\Omega),$ Yes</p>
+<p>$$
+\Vert u(t)\Vert_{H^2(\Omega)}\le C(\Omega,L,n)\left(\Vert u(t)\Vert_{L^2(\Omega)}+\Vert f(t)\Vert_{L^2(\Omega)}+\Vert u&#39;&#39;(t)\Vert_{L^2(\Omega)}\right).
+$$</p>
+<p>The estimation of $u&#39;&#39;&#39;$ is the same as the parabolic equation. To sum up, we have the following theorem:</p>
+<p><strong> Theorem 5 </strong>. <em> Assume $\Omega\subset \mathbb{R}^n$ is a bounded open set, $L$ has appropriate coefficients, $a^{ij}\in C^1(\overline\Omega),$ $b^i,c\in L^\infty(\Omega),$ $\partial \Omega\in C^2.$ if $f\in H^1(0,T;L^2(\Omega)),$ $g\in H_0^2(\Omega),$ $h\in H_0^1(\Omega),$ then $u$ satisfies the following regularity estimate: </em> </p>
+<p>$$
+\begin{aligned}
+ \sup_{0\le t\le T}\left(\Vert u&#39;&#39;(t)\Vert_{L^2(\Omega)}+\Vert u&#39;(t)\Vert_{H_0^1(\Omega)}+\Vert u(t)\Vert_{H^2(\Omega)}\right)&amp;+\Vert u&#39;&#39;&#39;\Vert_{L^2(0,T;H^{-1}(\Omega))}\le\\
+ C(L,n,T,\Omega)&amp;\left(\Vert f\Vert_{H^1(0,T;L^2(\Omega))}+\Vert g\Vert_{H^2(\Omega)}+\Vert h\Vert_{H_0^1(\Omega)}\right)
+ \end{aligned}
+$$</p>
+<h3 id="en-高阶正则性"><a href="#en-高阶正则性" class="headerlink" title="高阶正则性"></a> higher order regularity</h3><p>Use induction in the same way. For $v=u_t,$ $v|_{t=0}=h,$
+$v_t|_{t=0}=u_{tt}|_{t=0}=f(x,0)-Lg.$
+At this time, a low-order regularity estimate is given based on the regularity performance of elliptic equations. In order to go further, it is necessary to</p>
+<p>$$
+f(0)-Lg\in H_0^1(\Omega),\quad \frac{d {}f}{d {}t}|_{t=0}-Lh\in L^2(\Omega),
+$$</p>
+<p>Therefore, compatibility conditions need to be introduced. Note $g_0=g,g_1=h,$</p>
+<p>$$
+g_{2k}=\frac{d {}^{2k-2}f}{d {}t^{2k-2} }f|_{t=0}-Lg_{2k-2},\quad g_{2k+1}=\frac{d {}^{2k-1}f}{d {}t^{2k-1} }f|_{t=0}-Lg_{2k-1}
+$$</p>
+<p>If $g_i\in H_0^1(\Omega),$ $0\le i\le m-1,$ $g_m\in L^2(\Omega),$
+Then the compatibility condition ($A_m$) is said to be satisfied. The theorem is similar and will not be stated here.
+Similarly, it can be deduced that when all conditions are smooth, the weak solution is also a smooth solution.</p>
+<p>The article was last updated on 2022-12-24 09:06:53 </p>
+
+            
                 </div>
             
         </div>
@@ -494,7 +716,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《几何专题》笔记(1)-黎曼几何回顾</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Geometric Monograph Notes (1) - A Review of Riemannian Geometry</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Notes on &#34;Special Topics in Geometry&#34; (1) - Review of Riemannian Geometry</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -516,7 +738,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《PDE2》笔记-Cauchy问题</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">PDE2 Notes - Cauchy Questions</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Cauchy Question</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -769,9 +991,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%AE%9A%E4%B9%89"><span class="nav-text"> definition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Galerkin%E9%80%BC%E8%BF%91"><span class="nav-text"> Galerkin approaches</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%BC%B1%E8%A7%A3%E5%94%AF%E4%B8%80%E6%80%A7"><span class="nav-text"> Weak solution uniqueness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%A7%A3%E7%9A%84%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text"> regularity of solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E4%BA%8C%E9%98%B6%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text"> second-order regularity</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E9%AB%98%E9%98%B6%E6%AD%A3%E5%88%99%E6%80%A7"><span class="nav-text"> higher order regularity</span></a></li></ol></li></ol>
         </div>
     
 </div>

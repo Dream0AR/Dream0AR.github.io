@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《PDE2》笔记-特征值问题</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">PDE2 Notes - Eigenvalue Issues</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Eigenvalue Problem</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-127" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-127" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <p>考虑自共轭算子$S:H_0^1(\Omega)\rightarrow H^{-1}(\Omega),$</p>
 <p>$$
@@ -331,52 +334,106 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p>Consider the self-conjugate operator $S:H_0^1(\Omega)\rightarrow H^{-1}(\Omega),$</p>
-<script type="math/tex; mode=display">
-Su:=-(a^{ij}u_i+b^ju)_j+b^ju_j+cu.</script><p> The coefficients are all in $L^\infty(\Omega)$,<br>$a^{ij}\xi_i\xi_j\ge \mu|\xi|^2.$ We have bilinear bounded functional:</p>
-<script type="math/tex; mode=display">
-B_S[u,v]=\int_\Omega a^{ij}u_iv_j+b^i(uv_j+vu_j)+cuv=\left<{}Su,v\right>=\left<{}u,Sv\right>=B_S[v,u].</script><p>Satisfies the energy estimate:</p>
-<script type="math/tex; mode=display">
-B_S[u,u]\ge \frac{\mu}{2}\Vert Du\Vert_{L^2}^2-C(\mu,S)\Vert u\Vert_{L^2}^2.</script><p>If $(u,\lambda),$ exists, then there is $Su=\lambda u,$ in $H^{-1}(\Omega)$<br>It is called a characteristic pair, $\lambda$ is the eigenvalue, and $u$ is the eigenfunction.<br>A natural question is how to find all $\lambda.$</p>
+                    
+                <p>Consider the self-conjugate operator $S:H_0^1(\Omega)\rightarrow H^{-1}(\Omega),$</p>
+<p>$$
+Su:=-(a^{ij}u_i+b^ju)_j+b^ju_j+cu.
+$$</p>
+<p> The coefficients are all in $L^\infty(\Omega)$,
+$a^{ij}\xi_i\xi_j\ge \mu|\xi|^2.$ We have bilinear bounded functionals:</p>
+<p>$$
+B_S[u,v]=\int_\Omega a^{ij}u_iv_j+b^i(uv_j+vu_j)+cuv=\left&lt;{}Su,v\right&gt;=\left&lt;{}u,Sv\right&gt;=B_S[v,u].
+$$</p>
+<p>Satisfies the energy estimate:</p>
+<p>$$
+B_S[u,u]\ge \frac{\mu}{2}\Vert Du\Vert_{L^2}^2-C(\mu,S)\Vert u\Vert_{L^2}^2.
+$$</p>
+<p>If $(u,\lambda),$ exists, then there is $Su=\lambda u,$ in $H^{-1}(\Omega)$
+It is called a eigenpair, $\lambda$ is the eigenvalue, and $u$ is the eigenfunction.
+A natural question is how to find all $\lambda.$</p>
 <p>If $\,\exists\,$ feature pair $(u,\lambda),$ then $\,\forall\,v\in H_0^1(\Omega),$</p>
-<script type="math/tex; mode=display">
-B_S[u,v]=\left<{}\lambda u,v\right>=\lambda\int_\Omega uvdx.</script><p> At this time,</p>
-<script type="math/tex; mode=display">
-\lambda=\frac{B_S[u,u]}{\int_\Omega u^2dx}\ge -C(\mu,S).</script><p>Inspired by this, we define</p>
-<script type="math/tex; mode=display">
-\lambda_1:=\inf_{u\in H_0^1(\Omega)\setminus \{0\} }\frac{B_S[u,u]}{\Vert u\Vert_{L^2}^2}</script><p>Let&#39;s prove that $\lambda_1$ is the first eigenvalue. First prove that it is achievable.</p>
-<p><strong>Proposition 1</strong>. <em>$\,\exists\,w\in H<em>0^1(\Omega),$ $B_S[w,w]=\lambda</em>$</em></p>
-<p>$\,\exists\,w<em>k,$ satisfies $\Vert w_k\Vert</em>{L^2}=1,$ such that</p>
-<script type="math/tex; mode=display">
-\lambda_1\le B_S[w_k,w_k]\le \lambda_1+\frac{1}{k}.</script><p> From the following inequality sign,<br>Yes</p>
-<script type="math/tex; mode=display">
-\frac{\mu}{2}\Vert Dw_k\Vert_{L^2}^2\le \lambda_1+1+C(\mu,S).</script><p>Therefore ${w_k}$ is a bounded column in $H_0^1$, there is a subcolumn that converges in $L^2$, and $H_0^1$ converges weakly.<br>Let’s assume that the subcolumn is itself, that is $w_k\xrightarrow{L^2}w,$<br>$w_k\rightharpoonup w\in H_0^1.$<br>Hope to prove $B_S[w_k,w_k]\rightarrow B_S[w,w].$ Consider this item by item.</p>
-<script type="math/tex; mode=display">
-|\left<{}w_k,w_k\right>-\left<{}w,w\right>|\le |\left<{}w_k,w_k-w\right>|+|\left<{}w_k-w,w\right>|\le 2\Vert w_k-w\Vert_{L^2}\rightarrow 0</script><script type="math/tex; mode=display">
-|\left<{}\partial_iw_{k},w_k\right>-\left<{}\partial_i w,w\right>|\le |\left<{}\partial_iw_{k},w_k-w\right>|+|\left<{}\partial_i (w_k-w),w\right>|\le (\Vert Dw_k\Vert_{L^2}+\Vert Dw\Vert_{L^2})\Vert w_k-w\Vert_{L^2}</script><p>However, the terms $\left&lt;{}\partial_iw_k,\partial_iw_k\right&gt;$ are not easy to prove convergence.<br>Let us turn to proving</p>
-<script type="math/tex; mode=display">
-\varliminf_{k\rightarrow 0}\int a^{ij}\partial_iw_k\partial_jw_k\ge \int a^{ij}w_iw_j.</script><p>In this way, combined with the previous convergence, we have,</p>
-<script type="math/tex; mode=display">
-\lambda_1\le B_S[w,w]\le \varliminf_{k\rightarrow 0}B_S[w_k,w_k]=\lambda_1\quad\Rightarrow\quad B_S[w,w]=\lambda_1.</script><p>Since $a^{ij}$ is a consistent ellipse,<br>$\int<em>\Omega a^{ij}u_iv_j$ defines the inner product $B_a[u,v],$ on $H_0^1(\Omega)$<br>The norm $\Vert\cdot\Vert</em>{a}.$ was induced. At this time, it was discovered that the equation wanted to prove was exactly</p>
-<script type="math/tex; mode=display">
-\varliminf_{k\rightarrow 0} \Vert w_k\Vert_a\ge \Vert w\Vert_a</script><p>Then based on weak Sharp continuity, we get the conclusion.</p>
-<p><strong>Proposition 2</strong>. <em>$Sw=\lambda_1 w\in H^{-1}(\Omega).$</em></p>
+<p>$$
+B_S[u,v]=\left&lt;{}\lambda u,v\right&gt;=\lambda\int_\Omega uvdx.
+$$</p>
+<p> At this time,</p>
+<p>$$
+\lambda=\frac{B_S[u,u]}{\int_\Omega u^2dx}\ge -C(\mu,S).
+$$</p>
+<p>Inspired by this, we define</p>
+<p>$$
+\lambda_1:=\inf_{u\in H_0^1(\Omega)\setminus \{0\} }\frac{B_S[u,u]}{\Vert u\Vert_{L^2}^2}
+$$</p>
+<p>Let&#39;s prove that $\lambda_1$ is the first eigenvalue. First prove that it is achievable.</p>
+<p><strong> Proposition 1 </strong>. <em>$\,\exists\,w\in H_0^1(\Omega),$ $B_S[w,w]=\lambda_1$</em> </p>
+<p>$\,\exists\,w_k,$ satisfies $\Vert w_k\Vert_{L^2}=1,$ such that</p>
+<p>$$
+\lambda_1\le B_S[w_k,w_k]\le \lambda_1+\frac{1}{k}.
+$$</p>
+<p> From the following inequality sign,
+Yes </p>
+<p>$$
+\frac{\mu}{2}\Vert Dw_k\Vert_{L^2}^2\le \lambda_1+1+C(\mu,S).
+$$</p>
+<p>Therefore, $\{w_k\}$ is a bounded column in $H_0^1$, there are sub-columns that converge in $L^2$, and weak convergence in $H_0^1$.
+Let’s assume that the sub-column is itself, that is $w_k\xrightarrow{L^2}w,$
+$w_k\rightharpoonup w\in H_0^1.$
+It is hoped that the proof $B_S[w_k,w_k]\rightarrow B_S[w,w].$ will be considered item by item for this purpose.</p>
+<p>$$
+|\left&lt;{}w_k,w_k\right&gt;-\left&lt;{}w,w\right&gt;|\le |\left&lt;{}w_k,w_k-w\right&gt;|+|\left&lt;{}w_k-w,w\right&gt;|\le 2\Vert w_k-w\Vert_{L^2}\rightarrow 0
+$$</p>
+<p>$$
+|\left&lt;{}\partial_iw_{k},w_k\right&gt;-\left&lt;{}\partial_i w,w\right&gt;|\le |\left&lt;{}\partial_iw_{k},w_k-w\right&gt;|+|\left&lt;{}\partial_i (w_k-w),w\right&gt;|\le (\Vert Dw_k\Vert_{L^2}+\Vert Dw\Vert_{L^2})\Vert w_k-w\Vert_{L^2}
+$$</p>
+<p>However, the $\left&lt;{}\partial_iw_k,\partial_iw_k\right&gt;$ term is not easy to prove convergence.
+Let us turn to proving</p>
+<p>$$
+\varliminf_{k\rightarrow 0}\int a^{ij}\partial_iw_k\partial_jw_k\ge \int a^{ij}w_iw_j.
+$$</p>
+<p>In this way, combined with the previous convergence, we have,</p>
+<p>$$
+\lambda_1\le B_S[w,w]\le \varliminf_{k\rightarrow 0}B_S[w_k,w_k]=\lambda_1\quad\Rightarrow\quad B_S[w,w]=\lambda_1.
+$$</p>
+<p>Since $a^{ij}$ is a uniform ellipse,
+$\int_\Omega a^{ij}u_iv_j$ defines the inner product $B_a[u,v],$ on $H_0^1(\Omega)$
+The norm $\Vert\cdot\Vert_{a}.$ was induced. At this time, it was found that the equation wanted to prove was exactly</p>
+<p>$$
+\varliminf_{k\rightarrow 0} \Vert w_k\Vert_a\ge \Vert w\Vert_a
+$$</p>
+<p>Then based on weak Sharp continuity, we get the conclusion.</p>
+<p><strong> Proposition 2 </strong>. <em>$Sw=\lambda_1 w\in H^{-1}(\Omega).$</em> </p>
 <p>definition</p>
-<script type="math/tex; mode=display">
-f(t)=B_S[w+t\eta,w+t\eta]-\lambda_1\Vert w+t\eta\Vert_{L^2}^2,\quad \,\forall\,\eta\in C_0^\infty(\Omega).</script><p>Then $f(t)\ge 0,$ $f(0)=0,$ reaches minimum at $t=0$, so $f&#39;(t)=0,$</p>
-<script type="math/tex; mode=display">
-f'(t)=B_S[w,\eta]-\lambda_1\left<{}w,\eta\right>=0,\quad \left<{}Sw,\eta\right>=\left<{}\lambda_1w,\eta\right>.</script><p>By density, this proves the proposition.</p>
-<p>Inductively define the characteristic subspace $(\lambda_m,V_m):$</p>
-<script type="math/tex; mode=display">
-V_1:=\{w\in H_0^1(\Omega)|Sw=\lambda_1w\},</script><script type="math/tex; mode=display">
-\lambda_2=\inf_{\substack{u\in H_0^1\setminus\{0\}\\u\perp_{L^2} V_1} }\frac{B[u,u]}{\Vert u\Vert_{L^2}^2},\quad V_2:=\{\cdots\}</script><p><strong>Theorem 3</strong>. <em>$\Omega\subset \mathbb{R}^n$ is a bounded open set, and the $S$ coefficient satisfies the aforementioned conditions, then $S$ has infinite eigenvalues, tending to $+\infty.$ The eigenvectors ${w_k}$ corresponding to different eigenvalues are orthogonal in $L^2$, forming a standard orthonormal basis. If $B_S$ meets the mandatory conditions, Then ${\frac{w_k}{\sqrt{\lambda_k} }}\in H_0^1$ also forms an orthonormal basis under the inner product $B_S[u,v]$. At this time, $u=\sum d_kw_k\in L^2(\Omega),$ also forms in $H_0^1$.</em></p>
-<p>Due to the symmetry of $S$, the first two properties of the spectral theory are correct. When $B_S$ satisfies the mandatory conditions,<br>Just verify if $B_S[u,\frac{w_k}{\sqrt{w_k} }]=0,$<br>$\,\forall\,k\ge 1$ leads to $u=0.$<br>And this can be obtained based on ${w_k}$ being the standard orthonormal basis under $L^2$. The latter conclusion is obvious.</p>
-<p>Taking $S=-\Delta,$, the characteristic problem becomes</p>
-<script type="math/tex; mode=display">
--\Delta w_k-\lambda w_k=0.</script><p>At this time, based on the theory of Chapter 4, it can be required</p>
-<script type="math/tex; mode=display">
-\{w_k\}\subset C^\infty(\Omega)\cap H^2(\Omega)\cap H_0^1(\Omega)\subset H^{m+2}(\Omega).</script><p>The last inclusion relation requires $\partial\Omega\in C^m.$</p>
-<p>The article was last updated on 2022-12-02 16:40:24</p>
+<p>$$
+f(t)=B_S[w+t\eta,w+t\eta]-\lambda_1\Vert w+t\eta\Vert_{L^2}^2,\quad \,\forall\,\eta\in C_0^\infty(\Omega).
+$$</p>
+<p>Then $f(t)\ge 0,$ $f(0)=0,$ reaches minimum at $t=0$, so $f&#39;(t)=0,$</p>
+<p>$$
+f&#39;(t)=B_S[w,\eta]-\lambda_1\left&lt;{}w,\eta\right&gt;=0,\quad \left&lt;{}Sw,\eta\right&gt;=\left&lt;{}\lambda_1w,\eta\right&gt;.
+$$</p>
+<p>By density, this proves the proposition.</p>
+<p>Inductively define the feature subspace $(\lambda_m,V_m):$</p>
+<p>$$
+V_1:=\{w\in H_0^1(\Omega)|Sw=\lambda_1w\},
+$$</p>
+<p>$$
+\lambda_2=\inf_{\substack{u\in H_0^1\setminus\{0\}\\u\perp_{L^2} V_1} }\frac{B[u,u]}{\Vert u\Vert_{L^2}^2},\quad V_2:=\{\cdots\}
+$$</p>
+<p><strong> Theorem 3 </strong>. <em> $\Omega\subset \mathbb{R}^n$ is a bounded open set, and the $S$ coefficient satisfies the aforementioned conditions, then $S$ has infinite eigenvalues, tending to $+\infty.$. The eigenvectors $\{w_k\}$ corresponding to different eigenvalues are orthogonal in $L^2$, forming a standard orthonormal basis. If $B_S$ meets the mandatory conditions, then $\{\frac{w_k}{\sqrt{\lambda_k} }\}\in H_0^1$ also forms a standard orthonormal basis under the inner product $B_S[u,v]$. At this time, $u=\sum d_kw_k\in L^2(\Omega),$ is also in $H_0^1$. </em> </p>
+<p>Due to the symmetry of $S$, the first two properties of the spectral theory are correct. When $B_S$ satisfies the mandatory conditions,
+Just verify if $B_S[u,\frac{w_k}{\sqrt{w_k} }]=0,$
+$\,\forall\,k\ge 1$ Launched $u=0.$
+And this can be obtained based on the fact that $\{w_k\}$ is the standard orthonormal basis under $L^2$. The latter conclusion is obvious.</p>
+<p>Taking $S=-\Delta,$, the characteristic problem becomes </p>
+<p>$$
+-\Delta w_k-\lambda w_k=0.
+$$</p>
+<p>At this time, based on the theory of Chapter 4, it can be required</p>
+<p>$$
+\{w_k\}\subset C^\infty(\Omega)\cap H^2(\Omega)\cap H_0^1(\Omega)\subset H^{m+2}(\Omega).
+$$</p>
+<p>The last inclusion relation requirement $\partial\Omega\in C^m.$</p>
+<p>The article was last updated on 2022-12-02 16:40:24 </p>
+
+            
                 </div>
             
         </div>
@@ -419,7 +476,7 @@ V_1:=\{w\in H_0^1(\Omega)|Sw=\lambda_1w\},</script><script type="math/tex; mode=
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《PDE2》笔记-抽象函数</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">PDE2 Notes - Abstract Functions</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;PDE2&#34; Notes-Abstract Function</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -441,7 +498,7 @@ V_1:=\{w\in H_0^1(\Omega)|Sw=\lambda_1w\},</script><script type="math/tex; mode=
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑2》笔记(22)-Pontrjagin数</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (22) - Pontrjagin Numbers</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology 2&#34; Notes (22)-Pontrjagin Number</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>

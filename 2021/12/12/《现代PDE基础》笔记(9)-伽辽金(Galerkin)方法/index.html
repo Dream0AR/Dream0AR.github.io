@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(9)-伽辽金(Galerkin)方法</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Modern PDE Basics Notes (9) - Galerkin Method</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (9)-Galerkin Method</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-298" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-298" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -205,7 +205,7 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/"><span data-lang-group="note-label-299" data-lang="zh-cn">现代PDE基础</span><span data-lang-group="note-label-299" data-lang="en" style="display:none">Foundations of Modern PDE</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="椭圆方程"><a href="#椭圆方程" class="headerlink" title="椭圆方程"></a>椭圆方程</h2><p>回忆上节说明了$Ax=b$的存在性等价于$A^\ast y=0$的唯一性.
 若$A$是$n\times n$矩阵, 那么$A^\ast y=0$的唯一性等价于$Ay=0$的唯一性.
@@ -438,90 +441,213 @@ $\Vert e^{A_\lambda t}\Vert\le 1,$ 算子是有意义的.</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="elliptic-equation">Elliptic equation</h2>
-<p>Recall from the previous section that the existence of $Ax=b$ is equivalent to the uniqueness of $A^\ast y=0$.<br>If $A$ is an $n\times n$ matrix, then the uniqueness of $A^\ast y=0$ is equivalent to the uniqueness of $Ay=0$.<br>Therefore, the existence of $Ax=b$ is equivalent to uniqueness.</p>
-<p>For elliptic equations, consider the homogeneous Dirichlet boundary problem $Lu=f\in H^{-1}(\Omega).$<br>We have Garding&#39;s inequality:</p>
-<script type="math/tex; mode=display">
-\left<{}-Lu,u\right>_{L^2}\ge C_1\Vert u\Vert_1^2-C_2\Vert u\Vert^2.</script><p>When $C_2\le 0$, we can illustrate the uniqueness of the problem. As for the existence,<br>According to the original method, it is necessary to consider whether there is $C_2^\ast \le 0,$ in the Garding inequality corresponding to the dual operator $L^\ast $<br>Thus, the existence of the original problem is explained through the uniqueness of the dual problem.<br>But in fact, $C_2\le 0$ can directly illustrate the existence of the solution to the original problem.</p>
-<p>Consider the <strong>Galerkin method</strong>.<br>The method of deriving existence from the uniqueness of the dual problem only explains the theoretical existence.<br>The construction of the solution cannot be given specifically. However, this method can give the construction method of the solution,<br>It is the theoretical basis of the <strong>finite element method</strong> in the numerical solution of differential equations.</p>
-<p>Recall that $H^{m,p}$ is a separable space, because it can be equidistantly embedded in $(L^p)^N$,<br>The latter is a separable space. Therefore, $H<em>0^1(\Omega)$ is a separable Hilbert space,<br>There is a set of complete orthonormal bases ${\phi_i}.$ Theoretically,<br>The characteristic function system can be taken $-\Delta \phi_j=\lambda_j\phi_j,$<br>$\phi_j|</em>{\partial\Omega}=0.$ When the operator is self-conjugated, the characteristic function system is of course orthogonal.</p>
-<p>Since $C<em>c^\infty(\Omega)$ is dense in $H_0^1(\Omega)$,<br>Of course we can take ${\phi_i}\subset C_c^\infty(\Omega).$<br>Consider $u_m=\sum</em>{i=1}^ma<em>i\phi_i,$ $f=\sum</em>{i=1}^\infty f<em>i\phi_i,$<br>$f_m=\sum</em>{i=1}^m f_i\phi_i\rightharpoonup f.$ To understand $Lu=f,$<br>One expectation is to get $u_m$ and give $u.$ by solving $Lu_m=f_m$, but this expectation is often disappointed.<br>Because for the equation</p>
-<script type="math/tex; mode=display">
-Lu_m=\sum_{i=1}^m a_iL\phi_i=\sum_{i=1}^mf_i\phi_i=f_m,</script><p>When ${\phi_i}$ does not take the characteristic function system, this will be an infinite-dimensional equation,<br>It cannot be solved for a finite number of unknown quantities.</p>
+                    
+                <h2 id="en-椭圆方程"><a href="#en-椭圆方程" class="headerlink" title="椭圆方程"></a> Elliptic equation</h2><p>Recall from the previous section that the existence of $Ax=b$ is equivalent to the uniqueness of $A^\ast y=0$.
+If $A$ is the $n\times n$ matrix, then the uniqueness of $A^\ast y=0$ is equivalent to the uniqueness of $Ay=0$.
+Therefore, the existence of $Ax=b$ is equivalent to uniqueness.</p>
+<p>For elliptic equations, consider the homogeneous Dirichlet boundary problem $Lu=f\in H^{-1}(\Omega).$
+We have Garding&#39;s inequality:</p>
+<p>$$
+\left&lt;{}-Lu,u\right&gt;_{L^2}\ge C_1\Vert u\Vert_1^2-C_2\Vert u\Vert^2.
+$$</p>
+<p>When $C_2\le 0$, we can explain the uniqueness of the problem. As for the existence,
+According to the original method, it is necessary to consider whether there is $C_2^\ast \le 0,$ in the Garding inequality corresponding to the dual operator $L^\ast $.
+Thus, the existence of the original problem is explained through the uniqueness of the dual problem.
+But in fact, $C_2\le 0$ can directly illustrate the existence of the solution to the original problem.</p>
+<p>consider <strong> Galerkin method </strong> .
+The method of deriving existence from the uniqueness of the dual problem only explains the theoretical existence.
+The construction of the solution cannot be given specifically. However, this method can give the construction method of the solution,
+is the numerical solution of the differential equation <strong> finite element method </strong> theoretical basis.</p>
+<p>Recall that $H^{m,p}$ is a separable space because it can be equidistantly embedded in $(L^p)^N$,
+The latter is a separable space. Therefore, $H_0^1(\Omega)$ is a separable Hilbert space,
+There is a set of complete orthonormal bases $\{\phi_i\}.$. Theoretically,
+Can take the characteristic function system $-\Delta \phi_j=\lambda_j\phi_j,$
+$\phi_j|_{\partial\Omega}=0.$ When the operator is self-conjugated, the characteristic function system is of course orthogonal.</p>
+<p>Since $C_c^\infty(\Omega)$ is dense in $H_0^1(\Omega)$,
+Of course we can take $\{\phi_i\}\subset C_c^\infty(\Omega).$
+Consider $u_m=\sum_{i=1}^ma_i\phi_i,$ $f=\sum_{i=1}^\infty f_i\phi_i,$
+$f_m=\sum_{i=1}^m f_i\phi_i\rightharpoonup f.$ To understand $Lu=f,$
+One expectation is that $u_m$ will give $u.$ by solving $Lu_m=f_m$, but this expectation is often disappointed.
+Because for the equation </p>
+<p>$$
+Lu_m=\sum_{i=1}^m a_iL\phi_i=\sum_{i=1}^mf_i\phi_i=f_m,
+$$</p>
+<p>When $\{\phi_i\}$ does not take the characteristic function system, this will be an infinite-dimensional equation,
+It cannot be solved for a finite number of unknown quantities.</p>
 <p>Galerkin&#39;s approach is that we consider the following questions:</p>
-<script type="math/tex; mode=display">
-\left<{}Lu_m,\phi_j\right>=\left<{}f_m,\phi_j\right>,\quad j=1,\cdots,m.</script><p>That is $\sum<em>{i=1}^m a_i\left&lt;{}L\phi_i,\phi_j\right&gt;=\sum</em>{i=1}^mf_i\left&lt;{}\phi_i,\phi_j\right&gt;,$<br>$j=1,\cdots,m.$ This is the form of the matrix equation $Ax=b$. As stated at the beginning,<br>In order to prove the existence of the solution, it is only necessary to explain the uniqueness of the solution. For this purpose, elliptic estimation can be used.</p>
-<p>Consider $\left&lt;{}Lu_m-f_m,u_m\right&gt;=0,$ by Garding inequality, when $C_2\le 0$,</p>
-<script type="math/tex; mode=display">
+<p>$$
+\left&lt;{}Lu_m,\phi_j\right&gt;=\left&lt;{}f_m,\phi_j\right&gt;,\quad j=1,\cdots,m.
+$$</p>
+<p>That is $\sum_{i=1}^m a_i\left&lt;{}L\phi_i,\phi_j\right&gt;=\sum_{i=1}^mf_i\left&lt;{}\phi_i,\phi_j\right&gt;,$
+$j=1,\cdots,m.$ This is the form of the matrix equation $Ax=b$. As stated at the beginning,
+In order to prove the existence of the solution, it is only necessary to explain the uniqueness of the solution. For this purpose, elliptic estimation can be used.</p>
+<p>Consider $\left&lt;{}Lu_m-f_m,u_m\right&gt;=0,$ by Garding&#39;s inequality, when $C_2\le 0$,
+$$
 \begin{aligned}
-            C_1\Vert u_m\Vert^2_1&\le \left<{}-f_m,u_m\right>\le \Vert f_m\Vert_{-1}\Vert u_m\Vert_1\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2+\frac{C_1}{2}\Vert u_m\Vert_1^2\\
-            \frac{C_1}{2}\Vert u_m\Vert^2_1&\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2\\
-\Vert u_m\Vert_1&\le \frac{1}{C_1}\Vert f_m\Vert_{-1}\le \frac{1}{C_1}\Vert f\Vert_{H^{-1} }+M
-        \end{aligned}</script><p>The last inequality sign is because $f<em>m\rightharpoonup f$ is weakly $\ast$ convergent,<br>It is derived that $\Vert f_m-f\Vert</em>{H^{-1}}$ is bounded (resonance theorem).<br>Substitute $f_m=0$ to get the uniqueness of the solution to the equation, so the solution also exists. The matrix $A$ is invertible,<br>We can find $u_m$ as the solution to the problem.</p>
-<p>In particular, according to the last line, we can see that ${u_m}\subset H_0^1(\Omega)$ is bounded.<br>It is a Hilbert space, which is of course the dual space (reflexive) of a certain space (self),<br>Therefore ${u_m}$ is weakly compact, that is, it has sub-sequences that are weakly convergent. We might as well assume that it is weakly convergent to $u.$<br>Assert that $u$ is a weak solution.</p>
-<p>$\,\forall\,v\in H<em>0^1(\Omega),$ take $v_m=\sum</em>{i=1}^m\xi_i\phi_i,$<br>Then $v_m\xrightarrow{H^1}v.$<br>Since $\left&lt;{}Lu_m,\phi_j\right&gt;=\left&lt;{}f_m,\phi_j\right&gt;,$<br>$j=1,\cdots,m.$ We have $\left&lt;{}Lu_m,v_m\right&gt;=\left&lt;{}f_m,v_m\right&gt;.$<br>Note that $\left&lt;{}f_m,v_m\right&gt;=\left&lt;{}f_m,v_m-v\right&gt;+\left&lt;{}f_m,v\right&gt;\rightarrow \left&lt;{}f,v\right&gt;.$<br>Among them</p>
-<script type="math/tex; mode=display">
-|\left<{}f_m,v_m-v\right>|\le \Vert f_m\Vert_{-1}\Vert v_m-v\Vert_1\le (\Vert f\Vert_{-1}+M)\Vert v_m-v\Vert_1\rightarrow 0.</script><p>At the same time,</p>
-<script type="math/tex; mode=display">
-\left<{}Lu_m,v_m\right>=-\sum_{i,j=1}^n\int_{\Omega}\partial_ju_m\partial_i(a_{ij}(x)v_m)dx-\sum_{i=1}^n \int_\Omega u_m\partial_i(b_i(x)v_m)dx+\int_\Omega c(x)u_mv_mdx.</script><p>Similarly,<br>$\left&lt;{}Lu_m,v_m\right&gt;=\left&lt;{}Lu_m,v_m-v\right&gt;+\left&lt;{}Lu_m,v\right&gt;,$<br>Among them, according to strong convergence and integral by parts,</p>
-<script type="math/tex; mode=display">
-|\left<{}Lu_m,v_m-v\right>|\le \alpha\Vert u_m\Vert_1\Vert v_m-v\Vert_1\rightarrow 0;</script><script type="math/tex; mode=display">
-\left<{}Lu_m,v\right>=\left<{}u_m,L^\ast v\right>\rightarrow \left<{}u,L^\ast v\right>=\left<{}Lu,v\right>.</script><p>Therefore $\left&lt;{}Lu_m,v_m\right&gt;\rightarrow \left&lt;{}Lu,v\right&gt;.$<br>So $\left&lt;{}Lu,v\right&gt;=\left&lt;{}f,v\right&gt;,$<br>$\,\forall\,v\in H_0^1(\Omega).$ This shows that $u$ is a weak solution,<br>This proves the existence of the solution to the original problem and provides a specific method to obtain the solution.</p>
-<h2 id="hyperbolic-equation">hyperbolic equation</h2>
-<p>Consider the hyperbolic equation</p>
-<script type="math/tex; mode=display">
-Mu=\frac{\partial^2 u}{\partial t^2}-\left(\sum_{i,j=1}^n\frac{\partial}{\partial x_i}\left(a_{ij}(t,x)\frac{\partial u}{\partial x_j}\right)+\sum_{i=1}^nb_i(t,x)\frac{\partial u}{\partial x_i}+c(t,x)u\right)=f(t,x).</script><p>Among them, suppose $a_{ij}$ satisfies the <strong>consistent ellipticity condition</strong>: $\,\exists\,\alpha&gt;0,$ such that</p>
-<script type="math/tex; mode=display">
-\sum_{i,j=1}^n a_{ij}(t,x)\xi_i\xi_j\ge \alpha\sum_{i=1}^n \xi_i^2, \quad\,\forall\,\xi\in \mathbb{R}^n\setminus\{0\}.</script><p>We consider the Galerkin method: For the Dirichlet homogeneous boundary problem,<br>Take a set of $C<em>c^\infty$ complete orthonormal bases ${\phi_i(x)},$ of $H_0^1(\Omega)$<br>Then write $u_m(t,x)=\sum</em>{i=1}^m a_i(t)\phi_i(x),$ and solve the equation given the initial value</p>
-<script type="math/tex; mode=display">
-\left<{}Mu_m,\phi_j\right>=\left<{}f,\phi_j\right>, \quad j=1,\cdots,m,</script><p>Find the coefficient $a_i(t).$ This is a system of ODE equations composed of $m$ second-order ordinary differential equations, which is always solvable.<br>In order to illustrate that ${u_m}$ has subsequences that weakly converge to weak solutions, we only need to discuss its boundedness.<br>The difference method can be considered. Here we give the energy inequality and use the energy method to solve it.</p>
-<p>Using integrals by parts, it can be deduced that $u_t$ also has a homogeneous boundary from $u$. Consider</p>
-<script type="math/tex; mode=display">
-\int_\Omega u_tMudx=\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx-\int_\Omega\sum_i u_tb_iu_idx-\int_\Omega u_tcudx=\int_\Omega u_tfdx.</script><p>Using symmetry, we can get</p>
-<script type="math/tex; mode=display">
-\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx= \frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx.</script><p>Therefore,</p>
-<script type="math/tex; mode=display">
-\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx=\int_\Omega u_tfdx+\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx+\int_\Omega\sum_i u_tb_iu_idx+\int_\Omega u_tcudx.</script><p>Consider on $\overline{\Omega_T}=[0,T]\times \overline{\Omega}$,<br>It can be obtained that $C&gt;0,$ makes</p>
-<script type="math/tex; mode=display">
-\partial_t \int_\Omega u_t^2+\sum_{i,j=1}^n a_{ij}u_iu_j dx\le C(\Vert u\Vert_1^2+\Vert u_t\Vert^2+\Vert f\Vert^2)</script><p>Integrate both sides, then at time $t$, the initial value is recorded as $u=g,$ $u_t=h,$ then</p>
-<script type="math/tex; mode=display">
-\Vert u_t\Vert^2+\Vert u\Vert^2_1\le \Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^t\Vert u_t\Vert^2+\Vert u\Vert_1^2+\Vert f\Vert^2d\tau</script><p>Remember $E(t)=\Vert u_t\Vert^2+\Vert u\Vert^2_1,$<br>$E_0=\Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^T\Vert f\Vert^2d\tau,$ then</p>
-<script type="math/tex; mode=display">
-E(t)\le E_0+C\int_0^tE(\tau)d\tau.</script><p> To summarize the above methods,<br>We transform PDE into ODE by taking modulo, and obtain an ordinary differential inequality.<br>Then use Gronwall&#39;s inequality to get the energy inequality.<br><strong>Lemma 1</strong> (Gronwall inequality). <em>Suppose non-negative $E(t)\in C[0,T],$ satisfies $E(t)\le E_0+C\int_0^tE(\tau)d\tau,$ $C,E_0&gt;0,$ then</em></p>
-<script type="math/tex; mode=display">
-E(t)\le E_0e^{Ct}.</script><p><strong>Certificate:</strong> Remember $I(t)=\int_0^tE(\tau)d\tau,$<br>Then the original formula is equal to $\partial_t I(t)\le E_0+CI(t).$ Therefore,</p>
-<script type="math/tex; mode=display">
-\partial_t(e^{-Ct}I(t))\le E_0e^{-Ct}\,\Rightarrow\, e^{-Ct}I(t)\le \frac{E_0}{C}(1-e^{-Ct})\,\Rightarrow\, I(t)\le \frac{E_0}{C}(e^{Ct}-1).</script><p>Substituting into the above formula, we have</p>
-<script type="math/tex; mode=display">
-E(t)=\partial_t I(t)\le E_0e^{Ct}.</script><p>In particular, we have $E(t)\le E_0e^{CT},$ $\,\forall\,t\in [0,T].$ Therefore locally,<br>$u$ is bounded and therefore weakly compact. Furthermore, similarly to the elliptic equation,</p>
-<script type="math/tex; mode=display">
-\left<{}f,v\right>\leftarrow \left<{}Mu_m,v\right>=\left<{}u_m,M^\ast v\right>\rightarrow \left<{}u,M\ast v\right>=\left<{}Mu,v\right></script><p>Therefore, $u$ that ${u_m}$ weakly converges to is a weak solution. Of course,<br>The uniqueness can also be explained through the energy estimation of the dual problem, thereby giving the existence of the solution to the original problem.<br>But again, this can only give a theoretical explanation. Let $E_0=0$ to illustrate the uniqueness,<br>A stability statement is given for the general $E_0,$ energy method.</p>
-<h2 id="parabolic-equation">parabolic equation</h2>
-<p>Parabolic equations are similar to hyperbolic equations, and only the derivation of energy estimates is done here.</p>
-<script type="math/tex; mode=display">
-\left<{}Mu,u\right>=\frac{1}{2}\partial_t\int_\Omega u^2dx+\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\int_\Omega \sum_{i=1}^n b_iu_iudx-\int_\Omega cu^2dx=\int_\Omega fudx</script><p>It can be explained by $ab\le \varepsilon{a^2}+\frac{b^2}{\varepsilon},$:</p>
-<script type="math/tex; mode=display">
-\frac{1}{2}\partial_t\Vert u\Vert^2\le \frac{1}{2}\partial_t\Vert u\Vert^2+\frac{\lambda}{2} \Vert\nabla u\Vert^2\le C(\Vert u\Vert^2+\Vert f\Vert^2)</script><p>Therefore, assuming the initial value $u=g,$ then</p>
-<script type="math/tex; mode=display">
-\Vert u\Vert^2\le \Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau + C\int_0^t \Vert u\Vert^2d\tau.</script><p>Remember $E(t)=\Vert u\Vert^2,$<br>$E_0=\Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau,$<br>Then similarly from Gronwall&#39;s inequality, we have</p>
-<script type="math/tex; mode=display">
-E(t)\le E_0e^{Ct}.</script><p>Therefore, the weak solution can be obtained through the Galerkin method, and the uniqueness and stability of the solution are also discussed.</p>
-<h2 id="operator-semigroup">operator semigroup</h2>
-<p>Another very practical method is the operator semigroup method. For example, for parabolic problems,<br>Consider solving the homogeneous Dirichlet boundary initial value problem:</p>
-<script type="math/tex; mode=display">
+            C_1\Vert u_m\Vert^2_1&amp;\le \left&lt;{}-f_m,u_m\right&gt;\le \Vert f_m\Vert_{-1}\Vert u_m\Vert_1\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2+\frac{C_1}{2}\Vert u_m\Vert_1^2\\
+            \frac{C_1}{2}\Vert u_m\Vert^2_1&amp;\le \frac{1}{2C_1}\Vert f_m\Vert_{-1}^2\\
+            \Vert u_m\Vert_1&amp;\le \frac{1}{C_1}\Vert f_m\Vert_{-1}\le \frac{1}{C_1}\Vert f\Vert_{H^{-1} }+M
+        \end{aligned}
+$$
+The last inequality sign is because $f_m\rightharpoonup f$ is weakly convergent $\ast$,
+Deduced that $\Vert f_m-f\Vert_{H^{-1} }$ is bounded (resonance theorem).
+Substituting into $f_m=0$, we get the uniqueness of the solution of the equation, so the solution also exists. The matrix $A$ is reversible,
+We can find $u_m$ as the solution to the problem.</p>
+<p>In particular, according to the last line, we can see that $\{u_m\}\subset H_0^1(\Omega)$ is bounded.
+It is a Hilbert space, which is of course the dual space (reflexive) of a certain space (self),
+Therefore $\{u_m\}$ is weakly compact, that is, it has subsequences that are weakly convergent. We might as well assume that it is weakly convergent to $u.$
+Assert $u$ is the weak solution.</p>
+<p>$\,\forall\,v\in H_0^1(\Omega),$ takes $v_m=\sum_{i=1}^m\xi_i\phi_i,$
+Then $v_m\xrightarrow{H^1}v.$
+Due to $\left&lt;{}Lu_m,\phi_j\right&gt;=\left&lt;{}f_m,\phi_j\right&gt;,$
+$j=1,\cdots,m.$ We have $\left&lt;{}Lu_m,v_m\right&gt;=\left&lt;{}f_m,v_m\right&gt;.$
+Notice$\left&lt;{}f_m,v_m\right&gt;=\left&lt;{}f_m,v_m-v\right&gt;+\left&lt;{}f_m,v\right&gt;\rightarrow \left&lt;{}f,v\right&gt;.$
+Among them</p>
+<p>$$
+|\left&lt;{}f_m,v_m-v\right&gt;|\le \Vert f_m\Vert_{-1}\Vert v_m-v\Vert_1\le (\Vert f\Vert_{-1}+M)\Vert v_m-v\Vert_1\rightarrow 0.
+$$</p>
+<p>At the same time,</p>
+<p>$$
+\left&lt;{}Lu_m,v_m\right&gt;=-\sum_{i,j=1}^n\int_{\Omega}\partial_ju_m\partial_i(a_{ij}(x)v_m)dx-\sum_{i=1}^n \int_\Omega u_m\partial_i(b_i(x)v_m)dx+\int_\Omega c(x)u_mv_mdx.
+$$</p>
+<p>Similarly,
+$\left&lt;{}Lu_m,v_m\right&gt;=\left&lt;{}Lu_m,v_m-v\right&gt;+\left&lt;{}Lu_m,v\right&gt;,$
+Among them, according to strong convergence and integral by parts,</p>
+<p>$$
+|\left&lt;{}Lu_m,v_m-v\right&gt;|\le \alpha\Vert u_m\Vert_1\Vert v_m-v\Vert_1\rightarrow 0;
+$$</p>
+<p>$$
+\left&lt;{}Lu_m,v\right&gt;=\left&lt;{}u_m,L^\ast v\right&gt;\rightarrow \left&lt;{}u,L^\ast v\right&gt;=\left&lt;{}Lu,v\right&gt;.
+$$</p>
+<p>Therefore $\left&lt;{}Lu_m,v_m\right&gt;\rightarrow \left&lt;{}Lu,v\right&gt;.$
+So$\left&lt;{}Lu,v\right&gt;=\left&lt;{}f,v\right&gt;,$
+$\,\forall\,v\in H_0^1(\Omega).$ This shows that $u$ is a weak solution,
+This proves the existence of the solution to the original problem and provides a specific method to obtain the solution.</p>
+<h2 id="en-双曲型方程"><a href="#en-双曲型方程" class="headerlink" title="双曲型方程"></a> hyperbolic equation</h2><p>Consider the hyperbolic equation</p>
+<p>$$
+Mu=\frac{\partial^2 u}{\partial t^2}-\left(\sum_{i,j=1}^n\frac{\partial}{\partial x_i}\left(a_{ij}(t,x)\frac{\partial u}{\partial x_j}\right)+\sum_{i=1}^nb_i(t,x)\frac{\partial u}{\partial x_i}+c(t,x)u\right)=f(t,x).
+$$</p>
+<p>Where $a_{ij}$ satisfies <strong> consistent ellipticity condition </strong> : $\,\exists\,\alpha&gt;0,$ makes</p>
+<p>$$
+\sum_{i,j=1}^n a_{ij}(t,x)\xi_i\xi_j\ge \alpha\sum_{i=1}^n \xi_i^2, \quad\,\forall\,\xi\in \mathbb{R}^n\setminus\{0\}.
+$$</p>
+<p>We consider the Galerkin method: For the Dirichlet homogeneous boundary problem,
+Take a set of $C_c^\infty$ complete orthonormal bases $\{\phi_i(x)\},$ of $H_0^1(\Omega)$
+Then record $u_m(t,x)=\sum_{i=1}^m a_i(t)\phi_i(x),$ to solve the equation given the initial value</p>
+<p>$$
+\left&lt;{}Mu_m,\phi_j\right&gt;=\left&lt;{}f,\phi_j\right&gt;, \quad j=1,\cdots,m,
+$$</p>
+<p>Find the coefficient $a_i(t).$ This is a system of ODE equations composed of $m$ second-order ordinary differential equations, which is always solvable.
+In order to illustrate that $\{u_m\}$ has subsequences that weakly converge to weak solutions, we only need to discuss its boundedness.
+The difference method can be considered. Here we give the energy inequality and use the energy method to solve it.</p>
+<p>Using integrals by parts, $u$ has a homogeneous boundary to deduce $u_t$ as well. Consider</p>
+<p>$$
+\int_\Omega u_tMudx=\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx-\int_\Omega\sum_i u_tb_iu_idx-\int_\Omega u_tcudx=\int_\Omega u_tfdx.
+$$</p>
+<p>Using symmetry, we can get</p>
+<p>$$
+\int_\Omega \sum_{i,j=1}^nu_{it}a_{ij}u_jdx= \frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx.
+$$</p>
+<p>Therefore,</p>
+<p>$$
+\frac{1}{2}\partial_t \int_\Omega u_t^2dx+\frac{1}{2}\partial_t\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx=\int_\Omega u_tfdx+\frac{1}{2}\int_\Omega \sum_{i,j=1}^n\partial_t a_{ij}u_iu_jdx+\int_\Omega\sum_i u_tb_iu_idx+\int_\Omega u_tcudx.
+$$</p>
+<p>Consider on $\overline{\Omega_T}=[0,T]\times \overline{\Omega}$,
+We can get $C&gt;0,$ such that</p>
+<p>$$
+\partial_t \int_\Omega u_t^2+\sum_{i,j=1}^n a_{ij}u_iu_j dx\le C(\Vert u\Vert_1^2+\Vert u_t\Vert^2+\Vert f\Vert^2)
+$$</p>
+<p>Integrate both sides, then at the moment $t$, record the initial value as $u=g,$ $u_t=h,$, then</p>
+<p>$$
+\Vert u_t\Vert^2+\Vert u\Vert^2_1\le \Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^t\Vert u_t\Vert^2+\Vert u\Vert_1^2+\Vert f\Vert^2d\tau
+$$</p>
+<p>Remember$E(t)=\Vert u_t\Vert^2+\Vert u\Vert^2_1,$
+$E_0=\Vert g\Vert_1^2+\Vert h\Vert^2+C\int_0^T\Vert f\Vert^2d\tau,$ then</p>
+<p>$$
+E(t)\le E_0+C\int_0^tE(\tau)d\tau.
+$$</p>
+<p> To summarize the above methods,
+We transform PDE into ODE by taking modulo, and obtain an ordinary differential inequality.
+Then use Gronwall&#39;s inequality to get the energy inequality.</p>
+<p><strong> Lemma 1 </strong> (Gronwall&#39;s inequality). <em> Assume that non-negative $E(t)\in C[0,T],$ satisfies $E(t)\le E_0+C\int_0^tE(\tau)d\tau,$ $C,E_0&gt;0,$, then </em> </p>
+<p>$$
+E(t)\le E_0e^{Ct}.
+$$</p>
+<p><strong> Certificate: </strong> Remember$I(t)=\int_0^tE(\tau)d\tau,$
+Then the principle formula is equal to $\partial_t I(t)\le E_0+CI(t).$ Therefore,</p>
+<p>$$
+\partial_t(e^{-Ct}I(t))\le E_0e^{-Ct}\,\Rightarrow\, e^{-Ct}I(t)\le \frac{E_0}{C}(1-e^{-Ct})\,\Rightarrow\, I(t)\le \frac{E_0}{C}(e^{Ct}-1).
+$$</p>
+<p>Substituting into the above formula, we have </p>
+<p>$$
+E(t)=\partial_t I(t)\le E_0e^{Ct}.
+$$</p>
+<p>In particular, we have $E(t)\le E_0e^{CT},$ $\,\forall\,t\in [0,T].$ so locally,
+$u$ is bounded and therefore weakly compact. Furthermore, similar to the elliptic equation,</p>
+<p>$$
+\left&lt;{}f,v\right&gt;\leftarrow \left&lt;{}Mu_m,v\right&gt;=\left&lt;{}u_m,M^\ast v\right&gt;\rightarrow \left&lt;{}u,M\ast v\right&gt;=\left&lt;{}Mu,v\right&gt;
+$$</p>
+<p>Therefore, $\{u_m\}$ weakly converges to $u$, which is a weak solution. Of course,
+The uniqueness can also be explained through the energy estimation of the dual problem, thereby giving the existence of the solution to the original problem.
+But again, this can only give a theoretical explanation. Let $E_0=0$ illustrate the uniqueness,
+A stability statement is given for the general $E_0,$ energy method.</p>
+<h2 id="en-抛物型方程"><a href="#en-抛物型方程" class="headerlink" title="抛物型方程"></a> parabolic equation</h2><p>Parabolic equations are similar to hyperbolic equations, and only the derivation of energy estimates is done here.</p>
+<p>$$
+\left&lt;{}Mu,u\right&gt;=\frac{1}{2}\partial_t\int_\Omega u^2dx+\int_\Omega \sum_{i,j=1}^n a_{ij}u_iu_jdx-\int_\Omega \sum_{i=1}^n b_iu_iudx-\int_\Omega cu^2dx=\int_\Omega fudx
+$$</p>
+<p>Through $ab\le \varepsilon{a^2}+\frac{b^2}{\varepsilon},$ it can be explained:</p>
+<p>$$
+\frac{1}{2}\partial_t\Vert u\Vert^2\le \frac{1}{2}\partial_t\Vert u\Vert^2+\frac{\lambda}{2} \Vert\nabla u\Vert^2\le C(\Vert u\Vert^2+\Vert f\Vert^2)
+$$</p>
+<p>Therefore, assuming the initial value $u=g,$ is</p>
+<p>$$
+\Vert u\Vert^2\le \Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau + C\int_0^t \Vert u\Vert^2d\tau.
+$$</p>
+<p>Remember$E(t)=\Vert u\Vert^2,$
+$E_0=\Vert g\Vert^2+C\int_0^T\Vert f\Vert d\tau,$
+Then similarly from Gronwall&#39;s inequality, we have </p>
+<p>$$
+E(t)\le E_0e^{Ct}.
+$$</p>
+<p>Therefore, the weak solution can be obtained through the Galerkin method, and the uniqueness and stability of the solution are also discussed.</p>
+<h2 id="en-算子半群"><a href="#en-算子半群" class="headerlink" title="算子半群"></a> operator semigroup</h2><p>Another very practical method is the operator semigroup method. For example, for parabolic problems,
+Consider solving the homogeneous Dirichlet boundary initial value problem:
+$$
 \left\{\begin{aligned}
-            &u_t=Au=\sum_{i,j=1}^n\partial_j(a_{ij}u_i)\\
-            &u(0,x)=g(x)\\
-            &u|_{\partial\Omega\times [0,T]}=0
-        \end{aligned}\right.</script><p> So formally,<br>$u(t,x)=e^{At}g(x)$ gives the solution to the problem, because $u_t=Ae^{At}g(x)=Au,$<br>And satisfy the initial value and boundary conditions. Here $e^{At}:=\sum_n \frac{A^n}{n!}t^n.$<br>In order to give a strict explanation, take modulo the operator, then</p>
-<script type="math/tex; mode=display">
-\Vert e^{At}\Vert\le \sum_n\frac{\Vert A^n\Vert}{n!}t^n\le \sum_n\frac{\Vert A\Vert^n}{n!}t^n</script><p>The compatibility condition $\Vert AB\Vert\le \Vert A\Vert\Vert B\Vert.$ is used here.<br>Thus if $\Vert A\Vert\le 1,$ then $\Vert e^{At}\Vert\le e^t,$<br>The operator is meaningful.</p>
-<p>However, in general, it is obvious that $\Vert A\Vert\le 1$ is not necessarily true.<br>Recall that $(\lambda-A)^{-1}$ is a bounded linear operator for sufficiently large $\lambda$,<br>Therefore, discussion on it is promising.<br>Imitate $a=\lim\limits_{\lambda\rightarrow\infty}\lambda a(\lambda-a)^{-1},$<br>definition</p>
-<script type="math/tex; mode=display">
-A_\lambda=\lambda A(\lambda-A)^{-1}=\lambda(A-\lambda+\lambda)(\lambda-A)^{-1}=-\lambda+\lambda^2(\lambda-A)^{-1}.</script><p>We can expect the following limits to hold:</p>
-<script type="math/tex; mode=display">
-e^{At}=\lim\limits_{\lambda\rightarrow \infty}e^{A_\lambda t}=\lim\limits_{\lambda\rightarrow \infty}e^{-\lambda t}e^{\lambda^2(\lambda-A)^{-1}t}</script><p>At this time $\Vert e^{A<em>\lambda t}\Vert=e^{-\lambda t}\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert.$<br>And $\Vert(\lambda-A)^{-1}\Vert\le \frac{1}{\lambda},$<br>Therefore $\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert\le e^{\lambda t},$<br>$\Vert e^{A</em>\lambda t}\Vert\le 1,$ operator is meaningful.</p>
-<p>The article was last updated on 2021-12-13 11:11:02</p>
+            &amp;u_t=Au=\sum_{i,j=1}^n\partial_j(a_{ij}u_i)\\
+            &amp;u(0,x)=g(x)\\
+            &amp;u|_{\partial\Omega\times [0,T]}=0
+        \end{aligned}\right.
+$$
+ So formally,
+$u(t,x)=e^{At}g(x)$ gives the solution to the problem, because $u_t=Ae^{At}g(x)=Au,$
+And satisfy the initial value and boundary conditions. Here $e^{At}:=\sum_n \frac{A^n}{n!}t^n.$
+In order to give a strict explanation, take modulo the operator, then</p>
+<p>$$
+\Vert e^{At}\Vert\le \sum_n\frac{\Vert A^n\Vert}{n!}t^n\le \sum_n\frac{\Vert A\Vert^n}{n!}t^n
+$$</p>
+<p>The compatibility condition $\Vert AB\Vert\le \Vert A\Vert\Vert B\Vert.$ is used here
+Thus if $\Vert A\Vert\le 1,$ then $\Vert e^{At}\Vert\le e^t,$
+The operator is meaningful.</p>
+<p>However, in general, it is obvious that $\Vert A\Vert\le 1$ does not necessarily hold.
+Recall that $(\lambda-A)^{-1}$ is a bounded linear operator for sufficiently large $\lambda$,
+Therefore, discussion on it is promising.
+Imitation$a=\lim\limits_{\lambda\rightarrow\infty}\lambda a(\lambda-a)^{-1},$
+definition</p>
+<p>$$
+A_\lambda=\lambda A(\lambda-A)^{-1}=\lambda(A-\lambda+\lambda)(\lambda-A)^{-1}=-\lambda+\lambda^2(\lambda-A)^{-1}.
+$$</p>
+<p>We can expect the following limits to hold:</p>
+<p>$$
+e^{At}=\lim\limits_{\lambda\rightarrow \infty}e^{A_\lambda t}=\lim\limits_{\lambda\rightarrow \infty}e^{-\lambda t}e^{\lambda^2(\lambda-A)^{-1}t}
+$$</p>
+<p>At this time $\Vert e^{A_\lambda t}\Vert=e^{-\lambda t}\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert.$
+And $\Vert(\lambda-A)^{-1}\Vert\le \frac{1}{\lambda},$
+Therefore $\Vert e^{\lambda^2(\lambda-A)^{-1}t}\Vert\le e^{\lambda t},$
+$\Vert e^{A_\lambda t}\Vert\le 1,$ operators are meaningful.</p>
+<p>The article was last updated on 2021-12-13 11:11:02 </p>
+
+            
                 </div>
             
         </div>
@@ -564,7 +690,7 @@ e^{At}=\lim\limits_{\lambda\rightarrow \infty}e^{A_\lambda t}=\lim\limits_{\lamb
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第七章-微分形式</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Differential Forms</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Differential Forms</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -586,7 +712,7 @@ e^{At}=\lim\limits_{\lambda\rightarrow \infty}e^{A_\lambda t}=\lim\limits_{\lamb
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第六章-张量丛</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifolds Chapter 6 - Tensor Plexus</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 6 - Tensor Bundle</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -839,7 +965,7 @@ e^{At}=\lim\limits_{\lambda\rightarrow \infty}e^{A_\lambda t}=\lim\limits_{\lamb
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#elliptic-equation"><span class="nav-text">Elliptic equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hyperbolic-equation"><span class="nav-text">hyperbolic equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parabolic-equation"><span class="nav-text">parabolic equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#operator-semigroup"><span class="nav-text">operator semigroup</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%A4%AD%E5%9C%86%E6%96%B9%E7%A8%8B"><span class="nav-text"> Elliptic equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%8F%8C%E6%9B%B2%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text"> hyperbolic equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%8A%9B%E7%89%A9%E5%9E%8B%E6%96%B9%E7%A8%8B"><span class="nav-text"> parabolic equation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E7%AE%97%E5%AD%90%E5%8D%8A%E7%BE%A4"><span class="nav-text"> operator semigroup</span></a></li></ol>
         </div>
     
 </div>

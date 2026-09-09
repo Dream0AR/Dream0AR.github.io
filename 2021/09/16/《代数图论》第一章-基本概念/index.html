@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数图论》第一章-基本概念</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Diagrams Chapter 1 - Basic Concepts</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Graph Theory&#34; Chapter 1-Basic Concepts</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-433" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-433" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/">图论</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/"><span data-lang-group="note-label-434" data-lang="zh-cn">图论</span><span data-lang-group="note-label-434" data-lang="en" style="display:none">Graph Theory</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/GTM207-%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/">GTM207-代数图论</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%9B%BE%E8%AE%BA/GTM207-%E4%BB%A3%E6%95%B0%E5%9B%BE%E8%AE%BA/"><span data-lang-group="note-label-435" data-lang="zh-cn">GTM207-代数图论</span><span data-lang-group="note-label-435" data-lang="en" style="display:none">GTM 207 - Algebraic Graph Theory</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="图"><a href="#图" class="headerlink" title="图"></a>图</h2><p>图$X$由<strong>顶点集</strong>$V(X),$ <strong>边集</strong>$E(X)$组成.
 每个(无向)边是一个无序对$\{x,y\},$ 常用$xy$来简化表示. 若$xy\in E,$
@@ -425,80 +428,200 @@ face)</strong>. 面的长度指框住它边的个数.</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="figure">Figure</h2>
-<p>The graph $X$ consists of <strong>vertex set</strong>$V(X),$ <strong>edge set</strong>$E(X)$.<br>Each (undirected) edge is an unordered pair ${x,y},$ often represented by $xy$. If $xy\in E,$<br>Then $x, y$ points are said to be <strong>adjacent</strong>, denoted as $x\sim y.$<br>If there is a bijection $\varphi: V(X)\rightarrow V(Y),$<br>Let $x\sim y$ in $V(X)$ if and only if $\varphi(x)\sim\varphi(y),$ in $V(Y)$<br>Then the graph $X$ and $Y$ are said to be <strong>isomorphic</strong>. When drawing representations, numbers are often used to label the vertices.</p>
-<p>A graph is said to be <strong>complete</strong> if every pair of its vertices are adjacent.<br>Remember that a complete graph with $n$ vertices is $K_n.$. The graph is said to be <strong>empty</strong>,<br>If the edge set is an empty set and has at least one vertex; the graph is said to be <strong>invalid (null)</strong>,<br>If the edge set and the point set are both empty sets. These two concepts are proposed for narrative convenience.</p>
-<p>The previous graphs are all <strong>simple graphs</strong>. Sometimes the edge set $E(X)$ is replaced by the directed edge set $A(X),$<br>It is called <strong>directed graph</strong>. At this time, the edges are ordered pairs, which are represented by arrows in the diagram and are called <strong>arcs</strong>.<br>An undirected graph is sometimes also considered as a directed graph in which each undirected edge is two directed edges.<br>Generally, simple graphs are considered by default. The vertex set can actually have an infinite number of elements,<br>But this book considers <strong>finite graphs</strong> by default.</p>
-<h2 id="subplot">subplot</h2>
-<p>If the graph $Y$ satisfies $V(X)\subset V(Y),$ $E(X)\subset E(Y),$<br>Then $Y$ is called the <strong>subgraph</strong> of $X$. If $V(Y)=V(X),$ also satisfies $V(Y)=V(X),$, then $Y$ is called the <strong>generated subgraph</strong> of $X$.<br>If the vertices in a subgraph $Y$ are adjacent if and only if they are adjacent in $X$, then $Y$ is said to be an induced subgraph of $X$.<br>It can be seen that the generated subgraph is obtained by deleting edges, while the induced subgraph is obtained by deleting points and their adjacent edges.</p>
-<p>There are several important concepts related to subgraphs: If a subgraph is a complete graph, it is called a clique.<br>If the induced subgraph of a vertex set is empty, it is called an independent set.<br>The size of the largest clique in graph $X$ is denoted as $\omega(X), and the size of the largest independent set is denoted as $\alpha(X).$<br>These are two very important properties of graphs.</p>
-<p>The <strong>road</strong> with length $r$ from vertex $x$ to $y$ on the graph,<br>Refers to a sequence composed of $r+1$ different vertices, with $x$ as the head and $y$ as the tail.<br>And adjacent vertices in the sequence are also adjacent in the graph. If any two points on the graph have roads starting and ending with them,<br>Then the graph is said to be <strong>connected</strong>, otherwise it is said to be disconnected.</p>
-<p>The graph is disconnected, which means we can divide the graph $X$ vertex set into two sets $R, S, $<br>So that the vertices in $R$ and the vertices in $S$ are not adjacent.<br>At this time, we can say that the graph $<br>It is called the <strong>connected branch</strong> of the graph $X$, abbreviated as <strong>branch</strong>.</p>
-<p>A cycle refers to a connected graph, where each vertex has exactly two neighbors;<br>A ring in a graph refers to a ring that is a subgraph. It is easy to prove that if every point in the graph has at least two neighboring points,<br>Then the graph must contain a cycle. A connected acyclic graph is called a tree,<br>The acyclic graph can be split into the non-intersecting union of several maximal connected acyclic graphs, so it is called <strong>forest</strong>.<br>If a spanning subgraph is a tree, it is called a spanning tree. It is easy to see that a graph has a spanning tree if and only if it is connected.<br>A maximal spanning forest refers to a spanning subgraph composed of spanning trees for each branch.</p>
-<h2 id="automorphism">automorphism</h2>
-<p>The isomorphism of graph $X$ to itself is an automorphism. It is easy to prove that all automorphisms form a group,<br>Denoted as $\operatorname{Aut}(X).$<br>Obviously $\operatorname{Aut}(X)\subset \operatorname{Sym}(V(X)).$<br>The latter refers to the symmetry group, that is, all permutations of the set $V(X)$.<br>A basic example is $\operatorname{Aut}(K_n)\cong \operatorname{Sym}(V(K_n))=S_n.$<br>Generally speaking, it is not easy to determine whether two graphs are isomorphic, and whether a graph has non-trivial automorphism.</p>
-<p>The image of $v$ under the substitution $g$ is denoted as $v^g.$ When $g\in \operatorname{Aut}(X)$,<br>For the subgraph $Y\subset X,$, the subgraph $Y^g\subset X.$ can be defined edge-preservingly.<br>$Y$ and $Y^g$ are naturally isomorphic.</p>
-<p>The <strong>degree/valency</strong> of vertex $x$ refers to the number of neighbors of $x$. The maximum (minimum) degree of graph $X$,<br>That is, it refers to the maximum (minimum) value of all vertex degrees. If the degree of each vertex of the graph is $k,$<br>It is called <strong>$k-$regular graph</strong>.<br><strong>Lemma 1.1</strong>. <em>If $x\in X,$ $g\in \operatorname{Aut}(X),$ then $x$ has the same degree as $x^g$.</em></p>
-<p><strong>Certificate:</strong><br>Just use the induced subgraph $N(x)$ of $x$ and all its neighbors to satisfy $N(x)\cong N(x)^g=N(x^g)$.</p>
-<p>The <strong>distance</strong>$d_X(x,y),$ between two vertices $x,y$ in the graph $X$ refers to the length of the shortest path connecting $x,y$.<br>If $X$ is clear, the distance can be abbreviated as $d(x,y).$ A simple lemma is as follows:</p>
-<p><strong>Lemma 1.2</strong>. <em>$\,\forall\,x,y\in X,$ $g\in \operatorname{Aut}(X),$ $d(x,y)=d(x^g,y^g).$</em></p>
-<p>The <strong>complementary graph</strong>$\overline X$ of the graph $X$ is such a graph: It satisfies $V(X)=V(\overline X),$<br>But two vertices are adjacent in $\overline X$ if and only if they are not adjacent in $X$.</p>
+                    
+                <h2 id="en-图"><a href="#en-图" class="headerlink" title="图"></a> Figure</h2><p>Figure $X$ is given by <strong> vertex set </strong>$V(X),$ <strong> Bianji </strong> $E(X)$Composition.
+Each (undirected) edge is an unordered pair $\{x,y\},$, which is often represented by $xy$. If $xy\in E,$
+Then it is called $x,y$ point <strong> adjacent </strong> , recorded as $x\sim y.$
+If there is a bijection$\varphi: V(X)\rightarrow V(Y),$
+Such that $V(X)$ is in $x\sim y$ if and only if $V(Y)$ is in $\varphi(x)\sim\varphi(y),$
+Then we call the graphs $X$ and $Y$ <strong> isomorphism </strong> . When drawing representations, numbers are often used to label vertices.</p>
+<p>Call the picture <strong> complete </strong> , if both its vertices are adjacent.
+The complete graph with $n$ vertices is called $K_n.$. The graph is said to be <strong> empty </strong> of,
+If the edge set is an empty set and has at least one vertex; the graph is said to be <strong> invalid(null) </strong> of,
+If the edge set and the point set are both empty sets. These two concepts are proposed for narrative convenience.</p>
+<p>The previous pictures are all <strong> simple diagram </strong> . Sometimes edge set $E(X)$ is replaced by directed edge set $A(X),$
+called <strong> directed graph </strong> . At this time, the edges are ordered pairs, which are represented by arrows in the diagram and are called <strong> arc </strong> .
+An undirected graph is sometimes also considered as a directed graph in which each undirected edge is two directed edges.
+Generally, simple graphs are considered by default. The vertex set can actually have an infinite number of elements,
+But this book considers by default <strong> finite graph </strong>.</p>
+<h2 id="en-子图"><a href="#en-子图" class="headerlink" title="子图"></a> subplot</h2><p>If the graph $Y$ satisfies $V(X)\subset V(Y),$ $E(X)\subset E(Y),$
+Then $Y$ is called $X$ <strong> subplot </strong> . If $V(Y)=V(X),$ is also satisfied, then $Y$ is called $X$. <strong> Generate subgraph </strong> .
+If the vertices in subgraph $Y$ are adjacent if and only if they are adjacent in $X$, then $Y$ is called an induced subgraph of $X$.
+It can be seen that the generated subgraph is obtained by deleting edges, while the induced subgraph is obtained by deleting points and their adjacent edges.</p>
+<p>There are several important concepts related to subgraphs: If a subgraph is a complete graph, it is called a <strong> clique </strong> .
+If the induced subgraph of a certain vertex set is empty, it is called <strong> independent set </strong> .
+The size of the largest clique in graph $X$ is recorded as $\omega(X),$, and the size of the largest independent set is recorded as $\alpha(X).$.
+These are two very important properties of graphs.</p>
+<p>On the graph, the length from vertex $x$ to $y$ is $r$. <strong> road </strong> ,
+Refers to a sequence composed of $r+1$ different vertices, with $x$ as the head and $y$ as the tail.
+And adjacent vertices in the sequence are also adjacent in the graph. If any two points on the graph have roads starting and ending with them,
+Then the graph is said to be <strong> connected </strong> , otherwise it is disconnected.</p>
+<p>The graph is disconnected, which is equivalent to dividing the vertex set of the graph $X$ into two sets $R,S,$.
+So that the vertices in $R$ and the vertices in $S$ are not adjacent.
+At this time we can say that the graph $X$ is the intersection-free union of the vertex sets $R$ and $S$ induced subgraphs. A maximum connected induced subgraph,
+called graph $X$ <strong> connected component </strong> , abbreviated as <strong> branch </strong>.</p>
+<p>one <strong> cycle </strong> Refers to a connected graph, each vertex has exactly two neighbors;
+A ring in a graph refers to a ring that is a subgraph. It is easy to prove that if every point in the graph has at least two neighboring points,
+Then the graph must contain a cycle. A connected acyclic graph is called <strong> tree </strong> ,
+The acyclic graph can be split into the non-intersecting union of several maximal connected acyclic graphs, so it is called <strong> forest </strong> .
+If a generated subgraph is a tree, it is called <strong> spanning tree </strong> . It is easy to see that a graph has a spanning tree if and only if it is connected.
+A maximal spanning forest refers to a spanning subgraph composed of spanning trees for each branch.</p>
+<h2 id="en-自同构"><a href="#en-自同构" class="headerlink" title="自同构"></a> automorphism</h2><p>The isomorphism of graph $X$ to itself is an automorphism. It is easy to prove that all automorphisms form a group,
+Recorded as $\operatorname{Aut}(X).$
+Obviously $\operatorname{Aut}(X)\subset \operatorname{Sym}(V(X)).$
+The latter refers to the symmetric group, that is, all permutations of the set $V(X)$.
+A basic example is $\operatorname{Aut}(K_n)\cong \operatorname{Sym}(V(K_n))=S_n.$
+Generally speaking, it is not easy to determine whether two graphs are isomorphic, and whether a graph has non-trivial automorphism.</p>
+<p>The image of $v$ under permutation $g$ is recorded as $v^g.$. When $g\in \operatorname{Aut}(X)$,
+For subgraph $Y\subset X,$, the subgraph $Y^g\subset X.$ can be defined edge-preservingly.
+$Y$ and $Y^g$ are naturally isomorphic.</p>
+<p>Vertex$x$ <strong> Valency </strong> , refers to the number of neighbors of $x$. The maximum (minimum) degree of the graph $X$,
+That is, it refers to the maximum (minimum) value of all vertex degrees. If the degree of each vertex of the graph is $k,$
+is called <strong> $k-$Regular graph </strong>.</p>
+<p><strong> Lemma 1.1 </strong>. <em> If $x\in X,$ $g\in \operatorname{Aut}(X),$ then $x$ and $x^g$ have the same degree. </em> </p>
+<p><strong> Certificate: </strong>
+Just use the induced subgraph $N(x)$ of $x$ and all its neighbors to satisfy $N(x)\cong N(x)^g=N(x^g)$.</p>
+<p>The two vertices $x,y$ in the graph $X$ <strong> distance </strong> $d_X(x,y),$ refers to the length of the shortest circuit connecting $x,y$.
+If $X$ is clear, the distance can be abbreviated as $d(x,y).$. A simple lemma is as follows:</p>
+<p><strong> Lemma 1.2 </strong>. <em>$\,\forall\,x,y\in X,$ $g\in \operatorname{Aut}(X),$ $d(x,y)=d(x^g,y^g).$</em> </p>
+<p>Figure$X$ <strong> Complement the picture </strong> $\overline X$ is such a graph: It satisfies $V(X)=V(\overline X),$
+But two vertices are adjacent in $\overline X$ if and only if they are not adjacent in $X$.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/NqFdbRUiZGYM5em.png width='50%' height='50%'></p>
 <p>It is easy to prove the following lemma:</p>
-<p><strong>Lemma 1.3</strong>. <em>$\operatorname{Aut}(X)\cong \operatorname{Aut}(\overline X).$</em></p>
+<p><strong> Lemma 1.3 </strong>. <em>$\operatorname{Aut}(X)\cong \operatorname{Aut}(\overline X).$</em> </p>
 <p>If $X$ is a directed graph, then for isomorphism, we require it to be direction-preserving.</p>
-<h2 id="homomorphism">homomorphism</h2>
-<p>Mapping $f:V(X)\rightarrow V(Y)$ to two graphs $X,Y,$ is called <strong>homomorphism,</strong><br>If $x\sim y\in X\Rightarrow f(x)\sim f(y)\in Y.$, the previous isomorphism is of course also a isomorphism.<br>The graph $X$ is a <strong>bipartite graph</strong>, if $V(X)$ can be divided into $V_1, V_2,$<br>Such that the endpoints of each edge are in these two sets respectively.<br>An example of a homomorphism is $V(X)\rightarrow V(K_2),$ mapping $V_i$ to vertex $i$.</p>
-<p>This example raises the issue of graph coloring. The <strong>normal coloring (proper coloring)</strong> of a graph,<br>It refers to the mapping from $V(X)$ to a certain finite (color) set, so that adjacent points are mapped to different colors.<br>If $X$ can be dyed normally by $k$ colors, it is said to be dyeable by $k-$<strong>.<br>The smallest $k$ is called the </strong>chromatic number** of the graph $X$, recorded as $\chi(X).$<br>All points dyed with a certain color form an independent set, called a color class.<br>For a bipartite graph with at least one edge, its coloring number is $2.$</p>
-<p><strong>Lemma 1.4</strong>. <em>The coloring number of $X$ is the smallest $r,$ such that there is a homomorphism of $X\rightarrow K_r$.</em></p>
-<p><strong>Proof:</strong> For homomorphism $f:X\rightarrow Y,$ it is easy to see for $y\in Y,$<br>$f^{-1}(y):={x\in V(X): f(x)=y}$ is an independent set. Therefore, if there is a homomorphism from $X$ to $K_r$,<br>Taking $K_r$ vertices as $r$ different colors, just color the vertices in $X$ according to their images,<br>Thus $\chi(X)\le r.$</p>
-<p>If $\chi(X)$ can be dyed by $r-$, let the color set be ${1,\cdots,r},$<br>Just map each color class to the corresponding vertex in $K_r$. Because the adjacent points in $X$ have different colors,<br>And different colors are adjacent to each other in $K_r$.</p>
-<p>The homomorphism $f$ of graph $X$ to its subgraph $Y$ is called contraction, if $f|_Y$ is an identity mapping.<br>At this time, $Y$ is called the contraction kernel of $X$. For example, in the following figure, construct a homomorphism as shown by the red arrow,<br>Then the five inner sides form the contraction core of the original image.</p>
+<h2 id="en-同态"><a href="#en-同态" class="headerlink" title="同态"></a> homomorphism</h2><p>Given two graphs $X,Y,$, the mapping $f:V(X)\rightarrow V(Y)$ is called <strong> homomorphism, </strong>
+If $x\sim y\in X\Rightarrow f(x)\sim f(y)\in Y.$ the previous isomorphism is of course also a isomorphism.
+Figure $X$ is <strong> bipartite graph </strong> , if $V(X)$ can be divided into $V_1,V_2,$
+Such that the endpoints of each edge are in these two sets respectively.
+An example of a homomorphism is $V(X)\rightarrow V(K_2),$ mapping $V_i$ to vertex $i$.</p>
+<p>This example leads to the problem of graph coloring. A graph <strong> normal coloring </strong> ,
+It refers to the mapping from $V(X)$ to a certain finite (color) set, so that adjacent points are mapped to different colors.
+If $X$ can be dyed normally by $k$ colors, it is said that it can be dyed by $k-$ <strong> Dyeing </strong> .
+Call the smallest $k$ the graph $X$ <strong> chromatic number </strong> , recorded as $\chi(X).$
+All points dyed with a certain color form an independent set, called a <strong> color class </strong> .
+For a bipartite graph with at least one edge, its coloring number is $2.$</p>
+<p><strong> Lemma 1.4 </strong>. <em> The shading number of $X$ is the smallest $r,$ such that there is a homomorphism of $X\rightarrow K_r$. </em> </p>
+<p><strong> Certificate: </strong> Pair homomorphism $f:X\rightarrow Y,$ Easy to see pair $y\in Y,$
+$f^{-1}(y):=\{x\in V(X): f(x)=y\}$ is an independent set. Therefore, if there is a homomorphism from $X$ to $K_r$,
+Use $K_r$ vertices as $r$ different colors, and color the vertices in $X$ according to their images.
+Thus $\chi(X)\le r.$</p>
+<p>If $\chi(X)$ can be dyed by $r-$, record the color set as $\{1,\cdots,r\},$
+Just map each color class to the corresponding vertex in $K_r$. Because the adjacent points in $X$ have different colors,
+And different colors are next to each other in $K_r$.</p>
+<p>The homomorphism $f$ from graph $X$ to its subgraph $Y$ is called contraction, if $f|_Y$ is an identity mapping.
+At this time, $Y$ is called the shrinking kernel of $X$. As shown in the figure below, construct the homomorphism as shown by the red arrow,
+Then the five inner sides form the contraction core of the original image.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/qD6o2IO3FYmjvui.png width='50%' height='50%'></p>
-<p>For the homomorphism of directed graphs, just change the preservation of adjacency to the preservation of ordered pairs. It should be noted that,<br>The above discussion assumes that there is no loop in the graph. An edge is called a loop if its two endpoints are the same point.<br>The properties of homomorphisms of graphs that allow cycles will be quite different.<br>An example is that any mapping from a set of vertices to a point with a cycle is homomorphic.</p>
-<p>The homomorphism of graph $X$ to itself is called an automorphism, and all automorphisms constitute a monoid group. The automorphism group is included in it.</p>
-<h2 id="cycle-diagram">cycle diagram</h2>
-<p>Next, we introduce a very important type of graph, called circulant graph:<br>It is a directed graph $X=X(\mathbb{Z}_n,C),$<br>The vertex of the set $C\subset \mathbb{Z}_n\setminus{0}.$ is the element in $\mathbb{Z}_n$,<br>$(i,j)$ is an arc in $X$ if and only if $j-i\in C.$<br>$X(\mathbb{Z}_n,C)$ is called a cyclic graph of order $n$, with $C$ as the connection set.</p>
+<p>For the homomorphism of directed graphs, just change the preservation of adjacency to the preservation of ordered pairs. It should be noted that,
+The above discussions all assume that there are no cycles in the graph. The edges are called <strong> loop </strong> , if its two endpoints are the same point.
+The properties of homomorphisms of graphs that allow cycles will be quite different.
+An example is that any mapping from a set of vertices to a point with a cycle is homomorphic.</p>
+<p>The homomorphism of the graph $X$ to itself is called an automorphism, and all automorphisms constitute a monoid group. The automorphism group is included in it.</p>
+<h2 id="en-循环图"><a href="#en-循环图" class="headerlink" title="循环图"></a> cycle diagram</h2><p>Next, we introduce a very important type of graph, called <strong> circulant graph </strong> :
+It is a directed graph $X=X(\mathbb{Z}_n,C),$
+The vertices of the set $C\subset \mathbb{Z}_n\setminus\{0\}.$ are elements in $\mathbb{Z}_n$,
+$(i,j)$ is an arc in $X$ if and only if $j-i\in C.$
+$X(\mathbb{Z}_n,C)$ is called $n$ order cyclic graph, and $C$ is the connected set.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/5lzsWJ1NDBaf2ru.png width='50%' height='50%'></p>
-<p>If $\,\forall\,c\in C,$ $-c\in C,$ then $(i,j)$ is an arc if and only if $(j,i)$ is an arc,<br>Therefore $X$ can be regarded as an undirected graph. It is easy to see that the ring mentioned above is $X(\mathbb{Z}_n,{\pm 1}),$<br>It is a type of cyclic graph, denoted as $C_n$.</p>
-<h2 id="johnson-diagram">Johnson diagram</h2>
-<p>For positive integers $v\ge k\ge i,$ the graph $J(v,k,i)$ is such an undirected graph:<br>Let there be a set $\Omega,$ with $v$ elements<br>The graph takes all subsets containing $k$ elements in $\Omega$ as vertices,<br>An edge is connected between two points if and only if the intersection of its corresponding subsets contains $i$ elements. Therefore, it contains $\binom{v}{k}$ vertices,<br>It is a regular graph, and each point has $\binom{k}{i}\binom{v-k}{k-i}$ as its degree.</p>
-<p><strong>Lemma 1.5</strong>. <em>$J(v,k,i)\cong J(v,v-k,v-2k+i).$</em></p>
-<p><strong>Proof:</strong> Just map each subset containing $k$ elements to its complement in $\Omega$.<br>It is easy to see that the intersection of two complementary sets contains $v-2k+i$ elements if and only if the original two sets contain $i$ elements.<br>Therefore such mappings are isomorphic.</p>
-<p>According to this lemma, we can always default to $v\ge 2k.$. At this time, $J(v,k,k-1)$ is called <strong>Johnson graph</strong>,<br>$J(v,k,0)$ is the <strong>Kneser graph</strong>. Since the replacement of elements in $\Omega$ induces the replacement between subsets,<br>We have the following lemma:</p>
-<p><strong>Lemma 1.6</strong>. <em>$S_v\subset \operatorname{Aut}(J(v,k,i)).$</em></p>
-<h2 id="side-picture">side picture</h2>
-<p>The <strong>edge graph (line graph)</strong>$L(X)$ of the graph $X$ is such a graph: it has the edges of $X$ as vertices,<br>Two vertices are connected by an edge if and only if their corresponding edges in $X$ have common vertices.</p>
+<p>If $\,\forall\,c\in C,$ $-c\in C,$ then $(i,j)$ is an arc if and only if $(j,i)$ is an arc,
+Therefore $X$ can be regarded as an undirected graph. It is easy to see that the ring mentioned above is $X(\mathbb{Z}_n,\{\pm 1\}),$
+It is a type of cyclic graph, denoted as $C_n$.</p>
+<h2 id="en-Johnson图"><a href="#en-Johnson图" class="headerlink" title="Johnson图"></a> Johnson diagram</h2><p>The graph $J(v,k,i)$ of positive integers $v\ge k\ge i,$ is such an undirected graph:
+Let there be a set $\Omega,$ containing $v$ elements.
+The graph takes all subsets containing $k$ elements in $\Omega$ as vertices,
+An edge is connected between two points if and only if the intersection of its corresponding subsets contains $i$ elements. Therefore, it contains $\binom{v}{k}$ vertices,
+It is a regular graph, and each point has $\binom{k}{i}\binom{v-k}{k-i}$ as the degree.</p>
+<p><strong> Lemma 1.5 </strong>. <em>$J(v,k,i)\cong J(v,v-k,v-2k+i).$</em> </p>
+<p><strong> Certificate: </strong> Just map each subset containing $k$ elements to its complement in $\Omega$.
+It is easy to see that the intersection of two complementary sets contains $v-2k+i$ elements if and only if the original two sets contain $i$ elements.
+Therefore such mappings are isomorphic.</p>
+<p>According to this lemma, we can always default to $v\ge 2k.$. In this case, we call $J(v,k,k-1)$ <strong> Johnson diagram </strong> ,
+$J(v,k,0)$ is <strong> Kneser diagram </strong> . Since the permutation of elements in $\Omega$ induces permutation between subsets,
+We have the following lemma:</p>
+<p><strong> Lemma 1.6 </strong>. <em>$S_v\subset \operatorname{Aut}(J(v,k,i)).$</em> </p>
+<h2 id="en-边图"><a href="#en-边图" class="headerlink" title="边图"></a> side picture</h2><p>Figure$X$ <strong> line graph </strong> $L(X)$ is such a graph: it has the edge of $X$ as its vertex,
+Two vertices are connected by an edge if and only if their corresponding edges in $X$ have a common vertex.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/RPjdVz8KtTUnNFr.png width='50%' height='50%'></p>
-<p><strong>Star graph</strong>$K_{1,n}$ is a graph composed of $1$ vertices and their $n$ neighbors.<br>Its edge graph is the complete graph $K_n.$ For the ring $C_n,$ it is isomorphic to its edge graph.</p>
+<p><strong> star chart </strong> $K_{1,n}$ is a graph consisting of $1$ vertices and their $n$ neighbors.
+Its edge graph is the complete graph $K_n.$ and for the ring $C_n,$ it is isomorphic to its edge graph.</p>
 <p>Considering its two vertices for each edge, we have the following lemma:</p>
-<p><strong>Lemma 1.7</strong>. <em>If $X$ is a $k-$regular graph, then $L(X)$ is $2k-2$regular.</em></p>
-<p>Each vertex of degree $k$ in $X$ determines a clique of size $k$ in $L(X)$. If $X$ contains $n$ vertices,<br>Then there are corresponding $n$ clusters in $L(X)$, so that each vertex of $L(X)$ is in at most two of the clusters,<br>Each edge is in exactly one of the groups. In fact, through the construction method, there is the following inverse proposition:</p>
-<p><strong>Theorem 1.8</strong> (Krausz). <em>A non-empty graph is an edge graph of a graph if and only if its edge set can be divided into several cliques, such that each vertex is in at most two of the cliques.</em></p>
-<p>If $X$ does not contain <strong>triangle</strong> (a group with size $3$), then when a point in $L(X)$ has two adjacent points,<br>When both adjacent points are in a certain group as mentioned above, this point is also in that group.<br>Otherwise, their corresponding sides form a triangle at $X$.<br>Therefore, the cliques in $L(X)$ determined by the vertices of $X$ are all maximal.</p>
-<p>Obviously $X\cong Y\Rightarrow L(X)\cong L(Y),$ but the reverse is not necessarily true,<br>For example $L(K_{1,3})\cong L(K_3).$<br>However, Whitney proved that this is in fact the only counterexample in the connected case.<br>Let us prove the weaker proposition below.<br><strong>Lemma 1.9</strong>. <em>If the minimum degree of $X,Y$ is greater than $3,$ then $X\cong Y\Leftrightarrow L(X)\cong L(Y).$</em></p>
-<p><strong>Certificate:</strong> Just note that in the side plot,<br>A cluster containing less than three points may not necessarily be reduced to a star graph starting from a certain vertex.<br>However, when a group with more than three points is restored, it must be restored to a star graph. It only needs to be explained that when four sides have common vertices in pairs,<br>It must be in the shape of $K_{1,4}$. Otherwise, three of the sides must be restored to a triangle when restored.<br>At this time, it is impossible to add a fourth edge so that both sides have common vertices.</p>
-<p>Therefore, when the degree of each vertex is greater than $3$,<br>The size of $n$ maximal cliques corresponding to $n$ vertices is greater than $3,$<br>And conversely, each maximal clique with a size greater than $3$ corresponds to a vertex.<br>Therefore, there is a bijection between the vertex set and the maximum group with size greater than $3$,<br>And the vertices are adjacent if and only if the corresponding maximal cliques have common points.<br>Therefore, the properties of the graph and its edge graph properties determine each other,<br>Therefore $X\cong Y\Leftrightarrow L(X)\cong L(Y).$</p>
+<p><strong> Lemma 1.7 </strong>. <em> If $X$ is a $k-$ regular graph, then $L(X)$ is a $2k-2$ regular graph. </em> </p>
+<p>Each vertex with degree $k$ in $X$ determines a cluster with size $k$ in $L(X)$. If $X$ contains $n$ vertices,
+Then there are corresponding $n$ clusters in $L(X)$, so that each vertex of $L(X)$ is in at most two of the clusters,
+Each edge is in exactly one of the groups. In fact, through the construction method, there is the following inverse proposition:</p>
+<p><strong> Theorem 1.8 </strong> (Krausz). <em> A non-empty graph is an edge graph of a graph if and only if its edge set can be divided into several cliques, such that each vertex is in at most two of the cliques. </em> </p>
+<p>If $X$ does not contain <strong> triangle </strong> (a group with size $3$), then when a point in $L(X)$ has two neighboring points,
+When both adjacent points are in a certain group as mentioned above, this point is also in that group.
+Otherwise, their corresponding sides form a triangle in $X$.
+Therefore, the cliques in $L(X)$ determined by the vertices of $X$ are all maximal.</p>
+<p>Obviously $X\cong Y\Rightarrow L(X)\cong L(Y),$ but the reverse is not necessarily true,
+For example $L(K_{1,3})\cong L(K_3).$
+However, Whitney proved that this is in fact the only counterexample in the connected case.
+Let us prove the weaker proposition below.</p>
+<p><strong> Lemma 1.9 </strong>. <em> If the minimum degree of $X,Y$ is greater than $3,$, then $X\cong Y\Leftrightarrow L(X)\cong L(Y).$ </em> </p>
+<p><strong> Certificate: </strong> Just note that in the side plot,
+A cluster containing less than three points may not necessarily be reduced to a star graph starting from a certain vertex.
+However, when a group with more than three points is restored, it must be restored to a star graph. It only needs to be explained that when four sides have common vertices in pairs,
+It must be the shape of $K_{1,4}$. Otherwise, three of the sides must be restored to a triangle when restored.
+At this time, it is impossible to add a fourth edge so that both sides have common vertices.</p>
+<p>Therefore, when the degree of each vertex is greater than $3$,
+The size of the $n$ maximal cliques corresponding to $n$ vertices is greater than $3,$
+And conversely, each maximal clique with a size larger than $3$ corresponds to a vertex.
+Therefore, there is a bijection between the vertex set and the maximal group whose size is greater than $3$,
+And the vertices are adjacent if and only if the corresponding maximal cliques have common points.
+Therefore, the properties of the graph and its edge graph properties determine each other,
+Therefore$X\cong Y\Leftrightarrow L(X)\cong L(Y).$</p>
 <p>Another interesting description of edge graphs is:</p>
-<p><strong>Theorem 1.10</strong> (Beineke). <em>A graph is an edge graph if and only if its induced subgraphs each containing at most six points are edge graphs.</em></p>
-<p>We call a bipartite graph <strong>semi-regular</strong> if it has 2$-coloring such that points with the same color have the same degree.<br>The simplest example is <strong>complete bipartite graph</strong>$K_{m,n},$<br>It consists of two independent sets containing $m$ points and $n$ points, connected in pairs.</p>
-<p><strong>Lemma 1.11</strong>. <em>If the edge graph $L(X)$ of the connected graph $X$ is a regular graph, then $X$ is a regular or semi-regular bipartite graph.</em></p>
-<p><strong>Proof:</strong> Suppose $L(X)$ is $k-$ regular, then the sum of the degrees of each pair of adjacent points in $X$ is always $k+2.$<br>Therefore, the degree of all points in connected $X$ can only take on at most two values. If there is only one value,<br>Then it is a regular graph; if there are two different values, then just dye it according to these two values.<br>In this way, only the sum of point degrees of different colors meets the requirements, so points of the same color must not be adjacent.<br>And after dyeing in this way, points with the same color have the same degree, which is semi-regular.</p>
-<h2 id="available-floor-plan">Available floor plan</h2>
-<p>We have seen that it is convenient to represent graphs graphically. If the graph can be drawn without intersecting lines,<br>It is called a planar graph. More precisely, we consider mapping the graph onto a plane.<br>Map vertices to points and edges to continuous curves connecting two points without self-intersection,<br>Such a mapping is called <strong>Plane Embedding</strong>. If the curves corresponding to edges without common points do not intersect,<br>Curves corresponding to edges with common vertices only intersect at corresponding points on the plane.<br>A graph is called planar if and only if there exists such a planar embedding.</p>
-<p><strong>Plane graph</strong> is a planar graph with good plane embedding.<br>The edges of a plan view divide the plane into several areas, which are called the <strong>faces</strong> of the plan view. Except for one area,<br>All other areas are bounded. This unbounded area is called the <strong>infinity surface</strong> or <strong>external<br>face)</strong>. The length of a face refers to the number of sides that frame it.</p>
+<p><strong> Theorem 1.10 </strong> (Beineke). <em> A graph is an edge graph if and only if its induced subgraphs each containing at most six points are edge graphs. </em> </p>
+<p>We call a bipartite graph a <strong> Semi-regular </strong> , if it has $2$-dying such that points with the same color have the same degree.
+The simplest example is <strong> complete bipartite graph </strong> $K_{m,n},$
+It consists of two independent sets containing $m$ points and $n$ points, connected in pairs.</p>
+<p><strong> Lemma 1.11 </strong>. <em> If the edge graph $L(X)$ of the connected graph $X$ is a regular graph, then $X$ is a regular or semi-regular bipartite graph. </em> </p>
+<p><strong> Certificate: </strong> Assume $L(X)$ is regular $k-$, then the sum of the degrees of each pair of adjacent points in $X$ is always $k+2.$
+Therefore, the degree of all points in connected $X$ can only take on two values at most. If there is only one value,
+Then it is a regular graph; if there are two different values, then just dye it according to these two values.
+In this way, only the sum of point degrees of different colors meets the requirements, so points of the same color must not be adjacent.
+And after dyeing in this way, points with the same color have the same degree, which is semi-regular.</p>
+<h2 id="en-可平面图"><a href="#en-可平面图" class="headerlink" title="可平面图"></a> Available floor plan</h2><p>We have seen that it is convenient to represent graphs graphically. If the graph can be drawn without intersecting lines,
+is called <strong> planar graph </strong> .More precisely, we consider mapping the graph onto a plane.
+Map vertices to points and edges to continuous curves connecting two points without self-intersection,
+Call such a mapping <strong> planar embedding </strong> , if the curves corresponding to the edges without common points do not intersect,
+Curves corresponding to edges with common vertices only intersect at corresponding points on the plane.
+The graph is called <strong> Planar </strong> iff there exists such a planar embedding.</p>
+<p><strong> plane graph </strong> A planar graph embedded in order to obtain a good plane.
+The edges of a plane diagram divide the plane into several areas, which are called the sides of the plane diagram. <strong> noodles </strong> .Except for one area,
+All other areas are bounded, and this unbounded area is called <strong> infinite surface </strong> or <strong> external
+face) </strong> .The length of a face refers to the number of sides that frame it.</p>
 <p>The famous Euler formula gives the relationship between points, lines and surfaces in a plane diagram:</p>
-<p><strong>Theorem 1.12</strong> (Euler). <em>If the connected plane graph has $n$ vertices, $e$ edges and $f$ faces, then $n-e+f=2.$</em></p>
-<p>A planar graph is called a maximally planar graph. If one more edge is added, it is no longer planar.<br>If the plane of a planar graph embeds a face with a length greater than $3$, then you can definitely add another edge.<br>Therefore, the plane embedding of a maximally planar graph has the length of all faces $3$. If the degree of each point is at least $2$,<br>Then each edge lies in exactly two faces, and we have $2e=3f,$ so $e=3n-6.$<br>In fact, if a planar graph containing $n$ points has $3n-6$ edges, it must be maximal.<br>Such a graph is called a plane triangulation.</p>
-<p>There are many kinds of planar embeddings for a graph, which will cause the faces of the planar graph to be different, as shown in the figure below.<br>A very important topological conclusion is that $3-$ connected graphs essentially have only one embedding method.</p>
+<p><strong> Theorem 1.12 </strong> (Euler). <em> If the connected plane graph has $n$ vertices, $e$ edges and $f$ faces, then $n-e+f=2.$ </em> </p>
+<p>The plan view can be called <strong> Great floor plan </strong> , if one more edge is added, it is no longer planar.
+If the plane of a planar graph is embedded with a face whose length is greater than $3$, then you can definitely add another edge.
+Therefore, the length of all faces embedded in the plane of a maximally planar graph is $3$. If the degree of each point is at least $2$,
+Then each edge lies exactly in two faces, we have $2e=3f,$ and thus $e=3n-6.$
+In fact, if a planar graph containing $n$ points has $3n-6$ edges, it must be maximal.
+Such a graph is called <strong> Plane triangulation </strong>.</p>
+<p>There are many kinds of planar embeddings for a graph, which will cause the faces of the planar graph to be different, as shown in the figure below.
+A very important topological conclusion is that $3-$ connected graphs essentially have only one embedding method.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/bNgKA27E9TuIDkq.png width='50%' height='50%'></p>
-<p>Given a planar graph $X,$ we can generate <strong>dual graph</strong>$X^\ast,$<br>Taking the face of $X$ as the vertex of $X^\ast$, for each common edge between two faces in $X$,<br>Draw an edge in $X^\ast$ (across a common edge) connecting the corresponding vertices on both sides.<br>Note that there may be multiple edges in $X^\ast$, that is, there are multiple edges connecting two points.<br>Unless otherwise specified, we do not consider duplicate edges in the graph by default.</p>
+<p>Given a floor plan $X,$ we can generate <strong> dual graph </strong> $X^\ast,$
+Taking the face of $X$ as the vertex of $X^\ast$, for each common edge of the two faces in $X$,
+Draw an edge in $X^\ast$ (across a common edge) connecting the corresponding vertices on both sides.
+Note that $X^\ast$ may contain <strong> Multiple edges </strong> , that is, multiple edges are connected between two points.
+Unless otherwise specified, we do not consider duplicate edges in the graph by default.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/OqilQ1K7n2I4XAu.png width='50%' height='50%'></p>
-<p>If a graph is isomorphic to its dual graph, it is called <strong>self-dual</strong>, such as the complete graph $K_4.$<br>For a connected graph $X,$ we can explain $X\cong (X^\ast)^\ast.$<br>The concept of embedding can be generalized from the plane to any surface, and the duality is similar.<br>An example is that the complete graph $K_6$ of a non-planar graph can be embedded on the projective plane,<br>is a triangulation of the projective plane.</p>
+<p>If a graph is isomorphic to its dual graph, it is called <strong> self-dual </strong> , such as the complete graph $K_4.$
+For the connected graph $X,$, it can be explained $X\cong (X^\ast)^\ast.$
+The concept of embedding can be generalized from the plane to any surface, and the duality is similar.
+An example is that a complete graph $K_6$ of a non-planar graph can be embedded on a projective plane,
+is a triangulation of the projective plane.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/Fs8nIm63LMXyvaE.png width='50%' height='50%'></p>
-<p>Another example is that the complete graph $K_7$ is not a planar graph and cannot be embedded on the projective plane,<br>But it can be embedded on the torus.</p>
+<p>Another example is that the complete graph $K_7$ is not planar and cannot be embedded in the projective plane.
+But it can be embedded on the torus.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/09/16/UZLdoX21VqCADpw.png width='50%' height='50%'></p>
-<p>The article was last updated on 2021-09-16 14:51:40</p>
+<p>The article was last updated on 2021-09-16 14:51:40 </p>
+
+            
                 </div>
             
         </div>
@@ -541,7 +664,7 @@ face)</strong>. 面的长度指框住它边的个数.</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数图论》第二章-群论回顾</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Graph Theory&#34; Chapter 2 - Review of Group Theory</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Chapter 2 of &#34;Algebraic Graph Theory&#34; - Review of Group Theory</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -563,7 +686,7 @@ face)</strong>. 面的长度指框住它边的个数.</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第一章-微分流形(1)</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifolds, Chapter 1 - Differential Manifolds (1)</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 1 - Differential Manifolds (1)</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -816,7 +939,7 @@ face)</strong>. 面的长度指框住它边的个数.</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#figure"><span class="nav-text">Figure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#subplot"><span class="nav-text">subplot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#automorphism"><span class="nav-text">automorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#homomorphism"><span class="nav-text">homomorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cycle-diagram"><span class="nav-text">cycle diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#johnson-diagram"><span class="nav-text">Johnson diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#side-picture"><span class="nav-text">side picture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#available-floor-plan"><span class="nav-text">Available floor plan</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%9B%BE"><span class="nav-text"> Figure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%AD%90%E5%9B%BE"><span class="nav-text"> subplot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%87%AA%E5%90%8C%E6%9E%84"><span class="nav-text"> automorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%90%8C%E6%80%81"><span class="nav-text"> homomorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%BE%AA%E7%8E%AF%E5%9B%BE"><span class="nav-text"> cycle diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Johnson%E5%9B%BE"><span class="nav-text"> Johnson diagram</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%BE%B9%E5%9B%BE"><span class="nav-text"> side picture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%8F%AF%E5%B9%B3%E9%9D%A2%E5%9B%BE"><span class="nav-text"> Available floor plan</span></a></li></ol>
         </div>
     
 </div>

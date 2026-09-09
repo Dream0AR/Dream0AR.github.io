@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分流形》第五章-张量</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Differential Manifolds Chapter 5 - Tensors</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 5 - Tensor</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-308" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-308" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-309" data-lang="zh-cn">几何</span><span data-lang-group="note-label-309" data-lang="en" style="display:none">Geometry</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/">微分流形</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E6%B5%81%E5%BD%A2/"><span data-lang-group="note-label-310" data-lang="zh-cn">微分流形</span><span data-lang-group="note-label-310" data-lang="en" style="display:none">Differentiable Manifolds</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="对称张量与反称张量"><a href="#对称张量与反称张量" class="headerlink" title="对称张量与反称张量"></a>对称张量与反称张量</h2><p>对$\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ 若</p>
 <p>$$\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,$$</p>
@@ -304,7 +307,79 @@ $\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\o
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    
+                <h2 id="en-对称张量与反称张量"><a href="#en-对称张量与反称张量" class="headerlink" title="对称张量与反称张量"></a> Symmetric and antisymmetric tensors</h2><p>For $\Phi\in V^\ast \otimes \cdots\otimes V^\ast =L(V,\cdots,V;\mathbb{R}),$ if</p>
+<p>$$\Phi(v_1,\cdots,v_i,\cdots,v_j,\cdots,v_k)=\pm \Phi(v_1,\cdots,v_j,\cdots,v_i,\cdots,v_k),\quad \,\forall\,1\le i,j\le k,$$</p>
+<p>Then $\Phi$ is said to be <strong> Symmetry (Anti-symmetry) </strong> of.
+Use $\odot^k(V^\ast )$ to represent all symmetric tensors in $V^\ast \otimes\cdots\otimes V^\ast $,
+$\Lambda^k(V^\ast )$ represents the entire inverse tensor.</p>
+<p>Let $J(k)$ represent the permutation group of order $k$. For $\sigma\in J(k),$
+Definition $\operatorname{sgn}:J(k)\rightarrow\{\pm 1\},$ represents odd-even arrangement.
+Easy to verify$\operatorname{sgn}(\sigma\tau)=\operatorname{sgn}(\sigma)\operatorname{sgn}(\tau).$
+Define role$\sigma\Phi(v_1,\cdots,v_k):=\Phi(v_{\sigma(1)},\cdots,v_{\sigma(k)}),$
+It is easy to see that $\sigma\Phi\in V^\ast \otimes\cdots\otimes V^\ast ,$ and $\sigma$ are linear mappings.
+Then $\Phi$ is symmetric (antisymmetric) $\Leftrightarrow$
+$\sigma\Phi=(\operatorname{sgn}\sigma)\Phi.$</p>
+<p>Take a set of basis $\{e_i\},$ dual basis $\{\omega^i\}.$ of $V$
+Then for $\Phi=\Phi_{i_1\cdots i_k}\omega^{i_1}\otimes\cdots\otimes \omega^{i_k},$
+You can get $\Phi$ symmetry (antisymmetry) $\Leftrightarrow$
+$\Phi_{i_1\cdots i_k}$ is symmetric (anti-symmetric) about the indicator $\{i_1,\cdots,i_k\}$.</p>
+<p>Define the following two linear transformations:
+$S_k:\Phi\mapsto \frac{1}{k!}\sum_\sigma \sigma \Phi,$
+called <strong> Symmetrization operator </strong> ;
+$A_k:\Phi\mapsto \frac{1}{k!}\sum_{\sigma} (\operatorname{sgn}\sigma)\sigma \Phi,$
+called <strong> desymmetrization operator </strong> . Note $V_k=V^\ast \otimes\cdots\otimes V^\ast ,$ we have the following proposition:</p>
+<p><strong> Proposition 1 </strong>. <em> $\odot^k(V^\ast )=S_k(V_k),$ $\Lambda^k(V^\ast )=A_k(V_k),$ and $\Phi$ are symmetrical (antisymmetrical) $\Leftrightarrow$ $S_k(\Phi)=\Phi$($A_k(\Phi)=\Phi.$) </em> </p>
+<p><strong> Certificate: </strong> Take $\tau\in J(k),$ and first prove $\tau(S_k(\Phi))=S_k(\Phi),$
+$\tau(A_k(\Phi))=(\operatorname{sgn}\tau)A_k (\Phi).$
+Next, explain $A_k|_{\Lambda^k(V^\ast )}=\mathrm{id},$
+$S_k|_{\odot^k(V^\ast )}=\mathrm{id}$ is enough.</p>
+<h2 id="en-拉回映照"><a href="#en-拉回映照" class="headerlink" title="拉回映照"></a> Pull back the reflection</h2><p>Let $f:V\rightarrow W$ be a linear mapping, define $f^\ast :W^\ast \rightarrow V^\ast ,$
+$(f^\ast w^\ast )(v)=w^\ast (f(v)),$ is called <strong> Pull back the reflection </strong> .
+Can be generalized to $f^\ast :W_k\rightarrow V_k,$
+$(f^\ast \Phi)(v_1,\cdots,v_k)=\Phi(f(v_1),\cdots,f(v_k)).$</p>
+<p><strong> Proposition 2 </strong>. <em>$S_kf^\ast =f^\ast S_k,$ $A_kf^\ast =f^\ast A_k.$</em> </p>
+<p><strong> Certificate: </strong> Just use $\sigma f^\ast =f^\ast \sigma$.</p>
+<h2 id="en-外代数"><a href="#en-外代数" class="headerlink" title="外代数"></a> external algebra</h2><p>$\Lambda^r(V^\ast ):=A_r(V_r),$ is called $r$ order <strong> inverse tensor space </strong> .
+Agreement $\Lambda^0(V^\ast )=\mathbb{R},$ $\Lambda^1(V^\ast )=V^\ast .$
+Let $\Phi\in \Lambda^r(V^\ast ),$ $\Psi\in \Lambda^s(V^\ast ),$
+Then $\Phi\wedge \Psi:=\binom{r+s}{r,s}A_{r+s}(\Phi\otimes \Psi)\in \Lambda^{r+s}(V^\ast )$ is called the combination of $\Phi$ and $\Psi$ <strong> outer product </strong> ,
+Satisfy the following properties:</p>
+<ul>
+<li><p>Distributive law:
+$(a\Phi_1+b\Phi_2)\wedge\Psi=a\Phi_1\wedge \Psi+b\Phi_2\wedge\Psi;$
+$\Phi\wedge(a\Psi_1+b\Psi_2)=a\Phi\wedge \Psi_1+b\Phi\wedge \Psi_2.$</p>
+</li>
+<li><p>Anti-commutative law: $\Phi\wedge \Psi=(-1)^{rs}\Psi\wedge \Phi;$</p>
+</li>
+<li><p>Associative law: $(\Phi\wedge \Psi)\wedge\eta=\Phi\wedge(\Psi\wedge \eta).$</p>
+</li>
+</ul>
+<p>The proof is basically based on the properties of tensor products, and the linear desymmetry operator $A.$ is put outside it. For the inverse commutative law,
+Use substitution
+$$\tau=\begin{pmatrix}
+            1&amp;\cdots&amp;r&amp;r+1&amp;\cdots&amp;r+s\\
+            s+1&amp;\cdots&amp;s+r&amp;1&amp;\cdots&amp;s
+        \end{pmatrix}$$
+ That’s it, satisfying $\operatorname{sgn}\tau=(-1)^{rs}.$
+In particular, for the case of $r=s=1$, $\Phi\wedge\Psi=-\Psi\wedge\Phi,$
+$\Phi\wedge\Phi=0.$</p>
+<p>For the associative law, a permutation is introduced
+$$\widetilde\tau=\begin{pmatrix}
+            1&amp;\cdots&amp;r+s&amp;r+s+1&amp;\cdots&amp;r+s+t\\
+            \tau(1)&amp;\cdots&amp;\tau(r+s)&amp;r+s+1&amp;\cdots&amp;r+s+t
+        \end{pmatrix}$$
+ Just have the usual definition discussion. In particular,
+As can be seen in the proof,
+$\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\otimes \cdots\otimes \Phi_k).$</p>
+<p><strong> Corollary 3 </strong>. <em> Assume $\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$ $x_1,\cdots,x_k\in V,$ then $\theta^1\wedge\cdots\wedge\theta^k(x_1,\cdots,x_k)=\det(\theta^i(x_j))_{k\times k}.$ </em> </p>
+<p><strong> Certificate: </strong> Expand it and find that the expression is exactly the combinatorial definition of the determinant.
+That is $\sum_\sigma \operatorname{sgn}(\sigma) \theta^1(x_{\sigma(1)})\cdots\theta^k(x_{\sigma(k)}).$</p>
+<p><strong> Corollary 4 </strong>. <em> Assume $\theta^1,\cdots,\theta^k\in \Lambda^1(V^\ast )=V^\ast ,$, then $\theta^1,\cdots,\theta^k$ is linearly related $\Leftrightarrow$ $\theta^1\wedge\cdots\wedge\theta^k=0.$ </em> </p>
+<p><strong> Certificate: </strong> Just use the anti-commutative law and proof by contradiction.</p>
+<p>The article was last updated on 2021-12-02 11:36:31 </p>
+
+            
                 </div>
             
         </div>
@@ -347,7 +422,7 @@ $\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\o
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《现代PDE基础》笔记(8)-数理方程</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Modern PDE Basics Notes (8) - Mathematical Equations</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Basics of Modern PDE&#34; Notes (8)-Mathematical Equations</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -369,7 +444,7 @@ $\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\o
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》讨论稿-线性映照空间</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Discussion Paper &#34;Differential Manifolds&#34; - Linear Mapping Space</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Discussion Paper-Linear Mapping Space</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -622,9 +697,7 @@ $\Phi_1\wedge\cdots\wedge\Phi_k=\binom{r_1+\cdots+r_k}{r_1,\cdots,r_k}A(\Phi_1\o
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%AF%B9%E7%A7%B0%E5%BC%A0%E9%87%8F%E4%B8%8E%E5%8F%8D%E7%A7%B0%E5%BC%A0%E9%87%8F"><span class="nav-text"> Symmetric and antisymmetric tensors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%8B%89%E5%9B%9E%E6%98%A0%E7%85%A7"><span class="nav-text"> Pull back the reflection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%A4%96%E4%BB%A3%E6%95%B0"><span class="nav-text"> external algebra</span></a></li></ol>
         </div>
     
 </div>

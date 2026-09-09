@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《现代PDE基础》笔记(10)-复习</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Modern PDE Basics Notes (10) - Review</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Notes on &#34;Basics of Modern PDE&#34; (10)-Review</span>
                 
             </span>
         </div>
@@ -197,7 +197,7 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-287" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-287" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
@@ -205,7 +205,7 @@
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/">现代PDE基础</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/PDE/%E7%8E%B0%E4%BB%A3PDE%E5%9F%BA%E7%A1%80/"><span data-lang-group="note-label-288" data-lang="zh-cn">现代PDE基础</span><span data-lang-group="note-label-288" data-lang="en" style="display:none">Foundations of Modern PDE</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="广义函数"><a href="#广义函数" class="headerlink" title="广义函数"></a>广义函数</h2><h3 id="基本定义"><a href="#基本定义" class="headerlink" title="基本定义"></a>基本定义</h3><p>$C_c^\infty\subset \mathscr{S}\subset C^\infty,$
 记为$\mathscr{D}\subset \mathscr{S}\subset \mathscr{E},$
@@ -380,81 +383,155 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="generalized-function">generalized function</h2>
-<h3 id="basic-definition">Basic definition</h3>
-<p>$C_c^\infty\subset \mathscr{S}\subset C^\infty,$<br>Recorded as $\mathscr{D}\subset \mathscr{S}\subset \mathscr{E},$<br>Then $\mathscr{D}&#39;\supset \mathscr{S}&#39;\supset \mathscr{E}&#39;.$<br>Note that the basic space used here is that the former is dense in the latter.</p>
-<p>The continuity of a generalized function is equivalent to boundedness. Note that boundedness is more special here,<br>Because the basic space is not normed. But a sequence of norms can be obtained.</p>
-<p>From this property, we can get an important dual property: $(\mathscr{D}&#39;)_c=\mathscr{E}&#39;.$</p>
-<h3 id="polished">Polished</h3>
-<p>$\alpha<em>\varepsilon(x)=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon}).$<br>The convolution $J</em>\varepsilon f:=f<em>\varepsilon=\alpha</em>\varepsilon\ast f$ is called the polish of $f$.<br>Since $\alpha_\varepsilon$ is a radial function, we have:</p>
-<script type="math/tex; mode=display">
-\left<{}\alpha_\varepsilon\ast T,\varphi\right>=\left<{}T_x,\left<{}\alpha_\varepsilon(y),\varphi(x+y)\right>\right>=\left<{}T,\alpha_\varepsilon\ast \varphi\right>.</script><p>When $T\in \mathscr{D}&#39;$, $\alpha_\varepsilon\ast T\in C^\infty.$</p>
-<p>From Minkowski inequality,<br>$\Vert\alpha<em>\varepsilon\ast f\Vert</em>{L^p}\le \Vert f\Vert<em>{L^p}.$<br>Minkowski&#39;s inequality can be derived from discrete cases or proven by functional analysis methods.<br>When $\varepsilon\rightarrow 0$,<br>We have $f</em>\varepsilon\xrightarrow{L^p} f.$</p>
-<h3 id="seeking-derivation">Seeking derivation</h3>
-<p>A generalized function can &quot;almost&quot; always be written as a derivative of a normal function. Here the derivative is a generalized derivative, such as:</p>
-<script type="math/tex; mode=display">
-\left<{}T,\varphi\right>=\left<{}D^\alpha f,\varphi\right>=(-1)^{|\alpha|}\left<{}f,D^\alpha \varphi\right>.</script><p>The definition of derivation comes from integration by parts, derived from the Gauss-Green formula.</p>
-<script type="math/tex; mode=display">
-\int_\Omega \partial f\cdot g+f\cdot \partial g=\int_{\Omega} \partial(fg)=\int_{\partial \Omega} fg\cdot \gamma,</script><p>When one of $f, g$ takes zero on the boundary, the right end gets zero, and the equation about the left end is established.</p>
-<h3 id="fourier-transform">Fourier Transform</h3>
-<p>For the rapid descending function, there is Fourier transformation:</p>
-<script type="math/tex; mode=display">
-F[f] (\xi)=\widehat{f}(\xi):=\int_{\mathbb{R}^n} f(x)e^{-ix\cdot \xi}dx,</script><p>There is an inverse Fourier transformation:</p>
-<script type="math/tex; mode=display">
-f(x)=F^{-1}[\widehat{f}] (x):=(2\pi)^{-n}\int_{\mathbb{R}^n}\widehat{f}(\xi)e^{ix\cdot \xi}d\xi,</script><p>Meet:</p>
-<script type="math/tex; mode=display">
-\widehat{D^\alpha f}(\xi)=\xi^\alpha \widehat{f}(\xi),\quad D^\alpha=\frac{1}{i^{|\alpha|} }\partial^\alpha,</script><script type="math/tex; mode=display">
-\widehat{fg}=(2\pi)^{-n}\widehat{f}\ast \widehat{g}.</script><p>We have the classic proposition: $F:\mathscr{S}\cong \mathscr{S}$ is a continuous isomorphism.<br>This directly induces $F:\mathscr{S}&#39;\cong \mathscr{S}&#39;,$<br>$\left&lt;{}F[T],\varphi\right&gt;:=\left&lt;{}T,F[\varphi]\right&gt;.$<br>This is guaranteed by Fubini&#39;s theorem. We also have the Plancherel formula:</p>
-<script type="math/tex; mode=display">
-\int_{\mathbb{R}^n}\widehat{f}\overline{\widehat{g} }\bar{d}\xi=\int_{\mathbb{R}^n} f \overline{g}dx,\quad \bar{d}\xi=(2\pi)^{-n}d\xi.</script><p>Taking $g=f,$, we get the Parseval identity for the continuous case.</p>
-<h2 id="sobolev-space">Sobolev space</h2>
-<h3 id="sobolev%E2%80%99s-inequality">Sobolev’s inequality</h3>
-<script type="math/tex; mode=display">
-\Vert u\Vert_{L^q}\le C|u|_{\dot{H}^{m,p} },\quad \frac{n}{q}=\frac{n}{p}-m;</script><script type="math/tex; mode=display">
-|u|_{C^\alpha}\le C|u|_{\dot{H}^{m,p} },\quad -\alpha=\frac{n}{p}-m,\,\alpha\in (0,1);</script><script type="math/tex; mode=display">
-\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{m,p} },\quad 0>\frac{n}{p}-m;</script><script type="math/tex; mode=display">
-\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{s} },\quad 0>\frac{n}{2}-s;</script><script type="math/tex; mode=display">
-\Vert u\Vert_{L^q}\le C\Vert u\Vert_{H^{m,p} },\quad \frac{n}{p}-m=0,\, q\ge p.</script><p>Regarding the last inequality, the left-hand dimension is $\frac{n}{q},$<br>The right-hand side dimension is $[\frac{n}{p}-m,\frac{n}{p}]=[0,m].$ In order to make the inequality true,<br>The left-hand dimension must fall within this interval.<br>Therefore, the condition $\frac{n}{q}\le \frac{n}{p}=m\,\Rightarrow\,q\ge p$ is necessary.</p>
+                    
+                <h2 id="en-广义函数"><a href="#en-广义函数" class="headerlink" title="广义函数"></a> generalized function</h2><h3 id="en-基本定义"><a href="#en-基本定义" class="headerlink" title="基本定义"></a> basic definition</h3><p>$C_c^\infty\subset \mathscr{S}\subset C^\infty,$
+Recorded as $\mathscr{D}\subset \mathscr{S}\subset \mathscr{E},$
+Then $\mathscr{D}&#39;\supset \mathscr{S}&#39;\supset \mathscr{E}&#39;.$
+Note that the basic space used here is that the former is dense in the latter.</p>
+<p>The continuity of a generalized function is equivalent to boundedness. Note that boundedness is more special here,
+Because the basic space is not normed. But a sequence of norms can be obtained.</p>
+<p>An important dual property can be obtained from this property: $(\mathscr{D}&#39;)_c=\mathscr{E}&#39;.$</p>
+<h3 id="en-磨光"><a href="#en-磨光" class="headerlink" title="磨光"></a> polish</h3><p>$\alpha_\varepsilon(x)=\frac{1}{\varepsilon^n}\alpha(\frac{x}{\varepsilon}).$
+The convolution $J_\varepsilon f:=f_\varepsilon=\alpha_\varepsilon\ast f$ is called the polishing of $f$.
+Since $\alpha_\varepsilon$ is a radial function, we have:</p>
+<p>$$
+\left&lt;{}\alpha_\varepsilon\ast T,\varphi\right&gt;=\left&lt;{}T_x,\left&lt;{}\alpha_\varepsilon(y),\varphi(x+y)\right&gt;\right&gt;=\left&lt;{}T,\alpha_\varepsilon\ast \varphi\right&gt;.
+$$</p>
+<p>When $T\in \mathscr{D}&#39;$, $\alpha_\varepsilon\ast T\in C^\infty.$</p>
+<p>From Minkowski inequality,
+$\Vert\alpha_\varepsilon\ast f\Vert_{L^p}\le \Vert f\Vert_{L^p}.$
+Minkowski&#39;s inequality can be derived from discrete cases or proven by functional analysis methods.
+When $\varepsilon\rightarrow 0$,
+We have $f_\varepsilon\xrightarrow{L^p} f.$</p>
+<h3 id="en-求导"><a href="#en-求导" class="headerlink" title="求导"></a> Derivative</h3><p>A generalized function can almost always be written as a derivative of a normal function. The derivative here is a generalized derivative, such as:</p>
+<p>$$
+\left&lt;{}T,\varphi\right&gt;=\left&lt;{}D^\alpha f,\varphi\right&gt;=(-1)^{|\alpha|}\left&lt;{}f,D^\alpha \varphi\right&gt;.
+$$</p>
+<p>The definition of derivation comes from integration by parts, derived from the Gauss-Green formula.</p>
+<p>$$
+\int_\Omega \partial f\cdot g+f\cdot \partial g=\int_{\Omega} \partial(fg)=\int_{\partial \Omega} fg\cdot \gamma,
+$$</p>
+<p>When one of $f,g$ takes zero on the boundary, the right end gets zero, establishing an equation about the left end.</p>
+<h3 id="en-Fourier变换"><a href="#en-Fourier变换" class="headerlink" title="Fourier变换"></a> Fourier transform</h3><p>For the rapid descending function, there is Fourier transformation:</p>
+<p>$$
+F[f] (\xi)=\widehat{f}(\xi):=\int_{\mathbb{R}^n} f(x)e^{-ix\cdot \xi}dx,
+$$</p>
+<p>There is an inverse Fourier transformation:</p>
+<p>$$
+f(x)=F^{-1}[\widehat{f}] (x):=(2\pi)^{-n}\int_{\mathbb{R}^n}\widehat{f}(\xi)e^{ix\cdot \xi}d\xi,
+$$</p>
+<p>Meet:</p>
+<p>$$
+\widehat{D^\alpha f}(\xi)=\xi^\alpha \widehat{f}(\xi),\quad D^\alpha=\frac{1}{i^{|\alpha|} }\partial^\alpha,
+$$</p>
+<p>$$
+\widehat{fg}=(2\pi)^{-n}\widehat{f}\ast \widehat{g}.
+$$</p>
+<p>We have the classic proposition: $F:\mathscr{S}\cong \mathscr{S}$ is a continuous isomorphism.
+This directly induces $F:\mathscr{S}&#39;\cong \mathscr{S}&#39;,$
+$\left&lt;{}F[T],\varphi\right&gt;:=\left&lt;{}T,F[\varphi]\right&gt;.$
+This is guaranteed by Fubini&#39;s theorem. We also have the Plancherel formula:</p>
+<p>$$
+\int_{\mathbb{R}^n}\widehat{f}\overline{\widehat{g} }\bar{d}\xi=\int_{\mathbb{R}^n} f \overline{g}dx,\quad \bar{d}\xi=(2\pi)^{-n}d\xi.
+$$</p>
+<p>Taking $g=f,$ obtains the Parseval identity for the continuous case.</p>
+<h2 id="en-Sobolev空间"><a href="#en-Sobolev空间" class="headerlink" title="Sobolev空间"></a> Sobolev space</h2><h3 id="en-Sobolev不等式"><a href="#en-Sobolev不等式" class="headerlink" title="Sobolev不等式"></a> Sobolev&#39;s inequality</h3><p>$$
+\Vert u\Vert_{L^q}\le C|u|_{\dot{H}^{m,p} },\quad \frac{n}{q}=\frac{n}{p}-m;
+$$</p>
+<p>$$
+|u|_{C^\alpha}\le C|u|_{\dot{H}^{m,p} },\quad -\alpha=\frac{n}{p}-m,\,\alpha\in (0,1);
+$$</p>
+<p>$$
+\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{m,p} },\quad 0&gt;\frac{n}{p}-m;
+$$</p>
+<p>$$
+\Vert u\Vert_{L^\infty}\le C\Vert u\Vert_{H^{s} },\quad 0&gt;\frac{n}{2}-s;
+$$</p>
+<p>$$
+\Vert u\Vert_{L^q}\le C\Vert u\Vert_{H^{m,p} },\quad \frac{n}{p}-m=0,\, q\ge p.
+$$</p>
+<p>Regarding the last inequality, the left-hand dimension is $\frac{n}{q},$
+The right-hand side dimension is $[\frac{n}{p}-m,\frac{n}{p}]=[0,m].$ In order to make the inequality true,
+The left-hand dimension must fall within this interval.
+Therefore the condition $\frac{n}{q}\le \frac{n}{p}=m\,\Rightarrow\,q\ge p$ is necessary.</p>
 <p>We also have Poincaré’s inequality:</p>
-<script type="math/tex; mode=display">
-\Vert u\Vert_{L^p}\le d\Vert\nabla u\Vert_{L^p}=d|u|_{\dot{H}^{1,p} },\quad \,\forall\,u\in H_0^{1,p}(\Omega).</script><h3 id="theorem">Theorem</h3>
-<p><strong>Equivalent modular theorem</strong>: extended by <strong>Lions</strong>,<br>Functions in $H^{m,p}(\Omega)$ can always be extended to functions in $H^{m,p}(\mathbb{R}^n)$.<br>definition</p>
-<script type="math/tex; mode=display">
-\Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_\Omega =f}\Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)},</script><p>Then with $\widetilde{f},$ obtained by extension of Lions, we have:</p>
-<script type="math/tex; mode=display">
-\Vert f\Vert_{H^{m,p}(\Omega)}\le \Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}\le \Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)}\le C\Vert f\Vert_{H^{m,p}(\Omega)},</script><p><strong>Compact embedding theorem</strong>: When the conditions in Sobolev&#39;s inequality are strict,<br>That is $\frac{n}{q}&gt;\frac{n}{p}-m,$<br>At this time, the embedding of $H^{m,p}(\Omega)\hookrightarrow L^{q}(\Omega)$ is tight,<br>That is to map bounded sets into compact sets.</p>
-<p><strong>Trace Theorem</strong>:</p>
-<script type="math/tex; mode=display">
-\Vert u\Vert_{H^{s-\frac{1}{2} }(\partial\Omega)}\le C\Vert u\Vert_{H^s(\Omega)},\quad s>\frac{1}{2}</script><p>A simple corollary that is most commonly applied is:</p>
-<script type="math/tex; mode=display">
-\Vert u\Vert_{L^2(\partial \Omega)}\le C\Vert u\Vert_{H^1(\Omega)}.</script><p>Regarding the dual space: It should be noted that $H^{-1}(\Omega):=(H_0^1(\Omega))^\ast ,$<br>It is not the dual space of $H^1(\Omega)$. Only when $\Omega=\mathbb{R}^n$,<br>$H_0^1(\mathbb{R}^n)=H^1(\mathbb{R}^n).$ At the same time, the theorem expressed by Riesz,<br>$H^{-1}(\Omega)\cong H_0^1(\Omega),$ are not equal.<br>Because the former is regarded as the subspace of $\mathscr{D}&#39;(\Omega)$, and $L^2(\Omega)$ is the subspace,<br>The functional is taken as $L^2$ inner product; while the latter uses $H^1$ inner product as the functional, which leads to a difference in the dual space,<br>But after all, they are isomorphic correspondences.</p>
-<h2 id="pde">PDE</h2>
-<h3 id="basic-definition">Basic definition</h3>
-<p>Second-order elliptic equation:</p>
-<script type="math/tex; mode=display">
-Lu=\sum \partial_i(a_{ij}u_j)+\sum b_i u_i+cu.</script><p>Second-order hyperbolic equation:</p>
-<script type="math/tex; mode=display">
-Mu=u_{tt}-\sum \partial_i (a_{ij}u_j)-\sum b_{0j}u_{ti}+\sum b_iu_i+b_0 u_t+cu.</script><p>It can be recorded as $Mu=u_{tt}-M_1u_t+M_2u.$</p>
-<p>Second order parabolic equation:</p>
-<script type="math/tex; mode=display">
-Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.</script><p>It can be recorded as $Nu=u_t-N_1u.$</p>
-<p>The coefficient $a<em>{ij}$ is symmetric and satisfies the ellipticity condition:<br>$\sum a</em>{ij}\xi_i\xi_j\ge \alpha|\xi|^2.$ The conditions are consistent when time terms are involved.</p>
-<h3 id="energy-method">Energy Method</h3>
-<p>For elliptic equations, $\left&lt;{}u,Lu\right&gt;$ gives Garding&#39;s inequality;</p>
-<p>$\left&lt;{}u_t,Mu\right&gt;,$ of hyperbolic equation<br>The $\left&lt;{}u,Nu\right&gt;$ of the parabolic equation gives an energy estimate.</p>
-<h3 id="galerkin-method">Galerkin method</h3>
-<p>Take a set of bases of the basic space ${\varphi_i},$ Consider $u_m=\sum a_i\varphi_i,$ Solution</p>
-<script type="math/tex; mode=display">
-\left<{}Lu_m-f,\varphi_i\right>=0,\quad i=1,\cdots,m.</script><p>This is reduced to the form of a linear equation system $Ax=b$, and just solve for the coefficients.<br>The solvability here is guaranteed by Garding&#39;s inequality. $\frac{A+A^T}{2}$ is positive definite, and $A$ is reversible.<br>The quadratic form in the formula can be written in the form of $x^T\frac{A+A^T}{2}x=\left&lt;{}-Lu,u\right&gt;$,<br>When $C_2\le 0$, the positive definiteness is inferred.</p>
-<p>For the Galerkin method involving time terms, it is necessary to consider $u_m=\sum a_i(t)\varphi_i.$ at this time</p>
-<script type="math/tex; mode=display">
-\left<{}Mu_m,\varphi_i\right>=\left<{}f,\varphi_i\right>,\quad i=1,\cdots,m</script><p>is $m$ ODEs, which are always solvable. Specifically,</p>
-<script type="math/tex; mode=display">
-\sum \left<{}\varphi_j,\varphi_i\right>a_j''-\left<{}M_1\varphi_j,\varphi_i\right>a_j'+\left<{}M_2\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><p>Similarly, for parabolic equations, the question is:</p>
-<script type="math/tex; mode=display">
-\left<{}Nu_m,\varphi_i\right>=\sum \left<{}\varphi_j,\varphi_i\right>a_j'-\left<{}N_1\varphi_j,\varphi_i\right>a_j=\left<{}f,\varphi_i\right>.</script><h3 id="operator-semigroup">Operator semigroup</h3>
-<p>Consider the problem $u<em>t=N_1u,$ Formally, $e^{N_1t}u_0$ gives the solution. Specifically,<br>Consider $N</em>\lambda:=\lambda N<em>1(\lambda-N_1)^{-1},$<br>Define $e^{N_1t}:=\lim\limits</em>{\lambda\rightarrow+\infty}e^{N_\lambda t}$ to make the representation strict.</p>
-<p>The article was last updated on 2021-12-26 16:23:44</p>
+<p>$$
+\Vert u\Vert_{L^p}\le d\Vert\nabla u\Vert_{L^p}=d|u|_{\dot{H}^{1,p} },\quad \,\forall\,u\in H_0^{1,p}(\Omega).
+$$</p>
+<h3 id="en-定理"><a href="#en-定理" class="headerlink" title="定理"></a> Theorem</h3><p><strong> Equivalent modular theorem </strong> : by <strong> Lions extension </strong> ,
+Functions in $H^{m,p}(\Omega)$ can always be extended to functions in $H^{m,p}(\mathbb{R}^n)$.
+definition</p>
+<p>$$
+\Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}=\inf_{\widetilde{f}|_\Omega =f}\Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)},
+$$</p>
+<p>Then with $\widetilde{f},$ obtained by extension of Lions, we have:</p>
+<p>$$
+\Vert f\Vert_{H^{m,p}(\Omega)}\le \Vert f\Vert_{\widetilde{H}^{m,p}(\Omega)}\le \Vert\widetilde{f}\Vert_{H^{m,p}(\mathbb{R}^n)}\le C\Vert f\Vert_{H^{m,p}(\Omega)},
+$$</p>
+<p><strong> compact embedding theorem </strong> : When the conditions in Sobolev’s inequality are strict,
+That is $\frac{n}{q}&gt;\frac{n}{p}-m,$
+At this time, the embedding of $H^{m,p}(\Omega)\hookrightarrow L^{q}(\Omega)$ is tight,
+That is to map bounded sets into compact sets.</p>
+<p><strong> trace theorem </strong>:</p>
+<p>$$
+\Vert u\Vert_{H^{s-\frac{1}{2} }(\partial\Omega)}\le C\Vert u\Vert_{H^s(\Omega)},\quad s&gt;\frac{1}{2}
+$$</p>
+<p>A simple corollary that is most commonly applied is:</p>
+<p>$$
+\Vert u\Vert_{L^2(\partial \Omega)}\le C\Vert u\Vert_{H^1(\Omega)}.
+$$</p>
+<p>Regarding the dual space: It should be noted that $H^{-1}(\Omega):=(H_0^1(\Omega))^\ast ,$
+It is not the dual space of $H^1(\Omega)$. Only when $\Omega=\mathbb{R}^n$,
+$H_0^1(\mathbb{R}^n)=H^1(\mathbb{R}^n).$ At the same time, expressed by Riesz theorem,
+$H^{-1}(\Omega)\cong H_0^1(\Omega),$ When not equal.
+Because the former is regarded as the subspace of $\mathscr{D}&#39;(\Omega)$, and $L^2(\Omega)$ is the subspace,
+The functional is taken as the inner product of $L^2$; while the latter uses the inner product of $H^1$ as the functional, which leads to a difference in the dual space,
+But after all, they are isomorphic correspondences.</p>
+<h2 id="en-PDE"><a href="#en-PDE" class="headerlink" title="PDE"></a>PDE</h2><h3 id="en-基本定义-1"><a href="#en-基本定义-1" class="headerlink" title="基本定义"></a> basic definition</h3><p>Second-order elliptic equation: </p>
+<p>$$
+Lu=\sum \partial_i(a_{ij}u_j)+\sum b_i u_i+cu.
+$$</p>
+<p>Second-order hyperbolic equation:</p>
+<p>$$
+Mu=u_{tt}-\sum \partial_i (a_{ij}u_j)-\sum b_{0j}u_{ti}+\sum b_iu_i+b_0 u_t+cu.
+$$</p>
+<p>Can be recorded as $Mu=u_{tt}-M_1u_t+M_2u.$</p>
+<p>Second order parabolic equation: </p>
+<p>$$
+Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.
+$$</p>
+<p>Can be recorded as $Nu=u_t-N_1u.$</p>
+<p>The coefficient $a_{ij}$ is symmetric and satisfies the ellipticity condition:
+$\sum a_{ij}\xi_i\xi_j\ge \alpha|\xi|^2.$ The conditions are consistent when time terms are involved.</p>
+<h3 id="en-能量方法"><a href="#en-能量方法" class="headerlink" title="能量方法"></a> energy approach</h3><p>For elliptic equations, $\left&lt;{}u,Lu\right&gt;$ gives Garding&#39;s inequality;</p>
+<p>$\left&lt;{}u_t,Mu\right&gt;,$ of hyperbolic equation
+$\left&lt;{}u,Nu\right&gt;$ of the parabolic equation gives an estimate of the energy.</p>
+<h3 id="en-Galerkin方法"><a href="#en-Galerkin方法" class="headerlink" title="Galerkin方法"></a> Galerkin method</h3><p>Take a set of basis $\{\varphi_i\},$ of the basic space and consider $u_m=\sum a_i\varphi_i,$ solution</p>
+<p>$$
+\left&lt;{}Lu_m-f,\varphi_i\right&gt;=0,\quad i=1,\cdots,m.
+$$</p>
+<p>This is converted into the form of a linear system of equations $Ax=b$, and just solve for the coefficients.
+The solvability here is guaranteed by Garding&#39;s inequality. $\frac{A+A^T}{2}$ is positive definite, $A$ is reversible.
+The quadratic form in the formula can be written in the form of $x^T\frac{A+A^T}{2}x=\left&lt;{}-Lu,u\right&gt;$,
+When $C_2\le 0$, the positive definiteness is inferred.</p>
+<p>For the Galerkin method involving time terms, $u_m=\sum a_i(t)\varphi_i.$ needs to be considered at this time</p>
+<p>$$
+\left&lt;{}Mu_m,\varphi_i\right&gt;=\left&lt;{}f,\varphi_i\right&gt;,\quad i=1,\cdots,m
+$$</p>
+<p>is $m$ ODEs, which are always solvable. Specifically,</p>
+<p>$$
+\sum \left&lt;{}\varphi_j,\varphi_i\right&gt;a_j&#39;&#39;-\left&lt;{}M_1\varphi_j,\varphi_i\right&gt;a_j&#39;+\left&lt;{}M_2\varphi_j,\varphi_i\right&gt;a_j=\left&lt;{}f,\varphi_i\right&gt;.
+$$</p>
+<p>Similarly, for parabolic equations, the question is:</p>
+<p>$$
+\left&lt;{}Nu_m,\varphi_i\right&gt;=\sum \left&lt;{}\varphi_j,\varphi_i\right&gt;a_j&#39;-\left&lt;{}N_1\varphi_j,\varphi_i\right&gt;a_j=\left&lt;{}f,\varphi_i\right&gt;.
+$$</p>
+<h3 id="en-算子半群"><a href="#en-算子半群" class="headerlink" title="算子半群"></a> operator semigroup</h3><p>Consider problem $u_t=N_1u,$. Formally, $e^{N_1t}u_0$ gives the solution to the problem. Specifically,
+Consider$N_\lambda:=\lambda N_1(\lambda-N_1)^{-1},$
+Define $e^{N_1t}:=\lim\limits_{\lambda\rightarrow+\infty}e^{N_\lambda t}$ to make the representation strict.</p>
+<p>The article was last updated on 2021-12-26 16:23:44 </p>
+
+            
                 </div>
             
         </div>
@@ -497,7 +574,7 @@ Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.</script><p>It can be recor
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》练习</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifold Exercise</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Exercise</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -519,7 +596,7 @@ Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.</script><p>It can be recor
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》第七章-流形上的积分</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifolds Chapter 7 - Integrating on a Manifold</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 7 - Integrals on Manifolds</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -772,7 +849,7 @@ Nu=u_{t}-\sum \partial_i (a_{ij}u_j)+\sum b_i u_i+cu.</script><p>It can be recor
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#generalized-function"><span class="nav-text">generalized function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-definition"><span class="nav-text">Basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#polished"><span class="nav-text">Polished</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seeking-derivation"><span class="nav-text">Seeking derivation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fourier-transform"><span class="nav-text">Fourier Transform</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sobolev-space"><span class="nav-text">Sobolev space</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sobolev%E2%80%99s-inequality"><span class="nav-text">Sobolev’s inequality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theorem"><span class="nav-text">Theorem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pde"><span class="nav-text">PDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-definition"><span class="nav-text">Basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#energy-method"><span class="nav-text">Energy Method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#galerkin-method"><span class="nav-text">Galerkin method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operator-semigroup"><span class="nav-text">Operator semigroup</span></a></li></ol></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%B9%BF%E4%B9%89%E5%87%BD%E6%95%B0"><span class="nav-text"> generalized function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="nav-text"> basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E7%A3%A8%E5%85%89"><span class="nav-text"> polish</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%B1%82%E5%AF%BC"><span class="nav-text"> Derivative</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Fourier%E5%8F%98%E6%8D%A2"><span class="nav-text"> Fourier transform</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Sobolev%E7%A9%BA%E9%97%B4"><span class="nav-text"> Sobolev space</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Sobolev%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-text"> Sobolev&#39;s inequality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%AE%9A%E7%90%86"><span class="nav-text"> Theorem</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-PDE"><span class="nav-text">PDE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89-1"><span class="nav-text"> basic definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E8%83%BD%E9%87%8F%E6%96%B9%E6%B3%95"><span class="nav-text"> energy approach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Galerkin%E6%96%B9%E6%B3%95"><span class="nav-text"> Galerkin method</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E7%AE%97%E5%AD%90%E5%8D%8A%E7%BE%A4"><span class="nav-text"> operator semigroup</span></a></li></ol></li></ol>
         </div>
     
 </div>

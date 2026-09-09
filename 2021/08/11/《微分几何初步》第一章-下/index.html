@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分几何初步》第一章-下</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Preliminary Differential Geometry Chapter 1 - Part 2</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; Chapter 1-Part 2</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-446" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-446" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-447" data-lang="zh-cn">几何</span><span data-lang-group="note-label-447" data-lang="en" style="display:none">Geometry</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/">微分几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-448" data-lang="zh-cn">微分几何</span><span data-lang-group="note-label-448" data-lang="en" style="display:none">Differential Geometry</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="局部标准型"><a href="#局部标准型" class="headerlink" title="局部标准型"></a>局部标准型</h2><p>我们知道研究曲线局部性质的时候, 利用Frenet标架来处理会方便很多.
 取(无一阶奇点) 弧长参数化曲线$\alpha:I\rightarrow \mathbb{R}^3,$
@@ -434,7 +437,209 @@ $n$为曲线与这些直线的总交点数(记重数), 即将积分离散化.
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    
+                <h2 id="en-局部标准型"><a href="#en-局部标准型" class="headerlink" title="局部标准型"></a> Partial standard type</h2><p>We know that when studying the local properties of curves, it is much more convenient to use the Frenet frame.
+Take (no first-order singularity) arc length parameterized curve $\alpha:I\rightarrow \mathbb{R}^3,$
+Expanded by Taylor,
+$\alpha(s)=\alpha(0)+s\alpha&#39;(0)+\frac{s^2}{2}\alpha&#39;&#39;(0)+\frac{s^3}{6}\alpha&#39;&#39;&#39;(0)+R,$
+$R=o(s^3).$ We know $\alpha&#39;(0)=t,$ $\alpha&#39;&#39;(0)=kn,$
+$\alpha&#39;&#39;&#39;(0)=(kn)&#39;=k&#39;n+kn&#39;=k&#39;n-k^2t-k\tau b.$</p>
+<p>Organize to get $\alpha(s)-\alpha(0)=(s-\frac{k^2s^3}{6})t+(\frac{s^2k}{2}+\frac{s^3k&#39;}{6})n-\frac{s^3}{6}k\tau b+R,$
+Thus we obtain the (higher-order) local approximate coordinates of the curve under the Frenet frame:</p>
+<p>$$\left\{
+        \begin{aligned}
+            x(s)&amp;=s-\frac{k^2s^3}{6}+R_x\\
+            y(s)&amp;=\frac{k}{2}s^2+\frac{k&#39;s^3}{6}+R_y\\
+            z(s)&amp;=-\frac{k\tau}{6}s^3+R_z
+        \end{aligned}
+        \right.$$</p>
+<p>The above formula is called the local standard form of the curve $\alpha$ in the zero point neighborhood. Viewed from a first-order perspective,
+Only the tangent vector $t,$ can be seen, that is, only the information in the $x$ direction; and from a third-order perspective,
+You can see more information in $\mathbb{R}^3$, such as the direction of the curve ($n$ direction),
+Climb ($b$ direction) etc.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/11/iKONHwLEfYuytgQ.png width='50%' height='50%'></p>
+<p>From this we can see some geometric properties: When the torsion is negative,
+Locally, the curve goes up through the osculating plane; while the curve with positive torsion goes down.
+From the tangent plane (rectifying), the curve can be divided on one side in a certain neighborhood $(k\neq 0).$</p>
+<p>An important piece of information about the oblique plane is that it is the closest (most dense) plane to the curve.
+In mathematical language, that is,
+It is the limit of the plane determined by the tangent at point $s$ and point $s+h$ at $h\rightarrow 0$.
+Let&#39;s suppose that $s=0,$ consists of Frenet frame and local standard form,
+This plane can be recorded as $z=cy$ (excluded from the tangent plane $y=0$).
+Then calculate $c=\frac{z(h)}{y(h)}=\frac{-\frac{k\tau}{6}h^3+o(h^3)}{\frac{k}{2}h^2+o(h^2)}=-\frac{\tau h}{3}+o(h).$
+Therefore, the plane tends to $z=0,$, which is the close plane.</p>
+<p><strong> Note 1.1 </strong>. <em> Some books may define torsion as $b&#39;=-\tau n,$. Please note. </em> </p>
+<p>Let’s do some exercises. We mentioned that from the tangent plane, the curve can be divided on one side in a certain neighborhood of the $P$ point,
+In fact, any plane containing the tangent line of point $P$ can be used, except the close plane.
+Just consider the projection of the curve along the $x$ axis (tangential direction) on the normal plane,
+Then the previous $z=cy$ is the secant line between the zero point of the curve and the $h$ point, and the slope of the secant line tends to zero.
+So for any given plane $z=c_0y,$ $c_0\neq 0,$
+It is always possible to find a small enough neighborhood such that the secant slope is less than $c_0,$
+Therefore, the projected curve remains below the $z=c_0 y$ line, that is, the original curve remains on the plane side.</p>
+<p>The close plane can also be determined in other ways,
+For example, the limit of the plane determined by the three points $\alpha(s),\alpha(s+h_1),\alpha(s+h_2)$ is at $h_1,h_2\rightarrow 0$.
+Also take the local standard form, then the plane can be recorded as $ax+by+cz=0.$
+Take $F(s)=ax(s)+by(s)+cz(s),$ then $F&#39;(0)=a,$ $F&#39;&#39;(0)=bk.$
+Here $a,b$ is a function about $h_1,h_2$. Since $F(0),F(h_1),F(h_2)=0,$
+From the mean value theorem, we know that $a,b\rightarrow 0.$ and the plane tend to $z=0,$, that is, the close plane.</p>
+<p>A classic conclusion is that the curvature of the curve at point $P$ is consistent with the curvature of the close plane curve projected at point $P$ at that point.
+This is because from the local standard type,
+The curvature of $P$ point $(s=0)$ can be determined by $\lim\limits_{s\rightarrow 0}\frac{2y(s)}{x^2(s)}$,
+Has nothing to do with $z$.</p>
+<h2 id="en-平面曲线整体性质"><a href="#en-平面曲线整体性质" class="headerlink" title="平面曲线整体性质"></a> Overall properties of plane curves</h2><p>Next, we discuss the global differential properties of some plane curves. Chapter 5 will discuss them more systematically,
+Interested students can take a look later.</p>
+<p>Do some simple review,
+Plane closed curve $\alpha:[a,b]\rightarrow R^2$ requires $\alpha(a)=\alpha(b)$ at the same time,
+It is also required that the higher order derivatives are consistent. It is <strong> simple </strong> , if the closed curve does not self-intersect.
+Generally, the arc length is parameterized, and the curvature of the plane curve will have positive and negative signs.</p>
+<p>We say that a simple closed curve in the plane will frame an internal region, which can be obtained from the Jordan Curve Theorem,
+See Chapter 5. If you look in the direction in which the curve parameters increase, the interior always remains on the left side of the curve.
+Then the curve is said to be <strong> Positive orientation </strong> of.</p>
+<h3 id="en-等周不等式"><a href="#en-等周不等式" class="headerlink" title="等周不等式"></a> equal period inequality</h3><p>This is the oldest overall problem in differential geometry. When do simple closed curves of equal length enclose the largest area?
+Weierstrass gave the earliest proof of the variational method, but it was rather cumbersome.
+Here we introduce the proof given by Schmidt in 1939. For the area enclosed by the curve, according to Green&#39;s formula,
+We have the formula for calculating area:
+$$A=-\int_{a}^b yx&#39;dt=\int_a^bxy&#39;dt=\frac{1}{2}\int_a^b xy&#39;-yx&#39;dt.$$
+Or as the book proves through elementary methods, but the method is essentially similar to the elementary proof of Green&#39;s formula,
+And need to admit some conclusions (can find a straight line,
+Such that the distance function of the curve with respect to the straight line has a finite number of extreme points).</p>
+<p><strong> Theorem 1.2 </strong> (Equal period inequality). <em> Assume $C$ is a plane simple closed curve with length $l$, $A$ is the area enclosed by $C$, then $l^2-4\pi A\ge 0,$ is equal if and only if $C$ is the circumference. </em> </p>
+<p><strong> Certificate: </strong> As shown in the figure, take a suitable parallel line $L,L&#39;$ and clamp the curve $C$.
+Take a circle $S^1$ with a radius $r$ below that is also stuck, with the center of the circle as the origin,
+The vertical $L,L&#39;$ direction is the $x$ axis, and the $L,L&#39;$ direction is the $y$ axis.
+Parameterize arc length $\alpha(s)=(x(s),y(s)).$ for $C$
+Assume the $S^1$ curve is $\bar\alpha(s)=(x(s),\bar y(s)),$, that is, the two curves in the $x$ direction are synchronized.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/11/iopQHbWf8AqnCRs.png width='50%' height='50%'></p>
+<p>From the area formula, we have: $$\begin{aligned}
+                A+\pi r^2=\int_0^l(xy&#39;-\bar yx&#39;)ds\le \int_0^l\sqrt{x^2+\bar y^2} \cdot \sqrt{ {y&#39;}^2+{x&#39;}^2}ds=lr.
+            \end{aligned}$$</p>
+<p>Thus by the geometric mean $\sqrt{A}\sqrt{\pi r^2}\le \frac{1}{2}(A+\pi r^2)\le \frac{1}{2}lr,$
+$4 \pi A r^2\le l^2 r^2,$ is $l^2-4\pi A\ge 0.$ (note that it has nothing to do with $r$.)</p>
+<p>When the equal sign holds, all inequalities are equal. From the geometric mean inequality, $A=\pi r^2.$
+Therefore, $l=2\pi r,$ and any rotation $L,L&#39;$ direction, the distance is still $2r$.
+At the same time $(x,\bar y)=\lambda (y&#39;,-x&#39;),$ it is known from the module length relationship $|\lambda|=r,$
+Thus $x=\pm r y&#39;.$ rotates $L,L&#39;$ by $90$ degrees, and gets $y=\pm r x&#39;.$
+So $x^2+y^2=r^2({x&#39;}^2+{y&#39;}^2)=r^2,$ or $C$ is the circumference of the circle.</p>
+<p><strong> Note 1.3 </strong>. <em> It is easy to see that the equal period inequality is established for the simple closed curve $C^1$, and it is also naturally established for the segmented $C^1$. (When not specified, the default is smooth.) </em> </p>
+<h3 id="en-四顶点定理"><a href="#en-四顶点定理" class="headerlink" title="四顶点定理"></a> four vertex theorem</h3><p>Closed curve parameterized for arc length $\alpha(s)=(x(s),y(s)),$
+Introduce the tangent mark $t(s)=(x&#39;(s),y&#39;(s)).$ whose trajectory falls on the unit circle,
+And the speed vector is $kn$. Let $\theta(s)$ be the intersection angle between the $t(s)$ and $x$ axes,
+If it is restricted to fall on $[0,2\pi)$, $\theta$ may not be continuous.
+Because it can be defined locally by inverse trigonometric functions $(\theta(s)=\arctan\frac{y&#39;(s)}{x&#39;(s)}(+\pi)),$
+It is differentiable.</p>
+<p><img style='margin: auto;' src=https://i.loli.net/2021/08/11/6zPdoZalT9r5vW7.png width='50%' height='50%'></p>
+<p>From $t(s)=(\cos \theta(s),\sin \theta(s)),$ velocity vector $t&#39;=\theta&#39; n,$
+That is $\theta&#39;=k.$
+Thus continuous functions can be redefined as a whole $\theta(s)=\int_0^s k(s)ds.$
+It differs from the original function $2k\pi.$. This function describes the total rotation angle of the tangent vector,
+Since the tangent vectors at the beginning and end of the closed curve are the same, the rotation angle is an integer multiple of $2\pi$.
+Note$\int_0^l k(s)ds=\theta(l)-\theta(0)=2\pi I,$
+Call the integer $I$ the curve $\alpha$ <strong> Rotation indicator </strong> . Note that since $k$ is signed,
+The same goes for the rotation indicator $I$. When the simple closed curve has a positive orientation, the rotation indicator is also positive.</p>
+<p>We have the following theorem, which is proved in Theorem 2 of Section 5.7:</p>
+<p><strong> Theorem 1.4 </strong> (Rotation Index Theorem). <em> The rotation index for a simple closed curve is $\pm 1,$ whose sign depends on the orientation of the curve. </em> </p>
+<p>Next, the concept of curve vertices is introduced.
+The regular plane curve $\alpha:[a,b]\rightarrow \mathbb{R}^2$ is said to be <strong> convex </strong> of,
+If the trajectory of $\,\forall\,t\in [a,b],$ $\alpha$ always falls on the tangent side of point $t$.
+And the plane curve <strong> vertex </strong> , defined as all points $t$ such that $k&#39;(t)=0$,
+That is, the global stationary point of curvature (some books will define it more accurately as an extreme point). For example,
+An ellipse has exactly four vertices. Interestingly, any simple convex closed curve has at least four vertices.</p>
+<p>First prove a lemma.</p>
+<p><strong> Lemma 1.5 </strong>. <em> Let $\alpha(s)=(x(s),y(s)):[0,l]\rightarrow \mathbb{R}^2$ be the arc length parameterized plane closed curve. Then $\,\forall\,A,B,C\in \mathbb{R},$ $\int_0^l(Ax+By+C)k&#39;ds=0.$ </em> </p>
+<p><strong> Certificate: </strong> The $\theta$ function defined at the beginning,
+We have $(x&#39;,y&#39;)=(\cos \theta,\sin \theta),$ $k=\theta&#39;$ and $x&#39;&#39;=-ky&#39;,$
+$y&#39;&#39;=kx&#39;.$ Thus for a closed curve, there is $\int_0^l k&#39;ds=0,$
+$\int_0^l xk&#39;ds=-\int_0^lkx&#39;ds=-\int_0^ly&#39;&#39;ds=0,$
+$\int_0^l yk&#39;ds=-\int_0^lky&#39;ds=\int_0^lx&#39;&#39;ds=0.$ Thus the lemma is proved.</p>
+<p><strong> Theorem 1.6 </strong> (Four Vertices Theorem). <em> A simple convex closed curve has at least four vertices. </em> </p>
+<p><strong> Certificate: </strong> To parameterize the arc length of the curve, we only need to examine the behavior of the continuous function $k(s)$ on $[0,l]$.
+Since it is a periodic function, the maximum value point and the minimum value point are both stationary points.
+Therefore, we have found two vertices $p,q.$. These two points divide the arcs at both ends, and draw a straight line $L$ through $p,q$,
+First, it needs to be stated that each arc remains on one side of $L$.</p>
+<p>Otherwise, assuming that a certain arc also intersects $L$ at point $r$, then for the three points $p,q,r$ above $L$,
+Select the middle point as $p$. The tangent line at $p$ point must be exactly $L$, otherwise $q,r$ will be on both sides of the tangent line.
+Contradictory to convexity. However, even if the tangent line of point $p$ is $L$,
+The tangent line near point $p$ will still divide $q,r$ on both sides of the tangent line, which is inconsistent with convexity.
+Unless the straight line remains near point $p$ until $q,r$. At this time, at $k=0$, the maximum point of $p,q$,
+This shows that $k\equiv 0$ cannot be a closed curve.</p>
+<p>On the other hand, if the two end arcs remain on the same side of $L$, then a certain arc can be degenerated into a straight line due to the similarity of convexity,
+The same contradiction occurs. Therefore, the two end arcs are on both sides of $L$. Let $Ax+By+C=0$ be the equation of the straight line $L$.
+If there are no other vertices, then $k&#39;$ is always negative and always positive on the two arcs.
+Furthermore, the sign can be adjusted so that $(Ax+By+C)k&#39;$ on $C$ is always positive except for the point $p,q$. This is contradictory to the previous lemma,
+Thus, it can be found that the third vertex is located on a certain arc, and the sign changes at this point $k&#39;$.
+Since the arc connects the minimum and maximum points of $k(s)$, the sign of $k&#39;(s)$ changes an even number of times,
+Therefore, the fourth vertex must be found on this arc.</p>
+<p>The four-vertex theorem has been the subject of many studies. In fact, the theorem is true for simple closed curves.
+But the proof is a little more complicated, you can check the references. As mentioned before <em> simple convex </em> closed curve,
+But in fact it is somewhat redundant. Proposition 1 of Section 5.7 will prove that a plane closed curve is convex if and only if it is simple,
+And there is an orientation such that the curvature is non-negative. Therefore, the four-vertex theorem can be expressed more accurately as follows:</p>
+<p><strong> Theorem 1.7 </strong> (Four Vertices Theorem’). <em> There is an orientation such that the curvature function of the closed convex curve is non-negative, and there are at least two (strictly) maximum points and minimum points, or the curvature is constant (in this case, the curve is a circle). </em> </p>
+<p>A natural question is, for any given periodic function $k:[a,b]\rightarrow \mathbb{R},$
+If it satisfies the conclusion of the four vertex theorem,
+Is it possible to find a simple closed curve such that $k$ becomes its curvature function?
+That is the converse proposition of the four-vertex theorem. This is similar to the fundamental theorem of curve theory in three-dimensional space.</p>
+<p>For the case where the function is strictly positive, H.Gluck gave an affirmative answer in 1971.
+B.Dahlberg obtained the complete inverse theorem in 1997.
+The topic of the four-vertex theorem and its inverse theorem was edited and integrated into a very detailed paper in 2005.
+Interested students can check it out.</p>
+<h3 id="en-Cauchy-Crofton公式"><a href="#en-Cauchy-Crofton公式" class="headerlink" title="Cauchy-Crofton公式"></a> Cauchy-Crofton formula</h3><p>We first give this interesting theorem directly, and then only give the proof of the theorem:</p>
+<p><strong> Theorem 1.8 </strong> (Cauchy-Crofton formula). <em> Let $C$ be a plane regular curve with length $l$, then the overall measure of all straight lines (with multiplicity) that have intersection points with $C$ is $2l.$ </em> </p>
+<p>Two points need to be explained here. First, the multiplicity refers to the number of intersection points between the straight line and the curve $C$.
+That is, if a straight line has $n$ intersection points with the curve $C$, then the straight line is recorded $n$ times in the set.
+Secondly, we need to explain what the measure is.
+Take the unit vector $v=(\cos \theta,\sin \theta)$ perpendicular to the straight line,
+Let $p$ be the inner product of any point on the straight line and $v$, then the straight line is completely determined by these two parameters.
+Record the entire straight line as $\mathcal{L}=\{(p,\theta)\in \mathbb{R}^2; (p,\theta)\sim (-p,\theta+\pi)\},$
+We show that a reasonable measure can be uniquely defined on it.
+Reasonable here means that we hope that the measure remains unchanged under rigid transformation. First, there is the following simple proposition:</p>
+<p><strong> Proposition 1.9 </strong>. <em> Let $f(x,y)$ be a continuous function on $\mathbb{R}^2$, and define its area $A(S)=\iint_S f(x,y)dxdy.$ for the set $S\subset \mathbb{R}^2,$. If $A$ is a rigid transformation invariant, then $f$ must be a constant. </em> </p>
+<p><strong> Certificate: </strong> Let the rigid transformation be $F$. Since the Jacobian rigid transformation is $1$,
+We have $A(F(S))=\iint_S f(F(x,y))dxdy=\iint_S f(x,y)dxdy=A(S).$
+Since it is true for any $S$, $f\circ F=f.$ is transitive to $\mathbb{R}^2$ due to rigid transformation,
+That is $\,\forall\,p,q\in \mathbb{R}^2,$
+$\,\exists\,$ Rigid transformation $F$ makes $F(p)=q,$ known $f=\text{const}.$</p>
+<p>For curve $x\cos\theta+y\sin\theta=p,$ in $\mathcal{L}$
+Under the rigid transformation $\begin{cases}
+            \bar x=a+x\cos \varphi -y\sin \varphi\\
+            \bar y=b+x\sin \varphi +y\cos \varphi
+        \end{cases}$, the parameter becomes $\begin{cases}
+            \bar \theta=\theta + \varphi\\
+            \bar p=p+a\cos(\theta+\varphi)+b\sin(\theta+\varphi)
+        \end{cases}.$. It is easy to see that the Jacobian of this transformation under the $(p,\theta)$ coordinate is also $1,$.
+At the same time, this effect is obviously transitive on the entire straight line $\mathcal{L}$.
+Therefore, in the same way, it can be seen that the measure can be uniquely defined as $\mu(\mathcal{G})=\iint_\mathcal{G} dpd\theta$, which can differ by a constant multiple.
+This measure is called a kinematic measure.
+Next we give the general idea of proving the theorem.</p>
+<p><strong> Certificate: </strong> For the straight line segment $C,$ long $l$, since the measure remains unchanged under rigid transformation,
+Let’s assume that $C$ is centered on the origin and falls on the $x$ axis. Then the measure of the desired set is:
+$$\int_0^{2\pi} \int_0^{|\cos\theta|l/2}dpd\theta=\int_0^{2\pi}\frac{l}{2}|\cos\theta |d\theta=2l.$$</p>
+<p>Next, for a polyline $C,$ composed of a finite number of line segments, sum the measures of the straight lines corresponding to each line segment,
+Then we can get the measure of the desired set with multiplicity as $\iint n(p,\theta)dpd\theta=2\sum_i l_i=2l.$
+Finally, taking the limit, we can expect that the above formula is applicable to any regular curve, which proves the theorem.</p>
+<p>One thing to note is that for straight line segments, there will actually be straight lines with infinite multiplicity.
+But it measures zero under the kinematic measure. For the proof in the book,
+It is cumbersome to describe the process of taking the limit precisely. A more concrete proof is as follows:</p>
+<p><strong> Certificate: </strong> For the straight line corresponding to $(p,\theta)$,
+It can also be converted into the more common method of first determining the point $Z(s)=(x(s),y(s))\in C,$ and then determining the angle $\eta.$
+That is, convert $(p,\theta)$ coordinates to $(s,\eta)$ coordinates. Here let $\theta=\eta,$
+The geometric meaning is the same. Then $p=x(s)\cos \eta+y(s)\sin \eta.$
+Note that $(x&#39;,y&#39;)$ can be expressed as $(\cos\phi,\sin \phi),$
+Then Jacobian is $|\cos(\phi(s)-\eta)|.$</p>
+<p>Therefore, according to Fubini&#39;s theorem, the required measure is: $$\begin{aligned}
+                \int_{\{L:L\cap C\neq \varnothing\} }ndpd\theta&amp;=\int_{\{L:L\cap C\neq \varnothing\} }(\sum_{Z\in L\cap C}1)dpd\theta\\
+                &amp;=\int_{\{Z:Z\in C\} }\int_{\{L:Z\in L\} }dpd\theta\\
+                &amp;=\int_0^{l}\int_{0}^{\pi} |\cos(\phi(s)-\eta)|d\eta ds\\
+                &amp;=\int_0^l 2 ds=2l.
+            \end{aligned}$$</p>
+<p>The basic ideas of this topic belong to the branch of Integral Geometry.
+An interesting application of the Cauchy-Crofton formula is to estimate curve lengths.
+Take a group of straight lines with equal spacing $r$, and then rotate them at equal angles $\alpha$ to sweep across the entire plane.
+Then $l=\frac{1}{2}\int ndpd\theta\approx \frac{1}{2}nr\alpha,$
+$n$ is the total number of intersection points (number of points) between the curve and these straight lines, that is, the integral is discretized.
+The book mentions that this has applications in fields such as biology, such as estimating the length of DNA molecules.</p>
+<p>The article was last updated on 2021-08-11 12:07:07 </p>
+
+            
                 </div>
             
         </div>
@@ -477,7 +682,7 @@ $n$为曲线与这些直线的总交点数(记重数), 即将积分离散化.
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分几何初步》1.6-1.7</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Differential Geometry 1.6-1.7</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; 1.6-1.7</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -499,7 +704,7 @@ $n$为曲线与这些直线的总交点数(记重数), 即将积分离散化.
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">LaTeX-测试</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">LaTeX-Test</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">LaTeX-test</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -752,9 +957,7 @@ $n$为曲线与这些直线的总交点数(记重数), 即将积分离散化.
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%B1%80%E9%83%A8%E6%A0%87%E5%87%86%E5%9E%8B"><span class="nav-text"> Partial standard type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%B9%B3%E9%9D%A2%E6%9B%B2%E7%BA%BF%E6%95%B4%E4%BD%93%E6%80%A7%E8%B4%A8"><span class="nav-text"> Overall properties of plane curves</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E7%AD%89%E5%91%A8%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-text"> equal period inequality</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%9B%9B%E9%A1%B6%E7%82%B9%E5%AE%9A%E7%90%86"><span class="nav-text"> four vertex theorem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-Cauchy-Crofton%E5%85%AC%E5%BC%8F"><span class="nav-text"> Cauchy-Crofton formula</span></a></li></ol></li></ol>
         </div>
     
 </div>

@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《微分几何初步》3.4-3.5</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Preliminary Differential Geometry 3.4-3.5</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Differential Geometry&#34; 3.4-3.5</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-439" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-439" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-440" data-lang="zh-cn">几何</span><span data-lang-group="note-label-440" data-lang="en" style="display:none">Geometry</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/">微分几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%BE%AE%E5%88%86%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-441" data-lang="zh-cn">微分几何</span><span data-lang-group="note-label-441" data-lang="en" style="display:none">Differential Geometry</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="向量场"><a href="#向量场" class="headerlink" title="向量场"></a>向量场</h2><h3 id="平面上的向量场"><a href="#平面上的向量场" class="headerlink" title="平面上的向量场"></a>平面上的向量场</h3><p>开集$U\subset \mathbb{R}^2$上的<strong>向量场</strong>是一个映射,
 对每个$q=(x,y)\in U$, 指定一个$w(q)=(a(x,y),b(x,y))\in \mathbb{R}^2.$
@@ -480,84 +483,255 @@ $2\lambda^2 H=g+e=\left&lt;{}N,x_{uu}+x_{vv}\right&gt;,$
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="vector-field">vector field</h2>
-<h3 id="vector-field-on-the-plane">Vector field on the plane</h3>
-<p>The <strong>vector field</strong> on the open set $U\subset \mathbb{R}^2$ is a map,<br>For each $q=(x,y)\in U$, specify a $w(q)=(a(x,y),b(x,y))\in \mathbb{R}^2.$<br>The vector field is said to be <strong>differentiable</strong>, if $w$ is differentiable, that is, $a, b$ are all differentiable.<br>By default we always consider differentiable vector fields.</p>
-<p>Given a vector field, we consider whether there is a locus of the field,<br>That is, whether there is a differentiable curve $\alpha(t)=(x(t),y(t)),$<br>Such that $\alpha&#39;(t)=w(\alpha(t)).$ In fact, this is the solution of ordinary differential equations: <script type="math/tex">\left\{
+                    
+                <h2 id="en-向量场"><a href="#en-向量场" class="headerlink" title="向量场"></a> vector field</h2><h3 id="en-平面上的向量场"><a href="#en-平面上的向量场" class="headerlink" title="平面上的向量场"></a> Vector field on the plane</h3><p>On the open set $U\subset \mathbb{R}^2$ <strong> vector field </strong> is a mapping,
+For each $q=(x,y)\in U$, specify an $w(q)=(a(x,y),b(x,y))\in \mathbb{R}^2.$
+The vector field is said to be <strong> Differentiable </strong> , if $w$ is differentiable, that is, $a,b$ is all differentiable.
+By default we always consider differentiable vector fields.</p>
+<p>Given a vector field, we consider whether there is a <strong> trajectory </strong> ,
+That is, whether there is a differentiable curve $\alpha(t)=(x(t),y(t)),$
+so that $\alpha&#39;(t)=w(\alpha(t)).$ In fact, this is the solution of the system of ordinary differential equations: $$\left\{
         \begin{aligned}
             \frac{dx}{dt}=a(x,y)\\
             \frac{dy}{dt}=b(x,y)
         \end{aligned}
-        \right.</script></p>
-<p>We say that the vector field $w$ determines the above system of differential equations. For example, for the vector field $w(x,y)=(x,y),$<br>The trajectory passing through $(x_0,y_0)$ is $\alpha(t)=(x_0e^t,y_0 e^t);$<br>For the vector field $w(x,y)=(y,-x),$<br>The trajectory passing through $(x_0,y_0)$ is $\beta(t)=(r\sin t,r\cos t),$ $r^2=x_0^2+y_0^2.$</p>
+        \right.$$</p>
+<p>We say that the vector field $w$ determines the above system of differential equations. For example, the vector field $w(x,y)=(x,y),$
+The trajectory passing through point $(x_0,y_0)$ is $\alpha(t)=(x_0e^t,y_0 e^t);$
+Pair vector field$w(x,y)=(y,-x),$
+The trajectory passing $(x_0,y_0)$ point is $\beta(t)=(r\sin t,r\cos t),$ $r^2=x_0^2+y_0^2.$</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/clUGft9ZwT41PN2.png width='50%' height='50%'></p>
 <p>From the basic theory of ordinary differential equations (existence, uniqueness), we have the following theorem:</p>
-<p><strong>Theorem 1.1</strong>. <em>For a given vector field $w,$ and a fixed point $p\in U,$ on any open set $U\subset \mathbb{R}^2$, there is a trajectory of the field $\alpha:I\rightarrow U,$ where $I$ is the small neighborhood at the origin, $\alpha(0)=p.$ Such a trajectory is unique, that is, if there is another trajectory $\beta:J\rightarrow U,$ $J$ is the small neighborhood of the origin, $\beta(0)=p,$ is limited to $I\cap J$$\alpha=\beta.$</em></p>
+<p><strong> Theorem 1.1 </strong>. <em> For a given vector field $w,$ and a fixed point $p\in U,$ on any open set $U\subset \mathbb{R}^2$, there is a field trajectory $\alpha:I\rightarrow U,$ where $I$ is a small neighborhood at the origin, $\alpha(0)=p.$ such a trajectory is unique, that is, if there is another trajectory $\beta:J\rightarrow U,$ $J$ is a small neighborhood at the origin, $\beta(0)=p,$ is limited to $I\cap J$ $\alpha=\beta.$ </em> </p>
 <p>Based on the dependence of the solution on the initial value, we further have:</p>
-<p><strong>Theorem 1.2</strong>. <em>The meaning of the letters is the same as above, there is $p$ point neighborhood $V\subset U\subset \mathbb{R}^2,$ and there is a differentiable mapping $\alpha:V\times I\rightarrow U,$ such that $\,\forall\,q\in V,$ $\alpha(q,\cdot)$ is the trajectory of field $w$ through $q$ point.</em></p>
-<p>Such a mapping $\alpha$ is called the (local) <strong>flow</strong> (local flow) of $w$ at point $p$. From the diagram,<br>It &quot;shoots&quot; the cylinder onto the plane $(U)$, mapping each vertical line as a trajectory.</p>
+<p><strong> Theorem 1.2 </strong>. <em> The meaning of the letters is the same as above. There is a $p$ point neighborhood $V\subset U\subset \mathbb{R}^2,$ and a differentiable mapping $\alpha:V\times I\rightarrow U,$ such that $\,\forall\,q\in V,$ $\alpha(q,\cdot)$ is the trajectory of the field $w$ passing through the $q$ point. </em> </p>
+<p>Such a mapping $\alpha$ is called (local) of $w$ at point $p$ <strong> flow </strong> (local flow). From the diagram,
+It &quot;shoots&quot; the cylinder onto the plane $(U)$, mapping each vertical line as a trajectory.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/PS3wZrAmsBXEnfL.png width='50%' height='50%'></p>
 <p>From the above theorem, the conclusion is as follows:</p>
-<p><strong>Lemma 1.3</strong>. <em>Let $w$ be a vector field on the open set $U\subset \mathbb{R}^2$, $p\in U$ has $w(p)\neq 0.$ Then there exists $p$ point neighborhood $W\subset U$ and a differentiable function $f:W\rightarrow \mathbb{R},$ such that $f$ is constant along the trajectory, and $df_q\neq 0,$ $\,\forall\,q\in W.$</em></p>
-<p><strong>Proof:</strong> Let $p$ be the origin, and $w(p)$ be along the direction of $x$ axis.<br>From the above theorem we have local flow $\alpha:V\times I\rightarrow U.$<br>Take $\tilde\alpha$ as $\alpha$ and limit it to the rectangle $(V\times I)\cap {(0,y,t)\in \mathbb{R}^3}$.<br>By definition, $d\tilde \alpha_p$ maps the tangent direction of the $t$ axis to $w(p),$<br>Reflect the tangent direction of the $y$ axis to itself, so $d\tilde \alpha_p$ does not degenerate. According to the inverse function theorem,<br>On a sufficiently small neighborhood $W\subset U$, there exists a differentiable function $\tilde \alpha^{-1}.$<br>Then take $f$ as the component of $\tilde \alpha^{-1}$ on the $y$ axis. It is easy to see that $f$ meets the requirements.</p>
+<p><strong> Lemma 1.3 </strong>. <em> Let $w$ be the vector field on the open set $U\subset \mathbb{R}^2$, $p\in U$ has $w(p)\neq 0.$, then there exists $p$ point neighborhood $W\subset U$ and differentiable function $f:W\rightarrow \mathbb{R},$ such that $f$ is constant along the trajectory, and $df_q\neq 0,$ $\,\forall\,q\in W.$ </em> </p>
+<p><strong> Certificate: </strong> Let’s set $p$ as the origin and $w(p)$ along the $x$ axis.
+From the above theorem we have local flow $\alpha:V\times I\rightarrow U.$
+Take $\tilde\alpha$ as $\alpha$ and limit it to the rectangle $(V\times I)\cap \{(0,y,t)\in \mathbb{R}^3\}$.
+By definition, $d\tilde \alpha_p$ maps the axis tangent direction of $t$ to $w(p),$
+Reflect the tangent direction of the $y$ axis to itself, so $d\tilde \alpha_p$ does not degenerate. According to the inverse function theorem,
+On a sufficiently small neighborhood $W\subset U$, there is a differentiable function $\tilde \alpha^{-1}.$
+Then take $f$ as the component of $\tilde \alpha^{-1}$ on the $y$ axis. It is easy to see that $f$ meets the requirements.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/2Fl7eQPofshRBVb.png width='50%' height='50%'></p>
-<p>Such a function $f$ that is constant along the trajectory (solution) is called the (local) first integral of the field $w$ in the neighborhood of point $p$.<br>For example, for the field $w(x,y)=(y,-x),$<br>A first integral on $\mathbb{R}^2-O$ is $f(x,y)=x^2+y^2.$<br>It is easy to see that the first integral defined in this way is not unique. According to the implicit function theorem, where the differential of $f$ does not disappear,<br>$f=C$ gives the relationship between $x, y$, thereby eliminating an unknown quantity and making the solution easier.</p>
-<p>The <strong>direction field</strong>$r,$ on the open set $U\subset \mathbb{R}^2$ refers to each point $p\in U,$<br>Specify a straight line $r(p).$ on $\mathbb{R}^2$ that passes through point $p$. $ is said to be differentiable at point $p$,<br>If there is a non-zero differentiable vector field $w,$ on $p$ point neighborhood $V\subset U$<br>Satisfying $\,\forall\,q\in V$, non-zero $w(q)$ is the basis of $r(q)$.<br>The fact that $r$ is differentiable on $U$ naturally means that it is slightly differentiable on $U$.<br>Each non-zero differentiable vector field $w$ can naturally generate a differentiable direction field $r.$</p>
-<p>It should be noted that, according to the definition, each differentiable direction field point locally corresponds to a non-zero differentiable vector field $w,$<br>But it does not necessarily correspond to a non-zero differentiable vector field as a whole, as shown in the figure below.<br>It can be said that the vector field corresponding to the direction field locally gives an orientation of the direction field,<br>Then a direction field that cannot be oriented as a whole cannot correspond to an overall non-zero vector field.</p>
+<p>Such a function $f$ that is constant along the trajectory (solution) is called the (local) first integral of the field $w$ in the neighborhood of the point $p$.
+Such as on the field $w(x,y)=(y,-x),$
+A first point on $\mathbb{R}^2-O$ is $f(x,y)=x^2+y^2.$
+It is easy to see that the first integral defined in this way is not unique. According to the implicit function theorem, where $f$ the differential does not disappear,
+$f=C$ gives the relationship of $x,y$, thus eliminating an unknown quantity and making the solution easier.</p>
+<p>On the open set $U\subset \mathbb{R}^2$ <strong> direction field </strong> $r,$ refers to each point $p\in U,$
+Specify a straight line $r(p).$ passing $p$ point on $\mathbb{R}^2$. It is said that $r$ is at the $p$ point. <strong> Differentiable </strong> ,
+If there is a non-zero differentiable vector field $w,$ in the neighborhood $V\subset U$ of the point $p$
+Satisfying $\,\forall\,q\in V$, non-zero $w(q)$ is the basis of $r(q)$.
+$r$ being differentiable on $U$ naturally means that it is slightly differentiable on $U$.
+Each non-zero differentiable vector field $w$ naturally generates a differentiable direction field $r.$</p>
+<p>It should be noted that, according to the definition, each differentiable direction field point locally corresponds to a non-zero differentiable vector field $w,$
+But it does not necessarily correspond to a non-zero differentiable vector field as a whole, as shown in the figure below.
+It can be said that the vector field corresponding to the direction field locally gives an orientation of the direction field,
+Then a direction field that cannot be oriented as a whole cannot correspond to an overall non-zero vector field.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/a5mbLhMNnPXVSUZ.png width='50%' height='50%'></p>
-<p>A regular curve $C\subset U$ is called the <strong>integral curve</strong> of the direction field $r$ above $U$,<br>If $\,\forall\,q\in C,$ $r(q)$ is the tangent line of $C$ at point $q$.<br>It is easy to see that the integral curve is locally the trajectory of the vector field corresponding to the differentiable direction field,<br>Therefore, each differentiable direction field can always find the integral curve passing through any fixed point,<br>That is, similar to the splicing of solutions in ordinary differential equations, the integral curve is to splice the trajectories of the vector fields together.</p>
-<p>Since the trajectory and the integral curve seem to correspond to the same thing, why introduce a new definition?<br>Because the overall direction field does not necessarily correspond to the overall vector field, there is no concept of the so-called overall trajectory.<br>But the overall integral curve does exist. It can be seen that differentiability is also very important for the direction field.<br>By default we always consider differentiable direction fields.</p>
-<p>The direction field can also be given by a differential equation. For any vector field $w,$<br>It is easy to see that the direction fields generated by $\,\forall\,\lambda\neq 0,$ $\lambda w$ and $w$ are consistent,<br>$\lambda$ can be a differentiable function that is non-zero everywhere. For a system of ordinary differential equations $\begin{cases}<br>        \frac{dx}{dt}=\lambda(x,y)a(x,y)\ \frac{dy}{dt}=\lambda(x,y)b(x,y)<br>        \end{cases},$ In order to eliminate $\lambda,$<br>This direction field can be expressed by the differential equation $b(x,y)\frac{dx}{dt}-a(x,y)\frac{dy}{dt}=0$,<br>The solution to the equation corresponds to the integral curve.<br>For the direction field, we don’t care about the parameterization of the curve (for the trajectory of the vector field, we need to pay attention to parameter selection),<br>Therefore, we often use differential equations of the form $adx+bdy=0$ to represent the direction field.</p>
-<h3 id="vector-field-on-surface">Vector field on surface</h3>
-<p>All the previous contents only use the local properties on $\mathbb{R}^2$, mainly relying on its differentiable structure.<br>Therefore, we can naturally transfer the above discussion to the surface.<br><strong>Definition 1.4</strong>. <em>The vector field $w,$ on the open set $U$ in the surface $S$ specifies a correspondence of $w(p)\in T_p(S)$ for each point $p\in U,$. It is said to be differentiable at the $p$ point. If there are differentiable $a(u,v), b(u,v),$ for the parameterized $x(u,v),$ in a neighborhood of the $p$ point Make $w(x(u,v))=a(u,v)x_u+b(u,v)x_v.$ It has nothing to do with parameterization selection.</em></p>
-<p>Similarly, you can define the trajectory of the vector field, the direction field, the integral curve, etc.<br>Just replace $\mathbb{R}^2$ with $S$, and the theorem and lemma are naturally established.</p>
+<p>A regular curve $C\subset U$ is called the direction field $r$ above $U$. <strong> integral curve </strong> ,
+If $\,\forall\,q\in C,$ $r(q)$ is tangent to $C$ at point $q$.
+It is easy to see that the integral curve is locally the trajectory of the vector field corresponding to the differentiable direction field,
+Therefore, each differentiable direction field can always find the integral curve passing through any fixed point,
+That is, similar to the splicing of solutions in ordinary differential equations, the integral curve is to splice the trajectories of the vector fields together.</p>
+<p>Since the trajectory and the integral curve seem to correspond to the same thing, why introduce a new definition?
+Because the overall direction field does not necessarily correspond to the overall vector field, there is no concept of the so-called overall trajectory.
+But the overall integral curve does exist. It can be seen that differentiability is also very important for the direction field.
+By default we always consider differentiable direction fields.</p>
+<p>The direction field can also be given by a differential equation. For any vector field $w,$
+It is easy to see that the direction fields generated by $\,\forall\,\lambda\neq 0,$ $\lambda w$ and $w$ are consistent.
+$\lambda$ can be a differentiable function that is non-zero everywhere. For a system of ordinary differential equations $\begin{cases}
+        \frac{dx}{dt}=\lambda(x,y)a(x,y)\\ \frac{dy}{dt}=\lambda(x,y)b(x,y)
+        \end{cases},$, in order to eliminate $\lambda,$
+This direction field can be expressed by the differential equation $b(x,y)\frac{dx}{dt}-a(x,y)\frac{dy}{dt}=0$,
+The solution to the equation corresponds to the integral curve.
+For the direction field, we don’t care about the parameterization of the curve (for the trajectory of the vector field, we need to pay attention to parameter selection),
+Therefore, we often use differential equations of the form $adx+bdy=0$ to express the direction field.</p>
+<h3 id="en-曲面上的向量场"><a href="#en-曲面上的向量场" class="headerlink" title="曲面上的向量场"></a> vector field on a surface</h3><p>All the previous content only uses the local properties on $\mathbb{R}^2$, mainly relying on its differentiable structure.
+Therefore, we can naturally transfer the above discussion to the surface.</p>
+<p><strong> Definition 1.4 </strong>. <em> The vector field $w,$ on the open set $U$ in the surface $S$ specifies a correspondence to $w(p)\in T_p(S)$ for each point $p\in U,$. It is said to be differentiable at the $p$ point. If there is a differentiable $a(u,v), b(u,v),$ for the parameterization $x(u,v),$ on a certain neighborhood of the $p$ point, making $w(x(u,v))=a(u,v)x_u+b(u,v)x_v.$ irrelevant to the parameterization selection. </em> </p>
+<p>Similarly, you can define the trajectory of the vector field, the direction field, the integral curve, etc.
+Just replace $\mathbb{R}^2$ with $S$, and the theorem and lemma will naturally be established.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/INDqrGEuOld7iYy.png width='50%' height='50%'></p>
 <p>Next, we introduce the main theorem of this section.</p>
-<p><strong>Theorem 1.5</strong>. <em>There are two vector fields $w_1, w_2,$ on the open set $U\subset S$ that are linearly independent at a certain point $p\in U$. Then there is a certain $p$ point neighborhood $V\subset U,$ on which there is parameterization such that $\,\forall\,q\in V,$ two coordinate curves passing through the point are tangent to $w_1(q), w_2(q)$ respectively.</em> </p>
-<p><strong>Proof:</strong> Take the $p$ point neighborhood $W\subset U,$ so that it has the first integral $f_1,f_2.$<br>Definition $\varphi:W\rightarrow \mathbb{R}^2,$ $\varphi(q)=(f_1(q),f_2(q)),$<br>Then $d\varphi_p(w_1)=(0,(df_2)_p(w_1))\neq 0,$<br>$d\varphi_p(w_2)=((df_1)_p(w_2),0)\neq 0,$ and linearly independent,<br>$d\varphi_p$ does not degenerate. Therefore $\varphi$ is a local homeomorphism,<br>Therefore, $\varphi$ can be taken as the coordinate function on the smaller neighborhood $V\subset W$.<br>The coordinate curves $f_1(q)=const, f_2(q)=const$ are tangent to $w_1(q), w_2(q)$ respectively.</p>
-<p>It should be noted that the theorem does not mean that the velocity vector of the coordinate curve is $w_1(q),w_2(q).$<br>In fact, the above theorem can be expressed in the following form.</p>
-<p><strong>Corollary 1.6</strong>. <em>There are two direction fields $r_1, r_2,$ on the open set $U\subset S$. At a certain point $p\in U$, $r_1(p)\neq r_2(p).$ then there is a certain $p$ point neighborhood $V\subset U,$ on which there is a parameterization such that $\,\forall\,q\in V,$ The two coordinate curves passing through this point are the integral curves of $r_1 and r_2$ respectively.</em></p>
+<p><strong> Theorem 1.5 </strong>. <em> There are two vector fields $w_1,w_2,$ on the open set $U\subset S$ that are linearly independent at a certain point $p\in U$. Then there is a certain $p$ point neighborhood $V\subset U,$ on which there is parameterization such that the two coordinate curves $\,\forall\,q\in V,$ passing through the point are tangent to $w_1(q),w_2(q)$ respectively. </em> </p>
+<p><strong> Certificate: </strong> Take $p$ point neighborhood $W\subset U,$ so that it has the first integral $f_1,f_2.$
+Definition $\varphi:W\rightarrow \mathbb{R}^2,$ $\varphi(q)=(f_1(q),f_2(q)),$
+Then $d\varphi_p(w_1)=(0,(df_2)_p(w_1))\neq 0,$
+$d\varphi_p(w_2)=((df_1)_p(w_2),0)\neq 0,$ and linearly independent,
+$d\varphi_p$ does not degenerate. Therefore $\varphi$ is a local homeomorphism,
+Therefore, $\varphi$ can be taken as the coordinate function on the smaller neighborhood $V\subset W$.
+The coordinate curves $f_1(q)=const, f_2(q)=const$ are tangent to $w_1(q),w_2(q)$ respectively.</p>
+<p>It should be noted that the theorem does not mean that the velocity vector of the coordinate curve is $w_1(q),w_2(q).$
+In fact, the above theorem can be expressed in the following form.</p>
+<p><strong> Corollary 1.6 </strong>. <em> On the open set $U\subset S$, there are two directional fields $r_1,r_2,$ at a certain point $p\in U$, $r_1(p)\neq r_2(p).$, then there is a certain $p$ point neighborhood $V\subset U,$ on which there is parameterization such that the two coordinate curves $\,\forall\,q\in V,$ passing through the point are integral curves of $r_1,r_2$ respectively. </em> </p>
 <p>The theorem can illustrate the existence of orthogonal parameterization:</p>
-<p><strong>Corollary 1.7</strong>. <em>$\,\forall\,p\in S,$ $p$ There is a parameterization $x(u,v),$ on a certain neighborhood $V$, such that the coordinate curves $u=const, v=const$ are orthogonal to each other at any point $q\in V$. Such $x$ is called an orthogonal parameterization.</em></p>
-<p><strong>Proof:</strong> Take any parameterized $\bar x:\bar U\rightarrow S,$ at point $p$<br>Take the vector field $w<em>1=\bar x</em>{\bar u},$<br>$w<em>2=-(\bar F/\bar E)\bar x</em>{\bar u}+\bar x_{\bar v}.$<br>Then $w_1\cdot w_2=-\bar F +\bar F=0,$ is at any point $q$.<br>Applying the theorem yields the required parameterization.</p>
-<p>Not only that, you can also arbitrarily specify two orthogonal directions at point $p$ to generate the required orthogonal parameterization. In particular,<br>For special parameterizations, we have the following corollary:</p>
-<p><strong>Corollary 1.8</strong>. <em>There is parameterization near the hyperbolic point, so that the coordinate curve forms an asymptote network; there is (orthogonal) parameterization near the non-umbilical point, so that the coordinate curve forms a curvature line network.</em></p>
-<p><strong>Proof:</strong> Near the hyperbolic point, satisfy $eg-f^2&lt;0,$<br>From this, the asymptotic differential equation $e{u&#39;}^2+2fu&#39;v&#39;+g{v&#39;}^2=0$ can be linearly decomposed into the form of $(Au&#39;+Bv&#39;)(Au&#39;+Dv&#39;)=0$,<br>Thus, the two direction fields are determined, and their integral curves are the asymptotes. The conclusion can be drawn from the previous inference.</p>
-<p>Near the non-umbilical point, since the differential equation of the curvature line is more complicated, from the previous inference,<br>We might as well take the orthogonal parameterization first to make $F=0.$ Since it is a non-umbilical point, we can take the orthogonal parameterization to make $f\neq 0,$<br>Then from $EGf^2&gt;0,$ the differential equation can be linearly decomposed using the same method as above to obtain the direction field,<br>The integral curve is the curvature line. The conclusion can be drawn from the previous inference.</p>
-<h2 id="ruled-surfaces-and-minimally-curved-surfaces">Ruled surfaces and minimally curved surfaces</h2>
-<h3 id="ruled-surface">Ruled surface</h3>
-<p>A differentiable single-parameter straight line family ${L_t}$, refers to the differentiable ${\alpha(t),w(t)},$<br>For each $t\in I,$ specify a point $\alpha(t)\in \mathbb{R}^2$ and vector $w(t).$<br>The straight line $L_t$ passes through $\alpha(t),$ with $w(t)$ as the direction.<br>A ruled surface is a surface generated by a single-parameter straight line family, that is, $x(t,v)=\alpha(t)+vw(t),$<br>$(t,v)\in I\times \mathbb{R}.$ The straight line $L_t$ is called straight busbars (rulings),<br>The curve $\alpha(t)$ is called the directrix of the surface. Generally speaking, singular points are allowed to occur in $x$.</p>
-<p>It is always assumed next that $|w(t)|=1,$ $w&#39;(t)\neq 0.$ The latter assumption is that the surface is non-cylindrical.<br>From the previous assumption, we have $\left&lt;{}w(t),w&#39;(t)\right&gt;=0.$<br>We hope to find a curve $\beta(t)$ such that $\left&lt;{}\beta&#39;(t),w&#39;(t)\right&gt;=0,$<br>And $\beta$ falls on $x$. Let $\beta(t)=\alpha(t)+u(t)w(t),$<br>Then $\beta&#39;=\alpha&#39;+u&#39;w+uw&#39;.$ If the requirements are met,<br>Then $0=\left&lt;{}\beta&#39;,w&#39;\right&gt;=\left&lt;{}\alpha&#39;,w&#39;\right&gt;+u\left&lt;{}w&#39;,w&#39;\right&gt;,$<br>$u=-\frac{\left&lt;{}\alpha&#39;,w&#39;\right&gt;}{\left&lt;{}w&#39;,w&#39;\right&gt;}.$<br>Therefore, taking such $u$, the corresponding $\beta$ meets the requirements.</p>
-<p>Next, it will be explained that $\beta$ has nothing to do with the selection of the directrix.<br>If $x(t,u)=\alpha(t)+uw(t)=\bar\alpha(t)+v(u)w(t).$<br>Then $\beta-\bar \beta=(\alpha-\bar\alpha)+\frac{\left&lt;{}\bar\alpha&#39;-\alpha&#39;,w&#39;\right&gt;}{\left&lt;{}w&#39;,w&#39;\right&gt;}w.$<br>Since $\alpha-\bar\alpha=(u-v)w,$ and $\left&lt;{}w,w&#39;\right&gt;=0,$<br>Then there is $\beta=\bar\beta.$. Therefore, such a curve $\beta$ is only related to the ruled surface itself,<br>It is called the <strong>waistline</strong>, and the point on it is called the <strong>center point</strong> of the ruled surface. For example, the waistline of the spiral surface is the central axis,<br>The waist line of a single-leaf hyperboloid is the latitude line with the smallest radius.\<br>Select $\beta$ as the directrix of the ruled surface, $x(t,u)=\beta(t)+uw(t),$<br>Then $x_t=\beta&#39;+uw&#39;,$ $x_u=w,$<br>$x_t\wedge x_u=\beta&#39;\wedge w+uw&#39;\wedge w.$ $w&#39;$ is perpendicular to $\beta&#39;,w,$<br>Thus we can remember $\beta&#39;\wedge w=\lambda w&#39;,$ $\lambda=\lambda(t).$<br>Then $|x_t\wedge x_u|^2=(\lambda^2+u^2)|w&#39;|^2,$<br>Therefore, the singular point can only appear on $u=0$, that is, the directrix $\beta$. And the singular point appears when and only if $\lambda=0,$<br>That is, $w(t)$ is on the tangent to the directrix.<br>It can be expressed specifically that $\lambda=\frac{(\beta&#39;,w,w&#39;)}{|w&#39;|^2}.$</p>
-<p>Let&#39;s calculate the Gauss curvature of the ruled surface at the regular point. $x<em>{tt}=\beta&#39;&#39;+uw&#39;&#39;,$<br>$x</em>{tu}=w&#39;,$ $x<em>{uu}=0,$ thus $g=0,$<br>$f=\frac{(x_t,x_u,x</em>{tu})}{|x_t\wedge x_u|}=\frac{(\beta&#39;,w,w&#39;)}{|x_t\wedge x_u|}.$<br>Therefore $K=\frac{eg-f^2}{EG-F^2}=-\frac{\lambda^2 |w&#39;|^4}{(\lambda^2+u^2)^2|w&#39;|^4}=-\frac{\lambda^2}{(\lambda^2+u^2)^2}.$<br>Therefore, at the regular point, the Gauss curvature of the ruled surface $K\le 0,$<br>And is equal to zero only when $w(t)$ falls on the tangent line $\beta(t)$, which occurs along the straight bus. It can be seen that,<br>If $\lambda\neq 0,$ then $|K(u)|$ is a continuous function on the straight bus, and its value is symmetric about the center point,<br>At the center point $|K(u)|$ reaches the maximum value.</p>
-<p>The function $\lambda(t)$ is called the distribution parameter of $x$. Since the waistline has nothing to do with the selection of the directrix,<br>The same goes for $\lambda$. If $x$ is regular,<br>There is $N(t,u)=\frac{x_t\wedge x_u}{|x_t\wedge x_u|}=\frac{\lambda w&#39;+uw&#39;\wedge w}{\sqrt{\lambda^2+u^2}|w&#39;|}.$<br>If $\lambda\neq 0,$ $N(t,0)=\frac{w&#39;}{|w&#39;|}\frac{\lambda}{|\lambda|}.$<br>Consider the angle between $N(t,u)$ and $N(t,0)$, $\tan\theta=\frac{u}{|\lambda|},$<br>Proportional to $u$, the proportional coefficient is the reciprocal of the distribution parameter.</p>
-<p>Using this property, an interesting conclusion can be drawn:<br>The ruled surface generated by the single-parameter straight line family corresponding to the normal vector on the straight bus is exactly a hyperbolic parabola $z=kxy,$<br>$k=\frac{1}{\lambda}.$</p>
+<p><strong> Corollary 1.7 </strong>. <em> $\,\forall\,p\in S,$ $p$ There is a parameterization $x(u,v),$ on a certain neighborhood $V$ of the point such that the coordinate curves $u=const,v=const$ are orthogonal to each other at any point $q\in V$. Such a $x$ is called an orthogonal parameterization. </em> </p>
+<p><strong> Certificate: </strong> Take any parameterization $\bar x:\bar U\rightarrow S,$ at point $p$
+Orientation vector field $w_1=\bar x_{\bar u},$
+$w_2=-(\bar F/\bar E)\bar x_{\bar u}+\bar x_{\bar v}.$
+Then $w_1\cdot w_2=-\bar F +\bar F=0,$ is at any point $q$.
+Applying the theorem yields the required parameterization.</p>
+<p>Not only that, you can also arbitrarily specify two orthogonal directions at the $p$ point to generate the required orthogonal parameterization. In particular,
+For special parameterizations, we have the following corollary:</p>
+<p><strong> Corollary 1.8 </strong>. <em> There is parameterization near the hyperbolic point, so that the coordinate curve forms an asymptote network; there is (orthogonal) parameterization near the non-umbilical point, so that the coordinate curve forms a curvature line network. </em> </p>
+<p><strong> Certificate: </strong> Near the hyperbolic point, satisfies $eg-f^2&lt;0,$
+From this, the asymptote differential equation $e{u&#39;}^2+2fu&#39;v&#39;+g{v&#39;}^2=0$ can be linearly decomposed into the form $(Au&#39;+Bv&#39;)(Au&#39;+Dv&#39;)=0$,
+Thus, the two direction fields are determined, and their integral curves are the asymptotes. The conclusion can be drawn from the previous inference.</p>
+<p>Near the non-umbilical point, since the differential equation of the curvature line is more complicated, from the previous inference,
+We might as well take the orthogonal parameterization $F=0.$ first. Since it is a non-umbilical point, we can take the orthogonal parameterization $f\neq 0,$
+Then the differential equation can be linearly decomposed using the same method as above $EGf^2&gt;0,$ to obtain the direction field,
+The integral curve is the curvature line. The conclusion can be drawn from the previous inference.</p>
+<h2 id="en-直纹面与极小曲面"><a href="#en-直纹面与极小曲面" class="headerlink" title="直纹面与极小曲面"></a> Ruled surfaces and minimally curved surfaces</h2><h3 id="en-直纹面"><a href="#en-直纹面" class="headerlink" title="直纹面"></a> Ruled surface</h3><p>A differentiable single-parameter straight line family $\{L_t\}$ refers to a differentiable $\{\alpha(t),w(t)\},$
+For each $t\in I,$, specify a point $\alpha(t)\in \mathbb{R}^2$ and a vector $w(t).$
+The straight line $L_t$ passes through $\alpha(t),$ with $w(t)$ as the direction.
+A ruled surface is a surface generated by a single-parameter straight line family, that is, $x(t,v)=\alpha(t)+vw(t),$
+$(t,v)\in I\times \mathbb{R}.$ Straight lines $L_t$ are called straight buses (rulings),
+Curve $\alpha(t)$ is called the directrix of the surface. Generally speaking, singular points are allowed to occur in $x$.</p>
+<p>Next always assume $|w(t)|=1,$ $w&#39;(t)\neq 0.$ The latter assumption is that the surface is non-cylindrical.
+From the previous assumption, we have $\left&lt;{}w(t),w&#39;(t)\right&gt;=0.$
+We hope to find a curve $\beta(t)$ such that $\left&lt;{}\beta&#39;(t),w&#39;(t)\right&gt;=0,$
+And $\beta$ falls on $x$. Let $\beta(t)=\alpha(t)+u(t)w(t),$
+Then $\beta&#39;=\alpha&#39;+u&#39;w+uw&#39;.$ if it meets the requirements,
+Then $0=\left&lt;{}\beta&#39;,w&#39;\right&gt;=\left&lt;{}\alpha&#39;,w&#39;\right&gt;+u\left&lt;{}w&#39;,w&#39;\right&gt;,$
+$u=-\frac{\left&lt;{}\alpha&#39;,w&#39;\right&gt;}{\left&lt;{}w&#39;,w&#39;\right&gt;}.$
+Therefore, taking $u$ like this, the corresponding $\beta$ meets the requirements.</p>
+<p>Next, it will be explained that $\beta$ has nothing to do with the selection of the directrix.
+If$x(t,u)=\alpha(t)+uw(t)=\bar\alpha(t)+v(u)w(t).$
+Then $\beta-\bar \beta=(\alpha-\bar\alpha)+\frac{\left&lt;{}\bar\alpha&#39;-\alpha&#39;,w&#39;\right&gt;}{\left&lt;{}w&#39;,w&#39;\right&gt;}w.$
+Since $\alpha-\bar\alpha=(u-v)w,$ and $\left&lt;{}w,w&#39;\right&gt;=0,$
+There is $\beta=\bar\beta.$, so such a curve $\beta$ is only related to the ruled surface itself,
+call it <strong> Waistline </strong> , the points on it are called ruled surfaces <strong> center point </strong> . For example, the waist line of the spiral surface is the central axis,
+The waist line of a single-leaf hyperboloid is the latitude line with the smallest radius.\
+Select $\beta$ as the directrix of the ruled surface, $x(t,u)=\beta(t)+uw(t),$
+Then $x_t=\beta&#39;+uw&#39;,$ $x_u=w,$
+$x_t\wedge x_u=\beta&#39;\wedge w+uw&#39;\wedge w.$ $w&#39;$ perpendicular to $\beta&#39;,w,$
+So you can remember $\beta&#39;\wedge w=\lambda w&#39;,$ $\lambda=\lambda(t).$
+Then $|x_t\wedge x_u|^2=(\lambda^2+u^2)|w&#39;|^2,$
+Therefore, the singular point can only appear on $u=0$, that is, the directrix $\beta$. And the singular point appears if and only if $\lambda=0,$
+That is, $w(t)$ is on the tangent to the directrix.
+Can be expressed specifically $\lambda=\frac{(\beta&#39;,w,w&#39;)}{|w&#39;|^2}.$</p>
+<p>Let&#39;s calculate the Gauss curvature of the ruled surface at the regular point. $x_{tt}=\beta&#39;&#39;+uw&#39;&#39;,$
+$x_{tu}=w&#39;,$ $x_{uu}=0,$ thus $g=0,$
+$f=\frac{(x_t,x_u,x_{tu})}{|x_t\wedge x_u|}=\frac{(\beta&#39;,w,w&#39;)}{|x_t\wedge x_u|}.$
+Therefore$K=\frac{eg-f^2}{EG-F^2}=-\frac{\lambda^2 |w&#39;|^4}{(\lambda^2+u^2)^2|w&#39;|^4}=-\frac{\lambda^2}{(\lambda^2+u^2)^2}.$
+Therefore, at the regular point, the Gauss curvature of the ruled surface $K\le 0,$
+And equal to zero only when $w(t)$ falls on the tangent line $\beta(t)$, occurs along the straight bus. It can be seen that,
+If $\lambda\neq 0,$ then $|K(u)|$ is a continuous function on the straight bus, and its value is symmetrical about the center point,
+At the center point $|K(u)|$ reaches the maximum value.</p>
+<p>The function $\lambda(t)$ is called the distribution parameter of $x$. Since the waistline has nothing to do with the selection of the directrix,
+The same goes for $\lambda$. If $x$ is regular,
+Yes $N(t,u)=\frac{x_t\wedge x_u}{|x_t\wedge x_u|}=\frac{\lambda w&#39;+uw&#39;\wedge w}{\sqrt{\lambda^2+u^2}|w&#39;|}.$
+If $\lambda\neq 0,$ $N(t,0)=\frac{w&#39;}{|w&#39;|}\frac{\lambda}{|\lambda|}.$
+Consider the angle between $N(t,u)$ and $N(t,0)$, $\tan\theta=\frac{u}{|\lambda|},$
+Proportional to $u$, the proportional coefficient is the reciprocal of the distribution parameter.</p>
+<p>Using this property, an interesting conclusion can be drawn:
+The ruled surface generated by the single-parameter straight line family corresponding to the normal vector on the straight bus is exactly a hyperbolic parabola $z=kxy,$
+$k=\frac{1}{\lambda}.$</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/h17DmyHNwXn6vRx.png width='50%' height='50%'></p>
-<p>For the ruled surface $x(t,v)=\alpha(t)+vw(t),$ we call it <strong>developable</strong>,<br>If $(\alpha&#39;,w,w&#39;)=0.$, calculate $g=0,$<br>$f=\frac{(\alpha&#39;,w,w&#39;)}{|x_t\wedge x_u|}=0,$<br>Therefore, $K=\frac{eg-f^2}{EG-F^2}=0,$ means that the Gauss curvature of the developable surface is always zero.<br>In fact, the reverse is also true, that is, a surface with zero Gauss curvature must also be developable.<br>It is locally equidistant from the plane, so you can cut a piece of the surface and expand it into a plane,<br>This is also the reason why developable surfaces are named.</p>
-<p>A basic fact is that the tangent plane of a developable curve remains unchanged along the straight generator.<br>Just explain $\left&lt;{}N_v,x_v\right&gt;=\left&lt;{}N_v,x_t\right&gt;=0,$ that is $f=g=0.$<br>This has been obtained.\<br>Next, we explain that there are only three types of developable surfaces: cylinder, cone, and tangent surface.<br>The part with $w&#39;=0$ is a columnar area. After removing the part with $w&#39;=0$, the surface is non-columnar.<br>From the previous discussion, it can be obtained that the waistline $\beta(t),$ and the distribution parameter $\lambda=0,$<br>Therefore, there are all singular points on the waistline. At the place where $\beta&#39;=0$, the surface at this point is a cone;<br>After removing the place where $\beta&#39;=0$, we get from $\lambda=0$ that $\beta&#39;$ and $w$ are in the same direction,<br>That is, the surface is a tangent surface.</p>
-<p>An important property of a developable surface, or the equivalent definition is,<br>It is the envelope surface of the single-parameter plane family. Take the regular surface $S$ and the arc length parameterized curve $\alpha,$<br>Assume that its direction is asymptotic. Note $N(s)=N\circ\alpha(s),$<br>Then $\left&lt;{}dN(\alpha&#39;),\alpha&#39;\right&gt;=\left&lt;{}N&#39;,\alpha&#39;\right&gt;\neq 0,$<br>Thus $N&#39;\neq 0.$<br>Take the ruled surface $x(s,v)=\alpha(s)+v\frac{N(s)\wedge N&#39;(s)}{|N&#39;(s)|}.$</p>
-<p>Consider the family of tangent planes ${T<em>{\alpha(s)}(S)},$ of $S$ along $\alpha(s)$<br>Two very close planes intersect at a straight line,<br>Take $\frac{N(s)\wedge N(s+\Delta s)}{\Delta s}$ as the direction.<br>Let $\Delta s\rightarrow 0$ mean that the direction is $N\wedge N&#39;.$<br>Therefore, the straight busbar of $x$ is the limit of the intersection of adjacent planes of the plane family.<br>Such $x$ is called the envelope surface of the single-parameter plane family ${T</em>{\alpha(s)}(S)}$.<br>Cylindrical and conical surfaces can obviously be generated by this method.</p>
+<p>For the ruled surface $x(t,v)=\alpha(t)+vw(t),$, call it <strong> Expandable </strong> ,
+If $(\alpha&#39;,w,w&#39;)=0.$ is calculated, $g=0,$
+$f=\frac{(\alpha&#39;,w,w&#39;)}{|x_t\wedge x_u|}=0,$
+Therefore $K=\frac{eg-f^2}{EG-F^2}=0,$ means that the Gauss curvature of the developable surface is always zero.
+In fact, the reverse is also true, that is, a surface with zero Gauss curvature must also be developable.
+It is locally equidistant from the plane, so you can cut a piece of the surface and expand it into a plane,
+This is also the reason why developable surfaces are named.</p>
+<p>A basic fact is that the tangent plane of a developable curve remains unchanged along the straight generator.
+Just state that $\left&lt;{}N_v,x_v\right&gt;=\left&lt;{}N_v,x_t\right&gt;=0,$ is $f=g=0.$
+This has been obtained.\
+Next, we explain that there are only three types of developable surfaces: cylinder, cone, and tangent surface.
+The $w&#39;=0$ part is a columnar area. After removing the $w&#39;=0$ part, the surface is non-columnar.
+From the previous discussion, it can be obtained that the waistline $\beta(t),$ and the distribution parameter $\lambda=0,$
+Therefore, all the waistlines are singular points. At $\beta&#39;=0$, the surface at this point is a cone;
+After removing $\beta&#39;=0$, we can get $\beta&#39;$ and $w$ in the same direction from $\lambda=0$.
+That is, the surface is a tangent surface.</p>
+<p>An important property of a developable surface, or the equivalent definition is,
+It is the envelope surface of the single-parameter plane family. Take the regular surface $S$ and the arc length parameterized curve $\alpha,$ on it
+Assume that its direction is asymptotic. Note $N(s)=N\circ\alpha(s),$
+Then $\left&lt;{}dN(\alpha&#39;),\alpha&#39;\right&gt;=\left&lt;{}N&#39;,\alpha&#39;\right&gt;\neq 0,$
+Thus $N&#39;\neq 0.$
+Take the ruled surface $x(s,v)=\alpha(s)+v\frac{N(s)\wedge N&#39;(s)}{|N&#39;(s)|}.$</p>
+<p>Consider the tangent plane family $\{T_{\alpha(s)}(S)\},$ of $S$ along $\alpha(s)$
+Two very close planes intersect at a straight line,
+Take $\frac{N(s)\wedge N(s+\Delta s)}{\Delta s}$ as the direction.
+Let $\Delta s\rightarrow 0$ mean that the direction is $N\wedge N&#39;.$
+Therefore, the straight busbar of $x$ is the limit of the intersection of adjacent planes of the plane family.
+Such $x$ is called the envelope surface of the single-parameter plane family $\{T_{\alpha(s)}(S)\}$.
+Cylindrical and conical surfaces can obviously be generated by this method.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/t9pCgwDZ51FOz6a.png width='50%' height='50%'></p>
-<p>It can be calculated very directly,<br>$(\alpha&#39;,w,w&#39;)=\frac{1}{|N&#39;|^2}\left&lt;{}(N\wedge N&#39;)\wedge (N\wedge N&#39;)&#39;,\alpha&#39;\right&gt;=\frac{1}{|N&#39;|^2}\left&lt;{}\left&lt;{}N\wedge N&#39;,N&#39;&#39;\right&gt;N,\alpha&#39;\right&gt;=0,$<br>Therefore, the envelope surface of the single-parameter plane family is developable. For a developable surface,<br>It is also possible to find the corresponding single-parameter plane family and use it as the envelope surface.</p>
-<p>Next, we explain that $x$ is regular near $\alpha$, and is tangent to $S$ along $\alpha$. On $\alpha$,<br>$x_s\wedge x_v=\alpha&#39;\wedge\frac{N\wedge N&#39;}{|N&#39;|}=\left&lt;{}N&#39;,\alpha&#39;\right&gt;\frac{N}{|N&#39;|}=-\frac{k_nN}{|N&#39;|}.$<br>Due to the non-asymptotic direction of $\alpha&#39;$, $k_n$ is zero everywhere, so $x$ is regular near $\alpha$,<br>And the normal vector at $\alpha$ is consistent with $S$, that is, tangent to $S$.</p>
-<h3 id="minimal-surface">Minimal surface</h3>
-<p>A regular parametric surface is <strong>minimally small</strong> if its mean curvature disappears everywhere.<br>Let $x:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$ be a regular parameterized surface.<br>Take the bounded region $D\subset U,$ and the differentiable function $h:\bar D\rightarrow \mathbb{R}.$<br>$x(\bar D)$ is the <strong>normal variation</strong> determined by $h$,<br>Refers to the mapping $\varphi:\bar D\times (-\varepsilon,\varepsilon)\rightarrow \mathbb{R}^3,$<br>$\varphi(u,v,t)=x(u,v)+th(u,v)N(u,v).$<br>For each fixed $t\in (-\varepsilon,\varepsilon),$<br>$x^t:D\rightarrow \mathbb{R}^3,$<br>$x^t(u,v)=\varphi(u,v,t)$ is a parametric surface. Calculate $I^t=I-2thII+o(t).$<br>From the average curvature $H=\frac{1}{2}\frac{Eg-2fF+Ge}{EG-F^2},$<br>You can get $E^tG^t-(F^t)^2=(EG-F^2)(1-4thH)+o(t).$<br>Thus $x^t(\bar D)$ surface area$A(t)=\int<em>{\bar D}\sqrt{1-4thH+o(t)}\sqrt{EG-F^2}dudv,$<br>For sufficiently small $\varepsilon$, it is a differentiable function,<br>And the derivative at zero point $A&#39;(0)=\int</em>{\bar D}-2hH \sqrt{EG-F^2}dudv.$</p>
-<p><strong>Proposition 1.9</strong>. <em>The conditions are the same as above, $x$ is a minimal surface if and only if $A&#39;(0)=0$ holds for any normal variation.</em></p>
-<p><strong>Proof:</strong> The necessity is easy to see. Assume $H(q)\neq 0,$<br>Take $h that is supported on the sufficiently small neighborhood of point $q$:\bar D\rightarrow \mathbb{R}$ such that $h(q)=H(q),$<br>$hH&gt;0.$ Then for the normal variation determined by $h$, $A&#39;(0)&lt;0,$ is contradictory.</p>
-<p>It should be noted that in fact, we only stated that the minimum surface area reaches the critical value, which may not really be the minimum value.<br>However, the definition of minimal surface was proposed by Lagrange as early as 1760, so it is still used today.</p>
-<p>When talking about minimal surfaces, soap films are often mentioned. Given a frame, put it into soapy water,<br>Take it out carefully, and soap films will be set up on the frame. These soap films are curved surfaces with extremely small areas.<br>In this way we create a minimal surface.</p>
+<p>It can be calculated very directly,
+$(\alpha&#39;,w,w&#39;)=\frac{1}{|N&#39;|^2}\left&lt;{}(N\wedge N&#39;)\wedge (N\wedge N&#39;)&#39;,\alpha&#39;\right&gt;=\frac{1}{|N&#39;|^2}\left&lt;{}\left&lt;{}N\wedge N&#39;,N&#39;&#39;\right&gt;N,\alpha&#39;\right&gt;=0,$
+Therefore, the envelope surface of the single-parameter plane family is developable. For a developable surface,
+It is also possible to find the corresponding single-parameter plane family and use it as the envelope surface.</p>
+<p>Next, we explain that $x$ is regular near $\alpha$ and is tangent to $S$ along $\alpha$. On $\alpha$,
+$x_s\wedge x_v=\alpha&#39;\wedge\frac{N\wedge N&#39;}{|N&#39;|}=\left&lt;{}N&#39;,\alpha&#39;\right&gt;\frac{N}{|N&#39;|}=-\frac{k_nN}{|N&#39;|}.$
+Since $\alpha&#39;$ is a non-asymptotic direction, $k_n$ is zero everywhere, so $x$ is regular near $\alpha$,
+And the normal vector at $\alpha$ is consistent with $S$, that is, tangent to $S$.</p>
+<h3 id="en-极小曲面"><a href="#en-极小曲面" class="headerlink" title="极小曲面"></a> minimal surface</h3><p>A regular parametric surface is <strong> extremely small </strong> , if its mean curvature disappears everywhere.
+Let $x:U\subset \mathbb{R}^2\rightarrow \mathbb{R}^3$ be a regular parameterized surface.
+Take the bounded area $D\subset U,$ and the differentiable function $h:\bar D\rightarrow \mathbb{R}.$
+$x(\bar D)$ determined by $h$ <strong> normal variation </strong> ,
+Refers to mapping $\varphi:\bar D\times (-\varepsilon,\varepsilon)\rightarrow \mathbb{R}^3,$
+$\varphi(u,v,t)=x(u,v)+th(u,v)N(u,v).$
+For each fixed $t\in (-\varepsilon,\varepsilon),$
+$x^t:D\rightarrow \mathbb{R}^3,$
+$x^t(u,v)=\varphi(u,v,t)$ is a parametric surface. Calculate $I^t=I-2thII+o(t).$
+From the mean curvature $H=\frac{1}{2}\frac{Eg-2fF+Ge}{EG-F^2},$
+Can get $E^tG^t-(F^t)^2=(EG-F^2)(1-4thH)+o(t).$
+Thus $x^t(\bar D)$ surface area $A(t)=\int_{\bar D}\sqrt{1-4thH+o(t)}\sqrt{EG-F^2}dudv,$
+For sufficiently small $\varepsilon$, it is a differentiable function,
+And the derivative at zero point $A&#39;(0)=\int_{\bar D}-2hH \sqrt{EG-F^2}dudv.$</p>
+<p><strong> Proposition 1.9 </strong>. <em> The conditions are the same as above, $x$ is a minimal surface if and only if $A&#39;(0)=0$ holds for any normal variation. </em> </p>
+<p><strong> Certificate: </strong> The necessity is easy to see. Assumption $H(q)\neq 0,$
+Take $h:\bar D\rightarrow \mathbb{R}$ supported on a sufficiently small neighborhood of point $q$ such that $h(q)=H(q),$
+$hH&gt;0.$ Then for the normal variation determined by $h$, $A&#39;(0)&lt;0,$ is contradictory.</p>
+<p>It should be noted that in fact, we only stated that the minimum surface area reaches the critical value, which may not really be the minimum value.
+However, the definition of minimal surface was proposed by Lagrange as early as 1760, so it is still used today.</p>
+<p>When talking about minimal surfaces, soap films are often mentioned. Given a frame, put it into soapy water,
+Take it out carefully, and soap films will be set up on the frame. These soap films are curved surfaces with extremely small areas.
+In this way we create a minimal surface.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/N5vfHc93B2qnDJZ.png width='50%' height='50%'></p>
-<p>Generally, the average curvature vector is defined as $H=HN,$ and let $h=H$,<br>Then $A&#39;(0)=\int_{\bar D}-2\left&lt;{}H,H\right&gt;\sqrt{EG-F^2}dudv&lt;0,$<br>That is, along the average curvature vector, the area decreases near the zero point.</p>
-<p>For isothermal surfaces, that is, $E=G=\lambda^2,$ $F=0,$ there are the following propositions:<br><strong>Proposition 1.10</strong>. <em>Suppose $x(u,v)$ is a regular parameterized isothermal surface, then $x<em>{uu}+x</em>{vv}=2\lambda^2 H.$</em></p>
-<p><strong>Certificate:</strong> First from the differential, we have:<br>$\left&lt;{}x<em>{uu},x_u\right&gt;=\left&lt;{}x</em>{vu},x<em>v\right&gt;=-\left&lt;{}x_u,x</em>{vv}\right&gt;,$<br>Thus $\left&lt;{}x<em>{uu}+x</em>{vv},x<em>u\right&gt;=0.$<br>Similar $\left&lt;{}x</em>{uu}+x<em>{vv},x_v\right&gt;=0.$<br>Thus $x</em>{uu}+x<em>{vv}$ is along the $N$ direction.<br>The average curvature is calculated $H=\frac{1}{2}\frac{g+e}{\lambda^2}.$ Therefore,<br>$2\lambda^2 H=g+e=\left&lt;{}N,x</em>{uu}+x<em>{vv}\right&gt;,$<br>Thus $x</em>{uu}+x_{vv}=2\lambda^2 H.$</p>
-<p><strong>Corollary 1.11</strong>. <em>For a regular parameterized isothermal surface $x(u,v)=(x(u,v),y(u,v),z(u,v)), $ $x$ is minimal if and only if the coordinate components are all harmonic.</em></p>
-<p>There are several classic examples of minimal surfaces. For example, the catenary surface is the only minimal surface among surfaces of revolution.<br>Just take the parameterized calculation of the rotation surface. This is not difficult to understand,<br>Minimal surfaces and catenary lines are naturally formed,<br>Therefore, there is reason to believe that the catenary surface formed by the catenary line is a minimal surface.</p>
+<p>Generally, define the mean curvature vector as $H=HN,$ and let $h=H$,
+Then $A&#39;(0)=\int_{\bar D}-2\left&lt;{}H,H\right&gt;\sqrt{EG-F^2}dudv&lt;0,$
+That is, along the mean curvature vector, the area decreases near the zero point.</p>
+<p>For isothermal surfaces, that is, $E=G=\lambda^2,$ $F=0,$, there are the following propositions:</p>
+<p><strong> Proposition 1.10 </strong>. <em> Assume $x(u,v)$ is a regular parameterized isothermal surface, then $x_{uu}+x_{vv}=2\lambda^2 H.$ </em> </p>
+<p><strong> Certificate: </strong> First, from the differential, we have:
+$\left&lt;{}x_{uu},x_u\right&gt;=\left&lt;{}x_{vu},x_v\right&gt;=-\left&lt;{}x_u,x_{vv}\right&gt;,$
+Thus $\left&lt;{}x_{uu}+x_{vv},x_u\right&gt;=0.$
+Similar $\left&lt;{}x_{uu}+x_{vv},x_v\right&gt;=0.$
+Thus $x_{uu}+x_{vv}$ is along the $N$ direction.
+The mean curvature $H=\frac{1}{2}\frac{g+e}{\lambda^2}.$ is calculated. Therefore,
+$2\lambda^2 H=g+e=\left&lt;{}N,x_{uu}+x_{vv}\right&gt;,$
+Thus $x_{uu}+x_{vv}=2\lambda^2 H.$</p>
+<p><strong> Corollary 1.11 </strong>. <em> For a regular parameterized isothermal surface $x(u,v)=(x(u,v),y(u,v),z(u,v)),$ $x$ is minimal if and only if the coordinate components are all harmonic. </em> </p>
+<p>There are several classic examples of minimal surfaces. For example, the catenary surface is the only minimal surface among surfaces of revolution.
+Just take the parameterized calculation of the rotation surface. This is not difficult to understand,
+Minimal surfaces and catenary lines are naturally formed,
+Therefore, there is reason to believe that the catenary surface formed by the catenary line is a minimal surface.</p>
 <p><img style='margin: auto;' src=https://i.loli.net/2021/08/25/oeVBy5GjR3CQJML.png width='50%' height='50%'></p>
-<p>Another example is that spiral surfaces are the only minimal surfaces among ruled surfaces, other than planes.<br>Osserman&#39;s survey is quoted in the textbook,<br>The property of zero-point isolation of Gaussian curvature of minimal surfaces (except planes).</p>
-<p>Except where the Gauss curvature takes zero point, since the average curvature is zero, the Gauss curvature must be negative.<br>Since $k_1=-k_2,$ according to Euler&#39;s formula, the surface has orthogonal asymptotic curves. Obviously the straight generatrix is an asymptotic curve,<br>Since the surface is non-planar, the point $q\in W,$ can be obtained<br>Another asymptotic curve passing through this point has $\tau=\sqrt{-K}$ as the torsion rate.<br>Since the close plane of the asymptotic curve is the tangent plane of the surface,<br>The straight busbar on $q$ point neighborhood $V\subset W$ is exactly the normal of another asymptotic curve family.<br>This occurs if and only if the family of curves is a family of spirals (Bertrand curves), so $V$ is part of a spiral.<br>Since the helical torsion is constant, it can be seen that the entire curved surface is a helical surface.</p>
-<p>Minimal surfaces are an important research topic in differential geometry, and many conclusions about it are very vivid.<br>But it is quite difficult to prove. The book mentions the following theorem:</p>
-<p><strong>Theorem 1.12</strong>. <em>Let $S$ be a non-planar regular minimal closed surface, then the Gauss map image is dense on the sphere.</em></p>
-<p>The article was last updated on 2021-08-25 10:50:16</p>
+<p>Another example is that spiral surfaces are the only minimal surfaces among ruled surfaces, other than planes.
+Osserman&#39;s survey is quoted in the textbook,
+The property of zero-point isolation of Gaussian curvature of minimal surfaces (except planes).</p>
+<p>Except where the Gauss curvature takes zero point, since the mean curvature is zero, the Gauss curvature must be negative.
+Since $k_1=-k_2,$ is based on Euler&#39;s formula, the surface has orthogonal asymptotic curves. Obviously the straight generatrix is an asymptotic curve,
+Since the surface is non-planar, the point $q\in W,$ can be obtained
+Another asymptotic curve passing through this point has $\tau=\sqrt{-K}$ as the torsion rate.
+Since the close plane of the asymptotic curve is the tangent plane of the surface,
+In the $q$ point neighborhood $V\subset W$, the straight bus is exactly the normal of another asymptotic curve family.
+This occurs if and only if the family of curves is a family of spirals (Bertrand curves), so $V$ is part of a spiral.
+Since the helical torsion is constant, it can be seen that the entire curved surface is a helical surface.</p>
+<p>Minimal surfaces are an important research topic in differential geometry, and many conclusions about it are very vivid.
+But it is quite difficult to prove. The book mentions the following theorem:</p>
+<p><strong> Theorem 1.12 </strong>. <em> Let $S$ be a non-planar regular minimum closed surface, then the Gauss map image is dense on the sphere. </em> </p>
+<p>The article was last updated on 2021-08-25 10:50:16 </p>
+
+            
                 </div>
             
         </div>
@@ -600,7 +774,7 @@ $2\lambda^2 H=g+e=\left&lt;{}N,x_{uu}+x_{vv}\right&gt;,$
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》第一章-微分流形(1)</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifolds, Chapter 1 - Differential Manifolds (1)</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Differential Manifolds&#34; Chapter 1 - Differential Manifolds (1)</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -622,7 +796,7 @@ $2\lambda^2 H=g+e=\left&lt;{}N,x_{uu}+x_{vv}\right&gt;,$
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">Hexo博客搭建流程</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Hexo Blog Building Process</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Hexo blog building process</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -875,7 +1049,7 @@ $2\lambda^2 H=g+e=\left&lt;{}N,x_{uu}+x_{vv}\right&gt;,$
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vector-field"><span class="nav-text">vector field</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vector-field-on-the-plane"><span class="nav-text">Vector field on the plane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector-field-on-surface"><span class="nav-text">Vector field on surface</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ruled-surfaces-and-minimally-curved-surfaces"><span class="nav-text">Ruled surfaces and minimally curved surfaces</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ruled-surface"><span class="nav-text">Ruled surface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#minimal-surface"><span class="nav-text">Minimal surface</span></a></li></ol></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%90%91%E9%87%8F%E5%9C%BA"><span class="nav-text"> vector field</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%B9%B3%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%90%91%E9%87%8F%E5%9C%BA"><span class="nav-text"> Vector field on the plane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%9B%B2%E9%9D%A2%E4%B8%8A%E7%9A%84%E5%90%91%E9%87%8F%E5%9C%BA"><span class="nav-text"> vector field on a surface</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E7%9B%B4%E7%BA%B9%E9%9D%A2%E4%B8%8E%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2"><span class="nav-text"> Ruled surfaces and minimally curved surfaces</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E7%9B%B4%E7%BA%B9%E9%9D%A2"><span class="nav-text"> Ruled surface</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E6%9E%81%E5%B0%8F%E6%9B%B2%E9%9D%A2"><span class="nav-text"> minimal surface</span></a></li></ol></li></ol>
         </div>
     
 </div>

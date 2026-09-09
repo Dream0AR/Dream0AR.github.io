@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《黎曼几何初步》笔记(6)-弧长第一与第二变分公式</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (6) - Arc Length First and Second Variational Formulas</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; notes (6) - the first and second variational formulas of arc length</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-247" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-247" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-248" data-lang="zh-cn">几何</span><span data-lang-group="note-label-248" data-lang="en" style="display:none">Geometry</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-249" data-lang="zh-cn">黎曼几何</span><span data-lang-group="note-label-249" data-lang="en" style="display:none">Riemannian Geometry</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="第一变分公式"><a href="#第一变分公式" class="headerlink" title="第一变分公式"></a>第一变分公式</h2><p>我们来研究$\gamma$曲线的长度极短性.
 取单参数曲线族$\{\gamma_u\}_{-\varepsilon\le u\le \varepsilon},$
@@ -307,40 +310,82 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="first-variation-formula">first variation formula</h2>
-<p>Let&#39;s study the extremely short length of the $\gamma$ curve.<br>Take the single-parameter curve family ${\gamma<em>u}</em>{-\varepsilon\le u\le \varepsilon},$<br>Satisfies $\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b).$<br>Let $L(u):[-\varepsilon,\varepsilon]\rightarrow \mathbb{R}$ be the length of curve $\gamma_u$.<br>Then when $L&#39;(0)=0,$ $L&#39;&#39;(0)&gt;0$, there is a minimum value at $L(0)$;<br>If this holds true for all single-parameter curve families ${\gamma_u}$ that satisfy the conditions,<br>Then $\gamma$ locally obtains a very short length.</p>
-<p>Let’s first cancel the assumptions $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b)$,<br>Let $U$ be the transverse vector field of ${\gamma_u}$, $T$ is tangent to all curves $\gamma_u(t).$<br>Let $t$ be the arc length parameter of the base curve $\gamma$, $|\dot\gamma|=1.$ then,</p>
-<script type="math/tex; mode=display">
-L(u)=\int_a^b |\dot\gamma_u(t)|dt,\quad L'(u)=\int_a^b\frac{d {} }{d {}u}\sqrt{\left<{}\dot\gamma_u(t),\dot\gamma_u(t)\right>}dt,</script><p>The integral term can be written as:</p>
-<script type="math/tex; mode=display">
-U\sqrt{\left<{}T,T\right>}=\frac{1}{|T|}\left<{}T,D_UT\right>=\frac{1}{|T|}\left<{}T,D_TU\right>=\frac{1}{|T|}\left(T\left<{}T,U\right>-\left<{}D_TT,U\right>\right),</script><p>In this way we get the first variation formula of arc length:</p>
-<script type="math/tex; mode=display">
-L'(0)=\int_a^b\frac{d {} }{d {}t}\left<{}\dot\gamma,U\right>-\left<{}D_{\dot\gamma}\dot\gamma,U\right>dt=\left<{}\dot\gamma(t),U(t)\right>|_a^b-\int_a^b\left<{}\ddot\gamma(t),U(t)\right>.</script><p>Call ${\gamma_u}$ the <strong>normal variation</strong> of $\gamma$, if $\gamma_u(a)=\gamma(a),$<br>$\gamma_u(b)=\gamma(b),$ $\gamma_0=\gamma.$ For normal variation, $U(a)=U(b)=0,$<br>Therefore the first term in the first variation formula disappears. Now we can see another equivalent description of the geodesic:</p>
-<p><strong>Lemma 1</strong>. <em>The necessary and sufficient condition for curve $\gamma:[a,b]\rightarrow M$ to be a geodesic is that it is the critical point of the length function with respect to all normal variations.</em></p>
-<p>Let $N$ be a closed submanifold in $M$, $x\notin N,$<br>Then $\,\exists\,y\in N$ makes $d(x,y)=d(x,N).$<br>Take the shortest regular geodesic $\gamma:[a,b]\rightarrow M$ to connect $x,y.$</p>
-<p><strong>Lemma 2</strong>. <em>$\gamma\perp N,$ is $\dot\gamma(b)\perp N_y.$</em></p>
-<p><strong>Proof:</strong> Let $Y\in N_y,$ take $\xi:[-\varepsilon,\varepsilon]\rightarrow N,$<br>$\xi(0)=y,$ $\dot\xi(0)=Y.$ Then we can get the single-parameter curve family ${\gamma_u},$<br>$\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a)=x,$ $\gamma_u(b)=\xi(u).$<br>In this way, the transverse vector field $U$ satisfies $U(x)=0,$ $U(y)=Y,$ thus:</p>
-<script type="math/tex; mode=display">
-L'(0)=\left<{}\dot\gamma(b),U(b)\right>=\left<{}\dot\gamma(b),Y\right>=0 \quad \Rightarrow \quad \gamma\perp N.</script><h2 id="second-variation-formula">second variation formula</h2>
-<p>Generally, it is meaningful to calculate $L&#39;&#39;(0)$ when $L&#39;(0)=0$. Therefore, assuming $\gamma$ is a regular geodesic, then:</p>
-<script type="math/tex; mode=display">
-L''(u)=\int_a^b\frac{d {} }{d {}u}\left(\frac{1}{|T|}\left<{}T,D_TU\right>\right)dt,</script><p>The integral term can be written as:</p>
-<script type="math/tex; mode=display">
+                    
+                <h2 id="en-第一变分公式"><a href="#en-第一变分公式" class="headerlink" title="第一变分公式"></a> first variation formula</h2><p>Let&#39;s study the extremely short length of the $\gamma$ curve.
+Get the single parameter curve family $\{\gamma_u\}_{-\varepsilon\le u\le \varepsilon},$
+Meet $\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b).$
+Let $L(u):[-\varepsilon,\varepsilon]\rightarrow \mathbb{R}$ be the length of curve $\gamma_u$.
+Then when $L&#39;(0)=0,$ $L&#39;&#39;(0)&gt;0$, there is a minimum value at $L(0)$;
+If this holds true for all single-parameter curve families $\{\gamma_u\}$ that satisfy the conditions,
+Then $\gamma$ locally obtains an extremely short length.</p>
+<p>Let’s first cancel the assumption of $\gamma_u(a)=\gamma(a),$ $\gamma_u(b)=\gamma(b)$,
+Let $U$ be the transverse vector field of $\{\gamma_u\}$, $T$ is tangent to all curves $\gamma_u(t).$
+Suppose $t$ is the arc length parameter of the base curve $\gamma$, $|\dot\gamma|=1.$ then,</p>
+<p>$$
+L(u)=\int_a^b |\dot\gamma_u(t)|dt,\quad L&#39;(u)=\int_a^b\frac{d {} }{d {}u}\sqrt{\left&lt;{}\dot\gamma_u(t),\dot\gamma_u(t)\right&gt;}dt,
+$$</p>
+<p>The integral term can be written as:</p>
+<p>$$
+U\sqrt{\left&lt;{}T,T\right&gt;}=\frac{1}{|T|}\left&lt;{}T,D_UT\right&gt;=\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;=\frac{1}{|T|}\left(T\left&lt;{}T,U\right&gt;-\left&lt;{}D_TT,U\right&gt;\right),
+$$</p>
+<p>This way we get <strong> First variation formula of arc length </strong>:</p>
+<p>$$
+L&#39;(0)=\int_a^b\frac{d {} }{d {}t}\left&lt;{}\dot\gamma,U\right&gt;-\left&lt;{}D_{\dot\gamma}\dot\gamma,U\right&gt;dt=\left&lt;{}\dot\gamma(t),U(t)\right&gt;|_a^b-\int_a^b\left&lt;{}\ddot\gamma(t),U(t)\right&gt;.
+$$</p>
+<p>Call $\{\gamma_u\}$ $\gamma$ <strong> normal variation </strong> , if$\gamma_u(a)=\gamma(a),$
+$\gamma_u(b)=\gamma(b),$ $\gamma_0=\gamma.$ For normal variation, $U(a)=U(b)=0,$
+Therefore the first term in the first variation formula disappears. Now we can see another equivalent description of the geodesic:</p>
+<p><strong> Lemma 1 </strong>. <em> The necessary and sufficient condition for curve $\gamma:[a,b]\rightarrow M$ to be a geodesic is that it is the critical point of the length function with respect to all normal variations. </em> </p>
+<p>Let $N$ be the closed submanifold in $M$, $x\notin N,$
+Then $\,\exists\,y\in N$ makes $d(x,y)=d(x,N).$
+Take the shortest regular geodesic line $\gamma:[a,b]\rightarrow M$ and connect it to $x,y.$</p>
+<p><strong> Lemma 2 </strong>. <em> $\gamma\perp N,$ is $\dot\gamma(b)\perp N_y.$ </em> </p>
+<p><strong> Certificate: </strong> Let $Y\in N_y,$ take $\xi:[-\varepsilon,\varepsilon]\rightarrow N,$
+$\xi(0)=y,$ $\dot\xi(0)=Y.$ Then you can get the single parameter curve family $\{\gamma_u\},$
+$\gamma_0=\gamma,$ $\gamma_u(a)=\gamma(a)=x,$ $\gamma_u(b)=\xi(u).$
+In this way, the transverse vector field $U$ satisfies $U(x)=0,$ $U(y)=Y,$ and thus:</p>
+<p>$$
+L&#39;(0)=\left&lt;{}\dot\gamma(b),U(b)\right&gt;=\left&lt;{}\dot\gamma(b),Y\right&gt;=0 \quad \Rightarrow \quad \gamma\perp N.
+$$</p>
+<h2 id="en-第二变分公式"><a href="#en-第二变分公式" class="headerlink" title="第二变分公式"></a> second variation formula</h2><p>Generally, it is meaningful to calculate $L&#39;&#39;(0)$ when $L&#39;(0)=0$ is used. Therefore, assuming $\gamma$ is a regular geodesic, then:</p>
+<p>$$
+L&#39;&#39;(u)=\int_a^b\frac{d {} }{d {}u}\left(\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;\right)dt,
+$$</p>
+<p>The integral term can be written as:
+$$
 \begin{aligned}
- U\left(\frac{1}{|T|}\left<{}T,D_TU\right>\right)&=-\frac{1}{|T|^3}\left<{}T,D_TU\right>^2+\frac{1}{|T|}\left<{}D_TU,D_TU\right>+\frac{1}{|T|}\left<{}T,D_UD_TU\right>\\
- &=-\frac{1}{|T|^3}\left(T\left<{}T,U\right>-\left<{}D_TT,U\right>\right)^2+\frac{1}{|T| }|D_TU|^2+\frac{1}{|T|}\left(-\left<{}T,R_{UT}U\right>+\left<{}D_TD_UU,T\right>\right).
- \end{aligned}</script><p> When brought to $u=0$, note that $\gamma$ is a regular geodesic at this time,<br>Therefore:</p>
-<script type="math/tex; mode=display">
+ U\left(\frac{1}{|T|}\left&lt;{}T,D_TU\right&gt;\right)&amp;=-\frac{1}{|T|^3}\left&lt;{}T,D_TU\right&gt;^2+\frac{1}{|T|}\left&lt;{}D_TU,D_TU\right&gt;+\frac{1}{|T|}\left&lt;{}T,D_UD_TU\right&gt;\\
+ &amp;=-\frac{1}{|T|^3}\left(T\left&lt;{}T,U\right&gt;-\left&lt;{}D_TT,U\right&gt;\right)^2+\frac{1}{|T|}|D_TU|^2+\frac{1}{|T|}\left(-\left&lt;{}T,R_{UT}U\right&gt;+\left&lt;{}D_TD_UU,T\right&gt;\right).
+ \end{aligned}
+$$
+ When brought into $u=0$, note that $\gamma$ is a regular geodesic at this time.
+Therefore:
+$$
 \begin{aligned}
- L''(0)&=\int_a^b -\left(\frac{d {} }{d {}t}\left<{}\dot\gamma,U\right>\right)^2+|\dot U(t)|^2-\left<{}\dot \gamma,R_{U\dot\gamma}U\right>+\frac{d {} }{d {}t}\left<{}D_UU,\dot\gamma\right>dt\\
- &=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b\left(|\dot U(t)|^2-\left<{}R_{\dot\gamma U}\dot\gamma,U\right>-\left(\left<{}\dot\gamma,U\right>'\right)^2\right)dt.
- \end{aligned}</script><p>This is the <strong>arc length second variation formula</strong>, the determining term is the curvature term,<br>Call $\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a$ as boundary term,<br>The boundary term disappears when ${\gamma_u}$ is a normal variation.</p>
-<p>Since the tangential component of $U(t)$ along $\dot\gamma$ does not change the length of $\gamma$,<br>We only need to consider the orthogonal components $U^\perp(t),$<br>That is, suppose $\left&lt;{}U^\perp,\dot\gamma\right&gt;=0,$ $U=U^\perp+f\dot\gamma.$ Then</p>
-<script type="math/tex; mode=display">
-|\dot U(t)|^2-\left(\left<{}\dot\gamma(t),U(t)\right>'\right)^2=|\dot U^\perp (t)|^2+f'(t)^2-f'(t)^2=|\dot U^\perp(t)|^2,</script><script type="math/tex; mode=display">
-\left<{}R_{\dot\gamma U}\dot\gamma,U\right>=\left<{}R_{\dot\gamma U^\perp}\dot\gamma, U^\perp\right>.</script><p>Therefore, the second variation formula of arc length can also be written as:</p>
-<script type="math/tex; mode=display">
-L''(0)=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\left<{}R_{\dot\gamma U^\perp}\dot\gamma,U^\perp\right>\right)dt.</script><p>Later applications will be added in the future.<br>The article was last updated on 2022-04-22 21:06:49</p>
+ L&#39;&#39;(0)&amp;=\int_a^b -\left(\frac{d {} }{d {}t}\left&lt;{}\dot\gamma,U\right&gt;\right)^2+|\dot U(t)|^2-\left&lt;{}\dot \gamma,R_{U\dot\gamma}U\right&gt;+\frac{d {} }{d {}t}\left&lt;{}D_UU,\dot\gamma\right&gt;dt\\
+ &amp;=\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a+\int_a^b\left(|\dot U(t)|^2-\left&lt;{}R_{\dot\gamma U}\dot\gamma,U\right&gt;-\left(\left&lt;{}\dot\gamma,U\right&gt;&#39;\right)^2\right)dt.
+ \end{aligned}
+$$</p>
+<p>this is <strong> Second variation formula of arc length </strong> , the determining term is the curvature term,
+Call $\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a$ a boundary term,
+The boundary term disappears when $\{\gamma_u\}$ is a normal variation.</p>
+<p>Since the tangential component of $U(t)$ along $\dot\gamma$ does not change the length of $\gamma$,
+We only need to consider the orthogonal component $U^\perp(t),$
+That is, suppose $\left&lt;{}U^\perp,\dot\gamma\right&gt;=0,$ $U=U^\perp+f\dot\gamma.$ then</p>
+<p>$$
+|\dot U(t)|^2-\left(\left&lt;{}\dot\gamma(t),U(t)\right&gt;&#39;\right)^2=|\dot U^\perp (t)|^2+f&#39;(t)^2-f&#39;(t)^2=|\dot U^\perp(t)|^2,
+$$</p>
+<p>$$
+\left&lt;{}R_{\dot\gamma U}\dot\gamma,U\right&gt;=\left&lt;{}R_{\dot\gamma U^\perp}\dot\gamma, U^\perp\right&gt;.
+$$</p>
+<p>Therefore, the second variation formula of arc length can also be written as:</p>
+<p>$$
+L&#39;&#39;(0)=\left&lt;{}D_UU,\dot\gamma\right&gt;|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\left&lt;{}R_{\dot\gamma U^\perp}\dot\gamma,U^\perp\right&gt;\right)dt.
+$$</p>
+<p>Later applications will be added in the future.</p>
+<p>The article was last updated on 2022-04-22 21:06:49 </p>
+
+            
                 </div>
             
         </div>
@@ -383,7 +428,7 @@ L''(0)=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\l
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《黎曼几何初步》笔记(13)-子流形和第二基本形式</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (13) - Submanifold and Second Basic Form</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (13) - Submanifolds and the second fundamental form</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -405,7 +450,7 @@ L''(0)=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\l
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(5)-Jacobi场和Cartan-Hadamard定理</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Notes on Riemannian Geometry (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (5) - Jacobi Field and Cartan-Hadamard Theorem</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -658,7 +703,7 @@ L''(0)=\left<{}D_UU,\dot\gamma\right>|^b_a+\int_a^b \left(|\dot U^\perp(t)|^2-\l
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#first-variation-formula"><span class="nav-text">first variation formula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#second-variation-formula"><span class="nav-text">second variation formula</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E7%AC%AC%E4%B8%80%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F"><span class="nav-text"> first variation formula</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E7%AC%AC%E4%BA%8C%E5%8F%98%E5%88%86%E5%85%AC%E5%BC%8F"><span class="nav-text"> second variation formula</span></a></li></ol>
         </div>
     
 </div>

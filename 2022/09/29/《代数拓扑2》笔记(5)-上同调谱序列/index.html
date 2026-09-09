@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑2》笔记(5)-上同调谱序列</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (5) - Top Harmonic Sequence</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology 2&#34; Notes (5)-Cohomology Spectral Sequence</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-198" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-198" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/"><span data-lang-group="note-label-199" data-lang="zh-cn">代数拓扑</span><span data-lang-group="note-label-199" data-lang="en" style="display:none">Algebraic Topology</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/">代数拓扑2</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%912/"><span data-lang-group="note-label-200" data-lang="zh-cn">代数拓扑2</span><span data-lang-group="note-label-200" data-lang="en" style="display:none">Algebraic Topology II</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><p>上同调谱序列和同调谱序列是类似的, 只是箭头都反了过来. 总的来说, 我们有:</p>
 <ul>
@@ -332,61 +335,107 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="basic-concepts">Basic concepts</h2>
-<p>Cohomology spectrum sequences are similar to cohomology spectrum sequences, except that the arrows are reversed. In general, we have:</p>
+                    
+                <h2 id="en-基本概念"><a href="#en-基本概念" class="headerlink" title="基本概念"></a> Basic concepts</h2><p>Cohomology spectrum sequences are similar to cohomology spectrum sequences, except that the arrows are reversed. In general, we have:</p>
 <ul>
-<li><p>$R$ modulo $E_r^{p,q},$</p>
+<li><p>$R$Module $E_r^{p,q},$</p>
 </li>
 <li><p>Differential$\delta_r:E_r^{p,q}\rightarrow E_r^{p+r,q-r+1},$</p>
 </li>
 </ul>
-<p>The inclusion relationship of the filter columns on the chain complex will be reversed, that is</p>
-<script type="math/tex; mode=display">
-F_pC^\ast \supset F_{p+1}C^\ast .</script><p>This gives the spectral sequence $(E<em>r^{p,q},\delta_r),$ $E_1^{p,q}=H^{p+q}(G_pC^\ast ).$<br>The spectral sequence converges to $E</em>\infty^{p,q}=G_pH^{p+q}(C^\ast )$ if the filter column is bounded for each $C^i$.</p>
-<h2 id="multiplication-structure">Multiplication structure</h2>
-<p>Suppose $(C^\ast ,\delta)$ has a multiplication structure (itself satisfies the operation law such as associative law, etc.),</p>
-<script type="math/tex; mode=display">
-\cup:C^i\otimes C^j\rightarrow C^{i+j},</script><p> We want it to be compatible with differential and filter columns,<br>This way it can be placed on the spectral sequence.</p>
+<p>The inclusion relationship of the filtrations on the cochain complex will be reversed, that is </p>
+<p>$$
+F_pC^\ast \supset F_{p+1}C^\ast .
+$$</p>
+<p>This gives the spectral sequence $(E_r^{p,q},\delta_r),$ $E_1^{p,q}=H^{p+q}(G_pC^\ast ).$
+The spectral sequence converges to $E_\infty^{p,q}=G_pH^{p+q}(C^\ast )$ if the filter sequence is bounded for each $C^i$.</p>
+<h2 id="en-乘法结构"><a href="#en-乘法结构" class="headerlink" title="乘法结构"></a> multiplicative structure</h2><p>Assume $(C^\ast ,\delta)$ has a multiplicative structure (itself satisfies the operation law such as associative law, etc.),</p>
+<p>$$
+\cup:C^i\otimes C^j\rightarrow C^{i+j},
+$$</p>
+<p> We want it to be compatible with differential and filtrations,
+This way it can be placed on the spectral sequence.</p>
 <p>Compatibility with differentials requires that it be a derivative:</p>
-<script type="math/tex; mode=display">
-\delta(\alpha\cup \beta)=(\delta\alpha)\cup \beta+(-1)^i\alpha\cup(\delta\beta),\quad \alpha\in C^i.</script><p>Compatibility requirements with filter columns:</p>
-<script type="math/tex; mode=display">
-\cup:F_pC^\ast \otimes F_{p'}C^\ast \rightarrow F_{p+p'}C^\ast .</script><p>Thus $\cup$ induces (inductively) a well-defined multiplication on the spectral sequence:</p>
-<script type="math/tex; mode=display">
-\cup_r:E_r^{p,q}\otimes E_r^{p',q'}\rightarrow E_r^{p+p',q+q'}.</script><p><strong>Proposition 1</strong>. <em>$\delta_r$ is a derivative on $E_r^{p,q}$, that is:</em></p>
-<script type="math/tex; mode=display">
-\delta_r(\alpha\cup_r \beta)=(\delta_r\alpha)\cup_r\beta+(-1)^{|\alpha|}\alpha\cup_r(\delta_r\beta),\quad |\alpha|:=p+q,\quad \alpha\in E_r^{p,q}.</script><p><strong>Proposition 2</strong>. <em>If the filter column is bounded for each $C^i$, then the multiplicative structure on $E_\infty^{p,q}$ is consistent with the natural multiplicative structure on $G_pH^{p+q}(C^\ast )$.</em></p>
+<p>$$
+\delta(\alpha\cup \beta)=(\delta\alpha)\cup \beta+(-1)^i\alpha\cup(\delta\beta),\quad \alpha\in C^i.
+$$</p>
+<p>Compatibility requirements with filtrations:</p>
+<p>$$
+\cup:F_pC^\ast \otimes F_{p&#39;}C^\ast \rightarrow F_{p+p&#39;}C^\ast .
+$$</p>
+<p>Thus $\cup$ induces (inductively) a well-defined multiplication on the spectral sequence:</p>
+<p>$$
+\cup_r:E_r^{p,q}\otimes E_r^{p&#39;,q&#39;}\rightarrow E_r^{p+p&#39;,q+q&#39;}.
+$$</p>
+<p><strong> Proposition 1 </strong>. <em> $\delta_r$ is a derivative on $E_r^{p,q}$, that is: </em> </p>
+<p>$$
+\delta_r(\alpha\cup_r \beta)=(\delta_r\alpha)\cup_r\beta+(-1)^{|\alpha|}\alpha\cup_r(\delta_r\beta),\quad |\alpha|:=p+q,\quad \alpha\in E_r^{p,q}.
+$$</p>
+<p><strong> Proposition 2 </strong>. <em> If the filtration is bounded for each $C^i$, then the multiplicative structure on $E_\infty^{p,q}$ is compatible with the natural multiplicative structure on $G_pH^{p+q}(C^\ast )$. </em> </p>
 <p>We say that $E_r$ is an algebraic spectral sequence if it has a multiplicative structure.</p>
-<h2 id="leray-serre-cohomology-spectrum-sequence">Leray-Serre cohomology spectrum sequence</h2>
-<p>For Serre fibrosis, $B$ road connectivity,</p>
-<script type="math/tex; mode=display">
-F\rightarrow E\xrightarrow{\pi} B</script><p>For a commutative ring $R, $ $H^\ast (F;R)$ is a (graded commutative) $R$ algebra,<br>$E<em>2^{p,q}=H^p(B;H^q(F;R))$ is an $R$ algebra, $E_r$ is an algebraic spectrum sequence,<br>$E</em>\infty^{p,q}=G_pH^{p+q}(E;R).$</p>
-<p><strong>Note 3</strong>. <em>If $\cup$ represents the standard multiplication structure on $H^\ast (B;H^\ast (F;R))$, $\cup_2$ is the multiplication structure on $E_2^{p,q}$, then</em></p>
-<script type="math/tex; mode=display">
-\alpha\cup_2\alpha'=(-1)^{qp'}\alpha\cup\alpha',\quad \alpha\in E_2^{p,q},\alpha'\in E_2^{p',q'}.</script><p>Our goal is to make $(E_r,\delta_r,\cup_r)$ a differential graded algebra, such that</p>
-<script type="math/tex; mode=display">
-\alpha\beta=(-1)^{|\alpha||\beta|}\beta\alpha,</script><script type="math/tex; mode=display">
-\delta(\alpha\beta)=(\delta \alpha)\beta+(-1)^{|\alpha|}\alpha(\delta\beta).</script><p><strong>Theorem 4</strong>. <em>$H^\ast (SU(n))\cong \Lambda^\ast (a<em>3,a_5,\cdots,a</em>{2k-1})$ is an algebraic isomorphism (the latter is an external algebra).</em><br>Use induction. $n=1$ is trivial. Consider $n\ge 2,$</p>
-<script type="math/tex; mode=display">
-SU(n-1)\rightarrow SU(n)\rightarrow S^{2n-1},</script><p> Consider its construction.<br>$SU(n)$ can be moved to $S^{2n-1}\subset \mathbb{C}^n$,<br>The stabilizer of $(1,0,\cdots,0)$ is $SU(n-1).$<br>Thus $S^{2n-1}\cong \frac{SU(n)}{SU(n-1)}.$</p>
+<h2 id="en-Leray-Serre上同调谱序列"><a href="#en-Leray-Serre上同调谱序列" class="headerlink" title="Leray-Serre上同调谱序列"></a> Leray-Serre cohomology spectrum sequence</h2><p>For Serre fibrosis, $B$ road connectivity, </p>
+<p>$$
+F\rightarrow E\xrightarrow{\pi} B
+$$</p>
+<p>For a commutative ring $R,$ $H^\ast (F;R)$ is a (graded commutative) $R$ algebra,
+$E_2^{p,q}=H^p(B;H^q(F;R))$ is a $R$ algebra, $E_r$ is an algebraic spectral sequence,
+$E_\infty^{p,q}=G_pH^{p+q}(E;R).$</p>
+<p><strong> Note 3 </strong>. <em> If $\cup$ represents the standard multiplication structure on $H^\ast (B;H^\ast (F;R))$, and $\cup_2$ is the multiplication structure on $E_2^{p,q}$, then </em> </p>
+<p>$$
+\alpha\cup_2\alpha&#39;=(-1)^{qp&#39;}\alpha\cup\alpha&#39;,\quad \alpha\in E_2^{p,q},\alpha&#39;\in E_2^{p&#39;,q&#39;}.
+$$</p>
+<p>Our goal is to make $(E_r,\delta_r,\cup_r)$ a differential graded algebra such that</p>
+<p>$$
+\alpha\beta=(-1)^{|\alpha||\beta|}\beta\alpha,
+$$</p>
+<p>$$
+\delta(\alpha\beta)=(\delta \alpha)\beta+(-1)^{|\alpha|}\alpha(\delta\beta).
+$$</p>
+<p><strong> Theorem 4 </strong>. <em> $H^\ast (SU(n))\cong \Lambda^\ast (a_3,a_5,\cdots,a_{2k-1})$ is an algebraic isomorphism (the latter is an external algebra). </em> </p>
+<p>Use induction. $n=1$ is trivial. Consider $n\ge 2,$</p>
+<p>$$
+SU(n-1)\rightarrow SU(n)\rightarrow S^{2n-1},
+$$</p>
+<p> Consider its construction.
+$SU(n)$ can be moved to $S^{2n-1}\subset \mathbb{C}^n$,
+The stabilizer of $(1,0,\cdots,0)$ is $SU(n-1).$
+Thus $S^{2n-1}\cong \frac{SU(n)}{SU(n-1)}.$</p>
 <p>Consider the Leray-Serre spectral sequence,</p>
-<script type="math/tex; mode=display">
-E_2=H^\ast (S^{2n-1};H^\ast (SU(n-1)))\cong H(S^{2n-1})\otimes H^\ast (SU(n-1)).</script><p>The spectrum sequence is shown in the figure below,<br>The only possible non-zero $\delta_{2n-1}$ is also zero by derivation property (by decomposition).<br>Thus the spectral sequence stops starting from $E_2$.</p>
-<script type="math/tex; mode=display">
-E_\infty=E_2=H^\ast (S^{2n-1})\otimes \Lambda^\ast (a_3,\cdots,a_{2n-3})=\Lambda^\ast (a_3,\cdots,a_{2n-1}).</script><p>The newly added generator corresponds to the generator of $H^{2n-1}(S^{2n-1})$.</p>
+<p>$$
+E_2=H^\ast (S^{2n-1};H^\ast (SU(n-1)))\cong H(S^{2n-1})\otimes H^\ast (SU(n-1)).
+$$</p>
+<p>The spectrum sequence is shown in the figure below,
+The only possible non-zero $\delta_{2n-1}$ is also zero by the derivative property (by decomposition).
+Thus the spectral sequence stops starting from $E_2$.</p>
+<p>$$
+E_\infty=E_2=H^\ast (S^{2n-1})\otimes \Lambda^\ast (a_3,\cdots,a_{2n-3})=\Lambda^\ast (a_3,\cdots,a_{2n-1}).
+$$</p>
+<p>The newly added generator corresponds to the generator of $H^{2n-1}(S^{2n-1})$.</p>
 <p><img style='margin: auto;' src=https://s2.loli.net/2022/09/29/5Gl2EeTHFSdACcg.png width='50%' height='50%'></p>
-<p>Note that $\Lambda^\ast (a<em>3,\cdots,a</em>{2n-1})$ is a free algebra, and the extension problem is trivial,<br>Thus</p>
-<script type="math/tex; mode=display">
-\bigoplus_i H^i(SU(n))\cong \bigoplus_i\bigoplus_pG_pH^i(SU(n))=\bigoplus_i\bigoplus_p E_{\infty}^{p,i-p}.</script><p><strong>Theorem 5</strong>. <em>If $E<em>\infty$ is a free graded commutative bigraded algebra, then $H^\ast \cong E</em>\infty$ is an algebraic isomorphism.</em></p>
-<h2 id="edge-homomorphism">Edge homomorphism</h2>
-<p>Suppose $E_2\Rightarrow H^\ast $ is the first quadrant, then</p>
-<script type="math/tex; mode=display">
-E_\infty^{0,q}\hookrightarrow \cdots \hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}</script><script type="math/tex; mode=display">
-E_2^{p,0}\twoheadrightarrow E_3^{p,0}\twoheadrightarrow \cdots\twoheadrightarrow E_\infty^{p,0}</script><p>further,</p>
-<script type="math/tex; mode=display">
-E_\infty^{0,q}=G_0H^q=\frac{F_0H^q}{F_1H^q},\quad H^q\twoheadrightarrow E_\infty^{0,q};</script><script type="math/tex; mode=display">
-E_\infty^{p,0}=G_pH^p=\frac{F_pH^p}{F_{p+1}H^p=0}, \quad E_\infty^{p,0}\hookrightarrow H^p.</script><p>Edge homomorphism can be defined to study the relationship between the two.</p>
-<p>The article was last updated on 2022-09-29 16:15:30</p>
+<p>Note that $\Lambda^\ast (a_3,\cdots,a_{2n-1})$ is a free algebra and the extension problem is trivial,
+Thus</p>
+<p>$$
+\bigoplus_i H^i(SU(n))\cong \bigoplus_i\bigoplus_pG_pH^i(SU(n))=\bigoplus_i\bigoplus_p E_{\infty}^{p,i-p}.
+$$</p>
+<p><strong> Theorem 5 </strong>. <em> If $E_\infty$ is a free graded commutative bigraded algebra, then $H^\ast \cong E_\infty$ is an algebraic isomorphism. </em> </p>
+<h2 id="en-边同态"><a href="#en-边同态" class="headerlink" title="边同态"></a> edge homomorphism</h2><p>Assuming $E_2\Rightarrow H^\ast $ is the first quadrant, then</p>
+<p>$$
+E_\infty^{0,q}\hookrightarrow \cdots \hookrightarrow E_3^{0,q}\hookrightarrow E_2^{0,q}
+$$</p>
+<p>$$
+E_2^{p,0}\twoheadrightarrow E_3^{p,0}\twoheadrightarrow \cdots\twoheadrightarrow E_\infty^{p,0}
+$$</p>
+<p>further,</p>
+<p>$$
+E_\infty^{0,q}=G_0H^q=\frac{F_0H^q}{F_1H^q},\quad H^q\twoheadrightarrow E_\infty^{0,q};
+$$</p>
+<p>$$
+E_\infty^{p,0}=G_pH^p=\frac{F_pH^p}{F_{p+1}H^p=0}, \quad E_\infty^{p,0}\hookrightarrow H^p.
+$$</p>
+<p>Edge homomorphism can be defined to study the relationship between the two.</p>
+<p>The article was last updated on 2022-09-29 16:15:30 </p>
+
+            
                 </div>
             
         </div>
@@ -429,7 +478,7 @@ E_\infty^{p,0}=G_pH^p=\frac{F_pH^p}{F_{p+1}H^p=0}, \quad E_\infty^{p,0}\hookrigh
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《微分流形》笔记-横截性</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Differential Manifold Notes - Traversability</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Notes on &#34;Differential Manifolds&#34; - Transversality</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -451,7 +500,7 @@ E_\infty^{p,0}=G_pH^p=\frac{F_pH^p}{F_{p+1}H^p=0}, \quad E_\infty^{p,0}\hookrigh
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分流形》笔记-李群</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Manifold Notes - Li Qun</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Notes on &#34;Differential Manifolds&#34; - Lie Group</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -704,7 +753,7 @@ E_\infty^{p,0}=G_pH^p=\frac{F_pH^p}{F_{p+1}H^p=0}, \quad E_\infty^{p,0}\hookrigh
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic-concepts"><span class="nav-text">Basic concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multiplication-structure"><span class="nav-text">Multiplication structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#leray-serre-cohomology-spectrum-sequence"><span class="nav-text">Leray-Serre cohomology spectrum sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#edge-homomorphism"><span class="nav-text">Edge homomorphism</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text"> Basic concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E4%B9%98%E6%B3%95%E7%BB%93%E6%9E%84"><span class="nav-text"> multiplicative structure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Leray-Serre%E4%B8%8A%E5%90%8C%E8%B0%83%E8%B0%B1%E5%BA%8F%E5%88%97"><span class="nav-text"> Leray-Serre cohomology spectrum sequence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%BE%B9%E5%90%8C%E6%80%81"><span class="nav-text"> edge homomorphism</span></a></li></ol>
         </div>
     
 </div>

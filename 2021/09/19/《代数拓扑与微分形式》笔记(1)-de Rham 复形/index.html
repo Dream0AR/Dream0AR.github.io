@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(1)-de Rham 复形</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (1) - de Rham complex</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (1)-de Rham Complex</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-424" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-424" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/"><span data-lang-group="note-label-425" data-lang="zh-cn">代数拓扑</span><span data-lang-group="note-label-425" data-lang="en" style="display:none">Algebraic Topology</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/">GTM82-代数拓扑与微分形式</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/GTM82-%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91%E4%B8%8E%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F/"><span data-lang-group="note-label-426" data-lang="zh-cn">GTM82-代数拓扑与微分形式</span><span data-lang-group="note-label-426" data-lang="en" style="display:none">GTM 82 - Differential Forms in Algebraic Topology</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <p>de Rham
 上同调是流形的最重要的微分同胚不变量，而不变量是我们很期待的东西，用不变量可以快速区分/分类流形。</p>
@@ -302,35 +305,77 @@ $H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p>de Rham<br>Cohomology is the most important diffeomorphic invariant of manifolds, and invariants are something we are looking forward to. Invariants can be used to quickly distinguish/classify manifolds.</p>
-<h2 id="-mathbb-r-n-de-rham-cohomology">$\mathbb{R}^n$ de Rham cohomology</h2>
-<h3 id="differential-form">Differential form</h3>
-<p>The coordinates in $\mathbb{R}^n$ are $(x_1,...,x_n)$, record the independent variable differential $dx_1,...,dx_n$,<br>Introduce the notation $\wedge$(wedge) to satisfy $dx_i\wedge dx_i=0$,<br>$dx_i\wedge dx_j=-dx_j\wedge dx_i$, $i\neq j$.</p>
-<p>Remember $\Omega^q=\operatorname{span}<em>R{dx</em>{i<em>1}\wedge\cdots\wedge dx</em>{i<em>q}|{}i</em>{1}&lt;...&lt;{}i<em>{ {}q}},$<br>$\Omega^\ast=\oplus</em>{q=0}^n \Omega^q$, it is easy to see that its dimension is $2^n$.</p>
-<p>Remember the smooth $q-$ form as $\Omega^q(\mathbb{R}^n)=C^\infty(\mathbb{R}^n)\otimes<em>\mathbb{R}\Omega^q$,<br>The overall smooth form is $\Omega^\ast(\mathbb{R}^n)=\oplus</em>{q=0}^n \Omega^q(\mathbb{R}^n)$.</p>
-<p>Therefore, any smooth form $\omega\in \Omega^\ast(\mathbb{R}^n)$ can be <strong>decomposed</strong> by type as $\omega=\sum<em>{q=0}^{n} \omega_q$,<br>$\omega_q\in \Omega^q(\mathbb{R}^n)$.<br>$\omega_q=\sum</em>{I:{}i<em>{1}&lt;...&lt;{}i</em>{ {}q} }f_Idx_I$, $I$ is called <strong>multiple indicators</strong>.</p>
-<h3 id="operator">Operator</h3>
-<p>External product operator $\wedge$: (can be seen as an expanded definition of the original symbol)<br>$\tau=\sum<em>{I:{}i</em>{1}&lt;...&lt;{}i<em>{ {}p} }f_Idx_I\in \Omega^p(\mathbb{R}^n)$,<br>$\omega=\sum</em>{J:{}j<em>{1}&lt;...&lt;{}j</em>{ {}q} }g<em>Jdx_J\in \Omega^q(\mathbb{R}^n)$,<br>rule<br>$\tau\wedge\omega=\sum</em>{I,J}f<em>Ig_Jdx_I\wedge dx_J=\sum</em>{K:{}k<em>{1}&lt;...&lt;{}k</em>{ {}p+q} }h_Kdx_K$.<br>Among them, $h_K$ can be expressed by $f_I, g_J$.</p>
-<p><strong>Proposition 1.1</strong>. <em>$\tau\wedge \omega = (-1)^{pq}\omega \wedge \tau$</em></p>
-<p>External differential operator $d:\Omega^q(\mathbb{R}^n)\rightarrow \Omega^{q+1}(\mathbb{R}^n)$,<br>$\omega=\sum<em>I f_I dx_I$,<br>$d\omega=\sum_I df_I\wedge dx_I=\sum</em>{i,I} \frac{\partial {}f_I}{\partial {}x_i}dx_i\wedge dx_I$,<br>It is the natural continuation of the differential operator on $C^\infty$.</p>
-<p><strong>Proposition 1.2</strong>. <em>$\tau\in \Omega^p(\mathbb{R}^n)$, then $d(\tau\wedge \omega)=d\tau \wedge \omega + (-1)^p \tau\wedge d\omega,$ $d^2=0$.</em></p>
-<h3 id="de-rham-complex">de Rham complex</h3>
-<p>Since $d^2=0$, ${\Omega^\ast(\mathbb{R}^n),d}$ forms the <strong>de of $\mathbb{R}^n$<br>Rham complex</strong>:</p>
-<script type="math/tex; mode=display">\Omega^0(\mathbb{R}^n)\xrightarrow{d}\cdots\xrightarrow{d}\Omega^n(\mathbb{R}^n).</script><p>You can add $\Omega^q(\mathbb{R}^n)=0$ to $q<0$ and $q>n$.</p>
-<p>Definition$Z^q(\mathbb{R}^n)={\omega\in\Omega^q(\mathbb{R}^n)|d\omega=0},$<br>The elements are called <strong>closed</strong>$q$-forms.<br>Definition $B^q(\mathbb{R}^n)={d\tau | \tau\in\Omega^{q-1}(\mathbb{R}^n)},$<br>where the elements are called <strong>proper</strong>$q$-forms. In particular,<br>It is stipulated that $Z^n(\mathbb{R}^n)=\Omega^n(\mathbb{R}^n),$ $B^0(\mathbb{R}^n)=0.$</p>
-<p>Since $d^2=0$, $B^q(\mathbb{R}^n)\subset Z^q(\mathbb{R}^n).$<br>Define the $q$th de of $\mathbb{R}^n$<br>Rham cohomology is $H^q_{dR}(\mathbb{R}^n)=Z^q(\mathbb{R}^n)/B^q(\mathbb{R}^n).$<br>When no ambiguity is caused, subscripts are usually omitted.<br>The cohomology class of the closed $q$-form $\omega$ is denoted as $[\omega].$</p>
-<p>Similarly, for the de Rham complex on $\mathbb{R}^n$ open set $U$,<br>Just set the domain of the smooth function to $U$ at the beginning.</p>
-<p>We have <strong>Cohomological Poincaré&#39;s Lemma</strong>: $H^q(\mathbb{R}^n)=\begin{cases}<br>    \mathbb{R}\quad&amp;q=0\<br>    0&amp;q\neq 0<br>\end{cases}.$</p>
-<h2 id="cohomology">cohomology</h2>
-<p>Remember $\Omega^\ast<em>c(\mathbb{R}^n)=C^\infty_c(\mathbb{R}^n)\otimes</em>\mathbb{R}\Omega^\ast,$<br>That is to say, the smooth function is changed into a smooth function with compact support set. Similarly, it can be decomposed according to the shape.<br>Since the set of partial derivative supports of smooth functions is contained in the original compact support set, it also has compact support,<br>Therefore ${\Omega^\ast_c(\mathbb{R}^n),d}$ is a complex shape, which is called de with compact support<br>Rham complex**.</p>
-<p>Similarly,<br>Definition$Z^q<em>c(\mathbb{R}^n)={\omega\in\Omega_c^q(\mathbb{R}^n)|d\omega=0},$<br>$B^q_c(\mathbb{R}^n)={d\tau | \tau\in\Omega_c^{q-1}(\mathbb{R}^n)},$<br>$H^q</em>{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
-<p>Note that $Z_c^q(\mathbb{R}^n)=\Omega^q_c(\mathbb{R}^n)\cap Z^q(\mathbb{R}^n),$<br>But generally $B^q_c(\mathbb{R}^n)\neq B^q(\mathbb{R}^n)\cap \Omega_c^q(\mathbb{R}^n).$<br>That is, it is not that $d\tau$ has a compact support set, but $\tau$ in $d\tau$ has a compact support set.</p>
-<p>We have <strong>Compactly cohomological Poincaré&#39;s Lemma</strong>: $H^q_c(\mathbb{R}^n)=\begin{cases}<br>        \mathbb{R}\quad&amp;q=n\<br>        0&amp;q\neq n<br>    \end{cases}.$</p>
-<p>Note that this illustrates that compact cohomology is not homotopy invariant. Similarly,<br>We can define $H_c^\ast(U)$ for general $U\subset \mathbb{R}^n$.</p>
-<h2 id="differential-complex">differential complex</h2>
-<p>The vector space direct sum $C=\oplus_{q\in\mathbb{Z}} C^q$ is called <strong>differential complex</strong>,<br>If there is a homomorphism $d:C\rightarrow C,$ satisfies $d:C^q\rightarrow C^{q+1},$ $d^2=0.$<br>Cohomology can be defined for a complex by $d$. The de Rham complex is a differential complex.</p>
-<p>As in algebraic topology, we can define chain mappings between complexes and their induced homomorphisms, short exact sequences of complexes,<br>And the crucial zig-zag lemma (graph tracing defines long exact sequences of homology).</p>
-<p>The article was last updated on 2021-09-19 18:59:49</p>
+                    
+                <p>de Rham
+Cohomology is the most important diffeomorphic invariant of manifolds, and invariants are something we are looking forward to. Invariants can be used to quickly distinguish/classify manifolds.</p>
+<h2 id="en-mathbb-R-n-de-Rham-上同调"><a href="#en-mathbb-R-n-de-Rham-上同调" class="headerlink" title="$\mathbb{R}^n$ de Rham 上同调"></a> $\mathbb{R}^n$ de Rham cohomology</h2><h3 id="en-微分形式"><a href="#en-微分形式" class="headerlink" title="微分形式"></a> differential form</h3><p>In $\mathbb{R}^n$, the coordinate is $(x_1,...,x_n)$, and the independent variable differential $dx_1,...,dx_n$ is recorded.
+Introduce the symbol $\wedge$(wedge), satisfy $dx_i\wedge dx_i=0$,
+$dx_i\wedge dx_j=-dx_j\wedge dx_i$, $i\neq j$.</p>
+<p>Remember$\Omega^q=\operatorname{span}_R\{dx_{i_1}\wedge\cdots\wedge dx_{i_q}|{}i_{1}&lt;...&lt;{}i_{ {}q}\},$
+$\Omega^\ast=\oplus_{q=0}^n \Omega^q$, it is easy to see that its dimension is $2^n$.</p>
+<p>Let the whole smooth $q-$ form be $\Omega^q(\mathbb{R}^n)=C^\infty(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^q$,
+The smooth form is generally $\Omega^\ast(\mathbb{R}^n)=\oplus_{q=0}^n \Omega^q(\mathbb{R}^n)$.</p>
+<p>So any smooth form $\omega\in \Omega^\ast(\mathbb{R}^n)$ can <strong> Break down by type </strong> is $\omega=\sum_{q=0}^{n} \omega_q$,
+$\omega_q\in \Omega^q(\mathbb{R}^n)$.
+$\omega_q=\sum_{I:{}i_{1}&lt;...&lt;{}i_{ {}q} }f_Idx_I$, $I$ are called <strong> Multiple indicators </strong>。</p>
+<h3 id="en-算子"><a href="#en-算子" class="headerlink" title="算子"></a> operator</h3><p>External product operator $\wedge$: (can be seen as an expanded definition of the original symbol)
+$\tau=\sum_{I:{}i_{1}&lt;...&lt;{}i_{ {}p} }f_Idx_I\in \Omega^p(\mathbb{R}^n)$,
+$\omega=\sum_{J:{}j_{1}&lt;...&lt;{}j_{ {}q} }g_Jdx_J\in \Omega^q(\mathbb{R}^n)$,
+rule
+$\tau\wedge\omega=\sum_{I,J}f_Ig_Jdx_I\wedge dx_J=\sum_{K:{}k_{1}&lt;...&lt;{}k_{ {}p+q} }h_Kdx_K$.
+Among them $h_K$ can be expressed by $f_I,g_J$.</p>
+<p><strong> Proposition 1.1 </strong>. <em>$\tau\wedge \omega = (-1)^{pq}\omega \wedge \tau$</em> </p>
+<p>Exterior derivative operator $d:\Omega^q(\mathbb{R}^n)\rightarrow \Omega^{q+1}(\mathbb{R}^n)$,
+$\omega=\sum_I f_I dx_I$,
+$d\omega=\sum_I df_I\wedge dx_I=\sum_{i,I} \frac{\partial {}f_I}{\partial {}x_i}dx_i\wedge dx_I$,
+It is a natural continuation of the differential operator on $C^\infty$.</p>
+<p><strong> Proposition 1.2 </strong>. <em> $\tau\in \Omega^p(\mathbb{R}^n)$, then $d(\tau\wedge \omega)=d\tau \wedge \omega + (-1)^p \tau\wedge d\omega,$ $d^2=0$. </em> </p>
+<h3 id="en-de-Rham-复形"><a href="#en-de-Rham-复形" class="headerlink" title="de Rham 复形"></a> de Rham complex</h3><p>Since $d^2=0$, $\{\Omega^\ast(\mathbb{R}^n),d\}$ form $\mathbb{R}^n$ <strong> de
+Rham complex </strong> :
+$$\Omega^0(\mathbb{R}^n)\xrightarrow{d}\cdots\xrightarrow{d}\Omega^n(\mathbb{R}^n).$$
+$\Omega^q(\mathbb{R}^n)=0$ can be added to $q&lt;0$ and $q&gt;n$.</p>
+<p>Definition$Z^q(\mathbb{R}^n)=\{\omega\in\Omega^q(\mathbb{R}^n)|d\omega=0\},$
+where the elements are called <strong> closed </strong> $q$-Form.
+Definition$B^q(\mathbb{R}^n)=\{d\tau | \tau\in\Omega^{q-1}(\mathbb{R}^n)\},$
+where the elements are called <strong> appropriate </strong> $q$-Form. In particular,
+Regulations $Z^n(\mathbb{R}^n)=\Omega^n(\mathbb{R}^n),$ $B^0(\mathbb{R}^n)=0.$</p>
+<p>Due to $d^2=0$, $B^q(\mathbb{R}^n)\subset Z^q(\mathbb{R}^n).$
+Define the $q$th de of $\mathbb{R}^n$
+Rham cohomology is $H^q_{dR}(\mathbb{R}^n)=Z^q(\mathbb{R}^n)/B^q(\mathbb{R}^n).$
+When no ambiguity is caused, subscripts are usually omitted.
+The cohomology class where the closed $q$-form $\omega$ is located is recorded as $[\omega].$</p>
+<p>Similarly, for the de Rham complex on $\mathbb{R}^n$ open set $U$,
+Just set the smooth function domain to $U$ at the beginning.</p>
+<p>we have <strong> Cohomological Poincaré&#39;s Lemma </strong>: $H^q(\mathbb{R}^n)=\begin{cases}
+    \mathbb{R}\quad&amp;q=0\\
+    0&amp;q\neq 0
+\end{cases}.$</p>
+<h2 id="en-紧上同调"><a href="#en-紧上同调" class="headerlink" title="紧上同调"></a> cohomology</h2><p>Remember$\Omega^\ast_c(\mathbb{R}^n)=C^\infty_c(\mathbb{R}^n)\otimes_\mathbb{R}\Omega^\ast,$
+That is to say, the smooth function is changed into a smooth function with compact support set. Similarly, it can be decomposed according to the shape.
+Since the set of partial derivative supports of smooth functions is contained in the original compact support set, it also has compact support,
+Therefore $\{\Omega^\ast_c(\mathbb{R}^n),d\}$ is a complex, called <strong> with compact support de
+Rham complex </strong>.</p>
+<p>Similarly,
+Definition$Z^q_c(\mathbb{R}^n)=\{\omega\in\Omega_c^q(\mathbb{R}^n)|d\omega=0\},$
+$B^q_c(\mathbb{R}^n)=\{d\tau | \tau\in\Omega_c^{q-1}(\mathbb{R}^n)\},$
+$H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
+<p>Note$Z_c^q(\mathbb{R}^n)=\Omega^q_c(\mathbb{R}^n)\cap Z^q(\mathbb{R}^n),$
+But generally $B^q_c(\mathbb{R}^n)\neq B^q(\mathbb{R}^n)\cap \Omega_c^q(\mathbb{R}^n).$
+That is, it is not that $d\tau$ has a compact support but $\tau$ in $d\tau$ has a compact support.</p>
+<p>we have <strong> Poincaré&#39;s Lemma for Compact Cohomology </strong>: $H^q_c(\mathbb{R}^n)=\begin{cases}
+        \mathbb{R}\quad&amp;q=n\\
+        0&amp;q\neq n
+    \end{cases}.$</p>
+<p>Note that this shows <strong> Cohomology is not homotopy invariant </strong> .Similarly,
+We can define $H_c^\ast(U)$ for general $U\subset \mathbb{R}^n$.</p>
+<h2 id="en-微分复形"><a href="#en-微分复形" class="headerlink" title="微分复形"></a> differential complex</h2><p>The vector space direct sum $C=\oplus_{q\in\mathbb{Z} } C^q$ is called <strong> differential complex </strong> ,
+If there is a homomorphism $d:C\rightarrow C,$ that satisfies $d:C^q\rightarrow C^{q+1},$ $d^2=0.$
+Cohomology can be defined for a complex by $d$. A de Rham complex is a differential complex.</p>
+<p>As in algebraic topology, we can define chain mappings between complexes and their induced homomorphisms, short exact sequences of complexes,
+And the crucial zig-zag lemma (graph tracing defines long exact sequences of homology).</p>
+<p>The article was last updated on 2021-09-19 18:59:49 </p>
+
+            
                 </div>
             
         </div>
@@ -373,7 +418,7 @@ $H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(2)-流形上的微积分</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (2) - Calculus on Manifolds</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (2) - Calculus on Manifolds</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -395,7 +440,7 @@ $H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑与微分形式》笔记(1) - de Rham 复形</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology and Differential Forms Notes (1) - de Rham complex</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology and Differential Forms&#34; Notes (1) - de Rham Complex</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -648,7 +693,7 @@ $H^q_{c}(\mathbb{R}^n)=Z^q_c(\mathbb{R}^n)/B^q_c(\mathbb{R}^n).$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#-mathbb-r-n-de-rham-cohomology"><span class="nav-text">$\mathbb{R}^n$ de Rham cohomology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#differential-form"><span class="nav-text">Differential form</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#operator"><span class="nav-text">Operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#de-rham-complex"><span class="nav-text">de Rham complex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cohomology"><span class="nav-text">cohomology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#differential-complex"><span class="nav-text">differential complex</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-mathbb-R-n-de-Rham-%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text"> $\mathbb{R}^n$ de Rham cohomology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="nav-text"> differential form</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-%E7%AE%97%E5%AD%90"><span class="nav-text"> operator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#en-de-Rham-%E5%A4%8D%E5%BD%A2"><span class="nav-text"> de Rham complex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E7%B4%A7%E4%B8%8A%E5%90%8C%E8%B0%83"><span class="nav-text"> cohomology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%BE%AE%E5%88%86%E5%A4%8D%E5%BD%A2"><span class="nav-text"> differential complex</span></a></li></ol>
         </div>
     
 </div>

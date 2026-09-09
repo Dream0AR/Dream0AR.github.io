@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">道路同调(4)</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Road Synchronization (4)</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">Road synchronization(4)</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-51" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-51" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/">代数拓扑</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/"><span data-lang-group="note-label-52" data-lang="zh-cn">代数拓扑</span><span data-lang-group="note-label-52" data-lang="en" style="display:none">Algebraic Topology</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E9%81%93%E8%B7%AF%E5%90%8C%E8%B0%83/">道路同调</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E4%BB%A3%E6%95%B0%E6%8B%93%E6%89%91/%E9%81%93%E8%B7%AF%E5%90%8C%E8%B0%83/"><span data-lang-group="note-label-53" data-lang="zh-cn">道路同调</span><span data-lang-group="note-label-53" data-lang="en" style="display:none">Path Homology</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>定义$\left&lt;{}e_{i_0\cdots i_p},e_{j_0\cdots j_q}\right&gt;=\delta_{J}^I,$
 由此扩展到全体正则道路$\mathcal{R}_\ast =\bigoplus_{p\ge -1} \mathcal{R}_p$上的配对.
@@ -278,7 +281,53 @@ $u\ast v=u_\Omega\ast v_\Omega+(\cdots),$ 括号内的部分都在$\Omega_r^\per
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p class="translation-notice i18n-text" data-i18n="translation_unavailable.content">正文英文版本未发布，请先发布对应英文文章后再切换。</p>
+                    
+                <h2 id="en-准备工作"><a href="#en-准备工作" class="headerlink" title="准备工作"></a> Preparation</h2><p>Definition$\left&lt;{}e_{i_0\cdots i_p},e_{j_0\cdots j_q}\right&gt;=\delta_{J}^I,$
+This is extended to pairings on all regular roads $\mathcal{R}_\ast =\bigoplus_{p\ge -1} \mathcal{R}_p$.
+We remember capital letters to represent basic roads, and curly letters to represent arbitrary roads.
+That is, various spaces formed by basic roads.</p>
+<p><strong> Lemma 1 </strong>. <em>$\,\forall\,u,\varphi\in \mathcal{R}_\ast (X),$ $v,\psi\in \mathcal{R}_\ast (Y),$ $\left&lt;{}u\ast v,\varphi\ast \psi\right&gt;=\left&lt;{}u,\varphi\right&gt;\left&lt;{}v,\psi\right&gt;.$</em> </p>
+<p>This is because $u\ast v$ and $\varphi\ast \psi$ are the same if and only if they are respectively the same.</p>
+<p><strong> Lemma 2 </strong>. <em>$\,\forall\,w\in \Omega_\ast (Z),$ $w=\sum_{x\in A(X)}e_x\ast a^x=\sum_{y\in A(Y)}\ell^y\ast e_y,$ $a^x\in \Omega_\ast (Y),$ $\ell^y\in \Omega_\ast (X).$</em> </p>
+<p>Notice$\,\forall\,w\in \mathcal{A}_\ast (Z),$
+$w=\sum\limits_{\begin{subarray}{c}
+ x\in A(X)\\
+ y\in A(Y)
+ \end{subarray} } c^{xy}e_x*e_y,$
+It only needs to be stated that when $w\in \Omega_\ast (Z)$,
+$a^x=\sum_{y\in A(Y)}c^{xy}e_y\in \Omega_\ast (Y).$</p>
+<p>Remember $\partial e_x=\sum_{x&#39;\in R(X)}\varepsilon^x_{x&#39;}e_{x&#39;},$ then
+$$
+\begin{aligned}
+ \partial w&amp;=\sum\limits_{\begin{subarray}{c}
+ x\in A(X)\\
+ x&#39;\in R(X)
+ \end{subarray} } \varepsilon^x_{x&#39;} e_{x&#39;} *a^x+\sigma_x e^x*\partial a^x\\
+ &amp;=\sum_{x,x&#39;\in A(X)}e_x*(\varepsilon_{x}^{x&#39;}a^{x&#39;}+\sigma_x\partial a^x)+\sum_{x\in R(X)\setminus A(X)}\varepsilon_x^{x&#39;} e_x*a^{x&#39;}.
+ \end{aligned}
+$$
+ When $\partial w\in \mathcal{A}_*(Z)$,
+The latter sum disappears.
+Note$\widetilde a^x=\sum_{x&#39;\in A(X)}\varepsilon_x^{x&#39;}a^x+\sigma_x\partial a^x,$
+It must be allowed. Then make a difference and get $\partial a^x\in \mathcal{A}_\ast (Y).$</p>
+<p>Remember$\Omega_p^{\perp}=\{u\in \mathcal{A}_p:\left&lt;{}u,v\right&gt;=0,\,\forall\,v\in \Omega_p\}.$</p>
+<p><strong> Lemma 3 </strong>. <em>$\Omega_p^\perp(X)\ast A_q(Y),A_p(X)\ast \Omega_q^\perp(Y)\subset \Omega_r^\perp(X\ast Y),$ $r=p+q+1.$</em> </p>
+<p>Just use Lemma $1$.</p>
+<h2 id="en-主要定理"><a href="#en-主要定理" class="headerlink" title="主要定理"></a> main theorem</h2><p><strong> Theorem 4 </strong>. <em>$\,\forall\,w\in \Omega_r(Z),$ $w=\sum_j u_j\ast v_j,$ $u_j\in \Omega_{p_j}(X),$ $v_j\in \Omega_{q_j}(Y),$ $p_j+q_j+1=r.$</em> </p>
+<p>Known $A_r(Z)=\sum_{p+q+1=r}A_p(X)\ast A_q(Y).$
+Note$\Omega_r&#39;(Z)=\sum_{p+q+1=r} \Omega_p(X)\ast \Omega_q(Y),$
+Hope to prove$\Omega_r&#39;(Z)=\Omega_r(Z).$
+Obviously $\Omega_r&#39;(Z)\subset \Omega_r(Z).$</p>
+<p>$\,\forall\,u\in A_\ast (Z),$ With decomposition $u=u_\Omega+u_\perp.$
+$u\ast v=u_\Omega\ast v_\Omega+(\cdots),$ The parts in brackets are in $\Omega_r^\perp(Z)$,
+The previous part is in $\Omega_r&#39;(Z)$.</p>
+<p>So if $u\ast v\in\Omega_r(Z)$ is in,
+Immediately there is $u\ast v=u_\Omega\ast v_\Omega\in \Omega_r&#39;(Z).$ which proves the conclusion.</p>
+<p>Given the appropriate algebraic structure, we get</p>
+<p><strong> Theorem 5 </strong>. <em>$\Omega_\ast (Z)\cong \bigoplus \Omega_\ast (X)\otimes \Omega_\ast (Y).$</em> </p>
+<p>The article was last updated on 2024-03-08 10:52:13 </p>
+
+            
                 </div>
             
         </div>
@@ -321,7 +370,7 @@ $u\ast v=u_\Omega\ast v_\Omega+(\cdots),$ 括号内的部分都在$\Omega_r^\per
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">道路同调(5)</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Road Synchronization (5)</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Road synchronization(5)</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -343,7 +392,7 @@ $u\ast v=u_\Omega\ast v_\Omega+(\cdots),$ 括号内的部分都在$\Omega_r^\per
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">道路同调(3)</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Road Synchronization (3)</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Road synchronization(3)</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -596,9 +645,7 @@ $u\ast v=u_\Omega\ast v_\Omega+(\cdots),$ 括号内的部分都在$\Omega_r^\per
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <div class="translation-notice i18n-text" data-i18n="translation_unavailable.toc">
-                目录英文版本未发布
-            </div>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text"> Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E4%B8%BB%E8%A6%81%E5%AE%9A%E7%90%86"><span class="nav-text"> main theorem</span></a></li></ol>
         </div>
     
 </div>

@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《几何分析》笔记(3)-割迹</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Geometric Analysis Notes (3) - Notch</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Geometric Analysis&#34; Notes (3)-Cut</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-219" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-219" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-220" data-lang="zh-cn">几何</span><span data-lang-group="note-label-220" data-lang="en" style="display:none">Geometry</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90/">几何分析</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90/"><span data-lang-group="note-label-221" data-lang="zh-cn">几何分析</span><span data-lang-group="note-label-221" data-lang="en" style="display:none">Geometric Analysis</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <p>The dimension of a cut locus on a smooth Riemannian manifold - Jin-Ichi
 Itoh and Minoru Tanaka.</p>
@@ -329,49 +332,104 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p>The dimension of a cut locus on a smooth Riemannian manifold - Jin-Ichi<br>Itoh and Minoru Tanaka.</p>
-<h2 id="preparation">Preparation</h2>
-<p>Let&#39;s prove the theorem given in the first lesson. First, we give the generalized Sard&#39;s theorem:</p>
-<p><strong>Theorem 1</strong> (Morse-Sard-Federer). <em>Let $f:B_1^n(0)\rightarrow \mathbb{R}^m$ be the $C^1$ mapping, $E={x\in B_1^n(0)|r(df_x)\le k}.$ then $\dim f(E)\le k.$</em></p>
+                    
+                <p>The dimension of a cut locus on a smooth Riemannian manifold - Jin-Ichi
+Itoh and Minoru Tanaka.</p>
+<h2 id="en-准备工作"><a href="#en-准备工作" class="headerlink" title="准备工作"></a> Preparation</h2><p>Let&#39;s prove the theorem given in the first lesson. First, we give the generalized Sard&#39;s theorem:</p>
+<p><strong> Theorem 1 </strong> (Morse-Sard-Federer). <em> Let $f:B_1^n(0)\rightarrow \mathbb{R}^m$ be the mapping of $C^1$, $E=\{x\in B_1^n(0)|r(df_x)\le k\}.$ then $\dim f(E)\le k.$ </em> </p>
 <p>Recall that $M$ is a complete Riemannian manifold, $p\in M,$ then</p>
-<script type="math/tex; mode=display">
-\operatorname{Cut}_p=Q_p\cup N_p\cup L_p, \quad Q_{p}:=\{x\in \operatorname{Cut}_p|\,x,p\text{conjugate}\},</script><p>And $N_p$ is the part where exactly two line segments are connected,<br>$L_p$ is the part connected by more than three line segments.</p>
+<p>$$
+\operatorname{Cut}_p=Q_p\cup N_p\cup L_p, \quad Q_{p}:=\{x\in \operatorname{Cut}_p|\,x,p\text{共轭}\},
+$$</p>
+<p>And $N_p$ is the part where exactly two line segments are connected,
+$L_p$ is the part connected by more than three line segments.</p>
 <p>Give the following definitions:</p>
-<script type="math/tex; mode=display">
-\lambda(v)=\inf \{t>0|r(d\exp_{p,tv})\le n-1\}\in (0,+\infty],</script><script type="math/tex; mode=display">
-U_pM=\{v\in T_pM\,|\,|v|=1,\lambda(v)<+\infty\},</script><script type="math/tex; mode=display">
-\phi(v):=\exp_p\lambda(v)v: U_pM\rightarrow M.</script><p>We give the following facts: For $v\in U<em>pM,$<br>If $\nu(v):=n-r(d\exp</em>{p,\lambda(v)v})=1,$ According to Morse’s index theorem,<br>There is a neighborhood at $v$ such that $\nu(v)\equiv 1.$ According to Jacobi field properties and implicit function theorem,<br>$\lambda,\phi$ is smooth near $v$,<br>And $\,\exists\,\gamma:(-\varepsilon,\varepsilon)\rightarrow U_pM,$ such that</p>
-<script type="math/tex; mode=display">
-\gamma(0)=v,\quad \gamma'(t)\in \ker(d\exp_{p,\lambda(\gamma(t))\gamma(t)}).</script><p><strong>Lemma 2</strong>. <em>Based on the above facts, if $\phi(v)\in \operatorname{Cut}<em>p,$ then $\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|</em>{t=0}=0.$</em></p>
-<p>Note that $\widehat{\gamma}=\phi(\gamma(t)),$ is first defined by,</p>
-<script type="math/tex; mode=display">
-\frac{d {} }{d {}t}\widehat{\gamma}(t)=(\exp_{p,\lambda(v)v})_\ast \left(\frac{d {}\lambda(\gamma(t))}{d {}t}\gamma(t)+\lambda(\gamma(t))\frac{d {}\gamma(t)}{d {}t}\right)=\frac{d {}\lambda(\gamma(t))}{d {}t}(\exp_{p,\lambda(v)v})_\ast \gamma(t).</script><p>The mold length integral on both sides is<br>Assume $\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}&lt;0,$<br>Then there exists a small interval $[0,a],$ such that</p>
-<script type="math/tex; mode=display">
-l(\widehat{\gamma})+\lambda(\gamma(a))=\lambda(\gamma(0)).</script><p>Note that $\lambda(\gamma(a))\ge d(p,\phi(\gamma(a))),$<br>And since $\phi(v)\in \operatorname{Cut}_p,$<br>$\lambda(\gamma(0))=d(p,\phi(v)).$ Therefore,</p>
-<script type="math/tex; mode=display">
-d(p,\phi(v))\le l(\widehat{\gamma})+d(p,\phi(\gamma(a)))\le d(p,\phi(v)).</script><p>Therefore, the formula can only be equal to,<br>This shows that $\phi(\gamma(a))$ falls on the shortest geodesic connecting $p,\phi(v)$,<br>This contradicts the definition of $\lambda(\gamma(a))$,<br>Therefore $\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|<em>{t=0}=0,$<br>Thus $\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|</em>{t=0}=0.$</p>
-<h2 id="proof">Proof</h2>
-<p><strong>Lemma 3</strong>. <em>$\dim Q_p\le n-2.$</em></p>
-<p>We decompose the points in $Q_p$ into two parts for processing.</p>
-<script type="math/tex; mode=display">
+<p>$$
+\lambda(v)=\inf \{t&gt;0|r(d\exp_{p,tv})\le n-1\}\in (0,+\infty],
+$$</p>
+<p>$$
+U_pM=\{v\in T_pM\,|\,|v|=1,\lambda(v)&lt;+\infty\},
+$$</p>
+<p>$$
+\phi(v):=\exp_p\lambda(v)v: U_pM\rightarrow M.
+$$</p>
+<p>We give the following facts: For $v\in U_pM,$
+If $\nu(v):=n-r(d\exp_{p,\lambda(v)v})=1,$ is determined by Morse’s index theorem,
+There is a neighborhood of $v$ such that $\nu(v)\equiv 1.$ According to Jacobi field properties and implicit function theorem,
+$\lambda,\phi$ is smooth near $v$,
+And $\,\exists\,\gamma:(-\varepsilon,\varepsilon)\rightarrow U_pM,$ makes</p>
+<p>$$
+\gamma(0)=v,\quad \gamma&#39;(t)\in \ker(d\exp_{p,\lambda(\gamma(t))\gamma(t)}).
+$$</p>
+<p><strong> Lemma 2 </strong>. <em> Based on the aforementioned facts, if $\phi(v)\in \operatorname{Cut}_p,$ then $\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|_{t=0}=0.$ </em> </p>
+<p>Note that $\widehat{\gamma}=\phi(\gamma(t)),$ is first defined,</p>
+<p>$$
+\frac{d {} }{d {}t}\widehat{\gamma}(t)=(\exp_{p,\lambda(v)v})_\ast \left(\frac{d {}\lambda(\gamma(t))}{d {}t}\gamma(t)+\lambda(\gamma(t))\frac{d {}\gamma(t)}{d {}t}\right)=\frac{d {}\lambda(\gamma(t))}{d {}t}(\exp_{p,\lambda(v)v})_\ast \gamma(t).
+$$</p>
+<p>The mold length integral on both sides is
+Assumption$\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}&lt;0,$
+Then there is a small interval $[0,a],$ such that</p>
+<p>$$
+l(\widehat{\gamma})+\lambda(\gamma(a))=\lambda(\gamma(0)).
+$$</p>
+<p>Notice$\lambda(\gamma(a))\ge d(p,\phi(\gamma(a))),$
+And because $\phi(v)\in \operatorname{Cut}_p,$
+$\lambda(\gamma(0))=d(p,\phi(v)).$ Therefore,</p>
+<p>$$
+d(p,\phi(v))\le l(\widehat{\gamma})+d(p,\phi(\gamma(a)))\le d(p,\phi(v)).
+$$</p>
+<p>Therefore, the formula can only be equal to,
+This shows that $\phi(\gamma(a))$ falls on the shortest geodesic connecting $p,\phi(v)$,
+This contradicts the definition of $\lambda(\gamma(a))$,
+Therefore $\left.\frac{d {}\lambda(\gamma(t))}{d {}t}\right|_{t=0}=0,$
+Thus $\left.\frac{d {} }{d {}t}\phi(\gamma(t))\right|_{t=0}=0.$</p>
+<h2 id="en-证明"><a href="#en-证明" class="headerlink" title="证明"></a> prove</h2><p><strong> Lemma 3 </strong>. <em>$\dim Q_p\le n-2.$</em> </p>
+<p>We decompose the points in $Q_p$ into two parts for processing.
+$$
 \begin{aligned}
- Q_p&=\{\exp_pv\in Q_p|r(d\exp_{p,v})\le n-1\}\\
- &=\{\exp_pv\in Q_p|r(d\exp_{p,v})=n-1\}\cup \{\exp_pv\in Q_p|r(d\exp_{p,v})=n-2\}
- \end{aligned}</script><p> The dimensions of both parts are less than or equal to $n-2$.<br>The latter part is directly obtained from the generalized Sard&#39;s theorem, and the former part is indirectly obtained from it:<br>It is the image of ${v\in U_pM|\phi(v)\in \operatorname{Cut}_p,\nu(v)=1}$ under $\phi$,<br>And $r(d\phi)\le n-2.$</p>
-<p><strong>Lemma 4</strong>. <em>$N_p$ is an $n-1$ dimensional embedded submanifold.</em></p>
-<p>Taking $x\in N<em>p,$ there are two geodesics leading from $p$, recorded on $T_pM$, the end points are $x_1,x_2.$<br>Take their neighborhoods $U_1, U_2,$ so that $\exp_p|</em>{U_i}$ is diffeomorphic and image-consistent.</p>
-<p>Let $\phi=\exp<em>p|</em>{U<em>2}^{-1}\circ \exp_p|</em>{U<em>1}:U_1\approx U_2.$<br>Consider $f(v)=|v|-|\phi(v)|\in C^\infty(U_1).$ Let $f$ be non-degenerate,<br>Then there exists $(n-1)$ dimensional embedding submanifold $\Sigma_1,$ on which $|v|=|\phi(v)|.$<br>Let $\Sigma_2=\phi(\Sigma_1),$ $\Sigma=\exp_p\Sigma_1=\exp_p\Sigma_2.$<br>Analysis can get $\Sigma=N_p\cap \exp</em>{p}|_{U_1},$<br>Thus $N_p$ is an $n-1$ dimensional embedding submanifold.</p>
+ Q_p&amp;=\{\exp_pv\in Q_p|r(d\exp_{p,v})\le n-1\}\\
+ &amp;=\{\exp_pv\in Q_p|r(d\exp_{p,v})=n-1\}\cup \{\exp_pv\in Q_p|r(d\exp_{p,v})=n-2\}
+ \end{aligned}
+$$
+ The dimensions of both parts are less than or equal to $n-2$.
+The latter part is directly obtained from the generalized Sard&#39;s theorem, and the former part is indirectly obtained from it:
+It is the image of $\{v\in U_pM|\phi(v)\in \operatorname{Cut}_p,\nu(v)=1\}$ under $\phi$,
+And $r(d\phi)\le n-2.$</p>
+<p><strong> Lemma 4 </strong>. <em> $N_p$ is the $n-1$-dimensional embedding submanifold. </em> </p>
+<p>Take $x\in N_p,$ and there are two geodesic lines leading from $p$. Record them on $T_pM$ and their end points are $x_1,x_2.$.
+Take their neighborhood $U_1,U_2,$ such that $\exp_p|_{U_i}$ is diffeomorphic and image-consistent.</p>
+<p>Let$\phi=\exp_p|_{U_2}^{-1}\circ \exp_p|_{U_1}:U_1\approx U_2.$
+Considering $f(v)=|v|-|\phi(v)|\in C^\infty(U_1).$, we might as well assume that $f$ is non-degenerate,
+Then there is a $(n-1)$-dimensional embedding submanifold $\Sigma_1,$ on which there is $|v|=|\phi(v)|.$
+Order $\Sigma_2=\phi(\Sigma_1),$ $\Sigma=\exp_p\Sigma_1=\exp_p\Sigma_2.$
+Analysis can get $\Sigma=N_p\cap \exp_{p}|_{U_1},$
+Thus $N_p$ is a $n-1$-dimensional embedding submanifold.</p>
 <p>Similarly, it can be proved that:</p>
-<p><strong>Lemma 5</strong>. <em>$\dim L_p\le n-2$</em></p>
-<p>So we can see that the bad parts in $\partial B_R^g(p)\cap N_p$ are mainly concentrated on $N_p$.</p>
-<script type="math/tex; mode=display">
-\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup (\partial B_R^g(p)\cap N_p)\cup (\partial B_R^g(p)\cap (L_p\cup Q_p)).</script><p>On $\widehat{C}_p\subset T_pM$, take the normal coordinate system $\widehat{g}=\exp_p^\ast (g),$<br>$(\widehat{C}_p,\widehat{g})\cong (C_p,g).$ $r(v)=|v|$ is a smooth function.<br>Consider $\widehat{N}_p=\exp_p^{-1}(N_p)$ to be the $n-1$ dimensional submanifold of $\widehat{C}_p$,<br>Then the fact is:</p>
-<p><strong>Proposition 6</strong>. <em>$\widehat{N}_p$ has countable connected branches and is star-shaped.</em></p>
-<p>According to Sard&#39;s theorem, $\,\exists\,A\subset \mathbb{R}_+,$ $L^1(A)=0,$<br>$R\notin A$ is the regular value of $r(v)$ on $\widehat{N}_p$. $\,\forall\,a.e. R,$</p>
-<script type="math/tex; mode=display">
-\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup \{\text{zero test set}\}</script><p>For $R that is not a regular value, $ $\partial B_R^g(p)\cap N_p$ is an $n-1$ dimensional varifold,<br>is $\exp_p(\partial B_R^n(0)\cap \widehat{N}_p).$<br>The tangent spaces of $\widehat{N}_p$ and $\partial B_R^n(0)$ at the intersection of bad points are consistent,<br>There is a volume formula that will be discussed later:</p>
-<script type="math/tex; mode=display">
-\mathcal{H}^{n-1}(\partial B_R^g(p)\cap N_p)=\int \Theta d\mathcal{H}^{n-1}</script><p>The article was last updated on 2022-09-22 22:35:04</p>
+<p><strong> Lemma 5 </strong>. <em>$\dim L_p\le n-2$</em> </p>
+<p>So we can see that the bad parts in $\partial B_R^g(p)\cap N_p$ are mainly concentrated in $N_p$.</p>
+<p>$$
+\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup (\partial B_R^g(p)\cap N_p)\cup (\partial B_R^g(p)\cap (L_p\cup Q_p)).
+$$</p>
+<p>On $\widehat{C}_p\subset T_pM$, take the normal coordinate system $\widehat{g}=\exp_p^\ast (g),$
+$(\widehat{C}_p,\widehat{g})\cong (C_p,g).$ $r(v)=|v|$ is a smooth function.
+Consider $\widehat{N}_p=\exp_p^{-1}(N_p)$ to be the $n-1$-dimensional submanifold of $\widehat{C}_p$,
+Then the fact is:</p>
+<p><strong> Proposition 6 </strong>. <em> $\widehat{N}_p$ has countable connected components and is star-shaped. </em> </p>
+<p>From Sard’s theorem, $\,\exists\,A\subset \mathbb{R}_+,$ $L^1(A)=0,$
+$R\notin A$ is the regular value of $r(v)$ on $\widehat{N}_p$. $\,\forall\,a.e. R,$</p>
+<p>$$
+\partial B_R^g(p)=(\partial B_R^g(p)\cap S_p)\cup \{\text{零测集}\}
+$$</p>
+<p>For $R,$ $\partial B_R^g(p)\cap N_p$ that is not a regular value, it is a $n-1$ dimensional varifold,
+for $\exp_p(\partial B_R^n(0)\cap \widehat{N}_p).$
+The tangent spaces of $\widehat{N}_p$ and $\partial B_R^n(0)$ at the intersection of bad points are consistent.
+There is a volume formula that will be discussed later:</p>
+<p>$$
+\mathcal{H}^{n-1}(\partial B_R^g(p)\cap N_p)=\int \Theta d\mathcal{H}^{n-1}
+$$</p>
+<p>The article was last updated on 2022-09-22 22:35:04 </p>
+
+            
                 </div>
             
         </div>
@@ -414,7 +472,7 @@ d(p,\phi(v))\le l(\widehat{\gamma})+d(p,\phi(\gamma(a)))\le d(p,\phi(v)).</scrip
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《几何分析》笔记(4)-割迹应用</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Geometric Analysis Notes (4) - Cut App</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">&#34;Geometric Analysis&#34; Notes (4)-Cut Application</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -436,7 +494,7 @@ d(p,\phi(v))\le l(\widehat{\gamma})+d(p,\phi(\gamma(a)))\le d(p,\phi(v)).</scrip
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《代数拓扑2》笔记(3)-谱序列的应用</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Algebraic Topology 2 Notes (3) - Application of Spectral Sequences</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Algebraic Topology 2&#34; Notes (3) - Application of Spectral Sequences</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -689,7 +747,7 @@ d(p,\phi(v))\le l(\widehat{\gamma})+d(p,\phi(\gamma(a)))\le d(p,\phi(v)).</scrip
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#preparation"><span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#proof"><span class="nav-text">Proof</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text"> Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E8%AF%81%E6%98%8E"><span class="nav-text"> prove</span></a></li></ol>
         </div>
     
 </div>

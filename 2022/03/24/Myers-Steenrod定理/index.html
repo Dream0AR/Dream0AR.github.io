@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/">命题与定理</a>&nbsp;
+                        <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/"><span data-lang-group="note-label-266" data-lang="zh-cn">命题与定理</span><span data-lang-group="note-label-266" data-lang="en" style="display:none">Propositions and Theorems</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-267" data-lang="zh-cn">几何</span><span data-lang-group="note-label-267" data-lang="en" style="display:none">Geometry</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/">黎曼几何</a>&nbsp;
+                        &gt; <a href="/categories/%E5%91%BD%E9%A2%98%E4%B8%8E%E5%AE%9A%E7%90%86/%E5%87%A0%E4%BD%95/%E9%BB%8E%E6%9B%BC%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-268" data-lang="zh-cn">黎曼几何</span><span data-lang-group="note-label-268" data-lang="en" style="display:none">Riemannian Geometry</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <p>一开始看到流形上的等距变换, 自然想到保持范数$\Leftrightarrow$保持内积,
 从而保持黎曼度量. 但事实上等距(依照初始定义)保持的是流形上的距离,
@@ -293,26 +296,68 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <p>When I first saw the isometric transformation on the manifold, I naturally thought of maintaining the norm $\Leftrightarrow$ and maintaining the inner product.<br>Thus maintaining the Riemannian metric. But in fact isometric (according to the initial definition) maintains the distance on the manifold,<br>Rather than the distance in tangent space, this matter needs to be proved. The more important point is,<br>The aforementioned equivalence relationship only holds true for linear transformations.<br>The tangent mapping is a linear transformation based on the differentiability of the mapping.<br>In fact, we do not need to require the isometric transformation to be differentiable in advance, this is the Myers-Steenrod theorem.</p>
-<p><strong>Theorem 1</strong>. <em>If $\phi:M\rightarrow N$ is an isometric surjection, then $\phi$ is isomorphic, especially it is smooth.</em></p>
-<p><strong>Certificate:</strong> Since geodesics have local extreme shortness, isometric transformation maps geodesics to geodesics.<br>Assume $\phi(p)=q,$ select $v\in T_pM,$ $|v|$ is sufficiently small.<br>Take the geodesic $\gamma,$ starting from point $p$ and taking $v$ as the initial tangent vector.<br>Then $d(p,\gamma(1))=|v|.$ Since $\phi$ is an isometric transformation,<br>$d(q,\phi\circ\gamma(1))=|v|.$ If $\phi$ is differentiable,<br>Then since $\phi\circ\gamma$ is also a geodesic,<br>$|v|=|(\phi\circ\gamma)&#39;(0)|=|d\phi(v)|.$<br>At this time $d\phi$ is a linear transformation that maintains the norm, so $d\phi$ maintains the inner product, that is, it maintains the Riemannian metric,<br>Therefore $\phi$ is isomorphism.</p>
-<p>When $\phi$ is not necessarily differentiable, since $\phi$ maintains the geodesic,<br>We can define $d\phi:T_pM\rightarrow T_pN,$ by the tangent vector of the geodesic<br>It also maintains the norm. But it is not necessarily a linear transformation at this time, but we can prove this.<br>Assume that the following conclusion is known:</p>
-<script type="math/tex; mode=display">
-\lim_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.</script><p>Select $A,B\in T<em>pM,$ and get the corresponding geodesics $\gamma_A,\gamma_B.$. Note $A&#39;=d\phi(A),$<br>$B&#39;=d\phi(B),$ and the corresponding geodesics $\gamma</em>{A&#39;},\gamma<em>{B&#39;},$<br>We have $d(\gamma_A(t),\gamma_B(t))=d(\gamma</em>{A&#39;}(t),\gamma_{B&#39;}(t)),$<br>Thus:</p>
-<script type="math/tex; mode=display">
-1=\lim_{t\rightarrow 0}\frac{d(\exp_p(tA),\exp_p(tB))}{t|A-B|}=\lim_{t\rightarrow 0}\frac{d(\exp_q(tA'),\exp_q(tB'))}{t|A-B|}=\frac{|A'-B'|}{|A-B|},</script><p>Therefore $|d\phi(A)-d\phi(B)|=|A-B|,$ $\,\forall\,A,B\in T_pM.$<br>According to the Mazur-Ulam theorem, combined with $d\phi(0)=0,$, it shows that $d\phi$ is a linear transformation,<br>Thus the proposition is proved.</p>
-<p><strong>Lemma 2</strong>. <em>$\lim\limits_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.$</em></p>
-<p><strong>Proof:</strong> We first prove the following fact, for curve $c:I\rightarrow T_pM,$<br>If $|c&#39;|$ remains bounded,</p>
-<script type="math/tex; mode=display">
-\lim_{c(I)\rightarrow 0}\frac{l(\exp_p(c))}{l(c)}=1.</script><p>We have $l(c)=\int |c&#39;|,$<br>$l(\exp<em>p(c))=\int |d\exp_p(c&#39;(t))|</em>{\exp<em>p(c(t))}.$<br>Since $d\exp_p$ is an identity transformation at the origin, and $g$ is smooth,<br>The metrics $T</em>{\exp_p(c(t))}M$ and $T_pM$ are sufficiently close when $c(I)\rightarrow 0$,<br>$l(\exp_p(c))=l(c)+o(l(c)),$ From this we know that the fact is true.</p>
-<p>Next, let $\gamma$ be the curve connecting $A and B$, so that $\exp_p(\gamma)$ is the geodesic;<br>$\xi$ is the straight line connecting $A,B$. Then</p>
-<script type="math/tex; mode=display">
-|A-B|=l(\xi)\le l(\gamma),</script><script type="math/tex; mode=display">
-d(\exp_p(A),\exp_p(B))=l(\exp_p(\gamma))\le l(\exp_p(\xi)).</script><p>Therefore,</p>
-<script type="math/tex; mode=display">
-\frac{l(\exp_p(\gamma))}{l(\gamma)}\le \frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=\frac{l(\exp_p(\gamma))}{l(\xi)}\le \frac{l(\exp_p(\xi))}{l(\xi)}.</script><p>When $A,B\rightarrow 0\in T_pM$, both sides tend to $1,$ and the middle term also tends to $1.$</p>
-<p>Reference: <a target="_blank" rel="noopener" href="https://ncatlab.org/nlab/show/Myers-Steenrod+theorem">https://ncatlab.org/nlab/show/Myers-Steenrod+theorem</a></p>
-<p>The article was last updated on 2022-03-24 15:24:34</p>
+                    
+                <p>When I first saw the isometric transformation on the manifold, I naturally thought of maintaining the norm $\Leftrightarrow$ and maintaining the inner product.
+Thus maintaining the Riemannian metric. But in fact isometric (according to the initial definition) maintains the distance on the manifold,
+Rather than the distance in tangent space, this matter needs to be proved. The more important point is,
+The aforementioned equivalence relationship only holds true for linear transformations.
+The tangent mapping is a linear transformation based on the differentiability of the mapping.
+In fact, we do not need to require the isometric transformation to be differentiable in advance, this is the Myers-Steenrod theorem.</p>
+<p><strong> Theorem 1 </strong>. <em> If $\phi:M\rightarrow N$ is an isometric surjection, then $\phi$ is isomorphic, especially it is smooth. </em> </p>
+<p><strong> Certificate: </strong> Since geodesics have local extreme shortness, isometric transformation maps geodesics to geodesics.
+Let $\phi(p)=q,$ select $v\in T_pM,$ and $|v|$ be sufficiently small.
+Take the geodesic $\gamma,$ starting from point $p$ and taking $v$ as the initial tangent vector.
+Then $d(p,\gamma(1))=|v|.$ since $\phi$ is an isometric transformation,
+$d(q,\phi\circ\gamma(1))=|v|.$ If $\phi$ is differentiable,
+Then since $\phi\circ\gamma$ is also a geodesic,
+$|v|=|(\phi\circ\gamma)&#39;(0)|=|d\phi(v)|.$
+At this time $d\phi$ is a linear transformation that maintains the norm, so $d\phi$ maintains the inner product, that is, maintains the Riemannian metric,
+Therefore $\phi$ is isomorphism.</p>
+<p>When $\phi$ is not necessarily differentiable, since $\phi$ maintains the geodesic,
+We can define $d\phi:T_pM\rightarrow T_pN,$ by the tangent vector of the geodesic
+It also maintains the norm. But it is not necessarily a linear transformation at this time, but we can prove this.
+Assume that the following conclusion is known:</p>
+<p>$$
+\lim_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.
+$$</p>
+<p>Select $A,B\in T_pM,$ and take the corresponding geodesic $\gamma_A,\gamma_B.$ and record $A&#39;=d\phi(A),$
+$B&#39;=d\phi(B),$ and the corresponding geodesic $\gamma_{A&#39;},\gamma_{B&#39;},$
+We have $d(\gamma_A(t),\gamma_B(t))=d(\gamma_{A&#39;}(t),\gamma_{B&#39;}(t)),$
+Thus:</p>
+<p>$$
+1=\lim_{t\rightarrow 0}\frac{d(\exp_p(tA),\exp_p(tB))}{t|A-B|}=\lim_{t\rightarrow 0}\frac{d(\exp_q(tA&#39;),\exp_q(tB&#39;))}{t|A-B|}=\frac{|A&#39;-B&#39;|}{|A-B|},
+$$</p>
+<p>Therefore $|d\phi(A)-d\phi(B)|=|A-B|,$ $\,\forall\,A,B\in T_pM.$
+According to the Mazur-Ulam theorem, combined with $d\phi(0)=0,$, it shows that $d\phi$ is a linear transformation,
+Thus the proposition is proved.</p>
+<p><strong> Lemma 2 </strong>. <em>$\lim\limits_{A,B\rightarrow 0\in T_pM}\frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=1.$</em> </p>
+<p><strong> Certificate: </strong> We first prove the following fact, for the curve $c:I\rightarrow T_pM,$
+If $|c&#39;|$ remains bounded,</p>
+<p>$$
+\lim_{c(I)\rightarrow 0}\frac{l(\exp_p(c))}{l(c)}=1.
+$$</p>
+<p>We have $l(c)=\int |c&#39;|,$
+$l(\exp_p(c))=\int |d\exp_p(c&#39;(t))|_{\exp_p(c(t))}.$
+Since $d\exp_p$ is an identity transformation at the origin, and $g$ is smooth,
+$T_{\exp_p(c(t))}M$ and $T_pM$ metrics are sufficiently close at $c(I)\rightarrow 0$,
+$l(\exp_p(c))=l(c)+o(l(c)),$ From this we know that the facts are established.</p>
+<p>Next, let $\gamma$ be the curve connecting $A,B$, making $\exp_p(\gamma)$ a geodesic;
+$\xi$ is a straight line connecting $A,B$. Then </p>
+<p>$$
+|A-B|=l(\xi)\le l(\gamma),
+$$</p>
+<p>$$
+d(\exp_p(A),\exp_p(B))=l(\exp_p(\gamma))\le l(\exp_p(\xi)).
+$$</p>
+<p>Therefore,</p>
+<p>$$
+\frac{l(\exp_p(\gamma))}{l(\gamma)}\le \frac{d(\exp_p(A),\exp_p(B))}{|A-B|}=\frac{l(\exp_p(\gamma))}{l(\xi)}\le \frac{l(\exp_p(\xi))}{l(\xi)}.
+$$</p>
+<p>When $A,B\rightarrow 0\in T_pM$, both sides tend to $1,$ and the middle term also tends to $1.$</p>
+<p>Reference: <a class="link"   target="_blank" rel="noopener" href="https://ncatlab.org/nlab/show/Myers-Steenrod+theorem" >https://ncatlab.org/nlab/show/Myers-Steenrod+theorem<i class="fas fa-external-link-alt"></i></a></p>
+<p>The article was last updated on 2022-03-24 15:24:34 </p>
+
+            
                 </div>
             
         </div>
@@ -377,7 +422,7 @@ d(\exp_p(A),\exp_p(B))=l(\exp_p(\gamma))\le l(\exp_p(\xi)).</script><p>Therefore
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《黎曼几何初步》笔记(3)-测地线</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Preliminary Riemannian Geometry Notes (3) - Geodesic</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Preliminary Riemannian Geometry&#34; Notes (3) - Geodesics</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>

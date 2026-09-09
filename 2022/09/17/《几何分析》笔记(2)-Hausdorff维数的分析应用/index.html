@@ -171,7 +171,7 @@
                 <span class="title-hover-animation">
                     <span data-lang-group="article-title" data-lang="zh-cn">《几何分析》笔记(2)-Hausdorff维数的分析应用</span>
                 
-                    <span data-lang-group="article-title" data-lang="en" style="display:none">Geometric Analysis Notes (2) - Analytical Application of the Hausdorff Dimension</span>
+                    <span data-lang-group="article-title" data-lang="en" style="display:none">&#34;Geometric Analysis&#34; Notes (2)-Analytical Application of Hausdorff Dimension</span>
                 
             </span>
         </div>
@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-231" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-231" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/">几何</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/"><span data-lang-group="note-label-232" data-lang="zh-cn">几何</span><span data-lang-group="note-label-232" data-lang="en" style="display:none">Geometry</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90/">几何分析</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E5%87%A0%E4%BD%95/%E5%87%A0%E4%BD%95%E5%88%86%E6%9E%90/"><span data-lang-group="note-label-233" data-lang="zh-cn">几何分析</span><span data-lang-group="note-label-233" data-lang="en" style="display:none">Geometric Analysis</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><p>对完备流形$(M,g),$ 紧集$E,$ $\dim_\mathcal{H}E=p.$
 那么$\,\forall\,p&#39;&gt;p,$ $\,\forall\,\varepsilon,\delta&gt;0,$
@@ -302,42 +305,77 @@ $$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="preparation">Preparation</h2>
-<p>For complete manifold $(M,g),$ compact set $E,$ $\dim<em>\mathcal{H}E=p.$<br>Then $\,\forall\,p&#39;&gt;p,$ $\,\forall\,\varepsilon,\delta&gt;0,$<br>$\,\exists\,(x_i,r_i&lt;\delta),$<br>Finite Union$\bigcup \overline{B}</em>{r_i}(x_i)\supset E,$<br>Such that $\sum \omega(p&#39;)r_i^{p&#39;}&lt;\varepsilon.$<br>Let $\eta\in C^\infty(\mathbb{R}),$ such that</p>
-<script type="math/tex; mode=display">
+                    
+                <h2 id="en-准备工作"><a href="#en-准备工作" class="headerlink" title="准备工作"></a> Preparation</h2><p>For complete manifold $(M,g),$ compact set $E,$ $\dim_\mathcal{H}E=p.$
+Then $\,\forall\,p&#39;&gt;p,$ $\,\forall\,\varepsilon,\delta&gt;0,$
+$\,\exists\,(x_i,r_i&lt;\delta),$
+Limited Union$\bigcup \overline{B}_{r_i}(x_i)\supset E,$
+Make$\sum \omega(p&#39;)r_i^{p&#39;}&lt;\varepsilon.$
+Let $\eta\in C^\infty(\mathbb{R}),$ make
+$$
 \eta=
  \left\{\begin{aligned}
- &1,&&t<1\\
- &\in[0,1],&&t\in [1,2]\\
- &0,&&t>2.
- \end{aligned}\right.</script><p> We give the following definitions and properties:</p>
-<script type="math/tex; mode=display">
-\eta_i(x)=\eta\left(\frac{d(x,x_i)}{r_i}\right)\in \mathscr{D}(M),\quad \eta_i|_{B^g_{r_i}(x_i)}=1,\quad \eta_i|_{B^g_{2r_i}(x_i)^c}=0.</script><p>Calculation found that its gradient satisfies the following properties:</p>
-<script type="math/tex; mode=display">
-|\nabla_g\eta_i|=|\eta'|\left|\frac{\nabla_g d(x,x_i)}{r_i}\right|<\frac{C}{r_i}.</script><script type="math/tex; mode=display">
-\int_M |\nabla_g\eta_i|^{n-p'}dV_g\le \frac{C}{r_i^{n-p'} }\mathrm{vol}(B_{2r_i}^g(x_i))\le Cr_i^{p'}.</script><p>Next, define</p>
-<script type="math/tex; mode=display">
-\phi=\max\{\eta_i\}\in C^p(M)\cap W^{1,n-p'}(M),</script><p>Then from the previous conditions and conclusions,</p>
-<script type="math/tex; mode=display">
-\int_M|\nabla \phi|^{n-p'}\le C\varepsilon,</script><script type="math/tex; mode=display">
-\,\exists\,U\subset B_{2r_i}^g(E), \quad \phi|_U\equiv 1,\quad \phi|_{\left(B_{2r_i}^g(E)\right)^c}=0.</script><p>For simplicity, define $r=d(\partial U,E),$ then $\phi|_{B_r^g(E)}\equiv 1.$<br>Therefore as $\varepsilon,\delta$ changes,<br>We can show that $\,\exists\,\phi_k,\delta_k,r_k,$ such that:</p>
+ &amp;1,&amp;&amp;t&lt;1\\
+ &amp;\in[0,1],&amp;&amp;t\in [1,2]\\
+ &amp;0,&amp;&amp;t&gt;2.
+ \end{aligned}\right.
+$$
+ We give the following definitions and properties:</p>
+<p>$$
+\eta_i(x)=\eta\left(\frac{d(x,x_i)}{r_i}\right)\in \mathscr{D}(M),\quad \eta_i|_{B^g_{r_i}(x_i)}=1,\quad \eta_i|_{B^g_{2r_i}(x_i)^c}=0.
+$$</p>
+<p>Calculation found that its gradient satisfies the following properties:</p>
+<p>$$
+|\nabla_g\eta_i|=|\eta&#39;|\left|\frac{\nabla_g d(x,x_i)}{r_i}\right|&lt;\frac{C}{r_i}.
+$$</p>
+<p>$$
+\int_M |\nabla_g\eta_i|^{n-p&#39;}dV_g\le \frac{C}{r_i^{n-p&#39;} }\mathrm{vol}(B_{2r_i}^g(x_i))\le Cr_i^{p&#39;}.
+$$</p>
+<p>Next, define </p>
+<p>$$
+\phi=\max\{\eta_i\}\in C^p(M)\cap W^{1,n-p&#39;}(M),
+$$</p>
+<p>Then from the previous conditions and conclusions, </p>
+<p>$$
+\int_M|\nabla \phi|^{n-p&#39;}\le C\varepsilon,
+$$</p>
+<p>$$
+\,\exists\,U\subset B_{2r_i}^g(E), \quad \phi|_U\equiv 1,\quad \phi|_{\left(B_{2r_i}^g(E)\right)^c}=0.
+$$</p>
+<p>For simplicity, define $r=d(\partial U,E),$ then $\phi|_{B_r^g(E)}\equiv 1.$
+Therefore as $\varepsilon,\delta$ changes,
+We can show $\,\exists\,\phi_k,\delta_k,r_k,$ such that:</p>
 <ol>
 <li><p>$r_k&lt;\delta_k\rightarrow 0,$</p>
 </li>
-<li><p>$\operatorname{supp}\phi<em>k\subset B</em>{\delta<em>k}^g(E),$<br>$\phi|</em>{B_{r_k}^g(E)}=1,$</p>
+<li><p>$\operatorname{supp}\phi_k\subset B_{\delta_k}^g(E),$
+$\phi|_{B_{r_k}^g(E)}=1,$</p>
 </li>
-<li><p>$\phi_k\in C^0(M)\cap W^{1,n-p&#39;}(M),$<br>$\int_M|\nabla_g\phi_k|^{n-p&#39;}dV_g\rightarrow 0.$<br>From the approximation, we can set $\phi_k\in \mathscr{D}(M).$</p>
+<li><p>$\phi_k\in C^0(M)\cap W^{1,n-p&#39;}(M),$
+$\int_M|\nabla_g\phi_k|^{n-p&#39;}dV_g\rightarrow 0.$
+It can be set by approximation $\phi_k\in \mathscr{D}(M).$</p>
 </li>
 </ol>
-<h2 id="application">Application</h2>
-<p>Let $\Omega$ be a bounded region in $M$, $\partial\Omega=\Gamma_1\cup \Gamma_2,$<br>Among them, the dimension of $\Gamma_1$ is less than $n-1$ and is a compact set, and $\Gamma_2$ is of dimension $n-1$.<br>And $\mathcal{H}^{n-1}(\Gamma_2)&lt;+\infty.$<br>Let us prove that for the smooth vector field $X,$ on $M$</p>
-<script type="math/tex; mode=display">
-\int_\Omega \operatorname{div}X=\int_{\Gamma_2} X\cdot n.</script><p>Take $p&#39;\in (p,n-1),$ and let $E=\Gamma_1,$ $\,\exists\,\phi_k$ as mentioned above,<br>By digging out the bad pixels, we have:</p>
-<script type="math/tex; mode=display">
-\int_M\operatorname{div}(1-\phi_k)X=\int_{\Gamma_2}(1-\phi_k)X\cdot n.</script><p>And from the $\phi_k$ property and the Hausdorff dimension property, we know that,</p>
-<script type="math/tex; mode=display">
-\int_\Omega \nabla \phi_k \cdot X\rightarrow 0,\quad \int_\Omega \phi_k \operatorname{div}X\rightarrow 0,\quad \int_\Omega \phi_kX\cdot n\rightarrow 0.</script><p>This leads to the previous conclusion.</p>
-<p>The article was last updated on 2022-09-17 22:53:07</p>
+<h2 id="en-应用"><a href="#en-应用" class="headerlink" title="应用"></a> Application</h2><p>Let $\Omega$ be the bounded area in $M$, $\partial\Omega=\Gamma_1\cup \Gamma_2,$
+Among them, the dimension of $\Gamma_1$ is smaller than $n-1$ and is a compact set, $\Gamma_2$ is of dimension $n-1$,
+And $\mathcal{H}^{n-1}(\Gamma_2)&lt;+\infty.$
+Let us prove that for $M$ the smooth vector field $X,$</p>
+<p>$$
+\int_\Omega \operatorname{div}X=\int_{\Gamma_2} X\cdot n.
+$$</p>
+<p>Take $p&#39;\in (p,n-1),$ arbitrarily and let $E=\Gamma_1,$ $\,\exists\,\phi_k$ be as mentioned above,
+By digging out the bad pixels, we have:</p>
+<p>$$
+\int_M\operatorname{div}(1-\phi_k)X=\int_{\Gamma_2}(1-\phi_k)X\cdot n.
+$$</p>
+<p>And from the $\phi_k$ property and the Hausdorff dimension property, we know that,</p>
+<p>$$
+\int_\Omega \nabla \phi_k \cdot X\rightarrow 0,\quad \int_\Omega \phi_k \operatorname{div}X\rightarrow 0,\quad \int_\Omega \phi_kX\cdot n\rightarrow 0.
+$$</p>
+<p>This leads to the previous conclusion.</p>
+<p>The article was last updated on 2022-09-17 22:53:07 </p>
+
+            
                 </div>
             
         </div>
@@ -380,7 +418,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">《超图及其应用》笔记(1)-基本概念</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Hypergraphics and Applications Notes (1) - Basic Concepts</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Notes on &#34;Hypergraph and Its Application&#34; (1)-Basic Concepts</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -402,7 +440,7 @@ $$</p>
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《几何分析》笔记(1)-测地球</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Geometric Analysis Notes (1) - Earth Measurement</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Geometric Analysis&#34; Notes (1)-Measuring the Earth</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -655,7 +693,7 @@ $$</p>
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#preparation"><span class="nav-text">Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application"><span class="nav-text">Application</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-text"> Preparation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E5%BA%94%E7%94%A8"><span class="nav-text"> Application</span></a></li></ol>
         </div>
     
 </div>

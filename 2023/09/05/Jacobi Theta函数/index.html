@@ -197,15 +197,15 @@
             <ul>
                 
                     <li>
-                        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>&nbsp;
+                        <a href="/categories/%E7%AC%94%E8%AE%B0/"><span data-lang-group="note-label-72" data-lang="zh-cn">笔记</span><span data-lang-group="note-label-72" data-lang="en" style="display:none">Notes</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/">科研</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/"><span data-lang-group="note-label-73" data-lang="zh-cn">科研</span><span data-lang-group="note-label-73" data-lang="en" style="display:none">Research</span></a>&nbsp;
                     </li>
                 
                     <li>
-                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/%E6%A0%BC%E7%82%B9/">格点</a>&nbsp;
+                        &gt; <a href="/categories/%E7%AC%94%E8%AE%B0/%E7%A7%91%E7%A0%94/%E6%A0%BC%E7%82%B9/"><span data-lang-group="note-label-74" data-lang="zh-cn">格点</span><span data-lang-group="note-label-74" data-lang="en" style="display:none">Lattices</span></a>&nbsp;
                     </li>
                 
             </ul>
@@ -229,6 +229,9 @@
         
 
         <div class="article-content markdown-body">
+            
+                <p class="translation-notice" data-lang-group="article-translation-notice" data-lang="en" style="display:none" lang="en">Machine-translated from Chinese.</p>
+            
             <div data-lang-group="article-content-body" data-lang="zh-cn">
                 <h2 id="格点上的Poisson求和"><a href="#格点上的Poisson求和" class="headerlink" title="格点上的Poisson求和"></a>格点上的Poisson求和</h2><p>对充分好的函数, 我们有Fourier变换</p>
 <p>$$
@@ -335,51 +338,110 @@ $k\in\mathbb{Z}_+.$</p>
             </div>
             
                 <div data-lang-group="article-content-body" data-lang="en" style="display:none">
-                    <h2 id="poisson-summation-on-grid-points">Poisson summation on grid points</h2>
-<p>For sufficiently good functions, we have the Fourier transform</p>
-<script type="math/tex; mode=display">
-\widehat f(x)=\int_{-\infty}^{\infty} f(y)e^{-2\pi ixy}dy.</script><p><strong>Proposition 1</strong> (Parseval identity). <em>$\sum<em>{n=-\infty}^{\infty} f(n)=\sum</em>{n=-\infty}^{\infty}\widehat f(n).$</em></p>
-<p>Consider a periodic function</p>
-<script type="math/tex; mode=display">
-F(x)=\sum_{n=-\infty}^{\infty} f(x+n).</script><p>$F$ can be regarded as a function on $\mathbb{R}/\mathbb{Z}$, with Fourier expansion</p>
-<script type="math/tex; mode=display">
-F(x)=\sum_{m=-\infty}^{\infty} a_m e^{2\pi imx},</script><script type="math/tex; mode=display">
-a_m=\int_0^1 F(x) e^{-2\pi imx}dx=\int_0^1 \sum_{n=-\infty}^{\infty} f(x+n)e^{-2\pi im(x+n)}dx=\int_{-\infty}^\infty f(x)e^{-2\pi imx}dx=\widehat f(m).</script><p>Thus</p>
-<script type="math/tex; mode=display">
-\sum_{n=-\infty}^{\infty}f(n)=F(0)=\sum_{m=-\infty}^{\infty}a_m=\sum_{n=-\infty}^\infty \widehat f(n).</script><p>The proposition is proved.</p>
+                    
+                <h2 id="en-格点上的Poisson求和"><a href="#en-格点上的Poisson求和" class="headerlink" title="格点上的Poisson求和"></a> Poisson summation on grid points</h2><p>For sufficiently good functions, we have the Fourier transform</p>
+<p>$$
+\widehat f(x)=\int_{-\infty}^{\infty} f(y)e^{-2\pi ixy}dy.
+$$</p>
+<p><strong> Proposition 1 </strong> (Parseval identity). <em>$\sum_{n=-\infty}^{\infty} f(n)=\sum_{n=-\infty}^{\infty}\widehat f(n).$</em> </p>
+<p>Consider a periodic function </p>
+<p>$$
+F(x)=\sum_{n=-\infty}^{\infty} f(x+n).
+$$</p>
+<p>$F$ can be regarded as a function on $\mathbb{R}/\mathbb{Z}$, with Fourier expansion</p>
+<p>$$
+F(x)=\sum_{m=-\infty}^{\infty} a_m e^{2\pi imx},
+$$</p>
+<p>$$
+a_m=\int_0^1 F(x) e^{-2\pi imx}dx=\int_0^1 \sum_{n=-\infty}^{\infty} f(x+n)e^{-2\pi im(x+n)}dx=\int_{-\infty}^\infty f(x)e^{-2\pi imx}dx=\widehat f(m).
+$$</p>
+<p>thereby</p>
+<p>$$
+\sum_{n=-\infty}^{\infty}f(n)=F(0)=\sum_{m=-\infty}^{\infty}a_m=\sum_{n=-\infty}^\infty \widehat f(n).
+$$</p>
+<p>The proposition is proved.</p>
 <p>Generally, for any $n$-dimensional real vector space, equipped with a translation-invariant measure $\mu,$, there is a Fourier transform</p>
-<script type="math/tex; mode=display">
-\widehat f(x)=\int_V e^{-2\pi i\left<{}y,x\right>}f(y)\mu(y).</script><p>At this time $\widehat f$ is a sufficiently good function on $V^\ast $.</p>
-<p>Call $\Gamma$ the lattice point in $V$,<br>If $\Gamma$ takes a set of linearly independent vectors ${v_1,\cdots,v_n}$ in $V$ as the $\mathbb{Z}$-basis.<br>The dual lattice point $\Gamma&#39;$ in $V^\ast $ is defined as</p>
-<script type="math/tex; mode=display">
-\Gamma':=\{x\in V^\ast \mid \left<{}y,x\right>\in \mathbb{Z}, \,\forall\,y\in \Gamma\}.</script><p>At this time, remember $A=[v_1,\cdots,v_n],$<br>Then the column vector of $(A^{\ast })^{-1}$ is a set of $\mathbb{Z}$-basis of $\Gamma&#39;$,<br>Where ${}^\ast $ is the dual matrix. When $V=\mathbb{R}^n,$<br>When $\left&lt;{}-,-\right&gt;$ takes the standard inner product, ${}^\ast $ is the transpose.</p>
-<p><strong>Proposition 2</strong> (Poisson summation on the grid point). <em>The volume of the grid point $\Gamma$ in $V$ is denoted as $\mu(V/\Gamma).$ If the function $f$ has Fourier transformation, we have</em></p>
-<script type="math/tex; mode=display">
-\sum_{y\in\Gamma} f(y)=\frac{1}{\mu(V/\Gamma)}\sum_{x\in \Gamma'}\widehat f(x).</script><p>Perform scale transformation and maintain both sides of the equation (there are measurement terms in the Fourier transformation),<br>Therefore, we can always set $\mu(V/\Gamma)=1.$. Let the basis of $\Gamma$ be the matrix $A,$. Then</p>
-<script type="math/tex; mode=display">
-\sum_{y\in \Gamma}f(y)=\sum_{y\in \mathbb{Z}^n}f(Ay)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y),\quad \widetilde f(y)=:f(Ay).</script><script type="math/tex; mode=display">
-\widehat f(x)=\int_V e^{-2\pi i\left<{}y,x\right>}f(y)\mu(y)=\int_V e^{-2\pi i\left<{}Ay,x\right>}\widetilde f(y)\mu(y)=\int_V e^{-2\pi i\left<{}y,A^\ast x\right>}\widetilde f(y)\mu(y)=\mathcal{F}[\widetilde f] (A^\ast x).</script><script type="math/tex; mode=display">
-\sum_{x\in\Gamma'}\widehat f(x)=\sum_{x\in\mathbb{Z}^n}\widehat f((A^{\ast })^{-1}x)=\sum_{x\in \mathbb{Z}^n}\mathcal{F}[\widetilde f] (x)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y)=\sum_{y\in\Gamma}f(y).</script><p>The standard Poisson summation on the grid point $\mathbb{Z}^n\subset \mathbb{R}^n$ is used,<br>The proof is similar to the proof of the previous proposition.</p>
-<h2 id="theta-function">Theta function</h2>
-<p>Suppose there is a symmetric positive definite non-degenerate quadratic form $B(x,y)=x\cdot y$ on $V$ (compatible with the measure),<br>Then $V$ can be equated with $V^\ast $ at this time, and $\Gamma&#39;$ is also a grid point in $V$.<br>For any grid point $\Gamma,$ define</p>
-<script type="math/tex; mode=display">
-\Theta_\Gamma(t)=\sum_{x\in \Gamma} e^{-\pi tx\cdot x},\quad t>0,\quad t\in \mathbb{R}.</script><p><strong>Theorem 3</strong>. <em>$\Theta<em>\Gamma(t)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta</em>{\Gamma&#39;}(t^{-1}).$ In particular, if $\Gamma=\Gamma&#39;=\mathbb{Z}\subset \mathbb{R},$ Then $\Theta(t)=\frac{1}{\sqrt{t} }\Theta(\frac{1}{t}).$</em></p>
-<p>Use Poisson summation for the function $f(x)=e^{-\pi x\cdot x}$, then</p>
-<script type="math/tex; mode=display">
-\Theta_\Gamma(t)=\sum_{x\in \sqrt{t}\Gamma} f(x)=\frac{1}{\mu(V/\sqrt{t}\Gamma)}\sum_{x\in(\sqrt{t}\Gamma)'}\widehat f(x)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)} \sum_{x\in\Gamma'}\widehat f\left(\frac{1}{\sqrt{t} }x\right)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta_{\Gamma'}(t^{-1}).</script><p>The final equation is due to $f=\widehat f,$</p>
-<script type="math/tex; mode=display">
-\Theta_{\Gamma'(t^{-1})}=\sum_{x\in\Gamma'} e^{-\pi \frac{1}{t}x\cdot x}=\sum_{x\in\Gamma'}\widehat f\left(\frac{1}{\sqrt{t} }x\right).</script><p>Remember the quadratic gram matrix as $A=(a<em>{ij}),$ $a</em>{ij}=e<em>i\cdot e_j,$<br>Where ${e_i}$ is the base of $\Gamma$. Then the volume of $\Gamma$ is $\sqrt{\det(A)}.$<br>If $B$ is the inverse matrix of $A$, then $B=(b</em>{ij})$ is the gram matrix corresponding to the dual basis,<br>$\Gamma&#39;$ is composed of the dual basis $e<em>i&#39;=b</em>{ij}e_j$.<br>The volume of $\Gamma&#39;$ is $\det(A)^{-\frac{1}{2} }.$</p>
-<p>Let $r<em>\Gamma(m)$ be the number of $x\in\Gamma$ such that $x\cdot x=2m$, $m\ge 0$.<br>$r</em>\Gamma(m)$ is controlled by a polynomial with respect to $m$, and Serre gave a bound of $O(m^\frac{n}{2})$.<br>So the series $\sum<em>{m=0}^\infty r</em>\Gamma(m)q^m$ converges when $|q|&lt;1$.<br>Taking $q=e^{2\pi iz},$ then for $z\in\mathbb{H},$ we define a holomorphic function</p>
-<script type="math/tex; mode=display">
-\theta_\Gamma(z)=\sum_{m=0}^\infty r_\Gamma(m)q^m=\sum_{x\in\Gamma} e^{\pi iz(x\cdot x)}=\sum_{x\in\Gamma} q^{(x\cdot x)/2}.</script><p>Here we need to require $x\cdot x\equiv 0\mod 2,$ $\,\forall\,x\in \Gamma.$<br>This requires $A=(e_i\cdot e_j)$ to be even numbers on the diagonal.</p>
+<p>$$
+\widehat f(x)=\int_V e^{-2\pi i\left&lt;{}y,x\right&gt;}f(y)\mu(y).
+$$</p>
+<p>At this time $\widehat f$ is a sufficiently good function on $V^\ast $.</p>
+<p>Call $\Gamma$ the grid point in $V$,
+If $\Gamma$ takes a set of linearly independent vectors $\{v_1,\cdots,v_n\}$ in $V$ as $\mathbb{Z}$-basis.
+The dual grid point $\Gamma&#39;$ in $V^\ast $ is defined as</p>
+<p>$$
+\Gamma&#39;:=\{x\in V^\ast \mid \left&lt;{}y,x\right&gt;\in \mathbb{Z}, \,\forall\,y\in \Gamma\}.
+$$</p>
+<p>Record $A=[v_1,\cdots,v_n],$ at this time
+Then the column vector of $(A^{\ast })^{-1}$ is a set of $\mathbb{Z}$-basis of $\Gamma&#39;$,
+Where ${}^\ast $ is the dual matrix. When $V=\mathbb{R}^n,$
+When $\left&lt;{}-,-\right&gt;$ takes the standard inner product, ${}^\ast $ is the transpose.</p>
+<p><strong> Proposition 2 </strong> (Poisson summation on grid points). <em> The volume of grid point $\Gamma$ in $V$ is recorded as $\mu(V/\Gamma).$. If the function $f$ has Fourier transformation, we have </em> </p>
+<p>$$
+\sum_{y\in\Gamma} f(y)=\frac{1}{\mu(V/\Gamma)}\sum_{x\in \Gamma&#39;}\widehat f(x).
+$$</p>
+<p>Perform scale transformation and maintain both sides of the equation (there are measurement terms in the Fourier transformation),
+Therefore, we can always set $\mu(V/\Gamma)=1.$ and record the basis of $\Gamma$ as matrix $A,$. Then</p>
+<p>$$
+\sum_{y\in \Gamma}f(y)=\sum_{y\in \mathbb{Z}^n}f(Ay)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y),\quad \widetilde f(y)=:f(Ay).
+$$</p>
+<p>$$
+\widehat f(x)=\int_V e^{-2\pi i\left&lt;{}y,x\right&gt;}f(y)\mu(y)=\int_V e^{-2\pi i\left&lt;{}Ay,x\right&gt;}\widetilde f(y)\mu(y)=\int_V e^{-2\pi i\left&lt;{}y,A^\ast x\right&gt;}\widetilde f(y)\mu(y)=\mathcal{F}[\widetilde f] (A^\ast x).
+$$</p>
+<p>$$
+\sum_{x\in\Gamma&#39;}\widehat f(x)=\sum_{x\in\mathbb{Z}^n}\widehat f((A^{\ast })^{-1}x)=\sum_{x\in \mathbb{Z}^n}\mathcal{F}[\widetilde f] (x)=\sum_{y\in\mathbb{Z}^n}\widetilde f(y)=\sum_{y\in\Gamma}f(y).
+$$</p>
+<p>The standard Poisson summation on the grid point $\mathbb{Z}^n\subset \mathbb{R}^n$ is used,
+The proof is similar to the proof of the previous proposition.</p>
+<h2 id="en-Theta函数"><a href="#en-Theta函数" class="headerlink" title="Theta函数"></a> Theta function</h2><p>Suppose there is a symmetric positive definite non-degenerate quadratic form $B(x,y)=x\cdot y$ on $V$ (compatible with the measure),
+Then $V$ can be equated with $V^\ast $ at this time, and $\Gamma&#39;$ is also a grid point in $V$.
+Definition for any grid point $\Gamma,$</p>
+<p>$$
+\Theta_\Gamma(t)=\sum_{x\in \Gamma} e^{-\pi tx\cdot x},\quad t&gt;0,\quad t\in \mathbb{R}.
+$$</p>
+<p><strong> Theorem 3 </strong>. <em> $\Theta_\Gamma(t)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta_{\Gamma&#39;}(t^{-1}).$ In particular, if $\Gamma=\Gamma&#39;=\mathbb{Z}\subset \mathbb{R},$ then $\Theta(t)=\frac{1}{\sqrt{t} }\Theta(\frac{1}{t}).$ </em> </p>
+<p>Use Poisson summation on function $f(x)=e^{-\pi x\cdot x}$, then</p>
+<p>$$
+\Theta_\Gamma(t)=\sum_{x\in \sqrt{t}\Gamma} f(x)=\frac{1}{\mu(V/\sqrt{t}\Gamma)}\sum_{x\in(\sqrt{t}\Gamma)&#39;}\widehat f(x)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)} \sum_{x\in\Gamma&#39;}\widehat f\left(\frac{1}{\sqrt{t} }x\right)=t^{-\frac{n}{2} }\frac{1}{\mu(V/\Gamma)}\Theta_{\Gamma&#39;}(t^{-1}).
+$$</p>
+<p>The final equation is due to $f=\widehat f,$</p>
+<p>$$
+\Theta_{\Gamma&#39;(t^{-1})}=\sum_{x\in\Gamma&#39;} e^{-\pi \frac{1}{t}x\cdot x}=\sum_{x\in\Gamma&#39;}\widehat f\left(\frac{1}{\sqrt{t} }x\right).
+$$</p>
+<p>Remember the gram matrix of the quadratic type as $A=(a_{ij}),$ $a_{ij}=e_i\cdot e_j,$
+Where $\{e_i\}$ is the base of $\Gamma$. Then the volume of $\Gamma$ is $\sqrt{\det(A)}.$
+If $B$ is the inverse matrix of $A$, then $B=(b_{ij})$ is the gram matrix corresponding to the dual basis,
+$\Gamma&#39;$ is composed of the dual basis $e_i&#39;=b_{ij}e_j$.
+The volume of $\Gamma&#39;$ is $\det(A)^{-\frac{1}{2} }.$</p>
+<p>Let $r_\Gamma(m)$ be the number of $x\in\Gamma$ that makes $x\cdot x=2m$, $m\ge 0$.
+$r_\Gamma(m)$ is controlled by a polynomial with respect to $m$, and Serre gave a bound for $O(m^\frac{n}{2})$.
+So the series $\sum_{m=0}^\infty r_\Gamma(m)q^m$ converges at $|q|&lt;1$.
+Taking $q=e^{2\pi iz},$ then for $z\in\mathbb{H},$ we define the holomorphic function</p>
+<p>$$
+\theta_\Gamma(z)=\sum_{m=0}^\infty r_\Gamma(m)q^m=\sum_{x\in\Gamma} e^{\pi iz(x\cdot x)}=\sum_{x\in\Gamma} q^{(x\cdot x)/2}.
+$$</p>
+<p>Here we need to require $x\cdot x\equiv 0\mod 2,$ $\,\forall\,x\in \Gamma.$
+This requires $A=(e_i\cdot e_j)$ to be even numbers on the diagonal.</p>
 <p>The previous Theta function was a real parameter $t,$. The small theta function at this time satisfies</p>
-<script type="math/tex; mode=display">
-\Theta_\Gamma(t)=\theta_\Gamma(it),\quad \Theta_\Gamma\left(\frac{1}{t}\right)=\theta_\Gamma\left(\frac{i}{t}\right)=\theta_\Gamma\left(-\frac{1}{it}\right).</script><p>Further assume that $\Gamma$ is self-dual, that is, $\Gamma&#39;=\Gamma.$<br>This requires $A=(e_i\cdot e_j)$ to be an integral coefficient, and the determinant is $1.$ Under this assumption,<br>From the previous Poisson sum formula, we have</p>
-<script type="math/tex; mode=display">
-\theta_\Gamma\left(-\frac{1}{it}\right)=t^{\frac{n}{2} }\theta_\Gamma(it).</script><p>Since $\theta<em>\Gamma(-\frac{1}{z}),$<br>$(-iz)^{\frac{n}{2} }\theta</em>\Gamma(z)$ are all analytical functions,<br>It is now proved that they are equal on the pure imaginary axis (positive semi-axis). By analytical continuity,<br>They are all equal in the upper half plane.</p>
-<p><strong>Proposition 4</strong>. <em>For the grid point $\Gamma,$ $\theta<em>\Gamma\left(-\frac{1}{z}\right)=(-iz)^{\frac{n}{2} }\theta</em>\Gamma(z),$ $\,\forall\,z\in\mathbb{H}.$</em></p>
-<p>In fact, it can be proved that it satisfies self-duality and $x\cdot x\equiv 0\mod 2,$<br>The grid point $\Gamma\subset V$ of $\,\forall\,x\in \Gamma$ must be $8k$ dimensional,<br>$k\in\mathbb{Z}_+.$</p>
-<p>The article was last updated on 2023-09-05 15:45:49</p>
+<p>$$
+\Theta_\Gamma(t)=\theta_\Gamma(it),\quad \Theta_\Gamma\left(\frac{1}{t}\right)=\theta_\Gamma\left(\frac{i}{t}\right)=\theta_\Gamma\left(-\frac{1}{it}\right).
+$$</p>
+<p>Further assume that $\Gamma$ is self-dual, that is, $\Gamma&#39;=\Gamma.$
+This requires $A=(e_i\cdot e_j)$ to be an integral coefficient, and the determinant is $1.$. Under this assumption,
+From the previous Poisson sum formula, we have</p>
+<p>$$
+\theta_\Gamma\left(-\frac{1}{it}\right)=t^{\frac{n}{2} }\theta_\Gamma(it).
+$$</p>
+<p>Due to $\theta_\Gamma(-\frac{1}{z}),$
+$(-iz)^{\frac{n}{2} }\theta_\Gamma(z)$ are all analytical functions,
+It is now proved that they are equal on the pure imaginary axis (positive semi-axis). By analytical continuity,
+They are all equal in the upper half plane.</p>
+<p><strong> Proposition 4 </strong>. <em> For grid points that meet the above conditions $\Gamma,$ $\theta_\Gamma\left(-\frac{1}{z}\right)=(-iz)^{\frac{n}{2} }\theta_\Gamma(z),$ $\,\forall\,z\in\mathbb{H}.$ </em> </p>
+<p>In fact, it can be shown that it satisfies self-duality and $x\cdot x\equiv 0\mod 2,$
+Grid point $\Gamma\subset V$ of $\,\forall\,x\in \Gamma$ must be $8k$ dimensional,
+$k\in\mathbb{Z}_+.$</p>
+<p>The article was last updated on 2023-09-05 15:45:49 </p>
+
+            
                 </div>
             
         </div>
@@ -422,7 +484,7 @@ a_m=\int_0^1 F(x) e^{-2\pi imx}dx=\int_0^1 \sum_{n=-\infty}^{\infty} f(x+n)e^{-2
                                         
                                         <span data-lang-group="article-nav-prev-title" data-lang="zh-cn">循环群上热核</span>
                                         
-                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">Cyclic supragroup thermonuclear</span>
+                                            <span data-lang-group="article-nav-prev-title" data-lang="en" style="display:none">thermal core on cyclic group</span>
                                         
                                     </span>
                                     <span class="post-nav-item i18n-text" data-i18n="prev_posts">上一篇</span>
@@ -444,7 +506,7 @@ a_m=\int_0^1 F(x) e^{-2\pi imx}dx=\int_0^1 \sum_{n=-\infty}^{\infty} f(x+n)e^{-2
                                         
                                         <span data-lang-group="article-nav-next-title" data-lang="zh-cn">《微分拓扑》复习笔记(8)-定向相交数应用</span>
                                     
-                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">Differential Topology Review Notes (8) - Directional Intersection Number Application</span>
+                                        <span data-lang-group="article-nav-next-title" data-lang="en" style="display:none">&#34;Differential Topology&#34; review notes (8) - Application of directional intersection numbers</span>
                                     
                                 </span>
                                 <span class="post-nav-item i18n-text" data-i18n="next_posts">下一篇</span>
@@ -697,7 +759,7 @@ a_m=\int_0^1 F(x) e^{-2\pi imx}dx=\int_0^1 \sum_{n=-\infty}^{\infty} f(x+n)e^{-2
     </div>
     
         <div class="post-toc" data-lang-group="post-toc" data-lang="en" style="display:none">
-            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#poisson-summation-on-grid-points"><span class="nav-text">Poisson summation on grid points</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#theta-function"><span class="nav-text">Theta function</span></a></li></ol>
+            <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#en-%E6%A0%BC%E7%82%B9%E4%B8%8A%E7%9A%84Poisson%E6%B1%82%E5%92%8C"><span class="nav-text"> Poisson summation on grid points</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#en-Theta%E5%87%BD%E6%95%B0"><span class="nav-text"> Theta function</span></a></li></ol>
         </div>
     
 </div>
